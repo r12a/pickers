@@ -2,36 +2,41 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Persian character picker 19</title>
-<link rel="stylesheet" type="text/css" href="/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="/pickers/shared19/style.css" />
+<title>Persian character picker 20</title>
+<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="../shared20/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
-<script type="text/javascript" src="/code/boilerplate.js"></script>
-<script type="text/javascript" src="/scripts/arabic/fonts.js"> </script>
-
+<script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
+<script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
+<script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
+<script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
+<script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="/pickers/shared19/code.js">  </script>
+<script type="text/javascript" src="../shared20/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
-<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
-<script type="text/javascript" src="/scripts/block/arabic-names-subset.js"></script>
-<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+
 <script type="text/javascript" src="localtranscription.js">  </script>
+<script type="text/javascript" src="../arabic/composite-names.js"></script>
+<script type="text/javascript" src="../../shared/fontlists/arabic.js"> </script>
 </head>
 
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Persian character picker','');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Persian character picker','');</script>
 </header>
 <div id="main">
   <span id="copydelete">
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
+  <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
-<span id="tools"><img alt="tools" style="vertical-align:top;" src="/pickers/images/y.png"/>
+<span id="tools">
     <button onclick="showCodepoints()">Show<br/>codepoints</button>
     
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
@@ -50,7 +55,7 @@
 
 
 <div id="outputDiv">
-  <textarea dir="auto" rows="2" cols="80" id="output" name="output" spellcheck="false" placeholder="text area"></textarea>
+  <textarea dir="auto" rows="2" cols="80" id="output" name="output" spellcheck="false" placeholder="فارسی    text area"></textarea>
 </div>
 
 
@@ -480,8 +485,9 @@ dir="rtl">
       </table>
 
 
- <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }"><span class="optionTrigger">show/hide rare characters</span></p>
- <table id="rare" style="display:none;"><tbody>
+<details>
+ <summary>show/hide rare characters</summary>
+ <table id="rare"><tbody>
  
  	<tr>
     <td>
@@ -500,6 +506,7 @@ dir="rtl">
 </td>
       </tr>
 </tbody></table> 
+</details>
   </div>
 
 
@@ -590,13 +597,17 @@ dir="rtl">
     </form>
   </div>
   
-  <div class="control" style="text-align:center; color: white; background-color: #60ADFB; cursor: pointer;" onClick="help = window.open('help', 'help'); help.focus();">Help<br/><img src="../shared19/help.png" alt="" style="vertical-align: baseline;"/>
+  <div class="control" style="text-align:center; color: white; background-color: #60ADFB; cursor: pointer;" onClick="help = window.open('help', 'help'); help.focus();">Help<br/><img src="../shared20/help.png" alt="" style="vertical-align: baseline;"/>
   </div>
 </div>
 
 
 <div id="extracontrols">
-  <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+<details>
+<summary>more controls</summary>
+
+
+  <div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
     <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
 		onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
 		document.getElementById('n11nform').innerHTML = 'NFC';"/> 
@@ -608,7 +619,7 @@ dir="rtl">
 
 
 
-<div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
+<div class="control" id="uiFontControl">Change table font:<br />
     <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
     </select>
 	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
@@ -616,7 +627,7 @@ dir="rtl">
 
 
 
-<div class="control" id="ccBaseControl" style="display:none;">CC base:<br />
+<div class="control" id="ccBaseControl">CC base:<br />
     <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
 		<option value="0">Select...</option>
         <option value="">none</option>
@@ -630,7 +641,7 @@ dir="rtl">
 </div>
 
 
-<div class="control" id="uiTableDirection" style="display:none; text-align:right;">Table direction:<br />
+<div class="control" id="uiTableDirection" style="text-align:right;">Table direction:<br />
 <select onChange="if (this.value == 'rtl') {document.getElementById('alphabet').dir = 'rtl'} else {document.getElementById('alphabet').dir = 'ltr'}; return false;">
 <option value="rtl">RTL</option>
 <option value="ltr">LTR</option>
@@ -646,42 +657,17 @@ dir="rtl">
 </div-->
 
 
-<div id="showMoreControls" onclick="toggleExtraControls()"><span  class="optionTrigger">more controls</span></div>
+</details>
 
+<details>
+<summary>more pickers</summary>
+<iframe id="pickerlist" src="../pickerlist"></iframe>
+</details>
 </div>
 
-<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
 
-<div id="detailednotes" style="display:none">
-  <p><strong>Notes:</strong></p> 
-  
- <aside class="sidebar">
-  <div class="noprint">
-        <h2 class="notoc flush"><a id="links" tabindex="5">Related links</a></h2>
-        <p><a href="/scripts/arabic">Arabic character notes</a></p>
-        <p><a href="/scripts/links?script=arabic">Arabic script links</a></p>
-        <p><a href="/uniview/?block=arabic">Arabic in UniView </a></p>
-        <p><a href="/pickers/">Other pickers </a></p>
-  </div>
-</aside>     
 
-<p id="status">Updated Tue 6 Sep 2016 &bull; tags <a href="http://rishida.net/blog/index.php?tag=urdu" title="Show all blog posts tagged with 'arabic'">arabic</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
 
-<p>This Unicode character picker allows you to produce or analyse runs of Persian text using the Arabic script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-
-    <p>To properly display the text you will need to choose a font that is loaded on your system or device. The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7. See more information about <a href="/scripts/fontlist/#arabic">standard OS fonts in Mac and Windows</a>.</p>
-    <p>To produce characters in the text area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the controls to get further information about the characters. You must have JavaScript enabled. </p>
-    <dl>
-    
-      <dt>Mobile devices</dt>
-   		<dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
-        
-      <dt>About the chart</dt>
-      <dd>Includes characters in the Unicode <a href="/uniview/?block=arabic">Arabic</a> block that are used for writing modern Standard Persian. <strong>This is an early version of the picker for Persian. It is likely to change a little in the future as the required set of characters is refined.</strong> (It currently has some characters that are not needed, and may be missing some that are.)</dd>
-<dt>Get help</dt>
-      <dd><a href="help" target="help" style="font-size:120%;">See the help file</a>, or if something is broken or missing <a target="_blank" style="font-size:120%;" href="https://github.com/r12a/r12a.github.io/issues/new?title=[persian%20picker]%20%20ADD%20TITLE%20HERE">let me know</a>.</dd>
-      <dd>For version information see <a href="https://github.com/r12a/r12a.github.io/commits/master/pickers/persian">the Github commit list</a>.</dd>    </dl>
-</div>
 
 
 <div id="panel" style="display:none">
@@ -692,8 +678,17 @@ dir="rtl">
 
 
 
-<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>. Source: <a href="https://github.com/r12a/pickers/tree/gh-pages/persian">GitHub</a></div>
 
 
 </body>
+<script>
+// check for parameters and take appropriate action
+parameters = location.search.split('&');
+parameters[0] = parameters[0].substring(1);
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'text') { if (pairs[1]) document.getElementById('output').value = decodeURI(pairs[1]) }
+	}
+</script>
 </html>
