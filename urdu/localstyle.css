@@ -1,11 +1,13 @@
 @font-face {
     font-family: 'Noto Nastaliq Urdu WF';
-    src: url('/webfonts/notonastaliqurdudraftwebfont.woff2') format('woff2'),
-         url('/webfonts/notonastaliqurdudraftwebfont.woff') format('woff');
+    src: url('/shared/webfonts/notonastaliqurdu-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notonastaliqurdu-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
+
+*[lang=ur] { font-family: 'Noto Nastaliq Urdu WF', serif; }
 
 #alphabet { display: block; margin-right: 20px;  }
 

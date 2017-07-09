@@ -2,26 +2,31 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Urdu character picker 19</title>
-<link rel="stylesheet" type="text/css" href="/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="/pickers/shared19/style.css" />
-<link rel="stylesheet" type="text/css" href="localstyle.css" />
-<script type="text/javascript" src="/code/boilerplate.js"></script>
-<script type="text/javascript" src="/scripts/arabic/urdufonts.js"> </script>
+<title>Urdu character picker 20</title>
 
+<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="../shared20/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
+<script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
+<script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
+<script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
+<script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="/pickers/shared19/code.js">  </script>
+<script type="text/javascript" src="../shared20/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
-<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
-<script type="text/javascript" src="/scripts/block/arabic-names-subset.js"></script>
-<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+
+<script type="text/javascript" src="../arabic/composite-names.js"></script>
+<script type="text/javascript" src="/shared/fontlists/urdufonts.js"> </script>
 </head>
 
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Urdu character picker','v19');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Urdu character picker','v20');</script>
 </header>
 
 
@@ -30,9 +35,10 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
+  <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
-<span id="tools"><img alt="tools" style="vertical-align:top;" src="/pickers/images/y.png"/>
+<span id="tools">
     <button onclick="showCodepoints()">Show<br/>codepoints</button>
     
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
@@ -47,7 +53,7 @@
 
 
 <div id="outputDiv">
-  <textarea dir="auto" rows="2" cols="80" id="output" name="output"></textarea>
+  <textarea dir="auto" rows="2" cols="80" id="output" name="output" placeholder="اُردُو‎: text area"></textarea>
 </div>
 
 
@@ -605,11 +611,19 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
       <span onclick="searchFor('xxxxxx', 'latin');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" title="Clear search results." >X</span>
     </form>
   </div>
+  
+  <div class="control" style="text-align:center; color: white; background-color: #60ADFB; cursor: pointer;" onClick="help = window.open('help', 'help'); help.focus();">Help<br/><img src="../shared20/help.png" alt="" style="vertical-align: baseline;"/>
+  </div>
 </div>
 
 
+
+
 <div id="extracontrols">
-  <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+<details>
+<summary>more controls</summary>
+
+  <div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
     <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
 							onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
 							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
@@ -619,7 +633,7 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
 
 
 
-<div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
+<div class="control" id="uiFontControl">Change table font:<br />
     <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
     </select>
 	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
@@ -627,7 +641,7 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
 
 
 
-<div class="control" id="ccBaseControl" style="display:none;">CC base:<br />
+<div class="control" id="ccBaseControl">CC base:<br />
     <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
 		<option value="0">Select...</option>
         <option value="">none</option>
@@ -639,82 +653,23 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
 </div>
 
 
-<div class="control" id="uiTableDirection" style="display:none; text-align:right;">Table direction:<br />
+<div class="control" id="uiTableDirection" style="text-align:right;">Table direction:<br />
 <select onChange="if (this.value == 'rtl') {document.getElementById('alphabet').dir = 'rtl'} else {document.getElementById('alphabet').dir = 'ltr'}; return false;">
 <option value="rtl">RTL</option>
 <option value="ltr">LTR</option>
 </select>
 </div>
+</details>
 
-
-<div id="showMoreControls" onclick="toggleExtraControls()"><span class="optionTrigger">more controls</span></div>
-
+<details>
+<summary>more pickers</summary>
+<iframe id="pickerlist" src="../pickerlist"></iframe>
+</details>
 </div>
 
 
 
 
-
-<div id="showNotes" onclick="toggleNotes()"><span class="optionTrigger">show notes</span></div>
-
-<div id="detailednotes" style="display:none">
-  <p><strong>Notes:</strong></p> 
-  
- <aside class="sidebar">
-  <div class="noprint">
-        <h2 class="notoc flush"><a id="links" tabindex="5">Related links</a></h2>
-        <p><a href="/scripts/arabic/urdu">Urdu script notes</a></p>
-        <p><a href="/scripts/arabic">Arabic character notes</a></p>
-        <p><a href="/scripts/links?script=arabic">Arabic script links</a></p>
-        <p><a href="/uniview/?block=arabic">Arabic in UniView </a></p>
-        <p><a href="/pickers/">Other pickers </a></p>
-  </div>
-</aside>     
-
-<p id="status">Updated Thu 11 Mar 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=urdu" title="Show all blog posts tagged with 'urdu'">urdu</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
-
-<p>This Unicode character picker allows you to produce or analyse runs of Urdu text using the Arabic script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-
-    <p>You must have JavaScript enabled. Choose a view from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
-    <p>To properly display the text you will need to choose a font that is loaded on your system or device. The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7. See more information about <a href="/scripts/fontlist/#arabic">standard OS fonts in Mac and Windows</a>.</p>
-   <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
-    <dl>
-    
-      <dt>Mobile devices</dt>
-   		<dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
-        
-      <dt>About the chart</dt>
-      <dd>Includes characters in the Unicode <a href="/uniview/?block=arabic">Arabic</a> block that are used for Urdu. Most of the characters in the Urdu standard UZT 1.01 are included.</dd>
-      <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. (Note:  normalization is turned off for Han characters in this application.)</dd>
-      
-      <dt>Input features</dt>
-      <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area.</dd>
-      <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of Urdu.</dd>
-      <dd>By default, the table is right-aligned and flows from right to left, however it is possible to flip it using more <code class="kw" translate="no">controls/table direction</code>.</dd>
-      
-      <dd><strong class="leadin">Hints</strong> This changes the behaviour of the table view so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</dd>
-      
-      <dd><strong class="leadin">Transcriptions</strong>  There are two transcription panels available in this picker: Latin, and Library of Congress. The latter panel allows you to follow a transcription to produce some Urdu text. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want to insert it into the output area</dd>
-				<dd>The <code class="kw" translate="no">Latin</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
-				<dd>The <code class="kw" translate="no">LOC</code> panel allows you to generate some Urdu text from characters used for Urdu transcription in both the <a href="http://www.loc.gov/catdir/cpso/romanization/urdu.pdf">Library of Congress scheme</a> and <em>Teach Yourself Urdu</em> by David Matthews and Mohamed Kasim Dalvi.</dd>
-
-      
-      <dt>Notes on other controls</dt>
-      
-      <dd>The <code class="button" translate="no">Split syllables</code> button adds a copy of the text to the cursor position that has been split apart at syllable boundaries. Syllables joined by subjoining consonants do not have a space inserted. As with other controls, this works on a subset of the text if it is highlighted, and replaces any highlighted text.</dd>
-      
-      <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
-      
-      <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <code class="kw" translate="no">Add codepoint</code> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
-      
-      <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <code class="kw" translate="no">\bha\b</code> (or the shortcut, <code class="kw" translate="no">:ha:</code>).</dd>
-      
-      <dd><span class="leadin">CC base.</span> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://rishida.net/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. The <code class="kw" translate="no">CC base</code> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</dd>
-      
-      <dt>If something is missing/broken</dt>
-      <dd>... <a href="mailto:rishida@w3.org?subject=%5BUrdu%20picker%5D%20">let me know</a>.</dd>
-    </dl>
-</div>
 
 
 <div id="panel" style="display:none">
@@ -725,8 +680,17 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
 
 
 
-<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>. Source: <a href="https://github.com/r12a/pickers/tree/gh-pages/urdu">GitHub</a></div>
 
 
 </body>
+<script>
+// check for parameters and take appropriate action
+parameters = location.search.split('&');
+parameters[0] = parameters[0].substring(1);
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'text') { if (pairs[1]) document.getElementById('output').value = decodeURI(pairs[1]) }
+	}
+</script>
 </html>
