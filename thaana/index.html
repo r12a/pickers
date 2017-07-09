@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Thaana character picker 20</title>
+
+<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="../shared20/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
+<script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
+<script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
+<script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
+<script type="text/javascript" src="../../shared/code/all-names.js"></script>
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="../shared20/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+
+<script type="text/javascript" src="composite-names.js"></script>
+<script type="text/javascript" src="/shared/fontlists/thaana.js"> </script>
+</head>
+
+<body class="app">
+<header>
+<div id="header-boilerplate"></div>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Thaana character picker','v20');</script>
+</header>
+
+
+
+<div id="main">
+<span id="copydelete">
+  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
+  <button title="Select all the text." onclick="selectAll()">🔶</button>
+  <button title="Delete all the text." onclick="deleteAll()">❌</button>
+  <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
+  </span>
+  
+<span id="tools">
+    <button onclick="showCodepoints()">Show<br/>codepoints</button>
+    
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
+    
+    <button  id="makeExample" onclick="makeExample('dv','')" 
+    title="Create an example.">Make<br>example</button>
+    
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('thaana','dv','')" 
+    title="Create an character link.">Character<br/>markup</button>
+    </span>
+</div>
+
+
+<div id="outputDiv">
+  <textarea dir="auto" rows="2" cols="80" id="output" name="output"></textarea>
+</div>
+
+
+
+
+<div id="transcriptionWrapper">
+<div id="copyTranscription" onclick="copyTranscription()">📋</div>
+<div id="moveTranscription" onclick="moveTranscription()">⌃</div>
+<div id="closeTranscription" onclick="closeTranscription()">X</div>
+<div id="transcription" contenteditable="true"></div>
+</div>
+
+
+
+<div id="autofocusswitch">Autofocus: 
+	<span id="afon" class="on" 
+    onclick="switchAutofocus('on')">On</span> 
+    <span id="afoff" class="off" 
+    onclick="switchAutofocus('off')">Off</span>
+    </div>
+
+
+<div style="position:relative;">
+<div id="vertical-menu">
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="setSidebarDefaults(this);
+     return false;">D</div>
+
+<div class="vmtab" title="Hinting" data-var="showShapeHints" data-locn="" data-shorttitle="H"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">H</div>
+
+<!--div class="vmtab"  title="Shape lookup" data-var="showShapeLookup" data-locn="shapelist" data-shorttitle="S"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">S</div-->
+
+<div class="vmtab"  title="Latin characters" data-var="showLatinTrans" data-locn="latintranscript" data-shorttitle="L"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
+
+<div class="vmtab"  title="Maldivian Latin to Thaana" data-var="showMLTrans" data-locn="mltranscript" data-shorttitle="M"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">M</div>
+
+</div>
+</div>
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+ <div id="transcriptionChoice"></div>
+
+<div id="latintranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('d̪')">d̪</span>
+<span class="t" onclick="dotrans('ḏ')">ḏ</span>
+<span class="t" onclick="dotrans('d̤')">d̤</span>
+<span class="t" onclick="dotrans('ɖ')">ɖ</span>
+<span class="t" onclick="dotrans('ʤ')">ʤ</span>
+<span class="t" onclick="dotrans('ɡ')">ɡ</span>
+<span class="t" onclick="dotrans('ǵ')">ǵ</span>
+<span class="t" onclick="dotrans('ḥ')">ḥ</span>
+<span class="t" onclick="dotrans('ḫ')">ḫ</span>
+<span class="t" onclick="dotrans('ɭ')">ɭ</span>
+<span class="t" onclick="dotrans('n̪')">n̪</span>
+<span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('ɲ')">ɲ</span>
+<span class="t" onclick="dotrans('s̺')">s̺</span>
+<span class="t" onclick="dotrans('š')">š</span>
+<span class="t" onclick="dotrans('ṣ')">ṣ</span>
+<span class="t" onclick="dotrans('ʂ')">ʂ</span>
+<span class="t" onclick="dotrans('t̪')">t̪</span>
+<span class="t" onclick="dotrans('ṯ')">ṯ</span>
+<span class="t" onclick="dotrans('t̤')">t̤</span>
+<span class="t" onclick="dotrans('ʈ')">ʈ</span>
+<span class="t" onclick="dotrans('ʧ')">ʧ</span>
+<span class="t" onclick="dotrans('ʋ')">ʋ</span>
+<span class="t" onclick="dotrans('z̺')">z̺</span>
+<span class="t" onclick="dotrans('ʒ')">ʒ</span>
+<span class="t" onclick="dotrans('ʔ')">ʔ</span>
+<span class="t" onclick="dotrans('ʻ')">ʻ</span><br/>
+<span class="t" onclick="dotrans('ə')">ə</span>
+<span class="t" onclick="dotrans('əː')">əː</span>
+<span class="t" onclick="dotrans('i')">i</span>
+<span class="t" onclick="dotrans('iː')">iː</span>
+<span class="t" onclick="dotrans('u')">u</span>
+<span class="t" onclick="dotrans('uː')">uː</span>
+<span class="t" onclick="dotrans('e')">e</span>
+<span class="t" onclick="dotrans('eː')">eː</span>
+<span class="t" onclick="dotrans('ɔ')">ɔ</span>
+<span class="t" onclick="dotrans('ɔː')">ɔː</span>
+</div>
+
+
+
+<div id="mltranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('ަ')">a</span>
+<span class="t" onclick="dotrans('ާ')">aa</span>
+<span class="t" onclick="dotrans('ި')">i</span>
+<span class="t" onclick="dotrans('ީ')">ee</span>
+<span class="t" onclick="dotrans('ު')">u</span>
+<span class="t" onclick="dotrans('ޫ')">oo</span>
+<span class="t" onclick="dotrans('ެ')">e</span>
+<span class="t" onclick="dotrans('ޭ')">ey</span>
+<span class="t" onclick="dotrans('ޮ')">o</span>
+<span class="t" onclick="dotrans('ޯ')">oa</span>
+<span class="t" onclick="dotrans('ް')">-</span><br/>
+<span class="t" onclick="dotrans('ބ')">b</span>
+<span class="t" onclick="dotrans('ޗ')">ch</span>
+<span class="t" onclick="dotrans('ޑ')">d</span>
+<span class="t" onclick="dotrans('ދ')">dh</span>
+<span class="t" onclick="dotrans('ފ')">f</span>
+<span class="t" onclick="dotrans('ގ')">g</span>
+<span class="t" onclick="dotrans('ޏ')">gn</span>
+<span class="t" onclick="dotrans('ހ')">h</span>
+<span class="t" onclick="dotrans('ޖ')">j</span>
+<span class="t" onclick="dotrans('ކ')">k</span>
+<span class="t" onclick="dotrans('ލ')">l</span>
+<span class="t" onclick="dotrans('ޅ')">lh</span>
+<span class="t" onclick="dotrans('މ')">m</span>
+<span class="t" onclick="dotrans('ނ')">n</span>
+<span class="t" onclick="dotrans('ޱ')">ṇ</span>
+<span class="t" onclick="dotrans('ޕ')">p</span>
+<span class="t" onclick="dotrans('ރ')">r</span>
+<span class="t" onclick="dotrans('ސ')">s</span>
+<span class="t" onclick="dotrans('ށ')">sh</span>
+<span class="t" onclick="dotrans('ޓ')">t</span>
+<span class="t" onclick="dotrans('ތ')">th</span>
+<span class="t" onclick="dotrans('ވ')">v</span>
+<span class="t" onclick="dotrans('ޔ')">y</span>
+<span class="t" onclick="dotrans('ޒ')">z</span>
+<span class="t" onclick="dotrans('ޜ')">ʒ</span><br/>
+<span class="t" onclick="dotrans('ޘ')">ث</span>
+<span class="t" onclick="dotrans('ޙ')">ح</span>
+<span class="t" onclick="dotrans('ޚ')">خ</span>
+<span class="t" onclick="dotrans('ޛ')">ذ</span>
+<span class="t" onclick="dotrans('ޝ')">ش</span>
+<span class="t" onclick="dotrans('ޞ')">ص</span>
+<span class="t" onclick="dotrans('ޟ')">ض</span>
+<span class="t" onclick="dotrans('ޠ')">ط</span>
+<span class="t" onclick="dotrans('ޡ')">ظ</span>
+<span class="t" onclick="dotrans('ޢ')">ع</span>
+<span class="t" onclick="dotrans('ޣ')">غ</span>
+<span class="t" onclick="dotrans('ޤ')">ق</span>
+<span class="t" onclick="dotrans('ޥ')">و</span>
+</div>
+
+</div>
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+
+
+
+
+
+
+<div id="tables">
+  
+  <div id="alphabet" class="default"
+  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyana, 'Noto Sans Lao', sans-serif; font-size: 32px;">
+    <table id="kbd">
+      <tr>
+        <td style="padding: 0 10px; text-align:center;">
+          <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 40px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add(' ');">SPACE</span>
+  <br/>
+          <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+          <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+          <br/>
+          <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2067');">RLI</span>
+          <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2066');">LRI</span>
+          <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2069');">PDI</span>
+  <br/>
+          <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202B');">RLE</span>
+          <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; teuxt-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\202A');">LRE</span>
+          <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202C');">PDF</span>
+  <br/>
+          <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200E');">LRM</span>
+          <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200F');">RLM</span>
+          
+        </td>
+        <td><table id="consonants">
+          <tr>
+            <td class="hint">h</td>
+            <td><span class="c">&#x0780;</span></td>
+            <td class="hint">sh</td>
+            <td><span class="c">&#x0781;</span></td>
+            <td class="hint">n</td>
+            <td><span class="c">&#x0782;</span></td>
+            <td class="hint">r</td>
+            <td><span class="c">&#x0783;</span></td>
+            <td class="hint">b</td>
+            <td><span class="c">&#x0784;</span></td>
+            <td class="hint">lh</td>
+            <td><span class="c">&#x0785;</span></td>
+            <td class="hint">k</td>
+            <td><span class="c">&#x0786;</span></td>
+            <td class="hint">-</td>
+            <td><span class="c">&#x0787;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">v</td>
+            <td><span class="c">&#x0788;</span></td>
+            <td class="hint">m</td>
+            <td><span class="c">&#x0789;</span></td>
+            <td class="hint">f</td>
+            <td><span class="c">&#x078A;</span></td>
+            <td class="hint">dh</td>
+            <td><span class="c">&#x078B;</span></td>
+            <td class="hint">th</td>
+            <td><span class="c">&#x078C;</span></td>
+            <td class="hint">l</td>
+            <td><span class="c">&#x078D;</span></td>
+            <td class="hint">g</td>
+            <td><span class="c">&#x078E;</span></td>
+            <td class="hint">gn</td>
+            <td><span class="c">&#x078F;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">s</td>
+            <td><span class="c">&#x0790;</span></td>
+            <td class="hint">d</td>
+            <td><span class="c">&#x0791</span></td>
+            <td class="hint">z</td>
+            <td><span class="c">&#x0792;</span></td>
+            <td class="hint">t</td>
+            <td><span class="c">&#x0793;</span></td>
+            <td class="hint">y</td>
+            <td><span class="c">&#x0794;</span></td>
+            <td class="hint">p</td>
+            <td><span class="c">&#x0795;</span></td>
+            <td class="hint">j</td>
+            <td><span class="c">&#x0796;</span></td>
+            <td class="hint">ch</td>
+            <td><span class="c">&#x0797;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">ث</td>
+            <td><span class="c">&#x0798;</span></td>
+            <td class="hint">ح</td>
+            <td><span class="c">&#x0799;</span></td>
+            <td class="hint">خ</td>
+            <td><span class="c">&#x079A;</span></td>
+            <td class="hint">ذ</td>
+            <td><span class="c">&#x079B;</span></td>
+            <td class="hint">ʒ</td>
+            <td><span class="c">&#x079C;</span></td>
+            <td class="hint">ش</td>
+            <td><span class="c">&#x079D;</span></td>
+            <td class="hint">ص</td>
+            <td><span class="c">&#x079E;</span></td>
+            <td class="hint">ض</td>
+            <td><span class="c">&#x079F;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">ط</td>
+            <td><span class="c">&#x07A0;</span></td>
+            <td class="hint">ظ</td>
+            <td><span class="c">&#x07A1;</span></td>
+            <td class="hint">ع</td>
+            <td><span class="c">&#x07A2;</span></td>
+            <td class="hint">غ</td>
+            <td><span class="c">&#x07A3;</span></td>
+            <td class="hint">ق</td>
+            <td><span class="c">&#x07A4;</span></td>
+            <td class="hint">و</td>
+            <td><span class="c">&#x07A5;</span></td>
+            <td class="hint">ṇ</td>
+            <td><span class="c">&#x07B1;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
+            </tr>
+        </table></td>
+        <td style="text-align:right;">
+          <table id="vowels"><tbody>
+            <tr>
+              <td class="hint">a</td>
+              <td><span class="c">&#x07A6;</span></td>
+              <td class="hint">u</td>
+              <td><span class="c">&#x07AA;</span></td>
+              <td class="hint">o</td>
+              <td><span class="c">&#x07AE;</span></td>
+              </tr>
+            <tr>
+              <td class="hint">aa</td>
+              <td><span class="c">&#x07A7;</span></td>
+              <td class="hint">oo</td>
+              <td><span class="c">&#x07AB;</span></td>
+              <td class="hint">oa</td>
+              <td><span class="c">&#x07AF;</span></td>
+              </tr>
+            <tr>
+              <td class="hint">i</td>
+              <td><span class="c">&#x07A8;</span></td>
+              <td class="hint">e</td>
+              <td><span class="c">&#x07AC;</span></td>
+              <td class="hint">&nbsp;</td>
+              <td>&nbsp;</td>
+              </tr>
+            <tr>
+              <td class="hint">ee</td>
+              <td><span class="c">&#x07A9;</span></td>
+              <td class="hint">ey</td>
+              <td><span class="c">&#x07AD;</span></td>
+              <td class="hint">-</td>
+              <td><span class="c">&#x07B0;</span></td>
+              </tr>
+            </tbody></table>
+          <div style="text-align: right;"></div>
+        </td>
+      </tr>
+      </table>
+      
+ 
+
+  </div>
+
+
+
+
+ <div id="shapelist" style="display:none">
+ <div>
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+
+
+
+</div><!-- end of tables -->
+
+
+
+
+
+<div id="controls">
+  <div class="control">Font list:<br />
+    <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
+	    </select>
+  <script>document.getElementById('fontList').innerHTML = fontSelection</script>
+  </div>
+  <div class="control">Custom font:<br />
+    <form action="none"
+						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
+      <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
+    </form>
+  </div>
+  <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
+     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+  </div>
+  <div class="control">Add codepoint:
+    <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
+      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
+    </form>
+  </div>
+  <div class="control">Search for:
+    <form action="none"
+						 onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
+      <input name="search" id="search"  type="text" />
+      <img src="/pickers//images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+    </form>
+  </div>
+  
+  <div class="control" style="text-align:center; color: white; background-color: #60ADFB; cursor: pointer;" onClick="help = window.open('help', 'help'); help.focus();">Help<br/><img src="../shared20/help.png" alt="" style="vertical-align: baseline;"/>
+  </div>
+</div>
+
+
+
+
+<div id="extracontrols">
+<details>
+<summary>more controls</summary>
+
+  <div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+    <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+							onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+							onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+							onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+
+
+
+<div class="control" id="uiFontControl">Change table font:<br />
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+    </select>
+	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+
+
+
+<div class="control" id="ccBaseControl">CC base:<br />
+    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
+		<option value="0">Select...</option>
+        <option value="">none</option>
+        <option value="&#x00A0;">NBSP</option>
+        <option value=" ">SP</option>
+        <option value="◌">◌</option>
+        <option value="-">-</option>
+		</select>
+</div>
+</details>
+
+<details>
+<summary>more pickers</summary>
+<iframe id="pickerlist" src="../pickerlist"></iframe>
+</details>
+</div>
+
+
+
+
+<div id="panel" style="display:none">
+	<div id="title" class="ex" lang="pa"></div>
+  <div style="display:block">&nbsp;</div>
+  <p style="text-align:right;"></p>
+</div>
+
+
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>. Source: <a href="https://github.com/r12a/pickers/tree/gh-pages/thaana">GitHub</a></div>
+
+
+</body>
+<script>
+// check for parameters and take appropriate action
+parameters = location.search.split('&');
+parameters[0] = parameters[0].substring(1);
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'text') { if (pairs[1]) document.getElementById('output').value = decodeURI(pairs[1]) }
+	}
+</script>
+</html>
