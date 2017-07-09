@@ -113,8 +113,8 @@ function mdcToHieroglyphs (str) {
 			catNum += hg[2]
 			if (hg[3]) catNum += hg[3]
 			var found = false
-			for (char in charData) {
-				if (charData[char].n && charData[char].n.match(catNum)) {
+			for (char in charDB) {
+				if (charDB[char].n && charDB[char].n.match(catNum)) {
 					found = true
 					break
 					}
@@ -124,9 +124,9 @@ function mdcToHieroglyphs (str) {
 			}
 		else {
 			found = ''
-			for (char in charData) {
-				if (charData[char].c) {
-					var readings = charData[char].c.split(',')
+			for (char in charDB) {
+				if (charDB[char].c) {
+					var readings = charDB[char].c.split(',')
 					for (r=0;r<readings.length;r++) {
 						if (readings[r] == units[u]) {
 							found = char
@@ -167,9 +167,9 @@ function hieroglyphsToMdC (str) {
 	convertStr2CharArray(str, chars)
 	
 	for (var i=0;i<chars.length;i++) {
-		if (charData[chars[i]]) {
-			if (charData[chars[i]].c) {
-				var values = charData[chars[i]].c.split(',')
+		if (charDB[chars[i]]) {
+			if (charDB[chars[i]].c) {
+				var values = charDB[chars[i]].c.split(',')
 				if (values.length > 1) {
 					out += '['+values[0]
 					for (var v=1;v<values.length;v++) out += '{'+values[v]
@@ -177,8 +177,8 @@ function hieroglyphsToMdC (str) {
 					}
 				else out += values[0]
 				}
-			else if (charData[chars[i]].n.match('EGYPTIAN')) {
-				var name = charData[chars[i]].n.match(catNumRe)
+			else if (charDB[chars[i]].n.match('EGYPTIAN')) {
+				var name = charDB[chars[i]].n.match(catNumRe)
 				var number = name[2]
 				while (number.charAt(0) == '0') number = number.substr(1)
 				out += name[1]+number

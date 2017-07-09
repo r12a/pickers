@@ -21,8 +21,8 @@ function event_mouseoverChar ()  {
 	//charinfo = document.createTextNode( this.title );
 	
 	var charname = this.title
-	if (charData[this.textContent] && charData[this.textContent].s) {
-		charname += ' ( '+charData[this.textContent].s+' )'
+	if (charDB[this.textContent] && charDB[this.textContent].s) {
+		charname += ' ( '+charDB[this.textContent].s+' )'
 		}
 	var charinfo = document.createTextNode( charname )
 	
@@ -69,11 +69,11 @@ function searchFor ( str, scriptname ) {
 	var re = new RegExp(str, "i"); 
 	var out = '' 
 	
-	for (var char in charData) {
+	for (var char in charDB) {
 		var hex = convertChar2CP(char)
-		if (charData[char].n && charData[char].n.match(re)) {
-			//console.log('matched',charData[char].n,' as ',char)
-			out += '<span class="c" title="U+'+hex+' '+charData[char].n+'">'+char+'</span> '
+		if (charDB[char].n && charDB[char].n.match(re)) {
+			//console.log('matched',charDB[char].n,' as ',char)
+			out += '<span class="c" title="U+'+hex+' '+charDB[char].n+'">'+char+'</span> '
 			}
 		}
 	
@@ -126,7 +126,7 @@ function searchForKeywords ( str, usage ) {
 	
 	keywordList = str.split(' ')
 	for (var i=0;i<keywordList.length;i++) {
-		console.log(keywordList)
+		//console.log(keywordList)
 		keywordList[i] = keywordList[i].replace('+',' ')
 		}
 	
@@ -135,8 +135,8 @@ function searchForKeywords ( str, usage ) {
 	
 	// search for the first item
 	var re = new RegExp(keywordList[0], "i")
-	for (var char in charData) {
-		if (charData[char].s && charData[char].s.match(re)) {
+	for (var char in charDB) {
+		if (charDB[char].s && charDB[char].s.match(re)) {
 			foundList.push(char)
 			found = true
 			}
@@ -147,7 +147,7 @@ function searchForKeywords ( str, usage ) {
 		var newFoundList = []
 		re = RegExp(keywordList[k], "i")
 		for (var f=0;f<foundList.length;f++) {
-			if (charData[foundList[f]].s.match(re)) newFoundList.push(foundList[f])
+			if (charDB[foundList[f]].s.match(re)) newFoundList.push(foundList[f])
 			}
 		foundList = newFoundList
 		}
@@ -193,13 +193,13 @@ function searchForPhones ( str, scriptname ) {
 	var out = '' 
 	var alternatives
 	
-	for (var char in charData) {
+	for (var char in charDB) {
 		var hex = convertChar2CP(char)
-		if (charData[char].p) {
-			alternatives = charData[char].p.split(',')
+		if (charDB[char].p) {
+			alternatives = charDB[char].p.split(',')
 			for (c=0;c<alternatives.length;c++) {
 				if (alternatives[c] == str) {
-					out += '<span class="c" title="U+'+hex+' '+charData[char].n+'">'+char+'</span> '
+					out += '<span class="c" title="U+'+hex+' '+charDB[char].n+'">'+char+'</span> '
 					}
 				}
 			}
