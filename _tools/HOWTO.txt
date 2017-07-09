@@ -1,0 +1,62 @@
+
+
+
+MAKE A LATIN CHARACTER LIST
+===========================
+make a space-separated list of characters to be included, using the picker
+
+run _tools/_make-latin-char-table
+
+add the result between
+
+	<div id="phonemelist" style="position:relative;">
+ 	<div id="transcriptionChoice"></div>
+
+	<div id="latintranscript" class="transcript" style="display:none;">
+
+and 
+
+	</div>
+	</div>
+
+
+
+
+MAKE A TRANSCRIPTION LIST
+=========================
+in the picker make a list of correspondences, one per line, in the form key+space+result, where result can be a comma-separated list of alternatives
+
+run _tools/_make-transcription-list
+
+add the new list to the source wrapped by 
+
+	<div id="NAMEHERE" class="transcript" style="display:none;">
+	...
+	</div>
+	
+that must be located inside the div of #phonemelist
+
+add the following to #vertical-menu
+
+	<div class="vmtab"  title="0000000" data-var="111111" data-locn="222222" data-shorttitle="333"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">4444</div>
+
+example
+
+	<div class="vmtab"  title="Maldivian Latin to Thaana" data-var="showMLTrans" data-locn="mltranscript" data-shorttitle="M"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">M</div>
+
+00000 is the text description
+11111 is a variable name
+22222 is what you added as NAMEHERE above
+33333 is the first letter of 00000
+same for 44444
+
+in localcode.js add the variable name in 11111
+
+	globals.showMLTrans = ''
+
