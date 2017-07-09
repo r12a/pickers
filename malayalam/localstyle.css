@@ -1,10 +1,13 @@
 @font-face {
     font-family: 'Noto Sans Malayalam WF';
-    src: url('/webfonts/NotoSansMalayalamUI-Regularwebfont.woff2') format('woff2'),
-         url('/webfonts/NotoSansMalayalamUI-Regularwebfont.woff') format('woff');
+    src: url('/shared/webfonts/NotoSansMalayalamUI-Regularwebfont.woff2') format('woff2'),
+         url('/shared/webfonts/NotoSansMalayalamUI-Regularwebfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
+
+
+[lang=ml] { font-family: 'Noto Sans Malayalam WF', serif; }
 
 #alphabet { 
 	display: block; 

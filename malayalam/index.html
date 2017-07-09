@@ -2,66 +2,121 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Malayalam character picker 17</title>
-<link rel="stylesheet" type="text/css" href="/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="/pickers/shared17/style.css" />
-<link rel="stylesheet" type="text/css" href="localstyle.css" />
-<script type="text/javascript" src="/code/boilerplate.js"></script>
-<script type="text/javascript" src="/scripts/malayalam/fonts.js"> </script>
+<title>Malayalam character picker 20</title>
 
+<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="../shared20/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
+<script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
+<script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
+<script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
+<script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="/scripts/block/malayalam-names-subset.js"></script>
-<script type="text/javascript" src="/pickers/shared17/code.js">  </script>
+<script type="text/javascript" src="../shared20/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="/pickers/shared17/local.js">  </script>
-<script type="text/javascript" src="/code/normalization/js/n11n.js">  </script>
-<script type="text/javascript" src="/code/normalization/js/n11ndata-lite.js">  </script>
-<script type="text/javascript" src="/scripts/block/block-code.js"></script>
+
 <script type="text/javascript" src="localtranscription.js">  </script>
+<script type="text/javascript" src="composite-names.js"></script>
+<script type="text/javascript" src="/shared/fontlists/malayalam.js"> </script>
 </head>
 
 <body class="app">
 <header>
 <div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/images/world.gif','Malayalam character picker','v17');</script>
+<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Malayalam character picker','v20');</script>
 </header>
 
 
 
 <div id="main">
-  <button type="button" onclick="selectAll(); return false;">Select all</button>
-    <button type="button" onclick="deleteAll();document.getElementById('output').focus();">Delete all</button>
-    <button type="button" onclick=" showNameDetails(getHighlightedText(document.getElementById('output')), defaults.language, defaults.blocklocation, 'c' ); document.querySelector('#panel #title').style.fontFamily=document.getElementById('output').style.fontFamily;document.getElementById('output').focus();">Codepoints</button>
-    <button type="button" onclick="openEscapeWindow(); return false;">Escapes</button>
+<span id="copydelete">
+  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
+  <button title="Select all the text." onclick="selectAll()">🔶</button>
+  <button title="Delete all the text." onclick="deleteAll()">❌</button>
+  <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
+  </span>
+  
+<span id="tools">
+    <button onclick="showCodepoints()">Show<br/>codepoints</button>
     
-    <button type="button" onclick="transcribe(document.getElementById('output'),'toISO');document.getElementById('output').focus();" title="Convert Malayalam text to an ISO Latin transcription.">toISO</button>
-    <button type="button" onclick="transcribe(document.getElementById('output'),'toIPA');document.getElementById('output').focus();" title="Convert Malayalam text to an *approximation* to the IPA transcription.">toIPA</button>
-    <button type="button" onclick="transcribe(document.getElementById('output'),'toMalayalam');document.getElementById('output').focus();" title="Convert ISO latin text to Malayalam transcription.">toMalayalam</button>
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
     
+    <button  onclick="doTranscription('toISO')" 
+    title="Convert Malayalam text to an ISO Latin transcription.">Malayalam<br>to ISO</button>
+
+    <button onclick="doTranscription('toIPA')"
+    title="Convert Malayalam text to an *approximation* to the IPA transcription.">Malayalam<br>to IPA</button>
+
+    <button onclick="doTranscription('toMalayalam')"
+    title="Convert ISO latin text to Malayalam transcription.">ISO to<br/>Malayalam</button>
+
+    <button  id="makeExample" onclick="makeExample('ml','')" 
+    title="Create an example.">Make<br>example</button>
     
-    <button  id="makeExample" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeExample(document.getElementById('output').value,'ml','ltr');document.getElementById('output').focus();" title="Create an example.">makeEg</button>
-    <button  id="makeCharLink" style="display:none;" type="button" onclick="document.getElementById('transcriptionWrapper').style.display='block'; makeCharacterLink(getHighlightedText(document.getElementById('output')),'malayalam','ml','ltr');" title="Create an character link.">charLink</button>
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('malayalam','ml','')" 
+    title="Create an character link.">Character<br/>markup</button>
+    </span>
 </div>
 
+
 <div id="outputDiv">
-  <textarea rows="2" cols="80" id="output" name="output"></textarea>
+  <textarea dir="ltr" rows="2" cols="80" id="output" name="output" placeholder="മലയാളലിപി    text area"></textarea>
 </div>
 
 
 
 
 <div id="transcriptionWrapper">
+<div id="copyTranscription" onclick="copyTranscription()">📋</div>
 <div id="moveTranscription" onclick="moveTranscription()">⌃</div>
 <div id="closeTranscription" onclick="closeTranscription()">X</div>
-<div id="transcription"></div>
+<div id="transcription" contenteditable="true"></div>
 </div>
+
 
 
 <div id="autofocusswitch">Autofocus: 
 	<span id="afon" class="on" 
-    onclick="document.getElementById('afon').className='on'; document.getElementById('afoff').className='off';_refocus=true; document.getElementById( 'output' ).focus();">On</span> 
+    onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
-    onclick="document.getElementById('afon').className='off'; document.getElementById('afoff').className='on';_refocus=false;">Off</span></div>
+    onclick="switchAutofocus('off')">Off</span>
+    </div>
+
+
+<div style="position:relative;">
+<div id="vertical-menu">
+<div class="vmtab" 
+	onmouseover="this.textContent='Default'" 
+    onmouseout="this.textContent='D'"  
+    onclick="setSidebarDefaults(this);
+     return false;">D</div>
+
+<div class="vmtab" title="Hinting" data-var="showShapeHints" data-locn="" data-shorttitle="H"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">H</div>
+
+<div class="vmtab"  title="Shape lookup" data-var="showShapeLookup" data-locn="shapelist" data-shorttitle="S"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">S</div>
+
+<div class="vmtab"  title="Latin characters" data-var="showLatinTrans" data-locn="latintranscript" data-shorttitle="L"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
+
+<div class="vmtab"  title="ISO transcription" data-var="showISOTrans" data-locn="isotranscript" data-shorttitle="I"
+	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    onmouseout="this.textContent=this.dataset.shorttitle"  
+	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">I</div>
+
+</div>
+</div>
 
 
 
@@ -70,7 +125,7 @@
 <div id="phonemelist" style="position:relative;">
  <div id="transcriptionChoice"></div>
 
-<div id=latintranscript class=transcript style="display:none;">
+<div id="latintranscript" class="transcript" style="display:none;">
 <span class="t" onclick="dotrans('ʰ')">ʰ</span>
 <span class="t" onclick="dotrans('ɕ')">ɕ</span>
 <span class="t" onclick="dotrans('ḍ')">ḍ</span>
@@ -119,7 +174,7 @@
 	    </div> 
 
 
-<div id=isotranscript class=transcript style="display:none;">
+<div id="isotranscript" class="transcript" style="display:none;">
 <span class="t" onclick="dotrans('ബ')">b</span>
 <span class="t" onclick="dotrans('ഭ')">bh</span>
 <span class="t" onclick="dotrans('ച')">c</span>
@@ -212,278 +267,238 @@
 
 
 
-
 <div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
-
-
-
-<div style="position:relative;">
-<div id=vertical-menu>
-<div class="vmtab" onmouseover="this.textContent='Default'" onmouseout="this.textContent='D'"  onclick="
-menuitems = this.parentNode.querySelectorAll('div'); for (i=0;i<menuitems.length;i++) { menuitems[i].textContent=menuitems[i].textContent.substr(-2); menuitems[i].style.color='white';}
-_showShapeHints = '';
-document.getElementById('shapelist').style.display = 'none'; _showShapeLookup = '';
-document.getElementById('latintranscript').style.display = 'none'; _showLatinTrans = '';
-document.getElementById('isotranscript').style.display = 'none'; _showISOTrans = '';
- return false;">D</div>
- 
-<div class="vmtab" onmouseover="this.textContent='Hints'+_showShapeHints" onmouseout="this.textContent='H'"  onclick="if (_showShapeHints) {_showShapeHints = ''; this.textContent ='Hints'; this.style.color='white'; } else {_showShapeHints = ' ✓'; this.style.color='orange'; this.textContent='Hints'+_showShapeHints;} return false;">H</div>
-
-<div class="vmtab" onmouseover="this.textContent='Shape lookup'+_showShapeLookup" onmouseout="this.textContent='S'"  onclick="if (_showShapeLookup) {_showShapeLookup = ''; this.textContent ='Shape lookup'; this.style.color='white';  document.getElementById('shapelist').style.display = 'none';} else {_showShapeLookup = ' ✓'; this.textContent='Shape lookup'+_showShapeLookup; this.style.color='orange'; document.getElementById('shapelist').style.display = 'block';} return false;">S</div>
-
-<div class="vmtab" onmouseover="this.textContent='Latin transcription'+_showLatinTrans" onmouseout="this.textContent='L'"  onclick="if (_showLatinTrans) {_showLatinTrans = ''; this.textContent ='Latin transcription'; this.style.color='white'; document.getElementById('latintranscript').style.display = 'none';} else {_showLatinTrans = ' ✓'; this.textContent='Latin transcription'+_showLatinTrans; this.style.color='orange'; document.getElementById('latintranscript').style.display = 'block';} return false;">L</div>
-
-<div class="vmtab" onmouseover="this.textContent='ISO transcription'+_showISOTrans" onmouseout="this.textContent='I'"  onclick="if (_showISOTrans) {_showISOTrans = ''; this.textContent ='ISO transcription'; this.style.color='white'; document.getElementById('isotranscript').style.display = 'none';} else {_showISOTrans = ' ✓'; this.textContent='ISO transcription'+_showISOTrans;  this.style.color='orange'; document.getElementById('isotranscript').style.display = 'block';} return false;">I</div>
-</div>
-
-
-
-
 <div id="tables">
-  
-<div id="alphabet" class="default">
-  <table id="kbd">
-    <tr>
-      <td style="vertical-align:middle;"><span class="c" style="padding: 100px 10px;">&#x0D4D;</span></td>
-      <td><table id="consonants">
-        <tr>
-          <td class="hint">k</td>
-          <td><span class="c">&#x0D15;</span></td>
-          <td class="hint">kh</td>
-          <td><span class="c">&#x0D16;</span></td>
-          <td class="hint">g</td>
-          <td><span class="c">&#x0D17;</span></td>
-          <td class="hint">gh</td>
-          <td><span class="c">&#x0D18;</span></td>
-          <td class="hint">ṅ</td>
-          <td><span class="c">&#x0D19;</span></td>
+  <div id="alphabet" class="default">
+    <table id="kbd">
+      <tr>
+        <td style="vertical-align:middle;"><span class="c" style="padding: 100px 10px;">&#x0D4D;</span></td>
+        <td><table id="consonants">
+          <tr>
+            <td class="hint">k</td>
+            <td><span class="c">&#x0D15;</span></td>
+            <td class="hint">kh</td>
+            <td><span class="c">&#x0D16;</span></td>
+            <td class="hint">g</td>
+            <td><span class="c">&#x0D17;</span></td>
+            <td class="hint">gh</td>
+            <td><span class="c">&#x0D18;</span></td>
+            <td class="hint">ṅ</td>
+            <td><span class="c">&#x0D19;</span></td>
           </tr>
-        <tr>
-          <td class="hint">c</td>
-          <td><span class="c">&#x0D1A;</span></td>
-          <td class="hint">ch</td>
-          <td><span class="c">&#x0D1B;</span></td>
-          <td class="hint">j</td>
-          <td><span class="c">&#x0D1C;</span></td>
-          <td class="hint">jh</td>
-          <td><span class="c">&#x0D1D;</span></td>
-          <td class="hint">ñ</td>
-          <td><span class="c">&#x0D1E;</span></td>
+          <tr>
+            <td class="hint">c</td>
+            <td><span class="c">&#x0D1A;</span></td>
+            <td class="hint">ch</td>
+            <td><span class="c">&#x0D1B;</span></td>
+            <td class="hint">j</td>
+            <td><span class="c">&#x0D1C;</span></td>
+            <td class="hint">jh</td>
+            <td><span class="c">&#x0D1D;</span></td>
+            <td class="hint">ñ</td>
+            <td><span class="c">&#x0D1E;</span></td>
           </tr>
-        <tr>
-          <td class="hint">ṭ</td>
-          <td><span class="c">&#x0D1F;</span></td>
-          <td class="hint">ṭh</td>
-          <td><span class="c">&#x0D20;</span></td>
-          <td class="hint">ḍ</td>
-          <td><span class="c">&#x0D21;</span></td>
-          <td class="hint">ḍh</td>
-          <td><span class="c">&#x0D22;</span></td>
-          <td class="hint">ṇ</td>
-          <td><span class="c">&#x0D23;</span></td>
+          <tr>
+            <td class="hint">ṭ</td>
+            <td><span class="c">&#x0D1F;</span></td>
+            <td class="hint">ṭh</td>
+            <td><span class="c">&#x0D20;</span></td>
+            <td class="hint">ḍ</td>
+            <td><span class="c">&#x0D21;</span></td>
+            <td class="hint">ḍh</td>
+            <td><span class="c">&#x0D22;</span></td>
+            <td class="hint">ṇ</td>
+            <td><span class="c">&#x0D23;</span></td>
           </tr>
-        <tr>
-          <td class="hint">t</td>
-          <td><span class="c">&#x0D24;</span></td>
-          <td class="hint">th</td>
-          <td><span class="c">&#x0D25;</span></td>
-          <td class="hint">d</td>
-          <td><span class="c">&#x0D26;</span></td>
-          <td class="hint">dh</td>
-          <td><span class="c">&#x0D27;</span></td>
-          <td class="hint">n</td>
-          <td><span class="c">&#x0D28;</span></td>
+          <tr>
+            <td class="hint">t</td>
+            <td><span class="c">&#x0D24;</span></td>
+            <td class="hint">th</td>
+            <td><span class="c">&#x0D25;</span></td>
+            <td class="hint">d</td>
+            <td><span class="c">&#x0D26;</span></td>
+            <td class="hint">dh</td>
+            <td><span class="c">&#x0D27;</span></td>
+            <td class="hint">n</td>
+            <td><span class="c">&#x0D28;</span></td>
           </tr>
-        <tr>
-          <td class="hint">p</td>
-          <td><span class="c">&#x0D2A;</span></td>
-          <td class="hint">ph</td>
-          <td><span class="c">&#x0D2B;</span></td>
-          <td class="hint">b</td>
-          <td><span class="c">&#x0D2C;</span></td>
-          <td class="hint">bh</td>
-          <td><span class="c">&#x0D2D;</span></td>
-          <td class="hint">m</td>
-          <td><span class="c">&#x0D2E;</span></td>
+          <tr>
+            <td class="hint">p</td>
+            <td><span class="c">&#x0D2A;</span></td>
+            <td class="hint">ph</td>
+            <td><span class="c">&#x0D2B;</span></td>
+            <td class="hint">b</td>
+            <td><span class="c">&#x0D2C;</span></td>
+            <td class="hint">bh</td>
+            <td><span class="c">&#x0D2D;</span></td>
+            <td class="hint">m</td>
+            <td><span class="c">&#x0D2E;</span></td>
           </tr>
-        <tr>
-          <td class="hint">y</td>
-          <td><span class="c">&#x0D2F;</span></td>
-          <td class="hint">r</td>
-          <td><span class="c">&#x0D30;</span></td>
-          <td class="hint">l</td>
-          <td><span class="c">&#x0D32;</span></td>
-          <td class="hint">v</td>
-          <td><span class="c">&#x0D35;</span></td>
-          <td class="hint"></td>
-          <td></td>
+          <tr>
+            <td class="hint">y</td>
+            <td><span class="c">&#x0D2F;</span></td>
+            <td class="hint">r</td>
+            <td><span class="c">&#x0D30;</span></td>
+            <td class="hint">l</td>
+            <td><span class="c">&#x0D32;</span></td>
+            <td class="hint">v</td>
+            <td><span class="c">&#x0D35;</span></td>
+            <td class="hint"></td>
+            <td></td>
           </tr>
-        <tr>
-          <td class="hint">ś</td>
-          <td><span class="c">&#x0D36;</span></td>
-          <td class="hint">ṣ</td>
-          <td><span class="c">&#x0D37;</span></td>
-          <td class="hint">s</td>
-          <td><span class="c">&#x0D38;</span></td>
-          <td class="hint">h</td>
-          <td><span class="c">&#x0D39;</span></td>
-          <td class="hint">&nbsp;</td>
-          <td>&nbsp;</td>
+          <tr>
+            <td class="hint">ś</td>
+            <td><span class="c">&#x0D36;</span></td>
+            <td class="hint">ṣ</td>
+            <td><span class="c">&#x0D37;</span></td>
+            <td class="hint">s</td>
+            <td><span class="c">&#x0D38;</span></td>
+            <td class="hint">h</td>
+            <td><span class="c">&#x0D39;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
           </tr>
-        <tr>
-          <td class="hint">ḷ</td>
-          <td><span class="c">&#x0D33;</span></td>
-          <td class="hint">kṣ</td>
-          <td><span class="c">&#x0D15;&#x0D4D;&#x0D37;</span></td>
-          <td class="hint">ḻ</td>
-          <td><span class="c">&#x0D34;</span></td>
-          <td class="hint">ṟ</td>
-          <td><span class="c">&#x0D31;</span></td>
-          <td class="hint">&nbsp;</td>
-          <td>&nbsp;</td>
+          <tr>
+            <td class="hint">ḷ</td>
+            <td><span class="c">&#x0D33;</span></td>
+            <td class="hint">kṣ</td>
+            <td><span class="c">&#x0D15;&#x0D4D;&#x0D37;</span></td>
+            <td class="hint">ḻ</td>
+            <td><span class="c">&#x0D34;</span></td>
+            <td class="hint">ṟ</td>
+            <td><span class="c">&#x0D31;</span></td>
+            <td class="hint">&nbsp;</td>
+            <td>&nbsp;</td>
           </tr>
         </table></td>
-      <td id="secondpanel"><div><span class="hint">a</span><span class="c">&#x0D05;</span> <span class="hint">ā</span><span class="c">&#x0D06;</span> <span class="hint">i</span><span class="c">&#x0D07;</span> <span class="hint">ī</span><span class="c">&#x0D08;</span> <span class="hint">u</span><span class="c">&#x0D09;</span> <span class="hint">ū</span><span class="c">&#x0D0A;</span> <span class="hint">r̥</span><span class="c">&#x0D0B;</span><br />
-        <span class="hint">e</span><span class="c">&#x0D0E;</span> <span class="hint">ē</span><span class="c">&#x0D0F;</span> <span class="hint">ai</span><span class="c">&#x0D10;</span> <span class="hint">o</span><span class="c">&#x0D12;</span> <span class="hint">ō</span><span class="c">&#x0D13;</span> <span class="hint">au</span><span class="c">&#x0D14;</span></div>
-        <div id="combining">
-          <span class="hint">ā</span><span class="c">&#x0D3E;</span> <span class="hint">i</span><span class="c">&#x0D3F;</span> <span class="c">&#x0D40;</span> <span class="hint">u</span><span class="c">&#x0D41;</span> <span class="c">&#x0D42;</span> <span class="hint">r̥</span><span class="c">&#x0D43;</span><br/>
-          <span class="hint">e</span><span class="c">&#x0D46;</span> <span class="c">&#x0D47;</span> <span class="hint">ai</span><span class="c">&#x0D48;</span> <span class="hint">o</span><span class="c">&#x0D4A;</span> <span class="c">&#x0D4B;</span><br/>
-          <span class="hint">au</span><span class="c">&#x0D57;</span> <span class="c">&#x0D4C;</span>
-          </div>
-        <div><span class="c">&#x0D03;</span> <span class="c">&#x0D02;</span> <span class="c">&#x0964;</span> <span class="c">&#x0965;</span>
-          <span style="margin: 5px; margin-left: 30px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u00A0');">NBSP</span>
-          <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200D');">ZWJ</span>
-          <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200C');">ZWNJ</span>
-          </div>
-        <div style="text-align:center;"	>
-          <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add(' ');">SPACE</span><br/>
+        <td id="secondpanel"><div><span class="hint">a</span><span class="c">&#x0D05;</span> <span class="hint">ā</span><span class="c">&#x0D06;</span> <span class="hint">i</span><span class="c">&#x0D07;</span> <span class="hint">ī</span><span class="c">&#x0D08;</span> <span class="hint">u</span><span class="c">&#x0D09;</span> <span class="hint">ū</span><span class="c">&#x0D0A;</span> <span class="hint">r̥</span><span class="c">&#x0D0B;</span><br />
+          <span class="hint">e</span><span class="c">&#x0D0E;</span> <span class="hint">ē</span><span class="c">&#x0D0F;</span> <span class="hint">ai</span><span class="c">&#x0D10;</span> <span class="hint">o</span><span class="c">&#x0D12;</span> <span class="hint">ō</span><span class="c">&#x0D13;</span> <span class="hint">au</span><span class="c">&#x0D14;</span></div>
+          <div id="combining"> <span class="hint">ā</span><span class="c">&#x0D3E;</span> <span class="hint">i</span><span class="c">&#x0D3F;</span> <span class="c">&#x0D40;</span> <span class="hint">u</span><span class="c">&#x0D41;</span> <span class="c">&#x0D42;</span> <span class="hint">r̥</span><span class="c">&#x0D43;</span><br/>
+            <span class="hint">e</span><span class="c">&#x0D46;</span> <span class="c">&#x0D47;</span> <span class="hint">ai</span><span class="c">&#x0D48;</span> <span class="hint">o</span><span class="c">&#x0D4A;</span> <span class="c">&#x0D4B;</span><br/>
+            <span class="hint">au</span><span class="c">&#x0D57;</span> <span class="c">&#x0D4C;</span> </div>
+          <div><span class="c">&#x0D03;</span> <span class="c">&#x0D02;</span> <span class="c">&#x0964;</span> <span class="c">&#x0965;</span> <span style="margin: 5px; margin-left: 30px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u00A0');">NBSP</span> <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200D');">ZWJ</span> <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200C');">ZWNJ</span> </div>
+          <div style="text-align:center;"	> <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add(' ');">SPACE</span><br/>
           </div></td>
-      <td><table id="chillus">
-        <tr>
-          <td class="hint">ṇ</td>
-          <td><span class="c">&#x0D7A;</span></td>
-          </tr>
-        <tr>
-          <td class="hint">n</td>
-          <td><span class="c">&#x0D7B;</span></td>
-          </tr>
-        <tr>
-          <td class="hint">r</td>
-          <td><span class="c">&#x0D7C;</span></td>
-          </tr>
-        <tr>
-          <td class="hint">l</td>
-          <td><span class="c">&#x0D7D;</span></td>
-          </tr>
-        <tr>
-          <td class="hint">ḷ</td>
-          <td><span class="c">&#x0D7E;</span></td>
-          </tr>
-        <tr>
-          <td class="hint">k</td>
-          <td><span class="c">&#x0D7F;</span></td>
-          </tr>
-      </table></td>
-      <td style="text-align:right; padding-left: 10px;">
-        <table id="numbers"><tbody>
+        <td><table id="chillus">
           <tr>
-            <td class="hint">7</td>
-            <td><span class="c">&#x0D6D;</span></td>
-            <td class="hint">8</td>
-            <td><span class="c">&#x0D6E;</span></td>
-            <td class="hint">9</td>
-            <td><span class="c">&#x0D6F;</span></td></tr>
+            <td class="hint">ṇ</td>
+            <td><span class="c">&#x0D7A;</span></td>
+          </tr>
           <tr>
-            <td class="hint">4</td>
-            <td><span class="c">&#x0D6A;</span></td>
-            <td class="hint">5</td>
-            <td><span class="c">&#x0D6B;</span></td>
-            <td class="hint">6</td>
-            <td><span class="c">&#x0D6C;</span></td></tr>
+            <td class="hint">n</td>
+            <td><span class="c">&#x0D7B;</span></td>
+          </tr>
           <tr>
-            <td class="hint">1</td>
-            <td><span class="c">&#x0D67;</span></td>
-            <td class="hint">2</td>
-            <td><span class="c">&#x0D68;</span></td>
-            <td class="hint">4</td>
-            <td><span class="c">&#x0D69;</span></td></tr>
+            <td class="hint">r</td>
+            <td><span class="c">&#x0D7C;</span></td>
+          </tr>
           <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td class="hint">0</td>
-            <td><span class="c">&#x0D66;</span></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td></tr>
-          </tbody></table>
-        <div style="text-align: right;">
-          <table id=symbols>
-            <tbody>
-              <tr>
-                <td><span class="c">&#x0D70;</span></td>
-                <td><span class="c">&#x0D71;</span></td>
-                <td><span class="c">&#x0D72;</span></td>
+            <td class="hint">l</td>
+            <td><span class="c">&#x0D7D;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">ḷ</td>
+            <td><span class="c">&#x0D7E;</span></td>
+          </tr>
+          <tr>
+            <td class="hint">k</td>
+            <td><span class="c">&#x0D7F;</span></td>
+          </tr>
+        </table></td>
+        <td style="text-align:right; padding-left: 10px;"><table id="numbers">
+          <tbody>
+            <tr>
+              <td class="hint">7</td>
+              <td><span class="c">&#x0D6D;</span></td>
+              <td class="hint">8</td>
+              <td><span class="c">&#x0D6E;</span></td>
+              <td class="hint">9</td>
+              <td><span class="c">&#x0D6F;</span></td>
+            </tr>
+            <tr>
+              <td class="hint">4</td>
+              <td><span class="c">&#x0D6A;</span></td>
+              <td class="hint">5</td>
+              <td><span class="c">&#x0D6B;</span></td>
+              <td class="hint">6</td>
+              <td><span class="c">&#x0D6C;</span></td>
+            </tr>
+            <tr>
+              <td class="hint">1</td>
+              <td><span class="c">&#x0D67;</span></td>
+              <td class="hint">2</td>
+              <td><span class="c">&#x0D68;</span></td>
+              <td class="hint">4</td>
+              <td><span class="c">&#x0D69;</span></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td class="hint">0</td>
+              <td><span class="c">&#x0D66;</span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+          <div style="text-align: right;">
+            <table id=symbols>
+              <tbody>
+                <tr>
+                  <td><span class="c">&#x0D70;</span></td>
+                  <td><span class="c">&#x0D71;</span></td>
+                  <td><span class="c">&#x0D72;</span></td>
                 </tr>
-              <tr>
-                <td><span class="c">&#x0D73;</span></td>
-                <td><span class="c">&#x0D74;</span></td>
-                <td><span class="c">&#x0D75;</span></td>
+                <tr>
+                  <td><span class="c">&#x0D73;</span></td>
+                  <td><span class="c">&#x0D74;</span></td>
+                  <td><span class="c">&#x0D75;</span></td>
                 </tr>
               </tbody>
             </table>
-          </div>
-      </td>    </tr>
+          </div></td>
+      </tr>
     </table>
-  <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide rare characters</p>
-<table id="rare" style="display:none;">
-        <tr>
-          <td>
-            <span class="c">&#x0D60;</span> <span class="c">&#x0D0C;</span> <span class="c">&#x0D61;</span> &nbsp;&nbsp;
-            <span class="c">&#x0D44;</span> &nbsp; <span class="c">&#x0D62;</span> &nbsp; <span class="c">&#x0D63;</span> &nbsp; <span class="c">&#x0D3D;</span> &nbsp;&nbsp;
-             <span class="c">&#x0D79;</span>
-        </td>
-        </tr>
-      </table>
-</div>
-
-
-
- <div id=shapelist style="display:none">
+    <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide rare characters</p>
+    <table id="rare" style="display:none;">
+      <tr>
+        <td><span class="c">&#x0D60;</span> <span class="c">&#x0D0C;</span> <span class="c">&#x0D61;</span> &nbsp;&nbsp; <span class="c">&#x0D44;</span> &nbsp; <span class="c">&#x0D62;</span> &nbsp; <span class="c">&#x0D63;</span> &nbsp; <span class="c">&#x0D3D;</span> &nbsp;&nbsp; <span class="c">&#x0D79;</span></td>
+      </tr>
+    </table>
+  </div>
+  
+  
+  <div id="shapelist" style="display:none">
  <div>
-<img alt=" " src="images/shape1.png" onclick="findShape('0D15,0D7F,0D150D4D0D37','ക്ള,ക്ക,ക്ത,ക്ര,ക്ഷ,കു,കൂ,കൃ,ങ്ക',true)" />
-<img alt=" " src="images/shape2.png" onclick="findShape('0D32','ല്ര,ല്വ,ല്ല',true)" />
-<img alt=" " src="images/shape3.png" onclick="findShape('0D25,0D67,0D2E','ഥ്ള,മ്മ,മ്ര,മ്ള',true)" />
-<img alt=" " src="images/shape4.png" onclick="findShape('0D31,0D68,0D35,0D6E','വ്ര,വ്വ,വ്ള,റ്റ',true)" />
-<img alt=" " src="images/shape5.png" onclick="findShape('0D16,0D10,0D6D,0D46,0D48,0D4A,0D4C,0D09,0D0A','ഖ്വ',true)" />
-<img alt=" " src="images/shape6.png" onclick="findShape('0D73,0D74,0D0C,0D75,0D1E,0D61,0D2C,0D19,0D07,0D08','ഞ്ര,ഞ്ഞ,ബ്ബ,ബ്ള,ണ്മ,ങ്ര,ബ്ര,ഞ്ച,ഞ്ഛ',true)" />
-<img alt=" " src="images/shape7.png" onclick="findShape('0D07,0D08,0D1C','ഞ്ജ,ജ്ഞ,ജ്ജ,ജ്ര,ജു,ജൂ,ജൃ',true)" />
-<img alt=" " src="images/shape8.png" onclick="findShape('0D23,0D7A','ണ്ട,ണ്ഡ,ണ്ഢ,ണു,ണൂ,ണ്ര',true)" />
-<img alt=" " src="images/shape9.png" onclick="findShape('0D19,0D12,0D13,0D14,0D33,0D05,0D06','ങ്ങ',true)" />
-<img alt=" " src="images/shape10.png" onclick="findShape('0D28,0D38,0D69,0D6F,0D79,0D72,0D7B,0D57,0D4C,0D71,0D6C','മ്പ,ന്ത,നൂ,ന്ഥ,ന്മ,ന്ദ,ന്ദ്ര,ന്ധ,ന്ന,നൃ,ന്ര,സ്ര,സ്ഥ,സ്ള,സൃ,സ്റ്റ',true)" />
-<img alt=" " src="images/shape11.png" onclick="findShape('0D30,0D7C,0D6A,0D24,0D7A,0D1D','ര്ര,തൃ,ത്ര,ത്ത,ത്ഥ,ത്മ,ത്ന,ത്സ,ഝൃ,ഝ്ര,രൂ,രു,ത്ഭ,ത്ള,തു,തൂ,രൃ',true)" />
-<img alt=" " src="images/shape12.png" onclick="findShape('0D17,0D36,0D7E','ഗ്ദ,ഗ്ന,ഗ്മ,ഗൃ,ശൃ,ഗ്ര,ശ്ര,ഗ്ള,ശ്ള,ഗു,ഗൂ,ശു,ശൂ,ശ്ച,ശ്ഛ',true)" />
-<img alt=" " src="images/shape14.png" onclick="findShape('0D21,0D22','ഡ്ര,ഢ്ര',true)" />
-<img alt=" " src="images/shape15.png" onclick="findShape('0D27,0D70,0D2F','ധ്ന,ധൃ',true)" />
-<img alt=" " src="images/shape16.png" onclick="findShape('0D2F','യ്യ,യ്ര',true)" />
-<img alt=" " src="images/shape17.png" onclick="findShape('0D2A,0D1A,0D2B,0D37,0D39,0D0E,0D0F,0D10,0D18','ഹ്മ,ഘ്ര,ഘ്ള,പ്ട,പ്പ,പ്വ,പ്ള,ഫ്ത,ഫ്പ,പ്ര,ഫ്ര,ഹ്ര,ഹൃ,ഫ്ള,ഷ്പ,ഷ്ര,ഷ്ള,ഹ്ന,ഹ്ള,ഹു,ഹൂ',true)" />
-<img alt=" " src="images/shape18.png" onclick="findShape('0D1A,0D2A,0D1B','ച്ച,ച്വ,ച്ര,ഛ്ര,ഛു,ഛൂ',true)" />
-<img alt=" " src="images/shape19.png" onclick="findShape('0D1F,0D2D,0D26','ഭ്ര,ട്ട,ട്ര,ടൃ',true)" />
-<img alt=" " src="images/shape20.png" onclick="findShape('0D26,0D6B,0D2D,0D33','ദ്ദ,ദ്ധ,ദ്ര,ദൃ,ഭ്ര,ഭു,ഭൂ,ഭൃ,ള്ള,ളാ,ളൃ',true)" />
-<img alt=" " src="images/shape21.png" onclick="findShape('0D20,0D66,0D3E,0D41,0D02,0D42','ഠ്ര',true)" />
-<img alt=" " src="images/shape22.png" onclick="findShape('0D0B,0D60','',true)" />
+<img alt=" " src="images/shape1.png" onclick="findShape('D15,D7F,D15D4DD37','ക്ള,ക്ക,ക്ത,ക്ര,ക്ഷ,കു,കൂ,കൃ,ങ്ക',true)" />
+<img alt=" " src="images/shape2.png" onclick="findShape('D32','ല്ര,ല്വ,ല്ല',true)" />
+<img alt=" " src="images/shape3.png" onclick="findShape('D25,D67,D2E','ഥ്ള,മ്മ,മ്ര,മ്ള',true)" />
+<img alt=" " src="images/shape4.png" onclick="findShape('D31,D68,D35,D6E','വ്ര,വ്വ,വ്ള,റ്റ',true)" />
+<img alt=" " src="images/shape5.png" onclick="findShape('D16,D10,D6D,D46,D48,D4A,D4C,D09,D0A','ഖ്വ',true)" />
+<img alt=" " src="images/shape6.png" onclick="findShape('D73,D74,D0C,D75,D1E,D61,D2C,D19,D07,D08','ഞ്ര,ഞ്ഞ,ബ്ബ,ബ്ള,ണ്മ,ങ്ര,ബ്ര,ഞ്ച,ഞ്ഛ',true)" />
+<img alt=" " src="images/shape7.png" onclick="findShape('D07,D08,D1C','ഞ്ജ,ജ്ഞ,ജ്ജ,ജ്ര,ജു,ജൂ,ജൃ',true)" />
+<img alt=" " src="images/shape8.png" onclick="findShape('D23,D7A','ണ്ട,ണ്ഡ,ണ്ഢ,ണു,ണൂ,ണ്ര',true)" />
+<img alt=" " src="images/shape9.png" onclick="findShape('D19,D12,D13,D14,D33,D05,D06','ങ്ങ',true)" />
+<img alt=" " src="images/shape10.png" onclick="findShape('D28,D38,D69,D6F,D79,D72,D7B,D57,D4C,D71,D6C','മ്പ,ന്ത,നൂ,ന്ഥ,ന്മ,ന്ദ,ന്ദ്ര,ന്ധ,ന്ന,നൃ,ന്ര,സ്ര,സ്ഥ,സ്ള,സൃ,സ്റ്റ',true)" />
+<img alt=" " src="images/shape11.png" onclick="findShape('D30,D7C,D6A,D24,D7A,D1D','ര്ര,തൃ,ത്ര,ത്ത,ത്ഥ,ത്മ,ത്ന,ത്സ,ഝൃ,ഝ്ര,രൂ,രു,ത്ഭ,ത്ള,തു,തൂ,രൃ',true)" />
+<img alt=" " src="images/shape12.png" onclick="findShape('D17,D36,D7E','ഗ്ദ,ഗ്ന,ഗ്മ,ഗൃ,ശൃ,ഗ്ര,ശ്ര,ഗ്ള,ശ്ള,ഗു,ഗൂ,ശു,ശൂ,ശ്ച,ശ്ഛ',true)" />
+<img alt=" " src="images/shape14.png" onclick="findShape('D21,D22','ഡ്ര,ഢ്ര',true)" />
+<img alt=" " src="images/shape15.png" onclick="findShape('D27,D70,D2F','ധ്ന,ധൃ',true)" />
+<img alt=" " src="images/shape16.png" onclick="findShape('D2F','യ്യ,യ്ര',true)" />
+<img alt=" " src="images/shape17.png" onclick="findShape('D2A,D1A,D2B,D37,D39,D0E,D0F,D10,D18','ഹ്മ,ഘ്ര,ഘ്ള,പ്ട,പ്പ,പ്വ,പ്ള,ഫ്ത,ഫ്പ,പ്ര,ഫ്ര,ഹ്ര,ഹൃ,ഫ്ള,ഷ്പ,ഷ്ര,ഷ്ള,ഹ്ന,ഹ്ള,ഹു,ഹൂ',true)" />
+<img alt=" " src="images/shape18.png" onclick="findShape('D1A,D2A,D1B','ച്ച,ച്വ,ച്ര,ഛ്ര,ഛു,ഛൂ',true)" />
+<img alt=" " src="images/shape19.png" onclick="findShape('D1F,D2D,D26','ഭ്ര,ട്ട,ട്ര,ടൃ',true)" />
+<img alt=" " src="images/shape20.png" onclick="findShape('D26,D6B,D2D,D33','ദ്ദ,ദ്ധ,ദ്ര,ദൃ,ഭ്ര,ഭു,ഭൂ,ഭൃ,ള്ള,ളാ,ളൃ',true)" />
+<img alt=" " src="images/shape21.png" onclick="findShape('D20,D66,D3E,D41,D02,D42','ഠ്ര',true)" />
+<img alt=" " src="images/shape22.png" onclick="findShape('D0B,D60','',true)" />
 </div>
+  </div>
+</div>
+<!-- end of tables -->
+
 
 <div id="extrashapes"></div>
 
-</div>
-
-
-
-
-
-</div><!-- end of tables -->
-
-
-</div><!-- end of wrapper round tables and vertical menu -->
 
 
 <div id="controls">
@@ -509,27 +524,35 @@ document.getElementById('isotranscript').style.display = 'none'; _showISOTrans =
     </form>
   </div>
   <div class="control">Search for:
-    <form action="none" onsubmit="searchFor(getElementById('search').value, 'malayalam'); return false;">
+    <form action="none"
+						 onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
       <input name="search" id="search"  type="text" />
-      <span onclick="searchFor('xxxxxx', 'latin');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" title="Clear search results." >X</span>
+      <img src="/pickers//images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
     </form>
+  </div>
+  
+  <div class="control" style="text-align:center; color: white; background-color: #60ADFB; cursor: pointer;" onClick="help = window.open('help', 'help'); help.focus();">Help<br/><img src="../shared20/help.png" alt="" style="vertical-align: baseline;"/>
   </div>
 </div>
 
 
 
+
 <div id="extracontrols">
-  <div id="normaliseControl" style="display:none;" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+<details>
+<summary>more controls</summary>
+
+  <div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
     <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="_n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
 							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="_n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
 							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-							onclick="_n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
+							onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
 
 
 
-<div class="control" id="uiFontControl" style="display:none;">Change table font:<br />
+<div class="control" id="uiFontControl">Change table font:<br />
     <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
     </select>
 	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
@@ -537,7 +560,7 @@ document.getElementById('isotranscript').style.display = 'none'; _showISOTrans =
 
 
 
-<div class="control" id="ccBaseControl" style="display:none;">CC base:<br />
+<div class="control" id="ccBaseControl">CC base:<br />
     <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
 		<option value="0">Select...</option>
         <option value="">none</option>
@@ -547,98 +570,37 @@ document.getElementById('isotranscript').style.display = 'none'; _showISOTrans =
         <option value="-">-</option>
 		</select>
 </div>
+</details>
 
-
-
-<div id="showMoreControls" onclick="toggleExtraControls()">more controls</div>
+<details>
+<summary>more pickers</summary>
+<iframe id="pickerlist" src="../pickerlist"></iframe>
+</details>
 </div>
 
 
 
-<div id="showNotes" onclick="toggleNotes()">show notes</div>
-
-<div id="detailednotes" style="display:none">
-  <p><strong>Notes:</strong></p> 
-  
-<aside class="sidebar">
-  <nav class="noprint">
-        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
-        <!--p><a href="/scripts/malayalam">Malayalam script notes</a></p-->
-        <p><a href="/scripts/malayalam/block">Malayalam character notes</a></p>
-        <p><a href="/scripts/links?script=malayalam">Malayalam script links</a></p>
-        <p><a href="/uniview/?block=malayalam">Malayalam in UniView </a></p>
-        <p><a href="/pickers">Other pickers </a></p>
-  </nav>
-</aside>     
-
-
-<p id="status">Updated Wed 11 Mar 2015 &bull; tags <a href="http://rishida.net/blog/index.php?tag=malayalam" title="Show all blog posts tagged with 'malayalam'">malayalam</a>, <a href="http://rishida.net/blog/index.php?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>.</p>
-
-
-<p>This Unicode character picker allows you to produce or analyse runs of Malayalam text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-<p>The <code class="button" translate="no">toIPA</code> button is intended to speed up phonetic transcription and to give a general idea of sounds, rather than to produce perfect transcriptions.</p>
-
-<p>You must have JavaScript enabled. Choose view options from the grey vertical bar to the left. To produce text in the output area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the buttons to get further information about the characters. </p>
-    <p>To properly display the text you will need to choose a font that is loaded on your system or device, or use the  web font downloaded with the page (Noto Sans Malayalam). The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7/8, as well as which are the web fonts. Note that the web fonts aren't guarranteed to work on every system/device, because the font often relies on rendering algorithms provided by the operating system. See more information about <a href="/scripts/fontlist/#malayalam">standard OS fonts in Mac and Windows</a>.</p>
-   <p>You can also add codepoints and escapes via the &quot;Add codepoint&quot; field (hit return to add to the output field). You can also paste text into the output field to get information about it. Use the yellow boxes to set preferences or search. Regular expressions are allowed when searching – for example, to find characters with the word KA in their name, enter<kbd> \bka\b</kbd>, or the short form <kbd>:ka:</kbd>.</p>
-    <dl>
-    
-      <dt>Mobile devices</dt>
-   		<dd>When working on an iPad or similar device, you should turn off <code class="kw" translate="no">more controls</code>/<code class="kw" translate="no">Autofocus</code>. This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</dd>
-        
-      <dt>About the chart</dt>
-				<dd>Includes  characters in the Unicode <a href="/uniview/?block=malayalam">Malayalam </a> block used for writing Malayalam. <strong>Note:</strong> There are important changes to the Malayalam block in version 5.1 that will require changes to all existing Unicode text currently in Malayalam. </dd>
-      <dd>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. (Note:  normalization is turned off for Han characters in this application.)</dd>
-      
-      <dt>Input options</dt>
-      <dd>The following alternative views are available by clicking on the vertical grey bar to the left of the selection area.</dd>
-      
-      <dd><strong class="leadin">Default</strong> Clicking on this turns off the other features described in this section. The default table is likely to be most useful to people who are somewhat familiar with the alphabet and characters of Malayalam.</dd>
-				<dd>Characters have been arranged so that is easy to input them, and especially to ensure that multiple combining characters are input in the right normalised order.</dd>
-				<dd>Open the expanding link for  obsoleted and  less often used characters.</dd>
-                
-				<dd><strong class="leadin">Hints</strong> This changes the behaviour of the table view so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</dd>
-                
-				<dd><strong class="leadin">Shape lookup</strong> This adds a row of orange pictures that represent basic shapes associated with the Malayalam characters. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</dd>
-				<dd>The orange shapes  typically indicate the left-most or top-most part of a character shape; characters and combinations that start with that shape are highlighted together. </dd>
-                
-				<dd><strong class="leadin">Transcriptions</strong> There are two transcription panels available in this picker: Latin, and ISO. The latter panel allows you to follow a transcription to produce some Malayalam text. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want to insert it into the output area.</dd>
-				<dd>The <code class="kw" translate="no">Latin</code> panel provides additional characters you may need while typing in a Latin transcription from the keyboard.</dd>
-				<dd>The <code class="kw" translate="no">ISO</code> panel allows you to generate some Malayalam text (from the main table <a href="http://homepage.ntlworld.com/stone-catend/trind.htm">here</a>).</dd>
-                
-      <dt>Automatic transcriptions</dt>
-      <dd>There are three buttons that allow you to convert between Malayalam text and Latin transcriptions. If you highlight part of the text, only that part will be transcribed.  The result appears in a separate area below the main output area.</dd>
-      <dd>The <code class="button" translate="no">toISO</code> button produces an ISO 15919 transliteration, following the main table <a href="http://homepage.ntlworld.com/stone-catend/trind.htm">here</a>, except that doubled RA is transcribed as ṯṯ, and ^ is used after consonants to indicate chillu forms.</dd>
-      <dd>The <code class="button" translate="no">toMalayalam</code> button produces Malayalam text from a ISO 15919 transliteration, following the main table <a href="http://homepage.ntlworld.com/stone-catend/trind.htm">here</a>, except that doubled RA is transcribed as ṯṯ, and ^ is used after consonants to indicate chillu forms.</dd>
-      <dd>The <code class="button" translate="no">toIPA</code> button produces an output that is intended to <strong>approximately</strong> reflect actual pronunciation.</dd>
-      
-      <dt>Notes on other controls</dt>
-      
-      
-      <dd>Controls at the bottom of the page allow you to modify fonts used, the font size, and the height of the output box. </dd>
-      
-      <dd><span class="leadin">Add codepoint.</span> You can add characters to the output box by typing codepoints and escapes in the <code class="kw" translate="no">Add codepoint</code> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</dd>
-      
-      <dd><span class="leadin">Searching by character name or codepoint.</span> If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the X next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <code class="kw" translate="no">\bha\b</code> (or the shortcut, <code class="kw" translate="no">:ha:</code>).</dd>
-      
-      <dd><span class="leadin">CC base.</span> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://rishida.net/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. The <code class="kw" translate="no">CC base</code> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</dd>
-      
-      
-      <dt>If something is missing</dt>
-      <dd>... <a href="mailto:r12a@w3.org?subject=[malayalam picker]">let me know</a>.</dd>
-    </dl>
-</div>
 
 
 <div id="panel" style="display:none">
-	<div id="title" class="ex" lang="ml"></div>
+	<div id="title" class="ex" lang="pa"></div>
   <div style="display:block">&nbsp;</div>
   <p style="text-align:right;"></p>
 </div>
 
 
 
-<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>. Source: <a href="https://github.com/r12a/pickers/tree/gh-pages/malayalam">GitHub</a></div>
+
 
 </body>
+<script>
+// check for parameters and take appropriate action
+parameters = location.search.split('&');
+parameters[0] = parameters[0].substring(1);
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'text') { if (pairs[1]) document.getElementById('output').value = decodeURI(pairs[1]) }
+	}
+</script>
 </html>
