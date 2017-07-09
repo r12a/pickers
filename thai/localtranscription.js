@@ -1,4 +1,4 @@
-function localtranscribe (node, direction, str) {
+function localtranscribe (direction, str) {
 	
 	if (direction == 'toISO1') { return toISO1(str) }
 	if (direction == 'toISO2') { return toLatin(str,'iso2') }
