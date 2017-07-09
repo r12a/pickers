@@ -1,10 +1,13 @@
 @font-face {
     font-family: 'Noto Sans Lao WF';
-    src: url('/webfonts/NotoSansLao-Regular.woff2') format('woff2'),
-         url('/webfonts/NotoSansLao-Regular.woff') format('woff');
+    src: url('/shared/webfonts/NotoSansLao-Regular.woff2') format('woff2'),
+         url('/shared/webfonts/NotoSansLao-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
+
+
+[lang=lo] { font-family: 'Noto Sans Lao WF', serif; }
 
 #alphabet { 
 	display: block; 
