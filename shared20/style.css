@@ -271,6 +271,9 @@ span.c:hover {
 	margin: 0 20px; 
 	clear: both;
 	}
+#extracontrols details {
+	clear: both;
+	}
 .control { 
 	float:left; 
 	padding: 2px 4px; 
