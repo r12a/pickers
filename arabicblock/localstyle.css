@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Noto Naskh Arabic WF';
     src: 	local('Noto Naskh Arabic'),
-			url('/webfonts/NotoNaskhArabic-Regular.woff2') format('woff2'),
-         	url('/webfonts/NotoNaskhArabic-Regular.woff') format('woff');
+			url('/shared/webfonts/NotoNaskhArabic-Regular.woff2') format('woff2'),
+         	url('/shared/webfonts/NotoNaskhArabic-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
