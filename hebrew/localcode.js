@@ -1,4 +1,4 @@
-var _showAcadTrans = ''
+globals.showAcadTrans = ''
 
 
 function localInitialise () {
@@ -6,36 +6,35 @@ function localInitialise () {
 	
 
 var _h = {
-'05D1': ['05E0', '05DB', '05D2'],
-'05D2': ['05D1', '05E0'],
-'05D3': ['05DA', '05D5', '05E8'],
-'05D4': ['05D7', '05EA', '05DE'],
-'05D5': ['05D6', '05DF', '05F0', '05F1','05C0'],
-'05D7': ['05EA', '05D4', '05DE'],
-'05D9': ['05F1', '05F2', '05F3', '05F4'],
-'05DA': ['05D3', '05DF', '05E8', '05D5'],
-'05DB': ['05D1'],
-'05DD': ['05E1'],
-'05DD': ['05E1', '05DE'],
-'05DE': ['05DD'],
-'05DF': ['05D5', '05F0', '05F1', '05D6', '05D3','05C0'],
-'05E0': ['05D1', '05D2'],
-'05E1': ['05DD', '05DE'],
-'05E2': ['05E6', '05E5'],
-'05E3': ['05DA'],
-'05E4': ['05DB'],
-'05E5': ['05E6', '05E2'],
-'05E6': ['05E2', '05E5'],
-'05E8': ['05D3', '05DA', '05D5'],
-'05EA': ['05D4', '05D7', '05DE'],
-'05F0': ['05F1', '05D5', '05DF'],
-'05F1': ['05F2', '05F0', '05D5', '05DF', '05D9'],
-'05F2': ['05D9'],
-'05F3': ['05D9'],
-'05F4': ['05F2'],
-'05C2': ['05B9', '05BA'],
-'05B4': ['05C5'],
-'05C0': ['05DF','05D5'],
+'5D1': ['5E0', '5DB', '5D2'],
+'5D2': ['5D1', '5E0'],
+'5D3': ['5DA', '5D5', '5E8'],
+'5D4': ['5D7', '5EA', '5DE'],
+'5D5': ['5D6', '5DF', '5F0', '5F1','5C0'],
+'5D7': ['5EA', '5D4', '5DE'],
+'5D9': ['5F1', '5F2', '5F3', '5F4'],
+'5DA': ['5D3', '5DF', '5E8', '5D5'],
+'5DB': ['5D1'],
+'5DD': ['5E1', '5DE'],
+'5DE': ['5DD'],
+'5DF': ['5D5', '5F0', '5F1', '5D6', '5D3','5C0'],
+'5E0': ['5D1', '5D2'],
+'5E1': ['5DD', '5DE'],
+'5E2': ['5E6', '5E5'],
+'5E3': ['5DA'],
+'5E4': ['5DB'],
+'5E5': ['5E6', '5E2'],
+'5E6': ['5E2', '5E5'],
+'5E8': ['5D3', '5DA', '5D5'],
+'5EA': ['5D4', '5D7', '5DE'],
+'5F0': ['5F1', '5D5', '5DF'],
+'5F1': ['5F2', '5F0', '5D5', '5DF', '5D9'],
+'5F2': ['5D9'],
+'5F3': ['5D9'],
+'5F4': ['5F2'],
+'5C2': ['5B9', '5BA'],
+'5B4': ['5C5'],
+'5C0': ['5DF','5D5'],
 
 end: {}
 }
@@ -43,83 +42,5 @@ end: {}
 
 
 
-function findShape (shapelist, extrashapes, show) { 
-	// highlights characters that contain a given shape
-	// shapelist: string, comma-separated list of ids
-	// status: boolean, indicates whether to highlight or remove highlighting
-
-	var shapelistarray = shapelist.split(',')
-	var extrashapesarray = extrashapes.split(',')
-
-	clearHighlights()
-
-	if (show) {
-		for (var i=0;i<shapelistarray.length;i++) { //alert(document.getElementById(shapelistarray[i]).textContent)
-			document.getElementById(shapelistarray[i]).style.backgroundColor = '#FFE6B2'
-			}
-		}
-	else {
-		for (var i=0;i<shapelistarray.length;i++) {
-			document.getElementById(shapelistarray[i]).style.backgroundColor = 'transparent'
-			}
-		}
-	
-	var extras = ''
-	for (i=0;i<extrashapesarray.length;i++) {
-		extras += '<span class=c onclick="add(\''+extrashapesarray[i]+'\')">'+extrashapesarray[i]+'</span> '
-		document.getElementById('extrashapes').style.fontFamily = document.getElementById('uiFont').value
-		document.getElementById('extrashapes').style.fontSize = defaults.uisize+'px'
-		}
-	document.getElementById('extrashapes').innerHTML = extras
-	}
 
 
-function splitSyllables (str) {
-	// str is myanmar text
-	// produces a version of the string with spaces separating syllables except for conjuncts
-	// conjuncts are separated by virama
-	consonants = {'အ':'','က':'','ခ':'','ဂ':'','ဃ':'','င':'','စ':'','ဆ':'','ဇ':'','ဈ':'','ည':'','ဉ':'','ဋ':'','ဌ':'','ဍ':'','ဎ':'','ဏ':'','တ':'','ထ':'','ဒ':'','ဓ':'','န':'','ပ':'','ဖ':'','ဗ':'','ဘ':'','မ':'','ယ':'','ရ':'','လ':'','ဝ':'','သ':'','ဿ':'','ဟ':'','ဠ':'','ၐ':'','ၑ':'' }
-	indvowels = { 'ဣ':'','ဤ':'','ဥ':'','ဦ':'','ဧ':'','ဩ':'','ဪ':'','၌':'','၍':'','၎':'','၏':'','၊':'','။':''}
-	str = ' '+str+' '
-	var out = ''
-	for (p=0;p<str.length;p++) {
-		if (str[p] in consonants || str[p] in indvowels) {
-			if (str[p+1] != '\u103A' && str[p+1] != '\u1039' && str[p+1] != '\u1037') out += ' '+str[p]
-			else out += str[p]
-			}
-		else out += str[p]
-		}
-	out = out.replace(/\u1039 /g,'\u1039')
-	
-	// split away non-Burmese or dandas
-	return out.trim()
-	}
-
-function splitSyllables (str) {
-	// str is myanmar text
-	// produces a version of the string with spaces separating syllables except for conjuncts
-	// conjuncts are separated by virama
-	var consonants = {'အ':'','က':'','ခ':'','ဂ':'','ဃ':'','င':'','စ':'','ဆ':'','ဇ':'','ဈ':'','ည':'','ဉ':'','ဋ':'','ဌ':'','ဍ':'','ဎ':'','ဏ':'','တ':'','ထ':'','ဒ':'','ဓ':'','န':'','ပ':'','ဖ':'','ဗ':'','ဘ':'','မ':'','ယ':'','ရ':'','လ':'','ဝ':'','သ':'','ဿ':'','ဟ':'','ဠ':'','ၐ':'','ၑ':'' }
-	var indvowels = { 'ဣ':'','ဤ':'','ဥ':'','ဦ':'','ဧ':'','ဩ':'','ဪ':'','၌':'','၍':'','၎':'','၏':'','၊':'','။':''}
-	var str = ' '+str+' '
-	var out = ''
-	for (p=0;p<str.length;p++) {
-		if (str[p] in consonants || str[p] in indvowels) {
-			if (str[p+1] != '\u103A' && str[p+1] != '\u1039' && str[p+1] != '\u1037') out += ' '+str[p]
-			else out += str[p]
-			}
-		else out += str[p]
-		}
-	out = ' '+out.replace(/\u1039 /g,'\u1039')
-	
-	// split away non-Burmese or dandas or numbers
-	out2 = ''
-	var reLetter = /[က-ဿ၌-ႏႚ-႟]/
-	for (p=1;p<out.length;p++) { //console.log(out[p],out[p].match(reLetter))
-		if (! out[p].match(reLetter) && out[p-1].match(reLetter) && out[p] != ' ') {
-			out2 += ' '+out[p]
-			}
-		else out2 += out[p]
-		}
-	return out2.trim()
-	}
