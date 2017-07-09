@@ -2,21 +2,24 @@
 	font-family: 'Khmer OS Battambang WF'; 
 	font-style: normal; 
 	font-weight: normal; 
-	src: url('/webfonts/khmerosbbangw.woff'); 
+	src: url('/shared/webfonts/khmerosbbangw.woff'); 
 	} 
 @font-face { 
 	font-family: 'Noto Sans Khmer WF'; 
 	font-style: normal; 
 	font-weight: normal; 
-	src: url('/webfonts/notosanskhmer-regularwebfont.woff2'); 
-	src: url('/webfonts/notosanskhmer-regularwebfont.woff'); 
+	src: url('/shared/webfonts/notosanskhmer-regularwebfont.woff2'); 
+	src: url('/shared/webfonts/notosanskhmer-regularwebfont.woff'); 
 	} 
 
 #shape { display: none; }
-#rare { display:none; }
+/*#rare { display:none; }*/
 #alphabet { display: block; }
 #phonelist { display: none; }
 #fontgrid { display: none; }
+
+
+[lang=km] { font-family: 'Khmer OS Battambang WF', serif; }
 
 
 #kbd td.fullchar { text-align: right; }
