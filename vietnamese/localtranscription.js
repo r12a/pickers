@@ -1,4 +1,4 @@
-﻿function localtranscribe (node, direction, str) {
+﻿function localtranscribe (direction, str) {
 	
 	if (direction == 'toIPAN') { return transcribeToIPA(str,'n') }
 	if (direction == 'toIPAS') { return transcribeToIPA(str,'s') }
