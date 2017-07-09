@@ -1,16 +1,17 @@
 @font-face {
     font-family: 'Noto Sans Ethiopic WF';
-    src: url('/webfonts/NotoSansEthiopic-Regularwebfont.woff2') format('woff2'),
-         url('/webfonts/NotoSansEthiopic-Regularwebfont.woff') format('woff');
+    src: url('/shared/webfonts/NotoSansEthiopic-Regularwebfont.woff2') format('woff2'),
+         url('/shared/webfonts/NotoSansEthiopic-Regularwebfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
 #shape { display: none; }
-#alphabet { display: block; }
+#alphabet { display: block; text-align:center; }
+#extrashapes { text-align: center; }
 
 
-
+[lang=am] { font-family:'Noto Sans Ethiopic WF', serif; }
 
 #alphabet img { 
 	cursor: pointer; 
@@ -20,7 +21,7 @@ span.hint {
 	}
 	
 #kbd { 	
-	margin-left: 0; 
+	margin: auto; 
 	}
 #kbd table {
 	margin:0;
