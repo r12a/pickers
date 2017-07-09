@@ -13,7 +13,7 @@ Arabic • All Arabic • Armenian • Balinese • Bengali • Burmese • Deva
 
 Each picker has its own help file, which explains how to use the picker and what features are available. Features vary, but can include automatic transcription to and from the text, shape-based hints and selection methods, keyboards, codepoint listing, creating examples in markup, control over the font used, etc.
 
-# Forking
+## Making improvements
 
 If you want to try the source code, you'll need to fork both this repo and also the [shared](https://github.com/r12a/shared) repo. The links require you to add both at the root of your server.
 
