@@ -1,7 +1,7 @@
-function localtranscribe (node, direction, str) {
+function localtranscribe (direction, str) {
 	
-	if (direction == 'toISO15919') { return toISO15919(node, direction, str) }
-	if (direction == 'toDeva') { return toDeva(node, direction, str) }
+	if (direction == 'toISO15919') { return toISO15919(str) }
+	if (direction == 'toDeva') { return toDeva(str) }
 	}
 		
 		
@@ -12,7 +12,8 @@ function inSet (group, ch) {
 
 
 
-function toISO15919 (node, direction, str) {
+function toISO15919 (str) {
+	str += '  '
 	var inherentvowelkillers = '\u093E\u093F\u0940\u0941\u0942\u0956\u0957\u0943\u0944\u0962\u0963\u0945\u0946\u0947\u0948\u0949\u094A\u094B\u094C\u094F\u093A\u093B\u094E\u094D\u0955 X\u093C'
 	var consonants = 'कखगघङक़ख़चछजझञग़ऩटठडढणड़ढ़तथदधनऱय़पफबभमळऴयरलवफ़ज़शषसहॹॺॻॼॾॿ\u093C'
 	var aspiratedconsonants = 'कचटतपयशगजडदबलसड़'
@@ -20,9 +21,9 @@ function toISO15919 (node, direction, str) {
 
 	var out=''
 	for (var i=0; i<str.length-2; i++) {
-		inherent = false
-		ambiguous = false
-		ch = str.charAt(i)
+		var inherent = false
+		var ambiguous = false
+		var ch = str.charAt(i)
 		
 		// check for ambiguity, eg. b+h, or a+i
 		if (ch == '\u094D' && inSet(aspiratedconsonants, str.charAt(i-1)) && str.charAt(i+1) == 'ह')  {
@@ -65,7 +66,7 @@ function toISO15919 (node, direction, str) {
 		if (ambiguous) { out += ':' }
 		}
 
-	return out
+	return out.trim()
 	}
 
 
@@ -193,8 +194,8 @@ var mapToISO = {
 }
 
 
-function toDeva (node, direction, str) {
-
+function toDeva (str) {
+	str += '  '
 	var consonants = 'kgṉcjñṭḍtdnṇpqbmyrvśṣshlXṛṚṟẏḷḻfzɠʄɗɓġ'
 	var aspiratedconsonants = 'kgcjṭḍtdpbṛ'
 	var vowels = 'aāiīuūeēoōɛʊȓřɫḹ'
@@ -219,9 +220,9 @@ function toDeva (node, direction, str) {
 	str = str.replace(/l̥/g,'ɫ')
 	
 	for (var i=1; i<str.length-2; i++) {
-		ch = str.charAt(i)
-		conjunct = false
-		skipOne = false
+		var ch = str.charAt(i)
+		var conjunct = false
+		var skipOne = false
 		
 		// conjuncts
 		//if (consonants.indexOf(ch) > -1 && consonants.indexOf(str.charAt(i+1)) > -1  && str.charAt(i+1) != 'h') { conjunct = true }
@@ -264,7 +265,7 @@ function toDeva (node, direction, str) {
 		if (skipOne) { i++ }
 		}
 
-	return out
+	return out.trim()
 	}
 
 

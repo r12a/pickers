@@ -45,14 +45,16 @@
     
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
     
-    <button type="button" onclick="transcribe(document.getElementById('output'),'toISO15919');document.getElementById('output').focus();" title="Convert devanagari text to a ISO 15919 transcription.">toISO</button>
-
-    <button type="button" onclick="transcribe(document.getElementById('output'),'toDeva');document.getElementById('output').focus();" title="Convert an ISO 15919 transcription to devanagari text.">toDeva</button>
-
-  <button  id="makeExample" onclick="makeExample('hy','')" 
+    <button onclick="doTranscription('toISO15919')" 
+    title="Convert devanagari text to a ISO 15919 transcription.">Devanagari<br/>to ISO 15919</button> 
+    
+    <button onclick="doTranscription('toDeva')" 
+    title="Convert an ISO 15919 transcription to devanagari text.">ISO 15919 to<br/>Devanagari</button> 
+    
+  <button  id="makeExample" onclick="makeExample('hi','')" 
     title="Create an example.">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('devanagari','hy','')" 
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('devanagari','hi','')" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
