@@ -14,7 +14,7 @@ function inSet (group, ch) {
 
 
 function transcribetomalayalam (chstring) {
-	chstring = normalise(chstring); 
+	chstring = normalise(chstring)+' '
 
 	// build the output from the map array
     	var output = ''; var latin = ''; var ch;
@@ -212,7 +212,7 @@ function normalise (chstring) {
 
 
 function maptolatn (chstring) {
-					
+	chstring += '  '
 	var consonants = { 
 	'ക':'', 'ഖ':'', 'ഗ':'', 'ഘ':'', 'ങ':'', 'ച':'',
 	'ഛ':'', 'ജ':'', 'ഝ':'', 'ഞ':'', 'ട':'', 'ഠ':'', 
@@ -344,22 +344,22 @@ function maptolatn (chstring) {
 	chstring = chstring.replace(/൯/g,'9');
 
 
-candrabindu = 'ँ',
-chstring = chstring.replace(/null/g,'µ'); // was colon separator for disambiguation
-virama:'്';
+//candrabindu = 'ँ',
+//chstring = chstring.replace(/null/g,'µ'); // was colon separator for disambiguation
+//virama:'്';
 
 	// remove the viramas
 	chstring = chstring.replace(/്/g,'');
 
 
-	return chstring;
+	return chstring.trim();
 	}
 
 
 
 
 function maptoipa (chstring) {
-					
+	chstring += '  '
 	var consonants = { 
 	'ക':'', 'ഖ':'', 'ഗ':'', 'ഘ':'', 'ങ':'', 'ച':'',
 	'ഛ':'', 'ജ':'', 'ഝ':'', 'ഞ':'', 'ട':'', 'ഠ':'', 
@@ -488,13 +488,13 @@ function maptoipa (chstring) {
 	chstring = chstring.replace(/൯/g,'9');
 
 
-candrabindu = 'ँ',
-chstring = chstring.replace(/null/g,'µ'); // was colon separator for disambiguation
-virama:'്';
+	//var candrabindu = 'ँ'
+	//chstring = chstring.replace(/null/g,'µ'); // was colon separator for disambiguation
+	//virama:'്';
 
 	// remove the viramas
 	chstring = chstring.replace(/്/g,'');
 
 
-	return chstring;
+	return chstring.trim()
 	}
