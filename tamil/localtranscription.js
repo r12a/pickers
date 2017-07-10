@@ -13,6 +13,7 @@ function inSet (group, ch) {
 
 
 function dotranscription (chstring, direction) {
+	chstring += '  '
 	if (direction == 'tolatin') {
 		output = maptolatn(chstring);
 		}
@@ -32,7 +33,7 @@ function dotranscription (chstring, direction) {
 			else { output += latin; }
 			}
 		}
-	return output;
+	return output.trim()
 	} 
 	
 	
