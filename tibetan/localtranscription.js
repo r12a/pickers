@@ -1,7 +1,6 @@
-function localtranscribe (node, direction, str) {
+function localtranscribe (direction, str) {
 	
-	if (direction == 'toWylie') { return toWylie(node, direction, str) }
-	if (direction == 'toDeva') { return toDeva(node, direction, str) }
+	if (direction === 'toWylie') { return toWylie(str) }
 	}
 		
 		
@@ -12,7 +11,7 @@ function inSet (group, ch) {
 
 
 
-function toWylie (node, direction, str) {
+function toWylie (str) {
 	var consonants = 'ཀྐཁྑགྒངྔཅྕཆྖཇྗཉྙཏྟཐྠདྡནྣཔྤཕྥབྦམྨཙྩཚྪཛྫཝྭཞྮཟྯཡྱརྲལླཤྴསྶཧྷཊྚཋྛཌྜཌྷྜྷཎྞཥྵའꓝꓯ'
 	var subscripts = 'ྐྑྒྔྕྖྗྙྟྠྡྣྤྥྦྨྩྪྫྭྮྯྰྱྲླྴྶྷྚྛྜྷྜྷྞྵ'
 	var vowels = 'ཱིེོུ\u0F73\u0F75\u0F7B\u0F7D\u0F78\u0F81\u0F76\u0F80'
