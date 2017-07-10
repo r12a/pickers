@@ -35,6 +35,7 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
+   <button title="Add sample text." style="font-size: 150%;" onclick="add('اُردُو‎')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -53,7 +54,7 @@
 
 
 <div id="outputDiv">
-  <textarea dir="auto" rows="2" cols="80" id="output" name="output" placeholder="اُردُو‎: text area"></textarea>
+  <textarea dir="auto" rows="2" cols="80" id="output" name="output"></textarea>
 </div>
 
 
