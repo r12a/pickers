@@ -7,7 +7,7 @@
     font-style: normal;
 	}
 
-#extrashapes span { padding: 0 3px; }
+#extrashapes span { padding: 0 3px; font-family: "Noto Naskh Arabic WF", serif; }
 
 #alphabet img { 
 	cursor: pointer; 
