@@ -16,7 +16,7 @@ function inSet (group, ch) {
 
 
 function bengaliToRadice (str) { 
-
+	str += '  '
 	var inherentvowelkillers = '\u09CD\u09BE\u09BF\u09C0\u09C1\u09C2\u09C3\u09C7\u09C8\u09CB\u09CC\u09C4\u09E2\u09E3'
 	//var consonants = 'কখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলশষসহড়ঢ়য়ৰৱ'
 	var consonants = { 'ক':'','খ':'','গ':'','ঘ':'','ঙ':'','চ':'','ছ':'','জ':'','ঝ':'','ঞ':'','ট':'','ঠ':'','ড':'','ঢ':'','ণ':'','ত':'','থ':'','দ':'','ধ':'','ন':'','প':'','ফ':'','ব':'','ভ':'','ম':'','য':'','র':'','ল':'','শ':'','ষ':'','স':'','হ':'','ড়':'','ঢ়':'','য়':'','ৰ':'','ৱ':'' }
@@ -25,10 +25,10 @@ function bengaliToRadice (str) {
 
 	var out=''
 	for (var i=0; i<str.length-2; i++) {
-		inherent = false
-		ambiguous = false
-		ch = str.charAt(i)
-		next = str.charAt(i+1)
+		var inherent = false
+		var ambiguous = false
+		var ch = str.charAt(i)
+		var next = str.charAt(i+1)
 		
 		// check for ambiguity, eg. b+h, or a+i
 		if (ch == '\u09CD' && inSet(aspiratedconsonants, next) && next == 'হ')  {
@@ -98,7 +98,7 @@ function bengaliToRadice (str) {
 	out = out.replace(/\]/g,'</span></span>')
 	out = out.replace(/¶/g,'')
 
-	return out.replace(/ ¶/,'')
+	return out.replace(/ ¶/,'').trim()
 	}
 
 
@@ -183,7 +183,7 @@ var mapToRadice = {
 
 
 function bengaliToISO (str) { 
-
+	str += '  '
 	var inherentvowelkillers = '\u09CD\u09BE\u09BF\u09C0\u09C1\u09C2\u09C3\u09C7\u09C8\u09CB\u09CC\u09C4\u09E2\u09E3'
 	//var consonants = 'কখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলশষসহড়ঢ়য়ৰৱ'
 	var consonants = { 'ক':'','খ':'','গ':'','ঘ':'','ঙ':'','চ':'','ছ':'','জ':'','ঝ':'','ঞ':'','ট':'','ঠ':'','ড':'','ঢ':'','ণ':'','ত':'','থ':'','দ':'','ধ':'','ন':'','প':'','ফ':'','ব':'','ভ':'','ম':'','য':'','র':'','ল':'','শ':'','ষ':'','স':'','হ':'','ড়':'','ঢ়':'','য়':'','ৰ':'','ৱ':'' }
@@ -192,10 +192,10 @@ function bengaliToISO (str) {
 
 	var out=''
 	for (var i=0; i<str.length-2; i++) {
-		inherent = false
-		ambiguous = false
-		ch = str.charAt(i)
-		next = str.charAt(i+1)
+		var inherent = false
+		var ambiguous = false
+		var ch = str.charAt(i)
+		var next = str.charAt(i+1)
 		
 		// check for ambiguity, eg. b+h, or a+i
 		if (ch == '\u09CD' && inSet(aspiratedconsonants, next) && next == 'হ')  {
@@ -249,7 +249,7 @@ function bengaliToISO (str) {
 	out = out.replace(/\]/g,'</span></span>')
 	out = out.replace(/¶/g,'')
 
-	return out.replace(/ ¶/,'')
+	return out.replace(/ ¶/,'').trim()
 	}
 
 
@@ -342,7 +342,7 @@ var mapToISO = {
 
 
 function isoToBengali (str) { 
-
+	str += '  '
 	var canHaveAspiration = { 'p':'','t':'','ṭ':'','c':'','k':'', 
 		'b':'', 'd':'', 'ḍ':'', 'j':'', 'g':'','ɽ':'' };
 	var vowels = { 'a':'', 'ā':'', 'ai':'','au':'','ē':'', 'i':'', 'ī':'', 
@@ -352,8 +352,8 @@ function isoToBengali (str) {
 	var ch = ''
 	for (var i=0; i<str.length-1; i++) {
 		var conjunct = false
-		ch = str.charAt(i)
-		next = str.charAt(i+1)
+		var ch = str.charAt(i)
+		var next = str.charAt(i+1)
 		
 		// convert all vocalics to a single character
 		str = str.replace(/r̥/g,'Ṛ')
@@ -405,7 +405,7 @@ function isoToBengali (str) {
 		else { output += ch }
 		}
 	 
-	return output.replace(/ ¶/,'')
+	return output.replace(/ ¶/,'').trim()
 	}
 
 
@@ -498,7 +498,7 @@ virama:'্'
 
 
 function radiceToBengali (chstring) { 
-
+	chstring += '  '
 	// add an X to avoid breaking on lookahead; if no selection, try whole field; if still nothing, abort
 	chstring = chstring.toLowerCase()+'X';
 	if (chstring=='X') { chstring = node.value.toLowerCase()+'X'; }
@@ -547,7 +547,7 @@ function radiceToBengali (chstring) {
 	//document.getElementById('latin').value = output;
 	//node.value = node.value+' '+output;
 	 
-	return output.replace(/ ¶/,'')
+	return output.replace(/ ¶/,'').trim()
 	}
 
 
