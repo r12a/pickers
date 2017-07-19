@@ -175,9 +175,9 @@ function paste () {
 
 function getExample (str, lang, dir) {
 	parts = str.split('/')
-	var out = ''
+	var out = '<span class="charExample">'
 	out += '<span class="ex" lang="'+lang+'"'
-	if (dir=='rtl') { out += ' dir="rtl"' }
+	if (dir==='rtl') { out += ' dir="rtl"' }
 	out += '>'+parts[0]+'</span> '
 	if (parts[1]) {
 		out += '<span class="ipa">'+parts[1]+'</span> '
@@ -188,7 +188,7 @@ function getExample (str, lang, dir) {
 	if (parts[3]) {
 		out += '<span class="meaning">'+parts[3]+'</span> '
 		}
-	return out.trim()
+	return out.trim()+'</span>'
 	}
 
 
