@@ -62,14 +62,14 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 
 <map name="helpSelector">
   <area shape="rect" coords="6,73,779,105" href="#top_controls" />
-  <area shape="rect" coords="9,105,781,361" href="#text_area" />
-  <area shape="rect" coords="13,369,771,443" href="#secondary_output" />
-  <area shape="rect" coords="5,496,21,614" href="#input_aids" />
-  <area shape="rect" coords="16,449,368,470" href="#character_names" />
-  <area shape="rect" coords="662,449,775,472" href="#autofocus" />
-  <area shape="rect" coords="54,480,746,852" href="#buttons" />
-  <area shape="rect" coords="11,870,662,921" href="#yellow_controls" />
-  <area shape="rect" coords="12,922,616,984" href="#more_controls" />
+  <area shape="rect" coords="8,104,684,246" href="#text_area" />
+  <area shape="rect" coords="16,254,679,324" href="#secondary_output" />
+  <area shape="rect" coords="1,340,17,458" href="#input_aids" />
+  <area shape="rect" coords="16,336,368,357" href="#character_names" />
+  <area shape="rect" coords="561,333,674,356" href="#autofocus" />
+  <area shape="rect" coords="164,364,512,868" href="#buttons" />
+  <area shape="rect" coords="16,870,669,913" href="#yellow_controls" />
+  <area shape="rect" coords="14,915,618,977" href="#more_controls" />
 </map>
 <p><img usemap="#helpSelector" alt="Help selector." src="images/selector.png"/></p>
 
@@ -88,7 +88,7 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
   <h3 href="#buttons">Selection area</h3>
   <p><img src="images/selection_area.png" alt=""/></p>
   <p>Click on characters or buttons in this area to add them to the  text area above.</p>
-  <p>Characters are arranged based on similarity to ASCII characters.     The penultimate line contains characters that don't ressemble ASCII, but that have a loop in the glyph. The last line is everything else. This is a special arrangement just to make it easy for beginners to find characters. Future versions of the picker may provide other arrangements, if requested.</p>
+  <p>Characters are arranged in a common matrix format. The initial consonants for a syllable, using simplified transcriptions, are shown in the left column. On each row the order of syllables follows a, e, i, o, u, v. Pairs such as ga and ka are grouped in a single cell.</p>
   <p>The SHIFT button switches between upper and lower case characters in the selection area.</p>
 </section>
 
@@ -106,7 +106,7 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
        <p>For example, the following:</p>
       <p> ᏣᎳᎩ//tsalagi/Cherokee</p>
       <p>will produce:</p>
-      <p style="text-align:left; text-justify:auto;"><code> &lt;span class=&quot;ex&quot; lang=&quot;chr&quot;&gt;ᏣᎳᎩ&lt;/span&gt; &lt;span class=&quot;trans&quot;&gt;tsalagi&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Cherokee&lt;/span&gt;</code></p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;charExample&quot;&gt;&lt;span class=&quot;ex&quot; lang=&quot;chr&quot;&gt;ᏣᎳᎩ&lt;/span&gt; &lt;span class=&quot;trans&quot;&gt;tsalagi&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Cherokee&lt;/span&gt;&lt;/span&gt;</code></p>
       <p>To get just the cherokee and the meaning you would use:</p>
        <p><span lang="ar" dir="rtl"></span>ᏣᎳᎩ///Cherokee</p>
        
@@ -137,16 +137,17 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
   <p>When working on an iPad or similar device, you should set this to <samp>Off</samp>. This prevents the keyboard popping up after you input every character.</p>
 </section>
 
-<!--section id="input_aids">
+<section id="input_aids">
   <h3 href="#input_aids">Input aids</h3>
     <p><img src="images/input_aids.png" style="float:left; margin-right:1em; " alt=""/></p>
     <p>The vertical grey bar to the left allows you to turn on/off a number of panels that can help create the text you want.</p>
     <p><b class="leadin">Default.</b> Turns off all input aids and closes all panels.</p>
-      <p><b class="leadin">Hinting.</b> Changes the selection area so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.    </p>
-    <p><b class="leadin">Shape lookup.</b> This adds a row of orange pictures that represent basic shapes associated with the Cherokee characters. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</p>
-    <p> Each orange key below the table represents a significant part of the shape of two or more characters; when you click on the keys, characters and combinations of characters that incorporate that shape are highlighted above. Click on these characters to add them to the output. The shapes grouped under 'Other' are a mixed bag of characters that didn't fit elsewhere.</p>
+      <!--p><b class="leadin">Hinting.</b> Changes the selection area so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</p-->
+    <p><b class="leadin">Shape lookup.</b> This changes the layout of the characters to one that is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</p>
+    <p>Characters are arranged based on (broad) similarity to ASCII characters.     The penultimate line contains characters that don't resemble ASCII, but that have a loop in the glyph. The last line is everything else. </p>
+    <p>As in the default view, use the Shift button to access lowercase forms.</p>
     <p><b class="leadin">Latin characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  transcription.</p>
-</section-->
+</section>
 
 
 <section id="yellow_controls">

@@ -90,3 +90,28 @@ function toggleShift (node) {
 		}
 	}
 
+function toggleShift (node, LC, UC) {
+	if (node.className =='unshifted') {
+		document.getElementById(LC).style.display = 'none'
+		document.getElementById(UC).style.display = 'block'
+		node.className = 'shifted'
+		} 
+	else {
+		document.getElementById(LC).style.display = 'block'
+		document.getElementById(UC).style.display = 'none'
+		node.className = 'unshifted'
+		}
+	}
+
+function toggleShiftDefault (node) {
+	var cells = document.getElementById('defaultpanel').querySelectorAll('span')
+	if (node.className =='unshifted') {
+		for (var i=0;i<cells.length;i++) cells[i].textContent = cells[i].textContent.toUpperCase()
+		node.className = 'shifted'
+		} 
+	else {
+		for (var i=0;i<cells.length;i++) cells[i].textContent = cells[i].textContent.toLowerCase()
+		node.className = 'unshifted'
+		}
+	}
+

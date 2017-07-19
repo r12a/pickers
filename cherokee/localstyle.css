@@ -16,20 +16,22 @@
 
 
 
-#alphabet span.c { 
+#alphabet span.c, #shapelist span.c { 
 	cursor: pointer; 
 	font-family: "Noto Sans Cherokee WF", "Noto Sans Cherokee", sans-serif;
 	font-size: 32px;
 	padding: 1px;
 	min-width: 18px;
 	display: inline-block;
-	width: 55px; 
-	height: 55px;
-	line-height: 55px;
+	width: 45px; 
+	height: 40px;
+	line-height: 40px;
 	}
 
-#alphabet #uppercase, #alphabet #lowercase { 
+#shapelist #uppercase, #shapelist #lowercase { 
 	width: 90%;
+	}
+#shapelist #uppercase, #shapelist #lowercase, #shapelist table, #alphabet table { 
 	text-align: center;
 	margin: auto;
 	}
@@ -116,4 +118,6 @@
 
 
 
-
+.firstcol+td {
+	text-align:right;
+}
