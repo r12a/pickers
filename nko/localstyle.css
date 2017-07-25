@@ -6,6 +6,9 @@
     font-style: normal;
 	}
 
+[lang=nqo] { font-family: 'Noto Sans NKo WF', serif; }
+
+
 #alphabet { display: block; }
 #phonelist { display: none; }
 
