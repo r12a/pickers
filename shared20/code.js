@@ -42,6 +42,10 @@ function deleteAll () {
 	output.focus()
 	}
 
+function del () {
+	document.getElementById('output').value = document.getElementById('output').value.slice(0, -1)
+	}
+
 function showCodepoints () {
 	var output = document.getElementById('output')
 	showNameDetails(getHighlightedText(output), defaults.language, defaults.blocklocation, 'c', document.getElementById('panel') )
