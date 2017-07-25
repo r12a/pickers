@@ -9,6 +9,10 @@
 #alphabet { display: block; }
 #phonelist { display: none; }
 
+#tables {
+	margin-left: 25px;
+	margin-right: 25px;
+	}
 
 
 #alphabet td span.c, #rare span.c { 
@@ -45,6 +49,7 @@
 	}
 #kbd #consonants {
 	margin-left: 20px; 
+	margin-right: 20px; 
 	}
 
 #kbd #vowels {
@@ -80,6 +85,7 @@
 	}
 #rare {
 	margin-left: 3em;
+	margin-right: 3em;
 	}
 
 .key span { 
