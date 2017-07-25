@@ -62,6 +62,15 @@ function doTranscription (type) {
 	_output.focus()
 	}
 
+function makeSharingLink () {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	document.getElementById('transcriptionWrapper').style.display='block'
+	document.getElementById('transcription').style.display = 'block'
+	document.getElementById('transcription').textContent = window.location.protocol+'//'+window.location.hostname+window.location.pathname+'?text='+encodeURIComponent(chars)
+	output.focus()
+	}
+
 function makeExample (lang, dir) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
