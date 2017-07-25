@@ -113,3 +113,6 @@
 #alphabet #punc {
 	margin-top: 2em;
 	}
+#alphabet #punc span, #alphabet #tones span {
+	padding: 0 5px; 
+	}
