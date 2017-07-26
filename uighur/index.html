@@ -35,7 +35,8 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-   <button title="Add sample text." style="font-size: 150%;" onclick="add('ئۇيغۇر تىلى')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png"/></button>
+   <button title="Add sample text." style="font-size: 150%;" onclick="add('2. ھەممە ئادەم ھەرقانداق دۆلەتتىن كېتىشكە، جوملىدىن ئۆز دۆلىتىدىن كېتىشكە ھوقۇقلۇق ھەمدە ئۆزىنىڭ دۆلىتىگە قايتىپ كېلىشكە ھوقۇقلۇق.')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -67,12 +68,19 @@
 </div>
 
 
-<div id="autofocusswitch">Autofocus: 
+
+<div id="autofocusswitch">
+<span title="Set base direction to LTR." onclick="document.getElementById('output').dir='ltr'" class="setDir">→&#xFE0E;</span>
+<span title="Set base direction to Auto." onclick="document.getElementById('output').dir='auto'" class="setDir">↔&#xFE0E;</span> 
+<span title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'" class="setDir">←&#xFE0E;</span> 
+ &bull; 
+Autofocus: 
 	<span id="afon" class="on" 
     onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
     onclick="switchAutofocus('off')">Off</span>
     </div>
+
 
 
 <div style="position:relative;">
@@ -134,11 +142,10 @@
 
 
 
-<div id="tables">
+<div id="tables" dir="rtl">
   
   <!-- SHAPE -->
-  <div id="alphabet" class="default"
-dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyana, 'Noto Sans Lao', sans-serif; font-size: 32px;">
+  <div id="alphabet" class="default">
     <table id="kbd">
       <tr>
         <td><table id="consonants">
@@ -269,33 +276,24 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
               <td>&nbsp;</td></tr>
             </tbody></table>
         </td>
+        <td rowspan="2" id="controlchars" style="padding: 0 10px; text-align:center;"><p><span class="touch" style="margin: 0; padding: 30px 40px;" dir="auto" onClick="add(' ');">SPACE</span></p>
+          <p><span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> <span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span></p>
+          <p><span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch" dir="auto" onClick="add('\u2069');">PDI</span></p>
+          <p><span class="touch" dir="auto" onClick="add('\u202B');">RLE</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span></p>
+          <p><span class="touch" dir="auto" onClick="add('\u200E');">LRM</span> <span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u061C');">ALM</span></p>
+          <p><span class="touch" title="Delete All" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span> <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span></p></td>
       </tr>
       <tr>
-        <td colspan="2" style="text-align:center;">
-        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span>
-        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u00A0');">NBSP</span>
-        <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200D');">ZWJ</span>
-        <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200C');">ZWNJ</span>
-        <br/>
-        <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2067');">RLI</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2066');">LRI</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2069');">PDI</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202B');">RLE</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202A');">LRE</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202C');">PDF</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200E');">LRM</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200F');">RLM</span>
-        </td>
-        <td>
-        <table id=punctuation><tbody>
-        <tr>
-        <td><span class=c>&#x61F;</span></td>
-        <td><span class=c>&#x60C;</span></td>
-        <td><span class=c>&#x61B;</span></td>
-        </tr>
-        </tbody></table>
-        
-        </td>
+        <td colspan="2" style="text-align:center;"><table id=punctuation>
+          <tbody>
+            <tr>
+              <td><span class=c>&#x61F;</span></td>
+              <td><span class=c>&#x60C;</span></td>
+              <td><span class=c>&#x61B;</span></td>
+            </tr>
+          </tbody>
+        </table></td>
+        <td>&nbsp;</td>
       </tr>
       </table>
   </div>
@@ -402,7 +400,7 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
 
 
 <div class="control" id="uiTableDirection" style="text-align:right;">Table direction:<br />
-<select onChange="if (this.value == 'rtl') {document.getElementById('alphabet').dir = 'rtl'} else {document.getElementById('alphabet').dir = 'ltr'}; return false;">
+<select onChange="if (this.value == 'rtl') {document.getElementById('tables').dir = 'rtl'} else {document.getElementById('tables').dir = 'ltr'}; return false;">
 <option value="rtl">RTL</option>
 <option value="ltr">LTR</option>
 </select>

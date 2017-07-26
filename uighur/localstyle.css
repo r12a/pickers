@@ -19,7 +19,7 @@
 	}
 	
 #kbd { 	
-	margin-left: 0; 
+	margin: auto; 
 	}
 #kbd table {
 	margin:0;
@@ -57,6 +57,13 @@
 	min-width: 30px;
 	}
 
+
+#alphabet #controlchars {
+	padding: 0 10px; text-align:center;
+	}
+#alphabet #controlchars p {
+	margin: 5px 0;
+	}
 
 
 
