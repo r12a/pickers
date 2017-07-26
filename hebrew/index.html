@@ -37,7 +37,8 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('עִבְרִית‎')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png"/></button>
+  <button title="Add sample text." style="font-size: 150%;" onclick="add('2. כל אדם זכאי לעזוב כל ארץ, לרבות ארצו, ולחזור אל ארצו.')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -71,12 +72,19 @@
 
 
 
-<div id="autofocusswitch">Autofocus: 
+<div id="autofocusswitch">
+<span title="Set base direction to LTR." onclick="document.getElementById('output').dir='ltr'" class="setDir">→&#xFE0E;</span>
+<span title="Set base direction to Auto." onclick="document.getElementById('output').dir='auto'" class="setDir">↔&#xFE0E;</span> 
+<span title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'" class="setDir">←&#xFE0E;</span> 
+ &bull; 
+Autofocus: 
 	<span id="afon" class="on" 
     onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
     onclick="switchAutofocus('off')">Off</span>
     </div>
+
+
 
 
 <div style="position:relative;">
@@ -352,11 +360,20 @@ matres:
             <td>&nbsp;</td>
           </tr>
         </table></td>
-      </tr>
+           </td>
+       <td id="controlchars" style="padding: 0 10px; text-align:center;">
+       <p><span class="touch" style="margin: 0; padding: 30px 40px;" dir="auto" onClick="add(' ');">SPACE</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> <span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch" dir="auto" onClick="add('\u2069');">PDI</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u202B');">RLE</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u200E');">LRM</span> <span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u061C');">ALM</span></p>
+         <p><span class="touch" title="Delete All" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span> <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span></p></td>
+</tr>
     </table>
-    <div> <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span> <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2067');">RLI</span> <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2066');">LRI</span> <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2068');">FSI</span> <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u2069');">PDI</span> <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202B');">RLE</span> <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202A');">LRE</span> <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202C');">PDF</span> <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202E');">RLO</span> <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202D');">LRO</span> <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200F');">RLM</span> <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200E');">LRM</span> </div>
-    <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide rare characters</p>
-    <table id="rare" style="display:none;">
+    
+   <details style="margin: 0 4em 1em 4em;">
+   <summary>show/hide rare characters</summary>
+    <table id="rare">
       <tbody>
         <tr>
           <td><div><span class=c>&#x592;</span> <span class=c>&#x593;</span> <span class=c>&#x594;</span> <span class=c>&#x595;</span> <span class=c>&#x597;</span> <span class=c>&#x598;</span> <span class=c>&#x599;</span> <span class=c>&#x59C;</span> <span class=c>&#x59D;</span> <span class=c>&#x59E;</span> <span class=c>&#x59F;</span> <span class=c>&#x5A0;</span> <span class=c>&#x5A9;</span> <span class=c>&#x5A1;</span> <span class=c>&#x5A8;</span> <span class=c>&#x5AB;</span> <span class=c>&#x5AC;</span> <span class=c>&#x5AE;</span> <span class=c>&#x5AF;</span> <span class=c>&#x5BA;</span> <span class=c>&#x5BF;</span> <span class=c>&#x5C4;</span><br/>
@@ -364,13 +381,14 @@ matres:
         </tr>
       </tbody>
     </table>
+    </details>
   </div>
   
   
   
   
   
-<div id=shapelist style="display:none">
+<div id="shapelist" style="display:none; text-align:center;">
   <div>
 <img alt=" " src="images/shape1.png" onclick="findShape('5D1,5D2,5E0,5DB,5C6','',true)" />
 <img alt=" " src="images/shape2.png" onclick="findShape('5D3,5E8,5D5,5D6,5DA,5DF,5F1,5F0','',true)" />
@@ -463,6 +481,14 @@ matres:
         <option value="◌">◌</option>
         <option value="-">-</option>
 		</select>
+</div>
+
+
+<div class="control" id="uiTableDirection" style="text-align:right;">Table direction:<br />
+<select onChange="if (this.value == 'rtl') {document.getElementById('alphabet').dir = 'rtl'} else {document.getElementById('alphabet').dir = 'ltr'}; return false;">
+<option value="rtl">RTL</option>
+<option value="ltr">LTR</option>
+</select>
 </div>
 </details>
 

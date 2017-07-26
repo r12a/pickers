@@ -2,12 +2,12 @@
 #alphabet { 
 	display: block; 
 	color: #999;
-	margin-right: 20px;
+	margin-right: 0px;
 	}
 
 
 #kbd { 	
-	margin-left: 0; 
+	margin: auto; 
 	}
 #kbd table {
 	margin:0;
@@ -37,15 +37,15 @@
 	padding: 0; 
 	}
 #kbd #points { 
-	margin-left: 40px; 
-	margin-right: 40px; 
+	margin-left: 20px; 
+	margin-right: 20px; 
 	}
 #kbd #points td { 
 	padding-left: 10px; 
 	}
 
 #kbd #punctuation { 
-	margin-left: 40px; 
+	margin-left: 20px; 
 	}
 
 #kbd .padding {
@@ -57,5 +57,12 @@
 	line-height: 1;
 	}
 
+
+#alphabet #controlchars {
+	padding: 0 10px; text-align:center;
+	}
+#alphabet #controlchars p {
+	margin: 0;
+	}
 
 
