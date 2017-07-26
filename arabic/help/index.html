@@ -83,13 +83,22 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 </section>
 
 
+<section id="buttons">
+  <h3 href="#buttons">Selection area</h3>
+  <p><img src="images/selection_area.png" alt=""/></p>
+  <p>Click on characters or buttons in this area to add them to the  text area above.</p>
+  <p>Arabic characters are arranged so that similar shapes are close to each other, since this helps people unfamiliar with the script to find the right character. There are buttons to insert invisible bidi control characters to one side. There is also a section containing rarely used characters that is hidden by default.</p>
+  <p>Note that it is possible to flip the direction of the selection area by selecting <samp translate="no">more options &gt; Table direction</samp> (near the bottom of the picker).</p>
+</section>
+
+
 
 <section id="top_controls">
   <h3 href="#top_controls">Controls above the text area</h3>
       <p><img src="images/controls_above.png" alt=""/></p>
       <p>Controls above the input box allow you to run various operations on the text in the box. <strong>Most of them work on what you have selected</strong> within the box, or the whole box if nothing is selected.</p>
       
-      <p><b class="leadin">Copy, select, delete (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b>  The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </p>
+      <p><b class="leadin">Copy, select, delete, etc. (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text, or delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file. </p>
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
       <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
   <p><b class="leadin">Transcribe to LOC.</b> This produces a Library of Congress transcription of the text in the box. The transcription appears just below the input box, where you can copy it, move it into the input box at the caret, or delete it. The transcription is generated using rules.</p>
@@ -103,9 +112,9 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
        
       
       <p><b class="leadin">Character markup.</b> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the text area, then click this button.  It will return something like the following for each of the characters:</p>
-      <p style="text-align:left; text-justify:auto;"><code>&lt;a href=&quot;/scripts/arabic/block#char0628&quot;&gt;&lt;span class=&quot;uname&quot;&gt;U+064A  ARABIC LETTER BEH&lt;/span&gt; (&lt;span lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;ب&lt;/span&gt;)&lt;/a&gt;</code></p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;codepoint&quot;&gt;&lt;span lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;&amp;#x064A;&lt;/span&gt; [&lt;span class=&quot;uname&quot;&gt;U+064A ARABIC LETTER YEH&lt;/span&gt;]&lt;/span&gt;</code></p>
       <p>You can remove or alter the URL to suit your needs. When you add it to your document, it will look like this.</p>
-      <p><a href="/scripts/arabic/block#char064A"><span class="uname">U+064A ARABIC LETTER YEH</span> (<span lang="ar" dir="rtl">ي</span>)</a> </p>
+      <p><span class="codepoint"><span lang="ar" dir="rtl">&#x064A;</span> [<span class="uname">U+064A ARABIC LETTER YEH</span>]</span> </p>
 </section>
 
 <section>
@@ -123,9 +132,10 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 </section>
 
 <section id="autofocus">
-  <h3 href="#autofocus">Autofocus</h3>
+  <h3 href="#autofocus">Autofocus &amp; base direction</h3>
   <p style="text-align:right;"><img src="images/autofocus.png" alt=""/></p>
   <p>When working on an iPad or similar device, you should set this to <samp>Off</samp>. This prevents the keyboard popping up after you input every character.</p>
+  <p>The characters  → ↔ ←︎︎︎ allow you to set the base direction of the text area to LTR, auto, and RTL, respectively.</p>
 </section>
 
 <section id="input_aids">
@@ -139,13 +149,8 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
     <p><b class="leadin">Latin to Arabic.</b> Displays a panel that allows you to generate  Arabic text from characters used for Arabic transcription in  the <a href="http://www.loc.gov/catdir/cpso/romanization/urdu.pdf">Library of Congress scheme</a>.  Click on the transcription character and the appropriate Arabic character will be produced. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want in order to add it to the text area.</p>
     <p><b class="leadin">IPA transcriptions.</b> Displays a panel that allows you to generate  Arabic text from characters used for phonetic transcription of Arabic. (This may still need some work.).</p>
 </section>
-<section id="buttons">
-  <h3 href="#buttons">Selection area</h3>
-  <p><img src="images/selection_area.png" alt=""/></p>
-  <p>Click on characters or buttons in this area to add them to the  text area above.</p>
-  <p>Arabic characters are arranged so that similar shapes are close to each other, since this helps people unfamiliar with the script to find the right character. There are buttons to insert invisible bidi control characters to one side. There is also a section containing rarely used characters that is hidden by default.</p>
-  <p>Note that it is possible to flip the direction of the selection area by selecting <samp translate="no">more options &gt; Table direction</samp> (near the bottom of the picker).</p>
-</section>
+
+
 <section id="yellow_controls">
   <h3 href="#yellow_controls">Controls on the yellow background</h3>
     <p><img src="images/yellow_controls.png" alt=""/></p>

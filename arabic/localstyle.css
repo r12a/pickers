@@ -17,9 +17,7 @@
 	vertical-align: top;
 	}
 	
-#kbd { 	
-	margin-left: 0; 
-	}
+#kbd { margin:auto; }
 #kbd table {
 	margin:0;
 	}
@@ -67,3 +65,9 @@
 	vertical-align: top;
 	}
 
+#alphabet #controlchars {
+	padding: 0 10px; text-align:center;
+	}
+#alphabet #controlchars p {
+	margin: .5em 0;
+	}
