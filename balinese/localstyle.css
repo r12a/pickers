@@ -18,7 +18,7 @@
 
 [lang=ban],  
 .ex {
-	font-family: 'Aksara Bali WF', 'Noto Sans Balinese WF', serif; }
+	font-family: 'Aksara Bali WF', 'Noto Sans Balinese WF', serif; 
 	}
 	
 span.hint { margin-right: 2px; }
@@ -29,7 +29,7 @@ span.hint { margin-right: 2px; }
 	}
 
 #kbd { 	
-	margin-left: 0; 
+	margin: auto; 
 	}
 #kbd table {
 	margin:0;
