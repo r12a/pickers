@@ -580,4 +580,22 @@ summary:hover {
 #temp span { padding: 1em; border: 3px solid teal; line-height: 6em; }
 	
 	
-	
+.touch { /* these are space, rlm, etc touches */
+	margin: 0 5px; 
+	border: 1px solid #ddd; 
+	border-radius: 3px;
+	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; 
+	font-size: 14px; 
+	padding: 5px; 
+	text-align: center; 
+	text-transform: uppercase; 
+	vertical-align:middle; 
+	display: inline-block;
+	cursor: pointer;
+	}
+.delAll { /* special border for delete all touch */
+	border: 1px solid #eee; 
+	}
+.setDir {
+	cursor: pointer;
+	}
