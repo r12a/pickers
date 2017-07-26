@@ -33,7 +33,8 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('فارسی')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png"/></button>
+  <button title="Add sample text." style="font-size: 150%;" onclick="add('(۲) هر کس حق دارد هر کشوری و از جمله کشور خود را ترک کند یا به کشور خود باز گردد.')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -70,7 +71,12 @@
 </div>
 
 
-<div id="autofocusswitch">Autofocus: 
+<div id="autofocusswitch">
+<span title="Set base direction to LTR." onclick="document.getElementById('output').dir='ltr'" class="setDir">→&#xFE0E;</span>
+<span title="Set base direction to Auto." onclick="document.getElementById('output').dir='auto'" class="setDir">↔&#xFE0E;</span> 
+<span title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'" class="setDir">←&#xFE0E;</span> 
+ &bull; 
+Autofocus: 
 	<span id="afon" class="on" 
     onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
@@ -442,24 +448,13 @@ dir="rtl">
       </tbody>
   </table>
      </td>
-   <td style="line-height:2.5; padding: 0 10px; text-align:center;">
-         <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 40px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add(' ');">SPACE</span>
-<br/>
-          <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200D');">ZWJ</span>
-        <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
-        <br/>
-        <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2067');">RLI</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2066');">LRI</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2069');">PDI</span>
-<br/>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202B');">RLE</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; teuxt-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\202A');">LRE</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202C');">PDF</span>
-<br/>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200E');">LRM</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200F');">RLM</span>
-
-   </td>
+       <td id="controlchars" style="padding: 0 10px; text-align:center;">
+       <p><span class="touch" style="margin: 0; padding: 30px 40px;" dir="auto" onClick="add(' ');">SPACE</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> <span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch" dir="auto" onClick="add('\u2069');">PDI</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u202B');">RLE</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u200E');">LRM</span> <span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u061C');">ALM</span></p>
+         <p><span class="touch" title="Delete All" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span> <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span></p></td>
  </tr>
  <tr>
    <td><table id="additional">
