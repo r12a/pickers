@@ -28,7 +28,7 @@
 	}
 	
 #kbd { 	
-	margin-left: 0; 
+	margin: auto; 
 	}
 #kbd table {
 	margin:0;
@@ -38,7 +38,7 @@
 	margin: 0; 
 	padding: 0; 
 	padding-bottom: 3px; 
-	text-align: left;
+	text-align: start;
 	cursor:pointer;
 	vertical-align: top; 
 	line-height: 1.2;
@@ -93,6 +93,13 @@
 .key .s { position:absolute; bottom: 10px; left: 20px; }
 .key .n { position:absolute; bottom: 10px; right: 8px;  }
 
+
+#alphabet #controlchars {
+	padding: 0 10px; text-align:center;
+	}
+#alphabet #controlchars p {
+	margin: .5em 0;
+	}
 
 
 
