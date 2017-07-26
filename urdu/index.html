@@ -35,7 +35,8 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-   <button title="Add sample text." style="font-size: 150%;" onclick="add('اُردُو‎')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png"/></button>
+   <button title="Add sample text." style="font-size: 150%;" onclick="add('(۲) ہر شخص کو اس بات کا حق ہے کہ وہ ملک سے چلا جائے چاہے یہ ملک اس کا اپنا ہو۔ اور اسی طرح اسے ملک میں واپس آ جانے کا بھی حق ہے۔')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -47,7 +48,7 @@
     <button  id="makeExample" onclick="makeExample('ur','')" 
     title="Create an example.">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('arabic','ur','')" 
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('arabic','ur','rtl')" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
@@ -68,12 +69,20 @@
 </div>
 
 
-<div id="autofocusswitch">Autofocus: 
+
+<div id="autofocusswitch">
+<span title="Set base direction to LTR." onclick="document.getElementById('output').dir='ltr'" class="setDir">→&#xFE0E;</span>
+<span title="Set base direction to Auto." onclick="document.getElementById('output').dir='auto'" class="setDir">↔&#xFE0E;</span> 
+<span title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'" class="setDir">←&#xFE0E;</span> 
+ &bull; 
+Autofocus: 
 	<span id="afon" class="on" 
     onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
     onclick="switchAutofocus('off')">Off</span>
     </div>
+
+
 
 
 
@@ -497,26 +506,14 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
     </tr>
   </tbody>
 </table>
-     </td>
-   <td style="padding: 0 10px; text-align:center; line-height: 1.3;">
-         <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 40px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add(' ');">SPACE</span>
-<br/>
-          <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200D');">ZWJ</span>
-        <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
-        <br/>
-        <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2067');">RLI</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2066');">LRI</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2069');">PDI</span>
-<br/>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202B');">RLE</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; teuxt-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\202A');">LRE</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202C');">PDF</span>
-<br/>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200E');">LRM</span>
-        <span style="margin-right: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200F');">RLM</span>
-
-   </td>
- </tr>
+<td rowspan="3" id="controlchars" style="padding: 0 10px; text-align:center;">
+       <p><span class="touch" style="margin: 0; padding: 30px 40px;" dir="auto" onClick="add(' ');">SPACE</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> <span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch" dir="auto" onClick="add('\u2069');">PDI</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u202B');">RLE</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u200E');">LRM</span> <span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u061C');">ALM</span></p>
+         <p><span class="touch" title="Delete All" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span> <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span></p>
+         </td> </tr>
  <tr>
    <td><table id="additional">
      <tbody>
@@ -539,9 +536,12 @@ dir="rtl"  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyan
      </table></td>
    <td colspan="2"><span class="c">&#x0600;</span><span class="c">&#x0601;</span><span class="c">&#x0602;</span><span class="c">&#x060E;</span><span class="c">&#x0603;</span><span class="c">&#x060F;</span>
      
-     </td>
-   <td><span class="c">&#x060C;</span> <span class="c">&#x06D4;</span> <span class="c">&#x061B;</span> <span class="c">&#x061F;</span> <span class="c">&#x066B;</span> <span class="c">&#x066C;</span> <span class="c">&#x060D;</span> <span class="c">&#x066A;</span> </td>
- </tr>
+   </td>
+   </tr>
+ <tr>
+   <td><span class="c">&#x060C;</span> <span class="c">&#x06D4;</span> <span class="c">&#x061B;</span> <span class="c">&#x061F;</span> <span class="c">&#x066B;</span> <span class="c">&#x066C;</span> <span class="c">&#x060D;</span> <span class="c">&#x066A;</span></td>
+   <td colspan="2">&nbsp;</td>
+   </tr>
       </table>
   </div>
 

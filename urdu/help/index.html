@@ -57,7 +57,7 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 <section id="help">
 <h2 href="#help">Interactive help</h2>
 
-<p><strong>Select the thing you want help with:</strong></p>
+<p style="font-size:120%;"><strong>Select the thing you want help with:</strong></p>
 
 <map name="helpSelector">
   <area shape="rect" coords="11,71,756,107" href="#top_controls" />
@@ -84,12 +84,21 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 
 
 
+<section id="buttons">
+  <h3 href="#buttons">Selection area</h3>
+  <p><img src="images/selection_area.png" alt=""/></p>
+  <p>Click on characters or buttons in this area to add them to the  text area above.</p>
+  <p>Characters are arranged so that similar shapes are close to each other, since this helps people unfamiliar with the script to find the right character. There are buttons to insert invisible bidi control characters to one side.</p>
+  <p>Note that it is possible to flip the direction of the selection area by selecting <samp translate="no">more options &gt; Table direction</samp> (near the bottom of the picker).</p>
+</section>
+
+
+
 <section id="top_controls">
   <h3 href="#top_controls">Controls above the text area</h3>
       <p><img src="images/controls_above.png" alt=""/></p>
       <p>Controls above the input box allow you to run various operations on the text in the box. <strong>Most of them work on what you have selected</strong> within the box, or the whole box if nothing is selected.</p>
-      
-      <p><b class="leadin">Copy, select, delete (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b>  The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </p>
+      <p><b class="leadin">Copy, select, delete, etc. (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text, or delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file. </p>
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
       <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
     <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Urdu text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</p>
@@ -125,6 +134,7 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
   <h3 href="#autofocus">Autofocus</h3>
   <p style="text-align:right;"><img src="images/autofocus.png" alt=""/></p>
   <p>When working on an iPad or similar device, you should set this to <samp>Off</samp>. This prevents the keyboard popping up after you input every character.</p>
+  <p>The characters  → ↔ ←︎︎︎ allow you to set the base direction of the text area to LTR, auto, and RTL, respectively.</p>
 </section>
 
 <section id="input_aids">
@@ -139,13 +149,9 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
     <p>Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want to insert it into the output area.</p>
     <p><b class="leadin">IPA to Arabic.</b> Allows you to create Arabic text starting from IPA (International Phonetic Alphabet) symbols. The same applies with regards to ambiguities as described just above.</p>
 </section>
-<section id="buttons">
-  <h3 href="#buttons">Selection area</h3>
-  <p><img src="images/selection_area.png" alt=""/></p>
-  <p>Click on characters or buttons in this area to add them to the  text area above.</p>
-  <p>Characters are arranged so that similar shapes are close to each other, since this helps people unfamiliar with the script to find the right character. There are buttons to insert invisible bidi control characters to one side.</p>
-  <p>Note that it is possible to flip the direction of the selection area by selecting <samp translate="no">more options &gt; Table direction</samp> (near the bottom of the picker).</p>
-</section>
+
+
+
 <section id="yellow_controls">
   <h3 href="#yellow_controls">Controls on the yellow background</h3>
     <p><img src="images/yellow_controls.png" alt=""/></p>
