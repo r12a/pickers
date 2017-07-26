@@ -140,3 +140,6 @@
 	vertical-align:middle; 
 	display: inline-block;
 	}
+.setDir {
+	cursor: pointer;
+	}

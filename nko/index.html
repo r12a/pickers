@@ -73,7 +73,11 @@
 
 
 
-<div id="autofocusswitch">Autofocus: 
+<div id="autofocusswitch">
+<span title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'" class="setDir">←&#xFE0E;</span> 
+<span title="Set base direction to Auto." onclick="document.getElementById('output').dir='auto'" class="setDir">↔&#xFE0E;</span> 
+<span title="Set base direction to LTR." onclick="document.getElementById('output').dir='ltr'" class="setDir">→&#xFE0E;</span> &bull; 
+Autofocus: 
 	<span id="afon" class="on" 
     onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
