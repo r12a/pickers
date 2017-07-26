@@ -56,15 +56,15 @@
 <p><strong>Select the thing you want help with:</strong></p>
 
 <map name="helpSelector">
-  <area shape="rect" coords="0,55,600,95" href="#top_controls" />
-  <area shape="rect" coords="0,95,600,298" href="#text_area" />
-  <area shape="rect" coords="0,299,600,331" href="#secondary_output" />
-  <area shape="rect" coords="0,342,16,460" href="#input_aids" />
-  <area shape="rect" coords="16,339,368,360" href="#character_names" />
-  <area shape="rect" coords="484,336,597,359" href="#autofocus" />
-  <area shape="rect" coords="16,361,599,627" href="#buttons" />
-  <area shape="rect" coords="0,631,602,670" href="#yellow_controls" />
-  <area shape="rect" coords="-2,671,597,711" href="#more_controls" />
+  <area shape="rect" coords="13,64,710,104" href="#top_controls" />
+  <area shape="rect" coords="11,103,718,358" href="#text_area" />
+  <area shape="rect" coords="17,362,712,435" href="#secondary_output" />
+  <area shape="rect" coords="0,451,18,585" href="#input_aids" />
+  <area shape="rect" coords="21,448,373,469" href="#character_names" />
+  <area shape="rect" coords="568,444,711,468" href="#autofocus" />
+  <area shape="rect" coords="33,476,709,768" href="#buttons" />
+  <area shape="rect" coords="12,774,667,819" href="#yellow_controls" />
+  <area shape="rect" coords="10,840,609,880" href="#more_controls" />
 </map>
 <p><img usemap="#helpSelector" alt="Help selector." src="images/selector.png"/></p>
 
@@ -88,7 +88,7 @@
       <p><b class="leadin">Copy, select, delete (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b>  The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </p>
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
       <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
-  <p><b class="leadin">Transcribe to UN.</b> This produces a @@@@ transcription of the text in the box. The transcription appears just below the input box, where you can copy it, move it into the input box at the caret, or delete it. The transcription is generated using rules.</p>
+  <p><b class="leadin">Transcribe to UN.</b> This produces a UN transcription of the text in the box. The transcription appears just below the input box, where you can copy it, move it into the input box at the caret, or delete it. The transcription is generated using rules.</p>
   <p>In order to obtain a full transcription it is necessary to add short vowel diactritics to places that could have more than one pronunciation.</p>
   <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Persian text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</p>
        <p>For example, the following (which is displayed here more as you'd type it than see it):</p>
@@ -120,9 +120,10 @@
 </section>
 
 <section id="autofocus">
-  <h3 href="#autofocus">Autofocus</h3>
+  <h3 href="#autofocus">Autofocus &amp; base direction</h3>
   <p style="text-align:right;"><img src="images/autofocus.png" alt=""/></p>
   <p>When working on an iPad or similar device, you should set this to <samp>Off</samp>. This prevents the keyboard popping up after you input every character.</p>
+  <p>The characters  ︎ → ↔︎ ←︎ allow you to set the base direction of the text area to LTR, auto, and RTL, respectively.</p>
 </section>
 
 <section id="input_aids">
