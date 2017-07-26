@@ -36,7 +36,8 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('မြန်မာဘာသာ')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
+  <button title="Add sample text." style="font-size: 150%;" onclick="add('(၂) လူတိုင်းတွင် မိမိနေထိုင်ရာ တိုင်းပြည်မှ လည်းကောင်း၊ အခြားတိုင်းပြည်မှလည်းကောင်း ထွက်ခွာ သွားပိုင်ခွင့်ရှိသည့်အပြင်၊ မိမိ၏ တိုင်းပြည်သို့ ပြန်လာ ပိုင်ခွင့်လည်းရှိသည်။')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -459,13 +460,8 @@
   <div id="symbols"><span class=c>&#x1037;</span> <span class=c>&#x1038;</span> <span  style="margin-left: 20px;" class=c>&#x104C;</span> <span class=c>&#x104D;</span> <span class=c>&#x104E;</span> <span class=c>&#x104F;</span> <span style="margin-left: 20px;"><span class=c>&#x104A;</span> <span class=c>&#x104B;</span></span></div>
   <div id="digits"></div>
   </td>
-  <td id="zwspcol">
-  <img alt="&#x200C;" onclick="add('&#x200C;')" title="200C: ZERO WIDTH NON-JOINER" class="nogrid" src="images/200C.png" />
-  <img alt="&#x200D;" onclick="add('&#x200D;')" title="200D: ZERO WIDTH JOINER" class="nogrid" src="images/200D.png" />
-  <img alt="&#x00A0;" onclick="add('&#x00A0;')" title="00A0: NO-BREAK SPACE" class="nogrid" src="images/00A0.png" /><br />
-  <img alt="&#x0020;" onclick="add('&#x0020;')" title="0020: SPACE" class="nogrid" src="images/0020.png" /><br />
-  <img alt="&#x200B;" onclick="add('&#x200B;')" title="200B: ZERO WIDTH SPACE" class="nogrid" src="images/200B.png" />
-  </td>
+  <td id="zwspcol" style="writing-mode:vertical-rl; -webkit-writing-mode: vertical-rl;"><span class="touch" style="padding: 40px 5px; writing-mode:vertical-rl; -webkit-writing-mode: vertical-rl; margin:0;" onClick="add(' ');">SPACE</span>
+          <span class="touch" style="padding: 60px 5px;  writing-mode:vertical-rl; -webkit-writing-mode: vertical-rl; margin:0;" onClick="add('\u200B');">ZWSP</span></td>
   <td><table id="numbers" style="margin: 0 10px 10px 0;">
     <tbody>
       <tr>
@@ -501,7 +497,20 @@
         <td>&nbsp;</td>
         </tr>
       </tbody>
-  </table></td>
+  </table>
+  
+     <div style="text-align:center;">
+          <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span><br/>
+          <span class="touch" title="ZWJ" style="padding: 5px;" dir="auto" onClick="add('&#x200D;');">ZWJ</span> 
+          <span class="touch" title="ZWNJ" style="padding: 5px;" dir="auto" onClick="add('&#x200C;');">ZWNJ</span> 
+<br/>
+          <span class="touch" title="Delete All" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span> 
+          <span class="touch delAll" style="margin-right: 20px; margin-left:10px;" dir="auto" onClick="deleteAll();">❌</span>
+
+   </div>
+
+  </td>
+  
 </tr>
 </table>
 
@@ -549,7 +558,6 @@
 </div><!-- end of tables -->
 
 
-</div><!-- end of wrapper round tables and vertical menu -->
 
 
 
