@@ -125,3 +125,18 @@
 #alphabet #punc span, #alphabet #tones span {
 	padding: 0 5px; 
 	}
+#alphabet #controlchars {
+	padding: 0 10px; text-align:center;
+	}
+#alphabet #controlchars span {
+	margin: 0; 
+	border: 1px solid #ddd; 
+	border-radius: 3px;
+	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; 
+	font-size: 14px; 
+	padding: 5px; 
+	text-align: center; 
+	text-transform: uppercase; 
+	vertical-align:middle; 
+	display: inline-block;
+	}
