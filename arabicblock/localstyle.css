@@ -14,7 +14,7 @@
 	}
 
 #kbd { 	
-	margin-left: 0; 
+	margin: auto; 
 	}
 #kbd table {
 	margin:0;
@@ -120,3 +120,6 @@
 	content: '\200B ' ; /* zwsp */ 
 	}
 
+#extrashapes {
+    text-align: center;
+}
