@@ -37,7 +37,8 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('հայերեն')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png"/></button>
+  <button title="Add sample text." style="font-size: 150%;" onclick="add('2. Ամեն ոք ունի ցանկացած երկրից, այդ թվում իր երկրից հեռանալու և իր երկիր վերադառնալու իրավունք։')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -111,19 +112,56 @@
 <div id="phonemelist" style="position:relative;">
  <div id="transcriptionChoice"></div>
 
-<div id=latintranscript class=transcript style="display:none;">
-<span class="t" onclick="dotrans('ʰ')">ʰ</span>
-<span class="t" onclick="dotrans('ʧ')">ʧ</span>
-<span class="t" onclick="dotrans('ʒ')">ʒ</span>
-<span class="t" onclick="dotrans('ʦ')">ʦ</span>
-<span class="t" onclick="dotrans('ɡ')">ɡ</span>
-<span class="t" onclick="dotrans('ʣ')">ʣ</span>
-<span class="t" onclick="dotrans('ɣ')">ɣ</span>
-<span class="t" onclick="dotrans('ʃ')">ʃ</span>
-<span class="t" onclick="dotrans('ʤ')">ʤ</span>
-<span class="t" onclick="dotrans('ɛ')">ɛ</span>
-<span class="t" onclick="dotrans('ə')">ə</span>
-<span class="t" onclick="dotrans('ɪ')">ɪ</span>
+<div id="latintranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('a')">a</span>
+<span class="t" onclick="dotrans('b')">b</span>
+<span class="t" onclick="dotrans('c')">c</span>
+<span class="t" onclick="dotrans('c‛')">c‛</span>
+<span class="t" onclick="dotrans('č')">č</span>
+<span class="t" onclick="dotrans('č‛')">č‛</span>
+<span class="t" onclick="dotrans('d')">d</span>
+<span class="t" onclick="dotrans('dž')">dž</span>
+<span class="t" onclick="dotrans('e')">e</span>
+<span class="t" onclick="dotrans('ē')">ē</span>
+<span class="t" onclick="dotrans('ë')">ë</span>
+<span class="t" onclick="dotrans('f')">f</span>
+<span class="t" onclick="dotrans('g')">g</span>
+<span class="t" onclick="dotrans('h')">h</span>
+<span class="t" onclick="dotrans('i')">i</span>
+<span class="t" onclick="dotrans('j')">j</span>
+<span class="t" onclick="dotrans('ǰ')">ǰ</span>
+<span class="t" onclick="dotrans('k')">k</span>
+<span class="t" onclick="dotrans('k‛')">k‛</span>
+<span class="t" onclick="dotrans('k’')">k’</span>
+<span class="t" onclick="dotrans('l')">l</span>
+<span class="t" onclick="dotrans('ł')">ł</span>
+<span class="t" onclick="dotrans('m')">m</span>
+<span class="t" onclick="dotrans('n')">n</span>
+<span class="t" onclick="dotrans('o')">o</span>
+<span class="t" onclick="dotrans('ô')">ô</span>
+<span class="t" onclick="dotrans('p')">p</span>
+<span class="t" onclick="dotrans('p‛')">p‛</span>
+<span class="t" onclick="dotrans('p’')">p’</span>
+<span class="t" onclick="dotrans('q')">q</span>
+<span class="t" onclick="dotrans('r')">r</span>
+<span class="t" onclick="dotrans('ṙ')">ṙ</span>
+<span class="t" onclick="dotrans('r̄')">r̄</span>
+<span class="t" onclick="dotrans('r’')">r’</span>
+<span class="t" onclick="dotrans('s')">s</span>
+<span class="t" onclick="dotrans('š')">š</span>
+<span class="t" onclick="dotrans('t')">t</span>
+<span class="t" onclick="dotrans('t’')">t’</span>
+<span class="t" onclick="dotrans('t‛')">t‛</span>
+<span class="t" onclick="dotrans('tš')">tš</span>
+<span class="t" onclick="dotrans('tš’')">tš’</span>
+<span class="t" onclick="dotrans('ts’')">ts’</span>
+<span class="t" onclick="dotrans('u')">u</span>
+<span class="t" onclick="dotrans('v')">v</span>
+<span class="t" onclick="dotrans('w')">w</span>
+<span class="t" onclick="dotrans('x')">x</span>
+<span class="t" onclick="dotrans('y')">y</span>
+<span class="t" onclick="dotrans('z')">z</span>
+<span class="t" onclick="dotrans('ž')">ž</span>
 </div>
 </div>
 
@@ -140,31 +178,30 @@
 
 <div id="tables">
   
-  <div id="alphabet" class="default"
-  style="font-family: 'Saysettha OT', 'Lao Sangam MN', Dokchampa, Dhyana, 'Noto Sans Lao', sans-serif; font-size: 32px;">
+  <div id="alphabet" class="default">
     <table id="kbd">
       <tr>
         <td><table id="ligatures">
           <tbody>
             <tr>
-              <td class="hint">a</td>
-              <td><span class="c">&#x0574;&#x0576;</span></td>
+              <td class="hint">mn</td>
+              <td><span class="c">ﬓ</span></td>
               </tr>
             <tr>
-              <td class="hint"><span class="p">i</span></td>
-              <td><span class="c">&#x0574;&#x0565;</span></td>
+              <td class="hint"><span class="p">me</span></td>
+              <td><span class="c">ﬔ</span></td>
               </tr>
             <tr>
-              <td class="hint">u</td>
-              <td><span class="c">&#x0574;&#x056B;</span></td>
+              <td class="hint">mi</td>
+              <td><span class="c">ﬕ</span></td>
               </tr>
             <tr>
-              <td class="hint">ee</td>
-              <td><span class="c">&#x057E;&#x0576;</span></td>
+              <td class="hint">vn</td>
+              <td><span class="c">ﬖ</span></td>
               </tr>
             <tr>
-              <td class="hint">oo</td>
-              <td><span class="c">&#x0574;&#x056D;</span></td>
+              <td class="hint">mx</td>
+              <td><span class="c">ﬗ</span></td>
               </tr>
             </tbody>
           </table></td>
@@ -284,28 +321,21 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             </tr>
+            </table>
+            <table id="punctuation">
           <tr>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x0559;</span></td>
-            <td><span class="c">&#x055A;</span></td>
-            <td class="hint">&nbsp;</td>
+            <td><span class="c">&#x055F;</span></td>
+            <td><span class="c">&#x2019;</span></td>
             <td><span class="c">&#x055B;</span></td>
             <td><span class="c">&#x055C;</span></td>
-            <td class="hint">&nbsp;</td>
             <td><span class="c">&#x055D;</span></td>
-            <td>&nbsp;</td>
-            <td class="hint">&nbsp;</td>
             <td><span class="c">&#x055E;</span></td>
-            <td><span class="c">&#x055F;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x0589;</span></td>
             <td><span class="c">&#x058A;</span></td>
-            <td class="hint">&nbsp;</td>
             <td><span class="c">&#x00AB;</span></td>
             <td><span class="c">&#x00BB;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td><span class="c">&#x002C;</span></td>
+            <td><span class="c">&#x2024;</span></td>
+            <td><span class="c">&#x0589;</span></td>
             </tr>
         </table></td>
         <td style="text-align:right;">
@@ -347,14 +377,20 @@
               <td>&nbsp;</td>
               </tr>
             </tbody></table>
-          <div style="text-align: right;"></div>
+            
+              <details style="margin-top: 5px; text-align:center;">
+  <summary>Show deprecated<br/>characters</summary>
+  <div><span class="c">&#x0559;</span> <span class="c">&#x055A;</span></div>
+  </details>
+
         </td>
       </tr>
       <tr>
-        <td colspan="2">
-          <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add(' ');">SPACE</span>
-          <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u00A0');">NBSP</span></td>
-        <td>&nbsp;</td>
+        <td colspan="3" style="text-align:center;">
+          <span class="touch" style="padding: 5px 100px;" onClick="add(' ');">SPACE</span>
+          <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
+          <span class="touch" title="Delete All" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span> 
+          <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span></td>
       </tr>
       </table>
       
@@ -365,7 +401,7 @@
 
 
 
- <div id=shapelist style="display:none">
+ <div id="shapelist" style="display:none">
  <div>
 <img alt="shape1" src="images/shape1.png" onclick="findShape('531,544,54D,574,587,576,57E,56F,57F,583,57D,561,57A,574576,574565,57456B,57E576,57456D','',true)" /> 
 <img alt="shape2" src="images/shape2.png" onclick="findShape('532,538,554,550,552,539,569,53B,584,562,57F,583,56B','',true)" /> 
@@ -396,7 +432,6 @@
 </div><!-- end of tables -->
 
 
-</div><!-- end of wrapper round tables and vertical menu -->
 
 
 

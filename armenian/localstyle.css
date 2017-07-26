@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'Arian AMU WF';
+    src: url('../../shared/webfonts/arnamu-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/arnamu-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
     font-family: 'Noto Sans Armenian WF';
     src: url('/shared/webfonts/NotoSansArmenian-Regularwebfont.woff2') format('woff2'),
          url('/shared/webfonts/NotoSansArmenian-Regularwebfont.woff') format('woff');
@@ -13,7 +20,7 @@
 
 #alphabet td span.c { 
 	cursor: pointer; 
-	font-family: "Noto Sans Armenian WF", "Noto Sans Armenian", "Noto Serif Armenian", Sylfaen, Mshtakan, sans-serif;
+	font-family: 'Arian AMU WF', "Noto Sans Armenian WF", "Noto Sans Armenian", "Noto Serif Armenian", Sylfaen, Mshtakan, sans-serif;
 	font-size: 24px;
 	padding: 1px;
 	min-width: 18px;
@@ -28,7 +35,7 @@
 	}
 	
 #kbd { 	
-	margin-left: 0; 
+	margin: auto; 
 	}
 #kbd table {
 	margin:0;
@@ -62,11 +69,11 @@
 	}
 
 
-#kbd #punctuation {
-	margin-left: 20px;
+#alphabet #punctuation {
+	margin:auto;
 	}
-#kbd #punctuation td {
-	min-width: 30px;
+#alphabet #punctuation td span.c {
+	padding: 5px;
 	}
 
 
