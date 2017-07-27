@@ -20,7 +20,7 @@ span.hint {
 	}
 	
 #kbd { 	
-	margin-left: 0; 
+	margin: auto; 
 	}
 #kbd table {
 	margin:0;
@@ -152,6 +152,11 @@ span.hint {
 	}
 
 
+#extrashapes {
+	text-align:center;
+	margin-left: 3em;
+	margin-right: 3em;
+	}
 #extrashapes span {
 	cursor: pointer;
 	}
