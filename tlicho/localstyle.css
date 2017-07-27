@@ -17,7 +17,8 @@ span.hint {
 
 
 #kbd { 	
-	margin-left: 0; 
+	margin-left: 3em;
+	margin-bottom: 2em; 
 	}
 #kbd table {
 	margin:0;
