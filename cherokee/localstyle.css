@@ -118,6 +118,10 @@
 
 
 
-.firstcol+td {
+.firstcol, .firstcol+td {
 	text-align:right;
 }
+.shifted, .unshifted {
+	display: inline-block;
+	width: 10em;
+	}
