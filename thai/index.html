@@ -37,7 +37,8 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-   <button title="Add sample text." style="font-size: 150%;" onclick="add('อักษรไทย')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
+   <button title="Add sample text." style="font-size: 150%;" onclick="add('2. ทุกคนมีสิทธิที่จะออกจากประเทศใด ๆ ไป รวมทั้งประเทศของตนเองด้วย และที่จะกลับยังประเทศตน')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -475,6 +476,9 @@
               <td><span class="c">&#xE1A;</span></td>
             </tr>
           </table>
+          
+          <span class="c">&#xE46;</span> <span class="c">&#xE5A;</span> <span class="c">&#xE2F;&#xE25;&#xE2F;</span>
+          </td>
         <td id="symbols"><table id="numbers">
           <tbody>
             <tr>
@@ -514,7 +518,9 @@
         <td>        
       </tr>
       <tr>
-        <td colspan="3" style="text-align:left;"><span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200B');">ZWSP</span> <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u0020');">SPACE</span> <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u00A0');">NBSP</span> <span class="c" style="margin-left: 20px;">&#xE2F;</span> <span class="c">&#xE46;</span> <span class="c">&#xE5A;</span> <span class="c">&#xE2F;&#xE25;&#xE2F;</span></td>
+        <td colspan="3" style="text-align:left;">
+        <span class="touch" title="Zero width space" style="padding: 5px 100px;" dir="auto" onClick="add('\u200B');">ZWSP</span> <span class="touch" title="Space" style="padding: 5px 20px;" dir="auto" onClick="add(' ');">SPACE</span> <span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span><span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span> <span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+        </td>
       </tr>
     </table>
     <details>
@@ -536,7 +542,7 @@
     </table>
     </details>
   </div>
-  <div id="shapelist">
+  <div id="shapelist" style="text-align:center;">
 <img alt="shape1" src="images/shape1.png" onclick="findShape('E01,E16,E20,E24,E26,E0E,E0F,E13,E0C,E0D,E12','',true)" /> 
 <img alt="shape2" src="images/shape2.png" onclick="findShape('E32,E33,E45,E27,E08,E2D,E09,E25,E2A,E26','',true)" /> 
 <img alt="shape3" src="images/shape3.png" onclick="findShape('E04,E14,E28,E05,E15,E12,E0C,E24','',true)" /> 

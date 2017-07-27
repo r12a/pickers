@@ -27,7 +27,7 @@ td.hint {
 #leftvowels { margin: 15px 10px 0 0; border: 1px dotted #ccc; border-radius: 10px; }
 
 #kbd {
-	margin: 0;
+	margin: auto;
 	line-height: 1.2;
 	color: #888;
 	}
