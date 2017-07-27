@@ -45,6 +45,7 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
   <button title="Add sample text." style="font-size: 150%;" onclick="add('<-i-mn:n-R4:t*p-> <-𓇋-𓏠:𓈖-𓊵:𓏏*𓊪->')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
@@ -408,11 +409,13 @@
 
 
           <td>
-          <span class="spaceEtc" style="padding: 5px 50px;" dir="auto" title="U+0020 : SPACE" onClick="add(' ');">SPACE</span> 
-          <span class="spaceEtc" style="padding: 5px 50px;" dir="auto" title="U+00A0 : NO-BREAK SPACE" onClick="add('\u00A0');">NBSP</span>
-          <span class="spaceEtc" style="padding: 5px 10px;" dir="auto" title="U+202E : RIGHT-TO-LEFT OVERRIDE" onClick="add('\u202E');">RLO</span> 
-          <span class="spaceEtc" style="padding: 5px 10px;" dir="auto" title="U+202C : POP DIRECTIONAL FORMATTING" onClick="add('\u202C');">PDF</span></td>
-          <td>
+ <span class="touch" title="SPACE" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="NBSP" style="padding: 5px;" dir="auto" onClick="add('&#xA0;');">NBSP</span>
+<span class="touch" title="RLO" style="padding: 5px;" dir="auto" onClick="add('\u202E');">RLO</span>
+<span class="touch" title="PDF" style="padding: 5px;" dir="auto" onClick="add('\u202C');">PDF</span>
+<span class="touch" title="Delete All" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span></td>
+         <td>
           <span class="c">&#x13379;</span>
           <span class="c">&#x1337A;</span>
           <span class="c">&lt;</span>
