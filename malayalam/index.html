@@ -37,7 +37,8 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('മലയാളലിപി')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
+  <button title="Add sample text." style="font-size: 150%;" onclick="add('2. തന്റെ സ്വന്തം രാജ്യവും മറ്റേതൊരു രാജ്യവും വിടുന്നതിന്നും തന്റെ രാജ്യത്തേയ്ക്കു മടങ്ങിവരുന്നതിനുമുള്ള അധികാരം ഏതൊരാള്‍ക്കുമുള്ളതാണ്‌.')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -377,9 +378,18 @@
           <div id="combining"> <span class="hint">ā</span><span class="c">&#x0D3E;</span> <span class="hint">i</span><span class="c">&#x0D3F;</span> <span class="c">&#x0D40;</span> <span class="hint">u</span><span class="c">&#x0D41;</span> <span class="c">&#x0D42;</span> <span class="hint">r̥</span><span class="c">&#x0D43;</span><br/>
             <span class="hint">e</span><span class="c">&#x0D46;</span> <span class="c">&#x0D47;</span> <span class="hint">ai</span><span class="c">&#x0D48;</span> <span class="hint">o</span><span class="c">&#x0D4A;</span> <span class="c">&#x0D4B;</span><br/>
             <span class="hint">au</span><span class="c">&#x0D57;</span> <span class="c">&#x0D4C;</span> </div>
-          <div><span class="c">&#x0D03;</span> <span class="c">&#x0D02;</span> <span class="c">&#x0964;</span> <span class="c">&#x0965;</span> <span style="margin: 5px; margin-left: 30px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u00A0');">NBSP</span> <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200D');">ZWJ</span> <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200C');">ZWNJ</span> </div>
-          <div style="text-align:center;"	> <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add(' ');">SPACE</span><br/>
-          </div></td>
+          <div style="text-align:center;"><span class="c">&#x0D03;</span> <span class="c">&#x0D02;</span> <span class="c">&#x0964;</span> <span class="c">&#x0965;</span> 
+<span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Zero width non-joiner" style="padding: 5px;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+ <br/>
+<span class="touch" title="Space" style="padding: 5px 100px;" dir="auto" onClick="add(' ');">SPACE</span>
+ <br/>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+ 
+    </div>      
+    </td>
         <td><table id="chillus">
           <tr>
             <td class="hint">ṇ</td>
