@@ -592,6 +592,7 @@ summary:hover {
 	vertical-align:middle; 
 	display: inline-block;
 	cursor: pointer;
+	line-height: 1;
 	}
 .delAll { /* special border for delete all touch */
 	border: 1px solid #eee; 
