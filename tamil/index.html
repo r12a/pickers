@@ -37,7 +37,8 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('தமிழ் அரிச்சுவடி')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
+  <button title="Add sample text." style="font-size: 150%;" onclick="add('2. தனது சொந்த நாடு உட்பட ஏதேனும் நாட்டை விட்டுச் செல்லவும் தத்தமது நாட்டுக்குத் திரும்பவும் ஒவ்வொருவருக்கும் உரிமையுண்டு.')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -369,8 +370,16 @@
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td colspan="2"><span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span> <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u00A0');">NBSP</span> <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200D');">ZWJ</span> <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200C');">ZWNJ</span></td>
-        <td>&nbsp;</td>
+        <td colspan="3">
+        
+        <span class="touch" title="Space" style="padding: 5px 100px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Zero width non-joiner" style="padding: 5px;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+
+        </td>
       </tr>
     </table>
     <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide rare characters</p>
@@ -382,7 +391,7 @@
       </tbody>
     </table>
   </div>
-  <div id="shapelist" style="display:none">
+  <div id="shapelist" style="display:none; text-align:center;">
  <div>
 <img alt="" src="images/shape1.png" onclick="findShape('B9A,B95,BE7,BA4,BEA,BEC,BF2,BEF,B95BCDBB7','சு,கூ,கு,சூ,து,தூ,க்ஷு,க்ஷூ',true)" /> 
 <img alt=" " src="images/shape3.png" onclick="findShape('B9F,BAA,BAF,BAE,BF4,BB4,BF6','டி,டீ,பு,யு,மீ,மு,மூ,ழு,ழூ',true)" />
@@ -405,7 +414,7 @@
 <!-- end of tables -->
 
 
-<div id="extrashapes"></div>
+<div id="extrashapes" style="text-align:center;"></div>
 
 
 
