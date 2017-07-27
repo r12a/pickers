@@ -37,7 +37,8 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('देवनागरी')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
+  <button title="Add sample text." style="font-size: 150%;" onclick="add('(२) प्रत्येक व्यक्ति को अपने या पराये किसी भी देश को छोड़नो और अपने देश को वापस आनो का अधिकार है ।')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -443,7 +444,15 @@
           </table></td>
       </tr>
       <tr>
-        <td colspan="3" style="padding-top: 5px;"><span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add(' ');">SPACE</span> <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u00A0');">NBSP</span> <span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200D');">ZWJ</span> <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200C');">ZWNJ </span> <span style="padding-left: 20px;" class="c">&#x964;</span> <span class="c">&#x965;</span> <span class="c">&#x970;</span></td>
+        <td colspan="3" style="padding-top: 5px;">
+        <span class="touch" title="SPACE" style="padding: 5px 100px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="NBSP" style="padding: 5px;" dir="auto" onClick="add('&#xA0;);">NBSP</span>
+<span class="touch" title="NBSP" style="padding: 5px;" dir="auto" onClick="add('&#x200D;);">ZWJ</span>
+<span class="touch" title="NBSP" style="padding: 5px;" dir="auto" onClick="add('&#x200C;);">ZWNJ</span>
+<span class="touch" title="Delete All" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+
+         <span style="padding-left: 20px;" class="c">&#x964;</span> <span class="c">&#x965;</span> <span class="c">&#x970;</span></td>
       </tr>
     </table>
     <details>

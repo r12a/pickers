@@ -30,7 +30,7 @@ table {
 	}
 	
 #kbd { 	
-	margin-left: 0; 
+	margin: auto; 
 	color: #888;
 	}
 #kbd table {
