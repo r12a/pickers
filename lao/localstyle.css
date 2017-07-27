@@ -20,7 +20,10 @@ span.hint {
 
 
 #kbd { 	
-	margin-left: 0; 
+	margin: auto; 
+	}
+#shapelist {
+	text-align: center;
 	}
 #kbd table {
 	margin:0;
