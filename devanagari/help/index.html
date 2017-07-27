@@ -31,7 +31,6 @@
 
 
 <p>This Unicode character picker allows you to produce or analyse runs of  text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-<p><strong style="color: brown;">This page gives only generic help on pickers, while I find the time to develop a dedicated page. It may not cover all features in the picker, and  uses Armenian examples.</strong></p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[devanagari%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/devanagari">the Github commit list</a>.</p>
 
 
@@ -40,7 +39,7 @@
 <p>To produce characters in the text area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the controls to get further information about the characters. You must have JavaScript enabled. </p>
 <p><b class="leadin">Sample text</b> If you want to add some sample text to the text area, click on the <img src="../../images/sample.png" alt="plus sign"/> icon.</p>
 <p><b class="leadin">Fonts</b>
-To properly display the text you will need to choose a font that is loaded on your system or device, or use the web font downloaded with the page. The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7. See more information about <a href="/scripts/fontlist/#devanagari" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
+To properly display the text you will need to choose a font that is loaded on your system or device, or use the web font downloaded with the page (Noto Sans Devanagari). The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7. See more information about <a href="/scripts/fontlist/#devanagari" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
 
 <p><b class="leadin">Mobile devices</b>
 When working on an iPad or similar device, you should turn off<code class="kw" translate="no"> Autofocus</code> (just below the text area). This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</p>
@@ -48,7 +47,7 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 
 <section id="about">
 <h2 href="#about">About the chart</h2>
-      <p>Includes characters in the Unicode <a href="/uniview/?block=devanagari" target="_blank">Devanagari</a> block.     </p>
+      <p>Includes characters in the Unicode <a href="/uniview/?block=devanagari" target="_blank">Devanagari</a> block, plus <span class="codepoint"><span lang="hi">&#x20B9;</span> [<span class="uname">U+20B9 INDIAN RUPEE SIGN</span>]</span>.     </p>
       <p>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</p>
 </section>
 
@@ -60,15 +59,15 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 <p><strong>Select the thing you want help with:</strong></p>
 
 <map name="helpSelector">
-  <area shape="rect" coords="-6,-62,641,33" href="#top_controls" />
-  <area shape="rect" coords="0,33,646,181" href="#text_area" />
-  <area shape="rect" coords="2,182,646,237" href="#secondary_output" />
-  <area shape="rect" coords="0,244,16,362" href="#input_aids" />
-  <area shape="rect" coords="23,241,375,262" href="#character_names" />
-  <area shape="rect" coords="535,236,648,259" href="#autofocus" />
-  <area shape="rect" coords="20,261,601,517" href="#buttons" />
-  <area shape="rect" coords="10,519,636,572" href="#yellow_controls" />
-  <area shape="rect" coords="12,572,616,634" href="#more_controls" />
+  <area shape="rect" coords="11,66,679,105" href="#top_controls" />
+  <area shape="rect" coords="11,104,686,278" href="#text_area" />
+  <area shape="rect" coords="15,289,679,358" href="#secondary_output" />
+  <area shape="rect" coords="-1,371,15,489" href="#input_aids" />
+  <area shape="rect" coords="19,370,371,391" href="#character_names" />
+  <area shape="rect" coords="567,367,680,390" href="#autofocus" />
+  <area shape="rect" coords="19,394,675,632" href="#buttons" />
+  <area shape="rect" coords="12,634,674,686" href="#yellow_controls" />
+  <area shape="rect" coords="14,687,618,749" href="#more_controls" />
 </map>
 <p><img usemap="#helpSelector" alt="Help selector." src="images/selector.png"/></p>
 
@@ -84,28 +83,38 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 
 
 
+<section id="buttons">
+  <h3 href="#buttons">Selection area</h3>
+  <p><img src="images/selection_area.png" alt=""/></p>
+  <p>Click on characters or buttons in this area to add them to the  text area above.</p>
+  <p>Characters are arranged based on the use of the script in order to speed up picking.     Ligatures are in a panel to the left. In the centre, consonants are arranged in alphabetical order, with punctuation and marks below. Vowels are on the right.</p>
+</section>
+
+
+
 <section id="top_controls">
   <h3 href="#top_controls">Controls above the text area</h3>
       <p><img src="images/controls_above.png" alt=""/></p>
       <p>Controls above the input box allow you to run various operations on the text in the box. <strong>Most of them work on what you have selected</strong> within the box, or the whole box if nothing is selected.</p>
-      <p><strong style="color:brown;">There may be additional controls in the Devanagari picker. They will be covered once this page is updated.</strong></p>
-      
-      <p><b class="leadin">Copy, select, delete (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b>  The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </p>
+      <p><b class="leadin">Copy, select, delete, etc. (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p>
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
+      <p><b class="leadin">Devanagari to ISO 15919.</b> This produces an  ISO 15919 transcription of  text in the text area. The result appears just below, where you can copy it, move it into the input box at the caret, or delete it. The transcription is generated using rules.</p>
+      <p> Where ambiguity exists, and there is more than one way to transcribe a character, the displayed text will show alternatives. Click on the alternative that you prefer, and the others will disappear.</p>
+      <p><b class="leadin">ISO 15919 to Devanagari.</b> This transcribes in the opposite direction to the control just described.</p>
       <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
     <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Devanagari text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</p>
        <p>For example, the following:</p>
-      <p> այբուբեն/ɑjbubɛn/aybuben/alphabet</p>
+      <p>देवनागरी/ˌdeɪvəˈnɑːɡəri/dēvanāgarī/Devanagari</p>
       <p>will produce:</p>
-      <p style="text-align:left; text-justify:auto;"><code> &lt;span class=&quot;ex&quot; lang=&quot;hy&quot;&gt;այբուբեն&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;ɑjbubɛn&lt;/span&gt; &lt;span class=&quot;trans&quot;&gt;aybuben&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;alphabet&lt;/span&gt;</code></p>
-      <p>To get just the Devanagari and the second transcription you would use:</p>
-       <p><span lang="ar" dir="rtl"></span>այբուբեն//aybuben</p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;charExample&quot;&gt;&lt;span class=&quot;ex&quot; lang=&quot;hi&quot;&gt;देवनागरी&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;ˌdeɪvəˈnɑːɡəri&lt;/span&gt; &lt;span class=&quot;trans&quot;&gt;dēvanāgarī&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Devanagari&lt;/span&gt;&lt;/span&gt;</code></p>
+      <p>To get just the Devanagari and the meaning you would use:</p>
+       <p>देवनागरी//Devanagari</p>
        
       
       <p><b class="leadin">Character markup.</b> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the text area, then click this button.  It will return something like the following for each of the characters:</p>
-      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;codepoint&quot;&gt;&lt;span lang=&quot;hy&quot;&gt;&amp;#x0576;&lt;/span&gt; &lt;span class=&quot;uname&quot;&gt;U+0576 ARMENIAN SMALL LETTER NOW&lt;/span&gt;&lt;/span&gt;</code></p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;codepoint&quot;&gt;&lt;span lang=&quot;hi&quot;&gt;&amp;#x0904;&lt;/span&gt; [&lt;span class=&quot;uname&quot;&gt;U+0904 DEVANAGARI LETTER SHORT A&lt;/span&gt;]&lt;/span&gt;</code></p>
       <p>When you add it to your document, it will look like this.</p>
-      <p><span class="codepoint"><span lang="hy">&#x0576;</span> <span class="uname">U+0576 ARMENIAN SMALL LETTER NOW</span></span></p>
+      <p><span class="codepoint"><span lang="hi">&#x0904;</span> [<span class="uname">U+0904 DEVANAGARI LETTER SHORT A</span>]</span></p>
 </section>
 
 <section>
@@ -132,19 +141,14 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
   <h3 href="#input_aids">Input aids</h3>
     <p><img src="images/input_aids.png" style="float:left; margin-right:1em; " alt=""/></p>
     <p>The vertical grey bar to the left allows you to turn on/off a number of panels that can help create the text you want.</p>
-    <p><strong style="color:brown;">There may be more or fewer controls in the Devanagari picker. They will be covered once this page is updated.</strong></p>
     <p><b class="leadin">Default.</b> Turns off all input aids and closes all panels.</p>
       <p><b class="leadin">Hinting.</b> Changes the selection area so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.    </p>
-    <p><b class="leadin">Shape lookup.</b> This adds a row of orange pictures that represent basic shapes associated with the Devanagari characters. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</p>
-    <p> Each orange key below the table represents a significant part of the shape of two or more characters; when you click on the keys, characters and combinations of characters that incorporate that shape are highlighted above. Click on these characters to add them to the output. The shapes grouped under 'Other' are a mixed bag of characters that didn't fit elsewhere.</p>
     <p><b class="leadin">Latin characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  transcription.</p>
+    <p><b class="leadin">Keyboard.</b> Displays the devanagari characters arranged in a keyboard layout.</p>
 </section>
-<section id="buttons">
-  <h3 href="#buttons">Selection area</h3>
-  <p><img src="images/selection_area.png" alt=""/></p>
-  <p>Click on characters or buttons in this area to add them to the  text area above.</p>
-  <p>Characters are arranged based on the use of the script in order to speed up picking.     Ligatures are in a panel to the left. In the centre, consonants are arranged in alphabetical order, with punctuation and marks below. Vowels are on the right.</p>
-</section>
+
+
+
 <section id="yellow_controls">
   <h3 href="#yellow_controls">Controls on the yellow background</h3>
     <p><img src="images/yellow_controls.png" alt=""/></p>
