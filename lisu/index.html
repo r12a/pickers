@@ -37,7 +37,9 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('ꓡꓲ-ꓢꓴ')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
+  <button title="Add sample text." style="font-size: 150%;" onclick="add('ꓠꓬꓲ ꓻꓠꓬꓲ ꓣꓳꓽꓡꓲꓢꓴ ꓫꓵꓽꓐꓴ ꓒꓵꓽꓒꓽ ꓐꓴꓣꓱꓽˍꓔꓬˍꓟ ꓢꓽꓚꓻ ꓛꓲꓻꓐꓶꓻꓔꓯꓸꓣꓱꓽꓐˍꓡˍꓠꓼꓟ꓾ ꓞꓳꓻꓡꓯꓸ ꓐꓴˍꓶꓻꓙꓳˍꓡꓳ=ꓟꓬꓽꓠꓬꓲ ꓕꓲꓽꓐꓱꓻꓟˍꓠꓬ꓾')">+</button>
+  <!-- source: http://lisuahtar.blogspot.co.uk/2012/02/blog-post.html -->
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -208,7 +210,7 @@
             <td><span class="c">ꓭ</span></td>
           </tr>
         </table></td>
-        <td><table id="punc1">
+        <td style="text-align:center;"><table id="punc1" style="margin:auto;">
           <tr>
             <td><span class="c">ꓸ</span></td>
             <td><span class="c">ꓹ</span></td>
@@ -218,7 +220,7 @@
             <td><span class="c">ꓼ</span></td>
           </tr>
         </table>
-          <table id="punc2">
+          <table id="punc2" style="margin:auto; margin-top: 18px;">
             <tr>
               <td><span class="c">ꓸꓽ</span></td>
               <td><span class="c">ꓹꓽ</span></td>
@@ -232,7 +234,7 @@
               <td><span class="c">ꓻꓼ</span></td>
             </tr>
           </table>
-          <table>
+          <table style="margin:auto; margin-top: 18px;">
             <tr>
               <td><span class="c">-</span></td>
               <td><span class="c">꓾</span></td>
@@ -242,6 +244,12 @@
               <td><span class="c">…</span></td>
             </tr>
           </table></td>
+        <td style="width: 5em;">
+        <span class="touch" title="Space" style="padding: 50px 0; text-align:center; width: 80px" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="No-break space" style="width: 70px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Delete 1 character at end" style="width: 70px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-top:10px;" dir="auto" onClick="deleteAll();">❌</span>
+        </td>
       </tr>
     </table>
   </div>
