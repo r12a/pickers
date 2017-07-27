@@ -36,7 +36,7 @@
 	}
 
 #kbd { 	
-	margin-left: 0; 
+	margin: auto; 
 	}
 #kbd table {
 	margin:0;
@@ -142,6 +142,7 @@
 #shape span, #shape img { cursor:pointer; }
 /*#shape img.noOnclick { position: relative; z-index: 500; }*/
 .hidden { display:none; }
+#shapelist { text-align: center; }
 .shapelist { margin-bottom: 10px; }
 .shapelist li { 
 	position:relative;

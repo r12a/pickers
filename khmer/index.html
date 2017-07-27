@@ -37,7 +37,8 @@
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('អក្សរខ្មែរ')">+</button>
+  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
+  <button title="Add sample text." style="font-size: 150%;" onclick="add('២. មនុស្សគ្រប់រូបមានសិទ្ធិចាកចេញពីប្រទេសណាមួយ រួមទាំងប្រទេសរបស់ខ្លួនផង និងមាន សិទ្ធិវិលត្រឡប់មកប្រទេសរបស់ខ្លួនវិញ។')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -457,7 +458,9 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             </tr>
-          </table></td>
+          </table>
+          
+          </td>
         <td id="closediacritics">
           <div id=cd1><span class=c>&#x17CC;</span><br /><span class=c>&#x17C9;</span><br /><span class=c>&#x17CA;</span></div>
           <div id=cd2><span class=c>&#x17D2;</span></div>
@@ -519,13 +522,15 @@
         </table></td>
       </tr>
       <tr>
-        <td colspan="3">
-        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 100px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u200B');">ZWSP</span> 
-        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u0020');">SPACE</span>
-        <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" onClick="add('\u00A0');">NBSP</span>
+        <td colspan="5">
+          <span class="touch" title="Zero width space" style="padding: 5px 100px;" dir="auto" onClick="add('\u200B');">ZWSP</span>
+          <span class="touch" title="Space" style="padding: 5px 20px;" dir="auto" onClick="add(' ');">SPACE</span>
+          <span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+        <span id="punctuation">          <span class=c>&#x17D7;</span> <span class=c>។ល។</span> <span class=c>&#x17DA;</span> <span class=c>&#x17D4;</span> <span class=c>&#x17D5;</span> <span class=c>&#x17D6;</span> <span class=c>&#x17D9;</span>
+</span>
+          <span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+        <span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>          
         </td>
-        <td id="misc2"><div id="punctuation"><span class=c>&#x17D7;</span> <span class=c>។ល។</span> <span class=c>&#x17DA;</span> <span class=c>&#x17D4;</span> <span class=c>&#x17D5;</span> <span class=c>&#x17D6;</span> <span class=c>&#x17D9;</span></div></td>
-        <td id="zwspcol2">&nbsp;</td>
       </tr>
       </table>
  <details>
