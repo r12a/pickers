@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'eastern';
+    src: url('/shared/webfonts/notosanssyriaceastern-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosanssyriaceastern-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'estrangela';
+    src: url('/shared/webfonts/notosanssyriacestrangela-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosanssyriacestrangela-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'serta';
+    src: url('/shared/webfonts/notosanssyriacwestern-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosanssyriacwestern-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+[lang=aii-Syrc] { font-family: eastern; }
+
+
+
+#alphabet { display: block; margin-right: 20px;  }
+
+#alphabet td.hint {  
+	font-size: 14px;
+	color: #ccc;
+	text-align: left;
+	text-align: end;
+	vertical-align: top;
+	}
+	
+#kbd, #rare, #rare2, #translit { 	
+	margin: auto; 
+	}
+#kbd table {
+	margin:0;
+	}
+	
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: right;
+	text-align: start;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1.4;
+	}
+#kbd #consonants  {
+	text-align: start;
+	padding-inline-end: 20px;
+	}
+
+#kbd #vowels .hint {
+	padding-left: 10px; 
+	}
+
+#kbd #numbers {
+	padding: 0 10px;
+	}
+#kbd #additional span {
+	min-width: 20px;
+	}
+
+#toggleRare {
+	margin: 10px 30px;
+	}
+#rare .hint {
+	vertical-align: top;
+	}
+
+
+#alphabet #controlchars {
+	padding: 0 10px; text-align:center;
+	}
+#alphabet #controlchars p {
+	margin: .3em 0;
+	}
+
+#alphabet span.c, #rare span.c, #rare2 span.c, #translit span.c {
+	display: inline-block;
+	min-width: 20px;
+	text-align:center;
+	}
