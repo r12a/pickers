@@ -948,8 +948,8 @@ function copyTranscription () {
 
 function dotrans (altlist) { 
 	var inserts = altlist.split(',')
-	if (inserts.length == 1 && inserts[0] == '--') add('-')
-	else if (inserts.length == 1 && inserts[0] != '-') add(inserts[0])
+	if (inserts.length == 1 && inserts == '--') add('-')
+	else if (inserts.length == 1 && inserts != '-') add(inserts)
 	else {
 		var insert = ''
 		for (i=0;i<inserts.length;i++) {
