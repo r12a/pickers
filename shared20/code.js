@@ -192,11 +192,11 @@ function getExample (str, lang, dir) {
 	out += '<span class="ex" lang="'+lang+'"'
 	if (dir==='rtl') { out += ' dir="rtl"' }
 	out += '>'+parts[0]+'</span> '
-	if (parts[1]) {
-		out += '<span class="ipa">'+parts[1]+'</span> '
-		}
 	if (parts[2]) {
 		out += '<span class="trans">'+parts[2]+'</span> '
+		}
+	if (parts[1]) {
+		out += '<span class="ipa">'+parts[1]+'</span> '
 		}
 	if (parts[3]) {
 		out += '<span class="meaning">'+parts[3]+'</span> '
