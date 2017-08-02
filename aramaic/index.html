@@ -35,7 +35,7 @@
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
   <button title="Lowercase the text area." onclick="applyLowerCase()">L</button>
   <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png"/></button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('ܒ. ܟܠ ܚܕ ܐܝܬܠܗ ܗܩܘܬܐ ܠܫܘܩܐ ܟܠ ܐܬܪܐ ܒܚܒ݂ܫܐ ܐܬܪܐ ܘܕܝܪܬܐ ܥܠ ܐܬܪܐ.')">+</button>
+  <button title="Add sample text." style="font-size: 150%;" onclick="add('ܐܸܢ ܦܵܝܫܝܼ ܒܘܼܓ̰ܪܹ̈ܐ، ܟܹܐ ܗܵܘܝܼ ܡܲܦܬܘܼܝܹܐ ܘܓܲܪܘܘܼܣܹܐ ܒܣܸܕܪܵܐ ܕܐܵܢ ܠܸܫܵܢܹ̈ܐ ܣܸܦܪ̈ܵܝܹܐ ܘܪܗܸܛܪ̈ܵܝܹܐ ܕܕܘܼܢܝܹܐ.')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -125,13 +125,13 @@ Autofocus:
 
 
 
-<div id="phonemelist" style="position:relative;">
+<div id="phonemelist">
  <div id="transcriptionChoice"></div>
 
 <!-- ʿ ʾ ʕ ʔ a ă ā å ɑ b ḇ d ʤ ð e ĕ ē ɛ f g ḡ ɣ d ḏ h ḥ ħ i ī ɪ j k ḵ l m n o ō p p̄ q r s ṣ š sˤ ʃ t ṯ ṭ tˤ ʧ θ u ū v w x χ y z ʒ  -->
 <div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('ʿ')">ʿ</span>
 <span class="t" onclick="dotrans('ʾ')">ʾ</span>
+<span class="t" onclick="dotrans('ʿ')">ʿ</span>
 <span class="t" onclick="dotrans('ʕ')">ʕ</span>
 <span class="t" onclick="dotrans('ʔ')">ʔ</span>
 <span class="t" onclick="dotrans('a')">a</span>
@@ -172,6 +172,7 @@ Autofocus:
 <span class="t" onclick="dotrans('n')">n</span>
 <span class="t" onclick="dotrans('o')">o</span>
 <span class="t" onclick="dotrans('ō')">ō</span>
+<span class="t" onclick="dotrans('ô')">ô</span>
 <span class="t" onclick="dotrans('p')">p</span>
 <span class="t" onclick="dotrans('p̄')">p̄</span>
 <span class="t" onclick="dotrans('q')">q</span>
@@ -215,7 +216,7 @@ Autofocus:
 <span class="t" onclick="dotrans('ɡ')">g</span>
 <span class="t" onclick="dotrans('ɣ')">ḡ</span>
 <span class="t" onclick="dotrans('h')">h</span>
-<span class="t" onclick="dotrans('ħ,')">ḥ</span>
+<span class="t" onclick="dotrans('ħ')">ḥ</span>
 <span class="t" onclick="dotrans('ɪ')">i</span>
 <span class="t" onclick="dotrans('i,e')">ī</span>
 <span class="t" onclick="dotrans('k')">k</span>
@@ -355,7 +356,7 @@ dir="ltr">
        <td><span class="c">&#x072A;</span></td>
        <td class="hint">š</td>
        <td><span class="c">&#x072B;</span></td>
-       <td class="hint">&nbsp;</td>
+       <td class="hint">t</td>
        <td><span class="c">&#x072C;</span></td>
      </tr>
      </table></td>
@@ -376,15 +377,16 @@ dir="ltr">
      <tbody>
        <tr>
          <td><span class="c">&#x0742;</span></td>
-         <td><span class="c">&#x0741;</span></td>
          <td><span class="c">&#x0740;</span></td>
-           <td><span class="c">&#x0747;</span></td>
+     <td><span class="c">&#x0330;</span></td>
+         <td><span class="c">&#x032E;</span></td>
         </tr>
          <tr>
+         <td><span class="c">&#x0741;</span></td>
          <td><span class="c">&#x0308;</span></td>
     	 <td><span class="c">&#x0303;</span></td>
-         <td><span class="c">&#x032E;</span></td>
-         <td><span class="c">&#x0748;</span></td>
+           <td><span class="c">&#x0747;</span></td>
+     <td><span class="c">&#x0307;</span></td>
 		</tr>
      </tbody>
    </table>
@@ -459,65 +461,11 @@ dir="ltr">
      <td><span class="c">&#x0651;</span></td>
      <td><span class="c">&#x0652;</span></td>
      <td><span class="c">&#x0670;</span></td>
-     <td><span class="hint">marks</span></td>
-     <td><span class="c">&#x0330;</span></td>
      </tr>
     </table>
  </details>
 
 
-<details>
- <summary>show/hide less common characters</summary>
- <table id="rare">
-   <tr>
-     <td class="hint">d/r</td>
-     <td><span class="c">&#x0716;</span></td>
-     <td class="hint">p</td>
-     <td><span class="c">&#x0727;</span></td>
-     <td class="hint">a</td>
-     <td><span class="c">&#x0711;</span></td>
-     <td class="hint">marks</td>
-     <td><span class="c">&#x0304;</span></td>
-     <td><span class="c">&#x0320;</span></td>
-     <td><span class="c">&#x0307;</span></td>
-     <td><span class="c">&#x0323;</span></td>
-     <td><span class="c">&#x030A;</span></td>
-     <td><span class="c">&#x0325;</span></td>
-     <td><span class="c">&#x0324;</span></td>
-     <td><span class="c">&#x032D;</span></td>
-     <td class="hint">harklean</td>
-         <td><span class="c">&#x070B;</span></td>
-         <td><span class="c">&#x070C;</span></td>
-         <td><span class="c">&#x070D;</span></td>
-     <td class="hint">cross</td>
-         <td><span class="c">&#x2670;</span></td>
-         <td><span class="c">&#x2671;</span></td>
-     </tr>
-    </table>
- <table id="rare2">
-   <tr>
-     <td class="hint">punctuation</td>
-         <td><span class="c">&#x0700;</span></td>
-         <td><span class="c">&#x0701;</span></td>
-         <td><span class="c">&#x0702;</span></td>
-         <td><span class="c">&#x0703;</span></td>
-         <td><span class="c">&#x0704;</span></td>
-         <td><span class="c">&#x0705;</span></td>
-         <td><span class="c">&#x0706;</span></td>
-         <td><span class="c">&#x0707;</span></td>
-         <td><span class="c">&#x0708;</span></td>
-         <td><span class="c">&#x0709;</span></td>
-          <td><span class="c">&#x070A;</span></td>
-    <td class="hint">marks</td>
-         <td><span class="c">&#x0743;</span></td>
-         <td><span class="c">&#x0744;</span></td>
-         <td><span class="c">&#x0745;</span></td>
-         <td><span class="c">&#x0746;</span></td>
-         <td><span class="c">&#x0749;</span></td>
-         <td><span class="c">&#x074A;</span></td>
-    </tr>
-    </table>
-</details>
 
 
 

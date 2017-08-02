@@ -66,7 +66,7 @@ function event_mouseoverChar ()  {
 	if (ncr === '\u0710') ncr = 'ܝ'+ncr+' \u0715'+ncr+' '+ncr
 	else if (window.rightOnly.has(ncr)) ncr = 'ܝ'+ncr+' '+ncr
 	else if (bothJoin.has(ncr)) ncr = ncr+'ܝ'+ncr+'ܝ'+ncr+' '+ncr
-	var cursive = '<span style="font-family:eastern;">'+ncr+'</span> &nbsp; <span style="font-family:estrangela;">'+ncr+'</span> &nbsp; <span style="font-family:serta;">'+ncr+'</span>'
+	var cursive = '<span style="font-family: \'East Syriac Adiabene\',\'Noto Sans Syriac Eastern\', serif;">'+ncr+'</span>'
 	document.getElementById('cursive').innerHTML = cursive
 	
 	

@@ -1,19 +1,19 @@
 @font-face {
-    font-family: 'eastern';
+    font-family: 'Noto Sans Syriac Eastern WF';
     src: url('/shared/webfonts/notosanssyriaceastern-regular-webfont.woff2') format('woff2'),
          url('/shared/webfonts/notosanssyriaceastern-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
-    font-family: 'estrangela';
+    font-family: 'Noto Sans Syriac Estrangela WF';
     src: url('/shared/webfonts/notosanssyriacestrangela-regular-webfont.woff2') format('woff2'),
          url('/shared/webfonts/notosanssyriacestrangela-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
-    font-family: 'serta';
+    font-family: 'Noto Sans Syriac Western WF';
     src: url('/shared/webfonts/notosanssyriacwestern-regular-webfont.woff2') format('woff2'),
          url('/shared/webfonts/notosanssyriacwestern-regular-webfont.woff') format('woff');
     font-weight: normal;
@@ -21,7 +21,7 @@
 	}
 
 
-[lang=aii] { font-family: "East Syriac Ctesiphon", "East Syriac Adiabene", eastern, serif; font-size: 180%; }
+[lang=aii] { font-family: "East Syriac Ctesiphon", "East Syriac Adiabene", "Noto Sans Syriac Eastern WF", serif; font-size: 180%; }
 
 
 
