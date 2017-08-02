@@ -9,6 +9,6 @@ defaults.language = 'ar'
 defaults.blocklocation= '/scripts/arabic/block'
 defaults.uifont = '"East Syriac Adiabene"'; // font name per usage in CSS
 defaults.uisize = "40";  // number of pixels (just the number)
-defaults.ccbase = "\u0718";  // default base for combining characters
+defaults.ccbase = "ܖ";  // default base for combining characters
 
 
