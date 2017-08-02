@@ -88,3 +88,11 @@
 	min-width: 20px;
 	text-align:center;
 	}
+
+
+
+#cursive { 
+	font-family: 'East Syriac Adiabene','Noto Sans Syriac Eastern', serif; 
+	font-size: 36px;
+	line-height: 1;
+	}
