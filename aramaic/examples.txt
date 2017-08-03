@@ -1,0 +1,40 @@
+ܪܒ݂ܵܨܵܐ‎/rḇāṣā
+ܒܘܼܓ̰ܪܹ̈ܐ/bûʤreʾ/buʤrī/cultivated
+ܐܵܗܵܐ/ʾahaʾ/ʔaha/this
+ܗܵܘܝܼ/hawî/hawi/be
+ܚܲܕ/ḥăd/xa/one
+ܪܗܸܛܪ̈ܵܝܹܐ/rhĭṭ"rayeʾ/rhɪtrajɪ/eloquent
+ܩܘܼܝܵܡܵܐܼ/qûyamaʾ/qujama/subsistence
+ܟܬܝ݂ܵܒܵܬܹܐ/ktîḇat"eʿ/cʰtʰiwatʰɪ/writings
+ܢܘܼܟ݂ܪ̈ܵܝܹܐ/nûḵr"ayeʿ/nuxrajɪ/foreign
+ܕܠܐ/dlaʾ/dla/without
+ܐܘ݂ܡܬܵܐ/ʾûmtaʾ/ʔumtʰa/nation
+ܐܸܢ/ʾĭn/ʔɪn/if
+ܦܵܐܹܣ/paʿes/pʰajiʃ/become
+ܦܵܝܫܝܼ/payšî/pʰeʃi/become
+ܡܵܪܹܐ/mareʾ/marɪ/possessor of
+ܠܸܫܵܢܵܐ/lĭšanaʾ/liʃana/language
+ܡܵܦܬܘܼܝܹܐ/maptûyeʾ/mapʰtʰujɪ/expand
+ܢܵܛܘܿܪܹ̈ܐ/naṭô"reʾ/naturɪ/keepers
+ܒܵܟܸܐ/baḵĭʾ/baxi/cry
+ܡܵܚܸܐ/maḥɪʾ/maxi/hit
+ܡܠܟܐ/mlkʾ/malcʰa/king
+ܡܠܟ̈ܐ/mlk"ʾ/malcʰɪ/kings
+ܒܬ݇ܪ/b(t)r/bar/after
+ܣܲܡܵܐ/sămaʾ/samma/poison
+ܣܵܡܵܐ/samaʾ/saːma/portion
+ܬܸܢܵܐ/tĭnaʾ/tʰɪnna/smoke
+ܬܹܐܢܵܐ/teʾnaʾ/tʰiːna/fig
+ܛܠܲܦ̮ܚܹ̈ܐ/ṭlaꝑḥeʾ/tloxi/lentils
+
+
+
+
+
+to change order of ipa and trans
+
+<span class="charExample"><span class="ex" lang="aii" dir="rtl">([^<]+)</span> <span class="ipa">([^<]+)</span> <span class="trans">([^<]+)</span> <span class="meaning">([^<]+)</span></span>
+
+<span class="charExample"><span class="ex" lang="aii" dir="rtl">$1</span> <span class="trans">$3</span> <span class="ipa">$2</span> <span class="meaning">$4</span></span>
+
+
