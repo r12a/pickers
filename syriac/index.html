@@ -35,7 +35,7 @@
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
   <button title="Lowercase the text area." onclick="applyLowerCase()">L</button>
   <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png"/></button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('ܒ. ܟܠ ܚܕ ܐܝܬܠܗ ܗܩܘܬܐ ܠܫܘܩܐ ܟܠ ܐܬܪܐ ܒܚܒ݂ܫܐ ܐܬܪܐ ܘܕܝܪܬܐ ܥܠ ܐܬܪܐ.')">+</button>
+  <button title="Add sample text." style="font-size: 150%;" onclick="add('ܘܐ̄ܢܵܫ̈ܝܼܢ ܐܵܡܪܝܼܢ ܕܲܐܟܙܢܵܐ ܩܲܕ݂ܡܵܝܲܬ݂ ܪܟ݂ܲܒ݂ ܐܵܬ݂ܘ̈ܵܬ݂ܲܐ ܥܸܒ݂ܪ̈ܵܝܵܬ݂ܲܐ ܘܲܒ݂ܗܹܝܢ ܣܡ ܢܡܘܣܐ ܆ ܗܟܢܐ ܘܫܝܠܡܘܢ ܪܟܒ ܐܬܘ̈ܬܐ ܕܣܦܪ̈ܐ ܐܚܪ̈ܢܐ ܘܝܗ݂ܒ ܠܥܡ̈ܡܐ ܕܐܬܝܩܪ ܡܢܗܘܢ ܂')">+</button>
   <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
   </span>
   
@@ -48,17 +48,17 @@
     title="Convert Syriac text to an UN Latin transcription.">Transcribe<br/>
     to UN</button--> 
     
-    <button  id="makeExample" onclick="makeExample('aii-Syrc','rtl')" 
+    <button  id="makeExample" onclick="makeExample('syr-Syrc','rtl')" 
     title="Create an example.">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('syriac','aii-Syrc','rtl')" 
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('syriac','syr-Syrc','rtl')" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
 
 
 <div id="outputDiv">
-  <textarea dir="auto" rows="2" cols="80" id="output" name="output" spellcheck="false"></textarea>
+  <textarea dir="auto" rows="2" cols="80" id="output" name="output" spellcheck="false" placeholder="›"></textarea>
 </div>
 
 
@@ -359,7 +359,7 @@ dir="ltr">
        <td><span class="c">&#x072A;</span></td>
        <td class="hint">š</td>
        <td><span class="c">&#x072B;</span></td>
-       <td class="hint">&nbsp;</td>
+       <td class="hint">t</td>
        <td><span class="c">&#x072C;</span></td>
      </tr>
      </table></td>
