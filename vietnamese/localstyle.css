@@ -55,28 +55,6 @@ span.hint {
 	vertical-align: middle; 
 	line-height: 1.4;
 	}
-/*
-#kbd #combining { 
-	margin-top: 10px; 
-	width: 300px; 
-	padding:5px 8px; 
-	border: dotted 1px #999; 
-	border-radius: 5px;
-	
-	border-collapse:collapse;
-	margin-bottom: 10px;
-	}
-.combining { 
-	text-align: left; 
-	border-bottom: 1px dotted teal; 
-	margin: 0 0 2px 0; 
-	padding-left: 4px; 
-	line-height: 1.8;
-	}
-.combining img { 
-	margin-right: 10px; 
-	}
-#combining td { padding-right: 10px; } */
 
 #symbols {
 	line-height: 1.6;
@@ -124,5 +102,22 @@ span.hint {
 	padding-top: 5px; 
 	}
 
-
-
+#alphabet td span.c { 
+	cursor: pointer; 
+	font-size: 24px;
+	padding: 1px;
+	min-width: 25px;
+	display: inline-block;
+	}
+.shifted, .unshifted {
+	display: inline-block;
+	width: 8em;
+	line-height: 1;
+	}
+#grid {
+	margin: auto;
+	}
+#alphabet td {
+	min-width: 30px;
+	text-align: center;
+	}

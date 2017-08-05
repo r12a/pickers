@@ -113,52 +113,17 @@ function findShape (shapelist, extrashapes, show) {
 	}
 
 
-function splitSyllables (str) {
-	// str is myanmar text
-	// produces a version of the string with spaces separating syllables except for conjuncts
-	// conjuncts are separated by virama
-	consonants = {'အ':'','က':'','ခ':'','ဂ':'','ဃ':'','င':'','စ':'','ဆ':'','ဇ':'','ဈ':'','ည':'','ဉ':'','ဋ':'','ဌ':'','ဍ':'','ဎ':'','ဏ':'','တ':'','ထ':'','ဒ':'','ဓ':'','န':'','ပ':'','ဖ':'','ဗ':'','ဘ':'','မ':'','ယ':'','ရ':'','လ':'','ဝ':'','သ':'','ဿ':'','ဟ':'','ဠ':'','ၐ':'','ၑ':'' }
-	indvowels = { 'ဣ':'','ဤ':'','ဥ':'','ဦ':'','ဧ':'','ဩ':'','ဪ':'','၌':'','၍':'','၎':'','၏':'','၊':'','။':''}
-	str = ' '+str+' '
-	var out = ''
-	for (p=0;p<str.length;p++) {
-		if (str[p] in consonants || str[p] in indvowels) {
-			if (str[p+1] != '\u103A' && str[p+1] != '\u1039' && str[p+1] != '\u1037') out += ' '+str[p]
-			else out += str[p]
-			}
-		else out += str[p]
-		}
-	out = out.replace(/\u1039 /g,'\u1039')
-	
-	// split away non-Burmese or dandas
-	return out.trim()
-	}
 
-function splitSyllables (str) {
-	// str is myanmar text
-	// produces a version of the string with spaces separating syllables except for conjuncts
-	// conjuncts are separated by virama
-	var consonants = {'အ':'','က':'','ခ':'','ဂ':'','ဃ':'','င':'','စ':'','ဆ':'','ဇ':'','ဈ':'','ည':'','ဉ':'','ဋ':'','ဌ':'','ဍ':'','ဎ':'','ဏ':'','တ':'','ထ':'','ဒ':'','ဓ':'','န':'','ပ':'','ဖ':'','ဗ':'','ဘ':'','မ':'','ယ':'','ရ':'','လ':'','ဝ':'','သ':'','ဿ':'','ဟ':'','ဠ':'','ၐ':'','ၑ':'' }
-	var indvowels = { 'ဣ':'','ဤ':'','ဥ':'','ဦ':'','ဧ':'','ဩ':'','ဪ':'','၌':'','၍':'','၎':'','၏':'','၊':'','။':''}
-	var str = ' '+str+' '
-	var out = ''
-	for (p=0;p<str.length;p++) {
-		if (str[p] in consonants || str[p] in indvowels) {
-			if (str[p+1] != '\u103A' && str[p+1] != '\u1039' && str[p+1] != '\u1037') out += ' '+str[p]
-			else out += str[p]
-			}
-		else out += str[p]
+
+function toggleShift (node, LC, UC) {
+	if (node.className =='unshifted') {
+		document.getElementById(LC).style.display = 'none'
+		document.getElementById(UC).style.display = 'table'
+		node.className = 'shifted'
+		} 
+	else {
+		document.getElementById(LC).style.display = 'table'
+		document.getElementById(UC).style.display = 'none'
+		node.className = 'unshifted'
 		}
-	out = ' '+out.replace(/\u1039 /g,'\u1039')
-	
-	// split away non-Burmese or dandas or numbers
-	out2 = ''
-	var reLetter = /[က-ဿ၌-ႏႚ-႟]/
-	for (p=1;p<out.length;p++) { //console.log(out[p],out[p].match(reLetter))
-		if (! out[p].match(reLetter) && out[p-1].match(reLetter) && out[p] != ' ') {
-			out2 += ' '+out[p]
-			}
-		else out2 += out[p]
-		}
-	return out2.trim()
 	}

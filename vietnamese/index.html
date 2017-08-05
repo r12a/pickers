@@ -116,7 +116,7 @@
 <div id="tables">
   <div id="alphabet" class="default">
     <div id="grid">
-      <table id="upper">
+      <table id="upper" style="display:none;">
         <tr>
           <td ><span class="c">&#x0042;</span></td>
           <td ><span class="c">&#x0043;</span></td>
@@ -211,7 +211,9 @@
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td colspan="7"><span class="touch" title="Space" style="padding: 5px 20px;" dir="auto" onClick="add(' ');">SPACE</span>
+          <td colspan="7">
+                    <span class="shifted" dir="auto" onClick="toggleShift(this, 'upper', 'lower')">SHIFT</span>
+          <span class="touch" title="Space" style="padding: 5px 20px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
 <span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
 <span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
@@ -220,7 +222,7 @@
       </table>
     </div>
   </div>
-  <div id=shapelist style="display:none">
+  <div id="shapelist" style="display:none">
     <div></div>
   </div>
   <div id="extrashapes2"></div>
