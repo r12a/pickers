@@ -37,7 +37,7 @@
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
   <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png"/></button>
   <button title="Add sample text." style="font-size: 150%;" onclick="add('2. يَحِقُ لِكُلِ فَرْد أَن يُغَادِر أَيْةً بِلَاد بِمَا فِي ذَلِك بَلَدَه كَمَا يَحِقُ لَه العَودَة إِلَيه.')">+</button>
-  <button title="How to use this picker." onClick="help = window.open('help', 'help'); help.focus();"><img alt="help" src="../shared20/help.png"/></button>
+<a href="help"><button title="How to use this picker."><img alt="help" src="../shared20/help.png"/></button></a>
   </span>
   
 <span id="tools">
@@ -55,7 +55,7 @@
 
 
 <div id="outputDiv" dir=rtl>
-  <textarea rows="2" cols="80" id="output" dir="auto" name="output"></textarea>
+  <textarea rows="2" cols="80" id="output" dir="auto" name="output" placeholder="›"></textarea>
 </div>
 
 
@@ -241,10 +241,9 @@ Autofocus:
     </form>
   </div>
   
-  <div class="control" style="text-align:center; color: white; background-color: #60ADFB; cursor: pointer;" onClick="help = window.open('help', 'help'); help.focus();">Help<br/><img src="../images/help.png" alt="" style="vertical-align: baseline;"/>
-  </div>
+  <div class="control" id="helpcontrol"><a href="help">Help<br/><img src="../shared20/help.png" alt=""/></a>
 </div>
-
+</div>
 
 
 
@@ -296,7 +295,11 @@ Autofocus:
 </div>
 
 
-<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>. Source: <a href="https://github.com/r12a/pickers/tree/gh-pages/arabicblock">GitHub</a></div>
+<div class="smallprint">
+Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/arabicblock"><!-- #BeginDate format:En2 -->05-Aug-2017<!-- #EndDate --></a>.
+Make a <a href="https://github.com/r12a/pickers/issues/new?title=[allarabic%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
+Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
+</div>
 
 
 </body>
