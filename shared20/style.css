@@ -340,14 +340,15 @@ span.c:hover {
 	}
 
 
-
 .smallprint {
 	min-height: 800px;
 	vertical-align: bottom;
 	text-align: right;
 	margin-right: 20px; 
 	}
-	
+#version {
+	border-top-left-radius: 8px;
+	}
 	
 
  #keyboard { 
@@ -564,9 +565,11 @@ summary:hover {
 	color: #c33;
 	}
 
+/*
 #copydelete button:last-of-type {
 	margin-left: 1.5em;
 	}
+*/
 #copydelete img {
 	vertical-align: top;
 	}
@@ -599,4 +602,21 @@ summary:hover {
 	}
 .setDir {
 	cursor: pointer;
+	}
+
+#helpcontrol {
+	text-align:center; 
+	color: white; 
+	background-color: #60ADFB; 
+	cursor: pointer;
+	}
+#helpcontrol a {
+	color: white;
+	}
+#helpcontrol a:hover {
+	color: white;
+	background-color: transparent;
+	}
+#helpcontrol img {
+	vertical-align: baseline;
 	}
