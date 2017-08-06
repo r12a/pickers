@@ -113,6 +113,7 @@ span.hint {
 	display: inline-block;
 	width: 8em;
 	line-height: 1;
+	cursor: pointer;
 	}
 #grid {
 	margin: auto;
