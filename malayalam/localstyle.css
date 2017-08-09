@@ -60,3 +60,7 @@ span.hint {
 
 
 #kbd #numbers  {  padding: 5px; border: solid 1px #ccc; border-radius: 10px; }
+
+#shapelist, #extrashapes {
+	text-align:center;
+	}
