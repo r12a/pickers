@@ -2,7 +2,7 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for character picker 20</title>
+<title>Help for Tamil character picker 20</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="../../shared20/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
@@ -25,23 +25,26 @@
   <div id="toc"><!-- placeholder --></div>
   <div class="noprint">
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="/scripts/links?script=tamil">Tamil script links</a></p>
         <p><a href="/pickers/">List of pickers </a></p>
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->05-Aug-2017<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=tamil" title="Show all blog posts tagged with 'tamil'">tamil</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->09-Aug-2017<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=tamil" title="Show all blog posts tagged with 'tamil'">tamil</a></p>
 
-<p>This Unicode character picker allows you to produce or analyse runs of  text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-<p><strong style="color: brown;">This page gives only generic help on pickers, while I find the time to develop a dedicated page. It may not cover all features in the picker, and  uses Armenian examples.</strong></p>
+
+<p>This Unicode character picker allows you to produce or analyse runs of Tamil text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[tamil%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/tamil">the Github commit list</a>.</p>
 
 
 <section id="basics">
   <h2 href="#basics">Basic use</h2>
 <p>To produce characters in the text area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the controls to get further information about the characters. You must have JavaScript enabled. </p>
+<p>The controls just above the text area allow you to interact with the text in various ways. They nearly all work on highlighted text within the text area, or if there is no highlight, on all the text. Controls near the bottom of the picker allow you to change font, font size, line-height, text direction, etc.</p>
 <p><b class="leadin">Sample text</b> If you want to add some sample text to the text area, click on the <img src="../../images/sample.png" alt="plus sign"/> icon.</p>
+
 <p><b class="leadin">Fonts</b>
-To properly display the text you will need to choose a font that is loaded on your system or device, or use the web font downloaded with the page. The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7. See more information about <a href="/scripts/fontlist/#tamil" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
+  To properly display the text you will need to choose a font that is loaded on your system or device, or use the web font downloaded with the page (Noto Sans Tamil). The font list contains fonts that can be found on the Mac  and Windows. See more information about <a href="/scripts/fontlist/#tamil" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
 
 <p><b class="leadin">Mobile devices</b>
 When working on an iPad or similar device, you should turn off<code class="kw" translate="no"> Autofocus</code> (just below the text area). This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</p>
@@ -56,21 +59,21 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 
 
 <section id="help">
-<h2 href="#help">Interactive help</h2>
+<h2 href="#help">Select the thing you want help with
 
-<p><strong>Select the thing you want help with:</strong></p>
-
-<map name="helpSelector">
-  <area shape="rect" coords="-6,-62,641,33" href="#top_controls" />
-  <area shape="rect" coords="0,33,646,181" href="#text_area" />
-  <area shape="rect" coords="2,182,646,237" href="#secondary_output" />
-  <area shape="rect" coords="0,244,16,362" href="#input_aids" />
-  <area shape="rect" coords="23,241,375,262" href="#character_names" />
-  <area shape="rect" coords="535,236,648,259" href="#autofocus" />
-  <area shape="rect" coords="20,261,601,517" href="#buttons" />
-  <area shape="rect" coords="10,519,636,572" href="#yellow_controls" />
-  <area shape="rect" coords="12,572,616,634" href="#more_controls" />
-</map>
+  <map name="helpSelector">
+    <area shape="rect" coords="13,67,674,106" href="#top_controls" />
+    <area shape="rect" coords="14,106,678,278" href="#text_area" />
+    <area shape="rect" coords="17,278,671,328" href="#secondary_output" />
+    <area shape="rect" coords="-1,336,22,469" href="#input_aids" />
+    <area shape="rect" coords="22,333,374,354" href="#character_names" />
+    <area shape="rect" coords="559,331,672,354" href="#autofocus" />
+    <area shape="rect" coords="46,361,646,630" href="#buttons" />
+    <area shape="rect" coords="13,661,666,732" href="#shape_selector" />
+    <area shape="rect" coords="10,734,656,787" href="#yellow_controls" />
+    <area shape="rect" coords="9,788,613,850" href="#more_controls" />
+  </map>
+</h2>
 <p><img usemap="#helpSelector" alt="Help selector." src="images/selector.png"/></p>
 
 
@@ -80,16 +83,14 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
   <h3 href="#text_area">Text area</h3>
   <p><img src="images/text_area.png" alt=""/></p>
   <p>This is where you see characters appearing as you select them from the panels lower down or where you paste text into the picker. Once you have some text here, you can perform various operations on it, or simply copy it to the clipboard for use elsewhere. </p>
-  <p>The controls just above the text area allow you to interactive with the text in various ways. They mostly work on highlighted text within the text area, or if there is no highlight they work on all the text. Controls near the bottom of the picker allow you to change font, font size, line-height, text direction, etc.</p>
 </section>
-
 
 
 <section id="buttons">
   <h3 href="#buttons">Selection area</h3>
   <p><img src="images/selection_area.png" alt=""/></p>
   <p>Click on characters or buttons in this area to add them to the  text area above.</p>
-  <p>Characters are arranged based on the use of the script in order to speed up picking.     Ligatures are in a panel to the left. In the centre, consonants are arranged in alphabetical order, with punctuation and marks below. Vowels are on the right.</p>
+  <p>Characters have been arranged so that is easy to input them, and especially to ensure that multiple combining characters are input in the right normalised order.  Numbers and numeric symbols are to the far right. Open the expanding link for  obsoleted and  less often used characters.</p>
 </section>
 
 
@@ -98,23 +99,26 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
   <h3 href="#top_controls">Controls above the text area</h3>
       <p><img src="images/controls_above.png" alt=""/></p>
       <p>Controls above the input box allow you to run various operations on the text in the box. <strong>Most of them work on what you have selected</strong> within the box, or the whole box if nothing is selected.</p>
-      <p><strong style="color:brown;">There may be additional controls in the Tamil picker. They will be covered once this page is updated.</strong></p>
+      
       <p><b class="leadin">Copy, select, delete, etc. (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p>
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
       <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
-    <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Tamil text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</p>
+      <p>        <b class="leadin">Tamil to ISO.</b> Produces an ISO-15919 transliteration, that basically latinizes the Tamil characters. The result doesn't normally tell you exactly how to pronounce the Tamil text, but  each Tamil character is represented by a unique sequence in Latin, with a few exceptions. This transcription should produce fully conformant output.
+      </p>
+      <p> <b class="leadin">ISO to Tamil.</b> Produces Tamil text from an ISO-15919 transcription. </p>
+    <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Tamil text, [2] transliteration, [3] IPA transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use nothing between the slashes.</p>
        <p>For example, the following:</p>
-      <p> այբուբեն/ɑjbubɛn/aybuben/alphabet</p>
+      <p><span lang="ta">தமிழ் அரிச்சுவடி</span>/tamiḻ ariccuvaṭi/t̪ɐmɨɻ aɾiˈ͡tʃːuʋaɖi/Tamil script</p>
       <p>will produce:</p>
-      <p style="text-align:left; text-justify:auto;"><code> &lt;span class=&quot;ex&quot; lang=&quot;hy&quot;&gt;այբուբեն&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;ɑjbubɛn&lt;/span&gt; &lt;span class=&quot;trans&quot;&gt;aybuben&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;alphabet&lt;/span&gt;</code></p>
-      <p>To get just the Tamil and the second transcription you would use:</p>
-       <p><span lang="ar" dir="rtl"></span>այբուբեն//aybuben</p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;charExample&quot;&gt;&lt;span class=&quot;ex&quot; lang=&quot;ta&quot;&gt;தமிழ் அரிச்சுவடி&lt;/span&gt; &lt;span class=&quot;trans&quot;&gt;tamiḻ ariccuvaṭi&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;t̪ɐmɨɻ aɾiˈ͡tʃːuʋaɖi&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Tamil script&lt;/span&gt;&lt;/span&gt;</code></p>
+      <p>To get just the Tamil and the meaning you would use:</p>
+       <p><span lang="ta">தமிழ் அரிச்சுவடி</span>///Tamil script</p>
        
       
       <p><b class="leadin">Character markup.</b> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the text area, then click this button.  It will return something like the following for each of the characters:</p>
-      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;codepoint&quot;&gt;&lt;span lang=&quot;hy&quot;&gt;&amp;#x0576;&lt;/span&gt; &lt;span class=&quot;uname&quot;&gt;U+0576 ARMENIAN SMALL LETTER NOW&lt;/span&gt;&lt;/span&gt;</code></p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;codepoint&quot;&gt;&lt;span lang=&quot;ta&quot;&gt;&amp;#x0BF5;&lt;/span&gt; [&lt;span class=&quot;uname&quot;&gt;U+0BF5 TAMIL YEAR SIGN&lt;/span&gt;]&lt;/span&gt;</code></p>
       <p>When you add it to your document, it will look like this.</p>
-      <p><span class="codepoint"><span lang="hy">&#x0576;</span> <span class="uname">U+0576 ARMENIAN SMALL LETTER NOW</span></span></p>
+      <p><span class="codepoint"><span lang="ta">&#x0BF5;</span> [<span class="uname">U+0BF5 TAMIL YEAR SIGN</span>]</span></p>
 </section>
 
 <section>
@@ -141,14 +145,15 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
   <h3 href="#input_aids">Input aids</h3>
     <p><img src="images/input_aids.png" style="float:left; margin-right:1em; " alt=""/></p>
     <p>The vertical grey bar to the left allows you to turn on/off a number of panels that can help create the text you want.</p>
-    <p><strong style="color:brown;">There may be more or fewer controls in the Tamil picker. They will be covered once this page is updated.</strong></p>
     <p><b class="leadin">Default.</b> Turns off all input aids and closes all panels.</p>
       <p><b class="leadin">Hinting.</b> Changes the selection area so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.    </p>
-    <p><b class="leadin">Shape lookup.</b> This adds a row of orange pictures that represent basic shapes associated with the Tamil characters. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</p>
-    <p> Each orange key below the table represents a significant part of the shape of two or more characters; when you click on the keys, characters and combinations of characters that incorporate that shape are highlighted above. Click on these characters to add them to the output. The shapes grouped under 'Other' are a mixed bag of characters that didn't fit elsewhere.</p>
-    <p><b class="leadin">Latin characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  transcription.</p>
+    <p><b class="leadin" id="shape_selector">Shape lookup.</b> This adds a row of orange pictures that represent basic shapes associated with the Tamil characters. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</p>
+    <p><img src="images/shape_selector.png" alt=""/></p>
+    <p> Each orange key below the table represents a significant part of the shape of two or more characters; when you click on the keys, characters and combinations of characters that incorporate that shape are highlighted above. Click on these characters to add them to the output.</p>
+    <p>At the same time as highlighting characters above, clicking on the orange shapes can produce characters below. These are combinations of characters, often in conjunct form. You can also click on these to add them to the text area.</p>
+    <p><b class="leadin">Latin characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  transcription. Click on them to add them to the text area.</p>
+    <p><b class="leadin">ISO transcription.</b> Displays a panel of lowercase Latin characters. Clicking on those generates Tamil text.</p>
 </section>
-
 
 
 <section id="yellow_controls">
@@ -169,7 +174,9 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 </section>
 </section>
 
-<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+<div class="smallprint">Latest commit <a href="https://github.com/r12a/pickers/commits/gh-pages/tamil/help"><!-- #BeginDate format:En2 -->09-Aug-2017<!-- #EndDate --></a>. 
+Make a <a href="https://github.com/r12a/pickers/issues/new?title=[tamil%20help]%20%20ADD%20TITLE%20HERE">comment</a>.
+Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a>.</div>
 </body>
 <script type="text/javascript">
 createtoc(3);
