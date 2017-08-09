@@ -2,7 +2,7 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for character picker 20</title>
+<title>Help for Thai character picker 20</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="../../shared20/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
@@ -25,23 +25,26 @@
   <div id="toc"><!-- placeholder --></div>
   <div class="noprint">
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="/scripts/links?script=thai">Thai script links</a></p>
         <p><a href="/pickers/">List of pickers </a></p>
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->05-Aug-2017<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=thai" title="Show all blog posts tagged with 'thai'">thai</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->09-Aug-2017<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=thai" title="Show all blog posts tagged with 'thai'">thai</a></p>
 
-<p>This Unicode character picker allows you to produce or analyse runs of  text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-<p><strong style="color: brown;">This page gives only generic help on pickers, while I find the time to develop a dedicated page. It may not cover all features in the picker, and  uses Armenian examples.</strong></p>
+
+<p>This Unicode character picker allows you to produce or analyse runs of Thai text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[thai%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/thai">the Github commit list</a>.</p>
 
 
 <section id="basics">
   <h2 href="#basics">Basic use</h2>
 <p>To produce characters in the text area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the controls to get further information about the characters. You must have JavaScript enabled. </p>
+<p>The controls just above the text area allow you to interact with the text in various ways. They nearly all work on highlighted text within the text area, or if there is no highlight, on all the text. Controls near the bottom of the picker allow you to change font, font size, line-height, text direction, etc.</p>
 <p><b class="leadin">Sample text</b> If you want to add some sample text to the text area, click on the <img src="../../images/sample.png" alt="plus sign"/> icon.</p>
+
 <p><b class="leadin">Fonts</b>
-To properly display the text you will need to choose a font that is loaded on your system or device, or use the web font downloaded with the page. The font list indicates which fonts are standard for Mac (Snow Leopard/Lion) and Windows7. See more information about <a href="/scripts/fontlist/#thai" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
+  To properly display the text you will need to choose a font that is loaded on your system or device, or use the web font downloaded with the page (Noto Sans Thai). The font list contains fonts that can be found on the Mac  and Windows. See more information about <a href="/scripts/fontlist/#thai" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
 
 <p><b class="leadin">Mobile devices</b>
 When working on an iPad or similar device, you should turn off<code class="kw" translate="no"> Autofocus</code> (just below the text area). This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</p>
@@ -56,21 +59,21 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 
 
 <section id="help">
-<h2 href="#help">Interactive help</h2>
+<h2 href="#help">Select the thing you want help with
 
-<p><strong>Select the thing you want help with:</strong></p>
-
-<map name="helpSelector">
-  <area shape="rect" coords="-6,-62,641,33" href="#top_controls" />
-  <area shape="rect" coords="0,33,646,181" href="#text_area" />
-  <area shape="rect" coords="2,182,646,237" href="#secondary_output" />
-  <area shape="rect" coords="0,244,16,362" href="#input_aids" />
-  <area shape="rect" coords="23,241,375,262" href="#character_names" />
-  <area shape="rect" coords="535,236,648,259" href="#autofocus" />
-  <area shape="rect" coords="20,261,601,517" href="#buttons" />
-  <area shape="rect" coords="10,519,636,572" href="#yellow_controls" />
-  <area shape="rect" coords="12,572,616,634" href="#more_controls" />
-</map>
+  <map name="helpSelector">
+    <area shape="rect" coords="12,64,680,107" href="#top_controls" />
+    <area shape="rect" coords="13,108,684,275" href="#text_area" />
+    <area shape="rect" coords="11,275,677,328" href="#secondary_output" />
+    <area shape="rect" coords="0,335,19,497" href="#input_aids" />
+    <area shape="rect" coords="19,332,371,353" href="#character_names" />
+    <area shape="rect" coords="564,329,677,352" href="#autofocus" />
+    <area shape="rect" coords="33,356,660,608" href="#buttons" />
+    <area shape="rect" coords="9,608,667,648" href="#shape_selector" />
+    <area shape="rect" coords="9,647,669,701" href="#yellow_controls" />
+    <area shape="rect" coords="8,699,612,761" href="#more_controls" />
+  </map>
+</h2>
 <p><img usemap="#helpSelector" alt="Help selector." src="images/selector.png"/></p>
 
 
@@ -80,16 +83,15 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
   <h3 href="#text_area">Text area</h3>
   <p><img src="images/text_area.png" alt=""/></p>
   <p>This is where you see characters appearing as you select them from the panels lower down or where you paste text into the picker. Once you have some text here, you can perform various operations on it, or simply copy it to the clipboard for use elsewhere. </p>
-  <p>The controls just above the text area allow you to interactive with the text in various ways. They mostly work on highlighted text within the text area, or if there is no highlight they work on all the text. Controls near the bottom of the picker allow you to change font, font size, line-height, text direction, etc.</p>
 </section>
-
 
 
 <section id="buttons">
   <h3 href="#buttons">Selection area</h3>
   <p><img src="images/selection_area.png" alt=""/></p>
   <p>Click on characters or buttons in this area to add them to the  text area above.</p>
-  <p>Characters are arranged based on the use of the script in order to speed up picking.     Ligatures are in a panel to the left. In the centre, consonants are arranged in alphabetical order, with punctuation and marks below. Vowels are on the right.</p>
+  <p>Characters are arranged based on the use of the script in order to speed up picking.     Vowel signs that appear to the left of a syllable appear to the left of the table. To their right are the Thai consonants, arranged so that phonetically similar characters are grouped together. This helps when creating a Thai sequence from a transcription. Further to the right are vowels and tone marks; below them are characters that frequently occur at the end of a syllable; and below them are punctuation marks. Digits appear to the far right.</p>
+  <p>Open the expanding link for  obsoleted  and other less commonly used characters.</p>
 </section>
 
 
@@ -98,23 +100,28 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
   <h3 href="#top_controls">Controls above the text area</h3>
       <p><img src="images/controls_above.png" alt=""/></p>
       <p>Controls above the input box allow you to run various operations on the text in the box. <strong>Most of them work on what you have selected</strong> within the box, or the whole box if nothing is selected.</p>
-      <p><strong style="color:brown;">There may be additional controls in the Thai picker. They will be covered once this page is updated.</strong></p>
+      
       <p><b class="leadin">Copy, select, delete, etc. (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p>
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
       <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
-    <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Thai text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</p>
+      <p><b class="leadin">Thai to ISO-1.</b> Produces an ISO 11940-1 transliteration, that basically latinizes the Thai characters, without changing their order. The result doesn't normally tell you how to pronounce the Thai text, but it can be converted back to Thai, since each Thai character is represented by a unique sequence in Latin. This transcription should produce fully conformant output. There is no need to identify syllable boundaries first.</p>
+      <p><b class="leadin">Thai to ISO-2.</b> Produces an output that is intended to <strong>approximately</strong> reflect actual pronunciation. It will work fine most of the time, but there are occasional ambiguities and idiosynchrasies in Thai which will cause the converter to render certain, less common syllables incorrectly. So the output of these buttons should be treated as something that gets you 90% of the way. <strong>NOTE: Before using this button you need to add spaces or hyphens between each syllable of the Thai text.</strong> Syllable boundaries are important for correct interpretation of the text, and they are not detected automatically.</p>
+      <p>For this transcription I use a macron over long vowels. This is non-standard</p>
+      <p><b class="leadin">Thai to IPA.</b> Produces an output that is intended to <strong>approximately</strong> reflect actual pronunciation in IPA notation. It will work fine most of the time, but there are occasional ambiguities and idiosynchrasies in Thai which will cause the converter to render certain, less common syllables incorrectly. It also  automatically adds accent marks. So the output of these buttons should be treated as something that gets you 90% of the way. <strong>NOTE: Before using this button you need to add spaces or hyphens between each syllable of the Thai text.</strong> Syllable boundaries are important for correct interpretation of the text, and they are not detected automatically.</p>
+      <p><b class="leadin">Remove sp/hyphen.</b> Removes the spaces or hyphens from the highlighted range, or the whole output area, if nothing is highlighted. This is useful to restore the text after adding those breaks in order to do one of the conversions above.</p>
+      <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Thai text, [2] transliteration, [3] IPA transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use nothing between the slashes.</p>
        <p>For example, the following:</p>
-      <p> այբուբեն/ɑjbubɛn/aybuben/alphabet</p>
+      <p><span lang="th">อักษรไทย</span>/akson thai/ʔàksɔ̌ːn tʰāj/Thai script</p>
       <p>will produce:</p>
-      <p style="text-align:left; text-justify:auto;"><code> &lt;span class=&quot;ex&quot; lang=&quot;hy&quot;&gt;այբուբեն&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;ɑjbubɛn&lt;/span&gt; &lt;span class=&quot;trans&quot;&gt;aybuben&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;alphabet&lt;/span&gt;</code></p>
-      <p>To get just the Thai and the second transcription you would use:</p>
-       <p><span lang="ar" dir="rtl"></span>այբուբեն//aybuben</p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;charExample&quot;&gt;&lt;span class=&quot;ex&quot; lang=&quot;th&quot;&gt;อักษรไทย&lt;/span&gt; &lt;span class=&quot;trans&quot;&gt;akson thai&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;ʔàksɔ̌ːn tʰāj&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Thai script&lt;/span&gt;&lt;/span&gt;</code></p>
+      <p>To get just the Thai and the meaning you would use:</p>
+       <p><span lang="th">อักษรไทย</span>///Thai script</p>
        
       
       <p><b class="leadin">Character markup.</b> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the text area, then click this button.  It will return something like the following for each of the characters:</p>
-      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;codepoint&quot;&gt;&lt;span lang=&quot;hy&quot;&gt;&amp;#x0576;&lt;/span&gt; &lt;span class=&quot;uname&quot;&gt;U+0576 ARMENIAN SMALL LETTER NOW&lt;/span&gt;&lt;/span&gt;</code></p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;codepoint&quot;&gt;&lt;span lang=&quot;th&quot;&gt;&amp;#x0E0F;&lt;/span&gt; [&lt;span class=&quot;uname&quot;&gt;U+0E0F THAI CHARACTER TO PATAK&lt;/span&gt;]&lt;/span&gt;</code></p>
       <p>When you add it to your document, it will look like this.</p>
-      <p><span class="codepoint"><span lang="hy">&#x0576;</span> <span class="uname">U+0576 ARMENIAN SMALL LETTER NOW</span></span></p>
+      <p><span class="codepoint"><span lang="th">&#x0E0F;</span> [<span class="uname">U+0E0F THAI CHARACTER TO PATAK</span>]</span></p>
 </section>
 
 <section>
@@ -141,14 +148,16 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
   <h3 href="#input_aids">Input aids</h3>
     <p><img src="images/input_aids.png" style="float:left; margin-right:1em; " alt=""/></p>
     <p>The vertical grey bar to the left allows you to turn on/off a number of panels that can help create the text you want.</p>
-    <p><strong style="color:brown;">There may be more or fewer controls in the Thai picker. They will be covered once this page is updated.</strong></p>
     <p><b class="leadin">Default.</b> Turns off all input aids and closes all panels.</p>
       <p><b class="leadin">Hinting.</b> Changes the selection area so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.    </p>
-    <p><b class="leadin">Shape lookup.</b> This adds a row of orange pictures that represent basic shapes associated with the Thai characters. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</p>
+    <p><b class="leadin" id="shape_selector">Shape lookup.</b> This adds a row of orange pictures that represent basic shapes associated with the Thai characters. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</p>
+    <p><img src="images/shape_selector.png" alt=""/></p>
     <p> Each orange key below the table represents a significant part of the shape of two or more characters; when you click on the keys, characters and combinations of characters that incorporate that shape are highlighted above. Click on these characters to add them to the output. The shapes grouped under 'Other' are a mixed bag of characters that didn't fit elsewhere.</p>
-    <p><b class="leadin">Latin characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  transcription.</p>
+    <p><b class="leadin">Latin characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  transcription. Click on them to add them to the text area.</p>
+    <p><b class="leadin">ISO transcription.</b> Displays a panel of lowercase Latin characters. As you click on them, the picker generates some Thai text from an ISO 11940-2 transcription. This may need more work to be fully-operational. For example, it is not clear how to input 'an' and get รร.</p>
+    <p>This transcription tool will insert vowel characters such as ไ to the right of the character(s) they ought to preceed. There is a simple way to fix this. Highlight the syllable containing the wrongly-placed character in the output area, then press the <code class="button" translate="no">reorder</code> button. The character that should appear to the left of the syllable will be moved to the beginning of the highlighted area.</p>
+    <p><b class="leadin">Becker transcription.</b> Displays a panel of lowercase Latin characters. As you click on them, the picker generates some Thai text from a transcription in the book <cite>Thai for Beginners</cite>, by Benjawan Poomsan Becker. The reordering described for the ISO transcription just above also applies for this.</p>
 </section>
-
 
 
 <section id="yellow_controls">
@@ -169,7 +178,9 @@ When working on an iPad or similar device, you should turn off<code class="kw" t
 </section>
 </section>
 
-<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+<div class="smallprint">Latest commit <a href="https://github.com/r12a/pickers/commits/gh-pages/thai/help"><!-- #BeginDate format:En2 -->09-Aug-2017<!-- #EndDate --></a>. 
+Make a <a href="https://github.com/r12a/pickers/issues/new?title=[thai%20help]%20%20ADD%20TITLE%20HERE">comment</a>.
+Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a>.</div>
 </body>
 <script type="text/javascript">
 createtoc(3);
