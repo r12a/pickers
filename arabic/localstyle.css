@@ -34,10 +34,11 @@
 	}
 #kbd #consonants  {
 	text-align: start;
-	padding-inline-end: 20px;
+	/*padding-inline-end: 20px;*/
 	}
-#kbd #consonants td  {
-	padding: 0 2px;
+span.c  {
+	min-width: .5em;
+	text-align: center;
 	}
 
 #kbd #vowels .hint {
@@ -69,5 +70,12 @@
 	padding: 0 10px; text-align:center;
 	}
 #alphabet #controlchars p {
-	margin: .5em 0;
+	margin: .3em 0;
+	}
+
+#rare {
+	margin:auto;
+	}
+.touch {
+	margin: 0;
 	}

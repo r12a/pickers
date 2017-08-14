@@ -12,7 +12,7 @@
 
 #alphabet { 
 	display: block; 
-	color: #999;
+	color: #666;
 	}
 
 span.hint { 
@@ -67,4 +67,9 @@ span.hint {
 .key .s { position:absolute; bottom: 5px; left: 15px; }
 .key .n { position:absolute; bottom: 5px; right: 5px;  }
 
+#keyboard { display: none; }
 
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}

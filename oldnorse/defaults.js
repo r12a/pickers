@@ -1,14 +1,20 @@
-var defaults = new Object;
+var defaults = new Object
+var factoryDefaults = new Object
+	factoryDefaults.font = 'Doulos SIL'; // text area font name (a single font, no quotes)
+	factoryDefaults.size = "30";  // text area font size, number of pixels (just the number)
+	factoryDefaults.rows = "3"; // number representing number of times 100px for height of text area
+	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
+	factoryDefaults.language = 'non' // language to use for examples
+	factoryDefaults.blocklocation= '/scripts/latin/block'  // blocklocation to use for examples
+	factoryDefaults.uifont = 'Doulos SIL'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uisize = "40";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.ccbase = "\u25CC";  // default base for combining characters
+	factoryDefaults.direction = "ltr" // indicates whether this is a picker for a RTL script
+	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
+	factoryDefaults.contrast = "low" // contrast for UI text colours
 
-defaults.font = '"Doulos SIL"'; // font name per usage in CSS
-defaults.size = "30";  // number of pixels (just the number)
-defaults.rows = "3"; // number representing number of times 100px for height of box
-defaults.lineHeight = "1.5";  // just the number
-defaults.view = "alphabet";  // alphabet, phonic, phonelist
-defaults.language = 'non'
-defaults.blocklocation= '/scripts/arabic/block'
-defaults.uifont = '"Doulos SIL"'; // font name per usage in CSS
-defaults.uisize = "40";  // number of pixels (just the number)
-defaults.ccbase = "ـ";  // default base for combining characters
 
+var thisPicker = 'oldnorsePicker'
 
+if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
+else  defaults = factoryDefaults

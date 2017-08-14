@@ -11,7 +11,7 @@
 
 #alphabet { 
 	display: block; 
-	color: #999;
+	color: #666;
 	}
 
 span.hint { 
@@ -63,4 +63,8 @@ span.hint {
 
 #shapelist, #extrashapes {
 	text-align:center;
+	}
+
+#rare {
+	margin: auto;
 	}

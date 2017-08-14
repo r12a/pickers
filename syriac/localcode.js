@@ -83,6 +83,8 @@ function event_mouseoverChar ()  {
 	this.style.backgroundColor = '#CF9'
 	this.style.backgroundColor = '#fc6'
 	//this.style.backgroundColor = '#FC0'
+		this.style.backgroundColor = '#F4630B';
+		this.style.color = '#eee'
 	
 	// highlight similar characters
 	if (globals.showShapeHints && _h[this.id]) {

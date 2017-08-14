@@ -53,8 +53,12 @@
 	border-radius: 5px; 
 	}
 	
-#kbd #vowels td span {
-	padding: 0 10px; 
+#kbd #consonants td, #kbd #vowels td {
+	text-align: center;
+	}
+#kbd #consonants .c, #kbd #vowels .c  {
+	min-width:.75em;
+	text-align: center;
 	}
 	
 #kbd #ligatures td {

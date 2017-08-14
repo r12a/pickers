@@ -1,13 +1,20 @@
-var defaults = new Object;
+var defaults = new Object
+var factoryDefaults = new Object
+	factoryDefaults.font = 'Noto Sans Cherokee WF'; // text area font name (a single font, no quotes)
+	factoryDefaults.size = "45";  // text area font size, number of pixels (just the number)
+	factoryDefaults.rows = "2.5"; // number representing number of times 100px for height of text area
+	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
+	factoryDefaults.language = 'chr' // language to use for examples
+	factoryDefaults.blocklocation= '/scripts/cherokee/block'  // blocklocation to use for examples
+	factoryDefaults.uifont = 'Noto Sans Cherokee WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uisize = "32";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.ccbase = "\u25CC";  // default base for combining characters
+	factoryDefaults.direction = "ltr" // indicates whether this is a picker for a RTL script
+	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
+	factoryDefaults.contrast = "low" // contrast for UI text colours
 
-defaults.font = 'Noto Sans Cherokee WF'; // font name per usage in CSS
-defaults.size = "45";  // number of pixels (just the number)
-defaults.rows = "2.5"; // number representing number of times 100px for height of box
-defaults.lineHeight = "1.5";  // just the number
-defaults.view = "alphabet";  // alphabet, phonic, phonic2, phonelist
-defaults.language = 'chr'
-defaults.blocklocation= '/scripts/cherokee/block'
-defaults.uifont = 'Noto Sans Cherokee WF'; // font name per usage in CSS
-defaults.uisize = "32";  // number of pixels (just the number)
-defaults.ccbase = "◌";  // default base for combining characters
 
+var thisPicker = 'cherokeePicker'
+
+if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
+else  defaults = factoryDefaults

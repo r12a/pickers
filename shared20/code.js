@@ -12,6 +12,38 @@ var _output
 
 
 
+// LOCALSTORAGE ROUTINES
+
+function savePreferences () {
+	// if you click Ok to Store, this sets localStorage up
+	localStorage.pickersStore = 'yes'
+	node.parentNode.style.display = 'none'
+	}
+
+function dontStore (node) {
+	// you come here if you request no localStorage
+	// node is the button clicked
+	node.parentNode.style.display = 'none'
+	}
+
+function toggleContrast () {
+	// toggle the contrast for the UI, and record in localStorage
+	document.querySelector('body').classList.toggle('contrast')
+	if (document.querySelector('body').classList.contains('contrast')) defaults.contrast = 'high'
+	else defaults.contrast = 'low'
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+	}
+
+function storeDirection () {
+	// record selection area direction choice in localStorage
+	if (localStorage.pickersStore) {
+		if (document.querySelector('body').classList.contains('contrast')) localStorage.pickersContrast = 'high'
+		else localStorage.pickersContrast = 'low'
+		}
+	}
+
+
+
 
 // ACTION ROUTINES
 
@@ -46,6 +78,14 @@ function del () {
 	document.getElementById('output').value = document.getElementById('output').value.slice(0, -1)
 	}
 
+function changeSelectionDirection (dir) {
+	if (dir === 'rtl') document.getElementById('tables').dir = 'rtl'
+	else {document.getElementById('tables').dir = 'ltr'}
+
+	defaults.uidir = dir
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+	}
+	
 function showCodepoints () {
 	var output = document.getElementById('output')
 	showNameDetails(getHighlightedText(output), defaults.language, defaults.blocklocation, 'c', document.getElementById('panel') )
@@ -296,23 +336,43 @@ function add(ch) {
 	
 	
 function selectFont ( newFont ) {
-	newFont = '"'+newFont+'", "Doulos SIL"'
-	document.getElementById( 'output' ).style.fontFamily = newFont;
-	document.querySelector('#panel #title').style.fontFamily = newFont;
+	// sets a font-family for text area, and panel title
+	if (newFont.match('"') || newFont.match(',')) { alert('Use a single font with no quotes.'); return }
+	document.getElementById( 'output' ).style.fontFamily = "'"+newFont+"', 'Doulos SIL'"
+	document.querySelector('#panel #title').style.fontFamily ="'"+newFont+"', 'Doulos SIL'"
 	document.getElementById('fontName').value="";
+
+	defaults.font = newFont
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
 	}
 	
 function customFont ( newFont ) { 
-	var temp = newFont
-	newFont = '"'+newFont+'", "Doulos SIL"'
-	document.getElementById( 'output' ).style.fontFamily = newFont;
-	document.querySelector('#panel #title').style.fontFamily = newFont;
-	document.getElementById('fontList').value='0';
-	addFontToLists(temp, 'fontList,uiFont');
+	if (newFont.match('"') || newFont.match(',')) { alert('Use a single font with no quotes.'); return }
+	selectFont(newFont)
+	addFontToLists(newFont, 'fontList,uiFont');
 	}
+
 
 function changeFontSize ( newSize ) {
 	document.getElementById( 'output' ).style.fontSize = newSize + 'px';
+
+	defaults.size = newSize
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+	}
+
+function changeBoxHeight ( newSize ) {
+	document.getElementById( 'output' ).style.height = (newSize*100)+'px'
+
+	defaults.rows = newSize
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+	}
+
+
+function changeLineHeight ( newSize ) {
+	document.getElementById( 'output' ).style.lineHeight = newSize
+
+	defaults.lineheight = newSize
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
 	}
 
 
@@ -322,8 +382,13 @@ function setUIFont (font) {
 		chars[i].style.fontFamily = font
 		}
 	document.querySelector('#extrashapes').style.fontFamily = font;
-	document.querySelector('#transcriptionChoice').style.fontFamily = font;
+	document.querySelector('#transcriptionChoice').style.fontFamily = font
+	
+	defaults.uifont = font
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
 	}
+	
+	
 	
 function setUIFontSize (size) {
 	chars = document.querySelectorAll('.c')
@@ -331,6 +396,9 @@ function setUIFontSize (size) {
 		chars[i].style.fontSize = size+'px'
 		}
 	document.querySelector('#extrashapes').style.fontSize = size+'px';
+		
+	defaults.uisize = size
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
 	}
 	
 
@@ -566,7 +634,14 @@ function clearHighlights () {
 		}
 	}
 	
+
+
+function setLanguage (value) {
+	// sets the defaults.language value, which is used for generating examples
 	
+	defaults.language = value
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+	}
 
 	
 
@@ -727,6 +802,9 @@ function event_mouseoverChar ()  {
 	// highlight this character
 	this.style.backgroundColor = '#CF9'
 	this.style.backgroundColor = '#fc6'
+		this.style.backgroundColor = '#F4630B';
+		this.style.color = '#ddd'
+
 	//this.style.backgroundColor = '#FC0'
 	
 	// highlight similar characters
@@ -743,6 +821,7 @@ function event_mouseoverChar ()  {
 function event_mouseoutChar ()  {
 	// unhighlight this character
 	this.style.backgroundColor = 'transparent'
+		this.style.color = '#666'
 	
 	// unhighlight similar characters
 	if (_h[this.id]) {
@@ -769,7 +848,34 @@ function titleSort (a, b) {
 	return parseInt(a.title, 16)-parseInt(b.title, 16);
 	}
 
+
+function getWelcome (dir) {
+	// creates the welcome message for new users
+	// rtl indicates whether or not to include UI direction msg
+	var out = "<p>You can change the contrast for this app by clicking on the 🌓 icon in the top right corner of the page.<br/>"
+	if (dir === 'rtl') out += "The selection area for this picker is ordered RTL by default, but can be set to LTR at <samp>more controls/table direction</samp>.<br/>"
+	out += "Use the controls at the bottom of the page to change other settings, and <samp>more controls/reset defaults</samp> to return to the default setup.<br/>Click one of the following buttons to remove this message. Click <samp>Ok to store</samp> if you want this and other pickers to remember your settings between sessions. Settings are stored locally on the computer/device you are using.<br/><button onClick='savePreferences()'>Ok to store</button> <button onClick='dontStore(this)'>Don't store</button></p>"
+	return out
+	}
+
+
+function resetDefaults () {
+	defaults = factoryDefaults
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(factoryDefaults)
 	
+	setUIFont(factoryDefaults.uifont)
+	setUIFontSize(factoryDefaults.uisize)
+	//selectCCBase(factoryDefaults.ccbase)
+	selectFont(factoryDefaults.font)
+	changeFontSize(factoryDefaults.size)
+	changeBoxHeight(factoryDefaults.rows)
+	changeLineHeight(factoryDefaults.lineheight)
+	defaults.language = factoryDefaults.language
+	changeSelectionDirection(factoryDefaults.uidir)
+	}
+
+
+
 function initialise() { 
 
 	// stop IE changing the focus when clicking on an img
@@ -777,7 +883,14 @@ function initialise() {
 	//	document.getElementById('alphabet').onselectstart = function () { return false };
 	//	}
 	
-
+	
+	// show cookie message if no storage
+	var dir = 'ltr'
+	if (document.getElementById('tables') && document.getElementById('tables').dir === 'rtl') dir = 'rtl'
+	if (! localStorage.pickersStore && document.getElementById('welcome')) document.getElementById('welcome').innerHTML = getWelcome(dir)
+	
+	
+	console.log(defaults)	
 
 	// set ids to codepoint values of character sequence (with no leading zeros)
 	node = document.querySelectorAll( '.c' ); 
@@ -889,9 +1002,13 @@ window.onload = function() {
 		document.getElementById('extrashapes').style.fontFamily = defaults.uifont;
 		document.querySelector('#transcriptionChoice').style.fontFamily = defaults.uifont;
 		}
-	if (defaults.size) { 
+	if (defaults.uisize) { 
 		document.getElementById( 'uiFontSize' ).value = defaults.uisize;  
 		setUIFontSize(defaults.uisize);
+		}
+	if (defaults.lineheight) { 
+		document.getElementById( 'lineHeight' ).value = defaults.lineheight;  
+		document.getElementById( 'output' ).style.lineHeight = defaults.lineheight;
 		}
 	if (defaults.lineHeight) { 
 		document.getElementById( 'lineHeight' ).value = defaults.lineHeight;  
@@ -900,6 +1017,16 @@ window.onload = function() {
 	if (defaults.rows) { 
 		document.getElementById( 'rows' ).value = defaults.rows; 
 		document.getElementById( 'output' ).style.height = (defaults.rows*100)+'px';
+		}
+	if (defaults.language) { 
+		document.getElementById('langtag').value = defaults.language
+		}
+	if (defaults.contrast) { 
+		if (defaults.contrast === 'high') document.querySelector('body').classList.add('contrast')
+		}
+	if (defaults.uidir && document.getElementById('tables')) { 
+		if (defaults.uidir === 'rtl') document.getElementById('tables').dir = 'rtl'
+		else document.getElementById('tables').dir = 'ltr'
 		}
 	if (defaults.view) { switchView(defaults.view); }
 
@@ -971,24 +1098,25 @@ function dotrans (altlist) {
 
 
 function selectCCBase (base) {
-	if (base == '0') return
+	if (base === '0') return
+	//console.log(base)
 	
-	//var formerbase = defaults.ccbase
-	//defaults.ccbase = base
-	
-
 	// add defaults.ccbase to combining characters
 	nodes = document.querySelectorAll( '.c' ); 
 	for (var n = 0; n < nodes.length; n++ ) { 
 		// remove leading base characters if this is a combining character
 		if (nodes[n].textContent.length > 1 && defaults.ccbase != '') {
-			while (nodes[n].textContent.charAt(0) == defaults.ccbase) {
+			while (nodes[n].textContent.charAt(0) === defaults.ccbase) {
 				nodes[n].textContent = nodes[n].textContent.substr(1)
 				}
 			}
+		// look for ZWSP in charData name (which indicates cchar)
+		// if found, add base before other content
+		//console.log(n,nodes[n].textContent,charData[nodes[n].textContent])
 		if (charData[nodes[n].textContent].match('\u200B') && base != '') nodes[n].textContent = base + nodes[n].textContent
 		}
 	defaults.ccbase = base
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
 	}
 
 
@@ -1079,50 +1207,4 @@ function makeCharacterLink (cp, block, lang, direction) {
 	return out.trim()
 	}
 
-
-
-
-function makeCharacterLinkOLD (cp, block, lang, direction) { 
-	// returns markup with information about cp
-	// only wraps in a link if not on r12a.github.io
-	// cp: a unicode character, or sequence of unicode characters
-	// block: 
-	// lang: the BCP47 language tag for the context
-	// direction: either rtl or ltr or ''
-	//var chars = cp.split('')
-	var chars = []
-	convertStr2DecArray(cp, chars)
-	
-
-	var out = ''
-	var charstr = ''
-	for (var i=0;i<chars.length;i++) {
-		//var hex = convertChar2CP(chars[i])
-		charstr = String.fromCodePoint(chars[i])
-		out += '<span class="codepoint">'
-		
-		if (charData[charstr]) {
-			var hex = chars[i].toString(16).toUpperCase()
-			while (hex.length < 4) hex = '0'+hex 
-			
-			var name = charData[charstr]
-			var mark = false
-			if (charData[charstr].match('\u200B')) mark = true
-			var cbase = ''
-			if (defaults.ccbase != '') cbase = '&#x'+convertChar2CP(defaults.ccbase)+';'
-			var dir = ''
-			if (direction === 'rtl') dir = ' dir="rtl"'
-			}
-		else return 'Character not found in database.'
-	
-		out += '<span lang="'+lang+'"'+dir+'>'+cbase+'&#x'+hex+';</span> '
-	
-		if (! window.location.href.match('r12a.github.io')) out +=  '<a href="/scripts/'+block+'/block#char'+hex+'">'
-		out +=  '<span class="uname">U+'+hex+' '+name+'</span>'
-		if (! window.location.href.match('r12a.github.io')) out +=  '</a>'
-		out += '</span> '
-		}
-	
-	return out.trim()
-	}
 

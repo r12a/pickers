@@ -1,7 +1,7 @@
 
 #alphabet { 
 	display: block; 
-	color: #999;
+	color: #666;
 	margin-right: 0px;
 	}
 
@@ -32,6 +32,11 @@
 
 
 #kbd #consonants td { 
+	text-align: center;
+	}
+#kbd #consonants .c { 
+	min-width:.75em;
+	text-align: center;
 	}
 #kbd #consonants td.hint { 
 	padding: 0; 
@@ -40,18 +45,26 @@
 	margin-left: 20px; 
 	margin-right: 20px; 
 	}
-#kbd #points td { 
-	padding-left: 10px; 
+#kbd #points .c { 
+	min-width:.75em;
+	text-align: center;
 	}
 
 #kbd #punctuation { 
 	margin-left: 20px; 
 	}
-
-#kbd .padding {
-	width: 10px;
+#kbd #punctuation td { 
+	text-align: center;
+	}
+#kbd #punctuation .c { 
+	min-width: .75em;
+	text-align: center;
 	}
 
+
+#rare {
+	margin: auto;
+	}
 #rare td {
 	text-align: start;
 	line-height: 1;

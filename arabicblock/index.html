@@ -24,11 +24,14 @@
 </head>
 
 <body class="app">
+<button style="float:right;" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
 <header>
   <div id="header-boilerplate"></div>
   <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','All Arabic character picker','v20');</script> 
 </header>
 
+
+<div id="welcome"></div>
 
 <div id="main">
 <span id="copydelete">
@@ -45,16 +48,16 @@
     
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
     
-    <button  id="makeExample" onclick="makeExample('ar','rtl')" 
+    <button  id="makeExample" onclick="makeExample(defaults.language,'rtl')" 
     title="Create an example.">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('arabic','ar','rtl')" 
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('arabic',defaults.language,'rtl')" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
 
 
-<div id="outputDiv" dir=rtl>
+<div id="outputDiv" dir="auto">
   <textarea rows="2" cols="80" id="output" dir="auto" name="output" placeholder="›"></textarea>
 </div>
 
@@ -130,14 +133,14 @@ Autofocus:
   </div-->
   
   
-  <div id="tables">
+  <div id="tables" dir="rtl">
     <div id="transcriptionChoice2" style="position:absolute;left:40px; font-size: 60px; background-color: #FFFACD; border: 1px solid #ccc; border-radius:10px; padding: 7px;"></div>
     
     <!-- SHAPE -->
-    <div id="alphabet" class="default" dir="rtl">
+    <div id="alphabet" class="default">
       <table id="kbd">
         <tr>
-          <td colspan="3" dir=rtl>
+          <td colspan="3">
           <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add(' ');">SPACE</span> 
           <span style="margin: 0x; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="del();">DEL</span> 
           <span style="margin: 0x; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200D');">ZWJ</span> 
@@ -157,7 +160,7 @@ Autofocus:
           </td>
         </tr>
       </table>
-      <div dir="rtl" style="text-align:center;"> 
+      <div style="text-align:center;"> 
       <img alt=" " src="images/shape01.png" onclick="findShape('','\u0621,\u06FD,\u0674',false)" /> 
       <img alt=" " src="images/shape02.png" onclick="findShape('','\u0645,\u0765,\u0766',false)" /> 
       <img alt=" " src="images/shape03.png" onclick="findShape('','\u0647,\u06C1,\u06D5,\u06BE,\u0629,\u06C0,\u06C2,\u06C3,\u06FF,\u06FE',true)" /> 
@@ -188,7 +191,7 @@ Autofocus:
     
   </div>
   <!-- end of tables --> 
-     <div id="extrashapes" dir=rtl></div>
+     <div id="extrashapes" dir="rtl"></div>
  
 </div>
 <!-- end of wrapper round tables and vertical menu -->
@@ -214,13 +217,13 @@ Autofocus:
         onfocus="document.getElementById('dimensions').textContent='Font size (px):'" 
         onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
     <input name="rows" value="1.5" id="rows" size="3" 
-    	onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" 
+    	onchange="changeBoxHeight(this.value)" 
         onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" 
     	onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
         onfocus="document.getElementById('dimensions').textContent='Box height (px):'" 
         onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  
-    	onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" 
+    	onchange="changeLineHeight(this.value)" 
         onmouseover="document.getElementById('dimensions').textContent='Line height:'" 
         onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
         onfocus="document.getElementById('dimensions').textContent='Line height:'" 
@@ -276,6 +279,27 @@ Autofocus:
       <option value="-">-</option>
     </select>
   </div>
+
+
+<div class="control" id="uiTableDirection" style="text-align:right;">Table direction:<br />
+<select onChange="changeSelectionDirection(this.value); return false;">
+<option value="rtl">RTL</option>
+<option value="ltr">LTR</option>
+</select>
+</div>
+
+
+
+<div class="control">Set language:
+<form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
+  <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:right;" />
+  <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
+</form>
+</div>
+
+
+<div class="control" id="ccFactoryReset">Reset<br/><button onClick="resetDefaults()">Go</button>
+</div>
 </details>
 
 <details>
@@ -289,14 +313,14 @@ Autofocus:
 
 
 <div id="panel" style="display:none">
-  <div id="title" class="ex" lang="bn"></div>
+  <div id="title" class="ex" lang="ar"></div>
   <div style="display:block">&nbsp;</div>
   <p style="text-align:right;"> </p>
 </div>
 
 
 <div class="smallprint">
-Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/arabicblock"><!-- #BeginDate format:En2 -->05-Aug-2017<!-- #EndDate --></a>.
+Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/arabicblock"><!-- #BeginDate format:En2 -->14-Aug-2017<!-- #EndDate --></a>.
 Make a <a href="https://github.com/r12a/pickers/issues/new?title=[allarabic%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
 Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
 </div>

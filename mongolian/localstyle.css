@@ -10,7 +10,7 @@
 
 #alphabet { 
 	display: block; 
-	color: #999;
+	color: #666;
 	}
 
 #kbd { 	
@@ -57,7 +57,7 @@ dt { color: #FF6600; }
 
 
 #variantshapes { 
-	width: 85px; 
+	width: 120px; 
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	}
@@ -82,6 +82,9 @@ dt { color: #FF6600; }
 	color: #B46605;
 	padding-right: 2px;
 	font-size: 14px;
+	display: inline;
+	}
+#variantshapes .hint {
 	}
 #variantshapes .glyph {
 	text-align: right;
@@ -101,6 +104,7 @@ dt { color: #FF6600; }
 	width: 100%;
 	}
 
+#kbd #consonants { margin-left: 1em; }
 #commonvowels { width: 95px; border: 1px solid #ccc; border-radius: 10px; vertical-align: middle; }
 #commonvowels img { margin-top: 2px; }
 #translitvowels { width: 55px; vertical-align: middle; }
@@ -137,7 +141,7 @@ dt { color: #FF6600; }
 	-webkit-text-orientation: sideways-right;
  	}
  
-
+#keyboard { display:none; }
 .key span { 
 	font-size: 24px; 
 	color: gray; 

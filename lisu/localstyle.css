@@ -16,8 +16,13 @@
 #kbd td { padding: 0 5px; }
 .key { 	height: 34px; width: 56px;	}
 
-#punc1 span, #punc2 span {
-	padding: 4px; 
+#punc1 .c {
+	min-width: .75em;
+	text-align:center;
+	}
+#punc2 .c {
+	min-width: 1em;
+	text-align:center;
 	}
 
 .keyboardrow img+img {

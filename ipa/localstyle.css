@@ -11,7 +11,6 @@
 
 #alphabet { 
 	display: block; 
-	color: #999;
 	color: #666;
 	}
 /*
@@ -59,7 +58,7 @@ span.c {
 
 
 #alphabet { display: block; }
-#keyboard { display: block; }
+#keyboard { display: none; }
 
 .key { 	height: 32px; width: 60px;	} 
 .key span { 
@@ -76,6 +75,7 @@ span.c {
 #consonants { border: 1px solid  #ccc; padding-bottom: 10px;   padding-top: 8px; border-radius: 8px;  }
 #consonants td {  padding: 0;  white-space: nowrap; height: 30px; line-height: 1.4;}
 #consonants span { padding: 0 3px; }
+#kbd #vowels { padding: 0; }
 #vowels { margin-left: 20px; border: 1px solid #ccc; background: url(vowelgrid.gif) top left no-repeat; white-space: nowrap; border-radius: 8px;  }
 #vowels td { padding: 0px; margin: 0; border: 0; text-align: center; vertical-align: top;   padding-bottom: 10px; }
 #vowels img { padding: 0px; margin: 0; }
@@ -83,7 +83,7 @@ span.c {
 #vowels span { background-color: white; padding: 2px; }
 #bottomphones td { padding: 0; margin: 0; }
 #bottomphones  { margin:auto; margin-bottom: 10px;   line-height: 1.6;}
-#bottomphones .bottomrighttop span { padding: 0 3px; }
+/*#bottomphones .bottomrighttop span { padding: 0 3px; } */
 #other2 {  }
 #other2 img { padding: 0; margin: 0; }
 #tones {
@@ -123,3 +123,5 @@ table td {
 	margin-left: 4px;
 	}
 */
+
+.c { min-width:.6em; text-align: center; }

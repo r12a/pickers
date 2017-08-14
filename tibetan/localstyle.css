@@ -21,7 +21,7 @@ td.hint {
 #kbd {
 	margin: auto;
 	line-height: 1.4;
-	color: #888;
+	color: #666;
 	}
 
 #consonants {  margin:0; }
@@ -98,7 +98,10 @@ td.hint {
 	}
 
 #extraSymbols {
-	margin-left: 35px;
+	margin: auto;
+	}
+#extraSymbols td {
+	text-align: center;
 	}
 #extraSymbols span {
 	min-width: 10px;
@@ -121,4 +124,6 @@ td.hint {
 #fontgrid table {height: 600px;}
 #fontgrid td {height: 12%;width: 8%;}
 
-
+#translitvowels {
+	line-height: 1.5;
+	}

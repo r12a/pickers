@@ -51,6 +51,9 @@
 #kbd #consonants {
 	margin-left: 20px; 
 	}
+#kbd #consonants td {
+	text-align: right;
+	}
 
 #kbd #vowels {
 	border: 1px dotted #ccc;
@@ -112,6 +115,7 @@
 	}
 #kbd #punctuation td {
 	min-width: 30px;
+	text-align: center;
 	}
 
 
@@ -119,7 +123,9 @@
 	font-size: 12px;
 	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif;
 	}
-
+#rare {
+	margin: auto;
+	}
 
 #fontgrid { 
 	color: #808080; 
@@ -135,3 +141,10 @@
 	content: '\200B ' ; /* zwsp */ 
 	}
 
+.g {
+	display: inline-block;
+	}
+.c {
+	min-width: .75em;
+	}
+	

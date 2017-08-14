@@ -19,7 +19,7 @@
 	vertical-align: top;
 	}
 	
-#kbd { 	
+#kbd, #additional, #punctuation { 	
 	margin: auto; 
 	}
 #kbd table {
@@ -65,4 +65,11 @@
 	line-height: 1;
 	}
 
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
 
+.touch {
+	margin: 0;
+	}

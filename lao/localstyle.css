@@ -69,8 +69,12 @@ span.hint {
 	border-radius: 5px;
 	line-height: 2;
 	}
-#kbd #combining span.c {
-	padding: 0 6px;
+#kbd #consonants td, #kbd #numbers td {
+	text-align: center;
+	}
+#kbd #consonants .c, #kbd #predisposed .c, #kbd #combining .c, #kbd #numbers .c  {
+	min-width:.75em;
+	text-align: center;
 	}
 	
 #punctuation {

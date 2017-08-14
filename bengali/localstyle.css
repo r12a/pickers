@@ -168,3 +168,7 @@ span.hint {
 	content: '\200B ' ; /* zwsp */ 
 	}
 
+#kbd #numbers td { text-align: center; }
+#kbd #other span.c { min-width: 1em; text-align: center; }
+
+.c { min-width: .75em; }

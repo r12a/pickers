@@ -29,11 +29,11 @@ var keyboardguide = [
 var keyboardRowOffset = ['5px','20px','30px','50px']
 
 
-
-
+// overwrite standard function to make background white (for vowels)
 function event_mouseoutChar ()  {
 	// unhighlight this character
 	this.style.backgroundColor = 'white'
+		this.style.color = '#666'
 	
 	// unhighlight similar characters
 	if (_h[this.id]) {

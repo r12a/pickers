@@ -1,3 +1,11 @@
+/* higher contrast settings */
+body.contrast #chardata, 
+body.contrast #autofocusswitch, 
+body.contrast .hint, 
+body.contrast summary,
+body.contrast #phonemelist span {
+	color:rgba(125,58,33,1.00);
+	}
 
 body.app #sitelinks { 
 	margin-bottom: 2em;
@@ -47,6 +55,7 @@ dd {
 	}
 
 table, tr, td, th { font-size: 100%; }
+#tables td { white-space:nowrap; }
 
 table td { border: 0; }
 
@@ -219,13 +228,23 @@ table td { border: 0; }
 
 
 .hint {
-	font-size: 12px;
+	font-size: 14px;
 	color: #ccc;
-	text-align: right;
-	vertical-align: middle;
-	font-family: "Doulos SIL", Gentium, Gentium Plus, "Charis SIL", "Arial Unicode MS", serif;
+	text-align: center;
+	vertical-align: top;
+	font-family: "Noto Sans", Gentium, Gentium Plus, "Doulos SIL", "Charis SIL", "Arial Unicode MS", serif;
+	display: inline-block;
+	min-width: .75em;
+	padding: 3px 0;
 	}
-
+.g:hover .hint {
+	font-weight: normal;
+	background-color:rgba(244,99,11,1.00);
+	background-color:rgba(255,204,102,1.00);
+	color: white;
+	color: brown;
+	border-radius: 3px;
+	}
 
 
 
@@ -252,6 +271,7 @@ table td { border: 0; }
 span.c {
 	border-radius: 3px;
 	cursor: pointer;
+	display: inline-block;
 	}
 span.c:hover {
 	background-color: #CF9;
@@ -619,4 +639,15 @@ summary:hover {
 	}
 #helpcontrol img {
 	vertical-align: baseline;
+	}
+
+#kbd #vowels {
+	padding: 0 10px;
+	}
+
+#contrastSwitch {
+	float: right;
+	}
+#rare {
+	margin: auto;
 	}

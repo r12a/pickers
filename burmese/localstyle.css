@@ -58,7 +58,7 @@ span.hint {
 
 
 #kbd #independentvowels { 
-	width: 80px; 
+	width: 90px; 
 	border: dotted 1px #999; 
 	text-align: right; 
 	padding-right: 4px; 
@@ -88,6 +88,16 @@ span.hint {
 	}
 #combining td { padding-right: 10px; } */
 
+#consonants td {
+	text-align: center;
+	}
+#consonants td span.c {
+	min-width: 1em;
+	}
+#symbols span.c {
+	min-width: .75em;
+	text-align: center;
+	}
 #symbols {
 	line-height: 1.6;
 	margin-top: 20px;

@@ -25,12 +25,14 @@
 </head>
 
 <body class="app">
+<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
 <header>
 <div id="header-boilerplate"></div>
 <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Hebrew character picker','v20');</script>
 </header>
 
 
+<div id="welcome"></div>
 
 <div id="main">
 <span id="copydelete">
@@ -47,10 +49,10 @@
     
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
     
-    <button  id="makeExample" onclick="makeExample('he','')" 
+    <button  id="makeExample" onclick="makeExample(defaults.language,defaults.direction)" 
     title="Create an example.">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('hebrew','he','')" 
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('hebrew',defaults.language,defaults.direction)" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
@@ -195,126 +197,52 @@ matres:
 
 
 <div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
-<div id="tables">
-  <div id="alphabet" class="default" dir=rtl>
+<div id="tables" dir="rtl">
+  <div id="alphabet" class="default">
     <table id="kbd">
       <tr>
-        <td style="vertical-align:middle;"><table id="consonants">
+        <td style="vertical-align:middle;">
+        <table id="consonants">
           <tr>
-            <td class="hint">&nbsp;</td>
-            <td><span class=c>&#x5D0;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">v</td>
-            <td><span class="c">&#x5D1;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">g</td>
-            <td><span class="c">&#x5D2;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td class="hint">d</td>
-            <td><span class="c">&#x5D3;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">h</td>
-            <td><span class="c">&#x5D4;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">v</td>
-            <td><span class="c">&#x5D5;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">z</td>
-            <td><span class="c">&#x5D6;</span></td>
+            <td><span class="g"><span class="hint">ʔ</span><span class="c">&#x5D0;</span></span></td>
+            <td><span class="g"><span class="hint">b,v</span><span class="c">&#x5D1;</span></span></td>
+            <td><span class="g"><span class="hint">g</span><span class="c">&#x5D2;</span></span></td>
+            <td><span class="g"><span class="hint">d</span><span class="c">&#x5D3;</span></span></td>
+            <td><span class="g"><span class="hint">h</span><span class="c">&#x5D4;</span></span></td>
+            <td><span class="g"><span class="hint">v</span><span class="c">&#x5D5;</span></span></td>
           </tr>
           <tr>
-            <td class="hint">χ</td>
-            <td><span class="c">&#x5D7;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">t</td>
-            <td><span class="c">&#x5D8;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">j</td>
-            <td><span class="c">&#x5D9;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">χ</td>
-            <td><span class="c">&#x5DA;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x5DB;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">l</td>
-            <td><span class="c">&#x5DC;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">m</td>
-            <td><span class="c">&#x5DD;</span></td>
+            <td><span class="g"><span class="hint">z</span><span class="c">&#x5D6;</span></span></td>
+            <td><span class="g"><span class="hint">ẖ</span><span class="c">&#x5D7;</span></span></td>
+            <td><span class="g"><span class="hint">t</span><span class="c">&#x5D8;</span></span></td>
+            <td><span class="g"><span class="hint">y</span><span class="c">&#x5D9;</span></span></td>
+            <td colspan="2"><span class="g"><span class="hint">kh</span><span class="c">&#x5DA;</span><span class="c">&#x5DB;</span></span></td>
           </tr>
           <tr>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x5DE;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">n</td>
-            <td><span class="c">&#x5DF;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x5E0;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">s</td>
-            <td><span class="c">&#x5E1;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">ʔ</td>
-            <td><span class="c">&#x5E2;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">f</td>
-            <td><span class="c">&#x5E3;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x5E4;</span></td>
+             <td><span class="g"><span class="hint">l</span><span class="c">&#x5DC;</span></span></td>
+            <td colspan="2"><span class="g"><span class="hint">m</span> <span class="c">&#x5DD;</span> <span class="c">&#x5DE;</span></span></td>
+           <td colspan="2"><span class="g"><span class="hint">n</span><span class="c">&#x5DF;</span><span class="c">&#x5E0;</span></span></td>
+            <td><span class="g"><span class="hint">s</span><span class="c">&#x5E1;</span></span></td>
           </tr>
           <tr>
-            <td class="hint">ʦ</td>
-            <td><span class="c">&#x5E5;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x5E6;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">k</td>
-            <td><span class="c">&#x5E7;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">ʁ</td>
-            <td><span class="c">&#x5E8;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">ʃ</td>
-            <td><span class="c">&#x5E9;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">t</td>
-            <td><span class="c">&#x5EA;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td><span class="g"><span class="hint">ʕ</span><span class="c">&#x5E2;</span></span></td>
+            <td colspan="2"><span class="g"><span class="hint">f</span><span class="c">&#x5E3;</span> <span class="c">&#x5E4;</span></span></td>
+            <td colspan="2"><span class="g"><span class="hint">ʦ</span><span class="c">&#x5E5;</span> <span class="c">&#x5E6;</span></span></td>
+            <td><span class="g"><span class="hint">k</span><span class="c">&#x5E7;</span></span></td>
           </tr>
           <tr>
-            <td class="hint">&nbsp;</td>
+            <td><span class="g"><span class="hint">r</span><span class="c">&#x5E8;</span></span></td>
+            <td><span class="g"><span class="hint">s,sh</span><span class="c">&#x5E9;</span></span></td>
+            <td><span class="g"><span class="hint">t</span><span class="c">&#x5EA;</span></span></td>
             <td><span class="c">&#x5F0;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">&nbsp;</td>
             <td><span class="c">&#x5F1;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">&nbsp;</td>
             <td><span class="c">&#x5F2;</span></td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td class="padding">&nbsp;</td>
-            <td class="hint">&nbsp;</td>
-            <td>&nbsp;</td>
           </tr>
         </table></td>
         <td style="vertical-align:middle;"><table id="points">
           <tr>
-            <td><span class=c>&#x5BC;</span></td>
-            <td><span class=c>&#x5C1;</span></td>
+            <td><span class="c">&#x5BC;</span></td>
+            <td><span class="c">&#x5C1;</span></td>
             <td><span class="c">&#x5C2;</span></td>
             <td>&nbsp;</td>
           </tr>
@@ -343,7 +271,8 @@ matres:
             <td>&nbsp;</td>
           </tr>
         </table></td>
-        <td style="vertical-align:middle;"><table id="punctuation">
+        <td style="vertical-align:middle;">
+        <table id="punctuation">
           <tr>
             <td><span class="c">&#x5F3;</span></td>
           </tr>
@@ -359,7 +288,7 @@ matres:
           <tr>
             <td>&nbsp;</td>
           </tr>
-        </table></td>
+        </table>
            </td>
        <td id="controlchars" style="padding: 0 10px; text-align:center;">
        <p><span class="touch" style="margin: 0; padding: 30px 40px;" dir="auto" onClick="add(' ');">SPACE</span></p>
@@ -376,8 +305,8 @@ matres:
     <table id="rare">
       <tbody>
         <tr>
-          <td><div><span class=c>&#x592;</span> <span class=c>&#x593;</span> <span class=c>&#x594;</span> <span class=c>&#x595;</span> <span class=c>&#x597;</span> <span class=c>&#x598;</span> <span class=c>&#x599;</span> <span class=c>&#x59C;</span> <span class=c>&#x59D;</span> <span class=c>&#x59E;</span> <span class=c>&#x59F;</span> <span class=c>&#x5A0;</span> <span class=c>&#x5A9;</span> <span class=c>&#x5A1;</span> <span class=c>&#x5A8;</span> <span class=c>&#x5AB;</span> <span class=c>&#x5AC;</span> <span class=c>&#x5AE;</span> <span class=c>&#x5AF;</span> <span class=c>&#x5BA;</span> <span class=c>&#x5BF;</span> <span class=c>&#x5C4;</span><br/>
-            <span class=c>&#x591;</span> <span class=c>&#x596;</span> <span class=c>&#x59A;</span> <span class=c>&#x59B;</span> <span class=c>&#x5A3;</span> <span class=c>&#x5A2;</span> <span class=c>&#x5A4;</span> <span class=c>&#x5A5;</span> <span class=c>&#x5A6;</span> <span class=c>&#x5A7;</span> <span class=c>&#x5AA;</span> <span class=c>&#x5AD;</span> <span class=c>&#x5BD;</span> <span class=c>&#x5C5;</span> <span class=c>&#x5C7;</span> &nbsp;&nbsp;&nbsp; <span  class=c>&#x5C0;</span> <span class=c>&#x5C3;</span> <span class=c>&#x5C6;</span></div></td>
+          <td><div><span class="c">&#x592;</span> <span class="c">&#x593;</span> <span class="c">&#x594;</span> <span class="c">&#x595;</span> <span class="c">&#x597;</span> <span class="c">&#x598;</span> <span class="c">&#x599;</span> <span class="c">&#x59C;</span> <span class="c">&#x59D;</span> <span class="c">&#x59E;</span> <span class="c">&#x59F;</span> <span class="c">&#x5A0;</span> <span class="c">&#x5A9;</span> <span class="c">&#x5A1;</span> <span class="c">&#x5A8;</span> <span class="c">&#x5AB;</span> <span class="c">&#x5AC;</span> <span class="c">&#x5AE;</span> <span class="c">&#x5AF;</span> <span class="c">&#x5BA;</span> <span class="c">&#x5BF;</span> <span class="c">&#x5C4;</span><br/>
+            <span class="c">&#x591;</span> <span class="c">&#x596;</span> <span class="c">&#x59A;</span> <span class="c">&#x59B;</span> <span class="c">&#x5A3;</span> <span class="c">&#x5A2;</span> <span class="c">&#x5A4;</span> <span class="c">&#x5A5;</span> <span class="c">&#x5A6;</span> <span class="c">&#x5A7;</span> <span class="c">&#x5AA;</span> <span class="c">&#x5AD;</span> <span class="c">&#x5BD;</span> <span class="c">&#x5C5;</span> <span class="c">&#x5C7;</span> &nbsp;&nbsp;&nbsp; <span  class="c">&#x5C0;</span> <span class="c">&#x5C3;</span> <span class="c">&#x5C6;</span></div></td>
         </tr>
       </tbody>
     </table>
@@ -427,8 +356,8 @@ matres:
   </div>
   <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
      <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" onchange="changeBoxHeight(this.value)" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="changeLineHeight(this.value)" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
   </div>
   <div class="control">Add codepoint:
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
@@ -484,12 +413,26 @@ matres:
 
 
 <div class="control" id="uiTableDirection" style="text-align:right;">Table direction:<br />
-<select onChange="if (this.value == 'rtl') {document.getElementById('alphabet').dir = 'rtl'} else {document.getElementById('alphabet').dir = 'ltr'}; return false;">
+<select onChange="changeSelectionDirection(this.value); return false;">
 <option value="rtl">RTL</option>
 <option value="ltr">LTR</option>
 </select>
 </div>
+
+
+<div class="control">Set language:
+<form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
+  <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:right;" />
+  <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
+</form>
+</div>
+
+
+<div class="control" id="ccFactoryReset">Reset<br/><button onClick="resetDefaults()">Go</button>
+</div>
 </details>
+
+
 
 <details>
 <summary>more pickers</summary>
@@ -510,7 +453,7 @@ matres:
 
 
 <div class="smallprint">
-Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/hebrew"><!-- #BeginDate format:En2 -->05-Aug-2017<!-- #EndDate --></a>.
+Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/hebrew"><!-- #BeginDate format:En2 -->13-Aug-2017<!-- #EndDate --></a>.
 Make a <a href="https://github.com/r12a/pickers/issues/new?title=[hebrew%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
 Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
 </div>

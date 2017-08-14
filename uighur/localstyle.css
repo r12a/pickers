@@ -65,5 +65,7 @@
 	margin: 5px 0;
 	}
 
-
-
+.c { 
+	min-width: .5em;
+	text-align: center;
+	}

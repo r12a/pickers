@@ -25,12 +25,14 @@
 </head>
 
 <body class="app">
+<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
 <header>
 <div id="header-boilerplate"></div>
 <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Tifinagh character picker','v20');</script>
 </header>
 
 
+<div id="welcome"></div>
 
 <div id="main">
 <span id="copydelete">
@@ -47,10 +49,10 @@
     
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
     
-    <button  id="makeExample" onclick="makeExample('ber','')" 
+    <button  id="makeExample" onclick="makeExample(defaults.language,defaults.direction)" 
     title="Create an example.">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('tifinagh','ber','')" 
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('tifinagh',defaults.language,defaults.direction)" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
@@ -265,121 +267,71 @@
       <tr>
         <td style="vertical-align:middle;"><table id="consonants">
           <tr>
-            <td class="hint">b</td>
-            <td><span class="c">&#x2D31;</span></td>
-            <td class="hint">β</td>
-            <td><span class="c">&#x2D32;</span></td>
-            <td class="hint">g</td>
-            <td><span class="c">&#x2D33;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x2D34;</span></td>
-            <td class="hint">ʝ</td>
-            <td><span class="c">&#x2D35;</span></td>
-            <td class="hint">ʤ</td>
-            <td><span class="c">&#x2D36;</span></td>
-            <td class="hint">d</td>
-            <td><span class="c">&#x2D37;</span></td>
-            <td class="hint">ð</td>
-            <td><span class="c">&#x2D38;</span></td>
-            <td class="hint">dˁ</td>
-            <td><span class="c">&#x2D39;</span></td>
-            <td class="hint">ðˁ</td>
-            <td><span class="c">&#x2D3A;</span></td>
+            <td><span class="g"><span class="hint">b</span><span class="c">&#x2D31;</span></span></td>
+            <td><span class="g"><span class="hint">β</span><span class="c">&#x2D32;</span></span></td>
+            <td><span class="g"><span class="hint">g</span><span class="c">&#x2D33;</span></span></td>
+            <td><span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D34;</span></span></td>
+            <td><span class="g"><span class="hint">ʝ</span><span class="c">&#x2D35;</span></span></td>
+            <td><span class="g"><span class="hint">ʤ</span><span class="c">&#x2D36;</span></span></td>
+            <td><span class="g"><span class="hint">d</span><span class="c">&#x2D37;</span></span></td>
+            <td><span class="g"><span class="hint">ð</span><span class="c">&#x2D38;</span></span></td>
+            <td><span class="g"><span class="hint">dˁ</span><span class="c">&#x2D39;</span></span></td>
+            <td><span class="g"><span class="hint">ðˁ</span><span class="c">&#x2D3A;</span></span></td>
           </tr>
           <tr>
-            <td class="hint">f</td>
-            <td><span class="c">&#x2D3C;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x2D3D;</span></td>
-            <td class="hint">k</td>
-            <td><span class="c">&#x2D3E;</span></td>
-            <td class="hint">ç</td>
-            <td><span class="c">&#x2D3F;</span></td>
-            <td class="hint">h</td>
-            <td><span class="c">&#x2D40;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x2D41;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x2D42;</span></td>
-            <td class="hint">ħ</td>
-            <td><span class="c">&#x2D43;</span></td>
-            <td class="hint">χ</td>
-            <td><span class="c">&#x2D45;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x2D46;</span></td>
+            <td><span class="g"><span class="hint">f</span><span class="c">&#x2D3C;</span></span></td>
+            <td><span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D3D;</span></span></td>
+            <td><span class="g"><span class="hint">k</span><span class="c">&#x2D3E;</span></span></td>
+            <td><span class="g"><span class="hint">ç</span><span class="c">&#x2D3F;</span></span></td>
+            <td><span class="g"><span class="hint">h</span><span class="c">&#x2D40;</span></span></td>
+            <td><span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D41;</span></span></td>
+            <td><span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D42;</span></span></td>
+            <td><span class="g"><span class="hint">ħ</span><span class="c">&#x2D43;</span></span></td>
+            <td><span class="g"><span class="hint">χ</span><span class="c">&#x2D45;</span></span></td>
+            <td><span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D46;</span></span></td>
           </tr>
           <tr>
-            <td class="hint">k</td>
-            <td><span class="c">&#x2D47;</span></td>
-            <td class="hint">q</td>
-            <td><span class="c">&#x2D48;</span></td>
-            <td class="hint">ʒ</td>
-            <td><span class="c">&#x2D4A;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x2D4B;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x2D4C;</span></td>
-            <td class="hint">l</td>
-            <td><span class="c">&#x2D4D;</span></td>
-            <td class="hint">m</td>
-            <td><span class="c">&#x2D4E;</span></td>
-            <td class="hint">n</td>
-            <td><span class="c">&#x2D4F;</span></td>
-            <td class="hint">ɲ</td>
-            <td><span class="c">&#x2D50;</span></td>
-            <td class="hint">ŋ</td>
-            <td><span class="c">&#x2D51;</span></td>
+            <td><span class="g"><span class="hint">k</span><span class="c">&#x2D47;</span></span></td>
+            <td><span class="g"><span class="hint">q</span><span class="c">&#x2D48;</span></span></td>
+            <td><span class="g"><span class="hint">ʒ</span><span class="c">&#x2D4A;</span></span></td>
+            <td><span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D4B;</span></span></td>
+            <td><span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D4C;</span></span></td>
+            <td><span class="g"><span class="hint">l</span><span class="c">&#x2D4D;</span></span></td>
+            <td><span class="g"><span class="hint">m</span><span class="c">&#x2D4E;</span></span></td>
+            <td><span class="g"><span class="hint">n</span><span class="c">&#x2D4F;</span></span></td>
+            <td><span class="g"><span class="hint">ɲ</span><span class="c">&#x2D50;</span></span></td>
+            <td><span class="g"><span class="hint">ŋ</span><span class="c">&#x2D51;</span></span></td>
           </tr>
           <tr>
-            <td class="hint">p</td>
-            <td><span class="c">&#x2D52;</span></td>
-            <td class="hint">r</td>
-            <td><span class="c">&#x2D54;</span></td>
-            <td class="hint">rˤ</td>
-            <td><span class="c">&#x2D55;</span></td>
-            <td class="hint">ʁ</td>
-            <td><span class="c">&#x2D56;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x2D57;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x2D58;</span></td>
-            <td class="hint">s</td>
-            <td><span class="c">&#x2D59;</span></td>
-            <td class="hint">sˁ</td>
-            <td><span class="c">&#x2D5A;</span></td>
-            <td class="hint">ʃ</td>
-            <td><span class="c">&#x2D5B;</span></td>
-            <td class="hint">t</td>
-            <td><span class="c">&#x2D5C;</span></td>
+            <td><span class="g"><span class="hint">p</span><span class="c">&#x2D52;</span></span></td>
+            <td><span class="g"><span class="hint">r</span><span class="c">&#x2D54;</span></span></td>
+            <td><span class="g"><span class="hint">rˤ</span><span class="c">&#x2D55;</span></span></td>
+            <td><span class="g"><span class="hint">ʁ</span><span class="c">&#x2D56;</span></span></td>
+            <td><span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D57;</span></span></td>
+            <td><span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D58;</span></span></td>
+            <td><span class="g"><span class="hint">s</span><span class="c">&#x2D59;</span></span></td>
+            <td><span class="g"><span class="hint">sˁ</span><span class="c">&#x2D5A;</span></span></td>
+            <td><span class="g"><span class="hint">ʃ</span><span class="c">&#x2D5B;</span></span></td>
+            <td><span class="g"><span class="hint">t</span><span class="c">&#x2D5C;</span></span></td>
           </tr>
           <tr>
-            <td class="hint">θ</td>
-            <td><span class="c">&#x2D5D;</span></td>
-            <td class="hint">ʧ</td>
-            <td><span class="c">&#x2D5E;</span></td>
-            <td class="hint">tˁ</td>
-            <td><span class="c">&#x2D5F;</span></td>
-            <td class="hint">v</td>
-            <td><span class="c">&#x2D60;</span></td>
-            <td class="hint">w</td>
-            <td><span class="c">&#x2D61;</span></td>
-            <td class="hint">j</td>
-            <td><span class="c">&#x2D62;</span></td>
-            <td class="hint">z</td>
-            <td><span class="c">&#x2D63;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x2D64;</span></td>
-            <td class="hint">zˁ</td>
-            <td><span class="c">&#x2D65;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td><span class="c">&#x2D6F;</span></td>
+            <td><span class="g"><span class="hint">θ</span><span class="c">&#x2D5D;</span></span></td>
+            <td><span class="g"><span class="hint">ʧ</span><span class="c">&#x2D5E;</span></span></td>
+            <td><span class="g"><span class="hint">tˁ</span><span class="c">&#x2D5F;</span></span></td>
+            <td><span class="g"><span class="hint">v</span><span class="c">&#x2D60;</span></span></td>
+            <td><span class="g"><span class="hint">w</span><span class="c">&#x2D61;</span></span></td>
+            <td><span class="g"><span class="hint">j</span><span class="c">&#x2D62;</span></span></td>
+            <td><span class="g"><span class="hint">z</span><span class="c">&#x2D63;</span></span></td>
+            <td><span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D64;</span></span></td>
+            <td><span class="g"><span class="hint">zˁ</span><span class="c">&#x2D65;</span></span></td>
+            <td><span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D6F;</span></span></td>
           </tr>
         </table></td>
-        <td id="vowels"><span class="hint">æ</span><span class="c">&#x2D30;</span><br />
-          <span class="hint">ə</span><span class="c">&#x2D3B;</span><br />
-          <span class="hint">ɛ</span><span class="c">&#x2D44;</span><br />
-          <span class="hint">i</span><span class="c">&#x2D49;</span><br />
-          <span class="hint">ʊ</span><span class="c">&#x2D53;</span><br /></td>
+        <td id="vowels"><span class="g"><span class="hint">æ</span><span class="c">&#x2D30;</span></span><br />
+          <span class="g"><span class="hint">ə</span><span class="c">&#x2D3B;</span></span><br />
+          <span class="g"><span class="hint">ɛ</span><span class="c">&#x2D44;</span></span><br />
+          <span class="g"><span class="hint">i</span><span class="c">&#x2D49;</span></span><br />
+          <span class="g"><span class="hint">ʊ</span><span class="c">&#x2D53;</span></span><br /></td>
       </tr>
       <tr>
         <td colspan="2" style="vertical-align:middle;">
@@ -428,8 +380,8 @@
   </div>
   <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
      <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" onchange="changeBoxHeight(this.value)" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="changeLineHeight(this.value)" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
   </div>
   <div class="control">Add codepoint:
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
@@ -482,6 +434,18 @@
         <option value="-">-</option>
 		</select>
 </div>
+
+
+<div class="control">Set language:
+<form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
+  <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:right;" />
+  <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
+</form>
+</div>
+
+
+<div class="control" id="ccFactoryReset">Reset<br/><button onClick="resetDefaults()">Go</button>
+</div>
 </details>
 
 <details>
@@ -503,7 +467,7 @@
 
 
 <div class="smallprint">
-Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/tifinagh"><!-- #BeginDate format:En2 -->05-Aug-2017<!-- #EndDate --></a>.
+Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/tifinagh"><!-- #BeginDate format:En2 -->14-Aug-2017<!-- #EndDate --></a>.
 Make a <a href="https://github.com/r12a/pickers/issues/new?title=[tifinagh%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
 Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
 </div>

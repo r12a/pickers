@@ -52,7 +52,11 @@ table {
 #kbd #consonants {
 	margin-left: 0px; 
 	}
+#moreconsonants td , #consonants td {
+	text-align: center; 
+	}
 
+.g { display: inline-block; }
 
 #kbd #vowels {
 	border: 1px dotted #ccc;
@@ -66,6 +70,11 @@ table {
 	line-height: 1.3;
 	}
 #kbd #vowels span.c {
+	min-width: .75em;
+	text-align: center;
+	}
+#kbd #vowels span.g {
+	text-align: right;
 	}
 	
 
@@ -77,8 +86,9 @@ table {
 	text-align: center; 
 	line-height: 1;
 	}
-#kbd #diacritics span {
-	padding: 0 5px;
+#kbd #diacritics span.c {
+	min-width: .8em;
+	text-align: center;
 	}
 
 #kbd #symbols {
@@ -145,4 +155,8 @@ table {
 	}
 #fontgrid span:after { 
 	content: '\200B ' ; /* zwsp */ 
+	}
+
+#rare {
+	margin:auto;
 	}

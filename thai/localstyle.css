@@ -24,21 +24,19 @@ td.hint {
 
 #alphabet { padding-left: 5px; padding-right: 5px; }
 
-#leftvowels { margin: 15px 10px 0 0; border: 1px dotted #ccc; border-radius: 10px; }
+#leftvowels { margin: 15px 10px 0 0; border: 1px dotted #ccc; border-radius: 10px;}
 
 #kbd {
 	margin: auto;
 	line-height: 1.2;
-	color: #888;
+	color: #666;
 	}
 
-#consonants {  margin:0; border-collapse:collapse; }
-#consonants td {  padding: 0;  white-space: nowrap; margin: 0; padding-bottom: 3px; }
+#kbd #consonants {  margin:0; border-collapse:collapse; }
+#kbd #consonants td {  padding: 0;  white-space: nowrap; margin: 0; padding-bottom: 3px; text-align: left;}
 
 #combining { border: 1px dotted #ccc; border-radius: 10px; margin-left: 10px; line-height: 1.6; }
 #combining .hint { padding-right: 0px;  }
-#combining td { min-width: 12px; }
-#combining .c { padding-left: 7px; }
 
 #punctuation { 	margin-top: 4px; float: right;}
 #punctuation td { padding-left: 10px; text-align: right; }
@@ -63,4 +61,19 @@ td.hint {
 #fontgrid table {height: 600px;}
 #fontgrid td {height: 12%;width: 8%;}
 
+#kbd #consonants td, #kbd #numbers td, #kbd #finals td, #kbd #combining td {
+	text-align: center;
+	}
+#kbd #consonants .c, #kbd #finals .c, #kbd #combining .c, #kbd #numbers .c, #kbd #leftvowels .c  {
+	min-width:.75em;
+	text-align: center;
+	}
+#kbd #leftvowels td { text-align:right;}
+#kbd #consonants td { text-align:left;}
 
+#rare {
+	margin:auto;
+	}
+#shapelist {
+	display: none;
+	}

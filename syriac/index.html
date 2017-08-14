@@ -24,10 +24,14 @@
 </head>
 
 <body class="app">
+<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
 <header>
 <div id="header-boilerplate"></div>
 <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Syriac character picker','');</script>
 </header>
+
+<div id="welcome"></div>
+
 <div id="main">
   <span id="copydelete">
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
@@ -48,10 +52,10 @@
     title="Convert Syriac text to an UN Latin transcription.">Transcribe<br/>
     to UN</button--> 
     
-    <button  id="makeExample" onclick="makeExample('syr-Syrc','rtl')" 
+    <button  id="makeExample" onclick="makeExample(defaults.language,defaults.direction)" 
     title="Create an example.">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('syriac','syr-Syrc','rtl')" 
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('syriac',defaults.language,defaults.direction)" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
@@ -298,69 +302,43 @@ Autofocus:
 
 
 
-<div id="tables">
+<div id="tables" dir="rtl">
   
   <!-- SHAPE -->
-  <div id="alphabet" class="default"
-dir="ltr">
+  <div id="alphabet" class="default">
     <table id="kbd">
  <tr>
    <td id="consonants"><table id="consonants2">
      <tr>
-       <td class="hint">ʾ</td>
-       <td><span class="c">&#x0710;</span></td>
-       <td class="hint"><span class="p">b</span></td>
-       <td><span class="c">&#x0712;</span></td>
-       <td class="hint">g</td>
-       <td><span class="c">&#x0713;</span></td>
-       <td class="hint">d</td>
-       <td><span class="c">&#x0715;</span></td>
-       <td><span class="hint">h</span></td>
-       <td><span class="c">&#x0717;</span></td>
-       <td class="hint">&nbsp;</td>
+       <td><span class="g"><span class="hint">ʾ</span><span class="c">&#x0710;</span></span></td>
+       <td><span class="g"><span class="hint">b</span><span class="c">&#x0712;</span></span></td>
+       <td><span class="g"><span class="hint">g</span><span class="c">&#x0713;</span></span></td>
+       <td><span class="g"><span class="hint">d</span><span class="c">&#x0715;</span></span></td>
+       <td><span class="g"><span class="hint">h</span><span class="c">&#x0717;</span></span></td>
        <td><span class="c">&#x071E;</span></td>
      </tr>
      <tr>
-       <td class="hint">w</td>
-       <td><span class="c">&#x0718;</span></td>
-       <td class="hint">z</td>
-       <td><span class="c">&#x0719;</span></td>
-       <td class="hint">ḥ</td>
-       <td><span class="c">&#x071A;</span></td>
-       <td class="hint">ṭ</td>
-       <td><span class="c">&#x071B;</span></td>
-       <td class="hint">y</td>
-       <td><span class="c">&#x071D;</span></td>
-       <td><span class="hint">k</span></td>
-       <td><span class="c">&#x071F;</span></td>
+       <td><span class="g"><span class="hint">w</span><span class="c">&#x0718;</span></span></td>
+       <td><span class="g"><span class="hint">z</span><span class="c">&#x0719;</span></span></td>
+       <td><span class="g"><span class="hint">ḥ</span><span class="c">&#x071A;</span></span></td>
+       <td><span class="g"><span class="hint">ṭ</span><span class="c">&#x071B;</span></span></td>
+       <td><span class="g"><span class="hint">y</span><span class="c">&#x071D;</span></span></td>
+       <td><span class="g"><span class="hint">k</span><span class="c">&#x071F;</span></span></td>
      </tr>
      <tr>
-       <td class="hint"><span class="p">l</span></td>
-       <td><span class="c">&#x0720;</span></td>
-       <td class="hint">m</td>
-       <td><span class="c">&#x0721;</span></td>
-       <td class="hint">n</td>
-       <td><span class="c">&#x0722;</span></td>
-       <td class="hint">s</td>
-       <td><span class="c">&#x0723;</span></td>
-       <td class="hint">&nbsp;</td>
-       <td><span class="c">&#x0724;</span></td>
-       <td class="hint">ʿ</td>
-       <td><span class="c">&#x0725;</span></td>
+       <td><span class="g"><span class="hint">l</span><span class="c">&#x0720;</span></span></td>
+       <td><span class="g"><span class="hint">m</span><span class="c">&#x0721;</span></span></td>
+       <td><span class="g"><span class="hint">n</span><span class="c">&#x0722;</span></span></td>
+       <td colspan="2"><span class="g"><span class="hint">s</span><span class="c">&#x0723;</span> <span class="c">&#x0724;</span></span></td>
+       <td><span class="g"><span class="hint">ʿ</span><span class="c">&#x0725;</span></span></td>
      </tr>
      <tr>
-       <td class="hint">p</td>
-       <td><span class="c">&#x0726;</span></td>
-       <td class="hint">ṣ</td>
-       <td><span class="c">&#x0728;</span></td>
-       <td class="hint">q</td>
-       <td><span class="c">&#x0729;</span></td>
-       <td class="hint">r</td>
-       <td><span class="c">&#x072A;</span></td>
-       <td class="hint">š</td>
-       <td><span class="c">&#x072B;</span></td>
-       <td class="hint">t</td>
-       <td><span class="c">&#x072C;</span></td>
+       <td><span class="g"><span class="hint">p</span><span class="c">&#x0726;</span></span></td>
+       <td><span class="g"><span class="hint">ṣ</span><span class="c">&#x0728;</span></span></td>
+       <td><span class="g"><span class="hint">q</span><span class="c">&#x0729;</span></span></td>
+       <td><span class="g"><span class="hint">r</span><span class="c">&#x072A;</span></span></td>
+       <td><span class="g"><span class="hint">š</span><span class="c">&#x072B;</span></span></td>
+       <td><span class="g"><span class="hint">t</span><span class="c">&#x072C;</span></span></td>
      </tr>
      </table></td>
    <td id="vowels"><table style="margin: 0 10px 10px 0; border: 1px solid #ccc; border-radius: 10px; padding: 0 15px;">
@@ -453,7 +431,6 @@ dir="ltr">
          <td><span class="c">&#x0640;</span></td>
          <td style="vertical-align:middle;"><span class="touch" dir="auto" onClick="add('\u070F');">SAM</span></td>
          <td><span class="c">&#x0308;</span></td>
-         <td><span class="hint">&nbsp;</span></td>
          <td><span class="c">&#x032E;</span></td>
          </tr>
        </tbody>
@@ -468,9 +445,9 @@ dir="ltr">
  <summary>show/hide transliteration characters</summary>
  <table id="translit">
    <tr>
-     <td class="hint">garshuni</td>
+     <td><span class="hint">garshuni</span></td>
      <td><span class="c">&#x0714;</span></td>
-     <td class="hint">&nbsp;</td>
+     <td><span class="hint">&nbsp;</span></td>
      <td><span class="c">&#x071C;</span></td>
      <td><span class="c">&#x0621;</span></td>
      <td><span class="c">&#x064E;</span></td>
@@ -482,15 +459,15 @@ dir="ltr">
      <td><span class="c">&#x0651;</span></td>
      <td><span class="c">&#x0652;</span></td>
      <td><span class="c">&#x0670;</span></td>
-     <td class="hint">persian</td>
+     <td><span class="hint">persian</span></td>
      <td><span class="c">&#x072D;</span></td>
-     <td class="hint">&nbsp;</td>
+     <td><span class="hint">&nbsp;</span></td>
      <td><span class="c">&#x072E;</span></td>
-     <td class="hint">&nbsp;</td>
+     <td><span class="hint">&nbsp;</span></td>
      <td><span class="c">&#x072F;</span></td>
-     <td class="hint">sogdian</td>
+     <td><span class="hint">sogdian</span></td>
      <td><span class="c">&#x074D;</span></td>
-     <td class="hint">&nbsp;</td>
+     <td><span class="hint">&nbsp;</span></td>
      <td><span class="c">&#x074E;</span></td>
      <td><span class="c">&#x074F;</span></td>
      <td><span class="hint">marks</span></td>
@@ -505,13 +482,13 @@ dir="ltr">
  <summary>show/hide less common characters</summary>
  <table id="rare">
    <tr>
-     <td class="hint">d/r</td>
+     <td><span class="hint">d/r</span></td>
      <td><span class="c">&#x0716;</span></td>
-     <td class="hint">p</td>
+     <td><span class="hint">p</span></td>
      <td><span class="c">&#x0727;</span></td>
-     <td class="hint">a</td>
+     <td><span class="hint">a</span></td>
      <td><span class="c">&#x0711;</span></td>
-     <td class="hint">marks</td>
+     <td><span class="hint">marks</span></td>
      <td><span class="c">&#x0304;</span></td>
      <td><span class="c">&#x0320;</span></td>
      <td><span class="c">&#x0307;</span></td>
@@ -520,18 +497,18 @@ dir="ltr">
      <td><span class="c">&#x0325;</span></td>
      <td><span class="c">&#x0324;</span></td>
      <td><span class="c">&#x032D;</span></td>
-     <td class="hint">harklean</td>
+     <td><span class="hint">harklean</span></td>
          <td><span class="c">&#x070B;</span></td>
          <td><span class="c">&#x070C;</span></td>
          <td><span class="c">&#x070D;</span></td>
-     <td class="hint">cross</td>
+     <td><span class="hint">cross</span></td>
          <td><span class="c">&#x2670;</span></td>
          <td><span class="c">&#x2671;</span></td>
      </tr>
     </table>
  <table id="rare2">
    <tr>
-     <td class="hint">punctuation</td>
+     <td><span class="hint">punctuation</span></td>
          <td><span class="c">&#x0700;</span></td>
          <td><span class="c">&#x0701;</span></td>
          <td><span class="c">&#x0702;</span></td>
@@ -543,7 +520,7 @@ dir="ltr">
          <td><span class="c">&#x0708;</span></td>
          <td><span class="c">&#x0709;</span></td>
           <td><span class="c">&#x070A;</span></td>
-    <td class="hint">marks</td>
+    <td><span class="hint">marks</span></td>
          <td><span class="c">&#x0743;</span></td>
          <td><span class="c">&#x0744;</span></td>
          <td><span class="c">&#x0745;</span></td>
@@ -618,13 +595,13 @@ dir="ltr">
         onfocus="document.getElementById('dimensions').textContent='Font size (px):'" 
         onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
      <input name="rows" value="1.5" id="rows" size="3" 
-     	onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" 
+     	onchange="changeBoxHeight(this.value)" 
         onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" 
         onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
         onfocus="document.getElementById('dimensions').textContent='Box height (px):'" 
         onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
      <input name="lineHeight" value="1.5" id="lineHeight" size="3"  
-     	onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" 
+     	onchange="changeLineHeight(this.value)" 
         onmouseover="document.getElementById('dimensions').textContent='Line height:'" 
         onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
         onfocus="document.getElementById('dimensions').textContent='Line height:'" 
@@ -689,10 +666,22 @@ dir="ltr">
 
 
 <div class="control" id="uiTableDirection" style="text-align:right;">Table direction:<br />
-<select onChange="if (this.value == 'rtl') {document.getElementById('alphabet').dir = 'rtl'} else {document.getElementById('alphabet').dir = 'ltr'}; return false;">
+<select onChange="changeSelectionDirection(this.value); return false;">
 <option value="rtl">RTL</option>
 <option value="ltr">LTR</option>
 </select>
+</div>
+
+
+<div class="control">Set language:
+<form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
+  <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:right;" />
+  <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
+</form>
+</div>
+
+
+<div class="control" id="ccFactoryReset">Reset<br/><button onClick="resetDefaults()">Go</button>
 </div>
 
 
@@ -726,7 +715,7 @@ dir="ltr">
 
 
 <div class="smallprint">
-Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/syriac"><!-- #BeginDate format:En2 -->05-Aug-2017<!-- #EndDate --></a>.
+Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/syriac"><!-- #BeginDate format:En2 -->14-Aug-2017<!-- #EndDate --></a>.
 Raise <a href="https://github.com/r12a/pickers/issues/new?title=[syriac%20picker]%20%20ADD%20TITLE%20HERE">an issue</a>. 
 Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
 </div>

@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Noto Sans Tamil Webfont';
+    font-family: 'Noto Sans Tamil WF';
     src: url('/shared/webfonts/notosanstamil-regularwebfont.woff2') format('woff2'),
          url('/shared/webfonts/notosanstamil-regularwebfont.woff') format('woff');
     font-weight: normal;
@@ -8,7 +8,7 @@
 
 #alphabet { 
 	display: block; 
-	color: #999;
+	color: #666;
 	}
 
 span.hint { 
@@ -76,7 +76,8 @@ span.hint {
 	border-radius: 5px;
 	margin: 10px 0 20px 0;
 	line-height: 1.8;
-	padding: 10px;
+	padding: 5px;
+	text-align:center;
 	}
 #kbd .combining { 
 	border-top: dotted 1px #999; 
@@ -90,3 +91,14 @@ span.hint {
 	}
 	
 
+#kbd #consonants td, #kbd #numbers td {
+	text-align: center;
+	}
+#kbd #consonants .c, #kbd #numbers .c, #kbd #symbols  .c, #kbd #vowels  .c  {
+	min-width:.75em;
+	text-align: center;
+	}
+
+#rare {
+	margin:auto;
+	}

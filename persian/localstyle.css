@@ -36,7 +36,6 @@
 	}
 #kbd #consonants  {
 	text-align: start;
-	padding-inline-end: 20px;
 	}
 #kbd #consonants td  {
 	padding: 0 2px;
@@ -69,8 +68,20 @@
 
 
 #alphabet #controlchars {
-	padding: 0 10px; text-align:center;
+	padding: 0 8px; text-align:center;
 	}
 #alphabet #controlchars p {
-	margin: .5em 0;
+	margin: .3em 0;
+	}
+
+#kbd #consonants td, #kbd #numbers td {
+	text-align: center;
+	}
+#kbd #consonants .c, #kbd #numbers .c  {
+	min-width:.6em;
+	text-align: center;
+	}
+
+#rare {
+	margin:auto;
 	}

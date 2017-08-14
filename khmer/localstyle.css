@@ -60,6 +60,14 @@
 	vertical-align: top;
 	}
 
+#kbd #consonants td, #kbd #numbers td {
+	text-align: center;
+	}
+#kbd #consonants .c, #kbd #independentvowels .c, #kbd #combining .c, #kbd #numbers .c  {
+	min-width:.75em;
+	text-align: center;
+	}
+
 #kbd #misc {
 	padding-left: 10px;
 	}
@@ -142,7 +150,7 @@
 #shape span, #shape img { cursor:pointer; }
 /*#shape img.noOnclick { position: relative; z-index: 500; }*/
 .hidden { display:none; }
-#shapelist { text-align: center; }
+#shapelist { text-align: center; display: none; }
 .shapelist { margin-bottom: 10px; }
 .shapelist li { 
 	position:relative;

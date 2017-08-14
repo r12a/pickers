@@ -1,14 +1,20 @@
-var defaults = new Object;
+var defaults = new Object
+var factoryDefaults = new Object
+	factoryDefaults.font = 'Tibetan Machine Uni WF'; // text area font name (a single font, no quotes)
+	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
+	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
+	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
+	factoryDefaults.language = 'bo' // language to use for examples
+	factoryDefaults.blocklocation= '/scripts/tibetan/block'  // blocklocation to use for examples
+	factoryDefaults.uifont = 'Tibetan Machine Uni WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uisize = "32";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.ccbase = "\u0020";  // default base for combining characters
+	factoryDefaults.direction = "ltr" // indicates whether this is a picker for a RTL script
+	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
+	factoryDefaults.contrast = "low" // contrast for UI text colours
 
-defaults.font = "'Tibetan Machine Uni WF'"; // font name per usage in CSS
-defaults.size = "40";  // number of pixels (just the number)
-defaults.rows = "2"; // number representing number of times 100px for height of box
-defaults.lineHeight = "1.8";  // just the number
-defaults.view = "alphabet";  // alphabet, phonic, phonelist
-defaults.language = 'bo'
-defaults.blocklocation= '/scripts/tibetan/block'
-defaults.uifont = "'Tibetan Machine Uni WF'"; // font name per usage in CSS
-defaults.uisize = "32";  // number of pixels (just the number)
-defaults.ccbase = "\u0020";  // default base for combining characters
 
+var thisPicker = 'tibetanPicker'
 
+if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
+else  defaults = factoryDefaults

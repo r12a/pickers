@@ -105,22 +105,20 @@
 
 
 
-#alphabet #tones  {
-	padding-right: 1em;
-	padding-left: 1em;
-	}
-#alphabet #tones span.c {
-	padding-right: 10px;
-	padding-left: 10px;
-	}
-#alphabet #digits {
-	padding-left: 1em;
-	}
-#alphabet #punc {
+	#alphabet #punc {
 	margin-top: 2em;
 	}
-#alphabet #punc span, #alphabet #tones span {
-	padding: 0 5px; 
+
+#kbd #tones {
+	margin:0 2em;
+	}
+
+#kbd #consonants td, #kbd #vowels td, #kbd #tones td, #kbd #numbers td {
+	text-align: center;
+	}
+#kbd #consonants .c, #kbd #vowles .c, #kbd #tones .c, #kbd #numbers .c  {
+	min-width:.7em;
+	text-align: center;
 	}
 
 #alphabet #controlchars {

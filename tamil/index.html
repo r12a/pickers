@@ -25,12 +25,14 @@
 </head>
 
 <body class="app">
+<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
 <header>
 <div id="header-boilerplate"></div>
 <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Tamil character picker','v20');</script>
 </header>
 
 
+<div id="welcome"></div>
 
 <div id="main">
 <span id="copydelete">
@@ -53,10 +55,10 @@
     <button onclick="doTranscription('fromISO')"
     title="Convert ISO latin text to Tamil transcription.">ISO to<br/>Tamil</button>
 
-    <button  id="makeExample" onclick="makeExample('ta','')" 
+    <button  id="makeExample" onclick="makeExample(defaults.language,defaults.direction)" 
     title="Create an example.">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('tamil','ta','')" 
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('tamil',defaults.language,defaults.direction)" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
@@ -234,135 +236,105 @@
   <div id="alphabet" class="default">
     <table id="kbd">
       <tr>
-        <td id="pulli"><span class="c" style="line-height: 7; padding: 3em 5px; border: 1px dotted #999;">&#xBCD;</span></td>
+        <td id="pulli"><span class="c" style="line-height: 2; padding: 2em 5px; border: 1px dotted #999;">&#xBCD;</span></td>
         <td id="mainleft"><table id="consonants">
           <tr>
-            <td class="hint">k</td>
-            <td><span class=c>&#xB95;</span></td>
-            <td class="hint">c</td>
-            <td><span class="c">&#xB9A;</span></td>
-            <td class="hint">j</td>
-            <td><span class="c">&#xB9C;</span></td>
-            <td class="hint">ṭ</td>
-            <td><span class="c">&#xB9F;</span></td>
-            <td class="hint">t</td>
-            <td><span class="c">&#xBA4;</span></td>
-            <td class="hint">p</td>
-            <td><span class="c">&#xBAA;</span></td>
+            <td><span class="g"><span class="hint">k</span><span class="c">&#xB95;</span></span></td>
+            <td><span class="g"><span class="hint">c</span><span class="c">&#xB9A;</span></span></td>
+            <td><span class="g"><span class="hint">j</span><span class="c">&#xB9C;</span></span></td>
+            <td><span class="g"><span class="hint">ṭ</span><span class="c">&#xB9F;</span></span></td>
+            <td><span class="g"><span class="hint">t</span><span class="c">&#xBA4;</span></span></td>
+            <td><span class="g"><span class="hint">p</span><span class="c">&#xBAA;</span></span></td>
           </tr>
           <tr>
-            <td class="hint">ṅ</td>
-            <td><span class="c">&#xB99;</span></td>
-            <td class="hint">ñ</td>
-            <td><span class="c">&#xB9E;</span></td>
-            <td class="hint">ṇ</td>
-            <td><span class="c">&#xBA3;</span></td>
-            <td class="hint">n</td>
-            <td><span class=c>&#xBA8;</span></td>
-            <td class="hint">m</td>
-            <td><span class=c>&#xBA9;</span></td>
-            <td class="hint">ṉ</td>
-            <td><span class=c>&#xBAE;</span></td>
+            <td><span class="g"><span class="hint">ṅ</span><span class="c">&#xB99;</span></span></td>
+            <td><span class="g"><span class="hint">ñ</span><span class="c">&#xB9E;</span></span></td>
+            <td><span class="g"><span class="hint">ṇ</span><span class="c">&#xBA3;</span></span></td>
+            <td><span class="g"><span class="hint">n</span><span class="c">&#xBA8;</span></span></td>
+            <td><span class="g"><span class="hint">m</span><span class="c">&#xBA9;</span></span></td>
+            <td><span class="g"><span class="hint">ṉ</span><span class="c">&#xBAE;</span></span></td>
           </tr>
           <tr>
-            <td class="hint">r</td>
-            <td><span class=c>&#xBB0;</span></td>
-            <td class="hint">ṟ</td>
-            <td><span class="c">&#xBB1;</span></td>
-            <td class="hint">l</td>
-            <td><span class="c">&#xBB2;</span></td>
-            <td class="hint">ḷ</td>
-            <td><span class="c">&#xBB3;</span></td>
-            <td class="hint">ḻ</td>
-            <td><span class="c">&#xBB4;</span></td>
-            <td class="hint">y</td>
-            <td><span class="c">&#xBAF;</span></td>
+            <td><span class="g"><span class="hint">r</span><span class="c">&#xBB0;</span></span></td>
+            <td><span class="g"><span class="hint">ṟ</span><span class="c">&#xBB1;</span></span></td>
+            <td><span class="g"><span class="hint">l</span><span class="c">&#xBB2;</span></span></td>
+            <td><span class="g"><span class="hint">ḷ</span><span class="c">&#xBB3;</span></span></td>
+            <td><span class="g"><span class="hint">ḻ</span><span class="c">&#xBB4;</span></span></td>
+            <td><span class="g"><span class="hint">y</span><span class="c">&#xBAF;</span></span></td>
             <!--td rowspan="5"><img alt="&#x103A;" title="103A: MYANMAR SIGN ASAT" src="images/103Atall.png" onclick="add('&#x103A;');" /><br />
             <img alt="&#x1039;" title="1039: MYANMAR SIGN VIRAMA" src="images/1039tall.png" onclick="add('&#x1039;');" /></td-->
           </tr>
           <tr>
-            <td class="hint">ś</td>
-            <td><span class="c">&#xBB6;</span></td>
-            <td class="hint">ṣ</td>
-            <td><span class="c">&#xBB7;</span></td>
-            <td class="hint">s</td>
-            <td><span class="c">&#xBB8;</span></td>
-            <td class="hint">h</td>
-            <td><span class="c">&#xBB9;</span></td>
-            <td class="hint">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td class="hint">v</td>
-            <td><span class="c">&#xBB5;</span></td>
+            <td><span class="g"><span class="hint">ś</span><span class="c">&#xBB6;</span></span></td>
+            <td><span class="g"><span class="hint">ṣ</span><span class="c">&#xBB7;</span></span></td>
+            <td><span class="g"><span class="hint">s</span><span class="c">&#xBB8;</span></span></td>
+            <td colspan="2"><span class="g"><span class="hint">h</span><span class="c">&#xBB9;</span></span></td>
+            <td><span class="g"><span class="hint">v</span><span class="c">&#xBB5;</span></span></td>
           </tr>
           <tr>
-            <td class="hint">kṣ</td>
-            <td><span class="c">&#xB95;&#xBCD;&#xBB7;</span></td>
-            <td class="hint">&nbsp;</td>
+            <td colspan="2"><span class="g"><span class="hint">kṣ</span><span class="c">&#xB95;&#xBCD;&#xBB7;</span></span></td>
             <td><span class="c">&#xB83;</span></td>
-            <td class="hint">&nbsp;</td>
             <td>&nbsp;</td>
-            <td class="hint">&nbsp;</td>
             <td>&nbsp;</td>
-            <td class="hint">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td class="hint">&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
         </table>
           <div id="symbols"><span class="c">&#xBD0;</span> <span class="c">&#xBF6;</span> <span class="c">&#xBF7;</span> <span class="c">&#xBF8;</span> <span style="margin-left: 20px;"><span class="c">&#x964;</span> <span class="c">&#x965;</span></span></div></td>
-        <td style="padding-left:20px; vertical-align:top;"><div class="vowels"> <span class="hint">a</span><span class="c">&#xBBE;</span> <span class="hint">i</span><span class="c">&#xBBF;</span> <span class="c">&#xBC0;</span> <span class="hint">u</span><span class="c">&#xBC1;</span> <span class="c">&#xBC2;</span><br/>
-          <span class="hint">e</span><span class="c">&#xBC6;</span> <span class="c">&#xBC7;</span> <span class="hint">ai</span><span class="c">&#xBC8;</span><br/>
-          <span class="hint">o</span><span class="c">&#xBCA;</span> <span class="c">&#xBCB;</span> <span class="hint">au</span><span class="c">&#xBCC;</span> </div>
-          <div><span class="hint">a</span><span class=c>&#xB85;</span> <span class="hint"> </span><span class=c>&#xB86;</span> <span class="hint">i</span><span class=c>&#xB87;</span> <span class=c>&#xB88;</span> <span class="hint">u</span><span class=c>&#xB89;</span> <span class=c>&#xB8A;</span><br/>
-            <span class="hint">e</span><span class=c>&#xB8E;</span> <span class=c>&#xB8F;</span> <span class="hint">ai</span><span class=c>&#xB90;</span> <span class="hint">o</span><span class=c>&#xB92;</span> <span class=c>&#xB93;</span> <span class="hint">au</span><span class=c>&#xB94;</span></div></td>
+        <td style="padding-left:20px; vertical-align:top;"><div class="vowels"> <span class="g"><span class="hint">a</span><span class="c">&#xBBE;</span></span>
+ <span class="g"><span class="hint">i</span><span class="c">&#xBBF;</span></span>
+ <span class="g"><span class="hint">ī</span><span class="c">&#xBC0;</span></span>
+  <span class="g"><span class="hint">u</span><span class="c">&#xBC1;</span></span>
+ <span class="g"><span class="hint">ū</span><span class="c">&#xBC2;</span></span><br/>
+          <span class="g"><span class="hint">e</span><span class="c">&#xBC6;</span></span>
+ <span class="g"><span class="hint">ē</span><span class="c">&#xBC7;</span></span>
+  <span class="g"><span class="hint">ai</span><span class="c">&#xBC8;</span></span>
+<br/>
+          <span class="g"><span class="hint">o</span><span class="c">&#xBCA;</span></span>
+ <span class="g"><span class="hint">ō</span><span class="c">&#xBCB;</span></span>
+  <span class="g"><span class="hint">au</span><span class="c">&#xBCC;</span></span>
+ </div>
+          <div><span class="g"><span class="hint">a</span><span class="c">&#xB85;</span> <span class="c">&#xB86;</span></span>
+ <span class="g"><span class="hint">i</span><span class="c">&#xB87;</span>
+ <span class="c">&#xB88;</span></span>
+  <span class="g"><span class="hint">u</span><span class="c">&#xB89;</span>
+ <span class="c">&#xB8A;</span></span><br/>
+            <span class="g"><span class="hint">e</span><span class="c">&#xB8E;</span>
+ <span class="c">&#xB8F;</span></span>
+ <span class="g"><span class="hint">ai</span><span class="c">&#xB90;</span></span>
+ <span class="g"><span class="hint">o</span><span class="c">&#xB92;</span>
+ <span class="c">&#xB93;</span></span> 
+ <span class="g"><span class="hint">au</span><span class="c">&#xB94;</span></span>
+</div></td>
         <td><table id="numbers" style="margin: 0 10px0 0;">
           <tbody>
             <tr>
-              <td class="hint">7</td>
-              <td><span class="c">&#xBED;</span></td>
-              <td class="hint">8</td>
-              <td><span class="c">&#xBEE;</span></td>
-              <td class="hint">9</td>
-              <td><span class="c">&#xBEF;</span></td>
+              <td><span class="g"><span class="hint">7</span><span class="c">&#xBED;</span></span></td>
+              <td><span class="g"><span class="hint">8</span><span class="c">&#xBEE;</span></span></td>
+              <td><span class="g"><span class="hint">9</span><span class="c">&#xBEF;</span></span></td>
             </tr>
             <tr>
-              <td class="hint">4</td>
-              <td><span class="c">&#xBEA;</span></td>
-              <td class="hint">5</td>
-              <td><span class="c">&#xBEB;</span></td>
-              <td class="hint">6</td>
-              <td><span class="c">&#xBEC;</span></td>
+              <td><span class="g"><span class="hint">4</span><span class="c">&#xBEA;</span></span></td>
+              <td><span class="g"><span class="hint">5</span><span class="c">&#xBEB;</span></span></td>
+              <td><span class="g"><span class="hint">6</span><span class="c">&#xBEC;</span></span></td>
             </tr>
             <tr>
-              <td class="hint">1</td>
-              <td><span class="c">&#xBE7;</span></td>
-              <td class="hint">2</td>
-              <td><span class="c">&#xBE8;</span></td>
-              <td class="hint">3</td>
-              <td><span class="c">&#xBE9;</span></td>
+              <td><span class="g"><span class="hint">1</span><span class="c">&#xBE7;</span></span></td>
+              <td><span class="g"><span class="hint">2</span><span class="c">&#xBE8;</span></span></td>
+              <td><span class="g"><span class="hint">3</span><span class="c">&#xBE9;</span></span></td>
             </tr>
             <tr>
-              <td></td>
               <td><span class="c">&#xBFA;</span></td>
-              <td class="hint">0</td>
-              <td><span class="c">&#xBE6;</span></td>
-              <td></td>
+              <td><span class="g"><span class="hint">0</span><span class="c">&#xBE6;</span></span></td>
               <td><span class="c">&#xBF9;</span></td>
             </tr>
             <tr>
-              <td></td>
               <td><span class="c">&#xBF0;</span></td>
-              <td class="hint">&nbsp;</td>
               <td><span class="c">&#xBF1;</span></td>
-              <td></td>
               <td><span class="c">&#xBF2;</span></td>
             </tr>
             <tr>
-              <td></td>
               <td><span class="c">&#xBF3;</span></td>
-              <td class="hint">&nbsp;</td>
               <td><span class="c">&#xBF4;</span></td>
-              <td></td>
               <td><span class="c">&#xBF5;</span></td>
             </tr>
           </tbody>
@@ -381,15 +353,17 @@
 
         </td>
       </tr>
-    </table>
-    <p id="toggleRare" onclick="hiddenstuff=document.getElementById('rare'); if (hiddenstuff.style.display == 'none') { hiddenstuff.style.display = 'block'; } else { hiddenstuff.style.display = 'none'; }">show/hide rare characters</p>
-    <table id="rare" style="display:none;">
+      </table>
+      <details>
+      <summary>show/hide rare characters</summary>
+    <table id="rare">
       <tbody>
         <tr>
-          <td><span class=c>&#xB82;</span> <span class=c>&#xBD7;</span></td>
+          <td><span class="c">&#xB82;</span> <span class="c">&#xBD7;</span></td>
         </tr>
       </tbody>
     </table>
+    </details>
   </div>
   <div id="shapelist" style="display:none; text-align:center;">
  <div>
@@ -432,8 +406,8 @@
   </div>
   <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
      <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="rows" value="1.5" id="rows" size="3" onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="rows" value="1.5" id="rows" size="3" onchange="changeBoxHeight(this.value)" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
+     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="changeLineHeight(this.value)" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
   </div>
   <div class="control">Add codepoint:
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
@@ -486,6 +460,18 @@
         <option value="-">-</option>
 		</select>
 </div>
+
+
+<div class="control">Set language:
+<form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
+  <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:right;" />
+  <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
+</form>
+</div>
+
+
+<div class="control" id="ccFactoryReset">Reset<br/><button onClick="resetDefaults()">Go</button>
+</div>
 </details>
 
 <details>
@@ -507,7 +493,7 @@
 
 
 <div class="smallprint">
-Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/tamil"><!-- #BeginDate format:En2 -->05-Aug-2017<!-- #EndDate --></a>.
+Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/tamil"><!-- #BeginDate format:En2 -->14-Aug-2017<!-- #EndDate --></a>.
 Make a <a href="https://github.com/r12a/pickers/issues/new?title=[tamil%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
 Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
 </div>
