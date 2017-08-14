@@ -24,10 +24,15 @@
 </head>
 
 <body class="app">
+<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
 <header>
 <div id="header-boilerplate"></div>
 <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Persian character picker','');</script>
 </header>
+
+
+<div id="welcome"></div>
+
 <div id="main">
   <span id="copydelete">
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
@@ -47,10 +52,10 @@
     title="Convert Persian text to an UN Latin transcription.">Transcribe<br/>
     to UN</button> 
     
-    <button  id="makeExample" onclick="makeExample('ar','rtl')" 
+    <button  id="makeExample" onclick="makeExample(defaults.language,defaults.direction)" 
     title="Create an example.">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('arabic','ar','rtl')" 
+    <button  id="makeCharLink" type="button" onclick="makeCharLink('arabic',defaults.language,defaults.direction)" 
     title="Create an character link.">Character<br/>markup</button>
     </span>
 </div>
@@ -286,11 +291,10 @@ Autofocus:
 
 
 
-<div id="tables">
+<div id="tables" dir="rtl">
   
   <!-- SHAPE -->
-  <div id="alphabet" class="default"
-dir="rtl">
+  <div id="alphabet" class="default">
     <table id="kbd">
  <tr>
    <td id="consonants"><table>
@@ -514,13 +518,13 @@ dir="rtl">
         onfocus="document.getElementById('dimensions').textContent='Font size (px):'" 
         onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
      <input name="rows" value="1.5" id="rows" size="3" 
-     	onchange="document.getElementById( 'output' ).style.height = (this.value*100)+'px';" 
+     	onchange="changeBoxHeight(this.value)" 
         onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" 
         onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
         onfocus="document.getElementById('dimensions').textContent='Box height (px):'" 
         onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
      <input name="lineHeight" value="1.5" id="lineHeight" size="3"  
-     	onchange="document.getElementById( 'output' ).style.lineHeight = this.value;" 
+     	onchange="changeLineHeight(this.value)" 
         onmouseover="document.getElementById('dimensions').textContent='Line height:'" 
         onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
         onfocus="document.getElementById('dimensions').textContent='Line height:'" 
@@ -584,7 +588,7 @@ dir="rtl">
 
 
 <div class="control" id="uiTableDirection" style="text-align:right;">Table direction:<br />
-<select onChange="if (this.value == 'rtl') {document.getElementById('alphabet').dir = 'rtl'} else {document.getElementById('alphabet').dir = 'ltr'}; return false;">
+<select onChange="changeSelectionDirection(this.value); return false;">
 <option value="rtl">RTL</option>
 <option value="ltr">LTR</option>
 </select>
@@ -599,6 +603,18 @@ dir="rtl">
 </div-->
 
 
+
+
+<div class="control">Set language:
+<form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
+  <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:right;" />
+  <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
+</form>
+</div>
+
+
+<div class="control" id="ccFactoryReset">Reset<br/><button onClick="resetDefaults()">Go</button>
+</div>
 </details>
 
 <details>
@@ -621,7 +637,7 @@ dir="rtl">
 
 
 <div class="smallprint">
-Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/persian"><!-- #BeginDate format:En2 -->13-Aug-2017<!-- #EndDate --></a>.
+Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/persian"><!-- #BeginDate format:En2 -->14-Aug-2017<!-- #EndDate --></a>.
 Make a <a href="https://github.com/r12a/pickers/issues/new?title=[persian%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
 Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
 </div>

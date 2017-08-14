@@ -34,9 +34,11 @@
 #alphabet img { 
 	cursor: pointer; 
 	}
-
+#alphabet #kbd span.c {
+    color: #666;
+}
 #kbd { 	
-	margin: auto; 
+	margin: auto;  
 	}
 #kbd table {
 	margin:0;
