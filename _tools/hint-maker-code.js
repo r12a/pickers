@@ -3,7 +3,8 @@ function generateCode () {
 	// '56F': ['587','576'],
 	out = ''
 	for (var l=0;l<lines.length;l++) {  // for each line
-		chars = lines[l].split(' ')
+		chars = lines[l].trim().split(' ')
+		if (lines[l] === '') continue
 		out += "'";  // print the trigger character
 		for (i=0;i<chars[0].length;i++) {
 			out += chars[0].codePointAt(i).toString(16).toUpperCase()
