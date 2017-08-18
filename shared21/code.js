@@ -388,8 +388,8 @@ function setUIFont (font) {
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
 	}
 	
-	
-	
+		
+
 function setUIFontSize (size) {
 	chars = document.querySelectorAll('.c')
 	for (i=0;i<chars.length;i++) {

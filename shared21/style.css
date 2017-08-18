@@ -11,30 +11,6 @@ body.app #sitelinks {
 	margin-bottom: 2em;
 	}
 
-body.notes h1 {
-	color: #a52a2a;
-	}
-body.notes h2 {
-	margin-left: 30px;
-	}
-body.notes .sidebar h2 {
-	margin-left: .75em;
-	}
-body.notes h3 {
-	margin-left: 30px;
-	}
-body.notes b.leadin {
-	color: orange;
-	}
-
-.sidebar h2 {
-	margin-top: 0;
-	}
-.sidebar p {
-	line-height: 1em;
-	margin-bottom: 0;
-	}
-
 h1 {
 	margin-left: 30px;
 	margin-top: 0;
@@ -44,27 +20,12 @@ h1 {
 	font-size: 50%; 
 	margin-left: 10px; 
 	}
-	
-p { margin-left: 30px; }
-
-dl {  
-	margin-left: 30px;
-	}
-dd { 
-	margin-bottom: 10px;
-	}
 
 table, tr, td, th { font-size: 100%; }
 #tables td { white-space:nowrap; }
 
 table td { border: 0; }
 
-.instructions {
-	 font-family: robotolight; 
-	 font-style: italic; 
-	 text-align:center;
-	 margin-bottom: 0;
-	}
 #hidePageTop {
 	font-size: 80%;
 	text-align: center;
@@ -72,27 +33,6 @@ table td { border: 0; }
 	margin: 0 32% 10px 0;
 	font-style: italic;
 	font-family: robotolight;
-	}
-
-
-#subtitle { 
-	float: right;
-	margin:0;
-	margin-right: 20px;
-	text-align:right;
-	clear: both;
-	}
-#main {
-	margin: 0 20px 3px 20px;
-	}
-#main button {
-	margin-right: 10px;
-	margin-top: 3px;
-	background-color:#ffe; 
-	padding: 2px; 
-	border: 1px solid #CCC; 
-	box-shadow: 2px 2px 5px #888; 
-	border-radius: 10px; 
 	}
 
 
