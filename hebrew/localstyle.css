@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Noto Serif Hebrew WF';
+    src: url('/shared/webfonts/notoserifhebrew-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notoserifhebrew-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
 
 #alphabet { 
 	display: block; 
@@ -68,6 +76,11 @@
 #rare td {
 	text-align: start;
 	line-height: 1;
+	}
+#rare .c {
+	min-width: .6em;
+	text-align: center;
+	line-height: 1.4;
 	}
 
 
