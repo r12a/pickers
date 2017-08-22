@@ -18,3 +18,4 @@ var thisPicker = 'hebrewPicker'
 
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
+ 
