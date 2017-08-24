@@ -46,12 +46,14 @@ td {
 	border: 1px dotted #ccc;
 	border-radius: 5px; 
 	vertical-align: middle;
+	line-height: 2;
 	}
 
 #punctuation {
 	padding-left: 15px;
 	padding-right: 10px;
 	vertical-align: middle;
+	line-height: 2.4;
 	}
 	
 #independentvowels {
