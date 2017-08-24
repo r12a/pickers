@@ -376,9 +376,14 @@ dt {
 	cursor: pointer;
 	}
 
-#extrashapes {
-	margin: 0 20px;
-	}
+#shapelist {
+    text-align: center;
+    cursor: pointer;
+	display: none;
+}
+#shapekeys {
+    color: orange;
+}
 
 #tools {
 	float:right; 

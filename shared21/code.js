@@ -377,7 +377,7 @@ function changeLineHeight ( newSize ) {
 
 
 function setUIFont (font) {
-	chars = document.querySelectorAll('.c,.k1,.k2,.k3,.shapeSelect,#cursive')
+	chars = document.querySelectorAll('.c,.k1,.k2,.k3,.shapeSelect,#shapelist,#cursive')
 	for (i=0;i<chars.length;i++) {
 		chars[i].style.fontFamily = font
 		}
@@ -395,6 +395,7 @@ function setUIFontSize (size) {
 	for (i=0;i<chars.length;i++) {
 		chars[i].style.fontSize = size+'px'
 		}
+	document.querySelector('#shapelist').style.fontSize = size+'px';
 	document.querySelector('#extrashapes').style.fontSize = size+'px';
 		
 	defaults.uisize = size
@@ -517,23 +518,23 @@ function switchView (toView) {
 function findShape (shapelist, extrashapes, show) { 
 	// highlights characters that contain a given shape
 	// shapelist: string, comma-separated list of ids
-	// extrashapes: string, comma-separated list of characters to display below 
+	// extrashapes: string, space-separated list of characters to display below 
 	//						typically multiples, characters not in chart, or lookups for ethiopic, latin, etc
 	// status: boolean, indicates whether to highlight or remove highlighting
 
 	var shapelistarray = shapelist.split(',')
-	var extrashapesarray = extrashapes.split(',')
+	var extrashapesarray = extrashapes.split(' ')
 
 	clearHighlights()
 
 	if (shapelist != '') {
 		if (show) {
-			for (var i=0;i<shapelistarray.length;i++) { 
+			for (let i=0;i<shapelistarray.length;i++) { 
 				document.getElementById(shapelistarray[i]).style.backgroundColor = '#FFE6B2'
 				}
 			}
 		else {
-			for (var i=0;i<shapelistarray.length;i++) {
+			for (let i=0;i<shapelistarray.length;i++) {
 				document.getElementById(shapelistarray[i]).style.backgroundColor = 'transparent'
 				}
 			}
@@ -541,11 +542,9 @@ function findShape (shapelist, extrashapes, show) {
 	
 	if (extrashapesarray.length > 0) {
 		document.getElementById('extrashapes').textContent = ''
-		for (i=0;i<extrashapesarray.length;i++) {
+		for (let i=0;i<extrashapesarray.length;i++) {
 			span = document.createElement('span')
-			
-			
-			
+			span.className = 'c'
 			
 			prop = extrashapesarray[i]
 			var chars = []
@@ -559,32 +558,19 @@ function findShape (shapelist, extrashapes, show) {
 					codepoint += cp
 					}
 			
-			/*
-			prop = extrashapesarray[i]
-				var codepoint = ''
-				for (c=0; c<prop.length; c++) { 
-					cp = parseInt(prop.charCodeAt(c),10)
-					cp = cp.toString(16).toUpperCase()
-					while (cp.length < 4) cp = '0'+cp
-					cp = 'U+'+cp
-					if (c < prop.length-1) cp += ' '
-					codepoint += cp
-					}
-					*/
 			if (charData[prop]) span.title = codepoint+': '+charData[prop]
 			else span.title = codepoint
 				
 			span.onmouseover = event_mouseoverChar
 			span.onmouseout = event_mouseoutChar
 			span.onclick = event_clickOnChar
-			//if (charData[extrashapesarray[i]] && charData[extrashapesarray[i]].m) span.textContent  = defaults.ccbase + extrashapesarray[i]
 			if (charData[extrashapesarray[i]] && charData[extrashapesarray[i]].match('\u200B')) span.textContent  = defaults.ccbase + extrashapesarray[i]
 			else span.textContent = extrashapesarray[i]
 			document.getElementById('extrashapes').appendChild(span)
 			document.getElementById('extrashapes').appendChild(document.createTextNode(' '))
 			}
-		document.getElementById('extrashapes').style.fontFamily = document.getElementById('uiFont').value
-		document.getElementById('extrashapes').style.fontSize =  document.getElementById('uiFontSize').value+'px'
+		//document.getElementById('extrashapes').style.fontFamily = document.getElementById('uiFont').value
+		//document.getElementById('extrashapes').style.fontSize =  document.getElementById('uiFontSize').value+'px'
 		}
 	}
 
