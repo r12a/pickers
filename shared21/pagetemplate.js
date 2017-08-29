@@ -32,7 +32,13 @@ out += `</header>
     
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
     
-    <button  id="makeExample" onclick="makeExample(defaults.language,defaults.direction)" 
+ ` 
+	
+for (let i=0;i<window.controls.length;i++){
+	out += '<button onclick="'+window.controls[i].code+'" title="'+window.controls[i].alt+'">'+window.controls[i].title+'</button>\n\n'
+	}
+
+out += `<button  id="makeExample" onclick="makeExample(defaults.language,defaults.direction)" 
     title="Create an example.">Make<br>example</button>
     
     <button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" 
@@ -113,7 +119,7 @@ out = `
  </div>
   <div class="control">Custom font:<br />
     <form action="none" onsubmit="customFont(document.getElementById('fontName').value); return false;">
-      <input name="fontName" id="fontName" value=`+defaults.font+` onclick="this.select();" />
+      <input name="fontName" id="fontName" value="`+defaults.font+`" onclick="this.select();" />
     </form>
   </div>
   <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
