@@ -340,6 +340,7 @@ function selectFont ( newFont ) {
 	if (newFont.match('"') || newFont.match(',')) { alert('Use a single font with no quotes.'); return }
 	document.getElementById( 'output' ).style.fontFamily = "'"+newFont+"', 'Doulos SIL'"
 	document.querySelector('#panel #title').style.fontFamily ="'"+newFont+"', 'Doulos SIL'"
+	document.querySelector('#transcription').style.fontFamily ="'"+newFont+"', 'Doulos SIL', 'Gentium Plus', 'Charis Sil', Gentium, serif"
 	document.getElementById('fontName').value="";
 
 	defaults.font = newFont
@@ -379,10 +380,10 @@ function changeLineHeight ( newSize ) {
 function setUIFont (font) {
 	chars = document.querySelectorAll('.c,.k1,.k2,.k3,.shapeSelect,#shapelist,#cursive')
 	for (i=0;i<chars.length;i++) {
-		chars[i].style.fontFamily = font
+		chars[i].style.fontFamily = '"'+font+'"'
 		}
-	document.querySelector('#extrashapes').style.fontFamily = font;
-	document.querySelector('#transcriptionChoice').style.fontFamily = font
+	document.querySelector('#extrashapes').style.fontFamily = '"'+font+'"'
+	document.querySelector('#transcriptionChoice').style.fontFamily = '"'+font+'"'
 	
 	defaults.uifont = font
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
@@ -974,9 +975,10 @@ function setUpValues () {
 	initialise(); 
 	localInitialise(); 
 	if (defaults.font) { 
-		document.getElementById( 'fontName' ).value = defaults.font;  
-		document.getElementById( 'output' ).style.fontFamily = defaults.font;
+		document.getElementById( 'fontName' ).value = defaults.font
+		document.getElementById('output').style.fontFamily = '"'+defaults.font+'"'
 		document.querySelector('#panel #title').style.fontFamily = defaults.font;
+		document.querySelector('#transcription').style.fontFamily ="'"+defaults.font+"', 'Doulos SIL', 'Gentium Plus', 'Charis Sil', Gentium, serif"
 		}
 	if (defaults.size) { 
 		document.getElementById( 'fontSize' ).value = defaults.size;  
@@ -985,8 +987,8 @@ function setUpValues () {
 	if (defaults.uifont) { 
 		document.getElementById( 'uiFont' ).value = defaults.uifont;  
 		setUIFont(defaults.uifont);
-		document.getElementById('extrashapes').style.fontFamily = defaults.uifont;
-		document.querySelector('#transcriptionChoice').style.fontFamily = defaults.uifont;
+		//document.getElementById('extrashapes').style.fontFamily = '"'+defaults.uifont+'"'
+		//document.querySelector('#transcriptionChoice').style.fontFamily = defaults.uifont;
 		}
 	if (defaults.uisize) { 
 		document.getElementById( 'uiFontSize' ).value = defaults.uisize;  
