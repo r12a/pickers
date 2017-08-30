@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "અનુચ્છેદ ૧: પ્રતિષ્ઠા અને અધિકારોની દૃષ્ટિએ સર્વ માનવો જન્મથી સ્વતંત્ર અને સમાન હોય છે."
 	template.blocklocation= 'gujarati'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
+	template.github = 'gujarati'
 
 
 var inputAids = [

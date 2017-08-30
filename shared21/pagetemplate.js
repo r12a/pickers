@@ -109,7 +109,7 @@ out = `
 
 
 <div id="controls">
-  <div class="control">Font list:<br />
+  <div class="control">Change the font:<br />
     <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
 ` +
   fontSelection
@@ -117,7 +117,7 @@ out = `
  `
  	    </select>
  </div>
-  <div class="control">Custom font:<br />
+  <div class="control">Add another font:<br />
     <form action="none" onsubmit="customFont(document.getElementById('fontName').value); return false;">
       <input name="fontName" id="fontName" value="`+defaults.font+`" onclick="this.select();" />
     </form>
@@ -206,7 +206,7 @@ out = `
 
 
 <div id="panel" style="display:none">
-	<div id="title" class="ex" lang="pa"></div>
+	<div id="title" class="ex" lang="`+defaults.language+`"></div>
   <div style="display:block">&nbsp;</div>
   <p style="text-align:right;"></p>
 </div>
@@ -214,8 +214,8 @@ out = `
 
 
 <div class="smallprint">
-Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/gurmukhi"><!-- #BeginDate format:En2 -->15-Aug-2017<!-- #EndDate --></a>.
-Make a <a href="https://github.com/r12a/pickers/issues/new?title=[gurmukhi%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
+Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/`+template.github+`"><!-- #BeginDate format:En2 -->15-Aug-2017<!-- #EndDate --></a>.
+Make a <a href="https://github.com/r12a/pickers/issues/new?title=[`+template.github+`%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
 Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
 </div>
 `
