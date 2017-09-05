@@ -20,7 +20,7 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Mongolian Graphetic character picker'
-	template.sample = "ᮙᮛᮔᮨᮂᮔ ᮓᮤᮘᮨᮛᮨ ᮃᮊᮜ᮪ ᮏᮩᮀ ᮠᮒᮨ ᮔᮥᮛᮔᮤ, ᮎᮙ᮪ᮕᮥᮁ-ᮌᮅᮜ᮪ ᮏᮩᮀ ᮞᮞᮙᮔ ᮃᮚ ᮓᮤᮔ ᮞᮥᮙᮔᮨᮒ᮪ ᮓᮥᮓᮥᮜᮥᮛᮔ᮪."
+	template.sample = '\uE2FD\uE26C\uE27E\uE27E\uE268 \uE2C7\uE26C\uE27E\uE27E\uE2B6\u202F\uE269 \uE289\uE2C7 \uE308\uE26C\uE2DA\uE326\uE27B \uE27B\uE27B\uE27E\uE325'
 	template.blocklocation= 'mongolian'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'mongoliang'
