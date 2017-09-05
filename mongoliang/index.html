@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Mongolian Graphetic character picker 21</title>
+
+<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
+<script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
+<script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
+<script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
+<script type="text/javascript" src="../../shared/code/all-names.js"></script>
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="../shared21/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+
+<script type="text/javascript" src="localtranscription.js">  </script>
+<script type="text/javascript" src="composite-names.js"></script>
+<script type="text/javascript" src="/shared/fontlists/mongolian.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+ <div id="transcriptionChoice"></div>
+
+<div id="latintranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('a')">a</span>
+<span class="t" onclick="dotrans('ɑ')">ɑ</span>
+<span class="t" onclick="dotrans('e')">e</span>
+<span class="t" onclick="dotrans('é')">é</span>
+<span class="t" onclick="dotrans('ə')">ə</span>
+<span class="t" onclick="dotrans('ɛ')">ɛ</span>
+<span class="t" onclick="dotrans('eu')">eu</span>
+<span class="t" onclick="dotrans('i')">i</span>
+<span class="t" onclick="dotrans('o')">o</span>
+<span class="t" onclick="dotrans('ɔ')">ɔ</span>
+<span class="t" onclick="dotrans('u')">u</span>
+<span class="t" onclick="dotrans('ɤ')">ɤ</span>
+<span class="t" onclick="dotrans('b')">b</span>
+<span class="t" onclick="dotrans('c')">c</span>
+<span class="t" onclick="dotrans('d')">d</span>
+<span class="t" onclick="dotrans('ʤ')">ʤ</span>
+<span class="t" onclick="dotrans('f')">f</span>
+<span class="t" onclick="dotrans('g')">g</span>
+<span class="t" onclick="dotrans('h')">h</span>
+<span class="t" onclick="dotrans('j')">j</span>
+<span class="t" onclick="dotrans('k')">k</span>
+<span class="t" onclick="dotrans('kh')">kh</span>
+<span class="t" onclick="dotrans('l')">l</span>
+<span class="t" onclick="dotrans('m')">m</span>
+<span class="t" onclick="dotrans('n')">n</span>
+<span class="t" onclick="dotrans('ng')">ng</span>
+<span class="t" onclick="dotrans('ny')">ny</span>
+<span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('ɲ')">ɲ</span>
+<span class="t" onclick="dotrans('p')">p</span>
+<span class="t" onclick="dotrans('q')">q</span>
+<span class="t" onclick="dotrans('r')">r</span>
+<span class="t" onclick="dotrans('s')">s</span>
+<span class="t" onclick="dotrans('sy')">sy</span>
+<span class="t" onclick="dotrans('t')">t</span>
+<span class="t" onclick="dotrans('ʧ')">ʧ</span>
+<span class="t" onclick="dotrans('v')">v</span>
+<span class="t" onclick="dotrans('w')">w</span>
+<span class="t" onclick="dotrans('x')">x</span>
+<span class="t" onclick="dotrans('y')">y</span>
+<span class="t" onclick="dotrans('z')">z</span>
+</div>
+</div>
+
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+<div id="tables" dir="ltr">
+  <div id="alphabet" class="default">
+    <table id="kbd">
+      <tr>
+        <td><table id="consonants">
+          <tr>
+            <td><span class="g"><span class="hint">a</span> <span class="c">&#xE265;</span> <span class="c">&#xE2B2;</span> <span class="c med">&#xE26C;</span></span> <span class="c">&#xE268;</span></span></td>
+            <td><span class="g"><span class="hint">ue</span> <span class="c med">&#xE289;&#xE27E;</span> <span class="c">&#xE297;</span></span></td>
+            <td><span class="g"><span class="hint">ha</span> <span class="c med">&#xE347;</span> <span class="c">&#xE346;</span></span></td>
+            <td><span class="g"><span class="hint">ra</span> <span class="c">&#xE322;</span> <span class="c med">&#xE326;</span> <span class="c">&#xE325;</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="hint">na</span> <span class="c">&#xE2B1;</span> <span class="c med">&#xE2B7;</span> <span class="c">&#xE2B6;</span></span></td>
+            <td><span class="g"><span class="hint">ga</span> <span class="c">&#xE2CF;</span> <span class="c med">&#xE2D9;</span> <span class="c">&#xE2D7;</span></span></td>
+            <td><span class="g"><span class="hint">ba</span> <span class="c med">&#xE2C7;</span> <span class="c">&#xE2C3;</span></span></td>
+            <td><span class="g"><span class="hint">fa</span> <span class="c med">&#xE332;</span> <span class="c">&#xE32F;</span></span></td>
+         </tr>
+          <tr>
+            <td><span class="g"><span class="hint">anj</span> <span class="c med">&#x202F;&#xE269;</span></span></td>
+            <td><span class="g"><span class="hint">qa</span> <span class="c">&#xE2CE;</span> <span class="c med">&#xE2D8;</span> <span class="c">&#xE2D6;</span></span></td>
+            <td><span class="g"><span class="hint">pa</span> <span class="c med">&#xE2CD;</span> <span class="c">&#xE2CA;</span></span></td>
+            <td><span class="g"><span class="hint">ka</span> <span class="c med">&#xE338;</span> <span class="c">&#xE335;</span></span></td>
+         </tr>
+          <tr>
+            <td><span class="g"><span class="hint">i</span> <span class="c">&#xE27B;</span> <span class="c med">&#xE27E;</span></span></td>
+            <td><span class="g"><span class="hint">ge</span> <span class="c med">&#xE2DA;</span> <span class="c">&#xE2E8;</span></span></td>
+            <td><span class="g"><span class="hint">ma</span> <span class="c">&#xE2F1;</span> <span class="c med">&#xE2F4;</span> <span class="c">&#xE2F3;</span></span></td>
+            <td><span class="g"><span class="hint">tsa</span> <span class="c">&#xE33F;</span> <span class="c med">&#xE341;</span> <span class="c">&#xE340;</span></span></td>
+        </tr>
+          <tr>
+            <td><span class="g"><span class="hint">ya</span> <span class="c med">&#xE31E;</span></span></td>
+            <td><span class="g"><span class="hint">da</span> <span class="c med">&#xE30B;</span> <span class="c">&#xE312;</span></span></td>
+            <td><span class="g"><span class="hint">la</span> <span class="c">&#xE2F7;</span> <span class="c med">&#xE2FA;</span> <span class="c">&#xE2F9;</span></span></td>
+            <td><span class="g"><span class="hint">za</span> <span class="c">&#xE342;</span> <span class="c med">&#xE344;</span> <span class="c">&#xE343;</span></span></td>
+         </tr>
+          <tr>
+            <td><span class="g"><span class="hint">ja</span> <span class="c med">&#xE31D;</span> <span class="c">&#xE31B;</span></span></td>
+            <td><span class="g"><span class="hint">ta</span> <span class="c med">&#xE308;</span> <span class="c">&#xE30A;</span></span></td>
+            <td><span class="g"><span class="hint">sa</span ><span class="c">&#xE2FD;</span> <span class="c med">&#xE301;</span> <span class="c">&#xE2FF;</span></span></td>
+            <td><span class="g"><span class="hint">zra</span> <span class="c">&#xE348;</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="hint">u</span> <span class="c">&#xE289;</span> <span class="c med">&#xE286;</span></span></td>
+            <td><span class="g"><span class="hint">dac</span> <span class="c med">&#xE314;</span> <span class="c">&#xE311;</span></span></td>
+            <td><span class="g"><span class="hint">sha</span> <span class="c">&#xE303;</span> <span class="c med">&#xE306;</span> <span class="c">&#xE305;</span></span></td>
+            <td><span class="g"><span class="hint">chi</span> <span class="c">&#xE34F;</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="hint">ut</span> <span class="c">&#xE285;</span></span></td>
+            <td><span class="g"><span class="hint">wa</span> <span class="c med">&#xE2B0;</span> <span class="c">&#xE2AF;</span></span></td>
+            <td><span class="g"><span class="hint">cha</span> <span class="c med">&#xE315;</span> <span class="c">&#xE316;</span></td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+
+
+        
+        
+       <td id="punctuation"><table>
+          <tr>
+            <td><span class="c">&#x1800;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x1801;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x1802;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x1803;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x1804;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x1805;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x180A;</span></td>
+          </tr>
+        </table>
+
+       
+
+       <td>
+		<table id="numbers" style="margin: 0 10px 10px 0;">
+        <tbody>
+          <tr>
+            <td class="hint">7</td>
+            <td><span class="c">&#x1817;</span></td>
+            <td class="hint">8</td>
+            <td><span class="c">&#x1818;</span></td>
+            <td class="hint">9</td>
+            <td><span class="c">&#x1819;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">4</td>
+            <td><span class="c">&#x1814;</span></td>
+            <td class="hint">5</td>
+            <td><span class="c">&#x1815;</span></td>
+            <td class="hint">6</td>
+            <td><span class="c">&#x1816;</span></td>
+            </tr>
+          <tr>
+            <td class="hint">1</td>
+            <td><span class="c">&#x1811;</span></td>
+            <td class="hint">2</td>
+            <td><span class="c">&#x1812;</span></td>
+            <td class="hint">3</td>
+            <td><span class="c">&#x1813;</span></td>
+            </tr>
+          <tr>
+            <td class="hint"></td>
+            <td></td>
+            <td class="hint">0</td>
+            <td><span class=c><span class="c">&#x1810;</span></span></td>
+            <td class="hint"></td>
+            <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="text-align:center;">
+          <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 10px 30px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline-block;" onClick="add(' ');">SPACE</span><br/><span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u180E');">MVS</span><br/><span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202F');">NNBSP</span><br/><span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200D');">ZWJ</span> <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200C');">ZWNJ</span><br/>
+
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span><br/>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px;" dir="auto" onClick="deleteAll();">❌</span>
+
+
+          </div>        </td>
+      </tr>
+    </table>
+      
+    
+    </div>
+
+  
+  <div id="shapelist">
+    <div id="shapekeys">
+    </div>
+  <div id="extrashapes"></div>
+</div>
+
+
+
+ <div id="temp"></div>
+
+</div>
+<!-- end of tables -->
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>

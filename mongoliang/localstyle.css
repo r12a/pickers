@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Noto Sans Sundanese WF';
+    src: url('/shared/webfonts/notosanssundanese-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosanssundanese-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Sundanese Unicode 2013 WF';
+    src: url('/shared/webfonts/sundaneseunicode-2.0-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/sundaneseunicode-2.0-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+#alphabet { display: block; }
+#phonelist { display: none; }
+#fontgrid { display: none; }
+
+
+[lang=su] { font-family: 'Sundanese Unicode 2013 WF', 'Noto Sans Sundanese WF', serif; }
+
+
+
+#kbd { 	
+	margin: auto; 
+	}
+table {
+	margin:0;
+	}
+td {
+	padding: 0;
+	}
+/*
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: left;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1;
+	}
+	*/
+
+#vowels {
+	border: 1px dotted #ccc;
+	border-radius: 5px; 
+	vertical-align: middle;
+	}
+
+#numbers {
+	border: 1px dotted #ccc;
+	border-radius: 5px; 
+	vertical-align: middle;
+	line-height: 2;
+	}
+
+#punctuation {
+	padding-left: 15px;
+	padding-right: 10px;
+	vertical-align: middle;
+	line-height: 1.4;
+	}
+	
+#independentvowels {
+	margin: 0;
+	padding: 0;
+	}
+#independentvowels td {
+	text-align: right;
+	}
+#otherpunctuation {
+	margin:auto;
+	}
+#otherpunctuation .c {
+	line-height: 2.2;
+	}
+#medialsfinals {
+	padding: 0 .75em;
+	vertical-align: middle;
+	}
+#consonants {
+	margin-left: 10px; 
+	margin: 0;
+	}
+#consonants td {
+	text-align: left;
+	}
+#consonants2  {
+	margin-left: 10px; 
+	display: none;
+	}
+#consonants2 td {
+	text-align: left;
+	}
+#consonants2 td span.c {
+	min-width: 2em;
+	}
+.g {
+	display: inline-block;
+	text-align: center;
+	}
+.c {
+	min-width: .75em;
+	}
+#shift {
+	cursor:pointer;
+	}
+.med {
+	border: 1px solid #ccc;
+	}
