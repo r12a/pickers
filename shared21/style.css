@@ -35,7 +35,9 @@ table td { border: 0; }
 	font-family: robotolight;
 	}
 
-
+#topControls {
+	margin: 0 10px 0 15px;
+	}
 #outputDiv {
 	margin: 5px 20px 0 20px; 
 	}
