@@ -19,7 +19,7 @@ else  defaults = factoryDefaults
  
  
 var template = {}
-	template.title = 'Mongolian graphetic kbd character picker'
+	template.title = 'Mongolian graphetic character picker'
 	template.sample = 'ᠰᡠᡣᡣᡠ ᠪᡠᡣᡣᡡᢀ ᡥᡦ / ᡫᡠᢉᠷᡣ / ᢉᢉᠷᡣ'
 	template.blocklocation= 'mongolian'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
