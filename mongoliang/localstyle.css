@@ -99,10 +99,16 @@ td {
 	}
 .g {
 	display: inline-block;
+	}
+#kbd .g {
+	margin-right: 15px;
 	text-align: center;
+	border-right: 3px solid burlywood;
+	width: 8em;
 	}
 .c {
 	min-width: .75em;
+	text-align: center;
 	}
 #shift {
 	cursor:pointer;
