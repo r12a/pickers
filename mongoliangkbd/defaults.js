@@ -20,7 +20,7 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Mongolian graphetic kbd character picker'
-	template.sample = 'ᠰᡠᡣᡣᡠ ᠪᡠᡣᡣᡡᢀ ᡥᡦ'
+	template.sample = 'ᠰᡠᡣᡣᡠ ᠪᡠᡣᡣᡡᢀ ᡥᡦ / ᡫᡠᢉᠷᡣ / ᢉᢉᠷᡣ'
 	template.blocklocation= 'mongolian'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'mongoliang'
@@ -34,5 +34,5 @@ var inputAids = [
 ]
 
 var controls = [
-// {"title":"Sundanese<br/>to Latin", "alt":"Convert Sundanese text to a Latin transcription.", "code":"doTranscription('toLatin')"},
+{"title":"Vertical<br/>toggle", "alt":"Switch text area and selection areas to vertical glyphs.", "code":"toggleVertical('verticalToggle')"},
 ]

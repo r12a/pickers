@@ -44,12 +44,13 @@ end: {}
 }
 
 
-function showCodepoints () {
-	var output = document.getElementById('output')
-	showNameDetails(normalise(getHighlightedText(output)), defaults.language, defaults.blocklocation, 'c', document.getElementById('panel') )
-	document.querySelector('#panel #title').style.fontFamily = output.style.fontFamily
-	output.focus()
-	}
+function toggleVertical (id) {
+	// toggles text and selection area glyphs by changing CSS
+	if (document.getElementById('verticalToggle').textContent == '') document.getElementById('verticalToggle').textContent = '.c, #output { -webkit-writing-mode: vertical-lr; writing-mode: vertical-lr; }'
+	else document.getElementById('verticalToggle').textContent = ''
+}
+
+
 
 
 // forms with various positions
