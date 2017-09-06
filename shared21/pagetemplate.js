@@ -16,7 +16,7 @@ out += `</header>
 
 <div id="welcome"></div>
 
-<div id="main">
+<div id="topControls">
 <span id="copydelete">
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
