@@ -99,6 +99,12 @@ td {
 	border-right: 3px solid burlywood;
 	width: 4em;
 	}
+#table .g {
+	margin-right: 15px;
+	text-align: center;
+	border-right: 3px solid burlywood;
+	width: 9em;
+	}
 .c {
 	min-width: .75em;
 	text-align: center;

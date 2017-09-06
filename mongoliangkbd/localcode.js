@@ -74,7 +74,9 @@ function event_mouseoverChar ()  {
 	// overrides the function in shared20/code.js to add shaping forms for all syriac styles
 	
 	// add cursive forms to table
-	var ncr = String.fromCodePoint('0x'+this.id)
+	var ncr = this.id.replace(/200D/g,'')
+	ncr = String.fromCodePoint('0x'+ncr)
+	//var ncr = String.fromCodePoint('0x'+this.id)
 	if (isolinitmedifina.has(ncr)) ncr = ncr+' '+ncr+'\u200D \u200D'+ncr+'\u200D \u200D'+ncr
 	else if (initmedifina.has(ncr)) ncr = ncr+'\u200D \u200D'+ncr+'\u200D \u200D'+ncr
 	else if (isolfina.has(ncr)) ncr = ncr+' • • \u200D'+ncr
@@ -111,3 +113,17 @@ function event_mouseoverChar ()  {
 		}
 	}
 
+
+
+function toggleShift (node, LC, UC) {
+	if (node.className =='unshifted') {
+		document.getElementById(LC).style.display = 'none'
+		document.getElementById(UC).style.display = 'block'
+		node.className = 'shifted'
+		} 
+	else {
+		document.getElementById(LC).style.display = 'block'
+		document.getElementById(UC).style.display = 'none'
+		node.className = 'unshifted'
+		}
+	}
