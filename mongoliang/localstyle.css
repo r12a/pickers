@@ -1,14 +1,7 @@
 @font-face {
-    font-family: 'Noto Sans Sundanese WF';
-    src: url('/shared/webfonts/notosanssundanese-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notosanssundanese-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-	}
-@font-face {
-    font-family: 'Sundanese Unicode 2013 WF';
-    src: url('/shared/webfonts/sundaneseunicode-2.0-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/sundaneseunicode-2.0-webfont.woff') format('woff');
+    font-family: 'Graphetic Prototype WF';
+    src: url('/shared/webfonts/grapheticprototype-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/grapheticprototype-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
@@ -18,7 +11,7 @@
 #fontgrid { display: none; }
 
 
-[lang=su] { font-family: 'Sundanese Unicode 2013 WF', 'Noto Sans Sundanese WF', serif; }
+[lang=mn] { font-family: 'Graphetic Prototype WF', 'Graphetic Prototype 20170906', serif; }
 
 
 
@@ -104,11 +97,18 @@ td {
 	margin-right: 15px;
 	text-align: center;
 	border-right: 3px solid burlywood;
-	width: 8em;
+	width: 4em;
+	}
+#table .g {
+	margin-right: 15px;
+	text-align: center;
+	border-right: 3px solid burlywood;
+	width: 9em;
 	}
 .c {
 	min-width: .75em;
 	text-align: center;
+	line-height: 1;
 	}
 #shift {
 	cursor:pointer;

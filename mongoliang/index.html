@@ -2,7 +2,7 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Mongolian Graphetic character picker 21</title>
+<title>Mongolian Graphetic 2 character picker 21</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
 <link rel="stylesheet" type="text/css" href="../shared21/style.css" />
@@ -25,6 +25,7 @@
 <script type="text/javascript" src="/shared/fontlists/mongoliang.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
+<style id="verticalToggle"></style>
 </head>
 
 <body class="app">
@@ -92,6 +93,10 @@
 <span class="t" onclick="dotrans('y')">y</span>
 <span class="t" onclick="dotrans('γ')">γ</span>
 </div>
+
+
+<div id="cursive" class="transcript" style="display:block; font-size: 40px;">&nbsp;</div>
+
 </div>
 
 
@@ -103,56 +108,117 @@
       <tr>
         <td><table id="consonants">
           <tr>
-            <td><span class="g"><span class="hint">a</span> <span class="c">&#xE265;</span> <span class="c">&#xE2B2;</span> <span class="c med">&#xE26C;</span> <span class="c">&#xE268;</span></span></td>
-            <td><span class="g"><span class="hint">ue</span> <span class="c"> </span> <span class="c med">&#xE289;&#xE27E;</span> <span class="c">&#xE297;</span></span></td>
-            <td><span class="g"><span class="hint">ha</span> <span class="c">&#xE347;</span> <span class="c med">&#xE347;</span> <span class="c">&#xE346;</span></span></td>
-            <td><span class="g"><span class="hint">ra</span> <span class="c">&#xE322;</span> <span class="c med">&#xE326;</span> <span class="c">&#xE325;</span></span></td>
+            <td><span class="g"><span class="hint">a</span> <span class="c">&#x1860;</span></span></td>
+            <td><span class="g"><span class="hint">ue</span> <span class="c">&#x1867;</span></span></td>
+            <td><span class="g"><span class="hint">ha</span> <span class="c">&#x1841;</span></span></td>
+            <td><span class="g"><span class="hint">ra</span> <span class="c">&#x1837;</span></span></td>
           </tr>
           <tr>
-            <td><span class="g"><span class="hint">na</span> <span class="c"> </span> <span class="c">&#xE2B1;</span> <span class="c med">&#xE2B7;</span> <span class="c">&#xE2B6;</span></span></td>
-            <td><span class="g"><span class="hint">ga</span> <span class="c">&#xE2CF;</span> <span class="c med">&#xE2D9;</span> <span class="c">&#xE2D7;</span></span></td>
-            <td><span class="g"><span class="hint">ba</span> <span class="c">&#xE2C7;</span> <span class="c med">&#xE2C7;</span> <span class="c">&#xE2C3;</span></span></td>
-            <td><span class="g"><span class="hint">fa</span> <span class="c">&#xE332;</span> <span class="c med">&#xE332;</span> <span class="c">&#xE32F;</span></span></td>
+            <td><span class="g"><span class="hint">na</span> <span class="c">&#x1861;</span></span></td>
+            <td><span class="g"><span class="hint">ga</span> <span class="c">&#x1868;</span></span></td>
+            <td><span class="g"><span class="hint">ba</span> <span class="c">&#x182A;</span></span></td>
+            <td><span class="g"><span class="hint">fa</span> <span class="c">&#x1839;</span></span></td>
          </tr>
           <tr>
-            <td><span class="g"><span class="hint">anj</span> <span class="c">&#x202F;&#xE269;</span> <span class="c"> </span> <span class="c"> </span> <span class="c"> </span></span></td>
-            <td><span class="g"><span class="hint">qa</span> <span class="c">&#xE2CE;</span> <span class="c med">&#xE2D8;</span> <span class="c">&#xE2D6;</span></span></td>
-            <td><span class="g"><span class="hint">pa</span> <span class="c">&#xE2CD;</span> <span class="c med">&#xE2CD;</span> <span class="c">&#xE2CA;</span></span></td>
-            <td><span class="g"><span class="hint">ka</span> <span class="c">&#xE338;</span> <span class="c med">&#xE338;</span> <span class="c">&#xE335;</span></span></td>
+            <td><span class="g"><span class="hint">anj</span> <span class="c">&#x1880;</span></span></td>
+            <td><span class="g"><span class="hint">qa</span> <span class="c">&#x1869;</span></span></td>
+            <td><span class="g"><span class="hint">pa</span> <span class="c">&#x182B;</span></span></td>
+            <td><span class="g"><span class="hint">ka</span> <span class="c">&#x183A;</span></span></td>
          </tr>
           <tr>
-            <td><span class="g"><span class="hint">i</span> <span class="c">&#xE27B;</span> <span class="c">&#xE27E;</span> <span class="c med">&#xE27E;</span> <span class="c">&#xE27B;</span></span></td>
-            <td><span class="g"><span class="hint">ge</span> <span class="c">&#xE2DA;</span> <span class="c med">&#xE2DA;</span> <span class="c">&#xE2E8;</span></span></td>
-            <td><span class="g"><span class="hint">ma</span> <span class="c">&#xE2F1;</span> <span class="c med">&#xE2F4;</span> <span class="c">&#xE2F3;</span></span></td>
-            <td><span class="g"><span class="hint">tsa</span> <span class="c">&#xE33F;</span> <span class="c med">&#xE341;</span> <span class="c">&#xE340;</span></span></td>
+            <td><span class="g"><span class="hint">i</span> <span class="c">&#x1863;</span></span></td>
+            <td><span class="g"><span class="hint">ge</span> <span class="c">&#x1889;</span></span></td>
+            <td><span class="g"><span class="hint">ma</span> <span class="c">&#x182E;</span></span></td>
+            <td><span class="g"><span class="hint">tsa</span> <span class="c">&#x183C;</span></span></td>
         </tr>
           <tr>
-            <td><span class="g"><span class="hint">ya</span> <span class="c"> </span> <span class="c">&#xE31E;</span> <span class="c med">&#xE31E;</span> <span class="c"> </span></span></td>
-            <td><span class="g"><span class="hint">da</span> <span class="c">&#xE30B;</span> <span class="c med">&#xE30B;</span> <span class="c">&#xE312;</span></span></td>
-            <td><span class="g"><span class="hint">la</span> <span class="c">&#xE2F7;</span> <span class="c med">&#xE2FA;</span> <span class="c">&#xE2F9;</span></span></td>
-            <td><span class="g"><span class="hint">za</span> <span class="c">&#xE342;</span> <span class="c med">&#xE344;</span> <span class="c">&#xE343;</span></span></td>
+            <td><span class="g"><span class="hint">ya</span> <span class="c">&#x1864;</span></span></td>
+            <td><span class="g"><span class="hint">da</span> <span class="c">&#x186A;</span></span></td>
+            <td><span class="g"><span class="hint">la</span> <span class="c">&#x182F;</span></span></td>
+            <td><span class="g"><span class="hint">za</span> <span class="c">&#x183D;</span></span></td>
          </tr>
           <tr>
-            <td><span class="g"><span class="hint">ja</span> <span class="c"> </span> <span class="c"> </span> <span class="c med">&#xE31D;</span> <span class="c">&#xE31B;</span></span></td>
-            <td><span class="g"><span class="hint">ta</span> <span class="c">&#xE308;</span> <span class="c med">&#xE308;</span> <span class="c">&#xE30A;</span></span></td>
-            <td><span class="g"><span class="hint">sa</span ><span class="c">&#xE2FD;</span> <span class="c med">&#xE301;</span> <span class="c">&#xE2FF;</span></span></td>
-            <td><span class="g"><span class="hint">zra</span> <span class="c">&#xE348;</span> <span class="c"> </span> <span class="c"> </span></span></td>
+            <td><span class="g"><span class="hint">ja</span> <span class="c">&#x1854;</span></span></td>
+            <td><span class="g"><span class="hint">ta</span> <span class="c">&#x186B;</span></span></td>
+            <td><span class="g"><span class="hint">sa</span ><span class="c">&#x1830;</span></span></td>
+            <td><span class="g"><span class="hint">zra</span> <span class="c">&#x183F;</span></span></td>
           </tr>
           <tr>
-            <td><span class="g"><span class="hint">u</span> <span class="c"> </span> <span class="c">&#xE289;</span> <span class="c med">&#xE286;</span> <span class="c">&#xE286;</span></span></td>
-            <td><span class="g"><span class="hint">dc</span> <span class="c"> </span> <span class="c med">&#xE314;</span> <span class="c">&#xE311;</span></span></td>
-            <td><span class="g"><span class="hint">sha</span> <span class="c">&#xE303;</span> <span class="c med">&#xE306;</span> <span class="c">&#xE305;</span></span></td>
-            <td><span class="g"><span class="hint">chi</span> <span class="c">&#xE34F;</span> <span class="c"> </span> <span class="c"> </span></span></td>
+            <td><span class="g"><span class="hint">u</span> <span class="c">&#x1865;</span></span></td>
+            <td><span class="g"><span class="hint">dc</span> <span class="c">&#x186C;</span></span></td>
+            <td><span class="g"><span class="hint">sha</span> <span class="c">&#x1831;</span></span></td>
+            <td><span class="g"><span class="hint">chi</span> <span class="c">&#x1842;</span></span></td>
           </tr>
           <tr>
-            <td><span class="g"><span class="hint">ut</span> <span class="c">&#xE285;</span> <span class="c"> </span> <span class="c"> </span> <span class="c">&#xE285;</span></span></td>
-            <td><span class="g"><span class="hint">wa</span> <span class="c">&#xE2B0;</span> <span class="c med">&#xE2B0;</span> <span class="c">&#xE2AF;</span></span></td>
-            <td><span class="g"><span class="hint">cha</span> <span class="c">&#xE315;</span> <span class="c med">&#xE315;</span> <span class="c">&#xE316;</span></td>
+            <td><span class="g"><span class="hint">ut</span> <span class="c">&#x1866;</span></span></td>
+            <td><span class="g"><span class="hint">wa</span> <span class="c">&#x186D;</span></span></td>
+            <td><span class="g"><span class="hint">cha</span> <span class="c">&#x1834;</span></span></td>
             <td>&nbsp;</td>
           </tr>
         </table>
 
 
+       
+   
+       
+        <table id="table" style="display: none;">
+          <tr>
+            <td><span class="g"><span class="hint">a</span> <span class="c">&#x1860;</span> <span class="c">&#x1860;&#x200D;</span> <span class="c med">&#x200D;&#x1860;&#x200D;</span> <span class="c">&#x200D;&#x1860;</span></span></td>
+            <td><span class="g"><span class="hint">ue</span> <span class="c"> </span> <span class="c med">&#x200D;&#x1867;&#x200D;</span> <span class="c">&#x200D;&#x1867;</span></span></td>
+            <td><span class="g"><span class="hint">ha</span> <span class="c">&#x1841;&#x200D;</span> <span class="c med">&#x200D;&#x1841;&#x200D;</span> <span class="c">&#x200D;&#x1841;</span></span></td>
+            <td><span class="g"><span class="hint">ra</span> <span class="c">&#x1837;&#x200D;</span> <span class="c med">&#x200D;&#x1837;&#x200D;</span> <span class="c">&#x200D;&#x1837;</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="hint">na</span> <span class="c"> </span> <span class="c">&#x1861;&#x200D;</span> <span class="c med">&#x200D;&#x1861;&#x200D;</span> <span class="c">&#x200D;&#x1861;</span></span></td>
+            <td><span class="g"><span class="hint">ga</span> <span class="c">&#x1868;&#x200D;</span> <span class="c med">&#x200D;&#x1868;&#x200D;</span> <span class="c">&#x200D;&#x1868;</span></span></td>
+            <td><span class="g"><span class="hint">ba</span> <span class="c">&#x182A;&#x200D;</span> <span class="c med">&#x200D;&#x182A;&#x200D;</span> <span class="c">&#x200D;&#x182A;</span></span></td>
+            <td><span class="g"><span class="hint">fa</span> <span class="c">&#x1839;&#x200D;</span> <span class="c med">&#x200D;&#x1839;&#x200D;</span> <span class="c">&#x200D;&#x1839;</span></span></td>
+         </tr>
+          <tr>
+            <td><span class="g"><span class="hint">anj</span> <span class="c">&#x1880;</span> <span class="c"> </span> <span class="c"> </span> <span class="c"> </span></span></td>
+            <td><span class="g"><span class="hint">qa</span> <span class="c">&#x1869;&#x200D;</span> <span class="c med">&#x200D;&#x1869;&#x200D;</span> <span class="c">&#x200D;&#x1869;</span></span></td>
+            <td><span class="g"><span class="hint">pa</span> <span class="c">&#x182B;&#x200D;</span> <span class="c med">&#x200D;&#x182B;&#x200D;</span> <span class="c">&#x200D;&#x182B;</span></span></td>
+            <td><span class="g"><span class="hint">ka</span> <span class="c">&#x183A;&#x200D;</span> <span class="c med">&#x200D;&#x183A;&#x200D;</span> <span class="c">&#x200D;&#x183A;</span></span></td>
+         </tr>
+          <tr>
+            <td><span class="g"><span class="hint">i</span> <span class="c">&#x1863;</span> <span class="c">&#x1863;&#x200D;</span> <span class="c med">&#x200D;&#x1863;&#x200D;</span> <span class="c">&#x200D;&#x1863;</span></span></td>
+            <td><span class="g"><span class="hint">ge</span> <span class="c">&#x1889;&#x200D;</span> <span class="c med">&#x200D;&#x1889;&#x200D;</span> <span class="c">&#x200D;&#x1889;</span></span></td>
+            <td><span class="g"><span class="hint">ma</span> <span class="c">&#x182E;&#x200D;</span> <span class="c med">&#x200D;&#x182E;&#x200D;</span> <span class="c">&#x200D;&#x182E;</span></span></td>
+            <td><span class="g"><span class="hint">tsa</span> <span class="c">&#x183C;&#x200D;</span> <span class="c med">&#x200D;&#x183C;&#x200D;</span> <span class="c">&#x200D;&#x183C;</span></span></td>
+        </tr>
+          <tr>
+            <td><span class="g"><span class="hint">ya</span> <span class="c"> </span> <span class="c">&#x1864;&#x200D;</span> <span class="c med">&#x200D;&#x1864;&#x200D;</span> <span class="c"> </span></span></td>
+            <td><span class="g"><span class="hint">da</span> <span class="c">&#x186A;&#x200D;</span> <span class="c med">&#x200D;&#x186A;&#x200D;</span> <span class="c">&#x200D;&#x186A;</span></span></td>
+            <td><span class="g"><span class="hint">la</span> <span class="c">&#x182F;&#x200D;</span> <span class="c med">&#x200D;&#x182F;&#x200D;</span> <span class="c">&#x200D;&#x182F;</span></span></td>
+            <td><span class="g"><span class="hint">za</span> <span class="c">&#x183D;&#x200D;</span> <span class="c med">&#x200D;&#x183D;&#x200D;</span> <span class="c">&#x200D;&#x183D;</span></span></td>
+         </tr>
+          <tr>
+            <td><span class="g"><span class="hint">ja</span> <span class="c"> </span> <span class="c"> </span> <span class="c med">&#x200D;&#x1854;&#x200D;</span> <span class="c">&#x200D;&#x1854;</span></span></td>
+            <td><span class="g"><span class="hint">ta</span> <span class="c">&#x186B;&#x200D;</span> <span class="c med">&#x200D;&#x186B;&#x200D;</span> <span class="c">&#x200D;&#x186B;</span></span></td>
+            <td><span class="g"><span class="hint">sa</span> <span class="c">&#x1830;&#x200D;</span> <span class="c med">&#x200D;&#x1830;&#x200D;</span> <span class="c">&#x200D;&#x1830;</span></span></td>
+            <td><span class="g"><span class="hint">zra</span> <span class="c">&#x183F;</span> <span class="c"> </span> <span class="c"> </span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="hint">u</span> <span class="c"> </span> <span class="c">&#x1865;&#x200D;</span> <span class="c med">&#x200D;&#x1865;&#x200D;</span> <span class="c">&#x200D;&#x1865;</span></span></td>
+            <td><span class="g"><span class="hint">dc</span> <span class="c"> </span> <span class="c med">&#x200D;&#x186C;&#x200D;</span> <span class="c">&#x200D;&#x186C;</span></span></td>
+            <td><span class="g"><span class="hint">sha</span> <span class="c">&#x1831;&#x200D;</span> <span class="c med">&#x200D;&#x1831;&#x200D;</span> <span class="c">&#x200D;&#x1831;</span></span></td>
+            <td><span class="g"><span class="hint">chi</span> <span class="c">&#x1842;</span> <span class="c"> </span> <span class="c"> </span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="hint">ut</span> <span class="c">&#x1866;</span> <span class="c"> </span> <span class="c"> </span> <span class="c">&#x200D;&#x1866;</span></span></td>
+            <td><span class="g"><span class="hint">wa</span> <span class="c">&#x186D;&#x200D;</span> <span class="c med">&#x200D;&#x186D;&#x200D;</span> <span class="c">&#x200D;&#x186D;</span></span></td>
+            <td><span class="g"><span class="hint">cha</span> <span class="c">&#x1834;&#x200D;</span> <span class="c med">&#x200D;&#x1834;&#x200D;</span> <span class="c">&#x200D;&#x1834;</span></span></td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+
+
+        
+ 		  </td>
+       
+        
+        
+        
         
         
        <td id="punctuation"><table>
@@ -227,11 +293,26 @@
 
           </div>        </td>
       </tr>
+      <tr>
+        <td><span id="shift" class="shifted" onClick="toggleShift(this, 'table', 'consonants')">Toggle table</span></td>
+		<td>&nbsp;</td>      
+        <td>&nbsp;</td>
+      </tr>
     </table>
       
     
     </div>
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   <div id="shapelist">
     <div id="shapekeys">
