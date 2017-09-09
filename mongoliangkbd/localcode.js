@@ -113,6 +113,10 @@ function event_mouseoverChar ()  {
 		}
 	}
 
+function event_clickOnChar () {
+	clearHighlights()
+	add(this.textContent.replace(/\u200D/g,''))
+	}
 
 
 function toggleShift (node, LC, UC) {
