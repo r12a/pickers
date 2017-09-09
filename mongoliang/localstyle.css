@@ -106,7 +106,8 @@ td {
 	width: 9em;
 	}
 .c {
-	min-width: .75em;
+	min-width: .75em;	
+	min-height: .75em;
 	text-align: center;
 	line-height: 1;
 	}
