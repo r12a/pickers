@@ -3,101 +3,40 @@ https://bug.wikipedia.org/wiki/Mappadec%C3%A9%C5%8B
 
 https://en.wiktionary.org/wiki/Category:Buginese_lemmas\
 
-Pronunciation IPA(key): /kɑmɪːsɪ/
-
-Noun
-ᨀᨆᨗᨔᨗ (ka.mi.si)
-    the fifth day of the week; Thursday
+ᨀᨆᨗᨔᨗ/kamisi/kɑmɪːsɪ/Thursday    
     
-    
-ᨄᨉᨚᨕᨂᨛ (pa-do-a-ŋə, rumi paddoangeng)
-    prayers
+ᨄᨉᨚᨕᨂᨛ/paddoangeng//prayers
 
+ᨅᨔ ᨕᨘᨁᨗ/basa ugi//the Buginese language
 
-IPA(key): /paʔlontaraʔ/
-Noun
-ᨄᨒᨚᨈᨑ (/pa.lo.ta.ra/, rumi pa'lontara')
-    A person who is an expert on Lontara (the manuscript, not the script).
+ᨅᨗᨌᨑ/bicara//language
 
+ᨆᨌ ᨀᨚ ᨆᨅᨗᨌᨑ ᨕᨘᨁᨗ?
+	Maca ko mabicara ugi?
+	Can you speak Buginese?
 
+ᨆᨌ/maca//clever, tiger
+ᨆᨌ/maca//to know, to understand
 
-ᨅᨔ ᨕᨘᨁᨗ (basa ugi)
-    the Buginese language.
+ᨍᨘᨆ//juma/Friday
 
+ᨒᨄ/lapa/lava
+ᨒᨄ/lappa/joint
 
+ᨓᨕᨙ/wae//water
 
-Noun
-ᨅᨗᨌᨑ (bicara)
-    language
-Verb
-ᨅᨗᨌᨑ (bicara)
-    to talk
-    to speak
-        ᨆᨌ ᨀᨚ ᨆᨅᨗᨌᨑ ᨕᨘᨁᨗ?
-            Maca ko mabicara ugi?
-            Can you speak Buginese?
+ᨔᨈᨘ/satu/sɑtuŋ/Saturday
 
+ᨔᨒᨔ/salasa/sɑlɑːsɑ/Tuesday
 
-Noun
-ᨆᨌ (ma-ca)
-    clever
-    tiger
-Verb
-ᨆᨌ (ma-ca)
-    to know, to understand
+ᨕᨆᨑᨙᨉᨀᨂᨛ/amaradékangeng/amaradekaŋəŋ/democracy, freedom
 
+ᨕᨑᨅ/araba/ɑrɑːbɑ/Wednesday
 
+ᨕᨔᨘ/asu//dog
 
-Pronunciation
-    IPA(key): /jumɑ/
-Noun
-ᨍᨘᨆ (ju.ma)
-    the sixth day of the week; Friday
+ᨕᨗᨊ/ina/mother
 
-Noun
-ᨒᨄ (la.pa)
-    lapa: lava
-    lappa: joint
+ᨕᨙᨔᨙᨊᨙ/esene/eseneŋ/Monday
 
-
-ᨓᨕᨙ (Latin spelling wae)
-    water (clear liquid H₂O)
-
-
-
-    IPA(key): /sɑtuŋ/
-Noun
-ᨔᨈᨘ (sa.tu)
-    the seventh day of the week; Saturday
-
-
-
-    IPA(key): /sɑlɑːsɑ/
-Noun
-ᨔᨒᨔ (sa.la.sa)
-    the third day of the week; Tuesday
-
-
-
-
-IPA(key): /amaradekaŋəŋ/
-Noun
-ᨕᨆᨑᨙᨉᨀᨂᨛ (rumi amaradékangeng)
-    democracy
-    freedom
-
-
-
-IPA(key): /ɑrɑːbɑ/ Noun ᨕᨑᨅ (a.ra.ba) the fourth day of the week; Wednesday
-
-
-ᨕᨔᨘ (asu) dog (animal)
-
-
-ᨕᨗᨊ (Latin spelling ina) mother (female (human) who parents a child, gives birth to a baby, or is pregnant)
-
-
-IPA(key): /eseneŋ/ Noun ᨕᨙᨔᨙᨊᨙ (e.se.ne) the second day of the week; Monday
-
-
-ᨕᨛᨔᨚ ᨕᨖᨕᨗ (ɘso ahaɪ) the first day of the week; Sunday
+ᨕᨛᨔᨚ ᨕᨖᨕᨗ//ɘso ahaɪ/Sunday
