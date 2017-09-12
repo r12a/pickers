@@ -1,6 +1,6 @@
 function localtranscribe (direction, str) {
 	
-	if (direction == 'normalise') { return normalise(str) }
+	if (direction == 'toLatin') { return toLatin(str) }
 	if (direction == 'toDeva') { return toDeva(str) }
 	}
 		
@@ -9,31 +9,15 @@ function localtranscribe (direction, str) {
 
 
 
-function inSet (group, ch) {
-	if (group.indexOf(ch) > -1) return true
-	else { return false }
-	}
-
-
-
 function toLatin (str) {
 	str += '  '
-	var ivowelkillerSet = new Set(['\u1BAA', '\u1BAC', '\u1BAD', '\u1BA1', '\u1BA2', '\u1BA3', '\u1BA4', '\u1BA5', '\u1BA6', '\u1BA7', '\u1BA8', '\u1BA9', '\u1BAB']) // all characters that would kill the inherent vowel
-	var consonantSet = new Set(['\u1B8A', '\u1B8C', '\u1B8D', '\u1B8E', '\u1B8F', '\u1B91', '\u1B92', '\u1B93', '\u1B94', '\u1B95', '\u1B98', '\u1B99', '\u1B9A', '\u1B9C', '\u1B9B', '\u1B9E', '\u1B9D', '\u1BA0', '\u1B8B', '\u1BAE', '\u1B96', '\u1B97', '\u1B90', '\u1BAF', '\u1B9F', '\u1BBD', '\u1BA1', '\u1BA2', '\u1BA3'])
 
 	var out=''
 	for (var i=0; i<str.length-2; i++) {
-		var inherent = false
-		var ambiguous = false
 		var ch = str[i]
-		
-		// add inherent vowel
-		if (consonantSet.has(ch) && ! ivowelkillerSet.has(str[i+1])) inherent = true		
 		
 		if (typeof mapToISO[ch] !== 'undefined') { out += mapToISO[ch] }
 		else { out += ch }
-		if (inherent) { out += 'a' }
-		if (ambiguous) { out += ':' }
 		}
 
 	return out.trim()
@@ -41,79 +25,71 @@ function toLatin (str) {
 
 
 var mapToISO = {
-// consonants
-'\u1B8A':'k',
-'\u1B8C':'g',
-'\u1B8D':'ng',
-'\u1B8E':'c',
-'\u1B8F':'j',
-'\u1B91':'ny',
-'\u1B92':'t',
-'\u1B93':'d',
-'\u1B94':'n',
-'\u1B95':'p',
-'\u1B98':'b',
-'\u1B99':'m',
-'\u1B9A':'y',
-'\u1B9C':'l',
-'\u1B9B':'r',
-'\u1B9E':'s',
-'\u1B9D':'w',
-'\u1BA0':'h',
-'\u1B8B':'q',
-'\u1BAE':'kh',
-'\u1B96':'f',
-'\u1B97':'v',
-'\u1B90':'z',
-'\u1BAF':'sy',
-'\u1B9F':'x',
+'\u1860':'a\u0331',
+'\u1880':'\u0105',
+'\u1863':'i\u0331',
+'\u1865':'u\u0331',
+'\u1866':'\u0173',
+'\u1867':'\u00FC\u0331',
+'\u1861':'\u1E49',
+'\u1864':'y\u0331',
+'\u1868':'\u01E5',
+'\u1869':'\uA757',
+'\u1889':'\u011F',
+'\u186A':'\u1E0F',
+'\u186B':'\u1E6F',
+'\u186C':'\u0256',
+'\u186D':'w\u0331',
+'\u1841':'h',
+'\u182A':'b',
+'\u182B':'p',
+'\u182E':'m',
+'\u182F':'l',
+'\u1830':'s',
+'\u1831':'\u0161',
+'\u1834':'c',
+'\u1837':'r',
+'\u1839':'f',
+'\u183A':'k',
+'\u183C':'\u02A6',
+'\u183D':'z',
+'\u183F':'\u027B',
+'\u1842':'\u00E7',
+}
 
-// medials and finals
-'\u1BA1':'y',
-'\u1BA2':'r',
-'\u1BA3':'l',
-'\u1B80':'ng',
-'\u1B81':'r',
-'\u1B82':'h',
 
-// vowel signs
-'\u1BA4':'i',
-'\u1BA5':'u',
-'\u1BA6':'\u00E9',
-'\u1BA7':'o',
-'\u1BA8':'e',
-'\u1BA9':'eu',
-
-// independent vowels
-'\u1B83':'a',
-'\u1B84':'i',
-'\u1B85':'u',
-'\u1B86':'\u00E9',
-'\u1B87':'o',
-'\u1B88':'e',
-'\u1B89':'eu',
-
-//virama
-'\u1BAA':'',
-'\u1BAB':'',
-
-// punctuation
-'।':'.',
-'\u093D':'\'' ,
-'\u0903':'ḥ',
-
-// numbers
-'\u1BB0':'0',
-'\u1BB1':'1',
-'\u1BB2':'2',
-'\u1BB3':'3',
-'\u1BB4':'4',
-'\u1BB5':'5',
-'\u1BB6':'6',
-'\u1BB7':'7',
-'\u1BB8':'8',
-'\u1BB9':'9',
-
+var mapToISOold = {
+'\u1860':'a',
+'\u1880':'\u00E5',
+'\u1863':'i',
+'\u1865':'u',
+'\u1866':'\u016F',
+'\u1867':'\u00FC',
+'\u1861':'n',
+'\u1864':'y',
+'\u1854':'j',
+'\u1868':'g',
+'\u1869':'q',
+'\u1889':'\u011F',
+'\u186A':'d',
+'\u186B':'t',
+'\u186C':'\u0111',
+'\u186D':'w',
+'\u1841':'h',
+'\u182A':'b',
+'\u182B':'p',
+'\u182E':'m',
+'\u182F':'l',
+'\u1830':'s',
+'\u1831':'\u0161',
+'\u1834':'c',
+'\u1837':'r',
+'\u1839':'f',
+'\u183A':'k',
+'\u183C':'\u02A6',
+'\u183D':'z',
+'\u183F':'\u027B',
+'\u1842':'\u00E7',
 }
 
 
