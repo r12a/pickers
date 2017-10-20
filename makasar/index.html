@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Makasar character picker 21</title>
+
+<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
+<script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
+<script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
+<script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
+<script type="text/javascript" src="../../shared/code/all-names.js"></script>
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="../shared21/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+
+<script type="text/javascript" src="localtranscription.js">  </script>
+<script type="text/javascript" src="composite-names.js"></script>
+<script type="text/javascript" src="/shared/fontlists/makasar.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+ <div id="transcriptionChoice"></div>
+
+<div id="latintranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('a')">a</span>
+<span class="t" onclick="dotrans('e')">e</span>
+<span class="t" onclick="dotrans('ə')">ə</span>
+<span class="t" onclick="dotrans('i')">i</span>
+<span class="t" onclick="dotrans('o')">o</span>
+<span class="t" onclick="dotrans('ɔ')">ɔ</span>
+<span class="t" onclick="dotrans('u')">u</span>
+<span class="t" onclick="dotrans('b')">b</span>
+<span class="t" onclick="dotrans('c')">c</span>
+<span class="t" onclick="dotrans('d')">d</span>
+<span class="t" onclick="dotrans('ʤ')">ʤ</span>
+<span class="t" onclick="dotrans('f')">f</span>
+<span class="t" onclick="dotrans('g')">g</span>
+<span class="t" onclick="dotrans('h')">h</span>
+<span class="t" onclick="dotrans('j')">j</span>
+<span class="t" onclick="dotrans('ɟ')">ɟ</span>
+<span class="t" onclick="dotrans('k')">k</span>
+<span class="t" onclick="dotrans('l')">l</span>
+<span class="t" onclick="dotrans('m')">m</span>
+<span class="t" onclick="dotrans('n')">n</span>
+<span class="t" onclick="dotrans('ng')">ng</span>
+<span class="t" onclick="dotrans('ny')">ny</span>
+<span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('ɲ')">ɲ</span>
+<span class="t" onclick="dotrans('p')">p</span>
+<span class="t" onclick="dotrans('q')">q</span>
+<span class="t" onclick="dotrans('r')">r</span>
+<span class="t" onclick="dotrans('s')">s</span>
+<span class="t" onclick="dotrans('t')">t</span>
+<span class="t" onclick="dotrans('ʧ')">ʧ</span>
+<span class="t" onclick="dotrans('v')">v</span>
+<span class="t" onclick="dotrans('w')">w</span>
+<span class="t" onclick="dotrans('y')">y</span>
+</div>
+</div>
+
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+<div id="tables" dir="ltr">
+  <div id="alphabet" class="default">
+    <table id="kbd">
+      <tr>
+        <td><table id="consonants" style="margin: auto;">
+          <tr>
+            <td><span class="g"><span class="hint">k</span><span class="c">&#x11EE0;</span></span></td>
+            <td><span class="g"><span class="hint">g</span><span class="c">&#x11EE1;</span></span></td>
+            <td><span class="g"><span class="hint">ng</span><span class="c">&#x11EE2;</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="hint">c</span><span class="c">&#x11EE9;</span></span></td>
+            <td><span class="g"><span class="hint">j</span><span class="c">&#x11EEA;</span></span></td>
+            <td><span class="g"><span class="hint">ny</span><span class="c">&#x11EEB;</span></span></td>
+         </tr>
+          <tr>
+            <td><span class="g"><span class="hint">t</span><span class="c">&#x11EE6;</span></span></td>
+            <td><span class="g"><span class="hint">d</span><span class="c">&#x11EE7;</span></span></td>
+            <td><span class="g"><span class="hint">n</span><span class="c">&#x11EE8;</span></span></td>
+         </tr>
+          <tr>
+            <td><span class="g"><span class="hint">p</span><span class="c">&#x11EE3;</span></span></td>
+            <td><span class="g"><span class="hint">b</span><span class="c">&#x11EE4;</span></span></td>
+            <td><span class="g"><span class="hint">m</span><span class="c">&#x11EE5;</span></span></td>
+        </tr>
+          <tr>
+            <td><span class="g"><span class="hint">y</span><span class="c">&#x11EEC;</span></span></td>
+            <td><span class="g"><span class="hint">r</span><span class="c">&#x11EED;</span></span></td>
+            <td><span class="g"><span class="hint">l</span><span class="c">&#x11EEE;</span></span></td>
+         </tr>
+          <tr>
+            <td><span class="g"><span class="hint">s</span><span class="c">&#x11EF0;</span></span></td>
+			<td><span class="g"><span class="hint">w</span><span class="c">&#x11EEF;</span></span></td>
+             <td style="padding-left: 8px;"><span class="g"><span class="hint"></span><span class="c">&#x11EF2;</span></span></td>
+         </tr>
+          </table>
+        
+        
+        
+        
+      
+
+        
+                <td id="vowels"><table style="margin: auto;">
+           <tr>
+            <td><span class="g"><span class="hint">a</span><span class="c">&#x11EF1;</span></span></td>
+          </tr>
+         <tr>
+            <td><span class="g"><span class="hint">i</span><span class="c">&#x11EF3;</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="hint">u</span><span class="c">&#x11EF4;</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="hint">e</span><span class="c">&#x11EF5;</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="hint">o</span><span class="c">&#x11EF6;</span></span></td>
+          </tr>
+        </table></td>
+
+        </td>
+
+
+
+       <td id="punctuation"><table style="margin: auto;">
+          <tr>
+            <td><span class="c">&#x11EF7;</span></td>
+          </tr>
+          <tr>
+            <td><span class="c">&#x11EF8;</span></td>
+          </tr>
+        </table>
+
+
+       <td id="numbers">
+       <table style="margin: auto;">
+          <tr>
+          <tr>
+            <td><span class="g"><span class="c">7</span></span></td>
+            <td><span class="g"><span class="c">8</span></span></td>
+            <td><span class="g"><span class="c">9</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="c">4</span></span></td>
+            <td><span class="g"><span class="c">5</span></span></td>
+            <td><span class="g"><span class="c">6</span></span></td>
+          </tr>
+            <td><span class="g"><span class="c">1</span></span></td>
+            <td><span class="g"><span class="c">2</span></span></td>
+            <td><span class="g"><span class="c">3</span></span></td>
+          </tr>
+         <tr>
+			   <td>&nbsp;</td>
+            <td><span class="g"><span class="c">0</span></span></td>
+            <td>&nbsp;</td>
+          </tr>
+       </table>
+        </td>
+        
+        </td>
+      </tr>
+      <tr>
+        <td colspan="7" id="spaceetc">
+        <span class="touch" style="padding: 5px 70px;" onClick="add(' ');">SPACE</span> 
+        <span class="touch" style="padding: 5px 20px;" onClick="add('\u200D');">ZWJ</span> 
+        <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
+        <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
+        <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span></td>
+      </tr>
+    </table>
+  </div>
+
+  
+  <div id="shapelist">
+    <div id="shapekeys">
+    </div>
+  <div id="extrashapes"></div>
+</div>
+
+
+
+ <div id="temp"></div>
+
+</div>
+<!-- end of tables -->
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>

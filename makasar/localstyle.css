@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'MakasarGraphite WF';
+    src: url('/shared/webfonts/makasargraphite-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/makasargraphite-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+#alphabet { display: block; }
+#phonelist { display: none; }
+#fontgrid { display: none; }
+
+
+[lang=mak] { font-family: MakasarGraphite, 'MakasarGraphite WF', serif; }
+
+
+
+#kbd { 	
+	margin: auto; 
+	}
+table {
+	margin:0;
+	}
+td {
+	padding: 0;
+	}
+/*
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: left;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1;
+	}
+	*/
+
+#vowels {
+	border: 1px dotted #ccc;
+	border-radius: 5px; 
+	vertical-align: middle;
+	}
+
+#numbers {
+	border: 1px dotted #ccc;
+	border-radius: 5px; 
+	vertical-align: middle;
+	line-height: 2;
+	}
+
+#punctuation {
+	padding-left: 15px;
+	padding-right: 10px;
+	vertical-align: middle;
+	line-height: 2.4;
+	}
+	
+#independentvowels {
+	margin: 0;
+	padding: 0;
+	}
+#independentvowels td {
+	text-align: right;
+	}
+#otherpunctuation {
+	margin:auto;
+	}
+#otherpunctuation .c {
+	line-height: 2.2;
+	}
+#medialsfinals {
+	padding: 0 .75em;
+	vertical-align: middle;
+	}
+#consonants {
+	margin-left: 10px; 
+	margin: 0;
+	}
+#consonants td {
+	text-align: left;
+	}
+#consonants2  {
+	margin-left: 10px; 
+	display: none;
+	}
+#consonants2 td {
+	text-align: left;
+	}
+#consonants2 td span.c {
+	min-width: 2em;
+	}
+.g {
+	display: inline-block;
+	}
+.c {
+	min-width: .75em;
+	}
+#shift {
+	cursor:pointer;
+	}
+#adegadeg {
+	vertical-align:middle;
+	}
