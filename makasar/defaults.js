@@ -1,6 +1,6 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'MakasarGraphite WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'MakasarGraphite' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "2.5"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
