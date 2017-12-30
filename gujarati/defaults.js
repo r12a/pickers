@@ -27,6 +27,7 @@ var template = {}
 	template.blocklocation= 'gujarati'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'gujarati'
+	template.scriptcode = 'Gujr'
 
 
 var inputAids = [
