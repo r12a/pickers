@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Mandaic character picker 21</title>
+
+<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
+<script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
+<script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
+<script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11n.js">  </script>
+<script type="text/javascript" src="../../shared/code/normalization/js/n11ndata-lite.js">  </script>
+<script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
+<script type="text/javascript" src="../../shared/code/all-names.js"></script>
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="../shared21/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+<script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
+
+<script type="text/javascript" src="localtranscription.js">  </script>
+<script type="text/javascript" src="composite-names.js"></script>
+<script type="text/javascript" src="/shared/fontlists/mandaic.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+ <div id="transcriptionChoice"></div>
+
+<div id="latintranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('a')">a</span>
+<span class="t" onclick="dotrans('e')">e</span>
+<span class="t" onclick="dotrans('i')">i</span>
+<span class="t" onclick="dotrans('o')">o</span>
+<span class="t" onclick="dotrans('u')">u</span>
+<span class="t" onclick="dotrans('b')">b</span>
+<span class="t" onclick="dotrans('č')">č</span>
+<span class="t" onclick="dotrans('d')">d</span>
+<span class="t" onclick="dotrans('ḏ')">ḏ</span>
+<span class="t" onclick="dotrans('ð')">ð</span>
+<span class="t" onclick="dotrans('δ')">δ</span>
+<span class="t" onclick="dotrans('f')">f</span>
+<span class="t" onclick="dotrans('g')">g</span>
+<span class="t" onclick="dotrans('ɡ')">ɡ</span>
+<span class="t" onclick="dotrans('h')">h</span>
+<span class="t" onclick="dotrans('ḥ')">ḥ</span>
+<span class="t" onclick="dotrans('ẖ')">ẖ</span>
+<span class="t" onclick="dotrans('j')">j</span>
+<span class="t" onclick="dotrans('ǰ')">ǰ</span>
+<span class="t" onclick="dotrans('k')">k</span>
+<span class="t" onclick="dotrans('kḏ')">kḏ</span>
+<span class="t" onclick="dotrans('l')">l</span>
+<span class="t" onclick="dotrans('m')">m</span>
+<span class="t" onclick="dotrans('n')">n</span>
+<span class="t" onclick="dotrans('p')">p</span>
+<span class="t" onclick="dotrans('q')">q</span>
+<span class="t" onclick="dotrans('r')">r</span>
+<span class="t" onclick="dotrans('s')">s</span>
+<span class="t" onclick="dotrans('ṣ')">ṣ</span>
+<span class="t" onclick="dotrans('š')">š</span>
+<span class="t" onclick="dotrans('ʃ')">ʃ</span>
+<span class="t" onclick="dotrans('t')">t</span>
+<span class="t" onclick="dotrans('ṭ')">ṭ</span>
+<span class="t" onclick="dotrans('t̴')">t̴</span>
+<span class="t" onclick="dotrans('w')">w</span>
+<span class="t" onclick="dotrans('χ')">χ</span>
+<span class="t" onclick="dotrans('γ')">γ</span>
+<span class="t" onclick="dotrans('z')">z</span>
+<span class="t" onclick="dotrans('ẓ')">ẓ</span>
+<span class="t" onclick="dotrans('ž')">ž</span>
+<span class="t" onclick="dotrans('θ')">θ</span>
+<span class="t" onclick="dotrans('ʿ')">ʿ</span>
+</div>
+
+
+<div id="toMandaicPallet" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('ࡀ')">a</span>
+<span class="t" onclick="dotrans('ࡉ,ࡉ࡚,ࡏ')">e</span>
+<span class="t" onclick="dotrans('ࡉ')">i</span>
+<span class="t" onclick="dotrans('ࡏࡉ')">i-</span>
+<span class="t" onclick="dotrans('ࡅ,ࡅ࡚')">o</span>
+<span class="t" onclick="dotrans('ࡅ')">u</span>
+<span class="t" onclick="dotrans('ࡏࡅ')">u-</span>
+<span class="t" onclick="dotrans('ࡁ')">b</span>
+<span class="t" onclick="dotrans('ࡔ࡙')">č</span>
+<span class="t" onclick="dotrans('ࡂ࡙')">γ</span>
+<span class="t" onclick="dotrans('ࡂ')">g</span>
+<span class="t" onclick="dotrans('ࡃ࡙')">δ</span>
+<span class="t" onclick="dotrans('ࡃ')">d</span>
+<span class="t" onclick="dotrans('ࡖ')">ḏ</span>
+<span class="t" onclick="dotrans('ࡐ࡙')">f</span>
+<span class="t" onclick="dotrans('ࡄ࡙')">ḥ</span>
+<span class="t" onclick="dotrans('ࡄ')">h</span>
+<span class="t" onclick="dotrans('ࡇ')">ẖ</span>
+<span class="t" onclick="dotrans('ࡔ࡙')">ǰ</span>
+<span class="t" onclick="dotrans('ࡊ')">k</span>
+<span class="t" onclick="dotrans('ࡗ')">kḏ</span>
+<span class="t" onclick="dotrans('ࡋ')">l</span>
+<span class="t" onclick="dotrans('ࡌ')">m</span>
+<span class="t" onclick="dotrans('ࡍ')">n</span>
+<span class="t" onclick="dotrans('ࡐ')">p</span>
+<span class="t" onclick="dotrans('ࡒ')">q</span>
+<span class="t" onclick="dotrans('ࡓ')">r</span>
+<span class="t" onclick="dotrans('ࡎ')">s</span>
+<span class="t" onclick="dotrans('ࡑ')">ṣ</span>
+<span class="t" onclick="dotrans('ࡔ࡙')">š</span>
+<span class="t" onclick="dotrans('ࡕ')">t</span>
+<span class="t" onclick="dotrans('ࡈ')">ṭ</span>
+<span class="t" onclick="dotrans('ࡅ')">w</span>
+<span class="t" onclick="dotrans('ࡊ࡙')">χ</span>
+<span class="t" onclick="dotrans('ࡉ')">y</span>
+<span class="t" onclick="dotrans('ࡆ')">z</span>
+<span class="t" onclick="dotrans('ࡈ࡙')">ẓ</span>
+<span class="t" onclick="dotrans('ࡑ࡙')">ž</span>
+<span class="t" onclick="dotrans('ࡏ')">ʿ</span>
+<span class="t" onclick="dotrans('ࡕ࡙')">θ</span>
+</div>
+
+
+</div>
+
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+<div id="tables" dir="ltr">
+  <div id="alphabet" class="default">
+    <table id="kbd">
+      <tr>
+        <td><table id="consonants" style="margin: auto;">
+          <tr>
+<td><span class="g"><span class="hint">a</span><span class="c">&#x0840;</span></span></td>
+            <td><span class="g"><span class="hint">b</span><span class="c">&#x0841;</span></span></td>
+            <td><span class="g"><span class="hint">g</span><span class="c">&#x0842;</span></span></td>
+            <td><span class="g"><span class="hint">d</span><span class="c">&#x0843;</span></span></td>
+          </tr>
+          <tr>
+<td><span class="g"><span class="hint">h</span><span class="c">&#x0844;</span></span></td>
+            <td><span class="g"><span class="hint">u</span><span class="c">&#x0845;</span></span></td>
+            <td><span class="g"><span class="hint">z</span><span class="c">&#x0846;</span></span></td>
+            <td><span class="g"><span class="hint">-ẖ</span><span class="c">&#x0847;</span></span></td>
+         </tr>
+          <tr>
+<td><span class="g"><span class="hint">ṭ</span><span class="c">&#x0848;</span></span></td>
+            <td><span class="g"><span class="hint">i</span><span class="c">&#x0849;</span></span></td>
+            <td><span class="g"><span class="hint">k</span><span class="c">&#x084A;</span></span></td>
+            <td><span class="g"><span class="hint">l</span><span class="c">&#x084B;</span></span></td>
+         </tr>
+          <tr>
+<td><span class="g"><span class="hint">m</span><span class="c">&#x084C;</span></span></td>
+            <td><span class="g"><span class="hint">n</span><span class="c">&#x084D;</span></span></td>
+            <td><span class="g"><span class="hint">s</span><span class="c">&#x084E;</span></span></td>
+            <td><span class="g"><span class="hint">ʿ</span><span class="c">&#x084F;</span></span></td>
+        </tr>
+          <tr>
+<td><span class="g"><span class="hint">p</span><span class="c">&#x0850;</span></span></td>
+            <td><span class="g"><span class="hint">ṣ</span><span class="c">&#x0851;</span></span></td>
+            <td><span class="g"><span class="hint">q</span><span class="c">&#x0852;</span></span></td>
+            <td><span class="g"><span class="hint">r</span><span class="c">&#x0853;</span></span></td>
+         </tr>
+          <tr>
+<td><span class="g"><span class="hint">š</span><span class="c">&#x0854;</span></span></td>
+            <td><span class="g"><span class="hint">t</span><span class="c">&#x0855;</span></span></td>
+			<td><span class="g"><span class="hint">ḏ-</span><span class="c">&#x0856;</span></span></td>
+             <td style="padding-left: 8px;"><span class="g"><span class="hint">kḏ</span><span class="c">&#x0857;</span></span></td>
+         </tr>
+          </table>
+        
+        
+        
+        
+      
+
+        
+      <td id="vowels"><table style="margin: auto;">
+           <tr>
+            <td><span class="c">&#x0858;</span></td>
+          </tr>
+         <tr>
+            <td><span class="g"><span class="c">&#x0859;</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="c">&#x085A;</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="c">&#x085B;</span></span></td>
+          </tr>
+        </table></td>
+
+        </td>
+
+
+
+       <td id="punctuation"><table style="margin: auto;">
+          <tr>
+            <td><span class="g"><span class="c">&#x085E;</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="c">&#x0640;</span></span></td>
+          </tr>
+        </table>
+
+
+      <td id="numbers">
+       <table style="margin: auto;">
+          <tr>
+          <tr>
+            <td><span class="g"><span class="c">7</span></span></td>
+            <td><span class="g"><span class="c">8</span></span></td>
+            <td><span class="g"><span class="c">9</span></span></td>
+          </tr>
+          <tr>
+            <td><span class="g"><span class="c">4</span></span></td>
+            <td><span class="g"><span class="c">5</span></span></td>
+            <td><span class="g"><span class="c">6</span></span></td>
+          </tr>
+            <td><span class="g"><span class="c">1</span></span></td>
+            <td><span class="g"><span class="c">2</span></span></td>
+            <td><span class="g"><span class="c">3</span></span></td>
+          </tr>
+         <tr>
+			   <td>&nbsp;</td>
+            <td><span class="g"><span class="c">0</span></span></td>
+            <td>&nbsp;</td>
+          </tr>
+       </table>
+        </td>
+        
+        </td>
+      </tr>
+      <tr>
+        <td colspan="7" id="spaceetc">
+        <span class="touch" style="padding: 5px 70px;" onClick="add(' ');">SPACE</span> 
+        <span class="touch" style="padding: 5px 20px;" onClick="add('\u200D');">ZWJ</span> 
+        <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
+        <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
+        <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span></td>
+      </tr>
+    </table>
+  </div>
+
+  
+  <div id="shapelist">
+    <div id="shapekeys">
+    </div>
+  <div id="extrashapes"></div>
+</div>
+
+
+
+<div id="temp"></div>
+
+</div>
+<!-- end of tables -->
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
