@@ -1,3 +1,27 @@
+Copy a picker
+
+Do case-sensitive change of script name throughout index.html
+
+
+SET UP FONTS
+- Create /shared/fontlists/scriptname.js
+- Download needed fonts
+- Make webfont(s) and add to /shared
+- Set font in localstyle.css
+
+POSITION KEYS
+- Plan the zones for characters
+- Use UniView to make a list of characters for the picker
+- Use _tools/_make-characters.html to generate spans
+  Add result to #temp div
+- Move #temp markup to appropriate positions
+
+SET DEFAULTS
+- Edit defaults.js
+- Create sample text
+
+
+
 
 
 
