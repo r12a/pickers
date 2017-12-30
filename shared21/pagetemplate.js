@@ -193,12 +193,26 @@ out = `
 
 <div class="control" id="ccFactoryReset">Reset<br/><button onClick="resetDefaults()">Go</button>
 </div>
-</details>
+</details>`
 
-<details>
+
+if (template.scriptcode) {
+    out += `<details>
+    <summary>related links</summary>
+    <div id="linklist">`
+
+    out += getData(template.scriptcode)
+    
+    out += '</details>'
+    }
+    
+out += `<details>
 <summary>more pickers</summary>
 <iframe id="pickerlist" src="../pickerlist"></iframe>
 </details>
+</div>
+</div>
+
 </div>
 
 

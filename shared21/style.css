@@ -547,6 +547,16 @@ summary:hover {
 	height: 8em;
 	}
 	
+#scriptlinks {
+    font-size: 80%;
+    background-color: white;
+    border-radius: 2px;
+    padding: 0 4px;
+    color: #999;
+    cursor: pointer;
+    float: right;
+	}
+	
 #temp span { padding: 1em; border: 3px solid teal; line-height: 6em; }
 	
 	
@@ -598,3 +608,25 @@ summary:hover {
 #rare {
 	margin: auto;
 	}
+
+
+#linkstable {
+    font-size: 80%;
+    margin: 0 3em;
+    }
+#linkstable table {
+    margin: 0;
+    }
+#linkstable td {
+    text-align: start;
+    padding: 0 1em 0 0;
+    }
+#linkstable th {
+    vertical-align: top;
+    text-align: start;
+    padding: 0 1em 0 0;
+    }
+#linkstable p {
+    margin:0;
+    padding:0;
+    }
