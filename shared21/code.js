@@ -14,7 +14,7 @@ var _output
 
 // LOCALSTORAGE ROUTINES
 
-function savePreferences () {
+function savePreferences (node) {
 	// if you click Ok to Store, this sets localStorage up
 	localStorage.pickersStore = 'yes'
 	node.parentNode.style.display = 'none'
@@ -841,7 +841,7 @@ function getWelcome (dir) {
 	// rtl indicates whether or not to include UI direction msg
 	var out = "<p>You can change the contrast for this app by clicking on the 🌓 icon in the top right corner of the page.<br/>"
 	if (dir === 'rtl') out += "The selection area for this picker is ordered RTL by default, but can be set to LTR at <samp>more controls/table direction</samp>.<br/>"
-	out += "Use the controls at the bottom of the page to change other settings, and <samp>more controls/reset defaults</samp> to return to the default setup.<br/>Click one of the following buttons to remove this message. Click <samp>Ok to store</samp> if you want this and other pickers to remember your settings between sessions. Settings are stored locally on the computer/device you are using.<br/><button onClick='savePreferences()'>Ok to store</button> <button onClick='dontStore(this)'>Don't store</button></p>"
+	out += "Use the controls at the bottom of the page to change other settings, and <samp>more controls/reset defaults</samp> to return to the default setup.<br/>Click one of the following buttons to remove this message. Click <samp>Ok to store</samp> if you want this and other pickers to remember your settings between sessions. Settings are stored locally on the computer/device you are using.<br/><button onClick='savePreferences(this)'>Ok to store</button> <button onClick='dontStore(this)'>Don't store</button></p>"
 	return out
 	}
 
