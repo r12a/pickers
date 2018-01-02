@@ -327,8 +327,10 @@ function add(ch) {
 		}
 		
 	// normalize
-	if (globals.n11n=='nfc') { outputNode.value = nfc(outputNode.value); }
-	else if (globals.n11n=='nfd') { outputNode.value = nfd(outputNode.value);}
+	//if (globals.n11n=='nfc') { outputNode.value = nfc(outputNode.value);  }
+	if (globals.n11n=='nfc') { outputNode.value = outputNode.value.normalize('NFC') }
+	//else if (globals.n11n=='nfd') { outputNode.value = nfd(outputNode.value);}
+	else if (globals.n11n=='nfd') { outputNode.value = outputNode.value.normalize('NFD') }
 	}
 
 	

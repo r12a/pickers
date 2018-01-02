@@ -163,9 +163,9 @@ out = `
 
   <div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
     <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
+							onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFC');
 							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
+							onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFD');
 							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
 							onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
 
