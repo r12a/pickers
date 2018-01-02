@@ -62,7 +62,18 @@ out += `<button  id="makeExample" onclick="makeExample(defaults.language,default
 
 
 
-<div id="autofocusswitch">Autofocus: 
+<div id="autofocusswitch">`
+
+if (template.direction == "rtl") {
+    out += `
+    <span title="Set base direction to LTR." onclick="document.getElementById('output').dir='ltr'" class="setDir">→&#xFE0E;</span>
+<span title="Set base direction to Auto." onclick="document.getElementById('output').dir='auto'" class="setDir">↔&#xFE0E;</span> 
+<span title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'" class="setDir">←&#xFE0E;</span>  
+     &bull; 
+ `
+    
+    }
+out += `Autofocus: 
 	<span id="afon" class="on" 
     onclick="switchAutofocus('on')">On</span> 
     <span id="afoff" class="off" 
@@ -180,10 +191,26 @@ out = `
         <option value="◌">◌</option>
         <option value="-">-</option>
 		</select>
-</div>
+</div>`
 
 
-<div class="control">Set language:
+if (template.direction == 'rtl') {
+    out += `
+    
+     <div class="control" id="uiTableDirection" style="text-align:right;">Table direction:<br />
+    <select onChange="changeSelectionDirection(this.value); return false;">
+    <option value="rtl">RTL</option>
+    <option value="ltr">LTR</option>
+    </select>
+    </div>
+   
+    `
+    }
+
+
+
+
+out += `<div class="control">Set language:
 <form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
   <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:right;" />
   <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
