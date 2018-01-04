@@ -630,3 +630,26 @@ summary:hover {
     margin:0;
     padding:0;
     }
+#extrashapes {
+    text-align: center;
+    }
+.kbdWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    }
+
+
+.mirrorRTL {
+	transform: rotateY(180deg);
+	}
+.bdoRTL {
+	direction: rtl; 
+	unicode-bidi: bidi-override;
+	}
+.bdoLTR {
+	direction: ltr; 
+	unicode-bidi: bidi-override;
+	}
+
