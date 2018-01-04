@@ -82,7 +82,7 @@ end: {}
 
 
 
-function findShape (shapelist, extrashapes, show) { 
+function findShapeOLD (shapelist, extrashapes, show) { 
 	// highlights characters that contain a given shape
 	// shapelist: string, comma-separated list of ids
 	// status: boolean, indicates whether to highlight or remove highlighting

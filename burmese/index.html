@@ -2,130 +2,38 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Burmese character picker 19</title>
+<title>Burmese character picker 21</title>
+
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared20/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
 <script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
 <script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
 <script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
-<script type="text/javascript" src="../../shared/code/normalization/js/n11n.js">  </script>
-<script type="text/javascript" src="../../shared/code/normalization/js/n11ndata-lite.js">  </script>
 <script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
 <script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared20/code.js">  </script>
+<script type="text/javascript" src="../shared21/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+<script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
 
 <script type="text/javascript" src="localtranscription.js">  </script>
 <script type="text/javascript" src="composite-names.js"></script>
-<script type="text/javascript" src="../../shared/fontlists/myanmar.js"> </script>
+<script type="text/javascript" src="/shared/fontlists/myanmar.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
 </head>
 
 <body class="app">
-<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
-<header>
-<div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Burmese character picker','v20');</script>
-</header>
-
-
-<div id="welcome"></div>
-
-
-<div id="main">
-<span id="copydelete">
-  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
-  <button title="Select all the text." onclick="selectAll()">🔶</button>
-  <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('(၂) လူတိုင်းတွင် မိမိနေထိုင်ရာ တိုင်းပြည်မှ လည်းကောင်း၊ အခြားတိုင်းပြည်မှလည်းကောင်း ထွက်ခွာ သွားပိုင်ခွင့်ရှိသည့်အပြင်၊ မိမိ၏ တိုင်းပြည်သို့ ပြန်လာ ပိုင်ခွင့်လည်းရှိသည်။')">+</button>
-<a href="help"><button title="How to use this picker."><img alt="help" src="../shared20/help.png"/></button></a>
-  </span>
-  
-<span id="tools">
-    <button onclick="showCodepoints()">Show<br/>codepoints</button>
-    
-    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
-    
-    <button onclick="add(splitSyllables(getHighlightedText(document.getElementById('output')))); return false;" 
-    title="Split the text into syllables.">Split<br/>syllables</button> 
-    
-    <button onclick="doTranscription('toMLC')" 
-    title="Convert Burmese text to an MLC Latin transcription.">Convert<br/>to MLC</button> 
-    
-    <button onclick="doTranscription('toIPA')" 
-    title="Convert Burmese text to an *approximation* to the IPA transcription.">Convert<br/>to IPA</button> 
-    
-    <button  id="makeExample" onclick="makeExample(defaults.language,defaults.direction)" 
-    title="Create an example.">Make<br>example</button>
-    
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('myanmar',defaults.language,defaults.direction)" 
-    title="Create an character link.">Character<br/>markup</button>
-    </span>
-</div>
-
-<div id="outputDiv">
-  <textarea rows="2" cols="80" id="output" name="output" placeholder="›"></textarea>
-</div>
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
 
 
 
 
-<div id="transcriptionWrapper">
-<div id="copyTranscription" onclick="copyTranscription()">📋</div>
-<div id="moveTranscription" onclick="moveTranscription()">⌃</div>
-<div id="closeTranscription" onclick="closeTranscription()">X</div>
-<div id="transcription" contenteditable="true"></div>
-</div>
 
-
-<div id="autofocusswitch">Autofocus: 
-	<span id="afon" class="on" 
-    onclick="switchAutofocus('on')">On</span> 
-    <span id="afoff" class="off" 
-    onclick="switchAutofocus('off')">Off</span>
-    </div>
-
-
-
-<div style="position:relative;">
-<div id="vertical-menu">
-<div class="vmtab" 
-	onmouseover="this.textContent='Default'" 
-    onmouseout="this.textContent='D'"  
-    onclick="setSidebarDefaults(this);
-     return false;">D</div>
-
-<div class="vmtab" title="Hinting" data-var="showShapeHints" data-locn="" data-shorttitle="H"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">H</div>
-
-<div class="vmtab"  title="Shape lookup" data-var="showShapeLookup" data-locn="shapelist" data-shorttitle="S"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">S</div>
-
-<div class="vmtab"  title="Latin characters" data-var="showLatinTrans" data-locn="latintranscript" data-shorttitle="L"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
-
-<div class="vmtab"  title="MLC transcription" data-var="showISOTrans" data-locn="mlctranscript" data-shorttitle="M"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">M</div>
-
-<div class="vmtab"  title="Mesher transcription" data-var="showMesherTrans" data-locn="meshertranscript" data-shorttitle="M"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">M</div>
-</div>
-</div>
-
- 
 
 
 
@@ -133,7 +41,7 @@
 <div id="phonemelist" style="position:relative;">
  <div id="transcriptionChoice"></div>
 
-<div id=latintranscript class=transcript style="display:none;">
+<div id="latintranscript" class="transcript" style="display:none;">
 <span class="t" onclick="dotrans('ɕ')">ɕ</span>
 <span class="t" onclick="dotrans('ð')">ð</span>
 <span class="t" onclick="dotrans('ʝ')">ʝ</span>
@@ -173,10 +81,10 @@
 <span class="t" onclick="dotrans('\u0302')">ˆ</span>
 <span class="t" onclick="dotrans('\u0301')">ˊ</span>
 <span class="t" onclick="dotrans('\u030C')">ˇ</span>
-	    </div> 
+</div>
 
 
-<div id=mlctranscript class=transcript style="display:none;">
+<div id="mlctranscript" class="transcript" style="display:none;">
 <span class="t" onclick="dotrans('ဗ')">b</span>
 <span class="t" onclick="dotrans('ဘ')">bh</span>
 <span class="t" onclick="dotrans('စ')">c</span>
@@ -268,7 +176,7 @@
 
 
 
-<div id=meshertranscript class=transcript style="display:none;">
+<div id="meshertranscript" class="transcript" style="display:none;">
 <span class="t" onclick="dotrans('ဗ,ဘ,ပ,ဖ')">b</span>
 <span class="t" onclick="dotrans('ချ,ခြ')">ch</span>
 <span class="t" onclick="dotrans('ဒ,ဓ,ဍ,ဎ,တ,ထ')">d</span>
@@ -329,8 +237,9 @@
 <span class="t" onclick="dotrans('အ်,က်,စ်,တ်,ပ်')">-'</span>
 <span class="t" onclick="dotrans('ံ,မ်,န်,ဉ်,င်')">-n</span>
 </div>
-</div>
 
+
+</div>
 
 
 
@@ -338,13 +247,8 @@
 
 
 
-
-
-
-
 <div id="tables" dir="ltr">
   
-  <!-- SHAPE -->
 <div id="alphabet" class="default">
 <table id="kbd">
 <tr>
@@ -503,8 +407,9 @@
 
 
 
- <div id=shapelist style="display:none">
- <div>
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
 <img alt="shape1" src="images/shape1.png" onclick="findShape('101D,1040,1011,1010,103D,1037,1036,102D,102E,1013,1005,1008','ွှ,စျ',true)" /> 
 <img alt="shape2" src="images/shape2.png" onclick="findShape('1002,1050,1000,100F,1023,1024','',true)" /> 
 <img alt="shape3" src="images/shape3.png" onclick="findShape('1004,104E,1044,100B,100C,1020,101C,103A','',true)" /> 
@@ -521,154 +426,23 @@
 <img alt="shape15" src="images/shape15.png" onclick="findShape('103E,102F,1030,103B,1008','ျှ,စျ',true)" /> 
 <img alt="shape16" src="images/shape16.png" onclick="findShape('102B,1047,101B,104D,1031102B,1031102B103A','ါ်',true)" /> 
 </div>
-
 </div>
 
 <div id="extrashapes"></div>
 
 
+<div id="temp"></div>
 
 
 </div><!-- end of tables -->
 
-
-
-
-
-<div id="controls">
-  <div class="control">Font list:<br />
-    <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
-	    </select>
-  <script>document.getElementById('fontList').innerHTML = fontSelection</script>
-  </div>
   
-  <div class="control">Custom font:<br />
-    <form action="none" onsubmit="customFont(document.getElementById('fontName').value); return false;">
-      <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
-    </form>
-  </div>
-  
-  <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
-     <input name="fontSize" value="35" id="fontSize" size="3" 
-     	onchange="changeFontSize(this.value);" 
-        onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" 
-        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
-        onfocus="document.getElementById('dimensions').textContent='Font size (px):'" 
-        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="rows" value="1.5" id="rows" size="3" 
-     	onchange="changeBoxHeight(this.value)" 
-        onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" 
-        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
-        onfocus="document.getElementById('dimensions').textContent='Box height (px):'" 
-        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  
-     	onchange="changeLineHeight(this.value)" 
-        onmouseover="document.getElementById('dimensions').textContent='Line height:'" 
-        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
-        onfocus="document.getElementById('dimensions').textContent='Line height:'" 
-        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-  </div>
-  
-  <div class="control">Add codepoint:
-    <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
-      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
-    </form>
-  </div>
-  
-  <div class="control">Search for:
-    <form action="none" onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
-      <input name="search" id="search"  type="text" />
-      <img src="/pickers//images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
-    </form>
-  </div>
-  
-  <div class="control" id="helpcontrol"><a href="help">Help<br/><img src="../shared20/help.png" alt=""/></a></div>
-</div>
 
 
-
-<div id="extracontrols">
-<details>
-<summary>more controls</summary>
-
-  <div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
-    <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-		onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
-		document.getElementById('n11nform').innerHTML = 'NFC';"/> 
-    <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-		onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
-		document.getElementById('n11nform').innerHTML = 'NFD';"/> 
-    <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-		onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/>
-    </div>
-
-
-
-<div class="control" id="uiFontControl">Change table font:<br />
-    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
-    </select>
-	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
-	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
-
-
-
-<div class="control" id="ccBaseControl">CC base:<br />
-    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
-		<option value="0">Select...</option>
-        <option value="">none</option>
-        <option value="&#x00A0;">NBSP</option>
-        <option value=" ">SP</option>
-        <option value="◌">◌</option>
-        <option value="-">-</option>
-		</select>
-</div>
-
-
-<div class="control">Set language:
-<form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
-  <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:right;" />
-  <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
-</form>
-</div>
-
-
-<div class="control" id="ccFactoryReset">Reset<br/><button onClick="resetDefaults()">Go</button>
-</div>
-</details>
-
-<details>
-<summary>more pickers</summary>
-<iframe id="pickerlist" src="../pickerlist"></iframe>
-</details>
-</div>
-
-
-
-
-
-<div id="panel" style="display:none">
-	<div id="title" class="ex" lang="my"></div>
-  <div style="display:block">&nbsp;</div>
-  <p style="text-align:right;"></p>
-</div>
-
-
-
-<div class="smallprint">
-Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/burmese"><!-- #BeginDate format:En2 -->12-Aug-2017<!-- #EndDate --></a>.
-Make a <a href="https://github.com/r12a/pickers/issues/new?title=[burmese%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
-Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
-</div>
-
-
-</body>
+<div id="bottomBP"></div>
 <script>
-// check for parameters and take appropriate action
-parameters = location.search.split('&');
-parameters[0] = parameters[0].substring(1);
-for (var p=0;p<parameters.length;p++) {  
-	pairs = parameters[p].split('=');
-	if (pairs[0] == 'text') { if (pairs[1]) document.getElementById('output').value = decodeURI(pairs[1]) }
-	}
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
 </script>
+</body>
 </html>
