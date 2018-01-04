@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'Tuladha Jejeg WF';
+    src: url('/shared/webfonts/tuladhajejeg_gr-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/tuladhajejeg_gr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
     font-family: 'Noto Sans Javanese WF';
     src: url('/shared/webfonts/notosansjavanese-regular-webfont.woff2') format('woff2'),
          url('/shared/webfonts/notosansjavanese-regular-webfont.woff') format('woff');
