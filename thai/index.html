@@ -2,132 +2,37 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Thai character picker 20</title>
+<title>Thai character picker 21</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared20/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
 <script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
 <script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
 <script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
-<script type="text/javascript" src="../../shared/code/normalization/js/n11n.js">  </script>
-<script type="text/javascript" src="../../shared/code/normalization/js/n11ndata-lite.js">  </script>
 <script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
 <script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared20/code.js">  </script>
+<script type="text/javascript" src="../shared21/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+<script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
 
 <script type="text/javascript" src="localtranscription.js">  </script>
 <script type="text/javascript" src="composite-names.js"></script>
 <script type="text/javascript" src="/shared/fontlists/thai.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
 </head>
 
 <body class="app">
-<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
-<header>
-<div id="header-boilerplate"></div>
-<script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Thai character picker','v20');</script>
-</header>
-
-
-<div id="welcome"></div>
-
-<div id="main">
-<span id="copydelete">
-  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
-  <button title="Select all the text." onclick="selectAll()">🔶</button>
-  <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
-   <button title="Add sample text." style="font-size: 150%;" onclick="add('2. ทุกคนมีสิทธิที่จะออกจากประเทศใด ๆ ไป รวมทั้งประเทศของตนเองด้วย และที่จะกลับยังประเทศตน')">+</button>
-<a href="help"><button title="How to use this picker."><img alt="help" src="../shared20/help.png"/></button></a>
-  </span>
-  
-<span id="tools">
-    <button onclick="showCodepoints()">Show<br/>codepoints</button>
-    
-    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
-    
-    <button  onclick="doTranscription('toISO1')" 
-    title="Convert Malayalam text to an ISO Latin transcription.">Thai<br>to ISO-1</button>
-
-    <button  onclick="doTranscription('toISO2')" 
-    title="Convert Malayalam text to an ISO Latin transcription.">Thai<br>to ISO-2</button>
-
-    <button  onclick="doTranscription('toIPA')" 
-    title="Convert Malayalam text to an ISO Latin transcription.">Thai<br>to IPA</button>
-
-    <button type="button" onclick="add(condense(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();" title="Remove spaces and hyphens.">Remove<br>sp/hyph</button>
-
-    <button  id="makeExample" onclick="makeExample(defaults.language,defaults.direction)" 
-    title="Create an example.">Make<br>example</button>
-    
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('thai',defaults.language,defaults.direction)" 
-    title="Create an character link.">Character<br/>markup</button>
-    </span>
-</div>
-
-
-<div id="outputDiv">
-  <textarea dir="auto" rows="2" cols="80" id="output" name="output" placeholder="›" spellcheck="false"></textarea>
-</div>
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
 
 
 
 
-<div id="transcriptionWrapper">
-<div id="copyTranscription" onclick="copyTranscription()">📋</div>
-<div id="moveTranscription" onclick="moveTranscription()">⌃</div>
-<div id="closeTranscription" onclick="closeTranscription()">X</div>
-<div id="transcription" contenteditable="true"></div>
-</div>
-
-
-
-<div id="autofocusswitch">Autofocus: 
-	<span id="afon" class="on" 
-    onclick="switchAutofocus('on')">On</span> 
-    <span id="afoff" class="off" 
-    onclick="switchAutofocus('off')">Off</span>
-    </div>
-
-
-<div style="position:relative;">
-<div id="vertical-menu">
-<div class="vmtab" 
-	onmouseover="this.textContent='Default'" 
-    onmouseout="this.textContent='D'"  
-    onclick="setSidebarDefaults(this);
-     return false;">D</div>
-
-<div class="vmtab" title="Hinting" data-var="showShapeHints" data-locn="" data-shorttitle="H"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">H</div>
-
-<div class="vmtab"  title="Shape lookup" data-var="showShapeLookup" data-locn="shapelist" data-shorttitle="S"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">S</div>
-
-<div class="vmtab"  title="Latin characters" data-var="showLatinTrans" data-locn="latintranscript" data-shorttitle="L"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
-
-<div class="vmtab"  title="ISO transcription" data-var="showISO2Trans" data-locn="iso2transcript" data-shorttitle="I"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">I</div>
-
-<div class="vmtab"  title="Becker transcription" data-var="showBeckerTrans" data-locn="beckertranscript" data-shorttitle="B"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">B</div>
-
-</div>
-</div>
 
 
 
@@ -227,9 +132,9 @@
 <span class="t" onclick="dotrans('า')">aa</span>
 <span class="t" onclick="dotrans('ไ,ใ,&nbsp;ัย')">ai</span>
 <span class="t" onclick="dotrans('าย')">aai</span>
-<span class="t" onclick="dotrans('เา,เัว')">ao</span></span>
-<span class="t" onclick="dotrans('าว')">aao</span></span>
-<span class="t" onclick="dotrans('ำ')">am</span></span>
+<span class="t" onclick="dotrans('เา,เัว')">ao</span>
+<span class="t" onclick="dotrans('าว')">aao</span>
+<span class="t" onclick="dotrans('ำ')">am</span>
 <span class="t" onclick="dotrans('รร')">an</span>
 <span class="t" onclick="dotrans('เะ,เ็')">e</span>
 <span class="t" onclick="dotrans('เ')">ee</span>
@@ -265,14 +170,18 @@
 <span class="t" onclick="dotrans('ฤ')">rʉ</span>
 <span class="t" onclick="dotrans('ฤๅ')">rʉʉ</span>
 </div>
+
+
 </div>
 
 
 
 <div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
-<div id="tables">
-  <div id="transcriptionChoice2" style="position:absolute;left:40px; font-size: 60px; background-color: white; border: 1px solid #ccc; border-radius:10px; padding: 7px;"></div>
-  <!-- SHAPE -->
+
+
+
+<div id="tables" dir="ltr">
+  
   <div id="alphabet" class="default">
     <table id="kbd">
       <tr>
@@ -404,7 +313,6 @@
             </tr>
           </tbody>
         </table></td>
-        <td>        
       </tr>
       <tr>
         <td colspan="3" style="text-align:left;">
@@ -424,7 +332,12 @@
     </table>
     </details>
   </div>
-  <div id="shapelist" style="text-align:center;">
+
+
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
 <img alt="shape1" src="images/shape1.png" onclick="findShape('E01,E16,E20,E24,E26,E0E,E0F,E13,E0C,E0D,E12','',true)" /> 
 <img alt="shape2" src="images/shape2.png" onclick="findShape('E32,E33,E45,E27,E08,E2D,E09,E25,E2A,E26','',true)" /> 
 <img alt="shape3" src="images/shape3.png" onclick="findShape('E04,E14,E28,E05,E15,E12,E0C,E24','',true)" /> 
@@ -437,130 +350,24 @@
 <img alt="shape11" src="images/shape11.png" onclick="findShape('E34,E35,E36,E37','',true)" /> 
 <img alt="shape9" src="images/shape9.png" onclick="findShape('E30,E31,E4C,E49','',true)" /> 
 <img alt="shape16" src="images/shape0.png" onclick="findShape('E07,E23,E10,E4D,E47,E4E,E3A,E38,E39,E48,E4B,E49,E4A,E5B,E3F,E4F,E50,E51,E53,E54,E55,E56,E57,E58,E59','',true)" /> 
-  </div>
 </div>
-<!-- end of tables -->
-
+</div>
 
 <div id="extrashapes"></div>
 
 
+<div id="temp"></div>
 
-<div id="controls">
-  <div class="control">Font list:<br />
-    <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
-	    </select>
-  <script>document.getElementById('fontList').innerHTML = fontSelection</script>
-  </div>
-  <div class="control">Custom font:<br />
-    <form action="none"
-						 onsubmit="customFont(document.getElementById('fontName').value); return false;">
-      <input name="fontName" id="fontName" value="Hanuman" onclick="this.select();" />
-    </form>
-  </div>
-  <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
-     <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="rows" value="1.5" id="rows" size="3" onchange="changeBoxHeight(this.value)" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-     <input name="lineHeight" value="1.5" id="lineHeight" size="3"  onchange="changeLineHeight(this.value)" onmouseover="document.getElementById('dimensions').textContent='Line height:'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Line height:'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-  </div>
-  <div class="control">Add codepoint:
-    <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
-      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
-    </form>
-  </div>
-  <div class="control">Search for:
-    <form action="none"
-						 onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
-      <input name="search" id="search"  type="text" />
-      <img src="/pickers//images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
-    </form>
-  </div>
+
+</div><!-- end of tables -->
+
   
-  <div class="control" id="helpcontrol"><a href="help">Help<br/><img src="../shared20/help.png" alt=""/></a></div>
-</div>
 
 
-
-
-<div id="extracontrols">
-<details>
-<summary>more controls</summary>
-
-  <div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
-    <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-							onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
-
-
-
-<div class="control" id="uiFontControl">Change table font:<br />
-    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
-    </select>
-	<script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
-	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
-
-
-
-<div class="control" id="ccBaseControl">CC base:<br />
-    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
-		<option value="0">Select...</option>
-        <option value="">none</option>
-        <option value="&#x00A0;">NBSP</option>
-        <option value=" ">SP</option>
-        <option value="◌">◌</option>
-        <option value="-">-</option>
-		</select>
-</div>
-
-
-<div class="control">Set language:
-<form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
-  <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:right;" />
-  <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
-</form>
-</div>
-
-
-<div class="control" id="ccFactoryReset">Reset<br/><button onClick="resetDefaults()">Go</button>
-</div>
-</details>
-
-<details>
-<summary>more pickers</summary>
-<iframe id="pickerlist" src="../pickerlist"></iframe>
-</details>
-</div>
-
-
-
-
-
-<div id="panel" style="display:none">
-	<div id="title" class="ex" lang="pa"></div>
-  <div style="display:block">&nbsp;</div>
-  <p style="text-align:right;"></p>
-</div>
-
-
-
-<div class="smallprint">
-Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/thai"><!-- #BeginDate format:En2 -->14-Aug-2017<!-- #EndDate --></a>.
-Make a <a href="https://github.com/r12a/pickers/issues/new?title=[thai%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
-Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
-</div>
-
-
-</body>
+<div id="bottomBP"></div>
 <script>
-// check for parameters and take appropriate action
-parameters = location.search.split('&');
-parameters[0] = parameters[0].substring(1);
-for (var p=0;p<parameters.length;p++) {  
-	pairs = parameters[p].split('=');
-	if (pairs[0] == 'text') { if (pairs[1]) document.getElementById('output').value = decodeURI(pairs[1]) }
-	}
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
 </script>
+</body>
 </html>
