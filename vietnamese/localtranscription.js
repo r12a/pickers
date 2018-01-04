@@ -14,7 +14,7 @@ function transcribeToIPA (str, region) {
 	temp = temp.replace(/^ */, ''); // remove leading and trailing spaces
 	temp = temp.replace(/¶/, ''); // remove these too
 	temp = temp.replace(/ *$/, '');
-	temp = nfd(temp);
+	temp = temp.normalize('NFD');
 	// reorder so that tone mark is last
 	temp = temp.replace(/'\u0301\u0302'/,'\u0302\u0301');
 	temp = temp.replace(/\u0300\u0302/,'\u0302\u0300');
