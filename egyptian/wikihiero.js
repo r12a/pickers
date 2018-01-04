@@ -362,3 +362,38 @@ function WikiHieroHTML(hiero, scale, line)  {
     return html;        
 	}
 
+
+
+
+function setBidiOverride (mirror) {
+    // used by the small arrows below the input area when picker base direction is bidi
+    // sets the direction to rlo with optional mirroring
+    // mirror: boolean, sets the mirroring if true
+    console.log('hello')
+    if (mirror) {
+        document.getElementById('output').classList.add('mirrorRTL')
+        document.getElementById('wikiHieroOut').classList.add('mirrorRTL')
+        document.getElementById('output').classList.add('bdoLTR')
+        document.getElementById('output').classList.remove('bdoRTL')
+        }
+    else {
+        document.getElementById('output').classList.remove('mirrorRTL')
+        document.getElementById('output').classList.remove('bdoLTR')
+        document.getElementById('output').classList.add('bdoRTL')
+        }
+    }
+
+function clearBidiOverride () {
+    // used by the small arrows below the input area when picker base direction is bidi
+    // clears the rlo and any mirroring
+    
+    document.getElementById('output').classList.remove('bdoRTL')
+    document.getElementById('output').classList.remove('mirrorRTL')
+    document.getElementById('wikiHieroOut').classList.remove('mirrorRTL')
+    document.getElementById('output').classList.remove('bdoLTR')
+    }
+
+
+
+
+

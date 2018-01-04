@@ -2,29 +2,30 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Egyptian hieroglyph character picker 20</title>
+<title>Egyptian character picker 21</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared20/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
 <script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
 <script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
 <script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
-<script type="text/javascript" src="../../shared/code/normalization/js/n11n.js">  </script>
-<script type="text/javascript" src="../../shared/code/normalization/js/n11ndata-lite.js">  </script>
 <script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
 <script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared20/code.js">  </script>
+<script type="text/javascript" src="../shared21/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+<script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
 
 <script type="text/javascript" src="localtranscription.js">  </script>
 <script type="text/javascript" src="wikihiero.js">  </script>
 <script type="text/javascript" src="wh_list.js">  </script>
 <script type="text/javascript" src="composite-names.js"></script>
 <script type="text/javascript" src="/shared/fontlists/egyptianhieroglyphs.js"> </script>
-
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
 
 <style>
 #wikiHieroOut { margin-left: 30px;  }
@@ -34,150 +35,17 @@
 </head>
 
 <body class="app">
-<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
-<header>
-  <div id="header-boilerplate"></div>
-  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Egyptian hieroglyph character picker','');</script> 
-</header>
-
-<div id="welcome"></div>
-
-<div id="main">
-<span id="copydelete">
-  <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
-  <button title="Select all the text." onclick="selectAll()">🔶</button>
-  <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('<-i-mn:n-R4:t*p-> <-𓇋-𓏠:𓈖-𓊵:𓏏*𓊪->')">+</button>
-<a href="help"><button title="How to use this picker."><img alt="help" src="../shared20/help.png"/></button></a>
-  </span>
-  
-<span id="tools">
-    <button onclick="showCodepoints()">Show<br/>codepoints</button>
-    
-    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
-    
-    <button onclick="doTranscription('mdcToHieroglyphs')" 
-    title="Convert Manuel de Codage transcriptions to Unicode.">MdC to<br/>Hieroglyphs</button> 
-
-    <button onclick="doTranscription('hieroglyphsToMdC')" 
-    title="Convert Manuel de Codage transcriptions to Unicode.">Hieroglyphs<br/>to MdC</button> 
-    
-    <button onclick="doWikiHiero()" 
-    title="Display Manuel de Codage transcriptions on WikiHiero page.">MdC to<br/>WikiHiero</button> 
-
-    <button onclick="document.getElementById('translitSelector').style.display = 'block';" 
-    title="Convert one transcription to another.">Change<br/>Transliteration</button> 
-        
-    <button onclick="convertPhonemes()" 
-    title="Look up a Latin consonant or consonant sounds.">Phonetic<br/>look up</button> 
-
-    <button  id="makeExample" onclick="makeExample(defaults.language,defaults.direction)" 
-    title="Create an example.">Make<br>example</button>
-    
-    <button  id="makeCharLink" type="button" onclick="makeCharLink('egyptian',defaults.language,defaults.direction)" 
-    title="Create an character link.">Character<br/>markup</button>
-    </span>
-</div>
-
-<div id="translitSelector" style="display:none;">
-    <button onclick="doTranscription('mdcToUnicode')" 
-    title="Convert a Manuel de Codage transcription to a British Unicode transcription.">MdC to British</button> 
-
-    <button onclick="doTranscription('mdcToGerman')" 
-    title="Convert a Manuel de Codage transcription to a German Unicode transcription.">MdC to German</button> 
-
-    <button onclick="doTranscription('britishToMdc')" 
-    title="Convert a British Unicode transcription to a Manuel de Codage transcription.">British to MdC</button> 
-
-    <button onclick="doTranscription('germanToMdc')" 
-    title="Convert a German Unicode transcription to a Manuel de Codage transcription.">German to MdC</button> 
-
-    <button onclick="doTranscription('britishToGerman')" 
-    title="Convert a British Unicode transcription to a German Unicode transcription.">British to German</button> 
-
-    <button onclick="doTranscription('germanToBritish')" 
-    title="Convert a German Unicode transcription to a British Unicode transcription.">German to British</button> 
-
-	<button onclick="document.getElementById('translitSelector').style.display = 'none'">X</button>
-</div>
-
-
-<form id="wikihieroForm" method="post" action="http://aoineko.free.fr/index.php">
-<input type="hidden" id="wikihieroInput" name="text"/>
-</form>
-
-<div id="outputDiv">
-  <textarea rows="2" cols="80" id="output" name="output" placeholder="›"></textarea>
-</div>
-
-
-<div id="transcriptionWrapper">
-<div id="copyTranscription" onclick="copyTranscription()">📋</div>
-<div id="moveTranscription" onclick="moveTranscription()">⌃</div>
-<div id="closeTranscription" onclick="closeTranscription()">X</div>
-<div id="transcription" contenteditable="true"></div>
-</div>
-
-
-<div id="wikiHieroOut"></div>
-
-
-<div id="autofocusswitch">Autofocus: 
-	<span id="afon" class="on" 
-    onclick="switchAutofocus('on')">On</span> 
-    <span id="afoff" class="off" 
-    onclick="switchAutofocus('off')">Off</span>
-    </div>
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
 
 
 
-
-
-<div style="position:relative;">
-<div id="vertical-menu">
-<div class="vmtab" 
-	onmouseover="this.textContent='Default'" 
-    onmouseout="this.textContent='D'"  
-    onclick="setSidebarDefaults(this);
-     return false;">D</div>
-
-<div class="vmtab"  title="Latin characters" data-var="showLatinTrans" data-locn="latintranscript" data-shorttitle="L"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
-
-<div class="vmtab"  title="Capital Latin characters" data-var="showLatinCapsTrans" data-locn="latincapstranscript" data-shorttitle="C"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">C</div>
-
-<!--div class="vmtab"  title="Manuel de codage" data-var="manuelDeCodage" data-locn="manueldecodage" data-shorttitle="M"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">M</div-->
-
-<div class="vmtab"  title="Latin to Egyptian" data-var="showLOCTrans" data-locn="loctranscript" data-shorttitle="L"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">L</div>
-
-<div class="vmtab"  title="Egyptian alphabet" data-var="showAlphaTrans" data-locn="alphatranscript" data-shorttitle="E"
-	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
-    onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">E</div>
-
-</div>
-
-</div>
 
 
 
 
 <div id="phonemelist" style="position:relative;">
-
-	<div id="transcriptionChoice"></div>
-
+ <div id="transcriptionChoice"></div>
 
 <div id="latintranscript" class="transcript" style="display:none;">
 <span class="t" onclick="dotrans('a')">a</span>
@@ -392,19 +260,42 @@
 
 
 
-
 </div>
 
 
-<div id="chardata"><span id="charname">Click on characters  to create text in the box, then copy &amp; paste to your content.</span></div>
+<div id="translitSelector" style="display:none;">
+    <button onclick="doTranscription('mdcToUnicode')" 
+    title="Convert a Manuel de Codage transcription to a British Unicode transcription.">MdC to British</button> 
+
+    <button onclick="doTranscription('mdcToGerman')" 
+    title="Convert a Manuel de Codage transcription to a German Unicode transcription.">MdC to German</button> 
+
+    <button onclick="doTranscription('britishToMdc')" 
+    title="Convert a British Unicode transcription to a Manuel de Codage transcription.">British to MdC</button> 
+
+    <button onclick="doTranscription('germanToMdc')" 
+    title="Convert a German Unicode transcription to a Manuel de Codage transcription.">German to MdC</button> 
+
+    <button onclick="doTranscription('britishToGerman')" 
+    title="Convert a British Unicode transcription to a German Unicode transcription.">British to German</button> 
+
+    <button onclick="doTranscription('germanToBritish')" 
+    title="Convert a German Unicode transcription to a British Unicode transcription.">German to British</button> 
+
+	<button onclick="document.getElementById('translitSelector').style.display = 'none'">X</button>
+</div>
 
 
- 
+<div id="wikiHieroOut" style="z-index: -100;"></div>
+
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+
+<div id="tables" dir="ltr">
   
-  <div id="tables" dir="ltr">
-    <div id="transcriptionChoice2" style="position:absolute;left:40px; font-size: 60px; background-color: #FFFACD; border: 1px solid #ccc; border-radius:10px; padding: 7px;"></div>
-    
-    <!-- SHAPE -->
     <div id="alphabet" class="default">
       <table id="kbd">
         <tr>
@@ -468,148 +359,34 @@
       <span title="Z. Strokes, signs derived from Hieratic, geometrical figures" class="shapeSelect" onclick="findShape('','𓏤,𓏥,𓏦,𓏧,𓏨,𓏩,𓏪,𓏫,𓏬,𓏭,𓏮,𓏯,𓏰,𓏱,𓏲,𓏳,𓏴,𓏵,𓏶,𓏷,𓏸,𓏹,𓏺,𓏻,𓏼,𓏽,𓏾,𓏿,𓐀,𓐁,𓐂,𓐃,𓐄,𓐅,𓐆,𓐇,𓐈,𓐉,𓐊,𓐋,𓐌',true)">𓐄</span> 
       <span title="Aa. Unclassified" class="shapeSelect" onclick="findShape('','𓐍,𓐎,𓐏,𓐐,𓐑,𓐒,𓐓,𓐔,𓐕,𓐖,𓐗,𓐘,𓐙,𓐚,𓐛,𓐜,𓐝,𓐞,𓐟,𓐠,𓐡,𓐢,𓐣,𓐤,𓐥,𓐦,𓐧,𓐨,𓐩,𓐪,𓐫,𓐬,𓐭,𓐮',true)">𓐍</span> 
       </div>
-    </div>
+    </div><!-- end of alphabet -->
 
-    
-  </div>
-  <!-- end of tables --> 
-     <div id="extrashapes"></div>
- 
 
-<div id="controls">
-  <div class="control">Font list:<br />
-    <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
-	    </select>
-  <script>document.getElementById('fontList').innerHTML = fontSelection</script>
-  </div>
+
+
+
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
   
-  <div class="control">Custom font:<br />
-    <form action="none" onsubmit="customFont(document.getElementById('fontName').value); return false;">
-      <input name="fontName" id="fontName" value="Hanuman" />
-    </form>
-  </div>
-  
-  
-  <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
-    <input name="fontSize" value="35" id="fontSize" size="3" 
-    	onchange="changeFontSize(this.value);" 
-        onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" 
-        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
-        onfocus="document.getElementById('dimensions').textContent='Font size (px):'" 
-        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-    <input name="rows" value="1.5" id="rows" size="3" 
-    	onchange="changeBoxHeight(this.value)" 
-        onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" 
-        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
-        onfocus="document.getElementById('dimensions').textContent='Box height (px):'" 
-        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-    <input name="lineHeight" value="1.5" id="lineHeight" size="3"  
-    	onchange="changeLineHeight(this.value)" 
-        onmouseover="document.getElementById('dimensions').textContent='Line height:'" 
-        onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" 
-        onfocus="document.getElementById('dimensions').textContent='Line height:'" 
-        onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
-  </div>
-  
-  <div class="control">Add codepoint:
-    <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
-      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
-    </form>
-  </div>
-  
-  <div class="control">Search for:
-    <form action="none" onsubmit="searchFor(getElementById('search').value, 'egyptian'); return false;">
-      <input name="search" id="search" placeholder="Catalog numbers" type="text" />
-      <img src="/pickers/images/clearsearch.png" onclick="searchFor('xxxxxx', 'egyptian');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
-    </form>
-  </div>
-  
-  <div class="control" id="helpcontrol"><a href="help">Help<br/><img src="../shared20/help.png" alt=""/></a></div>
-</div>
 
 
-<div id="extracontrols">
- <details>
-<summary>more controls</summary>
-
- <div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
-    <img src="/pickers/images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=nfc(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers/images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=nfd(document.getElementById( 'output' ).value);
-							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers/images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-							onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
-                            
-  <div class="control" id="uiFontControl">Change table font:<br />
-    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
-    </select>
-    <script>document.getElementById('uiFont').innerHTML = document.getElementById('fontList').innerHTML;</script>
-    <input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />
-    px</div>
-    
-  <div class="control" id="ccBaseControl">CC base:<br />
-    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
-      <option value="0">Select...</option>
-      <option value="">none</option>
-      <option value="&#x00A0;">NBSP</option>
-      <option value=" ">SP</option>
-      <option value="◌">◌</option>
-      <option value="-">-</option>
-    </select>
-  </div>
-
-
-<div class="control" id="uiTableDirection" style="text-align:right;">Text area direction:<br />
-<select onChange="_output=document.getElementById('output'); whout = document.getElementById('wikiHieroOut'); if (this.value == 'rtl') {_output.className = 'bdoRTL';} else if (this.value == 'mirrorRTL') { _output.className = 'mirrorRTL'; whout.className = 'mirrorRTL';} else { _output.className = ''; whout.className = '';} return false;">
-<option value="ltr" selected>LTR (default)</option>
-<option value="rtl">RTL bidi</option>
-<option value="mirrorRTL">RTL mirror</option>
-</select>
-</div>
-
-
-<div class="control">Set language:
-<form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
-  <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:right;" />
-  <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
-</form>
-</div>
-
-
-<div class="control" id="ccFactoryReset">Reset<br/><button onClick="resetDefaults()">Go</button>
-</div>
-</details>
-
-<details>
-<summary>more pickers</summary>
-<iframe id="pickerlist" src="../pickerlist"></iframe>
-</details>
-</div>
-
-
-
-<div id="panel" style="display:none">
-  <div id="title" class="ex" lang="bn"></div>
-  <div style="display:block">&nbsp;</div>
-  <p style="text-align:right;"> </p>
-</div>
-
-
-<div class="smallprint">
-Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/egyptian"><!-- #BeginDate format:En2 -->12-Aug-2017<!-- #EndDate --></a>.
-Make a <a href="https://github.com/r12a/pickers/issues/new?title=[egyptian%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
-Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
-</div>
-
-
-</body>
+<div id="bottomBP"></div>
 <script>
-// check for parameters and take appropriate action
-parameters = location.search.split('&');
-parameters[0] = parameters[0].substring(1);
-for (var p=0;p<parameters.length;p++) {  
-	pairs = parameters[p].split('=');
-	if (pairs[0] == 'text') { if (pairs[1]) document.getElementById('output').value = decodeURI(pairs[1]) }
-	}
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
 </script>
+</body>
 </html>
