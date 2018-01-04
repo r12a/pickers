@@ -526,7 +526,7 @@ function findShape (shapelist, extrashapes, show) {
 	// status: boolean, indicates whether to highlight or remove highlighting
 
 	var shapelistarray = shapelist.split(',')
-	var extrashapesarray = extrashapes.split(' ')
+	var extrashapesarray = extrashapes.split(',')
 
 	clearHighlights()
 
@@ -543,7 +543,7 @@ function findShape (shapelist, extrashapes, show) {
 			}
 		}
 	
-	if (extrashapesarray.length > 0) {
+	if (extrashapesarray.length > 0 && extrashapesarray[0] != '') {
 		document.getElementById('extrashapes').textContent = ''
 		for (let i=0;i<extrashapesarray.length;i++) {
 			span = document.createElement('span')
