@@ -1,5 +1,34 @@
 
 
+
+function setBidiOverride (mirror) {
+    // used by the small arrows below the input area when picker base direction is bidi
+    // sets the direction to rlo with optional mirroring
+    // mirror: boolean, sets the mirroring if true
+    
+    if (mirror) {
+        document.getElementById('output').classList.add('mirrorRTL')
+        document.getElementById('output').classList.add('bdoLTR')
+        document.getElementById('output').classList.remove('bdoRTL')
+        }
+    else {
+        document.getElementById('output').classList.remove('mirrorRTL')
+        document.getElementById('output').classList.remove('bdoLTR')
+        document.getElementById('output').classList.add('bdoRTL')
+        }
+    }
+
+function clearBidiOverride () {
+    // used by the small arrows below the input area when picker base direction is bidi
+    // clears the rlo and any mirroring
+    
+    document.getElementById('output').classList.remove('bdoRTL')
+    document.getElementById('output').classList.remove('mirrorRTL')
+    document.getElementById('output').classList.remove('bdoLTR')
+    }
+
+
+
 function setTop (title,sample) {
 console.log(setTop)
 var out
@@ -64,15 +93,23 @@ out += `<button  id="makeExample" onclick="makeExample(defaults.language,default
 
 <div id="autofocusswitch">`
 
-if (template.direction == "rtl") {
+if (template.direction == "rtl" || template.direction == "bidi") {
     out += `
-    <span title="Set base direction to LTR." onclick="document.getElementById('output').dir='ltr'" class="setDir">→&#xFE0E;</span>
-<span title="Set base direction to Auto." onclick="document.getElementById('output').dir='auto'" class="setDir">↔&#xFE0E;</span> 
-<span title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'" class="setDir">←&#xFE0E;</span>  
+    <span title="Set base direction to LTR." onclick="document.getElementById('output').dir='ltr'; clearBidiOverride()" class="setDir">&#x2192;&#xFE0E;</span>
+    <span title="Set base direction to Auto." onclick="document.getElementById('output').dir='auto'; clearBidiOverride()" class="setDir">&#x2194;&#xFE0E;</span> 
+    <span title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'; clearBidiOverride()" class="setDir">&#x2190;&#xFE0E;</span>  
      &bull; 
  `
-    
     }
+if (template.direction == "bidi") {
+    out += `
+    <span title="Set base direction to RTL override, and reverse character glyphs." onclick="document.getElementById('output').dir='ltr'; setBidiOverride(true)" class="setDir">&#x2B45;&#xFE0E;</span> 
+    <span title="Set base direction to RTL override." onclick="document.getElementById('output').dir='rtl';; setBidiOverride(false)" class="setDir">&#x21D0;&#xFE0E;</span>
+     &bull; 
+ `
+    }
+
+
 out += `Autofocus: 
 	<span id="afon" class="on" 
     onclick="switchAutofocus('on')">On</span> 
@@ -95,10 +132,11 @@ if (inputAids.length > 0) {
 
 
 for (let i=0;i<inputAids.length;i++) {
+    if (!inputAids[i].initialCode)  inputAids[i].initialCode = ''
 	out += `<div class="vmtab" title="`+inputAids[i].title+`" data-var="`+inputAids[i].dataVar+ `" data-locn="`+inputAids[i].dataLocn+`" data-shorttitle="`+inputAids[i].dataShortTitle+`"
 	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
     onmouseout="this.textContent=this.dataset.shorttitle"  
-	onclick="toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">`+inputAids[i].dataShortTitle+`</div>
+	onclick="` + inputAids[i].initialCode + `toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">`+inputAids[i].dataShortTitle+`</div>
 `
 	}
 
@@ -255,7 +293,7 @@ out += `<details>
 
 
 <div class="smallprint">
-Last commit <a href="https://github.com/r12a/pickers/tree/gh-pages/`+template.github+`"><!-- #BeginDate format:En2 -->15-Aug-2017<!-- #EndDate --></a>.
+See <a href="https://github.com/r12a/pickers/tree/gh-pages/`+template.github+`">recent changes</a>.
 Make a <a href="https://github.com/r12a/pickers/issues/new?title=[`+template.github+`%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
 Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
 </div>
