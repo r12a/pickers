@@ -36,5 +36,6 @@ var inputAids = [
 ]
 
 var controls = [
-{"title":"Mandaic<br/>to Latin", "alt":"Convert Mandaic text to a Latin transcription.", "code":"doTranscription('toLatin')"},
+{"title":"Transliterate<br/>Mandaic", "alt":"Convert Mandaic text to a Latin transliteration.", "code":"doTranscription('toLatinTranslit')"},
+{"title":"Transcribe<br/>Mandaic", "alt":"Convert Mandaic text to a Latin transcription.", "code":"doTranscription('toLatin')"},
 ]
