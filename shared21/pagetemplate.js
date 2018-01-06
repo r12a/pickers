@@ -67,7 +67,7 @@ for (let i=0;i<window.controls.length;i++){
 	out += '<button onclick="'+window.controls[i].code+'" title="'+window.controls[i].alt+'">'+window.controls[i].title+'</button>\n\n'
 	}
 
-out += `<button  id="makeExample" onclick="makeExample(defaults.language,defaults.direction)" 
+out += `<button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" 
     title="Create an example.">Make<br>example</button>
     
     <button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" 
