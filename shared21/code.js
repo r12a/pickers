@@ -1189,7 +1189,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 	
 		out += '<span lang="'+lang+'"'+dir+'>'+cbase+'&#x'+hex+';</span> '
 	
-		if (! window.location.href.match('r12a.github.io')) out +=  '<a href="/scripts/'+block+'/block#char'+hex+'">'
+		if (! window.location.href.match('r12a.github.io')) out +=  '<a href="'+block+'#char'+hex+'">'
 		out +=  '[<span class="uname">U+'+hex+' '+name+'</span>]'
 		if (! window.location.href.match('r12a.github.io')) out +=  '</a>'
 		out += '</span> '
