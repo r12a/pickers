@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Noto Nastaliq Urdu WF';
-    src: url('/shared/webfonts/notonastaliqurdu-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notonastaliqurdu-webfont.woff') format('woff');
+    src: url('/shared/webfonts/notonastaliqurdu-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notonastaliqurdu-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
