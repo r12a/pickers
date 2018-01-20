@@ -175,7 +175,7 @@ function maptolatn (chstring) {
 	chstring = chstring.replace(/ஃஜ/g,'z'); 
 	chstring = chstring.replace(/அ/g,'a'); 
 	chstring = chstring.replace(/ா/g,'ā'); 
-	chstring = chstring.replace(/ആ/g,'ā'); 
+	chstring = chstring.replace(/ஆ/g,'ā'); 
 	chstring = chstring.replace(/ை/g,'ai'); 
 	chstring = chstring.replace(/ஐ/g,'ai'); 
 	chstring = chstring.replace(/ௌ/g,'au'); 

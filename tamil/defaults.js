@@ -32,7 +32,7 @@ var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"ISO transcription", "dataVar":"showISOTrans", "dataLocn":"isotranscript", "dataShortTitle":"I", "type":"palette"}
+{"title":"ISO to Tamil", "dataVar":"showISOTrans", "dataLocn":"isotranscript", "dataShortTitle":"I", "type":"palette"}
 //{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
