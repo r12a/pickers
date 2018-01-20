@@ -136,6 +136,8 @@ table td { border: 0; }
 	border-radius: 10px; 
 	padding: 10px;
 	margin-bottom: 8px;
+    margin-top: 1em;
+    text-align: center;
 	}
 
 #phondatabank {
