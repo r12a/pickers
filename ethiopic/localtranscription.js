@@ -20,14 +20,14 @@ function toLatin (str) {
 console.log(consonants)
     
     var chars = [...str]
-    console.log(chars)
+    //console.log(chars)
     for (let i=0;i<chars.length;i++) {
         var dec = chars[i].codePointAt(0)
         if (dec > 4607 && dec < 4952) {
             consonant = Math.floor((dec-4608)/8)
-            console.log(dec, consonant)
+            //console.log(dec, consonant)
             vowel = dec % 8
-            console.log(consonants[consonant], vowels[vowel])
+            //console.log(consonants[consonant], vowels[vowel])
             chars[i] = consonants[consonant]+vowels[vowel]
         }
     }
