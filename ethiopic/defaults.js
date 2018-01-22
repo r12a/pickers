@@ -29,7 +29,9 @@ var template = {}
 
 
 var inputAids = [
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
 ]
 
 var controls = [
+{"title":"Transliterate<br/>to Latin", "alt":"Convert Ethiopic text to a Latin transliteration.", "code":"doTranscription('toLatin')"},
 ]
