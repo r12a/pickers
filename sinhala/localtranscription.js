@@ -82,8 +82,8 @@ var mapToISO = {
 '\u0DA2':'j', 
 '\u0DA3':'jh', 
 '\u0DA4':'ñ', 
-'\u0DA5':'?', 
-'\u0DA6':'?', 
+'\u0DA5':'jñ', 
+'\u0DA6':'ňj', 
 '\u0DA7':'ṭ', 
 '\u0DA8':'ṭh', 
 '\u0DA9':'ḍ', 
@@ -158,8 +158,9 @@ var mapToISO = {
 '\u0DCA':'',
 '\u200D':'',
 
-// candrabindu
-'\u0D01':'\u0303',
+// visarga, anusvara
+'\u0D83':'ḥ',
+'\u0D82':'ṃ',
 
 // punctuation
 '।':'.',
