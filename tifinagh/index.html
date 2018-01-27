@@ -19,8 +19,8 @@
 <script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
 <script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
 
-<!--script type="text/javascript" src="localtranscription.js">  </script-->
-<script type="text/javascript" src="composite-names.js"></script>
+<script type="text/javascript" src="localtranscription.js">  </script>
+<script type="text/javascript" src="composite-names.js"> </script>
 <script type="text/javascript" src="/shared/fontlists/tifinagh.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
@@ -42,80 +42,125 @@
  <div id="transcriptionChoice"></div>
 
 <div id="latintranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('a')">a</span>
+<span class="t" onclick="dotrans('æ')">æ</span>
+<span class="t" onclick="dotrans('e')">e</span>
+<span class="t" onclick="dotrans('ə')">ə</span>
+<span class="t" onclick="dotrans('ɛ')">ɛ</span>
+<span class="t" onclick="dotrans('o')">o</span>
+<span class="t" onclick="dotrans('u')">u</span>
+<span class="t" onclick="dotrans('ʊ')">ʊ</span>
+<span class="t" onclick="dotrans('ː')">ː</span>
+<br/>
+<span class="t" onclick="dotrans('b')">b</span>
+<span class="t" onclick="dotrans('ḇ')">ḇ</span>
 <span class="t" onclick="dotrans('β')">β</span>
+<span class="t" onclick="dotrans('c')">c</span>
 <span class="t" onclick="dotrans('ç')">ç</span>
+<span class="t" onclick="dotrans('d')">d</span>
 <span class="t" onclick="dotrans('ḍ')">ḍ</span>
+<span class="t" onclick="dotrans('ḏ')">ḏ</span>
+<span class="t" onclick="dotrans('ḍ̱')">ḍ̱</span>
+<span class="t" onclick="dotrans('ʣ')">ʣ</span>
 <span class="t" onclick="dotrans('dˁ')">dˁ</span>
 <span class="t" onclick="dotrans('ʤ')">ʤ</span>
 <span class="t" onclick="dotrans('ð')">ð</span>
 <span class="t" onclick="dotrans('ðˁ')">ðˁ</span>
+<span class="t" onclick="dotrans('f')">f</span>
+<span class="t" onclick="dotrans('g')">g</span>
+<span class="t" onclick="dotrans('ɡ')">ɡ</span>
+<span class="t" onclick="dotrans('g̱')">g̱</span>
+<span class="t" onclick="dotrans('h')">h</span>
 <span class="t" onclick="dotrans('ḥ')">ḥ</span>
 <span class="t" onclick="dotrans('ħ')">ħ</span>
+<span class="t" onclick="dotrans('j')">j</span>
 <span class="t" onclick="dotrans('ʝ')">ʝ</span>
+<span class="t" onclick="dotrans('k')">k</span>
+<span class="t" onclick="dotrans('ḵ')">ḵ</span>
+<span class="t" onclick="dotrans('l')">l</span>
+<span class="t" onclick="dotrans('m')">m</span>
+<br/>
+<span class="t" onclick="dotrans('n')">n</span>
 <span class="t" onclick="dotrans('ŋ')">ŋ</span>
 <span class="t" onclick="dotrans('ɲ')">ɲ</span>
+<span class="t" onclick="dotrans('p')">p</span>
+<span class="t" onclick="dotrans('q')">q</span>
+<span class="t" onclick="dotrans('r')">r</span>
 <span class="t" onclick="dotrans('ṛ')">ṛ</span>
 <span class="t" onclick="dotrans('rˤ')">rˤ</span>
 <span class="t" onclick="dotrans('ʁ')">ʁ</span>
+<span class="t" onclick="dotrans('s')">s</span>
 <span class="t" onclick="dotrans('ṣ')">ṣ</span>
 <span class="t" onclick="dotrans('sˁ')">sˁ</span>
 <span class="t" onclick="dotrans('ʃ')">ʃ</span>
+<span class="t" onclick="dotrans('t')">t</span>
+<span class="t" onclick="dotrans('ṯ')">ṯ</span>
 <span class="t" onclick="dotrans('ṭ')">ṭ</span>
 <span class="t" onclick="dotrans('tˁ')">tˁ</span>
 <span class="t" onclick="dotrans('ʧ')">ʧ</span>
+<span class="t" onclick="dotrans('ʦ')">ʦ</span>
+<span class="t" onclick="dotrans('v')">v</span>
+<span class="t" onclick="dotrans('w')">w</span>
 <span class="t" onclick="dotrans('ʷ')">ʷ</span>
+<span class="t" onclick="dotrans('x')">x</span>
 <span class="t" onclick="dotrans('χ')">χ</span>
+<span class="t" onclick="dotrans('y')">y</span>
+<span class="t" onclick="dotrans('ɣ')">ɣ</span>
+<span class="t" onclick="dotrans('z')">z</span>
 <span class="t" onclick="dotrans('ẓ')">ẓ</span>
 <span class="t" onclick="dotrans('zˁ')">zˁ</span>
 <span class="t" onclick="dotrans('ʒ')">ʒ</span>
 <span class="t" onclick="dotrans('θ')">θ</span>
+<span class="t" onclick="dotrans('ʕ')">ʕ</span>
 <span class="t" onclick="dotrans('ʔ')">ʔ</span>
-&nbsp;&nbsp;
-<span class="t" onclick="dotrans('æ')">æ</span>
-<span class="t" onclick="dotrans('ə')">ə</span>
-<span class="t" onclick="dotrans('ɛ')">ɛ</span>
-<span class="t" onclick="dotrans('ʊ')">ʊ</span>
 </div>
 
 
 <div id="neotranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('ⴱ,ⴲ')">b</span>
-<span class="t" onclick="dotrans('ⵞ')">ch</span>
-<span class="t" onclick="dotrans('ⴷ,ⴸ')">d</span>
-<span class="t" onclick="dotrans('ⴹ,ⴺ')">ḍ</span>
-<span class="t" onclick="dotrans('ⴶ')">dj</span>
+<span class="t" onclick="dotrans('ⴰ')">a</span>
+<span class="t" onclick="dotrans('ⴻ')">e</span>
+<span class="t" onclick="dotrans('ⵄ')">ɛ</span>
+<span class="t" onclick="dotrans('ⵉ')">i</span>
+<span class="t" onclick="dotrans('ⵓ')">u</span>
+<br/>
+<span class="t" onclick="dotrans('ⴱ')">b</span>
+<span class="t" onclick="dotrans('ⴲ')">ḇ</span>
+<span class="t" onclick="dotrans('ⵛ')">c</span>
+<span class="t" onclick="dotrans('ⵞ')">č</span>
+<span class="t" onclick="dotrans('ⴷ')">d</span>
+<span class="t" onclick="dotrans('ⴸ')">ḏ</span>
+<span class="t" onclick="dotrans('ⴹ')">ḍ</span>
+<span class="t" onclick="dotrans('ⴺ')">ḍ̱</span>
 <span class="t" onclick="dotrans('ⴼ')">f</span>
-<span class="t" onclick="dotrans('ⴳ,ⴵ')">g</span>
-<span class="t" onclick="dotrans('ⵖ,ⵗ,ⵘ')">gh</span>
-<span class="t" onclick="dotrans('ⵀ,ⵁ,ⵂ')">h</span>
+<span class="t" onclick="dotrans('ⴳ')">g</span>
+<span class="t" onclick="dotrans('ⴳ')">g</span>
+<span class="t" onclick="dotrans('ⴴⵯ')">g̱°</span>
+<span class="t" onclick="dotrans('ⴵ')">ǧ</span>
+<span class="t" onclick="dotrans('ⵖ')">ɣ</span>
+<span class="t" onclick="dotrans('ⵀ')">h</span>
 <span class="t" onclick="dotrans('ⵃ')">ḥ</span>
-<span class="t" onclick="dotrans('ⵊ,ⵋ,ⵌ')">j</span>
-<span class="t" onclick="dotrans('ⴽ,ⴾ,ⴿ')">k</span>
-<span class="t" onclick="dotrans('ⵅ,ⵆ')">kh</span>
+<span class="t" onclick="dotrans('ⵊ')">j</span>
+<span class="t" onclick="dotrans('ⴽ')">k</span>
+<span class="t" onclick="dotrans('ⴽⵯ')">k°</span>
+<span class="t" onclick="dotrans('ⴿ')">ḵ</span>
 <span class="t" onclick="dotrans('ⵍ')">l</span>
 <span class="t" onclick="dotrans('ⵎ')">m</span>
 <span class="t" onclick="dotrans('ⵏ')">n</span>
-<span class="t" onclick="dotrans('ⵑ')">ng</span>
-<span class="t" onclick="dotrans('ⵐ')">ny</span>
 <span class="t" onclick="dotrans('ⵒ')">p</span>
-<span class="t" onclick="dotrans('ⵇ,ⵈ')">q</span>
+<span class="t" onclick="dotrans('ⵇ')">q</span>
 <span class="t" onclick="dotrans('ⵔ')">r</span>
 <span class="t" onclick="dotrans('ⵕ')">ṛ</span>
 <span class="t" onclick="dotrans('ⵙ')">s</span>
 <span class="t" onclick="dotrans('ⵚ')">ṣ</span>
-<span class="t" onclick="dotrans('ⵛ')">sh</span>
-<span class="t" onclick="dotrans('ⵜ,ⵝ')">t</span>
+<span class="t" onclick="dotrans('ⵜ')">t</span>
+<span class="t" onclick="dotrans('ⵝ')">ṯ</span>
 <span class="t" onclick="dotrans('ⵠ')">v</span>
 <span class="t" onclick="dotrans('ⵡ')">w</span>
+<span class="t" onclick="dotrans('ⵅ')">x</span>
 <span class="t" onclick="dotrans('ⵢ')">y</span>
-<span class="t" onclick="dotrans('ⵣ,ⵤ')">z</span>
+<span class="t" onclick="dotrans('ⵣ')">z</span>
 <span class="t" onclick="dotrans('ⵥ')">ẓ</span>
-&nbsp;&nbsp;
-<span class="t" onclick="dotrans('ⴰ')">a</span>
-<span class="t" onclick="dotrans('ⴻ,-')">e</span>
-<span class="t" onclick="dotrans('ⵄ')">ɛ</span>
-<span class="t" onclick="dotrans('ⵉ')">i</span>
-<span class="t" onclick="dotrans('ⵓ')">u</span>
+<span class="t" onclick="dotrans('ⵯ')">°</span>
 </div>
 
 
@@ -183,7 +228,7 @@
   
   
   <div id="alphabet" class="default">
-    <table id="kbd">
+    <!--table id="kbd">
       <tr>
         <td style="vertical-align:middle;"><table id="consonants">
           <tr>
@@ -249,19 +294,158 @@
         </table></td>
         <td id="vowels"><span class="g"><span class="hint">æ</span><span class="c">&#x2D30;</span></span><br />
           <span class="g"><span class="hint">ə</span><span class="c">&#x2D3B;</span></span><br />
-          <span class="g"><span class="hint">ɛ</span><span class="c">&#x2D44;</span></span><br />
           <span class="g"><span class="hint">i</span><span class="c">&#x2D49;</span></span><br />
           <span class="g"><span class="hint">ʊ</span><span class="c">&#x2D53;</span></span><br /></td>
       </tr>
+        </tr>
       <tr>
         <td colspan="2" style="vertical-align:middle;">
 <span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u2D7F');">TFNCJ</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
 <span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
 <span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
         </td>
       </tr>
-    </table>
+    </table-->
+    
+    
+    
+<div id="kbdGrid">
+      <div id="consonantGrid">
+            <span class="g"><span class="hint">b</span><span class="c">&#x2D31;</span></span>
+            <span class="g"><span class="hint">ḇ</span><span class="c">&#x2D32;</span></span>
+            <span class="g"><span class="hint">g</span><span class="c">&#x2D33;</span></span>
+            <span class="g"><span class="hint">g̱</span><span class="c">&#x2D34;</span></span>
+            <span class="g"><span class="hint">ǧ</span><span class="c">&#x2D35;</span></span>
+            <span class="g"><span class="hint">ʤ</span><span class="c">&#x2D36;</span></span>
+            <span class="g"><span class="hint">d</span><span class="c">&#x2D37;</span></span>
+            <span class="g"><span class="hint">ḏ</span><span class="c">&#x2D38;</span></span>
+            <span class="g"><span class="hint">ḍ</span><span class="c">&#x2D39;</span></span>
+            <span class="g"><span class="hint">ḍ̱</span><span class="c">&#x2D3A;</span></span>
+
+<span class="g"><span class="hint">f</span><span class="c">&#x2D3C;</span></span>
+            <span class="g"><span class="hint">k</span><span class="c">&#x2D3D;</span></span>
+            <span class="g"><span class="hint">k</span><span class="c">&#x2D3E;</span></span>
+            <span class="g"><span class="hint">ḵ</span><span class="c">&#x2D3F;</span></span>
+            <span class="g"><span class="hint">h</span><span class="c">&#x2D40;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D41;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D42;</span></span>
+            <span class="g"><span class="hint">ḥ</span><span class="c">&#x2D43;</span></span>
+            <span class="g"><span class="hint">ɛ</span><span class="c">&#x2D44;</span></span>
+            <span class="g"><span class="hint">x</span><span class="c">&#x2D45;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D46;</span></span>
+
+<span class="g"><span class="hint">q</span><span class="c">&#x2D47;</span></span>
+            <span class="g"><span class="hint">q</span><span class="c">&#x2D48;</span></span>
+            <span class="g"><span class="hint">j</span><span class="c">&#x2D4A;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D4B;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D4C;</span></span>
+            <span class="g"><span class="hint">l</span><span class="c">&#x2D4D;</span></span>
+            <span class="g"><span class="hint">m</span><span class="c">&#x2D4E;</span></span>
+            <span class="g"><span class="hint">n</span><span class="c">&#x2D4F;</span></span>
+            <span class="g"><span class="hint">ɲ</span><span class="c">&#x2D50;</span></span>
+            <span class="g"><span class="hint">ŋ</span><span class="c">&#x2D51;</span></span>
+
+<span class="g"><span class="hint">p</span><span class="c">&#x2D52;</span></span>
+            <span class="g"><span class="hint">r</span><span class="c">&#x2D54;</span></span>
+            <span class="g"><span class="hint">ṛ</span><span class="c">&#x2D55;</span></span>
+            <span class="g"><span class="hint">ɣ</span><span class="c">&#x2D56;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D57;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D58;</span></span>
+            <span class="g"><span class="hint">s</span><span class="c">&#x2D59;</span></span>
+            <span class="g"><span class="hint">ṣ</span><span class="c">&#x2D5A;</span></span>
+            <span class="g"><span class="hint">c</span><span class="c">&#x2D5B;</span></span>
+            <span class="g"><span class="hint">t</span><span class="c">&#x2D5C;</span></span>
+
+<span class="g"><span class="hint">ṯ</span><span class="c">&#x2D5D;</span></span>
+            <span class="g"><span class="hint">č</span><span class="c">&#x2D5E;</span></span>
+            <span class="g"><span class="hint">ṭ</span><span class="c">&#x2D5F;</span></span>
+            <span class="g"><span class="hint">v</span><span class="c">&#x2D60;</span></span>
+            <span class="g"><span class="hint">w</span><span class="c">&#x2D61;</span></span>
+            <span class="g"><span class="hint">y</span><span class="c">&#x2D62;</span></span>
+            <span class="g"><span class="hint">z</span><span class="c">&#x2D63;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D64;</span></span>
+            <span class="g"><span class="hint">ẓ</span><span class="c">&#x2D65;</span></span>
+            <span class="g"><span class="hint">ʷ</span><span class="c">&#x2D6F;</span></span>
+            <span class="g"><span class="c">&#x2D70;</span></span>
+        </div>
+ 
+ <!--div id="consonantGridAlpha">
+            <span class="g"><span class="hint">b</span><span class="c">&#x2D31;</span></span>
+            <span class="g"><span class="hint">ḇ</span><span class="c">&#x2D32;</span></span>
+            <span class="g"><span class="hint">g</span><span class="c">&#x2D33;</span></span>
+            <span class="g"><span class="hint">g̱</span><span class="c">&#x2D34;</span></span>
+            <span class="g"><span class="hint">ǧ</span><span class="c">&#x2D35;</span></span>
+            <span class="g"><span class="hint">ʤ</span><span class="c">&#x2D36;</span></span>
+            <span class="g"><span class="hint">d</span><span class="c">&#x2D37;</span></span>
+            <span class="g"><span class="hint">ḏ</span><span class="c">&#x2D38;</span></span>
+            <span class="g"><span class="hint">ḍ</span><span class="c">&#x2D39;</span></span>
+            <span class="g"><span class="hint">ḍ̱</span><span class="c">&#x2D3A;</span></span>
+
+<span class="g"><span class="hint">f</span><span class="c">&#x2D3C;</span></span>
+            <span class="g"><span class="hint">k</span><span class="c">&#x2D3D;</span></span>
+            <span class="g"><span class="hint">k</span><span class="c">&#x2D3E;</span></span>
+            <span class="g"><span class="hint">ḵ</span><span class="c">&#x2D3F;</span></span>
+            <span class="g"><span class="hint">h</span><span class="c">&#x2D40;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D41;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D42;</span></span>
+            <span class="g"><span class="hint">ḥ</span><span class="c">&#x2D43;</span></span>
+            <span class="g"><span class="hint">ɛ</span><span class="c">&#x2D44;</span></span>
+            <span class="g"><span class="hint">x</span><span class="c">&#x2D45;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D46;</span></span>
+
+<span class="g"><span class="hint">q</span><span class="c">&#x2D47;</span></span>
+            <span class="g"><span class="hint">q</span><span class="c">&#x2D48;</span></span>
+            <span class="g"><span class="hint">j</span><span class="c">&#x2D4A;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D4B;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D4C;</span></span>
+            <span class="g"><span class="hint">l</span><span class="c">&#x2D4D;</span></span>
+            <span class="g"><span class="hint">m</span><span class="c">&#x2D4E;</span></span>
+            <span class="g"><span class="hint">n</span><span class="c">&#x2D4F;</span></span>
+            <span class="g"><span class="hint">ɲ</span><span class="c">&#x2D50;</span></span>
+            <span class="g"><span class="hint">ŋ</span><span class="c">&#x2D51;</span></span>
+
+<span class="g"><span class="hint">p</span><span class="c">&#x2D52;</span></span>
+            <span class="g"><span class="hint">r</span><span class="c">&#x2D54;</span></span>
+            <span class="g"><span class="hint">ṛ</span><span class="c">&#x2D55;</span></span>
+            <span class="g"><span class="hint">ɣ</span><span class="c">&#x2D56;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D57;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D58;</span></span>
+            <span class="g"><span class="hint">s</span><span class="c">&#x2D59;</span></span>
+            <span class="g"><span class="hint">ṣ</span><span class="c">&#x2D5A;</span></span>
+            <span class="g"><span class="hint">c</span><span class="c">&#x2D5B;</span></span>
+            <span class="g"><span class="hint">t</span><span class="c">&#x2D5C;</span></span>
+
+<span class="g"><span class="hint">ṯ</span><span class="c">&#x2D5D;</span></span>
+            <span class="g"><span class="hint">č</span><span class="c">&#x2D5E;</span></span>
+            <span class="g"><span class="hint">ṭ</span><span class="c">&#x2D5F;</span></span>
+            <span class="g"><span class="hint">v</span><span class="c">&#x2D60;</span></span>
+            <span class="g"><span class="hint">w</span><span class="c">&#x2D61;</span></span>
+            <span class="g"><span class="hint">y</span><span class="c">&#x2D62;</span></span>
+            <span class="g"><span class="hint">z</span><span class="c">&#x2D63;</span></span>
+            <span class="g"><span class="hint">&nbsp;</span><span class="c">&#x2D64;</span></span>
+            <span class="g"><span class="hint">ẓ</span><span class="c">&#x2D65;</span></span>
+            <span class="g"><span class="hint">ʷ</span><span class="c">&#x2D6F;</span></span>
+            <span class="g"><span class="c">&#x2D70;</span></span>
+        </div-->
+ 
+     <div id="vowelGrid">
+          <span class="g"><span class="hint">a</span><span class="c">&#x2D30;</span></span>
+          <span class="g"><span class="hint">e</span><span class="c">&#x2D3B;</span></span>
+          <span class="g"><span class="hint">i</span><span class="c">&#x2D49;</span></span>
+          <span class="g"><span class="hint">u</span><span class="c">&#x2D53;</span></span>
+          <span class="g"><span class="hint">e</span><span class="c">ⵦ</span></span>
+          <span class="g"><span class="hint">o</span><span class="c">ⵧ</span></span>
+        </div>
+   </div>
+   <div id="spaceEtc" style="text-align: center; vertical-align:middle;">
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u2D7F');">TFNCJ</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+   </div>
   </div>
 
 
