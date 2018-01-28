@@ -533,7 +533,14 @@ function findShape (shapelist, extrashapes, show) {
 	if (shapelist != '') {
 		if (show) {
 			for (let i=0;i<shapelistarray.length;i++) { 
-				document.getElementById(shapelistarray[i]).style.backgroundColor = '#FFE6B2'
+				//document.getElementById(shapelistarray[i]).style.backgroundColor = '#FFE6B2'
+                ids = document.querySelectorAll('[data-c=c'+shapelistarray[i]+']')
+                //ids = document.querySelectorAll('.c')
+                //console.log('[data-c=c'+shapelistarray[i]+']')
+                for (let x=0;x<ids.length;x++) {
+                    //console.log(ids[x])
+                    ids[x].style.backgroundColor = '#FFE6B2'
+                    }
 				}
 			}
 		else {
@@ -890,6 +897,7 @@ function initialise() {
 			id += convertChar2CP(content[i])
 			}
 		node[n].id = id
+        node[n].dataset.c = 'c'+id
 		}
 	
 		
