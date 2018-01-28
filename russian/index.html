@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Russian character picker 22</title>
+
+<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
+<script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
+<script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
+<script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
+<script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
+<script type="text/javascript" src="../../shared/code/all-names.js"></script>
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="../shared22/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="../shared22/pagetemplate.js">  </script>
+<script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
+
+<script type="text/javascript" src="localtranscription.js">  </script>
+<script type="text/javascript" src="composite-names.js"> </script>
+<script type="text/javascript" src="/shared/fontlists/cyrillic.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+ <div id="transcriptionChoice"></div>
+
+<div id="latintranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('a')">a</span>
+<span class="t" onclick="dotrans('e')">e</span>
+<span class="t" onclick="dotrans('ė')">ė</span>
+<span class="t" onclick="dotrans('ē')">ē</span>
+<span class="t" onclick="dotrans('i')">i</span>
+<span class="t" onclick="dotrans('ĭ')">ĭ</span>
+<span class="t" onclick="dotrans('ɨ')">ɨ</span>
+<span class="t" onclick="dotrans('i͡u')">i͡u</span>
+<span class="t" onclick="dotrans('i͡a')">i͡a</span>
+<span class="t" onclick="dotrans('o')">o</span>
+<span class="t" onclick="dotrans('u')">u</span>
+<br/>
+<span class="t" onclick="dotrans('b')">b</span>
+<span class="t" onclick="dotrans('ɕ')">ɕ</span>
+<span class="t" onclick="dotrans('ch')">ch</span>
+<span class="t" onclick="dotrans('g')">g</span>
+<span class="t" onclick="dotrans('d')">d</span>
+<span class="t" onclick="dotrans('f')">f</span>
+<span class="t" onclick="dotrans('ɡ')">ɡ</span>
+<span class="t" onclick="dotrans('j')">j</span>
+<span class="t" onclick="dotrans('ʲ')">ʲ</span>
+<span class="t" onclick="dotrans('k')">k</span>
+<span class="t" onclick="dotrans('kh')">kh</span>
+<span class="t" onclick="dotrans('l')">l</span>
+<span class="t" onclick="dotrans('ɫ')">ɫ</span>
+<span class="t" onclick="dotrans('m')">m</span>
+<span class="t" onclick="dotrans('n')">n</span>
+<span class="t" onclick="dotrans('p')">p</span>
+<span class="t" onclick="dotrans('r')">r</span>
+<span class="t" onclick="dotrans('s')">s</span>
+<span class="t" onclick="dotrans('ʂ')">ʂ</span>
+<span class="t" onclick="dotrans('sh')">sh</span>
+<span class="t" onclick="dotrans('shch')">shch</span>
+<span class="t" onclick="dotrans('t')">t</span>
+<span class="t" onclick="dotrans('ʦ')">ʦ</span>
+<span class="t" onclick="dotrans('ʨ')">ʨ</span>
+<span class="t" onclick="dotrans('v')">v</span>
+<span class="t" onclick="dotrans('x')">x</span>
+<span class="t" onclick="dotrans('y')">y</span>
+<span class="t" onclick="dotrans('z')">z</span>
+<span class="t" onclick="dotrans('ʐ')">ʐ</span>
+<span class="t" onclick="dotrans('zh')">zh</span>
+<span class="t" onclick="dotrans('ʺ')">ʺ</span>
+<span class="t" onclick="dotrans('ʹ')">ʹ</span>
+</div>
+
+
+<div id="neotranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('а')">a</span>
+<span class="t" onclick="dotrans('е')">e</span>
+<span class="t" onclick="dotrans('ё')">ē</span>
+<span class="t" onclick="dotrans('и')">i</span>
+<span class="t" onclick="dotrans('й')">ĭ</span>
+<span class="t" onclick="dotrans('о')">o</span>
+<span class="t" onclick="dotrans('у')">u</span>
+<span class="t" onclick="dotrans('ы')">y</span>
+<span class="t" onclick="dotrans('э')">ė</span>
+<span class="t" onclick="dotrans('ю')">i͡u</span>
+<span class="t" onclick="dotrans('я')">i͡a</span>
+<br/>
+<span class="t" onclick="dotrans('б')">b</span>
+<span class="t" onclick="dotrans('ч')">ch</span>
+<span class="t" onclick="dotrans('д')">d</span>
+<span class="t" onclick="dotrans('ф')">f</span>
+<span class="t" onclick="dotrans('г')">g</span>
+<span class="t" onclick="dotrans('к')">k</span>
+<span class="t" onclick="dotrans('х')">kh</span>
+<span class="t" onclick="dotrans('л')">l</span>
+<span class="t" onclick="dotrans('м')">m</span>
+<span class="t" onclick="dotrans('н')">n</span>
+<span class="t" onclick="dotrans('п')">p</span>
+<span class="t" onclick="dotrans('р')">r</span>
+<span class="t" onclick="dotrans('с')">s</span>
+<span class="t" onclick="dotrans('ш')">sh</span>
+<span class="t" onclick="dotrans('щ')">shch</span>
+<span class="t" onclick="dotrans('т')">t</span>
+<span class="t" onclick="dotrans('ц')">ʦ</span>
+<span class="t" onclick="dotrans('в')">v</span>
+<span class="t" onclick="dotrans('з')">z</span>
+<span class="t" onclick="dotrans('ж')">zh</span>
+<span class="t" onclick="dotrans('ъ')">ʺ</span>
+<span class="t" onclick="dotrans('ь')">ʹ</span>
+<br/>
+<span class="t" onclick="dotrans('А')">A</span>
+<span class="t" onclick="dotrans('Е')">E</span>
+<span class="t" onclick="dotrans('Ё')">Ē</span>
+<span class="t" onclick="dotrans('И')">I</span>
+<span class="t" onclick="dotrans('Й')">Ĭ</span>
+<span class="t" onclick="dotrans('О')">O</span>
+<span class="t" onclick="dotrans('У')">U</span>
+<span class="t" onclick="dotrans('Ы')">Y</span>
+<span class="t" onclick="dotrans('Э')">Ė</span>
+<span class="t" onclick="dotrans('Ю')">I͡U</span>
+<span class="t" onclick="dotrans('Я')">I͡A</span>
+<br/>
+<span class="t" onclick="dotrans('Б')">B</span>
+<span class="t" onclick="dotrans('Ч')">Ch</span>
+<span class="t" onclick="dotrans('Д')">D</span>
+<span class="t" onclick="dotrans('Ф')">F</span>
+<span class="t" onclick="dotrans('Г')">G</span>
+<span class="t" onclick="dotrans('К')">K</span>
+<span class="t" onclick="dotrans('Х')">Kh</span>
+<span class="t" onclick="dotrans('Л')">L</span>
+<span class="t" onclick="dotrans('М')">M</span>
+<span class="t" onclick="dotrans('Н')">N</span>
+<span class="t" onclick="dotrans('П')">P</span>
+<span class="t" onclick="dotrans('Р')">R</span>
+<span class="t" onclick="dotrans('С')">S</span>
+<span class="t" onclick="dotrans('Ш')">Sh</span>
+<span class="t" onclick="dotrans('Щ')">Shch</span>
+<span class="t" onclick="dotrans('Т')">T</span>
+<span class="t" onclick="dotrans('Ц')">Ts</span>
+<span class="t" onclick="dotrans('В')">V</span>
+<span class="t" onclick="dotrans('З')">Z</span>
+<span class="t" onclick="dotrans('Ж')">Zh</span>
+<span class="t" onclick="dotrans('Ъ')">ʺ</span>
+<span class="t" onclick="dotrans('Ь')">ʹ</span>
+</div>
+
+
+
+<div id="ipatranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('ⴱ')">b</span>
+<span class="t" onclick="dotrans('ⴲ')">β</span>
+<span class="t" onclick="dotrans('ⴿ')">ç</span>
+<span class="t" onclick="dotrans('ⴷ')">d</span>
+<span class="t" onclick="dotrans('ⴸ')">ð</span>
+<span class="t" onclick="dotrans('ⴹ')">dˁ</span>
+<span class="t" onclick="dotrans('ⴺ')">ðˁ</span>
+<span class="t" onclick="dotrans('ⴶ')">ʤ</span>
+<span class="t" onclick="dotrans('ⴼ')">f</span>
+<span class="t" onclick="dotrans('ⴳ')">g</span>
+<span class="t" onclick="dotrans('ⵀ,ⵁ,ⵂ')">h</span>
+<span class="t" onclick="dotrans('ⵃ')">ħ</span>
+<span class="t" onclick="dotrans('ⵢ')">j</span>
+<span class="t" onclick="dotrans('ⴵ')">ʝ</span>
+<span class="t" onclick="dotrans('ⴽ,ⴾ')">k</span>
+<span class="t" onclick="dotrans('ⵍ')">l</span>
+<span class="t" onclick="dotrans('ⵎ')">m</span>
+<span class="t" onclick="dotrans('ⵏ')">n</span>
+<span class="t" onclick="dotrans('ⵑ')">ŋ</span>
+<span class="t" onclick="dotrans('ⵐ')">ɲ</span>
+<span class="t" onclick="dotrans('ⵒ')">p</span>
+<span class="t" onclick="dotrans('ⵇ,ⵈ')">q</span>
+<span class="t" onclick="dotrans('ⵔ')">r</span>
+<span class="t" onclick="dotrans('ⵕ')">rˤ</span>
+<span class="t" onclick="dotrans('ⵖ,ⵗ,ⵘ')">ʁ</span>
+<span class="t" onclick="dotrans('ⵙ')">s</span>
+<span class="t" onclick="dotrans('ⵚ')">sˁ</span>
+<span class="t" onclick="dotrans('ⵛ')">ʃ</span>
+<span class="t" onclick="dotrans('ⵜ')">t</span>
+<span class="t" onclick="dotrans('ⵟ')">tˁ</span>
+<span class="t" onclick="dotrans('ⵞ')">ʧ</span>
+<span class="t" onclick="dotrans('ⵝ')">θ</span>
+<span class="t" onclick="dotrans('ⵠ')">v</span>
+<span class="t" onclick="dotrans('ⵡ')">w</span>
+<span class="t" onclick="dotrans('ⵅ,ⵆ')">χ</span>
+<span class="t" onclick="dotrans('ⵣ,ⵤ')">z</span>
+<span class="t" onclick="dotrans('ⵥ')">zˁ</span>
+<span class="t" onclick="dotrans('ⵊ,ⵋ,ⵌ')">ʒ</span>
+&nbsp;&nbsp;
+<span class="t" onclick="dotrans('ⴰ')">æ</span>
+<span class="t" onclick="dotrans('ⴻ,-')">ə</span>
+<span class="t" onclick="dotrans('ⵄ')">ɛ</span>
+<span class="t" onclick="dotrans('ⵉ')">i</span>
+<span class="t" onclick="dotrans('ⵓ')">ʊ</span>
+</div>
+
+</div>
+
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+  
+  
+<div id="alphabet" class="default">
+<div id="kbdGrid">
+ 
+ <div id="consonantGrid">
+<span class="g"><span class="hint">b</span><span class="c">&#x0431;</span></span>
+<span class="g"><span class="hint">v</span><span class="c">&#x0432;</span></span>
+<span class="g"><span class="hint">g</span><span class="c">&#x0433;</span></span>
+<span class="g"><span class="hint">d</span><span class="c">&#x0434;</span></span>
+<span class="g"><span class="hint">zh</span><span class="c">&#x0436;</span></span>
+<span class="g"><span class="hint">z</span><span class="c">&#x0437;</span></span>
+<span class="g"><span class="hint">k</span><span class="c">&#x043A;</span></span>
+<span class="g"><span class="hint">l</span><span class="c">&#x043B;</span></span>
+<span class="g"><span class="hint">m</span><span class="c">&#x043C;</span></span>
+<span class="g"><span class="hint">n</span><span class="c">&#x043D;</span></span>
+<span class="g"><span class="hint">p</span><span class="c">&#x043F;</span></span>
+<span class="g"><span class="hint">r</span><span class="c">&#x0440;</span></span>
+<span class="g"><span class="hint">s</span><span class="c">&#x0441;</span></span>
+<span class="g"><span class="hint">t</span><span class="c">&#x0442;</span></span>
+<span class="g"><span class="hint">f</span><span class="c">&#x0444;</span></span>
+<span class="g"><span class="hint">kh</span><span class="c">&#x0445;</span></span>
+<span class="g"><span class="hint">ts</span><span class="c">&#x0446;</span></span>
+<span class="g"><span class="hint">ch</span><span class="c">&#x0447;</span></span>
+<span class="g"><span class="hint">sh</span><span class="c">&#x0448;</span></span>
+<span class="g"><span class="hint">shch</span><span class="c">&#x0449;</span></span>
+        </div>
+ 
+ 
+     <div id="vowelGrid">
+<span class="g"><span class="hint">a</span><span class="c">&#x0430;</span></span>
+<span class="g"><span class="hint">e</span><span class="c">&#x0435;</span></span>
+<span class="g"><span class="hint">ë</span><span class="c">&#x0451;</span></span>
+<span class="g"><span class="hint">i</span><span class="c">&#x0438;</span></span>
+<span class="g"><span class="hint">ĭ</span><span class="c">&#x0439;</span></span>
+<span class="g"><span class="hint">o</span><span class="c">&#x043E;</span></span>
+<span class="g"><span class="hint">u</span><span class="c">&#x0443;</span></span>
+<span class="g"><span class="hint">y</span><span class="c">&#x044B;</span></span>
+<span class="g"><span class="hint">é</span><span class="c">&#x044D;</span></span>
+<span class="g"><span class="hint">i͡u</span><span class="c">&#x044E;</span></span>
+<span class="g"><span class="hint">i͡a</span><span class="c">&#x044F;</span></span>
+<span class="c">&#x0301;</span>
+        </div>
+
+
+<div id="numberGrid">
+<span class="c">&#x0037;</span>
+<span class="c">&#x0038;</span>
+<span class="c">&#x0039;</span>
+<span class="c">&#x0034;</span>
+<span class="c">&#x0035;</span>
+<span class="c">&#x0036;</span>
+<span class="c">&#x0031;</span>
+<span class="c">&#x0032;</span>
+<span class="c">&#x0033;</span>
+<span class="c">&#x0030;</span>
+</div>
+   </div>
+
+
+<div id="punctuation">
+<span class="c">&#x002C;</span>
+<span class="c">&#x002E;</span>
+<span class="c">&#x003B;</span>
+<span class="c">&#x003A;</span>
+<span class="c">&#x003F;</span>
+<span class="c">&#x0021;</span>
+<span class="c">&#x2018;</span>
+<span class="c">&#x201A;</span>
+<span class="c">&#x201C;</span>
+<span class="c">&#x201E;</span>
+<span class="c">&#x00AB;</span>
+<span class="c">&#x00BB;</span>
+<span class="c">&#x0028;</span>
+<span class="c">&#x0029;</span>
+<span class="c">&#x002D;</span>
+</div>
+
+
+   <div id="spaceEtc" style="text-align: center; vertical-align:middle;">
+<span class="shifted" dir="auto" onclick="toggleShift(this, 'defaultLC', 'defaultUC')">SHIFT</span>
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+   </div>
+
+
+
+<details>
+<summary>Show obsolete letters</summary>
+<div id="obsolete">
+<span class="g"><span class="hint">ī</span><span class="c">&#x0456;</span></span>
+<span class="g"><span class="hint">ḟ</span><span class="c">&#x0473;</span></span>
+<span class="g"><span class="hint">i͡e</span><span class="c">&#x0463;</span></span>
+<span class="g"><span class="hint">ẏ</span><span class="c">&#x0475;</span></span>
+
+<span style="margin-left: 2em;" class="g"><span class="hint">ż</span><span class="c">&#x0455;</span></span>
+<span class="g"><span class="hint">k͡s</span><span class="c">&#x046F;</span></span>
+<span class="g"><span class="hint">p͡s</span><span class="c">&#x0471;</span></span>
+<span class="g"><span class="hint">ǫ</span><span class="c">&#x046B;</span></span>
+<span class="g"><span class="hint">ę</span><span class="c">&#x0467;</span></span>
+<span class="g"><span class="hint">i͡ǫ</span><span class="c">&#x046D;</span></span>
+<span class="g"><span class="hint">i͡ę</span><span class="c">&#x0469;</span></span>
+</div>
+</details>
+
+
+  </div>
+
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<img alt=" " src="images/shape1.png" onclick="findShape('2D54,2D59,2D5A,2D55,2D41,2D31,2D40,2D32','',true)" />
+<img alt=" " src="images/shape2.png" onclick="findShape('2D30,2D3B,2D53','',true)" />
+<img alt=" " src="images/shape3.png" onclick="findShape('2D48,2D57,2D42,2D3E,2D46,2D58','',true)" />
+<img alt=" " src="images/shape4.png" onclick="findShape('2D5D,2D45,2D33,2D34,2D35,2D4B','',true)" />
+<img alt=" " src="images/shape5.png" onclick="findShape('2D4F,2D51,2D36,2D4A,2D4D,2D5C,2D64','',true)" />
+<img alt=" " src="images/shape6.png" onclick="findShape('2D37,2D38,2D60','',true)" />
+<img alt=" " src="images/shape7.png" onclick="findShape('2D39,2D4E,2D5F,2D61,2D6F,2D3A','',true)" />
+<img alt=" " src="images/shape8.png" onclick="findShape('2D49,2D62','',true)" />
+<img alt=" " src="images/shape9.png" onclick="findShape('2D3D,2D47,2D3F,2D43','',true)" />
+<img alt=" " src="images/shape10.png" onclick="findShape('2D5B,2D5E','',true)" />
+<img alt=" " src="images/shape11.png" onclick="findShape('2D63,2D65','',true)" />
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
