@@ -1,3 +1,4 @@
+globals.showTransPanel =  ''
 
 function localInitialise () {
 	}

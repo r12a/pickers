@@ -14,19 +14,27 @@
 #alphabet td span.c { 
 	cursor: pointer; 
 	font-family: 'Noto Serif Sinhala WF', "Noto Serif Sinhala", "Sinhala MN", "Iskoola Pota", serif;
-	font-size: 24px;
+	font-size: 1em;
 	padding: 1px;
 	min-width: 18px;
 	}
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+    margin: 0;
+	font-size: 50%;
+	color: #ccc;
+	text-align: right;
+	vertical-align: top;
+	}
 
-
-#alphabet td.hint {  
+/*#alphabet td.hint {  
 	font-size: 14px;
 	color: #ccc;
 	text-align: right;
 	vertical-align: top;
 	}
-	
+*/	
 #kbd { 	
 	margin: auto; 
 	}
@@ -60,6 +68,9 @@
 	border: 1px dotted #ccc;
 	border-radius: 5px; 
 	}
+#kbd #numbers table {
+	margin:auto;
+	}
 
 
 #alphabet #punctuation {
@@ -91,5 +102,9 @@
 
 
 
+
+#alphabet summary {
+    font-size: 14px;
+    }
 
 

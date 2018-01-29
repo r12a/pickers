@@ -30,6 +30,7 @@ var template = {}
 
 var inputAids = [
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Latin to Sinhala", "dataVar":"showTransPanel", "dataLocn":"toSinhala", "dataShortTitle":"L", "type":"palette"},
 ]
 
 var controls = [
