@@ -228,7 +228,7 @@ function paste () {
 
 function getExample (str, lang, dir) {
 	parts = str.split('/')
-	var out = '<span class="charExample">'
+	var out = '<span class="charExample" translate="no">'
 	out += '<span class="ex" lang="'+lang+'"'
 	if (dir==='rtl') { out += ' dir="rtl"' }
 	out += '>'+parts[0]+'</span> '
@@ -1174,7 +1174,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 	convertStr2DecArray(cp, chars)
 	
 
-	var out = '<span class="codepoint">'
+	var out = '<span class="codepoint" translate="no">'
 	var charstr = ''
 	for (let i=0;i<chars.length;i++) {
         if (i>0) out += ' + '
