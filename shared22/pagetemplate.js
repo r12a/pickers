@@ -265,6 +265,16 @@ out += `<div class="control">Set language:
           <img src="../images/addcomma.png" alt="Select" title="Separate the characters in the edit buffer with commas." onclick="addSpacesToPicker(',');">
           <img src="../images/count.png" alt="Count" title="Count the characters in the text area." onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { alert(document.getElementById('output').value.length); }">
 </div>
+
+
+<div class="control">Remove:
+<form action="none" onsubmit="removeCharacter(document.getElementById('charRemoval').value); return false;">
+  <input name="charRemoval" id="charRemoval"  type="text" style="width: 40px; text-align:right;" />
+  <button>Go</button>
+</form>
+</div>
+
+
 </details>`
 
 
