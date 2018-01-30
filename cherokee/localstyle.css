@@ -11,21 +11,48 @@
 :lang(chr) { font-family: "Noto Sans Cherokee WF", "Plantagenet Cherokee", serif; } 
 
 
-#alphabet { display: block; }
+
 #phonelist { display: none; }
 
 
 
-#alphabet span.c, #shapelist span.c { 
-	cursor: pointer; 
-	font-family: "Noto Sans Cherokee WF", "Noto Sans Cherokee", sans-serif;
-	font-size: 32px;
-	padding: 1px;
-	min-width: 18px;
+
+#alphabet { 
+	display: block; 
+	color: #666;
+    line-height: 1.2;
+	}
+#alphabet td { 
+	padding: 0;
+    width: 2em;
+	}
+#alphabet table { 
+	margin: auto;
+    border-collapse: collapse;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: 1em;
+	text-align: center;
+	}
+    
+    
+
+
+
+
+.firstcol {
+    font-size: 50%;
+    vertical-align: middle;
+}
+.shifted, .unshifted {
 	display: inline-block;
-	width: 45px; 
-	height: 40px;
-	line-height: 40px;
+	width: 10em;
 	}
 
 #shapelist #uppercase, #shapelist #lowercase { 
@@ -35,93 +62,6 @@
 	text-align: center;
 	margin: auto;
 	}
-	
-#alphabet td span.c { 
-	cursor: pointer; 
-	font-family: "Noto Sans Cherokee WF", Sylfaen, Mshtakan, sans-serif;
-	font-size: 24px;
-	padding: 1px;
-	min-width: 18px;
-	}
-
-
-#alphabet td.hint {  
-	font-size: 14px;
-	color: #ccc;
-	text-align: right;
-	vertical-align: top;
-	}
-	
-#kbd { 	
-	margin: auto; 
-	margin: 2em auto 2em auto;
-	}
-#kbd table {
-	margin:auto;
-	}
-	
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: left;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1.2;
-	}
-#kbd #consonants {
-	margin-left: 20px; 
-	}
-
-#kbd #vowels {
-	margin-left: 20px;
-	border: 1px dotted #ccc;
-	border-radius: 5px; 
-	}
-	
-#kbd #ligatures td {
-	line-height: 1.35;
-	}
-#kbd #ligatures {
-	border: 1px dotted #ccc;
-	border-radius: 5px; 
-	}
-
-
-#kbd #punctuation {
-	margin-left: 20px;
-	}
-#kbd #punctuation td {
-	min-width: 30px;
-	}
-
-
-#toggleRare {
-	font-size: 12px;
-	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif;
-	}
 
 
 
-.key span { 
-	font-size: 20px; 
-	color: gray; 
-	font-weight: normal; 
-	font-family:  "Mongolian White",  "mongolian writing",sans-serif;  
-	cursor:pointer; 
-	text-align: center; 
-	line-height: 1;
-	}
-.key .s { position:absolute; bottom: 10px; left: 20px; }
-.key .n { position:absolute; bottom: 10px; right: 8px;  }
-
-
-
-
-.firstcol, .firstcol+td {
-	text-align:right;
-}
-.shifted, .unshifted {
-	display: inline-block;
-	width: 10em;
-	}
