@@ -532,12 +532,8 @@ function findShape (shapelist, extrashapes, show) {
 	if (shapelist != '') {
 		if (show) {
 			for (let i=0;i<shapelistarray.length;i++) { 
-				//document.getElementById(shapelistarray[i]).style.backgroundColor = '#FFE6B2'
                 ids = document.querySelectorAll('[data-c=c'+shapelistarray[i]+']')
-                //ids = document.querySelectorAll('.c')
-                //console.log('[data-c=c'+shapelistarray[i]+']')
                 for (let x=0;x<ids.length;x++) {
-                    //console.log(ids[x])
                     ids[x].style.backgroundColor = '#FFE6B2'
                     }
 				}
@@ -552,6 +548,14 @@ function findShape (shapelist, extrashapes, show) {
 	if (extrashapesarray.length > 0 && extrashapesarray[0] != '') {
 		document.getElementById('extrashapes').textContent = ''
 		for (let i=0;i<extrashapesarray.length;i++) {
+            // break the line at •
+            if (extrashapesarray[i] === '•') {
+                br = document.createElement('br')
+ 			    document.getElementById('extrashapes').appendChild(br)
+                continue
+                }
+            
+            // otherwise create hot spans
 			span = document.createElement('span')
 			span.className = 'c'
 			
@@ -578,8 +582,6 @@ function findShape (shapelist, extrashapes, show) {
 			document.getElementById('extrashapes').appendChild(span)
 			document.getElementById('extrashapes').appendChild(document.createTextNode(' '))
 			}
-		//document.getElementById('extrashapes').style.fontFamily = document.getElementById('uiFont').value
-		//document.getElementById('extrashapes').style.fontSize =  document.getElementById('uiFontSize').value+'px'
 		}
 	}
 
