@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Cyrillic character picker 22</title>
+
+<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
+<script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
+<script type="text/javascript" src="../../shared/code/show_codepoints.js"></script>
+<script type="text/javascript" src="../../shared/fontlists/manage.js"></script>
+<script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
+<script type="text/javascript" src="../../shared/code/all-names.js"></script>
+<script type="text/javascript" src="defaults.js">  </script>
+<script type="text/javascript" src="../shared22/code.js">  </script>
+<script type="text/javascript" src="localcode.js">  </script>
+<script type="text/javascript" src="../shared22/pagetemplate.js">  </script>
+<script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
+
+<!--script type="text/javascript" src="localtranscription.js">  </script-->
+<script type="text/javascript" src="composite-names.js"></script>
+<script type="text/javascript" src="/shared/fontlists/cyrillic.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+ <div id="transcriptionChoice"></div>
+
+<div id="latintranscript" class="transcript" style="display:none;">
+</div>
+
+
+<div id="toArmenianPallet" class="transcript" style="display:none;">
+</div>
+
+
+</div>
+
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+
+<div id="tables" dir="ltr">
+  
+    <div id="alphabet" class="default">
+      <table id="kbd">
+        <tr>
+          <td colspan="3">
+          
+          <span class="touch" title="Space" style="padding: 5px 100px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Combining grapheme joiner" style="padding: 5px;" dir="auto" onClick="add('\u034F');">CGJ</span>
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+
+          </td>
+        </tr>
+      </table>
+      <div style="margin:auto; text-align:center; max-width:70%;"> 
+      <span class="selector" onclick="findShape('','А,Ӑ,Ӓ,Ӕ,Ѧ,Ꙙ,•,а,ӑ,ӓ,ӕ,ѧ,ꙙ',false)">А</span> 
+      <span class="selector" onclick="findShape('','Б,В,•,б,в',false)">Б</span> 
+      <span class="selector" onclick="findShape('','Г,Ѓ,Ґ,Ғ,Ӷ,Ӻ,•,г,ѓ,ґ,ғ,ӷ,ӻ',false)">Г</span> 
+      <span class="selector" onclick="findShape('','Д,Ԫ,Ꙣ,Ꚁ,Ꚉ,•,д,ԫ,ꙣ,ꚁ,ꚉ',false)">Д</span> 
+      <span class="selector" onclick="findShape('','Е,Ѐ,Ё,Ӗ,Є,Ѥ,Э,Ӭ,Ҽ,Ҿ,Ә,Ӛ,•,е,ѐ,ё,є,ѥ,э,ӭ,ҽ,ҿ,ӗ,ә,ӛ',false)">Е</span> 
+      <span class="selector" onclick="findShape('','Ж,Җ,Ӂ,Ӝ,•,ж,җ,ӂ,ӝ',false)">Ж</span> 
+      <span class="selector" onclick="findShape('','З,Ҙ,Ӟ,Ꚅ,Ӡ,Ԑ,•,з,ҙ,ӟ,ꚅ,ӡ,ԑ',false)">З</span> 
+      <span class="selector" onclick="findShape('','И,Й,Ѝ,Ҋ,Ӣ,Ӥ,Ꙡ,•,и,й,ѝ,ҋ,ӣ,ӥ,ꙡ',false)">И</span> 
+      <span class="selector" onclick="findShape('','К,Ќ,Қ,Ҝ,Ҟ,Ҡ,Ӄ,Ԟ,•,к,ќ,қ,ҝ,ҟ,ҡ,ӄ,ԟ',false)">К</span> 
+      <span class="selector" onclick="findShape('','Л,Љ,Ӆ,Ԯ,Ԉ,Ԓ,Ԡ,Ꙥ,Ԕ,•,л,љ,ӆ,ԯ,ԉ,ԓ,ԡ,ꙥ,ԕ',false)">Л</span> 
+      <span class="selector" onclick="findShape('','М,Ӎ,Ꙧ,•,м,ӎ,ꙧ',false)">М</span> 
+      <span class="selector" onclick="findShape('','Н,Ҥ,Ң,Ӊ,Ԩ,Ӈ,Ԋ,Ԣ,Њ,•,н,ҥ,ң,ӊ,ԩ,ӈ,ԋ,ԣ,њ',false)">Н</span> 
+      <span class="selector" onclick="findShape('','О,Ѻ,Ӧ,Ө,Ӫ,Ѳ,Ѹ,Ꙩ,Ꙫ,Ꙭ,Ꚙ,Ꚛ,•,о,ѻ,ӧ,ө,ӫ,ѳ,ѹ,ꙩ,ꙫ,ꙭ,ꙮ,ꚙ,ꚛ',false)">О</span> 
+      <span class="selector" onclick="findShape('','П,Ԥ,Ҧ,•,п,ԥ,ҧ',false)">П</span> 
+      <span class="selector" onclick="findShape('','Р,Ҏ,Ԗ,•,р,ҏ,ԗ',false)">Р</span> 
+      <span class="selector" onclick="findShape('','С,Ҫ,Ҁ,•,с,ҫ,ҁ',false)">С</span> 
+      <span class="selector" onclick="findShape('','Т,Ћ,Ҭ,Ђ,Ҕ,Ꚋ,Ԏ,Ꚍ,Ꚑ,Ҵ,•,т,ћ,ҭ,ђ,ҕ,ꚋ,ԏ,ꚍ,ꚑ,ҵ',false)">Т</span> 
+      <span class="selector" onclick="findShape('','У,Ү,Ұ,Ӯ,Ӱ,Ӳ,•,у,ү,ұ,ӯ,ӱ,ӳ',false)">У</span> 
+      <span class="selector" onclick="findShape('','Ф,Ѱ,•,ф,ѱ',false)">Ф</span> 
+      <span class="selector" onclick="findShape('','Х,Ҳ,Ӽ,Ӿ,Ԕ,•,х,ҳ,ӽ,ӿ,ԕ',false)">Х</span> 
+      <span class="selector" onclick="findShape('','Ц,Џ,Ꚏ,•,ц,џ,ꚏ',false)">Ц</span> 
+      <span class="selector" onclick="findShape('','Ч,Ӵ,Ҷ,Ҹ,Ӌ,Ꚇ,Ꚓ,•,ч,ӵ,ҷ,ҹ,ӌ,ꚇ,ꚓ',false)">Ч</span>
+      <span class="selector" onclick="findShape('','Ш,Щ,Ꚗ,•,ш,щ,ꚗ',false)">Ш</span> 
+      <span class="selector" onclick="findShape('','Ь,Ѣ,Ҍ,Ъ,Ꙏ,Ы,Ӹ,Ꙑ,Ꙓ,Љ,Њ,•,ь,ѣ,ҍ,ъ,ꙏ,ы,ӹ,ꙑ,ꙓ,љ,њ,ꚜ,ꚝ',false)">Ь<span style="color:#aaa;">І</span></span> 
+      <span class="selector" onclick="findShape('','І,Ї,Ӏ,Ꙇ,Ю,Ꙕ,Ѩ,Ꙗ,Ꙝ,•,і,ї,ӏ,ꙇ,ю,ꙕ,ѩ,ꙗ,ꙝ',false)">І<span style="color:#aaa;">-</span></span> 
+      <span class="selector" onclick="findShape('','Я,Ԙ,•,я,ԙ',false)">Я</span> 
+      <span class="selector" onclick="findShape('','Ѡ,Ѽ,Ѿ,Ꙍ,Ԝ,•,ѡ,ѽ,ѿ,ꙍ,ԝ',false)">Ѡ</span> 
+      <span class="selector" onclick="findShape('','Һ,Ԧ,Ꚕ,•,һ,ԧ,ꚕ,ћ,ђ',false)">Һ</span> 
+      <span class="selector" onclick="findShape('','⁰,₀,¹,₁,²,₂,ƻ,Ꝛ,ꝛ,³,₃,⁴,₄,Ꜭ,ꜭ,Ꜯ,ꜯ,Ꝝ,ꝝ,⁵,₅,Ƽ,ƽ,⁶,₆,Ỽ,ỽ,⁷,₇,⁸,₈,Ȣ,ȣ,ᴕ,⁹,₉,Ꝯ,ꝯ,ꝰ,¼,½,¾',true)">#</span> 
+     <span class="selector" onclick="findShape('','Ԁ,Ԃ,Ԍ,Ј,Ԛ,Ѕ,Ꙅ,Ꚃ,Ѵ,Ѷ,Ꙁ,Ꙃ,•,ԁ,ԃ,ԍ,ј,ԛ,ѕ,ꙅ,ꚃ,ѵ,ѷ,ꙁ,ꙃ',false)">…¹</span> 
+      <span class="selector" onclick="findShape('','Ѫ,Ѭ,Ꙛ,Ꙉ,Ѯ,Ҩ,Ԅ,Ԇ,Ԭ,Ꙋ,Ꙟ,•,ѫ,ѭ,ꙛ,ꙉ,ѯ,ҩ,ԅ,ԇ,ԭ,ꙋ,ꙟ',false)">…²</span> 
+
+
+
+
+      <!--img alt='cc above' src="images/ccabove.png" onclick="findShape('','\u0300,\u0300,\u030F,\u0301,\u0301,\u030B,\u030D,\u030E,\u033E,\u0302,\u030C,\u0350,\u0306,\u0311,\u0351,\u0357,\u0303,\u0342,\u034A,\u034B,\u034C,\u0304,\u0305,\u033F,\u0307,\u0308,\u030A,\u0309,\u0312,\u0313,\u0313,\u0314,\u0315,\u031B,\u031A,\u0346,\u033D,\u0310,\u0352,\u0301,\u035D,\u035E,\u0360,\u0361',true)" /> 
+      <img alt='cc middle' src="images/ccmiddle.png" onclick="findShape('','\u0334,\u0335,\u0336,\u0337,\u0338',true)" /> 
+      <img alt='cc below' src="images/ccbelow.png" onclick="findShape('','\u0316,\u0317,\u0329,\u0348,\u032D,\u032C,\u0354,\u0355,\u0356,\u032E,\u032F,\u031C,\u0339,\u0330,\u033C,\u0331,\u0320,\u0332,\u0333,\u0347,\u0323,\u0324,\u0325,\u033B,\u0327,\u0328,\u0345,\u0326,\u0321,\u0322,\u0349,\u032A,\u033A,\u032B,\u0318,\u0319,\u031D,\u031E,\u031F,\u0353,\u034D,\u034E,\u035F,\u0362',true)" /> 
+      <img alt='0-9' src="images/digit.png" onclick="findShape('','⁰,₀,¹,₁,²,₂,ƻ,Ꝛ,ꝛ,³,₃,⁴,₄,Ꜭ,ꜭ,Ꜯ,ꜯ,Ꝝ,ꝝ,⁵,₅,Ƽ,ƽ,⁶,₆,Ỽ,ỽ,⁷,₇,⁸,₈,Ȣ,ȣ,ᴕ,⁹,₉,Ꝯ,ꝯ,ꝰ,¼,½,¾',true)" /> 
+      <img alt='stop' src="images/stop.png" onclick="findShape('','Ɂ,ɂ,ʔ,ʡ,ʕ,ˤ,ʢ,ʖ,ƾ,¿',true)" /> 
+      <img alt='misc' src="images/misc.png" onclick="findShape('','ǀ,ǁ,ǂ,Ꞌ,ꞌ,ǃ,¡,£,¤,¦,§,¨,«,­,¯,°,±,´,µ,¶,·,¸,»,÷,ᵠ,ᵩ,Ⱶ,ⱶ,ⱷ,꜠,꜡,Ꜥ,ꜥ,ꝸ,Ꝿ,ꝿ,ꞈ,꞉,꞊,ɷ,ɸ,ʘ,ʚ,ʭ,ᴖ,ᴗ,ᴤ,ᴥ,ᵜ,ᴦ,ᴨ,ᴪ,ᴫ,ᶿ,ˌ,ˍ,ˎ,ˏ,ː,˒,˓,˔,˕,˖,˗,˛,˞,¬,˥,˦,˧,˨,˩,˪,˫,ˬ,˭,˯,˰,˱,˲,˳,˴,˵,˶,˷,˸,˻,˼,˽,˾,˿,₊,₋,₌,₍,₎',true)" /--> 
+      </div>
+    </div>
+  </div>
+
+
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
