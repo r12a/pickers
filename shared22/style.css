@@ -655,3 +655,15 @@ summary:hover {
 	unicode-bidi: bidi-override;
 	}
 
+.selector {
+    color: orange;
+    font-size: 80%;
+    cursor: pointer;
+    }
+
+
+
+
+
+
+
