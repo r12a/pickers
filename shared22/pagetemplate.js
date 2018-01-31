@@ -52,7 +52,7 @@ out += `</header>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
   <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
   <button title="Add sample text." style="font-size: 150%;" onclick="add('` + template.sample +`')">+</button>
-<a href="help"><button title="How to use this picker."><img alt="help" src="../shared20/help.png"/></button></a>
+<a href="help"><button title="How to use this picker."><img alt="help" src="../images/help.png"/></button></a>
   </span>
   
   
@@ -189,7 +189,7 @@ out = `
     </form>
   </div>
   
-  <div class="control" id="helpcontrol"><a href="help">Help<br/><img src="../shared20/help.png" alt=""/></a></div>
+  <div class="control" id="helpcontrol"><a href="help">Help<br/><img src="../images/help.png" alt=""/></a></div>
 </div>
 
 
