@@ -209,7 +209,7 @@ out = `
 
 
 
-<div class="control" id="uiFontControl">Change table font:<br />
+<div class="control" id="uiFontControl">Change UI font:<br />
     <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
 ` +
   fontSelection
