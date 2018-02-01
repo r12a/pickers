@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>XXXXXXX character picker 21</title>
+<title>XXXXXXX character picker 22</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
 <script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
 <script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared21/code.js">  </script>
+<script type="text/javascript" src="../shared22/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+<script type="text/javascript" src="../shared22/pagetemplate.js">  </script>
 <script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
 
 <!--script type="text/javascript" src="localtranscription.js">  </script-->
@@ -46,7 +46,7 @@
 </div>
 
 
-<div id="XXXXXXXX" class="transcript" style="display:none;">
+<div id="transliteration" class="transcript" style="display:none;">
 </div>
 
 
@@ -60,20 +60,89 @@
 
 <div id="tables" dir="ltr">
   
-  <div id="alphabet" class="default">
-    <table id="kbd">
-XXXXXXXX
-      </table>
-      
+<div id="alphabet" class="default">
+<div id="kbdGrid">
  
+<div id="consonantGrid">      
+YYYYYYY
+</div>
+ 
+ <div id="vowelGrid">
+YYYYYY
+</div>
 
-  </div>
+<div id="numberGrid">
+<span class="c">&#x0037;</span>
+<span class="c">&#x0038;</span>
+<span class="c">&#x0039;</span>
+<span class="c">&#x0034;</span>
+<span class="c">&#x0035;</span>
+<span class="c">&#x0036;</span>
+<span class="c">&#x0031;</span>
+<span class="c">&#x0032;</span>
+<span class="c">&#x0033;</span>
+<span class="c">&#x0030;</span>
+</div>
+</div>
+
+
+<div id="punctuation">
+<span class="c">&#x002C;</span>
+<span class="c">&#x002E;</span>
+<span class="c">&#x003B;</span>
+<span class="c">&#x003A;</span>
+<span class="c">&#x003F;</span>
+<span class="c">&#x0021;</span>
+<span class="c">&#x2018;</span>
+<span class="c">&#x201A;</span>
+<span class="c">&#x201C;</span>
+<span class="c">&#x201E;</span>
+<span class="c">&#x00AB;</span>
+<span class="c">&#x00BB;</span>
+<span class="c">&#x0028;</span>
+<span class="c">&#x0029;</span>
+<span class="c">&#x002D;</span>
+</div>
+
+
+<div id="spaceEtc" style="text-align: center; vertical-align:middle;">
+<span class="shifted" dir="auto" onclick="toggleShift(this, 'defaultLC', 'defaultUC')">SHIFT</span>
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+   </div>
+
+
+
+<details>
+<summary>Show obsolete letters</summary>
+<div id="obsolete">
+<span class="g"><span class="hint">ī</span><span class="c">&#x0456;</span></span>
+<span class="g"><span class="hint">ḟ</span><span class="c">&#x0473;</span></span>
+<span class="g"><span class="hint">i͡e</span><span class="c">&#x0463;</span></span>
+<span class="g"><span class="hint">ẏ</span><span class="c">&#x0475;</span></span>
+
+<span style="margin-left: 2em;" class="g"><span class="hint">ż</span><span class="c">&#x0455;</span></span>
+<span class="g"><span class="hint">k͡s</span><span class="c">&#x046F;</span></span>
+<span class="g"><span class="hint">p͡s</span><span class="c">&#x0471;</span></span>
+<span class="g"><span class="hint">ǫ</span><span class="c">&#x046B;</span></span>
+<span class="g"><span class="hint">ę</span><span class="c">&#x0467;</span></span>
+<span class="g"><span class="hint">i͡ǫ</span><span class="c">&#x046D;</span></span>
+<span class="g"><span class="hint">i͡ę</span><span class="c">&#x0469;</span></span>
+</div>
+</details>
+
+
+</div>
+
 
 
 
 
 <div id="shapelist" style="display:none; text-align:center;">
  <div id="shapekeys">
+ <span class="selector" onclick="findShape('2D54,2D59,2D5A,2D55,2D41,2D31,2D40,2D32','',true)" />a</span>
  </div>
 </div>
 

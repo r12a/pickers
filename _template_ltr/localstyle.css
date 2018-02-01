@@ -5,84 +5,106 @@
     font-weight: normal;
     font-style: normal;
 	}
-@font-face {
-    font-family: 'Noto Sans Armenian WF';
-    src: url('/shared/webfonts/NotoSansArmenian-Regularwebfont.woff2') format('woff2'),
-         url('/shared/webfonts/NotoSansArmenian-Regularwebfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+
+[lang=ber] { font-family: 'Noto Sans Tifinagh WF', Tagmukay, serif; }
+
+
+#alphabet { 
+	display: block; 
+	color: #666;
 	}
 
-#alphabet { display: block; }
-#phonelist { display: none; }
-
-
-
-#alphabet td span.c { 
-	cursor: pointer; 
-	font-family: 'Arian AMU WF', "Noto Sans Armenian WF", "Noto Sans Armenian", "Noto Serif Armenian", Sylfaen, Mshtakan, sans-serif;
-	font-size: 24px;
-	padding: 1px;
-	min-width: 18px;
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
 	}
 
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 24px; 
+	color: gray; 
+	font-weight: normal; 
+	font-family:  "Hapax Berbère", "Noto Sans Tifinagh WF",  sans-serif;  
+	cursor:pointer; 
+	text-align: center; 
+	line-height: 1;
+	}
+.key .s { position:absolute; bottom: 5px; left: 15px; }
+.key .n { position:absolute; bottom: 5px; right: 5px;  }
 
-#alphabet td.hint {  
-	font-size: 14px;
-	color: #ccc;
-	text-align: right;
-	vertical-align: top;
-	}
-	
-#kbd { 	
-	margin: auto; 
-	}
-#kbd table {
-	margin:0;
-	}
-	
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: left;
-	cursor:pointer;
-	vertical-align: top; 
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
 	line-height: 1.2;
-	}
-#kbd #consonants {
-	margin-left: 20px; 
-	}
+    justify-content: center;
+    }
+#consonantGrid, #consonantGridAlpha {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 9.7em;
+    justify-content: space-between;
+    }
+#consonantGrid > span, #consonantGridAlpha > span {
+    min-width: 1em;
+    }
+#vowelGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 5.46em;
+    max-height: 15em;
+    justify-content: space-between;
+    margin-left: 1.5em;
+    line-height: 1.3;
+    }
+#numberGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 2.42em;
+    max-height: 15em;
+    justify-content: center;
+    margin-left: 1.2em;
+    line-height: 1.3;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
 
-#kbd #vowels {
-	margin-left: 20px;
-	border: 1px dotted #ccc;
-	border-radius: 5px; 
-	}
-	
-#kbd #ligatures td {
-	line-height: 1.35;
-	}
-#kbd #ligatures {
-	border: 1px dotted #ccc;
-	border-radius: 5px; 
-	}
+#alphabet summary {
+    font-size: 50%;
+    }
+#obsolete {
+    text-align: center;
+    }
 
 
-#alphabet #punctuation {
-	margin:auto;
-	}
-#alphabet #punctuation td span.c {
-	padding: 5px;
-	}
 
 
-#toggleRare {
-	font-size: 12px;
-	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif;
-	}
-
-
+/* KEYBOARD */
 
 .key span { 
 	font-size: 20px; 
