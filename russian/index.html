@@ -90,17 +90,19 @@
 
 
 <div id="neotranscript" class="transcript" style="display:none;">
+<div id="unshiftedTrans">
 <span class="t" onclick="dotrans('а')">a</span>
 <span class="t" onclick="dotrans('е')">e</span>
 <span class="t" onclick="dotrans('ё')">ē</span>
+<span class="t" onclick="dotrans('э')">ė</span>
 <span class="t" onclick="dotrans('и')">i</span>
 <span class="t" onclick="dotrans('й')">ĭ</span>
+<span class="t" onclick="dotrans('ю')">i͡u</span>
+<span class="t" onclick="dotrans('я')">i͡a</span>
 <span class="t" onclick="dotrans('о')">o</span>
 <span class="t" onclick="dotrans('у')">u</span>
 <span class="t" onclick="dotrans('ы')">y</span>
-<span class="t" onclick="dotrans('э')">ė</span>
-<span class="t" onclick="dotrans('ю')">i͡u</span>
-<span class="t" onclick="dotrans('я')">i͡a</span>
+<span class="unshifted" style="font-size: 80%; padding: 3px; margin-left: 2em;" dir="auto" onclick="this.parentNode.style.display='none'; document.getElementById('shiftedTrans').style.display='block';">SHIFT</span>
 <br/>
 <span class="t" onclick="dotrans('б')">b</span>
 <span class="t" onclick="dotrans('ч')">ch</span>
@@ -124,41 +126,44 @@
 <span class="t" onclick="dotrans('ж')">zh</span>
 <span class="t" onclick="dotrans('ъ')">ʺ</span>
 <span class="t" onclick="dotrans('ь')">ʹ</span>
-<br/>
+</div>
+<div id="shiftedTrans" style="display:none;">
 <span class="t" onclick="dotrans('А')">A</span>
 <span class="t" onclick="dotrans('Е')">E</span>
 <span class="t" onclick="dotrans('Ё')">Ē</span>
+<span class="t" onclick="dotrans('Э')">Ė</span>
 <span class="t" onclick="dotrans('И')">I</span>
 <span class="t" onclick="dotrans('Й')">Ĭ</span>
+<span class="t" onclick="dotrans('Ю')">I͡U</span>
+<span class="t" onclick="dotrans('Я')">I͡A</span>
 <span class="t" onclick="dotrans('О')">O</span>
 <span class="t" onclick="dotrans('У')">U</span>
 <span class="t" onclick="dotrans('Ы')">Y</span>
-<span class="t" onclick="dotrans('Э')">Ė</span>
-<span class="t" onclick="dotrans('Ю')">I͡U</span>
-<span class="t" onclick="dotrans('Я')">I͡A</span>
+<span class="shifted" style="font-size: 80%; padding: 3px; margin-left: 2em;" dir="auto" onclick="this.parentNode.style.display='none'; document.getElementById('unshiftedTrans').style.display='block';">SHIFT</span>
 <br/>
 <span class="t" onclick="dotrans('Б')">B</span>
-<span class="t" onclick="dotrans('Ч')">Ch</span>
+<span class="t" onclick="dotrans('Ч')">CH</span>
 <span class="t" onclick="dotrans('Д')">D</span>
 <span class="t" onclick="dotrans('Ф')">F</span>
 <span class="t" onclick="dotrans('Г')">G</span>
 <span class="t" onclick="dotrans('К')">K</span>
-<span class="t" onclick="dotrans('Х')">Kh</span>
+<span class="t" onclick="dotrans('Х')">KH</span>
 <span class="t" onclick="dotrans('Л')">L</span>
 <span class="t" onclick="dotrans('М')">M</span>
 <span class="t" onclick="dotrans('Н')">N</span>
 <span class="t" onclick="dotrans('П')">P</span>
 <span class="t" onclick="dotrans('Р')">R</span>
 <span class="t" onclick="dotrans('С')">S</span>
-<span class="t" onclick="dotrans('Ш')">Sh</span>
-<span class="t" onclick="dotrans('Щ')">Shch</span>
+<span class="t" onclick="dotrans('Ш')">SH</span>
+<span class="t" onclick="dotrans('Щ')">SHCH</span>
 <span class="t" onclick="dotrans('Т')">T</span>
-<span class="t" onclick="dotrans('Ц')">Ts</span>
+<span class="t" onclick="dotrans('Ц')">TS</span>
 <span class="t" onclick="dotrans('В')">V</span>
 <span class="t" onclick="dotrans('З')">Z</span>
-<span class="t" onclick="dotrans('Ж')">Zh</span>
+<span class="t" onclick="dotrans('Ж')">ZH</span>
 <span class="t" onclick="dotrans('Ъ')">ʺ</span>
 <span class="t" onclick="dotrans('Ь')">ʹ</span>
+</div>
 </div>
 
 
@@ -308,9 +313,9 @@
 
 
    <div id="spaceEtc" style="text-align: center; vertical-align:middle;">
-<span class="shifted" dir="auto" onclick="toggleShift(this, 'defaultLC', 'defaultUC')">SHIFT</span>
+<span class="unshifted" dir="auto" onclick="toggleShift(this, 'defaultLC', 'defaultUC')">SHIFT</span>
 <span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
 <span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
 <span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
    </div>

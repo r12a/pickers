@@ -23,17 +23,17 @@ var keyboardRowOffset = ['5px','20px','30px','50px']
 function toggleShift (node, LC, UC) {
     var chars = document.querySelectorAll('.c')
 
-    if (node.className =='unshifted') {
+    if (node.className =='shifted') {
         for (let i=0;i<chars.length;i++) {
             chars[i].textContent = chars[i].textContent.toLowerCase()
             }
-		node.className = 'shifted'
+		node.className = 'unshifted'
 		} 
 	else {
         for (let i=0;i<chars.length;i++) {
             chars[i].textContent = chars[i].textContent.toUpperCase()
             }
-		node.className = 'unshifted'
+		node.className = 'shifted'
 		}
 	// reinitialise ids to codepoint values of character sequence (with no leading zeros)
 	node = document.querySelectorAll( '.c' ); 
