@@ -1,3 +1,6 @@
+globals.showTranslit =  ''
+
+
 
 function localInitialise () {
 	}
@@ -62,4 +65,53 @@ var _h = {
 
 end: {}
 }
+
+
+
+
+
+var keyboarddef = [
+"§ ՝ ՜|1 ։ …|2 ձ Ձ|3 յ Յ|4 ՛ ★|5 , –|6 - —|7 . և|8 « (|9 » )|0 օ Օ|- ռ Ռ|= ժ Ժ",
+"q խ Խ|w վ Վ|e է Է|r ր Ր|t դ Դ|y ե Ե|u ը Ը|i ի Ի|o ո Ո|p բ Բ|[ չ Չ|] ջ Ջ",
+"a ա Ա|s ս Ս|d տ Տ|f ֆ Ֆ|g կ Կ|h հ Հ|j ճ Ճ|k ք Ք|l լ Լ|; թ Թ|' փ Փ|\\ ՚ ՞",
+"` ՝ ՜|z զ Զ|x ց Ց|c գ Գ|v ւ Ւ|b պ Պ|n ն Ն|m մ Մ|, շ Շ|. ղ Ղ|/ ծ Ծ"
+]
+
+
+
+
+
+
+function toggleShift (node, LC, UC) {
+    var chars = document.querySelectorAll('.c')
+
+    if (node.className =='shifted') {
+        for (let i=0;i<chars.length;i++) {
+            if (chars[i].dataset.lc) chars[i].textContent = chars[i].dataset.lc
+            else chars[i].textContent = chars[i].textContent.toLowerCase()
+            }
+		node.className = 'unshifted'
+		} 
+	else {
+        for (let i=0;i<chars.length;i++) {
+            if (chars[i].dataset.uc) chars[i].textContent = chars[i].dataset.uc
+            else chars[i].textContent = chars[i].textContent.toUpperCase()
+            }
+		node.className = 'shifted'
+		}
+	// reinitialise ids to codepoint values of character sequence (with no leading zeros)
+	node = document.querySelectorAll( '.c' ); 
+	for (var n = 0; n < node.length; n++ ) { 
+		content = node[n].textContent
+		id=''
+		for (i=0;i<content.length;i++) {
+			id += convertChar2CP(content[i])
+			}
+		node[n].id = id
+        node[n].dataset.c = 'c'+id
+        dec = parseInt(id, 16)
+        while (id.length<4) id = '0'+id
+        node[n].title = 'U+'+id+': '+charData[content]
+		}
+	}
 
