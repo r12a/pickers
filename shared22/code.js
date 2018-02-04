@@ -659,10 +659,32 @@ function getTitle (textcontent) { //console.log(textcontent)
 			}
 	}
 	
-	
 
 
-function makeKeyboard (chosenKbd) { 
+var keyboardLCGuide = [
+"§ 1 2 3 4 5 6 7 8 9 0 - = \u00A0",
+"q w e r t y u i o p [ ] \u00A0",
+"a s d f g h j k l ; ' \\ \u00A0",
+"` z x c v b n m , . / \u00A0"
+]
+
+var keyboardUCGuide = [
+"± ! @ # $ % ^ & * ( ) _ + \u00A0",
+"Q W E R T Y U I O P { } \u00A0",
+"A S D F G H J K L : \" | \u00A0",
+"~ Z X C V B N M < > ? \u00A0"
+]
+
+var keyboardRowOffset = ['0','1.5em','3em','1.5em']
+
+function event_toggleKbdShift () {
+    if (this.classList.contains('shiftKeyOn')) {
+        makeKeyboard(keyboarddef, keyboardLCGuide)
+        }
+    else makeKeyboard(keyboarddef, keyboardUCGuide)
+    }
+
+function makeKeyboard (chosenKbd, guideArray) { 
 
 	if (typeof keyboarddef === 'undefined' || document.getElementById('keyboard') == null) 
 		{ return }
@@ -676,81 +698,86 @@ function makeKeyboard (chosenKbd) {
 		keyrownode.style.paddingLeft = keyboardRowOffset[kr]
 			
 		var keyrow = chosenKbd[kr].split('|')
-		var keyrowguide = keyboardguide[kr].split(',')
+		var guiderow = guideArray[kr].split(' ')
 		for (key=0;key<keyrow.length;key++) {
-			chars = keyrow[key].split(',')
+            var guidekey = normalkey = shiftkey = thirdkey = ''
+			chars = keyrow[key].split(' ')
+			guide = guiderow[key].split(' ')
 			keynode = document.createElement('div')
 			keynode.className = 'key'
-			
-			var guide = document.createElement('span')
-			guide.appendChild(document.createTextNode(keyrowguide[key]))
-			guide.className = 'kg'
-			keynode.appendChild(guide)
-			
-			if (chars.length == 1) {
-				normalkey = document.createElement('span')
-				normalkey.className = 'k1'
-				normalkey.onmouseover = event_mouseoverChar
-				normalkey.onmouseout = event_mouseoutChar
-				normalkey.onclick = event_clickOnSpanChar
-				normalkey.title = getTitle(chars[0])
-				normalkey.appendChild(document.createTextNode(chars[0]))
-				
-				keynode.appendChild(normalkey)
-				}
-			else if (chars.length == 2) {
-				shiftkey = document.createElement('span')
-				shiftkey.className = 'k2'
-				shiftkey.onmouseover = event_mouseoverChar
-				shiftkey.onmouseout = event_mouseoutChar
-				shiftkey.onclick = event_clickOnSpanChar
-				shiftkey.title = getTitle(chars[0])
-				shiftkey.appendChild(document.createTextNode(chars[0]))
-				
-				normalkey = document.createElement('span')
-				normalkey.className = 'k2'
-				normalkey.onmouseover = event_mouseoverChar
-				normalkey.onmouseout = event_mouseoutChar
-				normalkey.onclick = event_clickOnSpanChar
-				normalkey.title = getTitle(chars[1])
-				normalkey.appendChild(document.createTextNode(chars[1]))
-				
-				keynode.appendChild(shiftkey)
-				keynode.appendChild(normalkey)
-				}
-			
-			else if (chars.length == 3) {
-				thirdkey = document.createElement('span')
-				thirdkey.className = 'k3'
-				thirdkey.onmouseover = event_mouseoverChar
-				thirdkey.onmouseout = event_mouseoutChar
-				thirdkey.onclick = event_clickOnSpanChar
-				thirdkey.title = getTitle(chars[0])
-				thirdkey.appendChild(document.createTextNode(chars[0]))
+			            			
+            guidekey = document.createElement('span')
+            guidekey.className = 'gkey'
+            guidekey.onmouseover = event_mouseoverChar
+            guidekey.onmouseout = event_mouseoutChar
+            guidekey.onclick = event_clickOnSpanChar
+            guidekey.appendChild(document.createTextNode(guide[0]))
 
-				shiftkey = document.createElement('span')
-				shiftkey.className = 'k3'
-				shiftkey.onmouseover = event_mouseoverChar
-				shiftkey.onmouseout = event_mouseoutChar
-				shiftkey.onclick = event_clickOnSpanChar
-				shiftkey.title = getTitle(chars[1])
-				shiftkey.appendChild(document.createTextNode(chars[1]))
-				
-				normalkey = document.createElement('span')
-				normalkey.className = 'k3'
-				normalkey.onmouseover = event_mouseoverChar
-				normalkey.onmouseout = event_mouseoutChar
-				normalkey.onclick = event_clickOnSpanChar
-				normalkey.title = getTitle(chars[2])
-				normalkey.appendChild(document.createTextNode(chars[2]))
+            if (chars[1]) {
+                normalkey = document.createElement('span')
+                normalkey.className = 'nkey'
+                normalkey.onmouseover = event_mouseoverChar
+                normalkey.onmouseout = event_mouseoutChar
+                normalkey.onclick = event_clickOnSpanChar
+                normalkey.title = getTitle(chars[1])
+                normalkey.appendChild(document.createTextNode(chars[1]))
+                }
+             else {
+                normalkey = document.createElement('span')
+                normalkey.className = 'nkey blank'
+                normalkey.style.cursor = 'auto'
+                normalkey.appendChild(document.createTextNode('\u00A0'))
+                }
 
-				keynode.appendChild(thirdkey)
-				keynode.appendChild(shiftkey)
-				keynode.appendChild(normalkey)
-				}
-			
+            if (chars[2]) {
+                shiftkey = document.createElement('span')
+                shiftkey.className = 'skey'
+                shiftkey.onmouseover = event_mouseoverChar
+                shiftkey.onmouseout = event_mouseoutChar
+                shiftkey.onclick = event_clickOnSpanChar
+                shiftkey.title = getTitle(chars[2])
+                shiftkey.appendChild(document.createTextNode(chars[2]))
+                }
+             else {
+                shiftkey = document.createElement('span')
+                shiftkey.className = 'skey blank'
+                normalkey.style.cursor = 'auto'
+                shiftkey.appendChild(document.createTextNode('\u00A0'))
+                }
+           
+            if (chars[3]) {
+                thirdkey = document.createElement('span')
+                thirdkey.className = 'okey'
+                thirdkey.onmouseover = event_mouseoverChar
+                thirdkey.onmouseout = event_mouseoutChar
+                thirdkey.onclick = event_clickOnSpanChar
+                thirdkey.title = getTitle(chars[3])
+                thirdkey.appendChild(document.createTextNode(chars[3]))
+                }
+            else {
+                thirdkey = document.createElement('span')
+                thirdkey.className = 'okey blank'
+                normalkey.style.cursor = 'auto'
+                thirdkey.appendChild(document.createTextNode('\u00A0'))
+                }
+
+            // order of chars in array is guide,lc,uc,other
+            // reorder to uc,lc,guide,other
+            keynode.appendChild(guidekey)
+            keynode.appendChild(thirdkey)
+            keynode.appendChild(shiftkey) 
+            keynode.appendChild(normalkey)
+
 			keyrownode.appendChild(keynode)
 			}
+           if (kr===3) {
+              div = document.createElement('div')
+              if (guideArray[0][0] === '§') div.className = 'key shiftKeyOff'
+              else div.className = 'key shiftKeyOn'
+              div.onclick = event_toggleKbdShift
+              div.appendChild(document.createTextNode('Shift'))
+              keyrownode.appendChild(div)
+              }
 		theKeyboard.appendChild(keyrownode)
 		}
 	// add base for combining characters
@@ -797,20 +824,15 @@ function event_mouseoverChar ()  {
 	chardata.replaceChild( span, chardata.firstChild );
 	
 	// highlight this character
-	this.style.backgroundColor = '#CF9'
-	this.style.backgroundColor = '#fc6'
-		this.style.backgroundColor = '#F4630B';
-		this.style.color = '#ddd'
+	this.style.backgroundColor = '#F4630B';
+	this.style.color = '#ddd'
 
-	//this.style.backgroundColor = '#FC0'
 	
 	// highlight similar characters
 	if (globals.showShapeHints && _h[this.id]) {
 		ptr = this.id
 		for (i=0;i<_h[ptr].length;i++) {
-			//document.getElementById(_h[ptr][i]).style.backgroundColor = '#E6FFCD'
 			document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
-			//document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE680'
 			}
 		}
 	}
@@ -818,7 +840,8 @@ function event_mouseoverChar ()  {
 function event_mouseoutChar ()  {
 	// unhighlight this character
 	this.style.backgroundColor = 'transparent'
-		this.style.color = '#666'
+	if (this.classList.contains('gkey')) this.style.color = 'orange'
+    else this.style.color = '#666'
 	
 	// unhighlight similar characters
 	if (_h[this.id]) {
@@ -976,7 +999,7 @@ function initialise() {
 		}
 
 	if (typeof keyboarddef !== 'undefined' && document.getElementById('keyboard') != null) 
-		makeKeyboard(keyboarddef)
+		makeKeyboard(keyboarddef, keyboardLCGuide)
 	}
 
 
