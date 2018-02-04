@@ -315,41 +315,58 @@ span.c:hover {
 	}
 	
 
+/* KEYBOARDS */
+
  #keyboard { 
  	padding-bottom: 10px; 
 	margin-bottom: 50px;
+    font-size: 1em;
 	}
  .keyboardrow {
 	 white-space: nowrap;
-	 clear: both;
+	 clear: both; 
  	}
 .key { 	
-	height: 36px; 
-	width: 65px;	
+	height: 3em; 
+	width: 3em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 	text-align: right; 
-	position: relative; 
 	float: left;
 	border: 1px solid #AAA;
-	margin: 2px; 
+	margin: 0.14em; 
 	box-shadow: 2px 2px 5px #888;
-	border-radius: 4px;
-	padding-right: 2px;
+	border-radius: 0.3em;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    }
+.key .gkey { 
+	color: orange;
+    /*font-size:100%;*/
 	}
-.key .kg { 
-	/*float: left; */
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin-left: 2px; 
-	font-size: 12px; 
-	text-transform: uppercase; 
-	color: orange; 
-	}
-/*.key span { max-height: 20px; max-width:26px; }*/
-.k { padding: 0 5px; }
-.key .k1 { display: inline-block; min-width: 70%; text-align: center; vertical-align: middle; border-radius: 4px; }
-.key .k2 { display: inline-block; min-width: 35%;  text-align: center; vertical-align: middle; border-radius: 4px; }
-.key .k3 { display: inline-block; min-width: 15%;  text-align: center; vertical-align: middle; border-radius: 4px; }
+.key span { 
+    display: block;
+    cursor:pointer; 
+    height: 1em;
+    min-width: 1em;
+    text-align: center;
+    border-radius: 2px;
+    }
+.shiftKeyOff {
+    background-color: transparent;
+    color: gray;
+    cursor: pointer;
+    text-align: center;
+    }
+.shiftKeyOn {
+    background-color: #ccc;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    }
+/* ============ */
+
 
 
 #autofocusswitch {
@@ -492,6 +509,7 @@ dt {
 	text-transform: uppercase; 
 	vertical-align:middle; 
 	display: inline;
+    cursor: pointer;
 	}
 .unshifted {
 	margin: 5px; 
@@ -505,6 +523,7 @@ dt {
 	text-transform: uppercase; 
 	vertical-align:middle; 
 	display: inline;
+    cursor: pointer;
 	}
 	
 	
