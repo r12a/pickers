@@ -1,13 +1,13 @@
 @font-face {
-    font-family: 'Noto Sans Tifinagh WF';
-    src: url('/shared/webfonts/notoseriftifinagh-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notoseriftifinagh-regular-webfont.woff') format('woff');
+    font-family: 'Doulos SIL WF';
+    src: local("Doulos SIL"),
+		url('/shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 
 
-[lang=ber] { font-family: 'Noto Sans Tifinagh WF', Tagmukay, serif; }
+[lang=ru] { font-family: 'Doulos SIL WF', "Times New Roman", serif; }
 
 
 #alphabet { 
@@ -28,21 +28,21 @@ span.hint {
 
 #kbd { display: table; }
     
-    
+
+
+
 /* KEYBOARD */
-.key span { 
-	font-size: 24px; 
-	color: gray; 
+.key { 
 	font-weight: normal; 
-	font-family:  "Hapax Berbère", "Noto Sans Tifinagh WF",  sans-serif;  
-	cursor:pointer; 
-	text-align: center; 
-	line-height: 1;
+	font-family:  "Doulos SIL", "Times New Roman",  sans-serif;
 	}
-.key .s { position:absolute; bottom: 5px; left: 15px; }
-.key .n { position:absolute; bottom: 5px; right: 5px;  }
+.key span { 
+	font-size: 1.2em; 
+    line-height: 1;
+	}
 
 #keyboard { display: none; }
+
 
 
 
