@@ -24,7 +24,6 @@ charData["\u{11EF3}"]="MAKASAR VOWEL SIGN I"
 charData["\u{11EF4}"]="MAKASAR VOWEL SIGN U"
 charData["\u{11EF5}"]="MAKASAR VOWEL SIGN E"
 charData["\u{11EF6}"]="MAKASAR VOWEL SIGN O"
-charData["\u{11EF1}"]="MAKASAR VOWEL SIGN I"
 
 charData["\u{11EF7}"]="MAKASAR PASSIMBANG"
 charData["\u{11EF8}"]="MAKASAR END OF SECTION"
