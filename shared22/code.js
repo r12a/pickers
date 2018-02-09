@@ -781,7 +781,7 @@ function makeKeyboard (chosenKbd, guideArray) {
 		theKeyboard.appendChild(keyrownode)
 		}
 	// add base for combining characters
-	node = theKeyboard.querySelectorAll( '.s, .n, .a' ); 
+	node = theKeyboard.querySelectorAll( '.skey, .nkey, .okey' ); 
 	for (var n = 0; n < node.length; n++ ) { 
 		prop = node[n].textContent
 		if (charData[prop] && charData[prop].match('\u200B')) { 
