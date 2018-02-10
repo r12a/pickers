@@ -276,7 +276,7 @@ function toggleNotes () {
 
 
 
-function add(ch) { 
+function add (ch) { 
 	// ch: string, the text to be added
 	// _cluster: boolean, global variable, set if this is a consonant cluster (used for vowels that surround base)
 	// globals.view: string, indicates which view is showing - this is important, since non-intelligent ordering is needed in the default view
@@ -342,7 +342,7 @@ function selectFont ( newFont ) {
 	if (newFont.match('"') || newFont.match(',')) { alert('Use a single font with no quotes.'); return }
 	document.getElementById( 'output' ).style.fontFamily = "'"+newFont+"', 'Doulos SIL'"
 	document.querySelector('#panel #title').style.fontFamily ="'"+newFont+"', 'Doulos SIL'"
-	document.querySelector('#transcription').style.fontFamily ="'"+newFont+"', 'Doulos SIL', 'Gentium Plus', 'Charis Sil', Gentium, serif"
+	document.querySelector('#transcription').style.fontFamily ="'Doulos SIL', '"+newFont+"', 'Gentium Plus', 'Charis Sil', Gentium, serif"
 	document.getElementById('fontName').value="";
 
 	defaults.font = newFont
@@ -675,7 +675,7 @@ var keyboardUCGuide = [
 "~ Z X C V B N M < > ? \u00A0"
 ]
 
-var keyboardRowOffset = ['0','1.5em','3em','1.5em']
+var keyboardRowOffset = ['0','1.5em','.5em','1.5em']
 
 function event_toggleKbdShift () {
     if (this.classList.contains('shiftKeyOn')) {
@@ -699,7 +699,19 @@ function makeKeyboard (chosenKbd, guideArray) {
 			
 		var keyrow = chosenKbd[kr].split('|')
 		var guiderow = guideArray[kr].split(' ')
-		for (key=0;key<keyrow.length;key++) {
+
+       // add tab key
+       if (kr===2) {
+          div = document.createElement('div')
+          div.className = 'key'
+          div.onclick = function () { add('\t') }
+          div.style.color = 'orange'
+          div.style.cursor = 'pointer'
+          div.appendChild(document.createTextNode('⇥'))
+          keyrownode.appendChild(div)
+          }
+
+        for (key=0;key<keyrow.length;key++) {
             var guidekey = normalkey = shiftkey = thirdkey = ''
 			chars = keyrow[key].split(' ')
 			guide = guiderow[key].split(' ')
@@ -770,14 +782,27 @@ function makeKeyboard (chosenKbd, guideArray) {
 
 			keyrownode.appendChild(keynode)
 			}
-           if (kr===3) {
-              div = document.createElement('div')
-              if (guideArray[0][0] === '§') div.className = 'key shiftKeyOff'
-              else div.className = 'key shiftKeyOn'
-              div.onclick = event_toggleKbdShift
-              div.appendChild(document.createTextNode('Shift'))
-              keyrownode.appendChild(div)
-              }
+            
+       // add return key
+       if (kr===1) {
+          div = document.createElement('div')
+          div.className = 'key'
+          div.onclick = function () { add('\n') }
+          div.style.color = 'orange'
+          div.style.cursor = 'pointer'
+          div.appendChild(document.createTextNode('⏎'))
+          keyrownode.appendChild(div)
+          }
+            
+       // add shift key
+       if (kr===3) {
+          div = document.createElement('div')
+          if (guideArray[0][0] === '§') div.className = 'key shiftKeyOff'
+          else div.className = 'key shiftKeyOn'
+          div.onclick = event_toggleKbdShift
+          div.appendChild(document.createTextNode('Shift'))
+          keyrownode.appendChild(div)
+          }
 		theKeyboard.appendChild(keyrownode)
 		}
 	// add base for combining characters
@@ -1012,7 +1037,7 @@ function setUpValues () {
 		document.getElementById( 'fontName' ).value = defaults.font
 		document.getElementById('output').style.fontFamily = '"'+defaults.font+'"'
 		document.querySelector('#panel #title').style.fontFamily = defaults.font;
-		document.querySelector('#transcription').style.fontFamily ="'"+defaults.font+"', 'Doulos SIL', 'Gentium Plus', 'Charis Sil', Gentium, serif"
+		document.querySelector('#transcription').style.fontFamily ="'Doulos SIL', '"+defaults.font+"', 'Gentium Plus', 'Charis Sil', Gentium, serif"
 		}
 	if (defaults.size) { 
 		document.getElementById( 'fontSize' ).value = defaults.size;  
