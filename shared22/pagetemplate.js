@@ -98,13 +98,13 @@ if (template.direction == "rtl" || template.direction == "bidi") {
     <span title="Set base direction to LTR." onclick="document.getElementById('output').dir='ltr'; clearBidiOverride()" class="setDir">&#x2192;&#xFE0E;</span>
     <span title="Set base direction to Auto." onclick="document.getElementById('output').dir='auto'; clearBidiOverride()" class="setDir">&#x2194;&#xFE0E;</span> 
     <span title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'; clearBidiOverride()" class="setDir">&#x2190;&#xFE0E;</span>  
+     <span title="Set base direction to RTL override." onclick="document.getElementById('output').dir='rtl'; setBidiOverride(false)" class="setDir">&#x21D0;&#xFE0E;</span>
      &bull; 
- `
+`
     }
 if (template.direction == "bidi") {
     out += `
     <span title="Set base direction to RTL override, and reverse character glyphs." onclick="document.getElementById('output').dir='ltr'; setBidiOverride(true)" class="setDir">&#x2B45;&#xFE0E;</span> 
-    <span title="Set base direction to RTL override." onclick="document.getElementById('output').dir='rtl';; setBidiOverride(false)" class="setDir">&#x21D0;&#xFE0E;</span>
      &bull; 
  `
     }
