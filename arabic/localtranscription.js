@@ -142,7 +142,77 @@ function transcribetoLOC (str) {
 
 
 
-function transcribetoISO (chstring) {
+function transcribetoISO (str) {
+    str = str.normalize('NFC')
+    
+    str = str.replace(/ء/g, "’")
+    str = str.replace(/آ/g, "ā")
+    str = str.replace(/أ/g, "ᵃ")
+    str = str.replace(/ؤ/g, "ʷ")
+    str = str.replace(/إ/g, "ₐ")
+    str = str.replace(/ئ/g, "ʸ")
+    str = str.replace(/ا/g, "ˡ")
+    str = str.replace(/ب/g, "b")
+    str = str.replace(/ة/g, "ẗ")
+    str = str.replace(/ت/g, "t")
+    str = str.replace(/ث/g, "ṯ")
+    str = str.replace(/ج/g, "ǧ")
+    str = str.replace(/ح/g, "ḥ")
+    str = str.replace(/خ/g, "ẖ")
+    str = str.replace(/د/g, "d")
+    str = str.replace(/ذ/g, "ḏ")
+    str = str.replace(/ر/g, "r")
+    str = str.replace(/ز/g, "z")
+    str = str.replace(/س/g, "s")
+    str = str.replace(/ش/g, "š")
+    str = str.replace(/ص/g, "ṣ")
+    str = str.replace(/ض/g, "ḍ")
+    str = str.replace(/ط/g, "ṭ")
+    str = str.replace(/ظ/g, "ẓ")
+    str = str.replace(/ع/g, "ʻ")
+    str = str.replace(/غ/g, "ġ")
+    str = str.replace(/ف/g, "f")
+    str = str.replace(/ق/g, "q")
+    str = str.replace(/ك/g, "k")
+    str = str.replace(/ل/g, "l")
+    str = str.replace(/م/g, "m")
+    str = str.replace(/ن/g, "n")
+    str = str.replace(/ه/g, "h")
+    str = str.replace(/و/g, "w")
+    str = str.replace(/ى/g, "ỳ")
+    str = str.replace(/ي/g, "y")
+    str = str.replace(/ٱ/g, "’")
+
+    // vowels
+    str = str.replace(/\u064E/g, "a")
+    str = str.replace(/\u064F/g, "u")
+    str = str.replace(/\u0650/g, "i")
+    str = str.replace(/\u064B/g, "aⁿ")
+    str = str.replace(/\u064C/g, "uⁿ")
+    str = str.replace(/\u064D/g, "iⁿ")
+    str = str.replace(/\u0651/g, "ᵚ")
+    str = str.replace(/\u0652/g, "̊")
+    str = str.replace(/\u0670/g, "̍")
+    str = str.replace(/\u0654/g, "͗")
+    str = str.replace(/\u0655/g, "̹")
+
+    // punctuation
+    str = str.replace(/ـ/g, "_")
+    str = str.replace(/،/g, ",")
+    str = str.replace(/۔/g, ".")
+    str = str.replace(/؛/g, ";")
+    str = str.replace(/؟/g, "?")
+    str = str.replace(/٪/g, "%")
+
+
+
+
+			
+    return str
+}
+
+
+function transcribetoISOold (chstring) {
 					
 	chstring = chstring.replace(/ال/g,' al-'); // lam alif
 	

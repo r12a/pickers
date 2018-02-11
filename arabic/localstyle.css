@@ -7,6 +7,157 @@
 	}
 
 
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+#kbd { margin:auto; }
+#kbd table {
+	margin:0;
+	}
+
+span.hint { 
+	margin-right: 0px;
+    margin-left: 0px;
+	font-size: 40%;
+	}
+.c { 
+	min-width: .5em;
+	text-align: center;
+	}
+
+
+
+/* KEYBOARD */
+.key { 
+	font-weight: normal; 
+	font-family:  eastern,  sans-serif;
+	}
+.key span { 
+	font-size: 1.2em; 
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#ligatureGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 2.5em;
+    max-height: 15em;
+    justify-content: space-between;
+    margin-right: 1.5em;
+    line-height: 1.3;
+    }
+#consonantGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    max-width: 12em;
+    justify-content: space-between;
+    }
+#consonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 1.4;
+    vertical-align: baseline;
+    }
+#kbd #vowels {
+    padding: 0;
+    }
+#vowelGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 2em;
+    max-height: 15em;
+    justify-content: space-between;
+    margin: 0 .5em;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    border-radius: .3em;
+    padding: .2em .5em;
+    }
+#vowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-height: 15em;
+    justify-content: space-between;
+    }
+#numberGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 2.5em;
+    max-height: 15em;
+    justify-content: space-between;
+    margin: 0 .2em;
+    line-height: 1;
+    border: 1px solid #ccc;
+    border-radius: .3em;
+    padding: .2em .4em;
+    }
+#numberGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-height: 15em;
+    justify-content: space-between;
+    }
+#alphabet #controlchars {
+	text-align:center;
+	}
+#alphabet #controlchars p {
+	margin: .1em 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: .8;
+	}
+.touch {
+    margin: 0;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#obsolete {
+    text-align: center;
+    }
+
+
+
+
+/*
+
 #alphabet { display: block; margin-right: 20px;  }
 
 #alphabet td.hint {  
@@ -34,7 +185,6 @@
 	}
 #kbd #consonants  {
 	text-align: start;
-	/*padding-inline-end: 20px;*/
 	}
 span.c  {
 	min-width: .5em;
@@ -71,6 +221,9 @@ span.c  {
 	}
 #alphabet #controlchars p {
 	margin: .3em 0;
+    margin-top: 0;
+margin-bottom: 0;
+line-height: 1;
 	}
 
 #rare {
@@ -79,3 +232,4 @@ span.c  {
 .touch {
 	margin: 0;
 	}
+*/

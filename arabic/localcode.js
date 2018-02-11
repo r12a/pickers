@@ -1,4 +1,5 @@
 globals.showLOCTrans = ''
+globals.showTransliteration = ''
 globals.showIPATrans = ''
 
 function localInitialise () {
@@ -34,6 +35,12 @@ end: {}
 }
 
 
+var keyboarddef = [
+"§ ذ ّ|1 ١|2 ٢|3 ٣|4 ٤|5 ٥|6 ٦|7 ٧|8 ٨|9 ٩|0 ٠|- «|= »",
+"q ض َ ‘|w ص ً ’|e ث ُ “|r ق ٌ ”|t ف لإ ڤ|y غ إ|u ع ‘ ە|i ه ÷|o خ ×|p ح ؛|[ ج < چ|] د >",
+"a ش ِ |s س ٍ ے|d ي ]\ ی|f ب [\ پ|g ل لأ ٓ|h ا أ ٰ|j ت ـ ٹ|k ن ، ں|l م /|; ك : گ|' ط \" …|\\",
+"` ٫ ٬|z ئ ~|x ء ْ|c ؤ } ڈ|v ر { ڑ|b لا لآ ژ|n ى آ|m ة ’|, و|.  ز|/ ظ ؟"
+]
 
 
 
