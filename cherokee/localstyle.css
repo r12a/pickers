@@ -10,13 +10,25 @@
 
 :lang(chr) { font-family: "Noto Sans Cherokee WF", "Plantagenet Cherokee", serif; } 
 
-
+summary { font-size: 14px; }
 
 #phonelist { display: none; }
 
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  "Noto Sans Cherokee WF", "Plantagenet Cherokee",  serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
 
 
 
+/* SELECTION AREA */
 #alphabet { 
 	display: block; 
 	color: #666;
@@ -41,7 +53,9 @@ span.hint {
 	text-align: center;
 	}
     
-    
+#diacritics {
+    text-align: center;
+    }    
 
 
 
@@ -62,6 +76,7 @@ span.hint {
 	text-align: center;
 	margin: auto;
 	}
+
 
 
 

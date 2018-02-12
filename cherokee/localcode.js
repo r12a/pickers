@@ -61,20 +61,32 @@ end: {}
 
 
 var keyboarddef = [
-"᠑|᠒|᠓|᠔|᠕|᠖|᠗|᠘|᠙|᠐",
-"᠁,ᠴ|ᠸ,ᠣ|ᠧ,ᠡ|ᠿ,ᠷ|ᠲ|ᠶ|ᠦ|ᠢ|ᠥ|ᠫ",
-"ᠠ|ᠰ|ᠳ|ᠹ|ᠭ|ᠾ,ᠬ|ᠵ|ᠻ,ᠺ|ᡀ,ᠯ|《,》",
-"ᡁ,ᠽ|ᠱ|ᡂ,ᠼ|ᠤ|ᠪ|ᠩ,ᠨ|ᠮ|᠂|᠃"
+"§|1 ᏣᎳᎩ Ꮁ|2 ᎣᏏᏲ Ꮗ|3 ᏩᏙ Ꮷ|4 Ꮩ Ꮀ|5 Ꮶ Ꮉ|6 Ꮬ Ꮭ|7 Ꮛ Ꮱ|8 Ꮦ Ꮊ|9 Ꮢ (|0 Ꮔ )|- Ꮏ Ꮌ|= Ᏻ Ꮍ",
+"q Ꭺ Ꮖ|w Ꮃ Ꮻ|e Ꭱ Ꮳ|r Ꮫ Ꮟ|t Ꮤ Ꮨ|y Ꮿ Ᏺ|u Ꭴ Ꭽ|i Ꭲ Ᏹ|o Ꭳ Ꮼ|p Ꮑ Ꮺ|[ Ꮥ Ꮡ|] Ꮆ Ꮴ",
+"a Ꭰ Ꮜ|s Ꮝ Ꮞ|d Ꮧ Ꮠ|f Ꭹ Ꮘ|g Ꭶ Ꮵ|h Ꭿ Ꮂ|j Ꮪ Ꭻ|k Ꮈ Ꭷ|l Ꮅ Ꭾ|; Ꮸ Ꮰ|' |\\ Ꮹ Ꮾ",
+"` Ꮚ|z Ꭼ Ꮓ|x Ᏼ Ꮽ|c Ꮣ Ꮯ|v Ꭵ Ꮮ|b Ꭸ Ᏸ|n Ꮎ Ꮋ|m Ꮕ Ꮇ|, Ꮲ|. Ꮄ|/ Ꮒ Ꮙ"
 ]
 
-var keyboardguide = [
-"1,2,3,4,5,6,7,8,9,0,-,=",
-"q,w,e,r,t,y,u,i,o,p,[,],",
-"a,s,d,f,g,h,j,k,l,;,',\\",
-"z,x,c,v,b,n,m,,.,/,"
+
+var keyboardUC = [
+"§|1 ꮳꮃꭹ ꮁ|2 ꭳꮟᏺ ꮗ|3 ꮹꮩ ꮷ|4 ꮩ ꮀ|5 ꮶ ꮉ|6 ꮬ ꮭ|7 ꮛ ꮱ|8 ꮦ ꮊ|9 ꮢ (|0 ꮔ )|- ꮏ ꮌ|= ᏻ ꮍ", 
+"q ꭺ ꮖ|w ꮃ ꮻ|e ꭱ ꮳ|r ꮫ ꮟ|t ꮤ ꮨ|y ꮿ ᏺ|u ꭴ ꭽ|i ꭲ ᏹ|o ꭳ ꮼ|p ꮑ ꮺ|[ ꮥ ꮡ|] ꮆ ꮴ", 
+"a ꭰ ꮜ|s ꮝ ꮞ|d ꮧ ꮠ|f ꭹ ꮘ|g ꭶ ꮵ|h ꭿ ꮂ|j ꮪ ꭻ|k ꮈ ꭷ|l ꮅ ꭾ|; ꮸ ꮰ|' |\\ ꮹ ꮾ", 
+"` ꮚ|z ꭼ ꮓ|x ᏼ ꮽ|c ꮣ ꮯ|v ꭵ ꮮ|b ꭸ ᏸ|n ꮎ ꮋ|m ꮕ ꮇ|, ꮲ|. ꮄ|/ ꮒ ꮙ" 
 ]
 
-var keyboardRowOffset = ['5px','20px','30px','50px']
+
+
+function event_toggleKbdShift () {
+    if (this.classList.contains('shiftKeyOn')) {
+        makeKeyboard(keyboarddef, keyboardLCGuide)
+        }
+    else makeKeyboard(keyboardUC, keyboardUCGuide)
+    }
+
+
+
+
 
 
 function toggleShift (node) {
