@@ -1046,7 +1046,7 @@ function setUpValues () {
 	for (var p=0;p<parameters.length;p++) {  
 		pairs = parameters[p].split('=');
 		if (pairs[0] === 'text') { 
-			if (pairs[1]) document.getElementById('output').value = decodeURI(pairs[1])
+			if (pairs[1]) document.getElementById('output').value = decodeURIComponent(pairs[1])
 			}
 		}
 	}
