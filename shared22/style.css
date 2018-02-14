@@ -164,7 +164,7 @@ table td { border: 0; }
 	margin-right: 20px; 
 	height: 1.2em; 
 	color: #ccc;
-	margin-bottom: 15px;
+	margin-bottom: .25em;
 	}
 #charname { 
 	margin-left: 5px; 
@@ -317,10 +317,19 @@ span.c:hover {
 
 /* KEYBOARDS */
 
+.kbdWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* margin-bottom: 50px; */
+    margin-bottom: .25em;
+    }
  #keyboard { 
- 	padding-bottom: 10px; 
-	margin-bottom: 50px;
+ 	/* padding-bottom: 10px; */
+	/*margin-bottom: 50px;*/
     font-size: 1em;
+    margin-top: .25em;
 	}
  .keyboardrow {
 	 white-space: nowrap;
@@ -525,7 +534,12 @@ dt {
 	display: inline;
     cursor: pointer;
 	}
-	
+
+.spaceline {
+    margin-bottom: .25em;
+    line-height: 1;
+    text-align: center;
+}
 	
 .spaceEtc {
 	margin: 5px; 
@@ -582,7 +596,7 @@ summary:hover {
 	
 	
 .touch { /* these are space, rlm, etc touches */
-	margin: 0 5px; 
+	/* margin: 0 5px; */
 	border: 1px solid #ddd; 
 	border-radius: 3px;
 	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; 
@@ -619,9 +633,10 @@ summary:hover {
 	vertical-align: baseline;
 	}
 
-#kbd #vowels {
+/*#kbd #vowels {
 	padding: 0 10px;
 	}
+*/
 
 #contrastSwitch {
 	float: right;
@@ -653,12 +668,6 @@ summary:hover {
     }
 #extrashapes {
     text-align: center;
-    }
-.kbdWrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: nowrap;
     }
 
 
