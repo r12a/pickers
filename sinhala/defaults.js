@@ -29,11 +29,14 @@ var template = {}
 
 
 var inputAids = [
+{"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
 {"title":"Latin to Sinhala", "dataVar":"showTransPanel", "dataLocn":"toSinhala", "dataShortTitle":"L", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
 {"title":"Sinhala<br/>to Latin", "alt":"Convert Sinhalese text to a Latin transliteration.", "code":"doTranscription('toISO15919')"},
 ]
+
 

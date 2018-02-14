@@ -221,7 +221,21 @@
 
 <div id="tables" dir="ltr">
   
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div>
+</div>
+
+
   <div id="alphabet" class="default">
+        <div class="spaceline">
+        <span class="touch" style="padding: 5px 60px;" onClick="add(' ');">SPACE</span> 
+        <span class="touch" style="padding: 5px 30px;" onClick="add('\u200D');">ZWNJ</span> 
+        <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+        <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
+        <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span>
+        </div>
     <table id="kbd">
       <tr>
         <td id="independentvowels"><table>
@@ -254,10 +268,10 @@
 <td><span class="g"><span class="c">&#x0D95;</span><span class="hint">ō</span></span></td>
 </tr>
         </table></td>
-        <td id="adegadeg" style="text-align: center;"><span class="c" style="padding: 1em .25em">&#x0DCA;</span><br/>
+        <!--td id="adegadeg" style="text-align: center;"><span class="c" style="padding: 1em .25em">&#x0DCA;</span><br/>
         <span class="touch" style="margin: 0;" onClick="add('\u0DCA\u200D');"><img src="images/hk_zwj.png" alt="HKZWJ"/></span><br/><span class="g" style="display:inline-block; margin-top: 0.3em"><span class="c">&#x0DCA;&#x200D;&#x0DBB;</span><span class="hint">-r</span></span>
         <br/><span class="g" style="display:inline-block; margin-top: 0.3em"><span class="c">&#x0DCA;&#x200D;&#x0DBA;</span><span class="hint">-y</span></span>
-</td>
+</td-->
         <td style="padding-right: 1em;"><table id="consonants">
           <tr>
             <td><span class="g"><span class="hint">k</span><span class="c">&#x0D9A;</span></span></td>
@@ -312,17 +326,21 @@
            <td><span class="g"><span class="hint">ṣ</span><span class="c">&#x0DC2;</span></span></td>
 <td><span class="g"><span class="hint">s</span><span class="c">&#x0DC3;</span></span></td>
             <td><span class="g"><span class="hint">h</span><span class="c">&#x0DC4;</span></span></td>
-                <td style="text-align:right"><span class="c">&#x0D83;</span></td>
-           <td style="text-align:right"><span class="c">&#x0D82;</span></td>
+          <td style="text-align:right"><span class="g"><span class="hint">ḥ</span><span class="c">&#x0D83;</span></span></td>
+          <td style="text-align:right"><span class="g"><span class="hint">ṃ</span><span class="c">&#x0D82;</span></span></td>
           </tr>
           </table>
         </td>
         
         
+          <td id="adegadeg" style="text-align: center; padding-right: 10px;"><span class="c" style="padding: 1em .25em">&#x0DCA;</span><br/>
+        <span class="touch" style="margin: 0;" onClick="add('\u0DCA\u200D');"><img src="images/hk_zwj.png" alt="HKZWJ"/></span><br/><span class="g" style="display:inline-block; margin-top: 0.3em"><span class="hint">-r</span><span class="c">&#x0DCA;&#x200D;&#x0DBB;</span></span>
+        <br/><span class="g" style="display:inline-block; margin-top: 0.3em"><span class="hint">-y</span><span class="c">&#x0DCA;&#x200D;&#x0DBA;</span></span>
+</td>
+      
         
         
-        
-                <td id="vowels"><table>
+                <td id="vowels" style="padding: 0 .25em;"><table>
 <tr>
 <td>&nbsp;</td>
 <td><span class="g"><span class="c">&#x0DCF;</span><span class="hint">ā</span></span></td>
@@ -402,14 +420,6 @@
 </table>
       </td>
         
-      </tr>
-      <tr>
-        <td colspan="5" id="spaceetc" style="text-align: center;padding-top:.25em;">
-        <span class="touch" style="padding: 5px 60px;" onClick="add(' ');">SPACE</span> 
-        <span class="touch" style="padding: 5px 30px;" onClick="add('\u200D');">ZWNJ</span> 
-        <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
-        <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
-        <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span></td>
       </tr>
   </table>      
  
@@ -508,6 +518,16 @@
 
 <div id="shapelist" style="display:none; text-align:center;">
  <div id="shapekeys">
+ <span onclick="findShape('D85,D85,D86,D87,D88,DAF','',true)">ද</span>
+<span onclick="findShape('DB6,DB6,D9B,D89,DAB','',true)">බ</span>
+<span onclick="findShape('DBB,DBB,D8A','',true)">ර</span>
+<span onclick="findShape('DD9,D93,DD9,DDA,DDB,DDE,DDC,DDD','',true)">ෙ</span>
+<span onclick="findShape('DB8,DB8,DB9,D96,D94,D95','',true)">ම</span>
+<span onclick="findShape('DB0,DBA,DA8,DA9,DAA,D9E,DB0,D9A,DA4,DA3,D9D,DC3','',true)">ධ</span>
+<span onclick="findShape('D9C,D9C,D9F,DAD,DB1,DB7,DC1,DC4','',true)">ග</span>
+<span onclick="findShape('DA0,DA7,DAE,DB5,DC0,D91,D92','',true)">ච</span>
+<span onclick="findShape('DB4,DA1,DA2,D9D,DC2','',true)">ප</span>
+<span onclick="findShape('DB3,DBD,DC5,DC6','',true)">ඳ</span>
  </div>
 </div>
 
