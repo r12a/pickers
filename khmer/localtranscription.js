@@ -1,9 +1,681 @@
 function localtranscribe (direction, str) {
 	
 	if (direction == 'toIPA') { return transcribeToIPA(str) }
+	if (direction == 'toTrans') { return transliterate(str) }
+	if (direction == 'toUNGEGN') { return toUNGEGN(str) }
 	}
 		
+
+
+function transliterate ( str ) {
+
+// based on UNGEGN, but without the variation in vowel transcription per the inherent vowel system
+
+str += '  '
+
+str = str.replace(/ក/g, "kâ")
+str = str.replace(/ខ/g, "kʰâ")
+str = str.replace(/គ/g, "ḵô")
+str = str.replace(/ឃ/g, "ḵʰô")
+str = str.replace(/ង/g, "ngô")
+str = str.replace(/ច/g, "câ")
+str = str.replace(/ឆ/g, "cʰâ")
+str = str.replace(/ជ/g, "c̱ô")
+str = str.replace(/ឈ/g, "c̱ʰô")
+str = str.replace(/ញ/g, "ñô")
+str = str.replace(/ដ/g, "dâ")
+str = str.replace(/ឋ/g, "ṭʰâ")
+str = str.replace(/ឌ/g, "ḏô")
+str = str.replace(/ឍ/g, "ṱʰô")
+str = str.replace(/ណ/g, "nâ")
+str = str.replace(/ត/g, "tâ")
+str = str.replace(/ថ/g, "tʰâ")
+str = str.replace(/ទ/g, "ṯô")
+str = str.replace(/ធ/g, "ṯʰô")
+str = str.replace(/ន/g, "ṉô")
+str = str.replace(/ប/g, "bâ")
+str = str.replace(/ផ/g, "pʰâ")
+str = str.replace(/ព/g, "ꝑô")
+str = str.replace(/ភ/g, "ꝑʰô")
+str = str.replace(/ម/g, "mô")
+str = str.replace(/យ/g, "yô")
+str = str.replace(/រ/g, "rô")
+str = str.replace(/ល/g, "ḻô")
+str = str.replace(/វ/g, "vô")
+str = str.replace(/ស/g, "sâ")
+str = str.replace(/ហ/g, "hâ")
+str = str.replace(/ឡ/g, "lâ")
+str = str.replace(/អ/g, "’â")
+
+str = str.replace(/ឝ/g, "ś")
+str = str.replace(/ឞ/g, "ṣ")
+
+// independent vowels
+str = str.replace(/ឥ/g, "′i")
+str = str.replace(/ឦ/g, "′ī")
+str = str.replace(/ឧ/g, "′u")
+str = str.replace(/ឩ/g, "′ū")
+str = str.replace(/ឪ/g, "ýu")
+str = str.replace(/ឫ/g, "ṛ")
+str = str.replace(/ឬ/g, "ṝ")
+str = str.replace(/ឭ/g, "ḷ")
+str = str.replace(/ឮ/g, "ḹ")
+str = str.replace(/ឯ/g, "′ae")
+str = str.replace(/ឰ/g, "′ai")
+str = str.replace(/ឱ/g, "′o")
+str = str.replace(/ឳ/g, "′au")
+str = str.replace(/ឲ/g, "′ǎu")
+
+// vowel signs
+str = str.replace(/ា/g, "ā")
+str = str.replace(/ិ/g, "i")
+str = str.replace(/ី/g, "ī")
+str = str.replace(/ឹ/g, "ẏ")
+str = str.replace(/ឺ/g, "ȳ")
+str = str.replace(/ុ/g, "u")
+str = str.replace(/ូ/g, "ū")
+str = str.replace(/ួ/g, "ua")
+str = str.replace(/ើ/g, "oe")
+str = str.replace(/ឿ/g, "ẏa")
+str = str.replace(/ៀ/g, "ia")
+str = str.replace(/េ/g, "e")
+str = str.replace(/ែ/g, "ae")
+str = str.replace(/ៃ/g, "ai")
+str = str.replace(/ោ/g, "o")
+str = str.replace(/ៅ/g, "au")
+
+str = str.replace(/ំ/g, "ṃ")
+str = str.replace(/ះ/g, "ḥ")
+str = str.replace(/ៈ/g, "à")
+str = str.replace(/់/g, "á")
+str = str.replace(/៌/g, "ʳ")
+str = str.replace(/៍/g, "˚")
+str = str.replace(/៎/g, "’")
+str = str.replace(/៏/g, "ʻ")
+str = str.replace(/័/g, "ă")
+str = str.replace(/៑/g, "˙")
+str = str.replace(/៝/g, "ᵊ")
+str = str.replace(/៉/g, "″")
+str = str.replace(/៊/g, "′")
+
+str = str.replace(/។/g, ".")
+str = str.replace(/៖/g, ":")
+
+str = str.replace(/០/g, "0")
+str = str.replace(/១/g, "1")
+str = str.replace(/២/g, "2")
+str = str.replace(/៣/g, "3")
+str = str.replace(/៤/g, "4")
+str = str.replace(/៥/g, "5")
+str = str.replace(/៦/g, "6")
+str = str.replace(/៧/g, "7")
+str = str.replace(/៨/g, "8")
+str = str.replace(/៩/g, "9")
+
+str = str.replace(/្/g, "͓")
+
+// remove inherent vowel where necessary
+str = str.replace(/â͓/g, "͓")
+str = str.replace(/ô͓/g, "͓")
+str = str.replace(/ô͓/g, "͓")
+
+str = str.replace(/[â|ô]ā/g, "ā")
+str = str.replace(/[â|ô]á/g, "á")
+str = str.replace(/[â|ô]i/g, "i")
+str = str.replace(/[â|ô]ī/g, "ī")
+str = str.replace(/[â|ô]ẏ/g, "ẏ")
+str = str.replace(/[â|ô]ȳ/g, "ȳ")
+str = str.replace(/[â|ô]u/g, "u")
+str = str.replace(/[â|ô]ū/g, "ū")
+str = str.replace(/[â|ô]ua/g, "ua")
+str = str.replace(/[â|ô]oe/g, "oe")
+str = str.replace(/[â|ô]ẏa/g, "ẏa")
+str = str.replace(/[â|ô]ia/g, "ia")
+str = str.replace(/[â|ô]e/g, "e")
+str = str.replace(/[â|ô]ae/g, "ae")
+str = str.replace(/[â|ô]ai/g, "ai")
+str = str.replace(/[â|ô]o/g, "o")
+str = str.replace(/[â|ô]au/g, "au")
+str = str.replace(/[â|ô]à/g, "à")
+
+str = str.replace(/[â|ô]′/g, "′")
+str = str.replace(/[â|ô][ ]/g, " ")
+str = str.replace(/[â|ô][\n]/g, "\n")
+str = str.replace(/[â|ô][\t]/g, "\t ")
+
+
+console.log(str)
+return str.trim()
+}
+
+
 		
+
+
+function toUNGEGN ( str ) {
+
+// this version takes us pretty close to a useable transliteration based on UNGEGN
+// it provides different, but unique transcriptions for a-system vs o-system vowels
+// and multiple such for sequences involving anusvara and visarga
+// the problem arises when the last consonant isn't of the right system for the vowel, eg. ស្រៈ
+// or when a diacritic is used to change the system of the consonant, etc.
+// here the specificity of the transcription, which is normally fairly close to the pronunciation,
+// becomes our enemy - doing the right thing to get a UNGEGN transcription takes us away from the
+// possibility of reversibility (unless we heavily overburden the transcription process)
+// (we could probably continue to develop it as a UNGEGN transcription algorithm)
+
+str += '  '
+
+str = str.replace(/ក/g, "kâ")
+str = str.replace(/ខ/g, "kʰâ")
+str = str.replace(/គ/g, "ḵô")
+str = str.replace(/ឃ/g, "ḵʰô")
+str = str.replace(/ង/g, "ngô")
+str = str.replace(/ច/g, "câ")
+str = str.replace(/ឆ/g, "cʰâ")
+str = str.replace(/ជ/g, "c̱ʰô")
+str = str.replace(/ឈ/g, "c̱ʰô")
+str = str.replace(/ញ/g, "nʰô")
+str = str.replace(/ដ/g, "dâ")
+str = str.replace(/ឋ/g, "ṭʰâ")
+str = str.replace(/ឌ/g, "ḏô")
+str = str.replace(/ឍ/g, "ṭʰô")
+str = str.replace(/ណ/g, "nâ")
+str = str.replace(/ត/g, "tâ")
+str = str.replace(/ថ/g, "tʰâ")
+str = str.replace(/ទ/g, "ṯô")
+str = str.replace(/ធ/g, "ṯʰô")
+str = str.replace(/ន/g, "ṉô")
+str = str.replace(/ប/g, "bâ")
+str = str.replace(/ផ/g, "pʰâ")
+str = str.replace(/ព/g, "ꝑô")
+str = str.replace(/ភ/g, "ꝑʰô")
+str = str.replace(/ម/g, "mô")
+str = str.replace(/យ/g, "yô")
+str = str.replace(/រ/g, "rô")
+str = str.replace(/ល/g, "ḻô")
+str = str.replace(/វ/g, "vô")
+str = str.replace(/ស/g, "sâ")
+str = str.replace(/ហ/g, "hâ")
+str = str.replace(/ឡ/g, "lâ")
+str = str.replace(/អ/g, "’â")
+
+
+// change vowel system for vowels following subjoined consonants
+str = str.replace(/\u17D2ងô/,"\u17D2ងâ")
+str = str.replace(/\u17D2ញô/,"\u17D2ញâ")
+str = str.replace(/\u17D2នô/,"\u17D2នâ")
+str = str.replace(/\u17D2មô/,"\u17D2មâ")
+str = str.replace(/\u17D2យô/,"\u17D2យâ")
+str = str.replace(/\u17D2រô/,"\u17D2រâ")
+str = str.replace(/\u17D2លô/,"\u17D2លâ")
+str = str.replace(/\u17D2វô/,"\u17D2វâ")
+
+
+str = str.replace(/ឝ/g, "ś")
+str = str.replace(/ឞ/g, "ṣ")
+
+str = str.replace(/ឥ/g, "′i")
+str = str.replace(/ឦ/g, "′ī")
+str = str.replace(/ឧ/g, "′u")
+str = str.replace(/ឩ/g, "′ū")
+str = str.replace(/ឪ/g, "ýu")
+str = str.replace(/ឫ/g, "ṛ")
+str = str.replace(/ឬ/g, "ṝ")
+str = str.replace(/ឭ/g, "ḷ")
+str = str.replace(/ឮ/g, "ḹ")
+str = str.replace(/ឯ/g, "′ae")
+str = str.replace(/ឰ/g, "′ai")
+str = str.replace(/ឱ/g, "′o")
+str = str.replace(/ឳ/g, "′au")
+str = str.replace(/ឲ/g, "′âu")
+
+str = str.replace(/âាំង/g, "ănᵍ")
+str = str.replace(/ôាំង/g, "eânᵍ")
+str = str.replace(/âុំ/g, "oṃ")
+str = str.replace(/ôុំ/g, "ŭṃ")
+str = str.replace(/âាំ/g, "ăṃ")
+str = str.replace(/ôាំ/g, "ŏâṃ")
+str = str.replace(/âំ/g, "âṃ")
+str = str.replace(/ôំ/g, "uṃ")
+
+str = str.replace(/âោះ/g, "aôḥ")
+str = str.replace(/ôោះ/g, "ŏăḥ")
+str = str.replace(/âុះ/g, "ŏḥ")
+str = str.replace(/ôុះ/g, "ŭḥ")
+str = str.replace(/âេះ/g, "éḥ")
+str = str.replace(/ôេះ/g, "éḥ")
+str = str.replace(/âះ/g, "ăḥ")
+str = str.replace(/ôះ/g, "eăḥ")
+
+str = str.replace(/âៈ/g, "à′")
+str = str.replace(/ôៈ/g, "eă′")
+
+str = str.replace(/âា/g, "a")
+str = str.replace(/ôា/g, "éa")
+str = str.replace(/âិ/g, "ĕ")
+str = str.replace(/ôិ/g, "ĭ")
+str = str.replace(/âី/g, "ei")
+str = str.replace(/ôី/g, "i")
+str = str.replace(/ឹ/g, "œ̆")
+str = str.replace(/ឹ/g, "œ̆")
+str = str.replace(/âឺ/g, "œ")
+str = str.replace(/ôឺ/g, "œ")
+str = str.replace(/âុ/g, "ŏ")
+str = str.replace(/ôុ/g, "ŭ")
+str = str.replace(/âូ/g, "o")
+str = str.replace(/ôូ/g, "u")
+str = str.replace(/âួ/g, "uŏ")
+str = str.replace(/ôួ/g, "uŏ")
+str = str.replace(/âើ/g, "aeu")
+str = str.replace(/ôើ/g, "eu")
+str = str.replace(/âឿ/g, "œă")
+str = str.replace(/ôឿ/g, "œă")
+str = str.replace(/âៀ/g, "iĕ")
+str = str.replace(/ôៀ/g, "iĕ")
+str = str.replace(/âេ/g, "é")
+str = str.replace(/ôេ/g, "é")
+str = str.replace(/âែ/g, "ê")
+str = str.replace(/ôែ/g, "ê")
+str = str.replace(/âៃ/g, "ai")
+str = str.replace(/ôៃ/g, "ey")
+str = str.replace(/âោ/g, "aô")
+str = str.replace(/ôោ/g, "oŭ")
+str = str.replace(/âៅ/g, "au")
+str = str.replace(/ôៅ/g, "ŏu")
+
+
+str = str.replace(/ៈ/g, "à")
+str = str.replace(/់/g, "á")
+str = str.replace(/៌/g, "ʳ")
+str = str.replace(/៍/g, "˚")
+str = str.replace(/៎/g, "’")
+str = str.replace(/៏/g, "ʻ")
+str = str.replace(/័/g, "ă")
+str = str.replace(/៑/g, "˙")
+str = str.replace(/៝/g, "ᵊ")
+str = str.replace(/៉/g, "″")
+str = str.replace(/៊/g, "′")
+
+str = str.replace(/។/g, ".")
+str = str.replace(/៖/g, ":")
+
+str = str.replace(/០/g, "0")
+str = str.replace(/១/g, "1")
+str = str.replace(/២/g, "2")
+str = str.replace(/៣/g, "3")
+str = str.replace(/៤/g, "4")
+str = str.replace(/៥/g, "5")
+str = str.replace(/៦/g, "6")
+str = str.replace(/៧/g, "7")
+str = str.replace(/៨/g, "8")
+str = str.replace(/៩/g, "9")
+
+str = str.replace(/្/g, "͓")
+
+// remove inherent vowel where necessary
+str = str.replace(/â͓/g, "͓")
+str = str.replace(/ô͓/g, "͓")
+str = str.replace(/ô͓/g, "͓")
+
+str = str.replace(/[â|ô]ā/g, "ā")
+str = str.replace(/[â|ô]á/g, "á")
+str = str.replace(/[â|ô]i/g, "i")
+str = str.replace(/[â|ô]ī/g, "ī")
+str = str.replace(/[â|ô]ẏ/g, "ẏ")
+str = str.replace(/[â|ô]ȳ/g, "ȳ")
+str = str.replace(/[â|ô]u/g, "u")
+str = str.replace(/[â|ô]ū/g, "ū")
+str = str.replace(/[â|ô]ua/g, "ua")
+str = str.replace(/[â|ô]oe/g, "oe")
+str = str.replace(/[â|ô]ẏa/g, "ẏa")
+str = str.replace(/[â|ô]ia/g, "ia")
+str = str.replace(/[â|ô]e/g, "e")
+str = str.replace(/[â|ô]ae/g, "ae")
+str = str.replace(/[â|ô]ai/g, "ai")
+str = str.replace(/[â|ô]o/g, "o")
+str = str.replace(/[â|ô]au/g, "au")
+str = str.replace(/[â|ô]à/g, "à")
+
+str = str.replace(/[â|ô]′/g, "′")
+str = str.replace(/[â|ô][ |\n|\t]/g, " ")
+
+
+console.log(str)
+return str.trim()
+}
+
+
+
+
+
+function toUNGEGNtranslit ( str ) {
+
+// this version takes us pretty close to a useable transliteration based on UNGEGN
+// it provides different, but unique transcriptions for a-system vs o-system vowels
+// and multiple such for sequences involving anusvara and visarga
+// the problem arises when the last consonant isn't of the right system for the vowel, eg. ស្រៈ
+// or when a diacritic is used to change the system of the consonant, etc.
+// here the specificity of the transcription, which is normally fairly close to the pronunciation,
+// becomes our enemy - doing the right thing to get a UNGEGN transcription takes us away from the
+// possibility of reversibility (unless we heavily overburden the transcription process)
+// (we could probably continue to develop it as a UNGEGN transcription algorithm)
+
+str += '  '
+
+str = str.replace(/ក/g, "kâ")
+str = str.replace(/ខ/g, "kʰâ")
+str = str.replace(/គ/g, "ḵô")
+str = str.replace(/ឃ/g, "ḵʰô")
+str = str.replace(/ង/g, "ngô")
+str = str.replace(/ច/g, "câ")
+str = str.replace(/ឆ/g, "cʰâ")
+str = str.replace(/ជ/g, "çʰô")
+str = str.replace(/ឈ/g, "çʰô")
+str = str.replace(/ញ/g, "nʰô")
+str = str.replace(/ដ/g, "dâ")
+str = str.replace(/ឋ/g, "ṭʰâ")
+str = str.replace(/ឌ/g, "ḏô")
+str = str.replace(/ឍ/g, "ṭʰô")
+str = str.replace(/ណ/g, "nâ")
+str = str.replace(/ត/g, "tâ")
+str = str.replace(/ថ/g, "tʰâ")
+str = str.replace(/ទ/g, "ṯô")
+str = str.replace(/ធ/g, "ṯʰô")
+str = str.replace(/ន/g, "ṉô")
+str = str.replace(/ប/g, "bâ")
+str = str.replace(/ផ/g, "pʰâ")
+str = str.replace(/ព/g, "ꝑô")
+str = str.replace(/ភ/g, "ꝑʰô")
+str = str.replace(/ម/g, "mô")
+str = str.replace(/យ/g, "yô")
+str = str.replace(/រ/g, "rô")
+str = str.replace(/ល/g, "ḻô")
+str = str.replace(/វ/g, "vô")
+str = str.replace(/ស/g, "sâ")
+str = str.replace(/ហ/g, "hâ")
+str = str.replace(/ឡ/g, "lâ")
+str = str.replace(/អ/g, "’â")
+
+
+
+str = str.replace(/ឝ/g, "ś")
+str = str.replace(/ឞ/g, "ṣ")
+
+str = str.replace(/ឥ/g, "′i")
+str = str.replace(/ឦ/g, "′ī")
+str = str.replace(/ឧ/g, "′u")
+str = str.replace(/ឩ/g, "′ū")
+str = str.replace(/ឪ/g, "ýu")
+str = str.replace(/ឫ/g, "ṛ")
+str = str.replace(/ឬ/g, "ṝ")
+str = str.replace(/ឭ/g, "ḷ")
+str = str.replace(/ឮ/g, "ḹ")
+str = str.replace(/ឯ/g, "′ae")
+str = str.replace(/ឰ/g, "′ai")
+str = str.replace(/ឱ/g, "′o")
+str = str.replace(/ឳ/g, "′au")
+str = str.replace(/ឲ/g, "′âu")
+
+str = str.replace(/âាំង/g, "ănᵍ")
+str = str.replace(/ôាំង/g, "eânᵍ")
+str = str.replace(/âុំ/g, "oṃ")
+str = str.replace(/ôុំ/g, "ŭṃ")
+str = str.replace(/âាំ/g, "ăṃ")
+str = str.replace(/ôាំ/g, "ŏâṃ")
+str = str.replace(/âំ/g, "âṃ")
+str = str.replace(/ôំ/g, "uṃ")
+
+str = str.replace(/âោះ/g, "aôḥ")
+str = str.replace(/ôោះ/g, "ŏăḥ")
+str = str.replace(/âុះ/g, "ŏḥ")
+str = str.replace(/ôុះ/g, "ŭḥ")
+str = str.replace(/âេះ/g, "éḥ")
+str = str.replace(/ôេះ/g, "éḥ")
+str = str.replace(/âះ/g, "ăḥ")
+str = str.replace(/ôះ/g, "eăḥ")
+
+str = str.replace(/âៈ/g, "à′")
+str = str.replace(/ôៈ/g, "eă′")
+
+str = str.replace(/âា/g, "a")
+str = str.replace(/ôា/g, "éa")
+str = str.replace(/âិ/g, "ĕ")
+str = str.replace(/ôិ/g, "ĭ")
+str = str.replace(/âី/g, "ei")
+str = str.replace(/ôី/g, "i")
+str = str.replace(/ឹ/g, "œ̆")
+str = str.replace(/ឹ/g, "œ̆")
+str = str.replace(/âឺ/g, "œ")
+str = str.replace(/ôឺ/g, "œ")
+str = str.replace(/âុ/g, "ŏ")
+str = str.replace(/ôុ/g, "ŭ")
+str = str.replace(/âូ/g, "o")
+str = str.replace(/ôូ/g, "u")
+str = str.replace(/âួ/g, "uŏ")
+str = str.replace(/ôួ/g, "uŏ")
+str = str.replace(/âើ/g, "aeu")
+str = str.replace(/ôើ/g, "eu")
+str = str.replace(/âឿ/g, "œă")
+str = str.replace(/ôឿ/g, "œă")
+str = str.replace(/âៀ/g, "iĕ")
+str = str.replace(/ôៀ/g, "iĕ")
+str = str.replace(/âេ/g, "é")
+str = str.replace(/ôេ/g, "é")
+str = str.replace(/âែ/g, "ê")
+str = str.replace(/ôែ/g, "ê")
+str = str.replace(/âៃ/g, "ai")
+str = str.replace(/ôៃ/g, "ey")
+str = str.replace(/âោ/g, "aô")
+str = str.replace(/ôោ/g, "oŭ")
+str = str.replace(/âៅ/g, "au")
+str = str.replace(/ôៅ/g, "ŏu")
+
+
+str = str.replace(/ៈ/g, "à")
+str = str.replace(/់/g, "á")
+str = str.replace(/៌/g, "ʳ")
+str = str.replace(/៍/g, "˚")
+str = str.replace(/៎/g, "’")
+str = str.replace(/៏/g, "ʻ")
+str = str.replace(/័/g, "ă")
+str = str.replace(/៑/g, "˙")
+str = str.replace(/៝/g, "ᵊ")
+str = str.replace(/៉/g, "″")
+str = str.replace(/៊/g, "′")
+
+str = str.replace(/។/g, ".")
+str = str.replace(/៖/g, ":")
+
+str = str.replace(/០/g, "0")
+str = str.replace(/១/g, "1")
+str = str.replace(/២/g, "2")
+str = str.replace(/៣/g, "3")
+str = str.replace(/៤/g, "4")
+str = str.replace(/៥/g, "5")
+str = str.replace(/៦/g, "6")
+str = str.replace(/៧/g, "7")
+str = str.replace(/៨/g, "8")
+str = str.replace(/៩/g, "9")
+
+str = str.replace(/្/g, "͓")
+
+// remove inherent vowel where necessary
+str = str.replace(/â͓/g, "͓")
+str = str.replace(/ô͓/g, "͓")
+str = str.replace(/ô͓/g, "͓")
+
+str = str.replace(/[â|ô]ā/g, "ā")
+str = str.replace(/[â|ô]á/g, "á")
+str = str.replace(/[â|ô]i/g, "i")
+str = str.replace(/[â|ô]ī/g, "ī")
+str = str.replace(/[â|ô]ẏ/g, "ẏ")
+str = str.replace(/[â|ô]ȳ/g, "ȳ")
+str = str.replace(/[â|ô]u/g, "u")
+str = str.replace(/[â|ô]ū/g, "ū")
+str = str.replace(/[â|ô]ua/g, "ua")
+str = str.replace(/[â|ô]oe/g, "oe")
+str = str.replace(/[â|ô]ẏa/g, "ẏa")
+str = str.replace(/[â|ô]ia/g, "ia")
+str = str.replace(/[â|ô]e/g, "e")
+str = str.replace(/[â|ô]ae/g, "ae")
+str = str.replace(/[â|ô]ai/g, "ai")
+str = str.replace(/[â|ô]o/g, "o")
+str = str.replace(/[â|ô]au/g, "au")
+str = str.replace(/[â|ô]à/g, "à")
+
+str = str.replace(/[â|ô]′/g, "′")
+str = str.replace(/[â|ô][ |\n|\t]/g, "")
+
+
+console.log(str)
+return str.trim()
+}
+
+
+
+
+
+function transliterateOLD ( str ) {
+// this is based on ALA LOC transliteration system, that uses typical indic transliterations
+// it diverges widely from the actual pronunciation
+
+str += '  '
+
+str = str.replace(/ក/g, "kᵃ")
+str = str.replace(/ខ/g, "kʰᵃ")
+str = str.replace(/គ/g, "gᵒ")
+str = str.replace(/ឃ/g, "gʰᵒ")
+str = str.replace(/ង/g, "ṅᵒ")
+str = str.replace(/ច/g, "cᵃ")
+str = str.replace(/ឆ/g, "cʰᵃ")
+str = str.replace(/ជ/g, "jᵒ")
+str = str.replace(/ឈ/g, "jʰᵒ")
+str = str.replace(/ញ/g, "ñᵒ")
+str = str.replace(/ដ/g, "ṭᵃ")
+str = str.replace(/ឋ/g, "ṭʰᵃ")
+str = str.replace(/ឌ/g, "ḍᵒ")
+str = str.replace(/ឍ/g, "ḍʰᵒ")
+str = str.replace(/ណ/g, "ṇᵃ")
+str = str.replace(/ត/g, "tᵃ")
+str = str.replace(/ថ/g, "tʰᵃ")
+str = str.replace(/ទ/g, "dᵒ")
+str = str.replace(/ធ/g, "dʰᵒ")
+str = str.replace(/ន/g, "nᵒ")
+str = str.replace(/ប/g, "pᵃ")
+str = str.replace(/ផ/g, "pʰᵃ")
+str = str.replace(/ព/g, "bᵒ")
+str = str.replace(/ភ/g, "bʰᵒ")
+str = str.replace(/ម/g, "mᵒ")
+str = str.replace(/យ/g, "yᵒ")
+str = str.replace(/រ/g, "rᵒ")
+str = str.replace(/ល/g, "lᵒ")
+str = str.replace(/វ/g, "vᵒ")
+str = str.replace(/ស/g, "sᵃ")
+str = str.replace(/ហ/g, "hᵃ")
+str = str.replace(/ឡ/g, "ḷᵃ")
+str = str.replace(/អ/g, "ʼᵃ")
+
+
+str = str.replace(/ឝ/g, "ś")
+str = str.replace(/ឞ/g, "ṣ")
+
+str = str.replace(/ឥ/g, "′i")
+str = str.replace(/ឦ/g, "′ī")
+str = str.replace(/ឧ/g, "′u")
+str = str.replace(/ឩ/g, "′ū")
+str = str.replace(/ឪ/g, "ýu")
+str = str.replace(/ឫ/g, "ṛ")
+str = str.replace(/ឬ/g, "ṝ")
+str = str.replace(/ឭ/g, "ḷ")
+str = str.replace(/ឮ/g, "ḹ")
+str = str.replace(/ឯ/g, "′ae")
+str = str.replace(/ឰ/g, "′ai")
+str = str.replace(/ឱ/g, "′o")
+str = str.replace(/ឳ/g, "′au")
+str = str.replace(/ឲ/g, "′âu")
+
+str = str.replace(/ា/g, "ā")
+str = str.replace(/ិ/g, "i")
+str = str.replace(/ី/g, "ī")
+str = str.replace(/ឹ/g, "ẏ")
+str = str.replace(/ឺ/g, "ȳ")
+str = str.replace(/ុ/g, "u")
+str = str.replace(/ូ/g, "ū")
+str = str.replace(/ួ/g, "ua")
+str = str.replace(/ើ/g, "oe")
+str = str.replace(/ឿ/g, "ẏa")
+str = str.replace(/ៀ/g, "ia")
+str = str.replace(/េ/g, "e")
+str = str.replace(/ែ/g, "ae")
+str = str.replace(/ៃ/g, "ai")
+str = str.replace(/ោ/g, "o")
+str = str.replace(/ៅ/g, "au")
+
+str = str.replace(/ំ/g, "ṃ")
+str = str.replace(/ះ/g, "ḥ")
+str = str.replace(/ៈ/g, "à")
+str = str.replace(/់/g, "á")
+str = str.replace(/៌/g, "ʳ")
+str = str.replace(/៍/g, "˚")
+str = str.replace(/៎/g, "’")
+str = str.replace(/៏/g, "ʻ")
+str = str.replace(/័/g, "ă")
+str = str.replace(/៑/g, "˙")
+str = str.replace(/៝/g, "ᵊ")
+str = str.replace(/៉/g, "″")
+str = str.replace(/៊/g, "′")
+
+str = str.replace(/។/g, ".")
+str = str.replace(/៖/g, ":")
+
+str = str.replace(/០/g, "0")
+str = str.replace(/១/g, "1")
+str = str.replace(/២/g, "2")
+str = str.replace(/៣/g, "3")
+str = str.replace(/៤/g, "4")
+str = str.replace(/៥/g, "5")
+str = str.replace(/៦/g, "6")
+str = str.replace(/៧/g, "7")
+str = str.replace(/៨/g, "8")
+str = str.replace(/៩/g, "9")
+
+str = str.replace(/្/g, "͓")
+
+// remove inherent vowel where necessary
+str = str.replace(/ᵃ͓/g, "͓")
+str = str.replace(/ᵒ͓/g, "͓")
+str = str.replace(/ᵒ͓/g, "͓")
+
+str = str.replace(/[ᵃ|ᵒ]ā/g, "ā")
+str = str.replace(/[ᵃ|ᵒ]á/g, "á")
+str = str.replace(/[ᵃ|ᵒ]i/g, "i")
+str = str.replace(/[ᵃ|ᵒ]ī/g, "ī")
+str = str.replace(/[ᵃ|ᵒ]ẏ/g, "ẏ")
+str = str.replace(/[ᵃ|ᵒ]ȳ/g, "ȳ")
+str = str.replace(/[ᵃ|ᵒ]u/g, "u")
+str = str.replace(/[ᵃ|ᵒ]ū/g, "ū")
+str = str.replace(/[ᵃ|ᵒ]ua/g, "ua")
+str = str.replace(/[ᵃ|ᵒ]oe/g, "oe")
+str = str.replace(/[ᵃ|ᵒ]ẏa/g, "ẏa")
+str = str.replace(/[ᵃ|ᵒ]ia/g, "ia")
+str = str.replace(/[ᵃ|ᵒ]e/g, "e")
+str = str.replace(/[ᵃ|ᵒ]ae/g, "ae")
+str = str.replace(/[ᵃ|ᵒ]ai/g, "ai")
+str = str.replace(/[ᵃ|ᵒ]o/g, "o")
+str = str.replace(/[ᵃ|ᵒ]au/g, "au")
+str = str.replace(/[ᵃ|ᵒ]à/g, "à")
+
+str = str.replace(/[ᵃ|ᵒ]′/g, "′")
+
+
+console.log(str)
+return str.trim()
+}
+
+
+
+
 function convertToIPA ( syllable ) {
 	var outstr = '';
 	var series = 1;

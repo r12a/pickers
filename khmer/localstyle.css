@@ -12,25 +12,52 @@
 	src: url('/shared/webfonts/notosanskhmer-regularwebfont.woff'); 
 	} 
 
-#shape { display: none; }
-/*#rare { display:none; }*/
-#alphabet { display: block; }
-#phonelist { display: none; }
-#fontgrid { display: none; }
-
-
-[lang=km] { font-family: 'Khmer OS Battambang WF', serif; }
+[lang=km] { font-family: 'Khmer OS Battambang WF', 'Noto Sans Khmer WF', serif; }
 .ipa { font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif; }
 
 
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 0px;
+    margin-left: 0px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+#alphabet summary {
+    font-size: 14px;
+    }
+
+
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Khmer OS Battambang WF', 'Noto Sans Khmer WF',  serif;  
+    line-height: 1.2;
+	}
+
+#keyboard { display: none; }
+
+
+
+
+
+/* SELECTION AREA */
+
+#kbd { margin: auto; }
 #kbd td.fullchar { text-align: right; }
 #kbd td.subjoinedchar { text-align: left; }
 
-
-#alphabet { 
-	/*padding-left: 10px; 
-	padding-right: 5px; */
-	}
+/*
 #alphabet img { 
 	cursor: pointer; 
 	}
@@ -126,23 +153,14 @@
 
 
 
-#phonic, #phonic2 { padding-left: 5px; padding-right: 5px; font-size: 15px; font-family: "Doulos SIL", sans-serif; }
-#phonic span, #phonic2 span { cursor:pointer; }
-.phonicspaces { padding-left: 10px; padding-right: 10px; width: 28px; }
 .uaplosives { white-space: nowrap; }
 .aspiratedplosives { white-space: nowrap; }
 .kbd td { vertical-align: top; }
 .vowels{ vertical-align: top; padding: 5px; margin-bottom: 5px; width: 750px; border: dotted 1px teal; }
 
-.sound {font-size: 130%; font-family: "Doulos SIL", "Charis SIL", Gentium, serif; color: #FF3333; cursor: default; white-space: nowrap; margin-right: 7px; }
-.sound span {font-size: 110%; font-family: "Doulos SIL", "Charis SIL", Gentium, serif; color: #FFF; cursor: default;  margin-right: 5px; background-color: #bbb; padding: 1px; padding-left:2px; background-image: url(images/topcorner.png); background-repeat:no-repeat; }
 .vowels .sound { color: #FF3333; }
 .vowels img {vertical-align: top; }
-.ph { border:0; }
-.soundselector { margin-bottom: 6px; line-height: 40px; }
-.soundselector img { margin-right: 5px; vertical-align: top; }
-.soundselector span { display:inline; }
-.soundselector img[title='+'] { height: 40px; }
+*/
 
 
 
@@ -174,16 +192,9 @@
 
 	background-color:white; 
 	border: 1px solid #CCC; 
-	-o-box-shadow: 7px 7px 5px #888;
-	-icab-box-shadow: 7px 7px 5px #888;
-	-khtml-box-shadow: 7px 7px 5px #888;
-	-moz-box-shadow: 7px 7px 5px #ccc;
-	-webkit-box-shadow: 7px 7px 5px #ccc;
 	box-shadow: 7px 7px 5px #888; 
 	padding: 5px 5px 5px 5px; 
 	border-radius: 10px; 
-	-moz-border-radius: 10px; 
-	-webkit-border-radius: 10px;
 	}
 
 .shapelist li:hover .hidden { display:block; }
@@ -194,22 +205,37 @@
 
 
 
-/*
-form#buttonform { margin: 0; padding: 0; border: 0;  line-height: normal; }
-dt { color: #FF6600; }
+#indvowels {
+    display: flex;
+    width: 3em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 .5em;
+    line-height: 1.65;
+    }
+#closediacritics { 
+	text-align: right; 
+    vertical-align: middle;
+	padding: 0 .4em 0 1em;
+    width: 1em;;
+	}
+#vowelsetc {
+    border: 1px solid #ccc;
+    border-radius: .5em;
+}
+#vowelsetc div {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 .5em;
+    line-height: 1.7;
+    }
 
-
-
-#zwspcol { padding-left: 10px; padding-right: 10px; width: 28px; }
-
-#alphabet { padding-left: 5px; padding-right: 5px; }
-#secondpanel { padding-left:20px; }
-#subscripts td { margin: 0; padding: 0;  padding-bottom: 3px;  }
-#subscripts, #consonants { border-collapse:collapse; }
-
-#alpharare { width: 100px;}
-#deprecated { border: 2px solid #DDDDDD;  }
-#deprecated div { background-color:#DDDDDD;  }
-#alphaobsolete { border: 2px solid #DDDDDD;  }
-#alphaobsolete div { background-color:#DDDDDD;  }
-*/
+#numbers {
+    border: 1px solid #ccc;
+    border-radius: .5em;
+    }
+.rare {
+    text-align: center;
+    margin: 0 20%;
+    }
