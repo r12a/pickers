@@ -32,7 +32,7 @@ var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Transliteration to Khmer", "dataVar":"showTransliterate", "dataLocn":"transliterate", "dataShortTitle":"T", "type":"palette"},
+{"title":"Reverse transliteration", "dataVar":"showTransliterate", "dataLocn":"transliterate", "dataShortTitle":"R", "type":"palette"},
 {"title":"Huffman transcription to Khmer", "dataVar":"showHuffmanTrans", "dataLocn":"huffmantranscript", "dataShortTitle":"H", "type":"palette"},
 {"title":"Gilbert transcription to Khmer", "dataVar":"showGilbertTrans", "dataLocn":"gilberttranscript", "dataShortTitle":"G", "type":"palette"},
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"},
@@ -40,7 +40,8 @@ var inputAids = [
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Khmer text to a Latin transliteration.", "code":"doTranscription('toTrans')"},
-{"title":"Khmer to<br/>UNGEGN", "alt":"Convert Khmer text to a rough UNGEGN transcription.", "code":"doTranscription('toUNGEGN')"},
-{"title":"Khmer<br/>to IPA", "alt":"Convert Khmer text to a rough IPA transcription.", "code":"doTranscription('toIPA')"},
+{"title":"Khmer to<br/>UNGEGN*", "alt":"Convert Khmer text to a rough UNGEGN transcription.", "code":"doTranscription('toUNGEGN')"},
+{"title":"Show<br/>syllables*", "alt":"Attempt to split the text into syllables.", "code":"add(syllabify(getHighlightedText(_output)));_output.focus();"},
+{"title":"Khmer<br/>to IPA*", "alt":"Convert Khmer text to a rough IPA transcription.", "code":"doTranscription('toIPA')"},
 {"title":"Remove<br/>space/hyphen", "alt":"Remove spaces and hyphens.", "code":"add(condense(getHighlightedText(_output)));_output.focus();"},
 ]
