@@ -222,3 +222,57 @@ function sendVowelLeft (str) {
 	
 	return lv+str.substr(0,lv.index)+str.substr(lv.index+1)
 	}
+
+
+function syllabify (str) {
+    // puts spaces between orthographic syllables
+    // useful as a prelude to IPA transcription
+    
+    var consonants = new Set(['ក', 'ខ', 'គ', 'ឃ', 'ង', 'ច', 'ឆ', 'ជ', 'ឈ', 'ញ', 'ដ', 'ឋ', 'ឌ', 'ឍ', 'ណ', 'ត', 'ថ', 'ទ', 'ធ', 'ន', 'ប', 'ផ', 'ព', 'ភ', 'ម', 'យ', 'ល', 'ឡ', 'រ', 'អ', 'ស', 'ហ', 'វ'])
+    var independentVowels = new Set(['ឥ', 'ឦ', 'ឧ', 'ឩ', 'ឪ', 'ឯ', 'ឰ', 'ឱ', 'ឲ', 'ឳ', 'ឫ', 'ឬ', 'ឭ', 'ឮ'])
+
+    str = ' '+str+' '
+    
+    let chars = [...str]
+    
+    // in first pass, add spaces before non-conjoined consonants
+    var firstpass = ''
+    for (let i=1;i<str.length-1;i++) {
+        console.log(str[i])
+        if (consonants.has(str[i]) && str[i-1] !== '\u17D2') firstpass += ' '+str[i]
+        else firstpass += str[i]
+        }
+    var syllables = firstpass.trim().split(' ')
+    
+    // optimise by moving spaces in certain arrangements
+    var out = ''
+    for (let i=0; i<syllables.length; i++) {
+        // move a final consonant or consonant-only cluster next to preceding orthographic syllable
+        //if (i===syllables.length-1 && syllables[i].length === 1) out += syllables[i]
+        if (i===syllables.length-1 && consonants.has(syllables[i][syllables[i].length-1])) out += syllables[i]
+        else out += ' '+syllables[i]
+        }
+        
+    // move nasals starting conjuncts to previous syllable
+    out = out.replace(/ (\u1793)\u17D2/g, '$1\u17D2 ')
+
+    // move consonant with bantok to previous syllable
+    out = out.replace(/ (.)\u17CB/g, '$1\u17CB ')
+    
+    
+    return out.trim()
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
