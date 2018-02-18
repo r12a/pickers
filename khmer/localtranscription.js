@@ -677,6 +677,10 @@ return str.trim()
 
 
 function convertToIPA ( syllable ) {
+
+// kill vowel after final if syllable is longer than 1 character and ends in consonant
+if (syllable.length > 1 && consonants.has(syllable[syllable.length-1])) syllable += 'u17D2'
+
 	var outstr = '';
 	var series = 1;
 	var labials = { '\u1794':'', '\u1795':'', '\u1796':'', '\u1797':'', '\u1798':'' };
