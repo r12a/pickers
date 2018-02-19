@@ -6,8 +6,8 @@ out = `<section id="basics">
   <h2 href="#basics">Basic use</h2>
 <p>To produce characters in the text area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the controls to get further information about the characters. You must have JavaScript enabled. </p>
 <p>The controls just above the text area allow you to interact with the text in various ways. <strong>They nearly all work on highlighted text within the text area, or if there is no highlight, on all the text.</strong> Controls near the bottom of the picker allow you to change font, font size, line-height, text direction, etc.</p>
-<p><b class="leadin">Contrast.</b> To change the contrast level for the text on the picker user interface, click on the <img src="../images/contrast.png" alt="plus sign"/> icon, found at the top right of the page. If you chose to save your settings between sessions, this will also be remembered.</p>
-<p><b class="leadin">Sample text</b> If you want to add some sample text to the text area, click on the <img src="../images/sample.png" alt="plus sign"/> icon.</p>
+<p><b class="leadin">Contrast.</b> To change the contrast level for the text on the picker user interface, click on the <img src="../../images/contrast.png" alt="plus sign"/> icon, found at the top right of the page. If you chose to save your settings between sessions, this will also be remembered.</p>
+<p><b class="leadin">Sample text</b> If you want to add some sample text to the text area, click on the <img src="../../images/sample.png" alt="plus sign"/> icon.</p>
 <p><b class="leadin">Fonts</b>
 To properly display the text you will need to choose a font that is loaded on your system or device, or use the web fonts downloaded with the page (the names end in ' WF'). Where applicable, the font list indicates which fonts are standard for Mac and Windows operating systems, and fonts that are freely available from Google and SIL. See more information about <a href="/scripts/fontlist/#khmer" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
 <p><b class="leadin">Autofocus &amp; mobile devices</b>
@@ -36,7 +36,7 @@ return `
 
 function addControlsAbove1 () {
 return `
-      <p><img src="../shared22/images/help/top_bar.png" alt=""/></p>
+      <p><img src="../../shared22/images/help/top_bar.png" alt=""/></p>
       <p>Controls above the input box allow you to run various operations on the text in the box. <strong>Most of them work on what you have selected</strong> within the box, or the whole box if nothing is selected.</p>
       <p><b class="leadin">Copy, select, delete, etc. (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p>
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
@@ -70,11 +70,11 @@ return `
 
 function addSecondaryText () {
 return `
-  <h2 id="secondary_output">Secondary text area</h2>
-  <p><img src="../shared22/images/help/secondary_text.png" alt=""/></p>
+  <h3 id="secondary_output">Secondary text area</h3>
+  <p><img src="../../shared22/images/help/secondary_text.png" alt=""/></p>
   <p>This area receives the output of various tools. Note that the text is editable.</p>
-  <p>The icons to the right ( <img src="../shared22/images/help/second_copy_etc.png" alt="" style="vertical-align:middle;"/> ) allow you to copy the contents of this area to the clipboard, insert the contents into the main text area, or close this subwindow, respectively. When you insert the contents of this subwindow into the main text area, the text will overwrite any highlighted text, otherwise it will just be inserted at the current cursor position.</p>
-  <p>Some conversions produce ambiguous output. In this case, you will be offered two alternatives on a yellow background, eg. <img src="../shared22/images/help/alternatives.png" alt="" style="vertical-align:top;"/> presents you with the alternatives 'h' or 't'. Simply click on the alternative you want, and the picker will discard the rest.</p>
+  <p>The icons to the right ( <img src="../../shared22/images/help/second_copy_etc.png" alt="" style="vertical-align:middle;"/> ) allow you to copy the contents of this area to the clipboard, insert the contents into the main text area, or close this subwindow, respectively. When you insert the contents of this subwindow into the main text area, the text will overwrite any highlighted text, otherwise it will just be inserted at the current cursor position.</p>
+  <p>Some conversions produce ambiguous output. In this case, you will be offered two alternatives on a yellow background, eg. <img src="../../shared22/images/help/alternatives.png" alt="" style="vertical-align:top;"/> presents you with the alternatives 'h' or 't'. Simply click on the alternative you want, and the picker will discard the rest.</p>
 
 `
 }
@@ -87,7 +87,7 @@ var out = ''
 
 if (aidsList.match('intro')) {
 	out += `
-	<p><img src="../shared22/images/help/input_aids.png" style="float:left; margin-right:1em; " alt=""/></p>
+	<p><img src="../../shared22/images/help/input_aids.png" style="float:left; margin-right:1em; " alt=""/></p>
 	<p>The vertical grey bar to the left allows you to turn on/off a number of panels that can help create the text you want.</p>
 	<p><b class="leadin">Default.</b> Turns off all input aids and closes all panels.</p>
  	`
@@ -116,7 +116,7 @@ if (aidsList.match('latin')) {
 if (aidsList.match('translit')) {
 	out += `
 	<p><b class="leadin">Reverse transliteration.</b> Displays a panel of the transliteration characters used for this picker. It allows you to generate text in the native script. Click on the transcription character and the appropriate native character will be added to the text area. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want in order to add it to the text area.</p>
-	<p><img src="../shared22/images/help/translit_option.png" alt=" "/></p>
+	<p><img src="../../shared22/images/help/translit_option.png" alt=" "/></p>
 	`
 	}
 
@@ -134,8 +134,8 @@ return out
 
 function addYellowControls () {
 return `
-  <h2 href="#yellow_controls">Controls on the yellow background</h2>
-    <p><img src="../shared22/images/help/yellow_controls.png" alt=""/></p>
+  <h3 href="#yellow_controls">Controls on the yellow background</h3>
+    <p><img src="../../shared22/images/help/yellow_controls.png" alt=""/></p>
     <p><b class="leadin">Left-hand controls.</b> These controls at the bottom of the page allow you to modify fonts used, the font size, line height, and the height of the text area. </p>
     <p><b class="leadin">Add codepoint.</b> You can add characters to the text area by typing codepoints and escapes in the <samp>Add codepoint</samp> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</p>
     <p><b class="leadin">Search for. </b>If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the <samp translate="no">X</samp> next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <kbd  translate="no">\bha\b</kbd> (or the shortcut, <kbd  translate="no">:ha:</kbd>).</p>
@@ -148,8 +148,8 @@ return `
 function addMoreControls (direction) {
 out = ''
 out +=  `
-  <h2 href="#more_controls">More controls</h2>
-  <p><img src="../shared22/images/help/more_controls.png" alt=""/></p>
+  <h3 href="#more_controls">More controls</h3>
+  <p><img src="../../shared22/images/help/more_controls.png" alt=""/></p>
   <p>Click on <samp>more controls</samp> to reveal the less commonly used controls described here.</p>
   <p><b class="leadin">Normalise. </b>All text is added to the main text area in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character – text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. </p>
   <p><b class="leadin">Change table font. </b>Allows you to change the font and size of the characters you click on in the main selection areas. </p>
@@ -164,10 +164,10 @@ out += `
     <p><b class="leadin">Set language. </b>Add a BCP47 language tag here (ie. what you would use as the value of a <code class="kw" translate="no">lang</code> attribute in HTML). It is used in code generated by <samp>Make example</samp> and <samp>Character markup</samp> controls to indicate the language of the text.</p>
     <p><b class="leadin">Reset. </b>Returns all settings you have changed (such as font size, text area size, language, etc.) to the original, default state.</p>
 <p><b class="leadin">Change text.</b> Tools for manipulating the content in the text area.</p>
-<p><img alt="Add space:" src="../images/addspace.png"/> &nbsp; Adds a space between every character in the text area.</p>
-<p><img alt="Add space:" src="../images/addcomma.png"/> &nbsp; Adds a comma between every character in the text area.</p>
-<p><img alt="Add space:" src="../images/removespace.png"/> &nbsp; Removes all spaces from the text area.</p>
-<p><img alt="Add space:" src="../images/count.png"/> &nbsp; Counts the number of characters in the text area.</p>
+<p><img alt="Add space:" src="../../images/addspace.png"/> &nbsp; Adds a space between every character in the text area.</p>
+<p><img alt="Add space:" src="../../images/addcomma.png"/> &nbsp; Adds a comma between every character in the text area.</p>
+<p><img alt="Add space:" src="../../images/removespace.png"/> &nbsp; Removes all spaces from the text area.</p>
+<p><img alt="Add space:" src="../../images/count.png"/> &nbsp; Counts the number of characters in the text area.</p>
 <p><b class="leadin">Remove.</b> Allows you to remove a character from the text area. Type in the box a single character or the hex code point value for the character you want to delete.</p>
 `
 
