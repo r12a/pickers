@@ -243,7 +243,21 @@
 
 
 <div id="alphabet" class="default">
-    <table id="kbd">
+
+
+<div class="spaceline">
+<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');" style="transform: rotateY(180deg);">⇥</span> 
+<span class="touch" title="Tab" dir="auto" onClick="add('\n');" style="transform: rotateY(180deg);">⏎</span> 
+<span class="touch" title="Delete All" dir="auto" onClick="del();">DEL</span> 
+<span class="touch delAll"  dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+
+<table id="kbd">
  <tr>
    <td id="consonants"><table id="consonants2">
      <tr>
@@ -323,8 +337,15 @@
          </tr>
      </tbody>
    </table></td>
+       <td id="controlchars" style="padding: 0; text-align:center;">
+         <p><span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u202B');">RLE</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u2069');">PDI</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u200E');">LRM</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u061C');">ALM</span></p>
+         </td>
    <td>
-<table id="numbers" style="margin: 0 10px 10px 0; border: 1px solid #ccc; border-radius: 10px;">
+<table id="numbers" style="margin: 0 10px; border: 1px solid #ccc; border-radius: 10px;">
     <tbody>
       <tr>
         <td><span class="c">7</span></td>
@@ -349,14 +370,7 @@
       </tbody>
   </table>
      </td>
-       <td rowspan="2" id="controlchars" style="padding: 0 10px; text-align:center;">
-       <p><span class="touch" style="margin: 0; padding: 30px 40px;" dir="auto" onClick="add(' ');">SPACE</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span><span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u2067');">RLI</span><span class="touch" dir="auto" onClick="add('\u2066');">LRI</span><span class="touch" dir="auto" onClick="add('\u2069');">PDI</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u202B');">RLE</span><span class="touch"  dir="auto" onClick="add('\202A');">LRE</span><span class="touch" dir="auto" onClick="add('\u202C');">PDF</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u200E');">LRM</span><span class="touch" dir="auto" onClick="add('\u200F');">RLM</span><span class="touch" dir="auto" onClick="add('\u061C');">ALM</span></p>
-         <p><span class="touch delAll" style="margin-left: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span><span class="touch" title="Delete All" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span></p></td>
- </tr>
+</tr>
  <tr>
    <td colspan="4"><table id="additional">
      <tbody>
