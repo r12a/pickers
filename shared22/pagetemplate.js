@@ -292,6 +292,19 @@ out += `<details>
 <summary>more pickers</summary>
 <iframe id="pickerlist" src="../pickerlist"></iframe>
 </details>
+`
+if ((typeof(footnotes) !== 'undefined')) {
+    out += `
+    <details>
+    <summary>* [footnotes]</summary>
+    `
+    out += footnotes
+    out += `
+    </details>
+    `
+    }
+
+out += `
 </div>
 </div>
 
