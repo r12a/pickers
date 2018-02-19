@@ -45,3 +45,8 @@ var controls = [
 {"title":"Khmer<br/>to IPA*", "alt":"Convert Khmer text to a rough IPA transcription.", "code":"doTranscription('toIPA')"},
 {"title":"Remove<br/>space/hyphen", "alt":"Remove spaces and hyphens.", "code":"add(condense(getHighlightedText(_output)));_output.focus();"},
 ]
+
+
+var footnotes = `
+<p>The <samp>Khmer to UNGEGN</samp>, and <samp>Khmer to IPA</samp> transcription tools, and the <samp>Show syllable</samp> tool are all still in development, and should be used with care!</p> 
+`
