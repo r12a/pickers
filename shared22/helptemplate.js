@@ -70,7 +70,7 @@ return `
 
 function addSecondaryText () {
 return `
-  <h3 id="secondary_output">Secondary text area</h3>
+  <h2 id="secondary_output">Secondary text area</h2>
   <p><img src="../../shared22/images/help/secondary_text.png" alt=""/></p>
   <p>This area receives the output of various tools. Note that the text is editable.</p>
   <p>The icons to the right ( <img src="../../shared22/images/help/second_copy_etc.png" alt="" style="vertical-align:middle;"/> ) allow you to copy the contents of this area to the clipboard, insert the contents into the main text area, or close this subwindow, respectively. When you insert the contents of this subwindow into the main text area, the text will overwrite any highlighted text, otherwise it will just be inserted at the current cursor position.</p>
@@ -134,7 +134,7 @@ return out
 
 function addYellowControls () {
 return `
-  <h3 href="#yellow_controls">Controls on the yellow background</h3>
+  <h2 href="#yellow_controls">Controls on the yellow background</h2>
     <p><img src="../../shared22/images/help/yellow_controls.png" alt=""/></p>
     <p><b class="leadin">Left-hand controls.</b> These controls at the bottom of the page allow you to modify fonts used, the font size, line height, and the height of the text area. </p>
     <p><b class="leadin">Add codepoint.</b> You can add characters to the text area by typing codepoints and escapes in the <samp>Add codepoint</samp> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</p>
@@ -148,7 +148,7 @@ return `
 function addMoreControls (direction) {
 out = ''
 out +=  `
-  <h3 href="#more_controls">More controls</h3>
+  <h2 href="#more_controls">More controls</h2>
   <p><img src="../../shared22/images/help/more_controls.png" alt=""/></p>
   <p>Click on <samp>more controls</samp> to reveal the less commonly used controls described here.</p>
   <p><b class="leadin">Normalise. </b>All text is added to the main text area in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character – text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. </p>
