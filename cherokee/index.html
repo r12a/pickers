@@ -103,7 +103,18 @@
 
   
 <div id="alphabet" class="default">
-  
+
+<div class="spaceline">
+<span class="shifted" dir="auto" onClick="toggleShift(this, 'defaultLC', 'defaultUC')">SHIFT</span>
+<span class="touch" style="padding: 5px 60px;" onClick="add(' ');">SPACE</span> 
+<span class="touch" title="NBSP" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Tab" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete from end." style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
   <div id="defaultUC">
   <table><tbody>
   <tr>
@@ -272,7 +283,7 @@
 
 
 
-    <table id="kbd">
+    <!--table id="kbd">
       <tr>
         <td colspan="2">
           <span class="shifted" dir="auto" onClick="toggleShift(this, 'defaultLC', 'defaultUC')">SHIFT</span>
@@ -283,7 +294,7 @@
 <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
         </td>
       </tr>
-      </table>
+      </table-->
       
  
 <details>
@@ -301,6 +312,14 @@
 
 
  <div id="shapelist" style="display:none; text-align:center;">
+ 
+ <div class="spaceline">
+           <span class="shifted" dir="auto" onClick="toggleShift(this, 'lowercase','uppercase')">SHIFT</span>
+          <span class="touch" title="Delete All" style="padding: 5px 100px;" dir="auto" onClick="add(' ');">SPACE</span>
+          <span class="touch" title="Delete All" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
   <div id="uppercase">
 <span class="c">&#x13AA;</span> <span class="c">&#x13F4;</span> <span class="c">&#x13F0;</span> <span class="c">&#x13CF;</span> <span class="c">&#x13DF;</span> <span class="c">&#x13E8;</span> <span class="c">&#x13E3;</span> <span class="c">&#x13A0;</span> <span class="c">&#x13E7;</span> <span class="c">&#x13B4;</span> <span class="c">&#x13AC;</span> <span class="c">&#x13CB;</span> <span class="c">&#x13B0;</span> <span class="c">&#x13A8;</span> <span class="c">&#x13C0;</span> <span class="c">&#x13E9;</span> <span class="c">&#x13B6;</span> <span class="c">&#x13F3;</span> <span class="c">&#x13BB;</span> <span class="c">&#x13C2;</span> <span class="c">&#x13F2;</span> <span class="c">&#x13A5;</span> <span class="c">&#x13D3;</span> <span class="c">&#x13D0;</span> <span class="c">&#x13AB;</span> <span class="c">&#x13E6;</span> <span class="c">&#x13DE;</span> <span class="c">&#x13DD;</span> <span class="c">&#x13B7;</span> <span class="c">&#x13A4;</span>
    <span class="c">&#x13BE;</span> <span class="c">&#x13EB;</span> <span class="c">&#x13C5;</span> <span class="c">&#x13BA;</span> <span class="c">&#x13E2;</span> <span class="c">&#x13AE;</span> <span class="c">&#x13B5;</span> <span class="c">&#x13A1;</span>
@@ -406,7 +425,7 @@
 
 
 
-    <table id="kbd2">
+    <!--table id="kbd2">
       <tr>
         <td colspan="2">
           <span class="shifted" dir="auto" onClick="toggleShift(this, 'lowercase','uppercase')">SHIFT</span>
@@ -415,7 +434,7 @@
 <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
         <td>&nbsp;</td>
       </tr>
-      </table>
+      </table-->
 
 
 </div>

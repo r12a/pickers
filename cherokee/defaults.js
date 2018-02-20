@@ -35,5 +35,5 @@ var inputAids = [
 ]
 
 var controls = [
-{"title":"Cherokee<br/>to Latin", "alt":"Convert Cherokee text to a Latin transliteration.", "code":"doTranscription('toTranslit')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Cherokee text to a Latin transliteration.", "code":"doTranscription('toTranslit')"},
 ]
