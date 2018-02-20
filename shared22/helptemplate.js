@@ -43,7 +43,7 @@ return `
       🔶 select all the text<br/>
       ❌ delete all the text<br/>
       <img src="../../images/share.png" alt="Share icon"/> generate a URL to share with others that will reproduce for them what you see in the text box<br/>
-      <span style="font-weight:bold;font-size:120%;color:black;">+</span> add some sample text to the text area</blockquote>
+      <img src="../../images/sample.png" alt="plus sign" style="vertical-align:middle;"/> add some sample text to the text area</blockquote>
       <!--p><b class="leadin">Copy, select, delete, etc. (<img src="../../shared22/images/help/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p-->
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
 
