@@ -90,7 +90,7 @@ span.hint {
     width: 2em;
     max-height: 15em;
     justify-content: space-between;
-    margin: 0 .5em;
+    margin: 0 .25em;
     line-height: 1.5;
     border: 1px solid #ccc;
     border-radius: .3em;
@@ -125,7 +125,13 @@ span.hint {
     justify-content: space-between;
     }
 #alphabet #controlchars {
-	text-align:center;
+	display: flex;
+    width: 2em;
+    flex-wrap: wrap;
+    align-items: stretch;
+    text-align: center;
+    align-content: space-between;
+    justify-content: center;
 	}
 #alphabet #controlchars p {
 	margin: .1em 0;
