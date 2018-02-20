@@ -616,16 +616,23 @@ summary:hover {
 	cursor: pointer;
 	}
 
-#helpcontrol {
+#helpcontrol, #helpBanner {
 	text-align:center; 
 	color: white; 
 	background-color: #60ADFB; 
 	cursor: pointer;
 	}
-#helpcontrol a {
+.interactiveHelpButton {
+    background-color: white;
+    border-radius: 3px;
+    }
+#helpcontrol a, #helpBanner a {
 	color: white;
 	}
-#helpcontrol a:hover {
+#helpBanner a {
+	text-decoration: underline;
+	}
+#helpcontrol a:hover, #helpBanner a:hover {
 	color: white;
 	background-color: transparent;
 	}
@@ -694,7 +701,9 @@ summary:hover {
     color: coral;
     }
 
-
+.interactiveHelpButton, #helpBanner {
+    display: none;
+    }
 
 
 

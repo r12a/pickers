@@ -6,11 +6,11 @@ out = `<section id="basics">
   <h2 href="#basics">Basic use</h2>
 <p>To produce characters in the text area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the controls to get further information about the characters. You must have JavaScript enabled. </p>
 <p>The controls just above the text area allow you to interact with the text in various ways. <strong>They nearly all work on highlighted text within the text area, or if there is no highlight, on all the text.</strong> Controls near the bottom of the picker allow you to change font, font size, line-height, text direction, etc.</p>
-<p><b class="leadin">Contrast.</b> To change the contrast level for the text on the picker user interface, click on the <img src="../../images/contrast.png" alt="plus sign"/> icon, found at the top right of the page. If you chose to save your settings between sessions, this will also be remembered.</p>
+<p><b class="leadin" id="contrast">Contrast.</b> To change the contrast level for the text on the picker user interface, click on the <img src="../../images/contrast.png" alt="plus sign"/> icon, found at the top right of the page. If you chose to save your settings between sessions, this will also be remembered.</p>
 <p><b class="leadin">Sample text</b> If you want to add some sample text to the text area, click on the <img src="../../images/sample.png" alt="plus sign"/> icon.</p>
 <p><b class="leadin">Fonts</b>
 To properly display the text you will need to choose a font that is loaded on your system or device, or use the web fonts downloaded with the page (the names end in ' WF'). Where applicable, the font list indicates which fonts are standard for Mac and Windows operating systems, and fonts that are freely available from Google and SIL. See more information about <a href="/scripts/fontlist/#khmer" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
-<p><b class="leadin">Autofocus &amp; mobile devices</b>
+<p><b class="leadin" id="autofocus">Autofocus &amp; mobile devices</b>
 When working on an iPad or similar device, you should turn off <code class="kw" translate="no">Autofocus</code> (just below the text area). This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</p>
 `
 if (direction === 'rtl') out += `<p><b class="leadin">Text direction</b> The characters → ↔ ←︎︎︎ (just below the right side of the text area) allow you to set the base direction of the text area to LTR, auto, and RTL, respectively. The symbol ⇐︎ sets the direction to RTL override.</p>
@@ -38,9 +38,14 @@ function addControlsAbove1 () {
 return `
       <p><img src="../../shared22/images/help/top_bar.png" alt=""/></p>
       <p>Controls above the input box allow you to run various operations on the text in the box. <strong>Most of them work on what you have selected</strong> within the box, or the whole box if nothing is selected.</p>
-      <p><b class="leadin">Copy, select, delete, etc. (<img src="../../shared22/images/help/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p>
+      <p><b class="leadin" id="icons">Icons.</b> The icons on the left above the input box allow you to do the following:</p>
+      <blockquote>📋 copy the text to the clipboard<br/>
+      🔶 select all the text<br/>
+      ❌ delete all the text<br/>
+      <img src="../../images/share.png" alt="Share icon"/> generate a URL to share with others that will reproduce for them what you see in the text box<br/>
+      <span style="font-weight:bold;font-size:120%;color:black;">+</span> add some sample text to the text area</blockquote>
+      <!--p><b class="leadin">Copy, select, delete, etc. (<img src="../../shared22/images/help/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p-->
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
-      <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
 
 `
 }
@@ -49,7 +54,8 @@ return `
 
 function addControlsAbove2 () {
 return `
-<p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] native text, [2] transliteration, [3] IPA transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use nothing between the slashes.</p>
+        <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
+        <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] native text, [2] transliteration, [3] IPA transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use nothing between the slashes.</p>
        <p>For example, the following in a Russian picker:</p>
       <p><span lang="ru">ру́сский язы́к</span>/rússkiy yazýk/ˈruskʲɪj jɪˈzɨk/Russian (language)</p>
       <p>will produce:</p>

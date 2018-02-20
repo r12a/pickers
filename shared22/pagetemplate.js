@@ -33,6 +33,7 @@ function setTop (title,sample) {
 console.log(setTop)
 var out
 out = `<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
+<a class="interactiveHelpButton" style="float:right; margin-right:.5em;" href="help/#contrast" target="_help" title="Help with contrast."><img alt="help" src="../images/help.png"/></a>
 
 <header>
 <div id="header-boilerplate"></div>
@@ -52,14 +53,13 @@ out += `</header>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
   <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
   <button title="Add sample text." style="font-size: 150%;" onclick="add('` + template.sample +`')">+</button>
-<a href="help"><button title="How to use this picker."><img alt="help" src="../images/help.png"/></button></a>
+<a class="interactiveHelpButton" href="help/#icons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
   </span>
   
   
 <span id="tools">
+<a class="interactiveHelpButton" style="margin-right:.5em;" href="help/#top_controls" target="_help" title="Help for top level controls."><img alt="help" src="../images/help.png"/></a>
     <button onclick="showCodepoints()">Show<br/>codepoints</button>
-    
-    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
     
  ` 
 	
@@ -67,7 +67,10 @@ for (let i=0;i<window.controls.length;i++){
 	out += '<button onclick="'+window.controls[i].code+'" title="'+window.controls[i].alt+'">'+window.controls[i].title+'</button>\n\n'
 	}
 
-out += `<button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" 
+out += ` 
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
+
+    <button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" 
     title="Create an example.">Make<br>example</button>
     
     <button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" 
@@ -83,6 +86,7 @@ out += `<button  id="makeExample" onclick="makeExample(defaults.language,templat
 
 
 <div id="transcriptionWrapper">
+<a class="interactiveHelpButton" href="help/#secondary_output" target="_help" style= "float: left; margin: 1em 1em 0 1em;" title="Help with the secondary text area."><img alt="help" src="../images/help.png"/></a>
 <div id="copyTranscription" onclick="copyTranscription()">📋</div>
 <div id="moveTranscription" onclick="moveTranscription()">⌃</div>
 <div id="closeTranscription" onclick="closeTranscription()">X</div>
@@ -91,7 +95,9 @@ out += `<button  id="makeExample" onclick="makeExample(defaults.language,templat
 
 
 
-<div id="autofocusswitch">`
+<div id="autofocusswitch">
+<a class="interactiveHelpButton" style="margin-right:.5em;" href="help/#autofocus" target="_help" title="Help with autofocus and direction."><img alt="help" src="../images/help.png"/></a>
+`
 
 if (template.direction == "rtl" || template.direction == "bidi") {
     out += `
@@ -120,8 +126,10 @@ out += `Autofocus:
 `
 
 if (inputAids.length > 0) {
-	out += `<div style="position:relative;">
+	out += `
+<div style="position:relative;">
 <div id="vertical-menu">
+
 <div class="vmtab" 
 	onmouseover="this.textContent='Default'" 
     onmouseout="this.textContent='D'"  
@@ -141,7 +149,9 @@ for (let i=0;i<inputAids.length;i++) {
 	}
 
 if (inputAids.length > 0) {
-out += `</div>
+out += `
+<a class="interactiveHelpButton" href="help/#input_aids" target="_help" title="Help with input aids."><img alt="help" src="../images/help.png"/></a>
+</div>
 </div>
 
 `
@@ -154,6 +164,12 @@ return out
 function getBottom () {
 var out
 out = `
+  <div id="helpBanner" style="text-align: center;color: white;background-color: #60ADFB;">
+  <div style="float:right; margin:1em;" onclick="hideCSHelp()">X</div>
+  <div><a href="help/" target="_help">Get basic information</a> about how to use this picker.</div>
+  <div style="font-size:80%">For context-sensitive help, click on one of these icons: <img src="../images/help.png" alt=""/></div>
+  </div>
+  
 <div id="extrashapes"></div>
 
 
@@ -189,7 +205,9 @@ out = `
     </form>
   </div>
   
-  <div class="control" id="helpcontrol"><a href="help">Help<br/><img src="../images/help.png" alt=""/></a></div>
+<a class="interactiveHelpButton" href="help/#yellow_controls" target="_help" title="Help with main yellow controls."><img alt="help" src="../images/help.png"/></a>
+
+<div class="control" id="helpcontrol" onclick="showCSHelp();return false;">Help<br/><img src="../images/help.png" alt=""/></div>
 </div>
 
 
@@ -273,6 +291,7 @@ out += `<div class="control">Set language:
   <button>Go</button>
 </form>
 </div>
+<a class="interactiveHelpButton" href="help/#more_controls" target="_help" title="Help with more yellow controls."><img alt="help" src="../images/help.png"/></a>
 
 
 </details>`

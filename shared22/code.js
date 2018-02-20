@@ -1387,3 +1387,27 @@ function removeCharacter (char) {
     var re = new RegExp(ch, "g"); 
     document.getElementById('output').value = document.getElementById('output').value.replace(re,'')
     }
+
+
+function showCSHelp () {
+    // make context-sensitive help buttons visible
+    var buttons = document.querySelectorAll('.interactiveHelpButton')
+    for (let i=0;i<buttons.length;i++) {
+        buttons[i].style.display = 'inline-block'
+        }
+    document.getElementById('helpBanner').style.display = 'block'
+    document.getElementById('helpcontrol').style.display = 'none'
+    }
+
+function hideCSHelp () {
+    // make context-sensitive help buttons invisible
+    var buttons = document.querySelectorAll('.interactiveHelpButton')
+    for (let i=0;i<buttons.length;i++) {
+        buttons[i].style.display = 'none'
+        }
+    document.getElementById('helpBanner').style.display = 'none'
+    document.getElementById('helpcontrol').style.display = 'block'
+    }
+
+
+
