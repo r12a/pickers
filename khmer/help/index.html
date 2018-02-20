@@ -32,7 +32,7 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->19-Feb-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=khmer" title="Show all blog posts tagged with 'khmer'">khmer</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->20-Feb-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=khmer" title="Show all blog posts tagged with 'khmer'">khmer</a></p>
 
 <p>This Unicode character picker allows you to produce or analyse runs of Khmer text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[khmer%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/khmer">the Github commit list</a>.</p>
@@ -63,7 +63,9 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <div id="controlsAbove1"></div>
 <script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
-      <p><b class="leadin">Khmer to UNGEGN.</b> <strong>This is still in development!</strong> Converts Khmer text into a transcription along the lines of the UNGEGN system. It still needs a lot of work.</p>
+      <p><b class="leadin">Transliterate.</b>   Converts the contents of the text area to a Latin transliteration based on a cross between the ALA LOC and UNGEGN systems, with a few small additions to help eliminate ambiguity. In addition, the transliterations  show inherent vowels. </p>
+<p>Transliterations provide a single correspondence between each Khmer symbol and a Latin symbol, so that the process is reversible. It doesn't  represent the actual pronunciation very well, but it does allow you to convert the Latin text back to the original Khmer. (<em>Transcriptions</em> to UNGEGN or IPA provide a Latin version of the Khmer text that is closer to the actual pronunciation, but is not reversible.) </p>
+<p><b class="leadin">Khmer to UNGEGN.</b> <strong>This is still in development!</strong> Converts Khmer text into a transcription along the lines of the UNGEGN system. It still needs a lot of work.</p>
 
 <p><b class="leadin">Show syllables.</b> This control attempts to split the Khmer text into  syllables, so that an IPA transcription can be attempted. It is still in the prototype stage.</p>
 <p>Because the algorithm for IPA conversion works on phonetic syllables, rather than  orthographic ones, in order to produce an automatic IPA transcription (see below) you'll need to additionally do the following:</p>
