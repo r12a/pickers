@@ -292,8 +292,22 @@
 <div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
 
 
-  <div id="alphabet" class="default">
-    <table id="kbd">
+<div id="alphabet" class="default">
+
+
+<div class="spaceline">
+<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');" style="transform: rotateY(180deg);">⇥</span> 
+<span class="touch" title="Tab" dir="auto" onClick="add('\n');" style="transform: rotateY(180deg);">⏎</span> 
+<span class="touch" title="Delete All" dir="auto" onClick="del();">DEL</span> 
+<span class="touch delAll"  dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+
+<table id="kbd">
  <tr>
    <td id="consonants">
         <div id="consonantGrid">      
@@ -386,6 +400,14 @@
 
    </td>
         <td id="controlchars">
+         <p><span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u202B');">RLE</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u2069');">PDI</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span></p>
+         <p>&nbsp;</p>
+         <p><span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u200E');">LRM</span></p>
+         <p><span class="touch" dir="auto" onClick="add('\u061C');">ALM</span></p>
+         </td>
+<!--td id="controlchars">
        <p><span class="touch" style="margin: 0; padding: 30px 40px;" dir="auto" onClick="add(' ');">SPACE</span></p>
          <p><span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> <span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span></p>
          <p><span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch" dir="auto" onClick="add('\u2069');">PDI</span></p>
@@ -394,7 +416,7 @@
          <p><span class="touch" title="Delete All" dir="auto" onClick="del();">DEL</span> 
          <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
          <span class="touch" title="Tab" dir="auto" onClick="add('\n');">⏎</span> 
-         <span class="touch delAll"  dir="auto" onClick="deleteAll();">❌</span></p></td>
+         <span class="touch delAll"  dir="auto" onClick="deleteAll();">❌</span></p></td-->
   <td>
   <div id="numberGrid">
       <div>
@@ -449,6 +471,7 @@
          </div>
 
 
+
  <details>
  <summary>show/hide rare characters</summary>
  <table id="rare"><tbody>
@@ -465,6 +488,7 @@
       </tr>
 </tbody></table> 
   </details>
+
   </div><!-- end of alphabet -->
 
 
