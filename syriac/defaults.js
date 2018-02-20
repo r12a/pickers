@@ -31,12 +31,12 @@ var template = {}
 var inputAids = [
 {"title":"Show cursive forms", "dataVar":"showCursive", "dataLocn":"cursive", "dataShortTitle":"S", "type":"hint"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Latin to Syriac", "dataVar":"showTransliteration", "dataLocn":"transliteration", "dataShortTitle":"L", "type":"palette"},
+{"title":"Reverse transliteration", "dataVar":"showTransliteration", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
 {"title":"Latin to IPA", "dataVar":"showLOCTrans", "dataLocn":"loctranscript", "dataShortTitle":"L", "type":"palette"},
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Syriac<br/>to Latin", "alt":"Convert Syriac text to a Latin transliteration.", "code":"doTranscription('toLatin')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Syriac text to a Latin transliteration.", "code":"doTranscription('toLatin')"},
 ]
 
