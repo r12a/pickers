@@ -13,6 +13,15 @@ end: {}
 
 
 var keyboarddef = [
+"§|1 ɨ ǃ ɴ|2 ø ˈ ‖|3 ɜ ɹ ɻ|4 ɾ $ ɽ|5 ɫ ˌ ʟ|6 ɐ ̯ ɓ|7 ɤ ɶ ˠ|8 ɵ * ɞ|9 œ ( ɠ|0 ̥ ) ̊|- - ‿ ͡|= ̩ + ǂ",
+"q q ɒ ̝|w w ʍ ʷ|e e ɛ ɘ|r r ʁ ʀ|t t θ ʈ|y y ʏ ̞|u u ʊ ɦ|i i ɪ ̟|o o ɔ ʘ|p p ʋ ɸ|[ [ æ ɗ|] ] ʉ ̪",
+"a a ɑ ̠|s s ʃ ʂ|d d ð ɖ|f f ɱ ɟ|g ɡ ɣ ɢ|h h ɥ ʰ|j j ɲ ʝ|k k ɬ ɮ|l l ʎ ɭ|; ; ː ̈|' ʲ ə ɚ|\\ # ̃ ̰",
+"`|z z ʒ ʐ|x x χ ħ|c c ç ɕ|v v ʌ ʑ|b b β ʙ|n n ŋ ɳ|m m ɯ ɰ|, , ̆  ʼ|. . → ̤|/ / ʔ ʕ"
+]
+
+
+/*
+var keyboarddef = [
 "ɨ,ǃ,ɴ|ø,ˈ,‖|ɜ,ɹ,ɻ|ɾ,$,ɽ|ɫ,ˌ,ʟ|ɐ,̯,ɓ|ɤ,ɶ,ˠ|ɵ,*,ɞ|œ,(,ɠ|̥,),̊|-,‿,͡|̩,+,ǂ",
 "q,ɒ,̝|w,ʍ,ʷ|e,ɛ,ɘ|r,ʁ,ʀ|t,θ,ʈ|y,ʏ,̞|u,ʊ,ɦ|i,ɪ,̟|o,ɔ,ʘ|p,ʋ,ɸ|[,æ,ɗ|],ʉ,̪",
 "a,ɑ,̠|s,ʃ,ʂ|d,ð,ɖ|f,ɱ,ɟ|ɡ,ɣ,ɢ|h,ɥ,ʰ|j,ɲ,ʝ|k,ɬ,ɮ|l,ʎ,ɭ|;,ː,̈|ʲ,ə,ɚ|#,̃,̰",
@@ -27,7 +36,7 @@ var keyboardguide = [
 ]
 
 var keyboardRowOffset = ['5px','20px','30px','50px']
-
+*/
 
 // overwrite standard function to make background white (for vowels)
 function event_mouseoutChar ()  {
