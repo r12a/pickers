@@ -31,12 +31,12 @@ var template = {}
 var inputAids = [
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Latin to Sinhala", "dataVar":"showTransPanel", "dataLocn":"toSinhala", "dataShortTitle":"L", "type":"palette"},
+{"title":"Reverse transliteration", "dataVar":"showTransPanel", "dataLocn":"toSinhala", "dataShortTitle":"R", "type":"palette"},
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Sinhala<br/>to Latin", "alt":"Convert Sinhalese text to a Latin transliteration.", "code":"doTranscription('toISO15919')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Sinhalese text to a Latin transliteration.", "code":"doTranscription('toISO15919')"},
 ]
 
 
