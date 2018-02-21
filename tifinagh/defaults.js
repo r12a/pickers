@@ -32,12 +32,12 @@ var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Latin to Tifinagh", "dataVar":"showNeoTrans", "dataLocn":"neotranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Reverse transliteration", "dataVar":"showNeoTrans", "dataLocn":"neotranscript", "dataShortTitle":"R", "type":"palette"},
 {"title":"IPA to Tifinagh", "dataVar":"showIPATrans", "dataLocn":"ipatranscript", "dataShortTitle":"I", "type":"palette"},
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Neo-Tifinagh<br/>to Latin", "alt":"Convert Neo-Tifinagh text to a Latin transliteration.", "code":"doTranscription('toIRCAM')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Neo-Tifinagh text to a Latin transliteration.", "code":"doTranscription('toIRCAM')"},
 ]
 
