@@ -47,7 +47,7 @@
 #consonants { border: 1px solid  #ccc; padding-bottom: 10px;   padding-top: 8px; border-radius: 8px;  }
 #consonants td {  padding: 0;  white-space: nowrap; height: 30px; line-height: 1.4;}
 #consonants span { padding: 0 3px; }
-#kbd #vowels { padding: 0; }
+#kbd #vowels { padding-bottom: 0.3em; }
 #vowels { margin-left: 20px; border: 1px solid #ccc; background: url(vowelgrid.gif) top left no-repeat; white-space: nowrap; border-radius: 8px;  }
 #vowels td { padding: 0px; margin: 0; border: 0; text-align: center; vertical-align: top;   padding-bottom: 10px; }
 #vowels img { padding: 0px; margin: 0; }
@@ -61,7 +61,7 @@
 #tones {
 	line-height: 1;	padding-left: 5px;
 	}
-#tones td { padding-left: 5px; }
+#tones td { padding-left: 5px; padding-bottom: 0; }
 
 
 .c { min-width:.6em; text-align: center; }
