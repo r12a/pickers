@@ -17,15 +17,29 @@ end: {}
 
 
 var keyboarddef = [
+"§|1|2|3|4|5|6|7|8|9|0|-|=",
+"q|w|e|r|t|y|u|i|o|p|[|]",
+"a|s|d|f|g|h|j|k|l|;|'|\\",
+"`|z|x|c|v|b|n|m|,|.|/"
 ]
 
-var keyboardguide = [
+
+/*  FOR KEYBOARDS WITH DIFFERENT CHARS ON SHIFT LEVEL
+var keyboardUC = [
+"§|1|2|3|4|5|6|7|8|9|0|-|=",
+"q|w|e|r|t උ|y|u|i|o|p|[|]",
+"a ඒ ඌ ඖ|s|d ො ඎ ෲ|f|g|h|j|k|l|;|'|\\",
+"`|z|x|c|v|b|n|m|,|.|/"
 ]
 
-var keyboardRowOffset = ['5px','20px','30px','50px']
 
-
-
+function event_toggleKbdShift () {
+    if (this.classList.contains('shiftKeyOn')) {
+        makeKeyboard(keyboarddef, keyboardLCGuide)
+        }
+    else makeKeyboard(keyboardUC, keyboardUCGuide)
+    }
+*/
 
 
 function toggleShift (node, LC, UC) {

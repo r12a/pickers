@@ -60,7 +60,23 @@
 
 <div id="tables" dir="ltr">
   
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
 <div id="alphabet" class="default">
+
+<div class="spaceline">
+<span class="shifted" dir="auto" onclick="toggleShift(this, 'defaultLC', 'defaultUC')">SHIFT</span>
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
 <div id="kbdGrid">
  
 <div id="consonantGrid">      
@@ -82,6 +98,8 @@ YYYYYY
 <span class="c">&#x0032;</span>
 <span class="c">&#x0033;</span>
 <span class="c">&#x0030;</span>
+<span class="c">,</span>
+<span class="c">.</span>
 </div>
 </div>
 
@@ -104,14 +122,6 @@ YYYYYY
 <span class="c">&#x002D;</span>
 </div>
 
-
-<div id="spaceEtc" style="text-align: center; vertical-align:middle;">
-<span class="shifted" dir="auto" onclick="toggleShift(this, 'defaultLC', 'defaultUC')">SHIFT</span>
-<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
-   </div>
 
 
 
