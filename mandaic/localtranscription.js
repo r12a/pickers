@@ -132,15 +132,14 @@ function toLatinTranslit (str) {
 	str = str.replace(punctuationSet,' ')
 	
 	// handle consonant duplication
-	var re = /(.)([\u0859]?)\u085B/g
-	str = str.replace(re,'$1$1$2')  // shadda
+	str = str.replace(/\u085B/,'ᵚ')  // shadda
 		
 	// handle vowels
     str = str.replace(/\u0840\u085A/g,'a') // halqa + vocalisation mark
 	str = str.replace(/\u0849\u085A/g,'e') // aksa + vocalisation mark
 	str = str.replace(/\u0845\u085A/g,'o') // ushenna + vocalisation mark
     
-    str = str.replace(/\u0840/g,'a') // halqa 
+    str = str.replace(/\u0840/g,'ā') // halqa 
 	str = str.replace(/\u0849/g,'i') // aksa 
 	str = str.replace(/\u0845/g,'u') // ushenna 
 	str = str.replace(/\u084F/g,'ʿ') // in 

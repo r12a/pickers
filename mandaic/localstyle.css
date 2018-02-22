@@ -15,38 +15,130 @@
 
 
 
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Mandaic', 'Mandaic WF',  sans-serif;  
+    line-height: 1.2;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+
+
+#kbdGrid {
+    display: flex;
+    flex-direction: row;
+    line-height: 1.2;
+    justify-content: center;
+    margin-top: .75em;
+    }
+#consonantGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 8em;
+    justify-content: space-between;
+    line-height: 1.7;
+    }
+#consonantGrid > span {
+    min-width: 1.5em;
+    }
+#vowelGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 1.2em;
+    max-height: 15em;
+    justify-content: center;
+    align-items:center;
+    margin: 0 .5em;
+    line-height: 1.3;
+    border: 1px dotted #ccc;
+    border-radius: .25em;
+    padding: 0 .5em;
+    }
+#punctuationGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 1.2em;
+    max-height: 15em;
+    justify-content: center;
+    align-items:center;
+    margin-end: 0 .5em;
+    line-height: 2;
+    padding: 0 .5em;
+    }
+#numberGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 2.42em;
+    max-height: 15em;
+    justify-content: center;
+    margin: 0 .5em;
+    line-height: 1.7;
+    align-content: center;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    }
+
+
+
+
+
 #kbd { 	
-	margin: auto; 
+	margin: auto;
+    line-height: 1.5;
 	}
 table {
-	margin:0;
+	margin: auto;
 	}
 td {
 	padding: 0;
 	}
-/*
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: left;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1;
-	}
-	*/
 
 #vowels {
 	border: 1px dotted #ccc;
 	border-radius: 5px; 
 	vertical-align: middle;
+    width: 2em;
 	}
 
 #numbers {
 	border: 1px dotted #ccc;
 	border-radius: 5px; 
 	vertical-align: middle;
-	line-height: 2;
+	line-height: 1.4;
 	}
 
 #punctuation {
@@ -56,49 +148,6 @@ td {
 	line-height: 2.4;
 	}
 	
-#independentvowels {
-	margin: 0;
-	padding: 0;
-	}
-#independentvowels td {
-	text-align: right;
-	}
-#otherpunctuation {
-	margin:auto;
-	}
-#otherpunctuation .c {
-	line-height: 2.2;
-	}
-#medialsfinals {
-	padding: 0 .75em;
-	vertical-align: middle;
-	}
 #consonants {
-	margin-left: 10px; 
-	margin: 0;
-	}
-#consonants td {
-	text-align: left;
-	}
-#consonants2  {
-	margin-left: 10px; 
-	display: none;
-	}
-#consonants2 td {
-	text-align: left;
-	}
-#consonants2 td span.c {
-	min-width: 2em;
-	}
-.g {
-	display: inline-block;
-	}
-.c {
-	min-width: .75em;
-	}
-#shift {
-	cursor:pointer;
-	}
-#adegadeg {
-	vertical-align:middle;
+	margin: auto;
 	}

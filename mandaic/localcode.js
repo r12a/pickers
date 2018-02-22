@@ -1,4 +1,4 @@
-globals.showLatinToMand = ''
+globals.showTransliterate = ''
 
 function localInitialise () {
 
@@ -45,6 +45,14 @@ var _h = {
 end: {}
 }
 
+
+var keyboarddef = [
+"§ ࡖ|1|2|3|4|5|6|7|8 ﴾|9 ﴿|0|- ࡚|=",
+"q ࡑࡀ|w ࡑ|e ࡗ|r ࡒ|t ࡐ ࡋࡀ|y ࡊࡀ|u ࡏ ‘|i ࡄ|o ࡍࡀ|p ࡇ ؛|[ ࡂ «|] ࡃ »",
+"a ࡔ|s ࡎ|d ࡉ (|f ࡁ )|g ࡋ ࡋࡀ|h ࡀ ࡞|j ࡕ ـ|k ࡍ ،|l ࡌ /|; ࡊ :|' ࡈ “|\\",
+"` ࡛|z ࡞|x ࡘ ࡙|c {|v ࡓ }|b ࡋࡀ|n ࡖ|m ࡐࡀ ’|, ࡅ .|. ࡆ ,|/ ؟"
+]
+// source: http://www.mandaeannetwork.com/mandaean/ma/books/mandaeannetwork_mandaean_mandaic_font.html
 
 
 

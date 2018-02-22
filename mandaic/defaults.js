@@ -32,10 +32,11 @@ var template = {}
 
 var inputAids = [
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Transcription to Mandaic", "dataVar":"showLatinToMand", "dataLocn":"toMandaicPallet", "dataShortTitle":"T", "type":"palette"}
+{"title":"Reverse transliteration", "dataVar":"showTransliterate", "dataLocn":"transliterate", "dataShortTitle":"R", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Transliterate<br/>Mandaic", "alt":"Convert Mandaic text to a Latin transliteration.", "code":"doTranscription('toLatinTranslit')"},
-{"title":"Transcribe<br/>Mandaic", "alt":"Convert Mandaic text to a Latin transcription.", "code":"doTranscription('toLatin')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Mandaic text to a Latin transliteration.", "code":"doTranscription('toLatinTranslit')"},
+{"title":"Mandaic<br/>transcription", "alt":"Convert Mandaic text to a Latin transcription.", "code":"doTranscription('toLatin')"},
 ]
