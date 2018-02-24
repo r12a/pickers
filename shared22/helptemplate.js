@@ -125,8 +125,7 @@ if (aidsList.match('latin')) {
 
 if (aidsList.match('translit')) {
 	out += `
-	<p><b class="leadin">Reverse transliteration.</b> Displays a panel of the transliteration characters used for this picker. It allows you to generate text in the native script. Click on the transcription character and the appropriate native character will be added to the text area. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want in order to add it to the text area.</p>
-	<p><img src="../../shared22/images/help/translit_option.png" alt=" "/></p>
+	<p><b class="leadin">Reverse transliteration.</b> Displays a panel of the transliteration characters used for this picker. It allows you to generate text in the native script. Click on the transcription character and the appropriate native character will be added to the text area.</p>
 	`
 	}
 
@@ -146,8 +145,9 @@ function addYellowControls () {
 return `
   <h2 href="#yellow_controls">Controls on the yellow background</h2>
     <p><img src="../../shared22/images/help/yellow_controls.png" alt=""/></p>
-    <p><b class="leadin">Left-hand controls.</b> These controls at the bottom of the page allow you to modify fonts used, the font size, line height, and the height of the text area. </p>
-    <p><b class="leadin">Add codepoint.</b> You can add characters to the text area by typing codepoints and escapes in the <samp>Add codepoint</samp> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</p>
+    <p><b class="leadin">Change the font/Add another font.</b> These controls allow you to change the font used in the text area. If you want to use a font that is not in the predefined list, add the font name to the right-hand control: the font name will be added to the list, and if it's still in use at the end of the session it will be stored as your default for your next session (if you agreed to store settings). When you start a new session, that font will be added to the selection list automatically. Note, however, that only the one font will be remembered this way, across sessions.</p>
+    <p><b class="leadin">Font size.</b> Allows you to adjust the size of the font for the text area. There is another control, under <samp translate="no">more controls</samp>, that allows you to specify the size by typing in a number, if needed.</p>
+    <p><b class="leadin">Add codepoint.</b> You can add characters to the text area by typing codepoints and escapes in the <samp translate="no">Add codepoint</samp> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</p>
     <p><b class="leadin">Search for. </b>If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the <samp translate="no">X</samp> next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <kbd  translate="no">\bha\b</kbd> (or the shortcut, <kbd  translate="no">:ha:</kbd>).</p>
 `
 }
@@ -159,10 +159,22 @@ function addMoreControls (direction) {
 out = ''
 out +=  `
   <h2 href="#more_controls">More controls</h2>
-  <p><img src="../../shared22/images/help/more_controls.png" alt=""/></p>
+  `
+  if (direction === 'rtl') out += '<p><img src="../../shared22/images/help/more_controls_rtl.png" alt=""/></p>'
+  else out += '<p><img src="../../shared22/images/help/more_controls.png" alt=""/></p>'
+  
+  out += `
   <p>Click on <samp>more controls</samp> to reveal the less commonly used controls described here.</p>
   <p><b class="leadin">Normalise. </b>All text is added to the main text area in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character – text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. </p>
-  <p><b class="leadin">Change table font. </b>Allows you to change the font and size of the characters you click on in the main selection areas. </p>
+  <p><b class="leadin">Set dimensions. </b>Allows you to change the font size, line height, and the box height, for the text area.</p>
+    <p><b class="leadin">Set language. </b>Add a BCP47 language tag here (ie. what you would use as the value of a <code class="kw" translate="no">lang</code> attribute in HTML). It is used in code generated by <samp>Make example</samp> and <samp>Character markup</samp> controls to indicate the language of the text.</p>
+<p><b class="leadin">Change text.</b> Tools for manipulating the content in the text area.</p>
+<p><img alt="Add space:" src="../../images/addspace.png"/> &nbsp; Adds a space between every character in the text area.</p>
+<p><img alt="Add space:" src="../../images/addcomma.png"/> &nbsp; Adds a comma between every character in the text area.</p>
+<p><img alt="Add space:" src="../../images/removespace.png"/> &nbsp; Removes all spaces from the text area.</p>
+<p><img alt="Add space:" src="../../images/count.png"/> &nbsp; Counts the number of characters in the text area.</p>
+<p><b class="leadin">Remove.</b> Allows you to remove a character from the text area. Type in the box a single character or the hex code point value for the character you want to delete.</p>
+  <p><b class="leadin">Change UI font. </b>Allows you to change the font and size of the characters you click on in the main selection areas. </p>
     <p><b class="leadin">CC base.</b> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://r12a.github.io/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. </p>
     <p>The <samp class="kw" translate="no">CC base</samp> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</p>
     `
@@ -171,14 +183,7 @@ if (direction === 'rtl') out += `
 <p><b class="leadin">Table direction.</b> Allows you to flip the direction of the selection area</p>
 `
 out += `
-    <p><b class="leadin">Set language. </b>Add a BCP47 language tag here (ie. what you would use as the value of a <code class="kw" translate="no">lang</code> attribute in HTML). It is used in code generated by <samp>Make example</samp> and <samp>Character markup</samp> controls to indicate the language of the text.</p>
     <p><b class="leadin">Reset. </b>Returns all settings you have changed (such as font size, text area size, language, etc.) to the original, default state.</p>
-<p><b class="leadin">Change text.</b> Tools for manipulating the content in the text area.</p>
-<p><img alt="Add space:" src="../../images/addspace.png"/> &nbsp; Adds a space between every character in the text area.</p>
-<p><img alt="Add space:" src="../../images/addcomma.png"/> &nbsp; Adds a comma between every character in the text area.</p>
-<p><img alt="Add space:" src="../../images/removespace.png"/> &nbsp; Removes all spaces from the text area.</p>
-<p><img alt="Add space:" src="../../images/count.png"/> &nbsp; Counts the number of characters in the text area.</p>
-<p><b class="leadin">Remove.</b> Allows you to remove a character from the text area. Type in the box a single character or the hex code point value for the character you want to delete.</p>
 `
 
 return out
