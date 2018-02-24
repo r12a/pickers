@@ -704,6 +704,9 @@ summary:hover {
 .interactiveHelpButton, #helpBanner {
     display: none;
     }
+#alphabet summary {
+    font-size: 14px;
+    }
 
 
 
