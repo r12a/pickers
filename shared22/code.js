@@ -361,6 +361,9 @@ function changeFontSize ( newSize ) {
 
 	defaults.size = newSize
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+    document.getElementById('fontSizeSlider').value = newSize
+    document.getElementById('sizeIndicator').textContent = newSize
+    document.getElementById('fontSize').value = newSize
 	}
 
 function changeBoxHeight ( newSize ) {
