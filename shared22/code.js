@@ -346,13 +346,15 @@ function selectFont ( newFont ) {
 	document.getElementById('fontName').value="";
 
 	defaults.font = newFont
+    console.log(defaults.font)
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+    document.getElementById('fontList').value = defaults.font
 	}
 	
 function customFont ( newFont ) { 
 	if (newFont.match('"') || newFont.match(',')) { alert('Use a single font with no quotes.'); return }
-	selectFont(newFont)
 	addFontToLists(newFont, 'fontList,uiFont');
+	selectFont(newFont)
 	}
 
 
@@ -1037,10 +1039,11 @@ function setUpValues () {
 	initialise(); 
 	localInitialise(); 
 	if (defaults.font) { 
-		document.getElementById( 'fontName' ).value = defaults.font
-		document.getElementById('output').style.fontFamily = '"'+defaults.font+'"'
-		document.querySelector('#panel #title').style.fontFamily = defaults.font;
-		document.querySelector('#transcription').style.fontFamily ="'Doulos SIL', '"+defaults.font+"', 'Gentium Plus', 'Charis Sil', Gentium, serif"
+        var fonts = document.getElementById('fontList').querySelectorAll('option')
+        var found = false
+        for (let i=0;i<fonts.length;i++) if (fonts[i].value === defaults.font) { found = true }
+        if (! found) addFontToLists(defaults.font, 'fontList,uiFont')
+        selectFont( defaults.font )
 		}
 	if (defaults.size) { 
 		document.getElementById( 'fontSize' ).value = defaults.size;  
@@ -1049,8 +1052,6 @@ function setUpValues () {
 	if (defaults.uifont) { 
 		document.getElementById( 'uiFont' ).value = defaults.uifont;  
 		setUIFont(defaults.uifont);
-		//document.getElementById('extrashapes').style.fontFamily = '"'+defaults.uifont+'"'
-		//document.querySelector('#transcriptionChoice').style.fontFamily = defaults.uifont;
 		}
 	if (defaults.uisize) { 
 		document.getElementById( 'uiFontSize' ).value = defaults.uisize;  
