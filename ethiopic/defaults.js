@@ -30,8 +30,10 @@ var template = {}
 
 var inputAids = [
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Show hints", "dataVar":"showRevealHints", "dataLocn":"", "dataShortTitle":"S", "type":"code", "initialCode":"if(globals.showRevealHints){revealHints(true)}else{revealHints(false);}"},
+{"title":"Extended repertoire", "dataVar":"showExtended", "dataLocn":"", "dataShortTitle":"E", "type":"code", "initialCode":"if(globals.showExtended){revealExtended(true)}else{revealExtended(false);}"},
 ]
 
 var controls = [
-{"title":"Transliterate<br/>to Latin", "alt":"Convert Ethiopic text to a Latin transliteration.", "code":"doTranscription('toLatin')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Ethiopic text to a Latin transliteration.", "code":"doTranscription('toLatin')"},
 ]

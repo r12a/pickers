@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Ethiopic character picker 21</title>
+<title>Ethiopic character picker 22</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
 <script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
 <script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared21/code.js">  </script>
+<script type="text/javascript" src="../shared22/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+<script type="text/javascript" src="../shared22/pagetemplate.js">  </script>
 <script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
 
 <script type="text/javascript" src="localtranscription.js">  </script>
@@ -55,6 +55,7 @@
 <span class="t" onclick="dotrans('ʊ')">ʊ</span>
 <span class="t" onclick="dotrans('wə')">wə</span>
 <span class="t" onclick="dotrans('yä')">yä</span>
+<br/>
 <span class="t" onclick="dotrans('b')">b</span>
 <span class="t" onclick="dotrans('β')">β</span>
 <span class="t" onclick="dotrans('č')">č</span>
@@ -75,6 +76,7 @@
 <span class="t" onclick="dotrans('n')">n</span>
 <span class="t" onclick="dotrans('ñ')">ñ</span>
 <span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<br/>
 <span class="t" onclick="dotrans('ɲ')">ɲ</span>
 <span class="t" onclick="dotrans('p')">p</span>
 <span class="t" onclick="dotrans('pʼ')">pʼ</span>
@@ -115,24 +117,623 @@
 <div id="tables" dir="ltr">
   
   <div id="alphabet" class="default">
-    <table id="kbd">
-      <tr>
-        <td colspan="3"><span class="c">&#x1369;</span> <span class="c">&#x136A;</span> <span class="c">&#x136B;</span> <span class="c">&#x136C;</span> <span class="c">&#x136D;</span> <span class="c">&#x136E;</span> <span class="c">&#x136F;</span> <span class="c">&#x1370;</span> <span class="c">&#x1371;</span> <span class="c">&#x1372;</span> <span class="c">&#x1373;</span> <span class="c">&#x1374;</span> <span class="c">&#x1375;</span> <span class="c">&#x1376;</span> <span class="c">&#x1377;</span> <span class="c">&#x1378;</span> <span class="c">&#x1379;</span> <span class="c">&#x137A;</span> <span class="c">&#x137B;</span> <span class="c">&#x137C;</span></td>
-      </tr>
-      <tr>
-        <td colspan="3"><span class="c">&#x1360;</span> 
-        <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 20px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add(' ');">SPACE</span> 
-        <span class="c" style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 0px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('፡');">፡</span> 
-        
-        <span class="c">&#x1362;</span> <span class="c">&#x1363;</span> <span class="c">&#x1364;</span> <span class="c">&#x1365;</span> <span class="c">&#x1366;</span> <span class="c">&#x1367;</span> <span class="c">&#x1368;</span> <span class="c" style="margin-left: 20px; padding: 10px;">&#x135F;</span> <span class="c" style="margin-left: 20px;  padding: 10px;">&#x30E;</span>
-        <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 20px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="del();">DEL</span> 
-        <span title="Delete All" class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+  
+  <div class="spaceline">
+<span class="touch" title="Space" style="padding: 5px 60px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Word space" style="padding: 5px 60px;" dir="auto" onClick="add('፡');">፡</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
 
-        </td>
-      </tr>
-    </table>
-    <div> <img alt="shape1" src="images/shape01.png" onclick="findShape('','ሀ,ሁ,ሂ,ሃ,ሄ,ህ,ሆ,ሇ',false)" /> <img alt="shape2" src="images/shape02.png" onclick="findShape('','ለ,ሉ,ሊ,ላ,ሌ,ል,ሎ,ሏ',false)" /> <img alt="shape3" src="images/shape03.png" onclick="findShape('','ሐ,ሑ,ሒ,ሓ,ሔ,ሕ,ሖ,ሗ',true)" /> <img alt="shape4" src="images/shape04.png" onclick="findShape('','መ,ሙ,ሚ,ማ,ሜ,ም,ሞ,ሟ,ፙ',true)" /> <img alt="shape5" src="images/shape05.png" onclick="findShape('','ሠ,ሡ,ሢ,ሣ,ሤ,ሥ,ሦ,ሧ',true)" /> <img alt="shape6" src="images/shape06.png" onclick="findShape('','ረ,ሩ,ሪ,ራ,ሬ,ር,ሮ,ሯ,ፘ',true)" /> <img alt="shape7" src="images/shape07.png" onclick="findShape('','ሰ,ሱ,ሲ,ሳ,ሴ,ስ,ሶ,ሷ,ሸ,ሹ,ሺ,ሻ,ሼ,ሽ,ሾ,ሿ',true)" /> <img alt="shape8" src="images/shape08.png" onclick="findShape('','ቀ,ቁ,ቂ,ቃ,ቄ,ቅ,ቆ,ቇ,ቈ,ቊ,ቋ,ቌ,ቍ,ቐ,ቑ,ቒ,ቓ,ቔ,ቕ,ቖ,ቘ,ቚ,ቛ,ቜ,ቝ',true)" /> <img alt="shape9" src="images/shape09.png" onclick="findShape('','በ,ቡ,ቢ,ባ,ቤ,ብ,ቦ,ቧ,ቨ,ቩ,ቪ,ቫ,ቬ,ቭ,ቮ,ቯ',true)" /> <img alt="shape10" src="images/shape10.png" onclick="findShape('','ተ,ቱ,ቲ,ታ,ቴ,ት,ቶ,ቷ,ቸ,ቹ,ቺ,ቻ,ቼ,ች,ቾ,ቿ্র',true)" /> <img alt="shape11" src="images/shape11.png" onclick="findShape('','ኀ,ኁ,ኂ,ኃ,ኄ,ኅ,ኆ,ኇ,ኈ,ኊ,ኋ,ኌ,ኍ',true)" /> <img alt="shape12" src="images/shape12.png" onclick="findShape('','ነ,ኑ,ኒ,ና,ኔ,ን,ኖ,ኗ,ኘ,ኙ,ኚ,ኛ,ኜ,ኝ,ኞ,ኟ',true)" /> <img alt="shape14" src="images/shape14.png" onclick="findShape('','አ,ኡ,ኢ,ኣ,ኤ,እ,ኦ,ኧ',true)" /> <img alt="shape15" src="images/shape15.png" onclick="findShape('','ከ,ኩ,ኪ,ካ,ኬ,ክ,ኮ,ኯ,ኰ,ኲ,ኳ,ኴ,ኵ,ኸ,ኹ,ኺ,ኻ,ኼ,ኽ,ኾ,ዀ,ዂ,ዃ,ዄ,ዅ',true)" /> <img alt="shape16" src="images/shape16.png" onclick="findShape('','ወ,ዉ,ዊ,ዋ,ዌ,ው,ዎ,ዏ',true)" /> <img alt="shape17" src="images/shape17.png" onclick="findShape('','ዐ,ዑ,ዒ,ዓ,ዔ,ዕ,ዖ',true)" /> <img alt="shape18" src="images/shape18.png" onclick="findShape('','ዘ,ዙ,ዚ,ዛ,ዜ,ዝ,ዞ,ዟ,ዠ,ዡ,ዢ,ዣ,ዤ,ዥ,ዦ,ዧ',true)" /> <img alt="shape20" src="images/shape20.png" onclick="findShape('','የ,ዩ,ዪ,ያ,ዬ,ይ,ዮ,ዯ',true)" /> <img alt="shape21" src="images/shape21.png" onclick="findShape('','ደ,ዱ,ዲ,ዳ,ዴ,ድ,ዶ,ዷ,ዸ,ዹ,ዺ,ዻ,ዼ,ዽ,ዾ,ዿ,ጀ,ጁ,ጂ,ጃ,ጄ,ጅ,ጆ,ጇ',true)" /> <img alt="shape22" src="images/shape22.png" onclick="findShape('','ገ,ጉ,ጊ,ጋ,ጌ,ግ,ጎ,ጏ,ጐ,ጒ,ጓ,ጔ,ጕ,ጘ,ጙ,ጚ,ጛ,ጜ,ጝ,ጞ,ጟ',true)" /> <img alt="shape23" src="images/shape23.png" onclick="findShape('','ጠ,ጡ,ጢ,ጣ,ጤ,ጥ,ጦ,ጧ,ጨ,ጩ,ጪ,ጫ,ጬ,ጭ,ጮ,ጯ',true)" /> <img alt="shape27" src="images/shape25.png" onclick="findShape('','ጰ,ጱ,ጲ,ጳ,ጴ,ጵ,ጶ,ጷ,ጸ,ጹ,ጺ,ጻ,ጼ,ጽ,ጾ,ጿ',true)" /> <img alt="shape27" src="images/shape26.png" onclick="findShape('','ፀ,ፁ,ፂ,ፃ,ፄ,ፅ,ፆ,ፇ',true)" /> <img alt="shape27" src="images/shape27.png" onclick="findShape('','ፈ,ፉ,ፊ,ፋ,ፌ,ፍ,ፎ,ፏ,ፚ',true)" /> <img alt="shape28" src="images/shape28.png" onclick="findShape('','ፐ,ፑ,ፒ,ፓ,ፔ,ፕ,ፖ,ፗ',true)" /> </div>
-  </div>
+
+<div id="kbdGrid">
+
+  
+
+<div id="consonants">
+<span class="g"><span class="hint">h</span><span onClick="reveal(this.textContent)">ሀ</span></span>
+<span class="g"><span class="hint">l</span><span onClick="reveal(this.textContent)">ለ</span></span>
+<span class="g"><span class="hint">ḥ</span><span onClick="reveal(this.textContent)">ሐ</span></span>
+<span class="g"><span class="hint">m</span><span onClick="reveal(this.textContent)">መ</span></span>
+<span class="g"><span class="hint">ś</span><span onClick="reveal(this.textContent)">ሠ</span></span>
+<span class="g"><span class="hint">r</span><span onClick="reveal(this.textContent)">ረ</span></span>
+<span class="g"><span class="hint">s</span><span onClick="reveal(this.textContent)">ሰ</span></span>
+<span class="g"><span class="hint">ḳ</span><span onClick="reveal(this.textContent)">ቀ</span></span>
+<span class="g"><span class="hint">b</span><span onClick="reveal(this.textContent)">በ</span></span>
+<span class="g"><span class="hint">t</span><span onClick="reveal(this.textContent)">ተ</span></span>
+<span class="g"><span class="hint">ḫ</span><span onClick="reveal(this.textContent)">ኀ</span></span>
+<span class="g"><span class="hint">n</span><span onClick="reveal(this.textContent)">ነ</span></span>
+<span class="g"><span class="hint">ʾ</span><span onClick="reveal(this.textContent)">አ</span></span>
+<span class="g"><span class="hint">k</span><span onClick="reveal(this.textContent)">ከ</span></span>
+<span class="g"><span class="hint">w</span><span onClick="reveal(this.textContent)">ወ</span></span>
+<span class="g"><span class="hint">ʿ</span><span onClick="reveal(this.textContent)">ዐ</span></span>
+<span class="g"><span class="hint">z</span><span onClick="reveal(this.textContent)">ዘ</span></span>
+<span class="g"><span class="hint">y</span><span onClick="reveal(this.textContent)">የ</span></span>
+<span class="g"><span class="hint">d</span><span onClick="reveal(this.textContent)">ደ</span></span>
+<span class="g"><span class="hint">g</span><span onClick="reveal(this.textContent)">ገ</span></span>
+<span class="g"><span class="hint">ṭ</span><span onClick="reveal(this.textContent)">ጠ</span></span>
+<span class="g"><span class="hint">p̣</span><span onClick="reveal(this.textContent)">ጰ</span></span>
+<span class="g"><span class="hint">ṣ</span><span onClick="reveal(this.textContent)">ጸ</span></span>
+<span class="g"><span class="hint">ṣ́</span><span onClick="reveal(this.textContent)">ፀ</span></span>
+<span class="g"><span class="hint">f</span><span onClick="reveal(this.textContent)">ፈ</span></span>
+<span class="g"><span class="hint">p</span><span onClick="reveal(this.textContent)">ፐ</span></span>
+
+<!--span class="hint">h</span><img alt="shape1" src="images/shape01.png" onclick="findShape('','ሀ,ሁ,ሂ,ሃ,ሄ,ህ,ሆ,ሇ',false)" /> <img alt="shape2" src="images/shape02.png" onclick="findShape('','ለ,ሉ,ሊ,ላ,ሌ,ል,ሎ,ሏ',false)" /> <img alt="shape3" src="images/shape03.png" onclick="findShape('','ሐ,ሑ,ሒ,ሓ,ሔ,ሕ,ሖ,ሗ',true)" /> <img alt="shape4" src="images/shape04.png" onclick="findShape('','መ,ሙ,ሚ,ማ,ሜ,ም,ሞ,ሟ,ፙ',true)" /> <img alt="shape5" src="images/shape05.png" onclick="findShape('','ሠ,ሡ,ሢ,ሣ,ሤ,ሥ,ሦ,ሧ',true)" /> <img alt="shape6" src="images/shape06.png" onclick="findShape('','ረ,ሩ,ሪ,ራ,ሬ,ር,ሮ,ሯ,ፘ',true)" /> <img alt="shape7" src="images/shape07.png" onclick="findShape('','ሰ,ሱ,ሲ,ሳ,ሴ,ስ,ሶ,ሷ,ሸ,ሹ,ሺ,ሻ,ሼ,ሽ,ሾ,ሿ',true)" /> <img alt="shape8" src="images/shape08.png" onclick="findShape('','ቀ,ቁ,ቂ,ቃ,ቄ,ቅ,ቆ,ቇ,ቈ,ቊ,ቋ,ቌ,ቍ,ቐ,ቑ,ቒ,ቓ,ቔ,ቕ,ቖ,ቘ,ቚ,ቛ,ቜ,ቝ',true)" /> <img alt="shape9" src="images/shape09.png" onclick="findShape('','በ,ቡ,ቢ,ባ,ቤ,ብ,ቦ,ቧ,ቨ,ቩ,ቪ,ቫ,ቬ,ቭ,ቮ,ቯ',true)" /> <img alt="shape10" src="images/shape10.png" onclick="findShape('','ተ,ቱ,ቲ,ታ,ቴ,ት,ቶ,ቷ,ቸ,ቹ,ቺ,ቻ,ቼ,ች,ቾ,ቿ্র',true)" /> <img alt="shape11" src="images/shape11.png" onclick="findShape('','ኀ,ኁ,ኂ,ኃ,ኄ,ኅ,ኆ,ኇ,ኈ,ኊ,ኋ,ኌ,ኍ',true)" /> <img alt="shape12" src="images/shape12.png" onclick="findShape('','ነ,ኑ,ኒ,ና,ኔ,ን,ኖ,ኗ,ኘ,ኙ,ኚ,ኛ,ኜ,ኝ,ኞ,ኟ',true)" /> <img alt="shape14" src="images/shape14.png" onclick="findShape('','አ,ኡ,ኢ,ኣ,ኤ,እ,ኦ,ኧ',true)" /> <img alt="shape15" src="images/shape15.png" onclick="findShape('','ከ,ኩ,ኪ,ካ,ኬ,ክ,ኮ,ኯ,ኰ,ኲ,ኳ,ኴ,ኵ,ኸ,ኹ,ኺ,ኻ,ኼ,ኽ,ኾ,ዀ,ዂ,ዃ,ዄ,ዅ',true)" /> <img alt="shape16" src="images/shape16.png" onclick="findShape('','ወ,ዉ,ዊ,ዋ,ዌ,ው,ዎ,ዏ',true)" /> <img alt="shape17" src="images/shape17.png" onclick="findShape('','ዐ,ዑ,ዒ,ዓ,ዔ,ዕ,ዖ',true)" /> <img alt="shape18" src="images/shape18.png" onclick="findShape('','ዘ,ዙ,ዚ,ዛ,ዜ,ዝ,ዞ,ዟ,ዠ,ዡ,ዢ,ዣ,ዤ,ዥ,ዦ,ዧ',true)" /> <img alt="shape20" src="images/shape20.png" onclick="findShape('','የ,ዩ,ዪ,ያ,ዬ,ይ,ዮ,ዯ',true)" /> <img alt="shape21" src="images/shape21.png" onclick="findShape('','ደ,ዱ,ዲ,ዳ,ዴ,ድ,ዶ,ዷ,ዸ,ዹ,ዺ,ዻ,ዼ,ዽ,ዾ,ዿ,ጀ,ጁ,ጂ,ጃ,ጄ,ጅ,ጆ,ጇ',true)" /> <img alt="shape22" src="images/shape22.png" onclick="findShape('','ገ,ጉ,ጊ,ጋ,ጌ,ግ,ጎ,ጏ,ጐ,ጒ,ጓ,ጔ,ጕ,ጘ,ጙ,ጚ,ጛ,ጜ,ጝ,ጞ,ጟ',true)" /> <img alt="shape23" src="images/shape23.png" onclick="findShape('','ጠ,ጡ,ጢ,ጣ,ጤ,ጥ,ጦ,ጧ,ጨ,ጩ,ጪ,ጫ,ጬ,ጭ,ጮ,ጯ',true)" /> <img alt="shape27" src="images/shape25.png" onclick="findShape('','ጰ,ጱ,ጲ,ጳ,ጴ,ጵ,ጶ,ጷ,ጸ,ጹ,ጺ,ጻ,ጼ,ጽ,ጾ,ጿ',true)" /> <img alt="shape27" src="images/shape26.png" onclick="findShape('','ፀ,ፁ,ፂ,ፃ,ፄ,ፅ,ፆ,ፇ',true)" /> <img alt="shape27" src="images/shape27.png" onclick="findShape('','ፈ,ፉ,ፊ,ፋ,ፌ,ፍ,ፎ,ፏ,ፚ',true)" /> <img alt="shape28" src="images/shape28.png" onclick="findShape('','ፐ,ፑ,ፒ,ፓ,ፔ,ፕ,ፖ,ፗ',true)" /--> 
+
+
+</div>
+
+
+
+
+<div id="reveal">
+<div id="ሀ">
+<span class="g"><span class="hint">hä</span><span class="c">&#x1200;</span></span>
+<span class="g"><span class="hint">hu</span><span class="c">&#x1201;</span></span>
+<span class="g"><span class="hint">hi</span><span class="c">&#x1202;</span></span>
+<span class="g"><span class="hint">ha</span><span class="c">&#x1203;</span></span>
+<span class="g"><span class="hint">he</span><span class="c">&#x1204;</span></span>
+<span class="g"><span class="hint">hə</span><span class="c">&#x1205;</span></span>
+<span class="g"><span class="hint">ho</span><span class="c">&#x1206;</span></span>
+<span class="g e"><span class="hint">hoa</span><span class="c">&#x1207;</span></span>
+</div>
+<div id="ለ">
+<span class="g"><span class="hint">lä</span><span class="c">&#x1208;</span></span>
+<span class="g"><span class="hint">lu</span><span class="c">&#x1209;</span></span>
+<span class="g"><span class="hint">li</span><span class="c">&#x120A;</span></span>
+<span class="g"><span class="hint">la</span><span class="c">&#x120B;</span></span>
+<span class="g"><span class="hint">le</span><span class="c">&#x120C;</span></span>
+<span class="g"><span class="hint">lə</span><span class="c">&#x120D;</span></span>
+<span class="g"><span class="hint">lo</span><span class="c">&#x120E;</span></span>
+<span class="g"><span class="hint">lwa</span><span class="c">&#x120F;</span></span>
+<span class="g e"><span class="hint">loa</span><span class="c">&#x2D80;</span></span>
+</div>
+<div id="ሐ">
+<span class="g"><span class="hint">ḥä</span><span class="c">&#x1210;</span></span>
+<span class="g"><span class="hint">ḥu</span><span class="c">&#x1211;</span></span>
+<span class="g"><span class="hint">ḥi</span><span class="c">&#x1212;</span></span>
+<span class="g"><span class="hint">ḥa</span><span class="c">&#x1213;</span></span>
+<span class="g"><span class="hint">ḥe</span><span class="c">&#x1214;</span></span>
+<span class="g"><span class="hint">ḥə</span><span class="c">&#x1215;</span></span>
+<span class="g"><span class="hint">ḥo</span><span class="c">&#x1216;</span></span>
+<span class="g"><span class="hint">ḥwa</span><span class="c">&#x1217;</span></span>
+</div>
+<div id="መ">
+<span class="g"><span class="hint">mä</span><span class="c">&#x1218;</span></span>
+<span class="g"><span class="hint">mu</span><span class="c">&#x1219;</span></span>
+<span class="g"><span class="hint">mi</span><span class="c">&#x121A;</span></span>
+<span class="g"><span class="hint">ma</span><span class="c">&#x121B;</span></span>
+<span class="g"><span class="hint">me</span><span class="c">&#x121C;</span></span>
+<span class="g"><span class="hint">mə</span><span class="c">&#x121D;</span></span>
+<span class="g"><span class="hint">mo</span><span class="c">&#x121E;</span></span>
+<span class="g"><span class="hint">mwa</span><span class="c">&#x121F;</span></span>
+<span class="g e"><span class="hint">moa</span><span class="c">&#x2D81;</span></span>
+<span class="g"><span class="hint">mya</span><span class="c">&#x1359;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">mʷä</span><span class="c">&#x1380;</span></span>
+<span class="g e"><span class="hint">mʷi</span><span class="c">&#x1381;</span></span>
+<span class="g e"><span class="hint">mʷe</span><span class="c">&#x1382;</span></span>
+<span class="g e"><span class="hint">mʷə</span><span class="c">&#x1383;</span></span>
+</div>
+<div id="ሠ">
+<span class="g"><span class="hint">śä</span><span class="c">&#x1220;</span></span>
+<span class="g"><span class="hint">śu</span><span class="c">&#x1221;</span></span>
+<span class="g"><span class="hint">śi</span><span class="c">&#x1222;</span></span>
+<span class="g"><span class="hint">śa</span><span class="c">&#x1223;</span></span>
+<span class="g"><span class="hint">śe</span><span class="c">&#x1224;</span></span>
+<span class="g"><span class="hint">śə</span><span class="c">&#x1225;</span></span>
+<span class="g"><span class="hint">śo</span><span class="c">&#x1226;</span></span>
+<span class="g"><span class="hint">śwa</span><span class="c">&#x1227;</span></span>
+</div>
+<div id="ረ">
+<span class="g"><span class="hint">rä</span><span class="c">&#x1228;</span></span>
+<span class="g"><span class="hint">ru</span><span class="c">&#x1229;</span></span>
+<span class="g"><span class="hint">ri</span><span class="c">&#x122A;</span></span>
+<span class="g"><span class="hint">ra</span><span class="c">&#x122B;</span></span>
+<span class="g"><span class="hint">re</span><span class="c">&#x122C;</span></span>
+<span class="g"><span class="hint">rə</span><span class="c">&#x122D;</span></span>
+<span class="g"><span class="hint">ro</span><span class="c">&#x122E;</span></span>
+<span class="g"><span class="hint">rwa</span><span class="c">&#x122F;</span></span>
+<span class="g e"><span class="hint">roa</span><span class="c">&#x2D82;</span></span>
+<span class="g"><span class="hint">rya</span><span class="c">&#x1358;</span></span>
+</div>
+<div id="ሰ">
+<span class="g"><span class="hint">sä</span><span class="c">&#x1230;</span></span>
+<span class="g"><span class="hint">su</span><span class="c">&#x1231;</span></span>
+<span class="g"><span class="hint">si</span><span class="c">&#x1232;</span></span>
+<span class="g"><span class="hint">sa</span><span class="c">&#x1233;</span></span>
+<span class="g"><span class="hint">se</span><span class="c">&#x1234;</span></span>
+<span class="g"><span class="hint">sə</span><span class="c">&#x1235;</span></span>
+<span class="g"><span class="hint">so</span><span class="c">&#x1236;</span></span>
+<span class="g"><span class="hint">swa</span><span class="c">&#x1237;</span></span>
+<span class="g e"><span class="hint">soa</span><span class="c">&#x2D83;</span></span>
+<br/>
+<span class="g"><span class="hint">šä</span><span class="c">&#x1238;</span></span>
+<span class="g"><span class="hint">šu</span><span class="c">&#x1239;</span></span>
+<span class="g"><span class="hint">ši</span><span class="c">&#x123A;</span></span>
+<span class="g"><span class="hint">ša</span><span class="c">&#x123B;</span></span>
+<span class="g"><span class="hint">še</span><span class="c">&#x123C;</span></span>
+<span class="g"><span class="hint">šə</span><span class="c">&#x123D;</span></span>
+<span class="g"><span class="hint">šo</span><span class="c">&#x123E;</span></span>
+<span class="g"><span class="hint">šwa</span><span class="c">&#x123F;</span></span>
+<span class="g"><span class="hint">šoa</span><span class="c">&#x2D84;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">ä</span><span class="c">&#x2DA0;</span></span>
+<span class="g e"><span class="hint">u</span><span class="c">&#x2DA1;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#x2DA2;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#x2DA3;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#x2DA4;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#x2DA5;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#x2DA6;</span></span>
+</div>
+<div id="ቀ">
+<span class="g"><span class="hint">ḳä</span><span class="c">&#x1240;</span></span>
+<span class="g"><span class="hint">ḳu</span><span class="c">&#x1241;</span></span>
+<span class="g"><span class="hint">ḳi</span><span class="c">&#x1242;</span></span>
+<span class="g"><span class="hint">ḳa</span><span class="c">&#x1243;</span></span>
+<span class="g"><span class="hint">ḳe</span><span class="c">&#x1244;</span></span>
+<span class="g"><span class="hint">ḳə</span><span class="c">&#x1245;</span></span>
+<span class="g"><span class="hint">ḳo</span><span class="c">&#x1246;</span></span>
+<span class="g"><span class="hint">ḳoa</span><span class="c">&#x1247;</span></span>
+<br/>
+<span class="g"><span class="hint">ḳʷä</span><span class="c">&#x1248;</span></span>
+<span class="g"><span class="hint">ḳʷi</span><span class="c">&#x124A;</span></span>
+<span class="g"><span class="hint">ḳʷa</span><span class="c">&#x124B;</span></span>
+<span class="g"><span class="hint">ḳʷe</span><span class="c">&#x124C;</span></span>
+<span class="g"><span class="hint">ḳʷə</span><span class="c">&#x124D;</span></span>
+<br/>
+<span class="g"><span class="hint">ḳʰä</span><span class="c">&#x1250;</span></span>
+<span class="g"><span class="hint">ḳʰu</span><span class="c">&#x1251;</span></span>
+<span class="g"><span class="hint">ḳʰi</span><span class="c">&#x1252;</span></span>
+<span class="g"><span class="hint">ḳʰa</span><span class="c">&#x1253;</span></span>
+<span class="g"><span class="hint">ḳʰe</span><span class="c">&#x1254;</span></span>
+<span class="g"><span class="hint">ḳʰə</span><span class="c">&#x1255;</span></span>
+<span class="g"><span class="hint">ḳʰo</span><span class="c">&#x1256;</span></span>
+<br/>
+<span class="g"><span class="hint">ḳʰʷä</span><span class="c">&#x1258;</span></span>
+<span class="g"><span class="hint">ḳʰʷi</span><span class="c">&#x125A;</span></span>
+<span class="g"><span class="hint">ḳʰʷa</span><span class="c">&#x125B;</span></span>
+<span class="g"><span class="hint">ḳʰʷe</span><span class="c">&#x125C;</span></span>
+<span class="g"><span class="hint">ḳʰʷə</span><span class="c">&#x125D;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">ä</span><span class="c">&#x2DC0;</span></span>
+<span class="g e"><span class="hint">u</span><span class="c">&#x2DC1;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#x2DC2;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#x2DC3;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#x2DC4;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#x2DC5;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#x2DC6;</span></span>
+</div>
+<div id="በ">
+<span class="g"><span class="hint">bä</span><span class="c">&#x1260;</span></span>
+<span class="g"><span class="hint">bu</span><span class="c">&#x1261;</span></span>
+<span class="g"><span class="hint">bi</span><span class="c">&#x1262;</span></span>
+<span class="g"><span class="hint">ba</span><span class="c">&#x1263;</span></span>
+<span class="g"><span class="hint">be</span><span class="c">&#x1264;</span></span>
+<span class="g"><span class="hint">bə</span><span class="c">&#x1265;</span></span>
+<span class="g"><span class="hint">bo</span><span class="c">&#x1266;</span></span>
+<span class="g"><span class="hint">bwa</span><span class="c">&#x1267;</span></span>
+<span class="g e"><span class="hint">boa</span><span class="c">&#x2D85;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">bʷä</span><span class="c">&#x1384;</span></span>
+<span class="g e"><span class="hint">bʷi</span><span class="c">&#x1385;</span></span>
+<span class="g e"><span class="hint">bʷe</span><span class="c">&#x1386;</span></span>
+<span class="g e"><span class="hint">bʷə</span><span class="c">&#x1387;</span></span>
+<br/>
+<span class="g"><span class="hint">vä</span><span class="c">&#x1268;</span></span>
+<span class="g"><span class="hint">vu</span><span class="c">&#x1269;</span></span>
+<span class="g"><span class="hint">vi</span><span class="c">&#x126A;</span></span>
+<span class="g"><span class="hint">va</span><span class="c">&#x126B;</span></span>
+<span class="g"><span class="hint">ve</span><span class="c">&#x126C;</span></span>
+<span class="g"><span class="hint">və</span><span class="c">&#x126D;</span></span>
+<span class="g"><span class="hint">vo</span><span class="c">&#x126E;</span></span>
+<span class="g"><span class="hint">vwa</span><span class="c">&#x126F;</span></span>
+</div>
+<div id="ተ">
+<span class="g"><span class="hint">tä</span><span class="c">&#x1270;</span></span>
+<span class="g"><span class="hint">tu</span><span class="c">&#x1271;</span></span>
+<span class="g"><span class="hint">ti</span><span class="c">&#x1272;</span></span>
+<span class="g"><span class="hint">ta</span><span class="c">&#x1273;</span></span>
+<span class="g"><span class="hint">te</span><span class="c">&#x1274;</span></span>
+<span class="g"><span class="hint">tə</span><span class="c">&#x1275;</span></span>
+<span class="g"><span class="hint">to</span><span class="c">&#x1276;</span></span>
+<span class="g"><span class="hint">twa</span><span class="c">&#x1277;</span></span>
+<span class="g e"><span class="hint">toa</span><span class="c">&#x2D86;</span></span>
+<br/>
+<span class="g"><span class="hint">čä</span><span class="c">&#x1278;</span></span>
+<span class="g"><span class="hint">ču</span><span class="c">&#x1279;</span></span>
+<span class="g"><span class="hint">či</span><span class="c">&#x127A;</span></span>
+<span class="g"><span class="hint">ča</span><span class="c">&#x127B;</span></span>
+<span class="g"><span class="hint">če</span><span class="c">&#x127C;</span></span>
+<span class="g"><span class="hint">čə</span><span class="c">&#x127D;</span></span>
+<span class="g"><span class="hint">čo</span><span class="c">&#x127E;</span></span>
+<span class="g"><span class="hint">čwa</span><span class="c">&#x127F;</span></span>
+<span class="g"><span class="hint">čoa</span><span class="c">&#x2D87;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">ä</span><span class="c">&#x2DA8;</span></span>
+<span class="g e"><span class="hint">u</span><span class="c">&#x2DA9;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#x2DAA;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#x2DAB;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#x2DAC;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#x2DAD;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#x2DAE;</span></span>
+</div>
+<div id="ኀ">
+<span class="g"><span class="hint">ḫä</span><span class="c">&#x1280;</span></span>
+<span class="g"><span class="hint">ḫu</span><span class="c">&#x1281;</span></span>
+<span class="g"><span class="hint">ḫi</span><span class="c">&#x1282;</span></span>
+<span class="g"><span class="hint">ḫa</span><span class="c">&#x1283;</span></span>
+<span class="g"><span class="hint">ḫe</span><span class="c">&#x1284;</span></span>
+<span class="g"><span class="hint">ḫə</span><span class="c">&#x1285;</span></span>
+<span class="g"><span class="hint">ḫo</span><span class="c">&#x1286;</span></span>
+<span class="g"><span class="hint">ḫoa</span><span class="c">&#x1287;</span></span>
+<br/>
+<span class="g"><span class="hint">ḫʷä</span><span class="c">&#x1288;</span></span>
+<span class="g"><span class="hint">ḫʷi</span><span class="c">&#x128A;</span></span>
+<span class="g"><span class="hint">ḫʷa</span><span class="c">&#x128B;</span></span>
+<span class="g"><span class="hint">ḫʷe</span><span class="c">&#x128C;</span></span>
+<span class="g"><span class="hint">ḫʷə</span><span class="c">&#x128D;</span></span>
+</div>
+<div id="ነ">
+<span class="g"><span class="hint">nä</span><span class="c">&#x1290;</span></span>
+<span class="g"><span class="hint">nu</span><span class="c">&#x1291;</span></span>
+<span class="g"><span class="hint">ni</span><span class="c">&#x1292;</span></span>
+<span class="g"><span class="hint">na</span><span class="c">&#x1293;</span></span>
+<span class="g"><span class="hint">ne</span><span class="c">&#x1294;</span></span>
+<span class="g"><span class="hint">nə</span><span class="c">&#x1295;</span></span>
+<span class="g"><span class="hint">no</span><span class="c">&#x1296;</span></span>
+<span class="g"><span class="hint">nwa</span><span class="c">&#x1297;</span></span>
+<span class="g e"><span class="hint">noa</span><span class="c">&#x2D88;</span></span>
+<br/>
+<span class="g"><span class="hint">ñä</span><span class="c">&#x1298;</span></span>
+<span class="g"><span class="hint">ñu</span><span class="c">&#x1299;</span></span>
+<span class="g"><span class="hint">ñi</span><span class="c">&#x129A;</span></span>
+<span class="g"><span class="hint">ña</span><span class="c">&#x129B;</span></span>
+<span class="g"><span class="hint">ñe</span><span class="c">&#x129C;</span></span>
+<span class="g"><span class="hint">ñə</span><span class="c">&#x129D;</span></span>
+<span class="g"><span class="hint">ño</span><span class="c">&#x129E;</span></span>
+<span class="g"><span class="hint">ñwa</span><span class="c">&#x129F;</span></span>
+<span class="g"><span class="hint">ñoa</span><span class="c">&#x2D89;</span></span>
+</div>
+<div id="አ">
+<span class="g"><span class="hint">ʾä</span><span class="c">&#x12A0;</span></span>
+<span class="g"><span class="hint">ʾu</span><span class="c">&#x12A1;</span></span>
+<span class="g"><span class="hint">ʾi</span><span class="c">&#x12A2;</span></span>
+<span class="g"><span class="hint">ʾa</span><span class="c">&#x12A3;</span></span>
+<span class="g"><span class="hint">ʾe</span><span class="c">&#x12A4;</span></span>
+<span class="g"><span class="hint">ʾə</span><span class="c">&#x12A5;</span></span>
+<span class="g"><span class="hint">ʾo</span><span class="c">&#x12A6;</span></span>
+<span class="g"><span class="hint">ʾwa</span><span class="c">&#x12A7;</span></span>
+<span class="g e"><span class="hint">ʾoa</span><span class="c">&#x2D8A;</span></span>
+</div>
+<div id="ከ">
+<span class="g"><span class="hint">kä</span><span class="c">&#x12A8;</span></span>
+<span class="g"><span class="hint">ku</span><span class="c">&#x12A9;</span></span>
+<span class="g"><span class="hint">ki</span><span class="c">&#x12AA;</span></span>
+<span class="g"><span class="hint">ka</span><span class="c">&#x12AB;</span></span>
+<span class="g"><span class="hint">ke</span><span class="c">&#x12AC;</span></span>
+<span class="g"><span class="hint">kə</span><span class="c">&#x12AD;</span></span>
+<span class="g"><span class="hint">ko</span><span class="c">&#x12AE;</span></span>
+<span class="g"><span class="hint">koa</span><span class="c">&#x12AF;</span></span>
+<br/>
+<span class="g"><span class="hint">kʷä</span><span class="c">&#x12B0;</span></span>
+<span class="g"><span class="hint">kʷi</span><span class="c">&#x12B2;</span></span>
+<span class="g"><span class="hint">kʷa</span><span class="c">&#x12B3;</span></span>
+<span class="g"><span class="hint">kʷe</span><span class="c">&#x12B4;</span></span>
+<span class="g"><span class="hint">kʷə</span><span class="c">&#x12B5;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">ä</span><span class="c">&#x2DC8;</span></span>
+<span class="g e"><span class="hint">u</span><span class="c">&#x2DC9;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#x2DCA;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#x2DCB;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#x2DCC;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#x2DCD;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#x2DCE;</span></span>
+<br/>
+<span class="g"><span class="hint">xä</span><span class="c">&#x12B8;</span></span>
+<span class="g"><span class="hint">xu</span><span class="c">&#x12B9;</span></span>
+<span class="g"><span class="hint">xi</span><span class="c">&#x12BA;</span></span>
+<span class="g"><span class="hint">xa</span><span class="c">&#x12BB;</span></span>
+<span class="g"><span class="hint">xe</span><span class="c">&#x12BC;</span></span>
+<span class="g"><span class="hint">xə</span><span class="c">&#x12BD;</span></span>
+<span class="g"><span class="hint">xo</span><span class="c">&#x12BE;</span></span>
+<br/>
+<span class="g"><span class="hint">xʷä</span><span class="c">&#x12C0;</span></span>
+<span class="g"><span class="hint">xʷi</span><span class="c">&#x12C2;</span></span>
+<span class="g"><span class="hint">xʷa</span><span class="c">&#x12C3;</span></span>
+<span class="g"><span class="hint">xʷe</span><span class="c">&#x12C4;</span></span>
+<span class="g"><span class="hint">xʷə</span><span class="c">&#x12C5;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">ä</span><span class="c">&#x2DD0;</span></span>
+<span class="g e"><span class="hint">u</span><span class="c">&#x2DD1;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#x2DD2;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#x2DD3;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#x2DD4;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#x2DD5;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#x2DD6;</span></span>
+</div>
+<div id="ወ">
+<span class="g"><span class="hint">wä</span><span class="c">&#x12C8;</span></span>
+<span class="g"><span class="hint">wu</span><span class="c">&#x12C9;</span></span>
+<span class="g"><span class="hint">wi</span><span class="c">&#x12CA;</span></span>
+<span class="g"><span class="hint">wa</span><span class="c">&#x12CB;</span></span>
+<span class="g"><span class="hint">we</span><span class="c">&#x12CC;</span></span>
+<span class="g"><span class="hint">wə</span><span class="c">&#x12CD;</span></span>
+<span class="g"><span class="hint">wo</span><span class="c">&#x12CE;</span></span>
+<span class="g"><span class="hint">woa</span><span class="c">&#x12CF;</span></span>
+</div>
+<div id="ዐ">
+<span class="g"><span class="hint">ʿä</span><span class="c">&#x12D0;</span></span>
+<span class="g"><span class="hint">ʿu</span><span class="c">&#x12D1;</span></span>
+<span class="g"><span class="hint">ʿi</span><span class="c">&#x12D2;</span></span>
+<span class="g"><span class="hint">ʿa</span><span class="c">&#x12D3;</span></span>
+<span class="g"><span class="hint">ʿe</span><span class="c">&#x12D4;</span></span>
+<span class="g"><span class="hint">ʿə</span><span class="c">&#x12D5;</span></span>
+<span class="g"><span class="hint">ʿo</span><span class="c">&#x12D6;</span></span>
+</div>
+<div id="ዘ">
+<span class="g"><span class="hint">zä</span><span class="c">&#x12D8;</span></span>
+<span class="g"><span class="hint">zu</span><span class="c">&#x12D9;</span></span>
+<span class="g"><span class="hint">zi</span><span class="c">&#x12DA;</span></span>
+<span class="g"><span class="hint">za</span><span class="c">&#x12DB;</span></span>
+<span class="g"><span class="hint">ze</span><span class="c">&#x12DC;</span></span>
+<span class="g"><span class="hint">zə</span><span class="c">&#x12DD;</span></span>
+<span class="g"><span class="hint">zo</span><span class="c">&#x12DE;</span></span>
+<span class="g"><span class="hint">zwa</span><span class="c">&#x12DF;</span></span>
+<br/>
+<span class="g"><span class="hint">žä</span><span class="c">&#x12E0;</span></span>
+<span class="g"><span class="hint">žu</span><span class="c">&#x12E1;</span></span>
+<span class="g"><span class="hint">ži</span><span class="c">&#x12E2;</span></span>
+<span class="g"><span class="hint">ža</span><span class="c">&#x12E3;</span></span>
+<span class="g"><span class="hint">že</span><span class="c">&#x12E4;</span></span>
+<span class="g"><span class="hint">žə</span><span class="c">&#x12E5;</span></span>
+<span class="g"><span class="hint">žo</span><span class="c">&#x12E6;</span></span>
+<span class="g"><span class="hint">žwa</span><span class="c">&#x12E7;</span></span>
+<span class="g"><span class="hint">žoa</span><span class="c">&#x2D8B;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">ä</span><span class="c">&#x2DB0;</span></span>
+<span class="g e"><span class="hint">u</span><span class="c">&#x2DB1;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#x2DB2;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#x2DB3;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#x2DB4;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#x2DB5;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#x2DB6;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">u</span><span class="c">&#xAB11;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#xAB12;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#xAB13;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#xAB14;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#xAB15;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#xAB16;</span></span>
+</div>
+<div id="የ">
+<span class="g"><span class="hint">yä</span><span class="c">&#x12E8;</span></span>
+<span class="g"><span class="hint">yu</span><span class="c">&#x12E9;</span></span>
+<span class="g"><span class="hint">yi</span><span class="c">&#x12EA;</span></span>
+<span class="g"><span class="hint">ya</span><span class="c">&#x12EB;</span></span>
+<span class="g"><span class="hint">ye</span><span class="c">&#x12EC;</span></span>
+<span class="g"><span class="hint">yə</span><span class="c">&#x12ED;</span></span>
+<span class="g"><span class="hint">yo</span><span class="c">&#x12EE;</span></span>
+<span class="g"><span class="hint">yoa</span><span class="c">&#x12EF;</span></span>
+</div>
+<div id="ደ">
+<span class="g"><span class="hint">dä</span><span class="c">&#x12F0;</span></span>
+<span class="g"><span class="hint">du</span><span class="c">&#x12F1;</span></span>
+<span class="g"><span class="hint">di</span><span class="c">&#x12F2;</span></span>
+<span class="g"><span class="hint">da</span><span class="c">&#x12F3;</span></span>
+<span class="g"><span class="hint">de</span><span class="c">&#x12F4;</span></span>
+<span class="g"><span class="hint">də</span><span class="c">&#x12F5;</span></span>
+<span class="g"><span class="hint">do</span><span class="c">&#x12F6;</span></span>
+<span class="g"><span class="hint">dwa</span><span class="c">&#x12F7;</span></span>
+<span class="g e"><span class="hint">doa</span><span class="c">&#x2D8C;</span></span>
+<br/>
+<span class="g"><span class="hint">ä</span><span class="c">&#x12F8;</span></span>
+<span class="g"><span class="hint">u</span><span class="c">&#x12F9;</span></span>
+<span class="g"><span class="hint">i</span><span class="c">&#x12FA;</span></span>
+<span class="g"><span class="hint">a</span><span class="c">&#x12FB;</span></span>
+<span class="g"><span class="hint">e</span><span class="c">&#x12FC;</span></span>
+<span class="g"><span class="hint">ə</span><span class="c">&#x12FD;</span></span>
+<span class="g"><span class="hint">o</span><span class="c">&#x12FE;</span></span>
+<span class="g"><span class="hint">wa</span><span class="c">&#x12FF;</span></span>
+<span class="g e"><span class="hint">oa</span><span class="c">&#x2D8D;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">u</span><span class="c">&#xAB09;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#xAB0A;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#xAB0B;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#xAB0C;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#xAB0D;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#xAB0E;</span></span>
+<br/>
+<span class="g"><span class="hint">ǧä</span><span class="c">&#x1300;</span></span>
+<span class="g"><span class="hint">ǧu</span><span class="c">&#x1301;</span></span>
+<span class="g"><span class="hint">ǧi</span><span class="c">&#x1302;</span></span>
+<span class="g"><span class="hint">ǧa</span><span class="c">&#x1303;</span></span>
+<span class="g"><span class="hint">ǧe</span><span class="c">&#x1304;</span></span>
+<span class="g"><span class="hint">ǧə</span><span class="c">&#x1305;</span></span>
+<span class="g"><span class="hint">ǧo</span><span class="c">&#x1306;</span></span>
+<span class="g"><span class="hint">ǧwa</span><span class="c">&#x1307;</span></span>
+<span class="g"><span class="hint">ǧoa</span><span class="c">&#x2D8E;</span></span>
+</div>
+<div id="ገ">
+<span class="g"><span class="hint">gä</span><span class="c">&#x1308;</span></span>
+<span class="g"><span class="hint">gu</span><span class="c">&#x1309;</span></span>
+<span class="g"><span class="hint">gi</span><span class="c">&#x130A;</span></span>
+<span class="g"><span class="hint">ga</span><span class="c">&#x130B;</span></span>
+<span class="g"><span class="hint">ge</span><span class="c">&#x130C;</span></span>
+<span class="g"><span class="hint">gə</span><span class="c">&#x130D;</span></span>
+<span class="g"><span class="hint">go</span><span class="c">&#x130E;</span></span>
+<span class="g"><span class="hint">goa</span><span class="c">&#x130F;</span></span>
+<br/>
+<span class="g"><span class="hint">gʷä</span><span class="c">&#x1310;</span></span>
+<span class="g"><span class="hint">gʷu</span><span class="c">&#x1312;</span></span>
+<span class="g"><span class="hint">gʷa</span><span class="c">&#x1313;</span></span>
+<span class="g"><span class="hint">gʷe</span><span class="c">&#x1314;</span></span>
+<span class="g"><span class="hint">gʷə</span><span class="c">&#x1315;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">ä</span><span class="c">&#x2DD8;</span></span>
+<span class="g e"><span class="hint">u</span><span class="c">&#x2DD9;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#x2DDA;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#x2DDB;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#x2DDC;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#x2DDD;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#x2DDE;</span></span>
+<br/>
+<span class="g"><span class="hint">ŋä</span><span class="c">&#x1318;</span></span>
+<span class="g"><span class="hint">ŋu</span><span class="c">&#x1319;</span></span>
+<span class="g"><span class="hint">ŋi</span><span class="c">&#x131A;</span></span>
+<span class="g"><span class="hint">ŋa</span><span class="c">&#x131B;</span></span>
+<span class="g"><span class="hint">ŋe</span><span class="c">&#x131C;</span></span>
+<span class="g"><span class="hint">ŋə</span><span class="c">&#x131D;</span></span>
+<span class="g"><span class="hint">ŋo</span><span class="c">&#x131E;</span></span>
+<span class="g"><span class="hint">ŋwa</span><span class="c">&#x131F;</span></span>
+<br/>
+<span class="g"><span class="hint">ŋʷä</span><span class="c">&#x2D93;</span></span>
+<span class="g"><span class="hint">ŋʷi</span><span class="c">&#x2D94;</span></span>
+<span class="g"><span class="hint">ŋʷe</span><span class="c">&#x2D95;</span></span>
+<span class="g"><span class="hint">ŋʷə</span><span class="c">&#x2D96;</span></span>
+</div>
+<div id="ጠ">
+<span class="g"><span class="hint">ṭä</span><span class="c">&#x1320;</span></span>
+<span class="g"><span class="hint">ṭu</span><span class="c">&#x1321;</span></span>
+<span class="g"><span class="hint">ṭi</span><span class="c">&#x1322;</span></span>
+<span class="g"><span class="hint">ṭa</span><span class="c">&#x1323;</span></span>
+<span class="g"><span class="hint">ṭe</span><span class="c">&#x1324;</span></span>
+<span class="g"><span class="hint">ṭə</span><span class="c">&#x1325;</span></span>
+<span class="g"><span class="hint">ṭo</span><span class="c">&#x1326;</span></span>
+<span class="g"><span class="hint">ṭwa</span><span class="c">&#x1327;</span></span>
+<span class="g e"><span class="hint">ṭoa</span><span class="c">&#x2D8F;</span></span>
+<br/>
+<span class="g"><span class="hint">č̣ä</span><span class="c">&#x1328;</span></span>
+<span class="g"><span class="hint">č̣u</span><span class="c">&#x1329;</span></span>
+<span class="g"><span class="hint">č̣i</span><span class="c">&#x132A;</span></span>
+<span class="g"><span class="hint">č̣a</span><span class="c">&#x132B;</span></span>
+<span class="g"><span class="hint">č̣e</span><span class="c">&#x132C;</span></span>
+<span class="g"><span class="hint">č̣ə</span><span class="c">&#x132D;</span></span>
+<span class="g"><span class="hint">č̣o</span><span class="c">&#x132E;</span></span>
+<span class="g"><span class="hint">č̣wa</span><span class="c">&#x132F;</span></span>
+<span class="g"><span class="hint">č̣oa</span><span class="c">&#x2D90;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">ä</span><span class="c">&#x2DB8;</span></span>
+<span class="g e"><span class="hint">u</span><span class="c">&#x2DB9;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#x2DBA;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#x2DBB;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#x2DBC;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#x2DBD;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#x2DBE;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">ä</span><span class="c">&#xAB20;</span></span>
+<span class="g e"><span class="hint">u</span><span class="c">&#xAB21;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#xAB22;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#xAB23;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#xAB24;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#xAB25;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#xAB26;</span></span>
+</div>
+<div id="ጰ">
+<span class="g"><span class="hint">p̣ä</span><span class="c">&#x1330;</span></span>
+<span class="g"><span class="hint">p̣u</span><span class="c">&#x1331;</span></span>
+<span class="g"><span class="hint">p̣i</span><span class="c">&#x1332;</span></span>
+<span class="g"><span class="hint">p̣a</span><span class="c">&#x1333;</span></span>
+<span class="g"><span class="hint">p̣e</span><span class="c">&#x1334;</span></span>
+<span class="g"><span class="hint">p̣ə</span><span class="c">&#x1335;</span></span>
+<span class="g"><span class="hint">p̣o</span><span class="c">&#x1336;</span></span>
+<span class="g"><span class="hint">p̣wa</span><span class="c">&#x1337;</span></span>
+<span class="g e"><span class="hint">p̣oa</span><span class="c">&#x2D91;</span></span>
+</div>
+<div id="ጸ">
+<span class="g"><span class="hint">ṣä</span><span class="c">&#x1338;</span></span>
+<span class="g"><span class="hint">ṣu</span><span class="c">&#x1339;</span></span>
+<span class="g"><span class="hint">ṣi</span><span class="c">&#x133A;</span></span>
+<span class="g"><span class="hint">ṣa</span><span class="c">&#x133B;</span></span>
+<span class="g"><span class="hint">ṣe</span><span class="c">&#x133C;</span></span>
+<span class="g"><span class="hint">ṣə</span><span class="c">&#x133D;</span></span>
+<span class="g"><span class="hint">ṣo</span><span class="c">&#x133E;</span></span>
+<span class="g"><span class="hint">ṣwa</span><span class="c">&#x133F;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">ä</span><span class="c">&#xAB28;</span></span>
+<span class="g e"><span class="hint">u</span><span class="c">&#xAB29;</span></span>
+<span class="g e"><span class="hint">i</span><span class="c">&#xAB2A;</span></span>
+<span class="g e"><span class="hint">a</span><span class="c">&#xAB2B;</span></span>
+<span class="g e"><span class="hint">e</span><span class="c">&#xAB2C;</span></span>
+<span class="g e"><span class="hint">ə</span><span class="c">&#xAB2D;</span></span>
+<span class="g e"><span class="hint">o</span><span class="c">&#xAB2E;</span></span>
+</div>
+<div id="ፀ">
+<span class="g"><span class="hint">ṣ́ä</span><span class="c">&#x1340;</span></span>
+<span class="g"><span class="hint">ṣ́u</span><span class="c">&#x1341;</span></span>
+<span class="g"><span class="hint">ṣ́i</span><span class="c">&#x1342;</span></span>
+<span class="g"><span class="hint">ṣ́a</span><span class="c">&#x1343;</span></span>
+<span class="g"><span class="hint">ṣ́e</span><span class="c">&#x1344;</span></span>
+<span class="g"><span class="hint">ṣ́ə</span><span class="c">&#x1345;</span></span>
+<span class="g"><span class="hint">ṣ́o</span><span class="c">&#x1346;</span></span>
+<span class="g"><span class="hint">ṣ́oa</span><span class="c">&#x1347;</span></span>
+</div>
+<div id="ፈ">
+<span class="g"><span class="hint">fä</span><span class="c">&#x1348;</span></span>
+<span class="g"><span class="hint">fu</span><span class="c">&#x1349;</span></span>
+<span class="g"><span class="hint">fi</span><span class="c">&#x134A;</span></span>
+<span class="g"><span class="hint">fa</span><span class="c">&#x134B;</span></span>
+<span class="g"><span class="hint">fe</span><span class="c">&#x134C;</span></span>
+<span class="g"><span class="hint">fə</span><span class="c">&#x134D;</span></span>
+<span class="g"><span class="hint">fo</span><span class="c">&#x134E;</span></span>
+<span class="g"><span class="hint">fwa</span><span class="c">&#x134F;</span></span>
+<span class="g"><span class="hint">fya</span><span class="c">&#x135A;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">fʷä</span><span class="c">&#x1388;</span></span>
+<span class="g e"><span class="hint">fʷi</span><span class="c">&#x1389;</span></span>
+<span class="g e"><span class="hint">fʷe</span><span class="c">&#x138A;</span></span>
+<span class="g e"><span class="hint">fʷə</span><span class="c">&#x138B;</span></span>
+</div>
+<div id="ፐ">
+<span class="g"><span class="hint">pä</span><span class="c">&#x1350;</span></span>
+<span class="g"><span class="hint">pu</span><span class="c">&#x1351;</span></span>
+<span class="g"><span class="hint">pi</span><span class="c">&#x1352;</span></span>
+<span class="g"><span class="hint">pa</span><span class="c">&#x1353;</span></span>
+<span class="g"><span class="hint">pe</span><span class="c">&#x1354;</span></span>
+<span class="g"><span class="hint">pə</span><span class="c">&#x1355;</span></span>
+<span class="g"><span class="hint">po</span><span class="c">&#x1356;</span></span>
+<span class="g"><span class="hint">pwa</span><span class="c">&#x1357;</span></span>
+<span class="g e"><span class="hint">poa</span><span class="c">&#x2D92;</span></span>
+<br class="e"/>
+<span class="g e"><span class="hint">pʷä</span><span class="c">&#x138C;</span></span>
+<span class="g e"><span class="hint">pʷi</span><span class="c">&#x138D;</span></span>
+<span class="g e"><span class="hint">pʷe</span><span class="c">&#x138E;</span></span>
+<span class="g e"><span class="hint">pʷə</span><span class="c">&#x138F;</span></span>
+</div>
+
+</div>
+
+<div id="punctuation">
+        <span class="c" >፡</span> 
+        <span class="c">&#x1362;</span> 
+        <span class="c">&#x1363;</span> 
+        <span class="c">&#x1364;</span> 
+        <span class="c">&#x1365;</span> 
+        <span class="c">&#x1366;</span> 
+        <span class="c">&#x1367;</span> 
+        <span class="c">&#x1368;</span> 
+        <span class="c">&#x1360;</span> 
+        <span class="c">&#x002E;</span>
+        <span class="c">?</span>
+        <span class="c">!</span>
+        <span class="c">¡</span>
+        <span class="c">‹</span>
+        <span class="c">›</span>
+        <span class="c">&#x00AB;</span>
+        <span class="c">&#x00BB;</span>
+        <span class="c">’</span>
+</div>
+
+<div id="enumbers">
+<span class="c">0</span> <span class="c">1</span> <span class="c">2</span> <span class="c">3</span> <span class="c">4</span> <span class="c">5</span> <span class="c">6</span> <span class="c">7</span> <span class="c">8</span> <span class="c">9</span> <span class="c">,</span> <span class="c">.</span>
+</div>
+
+<div id="numbers">
+<span class="c">&#x1369;</span> <span class="c">&#x136A;</span> <span class="c">&#x136B;</span> <span class="c">&#x136C;</span> <span class="c">&#x136D;</span> <span class="c">&#x136E;</span> <span class="c">&#x136F;</span> <span class="c">&#x1370;</span> <span class="c">&#x1371;</span> <span class="c">&#x1372;</span> <span class="c">&#x1373;</span> <span class="c">&#x1374;</span> <span class="c">&#x1375;</span> <span class="c">&#x1376;</span> <span class="c">&#x1377;</span> <span class="c">&#x1378;</span> <span class="c">&#x1379;</span> <span class="c">&#x137A;</span> <span class="c">&#x137B;</span> <span class="c">&#x137C;</span>
+</div>
+
 
 
 
@@ -143,6 +744,32 @@
 </div>
 
 <div id="extrashapes"></div>
+
+</div>
+
+
+<details>
+<summary style="text-align: start;">show combining characters</summary>
+<div id="cchars">
+<span class="c">&#x135E;</span>
+<span class="c">&#x135F;</span>
+<span class="c">&#x135D;</span>
+&nbsp;
+<span class="c">&#x030F;</span>
+<span class="c">&#x0300;</span>
+<span class="c">&#x0304;</span>
+<span class="c">&#x0301;</span>
+<span class="c">&#x030B;</span>
+<span class="c">&#x0302;</span>
+<span class="c">&#x030C;</span>
+<span class="c">&#x0307;</span>
+<span class="c">&#x0308;</span>
+<span class="c">&#x0303;</span>
+<span class="c">&#x30E;</span>
+</div>
+</details>
+
+  </div>
 
 
 <div id="temp"></div>

@@ -2,12 +2,14 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Ethiopic character picker 20</title>
+<title>Help for Ethiopic character picker 22</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../../shared20/style.css" />
+<link rel="stylesheet" type="text/css" href="../../shared22/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js" type="text/javascript"></script>
 <script type="text/javascript" src="/shared/code/toc_2016.js"></script>
+<script type="text/javascript" src="../../shared22/helptemplate.js"></script>
+<script>var direction = 'ltr'</script>
 </head>
 
 <body class="app notes">
@@ -17,7 +19,7 @@
 </header>
 
 
-<h1>Notes/help</h1>
+<h1>Ethiopic picker notes/help</h1>
 
 
 <aside class="sidebar">
@@ -25,139 +27,81 @@
   <div id="toc"><!-- placeholder --></div>
   <div class="noprint">
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="../index.html">Ethiopic picker</a></p>
         <p><a href="/scripts/links?script=ethiopic">Ethiopic script links</a></p>
         <p><a href="/pickers/">List of pickers </a></p>
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->08-Aug-2017<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=ethiopic" title="Show all blog posts tagged with 'ethiopic'">ethiopic</a></p>
-
+<p id="status">Updated  <!-- #BeginDate format:En2 -->23-Feb-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=ethiopic" title="Show all blog posts tagged with 'ethiopic'">ethiopic</a></p>
 
 <p>This Unicode character picker allows you to produce or analyse runs of Ethiopic text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[ethiopic%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/ethiopic">the Github commit list</a>.</p>
 
 
 <section id="basics">
-  <h2 href="#basics">Basic use</h2>
-<p>To produce characters in the text area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the controls to get further information about the characters. You must have JavaScript enabled. </p>
-<p>The controls just above the text area allow you to interact with the text in various ways. They nearly all work on highlighted text within the text area, or if there is no highlight, on all the text. Controls near the bottom of the picker allow you to change font, font size, line-height, text direction, etc.</p>
-<p><b class="leadin">Sample text</b> If you want to add some sample text to the text area, click on the <img src="../../images/sample.png" alt="plus sign"/> icon.</p>
-
-<p><b class="leadin">Fonts</b>
-  To properly display the text you will need to choose a font that is loaded on your system or device, or use the web font downloaded with the page (Noto Sans Ethiopic). The font list contains fonts that can be found on the Mac  and Windows. See more information about <a href="/scripts/fontlist/#ethiopic" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
-
-<p><b class="leadin">Mobile devices</b>
-When working on an iPad or similar device, you should turn off<code class="kw" translate="no"> Autofocus</code> (just below the text area). This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</p>
 </section>
+<script>
+document.getElementById('basics').innerHTML = addBasicUse(direction)
+</script>
+
 
 <section id="about">
 <h2 href="#about">About the chart</h2>
-      <p>Includes characters in the Unicode <a href="/uniview/?block=ethiopic" target="_blank">Ethiopic</a> block.     </p>
-      <p>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</p>
-</section>
+      <p>Includes all the characters in the Unicode <a href="/uniview/?block=ethiopic" target="_blank">Ethiopic</a>, <a href="/uniview/?block=ethiopic_supplement" target="_blank">Ethiopic Supplement</a>, <a href="/uniview/?block=ethiopic_extended" target="_blank">Ethiopic Extended</a> and <a href="/uniview/?block=ethiopic_extended-a" target="_blank">Ethiopic Extended-A</a> blocks. The extended repertoire is initially hidden, but can be revealed using a selection in the input aids, to the left side.</p>
+<div id="aboutBP">
+</div>
+<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
+</script>
 
-
-
-<section id="help">
-<h2 href="#help">Select the thing you want help with
-
-  <map name="helpSelector">
-    <area shape="rect" coords="10,68,714,106" href="#top_controls" />
-    <area shape="rect" coords="9,107,720,280" href="#text_area" />
-    <area shape="rect" coords="8,293,713,361" href="#secondary_output" />
-    <area shape="rect" coords="2,393,18,511" href="#input_aids" />
-    <area shape="rect" coords="16,372,368,393" href="#character_names" />
-    <area shape="rect" coords="601,369,714,392" href="#autofocus" />
-    <area shape="rect" coords="58,396,665,544" href="#buttons" />
-    <area shape="rect" coords="9,544,688,598" href="#yellow_controls" />
-    <area shape="rect" coords="9,597,613,659" href="#more_controls" />
-  </map>
-</h2>
-<p><img usemap="#helpSelector" alt="Help selector." src="images/selector.png"/></p>
-
-
-
-
-<section id="text_area">
-  <h3 href="#text_area">Text area</h3>
-  <p><img src="images/text_area.png" alt=""/></p>
-  <p>This is where you see characters appearing as you select them from the panels lower down or where you paste text into the picker. Once you have some text here, you can perform various operations on it, or simply copy it to the clipboard for use elsewhere. </p>
-</section>
-
-
-<section id="buttons">
-  <h3 href="#buttons">Selection area</h3>
-  <p><img src="images/selection_area.png" alt=""/></p>
-  <p>Click on characters or buttons in this area to add them to the  text area above.</p>
-  <p>To enter a syllable choose the base shape shown in orange. A list of related syllables will appear below. Click on one of these to add it to the text area.</p>
-  <p>Numbers and punctuation appear above the line of orange shapes.</p>
 </section>
 
 
 
 <section id="top_controls">
-  <h3 href="#top_controls">Controls above the text area</h3>
-      <p><img src="images/controls_above.png" alt=""/></p>
-      <p>Controls above the input box allow you to run various operations on the text in the box. <strong>Most of them work on what you have selected</strong> within the box, or the whole box if nothing is selected.</p>
-      
-      <p><b class="leadin">Copy, select, delete, etc. (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p>
-      <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
-      <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
-    <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Ethiopic text, [2] transliteration, [3] IPA transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use nothing between the slashes.</p>
-       <p>For example, the following:</p>
-      <p><span lang="am">አማርኛ</span>//æmˈhærɪk/Amharic</p>
-      <p>will produce:</p>
-      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;charExample&quot;&gt;&lt;span class=&quot;ex&quot; lang=&quot;am&quot;&gt;<span lang="am">አማርኛ</span>&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;æmˈhærɪk&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Amharic&lt;/span&gt;&lt;/span&gt;</code></p>
-      <p>To get just the ethiopic and the meaning you would use:</p>
-       <p><span lang="am">አማርኛ</span>///Amharic</p>
-       
-      
-      <p><b class="leadin">Character markup.</b> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the text area, then click this button.  It will return something like the following for each of the characters:</p>
-      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;codepoint&quot;&gt;&lt;span lang=&quot;am&quot;&gt;&amp;#x129B;&lt;/span&gt; [&lt;span class=&quot;uname&quot;&gt;U+129B ETHIOPIC SYLLABLE NYAA&lt;/span&gt;]&lt;/span&gt;</code></p>
-      <p>When you add it to your document, it will look like this.</p>
-      <p><span class="codepoint"><span lang="am">&#x129B;</span> [<span class="uname">U+129B ETHIOPIC SYLLABLE NYAA</span>]</span></p>
+<h2 href="#top_controls">Controls above the text area</h2>
+<div id="controlsAbove1"></div>
+<script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
+
+      <p><b class="leadin">Transliterate.</b> <strong></strong>Converts the contents of the text area to a Latin transliteration that provides a unique correspondence between each Ethiopic symbol and a Latin symbol. It doesn't necessarily lead to a good phonetic transcription, but the process is reversible (unlike most phonetic transcriptions).</p>
+<div id="controlsAbove2"></div>
+<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+
 </section>
 
-<section>
-  <h3 id="secondary_output">Secondary text area</h3>
-  <p><img src="images/secondary_text.png" alt=""/></p>
-  <p>This area receives the output of various tools. Note that the text is editable.</p>
-  <p>The icons to the right ( <img src="images/second_copy_etc.png" alt="" style="vertical-align:middle;"/> ) allow you to copy the contents of this area to the clipboard, insert the contents into the main text area, or close this subwindow, respectively. When you insert the contents of this subwindow into the main text area, the text will overwrite any highlighted text, otherwise it will just be inserted at the current cursor position.</p>
-  <p>Some conversions produce ambiguous output. In this case, you will be offered two alternatives on a yellow background, eg. <img src="images/alternatives.png" alt="" style="vertical-align:top;"/> presents you with the alternatives 'h' or 't'. Simply click on the alternative you want, and the picker will discard the rest.</p>
+<section id="secondaryText">
+</section>
+<script>document.getElementById('secondaryText').innerHTML = addSecondaryText()</script>
+
+
+
+<section id="input_aids">
+<h2 href="#input_aids">Input aids</h2>
+
+<div id="inputAids1"></div>
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, latin')</script>
+
+
+    <p><b class="leadin">Show hints.</b> When this is on, transliterations are shown for the syllabic characters.</p>
+<p><b class="leadin">Extended repertoire.</b> Allows you to toggle on or off the extension characters. The basic repertoire covers characters needed for Amharic, Tigrinya, Tigre, and Blin. The extension characters are for writing the sounds of other languages, such as Me'en, Sebatbeit, Gamo-Gofa-Dawro, Basketo, Gumuz, etc.</p>
+<div id="inputAids2"></div>
+<script>document.getElementById('inputAids2').innerHTML = addInputAids('keyboard')</script>
+
 </section>
 
-<section id="character_names">
-  <h3 href="#character_names">Character names</h3>
-  <p><img src="images/character_names.png" alt=""/></p>
-  <p>As you mouse over characters in the selection areas of the picker, you will see the code point and character name appear here. </p>
-</section>
 
-<section id="autofocus">
-  <h3 href="#autofocus">Autofocus</h3>
-  <p style="text-align:right;"><img src="images/autofocus.png" alt=""/></p>
-  <p>When working on an iPad or similar device, you should set this to <samp>Off</samp>. This prevents the keyboard popping up after you input every character.</p>
-</section>
+
 <section id="yellow_controls">
-  <h3 href="#yellow_controls">Controls on the yellow background</h3>
-    <p><img src="images/yellow_controls.png" alt=""/></p>
-    <p><b class="leadin">Left-hand controls.</b> These controls at the bottom of the page allow you to modify fonts used, the font size, line height, and the height of the text area. </p>
-    <p><b class="leadin">Add codepoint.</b> You can add characters to the text area by typing codepoints and escapes in the <samp>Add codepoint</samp> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</p>
-    <p><b class="leadin">Search for. </b>If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the <samp translate="no">X</samp> next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <kbd  translate="no">\bha\b</kbd> (or the shortcut, <kbd  translate="no">:ha:</kbd>).</p>
 </section>
-<section id="more_controls">
-  <h3 href="#more_controls">More controls</h3>
-  <p><img src="images/more_controls.png" alt=""/></p>
-  <p>Click on <samp>more controls</samp> to reveal the less commonly used controls described here.</p>
-  <p><b class="leadin">Normalise. </b>All text is added to the main text area in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character – text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. </p>
-  <p><b class="leadin">Change table font. </b>Allows you to change the font and size of the characters you click on in the main selection areas. </p>
-    <p><b class="leadin">CC base.</b> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://rishida.net/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. </p>
-    <p>The <samp class="kw" translate="no">CC base</samp> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</p>
-</section>
-</section>
+<script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
 
-<div class="smallprint">Latest commit <a href="https://github.com/r12a/pickers/commits/gh-pages/ethiopic/help"><!-- #BeginDate format:En2 -->08-Aug-2017<!-- #EndDate --></a>. 
-Make a <a href="https://github.com/r12a/pickers/issues/new?title=[ethiopic%20help]%20%20ADD%20TITLE%20HERE">comment</a>.
-Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a>.</div>
+
+
+<section id="more_controls">
+</section>
+<script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
 </body>
 <script type="text/javascript">
 createtoc(3);
