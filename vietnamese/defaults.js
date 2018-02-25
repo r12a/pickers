@@ -29,6 +29,7 @@ var template = {}
 
 
 var inputAids = [
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [

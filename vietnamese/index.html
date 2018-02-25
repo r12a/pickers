@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Vietnamese character picker 21</title>
+<title>Vietnamese character picker 22</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
 <script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
 <script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared21/code.js">  </script>
+<script type="text/javascript" src="../shared22/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+<script type="text/javascript" src="../shared22/pagetemplate.js">  </script>
 <script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
 
 <script type="text/javascript" src="localtranscription.js">  </script>
@@ -60,8 +60,25 @@
 
 <div id="tables" dir="ltr">
   
-  <div id="alphabet" class="default">
-    <div id="grid">
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+
+<div id="alphabet" class="default">
+  
+<div class="spaceline">
+<span class="shifted" dir="auto" onClick="toggleShift(this, 'upper', 'lower')">SHIFT</span>
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+  <div id="grid">
       <table id="upper" style="display:none;">
         <tr>
           <td ><span class="c">&#x0042;</span></td>
@@ -74,7 +91,7 @@
           <td ><span class="c">&#x004C;</span></td>
           <td ><span class="c">&#x004D;</span></td>
           <td ><span class="c">&#x004E;</span></td>
-          <td ><span class="c">&#x004E;&#x0047;</span></td>
+          <td style="width:1.5em"><span class="c">&#x004E;&#x0047;</span></td>
           <td ><span class="c">&#x0050;</span></td>
           <td ><span class="c">&#x0051;</span></td>
           <td ><span class="c">&#x0052;</span></td>
@@ -116,7 +133,7 @@
           <td ><span class="c">&#x006C;</span></td>
           <td ><span class="c">&#x006D;</span></td>
           <td ><span class="c">&#x006E;</span></td>
-          <td ><span class="c">&#x006E;&#x0067;</span></td>
+          <td style="width:1.5em"><span class="c">&#x006E;&#x0067;</span></td>
           <td ><span class="c">&#x0070;</span></td>
           <td ><span class="c">&#x0071;</span></td>
           <td ><span class="c">&#x0072;</span></td>
@@ -155,15 +172,6 @@
           <td ><span class="c">&#x0309;</span></td>
           <td ><span class="c">&#x0323;</span></td>
           <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td colspan="7">
-                    <span class="shifted" dir="auto" onClick="toggleShift(this, 'upper', 'lower')">SHIFT</span>
-          <span class="touch" title="Space" style="padding: 5px 20px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
-</td>
         </tr>
       </table>
     </div>
