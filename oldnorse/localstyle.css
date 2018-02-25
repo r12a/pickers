@@ -13,78 +13,37 @@
 	}
 
 
-#alphabet { display: block; margin-right: 20px;  }
-
-#alphabet td.hint {  
-	font-size: 14px;
-	color: #ccc;
-	text-align: left;
-	text-align: end;
-	vertical-align: top;
-	}
-	
-#kbd { 	
-	margin-left: 0; 
-	}
-#kbd table {
-	margin:0;
-	}
-	
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: right;
-	text-align: start;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1.4;
-	}
-#kbd #consonants  {
-	text-align: start;
-	padding-inline-end: 20px;
-	}
-#kbd #consonants td  {
-	padding: 0 2px;
-	}
-
-#kbd #vowels .hint {
-	padding-left: 10px; 
-	}
-#kbd #vowels td span {
-	padding: 0 10px; 
-	}
-#rareVowels span {
-	padding: 0 10px; 
-	}
-
-#kbd #numbers {
-	padding: 0 15px;
-	}
-#kbd #additional span {
-	padding: 0 4px;
-	min-width: 20px;
-	}
-
-#toggleRare {
-	margin: 10px 30px;
-	}
-#rare .hint {
-	vertical-align: top;
-	}
+[lang=ang] { font-family: 'Doulos SIL WF', serif; } 
 
 
-.key { 	height: 34px; width: 60px;	} 
-.key span { 
-	font-size: 24px; 
+#alphabet { 
+	display: block; 
 	color: #666;
-	font-weight: normal; 
-	font-family:  "Doulos SIL", "Noto Sans",  serif;  
-	cursor:pointer; 
-	text-align: center; 
-	line-height: 1;
-	padding: 0 2px; 
 	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.4em; 
+	font-weight: normal; 
+	font-family:  "Doulos SIL WF", "Junicode WF",  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
 
 
 #endings {

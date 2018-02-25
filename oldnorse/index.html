@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Old Norse character picker 21</title>
+<title>Old Norse character picker 22</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
 <script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
 <script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared21/code.js">  </script>
+<script type="text/javascript" src="../shared22/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+<script type="text/javascript" src="../shared22/pagetemplate.js">  </script>
 <script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
 
 <script type="text/javascript" src="localtranscription.js">  </script>
@@ -119,21 +119,17 @@
 
 <div id="tables" dir="ltr">
   
-  <div id="alphabet" class="default">
-  
-  <div class="kbdWrapper" style="margin-bottom: 1em;"><div dir="ltr" id="keyboard" style="display:block; margin-bottom: 0;"></div></div>
-  
-    <table id="kbd" style="margin: auto;">
-<tr>
-  <td colspan="3" id="bottomline">
-  <span class="unshifted" dir="auto" onClick="toggleKbdShift(this)">SHIFT</span> 
-<span class="touch" title="Space" style="padding: 5px 100px;" dir="auto" onClick="add(' ');">SPACE</span>
+<div class="kbdWrapper"><div dir="ltr" id="keyboard" style="display: block;"></div></div>
+
+<div id="alphabet" class="default">
+
+<div class="spaceline">
+<span class="touch" title="Space" style="padding: 5px 140px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
 <span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
 <span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
-  </td>
-</tr>
-      </table>
+</div>
+
 
   </div>
 
