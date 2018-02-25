@@ -11,29 +11,7 @@ function localInitialise () {
 	}
 
 
-_characterSet = 
-"ئا ا ئە ە ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك گ ڭ ل م ن ھ ئو و ئۇ ۇ ئۆ ۆ ئۈ ۈ ۋ ئې ې ئى ىي ي ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ؟ ، ؛"
-
-
 var _h = {
-'0627': ['06F1'],
-'0622': ['06F1'],
-'0623': ['06F1', '0654'],
-'0625': ['06F1', '0655'],
-'0671': ['06F1'],
-'06F1': ['0671', '0625', '0623', '0622', '0627'],
-'0639': ['060F'],
-'063A': ['060F'],
-'060F': ['0639', '063A'],
-'0657': ['064F'],
-'0602': ['060E'],
-'060E': ['0602'],
-'066B': ['0631'],
-'0631': ['066B'],
-'0654': ['0626', '0624', '0623'],
-'0655': ['0625'],
-'0626': ['0654'],
-'0624': ['0654'],
 
 end: {}
 }
@@ -41,20 +19,25 @@ end: {}
 
 
 var keyboarddef = [
-"1|2|3|4|5|6|7|8|‹,9|›,0|«,»",
-"œ,q|w|ē,e|r|þ,t|ȳ,y|ū,u|ī,i|ō,o|p|[,]",
-"ā,a|s|ð,d|f|ġ,g|h|j|k|l|’|ǣ,æ",
-"z|x|ċ,c|v|b|n|m|;|.,:|\u0361"
+"§|1 1|2 2|3 3|4 4|5 5|6 6|7 7|8 8|9 9 ‹|0 0 ›|- «|= »",
+"q q œ|w w|e e ē|r r|t t þ|y y ȳ|u u ū|i i ī|o o ō|p p|[|]",
+"a a ā|s s|d d ð|f f|g g ġ|h h|j j|k k|l l|; ’|' ǣ æ|\\",
+"z z|x x|c c ċ|v v|b b|n n|m m|, ;|. . :|/ \u0361"
 ]
 
-var keyboardguide = [
-"1,2,3,4,5,6,7,8,9,0,-,=",
-"q,w,e,r,t,y,u,i,o,p,[,],",
-"a,s,d,f,g,h,j,k,l,;,',\\",
-"z,x,c,v,b,n,m,,.,/,"
+var keyboardUC = [
+"§|1 1|2 2|3 3|4 4|5 5|6 6|7 7|8 8|9 9 ‹|0 0 ›|- «|= »",
+"Q Q Œ|W W|E E Ē|R R|T T Þ|Y Y Ȳ|U U Ū|I I Ī|O O Ō|P P|[|]", 
+"A A Ā|S S|D D Ð|F F|G G Ġ|H H|J J|K K|L L|; ’|' Ǣ Æ|\\", 
+"Z Z|X X|C C Ċ|V V|B B|N N|M M|, ;|. . :|/ \u0361"
 ]
 
-var keyboardRowOffset = ['5px','20px','30px','50px']
+function event_toggleKbdShift () {
+    if (this.classList.contains('shiftKeyOn')) {
+        makeKeyboard(keyboarddef, keyboardLCGuide)
+        }
+    else makeKeyboard(keyboardUC, keyboardUCGuide)
+    }
 
 
 

@@ -15,6 +15,42 @@
 
 [lang=ang] { font-family: 'Doulos SIL WF', serif; } 
 
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.4em; 
+	font-weight: normal; 
+	font-family:  "Doulos SIL WF", "Junicode WF",  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+
+
+
+/*
 #alphabet { display: block; margin-right: 20px;  }
 
 #alphabet td.hint {  
@@ -87,7 +123,7 @@
 	line-height: 1;
 	padding: 0 2px; 
 	}
-
+*/
 
 #endings {
 	margin-top: 2em;
