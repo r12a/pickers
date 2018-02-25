@@ -17,97 +17,38 @@
 
 
 
-#alphabet { display: block; margin-right: 20px;  }
-
-#alphabet td.hint {  
-	font-size: 14px;
-	color: #ccc;
-	text-align: left;
-	text-align: end;
-	vertical-align: top;
-	}
-	
-#kbd { 	
-	margin-left: 0; 
-	}
-#kbd table {
-	margin:0;
-	}
-	
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: right;
-	text-align: start;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1.4;
-	}
-#kbd #consonants  {
-	text-align: start;
-	padding-inline-end: 20px;
-	}
-#kbd #consonants td  {
-	padding: 0 2px;
+#alphabet { 
+	display: block; 
+	color: #666;
 	}
 
-#kbd #vowels .hint {
-	padding-left: 10px; 
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
 	}
-#kbd #vowels td span {
-	padding: 0 10px; 
-	}
-#rareVowels span {
-	padding: 0 10px; 
-	}
-
-#kbd #numbers {
-	padding: 0 15px;
-	}
-#kbd #additional span {
-	padding: 0 4px;
-	min-width: 20px;
+.c { 
+	min-width: .75em;
+	text-align: center;
 	}
 
-#toggleRare {
-	margin: 10px 30px;
-	}
-#rare .hint {
-	vertical-align: top;
-	}
-
-
+    
+    
+/* KEYBOARD */
 .key span { 
-	font-size: 24px; 
-	color: #666; 
+	font-size: 1.3em; 
 	font-weight: normal; 
-	font-family:  "Doulos SIL", "Noto Sans",  serif;  
-	cursor:pointer; 
-	text-align: center; 
-	line-height: 1;
-	padding: 0 2px; 
+	font-family:  "Junicode WF",  "Doulos SIL WF", sans-serif;  
+    line-height: 1;
 	}
-.key .s { position:absolute; bottom: 5px; left: 15px; }
-.key .n { position:absolute; bottom: 5px; right: 5px;  }
+
+#keyboard { display: none; }
 
 
-#endings {
-	margin-top: 2em;
-	text-align:center;
-	}
-#endings span {
-	display: inline-block;
-	width: 2em;
-	font-size: 120%;
-	font-weight: normal;
-	}
-#caseEndings table {
-	margin: auto;
-	margin-bottom: 2em;
-	}
-#caseEndings td {
-	min-width: 2em;
-	border-radius: 10px;
-	border: 1px solid #ccc;
-	}
+
+#keyboardSwitch {
+    text-align: center;
+    }
+
+
+

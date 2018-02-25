@@ -34,12 +34,12 @@ var inputAids = [
 ]
 
 var controls = [
-{"title":"Transliterate<br/>LB/ST runes", "alt":"Transliterate Long Branch or Short Twig runes.", "code":"doTranscription('transliterateRunes')"},
-{"title":"Transliterate<br/>Medieval runes", "alt":"Transliterate Medieval runes.", "code":"doTranscription('transliterateMedievalRunes')"},
-{"title":"Transliterate<br/>AS/F runes", "alt":"Transliterate Anglo-Saxon/Frisian runes.", "code":"doTranscription('transliterateASRunes')"},
-{"title":"Latin to<br/>LB runes", "alt":"Convert latin text to Long Branch Norwegian runes.", "code":"doTranscription('toLB')"},
-{"title":"Latin to<br/>ST runes", "alt":"Convert latin text to Short Twig Norwegian runes.", "code":"doTranscription('toST')"},
-{"title":"Latin to<br/>Medieval runes", "alt":"Convert latin text to Medieval Norwegian runes.", "code":"doTranscription('toMedieval')"},
-{"title":"Latin to<br/>AS/F runes", "alt":"Convert latin text to Anglo-Saxon/Frisian runes.", "code":"doTranscription('toASF')"},
+{"title":"LB/ST<br/>to Latin", "alt":"Transliterate Long Branch or Short Twig runes.", "code":"doTranscription('transliterateRunes')"},
+{"title":"Medieval<br/>to Latin", "alt":"Transliterate Medieval runes.", "code":"doTranscription('transliterateMedievalRunes')"},
+{"title":"AS/F<br/>to Latin", "alt":"Transliterate Anglo-Saxon/Frisian runes.", "code":"doTranscription('transliterateASRunes')"},
+{"title":"Latin to<br/>LB", "alt":"Convert latin text to Long Branch Norwegian runes.", "code":"doTranscription('toLB')"},
+{"title":"Latin to<br/>ST", "alt":"Convert latin text to Short Twig Norwegian runes.", "code":"doTranscription('toST')"},
+{"title":"Latin to<br/>Medieval", "alt":"Convert latin text to Medieval Norwegian runes.", "code":"doTranscription('toMedieval')"},
+{"title":"Latin to<br/>AS/F", "alt":"Convert latin text to Anglo-Saxon/Frisian runes.", "code":"doTranscription('toASF')"},
 {"title":"Transcribe<br/>from NION", "alt":"Convert text from New Introduction to Old Norse to Unicode.", "code":"doTranscription('fromNItON')"},
 ]
