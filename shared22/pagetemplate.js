@@ -170,7 +170,7 @@ out = `
   <div style="font-size:80%">For context-sensitive help, click on one of these icons: <img src="../images/help.png" alt=""/></div>
   </div>
   
-<div id="extrashapes"></div>
+<!--div id="extrashapes"></div-->
 
 
 <div id="controls">
