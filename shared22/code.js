@@ -398,6 +398,17 @@ function setUIFont (font) {
 	
 		
 
+function setUIFont (font) {
+	document.querySelector('#alphabet').style.fontFamily = '"'+font+'"'
+    document.querySelector('#extrashapes').style.fontFamily = '"'+font+'"'
+	document.querySelector('#transcriptionChoice').style.fontFamily = '"'+font+'"'
+	
+	defaults.uifont = font
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+	}
+	
+		
+
 function setUIFontSize (size) {
 	document.querySelector('#alphabet').style.fontSize = size+'px';
     document.querySelector('#shapelist').style.fontSize = size+'px';
@@ -866,7 +877,7 @@ function event_mouseoverChar ()  {
 			}
 		}
 	}
-	
+
 function event_mouseoutChar ()  {
 	// unhighlight this character
 	this.style.backgroundColor = 'transparent'
@@ -881,7 +892,7 @@ function event_mouseoutChar ()  {
 			}
 		}
 	}
-	
+
 function event_clickOnChar () {
 	clearHighlights()
 	add(this.textContent)

@@ -22,7 +22,10 @@ h1 {
 	}
 
 table, tr, td, th { font-size: 100%; }
-#tables td { white-space:nowrap; }
+#tables td { 
+    white-space:nowrap; 
+    font-family: inherit;
+    }
 
 table td { border: 0; }
 
@@ -562,6 +565,7 @@ summary {
 	padding: 0 4px;
 	color: #999;
 	cursor: pointer;
+    font-family: 'Helvetica Neue', calibri, corbel, "Segoe UI", helvetica, sans-serif;
 	}
 summary:hover {
 	color: #c33;
