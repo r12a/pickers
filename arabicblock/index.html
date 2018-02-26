@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>All Arabic character picker 21</title>
+<title>All Arabic character picker 22</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
 <script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
 <script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared21/code.js">  </script>
+<script type="text/javascript" src="../shared22/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+<script type="text/javascript" src="../shared22/pagetemplate.js">  </script>
 <script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
 
 <!--script type="text/javascript" src="localtranscription.js">  </script-->
@@ -60,62 +60,49 @@
 
 
 <div id="tables" dir="rtl">
+
+
+<div class="spaceline">
+<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');" style="transform: rotateY(180deg);">⇥</span> 
+<span class="touch" title="Tab" dir="auto" onClick="add('\n');" style="transform: rotateY(180deg);">⏎</span> 
+<span class="touch" title="Delete All" dir="auto" onClick="del();">DEL</span> 
+<span class="touch delAll"  dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+
   
     <div id="alphabet" class="default">
-      <table id="kbd">
-        <tr>
-          <td colspan="3">
-          <span style="margin: 0 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 50px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add(' ');">SPACE</span> 
-          <span style="margin: 0x; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="del();">DEL</span> 
-          <span style="margin: 0x; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200D');">ZWJ</span> 
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200C');">ZWNJ</span> 
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2067');">RLI</span>
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2066');">LRI</span>
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2068');">FSI</span>
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u2069');">PDI</span>
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202B');">RLE</span>
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202A');">LRE</span>
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202C');">PDF</span>
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202E');">RLO</span>
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u202D');">LRO</span>
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200F');">RLM</span>
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u200E');">LRM</span>
-          <span style="margin: 0; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir="auto" onClick="add('\u061C');">ALM</span>
-          </td>
-        </tr>
-      </table>
-      <div style="text-align:center;"> 
-      <img alt=" " src="images/shape01.png" onclick="findShape('','\u0621,\u06FD,\u0674',false)" /> 
-      <img alt=" " src="images/shape02.png" onclick="findShape('','\u0645,\u0765,\u0766',false)" /> 
-      <img alt=" " src="images/shape03.png" onclick="findShape('','\u0647,\u06C1,\u06D5,\u06BE,\u0629,\u06C0,\u06C2,\u06C3,\u06FF,\u06FE',true)" /> 
-      <img alt=" " src="images/shape04.png" onclick="findShape('','\u0627,\u0622,\u0623,\u0675,\u0671,\u0672,\u0773,\u0774,\u0625,\u0673',true)" />
-      <img alt=" " src="images/shape05.png" onclick="findShape('','\u0644,\u06B6,\u06B7,\u06B5,\u06B8,\u076A',true)" /> 
-      <img alt=" " src="images/shape06.png" onclick="findShape('','\u0643,\u06AC,\u06AD,\u06AE,\u077F',true)" /> 
-      <img alt=" " src="images/shape07.png" onclick="findShape('','\u06A9,\u06AA,\u0762,\u063B,\u0763,\u06AB,\u063C,\u0764,\u06AF,\u06B0,\u06B1,\u06B2,\u06B3,\u06B4',true)" /> 
-      <img alt=" " src="images/shape12.png" onclick="findShape('','\u0649,\u06CC,\u06CD,\u0626,\u0678,\u06CE,\u063D,\u063E,\u063F,\u0775,\u0776,\u064A,\u0620,\u06D0,\u06D1,\u0777',true)" /> 
-      <img alt=" " src="images/shape08.png" onclick="findShape('','\u062D,\u062C,\u0683,\u0684,\u0686,\u0758,\u0687,\u076E,\u076F,\u077C,\u062E,\u0757,\u06BF,\u0682,\u0685,\u0681,\u0772',true)" /> 
-      <img alt=" " src="images/shape09.png" onclick="findShape('','\u0639,\u063A,\u075D,\u075F,\u06A0,\u075E,\u06FC',true)" /> 
-      <img alt=" " src="images/shape10.png" onclick="findShape('','\u0633,\u0634,\u075C,\u0770,\u077D,\u077E,\u069B,\u069A,\u069C,\u06FA,\u06E3',true)" /> 
-      <img alt=" " src="images/shape11.png" onclick="findShape('','\u0635,\u0636,\u069E,\u069D,\u06FB ',true)" /> 
-      <img alt=" " src="images/shape14.png" onclick="findShape('','\u062F,\u0630,\u068C,\u068E,\u068F,\u0690,\u0688,\u06EE,\u068A,\u068D,\u075A,\u0689,\u068B,\u0759',true)" /> 
-      <img alt=" " src="images/shape15.png" onclick="findShape('','\u0631,\u066B,\u0632,\u076D,\u0697,\u076B,\u0698,\u0699,\u076C,\u0691,\u0771,\u06EF,\u0692,\u0694,\u0693,\u0695,\u075B,\u0696',true)" /> 
-      <img alt=" " src="images/shape16.png" onclick="findShape('','\u0648,\u06CF,\u06CA,\u06CB,\u0624,\u0676,\u06C9,\u06C6,\u06C7,\u0677,\u06C8,\u0778,\u0779,\u06C4,\u06C5,\u060B,\u0608,\u06E5',true)" /> 
-      <img alt=" " src="images/shape17.png" onclick="findShape('','\u066F,\u06A7,\u0642,\u06A8,\u06A1,\u0641,\u06A4,\u06A6,\u06A2,\u0760,\u06A5,\u0761,\u06A3',true)" /> 
-      <img alt=" " src="images/shape18.png" onclick="findShape('','\u066E,\u062A,\u067A,\u062B,\u067D,\u067F,\u0756,\u0679,\u0628,\u067B,\u067E,\u0752,\u0750,\u0680,\u0755,\u0754,\u067C,\u0753,\u0751',true)" /> 
-      <img alt=" " src="images/shape19.png" onclick="findShape('','\u06BA,\u0646,\u06BD,\u06BB,\u0768,\u0769,\u06B9,\u06BC,\u0767',true)" /> 
-      <img alt=" " src="images/shape20.png" onclick="findShape('','\u0637,\u0638,\u069F',true)" /> 
-      <img alt=" " src="images/shape21.png" onclick="findShape('','\u06D2,\u06D3,\u077A,\u077B,\u06E6',true)" /> 
-      <img alt=" " src="images/shape22.png" onclick="findShape('','\u064E,\u065E,\u064B,\u064F,\u065D,\u064C,\u0651,\u065A,\u065B,\u0658,\u0652,\u0654,\u0657,\u0670,\u06DF,\u06E0,\u06EC,\u06EB,\u0659,\u06E4,\u0653,\u06D8,\u0610,\u0611,\u0612,\u0613,\u0614,\u0615,\u06D6,\u06D7,\u0616,\u06D9,\u06DA,\u06DB,\u06DC,\u06E1,\u06E7,\u06E8,\u0617,\u0618,\u0619,\u06E2',true)" /> 
-      <img alt=" " src="images/shape23.png" onclick="findShape('','\u0650,\u064D,\u0655,\u0656,\u065C,\u06EA,\u061A,\u06ED,\u06E2',true)" /> 
-      <img alt=" " src="images/shape24.png" onclick="findShape('','\u0660,\u0661,\u0662,\u0663,\u0664,\u0665,\u0666,\u0667,\u0668,\u0669,\u06F0,\u06F1,\u06F2,\u06F3,\u06F4,\u06F5,\u06F6,\u06F7,\u06F8,\u06F9',true)" /> 
-      <img alt=" " src="images/shape25.png" onclick="findShape('','\u060D,\u061B,\u060C,\u061F,\u066A,\u0609,\u060A,\u0606,\u0607,\u066D,\u066C,\u061E,\u00AB,\u00BB,\u060F,\u06DD,\u06DE,\u06E9,\u06D4,\u0640,\u0600,\u0601,\u0602,\u060E,\u0603',true)" /> 
+      <div id="prompts">
+      <span onclick="findShape('','\u0621,\u06FD,\u0674',false)">ء</span>
+      <span onclick="findShape('','\u0645,\u0765,\u0766',false)">م</span>
+      <span onclick="findShape('','\u0647,\u06C1,\u06D5,\u06BE,\u0629,\u06C0,\u06C2,\u06C3,\u06FF,\u06FE',true)">ه</span> 
+      <span onclick="findShape('','\u0627,\u0622,\u0623,\u0675,\u0671,\u0672,\u0773,\u0774,\u0625,\u0673',true)">ا</span>
+      <span onclick="findShape('','\u0644,\u06B6,\u06B7,\u06B5,\u06B8,\u076A',true)">ل</span> 
+      <span onclick="findShape('','\u0643,\u06AC,\u06AD,\u06AE,\u077F',true)">ك</span> 
+      <span onclick="findShape('','\u06A9,\u06AA,\u0762,\u063B,\u0763,\u06AB,\u063C,\u0764,\u06AF,\u06B0,\u06B1,\u06B2,\u06B3,\u06B4',true)">ک</span> 
+      <span onclick="findShape('','\u0649,\u06CC,\u06CD,\u0626,\u0678,\u06CE,\u063D,\u063E,\u063F,\u0775,\u0776,\u064A,\u0620,\u06D0,\u06D1,\u0777',true)">ى</span> 
+      <span onclick="findShape('','\u062D,\u062C,\u0683,\u0684,\u0686,\u0758,\u0687,\u076E,\u076F,\u077C,\u062E,\u0757,\u06BF,\u0682,\u0685,\u0681,\u0772',true)">ح</span> 
+      <span onclick="findShape('','\u0639,\u063A,\u075D,\u075F,\u06A0,\u075E,\u06FC',true)">ع</span> 
+      <span onclick="findShape('','\u0633,\u0634,\u075C,\u0770,\u077D,\u077E,\u069B,\u069A,\u069C,\u06FA,\u06E3',true)">س</span> 
+      <span onclick="findShape('','\u0635,\u0636,\u069E,\u069D,\u06FB ',true)">ص</span> 
+      <span onclick="findShape('','\u062F,\u0630,\u068C,\u068E,\u068F,\u0690,\u0688,\u06EE,\u068A,\u068D,\u075A,\u0689,\u068B,\u0759',true)">د</span> 
+      <span onclick="findShape('','\u0631,\u066B,\u0632,\u076D,\u0697,\u076B,\u0698,\u0699,\u076C,\u0691,\u0771,\u06EF,\u0692,\u0694,\u0693,\u0695,\u075B,\u0696',true)">ر</span> 
+      <span onclick="findShape('','\u0648,\u06CF,\u06CA,\u06CB,\u0624,\u0676,\u06C9,\u06C6,\u06C7,\u0677,\u06C8,\u0778,\u0779,\u06C4,\u06C5,\u060B,\u0608,\u06E5',true)">و</span> 
+      <span onclick="findShape('','\u066F,\u06A7,\u0642,\u06A8,\u06A1,\u0641,\u06A4,\u06A6,\u06A2,\u0760,\u06A5,\u0761,\u06A3',true)">ٯ</span> 
+      <span onclick="findShape('','\u066E,\u062A,\u067A,\u062B,\u067D,\u067F,\u0756,\u0679,\u0628,\u067B,\u067E,\u0752,\u0750,\u0680,\u0755,\u0754,\u067C,\u0753,\u0751',true)">ٮ</span> 
+      <span onclick="findShape('','\u06BA,\u0646,\u06BD,\u06BB,\u0768,\u0769,\u06B9,\u06BC,\u0767',true)">ں</span> 
+      <span onclick="findShape('','\u0637,\u0638,\u069F',true)">ط</span> 
+      <span onclick="findShape('','\u06D2,\u06D3,\u077A,\u077B,\u06E6',true)">ے</span> 
+      <span onclick="findShape('','\u064E,\u065E,\u064B,\u064F,\u065D,\u064C,\u0651,\u065A,\u065B,\u0658,\u0652,\u0654,\u0657,\u0670,\u06DF,\u06E0,\u06EC,\u06EB,\u0659,\u06E4,\u0653,\u06D8,\u0610,\u0611,\u0612,\u0613,\u0614,\u0615,\u06D6,\u06D7,\u0616,\u06D9,\u06DA,\u06DB,\u06DC,\u06E1,\u06E7,\u06E8,\u0617,\u0618,\u0619,\u06E2',true)">-۬-</span>
+      <span onclick="findShape('','\u0650,\u064D,\u0655,\u0656,\u065C,\u06EA,\u061A,\u06ED',true)">-ٜ-</span>
+      <span onclick="findShape('','\u0660,\u0661,\u0662,\u0663,\u0664,\u0665,\u0666,\u0667,\u0668,\u0669,•,\u06F0,\u06F1,\u06F2,\u06F3,\u06F4,\u06F5,\u06F6,\u06F7,\u06F8,\u06F9',true)">#</span> 
+      <span onclick="findShape('','\u060D,\u061B,.,\u060C,\u061F,\u066A,\u0609,\u060A,\u0606,\u0607,\u066D,\u066C,\u061E,\u00AB,\u00BB,‹,›,(,),•,\u060F,\u06DD,\u06DE,\u06E9,\u06D4,\u0640,\u0600,\u0601,\u0602,\u060E,\u0603',true)">&hellip;</span> 
       </div>
-    </div><!-- end of alphabet -->
-
-
-
-
-
+      
 
 
  <div id="shapelist" style="display:none; text-align:center;">
@@ -127,6 +114,60 @@
 
 
 <div id="temp"></div>
+
+
+
+ <!--div id="punctuation">  
+         <span class="c">&#x060C;</span>
+         <span class="c">.</span>
+         <span class="c">&#x061B;</span>
+        <span class="c">:</span>
+        <span class="c">&#x061F;</span>
+         <span class="c">&#x060D;</span>
+         <span class="c">&#x066A;</span>
+         <span class="c">&#x0640;</span>
+         
+         <span class="c">&#x00AB;</span>
+         <span class="c">&#x00BB;</span>
+         <span class="c">&#x2039;</span>
+         <span class="c">&#x203A;</span>
+         <span class="c">(</span>
+         <span class="c">)</span>
+         
+         <span class="c">&#x0600;</span>
+         <span class="c">&#x0601;</span>
+         <span class="c">&#x0602;</span>
+         <span class="c">&#x060E;</span>
+         <span class="c">&#x0603;</span>
+         <span class="c">&#x060F;</span>
+         </div-->
+
+
+
+<div id="formatCharacters">
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u2067');">RLI</span>
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u2066');">LRI</span>
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u2068');">FSI</span>
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u2069');">PDI</span>
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u202B');">RLE</span>
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u202A');">LRE</span>
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u202C');">PDF</span>
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u202E');">RLO</span>
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u202D');">LRO</span>
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u200F');">RLM</span>
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u200E');">LRM</span>
+          <span class="touch" style="padding: 5px 5px;" onClick="add('\u061C');">ALM</span>
+          </div>
+
+
+
+
+    </div><!-- end of alphabet -->
+
+
+
+
+
 
 
 </div><!-- end of tables -->

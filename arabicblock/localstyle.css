@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'Scheherazade WF';
+    src: url('/shared/webfonts/scheherazaderegotwebfont.woff2') format('woff2'),
+         url('/shared/webfonts/scheherazaderegotwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
     font-family: 'Noto Naskh Arabic WF';
     src: 	local('Noto Naskh Arabic'),
 			url('/shared/webfonts/NotoNaskhArabic-Regular.woff2') format('woff2'),
@@ -7,6 +14,49 @@
     font-style: normal;
 	}
 
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+
+#formatCharacters {
+    text-align: center;
+    line-height: 1;
+    }
+
+#prompts {
+    text-align: center;
+    color: orange;
+    }
+#prompts span, #prompts img {
+    cursor: pointer;
+    }
+#extrashapes {
+    min-height: 3.5em;
+    }
+
+#punctuation {
+    line-height: 1;
+    text-align: center;
+    font-size: 80%;
+    }
+
+#extrashapes {
+    line-height: 1.2;
+    }
+/*
 #extrashapes span { padding: 0 3px; font-family: "Noto Naskh Arabic WF", serif; }
 
 #alphabet img { 
@@ -103,7 +153,6 @@
 .shapelist li:hover .hidden img { display:inline; }
 
 .shapelist span {  font-family: 'doulos sil', gentiumplus, code2000, serif; font-size:26px; line-height: 1.2em; }
-/* #shape li {  padding-bottom:5px; } */
 
 
 #fontgrid { 
@@ -117,9 +166,10 @@
 	margin-right: 10px; 
 	}
 #fontgrid span:after { 
-	content: '\200B ' ; /* zwsp */ 
+	content: '\200B ' ; 
 	}
 
 #extrashapes {
     text-align: center;
 }
+*/
