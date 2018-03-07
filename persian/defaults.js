@@ -31,10 +31,13 @@ var template = {}
 var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Latin to Persian", "dataVar":"showLOCTrans", "dataLocn":"loctranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"IPA to Persian", "dataVar":"showIPATrans", "dataLocn":"ipatranscript", "dataShortTitle":"I", "type":"palette"}
+{"title":"Reverse transliteration", "dataVar":"showTransliteration", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
+{"title":"UN to Persian", "dataVar":"showLOCTrans", "dataLocn":"loctranscript", "dataShortTitle":"U", "type":"palette"},
+{"title":"IPA to Persian", "dataVar":"showIPATrans", "dataLocn":"ipatranscript", "dataShortTitle":"I", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
+{"title":"Trans-<br/>literate", "alt":"Convert Persian text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 {"title":"Transcribe<br/>to UN", "alt":"Convert Persian text to an UN Latin transcription.", "code":"doTranscription('toUN')"},
 ]

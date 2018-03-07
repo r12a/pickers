@@ -1,5 +1,6 @@
 globals.showLOCTrans = ''
 globals.showIPATrans = ''
+globals.showTransliteration = ''
 
 function localInitialise () {
 
@@ -33,9 +34,11 @@ end: {}
 
 
 
+var keyboarddef = [
+"§ ÷|1 ۱ !|2 ۲ ٬|3 ۳ ٫|4 ۴ ﷼|5 ۵ ٪|6 ۶ ×|7 ۷ ،|8 ۸ *|9 ۹ )|0 ۰ (|-|=",
+"q ض ْ|w ص ٌ|e ث ٍ|r ق ً|t ف ُ|y غ ِ|u ع َ|i ه ّ|o خ ]|p ح [|[ ج }|] چ {",
+"a ش  ؤ|s س ئ|d ی ي|f ب إ|g ل أ|h ا آ|j ت ة|k ن «|l م »|; ک :|' گ ؛|\\",
+"`|z ظ ك|x ط ٓ|c ز ژ|v ر ٰ|b ذ|n د ٔ|m پ ء|, و|. . |/ ؟"
+]
 
 
-function setLocalButtons () {
-	// overrides the function that hides the makeEg and charLink buttons
-	
-	}
