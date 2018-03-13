@@ -1,5 +1,6 @@
 
 globals.showMLTrans = ''
+globals.showTransliteration = ''
 
 function localInitialise () {
 	}
@@ -37,4 +38,11 @@ var _h = {
 
 end: {}
 }
+
+var keyboarddef = [
+"§|1|2|3|4|5|6|7|8|9|0|-|=",
+"q ޫ|w ޮ|e ާ /|r ީ :|t ޭ ޤ|y ގ ޜ|u ރ ޣ|i މ ޠ|o ތ ޙ|p ހ|[ ލ|]",
+"a ި <|s ު >|d ް . ,|f ަ ،|g ެ \"|h ވ ޥ|j އ ޢ|k ނ ޘ|l ކ ޚ|; ފ ޡ|' اللّٰه ؛ ;|\\",
+"`|z ޒ ޖ|x ޑ ޕ|c ސ ޏ|v ޔ ޗ|b ޅ ޟ|n ދ ޛ|m ބ ޝ|, ށ \\|. ޓ ޞ|/ ޯ ؟"
+]
 

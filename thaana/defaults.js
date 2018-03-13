@@ -31,12 +31,14 @@ var template = {}
 var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Maldivian Latin to Thaana", "dataVar":"showMLTrans", "dataLocn":"mltranscript", "dataShortTitle":"M", "type":"palette"},
-
+{"title":"Reverse transliteration", "dataVar":"showTransliteration", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
+{"title":"Latin/Arabic to Thaana", "dataVar":"showMLTrans", "dataLocn":"mltranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
+{"title":"Trans-<br/>literate", "alt":"Convert Thaana text to a Latin transliteration.", "code":"doTranscription('toTranslit')"},
+{"title":"Maldivian<br/>Latin", "alt":"Convert Thaana text to a Maldivian Latin transliteration.", "code":"doTranscription('toMaldivian')"},
 ]
 
 
-var lastUpdate = '04-Jan-2018'
