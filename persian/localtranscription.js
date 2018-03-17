@@ -101,7 +101,7 @@ var vowels = {'\u064E':'a', '\u064F':'u', '\u0650':'i', '\u0652':'sukun', 	'\u06
 
 function transcribetoUN (str) {
 	// transcribes vowelled arabic text into an LOC transcription
-	
+	// based on https://unstats.un.org/unsd/geoinfo/UNGEGN/docs/10th-uncsgn-docs/econf/E_CONF.101_118_Rev.1_Transcription%20symbols%20for%20Persian_Updated.pdf
 	
 	// check that there are vowels
 	var found = false
@@ -130,7 +130,8 @@ function transcribetoUN (str) {
 
 	str = str.replace(/\u0622/g,'ā') 
 	
-	
+	str = str.replace(/ خو/g,' خ') // initial hah+vav -> hah 
+    
 	str = str.replace(/ \u0627\u0650\u06CC/g,' i') // initial aleph kasra yeh 
 	str = str.replace(/ \u0627\u064E\u06CC/g,' ey') // initial aleph fatha yeh 
 	str = str.replace(/ \u0627\u06CC/g,' [i{ey]') // initial aleph yeh 
@@ -146,6 +147,7 @@ function transcribetoUN (str) {
 
 	str = str.replace(/([\u0627\u06CC\u0648ā]+)\u0648/g,'$1v') // long-vowel waw
 	str = str.replace(/([\u0627\u06CC\u0648ā]+)\u06CC/g,'$1y') // long-vowel yeh
+	str = str.replace(/([\u0627\u06CC\u0648ā]+)\u0647/g,'$1h') // long-vowel he
 
 	str = str.replace(/\u064E\u0648/g,'ow') // fatha waw
 	str = str.replace(/\u064F\u0648/g,'u') // damma waw
