@@ -397,7 +397,9 @@ dt {
 
 #transcriptionChoice {
 	position:absolute;
-	left:40px; 
+	/* left:40px; */
+    left: 50%;
+    transform: translateX(-50%);
 	font-size: 60px; 
 	background-color: #FFFACD; 
 	border: 1px solid #ccc; 
@@ -466,6 +468,7 @@ dt {
 	font-size: 100%;
 	border: 0;
 	margin-right: 0;
+    vertical-align: middle;
 	}
 .optionTrigger {
 	background-color: white;
