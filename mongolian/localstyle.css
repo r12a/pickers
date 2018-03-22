@@ -12,6 +12,17 @@
 	display: block; 
 	color: #666;
 	}
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+    min-height: 1em;
+	text-align: center;
+	}
+
 
 #kbd { 	
 	margin: auto; 
@@ -30,28 +41,26 @@
 	line-height: 1.4;
 	min-width: 30px;
 	}
-#kbd td.hint {  
+/* #kbd td.hint {  
 	font-size: 14px;
 	color: #ccc;
 	text-align: right;
 	vertical-align: top;
-	}
-#kbd img {
-	vertical-align: top;
-	}
+	} 
 #kbd td.hint {
 	min-width: 5px; 
+	}*/
+#kbd img {
+	vertical-align: top;
 	}
 
 form#buttonform { margin: 0; padding: 0; border: 0;  line-height: normal; }
 dt { color: #FF6600; }
 
 
-/* #consonants { border: 2px dotted #005a9c; } */
 #consonants td {  padding: 0;  white-space: nowrap; }
-#kbd { margin-left: 0; }
 #alphabet { padding-left: 5px; padding-right: 5px; }
-#consonants td { margin: 0; padding: 0; padding-bottom: 3px; }
+#consonants td { margin: 0; padding: 0; padding-bottom: 3px; min-width: 2.5em; }
 #subscripts td { margin: 0; padding: 0;  padding-bottom: 3px;  }
 #subscripts, #consonants { border-collapse:collapse;  }
 
@@ -106,6 +115,7 @@ dt { color: #FF6600; }
 
 #kbd #consonants { margin-left: 1em; }
 #commonvowels { width: 95px; border: 1px solid #ccc; border-radius: 10px; vertical-align: middle; }
+#kbd #commonvowels { padding-left: .5em; }
 #commonvowels img { margin-top: 2px; }
 #translitvowels { width: 55px; vertical-align: middle; }
 #translitvowels img { margin-top: 4px; }
@@ -127,7 +137,7 @@ dt { color: #FF6600; }
 	-o-writing-mode: vertical-lr;
 	-ms-writing-mode: tb-lr;
 	height: 400px; 
-	width:600px; 
+	width:100%; 
 	clear:both;
  }
  
@@ -141,19 +151,28 @@ dt { color: #FF6600; }
 	-webkit-text-orientation: sideways-right;
  	}
  
-#keyboard { display:none; }
-.key span { 
-	font-size: 24px; 
-	color: gray; 
-	font-weight: normal; 
-	font-family:  "Mongolian White",  "Noto Sans Mongolian WF",  sans-serif;  
-	cursor:pointer; 
-	text-align: center; 
-	line-height: 1;
-	}
-.key .s { position:absolute; bottom: 5px; left: 15px; }
-.key .n { position:absolute; bottom: 5px; right: 5px;  }
+#numbers .c { 
+	writing-mode: horizontal-tb;
+	-webkit-writing-mode: horizontal-tb;
+	-ms-writing-mode: tb-lr;
+ 	}
+ 
 
-.key .k1 { -webkit-writing-mode: vertical-lr; writing-mode: vertical-lr; }
-.key .k2 { -webkit-writing-mode: vertical-lr; writing-mode: vertical-lr; }
-.key .k3 { -webkit-writing-mode: vertical-lr; writing-mode: vertical-lr; }
+
+
+
+
+
+
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  "Noto Sans Mongolian WF",  "Mongolian Baiti",  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+

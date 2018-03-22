@@ -1,5 +1,4 @@
-globals.showMesherTrans =  ''
-globals.showISOTrans = ''
+globals.showTranslit =  ''
 globals.showVariantsOnMouseover = ''
 
 function localInitialise () {
@@ -47,6 +46,7 @@ function showVariants (node)  {
 
 
 
+
 function event_mouseoverChar ()  {
 	// display character information
 	span = document.createElement( 'span' );
@@ -57,17 +57,14 @@ function event_mouseoverChar ()  {
 	chardata.replaceChild( span, chardata.firstChild );
 	
 	// highlight this character
-	this.style.backgroundColor = '#CF9'
-	this.style.backgroundColor = '#fc6'
-	//this.style.backgroundColor = '#FC0'
+	this.style.backgroundColor = '#F4630B';
+	this.style.color = '#ddd'
 	
 	// highlight similar characters
 	if (globals.showShapeHints && _h[this.id]) {
 		ptr = this.id
 		for (i=0;i<_h[ptr].length;i++) {
-			//document.getElementById(_h[ptr][i]).style.backgroundColor = '#E6FFCD'
 			document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
-			//document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE680'
 			}
 		}
 
@@ -142,17 +139,8 @@ end: {}
 }
 
 var keyboarddef = [
-"᠑|᠒|᠓|᠔|᠕|᠖|᠗|᠘|᠙|᠐",
-"᠁,ᠴ|ᠸ,ᠣ|ᠧ,ᠡ|ᠿ,ᠷ|ᠲ|ᠶ|ᠦ|ᠢ|ᠥ|ᠫ",
-"ᠠ|ᠰ|ᠳ|ᠹ|ᠭ|ᠾ,ᠬ|ᠵ|ᠻ,ᠺ|ᡀ,ᠯ|《,》",
-"ᡁ,ᠽ|ᠱ|ᡂ,ᠼ|ᠤ|ᠪ|ᠩ,ᠨ|ᠮ|᠂|᠃"
+"§|1 ᠑|2 ᠒|3 ᠓|4 ᠔|5 ᠕|6 ᠖|7 ᠗|8 ᠘|9 ᠙|0 ᠐|-|=",
+"q ᠁ ᠴ|w ᠸ ᠣ|e ᠧ ᠡ|r ᠿ ᠷ|t ᠲ|y ᠶ|u ᠦ|i ᠢ|o ᠥ|p ᠫ|[|]",
+"a ᠠ|s ᠰ|d ᠳ|f ᠹ|g ᠭ|h ᠾ ᠬ|j ᠵ|k ᠻ ᠺ|l ᡀ ᠯ|; 《 》|'|\\",
+"`|z ᡁ ᠽ|x ᠱ|c ᡂ ᠼ|v ᠤ|b ᠪ|n ᠩ ᠨ|m ᠮ|, ᠂|. ᠃|/"
 ]
-
-var keyboardguide = [
-"1,2,3,4,5,6,7,8,9,0,-,=",
-"q,w,e,r,t,y,u,i,o,p,[,],",
-"a,s,d,f,g,h,j,k,l,;,',\\",
-"z,x,c,v,b,n,m,,.,/,"
-]
-
-var keyboardRowOffset = ['5px','20px','30px','50px']
