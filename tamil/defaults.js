@@ -1,7 +1,7 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Tamil WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "28";  // text area font size, number of pixels (just the number)
+	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'ta' // language to use for examples
@@ -32,12 +32,12 @@ var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"ISO to Tamil", "dataVar":"showISOTrans", "dataLocn":"isotranscript", "dataShortTitle":"I", "type":"palette"}
-//{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
+{"title":"Reverse transliteration", "dataVar":"showISOTrans", "dataLocn":"isotranscript", "dataShortTitle":"R", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Tamil<br>to ISO", "alt":"Convert Tamil text to an ISO Latin transcription.", "code":"doTranscription('toISO')"},
+{"title":"Trans<br>-literate", "alt":"Convert Tamil text to an ISO Latin transcription.", "code":"doTranscription('toISO')"},
 {"title":"ISO to<br/>Tamil", "alt":"Convert ISO latin text to Tamil transcription.", "code":"doTranscription('fromISO')"},
 ]
 
