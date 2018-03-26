@@ -32,13 +32,14 @@ var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"ISO-15919 to Bengali", "dataVar":"showISOTrans", "dataLocn":"isotranscript", "dataShortTitle":"I", "type":"palette"},
-{"title":"Radice to Bengali", "dataVar":"showRadiceTrans", "dataLocn":"radicetranscript", "dataShortTitle":"R", "type":"palette"}
+{"title":"Reverse transliteration", "dataVar":"showISOTrans", "dataLocn":"isotranscript", "dataShortTitle":"R", "type":"palette"},
+{"title":"Radice to Bengali", "dataVar":"showRadiceTrans", "dataLocn":"radicetranscript", "dataShortTitle":"R", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
+{"title":"Trans-<br/>literate", "alt":"Convert Bengali text to an ISO 15919 Latin transcription.", "code":"doTranscription('toISO')"},
 {"title":"ISO 15919<br/>to Bengali", "alt":"Convert ISO 15919 Latin transcription to Bengali.", "code":"doTranscription('toBeng')"},
-{"title":"Bengali to<br/>ISO 15919", "alt":"Convert Bengali text to an ISO 15919 Latin transcription.", "code":"doTranscription('toISO')"},
+{"title":"Transcribe<br/>to Radice", "alt":"Convert Bengali text to a Radice Latin transcription.", "code":"doTranscription('toRadice')"},
 {"title":"Radice<br/>to Bengali", "alt":"Convert Radice Latin transcription to Bengali.", "code":"doTranscription('rtoBeng')"},
-{"title":"Bengali to<br/>Radice", "alt":"Convert Bengali text to a Radice Latin transcription.", "code":"doTranscription('toRadice')"},
 ]
