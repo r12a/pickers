@@ -82,19 +82,42 @@ function makeCharsetObject () {
 	}
 
 
-function makeList (list) {
+function makeList (list, trans, cs) {
 	list = list.trim()
 	list = list.replace(/\s+/g,' ')
 	var listarray = list.split(' ')
+	trans = trans.trim()
+	trans = trans.replace(/\s+/g,' ')
+	var transarray = trans.split(' ')
 	var out = ''
+    console.log(trans)
 	
 	for (var i=0;i<listarray.length;i++) {
-		hex = listarray[i].codePointAt(0).toString(16).toUpperCase()
-		while (hex.length < 4) hex = '0'+hex
-		hex = '&#x'+hex+';'
-		console.log(hex)
-		out += '<span class="c">'+hex+'</span>\n'
+		console.log(listarray[i])
+        var hexes = ''
+		for (j=0;j<listarray[i].length;j++) {
+            var hex = ''
+            hex += listarray[i].codePointAt(j).toString(16).toUpperCase()
+		    while (hex.length < 4) hex = '0'+hex
+            hex = '&#x'+hex+';'
+            hexes += hex
+            console.log(hexes)
+            }
+        listarray[i] = hexes
 		}
+	
+    if (trans==='') {
+        for (i=0;i<listarray.length;i++) out += '<span class="c">'+listarray[i]+'</span>\n'   
+        }
+    else if (cs) {
+        var ptr = 0
+        for (let i=0;i<transarray.length;i++) {
+            out += '<span class="g"><span class="hint">'+transarray[i]+'</span><span class="c">'+listarray[ptr]+'</span><span class="c">'+listarray[ptr+1]+'</span></span>\n'
+            ptr = ptr + 2
+            }
+        }
+    else for (i=0;i<listarray.length;i++) out += '<span class="g"><span class="hint">'+transarray[i]+'</span><span class="c">'+listarray[i]+'</span></span>\n' 
+	
 	return out
 	}
 
@@ -107,11 +130,15 @@ p, input, #character, #inputArea  { font-size: 200%; }
 
 <body>
 <p>Make a set of spans containing the characters to go in a picker</p>
-<p>Add space separated list of characters here:</p>
+<p>Add space separated list of script characters here:</p>
 <p>&nbsp;
 <textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;"></textarea></p>
 
-<p><button type="submit" onClick="document.getElementById('output').value  = makeList(document.getElementById('inputArea').value); return false;">Create lists!</button></p>
+<p>Add space separated list of transliteration characters here:</p>
+<p>&nbsp;
+<textarea dir="ltr" id="transArea" style="width: 90%; height: 200px;"></textarea></p>
+
+<p><label style="font-size:60%;">Case sensitive: <input id="cs" type="checkbox"/></label> <button type="submit" onClick="checked = false; if (document.getElementById('cs').checked) { checked=true; } document.getElementById('output').value  = makeList(document.getElementById('inputArea').value, document.getElementById('transArea').value, checked); document.getElementById('output').select(); return false;">Create lists!</button></p>
 
 <p>&nbsp;
 <textarea id="output" style="width: 90%; height: 600px;"></textarea></p>

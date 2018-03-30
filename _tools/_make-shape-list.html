@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Make shape list</title>
+
+<!-- creates a list of transcription entries for a picker from a space-separated list of characters/char sequences -->
+
+<script type="text/javascript">
+
+/*
+example input
+
+ட ப ய ம ௴ ழ ௶/்டி டீ பு யு மீ மு மூ ழு ழூ
+ர ஈ ா ௩ ங ந ௫ ௺ ௹/ர் ரி ரீ ஙு நு நூ ரு ரூ நீ
+
+*/
+
+function makeList (charlist) {
+
+	var lines = charlist.split('\n')
+	var out = ''
+	for (l=0; l<lines.length; l++) {
+		var currentLine = ''
+		var parts = lines[l].split('/')
+		console.log(parts)
+		var firsthalf = parts[0].trim()
+		var extras = ''
+		if (parts[1]) extras = parts[1]
+		extras = extras.replace(/ /g,',').trim()
+		var targets = firsthalf.split(' ')
+		for (let t=0;t<targets.length;t++) {
+			var codepoint = ''
+			for (let c=0; c<targets[t].length; c++) {
+				codepoint += targets[t].codePointAt(c).toString(16).toUpperCase()
+				}
+			currentLine += codepoint
+			if (t < targets.length-1) currentLine += ','
+			}
+		out += '<span onclick="findShape(\''+currentLine.replace(/ /g,',') + '\',\''+extras+'\',true)">'+targets[0]+'</span>\n'
+		}
+	return out
+	}
+
+
+
+
+
+
+	
+</script>
+<style>
+p, input, #character, #inputArea  { font-size: 200%; }
+</style>
+</head>
+
+<body>
+<p>Add a space-separated list of characters here, one line per shape to be matched, with the key first. If extra characters are to appear below, add those after / on the same line.</p>
+<p>&nbsp;
+<textarea dir=ltr id=inputArea style="width: 90%; height: 200px;"></textarea></p>
+
+<p><button type=submit onClick="document. getElementById('output').value = makeList(document.getElementById('inputArea').value); document. getElementById('output').select(); return false;">Create list!</button></p>
+
+<p>&nbsp;
+<textarea id=output style="width: 90%; height: 600px;"></textarea></p>
+
+</body>
+</html>
