@@ -543,6 +543,7 @@ dt {
 
 .spaceline {
     margin-bottom: .25em;
+    margin-top: .25em;
     line-height: 1;
     text-align: center;
 }
