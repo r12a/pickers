@@ -17,7 +17,6 @@
 #alphabet td span.c { 
 	cursor: pointer; 
 	font-family: "Noto Sans Gurmukhi", "Gurmukhi MN", Raavi, "Nirmala UI", "Arial Unicode MS", sans-serif;
-	font-size: 35px;
 	padding: 1px;
 	}
 
@@ -31,7 +30,24 @@
 	text-align: right;
 	vertical-align: top;
 	}
-	
+
+
+
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Gurmukhi WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+
+
+
 #kbd { 	
 	margin: auto; 
 	}
@@ -127,19 +143,6 @@
 	margin: auto;
 	}
 
-#fontgrid { 
-	color: #808080; 
-	background: white; 
-	padding: 10px 20px;
-	font-size: 30px;
-	}
-#fontgrid span { 
-	cursor: pointer; 
-	margin-right: 10px; 
-	}
-#fontgrid span:after { 
-	content: '\200B ' ; /* zwsp */ 
-	}
 
 .g {
 	display: inline-block;

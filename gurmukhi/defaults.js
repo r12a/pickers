@@ -1,7 +1,7 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Gurmukhi WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
+	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "2.2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'pa' // language to use for examples
@@ -30,8 +30,11 @@ var template = {}
 
 var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"}
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
+{"title":"Trans-<br/>literate", "alt":"Convert Gurmukhi text to an ISO 15919 Latin transliteration.", "code":"doTranscription('transliterate')"},
 ]
