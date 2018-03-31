@@ -13,15 +13,136 @@
     font-style: normal;
 	}
 
-#alphabet { display: block; }
-#phonelist { display: none; }
-#fontgrid { display: none; }
 
-
-[lang=jv] { font-family: 'Noto Sans Javanese WF', serif; }
+[lang=jv] { font-family: 'Tuladha Jejeg WF', 'Noto Sans Javanese WF', serif; }
 
 
 
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Javanese WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#consonantGrid div, #subConsonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 9em;
+    justify-content: space-between;
+    line-height: 1.8;
+    }
+#consonantGrid > span {
+    min-width: 1em;
+    }
+#moreconsonants {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 2em;
+    justify-content: center;
+    line-height: 1.5;
+    align-content: flex-start;
+    margin-left: 1em;
+    }
+#ivowelGrid {
+    white-space: normal;
+    max-width: 5.46em;
+    max-height: 15em;
+    justify-content: flex-end;
+    line-height: 1.8;
+    text-align: right;
+    }
+#vowelGrid {
+    white-space: normal;
+    max-width: 6em;
+    max-height: 15em;
+    justify-content: space-between;
+    line-height: 1.8;
+    margin-left: 1em;
+    }
+#virama {
+    width: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 .5em 0 .75em;
+    justify-content: center;
+    align-items: center;
+    }
+#numberGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 5em;
+    max-height: 8em;
+    justify-content: space-between;
+    margin-left: 1.2em;
+    line-height: 1.5;
+    font-size: 90%;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#mahaprana, #rare, #otherpunctuation {
+    text-align: center;
+    font-size: 90%;
+    }
+#otherpunctuation {
+    font-size: 80%;
+    }
+
+
+
+
+/*
 #kbd { 	
 	margin: auto; 
 	}
@@ -31,17 +152,6 @@ table {
 td {
 	padding: 0;
 	}
-/*
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: left;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1;
-	}
-	*/
 
 #vowels {
 	border: 1px dotted #ccc;
@@ -96,15 +206,11 @@ td {
 #consonants2 td span.c {
 	min-width: 2em;
 	}
-.g {
-	display: inline-block;
-	}
-.c {
-	min-width: .75em;
-	}
 #shift {
 	cursor:pointer;
 	}
 #adegadeg {
 	vertical-align:middle;
+    padding: 0 .5em;
 	}
+*/

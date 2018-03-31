@@ -1,3 +1,6 @@
+globals.showTranslit =  ''
+
+
 function localInitialise () {
 
 	}
@@ -62,3 +65,24 @@ function toggleShift (node, LC, UC) {
 	}
 
 
+var keyboarddef = [
+"§ ꧊ ꧋|1 ꧑|2 ꧒ ꧏ|3 ꧓ ꧆|4 ꧔ ꧞|5 ꧕ ꧟|6 ꧖|7 ꧗|8 ꧘|9 ꧙|0 ꧐|-|=",
+"q ꦼ ꦅ|w ꦮ ꧀ꦮ|e ꦌ ꦺ|r ꦫ ꦿ ꦬ|t ꦠ ꦡ|y ꦪ ꦾ|u ꦈ ꦸ ꦹ|i ꦆ ꦶ|o ꦎ ꦺꦴ ꦵ|p ꦥ ꦦ|[ ꧌|] ꧍",
+"a ꦄ ꦴ|s ꦱ ꦯ ꦰ|d ꦢ ꦣ|f ꦩ ꦽ|g ꦒ ꦓ|h ꦲ ꦃ|j ꦗ ꦘ ꦙ|k ꦏ ꦑ ꦐ|l ꦭ ꧀ꦭ|; ꦛ ꦜ|' ꦝ ꦞ|\\",
+"`|z ꦚ ꦂ|x ꦔ ꦁ ꦀ|c ꦕ ꦖ|v ꦊ ꦋ|b ꦧ ꦨ|n ꦤ ꦟ|m ꦩ ꦳|, ꧈ ꧇|. ꧉|/ ꧀"
+]
+
+var keyboardUC = [
+"§|1|2|3|4|5||6 ꧃|7 ꧄|8 ꧅|9|0|-|=",
+"q ꦄꦼ|w|e ꦍ ꦻ|r|t උ|y|u|i ꦇ ꦷ|o|p|[ ꧁|] ꧂",
+"a ꦄꦴ|s|d|f|g|h|j|k|l|;|'|\\",
+"`|z|x|c|v|b|n|m|,|.|/"
+]
+
+
+function event_toggleKbdShift () {
+    if (this.classList.contains('shiftKeyOn')) {
+        makeKeyboard(keyboarddef, keyboardLCGuide)
+        }
+    else makeKeyboard(keyboardUC, keyboardUCGuide)
+    }
