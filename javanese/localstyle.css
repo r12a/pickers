@@ -61,7 +61,7 @@ span.hint {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 9em;
+    width: 9.5em;
     justify-content: space-between;
     line-height: 1.8;
     }
