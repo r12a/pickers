@@ -20,7 +20,7 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Javanese character picker'
-	template.sample = "꧋ꦱꦧꦼꦤ꧀ꦲꦸꦮꦺꦴꦁꦏꦭꦲꦶꦫꦏꦺꦏꦤ꧀ꦛꦶꦩꦂꦢꦶꦏꦭꦤ꧀ꦢꦂꦧꦺꦩꦂꦠꦧꦠ꧀ꦭꦤ꧀ꦲꦏ꧀ꦲꦏ꧀ꦏꦁꦥꦢ꧀ꦲ꧉"
+	template.sample = "꧋ꦱꦧꦼꦤ꧀ꦲꦸꦮꦺꦴꦁꦏꦭꦲꦶꦫꦏꦺꦏꦤ꧀ꦛꦶꦩꦂꦢꦶꦏꦭꦤ꧀ꦢꦂꦧꦺꦩꦂꦠꦧꦠ꧀ꦭꦤ꧀ꦲꦏ꧀ꦲꦏ꧀ꦏꦁꦥꦝ꧉"
 	template.blocklocation= '/scripts/javanese/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'javanese'
@@ -38,4 +38,5 @@ var inputAids = [
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Javanese text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Transcribe<br/>to Latin", "alt":"Convert Javanese text to a Latin transcription.", "code":"doTranscription('toLatin')"},
 ]

@@ -1,3 +1,7 @@
+/* jshint strict: false */
+/* globals cl, langs */
+
+
 function localtranscribe (direction, str) {
 	
 	if (direction == 'transliterate') { return transliterate(str) }
@@ -59,12 +63,11 @@ for (let i=0; i<chars.length-2; i++) {
     
     //console.log(i,'chars:i',chars[i],'vsign',vowelsign, 'virama',hasVirama, 'nukta',hasNukta, 'ptr',chars[ptr])
     
-    out += '\u200B'+chars[i]
+    out += chars[i] // '\u200B'+chars[i]
     if (nuktas) out += nuktas
-    if (consonants.has(chars[i]) && vowelsign === '' && hasVirama === false) vowelsign = 'a'
-    //for (p=i+1;p<ptr;p++) if (chars[p] !== nukta) out += chars[p]
+    if (consonants.has(chars[i]) && vowelsign === '' && hasVirama === false) vowelsign = 'ᵃ'
     out += medials + vowelsign + otherCombining + finals
-    //if (vowelsign === 'a' && (chars[ptr] === 'ਇ' || chars[ptr] === 'ਉ')) out += ':'
+    //if (vowelsign === 'ᵃ' && (chars[ptr] === 'ਇ' || chars[ptr] === 'ਉ')) out += ':'
     if (hasAddak) out += chars[ptr]
     
     i = ptr-1
@@ -76,6 +79,7 @@ str = out+'  '
 console.log(out)
 
 str = str.replace(/\uA9C0/g, "͓") // virama
+str = str.replace(/\u200B/g, " ") // virama
 
 // correction for medial vocalic r
 str = str.replace(/a​ꦽ​/g,'ꦽ​')
@@ -106,7 +110,7 @@ str = str.replace(/ꦘ/g, "Ñ")
 str = str.replace(/ꦠ/g, "t")
 str = str.replace(/ꦡ/g, "T")
 str = str.replace(/ꦢ/g, "d")
-str = str.replace(/ꦝ/g, "D")
+str = str.replace(/ꦝ/g, "ḍ")
 str = str.replace(/ꦤ/g, "n")
 str = str.replace(/ꦟ/g, "N")
 str = str.replace(/ꦥ/g, "p")
@@ -168,8 +172,8 @@ str = str.replace(/꧘/g, "8")
 str = str.replace(/꧙/g, "9")
 
 // punctuation
-str = str.replace(/꧊/g, "|")
-str = str.replace(/꧋/g, "|")
+str = str.replace(/꧊/g, "•")
+str = str.replace(/꧋/g, "•")
 str = str.replace(/꧌/g, "(")
 str = str.replace(/꧍/g, ")")
 str = str.replace(/꧈/g, ",")
@@ -189,9 +193,107 @@ str = str.replace(/ꧏ/g, "²")
 
 
 
-
-
 function toLatin (str) {
+    // Convert javanese text to a transcription ressembling latin indonesian
+
+	str = transliterate(str)
+    str += '  '
+    
+
+str = str.replace(/ᵃ/g, "a")
+
+    // consonants
+str = str.replace(/h/g, "[h{∅]")
+str = str.replace(/k/g, "k")
+str = str.replace(/q/g, "q")
+str = str.replace(/g/g, "g")
+str = str.replace(/ŋ/g, "ng")
+str = str.replace(/c/g, "c")
+str = str.replace(/j/g, "j")
+str = str.replace(/ñ/g, "ny")
+str = str.replace(/ṭ/g, "th")
+str = str.replace(/ḍ/g, "dh")
+str = str.replace(/t/g, "t")
+str = str.replace(/d/g, "d")
+str = str.replace(/n/g, "n")
+str = str.replace(/p/g, "p")
+str = str.replace(/b/g, "b")
+str = str.replace(/m/g, "m")
+str = str.replace(/y/g, "y")
+str = str.replace(/l/g, "l")
+str = str.replace(/r/g, "r")
+str = str.replace(/s/g, "s")
+str = str.replace(/w/g, "w")
+str = str.replace(/rĕ/g, "re")
+str = str.replace(/lĕ/g, "le")
+str = str.replace(/K/g, "K")
+str = str.replace(/G/g, "G")
+str = str.replace(/C/g, "C")
+str = str.replace(/Ñ/g, "NY")
+str = str.replace(/T/g, "T")
+str = str.replace(/N/g, "N")
+str = str.replace(/P/g, "P")
+str = str.replace(/B/g, "B")
+str = str.replace(/S/g, "S")
+str = str.replace(/S̱/g, "S")
+str = str.replace(/Ḏ/g, "D")
+str = str.replace(/Ḓ/g, "DH")
+str = str.replace(/J̱/g, "J")
+str = str.replace(/Ṯ/g, "TH")
+
+str = str.replace(/ṛĕ/g, "re")
+str = str.replace(/ỵ/g, "y")
+str = str.replace(/ṛ/g, "r")
+
+str = str.replace(/ṁ/g, "m")
+str = str.replace(/ṅ/g, "ng")
+str = str.replace(/ṙ/g, "r")
+str = str.replace(/ḣ/g, "h")
+
+str = str.replace(/ạ/g, "a")
+str = str.replace(/ị/g, "i")
+str = str.replace(/ị̄/g, "i")
+str = str.replace(/ụ/g, "u")
+str = str.replace(/ẹ/g, "e")
+str = str.replace(/ọ/g, "o")
+
+str = str.replace(/ā/g, "a")
+str = str.replace(/i/g, "i")
+str = str.replace(/u/g, "u")
+str = str.replace(/é/g, "e")
+str = str.replace(/e/g, "e")
+str = str.replace(/ī/g, "i")
+str = str.replace(/ū/g, "u")
+str = str.replace(/o/g, "o")
+
+str = str.replace(/ħ/g, "h")
+str = str.replace(/x/g, "x")
+str = str.replace(/ð/g, "ð")
+str = str.replace(/z/g, "z")
+str = str.replace(/ʃ/g, "sh")
+str = str.replace(/ɣ/g, "gh")
+str = str.replace(/f/g, "f")
+
+
+str = str.replace(/\u0353/g, "") // virama
+
+console.log(str)
+
+	// add markup for ambiguous cases
+	str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
+	str = str.replace(/\|/g,'</span><span class=alt>')
+	str = str.replace(/\{/g,'</span><span class=altlast>')
+	str = str.replace(/\]/g,'</span></span>')
+
+	return str.trim()
+
+}
+
+
+
+
+
+function toLatinOLD (str) {
 	str += '  '
 	var ivowelkillerSet = new Set(['\uA9C0', '\uA9BD', '\uA9BE', '\uA9BF', '\uA9B6', '\uA9B8', '\uA9BA', '\uA9BC', '\uA9B4','O']) // all characters that would kill the inherent vowel
 	var consonantSet = new Set(['\uA98F', '\uA991', '\uA992', '\uA993', '\uA994', '\uA995', '\uA996', '\uA997', '\uA99B', '\uA99A', '\uA998', '\uA9A0', '\uA9A1', '\uA9A2', '\uA99D', '\uA9A4', '\uA99F', '\uA9A5', '\uA9A6', '\uA9A7', '\uA9A8', '\uA9A9', '\uA9AA', '\uA9AD', '\uA9AB', '\uA9B1', '\uA9AF', '\uA9AE', '\uA9B2', '\uA9B0', '\uA9A3', '\uA99E', '\uA999', '\uA99C', '\uA9BE', '\uA9BF'])
