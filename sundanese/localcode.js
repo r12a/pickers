@@ -1,3 +1,6 @@
+globals.showTranslit =  ''
+
+
 function localInitialise () {
 
 	}
@@ -43,6 +46,14 @@ var _h = {
 end: {}
 }
 
+
+var keyboarddef = [
+"§|1 ᮱|2 ᮲|3 ᮳|4 ᮴|5 ᮵|6 ᮶|7 ᮷|8 ᮸|9 ᮹|0 ᮰|-|=",
+"q ᮋ ᮁ|w ᮝ|e ᮨ ᮈ|r ᮛ ᮢ|t ᮒ|y ᮚ ᮡ|u ᮥ ᮅ|i ᮤ ᮄ|o ᮧ ᮇ|p ᮕ|[ ᮦ ᮆ|]",
+"a ᮃ|s ᮞ ᮯ|d ᮓ|f ᮖ|g ᮌ ᮍ|h ᮠ ᮂ|j ᮏ ᮑ|k ᮊ ᮮ|l ᮜ ᮣ|; ᮪|' ᮩ ᮉ|\\",
+"`|z ᮐ|x ᮟ|c ᮎ|v ᮗ|b ᮘ|n ᮔ ᮀ|m ᮙ|,|.|/ \|"
+]
+// keyboard source: http://watesawal.blogspot.co.uk/p/wacana.html
 
 
 
