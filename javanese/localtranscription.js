@@ -100,7 +100,7 @@ str = str.replace(/ꦏ/g, "k")
 str = str.replace(/ꦑ/g, "K")
 str = str.replace(/ꦒ/g, "g")
 str = str.replace(/ꦓ/g, "G")
-str = str.replace(/ꦔ/g, "ŋ")
+str = str.replace(/ꦔ/g, "ṅ")
 str = str.replace(/ꦕ/g, "c")
 str = str.replace(/ꦖ/g, "C")
 str = str.replace(/ꦗ/g, "j")
@@ -134,15 +134,16 @@ str = str.replace(/ꦙ/g, "J̱")
 str = str.replace(/ꦜ/g, "Ṯ")
 
 // medials
-str = str.replace(/ꦽ/g, "ṛĕ")
-str = str.replace(/ꦾ/g, "ỵ")
-str = str.replace(/ꦿ/g, "ṛ")
+str = str.replace(/ꦽ/g, "r̥̆")
+str = str.replace(/ꦾ/g, "y̆")
+str = str.replace(/ꦿ./g, "r̆")
+
 
 // finals
-str = str.replace(/ꦀ/g, "ṁ")
-str = str.replace(/ꦁ/g, "ṅ")
-str = str.replace(/ꦂ/g, "ṙ")
-str = str.replace(/ꦃ/g, "ḣ")
+str = str.replace(/ꦀ/g, "m̽")
+str = str.replace(/ꦁ/g, "ṅ̽")
+str = str.replace(/ꦂ/g, "r̽")
+str = str.replace(/ꦃ/g, "h̽")
 
 // independent vowels
 str = str.replace(/ꦄ/g, "ạ")

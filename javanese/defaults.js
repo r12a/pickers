@@ -38,5 +38,5 @@ var inputAids = [
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Javanese text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-{"title":"Transcribe<br/>to Latin", "alt":"Convert Javanese text to a Latin transcription.", "code":"doTranscription('toLatin')"},
+{"title":"Trans-<br/>scribe", "alt":"Convert Javanese text to a Latin transcription.", "code":"doTranscription('toLatin')"},
 ]
