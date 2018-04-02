@@ -30,9 +30,12 @@ var template = {}
 
 
 var inputAids = [
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"}
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Buginese<br/>to Latin", "alt":"Convert Buginese text to a Latin transcription.", "code":"doTranscription('toLatin')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Buginese text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>scribe", "alt":"Convert Buginese text to a Latin transcription.", "code":"doTranscription('toLatin')"},
 ]

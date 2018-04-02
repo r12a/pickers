@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Buginese character picker 21</title>
+<title>Buginese character picker 22</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
 <script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
@@ -16,9 +16,9 @@
 <script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
 <script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared21/code.js">  </script>
+<script type="text/javascript" src="../shared22/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+<script type="text/javascript" src="../shared22/pagetemplate.js">  </script>
 <script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
 
 <script type="text/javascript" src="localtranscription.js">  </script>
@@ -78,14 +78,204 @@
 <span class="t" onclick="dotrans('w')">w</span>
 <span class="t" onclick="dotrans('y')">y</span>
 </div>
+
+
+<div id="transliteration" class="transcript" style="display:none;">
+
+<span class="t" onclick="dotrans('ᨙ')">e</span>
+<span class="t" onclick="dotrans('ᨛ')">ə</span>
+<span class="t" onclick="dotrans('ᨗ')">i</span>
+<span class="t" onclick="dotrans('ᨚ')">o</span>
+<span class="t" onclick="dotrans('ᨘ')">u</span>
+&nbsp; • &nbsp;
+<span class="t" onclick="dotrans('ᨕ')">a</span>
+<span class="t" onclick="dotrans('ᨕᨙ')">e</span>
+<span class="t" onclick="dotrans('ᨕᨛ')">ə</span>
+<span class="t" onclick="dotrans('ᨕᨗ')">i</span>
+<span class="t" onclick="dotrans('ᨕᨗ‍ᨐ')">i͡a</span>
+<span class="t" onclick="dotrans('ᨕᨚ')">o</span>
+<span class="t" onclick="dotrans('ᨕᨘ')">u</span>
+
+<br/>
+<span class="t" onclick="dotrans('ᨅ')">b</span>
+<span class="t" onclick="dotrans('ᨌ')">c</span>
+<span class="t" onclick="dotrans('ᨉ')">d</span>
+<span class="t" onclick="dotrans('ᨁ')">g</span>
+<span class="t" onclick="dotrans('ᨖ')">h</span>
+<span class="t" onclick="dotrans('ᨍ')">j</span>
+<span class="t" onclick="dotrans('ᨀ')">k</span>
+<span class="t" onclick="dotrans('ᨒ')">l</span>
+<span class="t" onclick="dotrans('ᨆ')">m</span>
+<span class="t" onclick="dotrans('ᨇ')">ᵐp</span>
+<span class="t" onclick="dotrans('ᨊ')">n</span>
+<span class="t" onclick="dotrans('ᨎ')">ñ</span>
+<span class="t" onclick="dotrans('ᨂ')">ṅ</span>
+<span class="t" onclick="dotrans('ᨋ')">ⁿr</span>
+<span class="t" onclick="dotrans('ᨏ')">ᶮc</span>
+<span class="t" onclick="dotrans('ᨃ')">ᵑk</span>
+<span class="t" onclick="dotrans('ᨄ')">p</span>
+<span class="t" onclick="dotrans('ᨑ')">r</span>
+<span class="t" onclick="dotrans('ᨔ')">s</span>
+<span class="t" onclick="dotrans('ᨈ')">t</span>
+<span class="t" onclick="dotrans('ᨓ')">w</span>
+<span class="t" onclick="dotrans('ᨐ')">y</span>
+<br/>
+<span class="t" onclick="dotrans('0')">0</span>
+<span class="t" onclick="dotrans('1')">1</span>
+<span class="t" onclick="dotrans('2')">2</span>
+<span class="t" onclick="dotrans('3')">3</span>
+<span class="t" onclick="dotrans('4')">4</span>
+<span class="t" onclick="dotrans('5')">5</span>
+<span class="t" onclick="dotrans('6')">6</span>
+<span class="t" onclick="dotrans('7')">7</span>
+<span class="t" onclick="dotrans('8')">8</span>
+<span class="t" onclick="dotrans('9')">9</span>
+&nbsp;  &nbsp;
+<span class="t" onclick="dotrans('᨞')">.</span>
+<span class="t" onclick="dotrans('᨟')">•</span>
+</div>
+
 </div>
 
 
 
 <div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
 <div id="tables" dir="ltr">
-  <div id="alphabet" class="default">
-    <table id="kbd">
+
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+<div id="alphabet" class="default">
+  
+  
+  
+  <div class="spaceline">
+    <span class="touch" style="padding: 5px 60px;" onClick="add(' ');">SPACE</span> 
+    <span class="touch" style="padding: 5px 10px;" onClick="add('\u200D');">ZWJ</span> 
+    <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
+    <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+    <span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+    <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
+    <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span>
+</div>
+
+<div id="kbdGrid"> 
+ 
+
+
+<div id="consonantGrid">
+            <div>
+            <span class="g"><span class="hint">k</span><span class="c">ᨀ</span></span>
+            <span class="g"><span class="hint">g</span><span class="c">ᨁ</span></span>
+            <span class="g"><span class="hint">ṅ</span><span class="c">ᨂ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">c</span><span class="c">ᨌ</span></span>
+            <span class="g"><span class="hint">j</span><span class="c">ᨍ</span></span>
+            <span class="g"><span class="hint">ñ</span><span class="c">ᨎ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">t</span><span class="c">ᨈ</span></span>
+            <span class="g"><span class="hint">d</span><span class="c">ᨉ</span></span>
+            <span class="g"><span class="hint">n</span><span class="c">ᨊ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">p</span><span class="c">ᨄ</span></span>
+            <span class="g"><span class="hint">b</span><span class="c">ᨅ</span></span>
+            <span class="g"><span class="hint">m</span><span class="c">ᨆ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">y</span><span class="c">ᨐ</span></span>
+            <span class="g"><span class="hint">r</span><span class="c">ᨑ</span></span>
+            <span class="g"><span class="hint">l</span><span class="c">ᨒ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">s</span><span class="c">ᨔ</span></span>
+            <span class="g"><span class="hint">w</span><span class="c">ᨓ</span></span>
+            <span class="g"><span class="hint">h</span><span class="c">ᨖ</span></span>
+            </div>
+</div>
+
+
+
+<div id="translitGrid">
+            <div>
+            <span class="g"><span class="hint">ᵑk</span><span class="c">ᨃ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">ᶮc</span><span class="c">ᨏ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">ⁿr</span><span class="c">ᨋ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">ᵐp</span><span class="c">ᨇ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">i͡a</span><span class="c">ᨕᨗ‍ᨐ</span></span>
+            </div>
+</div>
+
+
+
+
+<div id="vowelGrid">
+<div><span class="g"><span class="hint">a</span><span class="c">ᨕ</span></span></div>
+<div><span class="g"><span class="hint">i</span><span class="c">ᨗ</span></span></div>
+<div><span class="g"><span class="hint">u</span><span class="c">ᨘ</span></span></div>
+<div><span class="g"><span class="hint">e</span><span class="c">ᨙ</span></span></div>
+<div><span class="g"><span class="hint">o</span><span class="c">ᨚ</span></span></div>
+<div><span class="g"><span class="hint">ə</span>&nbsp;&nbsp;<span class="c">ᨛ</span></span></div> 
+</div>
+
+<div id="numberGrid">
+            <div><span class="c">7</span> 
+            <span class="c">8</span>
+            <span class="c">9</span></div>
+            
+            <div><span class="c">4</span>
+            <span class="c">5</span>
+            <span class="c">6</span></div>
+
+            <div><span class="c">1</span>
+            <span class="c">2</span>
+            <span class="c">3</span></div>
+            <div><span class="c">0</span>
+<span class="c">,</span>
+<span class="c">.</span>
+</div>
+</div>
+</div>
+
+
+<div id="punctuation">
+<span class="c">&#x002C;</span>
+<span class="c">&#x002E;</span>
+<span class="c">&#x003B;</span>
+<span class="c">&#x003A;</span>
+<span class="c">&#x003F;</span>
+<span class="c">&#x0021;</span>
+<span class="c">&#x2018;</span>
+<span class="c">&#x2019;</span>
+<span class="c">&#x201C;</span>
+<span class="c">&#x201D;</span>
+<span class="c">&#x00AB;</span>
+<span class="c">&#x00BB;</span>
+<span class="c">&#x0028;</span>
+<span class="c">&#x0029;</span>
+<span class="c">&#x002D;</span>
+<span class="c">᨞</span>
+<span class="c">᨟</span>
+</div>
+
+
+
+
+
+
+<!--table id="kbd">
       <tr>
         <td><table id="consonants">
           <tr>
@@ -168,22 +358,22 @@
        <table>
           <tr>
           <tr>
-            <td><span class="g"><span class="c">7</span></span></td>
-            <td><span class="g"><span class="c">8</span></span></td>
-            <td><span class="g"><span class="c">9</span></span></td>
+            <td><span class="g"><span class="c">7</span></td>
+            <td><span class="g"><span class="c">8</span></td>
+            <td><span class="g"><span class="c">9</span></td>
           </tr>
           <tr>
-            <td><span class="g"><span class="c">4</span></span></td>
-            <td><span class="g"><span class="c">5</span></span></td>
-            <td><span class="g"><span class="c">6</span></span></td>
+            <td><span class="g"><span class="c">4</span></td>
+            <td><span class="g"><span class="c">5</span></td>
+            <td><span class="g"><span class="c">6</span></td>
           </tr>
-            <td><span class="g"><span class="c">1</span></span></td>
-            <td><span class="g"><span class="c">2</span></span></td>
-            <td><span class="g"><span class="c">3</span></span></td>
+            <td><span class="g"><span class="c">1</span></td>
+            <td><span class="g"><span class="c">2</span></td>
+            <td><span class="g"><span class="c">3</span></td>
           </tr>
          <tr>
 			   <td>&nbsp;</td>
-            <td><span class="g"><span class="c">0</span></span></td>
+            <td><span class="g"><span class="c">0</span></td>
             <td>&nbsp;</td>
           </tr>
        </table>
@@ -199,7 +389,7 @@
         <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
         <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span></td>
       </tr>
-    </table>
+    </table-->
   </div>
 
   

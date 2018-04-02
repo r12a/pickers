@@ -1,10 +1,152 @@
 function localtranscribe (direction, str) {
 	
 	if (direction == 'toLatin') { return toLatin(str) }
-	if (direction == 'toDeva') { return toDeva(str) }
+	if (direction == 'transliterate') { return transliterate(str) }
 	}
 		
-		
+
+
+
+
+function transliterate (str) {
+    
+str = str + '  '
+str = str.normalize('NFC')
+
+var consonants = new Set(['ᨀ', 'ᨁ', 'ᨂ', 'ᨌ', 'ᨍ', 'ᨎ', 'ᨈ', 'ᨉ', 'ᨊ', 'ᨄ', 'ᨅ', 'ᨆ', 'ᨐ', 'ᨑ', 'ᨒ', 'ᨔ', 'ᨓ', 'ᨖ', 'ᨃ', 'ᨏ', 'ᨋ', 'ᨇ'])
+var vowelSet = new Set(['ᨗ', 'ᨘ', 'ᨙ', 'ᨚ', 'ᨛ'])
+var medialSet = new Set([])
+var finalSet = new Set([])
+var nuktaSet = new Set([])
+var viramaSet = new Set([])
+var combChar = new Set(['ᨗ', 'ᨘ', 'ᨙ', 'ᨚ', 'ᨛ'])
+
+var addak = ''
+var virama = '\u1BAA'
+
+
+// adjust the string for nukta, virama, and addak, and add inherent vowel
+let chars = [...str]
+var out = ''
+for (let i=0; i<chars.length-2; i++) {
+    // look ahead to syllable end
+    var ptr = i+1
+    var vowelsign = ''
+    var medials = ''
+    var finals = ''
+    var otherCombining = ''
+    var nuktas = ''
+    var hasAddak = false
+    var hasNukta = false
+    var hasVirama = false
+    while (combChar.has(chars[ptr]) && ptr < chars.length) {
+        if (vowelSet.has(chars[ptr])) vowelsign += chars[ptr]
+        else if (medialSet.has(chars[ptr])) medials += chars[ptr]
+        else if (finalSet.has(chars[ptr])) finals += chars[ptr]
+        else if (nuktaSet.has(chars[ptr])) nuktas += chars[ptr]
+        else otherCombining += chars[ptr]
+        if (chars[ptr] === addak) hasAddak = true
+        if (viramaSet.has(chars[ptr])) hasVirama = true
+        ptr++
+        }
+    
+    //console.log(i,'chars:i',chars[i],'vsign',vowelsign, 'virama',hasVirama, 'nukta',hasNukta, 'ptr',chars[ptr])
+    
+    out += chars[i] // '\u200B'+chars[i]
+    if (nuktas) out += nuktas
+    if (consonants.has(chars[i]) && vowelsign === '' && hasVirama === false) vowelsign = 'ᵃ'
+    out += medials + vowelsign + otherCombining + finals
+    //if (vowelsign === 'ᵃ' && (chars[ptr] === 'ਇ' || chars[ptr] === 'ਉ')) out += ':'
+    if (hasAddak) out += chars[ptr]
+    
+    i = ptr-1
+
+    //console.log(out)
+    }
+
+str = out+'  '
+console.log(out)
+
+str = str.replace(/\u1BAA/g, "͓") // virama
+//str = str.replace(/\u200B/g, " ") // virama
+
+
+// do compounds
+str = str.replace(/ᨃ/g, "ᵑk")
+str = str.replace(/ᨏ/g, "ᶮc")
+str = str.replace(/ᨋ/g, "ⁿr")
+str = str.replace(/ᨇ/g, "ᵐp")
+str = str.replace(/ᨕᨗ‍ᨐ/g, "i͡a")
+
+
+
+// basic consonants
+str = str.replace(/ᨀ/g, "k")
+str = str.replace(/ᨁ/g, "g")
+str = str.replace(/ᨂ/g, "ṅ")
+str = str.replace(/ᨌ/g, "c")
+str = str.replace(/ᨍ/g, "j")
+str = str.replace(/ᨎ/g, "ñ")
+str = str.replace(/ᨈ/g, "t")
+str = str.replace(/ᨉ/g, "d")
+str = str.replace(/ᨊ/g, "n")
+str = str.replace(/ᨄ/g, "p")
+str = str.replace(/ᨅ/g, "b")
+str = str.replace(/ᨆ/g, "m")
+str = str.replace(/ᨐ/g, "y")
+str = str.replace(/ᨑ/g, "r")
+str = str.replace(/ᨒ/g, "l")
+str = str.replace(/ᨔ/g, "s")
+str = str.replace(/ᨓ/g, "w")
+str = str.replace(/ᨖ/g, "h")
+
+
+
+// independent vowels
+str = str.replace(/ᨕᨗ/g, "ị")
+str = str.replace(/ᨕᨘ/g, "ụ")
+str = str.replace(/ᨕᨙ/g, "ẹ")
+str = str.replace(/ᨕᨚ/g, "ọ")
+str = str.replace(/ᨕᨛ/g, "ə̣")
+str = str.replace(/ᨕ/g, "ạ")
+
+
+// vowel signs
+str = str.replace(/ᨗ/g, "i")
+str = str.replace(/ᨘ/g, "u")
+str = str.replace(/ᨙ/g, "e")
+str = str.replace(/ᨚ/g, "o")
+str = str.replace(/ᨛ/g, "ə")
+
+
+
+
+
+// punctuation
+str = str.replace(/᨞/g, ".")
+str = str.replace(/᨟/g, "•")
+
+
+
+
+	return str.trim()
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function inSet (group, ch) {
 	if (group.indexOf(ch) > -1) return true
 	else { return false }

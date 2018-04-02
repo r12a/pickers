@@ -1,3 +1,7 @@
+globals.showTranslit =  ''
+
+
+
 function localInitialise () {
 
 	}
@@ -42,6 +46,15 @@ var _h = {
 
 end: {}
 }
+
+
+
+var keyboarddef = [
+"§ ꧏ|1|2|3|4|5|6|7|8|9|0|-|=",
+"q ᨛ|w ᨏ|e ᨙ|r ᨑ|t ᨈ|y ᨐ|u ᨘ|i ᨗ|o ᨚ|p ᨄ|[|]",
+"a ᨕ ᨕᨗ‍ᨐ|s ᨔ|d ᨉ|f ᨃ|g ᨁ|h ᨖ|j ᨍ|k ᨀ|l ᨒ|;|'|\\",
+"`|z ᨎ|x ᨂ|c ᨌ|v ᨓ|b ᨅ|n ᨊ ᨋ|m ᨆ ᨇ|, ᨞|. ᨟|/"
+]
 
 
 
