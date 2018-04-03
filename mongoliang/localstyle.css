@@ -79,7 +79,8 @@ td {
 	}
 #consonants td {
 	text-align: left;
-	}
+    line-height: 1.25;
+    }
 #consonants2  {
 	margin-left: 10px; 
 	display: none;
@@ -103,7 +104,7 @@ td {
 	margin-right: 15px;
 	text-align: center;
 	border-right: 3px solid burlywood;
-	width: 9em;
+	width: 6em;
 	}
 .c {
 	min-width: .75em;	
@@ -117,3 +118,13 @@ td {
 .med {
 	border: 1px solid #ccc;
 	}
+#cursive {
+    transform: rotate(0.25turn);
+    position: absolute;
+    top: 17em;
+    margin: 0;
+    padding: 0;
+    }
+#output {
+    writing-mode: vertical-lr;
+    }

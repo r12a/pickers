@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Mongolian Graphetic character picker 21</title>
+<title>Mongolian Graphetic character picker 22</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
 <script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
@@ -16,9 +16,9 @@
 <script type="text/javascript" src="../../uniview/scriptGroups.js"></script>
 <script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared21/code.js">  </script>
+<script type="text/javascript" src="../shared22/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="../shared21/pagetemplate.js">  </script>
+<script type="text/javascript" src="../shared22/pagetemplate.js">  </script>
 
 <script type="text/javascript" src="localtranscription.js">  </script>
 <script type="text/javascript" src="composite-names.js"></script>
@@ -95,7 +95,6 @@
 </div>
 
 
-<div id="cursive" class="transcript" style="display:block; font-size: 28px;">&nbsp;</div>
 
 </div>
 
@@ -103,8 +102,26 @@
 
 <div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
 <div id="tables" dir="ltr">
+
   <div id="alphabet" class="default">
-    <table id="kbd">
+  
+<div id="cursive" class="transcript" style="display:block; border:0;">&nbsp;</div>
+
+
+<div class="spaceline">
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Mongolian vowel separator" style="padding: 5px;" dir="auto" onClick="add('\u180E');">MVS</span>
+<span class="touch" title="Narrow no-break space" style="padding: 5px;" dir="auto" onClick="add('\u202F');">NNBSP</span>
+<span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Zero width non-joiner" style="padding: 5px;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+  <table id="kbd">
       <tr>
         <td><table id="consonants">
           <tr>
@@ -284,19 +301,9 @@
             </tr>
           </tbody>
         </table>
-        <div style="text-align:center;">
-          <span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 10px 30px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline-block;" onClick="add(' ');">SPACE</span><br/><span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u180E');">MVS</span><br/><span style="margin: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u202F');">NNBSP</span><br/><span style="margin-left: 5px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200D');">ZWJ</span> <span style="margin-left: 2px; border: 1px solid #eee; font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif; font-size: 14px; padding: 5px; text-align: center; text-transform: uppercase; vertical-align:middle; display: inline;" dir=auto onClick="add('\u200C');">ZWNJ</span><br/>
-<span class="touch delAll" title="Delete All" style="margin-right: 10px;" dir="auto" onClick="deleteAll();">❌</span>
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-
-
-
-          </div>        </td>
-      </tr>
-      <tr>
-        <td><span id="shift" class="shifted" onClick="toggleShift(this, 'table', 'consonants')">Toggle table</span></td>
-		<td>&nbsp;</td>      
-        <td>&nbsp;</td>
+        
+        <span id="shift" class="shifted" onClick="cons = document.getElementById('consonants'); curs = document.getElementById('cursive'); if (cons.style.display=='none') {curs.style.display='block'} else {curs.style.display='none'}; toggleShift(this, 'table', 'consonants')">Toggle table</span>
+        </td>
       </tr>
     </table>
       

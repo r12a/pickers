@@ -39,6 +39,8 @@ var initonly = new Set(['\u183F', '\u1842'])
 
 function event_mouseoverChar ()  {
 	// overrides the function in shared20/code.js to add shaping forms for all syriac styles
+    
+    console.log('hello')
 	
 	// add cursive forms to table
 	var ncr = this.id.replace(/200D/g,'')
@@ -103,17 +105,5 @@ function toggleShift (node, LC, UC) {
 
 
 var keyboarddef = [
-"᠑|᠒|᠓|᠔|᠕|᠖|᠗|᠘|᠙|᠐",
-"᠁,ᠴ|ᠸ,ᠣ|ᠧ,ᠡ|ᠿ,ᠷ|ᠲ|ᠶ|ᠦ|ᠢ|ᠥ|ᠫ",
-"ᡠ,ᢀ|ᠰ|ᠳ|ᠹ|ᠭ|ᠾ,ᠬ|ᠵ|ᠻ,ᠺ|ᡀ,ᠯ|《,》",
-"ᡁ,ᠽ|ᠱ|ᡂ,ᠼ|ᠤ|ᠪ|ᠩ,ᠨ|ᠮ|᠂|᠃"
 ]
 
-var keyboardguide = [
-"1,2,3,4,5,6,7,8,9,0,-,=",
-"q,w,e,r,t,y,u,i,o,p,[,],",
-"a,s,d,f,g,h,j,k,l,;,',\\",
-"z,x,c,v,b,n,m,,.,/,"
-]
-
-var keyboardRowOffset = ['5px','20px','30px','50px']
