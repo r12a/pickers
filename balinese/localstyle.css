@@ -13,6 +13,157 @@
     font-style: normal;
 	}
 
+
+[lang=ban] { font-family: 'Aksara Bali WF', 'Noto Sans Balinese WF', serif; }
+
+
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Javanese WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#consonantGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 14em;
+    }
+#consonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 9em;
+    justify-content: space-between;
+    }
+#translitGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 14em;
+    }
+#translitGrid div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 2.5em;
+    justify-content: center;
+    margin-left: 1em;
+    }
+#consonantGrid > span {
+    min-width: 1em;
+    }
+#moreconsonants {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 2em;
+    justify-content: center;
+    height: 14em;
+    align-content: space-around;
+    margin-left: .25em;
+    }
+#ivowelGrid {
+    display: flex;
+    flex-direction: column;
+    height: 12em;
+    justify-content: space-between;
+    }
+#ivowelGrid div {
+    text-align: right;
+    }
+#vowelGrid {
+    display: flex;
+    flex-direction: column;
+    height: 14em;
+    justify-content: space-between;
+    margin-left: 1em;
+    }
+#virama {
+    width: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 .5em 0 .75em;
+    justify-content: center;
+    align-items: center;
+    height: 14em;
+    }
+#numberGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 5em;
+    max-height: 8em;
+    justify-content: space-between;
+    margin-left: 1.2em;
+    line-height: 1.8;
+    font-size: 90%;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#mahaprana, #rare, #otherpunctuation {
+    text-align: center;
+    font-size: 90%;
+    }
+#otherpunctuation {
+    font-size: 80%;
+    }
+
+
+
+
+
+/*
 #shape { display: none; }
 #alphabet { display: block; }
 
@@ -113,5 +264,5 @@ td#independentvowels { width: 43px; text-align: right; padding-right: 4px; borde
 .vowels{ padding: 5px; margin-bottom: 5px; width: 750px; border: 1px dotted teal; }
 
 
-
+*/
 
