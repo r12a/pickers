@@ -61,7 +61,12 @@ input, #character, #inputArea  { font-size: 200%; }
 
 <p>
 From: <select id="from"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
-To: <select id="to"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+To: <select id="to"><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+</select>
 <label>Escape <input id="escLeft" type="checkbox"/> <input id="escRight" type="checkbox"/></label>
 
 <button type="submit" onClick="document.getElementById('output').value  = makeList(document.getElementById('inputArea').value, document.getElementById('from').value-1, document.getElementById('to').value-1); document.getElementById('output').select(); return false;">Create lists!</button></p>
