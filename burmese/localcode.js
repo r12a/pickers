@@ -1,3 +1,4 @@
+globals.showTranslit =  ''
 globals.showMesherTrans =  ''
 globals.showISOTrans = ''
 
@@ -78,6 +79,21 @@ var _h = {
 
 end: {}
 }
+
+
+
+
+
+var keyboarddef = [
+"§ ၐ ဎ|1 ၁ ဍ|2 ၂ ၒ|3 ၃ ဋ|4 ၄ ၓ|5 ၅ ၔ|6 ၆ ၕ|7 ၇ ရ|8 ၈|9 ၉|0 ၀|-|=",
+"q ဆ ဈ|w တ ဝ|e န ဣ|r မ ၎|t အ ဤ|y ပ ၌|u က ဥ|i င ၍|o သ ဿ|p စ ဏ|[ ဟ ဧ|] ဩ ဪ",
+"a ေ ဗ|s ျ ှ|d ိ ီ|f ် ္|g ါ ွ|h ့ ံ|j ြ ဲ|k ု ဒ|l ူ ဓ|; း ဂ|'|\\ ၏ ၑ",
+"`|z ဖ ဇ|x ထ ဌ|c ခ ဃ|v လ ဠ|b ဘ ယ|n ည ဉ|m ာ ဦ|, ၊|. ။|/"
+]
+
+
+
+
 
 
 

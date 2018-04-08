@@ -2,7 +2,195 @@
 	
 	if (direction == 'toMLC') { return transcribetomlc(str) }
 	if (direction == 'toIPA') { return transcribetoipa(str) }
+	if (direction == 'transliterate') { return transliterate(str) }
 	}
+
+
+
+
+
+function transliterate (str) {
+    
+str = str + '  '
+str = str.normalize('NFC')
+
+var consonants = new Set(['က', 'ခ', 'ဂ', 'ဃ', 'င', 'စ', 'ဆ', 'ဇ', 'ဈ', 'ည', 'ဉ', 'ဋ', 'ဌ', 'ဍ', 'ဎ', 'ဏ', 'တ', 'ထ', 'ဒ', 'ဓ', 'န', 'ပ', 'ဖ', 'ဗ', 'ဘ', 'မ', 'ယ', 'ရ', 'လ', 'ဝ', 'သ', 'ဿ', 'ဟ', 'အ', 'ျ', 'ြ', 'ွ', 'ှ'])
+var vowelSet = new Set(['ာ', 'ါ', 'ိ', 'ီ', 'ု', 'ူ', 'ေ', 'ဲ'])
+var medialSet = new Set(['ျ', 'ြ', 'ွ', 'ှ'])
+var finalSet = new Set(['\u1036', '\u1037', '\u1038'])
+var nuktaSet = new Set([''])
+var viramaSet = new Set(['\u1039', '\u103A'])
+var combChar = new Set(['ာ', 'ါ', 'ိ', 'ီ', 'ု', 'ူ', 'ေ', 'ဲ', 'ျ', 'ြ', 'ွ', 'ှ', '\u1036', '\u1037', '\u1038', '\u1039', '\u103A'])
+
+var addak = ''
+var virama = '\u1039'
+
+
+// adjust the string for nukta, virama, and addak, and add inherent vowel
+let chars = [...str]
+var out = ''
+for (let i=0; i<chars.length-2; i++) {
+    // look ahead to syllable end
+    var ptr = i+1
+    var vowelsign = ''
+    var medials = ''
+    var finals = ''
+    var otherCombining = ''
+    var nuktas = ''
+    var hasAddak = false
+    var hasNukta = false
+    var hasVirama = false
+    while (combChar.has(chars[ptr]) && ptr < chars.length) {
+        if (vowelSet.has(chars[ptr])) vowelsign += chars[ptr]
+        else if (medialSet.has(chars[ptr])) medials += chars[ptr]
+        else if (finalSet.has(chars[ptr])) finals += chars[ptr]
+        else if (nuktaSet.has(chars[ptr])) nuktas += chars[ptr]
+        else otherCombining += chars[ptr]
+        if (chars[ptr] === addak) hasAddak = true
+        if (viramaSet.has(chars[ptr])) hasVirama = true
+        ptr++
+        }
+    
+    //console.log(i,'chars:i',chars[i],'vsign',vowelsign, 'virama',hasVirama, 'nukta',hasNukta, 'ptr',chars[ptr])
+    
+    out += chars[i] // '\u200B'+chars[i]
+    if (nuktas) out += nuktas
+    if (consonants.has(chars[i]) && vowelsign === '' && hasVirama === false) vowelsign = 'ᵃ'
+    out += medials + vowelsign + otherCombining + finals
+    //if (vowelsign === 'ᵃ' && (chars[ptr] === 'ਇ' || chars[ptr] === 'ਉ')) out += ':'
+    if (hasAddak) out += chars[ptr]
+    
+    i = ptr-1
+
+    //console.log(out)
+    }
+
+str = out+'  '
+console.log(out)
+
+str = str.replace(/\u103A/g, "͓") // asat
+str = str.replace(/\u1039/g, "͍") // virama
+
+// zwnj
+str = str.replace(/\u200C/g,'ⁿʲ')
+
+// tones
+str = str.replace(/့/g, "\u0330")
+str = str.replace(/\u1038/g, "\u0301")
+
+
+
+// basic consonants
+str = str.replace(/က/g, "k")
+str = str.replace(/ခ/g, "kʰ")
+str = str.replace(/ဂ/g, "g")
+str = str.replace(/ဃ/g, "gʰ")
+str = str.replace(/င/g, "ṅ")
+str = str.replace(/စ/g, "c")
+str = str.replace(/ဆ/g, "cʰ")
+str = str.replace(/ဇ/g, "j")
+str = str.replace(/ဈ/g, "jʰ")
+str = str.replace(/ည/g, "ñ")
+str = str.replace(/ဉ/g, "ᵰ")
+str = str.replace(/ဋ/g, "ṭ")
+str = str.replace(/ဌ/g, "ṭʰ")
+str = str.replace(/ဍ/g, "ḍ")
+str = str.replace(/ဎ/g, "ḍʰ")
+str = str.replace(/ဏ/g, "ṇ")
+str = str.replace(/တ/g, "t")
+str = str.replace(/ထ/g, "tʰ")
+str = str.replace(/ဒ/g, "d")
+str = str.replace(/ဓ/g, "dʰ")
+str = str.replace(/န/g, "n")
+str = str.replace(/ပ/g, "p")
+str = str.replace(/ဖ/g, "pʰ")
+str = str.replace(/ဗ/g, "b")
+str = str.replace(/ဘ/g, "bʰ")
+str = str.replace(/မ/g, "m")
+str = str.replace(/ယ/g, "y")
+str = str.replace(/ရ/g, "r")
+str = str.replace(/လ/g, "l")
+str = str.replace(/ဝ/g, "v")
+str = str.replace(/သ/g, "s")
+str = str.replace(/ဿ/g, "s͡s")
+str = str.replace(/ဟ/g, "h")
+str = str.replace(/အ/g, "‘")
+
+
+
+// finals
+str = str.replace(/\u1036/g, "ɴ̽")
+
+
+
+// medials
+str = str.replace(/ျ/g, "y̆")
+str = str.replace(/ြ/g, "r̆")
+str = str.replace(/ွ/g, "w̆")
+str = str.replace(/ှ/g, "h̆")
+str = str.replace(/္လ/g, "l̆")
+
+
+
+// independent vowels
+str = str.replace(/ဣ/g, "ị")
+str = str.replace(/ဤ/g, "ị̄")
+str = str.replace(/ဥ/g, "ụ")
+str = str.replace(/ဦ/g, "ụ̄")
+str = str.replace(/ဧ/g, "ẹ")
+str = str.replace(/ဩ/g, "ọ")
+str = str.replace(/ဪ/g, "ạu")
+str = str.replace(/‘ᵃ/g, "‘a")
+
+
+
+// vowel signs
+str = str.replace(/ာ/g, "ā")
+str = str.replace(/ါ/g, "ǟ")
+str = str.replace(/ိ/g, "i")
+str = str.replace(/ီ/g, "ī")
+str = str.replace(/ု/g, "u")
+str = str.replace(/ူ/g, "ū")
+str = str.replace(/ေ/g, "e")
+str = str.replace(/ဲ/g, "a͡i")
+str = str.replace(/ို/g, "o")
+
+
+
+// digits
+str = str.replace(/၀/g, "0")
+str = str.replace(/၁/g, "1")
+str = str.replace(/၂/g, "2")
+str = str.replace(/၃/g, "3")
+str = str.replace(/၄/g, "4")
+str = str.replace(/၅/g, "5")
+str = str.replace(/၆/g, "6")
+str = str.replace(/၇/g, "7")
+str = str.replace(/၈/g, "8")
+str = str.replace(/၉/g, "9")
+
+
+
+// punctuation
+str = str.replace(/၊/g, ",")
+str = str.replace(/။/g, ".")
+
+
+
+
+return str.trim()
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 function inSet (group, ch) {

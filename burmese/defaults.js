@@ -32,12 +32,15 @@ var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
 {"title":"MLC to Burmese", "dataVar":"showISOTrans", "dataLocn":"mlctranscript", "dataShortTitle":"M", "type":"palette"},
-{"title":"Mesher to Burmese", "dataVar":"showMesherTrans", "dataLocn":"meshertranscript", "dataShortTitle":"M", "type":"palette"}
+{"title":"Mesher to Burmese", "dataVar":"showMesherTrans", "dataLocn":"meshertranscript", "dataShortTitle":"M", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
+{"title":"Trans-<br/>literate", "alt":"Convert Balinese text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"MLC<br/>transcript", "alt":"Convert Burmese text to an MLC Latin transcription.", "code":"doTranscription('toMLC')"},
+{"title":"IPA<br/>transcript", "alt":"Convert Burmese text to an *approximation* to an IPA transcription.", "code":"doTranscription('toIPA')"},
 {"title":"Split<br/>syllables", "alt":"Split the text into syllables.", "code":"add(splitSyllables(getHighlightedText(document.getElementById('output')))); return false;"},
-{"title":"Burmese<br/>to MLC", "alt":"Convert Burmese text to an MLC Latin transcription.", "code":"doTranscription('toMLC')"},
-{"title":"Burmese to<br/>IPA", "alt":"Convert Burmese text to an *approximation* to an IPA transcription.", "code":"doTranscription('toIPA')"},
 ]
