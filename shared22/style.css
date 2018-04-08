@@ -245,7 +245,8 @@ span.c:hover {
 .control { 
 	float:left; 
 	padding: 2px 4px; 
-	background-color: #FFFACD; 
+	background-color: #FFFACD;
+    background-color: papayawhip;
 	border: 1px solid #ccc; 
 	margin-right: 2px; 
 	margin-bottom: 4px; 
