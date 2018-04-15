@@ -42,13 +42,26 @@
  <div id="transcriptionChoice"></div>
 
 <div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('a')">a</span>
+<span class="t" onclick="add('ʰ')">ʰ</span>
+<span class="t" onclick="add('ŋ')">ŋ</span>
+<span class="t" onclick="add('ɲ')">ɲ</span>
+<span class="t" onclick="add('ʨ')">ʨ</span>
 </div>
 
 
 <div id="transliteration" class="transcript" style="display:none;">
+<span class="t" onmouseover="showtrans('ະ')" onmouseout="hidetrans()" onclick="add('ະ')">a</span>
+<span class="t" onmouseover="showtrans('ັ')" onmouseout="hidetrans()" onclick="add('ັ')">ä</span>
+<span class="t" onmouseover="showtrans('າ')" onmouseout="hidetrans()" onclick="add('າ')">ā</span>
+<span class="t" onmouseover="showtrans('ໃ')" onmouseout="hidetrans()" onclick="add('ໃ')">aʲ</span>
 </div>
 
+<div id="transcription" class="transcript" style="display:none;">
+<span class="t" onmouseover="showtrans('ເ-ົາ')" onMouseOut="hidetrans()" onclick="addVowel('ເ-ົາ')">aao</span>
+<span class="t" onmouseover="showtrans('າວ')" onMouseOut="hidetrans()" onclick="add('າວ')">aao</span>
+<span class="t" onmouseover="showtrans('ໄ-')" onMouseOut="hidetrans()" onclick="addVowel('ໄ-')">ai</span>
+<span class="t" onmouseover="showtrans('ໃ-')" onMouseOut="hidetrans()" onclick="addVowel('ໃ-')">ai</span>
+</div>
 
 </div>
 
