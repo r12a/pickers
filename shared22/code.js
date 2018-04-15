@@ -1113,6 +1113,7 @@ function setUpValues () {
 			if (pairs[1]) document.getElementById('output').value = decodeURIComponent(pairs[1])
 			}
 		}
+    document.getElementById('output').focus()
 	}
 
 
@@ -1159,6 +1160,15 @@ function dotrans (altlist) {
 	}
 
 
+
+function showtrans (altlist) { 
+    document.getElementById('transcriptionChoice').innerHTML = altlist
+    document.getElementById('transcriptionChoice').style.display = 'block'
+	}
+
+function hidetrans () {
+    document.getElementById('transcriptionChoice').style.display = 'none'
+    }
 
 function selectCCBase (base) {
 	if (base === '0') return
