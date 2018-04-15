@@ -262,5 +262,11 @@ console.log(str)
 
 
 function toDeva (str) {
+	// add markup for ambiguous cases
+	chstring = chstring.replace(/\[/g,'<span class=alts><span class=altfirst>')
+	chstring = chstring.replace(/\|/g,'</span><span class=alt>')
+	chstring = chstring.replace(/\{/g,'</span><span class=altlast>')
+	chstring = chstring.replace(/\]/g,'</span></span>')
+	chstring = chstring.replace(/¶/g,'')
 	}
 
