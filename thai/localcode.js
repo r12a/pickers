@@ -1,5 +1,6 @@
 globals.showBeckerTrans =  ''
 globals.showISO2Trans = ''
+globals.showTranslit =  ''
 
 function localInitialise () {
 
@@ -114,11 +115,12 @@ end: {}
 */
 
 var keyboarddef = [
-"१|ऍ,२|ॅ,३|्र,४|र्,५|ज्ञ,६|त्र,७|क्ष,८|श्र,९|(,०|),-|ः,ृ|ऋ",
-"|औ,ै|ऐ,ा|आ,ी|ई,ू|ऊ,ब|भ,ह|ङ,ग|घ,द|ध,ज|झ,ड|ढ,ड|ञ",
-"|ओ,े|ए,्|अ,ि|इ,ु|उ,प|फ,र|ऱ,क|ख,त|थ,च|छ,ट|ठ,ॉ|ऑ",
-"ॊ|ऒ,ॆ|ऎ,ं|ँ,म|ण,न|ऩ,व|ऴ,ल|ळ,स|श, |ष,.|।,य|य़"
+"§|1 ๅ +|2 / ๑|3 _ ๒|4 ภ ๓|5 ถ ๔|6 ุ ู|7 ึ ฿|8 ค ๕|9 ต ๖|0 จ ๗|- ข ๘|= ช ๙",
+"q ๆ ๐|w ไ \"|e ำ ฎ|r พ ฑ|t ะ ธ|y ั ํ|u ี ๊|i ร ณ|o น ฯ|p ย ญ|[ บ ฐ|] ล ,",
+"a ฟ ฤ|s ห ฆ|d ก ฏ|f ด โ|g เ ฌ|h ้ ็|j ่ ๋|k า ษ|l ส ศ|; ว ซ|' ง .|\\ ฃ ฅ",
+"` - %|z ผ ฆ|x ป )|c แ ฉ|v อ ฮ|b ิ ฺ|n ื ์|m ท ?|, ม ฒ|. ใ ฬ|/ ฝ ฦ"
 ]
+
 
 
 function condense (str) {
@@ -151,3 +153,60 @@ function sendVowelLeft (str) {
 	
 	return lv+str.substr(0,lv.index)+str.substr(lv.index+1)
 	}
+
+function addVowel (ch) { 
+	// ch: string, the text to be added
+	
+	if (document.getElementById('output').style.display == 'none') { return; }
+	var outputNode = document.getElementById( 'output' ); // points to the output textarea
+
+	
+	//IE support
+	if (document.selection) { 
+		outputNode.focus()
+	    range = document.selection.createRange()
+		
+        // merge the base and the vowels
+        ch = ch.replace('-',range.text)
+        
+		range.text = ch; 
+	    range.select(); 
+		if (globals.refocus) outputNode.focus() 
+		}
+	// Mozilla and Safari support
+	else if (outputNode.selectionStart || outputNode.selectionStart == '0') {
+		var startPos = outputNode.selectionStart
+		var endPos = outputNode.selectionEnd
+		var cursorPos = startPos
+		var scrollTop = outputNode.scrollTop
+		var baselength = 0
+		
+        // get whatever is highlighted, or if no highlight the previous character
+        var consonant
+        if (startPos === endPos) startPos = startPos-1
+        consonant = outputNode.value.substring(startPos,endPos)
+        console.log(consonant)
+        
+        // merge the base and the vowels
+        ch = ch.replace('-',consonant)
+        
+		outputNode.value = outputNode.value.substring(0, startPos)
+              + ch
+              + outputNode.value.substring(endPos, outputNode.value.length)
+		cursorPos += ch.length
+
+		if (globals.refocus) outputNode.focus()
+		outputNode.selectionStart = cursorPos
+		outputNode.selectionEnd = cursorPos
+		if (! globals.refocus) outputNode.blur()
+		}
+	else {
+		outputNode.value += ch
+		if (globals.refocus) outputNode.focus()
+		}
+		
+	// normalize
+	if (globals.n11n=='nfc') { outputNode.value = outputNode.value.normalize('NFC') }
+	else if (globals.n11n=='nfd') { outputNode.value = outputNode.value.normalize('NFD') }
+	}
+

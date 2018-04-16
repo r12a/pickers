@@ -32,15 +32,16 @@ var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
 {"title":"ISO transcription", "dataVar":"showISO2Trans", "dataLocn":"iso2transcript", "dataShortTitle":"I", "type":"palette"},
-{"title":"Becker transcription", "dataVar":"showBeckerTrans", "dataLocn":"beckertranscript", "dataShortTitle":"B", "type":"palette"}
-//{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
+{"title":"Becker transcription", "dataVar":"showBeckerTrans", "dataLocn":"beckertranscript", "dataShortTitle":"B", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Thai<br>to ISO-1", "alt":"Convert Thai text to an ISO Latin transcription.", "code":"doTranscription('toISO1')"},
-{"title":"Thai<br>to ISO-2", "alt":"Convert Thai text to an ISO Latin transcription.", "code":"doTranscription('toISO2')"},
-{"title":"Thai<br>to IPA", "alt":"Convert Thai text to an approximate IPA transcription.", "code":"doTranscription('toIPA')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Thai text to an ISO 11940-1 Latin transcription.", "code":"doTranscription('toISO1')"},
+{"title":"Trans-<br>scribe", "alt":"Convert Thai text to an ISO 11940-2 Latin transcription.", "code":"doTranscription('toISO2')"},
+{"title":"Transcribe<br>to IPA", "alt":"Convert Thai text to an approximate IPA transcription.", "code":"doTranscription('toIPA')"},
 {"title":"Remove<br>sp/hyph", "alt":"Remove spaces and hyphens.", "code":"add(condense(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 ]
 
