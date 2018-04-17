@@ -6,15 +6,15 @@
     font-style: normal;
 	}
 @font-face {
-    font-family: 'Noto Sans Balinese WF';
-    src: url('/shared/webfonts/notosansbalinese-regularwebfont.woff2') format('woff2'),
-         url('/shared/webfonts/notosansbalinese-regularwebfont.woff') format('woff');
+    font-family: 'Noto Serif Balinese WF';
+    src: url('/shared/webfonts/notoserifbalinese-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notoserifbalinese-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
 
-[lang=ban] { font-family: 'Aksara Bali WF', 'Noto Sans Balinese WF', serif; }
+[lang=ban] { font-family: 'Aksara Bali WF', 'Noto Serif Balinese WF', serif; }
 
 
 
@@ -37,10 +37,10 @@ span.hint {
     
 /* KEYBOARD */
 .key span { 
-	font-size: 1.2em; 
+	font-size: 1.1em; 
 	font-weight: normal; 
-	font-family:  'Noto Sans Javanese WF',  sans-serif;  
-    line-height: 1;
+	font-family:  'Noto Serif Balinese WF',  sans-serif;  
+    line-height: 1.2;
 	}
 
 #keyboard { display: none; }
