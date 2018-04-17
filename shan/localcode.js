@@ -25,4 +25,16 @@ var keyboarddef = [
 
 
 
+function toggleShift (node, LC, UC) {
+	if (node.className ==='unshifted') {
+		document.getElementById(LC).style.display = 'none'
+		document.getElementById(UC).style.display = 'block'
+		node.className = 'shifted'
+		} 
+	else {
+		document.getElementById(LC).style.display = 'block'
+		document.getElementById(UC).style.display = 'none'
+		node.className = 'unshifted'
+		}
+	}
 

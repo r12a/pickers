@@ -212,13 +212,14 @@
   
   
   <div class="spaceline">
-    <span class="touch" style="padding: 5px 60px;" onClick="add(' ');">SPACE</span> 
-    <span class="touch" style="padding: 5px 60px;" onClick="add('\u200B');">ZWSP</span> 
+    <span class="touch" style="padding: 5px 50px;" onClick="add(' ');">SPACE</span> 
+    <span class="touch" style="padding: 5px 50px;" onClick="add('\u200B');">ZWSP</span> 
     <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
     <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
     <span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
     <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
     <span class="touch delAll" style="margin-left:20px;" onClick="deleteAll();">❌</span>
+    <span id="shift" class="unshifted" title="Toggle between Shan and Burmese digits." onClick="toggleShift(this, 'numberGrid', 'numberGridMy')">MY digits</span>
 </div>
 
 <div id="kbdGrid"> 
@@ -330,12 +331,31 @@
 <span class="c">,</span>
 <span class="c">.</span>
 </div>
+</div>
 
-<div style="margin-top: 2em;">
+<div id="numberGridMy" style="display: none;">
+            <div><span class="g"><span class="hint">7</span><span class="c">၇</span></span>
+            <span class="g"><span class="hint">8</span><span class="c">၈</span></span>
+            <span class="g"><span class="hint">9</span><span class="c">၉</span></span></div>
+            
+            <div><span class="g"><span class="hint">4</span><span class="c">၄</span></span>
+            <span class="g"><span class="hint">5</span><span class="c">၅</span></span>
+            <span class="g"><span class="hint">6</span><span class="c">၆</span></span></div>
+
+            <div><span class="g"><span class="hint">1</span><span class="c">၁</span></span>
+            <span class="g"><span class="hint">2</span><span class="c">၂</span></span>
+            <span class="g"><span class="hint">3</span><span class="c">၃</span></span></div>
+            <div><span class="g"><span class="hint">0</span><span class="c">၀</span></span>
+<span class="c">,</span>
+<span class="c">.</span>
+</div>
+
+<!--div style="margin-top: 1em;">
 <span class="c">႞</span>
 <span class="c">႟</span>
+</div-->
 </div>
-</div>
+
 </div>
 
 <div id="punctuation">
@@ -356,6 +376,8 @@
 <span class="c">&#x002D;</span>
 <span class="c">၊</span>
 <span class="c">။</span>
+<span class="c">႞</span>
+<span class="c">႟</span>
 </div>
 
 

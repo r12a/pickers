@@ -124,12 +124,12 @@ span.hint {
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin: 0 .5em 0 .75em;
+    margin: 0 .5em 0 0;
     justify-content: center;
     align-items: center;
     height: 10em;
     }
-#numberGrid div {
+#numberGrid div, #numberGridMy div {
     white-space: normal;
     display: flex;
     flex-wrap: wrap;
@@ -163,4 +163,6 @@ span.hint {
 #otherpunctuation {
     font-size: 80%;
     }
-
+.spaceline {
+    margin-left: 1em;
+    }
