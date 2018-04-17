@@ -159,5 +159,8 @@ span.hint {
 #obsolete {
     text-align: center;
     }
-
+#cursive {
+    width: 4em;
+    display: inline-block;
+    }
 

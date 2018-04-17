@@ -48,3 +48,48 @@ function setLocalButtons () {
 	// overrides the function that hides the makeEg and charLink buttons
 	
 	}
+
+
+var rightOnly = new Set(['ا', 'آ', 'أ', 'إ', 'ٱ', 'ة', 'و', 'ؤ', 'ر', 'ز', 'د', 'ذ'])
+
+var bothJoin = new Set(['ل', 'ك', 'ع', 'غ', 'ح', 'خ', 'ج', 'ف', 'ق', 'ط', 'ظ', 'ه', 'ي', 'ئ', 'ى', 'م', 'ب', 'ت', 'ث', 'ن', 'ص', 'ض', 'س', 'ش'])
+
+
+function event_mouseoverChar ()  {
+	// overrides the function in shared20/code.js to add shaping forms for all syriac styles
+	
+	// add cursive forms to table
+    if (this.id) {
+        var cursive = ''
+        var ncr = ''
+        if (this.id.length < 5) ncr = String.fromCodePoint('0x'+this.id)
+        if (window.rightOnly.has(ncr)) cursive = 'ـ'+ncr+' '+ncr
+        else if (bothJoin.has(ncr)) cursive = ncr+'ـ'+ncr+'ـ'+ncr+' '+ncr
+        document.getElementById('cursive').innerHTML = cursive
+        }
+	
+	
+	// display character information
+	var span = document.createElement( 'span' );
+	span.setAttribute( 'id', 'charname' );
+	var charinfo = document.createTextNode( this.title );
+	span.appendChild(charinfo);
+	
+	var chardata = document.getElementById('chardata');	
+	chardata.replaceChild( span, chardata.firstChild );
+	
+	// highlight this character
+	this.style.backgroundColor = '#CF9'
+	this.style.backgroundColor = '#fc6'
+		this.style.backgroundColor = '#F4630B';
+		this.style.color = '#eee'
+	
+	// highlight similar characters
+	if (globals.showShapeHints && _h[this.id]) {
+		ptr = this.id
+		for (i=0;i<_h[ptr].length;i++) {
+			document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
+			}
+		}
+	}
+	
