@@ -159,6 +159,7 @@ span.hint {
 #punctuation {
     text-align: center;
     font-size: 80%;
+    line-height: 1;
     }
 
 #alphabet summary {
@@ -167,84 +168,10 @@ span.hint {
 #obsolete {
     text-align: center;
     }
+#cursive {
+    width: 4em;
+    display: inline-block;
+    }
 
 
 
-
-/*
-
-#alphabet { display: block; margin-right: 20px;  }
-
-#alphabet td.hint {  
-	font-size: 14px;
-	color: #ccc;
-	text-align: left;
-	text-align: end;
-	vertical-align: top;
-	}
-	
-#kbd { margin:auto; }
-#kbd table {
-	margin:0;
-	}
-	
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: right;
-	text-align: start;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1.4;
-	}
-#kbd #consonants  {
-	text-align: start;
-	}
-span.c  {
-	min-width: .5em;
-	text-align: center;
-	}
-
-#kbd #vowels .hint {
-	padding-left: 10px; 
-	}
-#kbd #vowels td span {
-	padding: 0 10px; 
-	}
-#rareVowels span {
-	padding: 0 10px; 
-	}
-
-#kbd #numbers {
-	padding: 0 15px;
-	}
-#kbd #additional span {
-	padding: 0 4px;
-	min-width: 20px;
-	}
-
-#toggleRare {
-	margin: 10px 30px;
-	}
-#rare .hint {
-	vertical-align: top;
-	}
-
-#alphabet #controlchars {
-	padding: 0 10px; text-align:center;
-	}
-#alphabet #controlchars p {
-	margin: .3em 0;
-    margin-top: 0;
-margin-bottom: 0;
-line-height: 1;
-	}
-
-#rare {
-	margin:auto;
-	}
-.touch {
-	margin: 0;
-	}
-*/

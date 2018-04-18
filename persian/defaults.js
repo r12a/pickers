@@ -39,5 +39,5 @@ var inputAids = [
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Persian text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-{"title":"Transcribe<br/>to UN", "alt":"Convert Persian text to an UN Latin transcription.", "code":"doTranscription('toUN')"},
+{"title":"Trans-<br/>scribe", "alt":"Convert Persian text to an UN Latin transcription.", "code":"doTranscription('toUN')"},
 ]
