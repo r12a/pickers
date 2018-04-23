@@ -37,7 +37,6 @@
 
 
 
-
 <div id="phonemelist" style="position:relative;">
  <div id="transcriptionChoice"></div>
 
@@ -103,8 +102,8 @@
 <span class="t" onclick="dotrans('w')">w</span>
 <span class="t" onclick="dotrans('y')">y</span>
 <span class="t" onclick="dotrans('ý')">ý</span>
-<span class="t" onclick="dotrans('ẏ')">ẏ</span>
-<span class="t" onclick="dotrans('ȳ')">ȳ</span>
+<span class="t" onclick="dotrans('ɨ')">ɨ</span>
+<span class="t" onclick="dotrans('ɨ̄')">ɨ̄</span>
 <span class="t" onclick="dotrans('ʔ')">ʔ</span>
 
 <br/>
@@ -126,279 +125,448 @@
 <span class="t" onclick="dotrans('ʻ')">ʻ</span>
 <span class="t" onclick="dotrans('′')">′</span>
 
-
-
-
 </div>
 
 
-
+ 
 <div id="transliterate" class="transcript" style="display: none;">
-<span class="t" onclick="dotrans('អ')">’a</span>
-<span class="t" onclick="dotrans('ឯ')">′ae</span>
-<span class="t" onclick="dotrans('ឰ')">′ai</span>
-<span class="t" onclick="dotrans('ឳ')">′au</span>
-<span class="t" onclick="dotrans('ឲ')">′ǎu</span>
-<span class="t" onclick="dotrans('ឥ')">′i</span>
-<span class="t" onclick="dotrans('ឦ')">′ī</span>
-<span class="t" onclick="dotrans('ឱ')">′o</span>
-<span class="t" onclick="dotrans('ឧ')">′u</span>
-<span class="t" onclick="dotrans('ឩ')">′ū</span>
-&nbsp;•&nbsp;
-<span class="t" onclick="dotrans('◌៎')">’</span>
-<span class="t" onclick="dotrans('◌៍')">˚</span>
-<span class="t" onclick="dotrans('◌៏')">ʻ</span>
-&nbsp;•&nbsp;
-<span class="t" onclick="dotrans('០')">0</span>
-<span class="t" onclick="dotrans('១')">1</span>
-<span class="t" onclick="dotrans('២')">2</span>
-<span class="t" onclick="dotrans('៣')">3</span>
-<span class="t" onclick="dotrans('៤')">4</span>
-<span class="t" onclick="dotrans('៥')">5</span>
-<span class="t" onclick="dotrans('៦')">6</span>
-<span class="t" onclick="dotrans('៧')">7</span>
-<span class="t" onclick="dotrans('៨')">8</span>
-<span class="t" onclick="dotrans('៩')">9</span>
+<span class="t" onmouseover="showtrans('ឯ')" onmouseout="hidetrans()" onclick="add('ឯ')">æ̣</span>
+<span class="t" onmouseover="showtrans('ឰ')" onmouseout="hidetrans()" onclick="add('ឰ')">ạʲ</span>
+<span class="t" onmouseover="showtrans('ឲ')" onmouseout="hidetrans()" onclick="add('ឲ')">ạᵒ</span>
+<span class="t" onmouseover="showtrans('ឳ')" onmouseout="hidetrans()" onclick="add('ឳ')">ạʷ</span>
+<span class="t" onmouseover="showtrans('ឥ')" onmouseout="hidetrans()" onclick="add('ឥ')">ị</span>
+<span class="t" onmouseover="showtrans('ឦ')" onmouseout="hidetrans()" onclick="add('ឦ')">ị̄</span>
+<span class="t" onmouseover="showtrans('ឪ')" onmouseout="hidetrans()" onclick="add('ឪ')">ɨ̣</span>
+<span class="t" onmouseover="showtrans('ឭ')" onmouseout="hidetrans()" onclick="add('ឭ')">l̥</span>
+<span class="t" onmouseover="showtrans('ឮ')" onmouseout="hidetrans()" onclick="add('ឮ')">l̥̄</span>
+<span class="t" onmouseover="showtrans('ឱ')" onmouseout="hidetrans()" onclick="add('ឱ')">ọ</span>
+<span class="t" onmouseover="showtrans('ឫ')" onmouseout="hidetrans()" onclick="add('ឫ')">r̥</span>
+<span class="t" onmouseover="showtrans('ឬ')" onmouseout="hidetrans()" onclick="add('ឬ')">r̥̄</span>
+<span class="t" onmouseover="showtrans('ឧ')" onmouseout="hidetrans()" onclick="add('ឧ')">ụ</span>
+<span class="t" onmouseover="showtrans('ឩ')" onmouseout="hidetrans()" onclick="add('ឩ')">ụ̄</span>
 <br/>
-<span class="t" onclick="dotrans('◌់')">á</span>
-<span class="t" onclick="dotrans('◌ៈ')">à</span>
-<span class="t" onclick="dotrans('◌័')">ă</span>
-<span class="t" onclick="dotrans('◌ា')">ā</span>
-<span class="t" onclick="dotrans('◌ែ')">ae</span>
-<span class="t" onclick="dotrans('◌ៃ')">ai</span>
-<span class="t" onclick="dotrans('◌ាំ')">āṃ</span>
-<span class="t" onclick="dotrans('◌ៅ')">au</span>
-<span class="t" onclick="dotrans('◌េ')">e</span>
-<span class="t" onclick="dotrans('◌េះ')">eḥ</span>
-<span class="t" onclick="dotrans('◌ិ')">i</span>
-<span class="t" onclick="dotrans('◌ី')">ī</span>
-<span class="t" onclick="dotrans('◌ៀ')">ia</span>
-<span class="t" onclick="dotrans('◌ោ')">o</span>
-<span class="t" onclick="dotrans('◌ើ')">oe</span>
-<span class="t" onclick="dotrans('◌ោះ')">oḥ</span>
-<span class="t" onclick="dotrans('◌្ឧ')">u</span>
-<span class="t" onclick="dotrans('◌ុ')">u</span>
-<span class="t" onclick="dotrans('◌ូ')">ū</span>
-<span class="t" onclick="dotrans('◌ួ')">ua</span>
-<span class="t" onclick="dotrans('◌ុះ')">uḥ</span>
-<span class="t" onclick="dotrans('◌ុំ')">uṃ</span>
-<span class="t" onclick="dotrans('◌្ឯ')">uu</span>
-<span class="t" onclick="dotrans('◌ឹ')">ẏ</span>
-<span class="t" onclick="dotrans('◌ឺ')">ȳ</span>
-<span class="t" onclick="dotrans('◌ឿ')">ẏa</span>
+<span class="t" onmouseover="showtrans('ៈ')" onmouseout="hidetrans()" onclick="add('ៈ')">à</span>
+<span class="t" onmouseover="showtrans('ា')" onmouseout="hidetrans()" onclick="add('ា')">ā</span>
+<span class="t" onmouseover="showtrans('័')" onmouseout="hidetrans()" onclick="add('័')">ă</span>
+<span class="t" onmouseover="showtrans('ាំ')" onmouseout="hidetrans()" onclick="add('ាំ')">āṃ</span>
+<span class="t" onmouseover="showtrans('ែ')" onmouseout="hidetrans()" onclick="add('ែ')">æ</span>
+<span class="t" onmouseover="showtrans('ើ')" onmouseout="hidetrans()" onclick="add('ើ')">aᵊ</span>
+<span class="t" onmouseover="showtrans('ៃ')" onmouseout="hidetrans()" onclick="add('ៃ')">aʲ</span>
+<span class="t" onmouseover="showtrans('ៅ')" onmouseout="hidetrans()" onclick="add('ៅ')">aʷ</span>
+<span class="t" onmouseover="showtrans('េ')" onmouseout="hidetrans()" onclick="add('េ')">e</span>
+<span class="t" onmouseover="showtrans('េះ')" onmouseout="hidetrans()" onclick="add('េះ')">eḥ</span>
+<span class="t" onmouseover="showtrans('ិ')" onmouseout="hidetrans()" onclick="add('ិ')">i</span>
+<span class="t" onmouseover="showtrans('ី')" onmouseout="hidetrans()" onclick="add('ី')">ī</span>
+<span class="t" onmouseover="showtrans('ៀ')" onmouseout="hidetrans()" onclick="add('ៀ')">iᵊ</span>
+<span class="t" onmouseover="showtrans('ឹ')" onmouseout="hidetrans()" onclick="add('ឹ')">ɨ</span>
+<span class="t" onmouseover="showtrans('ឺ')" onmouseout="hidetrans()" onclick="add('ឺ')">ɨ̄</span>
+<span class="t" onmouseover="showtrans('ឿ')" onmouseout="hidetrans()" onclick="add('ឿ')">ɨᵊ</span>
+<span class="t" onmouseover="showtrans('ោ')" onmouseout="hidetrans()" onclick="add('ោ')">o</span>
+<span class="t" onmouseover="showtrans('ោះ')" onmouseout="hidetrans()" onclick="add('ោះ')">oḥ</span>
+<span class="t" onmouseover="showtrans('ុ')" onmouseout="hidetrans()" onclick="add('ុ')">u</span>
+<span class="t" onmouseover="showtrans('ូ')" onmouseout="hidetrans()" onclick="add('ូ')">ū</span>
+<span class="t" onmouseover="showtrans('ួ')" onmouseout="hidetrans()" onclick="add('ួ')">uᵊ</span>
+<span class="t" onmouseover="showtrans('ុះ')" onmouseout="hidetrans()" onclick="add('ុះ')">uḥ</span>
+<span class="t" onmouseover="showtrans('ុំ')" onmouseout="hidetrans()" onclick="add('ុំ')">uṃ</span>
+
 <br/>
 
 
-<span class="t" onclick="dotrans('ប')">b</span>
-<span class="t" onclick="dotrans('ច')">c</span>
-<span class="t" onclick="dotrans('ជ')">c̱</span>
-<span class="t" onclick="dotrans('ឆ')">cʰ</span>
-<span class="t" onclick="dotrans('ឈ')">c̱ʰ</span>
-<span class="t" onclick="dotrans('ដ')">d</span>
-<span class="t" onclick="dotrans('ឌ')">ḏ</span>
-<span class="t" onclick="dotrans('ហ')">h</span>
-<span class="t" onclick="dotrans('◌ះ')">ḥ</span>
-<span class="t" onclick="dotrans('ក')">k</span>
-<span class="t" onclick="dotrans('គ')">ḵ</span>
-<span class="t" onclick="dotrans('ខ')">kʰ</span>
-<span class="t" onclick="dotrans('ឃ')">ḵʰ</span>
-<span class="t" onclick="dotrans('ឡ')">l</span>
-<span class="t" onclick="dotrans('ឭ')">ḷ</span>
-<span class="t" onclick="dotrans('ឮ')">ḹ</span>
-<span class="t" onclick="dotrans('ល')">ḻ</span>
-<span class="t" onclick="dotrans('ម')">m</span>
-<span class="t" onclick="dotrans('◌ំ')">ṃ</span>
-<span class="t" onclick="dotrans('ណ')">n</span>
-<span class="t" onclick="dotrans('ញ')">ñ</span>
-<span class="t" onclick="dotrans('ន')">ṉ</span>
-<span class="t" onclick="dotrans('ង')">ng</span>
-<span class="t" onclick="dotrans('ផ')">pʰ</span>
-<span class="t" onclick="dotrans('ព')">ꝑ</span>
-<span class="t" onclick="dotrans('ភ')">ꝑʰ</span>
-<span class="t" onclick="dotrans('រ')">r</span>
-<span class="t" onclick="dotrans('ឫ')">ṛ</span>
-<span class="t" onclick="dotrans('◌្ឫ')">ṛ</span>
-<span class="t" onclick="dotrans('ឬ')">ṝ</span>
-<span class="t" onclick="dotrans('◌្ឬ')">ṝ</span>
-<span class="t" onclick="dotrans('ស')">s</span>
-<span class="t" onclick="dotrans('ត')">t</span>
-<span class="t" onclick="dotrans('ទ')">ṯ</span>
-<span class="t" onclick="dotrans('ថ')">tʰ</span>
-<span class="t" onclick="dotrans('ឋ')">ṭʰ</span>
-<span class="t" onclick="dotrans('ឍ')">ṱʰ</span>
-<span class="t" onclick="dotrans('ធ')">ṯʰ</span>
-<span class="t" onclick="dotrans('វ')">v</span>
-<span class="t" onclick="dotrans('យ')">y</span>
-<span class="t" onclick="dotrans('ឪ')">ýu</span>
+<span class="t" onmouseover="showtrans('អ')" onmouseout="hidetrans()" onclick="add('អ')">‘</span>
+<span class="t" onmouseover="showtrans('ប')" onmouseout="hidetrans()" onclick="add('ប')">b</span>
+<span class="t" onmouseover="showtrans('ច')" onmouseout="hidetrans()" onclick="add('ច')">c</span>
+<span class="t" onmouseover="showtrans('ឆ')" onmouseout="hidetrans()" onclick="add('ឆ')">cʰ</span>
+<span class="t" onmouseover="showtrans('ឈ')" onmouseout="hidetrans()" onclick="add('ឈ')">c̱ʰ</span>
+<span class="t" onmouseover="showtrans('ជ')" onmouseout="hidetrans()" onclick="add('ជ')">c̱</span>
+<span class="t" onmouseover="showtrans('ដ')" onmouseout="hidetrans()" onclick="add('ដ')">ḍ̱</span>
+<span class="t" onmouseover="showtrans('ឌ')" onmouseout="hidetrans()" onclick="add('ឌ')">ḍ̱</span>
+<span class="t" onmouseover="showtrans('ហ')" onmouseout="hidetrans()" onclick="add('ហ')">h</span>
+<span class="t" onmouseover="showtrans('ះ')" onmouseout="hidetrans()" onclick="add('ះ')">ḥ</span>
+<span class="t" onmouseover="showtrans('ក')" onmouseout="hidetrans()" onclick="add('ក')">k</span>
+<span class="t" onmouseover="showtrans('ខ')" onmouseout="hidetrans()" onclick="add('ខ')">kʰ</span>
+<span class="t" onmouseover="showtrans('ឃ')" onmouseout="hidetrans()" onclick="add('ឃ')">ḵʰ</span>
+<span class="t" onmouseover="showtrans('គ')" onmouseout="hidetrans()" onclick="add('គ')">ḵ</span>
+<span class="t" onmouseover="showtrans('ឡ')" onmouseout="hidetrans()" onclick="add('ឡ')">l</span>
+<span class="t" onmouseover="showtrans('ល')" onmouseout="hidetrans()" onclick="add('ល')">ḷ</span>
+<span class="t" onmouseover="showtrans('ម')" onmouseout="hidetrans()" onclick="add('ម')">m</span>
+<span class="t" onmouseover="showtrans('ំ')" onmouseout="hidetrans()" onclick="add('ំ')">ṃ</span>
+<span class="t" onmouseover="showtrans('ណ')" onmouseout="hidetrans()" onclick="add('ណ')">ṇ</span>
+<span class="t" onmouseover="showtrans('ន')" onmouseout="hidetrans()" onclick="add('ន')">n</span>
+<span class="t" onmouseover="showtrans('ញ')" onmouseout="hidetrans()" onclick="add('ញ')">ñ</span>
+<span class="t" onmouseover="showtrans('ង')" onmouseout="hidetrans()" onclick="add('ង')">ṅ</span>
+<br/>
+<span class="t" onmouseover="showtrans('ផ')" onmouseout="hidetrans()" onclick="add('ផ')">pʰ</span>
+<span class="t" onmouseover="showtrans('ព')" onmouseout="hidetrans()" onclick="add('ព')">p</span>
+<span class="t" onmouseover="showtrans('ភ')" onmouseout="hidetrans()" onclick="add('ភ')">p̄ʰ</span>
+<span class="t" onmouseover="showtrans('រ')" onmouseout="hidetrans()" onclick="add('រ')">r</span>
+<span class="t" onmouseover="showtrans('ឝ')" onmouseout="hidetrans()" onclick="add('ឝ')">ś</span>
+<span class="t" onmouseover="showtrans('ឞ')" onmouseout="hidetrans()" onclick="add('ឞ')">ṣ</span>
+<span class="t" onmouseover="showtrans('ស')" onmouseout="hidetrans()" onclick="add('ស')">s</span>
+<span class="t" onmouseover="showtrans('ត')" onmouseout="hidetrans()" onclick="add('ត')">t</span>
+<span class="t" onmouseover="showtrans('ថ')" onmouseout="hidetrans()" onclick="add('ថ')">tʰ</span>
+<span class="t" onmouseover="showtrans('ឋ')" onmouseout="hidetrans()" onclick="add('ឋ')">ṭʰ</span>
+<span class="t" onmouseover="showtrans('ឍ')" onmouseout="hidetrans()" onclick="add('ឍ')">ṭ̱ʰ</span>
+<span class="t" onmouseover="showtrans('ធ')" onmouseout="hidetrans()" onclick="add('ធ')">ṯʰ</span>
+<span class="t" onmouseover="showtrans('ទ')" onmouseout="hidetrans()" onclick="add('ទ')">ṯ</span>
+<span class="t" onmouseover="showtrans('វ')" onmouseout="hidetrans()" onclick="add('វ')">v</span>
+<span class="t" onmouseover="showtrans('យ')" onmouseout="hidetrans()" onclick="add('យ')">y</span>
+<span class="t" onmouseover="showtrans('្')" onmouseout="hidetrans()" onclick="add('្')">&nbsp;&nbsp;͓&nbsp;&nbsp;</span>
+
+<br/>
+<span class="t" onmouseover="showtrans('៌')" onmouseout="hidetrans()" onclick="add('៌')">ʳ</span>
+<span class="t" onmouseover="showtrans('៍')" onmouseout="hidetrans()" onclick="add('៍')"> ̽</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')"> ̆</span>
+<span class="t" onmouseover="showtrans('័')" onmouseout="hidetrans()" onclick="add('័')">ă</span>
+<span class="t" onmouseover="showtrans('៝')" onmouseout="hidetrans()" onclick="add('៝')">ᵊ</span>
+<span class="t" onmouseover="showtrans('៎')" onmouseout="hidetrans()" onclick="add('៎')"> ̾</span>
+<span class="t" onmouseover="showtrans('៏')" onmouseout="hidetrans()" onclick="add('៏')">͙</span>
+<span class="t" onmouseover="showtrans('៉')" onmouseout="hidetrans()" onclick="add('៉')">″</span>
+<span class="t" onmouseover="showtrans('៊')" onmouseout="hidetrans()" onclick="add('៊')">′</span>
+&nbsp;•&nbsp;
+<span class="t" onmouseover="showtrans('០')" onmouseout="hidetrans()" onclick="add('០')">0</span>
+<span class="t" onmouseover="showtrans('១')" onmouseout="hidetrans()" onclick="add('១')">1</span>
+<span class="t" onmouseover="showtrans('២')" onmouseout="hidetrans()" onclick="add('២')">2</span>
+<span class="t" onmouseover="showtrans('៣')" onmouseout="hidetrans()" onclick="add('៣')">3</span>
+<span class="t" onmouseover="showtrans('៤')" onmouseout="hidetrans()" onclick="add('៤')">4</span>
+<span class="t" onmouseover="showtrans('៥')" onmouseout="hidetrans()" onclick="add('៥')">5</span>
+<span class="t" onmouseover="showtrans('៦')" onmouseout="hidetrans()" onclick="add('៦')">6</span>
+<span class="t" onmouseover="showtrans('៧')" onmouseout="hidetrans()" onclick="add('៧')">7</span>
+<span class="t" onmouseover="showtrans('៨')" onmouseout="hidetrans()" onclick="add('៨')">8</span>
+<span class="t" onmouseover="showtrans('៩')" onmouseout="hidetrans()" onclick="add('៩')">9</span>
+
 
 </div>
 
 
 <div id="huffmantranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('ប')">b</span>
-<span class="t" onclick="dotrans('ច,ជ,ឆ,ឈ')">c</span>
-<span class="t" onclick="dotrans('ឆ,ឈ')">ch</span>
-<span class="t" onclick="dotrans('ដ,ត,ឌ')">d</span>
-<span class="t" onclick="dotrans('ហ្វ')">f</span>
-<span class="t" onclick="dotrans('ហ,ស')">h</span>
-<span class="t" onclick="dotrans('ក,គ,ខ,ឃ')">k</span>
-<span class="t" onclick="dotrans('ខ,ឃ')">kh</span>
-<span class="t" onclick="dotrans('ល,ឡ')">l</span>
-<span class="t" onclick="dotrans('ម')">m</span>
-<span class="t" onclick="dotrans('ណ,ន')">n</span>
-<span class="t" onclick="dotrans('ញ')">n̄</span>
-<span class="t" onclick="dotrans('ង')">ŋ</span>
-<span class="t" onclick="dotrans('ព,ប,ប៉,ផ,ភ')">p</span>
-<span class="t" onclick="dotrans('ផ,ភ')">ph</span>
-<span class="t" onclick="dotrans('រ')">r</span>
-<span class="t" onclick="dotrans('ស')">s</span>
-<span class="t" onclick="dotrans('ត,ទ,ដ,ឋ,ឌ,ឍ,ថ,ធ')">t</span>
-<span class="t" onclick="dotrans('ឋ,ឍ,ថ,ធ')">th</span>
-<span class="t" onclick="dotrans('វ')">w</span>
-<span class="t" onclick="dotrans('យ')">y</span>
+<span class="t" onmouseover="showtrans('ប')" onmouseout="hidetrans()" onclick="add('ប')">b</span>
+<span class="t" onmouseover="showtrans('ច')" onmouseout="hidetrans()" onclick="add('ច')">c</span>
+<span class="t" onmouseover="showtrans('ជ')" onmouseout="hidetrans()" onclick="add('ជ')">c</span>
+<span class="t" onmouseover="showtrans('ឆ')" onmouseout="hidetrans()" onclick="add('ឆ')">c</span>
+<span class="t" onmouseover="showtrans('ឈ')" onmouseout="hidetrans()" onclick="add('ឈ')">c</span>
+<span class="t" onmouseover="showtrans('ឆ')" onmouseout="hidetrans()" onclick="add('ឆ')">ch</span>
+<span class="t" onmouseover="showtrans('ឈ')" onmouseout="hidetrans()" onclick="add('ឈ')">ch</span>
+<span class="t" onmouseover="showtrans('ដ')" onmouseout="hidetrans()" onclick="add('ដ')">d</span>
+<span class="t" onmouseover="showtrans('ត')" onmouseout="hidetrans()" onclick="add('ត')">d</span>
+<span class="t" onmouseover="showtrans('ឌ')" onmouseout="hidetrans()" onclick="add('ឌ')">d</span>
+<span class="t" onmouseover="showtrans('ហ្វ')" onmouseout="hidetrans()" onclick="add('ហ្វ')">f</span>
+<span class="t" onmouseover="showtrans('ហ')" onmouseout="hidetrans()" onclick="add('ហ')">h</span>
+<span class="t" onmouseover="showtrans('ស')" onmouseout="hidetrans()" onclick="add('ស')">h</span>
+<span class="t" onmouseover="showtrans('ក')" onmouseout="hidetrans()" onclick="add('ក')">k</span>
+<span class="t" onmouseover="showtrans('គ')" onmouseout="hidetrans()" onclick="add('គ')">k</span>
+<span class="t" onmouseover="showtrans('ខ')" onmouseout="hidetrans()" onclick="add('ខ')">k</span>
+<span class="t" onmouseover="showtrans('ឃ')" onmouseout="hidetrans()" onclick="add('ឃ')">k</span>
+<span class="t" onmouseover="showtrans('ខ')" onmouseout="hidetrans()" onclick="add('ខ')">kh</span>
+<span class="t" onmouseover="showtrans('ឃ')" onmouseout="hidetrans()" onclick="add('ឃ')">kh</span>
+<span class="t" onmouseover="showtrans('ល')" onmouseout="hidetrans()" onclick="add('ល')">l</span>
+<span class="t" onmouseover="showtrans('ឡ')" onmouseout="hidetrans()" onclick="add('ឡ')">l</span>
+<span class="t" onmouseover="showtrans('ម')" onmouseout="hidetrans()" onclick="add('ម')">m</span>
+<span class="t" onmouseover="showtrans('ណ')" onmouseout="hidetrans()" onclick="add('ណ')">n</span>
+<span class="t" onmouseover="showtrans('ន')" onmouseout="hidetrans()" onclick="add('ន')">n</span>
+<span class="t" onmouseover="showtrans('ញ')" onmouseout="hidetrans()" onclick="add('ញ')">n̄</span>
+<span class="t" onmouseover="showtrans('ង')" onmouseout="hidetrans()" onclick="add('ង')">ŋ</span>
 <br/>
-<span class="t" onclick="dotrans('័,ា,+,់,ៈ')">a</span>
-<span class="t" onclick="dotrans('ា')">aa</span>
-<span class="t" onclick="dotrans('ើ')">aə</span>
-<span class="t" onclick="dotrans('ែ,ឯ')">ae</span>
-<span class="t" onclick="dotrans('ះ')">ah</span>
-<span class="t" onclick="dotrans('ាំ')">am</span>
-<span class="t" onclick="dotrans('ាំង,ំ')">aŋ</span>
-<span class="t" onclick="dotrans('ោ,ឧ,ឱ,ឲ')">ao</span>
-<span class="t" onclick="dotrans('ៅ,ឳ')">aw</span>
-<span class="t" onclick="dotrans('័យ,ៃ,ឰ')">ay</span>
-<span class="t" onclick="dotrans('-,់')">ɑ</span>
-<span class="t" onclick="dotrans('-')">ɑɑ</span>
-<span class="t" onclick="dotrans('ោះ,ស់')">ɑh</span>
-<span class="t" onclick="dotrans('ំ,ម់')">ɑm</span>
-<span class="t" onclick="dotrans('ិ')">e</span>
-<span class="t" onclick="dotrans('េ')">ee</span>
-<span class="t" onclick="dotrans('័,ា,់,ៈ')">eə̆</span>
-<span class="t" onclick="dotrans('ះ,ាះ')">eə̆h</span>
-<span class="t" onclick="dotrans('ាំង')">eə̆ŋ</span>
-<span class="t" onclick="dotrans('ិះ,េះ,ែះ,ែស')">eh</span>
-<span class="t" onclick="dotrans('េ')">ei</span>
-<span class="t" onclick="dotrans('ិ,ឹ,េ,ឥ')">ə</span>
-<span class="t" onclick="dotrans('ើ')">əə</span>
-<span class="t" onclick="dotrans('ើះ,ឹះ')">əh</span>
-<span class="t" onclick="dotrans('ឺ')">əɨ</span>
-<span class="t" onclick="dotrans('ូវ,ឪ')">əw</span>
-<span class="t" onclick="dotrans('ិយ,ី,ឥ,ឦ')">əy</span>
-<span class="t" onclick="dotrans('ិ')">ɛ</span>
-<span class="t" onclick="dotrans('ែ')">ɛɛ</span>
-<span class="t" onclick="dotrans('ិ')">i</span>
-<span class="t" onclick="dotrans('ិយ,ី')">ii</span>
-<span class="t" onclick="dotrans('ា,ៀ')">iə</span>
-<span class="t" onclick="dotrans('ិះ,េះ')">ih</span>
-<span class="t" onclick="dotrans('ិ,ឹ,េ,ឥ')">ɨ</span>
-<span class="t" onclick="dotrans('ឺ')">ɨɨ</span>
-<span class="t" onclick="dotrans('ឿ')">ɨə</span>
-<span class="t" onclick="dotrans('ូវ,ៅ')">ɨw</span>
-<span class="t" onclick="dotrans('័យ,ៃ,េយ')">ɨy</span>
-<span class="t" onclick="dotrans('ុ,ឧ')">o</span>
-<span class="t" onclick="dotrans('ោ')">oo</span>
-<span class="t" onclick="dotrans('័,ា,់')">oə̆</span>
-<span class="t" onclick="dotrans('ុះ')">oh</span>
-<span class="t" onclick="dotrans('ាំ')">oə̆m</span>
-<span class="t" onclick="dotrans('ុំ')">om</span>
-<span class="t" onclick="dotrans('ូ,ឩ')">ou</span>
-<span class="t" onclick="dotrans('-')">ɔɔ</span>
-<span class="t" onclick="dotrans('័រ,-,+,៌')">ɔə</span>
-<span class="t" onclick="dotrans('ុ,-,+,់,ឧ')">u</span>
-<span class="t" onclick="dotrans('ូ,ឩ')">uu</span>
-<span class="t" onclick="dotrans('ួ')">uə</span>
-<span class="t" onclick="dotrans('់,-,+,់')">uə̆</span>
-<span class="t" onclick="dotrans('ោះ,ស់')">uə̆h</span>
-<span class="t" onclick="dotrans('ុះ')">uh</span>
-<span class="t" onclick="dotrans('ម់,ុំ,ំ,ុម')">um</span>
-<span class="t" onclick="dotrans('ប់')">up</span>
-<span class="t" onclick="dotrans('-,+,៌')">rə</span>
-<span class="t" onclick="dotrans('ឫ')">rɨ</span>
-<span class="t" onclick="dotrans('ឬ')">rɨɨ</span>
-<span class="t" onclick="dotrans('ឭ')">lɨ</span>
-<span class="t" onclick="dotrans('ឮ')">lɨɨ</span>
+<span class="t" onmouseover="showtrans('ព')" onmouseout="hidetrans()" onclick="add('ព')">p</span>
+<span class="t" onmouseover="showtrans('ប')" onmouseout="hidetrans()" onclick="add('ប')">p</span>
+<span class="t" onmouseover="showtrans('ប៉')" onmouseout="hidetrans()" onclick="add('ប៉')">p</span>
+<span class="t" onmouseover="showtrans('ផ')" onmouseout="hidetrans()" onclick="add('ផ')">p</span>
+<span class="t" onmouseover="showtrans('ភ')" onmouseout="hidetrans()" onclick="add('ភ')">p</span>
+<span class="t" onmouseover="showtrans('ផ')" onmouseout="hidetrans()" onclick="add('ផ')">ph</span>
+<span class="t" onmouseover="showtrans('ភ')" onmouseout="hidetrans()" onclick="add('ភ')">ph</span>
+<span class="t" onmouseover="showtrans('រ')" onmouseout="hidetrans()" onclick="add('រ')">r</span>
+<span class="t" onmouseover="showtrans('ស')" onmouseout="hidetrans()" onclick="add('ស')">s</span>
+<span class="t" onmouseover="showtrans('ត')" onmouseout="hidetrans()" onclick="add('ត')">t</span>
+<span class="t" onmouseover="showtrans('ទ')" onmouseout="hidetrans()" onclick="add('ទ')">t</span>
+<span class="t" onmouseover="showtrans('ដ')" onmouseout="hidetrans()" onclick="add('ដ')">t</span>
+<span class="t" onmouseover="showtrans('ឋ')" onmouseout="hidetrans()" onclick="add('ឋ')">t</span>
+<span class="t" onmouseover="showtrans('ឌ')" onmouseout="hidetrans()" onclick="add('ឌ')">t</span>
+<span class="t" onmouseover="showtrans('ឍ')" onmouseout="hidetrans()" onclick="add('ឍ')">t</span>
+<span class="t" onclick="dotrans('ថ,)">t</span>
+<span class="t" onmouseover="showtrans('ធ')" onmouseout="hidetrans()" onclick="add('ធ')">t</span>
+<span class="t" onmouseover="showtrans('ឋ')" onmouseout="hidetrans()" onclick="add('ឋ')">th</span>
+<span class="t" onmouseover="showtrans('ឍ')" onmouseout="hidetrans()" onclick="add('ឍ')">th</span>
+<span class="t" onmouseover="showtrans('ថ')" onmouseout="hidetrans()" onclick="add('ថ')">th</span>
+<span class="t" onmouseover="showtrans('ធ')" onmouseout="hidetrans()" onclick="add('ធ')">th</span>
+<span class="t" onmouseover="showtrans('វ')" onmouseout="hidetrans()" onclick="add('វ')">w</span>
+<span class="t" onmouseover="showtrans('យ')" onmouseout="hidetrans()" onclick="add('យ')">y</span>
+<br/>
+<span class="t" onmouseover="showtrans('័')" onmouseout="hidetrans()" onclick="add('័')">a</span>
+<span class="t" onmouseover="showtrans('ា')" onmouseout="hidetrans()" onclick="add('ា')">a</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">a</span>
+<span class="t" onmouseover="showtrans('ៈ')" onmouseout="hidetrans()" onclick="add('ៈ')">a</span>
+<span class="t" onmouseover="showtrans('ា')" onmouseout="hidetrans()" onclick="add('ា')">aa</span>
+<span class="t" onmouseover="showtrans('ើ')" onmouseout="hidetrans()" onclick="add('ើ')">aə</span>
+<span class="t" onmouseover="showtrans('ែ')" onmouseout="hidetrans()" onclick="add('ែ')">ae</span>
+<span class="t" onmouseover="showtrans('ឯ')" onmouseout="hidetrans()" onclick="add('ឯ')">ae</span>
+<span class="t" onmouseover="showtrans('ះ')" onmouseout="hidetrans()" onclick="add('ះ')">ah</span>
+<span class="t" onmouseover="showtrans('ាំ')" onmouseout="hidetrans()" onclick="add('ាំ')">am</span>
+<span class="t" onmouseover="showtrans('ាំង')" onmouseout="hidetrans()" onclick="add('ាំង')">aŋ</span>
+<span class="t" onmouseover="showtrans('ំ')" onmouseout="hidetrans()" onclick="add('ំ')">aŋ</span>
+<span class="t" onmouseover="showtrans('ាំង')" onmouseout="hidetrans()" onclick="add('ាំង')">aŋ</span>
+<span class="t" onmouseover="showtrans('ំ')" onmouseout="hidetrans()" onclick="add('ំ')">aŋ</span>
+<span class="t" onmouseover="showtrans('ោ')" onmouseout="hidetrans()" onclick="add('ោ')">ao</span>
+<span class="t" onmouseover="showtrans('ឧ')" onmouseout="hidetrans()" onclick="add('ឧ')">ao</span>
+<span class="t" onmouseover="showtrans('ឱ')" onmouseout="hidetrans()" onclick="add('ឱ')">ao</span>
+<span class="t" onmouseover="showtrans('ឲ')" onmouseout="hidetrans()" onclick="add('ឲ')">ao</span>
+<span class="t" onmouseover="showtrans('ៅ')" onmouseout="hidetrans()" onclick="add('ៅ')">aw</span>
+<span class="t" onmouseover="showtrans('ឳ')" onmouseout="hidetrans()" onclick="add('ឳ')">aw</span>
+<span class="t" onmouseover="showtrans('័យ')" onmouseout="hidetrans()" onclick="add('័យ')">ay</span>
+<span class="t" onmouseover="showtrans('័ៃ')" onmouseout="hidetrans()" onclick="add('័ៃ')">ay</span>
+<span class="t" onmouseover="showtrans('័ឰ')" onmouseout="hidetrans()" onclick="add('័ឰ')">ay</span>
+<span class="t" onmouseover="showtrans('-')" onmouseout="hidetrans()" onclick="add('-')">ɑ</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">ɑ</span>
+<span class="t" onmouseover="showtrans('-')" onmouseout="hidetrans()" onclick="add('-')">ɑɑ</span>
+<span class="t" onmouseover="showtrans('ោះ')" onmouseout="hidetrans()" onclick="add('ោះ')">ɑh</span>
+<span class="t" onmouseover="showtrans('ស់')" onmouseout="hidetrans()" onclick="add('ស់')">ɑh</span>
+<span class="t" onmouseover="showtrans('ំ')" onmouseout="hidetrans()" onclick="add('ំ')">ɑm</span>
+<span class="t" onmouseover="showtrans('ម់')" onmouseout="hidetrans()" onclick="add('ម់')">ɑm</span>
+<br/>
+<span class="t" onmouseover="showtrans('ិ')" onmouseout="hidetrans()" onclick="add('ិ')">e</span>
+<span class="t" onmouseover="showtrans('េ')" onmouseout="hidetrans()" onclick="add('េ')">ee</span>
+<span class="t" onmouseover="showtrans('័')" onmouseout="hidetrans()" onclick="add('័')">eə̆</span>
+<span class="t" onmouseover="showtrans('ា')" onmouseout="hidetrans()" onclick="add('ា')">eə̆</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">eə̆</span>
+<span class="t" onmouseover="showtrans('ៈ')" onmouseout="hidetrans()" onclick="add('ៈ')">eə̆</span>
+<span class="t" onmouseover="showtrans('ះ')" onmouseout="hidetrans()" onclick="add('ះ')">eə̆h</span>
+<span class="t" onmouseover="showtrans('ាះ')" onmouseout="hidetrans()" onclick="add('ាះ')">eə̆h</span>
+<span class="t" onmouseover="showtrans('ាំង')" onmouseout="hidetrans()" onclick="add('ាំង')">eə̆ŋ</span>
+<span class="t" onmouseover="showtrans('ិះ')" onmouseout="hidetrans()" onclick="add('ិះ')">eh</span>
+<span class="t" onmouseover="showtrans('េះ')" onmouseout="hidetrans()" onclick="add('េះ')">eh</span>
+<span class="t" onmouseover="showtrans('ែះ')" onmouseout="hidetrans()" onclick="add('ែះ')">eh</span>
+<span class="t" onmouseover="showtrans('ែស')" onmouseout="hidetrans()" onclick="add('ែស')">eh</span>
+<span class="t" onmouseover="showtrans('េ')" onmouseout="hidetrans()" onclick="add('េ')">ei</span>
+<span class="t" onmouseover="showtrans('ិ')" onmouseout="hidetrans()" onclick="add('ិ')">ə</span>
+<span class="t" onmouseover="showtrans('ឹ')" onmouseout="hidetrans()" onclick="add('ឹ')">ə</span>
+<span class="t" onmouseover="showtrans('េ')" onmouseout="hidetrans()" onclick="add('េ')">ə</span>
+<span class="t" onmouseover="showtrans('ឥ')" onmouseout="hidetrans()" onclick="add('ឥ')">ə</span>
+<span class="t" onmouseover="showtrans('ើ')" onmouseout="hidetrans()" onclick="add('ើ')">əə</span>
+<span class="t" onmouseover="showtrans('ើះ')" onmouseout="hidetrans()" onclick="add('ើះ')">əh</span>
+<span class="t" onmouseover="showtrans('ឹះ')" onmouseout="hidetrans()" onclick="add('ឹះ')">əh</span>
+<span class="t" onmouseover="showtrans('ឺ')" onmouseout="hidetrans()" onclick="add('ឺ')">əɨ</span>
+<span class="t" onmouseover="showtrans('ូវ')" onmouseout="hidetrans()" onclick="add('ូវ')">əw</span>
+<span class="t" onmouseover="showtrans('ឪ')" onmouseout="hidetrans()" onclick="add('ឪ')">əw</span>
+<span class="t" onmouseover="showtrans('ិយ')" onmouseout="hidetrans()" onclick="add('ិយ')">əy</span>
+<span class="t" onmouseover="showtrans('ី')" onmouseout="hidetrans()" onclick="add('ី')">əy</span>
+<span class="t" onmouseover="showtrans('ឥ')" onmouseout="hidetrans()" onclick="add('ឥ')">əy</span>
+<span class="t" onmouseover="showtrans('ឦ')" onmouseout="hidetrans()" onclick="add('ឦ')">əy</span>
+<span class="t" onmouseover="showtrans('ិ')" onmouseout="hidetrans()" onclick="add('ិ')">ɛ</span>
+<span class="t" onmouseover="showtrans('ែ')" onmouseout="hidetrans()" onclick="add('ែ')">ɛɛ</span>
+<br/>
+<span class="t" onmouseover="showtrans('ិ')" onmouseout="hidetrans()" onclick="add('ិ')">i</span>
+<span class="t" onmouseover="showtrans('ិយ')" onmouseout="hidetrans()" onclick="add('ិយ')">ii</span>
+<span class="t" onmouseover="showtrans('ី')" onmouseout="hidetrans()" onclick="add('ី')">ii</span>
+<span class="t" onmouseover="showtrans('ា')" onmouseout="hidetrans()" onclick="add('ា')">iə</span>
+<span class="t" onmouseover="showtrans('ៀ')" onmouseout="hidetrans()" onclick="add('ៀ')">iə</span>
+<span class="t" onmouseover="showtrans('ិះ')" onmouseout="hidetrans()" onclick="add('ិះ')">ih</span>
+<span class="t" onmouseover="showtrans('េះ')" onmouseout="hidetrans()" onclick="add('េះ')">ih</span>
+<span class="t" onmouseover="showtrans('ិ')" onmouseout="hidetrans()" onclick="add('ិ')">ɨ</span>
+<span class="t" onmouseover="showtrans('ឹ')" onmouseout="hidetrans()" onclick="add('ឹ')">ɨ</span>
+<span class="t" onmouseover="showtrans('េ')" onmouseout="hidetrans()" onclick="add('េ')">ɨ</span>
+<span class="t" onmouseover="showtrans('ឥ')" onmouseout="hidetrans()" onclick="add('ឥ')">ɨ</span>
+<span class="t" onmouseover="showtrans('ឺ')" onmouseout="hidetrans()" onclick="add('ឺ')">ɨɨ</span>
+<span class="t" onmouseover="showtrans('ឿ')" onmouseout="hidetrans()" onclick="add('ឿ')">ɨə</span>
+<span class="t" onmouseover="showtrans('ូវ')" onmouseout="hidetrans()" onclick="add('ូវ')">ɨw</span>
+<span class="t" onmouseover="showtrans('ៅ')" onmouseout="hidetrans()" onclick="add('ៅ')">ɨw</span>
+<span class="t" onmouseover="showtrans('័យ')" onmouseout="hidetrans()" onclick="add('័យ')">ɨy</span>
+<span class="t" onmouseover="showtrans('ៃ')" onmouseout="hidetrans()" onclick="add('ៃ')">ɨy</span>
+<span class="t" onmouseover="showtrans('េយ')" onmouseout="hidetrans()" onclick="add('េយ')">ɨy</span>
+<span class="t" onmouseover="showtrans('ុ')" onmouseout="hidetrans()" onclick="add('ុ')">o</span>
+<span class="t" onmouseover="showtrans('ឧ')" onmouseout="hidetrans()" onclick="add('ឧ')">o</span>
+<span class="t" onmouseover="showtrans('ោ')" onmouseout="hidetrans()" onclick="add('ោ')">oo</span>
+<span class="t" onmouseover="showtrans('័')" onmouseout="hidetrans()" onclick="add('័')">oə̆</span>
+<span class="t" onmouseover="showtrans('ា')" onmouseout="hidetrans()" onclick="add('ា')">oə̆</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">oə̆</span>
+<span class="t" onmouseover="showtrans('ុះ')" onmouseout="hidetrans()" onclick="add('ុះ')">oh</span>
+<span class="t" onmouseover="showtrans('ាំ')" onmouseout="hidetrans()" onclick="add('ាំ')">oə̆m</span>
+<span class="t" onmouseover="showtrans('ុំ')" onmouseout="hidetrans()" onclick="add('ុំ')">om</span>
+<span class="t" onmouseover="showtrans('ូ')" onmouseout="hidetrans()" onclick="add('ូ')">ou</span>
+<span class="t" onmouseover="showtrans('ឩ')" onmouseout="hidetrans()" onclick="add('ឩ')">ou</span>
+<span class="t" onmouseover="showtrans('-')" onmouseout="hidetrans()" onclick="add('-')">ɔɔ</span>
+<span class="t" onmouseover="showtrans('័រ')" onmouseout="hidetrans()" onclick="add('័រ')">ɔə</span>
+<span class="t" onmouseover="showtrans('៌')" onmouseout="hidetrans()" onclick="add('៌')">ɔə</span>
+<br/>
+<span class="t" onmouseover="showtrans('ុ')" onmouseout="hidetrans()" onclick="add('ុ')">u</span>
+<span class="t" onmouseover="showtrans('-')" onmouseout="hidetrans()" onclick="add('-')">u</span>
+<span class="t" onmouseover="showtrans('+')" onmouseout="hidetrans()" onclick="add('+')">u</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">u</span>
+<span class="t" onmouseover="showtrans('ឧ')" onmouseout="hidetrans()" onclick="add('ឧ')">u</span>
+<span class="t" onmouseover="showtrans('ូ')" onmouseout="hidetrans()" onclick="add('ូ')">uu</span><span class="t" onmouseover="showtrans('ឩ')" onmouseout="hidetrans()" onclick="add('ឩ')">uu</span>
+<span class="t" onmouseover="showtrans('ួ')" onmouseout="hidetrans()" onclick="add('ួ')">uə</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">uə̆</span>
+<span class="t" onmouseover="showtrans('-')" onmouseout="hidetrans()" onclick="add('-')">uə̆</span>
+<span class="t" onmouseover="showtrans('+')" onmouseout="hidetrans()" onclick="add('+')">uə̆</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">uə̆</span>
+<span class="t" onmouseover="showtrans('ោះ')" onmouseout="hidetrans()" onclick="add('ោះ')">uə̆h</span>
+<span class="t" onmouseover="showtrans('ស់')" onmouseout="hidetrans()" onclick="add('ស់')">uə̆h</span>
+<span class="t" onmouseover="showtrans('ុះ')" onmouseout="hidetrans()" onclick="add('ុះ')">uh</span>
+<span class="t" onmouseover="showtrans('ម់')" onmouseout="hidetrans()" onclick="add('ម់')">um</span>
+<span class="t" onmouseover="showtrans('ុំ')" onmouseout="hidetrans()" onclick="add('ុំ')">um</span>
+<span class="t" onmouseover="showtrans('ំ')" onmouseout="hidetrans()" onclick="add('ំ')">um</span>
+<span class="t" onmouseover="showtrans('ុម')" onmouseout="hidetrans()" onclick="add('ុម')">um</span>
+<span class="t" onmouseover="showtrans('ប់')" onmouseout="hidetrans()" onclick="add('ប់')">up</span>
+<span class="t" onmouseover="showtrans('-')" onmouseout="hidetrans()" onclick="add('-')">rə</span>
+<span class="t" onmouseover="showtrans('+')" onmouseout="hidetrans()" onclick="add('+')">rə</span>
+<span class="t" onmouseover="showtrans('៌')" onmouseout="hidetrans()" onclick="add('៌')">rə</span>
+<span class="t" onmouseover="showtrans('ឫ')" onmouseout="hidetrans()" onclick="add('ឫ')">rɨ</span>
+<span class="t" onmouseover="showtrans('ឬ')" onmouseout="hidetrans()" onclick="add('ឬ')">rɨɨ</span>
+<span class="t" onmouseover="showtrans('ឭ')" onmouseout="hidetrans()" onclick="add('ឭ')">lɨ</span>
+<span class="t" onmouseover="showtrans('ឮ')" onmouseout="hidetrans()" onclick="add('ឮ')">lɨɨ</span>
 </div>
 
 
 
 
 <div id=gilberttranscript class=transcript style="display:none;">
-<span class="t" onclick="dotrans('ប,ព,ភ')">b</span>
-<span class="t" onclick="dotrans('ព,ប៉')">bp</span>
-<span class="t" onclick="dotrans('ឆ,ឈ')">ch</span>
-<span class="t" onclick="dotrans('ដ,ត,ឌ')">d</span>
-<span class="t" onclick="dotrans('ត,ទ')">dt</span>
-<span class="t" onclick="dotrans('ហ្វ')">f</span>
-<span class="t" onclick="dotrans('ក,គ')">g</span>
-<span class="t" onclick="dotrans('ហ,ស')">h</span>
-<span class="t" onclick="dotrans('ហ,ស')">j</span>
-<span class="t" onclick="dotrans('ខ,ឃ,ក,គ')">k</span>
-<span class="t" onclick="dotrans('ល,ឡ')">l</span>
-<span class="t" onclick="dotrans('ម')">m</span>
-<span class="t" onclick="dotrans('ណ,ន')">n</span>
-<span class="t" onclick="dotrans('ញ')">n̄</span>
-<span class="t" onclick="dotrans('ង')">ng</span>
-<span class="t" onclick="dotrans('ផ,ប៉,ប,ផ,ភ')">p</span>
-<span class="t" onclick="dotrans('អ,ក,គ,ខ,ឃ')">q</span>
-<span class="t" onclick="dotrans('រ')">r</span>
-<span class="t" onclick="dotrans('ស')">s</span>
-<span class="t" onclick="dotrans('ថ,ធ,ឋ,ឍ,ទ,ដ,ឋ,ឍ,ត')">t</span>
-<span class="t" onclick="dotrans('ឋ,ឍ,ថ,ធ')">th</span>
-<span class="t" onclick="dotrans('វ')">vw</span>
-<span class="t" onclick="dotrans('វ')">w</span>
-<span class="t" onclick="dotrans('យ')">y</span>
+<span class="t" onmouseover="showtrans('ប')" onmouseout="hidetrans()" onclick="add('ប')">b</span>
+<span class="t" onmouseover="showtrans('ព')" onmouseout="hidetrans()" onclick="add('ព')">b</span>
+<span class="t" onmouseover="showtrans('ភ')" onmouseout="hidetrans()" onclick="add('ភ')">b</span>
+<span class="t" onmouseover="showtrans('ព')" onmouseout="hidetrans()" onclick="add('ព')">bp</span>
+<span class="t" onmouseover="showtrans('ប៉')" onmouseout="hidetrans()" onclick="add('ប៉')">bp</span>
+<span class="t" onmouseover="showtrans('ឆ')" onmouseout="hidetrans()" onclick="add('ឆ')">ch</span>
+<span class="t" onmouseover="showtrans('ឈ')" onmouseout="hidetrans()" onclick="add('ឈ')">ch</span>
+<span class="t" onmouseover="showtrans('ដ')" onmouseout="hidetrans()" onclick="add('ដ')">d</span>
+<span class="t" onmouseover="showtrans('ត')" onmouseout="hidetrans()" onclick="add('ត')">d</span>
+<span class="t" onmouseover="showtrans('ឌ')" onmouseout="hidetrans()" onclick="add('ឌ')">d</span>
+<span class="t" onmouseover="showtrans('ត')" onmouseout="hidetrans()" onclick="add('ត')">dt</span>
+<span class="t" onmouseover="showtrans('ទ')" onmouseout="hidetrans()" onclick="add('ទ')">dt</span>
+<span class="t" onmouseover="showtrans('ហ្វ')" onmouseout="hidetrans()" onclick="add('ហ្វ')">f</span>
+<span class="t" onmouseover="showtrans('ក')" onmouseout="hidetrans()" onclick="add('ក')">g</span>
+<span class="t" onmouseover="showtrans('គ')" onmouseout="hidetrans()" onclick="add('គ')">g</span>
+<span class="t" onmouseover="showtrans('ហ')" onmouseout="hidetrans()" onclick="add('ហ')">h</span>
+<span class="t" onmouseover="showtrans('ស')" onmouseout="hidetrans()" onclick="add('ស')">h</span>
+<span class="t" onmouseover="showtrans('ហ')" onmouseout="hidetrans()" onclick="add('ហ')">j</span>
+<span class="t" onmouseover="showtrans('ស')" onmouseout="hidetrans()" onclick="add('ស')">j</span>
+<span class="t" onmouseover="showtrans('ខ')" onmouseout="hidetrans()" onclick="add('ខ')">k</span>
+<span class="t" onmouseover="showtrans('ឃ')" onmouseout="hidetrans()" onclick="add('ឃ')">k</span>
+<span class="t" onmouseover="showtrans('ក')" onmouseout="hidetrans()" onclick="add('ក')">k</span>
+<span class="t" onmouseover="showtrans('គ')" onmouseout="hidetrans()" onclick="add('គ')">k</span>
+<span class="t" onmouseover="showtrans('ល')" onmouseout="hidetrans()" onclick="add('ល')">l</span>
+<span class="t" onmouseover="showtrans('ឡ')" onmouseout="hidetrans()" onclick="add('ឡ')">l</span>
+<span class="t" onmouseover="showtrans('ម')" onmouseout="hidetrans()" onclick="add('ម')">m</span>
+<span class="t" onmouseover="showtrans('ណ')" onmouseout="hidetrans()" onclick="add('ណ')">n</span>
+<span class="t" onmouseover="showtrans('ន')" onmouseout="hidetrans()" onclick="add('ន')">n</span>
+<span class="t" onmouseover="showtrans('ញ')" onmouseout="hidetrans()" onclick="add('ញ')">n̄</span>
+<span class="t" onmouseover="showtrans('ង')" onmouseout="hidetrans()" onclick="add('ង')">ng</span>
 <br/>
-<span class="t" onclick="dotrans('ា,+,់,-,+,់,័,ៈ')">a</span>
-<span class="t" onclick="dotrans('ា')">aa</span>
-<span class="t" onclick="dotrans('ែ,ឯ')">ae</span>
-<span class="t" onclick="dotrans('ះ')">ah</span>
-<span class="t" onclick="dotrans('ៃ,ឰ')">ai</span>
-<span class="t" onclick="dotrans('ាំ')">am</span>
-<span class="t" onclick="dotrans('ាំង')">ang</span>
-<span class="t" onclick="dotrans('ោ,ឱ')">ao</span>
-<span class="t" onclick="dotrans('ៅ')">au</span>
-<span class="t" onclick="dotrans('ើ')">aʉ</span>
-<span class="t" onclick="dotrans('័យ')">ay</span>
-<span class="t" onclick="dotrans('ិ,័')">e</span>
-<span class="t" onclick="dotrans('េ,េ,ឦ')">ee</span>
-<span class="t" onclick="dotrans('េះ,ិះ')">eh</span>
-<span class="t" onclick="dotrans('ៃ,ឥ')">ei</span>
-<span class="t" onclick="dotrans('ី,័យ')">ey</span>
-<span class="t" onclick="dotrans('ឹ,ឹ')">ə</span>
-<span class="t" onclick="dotrans('ើ')">əə</span>
-<span class="t" onclick="dotrans('ំ')">əm</span>
-<span class="t" onclick="dotrans('ៅ')">əʉ</span>
-<span class="t" onclick="dotrans('ែ')">ɛɛ</span>
-<span class="t" onclick="dotrans('ា,់')">ɛa</span>
-<span class="t" onclick="dotrans('ះ,ៈ')">ɛah</span>
-<span class="t" onclick="dotrans('ាំង')">ɛang</span>
-<span class="t" onclick="dotrans('ិ')">i</span>
-<span class="t" onclick="dotrans('ី,យ')">ii</span>
-<span class="t" onclick="dotrans('ា,ៀ')">ia</span>
-<span class="t" onclick="dotrans('េះ,ិះ')">ih</span>
-<span class="t" onclick="dotrans('ច,ជ')">ik</span>
-<span class="t" onclick="dotrans('ុ,-,+,់')">o</span>
-<span class="t" onclick="dotrans('-,ូ,ោ,ឧ')">oo</span>
-<span class="t" onclick="dotrans('ា,់,-,+,៌,័,័រ')">oa</span>
-<span class="t" onclick="dotrans('ាំ')">oam</span>
-<span class="t" onclick="dotrans('ុះ')">oh</span>
-<span class="t" onclick="dotrans('ុំ')">om</span>
-<span class="t" onclick="dotrans('ឪ')">ow</span>
-<span class="t" onclick="dotrans('-,អ')">ɔɔ</span>
-<span class="t" onclick="dotrans('ោះ')">ɔh</span>
-<span class="t" onclick="dotrans('ំ')">ɔm</span>
-<span class="t" onclick="dotrans('ុ')">u</span>
-<span class="t" onclick="dotrans('ូ')">uu</span>
-<span class="t" onclick="dotrans('ួ')">ua</span>
-<span class="t" onclick="dotrans('ោះ')">uah</span>
-<span class="t" onclick="dotrans('ុះ')">uh</span>
-<span class="t" onclick="dotrans('ុំ')">um</span>
-<span class="t" onclick="dotrans('ឺ')">ʉʉ</span>
-<span class="t" onclick="dotrans('ឿ')">ʉa</span>
-<span class="t" onclick="dotrans('ឫ')">re</span>
-<span class="t" onclick="dotrans('ឬ')">rʉʉ</span>
-<span class="t" onclick="dotrans('ឭ')">lə</span>
-<span class="t" onclick="dotrans('ឮ')">lʉʉ</span>
+<span class="t" onmouseover="showtrans('ផ')" onmouseout="hidetrans()" onclick="add('ផ')">p</span>
+<span class="t" onmouseover="showtrans('ប៉')" onmouseout="hidetrans()" onclick="add('ប៉')">p</span>
+<span class="t" onmouseover="showtrans('ប')" onmouseout="hidetrans()" onclick="add('ប')">p</span>
+<span class="t" onmouseover="showtrans('ផ')" onmouseout="hidetrans()" onclick="add('ផ')">p</span>
+<span class="t" onmouseover="showtrans('ភ')" onmouseout="hidetrans()" onclick="add('ភ')">p</span>
+<span class="t" onmouseover="showtrans('អ')" onmouseout="hidetrans()" onclick="add('អ')">q</span>
+<span class="t" onmouseover="showtrans('ក')" onmouseout="hidetrans()" onclick="add('ក')">q</span>
+<span class="t" onmouseover="showtrans('គ')" onmouseout="hidetrans()" onclick="add('គ')">q</span>
+<span class="t" onmouseover="showtrans('ខ')" onmouseout="hidetrans()" onclick="add('ខ')">q</span>
+<span class="t" onmouseover="showtrans('ឃ')" onmouseout="hidetrans()" onclick="add('ឃ')">q</span>
+<span class="t" onmouseover="showtrans('រ')" onmouseout="hidetrans()" onclick="add('រ')">r</span>
+<span class="t" onmouseover="showtrans('ស')" onmouseout="hidetrans()" onclick="add('ស')">s</span>
+<span class="t" onmouseover="showtrans('ថ')" onmouseout="hidetrans()" onclick="add('ថ')">t</span>
+<span class="t" onmouseover="showtrans('ធ')" onmouseout="hidetrans()" onclick="add('ធ')">t</span>
+<span class="t" onmouseover="showtrans('ឋ')" onmouseout="hidetrans()" onclick="add('ឋ')">t</span>
+<span class="t" onmouseover="showtrans('ឍ')" onmouseout="hidetrans()" onclick="add('ឍ')">t</span>
+<span class="t" onmouseover="showtrans('ទ')" onmouseout="hidetrans()" onclick="add('ទ')">t</span>
+<span class="t" onmouseover="showtrans('ដ')" onmouseout="hidetrans()" onclick="add('ដ')">t</span>
+<span class="t" onmouseover="showtrans('ឋ')" onmouseout="hidetrans()" onclick="add('ឋ')">t</span>
+<span class="t" onmouseover="showtrans('ឍ')" onmouseout="hidetrans()" onclick="add('ឍ')">t</span>
+<span class="t" onmouseover="showtrans('ត')" onmouseout="hidetrans()" onclick="add('ត')">t</span>
+<span class="t" onmouseover="showtrans('ឋ')" onmouseout="hidetrans()" onclick="add('ឋ')">th</span>
+<span class="t" onmouseover="showtrans('ឍ')" onmouseout="hidetrans()" onclick="add('ឍ')">th</span>
+<span class="t" onmouseover="showtrans('ថ')" onmouseout="hidetrans()" onclick="add('ថ')">th</span>
+<span class="t" onmouseover="showtrans('ធ')" onmouseout="hidetrans()" onclick="add('ធ')">th</span>
+<span class="t" onmouseover="showtrans('វ')" onmouseout="hidetrans()" onclick="add('វ')">vw</span>
+<span class="t" onmouseover="showtrans('វ')" onmouseout="hidetrans()" onclick="add('វ')">w</span>
+<span class="t" onmouseover="showtrans('យ')" onmouseout="hidetrans()" onclick="add('យ')">y</span>
+<br/>
+<span class="t" onmouseover="showtrans('ា')" onmouseout="hidetrans()" onclick="add('ា')">a</span>
+<span class="t" onmouseover="showtrans('+')" onmouseout="hidetrans()" onclick="add('+')">a</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">a</span>
+<span class="t" onmouseover="showtrans('-')" onmouseout="hidetrans()" onclick="add('-')">a</span>
+<span class="t" onmouseover="showtrans('+')" onmouseout="hidetrans()" onclick="add('+')">a</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">a</span>
+<span class="t" onmouseover="showtrans('័')" onmouseout="hidetrans()" onclick="add('័')">a</span>
+<span class="t" onmouseover="showtrans('ៈ')" onmouseout="hidetrans()" onclick="add('ៈ')">a</span>
+<span class="t" onmouseover="showtrans('ា')" onmouseout="hidetrans()" onclick="add('ា')">aa</span>
+<span class="t" onmouseover="showtrans('ែ')" onmouseout="hidetrans()" onclick="add('ែ')">ae</span>
+<span class="t" onmouseover="showtrans('ឯ')" onmouseout="hidetrans()" onclick="add('ឯ')">ae</span>
+<span class="t" onmouseover="showtrans('ះ')" onmouseout="hidetrans()" onclick="add('ះ')">ah</span>
+<span class="t" onmouseover="showtrans('ៃ')" onmouseout="hidetrans()" onclick="add('ៃ')">ai</span>
+<span class="t" onmouseover="showtrans('ឰ')" onmouseout="hidetrans()" onclick="add('ឰ')">ai</span>
+<span class="t" onmouseover="showtrans('ាំ')" onmouseout="hidetrans()" onclick="add('ាំ')">am</span>
+<span class="t" onmouseover="showtrans('ាំង')" onmouseout="hidetrans()" onclick="add('ាំង')">ang</span>
+<span class="t" onmouseover="showtrans('ោ')" onmouseout="hidetrans()" onclick="add('ោ')">ao</span>
+<span class="t" onmouseover="showtrans('ឱ')" onmouseout="hidetrans()" onclick="add('ឱ')">ao</span>
+<span class="t" onmouseover="showtrans('ៅ')" onmouseout="hidetrans()" onclick="add('ៅ')">au</span>
+<span class="t" onmouseover="showtrans('ើ')" onmouseout="hidetrans()" onclick="add('ើ')">aʉ</span>
+<span class="t" onmouseover="showtrans('័យ')" onmouseout="hidetrans()" onclick="add('័យ')">ay</span>
+<br/>
+<span class="t" onmouseover="showtrans('ិ')" onmouseout="hidetrans()" onclick="add('ិ')">e</span>
+<span class="t" onmouseover="showtrans('័')" onmouseout="hidetrans()" onclick="add('័')">e</span>
+<span class="t" onmouseover="showtrans('េ')" onmouseout="hidetrans()" onclick="add('េ')">ee</span>
+<span class="t" onmouseover="showtrans('េ')" onmouseout="hidetrans()" onclick="add('េ')">ee</span>
+<span class="t" onmouseover="showtrans('ឦ')" onmouseout="hidetrans()" onclick="add('ឦ')">ee</span>
+<span class="t" onmouseover="showtrans('េះ')" onmouseout="hidetrans()" onclick="add('េះ')">eh</span>
+<span class="t" onmouseover="showtrans('ិះ')" onmouseout="hidetrans()" onclick="add('ិះ')">eh</span>
+<span class="t" onmouseover="showtrans('ៃ')" onmouseout="hidetrans()" onclick="add('ៃ')">ei</span>
+<span class="t" onmouseover="showtrans('ឥ')" onmouseout="hidetrans()" onclick="add('ឥ')">ei</span>
+<span class="t" onmouseover="showtrans('ី')" onmouseout="hidetrans()" onclick="add('ី')">ey</span>
+<span class="t" onmouseover="showtrans('័យ')" onmouseout="hidetrans()" onclick="add('័យ')">ey</span>
+<span class="t" onmouseover="showtrans('ឹ')" onmouseout="hidetrans()" onclick="add('ឹ')">ə</span>
+<span class="t" onmouseover="showtrans('ឹ')" onmouseout="hidetrans()" onclick="add('ឹ')">ə</span>
+<span class="t" onmouseover="showtrans('ើ')" onmouseout="hidetrans()" onclick="add('ើ')">əə</span>
+<span class="t" onmouseover="showtrans('ំ')" onmouseout="hidetrans()" onclick="add('ំ')">əm</span>
+<span class="t" onmouseover="showtrans('ៅ')" onmouseout="hidetrans()" onclick="add('ៅ')">əʉ</span>
+<span class="t" onmouseover="showtrans('ែ')" onmouseout="hidetrans()" onclick="add('ែ')">ɛɛ</span>
+<span class="t" onmouseover="showtrans('ា')" onmouseout="hidetrans()" onclick="add('ា')">ɛa</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">ɛa</span>
+<span class="t" onmouseover="showtrans('ះ')" onmouseout="hidetrans()" onclick="add('ះ')">ɛah</span>
+<span class="t" onmouseover="showtrans('ៈ')" onmouseout="hidetrans()" onclick="add('ៈ')">ɛah</span>
+<span class="t" onmouseover="showtrans('ាំង')" onmouseout="hidetrans()" onclick="add('ាំង')">ɛang</span>
+<br/>
+<span class="t" onmouseover="showtrans('ិ')" onmouseout="hidetrans()" onclick="add('ិ')">i</span>
+<span class="t" onmouseover="showtrans('ី')" onmouseout="hidetrans()" onclick="add('ី')">ii</span>
+<span class="t" onmouseover="showtrans('យ')" onmouseout="hidetrans()" onclick="add('យ')">ii</span>
+<span class="t" onmouseover="showtrans('ា')" onmouseout="hidetrans()" onclick="add('ា')">ia</span>
+<span class="t" onmouseover="showtrans('ៀ')" onmouseout="hidetrans()" onclick="add('ៀ')">ia</span>
+<span class="t" onmouseover="showtrans('េះ')" onmouseout="hidetrans()" onclick="add('េះ')">ih</span>
+<span class="t" onmouseover="showtrans('ិះ')" onmouseout="hidetrans()" onclick="add('ិះ')">ih</span>
+<span class="t" onmouseover="showtrans('ច')" onmouseout="hidetrans()" onclick="add('ច')">ik</span>
+<span class="t" onmouseover="showtrans('ជ')" onmouseout="hidetrans()" onclick="add('ជ')">ik</span>
+<span class="t" onmouseover="showtrans('ុ')" onmouseout="hidetrans()" onclick="add('ុ')">o</span>
+<span class="t" onmouseover="showtrans('-')" onmouseout="hidetrans()" onclick="add('-')">o</span>
+<span class="t" onclick="dotrans('+)">o</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">o</span>
+<span class="t" onmouseover="showtrans('-')" onmouseout="hidetrans()" onclick="add('-')">oo</span>
+<span class="t" onmouseover="showtrans('ូ')" onmouseout="hidetrans()" onclick="add('ូ')">oo</span>
+<span class="t" onmouseover="showtrans('ោ')" onmouseout="hidetrans()" onclick="add('ោ')">oo</span>
+<span class="t" onmouseover="showtrans('ឧ')" onmouseout="hidetrans()" onclick="add('ឧ')">oo</span>
+<span class="t" onmouseover="showtrans('ា')" onmouseout="hidetrans()" onclick="add('ា')">oa</span>
+<span class="t" onmouseover="showtrans('់')" onmouseout="hidetrans()" onclick="add('់')">oa</span>
+<span class="t" onmouseover="showtrans('-')" onmouseout="hidetrans()" onclick="add('-')">oa</span>
+<span class="t" onmouseover="showtrans('+')" onmouseout="hidetrans()" onclick="add('+')">oa</span>
+<span class="t" onmouseover="showtrans('៌')" onmouseout="hidetrans()" onclick="add('៌')">oa</span>
+<span class="t" onmouseover="showtrans('័')" onmouseout="hidetrans()" onclick="add('័')">oa</span>
+<span class="t" onmouseover="showtrans('័រ')" onmouseout="hidetrans()" onclick="add('័រ')">oa</span>
+<span class="t" onmouseover="showtrans('ាំ')" onmouseout="hidetrans()" onclick="add('ាំ')">oam</span>
+<span class="t" onmouseover="showtrans('ុះ')" onmouseout="hidetrans()" onclick="add('ុះ')">oh</span>
+<span class="t" onmouseover="showtrans('ុំ')" onmouseout="hidetrans()" onclick="add('ុំ')">om</span>
+<span class="t" onmouseover="showtrans('ឪ')" onmouseout="hidetrans()" onclick="add('ឪ')">ow</span>
+<br/>
+<span class="t" onmouseover="showtrans('-')" onmouseout="hidetrans()" onclick="add('-')">ɔɔ</span>
+<span class="t" onmouseover="showtrans('អ')" onmouseout="hidetrans()" onclick="add('អ')">ɔɔ</span>
+<span class="t" onmouseover="showtrans('ោះ')" onmouseout="hidetrans()" onclick="add('ោះ')">ɔh</span>
+<span class="t" onmouseover="showtrans('ំ')" onmouseout="hidetrans()" onclick="add('ំ')">ɔm</span>
+<span class="t" onmouseover="showtrans('ុ')" onmouseout="hidetrans()" onclick="add('ុ')">u</span>
+<span class="t" onmouseover="showtrans('ូ')" onmouseout="hidetrans()" onclick="add('ូ')">uu</span>
+<span class="t" onmouseover="showtrans('ួ')" onmouseout="hidetrans()" onclick="add('ួ')">ua</span>
+<span class="t" onmouseover="showtrans('ោះ')" onmouseout="hidetrans()" onclick="add('ោះ')">uah</span>
+<span class="t" onmouseover="showtrans('ុះ')" onmouseout="hidetrans()" onclick="add('ុះ')">uh</span>
+<span class="t" onmouseover="showtrans('ុំ')" onmouseout="hidetrans()" onclick="add('ុំ')">um</span>
+<span class="t" onmouseover="showtrans('ឺ')" onmouseout="hidetrans()" onclick="add('ឺ')">ʉʉ</span>
+<span class="t" onmouseover="showtrans('ឿ')" onmouseout="hidetrans()" onclick="add('ឿ')">ʉa</span>
+<span class="t" onmouseover="showtrans('ឫ')" onmouseout="hidetrans()" onclick="add('ឫ')">re</span>
+<span class="t" onmouseover="showtrans('ឬ')" onmouseout="hidetrans()" onclick="add('ឬ')">rʉʉ</span>
+<span class="t" onmouseover="showtrans('ឭ')" onmouseout="hidetrans()" onclick="add('ឭ')">lə</span>
+<span class="t" onmouseover="showtrans('ឮ')" onmouseout="hidetrans()" onclick="add('ឮ')">lʉʉ</span>
 </div>
 
 
@@ -417,6 +585,8 @@
 
 
 
+<div id="alphabet" class="default">
+
 <div class="spaceline">
 <span class="touch" title="Zero width space" style="padding: 5px 100px;" dir="auto" onClick="add('\u200B');">ZWSP</span>
 <span class="touch" title="Space" style="padding: 5px 20px;" dir="auto" onClick="add(' ');">SPACE</span>
@@ -428,196 +598,198 @@
 </div>
 
 
- 
-  <div id="alphabet" class="default">
-    <table id="kbd">
-      <tr>
-        <td><table id="consonants">
-          <tr>
-            <td><span class="g"><span class="hint">k</span><span class="c">&#x1780;</span><span class="c">&#x17D2;&#x1780;</span></span></td>
-            <td><span class="g"><span class="hint">kʰ</span><span class="c">&#x1781;</span><span class="c">&#x17D2;&#x1781;</span></span></td>
-            <td><span class="g"><span class="hint">ḵ</span><span class="c">&#x1782;</span><span class="c">&#x17D2;&#x1782;</span></span></td>
-            <td><span class="g"><span class="hint">ḵʰ</span><span class="c">&#x1783;</span><span class="c">&#x17D2;&#x1783;</span></span></td>
-            <td><span class="g"><span class="hint">ng</span><span class="c">&#x1784;</span><span class="c">&#x17D2;&#x1784;</span></span></td>
-        </tr>
-          <tr>
-            <td><span class="g"><span class="hint">c</span><span class="c">&#x1785;</span><span class="c">&#x17D2;&#x1785;</span></span></td>
-            <td><span class="g"><span class="hint">cʰ</span><span class="c">&#x1786;</span><span class="c">&#x17D2;&#x1786;</span></span></td>
-            <td><span class="g"><span class="hint">c̱</span><span class="c">&#x1787;</span><span class="c">&#x17D2;&#x1787;</span></span></td>
-            <td><span class="g"><span class="hint">c̱ʰ</span><span class="c">&#x1788;</span><span class="c">&#x17D2;&#x1788;</span></span></td>
-            <td><span class="g"><span class="hint">ñ</span><span class="c">&#x1789;</span><span class="c">&#x17D2;&#x1789;</span></span></td>
-        </tr>
-          <tr>
-            <td><span class="g"><span class="hint">d</span><span class="c">&#x178A;</span><span class="c">&#x17D2;&#x178A;</span></span></td>
-            <td><span class="g"><span class="hint">ṭʰ</span><span class="c">&#x178B;</span><span class="c">&#x17D2;&#x178B;</span></span></td>
-            <td><span class="g"><span class="hint">ḏ</span><span class="c">&#x178C;</span><span class="c">&#x17D2;&#x178C;</span></span></td>
-            <td><span class="g"><span class="hint">ṱʰ</span><span class="c">&#x178D;</span><span class="c">&#x17D2;&#x178D;</span></span></td>
-            <td><span class="g"><span class="hint">n</span><span class="c">&#x178E;</span><span class="c">&#x17D2;&#x178E;</span></span></td>
-        </tr>
-          <tr>
-            <td><span class="g"><span class="hint">t</span><span class="c">&#x178F;</span><span class="c">&#x17D2;&#x178F;</span></span></td>
-            <td><span class="g"><span class="hint">tʰ</span><span class="c">&#x1790;</span><span class="c">&#x17D2;&#x1790;</span></span></td>
-            <td><span class="g"><span class="hint">ṯ</span><span class="c">&#x1791;</span><span class="c">&#x17D2;&#x1791;</span></span></td>
-            <td><span class="g"><span class="hint">ṯʰ</span><span class="c">&#x1792;</span><span class="c">&#x17D2;&#x1792;</span></span></td>
-            <td><span class="g"><span class="hint">ṉ</span><span class="c">&#x1793;</span><span class="c">&#x17D2;&#x1793;</span></span></td>
-        </tr>
-          <tr>
-            <td><span class="g"><span class="hint">b</span><span class="c">&#x1794;</span><span class="c">&#x17D2;&#x1794;</span></span></td>
-            <td><span class="g"><span class="hint">pʰ</span><span class="c">&#x1795;</span><span class="c">&#x17D2;&#x1795;</span></span></td>
-            <td><span class="g"><span class="hint">ꝑ</span><span class="c">&#x1796;</span><span class="c">&#x17D2;&#x1796;</span></span></td>
-            <td><span class="g"><span class="hint">ꝑʰ</span><span class="c">&#x1797;</span><span class="c">&#x17D2;&#x1797;</span></span></td>
-            <td><span class="g"><span class="hint">m</span><span class="c">&#x1798;</span><span class="c">&#x17D2;&#x1798;</span></span></td>
-        </tr>
-          <tr>
-            <td><span class="g"><span class="hint">y</span><span class="c">&#x1799;</span><span class="c">&#x17D2;&#x1799;</span></span></td>
-            <td><span class="g"><span class="hint">ḻ</span><span class="c">&#x179B;</span><span class="c">&#x17D2;&#x179B;</span></span></td>
-            <td><span class="g"><span class="hint">l</span><span class="c">&#x17A1;</span><span class="c">&#x17D2;&#x17A1;</span></span></td>
-            <td><span class="g"><span class="hint">r</span><span class="c">&#x179A;</span><span class="c">&#x17D2;&#x179A;</span></span></td>
-            <td><span class="g"><span class="hint">’a</span><span class="c">&#x17A2;</span><span class="c">&#x17D2;&#x17A2;</span></span></td>
-        </tr>
-          <tr>
-            <td><span class="g"><span class="hint">s</span><span class="c">&#x179F;</span><span class="c">&#x17D2;&#x179F;</span></span></td>
-            <td><span class="g"><span class="hint">h</span><span class="c">&#x17A0;</span><span class="c">&#x17D2;&#x17A0;</span></span></td>
-            <td><span class="g"><span class="hint">v</span><span class="c">&#x179C;</span><span class="c">&#x17D2;&#x179C;</span></span></td>
-             <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-</table>
-          
-      </td>
-        <td id="closediacritics">
-          <div><span class="c">&#x17CC;</span><br /><span class="c">&#x17C9;</span><br /><span class="c">&#x17CA;</span><br/>
-          <span class="c">&#x17D2;</span></div>
-      </td>
-        
-        
-        <td>
-        <div id="vowelsetc">
-          <!--div id="independentvowels">
-            <span class="g"><span class="hint">′i</span><span class="c">&#x17A5;</span></span>
-            <span class="g"><span class="hint">′ī</span><span class="c">&#x17A6;</span></span>
-            <span class="g"><span class="hint">′u</span><span class="c">&#x17A7;</span></span>
-            <span class="g"><span class="hint">′ū</span><span class="c">&#x17A9;</span></span>
-            <span class="g"><span class="hint">ýu</span><span class="c">&#x17AA;</span></span>
-            <span class="g"><span class="hint">′ae</span><span class="c">&#x17AF;</span></span>
-            <span class="g"><span class="hint">′ai</span><span class="c">&#x17B0;</span></span>
-            <span class="g"><span class="hint">′o</span><span class="c">&#x17B1;</span></span>
-            <span class="g"><span class="hint">′ǎu</span><span class="c">&#x17B2;</span></span> 
-            <span class="g"><span class="hint">′au</span><span class="c">&#x17B3;</span></span>
-            <br>
-            <span class="g"><span class="hint">ṛ</span><span class="c">&#x17AB;</span></span>
-            <span class="g"><span class="hint">ṝ</span><span class="c">&#x17AC;</span></span>
-            <span class="g"><span class="hint">ḷ</span><span class="c">&#x17AD;</span></span>           
-            <span class="g"><span class="hint">ḹ</span><span class="c">&#x17AE;</span></span>
-            
-            <span class="g"><span class="hint">u</span><span class="c">&#x17D2;&#x17A7;</span></span>
-            <span class="g"><span class="hint">uu</span><span class="c">&#x17D2;&#x17AF;</span></span>
-            
-            <span class="g"><span class="hint">ṛ</span><span class="c">&#x17D2;&#x17AB;</span></span>
-            <span class="g"><span class="hint">ṝ</span><span class="c">&#x17D2;&#x17AC;</span></span>
-            </div-->
-          
-                <div>
-            	<span class="g"><span class="hint">ā</span><span class="c">&#x17B6;</span></span>
-                <span class="g"><span class="hint">āṃ</span><span class="c">&#x17B6;&#x17C6;</span></span>
-                <span class="g"><span class="hint">u</span><span class="c">&#x17D2;&#x17A7;</span></span>
-                <span class="g"><span class="hint">uu</span><span class="c">&#x17D2;&#x17AF;</span></span>
-                </div>
-                <div>
-                <span class="g"><span class="hint">i</span><span class="c">&#x17B7;</span></span>
-                <span class="g"><span class="hint">ī</span><span class="c">&#x17B8;</span></span>
-                <span class="g"><span class="hint">ẏ</span><span class="c">&#x17B9;</span></span>
-                <span class="g"><span class="hint">ȳ</span><span class="c">&#x17BA;</span></span>
-                </div>
-                <div>
-                <span class="g"><span class="hint">u</span><span class="c">&#x17BB;</span></span>
-                <span class="g"><span class="hint">uṃ</span><span class="c">&#x17BB;&#x17C6;</span></span>
-                <span class="g"><span class="hint">uḥ</span><span class="c">&#x17BB;&#x17C7;</span></span>
-                <span class="g"><span class="hint">ū</span><span class="c">&#x17BC;</span></span>
-                <span class="g"><span class="hint">ua</span><span class="c">&#x17BD;</span></span>
-                </div>
-                <div>
-                <span class="g"><span class="hint">e</span><span class="c">&#x17C1;</span></span>
-                <span class="g"><span class="hint">eḥ</span><span class="c">&#x17C1;&#x17C7;</span></span>
-                <span class="g"><span class="hint">ae</span><span class="c">&#x17C2;</span></span>
-                <span class="g"><span class="hint">ai</span><span class="c">&#x17C3;</span></span>
-                </div>
-                <div>
-                <span class="g"><span class="hint">o</span><span class="c">&#x17C4;</span></span>
-                <span class="g"><span class="hint">oḥ</span><span class="c">&#x17C4;&#x17C7;</span></span>
-                <span class="g"><span class="hint">au</span><span class="c">&#x17C5;</span></span>
-                </div>
-                <div>
-                <span class="g"><span class="hint">oe</span><span class="c">&#x17BE;</span></span>
-                <span class="g"><span class="hint">ẏa</span><span class="c">&#x17BF;</span></span>
-                <span class="g"><span class="hint">ia</span><span class="c">&#x17C0;</span></span>
-                </div>
-                <div>
-                <span class="g"><span class="hint">ṃ</span><span class="c">&#x17C6;</span></span>
-                <span class="g"><span class="hint">ḥ</span><span class="c">&#x17C7;</span></span>
-                <span class="g"><span class="hint">à</span><span class="c">&#x17C8;</span></span>
-                <span class="g"><span class="hint">á</span><span class="c">&#x17CB;</span></span>
-                </div>
-                <div>
-                <span class="g"><span class="hint">˚</span><span class="c">&#x17CD;</span></span>
-                <span class="g"><span class="hint">’</span><span class="c">&#x17CE;</span></span>
-                <span class="g"><span class="hint">ʻ</span><span class="c">&#x17CF;</span></span>
-                <span class="g"><span class="hint">ă</span><span class="c">&#x17D0;</span></span>
-                </div>
-        </div>
-      </td>
-    <td>
-        <div id="indvowels">
-            <span class="g"><span class="hint">′i</span><span class="c">&#x17A5;</span></span>
-            <span class="g"><span class="hint">′ī</span><span class="c">&#x17A6;</span></span>
-            <span class="g"><span class="hint">′u</span><span class="c">&#x17A7;</span></span>
-            <span class="g"><span class="hint">′ū</span><span class="c">&#x17A9;</span></span>
-            <span class="g"><span class="hint">ýu</span><span class="c">&#x17AA;</span></span>
-            <span class="g"><span class="hint">′ae</span><span class="c">&#x17AF;</span></span>
-            <span class="g"><span class="hint">′ai</span><span class="c">&#x17B0;</span></span>
-            <span class="g"><span class="hint">′o</span><span class="c">&#x17B1;</span></span>
-            <span class="g"><span class="hint">′ǎu</span><span class="c">&#x17B2;</span></span> 
-            <span class="g"><span class="hint">′au</span><span class="c">&#x17B3;</span></span>
 
-            <span class="g"><span class="hint">ṛ</span><span class="c">&#x17AB;</span></span>
-            <span class="g"><span class="hint">ṝ</span><span class="c">&#x17AC;</span></span>
-            <span class="g"><span class="hint">ḷ</span><span class="c">&#x17AD;</span></span>           
-            <span class="g"><span class="hint">ḹ</span><span class="c">&#x17AE;</span></span>
-            
-            <span class="g"><span class="hint">ṛ</span><span class="c">&#x17D2;&#x17AB;</span></span>
-            <span class="g"><span class="hint">ṝ</span><span class="c">&#x17D2;&#x17AC;</span></span>
-    </div>
-      </td>
-        
-        <td id="zwspcol" style="white-space: normal; width: 5em;"><table id="numbers" style="margin: 0 10px 10px 0;">
-          <tbody>
-            <tr>
-              <td><span class="g"><span class="hint">7</span><span class="c">&#x17E7;</span></span></td>
-              <td><span class="g"><span class="hint">8</span><span class="c">&#x17E8;</span></span></td>
-              <td><span class="g"><span class="hint">9</span><span class="c">&#x17E9;</span></span></td>
-          </tr>
-            <tr>
-              <td><span class="g"><span class="hint">4</span><span class="c">&#x17E4;</span></span></td>
-              <td><span class="g"><span class="hint">5</span><span class="c">&#x17E5;</span></span></td>
-              <td><span class="g"><span class="hint">6</span><span class="c">&#x17E6;</span></span></td>
-          </tr>
-            <tr>
-              <td><span class="g"><span class="hint">1</span><span class="c">&#x17E1;</span></span></td>
-              <td><span class="g"><span class="hint">2</span><span class="c">&#x17E2;</span></span></td>
-              <td><span class="g"><span class="hint">3</span><span class="c">&#x17E3;</span></span></td>
-          </tr>
-            <tr>
-              <td><span class="g"><span class="hint">0</span><span class="c">&#x17E0;</span></span></td>
-              <td><span class="c">.</span></td>
-              <td><span class="c">,</span></td>
-          </tr>
-        </tbody>
-        </table>
-<div id="punctuation" style="text-align: center;"><span class="c">&#x17DB;</span> <span class="c">&#x17D6;</span> <span class="c">&#x17D9;</span> <span class="c">&#x17D7;</span> <span class="c">។ល។</span> <span class="c">&#x17DA;</span> <span class="c">&#x17D4;</span> <span class="c">&#x17D5;</span></div>
+<div id="kbdGrid">
+<div id="ivowelGrid">
+<div><span class="g"><span class="hint">ị̄</span><span class="c">&#x17A6;</span></span> <span class="g"><span class="hint">ị</span><span class="c">&#x17A5;</span></span></div>
+<div><span class="g"><span class="hint">ụ̄</span><span class="c">&#x17A9;</span></span> <span class="g"><span class="hint">ụ</span><span class="c">&#x17A7;</span><span class="c">្ឧ</span></span></div>
+<div><span class="g"><span class="hint">ɨ̣</span><span class="c">&#x17AA;</span></span> <span class="g"><span class="hint">æ̣</span><span class="c">&#x17AF;</span><span class="c">្ឯ</span></span></div>
+<div><span class="g"><span class="hint">ọ</span><span class="c">&#x17B1;</span></span> <span class="g"><span class="hint">ạʲ</span><span class="c">&#x17B0;</span></span></div>
+<div><span class="g"><span class="hint">ạʷ</span><span class="c">&#x17B3;</span></span> <span class="g"><span class="hint">ạᵒ</span><span class="c">&#x17B2;</span></span></div>
+<div><span class="g"><span class="hint">r̥̄</span><span class="c">&#x17AC;</span><span class="c">&#x17D2;&#x17AC;</span></span> <span class="g"><span class="hint">r̥</span><span class="c">&#x17AB;</span><span class="c">&#x17D2;&#x17AB;</span></span></div>
+<div><span class="g"><span class="hint">l̥̄</span><span class="c">&#x17AE;</span></span> <span class="g"><span class="hint">l̥</span><span class="c">&#x17AD;</span></span></div>
+</div>
+
+
+<div id="consonantGrid">
+<div>
+<span class="g"><span class="hint">k</span><span class="c">&#x1780;</span><span class="c">&#x17D2;&#x1780;</span></span>
+<span class="g"><span class="hint">kʰ</span><span class="c">&#x1781;</span><span class="c">&#x17D2;&#x1781;</span></span>
+<span class="g"><span class="hint">ḵ</span><span class="c">&#x1782;</span><span class="c">&#x17D2;&#x1782;</span></span>
+<span class="g"><span class="hint">ḵʰ</span><span class="c">&#x1783;</span><span class="c">&#x17D2;&#x1783;</span></span>
+<span class="g"><span class="hint">ṅ</span><span class="c">&#x1784;</span><span class="c">&#x17D2;&#x1784;</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">c</span><span class="c">&#x1785;</span><span class="c">&#x17D2;&#x1785;</span></span>
+<span class="g"><span class="hint">cʰ</span><span class="c">&#x1786;</span><span class="c">&#x17D2;&#x1786;</span></span>
+<span class="g"><span class="hint">c̱</span><span class="c">&#x1787;</span><span class="c">&#x17D2;&#x1787;</span></span>
+<span class="g"><span class="hint">c̱ʰ</span><span class="c">&#x1788;</span><span class="c">&#x17D2;&#x1788;</span></span>
+<span class="g"><span class="hint">ñ</span><span class="c">&#x1789;</span><span class="c">&#x17D2;&#x1789;</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ḍ̱</span><span class="c">&#x178A;</span><span class="c">&#x17D2;&#x178A;</span></span>
+<span class="g"><span class="hint">ṭʰ</span><span class="c">&#x178B;</span><span class="c">&#x17D2;&#x178B;</span></span>
+<span class="g"><span class="hint">ḍ̱</span><span class="c">&#x178C;</span><span class="c">&#x17D2;&#x178C;</span></span>
+<span class="g"><span class="hint">ṭ̱ʰ</span><span class="c">&#x178D;</span><span class="c">&#x17D2;&#x178D;</span></span>
+<span class="g"><span class="hint">ṇ</span><span class="c">&#x178E;</span><span class="c">&#x17D2;&#x178E;</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">t</span><span class="c">&#x178F;</span><span class="c">&#x17D2;&#x178F;</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">&#x1790;</span><span class="c">&#x17D2;&#x1790;</span></span>
+<span class="g"><span class="hint">ṯ</span><span class="c">&#x1791;</span><span class="c">&#x17D2;&#x1791;</span></span>
+<span class="g"><span class="hint">ṯʰ</span><span class="c">&#x1792;</span><span class="c">&#x17D2;&#x1792;</span></span>
+<span class="g"><span class="hint">n</span><span class="c">&#x1793;</span><span class="c">&#x17D2;&#x1793;</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">b</span><span class="c">&#x1794;</span><span class="c">&#x17D2;&#x1794;</span></span>
+<span class="g"><span class="hint">pʰ</span><span class="c">&#x1795;</span><span class="c">&#x17D2;&#x1795;</span></span>
+<span class="g"><span class="hint">p</span><span class="c">&#x1796;</span><span class="c">&#x17D2;&#x1796;</span></span>
+<span class="g"><span class="hint">p̄ʰ</span><span class="c">&#x1797;</span><span class="c">&#x17D2;&#x1797;</span></span>
+<span class="g"><span class="hint">m</span><span class="c">&#x1798;</span><span class="c">&#x17D2;&#x1798;</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">y</span><span class="c">&#x1799;</span><span class="c">&#x17D2;&#x1799;</span></span>
+<span class="g"><span class="hint">l</span><span class="c">&#x17A1;</span><span class="c">&#x17D2;&#x17A1;</span></span>
+<span class="g"><span class="hint">ḷ</span><span class="c">&#x179B;</span><span class="c">&#x17D2;&#x179B;</span></span>
+<span class="g"><span class="hint">r</span><span class="c">&#x179A;</span><span class="c">&#x17D2;&#x179A;</span></span>
+<span class="g"><span class="hint">v</span><span class="c">&#x179C;</span><span class="c">&#x17D2;&#x179C;</span></span>
+</div>
+<div style="justify-content: right;">
+<span class="g"><span class="hint">s</span><span class="c">&#x179F;</span><span class="c">&#x17D2;&#x179F;</span></span>
+&nbsp;&nbsp;
+<span class="g"><span class="hint">h</span><span class="c">&#x17A0;</span><span class="c">&#x17D2;&#x17A0;</span></span>
+</div>
+</div>
+
+
+<div id="diacritics">
+  <span class="c">&#x17CC;</span><br /><span class="c">&#x17C9;</span><br /><span class="c">&#x17CA;</span><br/>
+  <span class="c">&#x17D2;</span>
+</div>
+
+
+<div id="vowelGrid">
+<div>
+<span class="g"><span class="hint">‘ᵃ</span><span class="c">&#x17A2;</span><span class="c">&#x17D2;&#x17A2;</span></span>
+&nbsp;
+<span class="g"><span class="hint">ṃ</span><span class="c">&#x17C6;</span></span>
+<span class="g"><span class="hint">ḥ</span><span class="c">&#x17C7;</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ă</span><span class="c">&#x17D0;</span></span>
+<span class="g"><span class="hint">ā</span><span class="c">&#x17B6;</span></span>
+<span class="g"><span class="hint">aᵐ</span><span class="c">&#x17B6;&#x17C6;</span></span>
+<span class="g"><span class="hint">à</span><span class="c">&#x17C8;</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">i</span><span class="c">&#x17B7;</span></span>
+ <span class="g"><span class="hint">ī</span><span class="c">&#x17B8;</span></span>
+ <span class="g"><span class="hint">ɨ</span><span class="c">&#x17B9;</span></span>
+ <span class="g"><span class="hint">ɨ̄</span><span class="c">&#x17BA;</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">u</span><span class="c">&#x17BB;</span></span>
+<span class="g"><span class="hint">uṃ</span><span class="c">ុំ</span></span>
+<span class="g"><span class="hint">uḥ</span><span class="c">ុះ</span></span>
+<span class="g"><span class="hint">ū</span><span class="c">&#x17BC;</span></span>
+<span class="g"><span class="hint">uᵊ</span><span class="c">ួ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">e</span><span class="c">េ</span></span>
+<span class="g"><span class="hint">eḥ</span><span class="c">េះ</span></span>
+<span class="g"><span class="hint">aʲ</span><span class="c">ៃ</span></span>
+<span class="g"><span class="hint">æ</span><span class="c">ែ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">o</span><span class="c">ោ</span></span>
+<span class="g"><span class="hint">oḥ</span><span class="c">ោះ</span></span>
+<span class="g"><span class="hint">aʷ</span><span class="c">ៅ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">aᵊ</span><span class="c">ើ</span></span>
+<span class="g"><span class="hint">iᵊ</span><span class="c">ៀ</span></span>
+<span class="g"><span class="hint">ɨᵊ</span><span class="c">ឿ</span></span>
+</div>
+</div>
+
+
+
+<div id="translitGrid">
+<!--div><span class="g"><span class="hint">ṃ</span><span class="c">&#x17C6;</span></span></div>
+<div><span class="g"><span class="hint">ḥ</span><span class="c">&#x17C7;</span></span></div-->
+<div><span class="g"><span class="c">&#x17CB;</span></span></div>
+<div><span class="g"><span class="c">&#x17CD;</span></span></div>
+<div><span class="g"><span class="c">&#x17CE;</span></span></div>
+<div><span class="g"><span class="c">&#x17CF;</span></span></div>
+</div>
+
+
+
+<div id="numberGrid">
+<div><span class="g"><span class="hint">7</span><span class="c">៧</span></span><span class="g"><span class="hint">8</span><span class="c">៨</span></span><span class="g"><span class="hint">9</span><span class="c">៩</span></span></div>
+<div><span class="g"><span class="hint">4</span><span class="c">៤</span></span><span class="g"><span class="hint">5</span><span class="c">៥</span></span><span class="g"><span class="hint">6</span><span class="c">៦</span></span></div>
+<div><span class="g"><span class="hint">1</span><span class="c">១</span></span><span class="g"><span class="hint">2</span><span class="c">២</span></span><span class="g"><span class="hint">3</span><span class="c">៣</span></span></div>
+<div><span class="g"><span class="hint">0</span><span class="c">០</span></span> <span class="c">,</span> <span class="c">.</span> </div>
+<div style="margin-top: 2em;"><span class="c">៛</span> <span class="c">ៗ</span> <span class="c">៙</span> <span class="c">៚</span></div>
+<div><span class="c">។ល។</span></div>
+</div>
+</div>
+
+
+<div id="punctuation">
+<span class="c">&#x002C;</span>
+<span class="c">&#x002E;</span>
+<span class="c">&#x003B;</span>
+<span class="c">&#x003A;</span>
+<span class="c">&#x003F;</span>
+<span class="c">&#x0021;</span>
+<span class="c">&#x2018;</span>
+<span class="c">&#x2019;</span>
+<span class="c">&#x201C;</span>
+<span class="c">&#x201D;</span>
+<span class="c">&#x00AB;</span>
+<span class="c">&#x00BB;</span>
+<span class="c">&#x0028;</span>
+<span class="c">&#x0029;</span>
+<span class="c">&#x002D;</span>
+<span class="c">៖</span>
+<span class="c">៕</span>
+<span class="c">។</span>
+</div>
+
+
+<!--details>
+<summary>Show vowel clusters</summary>
+ <div id="vowelclusters">
+ <span class="g"><span class="hint">é</span><span class="v" onClick="addVowel(this.textContent)">ເ-ະ</span></span>
+ <span class="g"><span class="hint">é</span><span class="v" onClick="addVowel(this.textContent)">ເ-ັ</span></span>
+ <span class="g"><span class="hint">è</span><span class="v" onClick="addVowel(this.textContent)">ແ-ະ</span></span>
+ <span class="g"><span class="hint">è</span><span class="v" onClick="addVowel(this.textContent)">ແ-ັ</span></span>
+ <span class="g"><span class="hint">ô</span><span class="v" onClick="addVowel(this.textContent)">ໂ-ະ</span></span>
+ <span class="g"><span class="hint">o</span><span class="v" onClick="addVowel(this.textContent)">ເ-າະ</span></span>
+ <span class="g"><span class="hint">o</span><span class="v" onClick="addVowel(this.textContent)">-ັອ</span></span>
+ <span class="g"><span class="hint">eu</span><span class="v" onClick="addVowel(this.textContent)">ເ-ິ</span></span>
+ <span class="g"><span class="hint">eu</span><span class="v" onClick="addVowel(this.textContent)">ເ-ີ</span></span>
+ <span class="g"><span class="hint">ia</span><span class="v" onClick="addVowel(this.textContent)">ເ-ັຍ</span></span>
+ <span class="g"><span class="hint">ia</span><span class="v" onClick="addVowel(this.textContent)">-ັຽ</span></span>
+ <span class="g"><span class="hint">ia</span><span class="v" onClick="addVowel(this.textContent)">ເ-ຍ</span></span>
+ <span class="g"><span class="hint">ua</span><span class="v" onClick="addVowel(this.textContent)">ເ-ຶອ</span></span>
+ <span class="g"><span class="hint">ua</span><span class="v" onClick="addVowel(this.textContent)">ເ-ືອ</span></span>
+ <span class="g"><span class="hint">oua</span><span class="v" onClick="addVowel(this.textContent)">-ົວະ</span></span>
+ <span class="g"><span class="hint">oua</span><span class="v" onClick="addVowel(this.textContent)">-ົວ</span></span>
+ <span class="g"><span class="hint">oua</span><span class="v" onClick="addVowel(this.textContent)">-ົວ</span></span>
+ <span class="g"><span class="hint">ai</span><span class="v" onClick="addVowel(this.textContent)">-ັຍ</span></span>
+ <span class="g"><span class="hint">ai</span><span class="v" onClick="addVowel(this.textContent)">-າຍ</span></span>
+ <span class="g"><span class="hint">aw</span><span class="v" onClick="addVowel(this.textContent)">ເ-ົາ</span></span>
+</div>
+</details-->
+
+
+
 
 </td>
       </tr>
-  </table>
+  </table-->
  <details>
  <summary>show/hide rare characters</summary>
  
