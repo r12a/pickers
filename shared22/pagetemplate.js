@@ -46,6 +46,7 @@ out += `</header>
 
 <div id="welcome"></div>
 
+
 <div id="topControls">
 <span id="copydelete">
   <button title="Copy to clipboard (doesn't work on Safari)." onclick="copyToClipboard()">📋</button>
@@ -64,7 +65,14 @@ out += `</header>
  ` 
 	
 for (let i=0;i<window.controls.length;i++){
-	out += '<button onclick="'+window.controls[i].code+'" title="'+window.controls[i].alt+'">'+window.controls[i].title+'</button>\n\n'
+	out += '<button onclick="'+window.controls[i].code+'" '
+    if (window.controls[i].warning) {
+        var warningMsg = window.controls[i].warning+' See help file.'
+        var warningLocn = "document.getElementById(\'warning\')"
+        out += 'onmouseover="'+warningLocn+'.style.display=\'inline-block\'; '+warningLocn+'.innerHTML = \''+warningMsg+'\'" '
+        out += 'onmouseout="'+warningLocn+'.style.display=\'none\'" '
+        }
+    out += 'title="'+window.controls[i].alt+'">'+window.controls[i].title+'</button>\n\n'
 	}
 
 out += ` 
@@ -79,6 +87,7 @@ out += `
 </div>
 
 <div id="outputDiv">
+<div id="warning"></div>
   <textarea dir="auto" rows="2" cols="80" id="output" name="output" placeholder="›"></textarea>
 </div>
 

@@ -41,9 +41,26 @@ table td { border: 0; }
 #topControls {
 	margin: 0 10px 0 15px;
 	}
+#topControls button {
+	position: relative;
+	}
 #outputDiv {
 	margin: 5px 20px 0 20px; 
 	}
+#warning {
+    position: absolute;
+    top: 4em;
+    right: 0;
+    z-index: 100;
+    background-color: blanchedalmond;
+    padding: .5em 1em;
+    border-radius: .5em;
+    font-size: 80%;
+    width: 50%;
+    margin: auto;
+    display: none;
+    text-align: center;
+}
 #output { 
 	border: 1px solid #ccc; 
 	width: 100%; 
@@ -398,9 +415,8 @@ dt {
 
 #transcriptionChoice {
 	position:absolute;
-	/* left:40px; */
-    left: 50%;
-    transform: translateX(-50%);
+	left:40px;
+    /*transform: translateX(-50%);*/
 	font-size: 60px; 
 	background-color: #FFFACD; 
 	border: 1px solid #ccc; 
