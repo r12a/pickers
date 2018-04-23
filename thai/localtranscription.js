@@ -1,18 +1,168 @@
 function localtranscribe (direction, str) {
 	
+	if (direction == 'transliterate') { return transliterate(str) }
 	if (direction == 'toISO1') { return toISO1(str) }
 	if (direction == 'toISO2') { return toLatin(str,'iso2') }
 	if (direction == 'toIPA') { return toLatin(str,'ipa') }
 	}
+
+
+
+
+function transliterate ( str ) { 
+// based on harmonised translit for se asian scripts
+
+str += '  '
+
+// move left-positioned consonants to the right
+str = str.replace(/(เ|แ|ไ|โ|ใ)(.)/g, '$2$1')
+
+
+str = str.replace(/ก/g, "kᵒ")
+str = str.replace(/ข/g, "kʰᵒ")
+str = str.replace(/ฃ/g, "k̇ᵒ")
+str = str.replace(/ค/g, "ḵᵒ")
+str = str.replace(/ฅ/g, "k̇ʰᵒ")
+str = str.replace(/ฆ/g, "ḵʰᵒ")
+str = str.replace(/ง/g, "ṅᵒ")
+str = str.replace(/จ/g, "cᵒ")
+str = str.replace(/ฉ/g, "cʰᵒ")
+str = str.replace(/ช/g, "c̱ᵒ")
+str = str.replace(/ซ/g, "ṡᵒ")
+str = str.replace(/ฌ/g, "c̱ʰᵒ")
+str = str.replace(/ญ/g, "ỵᵒ")
+str = str.replace(/ฎ/g, "ḍ̇ᵒ")
+str = str.replace(/ฏ/g, "ṭᵒ")
+str = str.replace(/ฐ/g, "ṭʰᵒ")
+str = str.replace(/ฑ/g, "ṭ̲ᵒ")
+str = str.replace(/ฒ/g, "ṭ̲ʰᵒ")
+str = str.replace(/ณ/g, "ṇᵒ")
+str = str.replace(/ด/g, "ḋᵒ")
+str = str.replace(/ต/g, "tᵒ")
+str = str.replace(/ถ/g, "tʰᵒ")
+str = str.replace(/ท/g, "ṯᵒ")
+str = str.replace(/ธ/g, "ṯʰᵒ")
+str = str.replace(/น/g, "nᵒ")
+str = str.replace(/บ/g, "ḃᵒ")
+str = str.replace(/ป/g, "pᵒ")
+str = str.replace(/ผ/g, "pʰᵒ")
+str = str.replace(/ฝ/g, "fᵒ")
+str = str.replace(/พ/g, "p̄ᵒ")
+str = str.replace(/ฟ/g, "ḟᵒ")
+str = str.replace(/ภ/g, "p̄ʰᵒ")
+str = str.replace(/ม/g, "mᵒ")
+str = str.replace(/ย/g, "yᵒ")
+str = str.replace(/ร/g, "rᵒ")
+str = str.replace(/ล/g, "lᵒ")
+str = str.replace(/ฬ/g, "ḷᵒ")
+str = str.replace(/ว/g, "wᵒ")
+str = str.replace(/ศ/g, "śᵒ")
+str = str.replace(/ษ/g, "ṣᵒ")
+str = str.replace(/ส/g, "sᵒ")
+str = str.replace(/ห/g, "hᵒ")
+str = str.replace(/ฮ/g, "ẖᵒ")
+str = str.replace(/อ/g, "‘ᵒ")
+str = str.replace(/ๅ/g, "ĕ")
+
+
+// finals
+str = str.replace(/ำ/g, "aᵐ")
+
+
+// vocalics
+str = str.replace(/ฤ/g, "r̥ₔ")
+str = str.replace(/ฤๅ/g, "ṛĕ")
+str = str.replace(/ฦ/g, "l̥ₔ")
+str = str.replace(/ฦๅ/g, "l̥̄ĕ")
+
+
+// vowel signs
+str = str.replace(/า/g, "ā")
+str = str.replace(/ั/g, "ä")
+str = str.replace(/ะ/g, "a")
+str = str.replace(/ิ/g, "i")
+str = str.replace(/ี/g, "ī")
+str = str.replace(/ึ/g, "ɯ")
+str = str.replace(/ื/g, "ɯ̄")
+str = str.replace(/ุ/g, "u")
+str = str.replace(/ู/g, "ū")
+str = str.replace(/เ/g, "e")
+str = str.replace(/แ/g, "ɛ")
+str = str.replace(/ไ/g, "aʲ")
+str = str.replace(/ใ/g, "äʲ")
+str = str.replace(/โ/g, "o")
+
+
+// tones
+str = str.replace(/่/g, "̀")
+str = str.replace(/้/g, "̂")
+str = str.replace(/๊/g, "́")
+str = str.replace(/๋/g, "̌")
+
+
+// diacritics
+str = str.replace(/์/g, "̒")
+str = str.replace(/็/g, "̆")
+
+
+// punctuation
+
+
+// digits
+str = str.replace(/໐/g, "0")
+str = str.replace(/໑/g, "1")
+str = str.replace(/໒/g, "2")
+str = str.replace(/໓/g, "3")
+str = str.replace(/໔/g, "4")
+str = str.replace(/໕/g, "5")
+str = str.replace(/໖/g, "6")
+str = str.replace(/໗/g, "7")
+str = str.replace(/໘/g, "8")
+str = str.replace(/໙/g, "9")
+
+
+
+// remove inherent vowel where necessary
+str = str.replace(/ᵃ͓/g, "͓")
+str = str.replace(/ᵒ͓/g, "͓")
+str = str.replace(/ᵒ͓/g, "͓")
+
+str = str.replace(/[ᵃ|ᵒ]ā/g, "ā")
+str = str.replace(/[ᵃ|ᵒ]ä/g, "ä")
+str = str.replace(/[ᵃ|ᵒ]á/g, "á")
+str = str.replace(/[ᵃ|ᵒ]a/g, "a")
+str = str.replace(/[ᵃ|ᵒ]i/g, "i")
+str = str.replace(/[ᵃ|ᵒ]ī/g, "ī")
+str = str.replace(/[ᵃ|ᵒ]ɨ/g, "ɨ")
+str = str.replace(/[ᵃ|ᵒ]u/g, "u")
+str = str.replace(/[ᵃ|ᵒ]ū/g, "ū")
+str = str.replace(/[ᵃ|ᵒ]o/g, "o")
+str = str.replace(/[ᵃ|ᵒ]e/g, "e")
+str = str.replace(/[ᵃ|ᵒ]æ/g, "æ")
+str = str.replace(/[ᵃ|ᵒ]ɛ/g, "ɛ")
+
+str = str.replace(/[ᵃ|ᵒ]′/g, "′")
+str = str.replace(/[ᵃ|ᵒ][ ]/g, " ")
+str = str.replace(/[ᵃ|ᵒ][\n]/g, "\n")
+str = str.replace(/[ᵃ|ᵒ][\t]/g, "\t ")
+
+
+console.log(str)
+return str.trim()
+}
+
+
 		
+
+
+
+
+
 		
 function inSet (group, ch) {
 	if (group.indexOf(ch) > -1) return true
 	else { return false }
 	}
-
-
-
 
 
 function toLatin (str, target) {

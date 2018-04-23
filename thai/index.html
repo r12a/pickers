@@ -60,21 +60,21 @@
 
 <div id="transliteration" class="transcript" style="display:none;">
 <span class="t" onmouseover="showtrans('ะ')" onmouseout="hidetrans()" onclick="add('ะ')">a</span>
-<span class="t" onmouseover="showtrans('ำ')" onmouseout="hidetrans()" onclick="add('ำ')">å</span>
+<span class="t" onmouseover="showtrans('ั')" onmouseout="hidetrans()" onclick="add('ั')">ä</span>
 <span class="t" onmouseover="showtrans('า')" onmouseout="hidetrans()" onclick="add('า')">ā</span>
-<span class="t" onmouseover="showtrans('ั')" onmouseout="hidetrans()" onclick="add('ั')">ạ</span>
-<span class="t" onmouseover="showtrans('แ')" onmouseout="hidetrans()" onclick="add('แ')">æ</span>
-<span class="t" onmouseover="showtrans('เ')" onmouseout="hidetrans()" onclick="add('เ')">e</span>
+<span class="t" onmouseover="showtrans('ใ')" onmouseout="hidetrans()" onclick="addVowel('ใ-')">äʲ</span>
+<span class="t" onmouseover="showtrans('ไ')" onmouseout="hidetrans()" onclick="addVowel('ไ-')">aʲ</span>
+<span class="t" onmouseover="showtrans('ำ')" onmouseout="hidetrans()" onclick="add('ำ')">aᵐ</span>
+<span class="t" onmouseover="showtrans('เ')" onmouseout="hidetrans()" onclick="addVowel('เ-')">e</span>
+<span class="t" onmouseover="showtrans('แ')" onmouseout="hidetrans()" onclick="addVowel('แ-')">ɛ</span>
 <span class="t" onmouseover="showtrans('ิ')" onmouseout="hidetrans()" onclick="add('ิ')">i</span>
 <span class="t" onmouseover="showtrans('ี')" onmouseout="hidetrans()" onclick="add('ี')">ī</span>
-<span class="t" onmouseover="showtrans('ไ')" onmouseout="hidetrans()" onclick="add('ไ')">ị</span>
-<span class="t" onmouseover="showtrans('ใ')" onmouseout="hidetrans()" onclick="add('ใ')">ı</span>
-<span class="t" onmouseover="showtrans('โ')" onmouseout="hidetrans()" onclick="add('โ')">o</span>
+<span class="t" onmouseover="showtrans('โ')" onmouseout="hidetrans()" onclick="addVowel('โ-')">o</span>
 <span class="t" onmouseover="showtrans('ุ')" onmouseout="hidetrans()" onclick="add('ุ')">u</span>
 <span class="t" onmouseover="showtrans('ู')" onmouseout="hidetrans()" onclick="add('ู')">ū</span>
-<span class="t" onmouseover="showtrans('ึ')" onmouseout="hidetrans()" onclick="add('ึ')">ụ</span>
-<span class="t" onmouseover="showtrans('ื')" onmouseout="hidetrans()" onclick="add('ื')">ụ</span>
-<span class="t" onmouseover="showtrans('ฤ')" onmouseout="hidetrans()" onclick="add('ฤ')">v</span>
+<span class="t" onmouseover="showtrans('ึ')" onmouseout="hidetrans()" onclick="add('ึ')">ɯ</span>
+<span class="t" onmouseover="showtrans('ื')" onmouseout="hidetrans()" onclick="add('ื')">ɯ̄</span>
+
 <span class="t" onmouseover="showtrans('์')" onmouseout="hidetrans()" onclick="add('์')">̒</span>
 <span class="t" onmouseover="showtrans('็')" onmouseout="hidetrans()" onclick="add('็')">̆</span>
 &nbsp; • &nbsp;
@@ -83,50 +83,56 @@
 <span class="t" onmouseover="showtrans('๊')" onmouseout="hidetrans()" onclick="add('๊')">́</span>
 <span class="t" onmouseover="showtrans('๋')" onmouseout="hidetrans()" onclick="add('๋')">̌</span>
 <br/>
-<span class="t" onmouseover="showtrans('บ')" onmouseout="hidetrans()" onclick="add('บ')">b</span>
+<span class="t" onmouseover="showtrans('อ')" onmouseout="hidetrans()" onclick="add('อ')">‘</span>
+<span class="t" onmouseover="showtrans('บ')" onmouseout="hidetrans()" onclick="add('บ')">ḃ</span>
 <span class="t" onmouseover="showtrans('จ')" onmouseout="hidetrans()" onclick="add('จ')">c</span>
-<span class="t" onmouseover="showtrans('ช')" onmouseout="hidetrans()" onclick="add('ช')">cʰ</span>
-<span class="t" onmouseover="showtrans('ฉ')" onmouseout="hidetrans()" onclick="add('ฉ')">c̄ʰ</span>
-<span class="t" onmouseover="showtrans('ฌ')" onmouseout="hidetrans()" onclick="add('ฌ')">c̣ʰ</span>
-<span class="t" onmouseover="showtrans('ด')" onmouseout="hidetrans()" onclick="add('ด')">d</span>
-<span class="t" onmouseover="showtrans('ฎ')" onmouseout="hidetrans()" onclick="add('ฎ')">ḍ</span>
-<span class="t" onmouseover="showtrans('ฟ')" onmouseout="hidetrans()" onclick="add('ฟ')">f</span>
-<span class="t" onmouseover="showtrans('ฝ')" onmouseout="hidetrans()" onclick="add('ฝ')">f̄</span>
-<span class="t" onmouseover="showtrans('ห')" onmouseout="hidetrans()" onclick="add('ห')">h̄</span>
+<span class="t" onmouseover="showtrans('ช')" onmouseout="hidetrans()" onclick="add('ช')">c̱</span>
+<span class="t" onmouseover="showtrans('ฉ')" onmouseout="hidetrans()" onclick="add('ฉ')">cʰ</span>
+<span class="t" onmouseover="showtrans('ฌ')" onmouseout="hidetrans()" onclick="add('ฌ')">c̱ʰ</span>
+<span class="t" onmouseover="showtrans('ด')" onmouseout="hidetrans()" onclick="add('ด')">ḋ</span>
+<span class="t" onmouseover="showtrans('ฎ')" onmouseout="hidetrans()" onclick="add('ฎ')">ḍ̇</span>
+<span class="t" onmouseover="showtrans('ฝ')" onmouseout="hidetrans()" onclick="add('ฝ')">f</span>
+<span class="t" onmouseover="showtrans('ฟ')" onmouseout="hidetrans()" onclick="add('ฟ')">ḟ</span>
+<span class="t" onmouseover="showtrans('ห')" onmouseout="hidetrans()" onclick="add('ห')">h</span>
 <span class="t" onmouseover="showtrans('ฮ')" onmouseout="hidetrans()" onclick="add('ฮ')">ẖ</span>
 <span class="t" onmouseover="showtrans('ก')" onmouseout="hidetrans()" onclick="add('ก')">k</span>
-<span class="t" onmouseover="showtrans('ค')" onmouseout="hidetrans()" onclick="add('ค')">kʰ</span>
-<span class="t" onmouseover="showtrans('ข')" onmouseout="hidetrans()" onclick="add('ข')">k̄ʰ</span>
-<span class="t" onmouseover="showtrans('ฅ')" onmouseout="hidetrans()" onclick="add('ฅ')">k̛ʰ</span>
-<span class="t" onmouseover="showtrans('ฆ')" onmouseout="hidetrans()" onclick="add('ฆ')">ḳʰ</span>
-<span class="t" onmouseover="showtrans('ฃ')" onmouseout="hidetrans()" onclick="add('ฃ')">ḳ̄ʰ</span>
+<span class="t" onmouseover="showtrans('ฃ')" onmouseout="hidetrans()" onclick="add('ฃ')">k̇</span>
+<span class="t" onmouseover="showtrans('ค')" onmouseout="hidetrans()" onclick="add('ค')">ḵ</span>
+<span class="t" onmouseover="showtrans('ข')" onmouseout="hidetrans()" onclick="add('ข')">kʰ</span>
+<span class="t" onmouseover="showtrans('ฅ')" onmouseout="hidetrans()" onclick="add('ฅ')">k̇ʰ</span>
+<span class="t" onmouseover="showtrans('ฆ')" onmouseout="hidetrans()" onclick="add('ฆ')">ḵʰ</span>
 <span class="t" onmouseover="showtrans('ล')" onmouseout="hidetrans()" onclick="add('ล')">l</span>
 <span class="t" onmouseover="showtrans('ฬ')" onmouseout="hidetrans()" onclick="add('ฬ')">ḷ</span>
 <span class="t" onmouseover="showtrans('ม')" onmouseout="hidetrans()" onclick="add('ม')">m</span>
 <span class="t" onmouseover="showtrans('น')" onmouseout="hidetrans()" onclick="add('น')">n</span>
 <span class="t" onmouseover="showtrans('ง')" onmouseout="hidetrans()" onclick="add('ง')">ṅ</span>
-<span class="t" onmouseover="showtrans('ณ')" onmouseout="hidetrans()" onclick="add('ณ')">ṇ</span><br/>
+<span class="t" onmouseover="showtrans('ณ')" onmouseout="hidetrans()" onclick="add('ณ')">ṇ</span>
+<br/>
 <span class="t" onmouseover="showtrans('ป')" onmouseout="hidetrans()" onclick="add('ป')">p</span>
-<span class="t" onmouseover="showtrans('พ')" onmouseout="hidetrans()" onclick="add('พ')">pʰ</span>
-<span class="t" onmouseover="showtrans('ผ')" onmouseout="hidetrans()" onclick="add('ผ')">p̄ʰ</span>
-<span class="t" onmouseover="showtrans('ภ')" onmouseout="hidetrans()" onclick="add('ภ')">p̣ʰ</span>
+<span class="t" onmouseover="showtrans('พ')" onmouseout="hidetrans()" onclick="add('พ')">p̄</span>
+<span class="t" onmouseover="showtrans('ผ')" onmouseout="hidetrans()" onclick="add('ผ')">pʰ</span>
+<span class="t" onmouseover="showtrans('ภ')" onmouseout="hidetrans()" onclick="add('ภ')">p̄ʰ</span>
 <span class="t" onmouseover="showtrans('ร')" onmouseout="hidetrans()" onclick="add('ร')">r</span>
-<span class="t" onmouseover="showtrans('ซ')" onmouseout="hidetrans()" onclick="add('ซ')">s</span>
-<span class="t" onmouseover="showtrans('ส')" onmouseout="hidetrans()" onclick="add('ส')">s̄</span>
-<span class="t" onmouseover="showtrans('ษ')" onmouseout="hidetrans()" onclick="add('ษ')">s̛̄</span>
-<span class="t" onmouseover="showtrans('ศ')" onmouseout="hidetrans()" onclick="add('ศ')">ṣ̄</span>
+<span class="t" onmouseover="showtrans('ส')" onmouseout="hidetrans()" onclick="add('ส')">s</span>
+<span class="t" onmouseover="showtrans('ศ')" onmouseout="hidetrans()" onclick="add('ศ')">ś</span>
+<span class="t" onmouseover="showtrans('ซ')" onmouseout="hidetrans()" onclick="add('ซ')">ṡ</span>
+<span class="t" onmouseover="showtrans('ษ')" onmouseout="hidetrans()" onclick="add('ษ')">ṣ</span>
 <span class="t" onmouseover="showtrans('ต')" onmouseout="hidetrans()" onclick="add('ต')">t</span>
 <span class="t" onmouseover="showtrans('ฏ')" onmouseout="hidetrans()" onclick="add('ฏ')">ṭ</span>
-<span class="t" onmouseover="showtrans('ท')" onmouseout="hidetrans()" onclick="add('ท')">tʰ</span>
-<span class="t" onmouseover="showtrans('ถ')" onmouseout="hidetrans()" onclick="add('ถ')">t̄ʰ</span>
-<span class="t" onmouseover="showtrans('ฒ')" onmouseout="hidetrans()" onclick="add('ฒ')">t̛ʰ</span>
-<span class="t" onmouseover="showtrans('ธ')" onmouseout="hidetrans()" onclick="add('ธ')">ṭʰ</span>
-<span class="t" onmouseover="showtrans('ฐ')" onmouseout="hidetrans()" onclick="add('ฐ')">ṭ̄ʰ</span>
-<span class="t" onmouseover="showtrans('ฑ')" onmouseout="hidetrans()" onclick="add('ฑ')">ṯʰ</span>
+<span class="t" onmouseover="showtrans('ฑ')" onmouseout="hidetrans()" onclick="add('ฑ')">ṭ̲</span>
+<span class="t" onmouseover="showtrans('ท')" onmouseout="hidetrans()" onclick="add('ท')">ṯ</span>
+<span class="t" onmouseover="showtrans('ถ')" onmouseout="hidetrans()" onclick="add('ถ')">tʰ</span>
+<span class="t" onmouseover="showtrans('ฐ')" onmouseout="hidetrans()" onclick="add('ฐ')">ṭʰ</span>
+<span class="t" onmouseover="showtrans('ฒ')" onmouseout="hidetrans()" onclick="add('ฒ')">ṭ̲ʰ</span>
+<span class="t" onmouseover="showtrans('ธ')" onmouseout="hidetrans()" onclick="add('ธ')">ṯʰ</span>
 <span class="t" onmouseover="showtrans('ว')" onmouseout="hidetrans()" onclick="add('ว')">w</span>
-<span class="t" onmouseover="showtrans('อ')" onmouseout="hidetrans()" onclick="add('อ')">x</span>
 <span class="t" onmouseover="showtrans('ย')" onmouseout="hidetrans()" onclick="add('ย')">y</span>
 <span class="t" onmouseover="showtrans('ญ')" onmouseout="hidetrans()" onclick="add('ญ')">ỵ</span>
+<span class="t" onmouseover="showtrans('ฤ')" onmouseout="hidetrans()" onclick="add('ฤ')">r̥ₔ</span>
+<span class="t" onmouseover="showtrans('ฤๅ')" onmouseout="hidetrans()" onclick="add('ฤๅ')">ṛĕ</span>
+<span class="t" onmouseover="showtrans('ฦ')" onmouseout="hidetrans()" onclick="add('ฦ')">l̥ₔ</span>
+<span class="t" onmouseover="showtrans('ฦๅ')" onmouseout="hidetrans()" onclick="add('ฦๅ')">l̥̄ĕ</span>
+
 <br/>
 <span class="t" onmouseover="showtrans('໐')" onmouseout="hidetrans()" onclick="add('๐')">0</span>
 <span class="t" onmouseover="showtrans('໑')" onmouseout="hidetrans()" onclick="add('๑')">1</span>
@@ -395,49 +401,49 @@
 <div id="kbdGrid">
 <div id="ivowelGrid">
 <div><span class="g"><span class="hint">e</span><span class="c">เ</span></span></div>
-<div><span class="g"><span class="hint">æ</span><span class="c">แ</span></span></div>
-<div><span class="g"><span class="hint">ị</span><span class="c">ไ</span></span></div>
+<div><span class="g"><span class="hint">ɛ</span><span class="c">แ</span></span></div>
+<div><span class="g"><span class="hint">aʲ</span><span class="c">ไ</span></span></div>
 <div><span class="g"><span class="hint">o</span><span class="c">โ</span></span></div>
-<div><span class="g"><span class="hint">ı</span><span class="c">ใ</span></span></div>
+<div><span class="g"><span class="hint">äʲ</span><span class="c">ใ</span></span></div>
 </div>
 <div id="consonantGrid">
 <div>
 <span class="g"><span class="hint">k</span><span class="c">ก</span></span>
-<span class="g"><span class="hint">k̄ʰ</span><span class="c">ข</span></span> 
-<span class="g"><span class="hint">kʰ</span><span class="c">ค</span></span>
-<span class="g"><span class="hint">ḳʰ</span><span class="c">ฆ</span></span>
+<span class="g"><span class="hint">kʰ</span><span class="c">ข</span></span> 
+<span class="g"><span class="hint">ḵ</span><span class="c">ค</span></span>
+<span class="g"><span class="hint">ḵʰ</span><span class="c">ฆ</span></span>
 <span class="g"><span class="hint">ṅ</span><span class="c">ง</span></span>
 </div>
 <div>
 <span class="g"><span class="hint">c</span><span class="c">จ</span></span>
-<span class="g"><span class="hint">c̄ʰ</span><span class="c">ฉ</span></span>
-<span class="g"><span class="hint">cʰ</span><span class="c">ช</span></span>
-<span class="g"><span class="hint">c̣ʰ</span><span class="c">ฌ</span></span>
+<span class="g"><span class="hint">cʰ</span><span class="c">ฉ</span></span>
+<span class="g"><span class="hint">c̱</span><span class="c">ช</span></span>
+<span class="g"><span class="hint">c̱ʰ</span><span class="c">ฌ</span></span>
 &nbsp;&nbsp;&nbsp;
 </div>
 <div>
 <span class="g"><span class="hint">ṭ</span><span class="c">ฏ</span></span>
-<span class="g"><span class="hint">ṭ̄ʰ</span><span class="c">ฐ</span></span>
-<span class="g"><span class="hint">ṭʰ</span><span class="c">ธ</span></span>
-<span class="g"><span class="hint">ṯʰ</span><span class="c">ฑ</span></span>
-<span class="g"><span class="hint">ḍ</span><span class="c">ฎ</span></span>
+<span class="g"><span class="hint">ṭʰ</span><span class="c">ฐ</span></span>
+<span class="g"><span class="hint">ṭ̲</span><span class="c">ฑ</span></span>
+<span class="g"><span class="hint">ṭ̲ʰ</span><span class="c">ฒ</span></span>
+<span class="g"><span class="hint">ḍ̇</span><span class="c">ฎ</span></span>
 <span class="g"><span class="hint">ṇ</span><span class="c">ณ</span></span>
 </div>
 <div>
 <span class="g"><span class="hint">t</span><span class="c">ต</span></span>
-<span class="g"><span class="hint">t̛ʰ</span><span class="c">ฒ</span></span>
-<span class="g"><span class="hint">t̄ʰ</span><span class="c">ถ</span></span><br/>
-<span class="g"><span class="hint">tʰ</span><span class="c">ท</span></span>
-<span class="g"><span class="hint">d</span><span class="c">ด</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">ถ</span></span><br/>
+<span class="g"><span class="hint">ṯ</span><span class="c">ท</span></span>
+<span class="g"><span class="hint">ṯʰ</span><span class="c">ธ</span></span>
+<span class="g"><span class="hint">ḋ</span><span class="c">ด</span></span>
 <span class="g"><span class="hint">n</span><span class="c">น</span></span>
 </div>
 <div>
 <!--span class="g"><span class="hint">ṉ</span><span class="c">&#x0EDC;</span></span-->
 <span class="g"><span class="hint">p</span><span class="c">ป</span></span>
-<span class="g"><span class="hint">p̄ʰ</span><span class="c">ผ</span></span>
-<span class="g"><span class="hint">pʰ</span><span class="c">พ</span></span>
-<span class="g"><span class="hint">p̣ʰ</span><span class="c">ภ</span></span>
-<span class="g"><span class="hint">b</span><span class="c">บ</span></span>
+<span class="g"><span class="hint">pʰ</span><span class="c">ผ</span></span>
+<span class="g"><span class="hint">p̄</span><span class="c">พ</span></span>
+<span class="g"><span class="hint">p̄ʰ</span><span class="c">ภ</span></span>
+<span class="g"><span class="hint">ḃ</span><span class="c">บ</span></span>
 <span class="g"><span class="hint">m</span><span class="c">ม</span></span>
 </div>
 <div>
@@ -449,20 +455,20 @@
 <span class="g"><span class="hint">w</span><span class="c">ว</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">s</span><span class="c">ซ</span></span>
-<span class="g"><span class="hint">ṣ̄</span><span class="c">ศ</span></span>
-<span class="g"><span class="hint">s̛̄</span><span class="c">ษ</span></span>
-<span class="g"><span class="hint">s̄</span><span class="c">ส</span></span>
-<span class="g"><span class="hint">f</span><span class="c">ฟ</span></span>
-<span class="g"><span class="hint">f̄</span><span class="c">ฝ</span></span>
-<span class="g"><span class="hint">h̄</span><span class="c">ห</span></span>
+<span class="g"><span class="hint">ṡ</span><span class="c">ซ</span></span>
+<span class="g"><span class="hint">ś</span><span class="c">ศ</span></span>
+<span class="g"><span class="hint">ṣ</span><span class="c">ษ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">ส</span></span>
+<span class="g"><span class="hint">ḟ</span><span class="c">ฟ</span></span>
+<span class="g"><span class="hint">f</span><span class="c">ฝ</span></span>
+<span class="g"><span class="hint">h</span><span class="c">ห</span></span>
 <span class="g"><span class="hint">ẖ</span><span class="c">ฮ</span></span>
 </div>
 </div>
 <div id="vowelGrid">
 <div>
-<span class="g"><span class="hint">x</span><span class="c">อ</span></span></div>
-<div><span class="g"><span class="hint">ạ</span><span class="c">ั</span></span>
+<span class="g"><span class="hint">‘</span><span class="c">อ</span></span></div>
+<div><span class="g"><span class="hint">ä</span><span class="c">ั</span></span>
 <span class="g"><span class="hint">ā</span><span class="c">า</span></span>
 </div>
 <div>
@@ -470,25 +476,20 @@
 <span class="g"><span class="hint">ī</span><span class="c">ี</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">ụ</span><span class="c">ึ</span></span>
-<span class="g"><span class="hint">ụ̄</span><span class="c">ื</span></span>
+<span class="g"><span class="hint">ɯ</span><span class="c">ึ</span></span>
+<span class="g"><span class="hint">ɯ̄</span><span class="c">ื</span></span>
 </div>
 <div>
 <span class="g"><span class="hint">u</span><span class="c">ุ</span></span>
 <span class="g"><span class="hint">ū</span><span class="c">ู</span></span>
 </div>
-<!--div>
-<span class="g"><span class="hint">ö</span><span class="c">&#x0ECD;</span></span>
-<span class="g"><span class="hint">ō</span><span class="c">&#x0EBB;</span></span>
-</div-->
 </div>
 <div id="moreconsonants">
 <span class="g"><span class="hint">a</span><span class="c">ะ</span></span>
-<span class="g"><span class="hint" style="margin-top:.75em;">å</span><span class="c">ำ</span></span>
+<span class="g"><span class="hint" style="margin-top:.75em;">aᵐ</span><span class="c">ำ</span></span>
 <span class="g"><span class="hint">̆</span><span class="c">็</span></span>
 <span class="g"><span class="hint">y</span><span class="c">ย</span></span>
-<span class="g"><span class="hint">v</span><span class="c">ฤ</span></span>
-<!--span class="g"><span class="hint">ñ</span><span class="c">&#x0E8D;</span></span-->
+<span class="g"><span class="hint">r̥ₔ</span><span class="c">ฤ</span></span>
 </div>
 <div id="tones">
 <div> <span class="g"><span class="hint">&#x0312;</span><span class="c">&#x0E4C;</span></span></div>
@@ -534,7 +535,7 @@
     <table id="rare">
       <tbody>
         <tr>
-          <td><span class="hint">unnormalised</span> <span class="c">&#xE03;</span> <span class="c">&#xE05;</span> <span class="c">&#xE26;</span></td>
+          <td><span class="hint">consonants</span> <span class="c">&#xE03;</span> <span class="c">&#xE05;</span> <span class="hint">vocalics</span> <span class="c">&#xE26;</span> <span class="c">ฤๅ</span> <span class="c">ฦๅ</span></td>
           <td><span class="hint">other</span><span class="c">&#xE4E;</span> <span class="c">&#xE3A;</span> <span class="c">&#xE4D;</span> <span class="c">&#xE5B;</span> <span class="c">&#xE4F;</span> <span class="c">&#xE45;</span></td>
         </tr>
       </tbody>
