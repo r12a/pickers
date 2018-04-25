@@ -69,6 +69,11 @@ str = str.replace(/ๅ/g, "ĕ")
 str = str.replace(/ำ/g, "aᵐ")
 
 
+// diacritics
+str = str.replace(/์/g, "˟")
+str = str.replace(/็/g, "˘")
+
+
 // vocalics
 str = str.replace(/ฤ/g, "r̥ₔ")
 str = str.replace(/ฤๅ/g, "ṛĕ")
@@ -94,10 +99,10 @@ str = str.replace(/โ/g, "o")
 
 
 // tones
-str = str.replace(/่/g, "̀")
-str = str.replace(/้/g, "̂")
-str = str.replace(/๊/g, "́")
-str = str.replace(/๋/g, "̌")
+str = str.replace(/\u0E48/g, "¹")
+str = str.replace(/\u0E49/g, "²")
+str = str.replace(/\u0E4A/g, "³")
+str = str.replace(/\u0E4B/g, "⁴")
 
 
 // diacritics
