@@ -86,89 +86,82 @@ return out.trim()
 
 
 
-function transliterate (str) { // this version for abgidas
+function transliterate (str) { 
     
 str = str + '  '
 str = str.normalize('NFC')
 
+// move left-positioned consonants to the right
+str = str.replace(/(ເ|ແ|ໂ|ໃ|ໄ)(.)/g, '$2$1')
+
+
+
 // tones
-str = str.replace(/່/g, "¹")
-str = str.replace(/້/g, "²")
-str = str.replace(/໊/g, "³")
-str = str.replace(/໋/g, "⁴")
+str = str.replace(/\u0EC8/g, "¹")
+str = str.replace(/\u0EC9/g, "²")
+str = str.replace(/\u0ECA/g, "³")
+str = str.replace(/\u0ECB/g, "⁴")
 
 
-// do 'nuktas'
-str = str.replace(/ꦲ꦳/g, "ħ")
-str = str.replace(/ꦏ꦳/g, "x")
-str = str.replace(/ꦢ꦳/g, "ð")
-str = str.replace(/ꦗ꦳/g, "z")
-str = str.replace(/ꦱ꦳/g, "ʃ")
-str = str.replace(/ꦒ꦳/g, "ɣ")
-str = str.replace(/ꦥ꦳/g, "f")
-str = str.replace(/ꦔ꦳/g, "ʔ")
+
 
 
 // consonants
+str = str.replace(/ອ/g, "‘")
+str = str.replace(/ບ/g, "ḃ")
+str = str.replace(/ຈ/g, "c")
+str = str.replace(/ດ/g, "ḋ")
+str = str.replace(/ຝ/g, "f")
+str = str.replace(/ຟ/g, "ḟ")
+str = str.replace(/ຫ/g, "h")
+str = str.replace(/ຮ/g, "ḣ")
 str = str.replace(/ກ/g, "k")
 str = str.replace(/ຂ/g, "kʰ")
 str = str.replace(/ຄ/g, "ḵʰ")
-str = str.replace(/ງ/g, "ṅ")
-str = str.replace(/ຈ/g, "c")
-str = str.replace(/ສ/g, "s")
-str = str.replace(/ຊ/g, "s̱")
+str = str.replace(/ລ/g, "l")
+str = str.replace(/ຼ/g, "l̆")
+str = str.replace(/ມ/g, "m")
+str = str.replace(/ໝ/g, "m̱")
+str = str.replace(/ນ/g, "n")
 str = str.replace(/ຍ/g, "ñ")
-str = str.replace(/ດ/g, "d")
+str = str.replace(/ງ/g, "ṅ")
+str = str.replace(/ໜ/g, "ṉ")
+str = str.replace(/ປ/g, "p")
+str = str.replace(/ພ/g, "p̄")
+str = str.replace(/ຜ/g, "pʰ")
+str = str.replace(/ຣ/g, "ṙ")
+str = str.replace(/ສ/g, "s")
+str = str.replace(/ຊ/g, "ṡ")
 str = str.replace(/ຕ/g, "t")
 str = str.replace(/ຖ/g, "tʰ")
 str = str.replace(/ທ/g, "ṯʰ")
-str = str.replace(/ນ/g, "n")
-str = str.replace(/ບ/g, "b")
-str = str.replace(/ປ/g, "p")
-str = str.replace(/ຜ/g, "pʰ")
-str = str.replace(/ຝ/g, "f")
-str = str.replace(/ພ/g, "ꝑʰ")
-str = str.replace(/ຟ/g, "f̱")
-str = str.replace(/ມ/g, "m")
-str = str.replace(/ຢ/g, "y")
-str = str.replace(/ຣ/g, "r")
-str = str.replace(/ລ/g, "l")
 str = str.replace(/ວ/g, "w")
-str = str.replace(/ຫ/g, "h")
-str = str.replace(/ອ/g, "‘")
-str = str.replace(/ຮ/g, "ẖ")
-str = str.replace(/ຼ/g, "l̆")
-str = str.replace(/ໜ/g, "ṉ")
-str = str.replace(/ໝ/g, "m̱")
+str = str.replace(/ຢ/g, "y")
 
-
-// medials
 
 // finals
+str = str.replace(/ຳ/g, "aᵐ")
 
-// independent vowels
 
 // vowel signs
-str = str.replace(/ເ/g, "é")
-str = str.replace(/ແ/g, "è")
-str = str.replace(/ໂ/g, "ô")
-str = str.replace(/ໃ/g, "aʲ")
-str = str.replace(/ໄ/g, "äʲ")
 str = str.replace(/າ/g, "ā")
-str = str.replace(/ຳ/g, "aᵐ")
-str = str.replace(/ະ/g, "a")
 str = str.replace(/ັ/g, "ä")
+str = str.replace(/ະ/g, "a")
 str = str.replace(/ິ/g, "i")
 str = str.replace(/ີ/g, "ī")
-str = str.replace(/ຶ/g, "ü")
-str = str.replace(/ື/g, "ǖ")
+str = str.replace(/ຶ/g, "ɯ")
+str = str.replace(/ື/g, "ɯ̄")
 str = str.replace(/ຸ/g, "u")
 str = str.replace(/ູ/g, "ū")
-str = str.replace(/ຽ/g, "iᵊ")
+str = str.replace(/ເ/g, "e")
+str = str.replace(/ແ/g, "ɛ")
+str = str.replace(/ໄ/g, "aʲ")
+str = str.replace(/ໃ/g, "äʲ")
+str = str.replace(/ໂ/g, "o")
+str = str.replace(/ໍ/g, "ō")
+str = str.replace(/ົ/g, "ö")
 str = str.replace(/ວ/g, "uᵊ")
-str = str.replace(/ໍ/g, "ö")
-str = str.replace(/ົ/g, "ō")
-
+str = str.replace(/ຽ/g, "iᵊ")
 
 
 // digits
@@ -185,14 +178,11 @@ str = str.replace(/໙/g, "9")
 
 
 // punctuation
-str = str.replace(/꧊/g, "|")
-str = str.replace(/꧋/g, "|")
-str = str.replace(/꧌/g, "(")
-str = str.replace(/꧍/g, ")")
-str = str.replace(/꧈/g, ",")
-str = str.replace(/꧉/g, ".")
-str = str.replace(/꧇/g, ":")
-str = str.replace(/ꧏ/g, "2")
+str = str.replace(/ຯ/g, "...")
+
+
+// diacritics
+str = str.replace(/໌/g, "˘")
 
 
 
