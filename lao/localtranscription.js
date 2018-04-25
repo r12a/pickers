@@ -182,7 +182,7 @@ str = str.replace(/ຯ/g, "...")
 
 
 // diacritics
-str = str.replace(/໌/g, "˘")
+str = str.replace(/໌/g, "˟")
 
 
 
