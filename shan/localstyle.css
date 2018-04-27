@@ -64,7 +64,7 @@ span.hint {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 8em;
+    width: 9em;
     justify-content: space-between;
     }
 #translitGrid {

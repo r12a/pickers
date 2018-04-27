@@ -75,11 +75,11 @@ str = str.replace(/\u1039/g, "͍") // virama
 str = str.replace(/\u200C/g,'ⁿʲ')
 
 // tones
-str = str.replace(/ႇ/g, "²")
-str = str.replace(/ႈ/g, "³")
-str = str.replace(/း/g, "⁴")
-str = str.replace(/ႉ/g, "⁵")
-str = str.replace(/ႊ/g, "⁶")
+str = str.replace(/ႇ/g, "¹")
+str = str.replace(/ႈ/g, "²")
+str = str.replace(/း/g, "³")
+str = str.replace(/ႉ/g, "⁴")
+str = str.replace(/ႊ/g, "⁵")
 
 
 
@@ -138,9 +138,9 @@ str = str.replace(/ေ/g, "e")
 str = str.replace(/ဵ/g, "ë")
 str = str.replace(/ႄ/g, "æ")
 str = str.replace(/ႅ/g, "æ̈")
-str = str.replace(/ႆ/g, "a͡i")
+str = str.replace(/ႆ/g, "aʲ")
 str = str.replace(/႟/g, "o")
-str = str.replace(/ွ/g, "a͡u")
+str = str.replace(/ွ/g, "aʷ")
 
 
 
