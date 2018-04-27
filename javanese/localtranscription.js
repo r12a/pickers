@@ -148,6 +148,7 @@ str = str.replace(/ꦃ/g, "h̽")
 // independent vowels
 str = str.replace(/ꦄ/g, "ạ")
 str = str.replace(/ꦆ/g, "ị")
+str = str.replace(/ꦅ/g, "ị̈")
 str = str.replace(/ꦈ/g, "ụ")
 str = str.replace(/ꦌ/g, "ẹ")
 str = str.replace(/ꦎ/g, "ọ")
