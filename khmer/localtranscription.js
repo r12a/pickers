@@ -68,6 +68,7 @@ str = str.replace(/ឮ/g, "l̥̄ₔ")
 
 
 // vowel signs
+str = str.replace(/ៈ/g, "a")
 str = str.replace(/ា/g, "ā")
 str = str.replace(/ិ/g, "i")
 str = str.replace(/ី/g, "ī")
@@ -86,16 +87,13 @@ str = str.replace(/ឿ/g, "ɨᵊ")
 str = str.replace(/ៀ/g, "iᵊ")
 
 // diacritics
-str = str.replace(/ំ/g, "ṃ")
-str = str.replace(/ះ/g, "ḥ")
-str = str.replace(/ៈ/g, "à")
 str = str.replace(/៌/g, "ʳ")
-str = str.replace(/៍/g, "̽")
-str = str.replace(/់/g, "̆")
+str = str.replace(/៍/g, "˟")
+str = str.replace(/់/g, "˘")
 str = str.replace(/័/g, "ă")
 str = str.replace(/៝/g, "ᵊ")
-str = str.replace(/៎/g, "̾")
-str = str.replace(/៏/g, "͙")
+str = str.replace(/៎/g, "ⸯ")
+str = str.replace(/៏/g, "⁎")
 str = str.replace(/៉/g, "″")
 str = str.replace(/៊/g, "′")
 str = str.replace(/៑/g, "˙")
