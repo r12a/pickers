@@ -115,13 +115,13 @@ if (template.direction == "rtl" || template.direction == "bidi") {
     <span title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'; clearBidiOverride()" class="setDir">&#x2190;&#xFE0E;</span>  
      <span title="Set base direction to RTL override." onclick="document.getElementById('output').dir='rtl'; setBidiOverride(false)" class="setDir">&#x21D0;&#xFE0E;</span>
      &bull; 
-`
+    `
     }
 if (template.direction == "bidi") {
     out += `
     <span title="Set base direction to RTL override, and reverse character glyphs." onclick="document.getElementById('output').dir='ltr'; setBidiOverride(true)" class="setDir">&#x2B45;&#xFE0E;</span> 
      &bull; 
- `
+    `
     }
 
 
@@ -132,19 +132,19 @@ out += `Autofocus:
     onclick="switchAutofocus('off')">Off</span>
     </div>
 
-`
+   `
 
 if (inputAids.length > 0) {
 	out += `
-<div style="position:relative;">
-<div id="vertical-menu">
+    <div style="position:relative;">
+    <div id="vertical-menu">
 
-<div class="vmtab" 
-	onmouseover="this.textContent='Default'" 
-    onmouseout="this.textContent='D'"  
+    <!--div class="vmtab" 
+	onmouseover="this.textContent='Clear all'" 
+    onmouseout="this.textContent='C'"  
     onclick="setSidebarDefaults(this);
-     return false;">D</div>
-`
+     return false;">C</div-->
+    `
 	}
 
 
@@ -154,12 +154,17 @@ for (let i=0;i<inputAids.length;i++) {
 	onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
     onmouseout="this.textContent=this.dataset.shorttitle"  
 	onclick="` + inputAids[i].initialCode + `toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">`+inputAids[i].dataShortTitle+`</div>
-`
+    `
 	}
 
 if (inputAids.length > 0) {
 out += `
 <a class="interactiveHelpButton" href="help/#input_aids" target="_help" title="Help with input aids."><img alt="help" src="../images/help.png"/></a>
+    <div class="vmtab" 
+	onmouseover="this.textContent='Clear all'" 
+    onmouseout="this.textContent='C'"  
+    onclick="setSidebarDefaults(this);
+     return false;">C</div>
 </div>
 </div>
 
