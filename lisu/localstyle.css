@@ -8,38 +8,113 @@
 
 [lang=lis] { font-family: 'Noto Sans Lisu WF', serif; }
 
-#alphabet { display: block; }
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  "Noto Sans Lisu WF",  sans-serif;  
+    line-height: 1;
+	}
+
 #keyboard { display: none; }
 
-#kbd { margin: auto; margin-bottom: 2em; }
-#kbd table { margin: 0 10px 10px 0; border: 1px solid #ccc; border-collapse:collapse; padding: 0; border-radius: 10px; }
-#kbd td { padding: 0 5px; }
-.key { 	height: 34px; width: 56px;	}
-
-#punc1 .c {
-	min-width: .75em;
-	text-align:center;
-	}
-#punc2 .c {
-	min-width: 1em;
-	text-align:center;
-	}
-
-.keyboardrow img+img {
-	margin-left: 0;
-	}
 
 
-.key span { 
-	font-size: 20px; 
-	color: #494848; 
-	font-weight: normal; 
-	font-family:  "Noto Sans Lisu WF";  
-	cursor:pointer; 
-	text-align: center; 
-	line-height: 1;
-	}
-.key .s { position:absolute; bottom: 5px; left: 15px; }
-.key .n { position:absolute; bottom: 5px; right: 5px;  }
+/* SELECTION AREA */
 
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+    justify-content: center;
+    }
+#consonantGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 9em;
+    }
+#consonantGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 10em;
+    justify-content: space-between;
+    }
+#consonantGrid > span > span {
+    min-width: 1em;
+    }
+#vowelGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 8.5em;
+    justify-content: space-between;
+    margin: 0 1em;
+    border: 1px solid #eee;
+    border-radius: .5em;
+    padding: 0 .25em;
+    }
+#vowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 4em;
+    justify-content: space-between;
+    }
+#toneGrid {
+    width: 2.5em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 8em;
+    justify-content: center;
+    align-items: center;
+    }
+#numberGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 2.42em;
+    height: 7em;
+    justify-content: center;
+    margin-left: 1.2em;
+    line-height: 1.3;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
 
+#alphabet summary {
+    font-size: 14px;
+    }
+#obsolete {
+    text-align: center;
+    }
