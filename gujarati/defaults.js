@@ -14,11 +14,8 @@ var factoryDefaults = {}
 
 var thisPicker = 'gujaratiPicker'
 
-// reinstate this later
-//if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
-//else  defaults = factoryDefaults
-
- defaults = factoryDefaults
+if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
+else  defaults = factoryDefaults
  
  
 var template = {}
@@ -32,8 +29,11 @@ var template = {}
 
 var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H"},
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L"}
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L"},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
+{"title":"Trans-<br/>literate", "alt":"Convert Gujarati text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 ]
