@@ -5,7 +5,7 @@ var factoryDefaults = {}
 	factoryDefaults.rows = "2.5"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'mak' // language to use for examples
-	factoryDefaults.uifont = 'MakasarGraphite WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Makasar WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "\u00A0";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -30,9 +30,12 @@ var template = {}
 
 
 var inputAids = [
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"}
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Makasar<br/>to Latin", "alt":"Convert Makasar text to a Latin transcription.", "code":"doTranscription('toLatin')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Makasar text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>scribe", "alt":"Convert Makasar text to a Latin transcription.", "code":"doTranscription('toLatin')"},
 ]
