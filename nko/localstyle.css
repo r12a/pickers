@@ -9,8 +9,131 @@
 [lang=nqo] { font-family: 'Noto Sans NKo WF', serif; }
 
 
-#alphabet { display: block; }
-#phonelist { display: none; }
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.1em; 
+	font-weight: normal; 
+	font-family:  "Noto Sans NKo WF",  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+#controlchars {
+    text-align: center;
+    margin-bottom: .25em;
+    line-height: 1;
+    }
+
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#consonantGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 8em;
+    margin: 0 .75em;
+    }
+#consonantGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 7em;
+    justify-content: space-between;
+    }
+#vowelGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 7.5em;
+    padding: .25em .3em .25em .2em;
+    border: 1px solid #ccc;
+    border-radius: .5em;
+    }
+#vowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 3em;
+    justify-content: space-between;
+    }
+#diacritics {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    height: 8em;
+    margin: 0 .75em;
+    }
+#numberGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 8em;
+    margin-left: .5em;
+    }
+#numberGrid div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 4em;
+    justify-content: space-between;
+    font-size: 90%;
+    line-height: 1.75;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#hidden {
+    text-align: center;
+    font-size: 90%;
+    }
+
+
+
+
+/*
 
 #tables {
 	margin-left: 25px;
@@ -127,3 +250,4 @@
 #alphabet #controlchars p {
 	margin: .5em 0;
 	}
+*/
