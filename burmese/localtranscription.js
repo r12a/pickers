@@ -14,6 +14,7 @@ function transliterate (str) {
 str = str + '  '
 str = str.normalize('NFC')
 
+/*
 var consonants = new Set(['က', 'ခ', 'ဂ', 'ဃ', 'င', 'စ', 'ဆ', 'ဇ', 'ဈ', 'ည', 'ဉ', 'ဋ', 'ဌ', 'ဍ', 'ဎ', 'ဏ', 'တ', 'ထ', 'ဒ', 'ဓ', 'န', 'ပ', 'ဖ', 'ဗ', 'ဘ', 'မ', 'ယ', 'ရ', 'လ', 'ဝ', 'သ', 'ဿ', 'ဟ', 'အ', 'ျ', 'ြ', 'ွ', 'ှ'])
 var vowelSet = new Set(['ာ', 'ါ', 'ိ', 'ီ', 'ု', 'ူ', 'ေ', 'ဲ'])
 var medialSet = new Set(['ျ', 'ြ', 'ွ', 'ှ'])
@@ -67,6 +68,8 @@ for (let i=0; i<chars.length-2; i++) {
 
 str = out+'  '
 console.log(out)
+*/
+
 
 str = str.replace(/\u103A/g, "͓") // asat
 str = str.replace(/\u1039/g, "͍") // virama
@@ -75,9 +78,12 @@ str = str.replace(/\u1039/g, "͍") // virama
 str = str.replace(/\u200C/g,'ⁿʲ')
 
 // tones
-str = str.replace(/့/g, "\u0330")
-str = str.replace(/\u1038/g, "\u0301")
+str = str.replace(/့/g, "¹")
+str = str.replace(/\u1038/g, "²")
 
+
+// kinzi
+str = str.replace(/\u1004\u103A\u1039/g, "ṅ̽")
 
 
 // basic consonants
@@ -112,14 +118,14 @@ str = str.replace(/ရ/g, "r")
 str = str.replace(/လ/g, "l")
 str = str.replace(/ဝ/g, "v")
 str = str.replace(/သ/g, "s")
-str = str.replace(/ဿ/g, "s͡s")
+str = str.replace(/ဿ/g, "ṡ")
 str = str.replace(/ဟ/g, "h")
 str = str.replace(/အ/g, "‘")
 
 
 
 // finals
-str = str.replace(/\u1036/g, "ɴ̽")
+str = str.replace(/\u1036/g, "n̽")
 
 
 
@@ -139,8 +145,7 @@ str = str.replace(/ဥ/g, "ụ")
 str = str.replace(/ဦ/g, "ụ̄")
 str = str.replace(/ဧ/g, "ẹ")
 str = str.replace(/ဩ/g, "ọ")
-str = str.replace(/ဪ/g, "ạu")
-str = str.replace(/‘ᵃ/g, "‘a")
+str = str.replace(/ဪ/g, "ạʷ")
 
 
 
@@ -152,8 +157,7 @@ str = str.replace(/ီ/g, "ī")
 str = str.replace(/ု/g, "u")
 str = str.replace(/ူ/g, "ū")
 str = str.replace(/ေ/g, "e")
-str = str.replace(/ဲ/g, "a͡i")
-str = str.replace(/ို/g, "o")
+str = str.replace(/ဲ/g, "aʲ")
 
 
 
