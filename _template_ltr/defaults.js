@@ -37,7 +37,7 @@ var inputAids = [
 ]
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert XXXXXXXX text to a Latin transliteration.", "code":"doTranscription('toTranslit')"},
-{"title":"XXXXXXXXXX<br/>to XXXXXXXXXX", "alt":"XXXXXXXXXX.", "code":"doTranscription('XXXXXXXXXX')"},
+{"title":"Trans-<br/>literate", "alt":"Convert XXXXXXXX text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"XXXXXXXXXX<br/>to XXXXXXXXXX", "alt":"XXXXXXXXXX.", "code":"doTranscription('XXXXXXXXXX')", "warning":"Still in development. Separate syllables before use."},
 ]
 
