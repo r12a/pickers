@@ -1292,18 +1292,14 @@ function makeCharacterLink (cp, block, lang, direction) {
 
 
 function getData (script) {
-	var found = false
-	var record = null
-	for (var i=0;i<linkDB.length;i++) {
-		if (linkDB[i].code === script) {
-			record = linkDB[i]
-			found = true
-			break
-			}
-		}
-	if (! found) return '<p>No data found.</p>'
-	
-	script = linkDB[i].script
+    // adds link data to 'related links' expander
+    // script: string, iso code for script
+    
+    script = script.toLowerCase()
+	if (! linkDB[script]) return '<p>No data found.</p>'
+    else record = linkDB[script]
+    
+	//script = linkDB[i].script
 	var lc = script.toLowerCase()
 	var norm = script.toLowerCase().replace(/ /g,'_')
 	
