@@ -25,7 +25,7 @@
 
 .shapeSelect {
 	color: orange;
-	font-size: 2.5em;
+	font-size: 1.5em;
 	cursor: pointer;
 	font-family: 'Noto Sans Egyptian Hieroglyphs WF', Aegyptus;
 	}
@@ -177,6 +177,7 @@ span.hint {
 
 #extrashapes span {
 	cursor: pointer;
+    font-size: 1.5em;
 	}
 
 #chardata {
@@ -184,7 +185,7 @@ span.hint {
 	}
 	
 #keywordSearch {
-	font-size: 120%;
+	font-size: 1em;
 	padding-left: 1em;
 	background-color: #eee;
 	border: 1px solid #ddd;
@@ -192,6 +193,12 @@ span.hint {
 	}
 
 #categoryList {
+	padding: .5em;
+	background-color: #fff;
+	margin: 0 20px 0 10px;
+	}
+
+#shapekeys {
 	padding: .5em;
 	background-color: #fff;
 	margin: 0 20px 0 10px;
@@ -207,7 +214,7 @@ span.hint {
 
 
 #searchResults {
-	font-size: 2.5em;
+	font-size: 1.5em;
 	cursor: pointer;
 	font-family: 'Noto Sans Egyptian Hieroglyphs WF', Aegyptus;
 	margin: 0 20px 0.5em 10px;
@@ -233,3 +240,14 @@ span.hint {
 #wikiHieroOut {
 	margin-right: 30px; 
 	}
+
+.selector {
+    font-size: 2em;
+    }
+#keywordSearch span {
+    min-width: 1em;
+    text-align: center;
+    display: inline-block;
+    }
+
+
