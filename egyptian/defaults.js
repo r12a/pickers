@@ -20,7 +20,7 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Egyptian hieroglyph character picker'
-	template.sample = "<-i-mn:n-R4:t*p-> <-𓇋-𓏠:𓈖-𓊵:𓏏*𓊪->"
+	template.sample = "<-i-mn:n-R4:t*p->\\n<-𓇋-𓏠:𓈖-𓊵:𓏏*𓊪->"
     template.blocklocation= '/scripts/egyptianhieroglyphs/block'  // blocklocation to use for examples
 	template.direction = "bidi" // indicates whether this is a picker for a RTL script
 	template.github = 'egyptian'
@@ -37,8 +37,8 @@ var inputAids = [
 
 var controls = [
 {"title":"MdC to<br/>Hieroglyphs", "alt":"Convert Manuel de Codage transcriptions to Unicode.", "code":"doTranscription('mdcToHieroglyphs')"},
-{"title":"Hieroglyphs<br/>to MdC", "alt":"Convert Manuel de Codage transcriptions to Unicode.", "code":"doTranscription('hieroglyphsToMdC')"},
 {"title":"MdC to<br/>WikiHiero", "alt":"Display Manuel de Codage transcriptions on WikiHiero page.", "code":"doWikiHiero()"},
+{"title":"Hieroglyphs<br/>to MdC", "alt":"Convert Manuel de Codage transcriptions to Unicode.", "code":"doTranscription('hieroglyphsToMdC')"},
 {"title":"Change<br/>Transliteration", "alt":"Convert one transcription to another.", "code":"document.getElementById('translitSelector').style.display = 'block';"},
 {"title":"Phonetic<br/>look up", "alt":"Look up a Latin consonant or consonant sounds.", "code":"convertPhonemes()"},
 ]
