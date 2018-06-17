@@ -390,7 +390,7 @@ function setUIFont (font) {
 		chars[i].style.fontFamily = '"'+font+'"'
 		}
 	document.querySelector('#extrashapes').style.fontFamily = '"'+font+'"'
-	document.querySelector('#transcriptionChoice').style.fontFamily = '"'+font+'"'
+	document.querySelector('#transcriptionChoice').style.fontFamily = "\'Doulos SIL\', \''+font+'\'"
 	
 	defaults.uifont = font
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
@@ -401,7 +401,7 @@ function setUIFont (font) {
 function setUIFont (font) {
 	document.querySelector('#alphabet').style.fontFamily = '"'+font+'"'
     document.querySelector('#extrashapes').style.fontFamily = '"'+font+'"'
-	document.querySelector('#transcriptionChoice').style.fontFamily = '"'+font+'"'
+	document.querySelector('#transcriptionChoice').style.fontFamily = "'Doulos SIL', '"+font+"'"
 	
 	defaults.uifont = font
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
@@ -1315,18 +1315,31 @@ function getData (script) {
 		for (var r=2;r<record.local.length;r++) temp += '<p><a href="'+record.info[r].url+'" >'+record.info[r].name+'</a></p>'
 		out += '</td></tr>'
 		}
-	if ((record.local && record.local.length) > 0 | scriptNotesSet.has(lc) | charNotesSet.has(lc) | compChartSet.has(lc) | scriptSummarySet.has(lc)) {
+	/*if ((record.local && record.local.length) > 0 | scriptNotesSet.has(lc) | charNotesList[lc] | compChartSet.has(lc)) {
 		var temp = ''
 		temp += '<tr><th>This site:</th><td>'
 		if (scriptNotesSet.has(lc)) temp += '<p><a href="/scripts/'+lc+'" >Script summary</a></p>'
-		if (charNotesSet.has(lc)) temp += '<p><a href="/scripts/'+lc+'/block" >Character notes</a></p>'
+		if (charNotesList.has(lc)) temp += '<p><a href="/scripts/'+lc+'/block" >Character notes</a></p>'
 		if (compChartSet.has(lc)) temp += '<p><a href="/scripts/featurelist/" >Comparison chart</a></p>'
 		for (var r=0;r<record.local.length;r++) temp += '<p><a href="'+record.local[r].url+'" >'+record.local[r].name+'</a></p>'
-		if (scriptSummarySet.has(lc)) temp += '<p><a href="/scripts/tutorial/summaries/'+lc+'" >Tutorial notes</a></p>'
+		//if (scriptSummarySet.has(lc)) temp += '<p><a href="/scripts/tutorial/summaries/'+lc+'" >Tutorial notes</a></p>'
+		temp += '</td></tr>'
+		if (temp !== '<tr><th>This site:</th><td></td></tr>') out += temp
+		}*/
+	if ((record.local && record.local.length > 0) || scriptNotes[lc] || charNotesList[lc] || compChartSet.has(lc)) {
+		var temp = ''
+		temp += '<tr><th>r12a.github.io:</th><td>'
+		if (scriptNotes[lc]) {
+            for (let n=0;n<scriptNotes[lc].length;n++) temp += '<p><a href="/scripts/'+scriptNotes[lc][n][1]+'" >'+scriptNotes[lc][n][0]+'</a></p>'
+            }
+		if (charNotesList[lc]) temp += '<p><a href="/scripts/'+charNotesList[lc]+'" >Character notes</a></p>'
+		if (compChartSet.has(lc)) temp += '<p><a href="/scripts/featurelist/" >Comparison chart</a></p>'
+		for (var r=0;r<record.local.length;r++) temp += '<p><a href="'+record.local[r].url+'" >'+record.local[r].name+'</a></p>'
+		//if (scriptSummarySet.has(lc)) temp += '<p><a href="/scripts/tutorial/summaries/'+lc+'" >Tutorial notes</a></p>'
 		temp += '</td></tr>'
 		if (temp !== '<tr><th>This site:</th><td></td></tr>') out += temp
 		}
-	if (record.unicode) {
+    if (record.unicode) {
 		out += '<tr><th>Unicode info:</th><td>'
 		out += '<p><a href="http://www.unicode.org/versions/latest/ch'+chapters[norm]+'.pdf" >Core text</a></p>'
 		out += '<p><a href="http://scriptsource.org/entry/'+ssHistory[norm]+'" >Historical</a></p>'
