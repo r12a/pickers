@@ -29,18 +29,15 @@ var template = {}
 
 
 var inputAids = [
-{"title":"Show cursive forms", "dataVar":"showCursive", "dataLocn":"cursive", "dataShortTitle":"S", "type":"hint"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
 {"title":"Transcribe to IPA", "dataVar":"showLOCTrans", "dataLocn":"loctranscript", "dataShortTitle":"T", "type":"palette"},
-{"title":"Transcribe to Syriac", "dataVar":"showIPATrans", "dataLocn":"ipatranscript", "dataShortTitle":"T", "type":"palette"}
+{"title":"Transcribe to Syriac", "dataVar":"showIPATrans", "dataLocn":"ipatranscript", "dataShortTitle":"T", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-//{"title":"ISO 15919<br/>to Bengali", "alt":"Convert ISO 15919 Latin transcription to Bengali.", "code":"doTranscription('toBeng')"},
-//{"title":"Bengali to<br/>ISO 15919", "alt":"Convert Bengali text to an ISO 15919 Latin transcription.", "code":"doTranscription('toISO')"},
-//{"title":"Radice<br/>to Bengali", "alt":"Convert Radice Latin transcription to Bengali.", "code":"doTranscription('rtoBeng')"},
-//{"title":"Bengali to<br/>Radice", "alt":"Convert Bengali text to a Radice Latin transcription.", "code":"doTranscription('toRadice')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Assyrian text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+//{"title":"Trans-<br/>scribe", "alt":"Convert Uighur text to a ULY Latin transcription.", "code":"doTranscription('toULY')"},
 ]
 
 
-var lastUpdate = '04-Jan-2018'

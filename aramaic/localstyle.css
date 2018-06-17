@@ -25,74 +25,153 @@
 
 
 
-#alphabet { display: block; margin-right: 20px;  }
-
-#alphabet td.hint {  
-	font-size: 14px;
-	color: #ccc;
-	text-align: left;
-	text-align: end;
-	vertical-align: top;
-	}
-	
-#kbd, #rare, #rare2, #translit { 	
-	margin: auto; 
-	}
-#kbd table {
-	margin:0;
-	}
-	
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: right;
-	text-align: start;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1.4;
-	}
-#kbd #consonants  {
-	text-align: start;
-	padding-inline-end: 20px;
+#alphabet { 
+	display: block; 
+	color: #666;
 	}
 
-#kbd #vowels .hint {
-	padding-left: 10px; 
+span.hint { 
+	margin-right: 1px;
+    margin-left: 1px;
+	font-size: 40%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
 	}
 
-#kbd #numbers {
-	padding: 0 10px;
-	}
-#kbd #additional span {
-	min-width: 20px;
-	}
-
-#toggleRare {
-	margin: 10px 30px;
-	}
-#rare .hint {
-	vertical-align: top;
+.v { 
+	min-width: .75em;
+	text-align: center;
+    cursor: pointer;
 	}
 
-
-#alphabet #controlchars {
-	padding: 0 10px; text-align:center;
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.4em; 
+	font-weight: normal; 
+	font-family:  'Scheherazade WF',  sans-serif;  
+    line-height: 1;
 	}
-#alphabet #controlchars p {
-	margin: .3em 0;
-	}
-
-#alphabet span.c, #rare span.c, #rare2 span.c, #translit span.c {
-	display: inline-block;
-	min-width: 20px;
-	text-align:center;
-	}
+.key {padding: 4px 0 0 0; }
+#keyboard { display: none; }
 
 
 
-#cursive { 
-	font-family: 'East Syriac Adiabene','Noto Sans Syriac Eastern', serif; 
-	font-size: 36px;
-	line-height: 1;
+/* SELECTION AREA */
+
+#controlchars {
+    text-align: center;
+    margin-bottom: .25em;
+    line-height: 1;
+    }
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#consonantGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 5.5em;
+    }
+#consonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 8em;
+    justify-content: space-between;
+    }
+#consonantGrid > span {
+    min-width: 1em;
+    }
+#vowelGrid {
+    display: flex;
+    flex-direction: column;
+    height: 5.25em;
+    justify-content: center;
+    border: 1px dotted #ccc;
+    border-radius: .5em;
+    padding: 0 .25em;
+    margin: 0 .5em;
+    flex-wrap: wrap;
+    width: 2em;
+    }
+#diacriticGrid {
+    display: flex;
+    flex-direction: column;
+    height: 5.25em;
+    justify-content: space-between;
+    border: 1px dotted #ccc;
+    border-radius: .5em;
+    padding: 0 .25em;
+    flex-wrap: wrap;
+    width: 1.5em;
+    line-height: 1;
+    }
+#vowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 4em;
+    justify-content: center;
+    }
+#numberGrid {
+    height: 4em;
+    margin: 0 .5em;
+    }
+#numberGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 2.5em;
+    justify-content: space-between;
+    line-height: 1.2;
+    font-size: 90%;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 70%;
+    line-height: 1;
+    margin-top: .5em;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#vowelclusters {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: .5em;
+    width: 20em;
+    margin: auto;
+    }
+
+#transcriptionChoice {
+	position:absolute;
+	left:60px;
+	font-size: 60px; 
+	background-color: #FFFACD; 
+	border: 1px solid #ccc; 
+	border-radius:10px; 
+	padding: 7px;
+	display: none;
+    font-family:  "Doulos SIL", "East Syriac Ctesiphon", "East Syriac Adiabene", "Noto Sans Syriac Eastern WF", serif;
 	}
+#cursive {
+    width: 4em;
+    display: inline-block;
+    }
+
