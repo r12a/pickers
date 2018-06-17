@@ -239,6 +239,7 @@ span.hint {
 
 #wikiHieroOut {
 	margin-right: 30px; 
+    clear: both;
 	}
 
 .selector {
@@ -249,5 +250,12 @@ span.hint {
     text-align: center;
     display: inline-block;
     }
-
+#wikihieroCancel {
+    font-size: 1.6em;
+    color: #ccc;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    margin-right: 1em;
+    }
 

@@ -8,7 +8,8 @@ var _showISOTrans = ''
 
 function doWikiHiero () {
 	var _output = document.getElementById('output')
-	document.getElementById('wikiHieroOut').innerHTML = WikiHieroHTML(getHighlightedText(_output), 100, false)
+	document.getElementById('wikiHieroOut').innerHTML = '<div id="wikihieroCancel" onclick="this.parentNode.style.display=\'none\';">X</div>'+WikiHieroHTML(getHighlightedText(_output), 100, false)
+    document.getElementById('wikiHieroOut').style.display = 'block'
 	_output.focus()
 	}
 
