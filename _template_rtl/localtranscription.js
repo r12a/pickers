@@ -1,7 +1,7 @@
 ﻿function localtranscribe (direction, str) {
 	
-	if (direction == 'toISO') { return transcribetoISO(str) }
-	if (direction == 'toLOC') { return transcribetoLOC(str) }
+	if (direction == 'transliterate') { return transliterate(str) }
+	if (direction == 'toULY') { return transcribetoULY(str) }
 	}
 
 
@@ -9,130 +9,57 @@
 var vowels = {'\u064E':'a', '\u064F':'u', '\u0650':'i', '\u0652':'sukun', 	'\u064B':'an', '\u064C':'un', '\u064D':'in'}
 
 
-function transcribetoLOC (str) {
-	// transcribes vowelled arabic text into an LOC transcription
+function transliterate (str) {
+	// transliterates uighur text 
 	
-	
-	// check that there are vowels
-	var found = false
-	for (var i=0;i<str.length;i++) {
-		if (vowels[str.charAt(i)]) { found=true; break }
-		}
-	if (!found) alert('This transcription method expects to start with vowelled text.')
 	
 	// add initial space so that beginning of word rules work
-	str = ' '+str
-	
-	// disambiguate any xh followed by h
-	str = str.replace(/([ت|ك|س|غ|د])ه/g, "$1ʹه")
-	
-	str = str.replace(/اللّٰه/g,'Allāh') 
+	str = '  '+str+'  '
 
-	// handle shadda
-	var re = /(.)([\u064E|\u064F|\u0650|\u0652|\u064B|\u064C|\u064D]?)\u0651/g
-	str = str.replace(re,'$1$1$2')  // shadda
-	
-	str = str.replace(/ ال/g,' al-') // definite article
-	
-	str = str.replace(/\u200C([^ ])/g,'ʹ$1')  // zwnj creating final form in middle of word
+// consonants
+str = str.replace(/م/g, "m")
+str = str.replace(/ن/g, "n")
+str = str.replace(/د/g, "d")
+str = str.replace(/ت/g, "t")
+str = str.replace(/ب/g, "b")
+str = str.replace(/پ/g, "p")
+str = str.replace(/ف/g, "f")
+str = str.replace(/ق/g, "q")
+str = str.replace(/ك/g, "k")
+str = str.replace(/ڭ/g, "ŋ")
+str = str.replace(/گ/g, "g")
+str = str.replace(/غ/g, "ḥ")
+str = str.replace(/ھ/g, "h")
+str = str.replace(/خ/g, "x")
+str = str.replace(/چ/g, "č")
+str = str.replace(/ج/g, "j")
+str = str.replace(/ژ/g, "ž")
+str = str.replace(/ز/g, "z")
+str = str.replace(/س/g, "s")
+str = str.replace(/ش/g, "š")
+str = str.replace(/ر/g, "r")
+str = str.replace(/ل/g, "l")
+str = str.replace(/ئ/g, "’")
 
-	str = str.replace(/\u064E[\u0651]?ا/g,'ā') 
-	str = str.replace(/\u064E[\u0651]?ى/g,'á') 
-	str = str.replace(/\u064F[\u0651]?و/g,'ū') 
-	str = str.replace(/\u0650[\u0651]?ى/g,'ī') 
-	str = str.replace(/\u0650[\u0651]?ي/g,'ī') 
-	str = str.replace(/\u064E[\u0651]?و\u0652/g,'aw') 
-	str = str.replace(/\u064E[\u0651]?ى\u0652/g,'ay') 
-	
-	
-	str = str.replace(/ء/g,'’') 
-	str = str.replace(/م/g,'m') 
-	str = str.replace(/\bا/g,'ʾa') 
-	str = str.replace(/ا/g,'') 
-	str = str.replace(/ آ/g,'ā') 
-	str = str.replace(/آ/g,'[’ā{ā]') 
-	str = str.replace(/ أ/g,'') 
-	str = str.replace(/أ/g,'’') 
-	str = str.replace(/ إ/g,'') 
-	str = str.replace(/إ/g,'’') 
-	str = str.replace(/ٱ/g,'') 
-	str = str.replace(/ؤ/g,'’') 
-	str = str.replace(/ئ/g,'’') 
-	str = str.replace(/ب/g,'b') 
-	str = str.replace(/ت/g,'t') 
-	str = str.replace(/ث/g,'th') 
-	str = str.replace(/ج/g,'j') 
-	str = str.replace(/ح/g,'ḥ')
-	str = str.replace(/خ/g,'kh')
-	str = str.replace(/د/g,'d') 
-	str = str.replace(/ذ/g,'dh') 
-	str = str.replace(/ر/g,'r') 
-	str = str.replace(/ز/g,'z') 
-	str = str.replace(/س/g,'s') 
-	str = str.replace(/ش/g,'sh') 
-	str = str.replace(/ص/g,'ṣ') 
-	str = str.replace(/ض/g,'ḍ') 
-	str = str.replace(/ط/g,'ṭ') 
-	str = str.replace(/ظ/g,'ẓ') 
-	str = str.replace(/ع/g,'ʻ') 
-	str = str.replace(/غ/g,'gh') 
-	str = str.replace(/ف/g,'f') 
-	str = str.replace(/ق/g,'q') 
-	str = str.replace(/ك/g,'k') 
-	str = str.replace(/ل/g,'l')
-	str = str.replace(/م/g,'m')
-	str = str.replace(/ن/g,'n')
-	str = str.replace(/ه/g,'h')
-	str = str.replace(/و/g,'w') 
-	str = str.replace(/ي/g,'y') 
-	str = str.replace(/ة/g,'[h{t]') 
-	str = str.replace(/ى/g,'ỳ') 
-	
-	str = str.replace(/\u064E/g,'a') 
-	str = str.replace(/\u064F/g,'u') 
-	str = str.replace(/\u0650/g,'i') 
-	str = str.replace(/\u0652/g,'') 
-	str = str.replace(/\u064B/g,'an')  
-	str = str.replace(/\u064C/g,'un') 
-	str = str.replace(/\u064D/g,'in')
-	 
-	str = str.replace(/۱/g,'1') 
-	str = str.replace(/۲/g,'2') 
-	str = str.replace(/۳/g,'3') 
-	str = str.replace(/۴/g,'4') 
-	str = str.replace(/۵/g,'5') 
-	str = str.replace(/۶/g,'6')
-	str = str.replace(/۷/g,'7')
-	str = str.replace(/۸/g,'8')
-	str = str.replace(/۹/g,'9')
-	str = str.replace(/۰/g,'0')
-	
-	str = str.replace(/٪/g,'%')
-	str = str.replace(/؟/g,'?')
-	str = str.replace(/؛/g,'\u002C')
-	str = str.replace(/،/g,',')
-	str = str.replace(/؛/g,';')
-	str = str.replace(/۔/g,'.')
-	str = str.replace(/ـ/g,'')
+str = str.replace(/ي/g, "y")
+str = str.replace(/ۋ/g, "w")
 
-	
-	
-	str = str.replace(/௰/g,'(x10)')
-	str = str.replace(/௱/g,'(x100)')
-	str = str.replace(/௲/g,'(x1000)')
-	str = str.replace(/௺/g,'<number sign>')
-	str = str.replace(/௹/g,'<rupee sign>')
-	str = str.replace(/௳/g,'<day sign>')
-	str = str.replace(/௴/g,'<month sign>')
-	str = str.replace(/௵/g,'<year sign>')
+// vowels
+str = str.replace(/ا/g, "a")
+str = str.replace(/ە/g, "e")
+str = str.replace(/ې/g, "ë")
+str = str.replace(/ى/g, "i")
+str = str.replace(/ۆ/g, "ö")
+str = str.replace(/و/g, "o")
+str = str.replace(/ۇ/g, "u")
+str = str.replace(/ۈ/g, "ü")
 
+// punctuation
+str = str.replace(/٪/g, "%")
+str = str.replace(/؟/g, "?")
+str = str.replace(/؛/g, ";")
+str = str.replace(/،/g, ",")
 
-	// add markup for ambiguous cases
-	str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
-	str = str.replace(/\|/g,'</span><span class=alt>')
-	str = str.replace(/\{/g,'</span><span class=altlast>')
-	str = str.replace(/\]/g,'</span></span>')
-	str = str.replace(/¶/g,'')
 
 
 	return str.trim()
@@ -142,7 +69,74 @@ function transcribetoLOC (str) {
 
 
 
-function transcribetoISO (chstring) {
+function transcribetoULY (str) {
+    str = str.normalize('NFC')
+    
+str = str.replace(/م/g, "m")
+str = str.replace(/ن/g, "n")
+str = str.replace(/د/g, "d")
+str = str.replace(/ت/g, "t")
+str = str.replace(/ب/g, "b")
+str = str.replace(/پ/g, "p")
+str = str.replace(/ف/g, "f")
+str = str.replace(/ق/g, "q")
+str = str.replace(/ك/g, "k")
+str = str.replace(/ڭ/g, "ng")
+str = str.replace(/گ/g, "g")
+str = str.replace(/غ/g, "gh")
+str = str.replace(/ھ/g, "h")
+str = str.replace(/خ/g, "x")
+str = str.replace(/چ/g, "ch")
+str = str.replace(/ج/g, "j")
+str = str.replace(/ژ/g, "zh")
+str = str.replace(/ز/g, "z")
+str = str.replace(/س/g, "s")
+str = str.replace(/ش/g, "sh")
+str = str.replace(/ر/g, "r")
+str = str.replace(/ل/g, "l")
+str = str.replace(/ئ/g, "")
+
+str = str.replace(/ي/g, "y")
+str = str.replace(/ۋ/g, "w")
+
+
+
+    // vowels
+str = str.replace(/ا/g, "a")
+str = str.replace(/ە/g, "e")
+str = str.replace(/ې/g, "ë")
+str = str.replace(/ى/g, "i")
+str = str.replace(/ۆ/g, "ö")
+str = str.replace(/و/g, "o")
+str = str.replace(/ۇ/g, "u")
+str = str.replace(/ۈ/g, "ü")
+
+str = str.replace(/ئا/g, "a")
+str = str.replace(/ئە/g, "e")
+str = str.replace(/ئې/g, "ë")
+str = str.replace(/ئى/g, "i")
+str = str.replace(/ئۆ/g, "ö")
+str = str.replace(/ئو/g, "o")
+str = str.replace(/ئۇ/g, "u")
+str = str.replace(/ئۈ/g, "ü")
+
+
+    // punctuation
+str = str.replace(/٪/g, "%")
+str = str.replace(/؟/g, "?")
+str = str.replace(/؛/g, ";")
+str = str.replace(/،/g, ",")
+
+
+
+
+
+			
+    return str
+}
+
+
+function transcribetoISOold (chstring) {
 					
 	chstring = chstring.replace(/ال/g,' al-'); // lam alif
 	
