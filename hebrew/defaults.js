@@ -32,7 +32,8 @@ var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Academy transcription", "dataVar":"showAcadTrans", "dataLocn":"acadtranscript", "dataShortTitle":"A", "type":"palette"}
+{"title":"Academy transcription", "dataVar":"showAcadTrans", "dataLocn":"acadtranscript", "dataShortTitle":"A", "type":"palette"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [

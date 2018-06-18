@@ -7,6 +7,10 @@
 	}
 
 
+[lang=he] { font-family: 'Noto Serif Hebrew WF', serif; }
+
+
+
 #alphabet { 
 	display: block; 
 	color: #666;
@@ -14,6 +18,46 @@
 	}
 
 
+span.hint { 
+	margin-right: 1px;
+    margin-left: 1px;
+	font-size: 40%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+.v { 
+	min-width: .75em;
+	text-align: center;
+    cursor: pointer;
+	}
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.4em; 
+	font-weight: normal; 
+	font-family:  'Arial',  sans-serif;  
+    line-height: 1;
+	}
+.key {padding: 4px 0 0 0; }
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+#controlchars {
+    text-align: center;
+    margin-bottom: .25em;
+    line-height: 1;
+    }
+.spaceline {
+    margin-bottom: 0;
+    }
 #kbd { 	
 	margin: auto; 
 	}
@@ -25,47 +69,23 @@
 	padding: 0; 
 	padding-bottom: 3px; 
 	text-align: left;
-	font-size: 25px;
 	cursor:pointer;
 	vertical-align: top; 
 	line-height: 1.4;
-	}
-#kbd td.hint {  
-	font-size: 12px;
-	color: #ccc;
-	text-align: right;
-	text-align: start;
-	vertical-align: top;
 	}
 
 
 #kbd #consonants td { 
 	text-align: center;
 	}
-#kbd #consonants .c { 
-	min-width:.75em;
-	text-align: center;
-	}
-#kbd #consonants td.hint { 
-	padding: 0; 
-	}
 #kbd #points { 
 	margin-left: 20px; 
 	margin-right: 20px; 
 	}
-#kbd #points .c { 
-	min-width:.75em;
-	text-align: center;
-	}
-
 #kbd #punctuation { 
 	margin-left: 20px; 
 	}
 #kbd #punctuation td { 
-	text-align: center;
-	}
-#kbd #punctuation .c { 
-	min-width: .75em;
 	text-align: center;
 	}
 
@@ -77,11 +97,6 @@
 	text-align: start;
 	line-height: 1;
 	}
-#rare .c {
-	min-width: .6em;
-	text-align: center;
-	line-height: 1.4;
-	}
 
 
 #alphabet #controlchars {
@@ -91,4 +106,10 @@
 	margin: 0;
 	}
 
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1;
+    margin-top: .5em;
+    }
 

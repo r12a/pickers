@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Hebrew character picker 21</title>
+<title>Hebrew character picker 22</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared21/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared21/code.js">  </script>
+<script src="../shared22/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared21/pagetemplate.js">  </script>
+<script src="../shared22/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
 <!--script src="localtranscription.js">  </script-->
@@ -63,47 +63,107 @@
 
 
 <div id="acadtranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('בּ,ב')">b</span>
-<span class="t" onclick="dotrans('צ׳,ץ׳')">č</span>
-<span class="t" onclick="dotrans('ד')">d</span>
-<span class="t" onclick="dotrans('פ,ף')">f</span>
-<span class="t" onclick="dotrans('ג')">g</span>
-<span class="t" onclick="dotrans('ג׳')">ǧ</span>
-<span class="t" onclick="dotrans('ה')">h</span>
-<span class="t" onclick="dotrans('ח')">h̠</span>
-<span class="t" onclick="dotrans('כּ,כ,ךּ,ך,ק')">k</span>
-<span class="t" onclick="dotrans('כ,ך')">kh</span>
-<span class="t" onclick="dotrans('ל')">l</span>
-<span class="t" onclick="dotrans('מ,ם')">m</span>
-<span class="t" onclick="dotrans('נ,ן')">n</span>
-<span class="t" onclick="dotrans('פּ,פ')">p</span>
-<span class="t" onclick="dotrans('ר')">r</span>
-<span class="t" onclick="dotrans('ס,ש,שׂ')">s</span>
-<span class="t" onclick="dotrans('ש,שׁ')">sh</span>
-<span class="t" onclick="dotrans('ט,ת,תּ')">t</span>
-<span class="t" onclick="dotrans('צ,ץ')">ʦ</span>
-<span class="t" onclick="dotrans('װ,ו׳')">w</span>
-<span class="t" onclick="dotrans('ב,ו')">v</span>
-<span class="t" onclick="dotrans('י')">y</span>
-<span class="t" onclick="dotrans('ז')">z</span>
-<span class="t" onclick="dotrans('ז׳')">ž</span>
-<span class="t" onclick="dotrans('א,ע')">'</span>
-<span class="t" onclick="dotrans('א,ה,ע')">silent</span>
+<span class="t" onmouseover="showtrans('ב')" onmouseout="hidetrans()" onclick="add('ב')">b</span>
+<span class="t" onmouseover="showtrans('בּ')" onmouseout="hidetrans()" onclick="add('בּ')">b</span>
+<span class="t" onmouseover="showtrans('צ׳')" onmouseout="hidetrans()" onclick="add('צ׳')">č</span>
+<span class="t" onmouseover="showtrans('ץ׳')" onmouseout="hidetrans()" onclick="add('ץ׳')">č</span>
+<span class="t" onmouseover="showtrans('ד')" onmouseout="hidetrans()" onclick="add('ד')">d</span>
+<span class="t" onmouseover="showtrans('פ')" onmouseout="hidetrans()" onclick="add('פ')">f</span>
+<span class="t" onmouseover="showtrans('ף')" onmouseout="hidetrans()" onclick="add('ף')">f</span>
+<span class="t" onmouseover="showtrans('ג')" onmouseout="hidetrans()" onclick="add('ג')">g</span>
+<span class="t" onmouseover="showtrans('ג׳')" onmouseout="hidetrans()" onclick="add('ג׳')">ǧ</span>
+<span class="t" onmouseover="showtrans('ה')" onmouseout="hidetrans()" onclick="add('ה')">h</span>
+<span class="t" onmouseover="showtrans('ח')" onmouseout="hidetrans()" onclick="add('ח')">h̠</span>
+<span class="t" onmouseover="showtrans('כּ')" onmouseout="hidetrans()" onclick="add('כּ')">k</span>
+<span class="t" onmouseover="showtrans('כ')" onmouseout="hidetrans()" onclick="add('כ')">k</span>
+<span class="t" onmouseover="showtrans('ךּ')" onmouseout="hidetrans()" onclick="add('ךּ')">k</span>
+<span class="t" onmouseover="showtrans('ך')" onmouseout="hidetrans()" onclick="add('ך')">k</span>
+<span class="t" onmouseover="showtrans('ק')" onmouseout="hidetrans()" onclick="add('ק')">k</span>
+<span class="t" onmouseover="showtrans('כ')" onmouseout="hidetrans()" onclick="add('כ')">kh</span>
+<span class="t" onmouseover="showtrans('ך')" onmouseout="hidetrans()" onclick="add('ך')">kh</span>
+<span class="t" onmouseover="showtrans('ל')" onmouseout="hidetrans()" onclick="add('ל')">l</span>
+<span class="t" onmouseover="showtrans('מ')" onmouseout="hidetrans()" onclick="add('מ')">m</span>
+<span class="t" onmouseover="showtrans('ם')" onmouseout="hidetrans()" onclick="add('ם')">m</span>
+<span class="t" onmouseover="showtrans('נ')" onmouseout="hidetrans()" onclick="add('נ')">n</span>
+<span class="t" onmouseover="showtrans('ן')" onmouseout="hidetrans()" onclick="add('ן')">n</span>
+<br/>
+<span class="t" onmouseover="showtrans('פּ')" onmouseout="hidetrans()" onclick="add('פּ')">p</span>
+<span class="t" onmouseover="showtrans('פ')" onmouseout="hidetrans()" onclick="add('פ')">p</span>
+<span class="t" onmouseover="showtrans('ר')" onmouseout="hidetrans()" onclick="add('ר')">r</span>
+<span class="t" onmouseover="showtrans('ס')" onmouseout="hidetrans()" onclick="add('ס')">s</span>
+<span class="t" onmouseover="showtrans('ש')" onmouseout="hidetrans()" onclick="add('ש')">s</span>
+<span class="t" onmouseover="showtrans('שׂ')" onmouseout="hidetrans()" onclick="add('שׂ')">s</span>
+<span class="t" onmouseover="showtrans('ש')" onmouseout="hidetrans()" onclick="add('ש')">sh</span>
+<span class="t" onmouseover="showtrans('שׁ')" onmouseout="hidetrans()" onclick="add('שׁ')">sh</span>
+<span class="t" onmouseover="showtrans('ט')" onmouseout="hidetrans()" onclick="add('ט')">t</span>
+<span class="t" onmouseover="showtrans('ת')" onmouseout="hidetrans()" onclick="add('ת')">t</span>
+<span class="t" onmouseover="showtrans('תּ')" onmouseout="hidetrans()" onclick="add('תּ')">t</span>
+<span class="t" onmouseover="showtrans('צ')" onmouseout="hidetrans()" onclick="add('צ')">ʦ</span>
+<span class="t" onmouseover="showtrans('ץ')" onmouseout="hidetrans()" onclick="add('ץ')">ʦ</span>
+<span class="t" onmouseover="showtrans('װ')" onmouseout="hidetrans()" onclick="add('װ')">w</span>
+<span class="t" onmouseover="showtrans('ו׳')" onmouseout="hidetrans()" onclick="add('ו׳')">w</span>
+<span class="t" onmouseover="showtrans('ב')" onmouseout="hidetrans()" onclick="add('ב')">v</span>
+<span class="t" onmouseover="showtrans('ו')" onmouseout="hidetrans()" onclick="add('ו')">v</span>
+<span class="t" onmouseover="showtrans('י')" onmouseout="hidetrans()" onclick="add('י')">y</span>
+<span class="t" onmouseover="showtrans('ז')" onmouseout="hidetrans()" onclick="add('ז')">z</span>
+<span class="t" onmouseover="showtrans('ז׳')" onmouseout="hidetrans()" onclick="add('ז׳')">ž</span>
+<span class="t" onmouseover="showtrans('א,ע')" onmouseout="hidetrans()" onclick="add('א,ע')">'</span>
+<span class="t" onmouseover="showtrans('א')" onmouseout="hidetrans()" onclick="add('א')">∅</span>
+<span class="t" onmouseover="showtrans('ה')" onmouseout="hidetrans()" onclick="add('ה')">∅</span>
+<span class="t" onmouseover="showtrans('ע')" onmouseout="hidetrans()" onclick="add('ע')">∅</span>
 <br/>
 matres: 
-<span class="t" onclick="dotrans('א,ה')">a</span>
-<span class="t" onclick="dotrans('י,א,ה')">e</span>
-<span class="t" onclick="dotrans('י')">i</span>
-<span class="t" onclick="dotrans('ו,א,ה')">o</span>
-<span class="t" onclick="dotrans('ו')">u</span>
-&nbsp;&nbsp;&nbsp; points:
-<span class="t" onclick="dotrans('ַ,ַה,ַא,ָ,ָה,ָא,ֲ')">a</span>
-<span class="t" onclick="dotrans('ֵ,ֵי,ֵה,ֵא,ֶ,ֶי,ֶה,ֶא,ֱ,ְ')">e</span>
-<span class="t" onclick="dotrans('ֵי')">ei</span>
-<span class="t" onclick="dotrans('ִי,ִ,יִ')">i</span>
-<span class="t" onclick="dotrans('ֹ,וֹ,ֹה,ֹא,ָ,ֳ')">o</span>
-<span class="t" onclick="dotrans('וּ,וּה,וּא,ֻ')">u</span>
-<span class="t" onclick="dotrans('ְ,ּ')">silent</span>
+<span class="t" onmouseover="showtrans('א')" onmouseout="hidetrans()" onclick="add('א')">a</span>
+<span class="t" onmouseover="showtrans('ה')" onmouseout="hidetrans()" onclick="add('ה')">a</span>
+<span class="t" onmouseover="showtrans('י')" onmouseout="hidetrans()" onclick="add('י')">e</span>
+<span class="t" onmouseover="showtrans('א')" onmouseout="hidetrans()" onclick="add('א')">e</span>
+<span class="t" onmouseover="showtrans('ה')" onmouseout="hidetrans()" onclick="add('ה')">e</span>
+<span class="t" onmouseover="showtrans('י')" onmouseout="hidetrans()" onclick="add('י')">i</span>
+<span class="t" onmouseover="showtrans('ו')" onmouseout="hidetrans()" onclick="add('ו')">o</span>
+<span class="t" onmouseover="showtrans('א')" onmouseout="hidetrans()" onclick="add('א')">o</span>
+<span class="t" onmouseover="showtrans('ה')" onmouseout="hidetrans()" onclick="add('ה')">o</span>
+<span class="t" onmouseover="showtrans('ו')" onmouseout="hidetrans()" onclick="add('ו')">u</span>
+<br/>
+points:
+<span class="t" onmouseover="showtrans('&#x05B7;')" onmouseout="hidetrans()" onclick="add('&#x05B7;')">a</span>
+<span class="t" onmouseover="showtrans('&#x05B7;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05B7;&#x05D4;')">a</span>
+<span class="t" onmouseover="showtrans('&#x05B7;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05B7;&#x05D0;')">a</span>
+<span class="t" onmouseover="showtrans('&#x05B8;')" onmouseout="hidetrans()" onclick="add('&#x05B8;')">a</span>
+<span class="t" onmouseover="showtrans('&#x05B8;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05B8;&#x05D4;')">a</span>
+<span class="t" onmouseover="showtrans('&#x05B8;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05B8;&#x05D0;')">a</span>
+<span class="t" onmouseover="showtrans('&#x05B2;')" onmouseout="hidetrans()" onclick="add('&#x05B2;')">a</span>
+
+<span class="t" onmouseover="showtrans('&#x05B5;')" onmouseout="hidetrans()" onclick="add('&#x05B5;')">e</span>
+<span class="t" onmouseover="showtrans('&#x05B5;&#x05D9;')" onmouseout="hidetrans()" onclick="add('&#x05B5;&#x05D9;')">e</span>
+<span class="t" onmouseover="showtrans('&#x05B5;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05B5;&#x05D4;')">e</span>
+<span class="t" onmouseover="showtrans('&#x05B5;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05B5;&#x05D0;')">e</span>
+<span class="t" onmouseover="showtrans('&#x05B6;')" onmouseout="hidetrans()" onclick="add('&#x05B6;')">e</span>
+<span class="t" onmouseover="showtrans('&#x05B6;&#x05D9;')" onmouseout="hidetrans()" onclick="add('&#x05B6;&#x05D9;')">e</span>
+<span class="t" onmouseover="showtrans('&#x05B6;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05B6;&#x05D4;')">e</span>
+<span class="t" onmouseover="showtrans('&#x05B6;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05B6;&#x05D0;')">e</span>
+<span class="t" onmouseover="showtrans('&#x05B1;')" onmouseout="hidetrans()" onclick="add('&#x05B1;')">e</span>
+<span class="t" onmouseover="showtrans('&#x05B0;')" onmouseout="hidetrans()" onclick="add('&#x05B0;')">e</span>
+
+<span class="t" onmouseover="showtrans('&#x05B5;&#x05D9;')" onmouseout="hidetrans()" onclick="add('&#x05B5;&#x05D9;')">ei</span>
+
+<span class="t" onmouseover="showtrans('&#x05B4;&#x05D9;')" onmouseout="hidetrans()" onclick="add('&#x05B4;&#x05D9;')">i</span>
+<span class="t" onmouseover="showtrans('&#x05B4;')" onmouseout="hidetrans()" onclick="add('&#x05B4;')">i</span>
+<span class="t" onmouseover="showtrans('&#x05D9;&#x05B4;')" onmouseout="hidetrans()" onclick="add('&#x05D9;&#x05B4;')">i</span>
+
+<span class="t" onmouseover="showtrans('&#x05B9;')" onmouseout="hidetrans()" onclick="add('&#x05B9;')">o</span>
+<span class="t" onmouseover="showtrans('&#x05D5;&#x05B9;')" onmouseout="hidetrans()" onclick="add('&#x05D5;&#x05B9;')">o</span>
+<span class="t" onmouseover="showtrans('&#x05B9;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05B9;&#x05D4;')">o</span>
+<span class="t" onmouseover="showtrans('&#x05B9;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05B9;&#x05D0;')">o</span>
+<span class="t" onmouseover="showtrans('&#x05B8;')" onmouseout="hidetrans()" onclick="add('&#x05B8;')">o</span>
+<span class="t" onmouseover="showtrans('&#x05B3;')" onmouseout="hidetrans()" onclick="add('&#x05B3;')">o</span>
+
+<span class="t" onmouseover="showtrans('&#x05D5;&#x05BC;')" onmouseout="hidetrans()" onclick="add('&#x05D5;&#x05BC;')">u</span>
+<span class="t" onmouseover="showtrans('&#x05D5;&#x05BC;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05D5;&#x05BC;&#x05D4;')">u</span>
+<span class="t" onmouseover="showtrans('&#x05D5;&#x05BC;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05D5;&#x05BC;&#x05D0;')">u</span>
+<span class="t" onmouseover="showtrans('&#x05BB;')" onmouseout="hidetrans()" onclick="add('&#x05BB;')">u</span>
+
+<span class="t" onmouseover="showtrans('&#x05B0;')" onmouseout="hidetrans()" onclick="add('&#x05B0;')">∅</span>
+<span class="t" onmouseover="showtrans('&#x05BC;')" onmouseout="hidetrans()" onclick="add('&#x05BC;')">∅</span>
 </div>
 
 
@@ -119,7 +179,38 @@ matres:
 
 <div id="tables" dir="rtl">
   
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+  
   <div id="alphabet" class="default">
+  
+  
+  
+  
+<div class="spaceline">
+<span class="touch" dir="auto" onClick="ccb=document.getElementById('controlchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">Format chars</span> 
+<span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');" style="transform: rotateY(180deg);">⇥</span> 
+<span class="touch" title="Tab" dir="auto" onClick="add('\n');" style="transform: rotateY(180deg);">⏎</span> 
+<span class="touch" title="Delete All" dir="auto" onClick="del();">DEL</span> 
+<span class="touch delAll"  dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+<div id="controlchars" style="display: none;">
+ <span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u202B');">RLE</span>
+ <span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span>
+ <span class="touch" dir="auto" onClick="add('\u2069');">PDI</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
+ <span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u200E');">LRM</span>
+ <span class="touch" dir="auto" onClick="add('\u061C');">ALM</span>
+ </div>
+
+
+
     <table id="kbd">
       <tr>
         <td style="vertical-align:middle;">
@@ -165,7 +256,7 @@ matres:
             <td><span class="c">&#x5BC;</span></td>
             <td><span class="c">&#x5C1;</span></td>
             <td><span class="c">&#x5C2;</span></td>
-            <td>&nbsp;</td>
+            <td> </td>
           </tr>
           <tr>
             <td><span class="c">&#x5B4;</span></td>
@@ -177,19 +268,13 @@ matres:
             <td><span class="c">&#x5B8;</span></td>
             <td><span class="c">&#x5B9;</span></td>
             <td><span class="c">&#x5BB;</span></td>
-            <td>&nbsp;</td>
+            <td> </td>
           </tr>
           <tr>
             <td><span class="c">&#x5B0;</span></td>
             <td><span class="c">&#x5B1;</span></td>
             <td><span class="c">&#x5B2;</span></td>
             <td><span class="c">&#x5B3;</span></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
           </tr>
         </table></td>
         <td style="vertical-align:middle;">
@@ -206,28 +291,38 @@ matres:
           <tr>
             <td><span class="c">&#x20AA;</span></td>
           </tr>
-          <tr>
-            <td>&nbsp;</td>
-          </tr>
         </table>
            </td>
-       <td id="controlchars" style="padding: 0 10px; text-align:center;">
-       <p><span class="touch" style="margin: 0; padding: 30px 40px;" dir="auto" onClick="add(' ');">SPACE</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> <span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch" dir="auto" onClick="add('\u2069');">PDI</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u202B');">RLE</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u200E');">LRM</span> <span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u061C');">ALM</span></p>
-         <p><span class="touch" title="Delete All" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span> <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span></p></td>
-</tr>
+    </tr>
     </table>
-    
-   <details style="margin: 0 4em 1em 4em;">
+  
+
+  
+ <div id="punctuation">  
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+         </div>
+
+
+
+   <details>
    <summary>show/hide rare characters</summary>
     <table id="rare">
       <tbody>
         <tr>
           <td><div><span class="c">&#x592;</span> <span class="c">&#x593;</span> <span class="c">&#x594;</span> <span class="c">&#x595;</span> <span class="c">&#x597;</span> <span class="c">&#x598;</span> <span class="c">&#x599;</span> <span class="c">&#x59C;</span> <span class="c">&#x59D;</span> <span class="c">&#x59E;</span> <span class="c">&#x59F;</span> <span class="c">&#x5A0;</span> <span class="c">&#x5A9;</span> <span class="c">&#x5A1;</span> <span class="c">&#x5A8;</span> <span class="c">&#x5AB;</span> <span class="c">&#x5AC;</span> <span class="c">&#x5AE;</span> <span class="c">&#x5AF;</span> <span class="c">&#x5BA;</span> <span class="c">&#x5BF;</span> <span class="c">&#x5C4;</span><br/>
-            <span class="c">&#x591;</span> <span class="c">&#x596;</span> <span class="c">&#x59A;</span> <span class="c">&#x59B;</span> <span class="c">&#x5A3;</span> <span class="c">&#x5A2;</span> <span class="c">&#x5A4;</span> <span class="c">&#x5A5;</span> <span class="c">&#x5A6;</span> <span class="c">&#x5A7;</span> <span class="c">&#x5AA;</span> <span class="c">&#x5AD;</span> <span class="c">&#x5BD;</span> <span class="c">&#x5C5;</span> <span class="c">&#x5C7;</span> &nbsp;&nbsp;&nbsp; <span  class="c">&#x5C0;</span> <span class="c">&#x5C3;</span> <span class="c">&#x5C6;</span></div></td>
+            <span class="c">&#x591;</span> <span class="c">&#x596;</span> <span class="c">&#x59A;</span> <span class="c">&#x59B;</span> <span class="c">&#x5A3;</span> <span class="c">&#x5A2;</span> <span class="c">&#x5A4;</span> <span class="c">&#x5A5;</span> <span class="c">&#x5A6;</span> <span class="c">&#x5A7;</span> <span class="c">&#x5AA;</span> <span class="c">&#x5AD;</span> <span class="c">&#x5BD;</span> <span class="c">&#x5C5;</span> <span class="c">&#x5C7;</span>  <span  class="c">&#x5C0;</span> <span class="c">&#x5C3;</span> <span class="c">&#x5C6;</span></div></td>
         </tr>
       </tbody>
     </table>
