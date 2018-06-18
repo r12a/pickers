@@ -295,14 +295,24 @@
 
 <div class="spaceline">
 <span id="cursive"></span>
-<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
-<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" dir="auto" onClick="ccb=document.getElementById('formatchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">Format chars</span> 
 <span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');" style="transform: rotateY(180deg);">⇥</span> 
 <span class="touch" title="Tab" dir="auto" onClick="add('\n');" style="transform: rotateY(180deg);">⏎</span> 
 <span class="touch" title="Delete All" dir="auto" onClick="del();">DEL</span> 
 <span class="touch delAll"  dir="auto" onClick="deleteAll();">❌</span>
 </div>
+
+
+<div id="formatchars" style="display: none;">
+ <span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u202B');">RLE</span>
+ <span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span>
+ <span class="touch" dir="auto" onClick="add('\u2069');">PDI</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
+ <span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u200E');">LRM</span>
+ <span class="touch" dir="auto" onClick="add('\u061C');">ALM</span>
+ </div>
 
 
 
@@ -457,22 +467,6 @@
          <span class="c">&#x060E;</span>
          <span class="c">&#x0603;</span>
          <span class="c">&#x060F;</span>
-         
-         <br/>
-         
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u2067');">RLI</span>
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u2066');">LRI</span>
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u2068');">FSI</span>
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u2069');">PDI</span>
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u202B');">RLE</span>
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u202A');">LRE</span>
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u202C');">PDF</span>
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u202E');">RLO</span>
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u202D');">LRO</span>
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u200F');">RLM</span>
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u200E');">LRM</span>
-          <span class="touch" style="padding: 5px 5px;" onClick="add('\u061C');">ALM</span>
-
          </div>
 
 
