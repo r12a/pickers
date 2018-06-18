@@ -246,14 +246,24 @@
 
 
 <div class="spaceline">
-<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
-<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" dir="auto" onClick="ccb=document.getElementById('controlchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">Format chars</span> 
 <span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');" style="transform: rotateY(180deg);">⇥</span> 
 <span class="touch" title="Tab" dir="auto" onClick="add('\n');" style="transform: rotateY(180deg);">⏎</span> 
 <span class="touch" title="Delete All" dir="auto" onClick="del();">DEL</span> 
 <span class="touch delAll"  dir="auto" onClick="deleteAll();">❌</span>
 </div>
+
+
+<div id="controlchars" style="display: none;">
+ <span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u202B');">RLE</span>
+ <span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span>
+ <span class="touch" dir="auto" onClick="add('\u2069');">PDI</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
+ <span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u200E');">LRM</span>
+ <span class="touch" dir="auto" onClick="add('\u061C');">ALM</span>
+ </div>
 
 
 
@@ -337,13 +347,6 @@
          </tr>
      </tbody>
    </table></td>
-       <td id="controlchars" style="padding: 0; text-align:center;">
-         <p><span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u202B');">RLE</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u2069');">PDI</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u200E');">LRM</span></p>
-         <p><span class="touch" dir="auto" onClick="add('\u061C');">ALM</span></p>
-         </td>
    <td>
 <table id="numbers" style="margin: 0 10px; border: 1px solid #ccc; border-radius: 10px;">
     <tbody>
@@ -371,24 +374,35 @@
   </table>
      </td>
 </tr>
- <tr>
-   <td colspan="4"><table id="additional">
-     <tbody>
-       <tr>
-         <td><span class="c">.</span></td>
-         <td><span class="c">&#x060C;</span></td>
-         <td><span class="c">&#x061B;</span></td>
-         <td><span class="c">&#x061F;</span></td>
-         <td><span class="c">&#x0640;</span></td>
-         <td style="vertical-align:middle;"><span class="touch" dir="auto" onClick="add('\u070F');">SAM</span></td>
-         <td><span class="c">&#x0308;</span></td>
-         <td><span class="c">&#x032E;</span></td>
-         </tr>
-       </tbody>
-   </table></td>
-   </tr>
  </table>
 
+  
+ <div id="punctuation">  
+         <span class="c">&#x060C;</span>
+         <span class="c">.</span>
+         <span class="c">&#x061B;</span>
+        <span class="c">:</span>
+        <span class="c">&#x061F;</span>
+         <span class="c">&#x060D;</span>
+         <span class="c">&#x066A;</span>
+         <span class="c">&#x0640;</span>
+         
+         <span class="c">&#x00AB;</span>
+         <span class="c">&#x00BB;</span>
+         <span class="c">&#x2039;</span>
+         <span class="c">&#x203A;</span>
+         <span class="c">(</span>
+         <span class="c">)</span>
+
+         <span class="c">.</span>
+         <span class="c">&#x060C;</span>
+         <span class="c">&#x061B;</span>
+         <span class="c">&#x061F;</span>
+         <span class="c">&#x0640;</span>
+         <span class="touch" dir="auto" onClick="add('\u070F');">SAM</span>
+         <span class="c">&#x0308;</span>
+         <span class="c">&#x032E;</span>
+</div>
 
 
 <details>
