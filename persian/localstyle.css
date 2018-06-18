@@ -53,6 +53,15 @@ span.hint {
 
 /* SELECTION AREA */
 
+#formatchars {
+    text-align: center;
+    margin-bottom: .25em;
+    line-height: 1;
+    }
+.spaceline {
+    margin-bottom: 0;
+    }
+
 #kbdGrid {
  display: flex;
  flex-direction: row;
