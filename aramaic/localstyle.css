@@ -67,6 +67,9 @@ span.hint {
     margin-bottom: .25em;
     line-height: 1;
     }
+.spaceline {
+    margin-bottom: 0;
+    }
 
 #kbdGrid {
  display: flex;
@@ -145,7 +148,7 @@ span.hint {
 #spaceEtc {
     text-align: center;
     vertical-align: middle;
-	margin-bottom: 1em;
+	margin-bottom: 0;
     }
 
 #alphabet summary {
@@ -175,3 +178,7 @@ span.hint {
     display: inline-block;
     }
 
+#translit {
+    margin: auto;
+    
+}
