@@ -9,6 +9,20 @@
 
 *[lang=ur] { font-family: 'Noto Nastaliq Urdu WF', serif; }
 
+/* KEYBOARD */
+.key span { 
+	font-size: 1.4em; 
+	font-weight: normal; 
+	font-family:  'Scheherazade WF',  'Arial', sans-serif;  
+    line-height: 1;
+	}
+.key {padding: 4px 0 0 0; }
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
 #alphabet { display: block; margin-right: 20px;  }
 
 #alphabet td.hint {  
@@ -18,7 +32,11 @@
 	text-align: end;
 	vertical-align: top;
 	}
-	
+
+.spaceline {
+    line-height: 1.5em;
+    }
+
 #kbd, #additional, #punctuation { 	
 	margin: auto; 
 	}
@@ -34,10 +52,15 @@
 	text-align: start;
 	cursor:pointer;
 	vertical-align: top; 
-	line-height: 1.4;
+	line-height: 2;
 	}
-#kbd #consonants  {
-	text-align: start;
+#kbd #consonants {
+    width: 18em;
+    padding: 0 .5em;
+	}
+#kbd #consonants div {
+    display: flex;
+	justify-content: space-between;
 	}
 #kbd #consonants td  {
 	padding: 0 2px;
@@ -55,6 +78,13 @@
 	min-width: 20px;
 	}
 
+#punctuation {
+    text-align: center;
+    font-size: 90%;
+    line-height: 1;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    }
 
 
 #alphabet #controlchars {
@@ -73,3 +103,14 @@
 .touch {
 	margin: 0;
 	}
+#shapekeys {
+    margin-top: 1.5em;
+}
+
+
+#cursive {
+    width: 6em;
+    display: inline-block;
+    }
+
+
