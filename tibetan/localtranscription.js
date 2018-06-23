@@ -1,8 +1,143 @@
 function localtranscribe (direction, str) {
 	
 	if (direction === 'toWylie') { return toWylie(str) }
+	if (direction === 'transliterate') { return transliterate(str) }
 	}
-		
+
+
+
+function transliterate (str) {
+
+str = str + '  '
+
+// consonants
+str = str.replace(/ཀ/g, "k")
+str = str.replace(/ཁ/g, "kʰ")
+str = str.replace(/ག/g, "g")
+str = str.replace(/གྷ/g, "gʰ")
+str = str.replace(/ང/g, "ṅ")
+str = str.replace(/ཅ/g, "c")
+str = str.replace(/ཆ/g, "cʰ")
+str = str.replace(/ཇ/g, "j")
+str = str.replace(/ཉ/g, "ñ")
+str = str.replace(/ཊ/g, "ṭ")
+str = str.replace(/ཋ/g, "ṭʰ")
+str = str.replace(/ཌ/g, "ḍ")
+str = str.replace(/ཌྷ/g, "ḍʰ")
+str = str.replace(/ཎ/g, "ṇ")
+str = str.replace(/ཏ/g, "t")
+str = str.replace(/ཐ/g, "tʰ")
+str = str.replace(/ད/g, "d")
+str = str.replace(/དྷ/g, "d")
+str = str.replace(/ན/g, "n")
+str = str.replace(/པ/g, "p")
+str = str.replace(/ཕ/g, "pʰ")
+str = str.replace(/བ/g, "b")
+str = str.replace(/བྷ/g, "b")
+str = str.replace(/མ/g, "m")
+str = str.replace(/ཙ/g, "ʦ")
+str = str.replace(/ཚ/g, "ʦʰ")
+str = str.replace(/ཛ/g, "ʣ")
+str = str.replace(/ཛྷ/g, "ʣʰ")
+str = str.replace(/ཝ/g, "w")
+str = str.replace(/ཞ/g, "zʰ")
+str = str.replace(/ཟ/g, "z")
+str = str.replace(/འ/g, "à")
+str = str.replace(/ཡ/g, "y")
+str = str.replace(/ར/g, "r")
+str = str.replace(/ལ/g, "l")
+str = str.replace(/ཤ/g, "š")
+str = str.replace(/ཥ/g, "ṣ")
+str = str.replace(/ས/g, "s")
+str = str.replace(/ཧ/g, "h")
+str = str.replace(/ཨ/g, "ạ")
+str = str.replace(/ཀྵ/g, "kˢ")
+str = str.replace(/ཪ/g, "ṛ")
+
+// subjoined consonants   alt: ˖
+str = str.replace(/ྐ/g, "k\u033D")
+str = str.replace(/ྑ/g, "kʰ\u033D")
+str = str.replace(/ྒ/g, "g\u033D")
+str = str.replace(/ྒྷ/g, "gʰ\u033D")
+str = str.replace(/ྔ/g, "ṅ\u033D")
+str = str.replace(/ྕ/g, "c\u033D")
+str = str.replace(/ྖ/g, "cʰ\u033D")
+str = str.replace(/ྗ/g, "j\u033D")
+str = str.replace(/ྙ/g, "ñ\u033D")
+str = str.replace(/ྚ/g, "ṭ\u033D")
+str = str.replace(/ྛ/g, "ṭʰ\u033D")
+str = str.replace(/ྜ/g, "ḍ\u033D")
+str = str.replace(/ྜྷ/g, "ḍʰ\u033D")
+str = str.replace(/ྞ/g, "ṇ\u033D")
+str = str.replace(/ྟ/g, "t\u033D")
+str = str.replace(/ྠ/g, "tʰ\u033D")
+str = str.replace(/ྡ/g, "d\u033D")
+str = str.replace(/ྡྷ/g, "dʰ\u033D")
+str = str.replace(/ྣ/g, "n\u033D")
+str = str.replace(/ྤ/g, "p\u033D")
+str = str.replace(/ྥ/g, "pʰ\u033D")
+str = str.replace(/ྦ/g, "b\u033D")
+str = str.replace(/ྦྷ/g, "bʰ\u033D")
+str = str.replace(/ྨ/g, "m\u033D")
+str = str.replace(/ྩ/g, "ʦ\u033D")
+str = str.replace(/ྪ/g, "ʦʰ\u033D")
+str = str.replace(/ྫ/g, "ʣ\u033D")
+str = str.replace(/ྫྷ/g, "ʣʰ\u033D")
+str = str.replace(/ྭ/g, "w\u033D")
+str = str.replace(/ྮ/g, "zʰ\u033D")
+str = str.replace(/ྯ/g, "zʰ\u033D")
+str = str.replace(/ྰ/g, "à\u033D")
+str = str.replace(/ྱ/g, "y\u033D")
+str = str.replace(/ྲ/g, "r\u033D")
+str = str.replace(/ླ/g, "l\u033D")
+str = str.replace(/ྴ/g, "š\u033D")
+str = str.replace(/ྵ/g, "ṣ\u033D")
+str = str.replace(/ྶ/g, "s\u033D")
+str = str.replace(/ྷ/g, "h\u033D")
+str = str.replace(/ྸ/g, "ạ\u033D")
+str = str.replace(/ྐྵ/g, "kˢ\u033D")
+
+// vowels
+str = str.replace(/ཱ/g, "à")
+str = str.replace(/ི/g, "i")
+str = str.replace(/ཱི/g, "ī")
+str = str.replace(/ུ/g, "u")
+str = str.replace(/ཱུ/g, "ū")
+str = str.replace(/ྲྀ/g, "r̥")
+str = str.replace(/ཷ/g, "r̥̄")
+str = str.replace(/ླྀ/g, "l̥")
+str = str.replace(/ཹ/g, "l̥̄")
+str = str.replace(/ེ/g, "e")
+str = str.replace(/ཻ/g, "ē")
+str = str.replace(/ོ/g, "o")
+str = str.replace(/ཽ/g, "ō")
+str = str.replace(/ྀ/g, "i")
+str = str.replace(/ཱྀ/g, "ī")
+
+// punctuation
+str = str.replace(/་/g, " ")
+str = str.replace(/།/g, " | ")
+str = str.replace(/༎/g, " ‖ ")
+
+// digits
+str = str.replace(/༡/g, "1")
+str = str.replace(/༢/g, "2")
+str = str.replace(/༣/g, "3")
+str = str.replace(/༤/g, "4")
+str = str.replace(/༥/g, "5")
+str = str.replace(/༦/g, "6")
+str = str.replace(/༧/g, "7")
+str = str.replace(/༨/g, "8")
+str = str.replace(/༩/g, "9")
+str = str.replace(/༠/g, "0")
+
+
+
+return str.trim()
+
+}
+
+
 		
 function inSet (group, ch) {
 	if (group.indexOf(ch) > -1) return true

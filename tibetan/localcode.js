@@ -2,6 +2,7 @@ function localInitialise () {
 	}
 
 globals.showWylieTrans = ''
+globals.showTranslit =  ''
 
 var _h = {
 'F40': ['F69', 'F6B'],
@@ -81,3 +82,22 @@ var keyboarddef = [
 "|ओ,े|ए,्|अ,ि|इ,ु|उ,प|फ,र|ऱ,क|ख,त|थ,च|छ,ट|ठ,ॉ|ऑ",
 "ॊ|ऒ,ॆ|ऎ,ं|ँ,म|ण,न|ऩ,व|ऴ,ल|ळ,स|श, |ष,.|।,य|य़"
 ]
+
+
+function toggleShift (node) {
+    var chars = document.querySelectorAll('.x')
+
+    if (node.className =='unshifted') {
+        for (let i=0;i<chars.length;i++) {
+            if (chars[i].id === 'translitvowels') chars[i].style.display = 'block'
+            else chars[i].style.display = 'inline-block'
+            }
+		node.className = 'shifted'
+		} 
+	else {
+        for (let i=0;i<chars.length;i++) {
+            chars[i].style.display = 'none'
+            }
+		node.className = 'unshifted'
+		}
+	}

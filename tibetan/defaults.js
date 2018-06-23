@@ -31,11 +31,13 @@ var template = {}
 var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
 {"title":"Wylie transcription", "dataVar":"showWylieTrans", "dataLocn":"wylietranscript", "dataShortTitle":"W", "type":"palette"}
 //{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
+{"title":"Trans-<br/>literate", "alt":"Convert XXXXXXXX text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 {"title":"Transcribe<br/>to Wylie", "alt":"Convert Tibetan text to a Latin (Wylie) transcription.", "code":"doTranscription('toWylie')"},
 {"title":"Transcribe<br/>from Wylie", "alt":"Convert a Latin (Wylie) transcription to Tibetan text.", "code":"var converter = window.open('http://www.thlib.org/reference/transliteration/wyconverter.php', 'converter') ; converter.focus();"},
 ]
