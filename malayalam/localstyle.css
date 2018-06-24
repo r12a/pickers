@@ -9,62 +9,158 @@
 
 [lang=ml] { font-family: 'Noto Sans Malayalam WF', serif; }
 
+
+
+[lang=gu] { font-family: 'Noto Sans Gujarati WF', serif; }
+
+
+
 #alphabet { 
 	display: block; 
 	color: #666;
 	}
 
 span.hint { 
-	margin-right: 3px;
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
 	}
 
-
-#kbd { 	
-	margin: auto; 
-	}
-#kbd table {
-	margin:0;
-	}
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: left;
-	font-size: 25px;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1.4;
-	}
-#kbd td.hint {  
-	font-size: 12px;
-	color: #ccc;
-	text-align: right;
-	vertical-align: top;
-	}
-#kbd img {
-	vertical-align: top;
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Gujarati WF',  sans-serif;  
+    line-height: 1;
 	}
 
-
-#consonants td {  padding: 0;  white-space: nowrap; }
-
-#combining { border-collapse:collapse; margin-top: 10px; margin-bottom: 10px; width: 300px; padding:5px; border: solid 1px #ccc; border-radius: 10px; }
-#combining td { padding-right: 10px; }
-#chillus { padding-left: 10px; }
-#kbd #secondpanel { padding-left:20px; }
-
-.phonicspaces { padding-left: 10px; padding-right: 10px; width: 28px; }
-.uaplosives { white-space: nowrap; }
-.aspiratedplosives { white-space: nowrap; }
-.vowels{ padding: 5px; margin-bottom: 5px; width: 750px; }
+#keyboard { display: none; }
 
 
-#kbd #numbers  {  padding: 5px; border: solid 1px #ccc; border-radius: 10px; }
 
-#shapelist, #extrashapes {
-	text-align:center;
-	}
+/* SELECTION AREA */
 
-#rare {
-	margin: auto;
-	}
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#ivowelGrid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 12em;
+    justify-content: space-between;
+    line-height: 1.5;
+    text-align: right;
+    }
+#ivowelGrid div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 5em;
+    justify-content: flex-end;
+    }
+#virama {
+    width: 2em;
+    display: flex;
+    flex-direction: column;
+    margin: 0 .3em 0 .4em;
+    justify-content: center;
+    align-items: center;
+    }
+#consonantGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 12em;
+    }
+#consonantGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 10em;
+    justify-content: space-between;
+    }
+#moreconsonants {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 3em;
+    justify-content: space-between;
+    align-content: center;
+    height: 12em;
+    margin-left: .3em;
+   }
+#diacritics {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    height: 9em;
+    margin-left: .5em;
+    line-height: 1.75;
+    }
+#vowelGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 11em;
+    margin-left: .3em;
+    padding: .25em .3em .25em .2em;
+    border: 1px solid #ccc;
+    border-radius: .5em;
+    }
+#vowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 5em;
+    justify-content: space-around;
+    }
+#numberGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 9em;
+    margin-left: .5em;
+    }
+#numberGrid div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 5em;
+    justify-content: space-between;
+    font-size: 90%;
+    line-height: 1.75;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#hidden {
+    text-align: center;
+    font-size: 90%;
+    }
+
