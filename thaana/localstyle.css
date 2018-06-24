@@ -135,23 +135,6 @@ span.hint {
     line-height: 1;
     margin-bottom: .2em;
     }
-/*
-#alphabet #controlchars {
-	display: flex;
-    width: 3em;
-    flex-wrap: wrap;
-    align-items: stretch;
-    text-align: center;
-    align-content: space-between;
-    justify-content: center;
-	}
-#alphabet #controlchars p {
-	margin: .1em 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: .8;
-	}
-*/
 .touch {
     margin: 0;
     }
@@ -162,7 +145,9 @@ span.hint {
     }
 #punctuation {
     text-align: center;
-    font-size: 80%;
+    font-size: 70%;
+    line-height: 1.7;
+    margin-top: .5em;
     }
 
 #alphabet summary {
@@ -173,103 +158,5 @@ span.hint {
     }
 
 
-
-
-/*
-#alphabet td span.c { 
-	cursor: pointer; 
-	font-family: "Noto Sans Thaana WF", "Noto Sans Thaana", "Noto Serif Thaana", A_Faseyha, sans-serif;
-	font-size: 24px;
-	padding: 1px;
-	min-width: 18px;
-	}
-
-
-#alphabet td.hint {  
-	font-size: 14px;
-	color: #ccc;
-	text-align: right;
-	vertical-align: top;
-	}
-	
-#kbd { 	
-	margin: auto; 
-	}
-#kbd table {
-	margin:0;
-	}
-	
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: start;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1.2;
-	}
-#kbd #consonants {
-	margin-left: 20px; 
-	}
-
-#kbd #vowels {
-	margin-left: 20px;
-	border: 1px dotted #ccc;
-	border-radius: 5px; 
-	}
-	
-#kbd #consonants td, #kbd #vowels td {
-	text-align: center;
-	}
-#kbd #consonants .c, #kbd #vowels .c  {
-	min-width:.75em;
-	text-align: center;
-	}
-	
-#kbd #ligatures td {
-	line-height: 1.35;
-	}
-#kbd #ligatures {
-	border: 1px dotted #ccc;
-	border-radius: 5px; 
-	}
-
-
-#kbd #punctuation {
-	margin-left: 20px;
-	}
-#kbd #punctuation td {
-	min-width: 30px;
-	}
-
-
-#toggleRare {
-	font-size: 12px;
-	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif;
-	}
-
-
-
-.key span { 
-	font-size: 20px; 
-	color: gray; 
-	font-weight: normal; 
-	font-family:  "Mongolian White",  "mongolian writing",sans-serif;  
-	cursor:pointer; 
-	text-align: center; 
-	line-height: 1;
-	}
-.key .s { position:absolute; bottom: 10px; left: 20px; }
-.key .n { position:absolute; bottom: 10px; right: 8px;  }
-
-
-#alphabet #controlchars {
-	padding: 0 10px; text-align:center;
-	}
-#alphabet #controlchars p {
-	margin: .5em 0;
-	}
-
-*/
 
 
