@@ -251,9 +251,10 @@ out = `
 	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
 
 
-<div id="userFontMgt" class="control" style="width: 50%; height: 5em;padding: 1em; display: flex; flex-direction: row; flex-wrap: nowrap;">
-<span style="padding-right: 1em; width: 30%; text-align:start;">List fonts you want to add to the font selection lists. One font name per line.</span><br>
-<textarea id="fontManagementList" style="width: 50%; height: 100%;"></textarea> <button onclick="manageUserFonts(document.getElementById('fontManagementList').value)">Set</button>
+<div id="userFontMgt" class="control" style="width: 26em; height: 5em;padding: .5em; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: start;">
+<span style="padding-right: 1em; flex:4; text-align:start;">List fonts you want to add to the font selection lists. One font name per line.</span>
+<textarea id="fontManagementList" style="flex:6; height: 100%;"></textarea>
+<button style="flex:.5; margin-left:.5em;" onclick="manageUserFonts(document.getElementById('fontManagementList').value)">Set</button>
 </div>
 
 <a class="interactiveHelpButton" href="help/#manage_fonts" target="_help" title="Help with font management controls."><img alt="help" src="../images/help.png"/></a>
