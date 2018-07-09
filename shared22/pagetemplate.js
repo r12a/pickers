@@ -188,7 +188,7 @@ out = `
 
 
 <div id="controls">
-  <div class="control">Change the font:<br />
+  <div class="control">Change the text area font:<br />
     <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
 ` +
   fontSelection
@@ -196,11 +196,11 @@ out = `
  `
  	    </select>
  </div>
-  <div class="control">Add another font:<br />
+  <!--div class="control">Add another font:<br />
     <form action="none" onsubmit="customFont(document.getElementById('fontName').value); return false;">
       <input name="fontName" id="fontName" value="`+defaults.font+`" onclick="this.select();" />
     </form>
-  </div>
+  </div-->
   
   
   
@@ -229,8 +229,38 @@ out = `
 
 
 
+<div id="fontManager">
+</div>
+
+
+
 
 <div id="extracontrols">
+
+<details>
+<summary>manage fonts</summary>
+
+
+<div class="control" id="uiFontControl">Change selection area font:<br />
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+` +
+  fontSelection
+  +
+ `
+    </select>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+
+
+<div id="userFontMgt" class="control" style="width: 50%; height: 5em;padding: 1em; display: flex; flex-direction: row; flex-wrap: nowrap;">
+<span style="padding-right: 1em; width: 30%; text-align:start;">List fonts you want to add to the font selection lists. One font name per line.</span><br>
+<textarea id="fontManagementList" style="width: 50%; height: 100%;"></textarea> <button onclick="manageUserFonts(document.getElementById('fontManagementList').value)">Set</button>
+</div>
+</details>
+
+
+
+
+
 <details>
 <summary>more controls</summary>
 
@@ -274,20 +304,6 @@ out = `
   <button>Go</button>
 </form>
 </div>
-
-
-<br style="clear:both;"/>
-
-
-<div class="control" id="uiFontControl">Change UI font:<br />
-    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
-` +
-  fontSelection
-  +
- `
-    </select>
-	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
-
 
 
 <div class="control" id="ccBaseControl">CC base:<br />

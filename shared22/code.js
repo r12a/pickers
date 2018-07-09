@@ -343,19 +343,38 @@ function selectFont ( newFont ) {
 	document.getElementById( 'output' ).style.fontFamily = "'"+newFont+"', 'Doulos SIL'"
 	document.querySelector('#panel #title').style.fontFamily ="'"+newFont+"', 'Doulos SIL'"
 	document.querySelector('#transcription').style.fontFamily ="'Doulos SIL', '"+newFont+"', 'Gentium Plus', 'Charis Sil', Gentium, serif"
-	document.getElementById('fontName').value="";
+	//document.getElementById('fontName').value="";
 
 	defaults.font = newFont
-    console.log(defaults.font)
+    console.log("Default font set to ",defaults.font)
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
     document.getElementById('fontList').value = defaults.font
 	}
 	
 function customFont ( newFont ) { 
 	if (newFont.match('"') || newFont.match(',')) { alert('Use a single font with no quotes.'); return }
-	addFontToLists(newFont, 'fontList,uiFont');
+	addFontToLists(newFont, 'fontList,uiFont')
 	selectFont(newFont)
 	}
+
+function manageUserFonts (flist) {
+    // clean the list and create an array
+    flist = flist.replace(/[ ]+/g,' ')
+    flistArray = flist.split('\n')
+    for (let i=0;i<flistArray.length;i++) flistArray[i] = flistArray[i].trim()
+    
+    removeUserFonts('fontList,uiFont')
+    defaults.userfonts = flistArray.join()
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+
+    for (let i=0;i<flistArray.length;i++) {
+        addFontToLists(flistArray[i], 'fontList,uiFont', false)
+        }
+    
+    console.log(flistArray)
+
+    alert('User fonts updated in selection lists.')
+    }
 
 
 function changeFontSize ( newSize ) {
@@ -1049,7 +1068,15 @@ function setUpValues () {
 //window.onload = function() { 
 	initialise(); 
 	localInitialise(); 
-	if (defaults.font) { 
+	if (defaults.userfonts) {
+        var flistArray = defaults.userfonts.split(',')
+        for (let i=0;i<flistArray.length;i++) {
+            addFontToLists(flistArray[i], 'fontList,uiFont', false)
+            document.getElementById('fontManagementList').value += flistArray[i]+'\n'
+            }
+		}
+    else (defaults.userfonts = '')
+    if (defaults.font) { 
         var fonts = document.getElementById('fontList').querySelectorAll('option')
         var found = false
         for (let i=0;i<fonts.length;i++) if (fonts[i].value === defaults.font) { found = true }
