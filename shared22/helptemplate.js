@@ -150,6 +150,16 @@ return `
     <p><b class="leadin">Font size.</b> Allows you to adjust the size of the font for the text area. There is another control, under <samp translate="no">more controls</samp>, that allows you to specify the size by typing in a number, if needed.</p>
     <p><b class="leadin">Add codepoint.</b> You can add characters to the text area by typing codepoints and escapes in the <samp translate="no">Add codepoint</samp> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</p>
     <p><b class="leadin">Search for. </b>If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the <samp translate="no">X</samp> next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <kbd  translate="no">\bha\b</kbd> (or the shortcut, <kbd  translate="no">:ha:</kbd>).</p>
+
+
+  <h2 id="manage_fonts" href="#manage_fonts">Manage fonts</h2>
+    <p><img src="../../shared22/images/help/manage_fonts.png" alt=""/></p>
+    
+  <p>Click on <samp>manage fonts</samp> to reveal the controls described here.</p>
+
+  <p><b class="leadin">Change UI font. </b> Allows you to change the font and size of the characters you click on in the main selection areas. </p>
+
+    <p><b class="leadin">List fonts... </b> Add font names to this control (one per line) and they will be added to the font selector lists. If you agreed to store settings, they will be remembered for your next session on that device (you need to set these lists separately on each device you use).</p>
 `
 }
 
@@ -159,17 +169,7 @@ return `
 function addMoreControls (direction) {
 out = ''
 out +=  `
-  <h2 href="#manage_fonts">Manage fonts</h2>
-    <p><img src="../../shared22/images/help/manage_fonts.png" alt=""/></p>
-    
-  <p>Click on <samp>manage fonts</samp> to reveal the controls described here.</p>
-
-  <p><b class="leadin">Change UI font. </b> Allows you to change the font and size of the characters you click on in the main selection areas. </p>
-
-    <p><b class="leadin">List fonts... </b> Add font names to this control (one per line) and they will be added to the font selector lists. If you agreed to store settings, they will be remembered for your next session on that device (you need to set these lists separately on each device you use).</p>
-  
-  
-  <h2 href="#more_controls">More controls</h2>
+  <h2 id="more_controls" href="#more_controls">More controls</h2>
   `
   if (direction === 'rtl') out += '<p><img src="../../shared22/images/help/more_controls_rtl.png" alt=""/></p>'
   else out += '<p><img src="../../shared22/images/help/more_controls.png" alt=""/></p>'

@@ -255,6 +255,9 @@ out = `
 <span style="padding-right: 1em; width: 30%; text-align:start;">List fonts you want to add to the font selection lists. One font name per line.</span><br>
 <textarea id="fontManagementList" style="width: 50%; height: 100%;"></textarea> <button onclick="manageUserFonts(document.getElementById('fontManagementList').value)">Set</button>
 </div>
+
+<a class="interactiveHelpButton" href="help/#manage_fonts" target="_help" title="Help with font management controls."><img alt="help" src="../images/help.png"/></a>
+
 </details>
 
 
