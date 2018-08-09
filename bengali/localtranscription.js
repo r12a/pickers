@@ -1,10 +1,131 @@
 ﻿function localtranscribe (direction, str) {
 	
+	if (direction == 'transliterate') { return transliterate(str) }
 	if (direction == 'rtoBeng') { return radiceToBengali(str) }
 	if (direction == 'toBeng') { return isoToBengali(str) }
 	if (direction == 'toISO') { return bengaliToISO(str) }
 	if (direction == 'toRadice') { return bengaliToRadice(str) }
 	}
+
+
+
+
+function transliterate (str) { 
+    
+str = str + '  '
+str = str.normalize('NFC')
+
+str = str.replace(/\u09CD/g, "͓") // virama
+
+// nuktas & specials
+str = str.replace(/ৎ/g, "ṯ")
+str = str.replace(/ড়/g, "ṛ")
+str = str.replace(/ঢ়/g, "ṛʰ")
+str = str.replace(/য়/g, "ẏ")
+
+
+// consonants 
+str = str.replace(/ক/g, "k")
+str = str.replace(/খ/g, "kʰ")
+str = str.replace(/গ/g, "g")
+str = str.replace(/ঘ/g, "gʰ")
+str = str.replace(/ঙ/g, "ṅ")
+str = str.replace(/চ/g, "c")
+str = str.replace(/ছ/g, "cʰ")
+str = str.replace(/জ/g, "j")
+str = str.replace(/ঝ/g, "jʰ")
+str = str.replace(/ঞ/g, "ñ")
+str = str.replace(/ট/g, "ṭ")
+str = str.replace(/ঠ/g, "ṭʰ")
+str = str.replace(/ড/g, "ḍ")
+str = str.replace(/ঢ/g, "ḍʰ")
+str = str.replace(/ণ/g, "ṇ")
+str = str.replace(/ত/g, "t")
+str = str.replace(/থ/g, "tʰ")
+str = str.replace(/দ/g, "d")
+str = str.replace(/ধ/g, "dʰ")
+str = str.replace(/ন/g, "n")
+str = str.replace(/প/g, "p")
+str = str.replace(/ফ/g, "pʰ")
+str = str.replace(/ব/g, "b")
+str = str.replace(/ভ/g, "bʰ")
+str = str.replace(/ম/g, "m")
+str = str.replace(/য/g, "y")
+str = str.replace(/র/g, "r")
+str = str.replace(/ল/g, "l")
+str = str.replace(/শ/g, "ś")
+str = str.replace(/ষ/g, "ṣ")
+str = str.replace(/স/g, "s")
+str = str.replace(/হ/g, "h")
+
+
+// medials
+
+// finals
+
+// vocalics
+
+// independent vowels
+str = str.replace(/অ/g, "a")
+str = str.replace(/আ/g, "ā")
+str = str.replace(/ই/g, "i")
+str = str.replace(/ঈ/g, "ī")
+str = str.replace(/উ/g, "u")
+str = str.replace(/ঊ/g, "ū")
+str = str.replace(/ঋ/g, "r̥")
+str = str.replace(/এ/g, "e")
+str = str.replace(/ঐ/g, "ai")
+str = str.replace(/ও/g, "o")
+str = str.replace(/ঔ/g, "au")
+
+
+// vowel signs
+str = str.replace(/া/g, "ā")
+str = str.replace(/ি/g, "i")
+str = str.replace(/ী/g, "ī")
+str = str.replace(/ু/g, "u")
+str = str.replace(/ূ/g, "ū")
+str = str.replace(/ৃ/g, "r̥")
+str = str.replace(/ে/g, "e")
+str = str.replace(/ৈ/g, "ai")
+str = str.replace(/ো/g, "o")
+str = str.replace(/ৌ/g, "au")
+
+
+// diacritics
+str = str.replace(/ঁ/g, "m̐")
+str = str.replace(/ং/g, "ṁ")
+str = str.replace(/ঃ/g, "ḥ")
+
+
+// digits
+str = str.replace(/০/g, "0")
+str = str.replace(/১/g, "1")
+str = str.replace(/২/g, "2")
+str = str.replace(/৩/g, "3")
+str = str.replace(/৪/g, "4")
+str = str.replace(/৫/g, "5")
+str = str.replace(/৬/g, "6")
+str = str.replace(/৭/g, "7")
+str = str.replace(/৮/g, "8")
+str = str.replace(/৯/g, "9")
+
+
+// punctuation
+str = str.replace(/।/g, ".")
+str = str.replace(/॥/g, ".")
+
+
+
+	return str.trim()
+
+
+    }
+
+
+
+
+
 
 
 function inSet (group, ch) {
@@ -15,7 +136,7 @@ function inSet (group, ch) {
 
 
 
-function bengaliToRadice (str) { 
+function bengaliToRadice (str) { // adds inherent vowels - superceded by simple translit below
 	str += '  '
 	var inherentvowelkillers = '\u09CD\u09BE\u09BF\u09C0\u09C1\u09C2\u09C3\u09C7\u09C8\u09CB\u09CC\u09C4\u09E2\u09E3'
 	//var consonants = 'কখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলশষসহড়ঢ়য়ৰৱ'
@@ -100,6 +221,9 @@ function bengaliToRadice (str) {
 
 	return out.replace(/ ¶/,'').trim()
 	}
+
+
+
 
 
 
