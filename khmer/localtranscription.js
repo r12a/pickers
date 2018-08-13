@@ -118,6 +118,10 @@ str = str.replace(/៧/g, "7")
 str = str.replace(/៨/g, "8")
 str = str.replace(/៩/g, "9")
 
+// zwj, zwnj
+str = str.replace(/\u200D/g, "ǂ")
+str = str.replace(/\u200C/g, "ǀ")
+
 
 // remove inherent vowel where necessary
 str = str.replace(/ᵃ͓/g, "͓")
