@@ -112,10 +112,11 @@ span.hint {
     flex-direction: column;
     max-width: 2em;
     justify-content:flex-start;
-    height: 11em;
+    height: 12em;
     justify-content: space-around;
     align-content: center;
     margin-left: .5em;
+    text-align: right;
     }
 #moreconsonants {
     white-space: normal;
