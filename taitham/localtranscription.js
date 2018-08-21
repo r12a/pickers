@@ -109,7 +109,7 @@ str = str.replace(/ᩯ/g, "ɛ")
 str = str.replace(/ᩱ/g, "aʲ")
 str = str.replace(/ᩲ/g, "äʲ")
 str = str.replace(/ᩰ/g, "o")
-str = str.replace(/ᩴ/g, "ᵒ")
+str = str.replace(/ᩴ/g, "ŋ̣")
 str = str.replace(/ᩫ/g, "ö")
 str = str.replace(/ᩬ/g, "ō")
 str = str.replace(/ᩳ/g, "ò")
@@ -129,6 +129,7 @@ str = str.replace(/᩹/g, "⁵")
 str = str.replace(/᩺/g, "˟")
 str = str.replace(/᩻/g, "ʻ")
 str = str.replace(/᩿/g, "˽")
+str = str.replace(/᩼/g, "˚")
 
 
 
