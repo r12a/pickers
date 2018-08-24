@@ -162,7 +162,7 @@ span.hint {
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin: 0 .5em 0 .25em;
+    margin: 0 0 0 .25em;
     justify-content: center;
     align-items: center;
     }
