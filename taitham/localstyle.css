@@ -92,7 +92,7 @@ span.hint {
     margin-left: .5em;
     border: 1px dotted #ccc;
     border-radius: .5em;
-    padding: 0 .25em;
+    padding: 0 .1em;
     }
 #tones div {
     display: flex;
@@ -123,11 +123,14 @@ span.hint {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    max-width: 2em;
+    max-width: 3em;
     margin-left: 1em;
     text-align: center;
     justify-content: space-between;
     font-size: 90%;
+    border: 1px dotted #ccc;
+    border-radius: .5em;
+    padding: 0 .25em;
     }
 #ivowelGrid {
     display: flex;
@@ -147,7 +150,7 @@ span.hint {
     flex-direction: column;
     justify-content: space-between;
     margin-left: .5em;
-    padding: .5em;
+    padding: .5em .1em;
     border: 1px dotted #ccc;
     }
 #vowelGrid div {
