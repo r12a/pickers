@@ -4,7 +4,7 @@ var factoryDefaults = {}
 	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
-	factoryDefaults.language = 'nod' // language to use for examples
+	factoryDefaults.language = 'khb' // language to use for examples
 	factoryDefaults.uifont = 'Noto Sans New Tai Lue WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "26";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
@@ -37,6 +37,6 @@ var inputAids = [
 ]
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Tai text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Lü text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 ]
 
