@@ -84,8 +84,8 @@ str = str.replace(/ᧁ/g, "w̽")
 
 
 // vocalics
-str = str.replace(/᧞/g, "l̥ₔ")
-str = str.replace(/᧟/g, "l̥̄ĕ")
+str = str.replace(/᧞/g, "l̥")
+str = str.replace(/᧟/g, "l̥̄")
 
 
 // independent vowels
