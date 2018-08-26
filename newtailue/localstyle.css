@@ -36,13 +36,14 @@ span.hint {
     
 /* KEYBOARD */
 .key span { 
-	font-size: 1.1em; 
+	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  'Noto Sans New Tai Lue WF',  sans-serif;  
+	font-family:  "Noto Sans New Tai Lue WF",  sans-serif;  
     line-height: 1;
 	}
-.key {padding: 4px 0 0 0; }
+
 #keyboard { display: none; }
+
 
 
 
