@@ -21,7 +21,7 @@ str += '  '
 
 
 // ap
-str = str.replace(/ꪜꪾ/g, "aᵖ")
+str = str.replace(/ꪚꪾ/g, "aᵖ")
 
 
 // consonants
@@ -31,14 +31,14 @@ str = str.replace(/ꪃ/g, "kʰ")
 str = str.replace(/ꪂ/g, "ḵʰ")
 str = str.replace(/ꪆ/g, "g")
 str = str.replace(/ꪇ/g, "ḡ")
-str = str.replace(/ꪉ/g, "ṅ")
-str = str.replace(/ꪈ/g, "ṉ̇")
+str = str.replace(/ꪉ/g, "ŋ")
+str = str.replace(/ꪈ/g, "ŋ̄")
 str = str.replace(/ꪋ/g, "c")
 str = str.replace(/ꪊ/g, "c̱")
 str = str.replace(/ꪍ/g, "cʰ")
 str = str.replace(/ꪌ/g, "c̱ʰ")
 str = str.replace(/ꪑ/g, "ɲ")
-str = str.replace(/ꪐ/g, "ɲ̱")
+str = str.replace(/ꪐ/g, "ɲ̄")
 str = str.replace(/ꪕ/g, "t")
 str = str.replace(/ꪔ/g, "ṯ")
 str = str.replace(/ꪗ/g, "tʰ")
@@ -71,8 +71,8 @@ str = str.replace(/ꪏ/g, "s")
 str = str.replace(/ꪎ/g, "s̱")
 str = str.replace(/ꪡ/g, "f")
 str = str.replace(/ꪠ/g, "f̱")
-str = str.replace(/ꪯ/g, "ạ")
-str = str.replace(/ꪮ/g, "ạ̱")
+str = str.replace(/ꪯ/g, "ʔ")
+str = str.replace(/ꪮ/g, "ʔ̱")
 
 
 
@@ -117,6 +117,10 @@ str = str.replace(/ꪺ/g, "uᵊ")
 
 
 // tones
+str = str.replace(/꪿/g, "¹")
+str = str.replace(/꫁/g, "²")
+str = str.replace(/ꫀ/g, "¹̱")
+str = str.replace(/ꫂ/g, "²̱")
 
 
 
