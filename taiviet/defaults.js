@@ -7,7 +7,7 @@ var factoryDefaults = {}
 	factoryDefaults.language = 'blt' // language to use for examples
 	factoryDefaults.uifont = 'Noto Sans Tai Viet WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "26";  // selection area font size, number of pixels (just the number)
-	factoryDefaults.ccbase = "";  // default base for combining characters
+	factoryDefaults.ccbase = "\u25CC";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
 
