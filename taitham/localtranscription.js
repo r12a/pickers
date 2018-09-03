@@ -18,7 +18,7 @@ str += '  '
 //str = str.replace(/(ᩮ|ᩯ|ᩱ|ᩰ|ᩲ)(.)/g, '$2$1')
 
 // virama
-str = str.replace(/᩠/g, "͓")
+str = str.replace(/᩠/g, "˖")
 
 
 // consonants
@@ -62,7 +62,7 @@ str = str.replace(/ᩇ/g, "ṣ")
 str = str.replace(/ᩈ/g, "s")
 str = str.replace(/ᩉ/g, "h")
 str = str.replace(/ᩌ/g, "ẖ")
-str = str.replace(/ᩋ/g, "ạ")
+str = str.replace(/ᩋ/g, "ʔ")
 str = str.replace(/ᨺ/g, "f")
 str = str.replace(/ᨼ/g, "f̱")
 str = str.replace(/ᩓ/g, "lᵊ")
