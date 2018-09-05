@@ -24,6 +24,8 @@ function makeList (list, from, to) {
 	console.log('listarray length',listarray.length)
 	
 	for (var i=0;i<listarray.length;i++) {
+		listarray[i] = listarray[i].trim()
+		if (listarray[i] === '') continue
 		var pair = listarray[i]
 		console.log(pair)
 		pair = pair.trim()
@@ -56,6 +58,7 @@ input, #character, #inputArea  { font-size: 200%; }
 
 <p>Each line contains a key+trans+ipa separated by tabs.</p>
 <p>comma&amp;space separated items are converted to [a{b{c].</p>
+<p><button onClick="document.getElementById('inputArea').value = ''">Clear input</button></p>
 <p>&nbsp;
 <textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;" placeholder="Input goes here."></textarea></p>
 

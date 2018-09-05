@@ -23,6 +23,8 @@ function makeList (list, from, to) {
 	console.log('listarray length',listarray.length)
 	
 	for (var i=0;i<listarray.length;i++) {
+		listarray[i] = listarray[i].trim()
+		if (listarray[i] === '') continue
 		var pair = listarray[i]
 		console.log(pair)
 		pair = pair.trim()
@@ -44,6 +46,7 @@ input, #character, #inputArea  { font-size: 150%; }
 <p>This creates a panel for transcription. The input is likely to be from a list in script summary page form, with spaces added. </p>
 <p>Add   characters here. Each line contains a either 2 or 3 tab separated items. The output may contain a comma separated list.</p>
 <p>Choose which item is from and which is to.</p>
+<p><button onClick="document.getElementById('inputArea').value = ''">Clear input</button></p>
 <p>&nbsp;
 <textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;"></textarea></p>
 

@@ -6,106 +6,53 @@
 
 <!-- creates markup for a list of Latin characters -->
 
-<script type="text/javascript" src="../../../../uniview/u.js"></script>
-<script type="text/javascript" src="../../../../uniview/descriptions.js"></script>
 <script type="text/javascript">
 
 
 
-function makeCharsetObject () {
-	// takes a list of characters or character sequences from  Ranges and creates 
-	// an object array with each character/sequence as key and info about name & codepoint
-	
-	// create object in memory
-	var _charSet = new Object()
-
-	charArray = document.getElementById('inputArea').value.split(' ')
-	for (i=0;i<charArray.length;i++) {
-			var seq = charArray[i]
-			_charSet[seq] = new Object()
-			
-			_charSet[charArray[i]].character = seq
-			
-			cp = ''
-			for (j=0; j<seq.length; j++) {
-				if (cp != '') { cp += ' ' }
-				num = seq.codePointAt(j).toString(16).toUpperCase()
-				while (num.length<4) { num = '0'+num }
-				cp += 'U+'+num
-				}
-			_charSet[charArray[i]].cp = cp
-			
-			ncr = ''
-			for (j=0; j<seq.length; j++) {
-				num = seq.codePointAt(j).toString(16).toUpperCase()+';'
-				while (num.length<4) { num = '0'+num }
-				ncr += '&#x'+ num
-				}
-			_charSet[charArray[i]].ncr = ncr
-			
-			jsesc = ''
-			for (j=0; j<seq.length; j++) {
-				num = seq.codePointAt(j).toString(16).toUpperCase()
-				while (num.length<4) { num = '0'+num }
-				jsesc += '\\u'+ num
-				}
-			_charSet[charArray[i]].jsesc = jsesc
-			
-			name = ''
-			for (j=0; j<seq.length; j++) {
-				uPointer = seq.codePointAt(j)
-				udata = U[uPointer].split(';')
-				if (name != '') { name += ', ' }
-				name += udata[1]
-				}
-			_charSet[charArray[i]].name = name
-			
-			mark = false
-			uPointer = seq.codePointAt(0)
-			udata = U[uPointer].split(';')
-			if (udata[2].substr(0,1) == 'M') { 
-				mark = true
-				}
-			_charSet[charArray[i]].mark = mark
-		}
-		
-		
-	// prepare object code string
-	var out = ''
-	for (prop in _charSet) {
-		out +=  "'"
-		if (_charSet[prop].mark) { out += _charSet[prop].jsesc }
-		else { out += _charSet[prop].character }
-		out += "': '',\n"
-		}
-	document.getElementById('output').value = out
-	}
-
-
-function makeList (list, trans, cs) {
-	list = list.trim()
-	list = list.replace(/\s+/g,' ')
-	var listarray = list.split(' ')
-	trans = trans.trim()
-	trans = trans.replace(/\s+/g,' ')
-	var transarray = trans.split(' ')
-	var out = ''
-    console.log(trans)
-	
-	for (var i=0;i<listarray.length;i++) {
-		console.log(listarray[i])
-        var hexes = ''
-		for (j=0;j<listarray[i].length;j++) {
-            var hex = ''
-            hex += listarray[i].codePointAt(j).toString(16).toUpperCase()
-		    while (hex.length < 4) hex = '0'+hex
-            hex = '&#x'+hex+';'
-            hexes += hex
-            console.log(hexes)
+function makeList (list, cs) {
+    out = ''
+    var listarray = []
+    var transarray = []
+    var temp = list.split('\n')
+     console.log(temp)
+   for (let i=0;i<temp.length;i++) {
+        temp[i] = temp[i].trim()
+        if (temp[i]) {
+            console.log(temp[i])
+            temp[i] = temp[i].replace(/\s+/g,' ')
+            var line = temp[i].split(' ')
+            listarray.push(line[0])
+            if (line.length > 1) transarray.push(line[1])
+            else transarray.push('')
             }
-        listarray[i] = hexes
-		}
-	
+        }
+    
+    // convert to escapes, if requested
+    if (document.getElementById('esc').checked) {
+        for (var i=0;i<listarray.length;i++) {
+            console.log(listarray[i])
+            var hexes = ''
+            for (j=0;j<listarray[i].length;j++) {
+                var hex = ''
+                hex += listarray[i].codePointAt(j).toString(16).toUpperCase()
+                while (hex.length < 4) hex = '0'+hex
+                hex = '&#x'+hex+';'
+                hexes += hex
+                console.log(hexes)
+                }
+            listarray[i] = hexes
+            }
+	   }
+    
+    // produce the output
+    for (let i=0;i<listarray.length;i++) {
+        if (transarray[i]) out += '<span class="g"><span class="hint">'+transarray[i]+'</span><span class="c">'+listarray[i]+'</span></span>\n'
+        else out += '<span class="c">'+listarray[i]+'</span>\n'
+        }
+    
+    
+    /*  NOTE THAT THE CASE SENSITIVE CODE NEEDS TO BE ADDED ABOVE
     if (trans==='') {
         for (i=0;i<listarray.length;i++) out += '<span class="c">'+listarray[i]+'</span>\n'   
         }
@@ -117,6 +64,7 @@ function makeList (list, trans, cs) {
             }
         }
     else for (i=0;i<listarray.length;i++) out += '<span class="g"><span class="hint">'+transarray[i]+'</span><span class="c">'+listarray[i]+'</span></span>\n' 
+    */
 	
 	return out
 	}
@@ -124,24 +72,36 @@ function makeList (list, trans, cs) {
 	
 </script>
 <style>
-p, input, #character, #inputArea  { font-size: 200%; }
+p, input, #character, #inputArea  { font-size: 100%; }
 </style>
 </head>
 
 <body>
-<p>Make a set of spans containing the characters to go in a picker</p>
-<p>Add space separated list of script characters here:</p>
-<p>&nbsp;
-<textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;"></textarea></p>
+<p>Make a set of spans for the selection area of a picker</p>
+<p>Add  lines here containing character+tab+transliteration:</p>
+<p><button onClick="
+    document.getElementById('inputArea').value  = '' 
+    ">Clear input area</button></p>
+<textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;"></textarea>
 
-<p>Add space separated list of transliteration characters here:</p>
-<p>&nbsp;
-<textarea dir="ltr" id="transArea" style="width: 90%; height: 200px;"></textarea></p>
 
-<p><label style="font-size:60%;">Case sensitive: <input id="cs" type="checkbox"/></label> <button type="submit" onClick="checked = false; if (document.getElementById('cs').checked) { checked=true; } document.getElementById('output').value  = makeList(document.getElementById('inputArea').value, document.getElementById('transArea').value, checked); document.getElementById('output').select(); return false;">Create lists!</button></p>
+<p><!--label style="font-size:60%;">Case sensitive: <input id="cs" type="checkbox"/></label-->
+    <label>Use escapes: <input id="esc" type="checkbox"/></label> 
+    <button type="submit" onClick="
+    checked = false; 
+    document.getElementById('output').value  = makeList(document.getElementById('inputArea').value, checked); 
+    document.getElementById('output').select(); return false;
+    ">Create spans!</button></p>
 
 <p>&nbsp;
 <textarea id="output" style="width: 90%; height: 600px;"></textarea></p>
 
 </body>
 </html>
+
+<!--
+former check for case sensitive
+    if (document.getElementById('cs').checked) { checked=true; } 
+
+
+-->
