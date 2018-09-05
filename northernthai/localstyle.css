@@ -1,0 +1,232 @@
+@font-face {
+    font-family: 'Noto Serif Tai Tham WF';
+    src: url('/shared/webfonts/notosanstaitham-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosanstaitham-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Lanna Alif WF';
+    src: url('/shared/webfonts/lannaalif-v1-03-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/lannaalif-v1-03-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'A Tai Tham KH New WF';
+    src: url('/shared/webfonts/a_tai_tham_kh_new-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/a_tai_tham_kh_new-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+[lang=nod] { font-family: 'Noto Serif Tai Tham WF', serif; }
+[lang=kkh] { font-family: 'A Tai Tham KH New WF', serif; }
+
+
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+.v { 
+	min-width: .75em;
+	text-align: center;
+    cursor: pointer;
+	}
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.1em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Lao WF',  sans-serif;  
+    line-height: 1;
+	}
+.key {padding: 4px 0 0 0; }
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#consonantGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 12em;
+    }
+#consonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 12em;
+    justify-content: space-between;
+    }
+#tones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 11em;
+    margin-left: .5em;
+    border: 1px dotted #ccc;
+    border-radius: .5em;
+    padding: 0 .1em;
+    }
+#tones div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 1.5em;
+    justify-content: center;
+    margin-left: 0;
+    }
+#consonantGrid > span {
+    min-width: 1em;
+    }
+#diacritics {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 2em;
+    justify-content:flex-start;
+    height: 12em;
+    justify-content: space-around;
+    align-content: center;
+    margin-left: .5em;
+    text-align: right;
+    }
+#moreconsonants {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 3em;
+    margin-left: 1em;
+    text-align: center;
+    justify-content: space-between;
+    font-size: 90%;
+    border: 1px dotted #ccc;
+    border-radius: .5em;
+    padding: 0 .25em;
+    }
+#ivowelGrid {
+    display: flex;
+    flex-direction: column;
+    height: 12em;
+    justify-content: space-between;
+    margin-left: .5em;
+    border: 1px dotted #ccc;
+    border-radius: .5em;
+    padding: 0 .25em;
+    }
+#ivowelGrid div {
+    text-align: right;
+    }
+#vowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: .5em;
+    padding: .5em .1em;
+    border: 1px dotted #ccc;
+    }
+#vowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 3em;
+    justify-content: center;
+    }
+#virama {
+    width: .75em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 .25em;
+    justify-content: center;
+    align-items: center;
+    }
+#numberGrid {
+    max-height: 9em;
+    }
+#numberGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 5em;
+    justify-content: space-between;
+    margin-left: 1.2em;
+    line-height: 1.6;
+    font-size: 90%;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: 1em;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#mahaprana, #rare, #otherpunctuation {
+    text-align: center;
+    font-size: 90%;
+    }
+#otherpunctuation {
+    font-size: 80%;
+    }
+#vowelclusters {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: .5em;
+    width: 20em;
+    margin: auto;
+    }
+
+#transcriptionChoice {
+	position:absolute;
+	left:60px;
+    /*transform: translateX(-50%);*/
+	font-size: 60px; 
+	background-color: #FFFACD; 
+	border: 1px solid #ccc; 
+	border-radius:10px; 
+	padding: 7px;
+	display: none;
+	}
+
+#numberGrid .naitam {
+    display: none;
+    }
+
+
