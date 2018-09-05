@@ -37,6 +37,7 @@ var inputAids = [
 ]
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Thai text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>lit. (nod)", "alt":"Convert Northern Thai text to a Latin transliteration.", "code":"doTranscription('transliteratenod')"},
+{"title":"Trans-<br/>lit. (kkh)", "alt":"Convert Tai Khün text to a Latin transliteration.", "code":"doTranscription('transliteratekkh')"},
 ]
 

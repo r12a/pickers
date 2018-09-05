@@ -1,7 +1,7 @@
 function localtranscribe (direction, str) {
 	
-	if (direction == 'transliterate') { return transliterate(str) }
-	if (direction == 'toISO1') { return toISO1(str) }
+	if (direction == 'transliteratenod') { return transliteratenod(str) }
+	if (direction == 'transliteratekkh') { return transliteratekkh(str) }
 	if (direction == 'toISO2') { return toLatin(str,'iso2') }
 	if (direction == 'toIPA') { return toLatin(str,'ipa') }
 	}
@@ -9,7 +9,7 @@ function localtranscribe (direction, str) {
 
 
 
-function transliterate ( str ) { 
+function transliteratenod ( str ) { 
 // based on harmonised translit for se asian scripts
 
 str += '  '
@@ -23,49 +23,48 @@ str = str.replace(/᩠/g, "˖")
 
 // consonants
 str = str.replace(/ᨠ/g, "k")
-str = str.replace(/ᨡ/g, "kʰ")
-str = str.replace(/ᨢ/g, "k̇")
 str = str.replace(/ᨣ/g, "ḵ")
-str = str.replace(/ᨤ/g, "k̇ʰ")
-str = str.replace(/ᨥ/g, "ḵʰ")
-str = str.replace(/ᨦ/g, "ŋ̄")
+str = str.replace(/ᨦ/g, "ŋ̱")
 str = str.replace(/ᨧ/g, "c")
-str = str.replace(/ᨨ/g, "cʰ")
 str = str.replace(/ᨩ/g, "c̱")
-str = str.replace(/ᨪ/g, "ṡ̱")
-str = str.replace(/ᨫ/g, "c̱ʰ")
-str = str.replace(/ᨬ/g, "ɲ̄")
+str = str.replace(/ᨬ/g, "ɲ̱")
 str = str.replace(/ᨭ/g, "ṭ")
 str = str.replace(/ᨮ/g, "ṭʰ")
-str = str.replace(/ᨯ/g, "d")
 str = str.replace(/ᨰ/g, "ṭ̲ʰ")
+str = str.replace(/ᨯ/g, "d̯")
 str = str.replace(/ᨱ/g, "ṇ̱")
 str = str.replace(/ᨲ/g, "t")
-str = str.replace(/ᨳ/g, "tʰ")
 str = str.replace(/ᨴ/g, "ṯ")
+str = str.replace(/ᨳ/g, "tʰ")
 str = str.replace(/ᨵ/g, "ṯʰ")
 str = str.replace(/ᨶ/g, "ṉ")
-str = str.replace(/ᨷ/g, "b")
 str = str.replace(/ᨸ/g, "p")
-str = str.replace(/ᨹ/g, "pʰ")
 str = str.replace(/ᨻ/g, "p̄")
+str = str.replace(/ᨹ/g, "pʰ")
 str = str.replace(/ᨽ/g, "p̄ʰ")
+str = str.replace(/ᨷ/g, "b̯")
 str = str.replace(/ᨾ/g, "m̱")
-str = str.replace(/ᩀ/g, "y")
-str = str.replace(/ᨿ/g, "ȳ")
-str = str.replace(/ᩁ/g, "r")
 str = str.replace(/ᩃ/g, "ḻ")
 str = str.replace(/ᩊ/g, "ḷ̱")
+str = str.replace(/ᩁ/g, "r")
+str = str.replace(/ᩀ/g, "y")
+str = str.replace(/ᨿ/g, "ȳ")
 str = str.replace(/ᩅ/g, "w̱")
-str = str.replace(/ᩆ/g, "ś")
-str = str.replace(/ᩇ/g, "ṣ")
-str = str.replace(/ᩈ/g, "s")
 str = str.replace(/ᩉ/g, "h")
 str = str.replace(/ᩌ/g, "ẖ")
-str = str.replace(/ᩋ/g, "ʔ")
+str = str.replace(/ᨡ/g, "x")
+str = str.replace(/ᨥ/g, "x̱")
+str = str.replace(/ᨢ/g, "ẋ")
+str = str.replace(/ᨤ/g, "ẋ̱")
+str = str.replace(/ᩈ/g, "s")
+str = str.replace(/ᩆ/g, "ś")
+str = str.replace(/ᨪ/g, "ṡ̱")
+str = str.replace(/ᩇ/g, "ṣ")
+str = str.replace(/ᨨ/g, "ŝ")
+str = str.replace(/ᨫ/g, "ŝ̱")
 str = str.replace(/ᨺ/g, "f")
 str = str.replace(/ᨼ/g, "f̱")
-str = str.replace(/ᩓ/g, "lᵊ")
+str = str.replace(/ᩋ/g, "ʔ̯")
 
 
 // medials
@@ -74,16 +73,24 @@ str = str.replace(/ᩖ/g, "l̆")
 
 
 // finals
+str = str.replace(/ᩙ/g, "ŋ̽")
+str = str.replace(/ᩘ/g, "ŋ̣̽")
+str = str.replace(/ᩴ/g, "ŋ̊")
 str = str.replace(/ᩜ/g, "m̽")
-str = str.replace(/ᩙ/g, "ṅ̽")
-str = str.replace(/ᩘ/g, "ṉ̇̽")
+str = str.replace(/ᩝ/g, "b̽")
+str = str.replace(/ᩞ/g, "s̽")
 str = str.replace(/ᩚ/g, "p̆")
+
+// specials
 str = str.replace(/ᩛ/g, "ᵽ")
+str = str.replace(/ᩓ/g, "lₔ")
+str = str.replace(/ᩔ/g, "S")
 
 
 // vocalics
-str = str.replace(/ᩂ/g, "r̥ₔ")
-str = str.replace(/ᩄ/g, "l̥ₔ")
+str = str.replace(/ᩂ/g, "r̥")
+str = str.replace(/ᩄ/g, "l̥")
+
 
 // independent vowels
 str = str.replace(/ᩍ/g, "ị")
@@ -92,6 +99,15 @@ str = str.replace(/ᩏ/g, "ụ")
 str = str.replace(/ᩐ/g, "ụ̄")
 str = str.replace(/ᩑ/g, "ẹ")
 str = str.replace(/ᩒ/g, "ọ")
+
+
+// prescript vowels
+str = str.replace(/ᩮ/g, "e")
+str = str.replace(/ᩯ/g, "ɛ")
+str = str.replace(/ᩱ/g, "aʲ")
+str = str.replace(/ᩲ/g, "ɔ")
+str = str.replace(/ᩰ/g, "o")
+
 
 // vowel signs
 str = str.replace(/ᩣ/g, "ā")
@@ -104,17 +120,10 @@ str = str.replace(/ᩧ/g, "ɯ")
 str = str.replace(/ᩨ/g, "ɯ̄")
 str = str.replace(/ᩩ/g, "u")
 str = str.replace(/ᩪ/g, "ū")
-str = str.replace(/ᩮ/g, "e")
-str = str.replace(/ᩭ/g, "ë")
-str = str.replace(/ᩯ/g, "ɛ")
-str = str.replace(/ᩱ/g, "aʲ")
-str = str.replace(/ᩲ/g, "äʲ")
-str = str.replace(/ᩰ/g, "o")
-str = str.replace(/ᩴ/g, "ŋ̣")
-str = str.replace(/ᩫ/g, "ö")
-str = str.replace(/ᩬ/g, "ō")
-str = str.replace(/ᩳ/g, "ò")
-
+str = str.replace(/ᩫ/g, "ɔ̈")
+str = str.replace(/ᩬ/g, "ɔ̱")
+str = str.replace(/ᩳ/g, "ɔ̂")
+str = str.replace(/ᩭ/g, "oʲ")
 
 
 // tones
@@ -133,10 +142,15 @@ str = str.replace(/᩿/g, "˽")
 str = str.replace(/᩼/g, "˚")
 
 
-
 // punctuation
 str = str.replace(/᪩/g, ".")
 str = str.replace(/᪨/g, ",")
+
+
+// logographs
+str = str.replace(/᪠/g, "(city)")
+str = str.replace(/᪡/g, "(village)")
+str = str.replace(/᪢/g, "(heaven)")
 
 
 // digits
@@ -167,6 +181,182 @@ str = str.replace(/᪙/g, "9̣")
 console.log(str)
 return str.trim()
 }
+
+
+		
+function transliteratekkh ( str ) { 
+// based on harmonised translit for se asian scripts
+
+str += '  '
+
+// move left-positioned consonants to the right
+//str = str.replace(/(ᩮ|ᩯ|ᩱ|ᩰ|ᩲ)(.)/g, '$2$1')
+
+// virama
+str = str.replace(/᩠/g, "˖")
+
+
+// consonants
+str = str.replace(/ᨠ/g, "k")
+str = str.replace(/ᨣ/g, "ḵ")
+str = str.replace(/ᨡ/g, "kʰ")
+str = str.replace(/ᨥ/g, "ḵʰ")
+str = str.replace(/ᨤ/g, "ḵ̇ʰ")
+str = str.replace(/ᨦ/g, "ŋ̱")
+str = str.replace(/ᨧ/g, "c")
+str = str.replace(/ᨩ/g, "c̱")
+str = str.replace(/ᨨ/g, "cʰ")
+str = str.replace(/ᨫ/g, "c̱ʰ")
+str = str.replace(/ᨬ/g, "ɲ̱")
+str = str.replace(/ᨭ/g, "ṭ")
+str = str.replace(/ᨮ/g, "ṭʰ")
+str = str.replace(/ᨰ/g, "ṭ̲ʰ")
+str = str.replace(/ᨯ/g, "d̯")
+str = str.replace(/ᨱ/g, "ṇ̱")
+str = str.replace(/ᨲ/g, "t")
+str = str.replace(/ᨴ/g, "ṯ")
+str = str.replace(/ᨳ/g, "tʰ")
+str = str.replace(/ᨵ/g, "ṯʰ")
+str = str.replace(/ᨶ/g, "ṉ")
+str = str.replace(/ᨸ/g, "p")
+str = str.replace(/ᨻ/g, "p̄")
+str = str.replace(/ᨹ/g, "pʰ")
+str = str.replace(/ᨽ/g, "p̄ʰ")
+str = str.replace(/ᨷ/g, "b̯")
+str = str.replace(/ᨾ/g, "m̱")
+str = str.replace(/ᩃ/g, "ḻ")
+str = str.replace(/ᩊ/g, "ḷ̱")
+str = str.replace(/ᩁ/g, "r")
+str = str.replace(/ᩀ/g, "y")
+str = str.replace(/ᨿ/g, "ȳ")
+str = str.replace(/ᩅ/g, "w̱")
+str = str.replace(/ᩈ/g, "s")
+str = str.replace(/ᩆ/g, "ś")
+str = str.replace(/ᨪ/g, "ṡ̱")
+str = str.replace(/ᩇ/g, "ṣ")
+str = str.replace(/ᨺ/g, "f")
+str = str.replace(/ᨼ/g, "f̱")
+str = str.replace(/ᩉ/g, "h")
+str = str.replace(/ᩌ/g, "ẖ")
+str = str.replace(/ᩋ/g, "ʔ̯")
+
+
+
+// medials
+str = str.replace(/ᩕ/g, "r̆")
+str = str.replace(/ᩖ/g, "l̆")
+
+
+// finals
+str = str.replace(/᩺/g, "r̽")
+str = str.replace(/ᩴ/g, "ŋ̊")
+str = str.replace(/ᩙ/g, "ŋ̽")
+str = str.replace(/ᩘ/g, "ŋ̣̽")
+str = str.replace(/ᩜ/g, "m̽")
+str = str.replace(/ᩚ/g, "p̆")
+
+
+
+// specials
+str = str.replace(/ᩛ/g, "ᵽ")
+str = str.replace(/ᩓ/g, "lₔ")
+str = str.replace(/ᩔ/g, "S")
+
+
+// vocalics
+str = str.replace(/ᩂ/g, "r̥")
+str = str.replace(/ᩄ/g, "l̥")
+
+
+// independent vowels
+str = str.replace(/ᩍ/g, "ị")
+str = str.replace(/ᩎ/g, "ị̄")
+str = str.replace(/ᩏ/g, "ụ")
+str = str.replace(/ᩐ/g, "ụ̄")
+str = str.replace(/ᩑ/g, "ẹ")
+str = str.replace(/ᩒ/g, "ọ")
+
+
+// prescript vowels
+str = str.replace(/ᩮ/g, "e")
+str = str.replace(/ᩯ/g, "ɛ")
+str = str.replace(/ᩱ/g, "aʲ")
+str = str.replace(/ᩰ/g, "o")
+str = str.replace(/ᩲ/g, "ɔ")
+
+
+// vowel signs
+str = str.replace(/ᩣ/g, "ā")
+str = str.replace(/ᩤ/g, "ä")
+str = str.replace(/ᩡ/g, "a")
+str = str.replace(/ᩢ/g, "á")
+str = str.replace(/ᩥ/g, "i")
+str = str.replace(/ᩦ/g, "ī")
+str = str.replace(/ᩧ/g, "ɯ")
+str = str.replace(/ᩨ/g, "ɯ̄")
+str = str.replace(/ᩩ/g, "u")
+str = str.replace(/ᩪ/g, "ū")
+str = str.replace(/ᩭ/g, "oʲ")
+str = str.replace(/ᩫ/g, "ɔ̈")
+str = str.replace(/ᩬ/g, "ɔ̱")
+str = str.replace(/ᩳ/g, "ɔ̂")
+
+
+// tones
+str = str.replace(/᩵/g, "¹")
+str = str.replace(/᩶/g, "²")
+str = str.replace(/᩷/g, "³")
+str = str.replace(/᩸/g, "⁴")
+str = str.replace(/᩹/g, "⁵")
+
+
+
+// diacritics
+str = str.replace(/᩼/g, "˚")
+str = str.replace(/᩿/g, "˽")
+str = str.replace(/᩻/g, "ʻ")
+
+
+// punctuation
+str = str.replace(/᪩/g, ".")
+str = str.replace(/᪨/g, ",")
+
+
+// logographs
+str = str.replace(/᪠/g, "(city)")
+str = str.replace(/᪡/g, "(village)")
+str = str.replace(/᪢/g, "(heaven)")
+
+
+// digits
+str = str.replace(/᪀/g, "0")
+str = str.replace(/᪁/g, "1")
+str = str.replace(/᪂/g, "2")
+str = str.replace(/᪃/g, "3")
+str = str.replace(/᪄/g, "4")
+str = str.replace(/᪅/g, "5")
+str = str.replace(/᪆/g, "6")
+str = str.replace(/᪇/g, "7")
+str = str.replace(/᪈/g, "8")
+str = str.replace(/᪉ /g, "9")
+
+str = str.replace(/᪐/g, "0̣")
+str = str.replace(/᪑/g, "1̣")
+str = str.replace(/᪒/g, "2̣")
+str = str.replace(/᪓/g, "3̣")
+str = str.replace(/᪔/g, "4̣")
+str = str.replace(/᪕/g, "5̣")
+str = str.replace(/᪖/g, "6̣")
+str = str.replace(/᪗/g, "7̣")
+str = str.replace(/᪘/g, "8̣")
+str = str.replace(/᪙/g, "9̣")
+
+
+
+console.log(str)
+return str.trim()
+}
+
 
 
 		
