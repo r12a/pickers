@@ -420,6 +420,7 @@ function setUIFont (font) {
 function setUIFont (font) {
 	document.querySelector('#alphabet').style.fontFamily = '"'+font+'"'
     document.querySelector('#extrashapes').style.fontFamily = '"'+font+'"'
+    document.querySelector('#shapelist').style.fontFamily = '"'+font+'"'
 	document.querySelector('#transcriptionChoice').style.fontFamily = "'Doulos SIL', '"+font+"'"
 	
 	defaults.uifont = font
@@ -901,6 +902,7 @@ function event_mouseoutChar ()  {
 	// unhighlight this character
 	this.style.backgroundColor = 'transparent'
 	if (this.classList.contains('gkey')) this.style.color = 'orange'
+	else if (this.classList.contains('sj')) this.style.color = 'chocolate'
     else this.style.color = '#666'
 	
 	// unhighlight similar characters
