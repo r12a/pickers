@@ -6,8 +6,8 @@ var factoryDefaults = {}
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'nod' // language to use for examples
 	factoryDefaults.uifont = 'A Tai Tham KH New WF'; // font name  for selection area (a single font, no quotes)
-	factoryDefaults.uisize = "26";  // selection area font size, number of pixels (just the number)
-	factoryDefaults.ccbase = "\u25CC";  // default base for combining characters
+	factoryDefaults.uisize = "24";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
 
@@ -30,7 +30,7 @@ var template = {}
 
 var inputAids = [
 //{"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
-//{"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
+{"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
 {"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}

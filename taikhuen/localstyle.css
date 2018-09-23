@@ -41,11 +41,22 @@ span.hint {
 	text-align: center;
 	}
 
+span.sj {
+    display: none;
+    color: chocolate;
+    }
 .v { 
 	min-width: .75em;
 	text-align: center;
     cursor: pointer;
 	}
+
+.subjoined {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ccc;
+    color: white;
+    }
 
     
     
@@ -74,14 +85,15 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 12em;
+    height: 12.5em;
+    width: 12em;
     }
 #consonantGrid div {
     white-space: normal;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 12em;
+    width: 100%;
     justify-content: space-between;
     }
 #tones {
