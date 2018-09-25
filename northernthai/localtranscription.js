@@ -1,9 +1,7 @@
 function localtranscribe (direction, str) {
-	
+	console.log(direction)
 	if (direction == 'transliterate') { return transliterate(str) }
-	if (direction == 'toISO1') { return toISO1(str) }
-	if (direction == 'toISO2') { return toLatin(str,'iso2') }
-	if (direction == 'toIPA') { return toLatin(str,'ipa') }
+	if (direction == 'transcription') { return transcription(str) }
 	}
 
 
@@ -13,9 +11,6 @@ function transliterate ( str ) {
 // based on harmonised translit for se asian scripts
 
 str += '  '
-
-// move left-positioned consonants to the right
-//str = str.replace(/(ᩮ|ᩯ|ᩱ|ᩰ|ᩲ)(.)/g, '$2$1')
 
 // virama
 str = str.replace(/᩠/g, "˖")
@@ -177,11 +172,51 @@ str = str.replace(/᪘/g, "8̣")
 str = str.replace(/᪙/g, "9̣")
 
 
-
-console.log(str)
 return str.trim()
 }
 
+
+
+
+
+function transcription ( str ) { 
+// based on harmonised translit for se asian scripts
+
+str = transliterate(str)
+
+str += '  '
+
+
+// complex vowels
+str = str.replace(/˖w̱ɔ̈([¹|²|³|⁴|⁵]*)a/g, "uaʔ")
+str = str.replace(/˖w̱ɔ̈/g, "ua")
+str = str.replace(/˖ȳe/g, "ia")
+str = str.replace(/á([¹|²|³|⁴|⁵]*)˖ȳ/g, "aj$1")
+str = str.replace(/aʲ˖ȳ/g, "aj")
+str = str.replace(/e˖ȳa/g, "iaʔ")
+str = str.replace(/ea/g, "eʔ")
+str = str.replace(/eā/g, "oː")
+str = str.replace(/eá([¹|²|³|⁴|⁵]*)ā/g, "o$1")
+str = str.replace(/eɔ̱([¹|²|³|⁴|⁵]*)iʔ̯a/g, "ɯaʔ")
+    str = str.replace(/ei([¹|²|³|⁴|⁵]*)ɔ̱ʔ̯a/g, "ɯaʔ")
+str = str.replace(/eɔ̱i([¹|²|³|⁴|⁵]*)a/g, "ɤʔ$1")
+    str = str.replace(/eiɔ̱([¹|²|³|⁴|⁵]*)a/g, "ɤʔ$1")
+str = str.replace(/eɔ̱i([¹|²|³|⁴|⁵]*)ʔ̯/g, "ɯa$1")
+str = str.replace(/eɔ̱([¹|²|³|⁴|⁵]*)i/g, "ɤː/ɨa$1")
+str = str.replace(/eɔ̱([¹|²|³|⁴|⁵]*)ɯ̄/g, "ɤʔ$1")
+    str = str.replace(/eɯ̄([¹|²|³|⁴|⁵]*)ɔ̱/g, "ɤʔ$1")
+str = str.replace(/eɔ̱([¹|²|³|⁴|⁵]*)ɯ̄a/g, "ɤː$1")
+    str = str.replace(/eɯ̄([¹|²|³|⁴|⁵]*)ɔ̱a/g, "ɤː$1")
+str = str.replace(/ɛa/g, "ɛʔ")
+str = str.replace(/oa/g, "oʔ")
+str = str.replace(/oɔ̱a/g, "ɔʔ")
+str = str.replace(/ɔ̱([¹|²|³|⁴|⁵]*)ŋ̊/g, "ɔː$1")
+
+// need to check the above for reversed combinations of super- and subscript vowels
+// probably also look for tones twice if vowel signs appear above and below
+
+return str.trim()
+}
 
 		
 

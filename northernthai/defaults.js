@@ -20,7 +20,7 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Northern Thai character picker'
-	template.sample = "ᨣᩢ᩠ᨶᩉᩮᩖᩨᨠᩥ᩠ᨶ ᨣᩢᩐᩢᩣᨡᩣ᩠ᨿᨸᩮ᩠ᨶᨦᩫ᩠ᨶ ᨠᩮ᩠ᨷᩉᩬᨾᩋᩬᨾᩅᩱᩢᨯ᩠᩶ᨦᨶᩦ᩶ ᨴᩩᨠᪧᨸᩦᨾᩣᨷᩢᨡᩣ᩠ᨯ ᨧᩥ᩠᩵ᨦᨠ᩠ᨴᩣᩴᩉᩨ᩶ᨡᩮᩢᩣᨻᩳ᩵ᨾᩯ᩵ᩃᩪᨠ ᨷᩢᨯᩱᩢᨠᩢᩢ᩠ᨶᩈᩢ᩠ᨦᩈᩢ᩠ᨠᨩᩮᩨᩬ"
+	template.sample = "ᨣᩢ᩠ᨶᩉᩮᩖᩨᨠᩥ᩠ᨶ ᨣᩢᩐᩢᩣᨡᩣ᩠ᨿᨸᩮ᩠ᨶᨦᩫ᩠ᨶ ᨠᩮ᩠ᨷᩉᩬᨾᩋᩬᨾᩅᩱᩢᨯ᩠᩶ᨦᨶᩦ᩶ ᨴᩩᨠᪧᨸᩦᨾᩣᨷᩢᨡᩣ᩠ᨯ ᨧᩥ᩠᩵ᨦᨠ᩠ᨴᩣᩴᩉᩨ᩶ᨡᩮᩢᩣᨻᩳ᩵ᨾᩯ᩵ᩃᩪᨠ ᨷᩢᨯᩱ᩶ᨠᩢ᩠᩶ᨶᩈᩢ᩠ᨦᩈᩢ᩠ᨠᨩᩮᩬᩨ"
 	template.blocklocation= '/scripts/taitham/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'northernthai'
@@ -38,6 +38,6 @@ var inputAids = [
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Northern Thai text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-//{"title":"Trans-<br/>scribe", "alt":"Convert Northern Thai text to an approximate Latin transcription.", "code":"doTranscription('transcription')", "warning":"Still in development. Mostly useful for complex vowels."},
+{"title":"Trans-<br/>scribe", "alt":"Transliterate but convert complex vowels to sounds.", "code":"doTranscription('transcription')", "warning":"Transliterates, but renders sound for complex vowels."},
 ]
 
