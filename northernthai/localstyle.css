@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'Lamphun WF';
+    src: url('/shared/webfonts/lamphun-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/lamphun-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
     font-family: 'Noto Serif Tai Tham WF';
     src: url('/shared/webfonts/notosanstaitham-regular-webfont.woff2') format('woff2'),
          url('/shared/webfonts/notosanstaitham-regular-webfont.woff') format('woff');
@@ -12,17 +19,9 @@
     font-weight: normal;
     font-style: normal;
 	}
-@font-face {
-    font-family: 'A Tai Tham KH New WF';
-    src: url('/shared/webfonts/a_tai_tham_kh_new-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/a_tai_tham_kh_new-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-	}
 
 
-[lang=nod] { font-family: 'Noto Serif Tai Tham WF', serif; }
-[lang=kkh] { font-family: 'A Tai Tham KH New WF', serif; }
+[lang=nod] { font-family: 'Lamphun WF', 'Noto Serif Tai Tham WF', serif; }
 
 
 
@@ -56,7 +55,7 @@ span.sj {
 .key span { 
 	font-size: 1.1em; 
 	font-weight: normal; 
-	font-family:  'Noto Sans Lao WF',  sans-serif;  
+	font-family:  'Lanna Alif WF',  sans-serif;  
     line-height: 1;
 	}
 .key {padding: 4px 0 0 0; }
