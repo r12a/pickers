@@ -1427,7 +1427,7 @@ function addSpacesToPicker (type) {
     document.getElementById('output').value = out
     }
 
-function removeCharacter (char) {
+function removeCharacterOLD (char) {
     var problemChars = new Set (['.','*','[',']','(',')','?','^'])
     if (char === '') return
     if (char.length === 1) {
@@ -1449,6 +1449,31 @@ function removeCharacter (char) {
     console.log(ch)
     var re = new RegExp(ch, "g"); 
     document.getElementById('output').value = document.getElementById('output').value.replace(re,'')
+    }
+
+
+function removeCharacter (char,replacement) {
+    var problemChars = new Set (['.','*','[',']','(',')','?','^'])
+    if (char === '') return
+    if (char.length === 1) {
+        if (problemChars.has(char)) ch = '\\'+char
+        else ch = char
+        }
+    else {
+        var hex = new Set(['1','2','3','4','5','6','7','8','9','0','A','B','C','D','E','F','a','b','c','d','e','f'])
+        error = false
+        if (char.length > 6) error = true
+        for (let i=0;i<char.length;i++) if (! hex.has(char[i])) error = true
+        if (error) {
+            alert('Input either a single character or hex code point value.')
+            return
+            }
+        var dec = parseInt(char, 16)
+        var ch = String.fromCodePoint(dec)
+        }
+    console.log(ch)
+    var re = new RegExp(ch, "g"); 
+    document.getElementById('output').value = document.getElementById('output').value.replace(re,replacement)
     }
 
 

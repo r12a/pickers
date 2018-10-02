@@ -303,9 +303,18 @@ out = `
 
 
 
-<div class="control">Remove:
+<!--div class="control">Remove:
 <form action="none" onsubmit="removeCharacter(document.getElementById('charRemoval').value); return false;">
   <input name="charRemoval" id="charRemoval"  type="text" style="width: 40px; text-align:right;" />
+  <button>Go</button>
+</form>
+</div-->
+
+
+<div class="control">Replace:
+<form action="none" onsubmit="removeCharacter(document.getElementById('charRemoval').value, document.getElementById('charReplacement').value); return false;">
+  <input name="charRemoval" id="charRemoval"  type="text" style="width: 40px; text-align:right; line-height: 1;" />
+  <input name="charReplacement" id="charReplacement"  type="text" style="width: 40px; text-align:right; line-height: 1;" />
   <button>Go</button>
 </form>
 </div>
