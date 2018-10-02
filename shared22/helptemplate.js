@@ -185,10 +185,10 @@ out +=  `
 
 <p><b class="leadin">Change text.</b> Tools for manipulating the content in the text area.</p>
 <p><img alt="Add space:" src="../../images/addspace.png"/> &nbsp; Adds a space between every character in the text area.</p>
-<p><img alt="Add space:" src="../../images/addcomma.png"/> &nbsp; Adds a comma between every character in the text area.</p>
+<p><img alt="Add space:" src="../../images/addcomma.png"/> &nbsp; By default, adds a comma between every character in the text area. Put a different character or sequence of characters in the box just to the left in order to add something else between each character.</p>
 <p><img alt="Add space:" src="../../images/removespace.png"/> &nbsp; Removes all spaces from the text area.</p>
 <p><img alt="Add space:" src="../../images/count.png"/> &nbsp; Counts the number of characters in the text area.</p>
-<p><b class="leadin">Remove.</b> Allows you to remove a character from the text area. Type in the box a single character or the hex code point value for the character you want to delete.</p>
+<p><b class="leadin">Replace.</b> Allows you to remove a character from the text area, or replace it with something else. Type in the left-hand box a single character or the hex code point value for the character you want to delete/replace. If replacing, type the replacement text in the right-hand box.</p>
 
 <p><b class="leadin">CC base.</b> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://r12a.github.io/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. </p>
     <p>The <samp class="kw" translate="no">CC base</samp> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</p>
