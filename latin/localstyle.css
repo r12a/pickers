@@ -17,8 +17,49 @@
 	}
 span.hint {
 	margin-right: 2px;
+    margin-left: 2px;
+	font-size: 50%;
 	}
-	
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+
+#formatCharacters {
+    text-align: center;
+    line-height: 1;
+    }
+
+#prompts {
+    text-align: center;
+    color: orange;
+    }
+#prompts span, #prompts img {
+    cursor: pointer;
+    }
+#extrashapes {
+    min-height: 3.5em;
+    }
+
+#punctuation {
+    line-height: 1;
+    text-align: center;
+    font-size: 80%;
+    }
+
+#extrashapes {
+    line-height: 1.2;
+	text-align:center;
+	margin-left: 3em;
+	margin-right: 3em;
+    margin-bottom: 1em;
+	}
+#extrashapes span {
+	cursor: pointer;
+	}
+
+/*
 #kbd { 	
 	margin: auto; 
 	}
@@ -59,8 +100,6 @@ span.hint {
 #kbd #combining { 
 	margin-top: 20px; 
 	margin-bottom: 30px;
-	/* width: 260px; 
-	padding:5px 10px; */
 	border: dotted 1px #999; 
 	border-radius: 5px;
 	}
@@ -134,7 +173,6 @@ span.hint {
 .shapelist li:hover .hidden img { display:inline; }
 
 .shapelist span {  font-family: 'doulos sil', gentiumplus, code2000, serif; font-size:26px; line-height: 1.2em; }
-/* #shape li {  padding-bottom:5px; } */
 
 
 #fontgrid { 
@@ -148,15 +186,7 @@ span.hint {
 	margin-right: 10px; 
 	}
 #fontgrid span:after { 
-	content: '\200B ' ; /* zwsp */ 
+	content: '\200B ' ; /* zwsp
 	}
+*/
 
-
-#extrashapes {
-	text-align:center;
-	margin-left: 3em;
-	margin-right: 3em;
-	}
-#extrashapes span {
-	cursor: pointer;
-	}
