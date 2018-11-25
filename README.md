@@ -9,7 +9,57 @@ You can easily cut and paste text between the picker and your own document. The 
 For a list of links to pickers see https://r12a.github.io/pickers/
 
 They currently include:
-Arabic • All Arabic • Assyrian Neo-Aramaic • Armenian • Balinese • Buginese • Bengali • Burmese • Cherokee • Cyrillic • Devanagari • Egyptian hieroglyphs • Ethiopic • Gujarati • Gurmukhi • Hebrew • IPA • Javanese • Khmer • Lao • Latin & diacritics • Lisu (Fraser script) • Makasar • Mandaic • Malayalam • Mongolian • New Tai Lue • N'Ko • Northern Thai • Old English • Old Norse • Persian • Runic • Russian • Shan • Sinhala • Sundanese • Syriac • Tai Khün • Tai Le • Tai Tham • Tai Viet • Tamil • Thaana • Thai • Tibetan • Tifinagh • Tłı̨chǫ (Dogrib) • Uighur • Urdu • Vietnamese
+    <span><a href="arabic/">Arabic</a></span> •
+    <span><a href="arabicblock/">All Arabic</a></span> •
+    <span><a href="aramaic/">Assyrian Neo-Aramaic</a></span> •
+    <span><a href="armenian/">Armenian</a></span> •
+    <span><a href="balinese/">Balinese</a></span> •
+    <span><a href="buginese/">Buginese</a></span> •
+    <span><a href="bengali/">Bengali</a></span> •
+    <span><a href="burmese/">Burmese</a></span> •
+    <span><a href="cherokee/">Cherokee</a></span> •
+    <span><a href="cyrillic/">Cyrillic</a></span> •
+    <span><a href="devanagari/">Devanagari</a></span> •
+    <span><a href="egyptian/">Egyptian&nbsp;hieroglyphs</a></span> •
+    <span><a href="ethiopic/">Ethiopic</a></span> •
+    <span><a href="gujarati/">Gujarati</a></span> •
+    <span><a href="gurmukhi/">Gurmukhi</a></span> •
+    <span><a href="hebrew/">Hebrew</a></span> •
+    <span><a href="ipa/">IPA</a></span> •
+    <span><a href="javanese/">Javanese</a></span> •
+    <span><a href="khmer/">Khmer</a></span> •
+    <span><a href="lao/">Lao</a></span> •
+    <span><a href="latin/">Latin&nbsp;&amp;&nbsp;diacritics</a></span> •
+    <span><a href="lisu/">Lisu (Fraser script)</a></span> •
+    <span><a href="makasar/">Makasar</a></span> •
+    <span><a href="mandaic/">Mandaic</a></span> •
+    <span><a href="malayalam/">Malayalam</a></span> •
+    <span><a href="mongolian/">Mongolian</a></span> •
+    <span><a href="newtailue/">New&nbsp;Tai&nbsp;Lue</a></span> •
+    <span><a href="nko/">N'Ko</a></span> •
+    <span><a href="northernthai/">Northern Thai</a></span> •
+    <span><a href="oldenglish/">Old&nbsp;English</a></span> •
+    <span><a href="oldnorse/">Old&nbsp;Norse</a></span> •
+    <span><a href="persian/">Persian</a></span> •
+    <span><a href="runic/">Runic</a></span> •
+    <span><a href="russian/">Russian</a></span> •
+    <span><a href="shan/">Shan</a></span> •
+    <span><a href="sinhala/">Sinhala</a></span> •
+    <span><a href="sundanese/">Sundanese</a></span> •
+    <span><a href="syriac/">Syriac</a></span> •
+    <span><a href="taikhuen/">Tai&nbsp;Khün</a></span> •
+    <span><a href="taile/">Tai&nbsp;Le</a></span> •
+    <span><a href="taitham/">Tai&nbsp;Tham</a></span> •
+    <span><a href="taiviet/">Tai&nbsp;Viet</a></span> •
+    <span><a href="tamil/">Tamil</a></span> •
+    <span><a href="thaana/">Thaana</a></span> •
+    <span><a href="thai/">Thai</a></span> •
+    <span><a href="tibetan/">Tibetan</a></span> •
+    <span><a href="tifinagh/">Tifinagh </a></span> •
+    <span><a href="tlicho/">Tłı̨chǫ&nbsp;(Dogrib)</a></span> •
+    <span><a href="uighur/">Uighur</a></span> •
+    <span><a href="urdu/">Urdu</a></span> •
+    <span><a href="vietnamese/">Vietnamese</a></span>
 
 Each picker has its own help file, which explains how to use the picker and what features are available. Features vary, but can include automatic transcription to and from the text, shape-based hints and selection methods, keyboards, codepoint listing, creating examples in markup, control over the font used, etc.
 
