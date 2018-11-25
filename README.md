@@ -9,7 +9,7 @@ You can easily cut and paste text between the picker and your own document. The 
 For a list of links to pickers see https://r12a.github.io/pickers/
 
 They currently include:
-Arabic • All Arabic • Armenian • Balinese • Bengali • Burmese • Devanagari • Egyptian hieroglyphs • Basic Ethiopic • Gurmukhi • Hebrew • IPA • Khmer • Lao • Latin & diacritics • Lisu (Fraser script) • Malayalam • Mongolian • Old English • Old Norse • Persian • Runic • Tamil • Thaana • Thai • Tibetan • Tifinagh • Tłı̨chǫ (Dogrib) • Uighur • Urdu • Vietnamese
+Arabic • All Arabic • Assyrian Neo-Aramaic • Armenian • Balinese • Buginese • Bengali • Burmese • Cherokee • Cyrillic • Devanagari • Egyptian hieroglyphs • Ethiopic • Gujarati • Gurmukhi • Hebrew • IPA • Javanese • Khmer • Lao • Latin & diacritics • Lisu (Fraser script) • Makasar • Mandaic • Malayalam • Mongolian • New Tai Lue • N'Ko • Northern Thai • Old English • Old Norse • Persian • Runic • Russian • Shan • Sinhala • Sundanese • Syriac • Tai Khün • Tai Le • Tai Tham • Tai Viet • Tamil • Thaana • Thai • Tibetan • Tifinagh • Tłı̨chǫ (Dogrib) • Uighur • Urdu • Vietnamese
 
 Each picker has its own help file, which explains how to use the picker and what features are available. Features vary, but can include automatic transcription to and from the text, shape-based hints and selection methods, keyboards, codepoint listing, creating examples in markup, control over the font used, etc.
 
