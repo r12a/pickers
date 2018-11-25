@@ -22,7 +22,7 @@
 
 <script src="localtranscription.js">  </script>
 <script src="composite-names.js"></script>
-<script src="/shared/fontlists/XXXXXXXX.js"> </script>
+<script src="../../shared/fontlists/XXXXXXXX.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
 </head>
@@ -79,6 +79,18 @@
 
 
 <div id="alphabet" class="default">
+
+
+
+<div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+ <span class="selector" onclick="findShape('2D54,2D59,2D5A,2D55,2D41,2D31,2D40,2D32','',true)" />a</span>
+ </div>
+</div>
+
+<div id="extrashapes"></div>
+
+
 
 <div class="spaceline">
 <span class="shifted" dir="auto" onclick="toggleShift(this, 'defaultLC', 'defaultUC')">SHIFT</span>
@@ -161,18 +173,6 @@ YYYYYY
 
 
 </div>
-
-
-
-
-
-<div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
- <span class="selector" onclick="findShape('2D54,2D59,2D5A,2D55,2D41,2D31,2D40,2D32','',true)" />a</span>
- </div>
-</div>
-
-<div id="extrashapes"></div>
 
 
 <div id="temp"></div>
