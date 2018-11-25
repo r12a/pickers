@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Vai character picker 22</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared22/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="defaults.js">  </script>
+<script src="../shared22/code.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared22/pagetemplate.js">  </script>
+<script src="../../scripts/linkdata/linkdb.js"></script>
+
+<script src="localtranscription.js">  </script>
+<script src="composite-names.js"></script>
+<script src="../../shared/fontlists/vai.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+ <div id="transcriptionChoice"></div>
+
+<div id="latintranscript" class="transcript" style="display:none;">
+<span class="t" onclick="dotrans('ẹ')">ẹ</span>
+<span class="t" onclick="dotrans('ị')">ị</span>
+<span class="t" onclick="dotrans('ạ')">ạ</span>
+<span class="t" onclick="dotrans('ọ')">ọ</span>
+<span class="t" onclick="dotrans('ụ')">ụ</span>
+<span class="t" onclick="dotrans('ɔ̣')">ɔ̣</span>
+<span class="t" onclick="dotrans('ɛ̣')">ɛ̣</span>
+
+<span class="t" onclick="dotrans('ẽ')">ẽ</span>
+<span class="t" onclick="dotrans('ĩ')">ĩ</span>
+<span class="t" onclick="dotrans('ã')">ã</span>
+<span class="t" onclick="dotrans('õ')">õ</span>
+<span class="t" onclick="dotrans('ũ')">ũ</span>
+<span class="t" onclick="dotrans('ɔ̃')">ɔ̃</span>
+<span class="t" onclick="dotrans('ɛ̃')">ɛ̃</span>
+
+<!--span class="t" onclick="dotrans('̃')">̃</span>   this block is in original order
+<br/>
+<span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('h')">h</span>
+<span class="t" onclick="dotrans('w')">w</span>
+<span class="t" onclick="dotrans('p')">p</span>
+<span class="t" onclick="dotrans('b')">b</span>
+<span class="t" onclick="dotrans('ɓ')">ɓ</span>
+<span class="t" onclick="dotrans('mɓ')">mɓ</span>
+<span class="t" onclick="dotrans('kp')">kp</span>
+<span class="t" onclick="dotrans('mgb')">mgb</span>
+<span class="t" onclick="dotrans('gb')">gb</span>
+<span class="t" onclick="dotrans('f')">f</span>
+<span class="t" onclick="dotrans('v')">v</span>
+<span class="t" onclick="dotrans('t')">t</span>
+<span class="t" onclick="dotrans('θ')">θ</span>
+<span class="t" onclick="dotrans('d')">d</span>
+<span class="t" onclick="dotrans('ð')">ð</span>
+<span class="t" onclick="dotrans('l')">l</span>
+<span class="t" onclick="dotrans('r')">r</span>
+<span class="t" onclick="dotrans('ɗ')">ɗ</span>
+<span class="t" onclick="dotrans('nɗ')">nɗ</span>
+<span class="t" onclick="dotrans('s')">s</span>
+<span class="t" onclick="dotrans('ʃ')">ʃ</span>
+<span class="t" onclick="dotrans('z')">z</span>
+<span class="t" onclick="dotrans('ʒ')">ʒ</span>
+<span class="t" onclick="dotrans('ʧ')">ʧ</span>
+<span class="t" onclick="dotrans('ʤ')">ʤ</span>
+<span class="t" onclick="dotrans('nʤ')">nʤ</span>
+<span class="t" onclick="dotrans('j')">j</span>
+<span class="t" onclick="dotrans('k')">k</span>
+<span class="t" onclick="dotrans('ŋg')">ŋg</span>
+<span class="t" onclick="dotrans('g')">g</span>
+<span class="t" onclick="dotrans('m')">m</span>
+<span class="t" onclick="dotrans('n')">n</span>
+<span class="t" onclick="dotrans('ɲ')">ɲ</span-->
+<br/>
+<span class="t" onclick="dotrans('b')">b</span>
+<span class="t" onclick="dotrans('ɓ')">ɓ</span>
+<span class="t" onclick="dotrans('d')">d</span>
+<span class="t" onclick="dotrans('ɗ')">ɗ</span>
+<span class="t" onclick="dotrans('ð')">ð</span>
+<span class="t" onclick="dotrans('ʤ')">ʤ</span>
+<span class="t" onclick="dotrans('f')">f</span>
+<span class="t" onclick="dotrans('g')">g</span>
+<span class="t" onclick="dotrans('gb')">gb</span>
+<span class="t" onclick="dotrans('h')">h</span>
+<span class="t" onclick="dotrans('j')">j</span>
+<span class="t" onclick="dotrans('k')">k</span>
+<span class="t" onclick="dotrans('kp')">kp</span>
+<span class="t" onclick="dotrans('l')">l</span>
+<span class="t" onclick="dotrans('m')">m</span>
+<span class="t" onclick="dotrans('mɓ')">mɓ</span>
+<span class="t" onclick="dotrans('mgb')">mgb</span>
+<br/>
+<span class="t" onclick="dotrans('n')">n</span>
+<span class="t" onclick="dotrans('nɗ')">nɗ</span>
+<span class="t" onclick="dotrans('nʤ')">nʤ</span>
+<span class="t" onclick="dotrans('ŋ')">ŋ</span>
+<span class="t" onclick="dotrans('ŋg')">ŋg</span>
+<span class="t" onclick="dotrans('ɲ')">ɲ</span>
+<span class="t" onclick="dotrans('p')">p</span>
+<span class="t" onclick="dotrans('r')">r</span>
+<span class="t" onclick="dotrans('s')">s</span>
+<span class="t" onclick="dotrans('ʃ')">ʃ</span>
+<span class="t" onclick="dotrans('t')">t</span>
+<span class="t" onclick="dotrans('ʧ')">ʧ</span>
+<span class="t" onclick="dotrans('v')">v</span>
+<span class="t" onclick="dotrans('w')">w</span>
+<span class="t" onclick="dotrans('θ')">θ</span>
+<span class="t" onclick="dotrans('z')">z</span>
+<span class="t" onclick="dotrans('ʒ')">ʒ</span>
+
+</div>
+
+
+<div id="transliteration" class="transcript" style="display:none;">
+<span class="t" onmouseover="showtrans('ꔂ,ꔦ,ꕌ,ꕳ')" onmouseout="hidetrans()" onclick="add('ະ')">h</span>
+<span class="t" onmouseover="showtrans('ັ')" onmouseout="hidetrans()" onclick="add('ັ')">ä</span>
+<span class="t" onmouseover="showtrans('າ')" onmouseout="hidetrans()" onclick="add('າ')">ā</span>
+<span class="t" onmouseover="showtrans('ໃ')" onmouseout="hidetrans()" onclick="add('ໃ')">aʲ</span>
+
+<p>Compose the latin text here: <input type="text" id="reverseTranslitIn"/> <button>Change to Vai</button></p>
+</div>
+
+<div id="transcription" class="transcript" style="display:none;">
+<span class="t" onmouseover="showtrans('ເ-ົາ')" onMouseOut="hidetrans()" onclick="addVowel('ເ-ົາ')">aao</span>
+<span class="t" onmouseover="showtrans('າວ')" onMouseOut="hidetrans()" onclick="add('າວ')">aao</span>
+<span class="t" onmouseover="showtrans('ໄ-')" onMouseOut="hidetrans()" onclick="addVowel('ໄ-')">ai</span>
+<span class="t" onmouseover="showtrans('ໃ-')" onMouseOut="hidetrans()" onclick="addVowel('ໃ-')">ai</span>
+</div>
+
+</div>
+
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+<div id="alphabet" class="default">
+
+
+
+<div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+ <span class="selector" onclick="findShape('2D54,2D59,2D5A,2D55,2D41,2D31,2D40,2D32','',true)" />a</span>
+ </div>
+</div>
+
+
+
+
+<div class="spaceline">
+<span class="shifted" dir="auto" onclick="toggleShift(this, 'kbdGrid', 'twoStep')">TABLE VIEW</span>
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+<div id="twoStep">
+      <div style="margin:0 15%; text-align:center; max-width:70%; font-size: 100%;"> 
+      <span class="selector" onclick="findShape('','ꔀ,ꔁ,ꔂ,ꔃ,ꔄ,ꔅ,ꔆ,ꔇ,ꔈ,ꔉ,ꔊ,ꔋ,ꔌ,ꔍ,ꔎ,ꔏ,ꔐ,ꔑ,ꔒ,ꔓ,ꔔ,ꔕ,ꔖ,ꔗ,ꔘ,ꔙ,ꔚ,ꔛ,ꔜ,ꔝ,ꔞ,ꔟ,ꔠ,ꔡ,ꔢ,ꔣ',false)">ꔀ</span> 
+      <span class="selector" onclick="findShape('','ꔤ,ꔥ,ꔦ,ꔧ,ꔨ,ꔩ,ꔪ,ꔫ,ꔬ,ꔭ,ꔮ,ꔯ,ꔰ,ꔱ,ꔲ,ꔳ,ꔴ,ꔵ,ꔶ,ꔷ,ꔸ,ꔹ,ꔺ,ꔻ,ꔼ,ꔽ,ꔾ,ꔿ,ꕀ,ꕁ,ꕂ,ꕃ,ꕄ,ꕅ,ꕆ,ꕇ,ꕈ',false)">ꔤ</span> 
+      <span class="selector" onclick="findShape('','ꕉ,ꕊ,ꕋ,ꕌ,ꕍ,ꕎ,ꕏ,ꕐ,ꕑ,ꕒ,ꕓ,ꕔ,ꕕ,ꕖ,ꕗ,ꕘ,ꕙ,ꕚ,ꕛ,ꕜ,ꕝ,ꕞ,ꕟ,ꕠ,ꕡ,ꕢ,ꕣ,ꕤ,ꕥ,ꕦ,ꕧ,ꕨ,ꕩ,ꕪ,ꕫ,ꕬ,ꕭ,ꕮ,ꕯ,ꕰ',false)">ꕉ</span> 
+      <span class="selector" onclick="findShape('','ꕱ,ꕲ,ꕳ,ꕴ,ꕵ,ꕶ,ꕷ,ꕸ,ꕹ,ꕺ,ꕻ,ꕼ,ꕽ,ꕾ,ꕿ,ꖀ,ꖁ,ꖂ,ꖃ,ꖄ,ꖅ,ꖆ,ꖇ,ꖈ,ꖉ,ꖊ,ꖋ,ꖌ,ꖍ,ꖎ,ꖏ,ꖐ,ꖑ,ꖒ,ꖓ,ꖔ',false)">ꕱ</span> 
+      <span class="selector" onclick="findShape('','ꖕ,ꖖ,ꖗ,ꖘ,ꖙ,ꖚ,ꖛ,ꖜ,ꖝ,ꖞ,ꖟ,ꖠ,ꖡ,ꖢ,ꖣ,ꖤ,ꖥ,ꖦ,ꖧ,ꖨ,ꖩ,ꖪ,ꖫ,ꖬ,ꖭ,ꖮ,ꖯ,ꖰ,ꖱ,ꖲ,ꖳ,ꖴ,ꖵ,ꖶ,ꖷ,ꖸ,ꖹ',false)">ꖕ</span> 
+      <span class="selector" onclick="findShape('','ꖺ,ꖻ,ꖼ,ꖽ,ꖾ,ꖿ,ꗀ,ꗁ,ꗂ,ꗃ,ꗄ,ꗅ,ꗆ,ꗇ,ꗈ,ꗉ,ꗊ,ꗋ,ꗌ,ꗍ,ꗎ,ꗏ,ꗐ,ꗑ,ꗒ,ꗓ,ꗔ,ꗕ,ꗖ,ꗗ,ꗘ,ꗙ,ꗚ,ꗛ,ꗜ,ꗝ,ꗞ,ꗟ,ꗠ',false)">ꖺ</span> 
+      <span class="selector" onclick="findShape('','ꗡ,ꗢ,ꗣ,ꗤ,ꗥ,ꗦ,ꗧ,ꗨ,ꗩ,ꗪ,ꗫ,ꗬ,ꗭ,ꗮ,ꗯ,ꗰ,ꗱ,ꗲ,ꗳ,ꗴ,ꗵ,ꗶ,ꗷ,ꗸ,ꗹ,ꗺ,ꗻ,ꗼ,ꗽ,ꗾ,ꗿ,ꘀ,ꘁ,ꘂ,ꘃ,ꘄ,ꘅ,ꘆ,ꘇ,ꘈ,ꘉ,ꘊ',false)">ꗡ</span> 
+      <span class="selector" onclick="findShape('','꘠,꘡,꘢,꘣,꘤,꘥,꘦,꘧,꘨,꘩',true)">#</span> 
+     <span class="selector" onclick="findShape('','ꘐ,ꘑ,ꘒ,ꘪ,ꘫ',false)">HS</span> 
+      <span class="selector" onclick="findShape('','ꘓ,ꘔ,ꘕ,ꘖ,ꘗ,ꘘ,ꘙ,ꘚ,ꘛ,ꘜ,ꘝ,ꘞ,ꘟ',false)">L</span> 
+      <span class="c">ꘌ</span>
+      <span class="c">ꘋ</span>
+      <span class="c">ꘘ</span>
+      <span class="c">ꘓ</span>
+
+<div id="extrashapes"></div>
+</div>
+</div>
+
+<div id="kbdGrid" style="display: none; flex-direction: row; flex-wrap: wrap;">
+
+<div id="part1">      
+<table>
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th><span class="hint">e</span></th>
+<th><span class="hint">i</span></th>
+<th><span class="hint">a</span></th>
+<th><span class="hint">o</span></th>
+<th><span class="hint">u</span></th>
+<th><span class="hint">ɔ</span></th>
+<th><span class="hint">ɛ</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>&nbsp;</th>
+<td><span class="c">ꔀ</span></td>
+<td><span class="c">ꔤ</span></td>
+<td><span class="c">ꕉ</span></td>
+<td><span class="c">ꕱ</span></td>
+<td><span class="c">ꖕ</span></td>
+<td><span class="c">ꖺ</span></td>
+<td><span class="c">ꗡ</span></td>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<td><span class="c">ꔁ</span></td>
+<td><span class="c">ꔥ</span></td>
+<td><span class="c">ꕊ</span></td>
+<td><span class="c">ꕲ</span></td>
+<td><span class="c">ꖖ</span></td>
+<td><span class="c">ꖻ</span></td>
+<td><span class="c">ꗢ</span></td>
+</tr>
+<tr>
+<th><span class="hint">ŋ</span></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><span class="c">ꕋ</span></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><span class="c">ꖼ</span></td>
+<td><span class="c">ꗣ</span></td>
+</tr>
+<tr>
+<th><span class="hint">h</span></th>
+<td><span class="c">ꔂ</span></td>
+<td><span class="c">ꔦ</span><span class="c">ꔧ</span></td>
+<td><span class="c">ꕌ</span><span class="c">ꕍ</span></td>
+<td><span class="c">ꕳ</span></td>
+<td><span class="c">ꖗ</span><span class="c">ꖘ</span></td>
+<td><span class="c">ꖽ</span><span class="c">ꖾ</span></td>
+<td><span class="c">ꗤ</span><span class="c">ꗥ</span></td>
+</tr>
+<tr>
+<th><span class="hint">w</span></th>
+<td><span class="c">ꔃ</span><span class="c">ꔄ</span></td>
+<td><span class="c">ꔨ</span><span class="c">ꔩ</span></td>
+<td><span class="c">ꕎ</span><span class="c">ꕏ</span></td>
+<td><span class="c">ꕴ</span><span class="c">ꕵ</span></td>
+<td><span class="c">ꖙ</span><span class="c">ꖚ</span></td>
+<td><span class="c">ꖿ</span><span class="c">ꗀ</span></td>
+<td><span class="c">ꗦ</span><span class="c">ꗧ</span></td>
+</tr>
+<tr>
+<th><span class="hint">p</span></th>
+<td><span class="c">ꔅ</span></td>
+<td><span class="c">ꔪ</span></td>
+<td><span class="c">ꕐ</span></td>
+<td><span class="c">ꕶ</span></td>
+<td><span class="c">ꖛ</span></td>
+<td><span class="c">ꗁ</span></td>
+<td><span class="c">ꗨ</span></td>
+</tr>
+<tr>
+<th><span class="hint">b</span></th>
+<td><span class="c">ꔆ</span></td>
+<td><span class="c">ꔫ</span></td>
+<td><span class="c">ꕑ</span></td>
+<td><span class="c">ꕷ</span></td>
+<td><span class="c">ꖜ</span></td>
+<td><span class="c">ꗂ</span></td>
+<td><span class="c">ꗩ</span></td>
+</tr>
+<tr>
+<th><span class="hint">ɓ</span></th>
+<td><span class="c">ꔇ</span></td>
+<td><span class="c">ꔬ</span></td>
+<td><span class="c">ꕒ</span></td>
+<td><span class="c">ꕸ</span></td>
+<td><span class="c">ꖝ</span></td>
+<td><span class="c">ꗃ</span></td>
+<td><span class="c">ꗪ</span></td>
+</tr>
+<tr>
+<th><span class="hint">mɓ</span></th>
+<td><span class="c">ꔈ</span></td>
+<td><span class="c">ꔭ</span></td>
+<td><span class="c">ꕓ</span></td>
+<td><span class="c">ꕹ</span></td>
+<td><span class="c">ꖞ</span></td>
+<td><span class="c">ꗄ</span></td>
+<td><span class="c">ꗫ</span></td>
+</tr>
+<tr>
+<th><span class="hint">kp</span></th>
+<td><span class="c">ꔉ</span></td>
+<td><span class="c">ꔮ</span></td>
+<td><span class="c">ꕔ</span><span class="c">ꕕ</span></td>
+<td><span class="c">ꕺ</span></td>
+<td><span class="c">ꖟ</span></td>
+<td><span class="c">ꗅ</span></td>
+<td><span class="c">ꗬ</span><span class="c">ꗭ</span></td>
+</tr>
+<tr>
+<th><span class="hint">mgb</span></th>
+<td><span class="c">ꔊ</span></td>
+<td><span class="c">ꔯ</span></td>
+<td><span class="c">ꕖ</span></td>
+<td><span class="c">ꕻ</span></td>
+<td><span class="c">ꖠ</span></td>
+<td><span class="c">ꗆ</span></td>
+<td><span class="c">ꗮ</span></td>
+</tr>
+<tr>
+<th><span class="hint">gb</span></th>
+<td><span class="c">ꔋ</span></td>
+<td><span class="c">ꔰ</span></td>
+<td><span class="c">ꕗ</span></td>
+<td><span class="c">ꕼ</span></td>
+<td><span class="c">ꖡ</span></td>
+<td><span class="c">ꗇ</span><span class="c">ꗈ</span></td>
+<td><span class="c">ꗯ</span><span class="c">ꗰ</span></td>
+</tr>
+<tr>
+<th><span class="hint">f</span></th>
+<td><span class="c">ꔌ</span></td>
+<td><span class="c">ꔱ</span></td>
+<td><span class="c">ꕘ</span></td>
+<td><span class="c">ꕽ</span></td>
+<td><span class="c">ꖢ</span></td>
+<td><span class="c">ꗉ</span></td>
+<td><span class="c">ꗱ</span></td>
+</tr>
+<tr>
+<th><span class="hint">v</span></th>
+<td><span class="c">ꔍ</span></td>
+<td><span class="c">ꔲ</span></td>
+<td><span class="c">ꕙ</span></td>
+<td><span class="c">ꕾ</span></td>
+<td><span class="c">ꖣ</span></td>
+<td><span class="c">ꗊ</span></td>
+<td><span class="c">ꗲ</span></td>
+</tr>
+<tr>
+<th><span class="hint">t</span></th>
+<td><span class="c">ꔎ</span></td>
+<td><span class="c">ꔳ</span></td>
+<td><span class="c">ꕚ</span></td>
+<td><span class="c">ꕿ</span></td>
+<td><span class="c">ꖤ</span></td>
+<td><span class="c">ꗋ</span></td>
+<td><span class="c">ꗳ</span></td>
+</tr>
+<tr>
+<th><span class="hint">θ</span></th>
+<td><span class="c">ꔏ</span></td>
+<td><span class="c">ꔴ</span></td>
+<td><span class="c">ꕛ</span></td>
+<td><span class="c">ꖀ</span></td>
+<td><span class="c">ꖥ</span></td>
+<td><span class="c">ꗌ</span></td>
+<td><span class="c">ꗴ</span></td>
+</tr>
+<tr>
+<th><span class="hint">d</span></th>
+<td><span class="c">ꔐ</span></td>
+<td><span class="c">ꔵ</span></td>
+<td><span class="c">ꕜ</span></td>
+<td><span class="c">ꖁ</span></td>
+<td><span class="c">ꖦ</span></td>
+<td><span class="c">ꗍ</span></td>
+<td><span class="c">ꗵ</span></td>
+</tr>
+<tr>
+<th><span class="hint">ð</span></th>
+<td><span class="c">ꔑ</span></td>
+<td><span class="c">ꔶ</span></td>
+<td><span class="c">ꕝ</span></td>
+<td><span class="c">ꖂ</span></td>
+<td><span class="c">ꖧ</span></td>
+<td><span class="c">ꗎ</span></td>
+<td><span class="c">ꗶ</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+ 
+ <div id="part2">
+<table>
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th><span class="hint">e</span></th>
+<th><span class="hint">i</span></th>
+<th><span class="hint">a</span></th>
+<th><span class="hint">o</span></th>
+<th><span class="hint">u</span></th>
+<th><span class="hint">ɔ</span></th>
+<th><span class="hint">ɛ</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th><span class="hint">l</span></th>
+<td><span class="c">ꔒ</span></td>
+<td><span class="c">ꔷ</span></td>
+<td><span class="c">ꕞ</span></td>
+<td><span class="c">ꖃ</span></td>
+<td><span class="c">ꖨ</span></td>
+<td><span class="c">ꗏ</span></td>
+<td><span class="c">ꗷ</span></td>
+</tr>
+<tr>
+<th><span class="hint">r</span></th>
+<td><span class="c">ꔓ</span></td>
+<td><span class="c">ꔸ</span></td>
+<td><span class="c">ꕟ</span></td>
+<td><span class="c">ꖄ</span></td>
+<td><span class="c">ꖩ</span></td>
+<td><span class="c">ꗐ</span></td>
+<td><span class="c">ꗸ</span></td>
+</tr>
+<tr>
+<th><span class="hint">ɗ</span></th>
+<td><span class="c">ꔔ</span></td>
+<td><span class="c">ꔹ</span></td>
+<td><span class="c">ꕠ</span></td>
+<td><span class="c">ꖅ</span></td>
+<td><span class="c">ꖪ</span></td>
+<td><span class="c">ꗑ</span></td>
+<td><span class="c">ꗹ</span></td>
+</tr>
+<tr>
+<th><span class="hint">nɗ</span></th>
+<td><span class="c">ꔕ</span></td>
+<td><span class="c">ꔺ</span></td>
+<td><span class="c">ꕡ</span></td>
+<td><span class="c">ꖆ</span></td>
+<td><span class="c">ꖫ</span></td>
+<td><span class="c">ꗒ</span></td>
+<td><span class="c">ꗺ</span></td>
+</tr>
+<tr>
+<th><span class="hint">s</span></th>
+<td><span class="c">ꔖ</span></td>
+<td><span class="c">ꔻ</span></td>
+<td><span class="c">ꕢ</span></td>
+<td><span class="c">ꖇ</span></td>
+<td><span class="c">ꖬ</span></td>
+<td><span class="c">ꗓ</span></td>
+<td><span class="c">ꗻ</span></td>
+</tr>
+<tr>
+<th><span class="hint">ʃ</span></th>
+<td><span class="c">ꔗ</span></td>
+<td><span class="c">ꔼ</span></td>
+<td><span class="c">ꕣ</span></td>
+<td><span class="c">ꖈ</span></td>
+<td><span class="c">ꖭ</span></td>
+<td><span class="c">ꗔ</span></td>
+<td><span class="c">ꗼ</span></td>
+</tr>
+<tr>
+<th><span class="hint">z</span></th>
+<td><span class="c">ꔘ</span></td>
+<td><span class="c">ꔽ</span></td>
+<td><span class="c">ꕤ</span></td>
+<td><span class="c">ꖉ</span></td>
+<td><span class="c">ꖮ</span></td>
+<td><span class="c">ꗕ</span></td>
+<td><span class="c">ꗽ</span></td>
+</tr>
+<tr>
+<th><span class="hint">ʒ</span></th>
+<td><span class="c">ꔙ</span></td>
+<td><span class="c">ꔾ</span></td>
+<td><span class="c">ꕥ</span></td>
+<td><span class="c">ꖊ</span></td>
+<td><span class="c">ꖯ</span></td>
+<td><span class="c">ꗖ</span></td>
+<td><span class="c">ꗾ</span></td>
+</tr>
+<tr>
+<th><span class="hint">ʧ</span></th>
+<td><span class="c">ꔚ</span></td>
+<td><span class="c">ꔿ</span></td>
+<td><span class="c">ꕦ</span></td>
+<td><span class="c">ꖋ</span></td>
+<td><span class="c">ꖰ</span></td>
+<td><span class="c">ꗗ</span></td>
+<td><span class="c">ꗿ</span></td>
+</tr>
+<tr>
+<th><span class="hint">ʤ</span></th>
+<td><span class="c">ꔛ</span></td>
+<td><span class="c">ꕀ</span></td>
+<td><span class="c">ꕧ</span></td>
+<td><span class="c">ꖌ</span></td>
+<td><span class="c">ꖱ</span></td>
+<td><span class="c">ꗘ</span></td>
+<td><span class="c">ꘀ</span></td>
+</tr>
+<tr>
+<th><span class="hint">nʤ</span></th>
+<td><span class="c">ꔜ</span></td>
+<td><span class="c">ꕁ</span></td>
+<td><span class="c">ꕨ</span></td>
+<td><span class="c">ꖍ</span></td>
+<td><span class="c">ꖲ</span></td>
+<td><span class="c">ꗙ</span></td>
+<td><span class="c">ꘁ</span></td>
+</tr>
+<tr>
+<th><span class="hint">j</span></th>
+<td><span class="c">ꔝ</span></td>
+<td><span class="c">ꕂ</span></td>
+<td><span class="c">ꕩ</span></td>
+<td><span class="c">ꖎ</span></td>
+<td><span class="c">ꖳ</span></td>
+<td><span class="c">ꗚ</span></td>
+<td><span class="c">ꘂ</span></td>
+</tr>
+<tr>
+<th><span class="hint">k</span></th>
+<td><span class="c">ꔞ</span></td>
+<td><span class="c">ꕃ</span></td>
+<td><span class="c">ꕪ</span><span class="c">ꕫ</span></td>
+<td><span class="c">ꖏ</span></td>
+<td><span class="c">ꖴ</span></td>
+<td><span class="c">ꗛ</span></td>
+<td><span class="c">ꘃ</span></td>
+</tr>
+<tr>
+<th><span class="hint">ŋg</span></th>
+<td><span class="c">ꔟ</span></td>
+<td><span class="c">ꕄ</span></td>
+<td><span class="c">ꕬ</span></td>
+<td><span class="c">ꖐ</span></td>
+<td><span class="c">ꖵ</span></td>
+<td><span class="c">ꗜ</span></td>
+<td><span class="c">ꘄ</span><span class="c">ꘅ</span></td>
+</tr>
+<tr>
+<th><span class="hint">g</span></th>
+<td><span class="c">ꔠ</span></td>
+<td><span class="c">ꕅ</span></td>
+<td><span class="c">ꕭ</span></td>
+<td><span class="c">ꖑ</span></td>
+<td><span class="c">ꖶ</span></td>
+<td><span class="c">ꗝ</span></td>
+<td><span class="c">ꘆ</span><span class="c">ꘇ</span></td>
+</tr>
+<tr>
+<th><span class="hint">m</span></th>
+<td><span class="c">ꔡ</span></td>
+<td><span class="c">ꕆ</span></td>
+<td><span class="c">ꕮ</span></td>
+<td><span class="c">ꖒ</span></td>
+<td><span class="c">ꖷ</span></td>
+<td><span class="c">ꗞ</span></td>
+<td><span class="c">ꘈ</span></td>
+</tr>
+<tr>
+<th><span class="hint">n</span></th>
+<td><span class="c">ꔢ</span></td>
+<td><span class="c">ꕇ</span></td>
+<td><span class="c">ꕯ</span></td>
+<td><span class="c">ꖓ</span></td>
+<td><span class="c">ꖸ</span></td>
+<td><span class="c">ꗟ</span></td>
+<td><span class="c">ꘉ</span></td>
+</tr>
+<tr>
+<th><span class="hint">ɲ</span></th>
+<td><span class="c">ꔣ</span></td>
+<td><span class="c">ꕈ</span></td>
+<td><span class="c">ꕰ</span></td>
+<td><span class="c">ꖔ</span></td>
+<td><span class="c">ꖹ</span></td>
+<td><span class="c">ꗠ</span></td>
+<td><span class="c">ꘊ</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">‚</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<span class="c">„</span>
+<span class="c">«</span>
+<span class="c">»</span>
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+<span class="c">꘍</span>
+<span class="c">꘎</span>
+<span class="c">꘏</span>
+</div>
+
+
+
+
+<!--details>
+<summary>Show obsolete letters</summary>
+<div id="obsolete">
+<span class="g"><span class="hint">ī</span><span class="c">&#x0456;</span></span>
+<span class="g"><span class="hint">ḟ</span><span class="c">&#x0473;</span></span>
+<span class="g"><span class="hint">i͡e</span><span class="c">&#x0463;</span></span>
+<span class="g"><span class="hint">ẏ</span><span class="c">&#x0475;</span></span>
+
+<span style="margin-left: 2em;" class="g"><span class="hint">ż</span><span class="c">&#x0455;</span></span>
+<span class="g"><span class="hint">k͡s</span><span class="c">&#x046F;</span></span>
+<span class="g"><span class="hint">p͡s</span><span class="c">&#x0471;</span></span>
+<span class="g"><span class="hint">ǫ</span><span class="c">&#x046B;</span></span>
+<span class="g"><span class="hint">ę</span><span class="c">&#x0467;</span></span>
+<span class="g"><span class="hint">i͡ǫ</span><span class="c">&#x046D;</span></span>
+<span class="g"><span class="hint">i͡ę</span><span class="c">&#x0469;</span></span>
+</div>
+</details-->
+
+
+</div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
