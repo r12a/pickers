@@ -59,6 +59,7 @@ They currently include:
     <span><a href="tlicho/">Tłı̨chǫ&nbsp;(Dogrib)</a></span> •
     <span><a href="uighur/">Uighur</a></span> •
     <span><a href="urdu/">Urdu</a></span> •
+    <span><a href="vai/">Vai</a></span> •
     <span><a href="vietnamese/">Vietnamese</a></span>
 
 Each picker has its own help file, which explains how to use the picker and what features are available. Features vary, but can include automatic transcription to and from the text, shape-based hints and selection methods, keyboards, codepoint listing, creating examples in markup, control over the font used, etc.
