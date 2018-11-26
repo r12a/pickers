@@ -290,7 +290,21 @@ str = str.replace(/–/g, "ꘌ")
 
 // logograms
 str = str.replace(/FAA/g, "ꘘ")
-str = str.replace(/FEENG/g, "ꘓ")
+str = str.replace(/FENG/g, "ꘓ")
+
+str = str.replace(/FEŊ/g, "ꘓ")
+str = str.replace(/KEŊ/g, "ꘔ")
+str = str.replace(/TIŊ/g, "ꘕ")
+str = str.replace(/NII/g, "ꘖ")
+str = str.replace(/BAŊ/g, "ꘗ")
+str = str.replace(/TAA/g, "ꘙ")
+str = str.replace(/DAŊ/g, "ꘚ")
+str = str.replace(/DOŊ/g, "ꘛ")
+str = str.replace(/KUŊ/g, "ꘜ")
+str = str.replace(/TƆŊ/g, "ꘝ")
+str = str.replace(/DƆƆ̣/g, "ꘞ")
+str = str.replace(/JƆŊ/g, "ꘟ")
+
 
 // punctuation
 str = str.replace(/,/g, "꘍")
@@ -603,7 +617,19 @@ str = str.replace(/ꘌ/g, "–")
 
 // logograms
 str = str.replace(/ꘘ/g, "FAA")
-str = str.replace(/ꘓ/g, "FEENG")
+str = str.replace(/ꘓ/g, "FEŊ")
+str = str.replace(/ꘔ/g, "KEŊ")
+str = str.replace(/ꘕ/g, "TIŊ")
+str = str.replace(/ꘖ/g, "NII")
+str = str.replace(/ꘗ/g, "BAŊ")
+str = str.replace(/ꘙ/g, "TAA")
+str = str.replace(/ꘚ/g, "DAŊ")
+str = str.replace(/ꘛ/g, "DOŊ")
+str = str.replace(/ꘜ/g, "KUŊ")
+str = str.replace(/ꘝ/g, "TƆŊ")
+str = str.replace(/ꘞ/g, "DƆƆ̣")
+str = str.replace(/ꘟ/g, "JƆŊ")
+
 
 // punctuation
 str = str.replace(/꘍/g, ",")

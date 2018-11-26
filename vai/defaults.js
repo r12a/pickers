@@ -38,7 +38,7 @@ var inputAids = [
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Vai text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-{"title":"Transliterate<br/>to Vai", "alt":"Convert Latin transliterated text to Vai.", "code":"doTranscription('reverse')"},
+{"title":"Reverse<br/>translit.", "alt":"Convert Latin transliterated text to Vai.", "code":"doTranscription('reverse')"},
 //{"title":"XXXXXXXXXX<br/>to XXXXXXXXXX", "alt":"XXXXXXXXXX.", "code":"doTranscription('XXXXXXXXXX')", "warning":"Still in development. Separate syllables before use."},
 ]
 
