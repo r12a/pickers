@@ -150,7 +150,7 @@ if (aidsList.match('keyboard')) {
     `
     }
 
-if (aidsList.match('intro')) {
+if (aidsList.match('close')) {
 	out += `
 	<p><b class="leadin">Clear all.</b> Turns off all input aids and closes all panels.</p>
 	`
