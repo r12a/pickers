@@ -57,3 +57,84 @@ function toggleShift (node, LC, UC) {
 		}
 	}
 
+
+
+var justLatinMap = `
+a ã ạ ạ̃ a
+e ẽ ẹ ẹ̃ e
+E ɛ̃ ɛ̣ ɛ̣̃ ɛ
+i ĩ ị ị̃ i
+o õ ọ ọ̃ o
+O ɔ̃ ɔ̣ ɔ̣̃ ɔ
+u ũ ụ ụ̃ u
+b ɓ b 
+d ɗ ð ʤ d 
+g gb g 
+k kp k
+m mɓ mgb m
+n nɗ nʤ n 
+N ŋg ɲ ŋ ŋ̇
+s ʃ s
+t ʧ t
+q θ q
+z ʒ z
+= – =
+`
+
+
+
+var translitCharacterMap = `
+a a ա
+A A Ա 
+e e ե ew և ë ը ɛ է
+E E Ե Ë Ը Ɛ Է
+i i ի
+I I Ի 
+o o ո ò օ
+O O Ո Ò Օ
+b b բ
+B B Բ 
+c ç ծ č չ č̣ ճ c’ ց
+C Ç Ծ Č Չ Č̣ Ճ C’ Ց
+d d դ
+D D Դ
+f f ֆ
+F F Ֆ
+g g գ ġ ղ
+G G Գ Ġ Ղ
+h h հ
+H H Հ
+j j ձ ǰ ջ
+J J Ձ ǰ Ջ
+k k կ k’ ք
+K K Կ K’ Ք
+l l լ
+L L Լ
+m m մ mn ﬓ me ﬔ mi ﬕ vn ﬖ mx ﬗ
+M M Մ
+n n ն
+N N Ն
+p p պ p’ փ
+P P Պ P’ Փ
+r r ր ṙ ռ
+R R Ր Ṙ Ռ
+s s ս š շ
+S S Ս Š Շ
+t t տ t’ թ
+T T Տ T’ Թ
+v v վ
+V V Վ
+w w ւ
+W W Ւ
+x x խ
+X X Խ
+y y յ
+Y Y Յ
+z z զ ž ժ
+Z Z Զ Ž Ժ
+; , , : ․ * ՝ . ։ “ « ” » ? ՞ ! ՜
+`
+
+
+
+

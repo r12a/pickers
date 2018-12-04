@@ -33,7 +33,7 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->26-Nov-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=vai" title="Show all blog posts tagged with 'vai'">vai</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->04-Dec-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=vai" title="Show all blog posts tagged with 'vai'">vai</a></p>
 
 <p>This Unicode character picker allows you to produce or analyse runs of Vai text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[vai%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/vai">the Github commit list</a>.</p>
@@ -72,7 +72,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
       <p><b class="leadin">Transliterate.</b> <strong></strong>Converts the contents of the text area to a Latin transliteration that provides a unique correspondence between each Vai symbol and a Latin symbol. It doesn't lead to a good phonetic transcription, but the process is reversible (unlike most phonetic transcriptions).</p>
-<p><b class="leadin">Reverse translit.</b> <strong></strong>Converts  a Latin transliteration to Vai text. Pickers usually include the reverse transliteration command in the bar on the left, but the size of Vai makes the normal approach unfeasible. Instead, just write the text in Latin in the main box, highlight it, and click the Reverse translit. button. You can then quickly pull the Vai text into the main box using the controls to the right.</p>
+<p><b class="leadin">Reverse translit.</b> <strong></strong>Converts  a Latin transliteration to Vai text. Pickers usually include the reverse transliteration command in the bar on the left, but the size of Vai makes the normal approach unfeasible. Instead, just write the text in Latin in the main box, highlight it, and click the <samp>Reverse translit.</samp> button. You can then quickly pull the Vai text into the main box using the controls to the right.</p>
 <div id="controlsAbove2"></div>
 <script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
@@ -88,7 +88,9 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <h2 href="#input_aids">Input aids</h2>
 
 <div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, shape, latin')</script>
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, shape, latin',
+'<p><strong>Note:</strong> <samp>Shape lookup</samp> only works with the table view.</p>'
+)</script>
 
 
     <!--p><b class="leadin">Huffman transcription.</b> Displays a panel that  allows you to generate Vai text from a transcription as used by Huffman in <cite>Cambodian System of Writing</cite>. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want in order to add it to the text area.</p>
