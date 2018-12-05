@@ -285,7 +285,7 @@ str = str.replace(/nɛ̃/g, "ꘉ")
 str = str.replace(/ɲɛ̃/g, "ꘊ")
 
 // syllable finals
-str = str.replace(/ŋ̇/g, "ꘋ")
+str = str.replace(/ŋ̽/g, "ꘋ")
 str = str.replace(/–/g, "ꘌ")
 
 // logograms
@@ -612,7 +612,7 @@ str = str.replace(/ꘉ/g, "nɛ̃")
 str = str.replace(/ꘊ/g, "ɲɛ̃")
 
 // syllable finals
-str = str.replace(/ꘋ/g, "ŋ̇")
+str = str.replace(/ꘋ/g, "ŋ̽")
 str = str.replace(/ꘌ/g, "–")
 
 // logograms
