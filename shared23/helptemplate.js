@@ -121,7 +121,8 @@ if (aidsList.match('latin')) {
 	out += `
 	<p><b class="leadin">Latin characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  transcription, and sets up the <strong>Latin type-in mode</strong>.</p>
     <p>As you type, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or click directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already typed the character you wanted, just continue typing.)</p>
-    <p><img src="../../shared23/images/helpcharacter-selector.png" alt=""/></p>
+    <p><img src="../../shared23/images/help/character-selector.png" alt=""/></p>
+    <p>The digits coloured orange identify items used by this picker's transliteration scheme. The other items will be used for other types of transcription, such as phonetic, or ISO, etc.</p>
     <p>The key that produces the suggestions is highlighted in orange in a panel that appears below the text area.</p>
     <p><img src="../../shared23/images/help/latin-panel.png" alt=""/></p>
     <p>You can also click on the items in that panel in order to insert them. In general, alternative characters are associate with a key on the keyboard that ressembles them when displayed - eg. &#x0263; will usually be brought up by clicking on the 'v' key (rather than, say 'g').</p>

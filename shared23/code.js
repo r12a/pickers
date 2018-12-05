@@ -1641,20 +1641,18 @@ var latinOnly = false
 var charChoiceKeys = new Set(['0','1','2','3','4','5','6','7','8','9'])
 
 
-function drawCharSelectionPanel (key) {
+function drawCharSelectionPanelOLD (key) {
         out = ''
         for (let i=1;i<latinCharacters[key].length;i++) {
             if (i > 9) {
                 out += ' &nbsp; Warning: More than 10 items.'
                 break
                 }
-            out += ' <sup>'+eval(i % 10)//+'</sup>'
+            out += ' <sup>'+eval(i % 10)
             if (! window.latinOnly) out += latinCharacters[key][i][0]
             out += '</sup> '
             out += '<bdi onclick="'
-            //if (latinCharacters[key][i][1].includes('-')) out += 'addVowel'
             out += 'addReplacement'
-            //else out += 'add'
             out += '(\''+latinCharacters[key][i][1]+'\'); window.awaitingInput=\'\'; document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+latinCharacters[key][i][1]+'</bdi>'
             }
         out += ' <sup>0'
@@ -1667,6 +1665,66 @@ function drawCharSelectionPanel (key) {
 
         document.getElementById("charChoice").innerHTML = out
     }
+	
+	
+function drawCharSelectionPanelX (key) {
+        out = ''
+        translitTotal = -1
+        if (window.latinOnly) translitTotal = parseInt(latinCharacters[key].pop())
+        for (let i=1;i<latinCharacters[key].length;i++) {
+            if (i > 9) {
+                out += ' &nbsp; Warning: More than 10 items.'
+                break
+                }
+            out += ' <sup'
+            if (i<translitTotal) out += ' style="color: orange;"'
+            out += '>'+eval(i % 10)
+            if (! window.latinOnly) out += latinCharacters[key][i][0]
+            out += '</sup> '
+            out += '<bdi onclick="'
+            out += 'addReplacement'
+            out += '(\''+latinCharacters[key][i][1]+'\'); window.awaitingInput=\'\'; document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+latinCharacters[key][i][1]+'</bdi>'
+            }
+        out += ' <sup'
+        if (translitTotal>0) out += ' style="color: orange;"'
+        out += '>0'
+        if (! window.latinOnly) out += latinCharacters[key][0][0]
+        out += '</sup> <bdi onclick="'
+        out += 'addReplacement'
+        out += '(\''+latinCharacters[key][0][1]+'\'); window.awaitingInput=\'\'; document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+latinCharacters[key][0][1]+'</bdi>'
+
+        document.getElementById("charChoice").innerHTML = out
+    }
+	
+	
+function drawCharSelectionPanel (key) {
+        out = ''
+        if (window.latinOnly) { // deal with # at end indicating how many translit chars
+            translitTotal = parseInt(latinCharacters[key][latinCharacters[key].length-1][0])
+            last = latinCharacters[key].length-1
+            }
+        else {
+            last = latinCharacters[key].length
+            translitTotal = -1
+            }
+        for (let i=0;i<last;i++) {
+            if (i > 9) {
+                out += ' &nbsp; Warning: More than 10 items.'
+                break
+                }
+            out += ' <sup'
+            if (i<translitTotal) out += ' style="color: orange;"'
+            out += '>'+eval(i % 10)
+            if (! window.latinOnly) out += latinCharacters[key][i][0]
+            out += '</sup> '
+            out += '<bdi onclick="'
+            out += 'addReplacement'
+            out += '(\''+latinCharacters[key][i][1]+'\'); window.awaitingInput=\'\'; document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+latinCharacters[key][i][1]+'</bdi>'
+            }
+
+        document.getElementById("charChoice").innerHTML = out
+    }
+	
 	
 // decipher key down codes
 function showDown (evt) {
@@ -1746,7 +1804,9 @@ function makePalette (mappingTable) {
         var charArray = list.split(' ')
         var theKey = charArray.shift()
         out = '<b>'+theKey+'</b>\n'
-        for (let j=0;j<charArray.length;j++) {
+        if (window.latinOnly) last = charArray.length-1 // this removes the translit count
+        else last = charArray.length
+        for (let j=0;j<last;j++) {
             if (window.latinOnly) {
                 out += '<span class="t" onclick="add(\''+charArray[j]+'\')">'+charArray[j]+'</span>\n'
                 }
