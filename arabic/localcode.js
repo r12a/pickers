@@ -92,4 +92,111 @@ function event_mouseoverChar ()  {
 			}
 		}
 	}
-	
+
+
+
+
+
+var justLatinMap = `
+a ɑ ɑ͑ ɑ̜ ɑ̄ ā ɑ̃ ɑː á 4
+d ð d̴ dˤ ḍ ðˤ 2
+h ħ ḥ 1
+i ī iː 0
+n ⁿ ñ 1
+o ö 0
+r ʁ 0
+s s̴ ʃ ṣ sˤ 2
+t ẗ t̴ tˤ ṭ 2
+u ū uː 0
+w w͑ ᵚ 2
+y ɣ y͑ 2
+z ʒ z̴ ẓ 2
+@ θ 1
+* ͓ 1
+{ ʕ ˤ ʿ ˓ 1
+} ʔ ʾ 1
+' ʼ ʻ ′ 0
+`
+
+
+
+var translitCharacterMap = `
+a ɑ ا ɑl ال ɑ͑ أ ɑ̜ إ ɑ̄ آ ā ى ɑ̃ ٱ Allāh اللّٰه
+A a َ aⁿ ً 
+b b ب
+d d د d̴ ض
+D ð ذ
+f f ف
+h h ه
+H ħ ح
+I i ِ iⁿ ٍ 
+k k ك
+l l ل
+m m م
+n n ن
+q q ق
+r r ر
+s s س ʃ ش
+S s̴ ص
+t t ت ẗ ة
+T t̴ ط
+U u ُ uⁿ ٌ 
+w w و ᵚ ّ w͑ ؤ
+x x خ
+y y ي ɣ غ y͑ ئ
+z ʒ ج z ز
+Z z̴ ظ
+@ θ ث
+{ ʕ ع
+} ʔ ء
+* ͓ ْ
+§ 0 ٠ 1 ١ 2 ٢ 3 ٣ 4 ٤ 5 ٥ 6 ٦ 7 ٧ 8 ٨ 9 ٩
+; ; ؛
+_ _ ـ
+, , ،
+. . ۔
+? ? ؟
+% % ٪
+`
+
+
+
+
+var ipaCharacterMap = `
+a ɑː ا ɑ ة a ى ɑt ة ʔɑː آ
+A a َ an ً
+b b ب
+d d د dˤ ض ðˤ ظ ð ذ
+f f ف f ڢ
+h h ہ ħ ح
+i iː ي
+I i ِ in ٍ
+j j ي
+k k ك
+l l ل
+m m م
+n n ن
+q q ق q ڧ
+r r ر
+s s س sˤ ص ʃ ش
+t t ت tˤ ط
+u uː و
+U u ُ un ٌ
+w w و
+x x خ
+y ɣ غ
+z z ز ʒ ج
+@ θ ث
+{ ʕ ع
+} ʔ ء
+[ ° ْ ᵚ ّ
+§ 0 ٠ 1 ١ 2 ٢ 3 ٣ 4 ٤ 5 ٥ 6 ٦ 7 ٧ 8 ٨ 9 ٩
+; ; ؛
+_ _ ـ
+, , ،
+. . ۔
+? ? ؟
+% % ٪
+`
+
+
