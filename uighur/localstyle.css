@@ -131,86 +131,9 @@ span.hint {
     margin: auto;
     }
 
-#transcriptionChoice {
-	position:absolute;
-	left:60px;
-    /*transform: translateX(-50%);*/
-	font-size: 60px; 
-	background-color: #FFFACD; 
-	border: 1px solid #ccc; 
-	border-radius:10px; 
-	padding: 7px;
-	display: none;
-	}
 #cursive {
     width: 4em;
     display: inline-block;
     }
 
 
-
-
-
-/*
-#alphabet { display: block; }
-
-#alphabet td.hint {  
-	font-size: 14px;
-	color: #ccc;
-	text-align: left;
-	text-align: end;
-	vertical-align: top;
-	}
-	
-#kbd { 	
-	margin: auto; 
-	}
-#kbd table {
-	margin:0;
-	}
-	
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: right;
-	text-align: start;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1.1;
-	}
-#kbd img {
-	vertical-align: top;
-	}
-
-#kbd #vowels .hint {
-	padding-left: 10px; 
-	}
-
-#kbd #numbers {
-	padding-left: 20px;
-	}
-#kbd #numbers img {
-	vertical-align: top;
-	}
-
-#kbd #punctuation {
-	padding-left: 20px;
-	}
-#kbd #punctuation td {
-	min-width: 30px;
-	}
-
-
-#alphabet #controlchars {
-	padding: 0 10px; text-align:center;
-	}
-#alphabet #controlchars p {
-	margin: 5px 0;
-	}
-
-.c { 
-	min-width: .5em;
-	text-align: center;
-	}
-*/

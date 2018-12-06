@@ -125,4 +125,93 @@ function event_mouseoverChar ()  {
 		}
 	}
 
+var justLatinMap = `
+a ɑ 0
+c č 1
+d ʤ 1
+e ë ɛ 1
+n ŋ 1
+o ø ɔ ö 1
+r ʁ ɾ 1
+s ʃ 1
+u ü ʊ 1
+x χ 1
+y ɣ ʏ 0
+z ʒ 1
+{ ʿ ’ 1
+`
 
+
+
+var translitCharacterMap = `
+a a ا
+A ’a ئا
+b b ب
+c č چ
+d d د ʤ ج
+e e ە ë ې
+E ’e ئە ’ë ئې
+f f ف
+g g گ
+h h ھ
+i i ى
+I ’i ئى
+k k ك
+l l ل
+m m م
+n n ن ŋ ڭ
+o o و ø ۆ
+O ’o ئو ’ø ئۆ
+p p پ
+q q ق
+r r ر ʁ غ
+s s س ʃ ش
+t t ت
+u u ۇ ü ۈ
+U ’u ئۇ ’ü ئۈ
+w w ۋ
+x χ خ
+y y ي
+z z ز ʒ ژ
+{ ʿ ئ
+% % ٪
+, , ،
+; ; ؛
+? ? ؟
+`
+
+
+
+var ulyCharacterMap = `
+a a ا
+A ’a ئا
+b b ب
+c ch چ
+d d د
+e e ە ë ې
+E ’e ئە ’ë ئې
+f f ف
+g g گ gh غ
+h h ھ
+i i ى
+I ’i ئى
+j j ج
+k k ك
+l l ل
+m m م
+n n ن ng ڭ
+o o و ö ۆ
+O ’o ئو ’ö ئۆ
+p p پ
+q q ق
+r r ر
+s s س sh ش
+t t ت
+u u ۇ ü ۈ
+U ’u ئۇ ’ü ئۈ
+w w ۋ
+x x خ
+y y ي
+z z ز zh ژ
+' ’ ئ
+`
