@@ -98,7 +98,7 @@ var out = ''
 if (aidsList.match('intro')) {
 	out += `
 	<p><img src="../../shared23/images/help/input_aids.png" style="float:left; margin-right:1em; " alt=""/></p>
-	<p>The vertical grey bar to the left allows you to turn on/off a number of panels that can help create the text you want.</p>
+	<p>The vertical grey bar to the left allows you to turn on/off a number of features or panels that can help create the text you want.</p>
  	`
     if (notes) out+= notes
     }
@@ -125,7 +125,7 @@ if (aidsList.match('latin')) {
     <p>The digits coloured orange identify items used by this picker's transliteration scheme. The other items will be used for other types of transcription, such as phonetic, or ISO, etc.</p>
     <p>The key that produces the suggestions is highlighted in orange in a panel that appears below the text area.</p>
     <p><img src="../../shared23/images/help/latin-panel.png" alt=""/></p>
-    <p>You can also click on the items in that panel in order to insert them. In general, alternative characters are associate with a key on the keyboard that ressembles them when displayed - eg. &#x0263; will usually be brought up by clicking on the 'v' key (rather than, say 'g').</p>
+    <p>You can also click on the items in that panel in order to insert them. In general, alternative characters are associate with a key on the keyboard that ressembles them when displayed - eg. &#x0263; will usually be brought up by clicking on the 'y' key (rather than, say 'g').</p>
 	`
 	}
 
