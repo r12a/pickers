@@ -119,4 +119,184 @@ function event_mouseoverChar ()  {
 	}
 
 
+var justLatinMap = `
+a ā 0
+b β 0
+d ɖ ʤ ḍ 2
+e ɛ ɛ͑ e͑ ə 3
+g ɡ ǧ g͟h 0
+h ʰ h͑ ḫ 3
+i ɪ͑ ᵢ ī ɪ 2
+k k͟h 0
+n ṇ̃ ⁿ ᵑ ṅ 3
+o ɔ 0
+r ɽ ṛ ʁ 1
+s ŝ ṡ ʃ ṣ š ʂ s̱ 3
+t ʈ ṭ t̤ 1
+u u͑ ᵘ ū ʊ 2
+w ᵚ 1
+y ɣ 1
+z ż ž ẑ ʒ ẓ ẕ z̤ 4
+{ ʿ 1
+} ʾ ʔ 1
+' ‘ 1
+: ː 0
+[  ̃◌ 0
+* ͓ 1
+0 0̣ 1
+1 1̣ 1
+2 2̣ 1
+3 3̣ 1
+4 4̣ 1
+5 5̣ 1
+6 6̣ 1
+7 7̣ 1
+8 8̣ 1
+9 9̣ 1
+`
+
+
+
+var translitCharacterMap = `
+a ɑ ا ɑ͑ أ ɑ̜ إ ɑ̄ آ ɑ̇ ٰ
+A a َ aⁿ ً
+b b ب
+c č چ
+d d د ɖ ڈ
+D ʤ ج
+e ɛ ے ɛ͑ ۓ
+E e͑ ۂ
+f f ف
+g g گ
+h ʰ ھ ḫ ہ h͗ ۀ
+H h ح
+i ɪ͑ ئ
+I i ِ iⁿ ٍ ᵢ ٖ
+k k ک k̇ ك
+l l ل
+m m م
+n n ن ñ ں ᵑ ٘
+p p پ
+q q ق
+r r ر ɽ ڑ
+s s س ʃ ش ṡ ث
+S ŝ ص
+t t ت ʈ ٹ ẗ ة
+T t̂ ط
+u u͑ ؤ ᵘ ٗ
+U u ُ uⁿ ٌ ᵚ ّ
+v v و
+x x خ
+y y ی
+Y ɣ غ
+z z ز ʒ ژ ż ذ
+Z ž ظ ẑ ض
+{ ʿ ع
+} ʾ ء
+* ͓ ْ
+' ‘ ٔ
+; ; ؛
+_ _ ـ
+, , ،
+. . ۔
+? ? ؟
+% % ٪
+0 0̣ ۰
+1 1̣ ۱
+2 2̣ ۲
+3 3̣ ۳
+4 4̣ ۴
+5 5̣ ۵
+6 6̣ ۶
+7 7̣ ۷
+8 8̣ ۸
+9 9̣ ۹
+`
+
+
+var locCharacterMap = `
+b b ب
+B bh بھ
+c c چ
+C ch چھ
+d d د ḍ ڈ
+D dh دھ ḍh ڈھ
+f f ف
+g g گ ǧ غ
+G gh گھ g͟h غ
+h h ہ h ح
+j j ج
+J jh جھ
+k k ک
+K kh کھ k͟h خ
+l l ل
+m m م
+n n ن ṉ ن ṉ ں ṅ ں
+p p پ
+P ph پھ
+q q ق
+r r ر ṛ ڑ ṛh ڑھ
+s s س s ث s ص ṣ ص s̱ ث š ش sh ش
+t t ت t ط t̤ ط ṭ ٹ
+T th تھ ṭh ٹھ
+v v و
+x x خ
+y y ی
+z z ذ z ز z ض z ظ ẕ ذ z̤ ض ẓ ظ ž ژ zh ژ
+' ' ع ' ء
+@ ∅ ی ∅ ا ∅ ع ∅ ل ∅ و ∅ ء
+a a ا a ہ ā ا ā آ ai ے ai ی ai ای ai ۓ au و au او
+e e ے e ی e ای
+i i ا i ئ ī ی ī ی ī ای
+o o و o او
+u u ا ū و ū او
+A a َ a اَ a َہ ā ا ā آ ā عَا ai َے ai َی ai اَی ai ۓ au َو au اَو
+E e ے e ی e ای e ی
+I i اِ ī ی ī ِی ī اِی
+O o و o او
+U u ُ u اُ u و ū ُو ū اُو ū وٗ ū اوٗ
+[ ̃ ں
+`
+
+
+
+var ipaCharacterMap = `
+b b ب β و
+B bʰ بھ
+c c چ
+C cʰ چھ
+d d د ɖ ڈ ʤ ج
+D dʰ دھ ɖʰ ڈھ ʤʰ جھ
+f f ف
+g g گ
+G gʰ گھ
+h h ہ h ح
+j j ی
+k k ک
+K kʰ کھ
+l l ل
+m m م
+n n ن
+p p پ
+P pʰ پھ
+q q ق
+r r ر ɽ ڑ ɽʰ ڑھ ʁ غ
+s s س s ث s ص ʃ ش
+t t ت t ط ʈ ٹ
+T tʰ تھ ʈʰ ٹھ
+x x خ
+z z ذ z ز z ض z ظ ʒ ژ
+? ʔ ع
+@ ∅ ی ∅ ا ∅ ع ∅ ل ∅ و ∅ ء
+e ə ا ɛ ے ɛ ی ɛ ای ɛ ۓ e ے e ی e ای
+a ɑː ہ
+o ɔ و ɔ او o و o او
+i ɪ ائ iː ی iː ای
+u ʊ ا uː و uː او
+E ə َ ə اَ ɛ َ ɛ َے ɛ َی ɛ اَی ɛ ۓ e ے e ی e ای e ِ
+A ɑː َ ɑː ا ɑː آ ɑː عَا
+O ɔ َو ɔ اَو o و o او o ُ
+I ɪ ِ iː ی iː ِی iː اِی
+U ʊ ُ ʊ اُ ʊ و uː ُو uː اُو uː وٗ uː اوٗ
+`
 

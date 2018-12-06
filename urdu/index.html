@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Urdu character picker 22</title>
+<title>Urdu character picker 23</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared22/code.js">  </script>
+<script src="../shared23/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared22/pagetemplate.js">  </script>
+<script src="../shared23/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
 <script src="localtranscription.js">  </script>
@@ -39,380 +39,9 @@
 
 
 <div id="phonemelist" style="position:relative;">
- <div id="transcriptionChoice"></div>
-
-<div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('ʰ')">ʰ</span>
-<span class="t" onclick="dotrans('β')">β</span>
-<span class="t" onclick="dotrans('ḍ')">ḍ</span>
-<span class="t" onclick="dotrans('ɖ')">ɖ</span>
-<span class="t" onclick="dotrans('ʤ')">ʤ</span>
-<span class="t" onclick="dotrans('ɡ')">ɡ</span>
-<span class="t" onclick="dotrans('ǧ')">ǧ</span>
-<span class="t" onclick="dotrans('g͟h')">g͟h</span>
-<span class="t" onclick="dotrans('k͟h')">k͟h</span>
-<span class="t" onclick="dotrans('ṅ')">ṅ</span>
-<span class="t" onclick="dotrans('ṛ')">ṛ</span>
-<span class="t" onclick="dotrans('ɽ')">ɽ</span>
-<span class="t" onclick="dotrans('ʁ')">ʁ</span>
-<span class="t" onclick="dotrans('ṣ')">ṣ</span>
-<span class="t" onclick="dotrans('š')">š</span>
-<span class="t" onclick="dotrans('ʂ')">ʂ</span>
-<span class="t" onclick="dotrans('s̱')">s̱</span>
-<span class="t" onclick="dotrans('ʃ')">ʃ</span>
-<span class="t" onclick="dotrans('ṭ')">ṭ</span>
-<span class="t" onclick="dotrans('ʈ')">ʈ</span>
-<span class="t" onclick="dotrans('t̤')">t̤</span>
-<span class="t" onclick="dotrans('ẓ')">ẓ</span>
-<span class="t" onclick="dotrans('ž')">ž</span>
-<span class="t" onclick="dotrans('ẕ')">ẕ</span>
-<span class="t" onclick="dotrans('z̤')">z̤</span>
-<span class="t" onclick="dotrans('ʒ')">ʒ</span>
-<span class="t" onclick="dotrans('ʔ')">ʔ</span>
-<span class="t" onclick="dotrans('ā')">ā</span>
-<span class="t" onclick="dotrans('ɛ')">ɛ</span>
-<span class="t" onclick="dotrans('ə')">ə</span>
-<span class="t" onclick="dotrans('ī')">ī</span>
-<span class="t" onclick="dotrans('ː')">ː</span>
-<span class="t" onclick="dotrans('ɪ')">ɪ</span>
-<span class="t" onclick="dotrans('ɔ')">ɔ</span>
-<span class="t" onclick="dotrans('ū')">ū</span>
-<span class="t" onclick="dotrans('ʊ')">ʊ</span>
-<span class="t" onclick="dotrans('̃')">̃◌</span>
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 </div>
 
-
-
-
-
-<div id="transliteration" class="transcript" style="display:none;">
-<span class="t" onmouseover="showtrans('ٱ')" onmouseout="hidetrans()" onclick="add('ٱ')">’</span>
-<span class="t" onmouseover="showtrans('أ')" onmouseout="hidetrans()" onclick="add('أ')">ᵃ</span>
-<span class="t" onmouseover="showtrans('إ')" onmouseout="hidetrans()" onclick="add('إ')">ₐ</span>
-<span class="t" onmouseover="showtrans('آ')" onmouseout="hidetrans()" onclick="add('آ')">ā</span>
-<span class="t" onmouseover="showtrans('ب')" onmouseout="hidetrans()" onclick="add('ب')">b</span>
-<span class="t" onmouseover="showtrans('چ')" onmouseout="hidetrans()" onclick="add('چ')">č</span>
-<span class="t" onmouseover="showtrans('د')" onmouseout="hidetrans()" onclick="add('د')">d</span>
-<span class="t" onmouseover="showtrans('ے')" onmouseout="hidetrans()" onclick="add('ے')">ɛ</span>
-<span class="t" onmouseover="showtrans('ۓ')" onmouseout="hidetrans()" onclick="add('ۓ')">ɛ͗</span>
-<span class="t" onmouseover="showtrans('ف')" onmouseout="hidetrans()" onclick="add('ف')">f</span>
-<span class="t" onmouseover="showtrans('گ')" onmouseout="hidetrans()" onclick="add('گ')">g</span>
-<span class="t" onmouseover="showtrans('ج')" onmouseout="hidetrans()" onclick="add('ج')">ǧ</span>
-<span class="t" onmouseover="showtrans('غ')" onmouseout="hidetrans()" onclick="add('غ')">ġ</span>
-<span class="t" onmouseover="showtrans('ه')" onmouseout="hidetrans()" onclick="add('ه')">h</span>
-<span class="t" onmouseover="showtrans('ھ')" onmouseout="hidetrans()" onclick="add('ھ')">ʰ</span>
-<span class="t" onmouseover="showtrans('ۀ')" onmouseout="hidetrans()" onclick="add('ۀ')">h͗</span>
-<span class="t" onmouseover="showtrans('ح')" onmouseout="hidetrans()" onclick="add('ح')">ḥ</span>
-<span class="t" onmouseover="showtrans('ہ')" onmouseout="hidetrans()" onclick="add('ہ')">ḫ</span>
-<span class="t" onmouseover="showtrans('ۂ')" onmouseout="hidetrans()" onclick="add('ۂ')">ḫ͗</span>
-<span class="t" onmouseover="showtrans('خ')" onmouseout="hidetrans()" onclick="add('خ')">ẖ</span>
-<span class="t" onmouseover="showtrans('ك')" onmouseout="hidetrans()" onclick="add('ك')">k</span>
-<span class="t" onmouseover="showtrans('ک')" onmouseout="hidetrans()" onclick="add('ک')">ḳ</span>
-<span class="t" onmouseover="showtrans('ا')" onmouseout="hidetrans()" onclick="add('ا')">ˡ</span>
-<span class="t" onmouseover="showtrans('ل')" onmouseout="hidetrans()" onclick="add('ل')">l</span>
-<span class="t" onmouseover="showtrans('م')" onmouseout="hidetrans()" onclick="add('م')">m</span>
-<span class="t" onmouseover="showtrans('ن')" onmouseout="hidetrans()" onclick="add('ن')">n</span>
-<span class="t" onmouseover="showtrans('ں')" onmouseout="hidetrans()" onclick="add('ں')">ñ</span>
-<br/>
-<span class="t" onmouseover="showtrans('پ')" onmouseout="hidetrans()" onclick="add('پ')">p</span>
-<span class="t" onmouseover="showtrans('ق')" onmouseout="hidetrans()" onclick="add('ق')">q</span>
-<span class="t" onmouseover="showtrans('ر')" onmouseout="hidetrans()" onclick="add('ر')">r</span>
-<span class="t" onmouseover="showtrans('ڑ')" onmouseout="hidetrans()" onclick="add('ڑ')">ṛ</span>
-<span class="t" onmouseover="showtrans('س')" onmouseout="hidetrans()" onclick="add('س')">s</span>
-<span class="t" onmouseover="showtrans('ش')" onmouseout="hidetrans()" onclick="add('ش')">š</span>
-<span class="t" onmouseover="showtrans('ص')" onmouseout="hidetrans()" onclick="add('ص')">ṣ</span>
-<span class="t" onmouseover="showtrans('ث')" onmouseout="hidetrans()" onclick="add('ث')">s̱</span>
-<span class="t" onmouseover="showtrans('ت')" onmouseout="hidetrans()" onclick="add('ت')">t</span>
-<span class="t" onmouseover="showtrans('ة')" onmouseout="hidetrans()" onclick="add('ة')">ẗ</span>
-<span class="t" onmouseover="showtrans('ٹ')" onmouseout="hidetrans()" onclick="add('ٹ')">ṭ</span>
-<span class="t" onmouseover="showtrans('ط')" onmouseout="hidetrans()" onclick="add('ط')">t̤</span>
-<span class="t" onmouseover="showtrans('و')" onmouseout="hidetrans()" onclick="add('و')">v</span>
-<span class="t" onmouseover="showtrans('ؤ')" onmouseout="hidetrans()" onclick="add('ؤ')">v͗</span>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">y</span>
-<span class="t" onmouseover="showtrans('ى')" onmouseout="hidetrans()" onclick="add('ى')">ỳ</span>
-<span class="t" onmouseover="showtrans('ئ')" onmouseout="hidetrans()" onclick="add('ئ')">y͗</span>
-<span class="t" onmouseover="showtrans('ز')" onmouseout="hidetrans()" onclick="add('ز')">z</span>
-<span class="t" onmouseover="showtrans('ژ')" onmouseout="hidetrans()" onclick="add('ژ')">ž</span>
-<span class="t" onmouseover="showtrans('ظ')" onmouseout="hidetrans()" onclick="add('ظ')">ẓ</span>
-<span class="t" onmouseover="showtrans('ض')" onmouseout="hidetrans()" onclick="add('ض')">z̤</span>
-<span class="t" onmouseover="showtrans('ذ')" onmouseout="hidetrans()" onclick="add('ذ')">ẕ</span>
-<span class="t" onmouseover="showtrans('ء')" onmouseout="hidetrans()" onclick="add('ء')">ʾ</span>
-<span class="t" onmouseover="showtrans('ع')" onmouseout="hidetrans()" onclick="add('ع')">ʿ</span>
-
-
-<br/>
-<span class="t" onmouseover="showtrans('َ')" onmouseout="hidetrans()" onclick="add('َ')">a</span>
-<span class="t" onmouseover="showtrans('ُ')" onmouseout="hidetrans()" onclick="add('ُ')">u</span>
-<span class="t" onmouseover="showtrans('ِ')" onmouseout="hidetrans()" onclick="add('ِ')">i</span>
-<span class="t" onmouseover="showtrans('ً')" onmouseout="hidetrans()" onclick="add('ً')">aⁿ</span>
-<span class="t" onmouseover="showtrans('ٌ')" onmouseout="hidetrans()" onclick="add('ٌ')">uⁿ</span>
-<span class="t" onmouseover="showtrans('ٍ')" onmouseout="hidetrans()" onclick="add('ٍ')">iⁿ</span>
-<span class="t" onmouseover="showtrans('ّ')" onmouseout="hidetrans()" onclick="add('ّ')">ᵚ</span>
-<span class="t" onmouseover="showtrans('ْ')" onmouseout="hidetrans()" onclick="add('ْ')">̊</span>
-<span class="t" onmouseover="showtrans('ٔ')" onmouseout="hidetrans()" onclick="add('ٔ')">͗</span>
-<span class="t" onmouseover="showtrans('ٕ')" onmouseout="hidetrans()" onclick="add('ٕ')">̹</span>
-&nbsp;•&nbsp;
-<span class="t" onmouseover="showtrans('ـ')" onmouseout="hidetrans()" onclick="add('ـ')">_</span>
-<span class="t" onmouseover="showtrans('،')" onmouseout="hidetrans()" onclick="add('،')">,</span>
-<span class="t" onmouseover="showtrans('۔')" onmouseout="hidetrans()" onclick="add('۔')">.</span>
-<span class="t" onmouseover="showtrans('؛')" onmouseout="hidetrans()" onclick="add('؛')">;</span>
-<span class="t" onmouseover="showtrans('؟')" onmouseout="hidetrans()" onclick="add('؟')">?</span>
-<span class="t" onmouseover="showtrans('٪')" onmouseout="hidetrans()" onclick="add('٪')">%</span>
-<br/>
-<span class="t" onmouseover="showtrans('۰')" onmouseout="hidetrans()" onclick="add('۰')">0̱</span>
-<span class="t" onmouseover="showtrans('۱')" onmouseout="hidetrans()" onclick="add('۱')">1̱</span>
-<span class="t" onmouseover="showtrans('۲')" onmouseout="hidetrans()" onclick="add('۲')">2̱</span>
-<span class="t" onmouseover="showtrans('۳')" onmouseout="hidetrans()" onclick="add('۳')">3̱</span>
-<span class="t" onmouseover="showtrans('۴')" onmouseout="hidetrans()" onclick="add('۴')">4̱</span>
-<span class="t" onmouseover="showtrans('۵')" onmouseout="hidetrans()" onclick="add('۵')">5̱</span>
-<span class="t" onmouseover="showtrans('۶')" onmouseout="hidetrans()" onclick="add('۶')">6̱</span>
-<span class="t" onmouseover="showtrans('۷')" onmouseout="hidetrans()" onclick="add('۷')">7̱</span>
-<span class="t" onmouseover="showtrans('۸')" onmouseout="hidetrans()" onclick="add('۸')">8̱</span>
-<span class="t" onmouseover="showtrans('۹')" onmouseout="hidetrans()" onclick="add('۹')">9̱</span>
-</div>
-
-
-
-
-<div id="loctranscript" class="transcript" style="display:none;">
-<span class="t" onmouseover="showtrans('ب')" onmouseout="hidetrans()" onclick="add('ب')">b</span>
-<span class="t" onmouseover="showtrans('بھ')" onmouseout="hidetrans()" onclick="add('بھ')">bh</span>
-<span class="t" onmouseover="showtrans('چ')" onmouseout="hidetrans()" onclick="add('چ')">c</span>
-<span class="t" onmouseover="showtrans('چھ')" onmouseout="hidetrans()" onclick="add('چھ')">ch</span>
-<span class="t" onmouseover="showtrans('د')" onmouseout="hidetrans()" onclick="add('د')">d</span>
-<span class="t" onmouseover="showtrans('ڈ')" onmouseout="hidetrans()" onclick="add('ڈ')">ḍ</span>
-<span class="t" onmouseover="showtrans('دھ')" onmouseout="hidetrans()" onclick="add('دھ')">dh</span>
-<span class="t" onmouseover="showtrans('ڈھ')" onmouseout="hidetrans()" onclick="add('ڈھ')">ḍh</span>
-<span class="t" onmouseover="showtrans('ف')" onmouseout="hidetrans()" onclick="add('ف')">f</span>
-<span class="t" onmouseover="showtrans('گ')" onmouseout="hidetrans()" onclick="add('گ')">g</span>
-<span class="t" onmouseover="showtrans('غ')" onmouseout="hidetrans()" onclick="add('غ')">ǧ</span>
-<span class="t" onmouseover="showtrans('گھ')" onmouseout="hidetrans()" onclick="add('گھ')">gh</span>
-<span class="t" onmouseover="showtrans('غ')" onmouseout="hidetrans()" onclick="add('غ')">g͟h</span>
-<span class="t" onmouseover="showtrans('ہ')" onmouseout="hidetrans()" onclick="add('ہ')">h</span>
-<span class="t" onmouseover="showtrans('ح')" onmouseout="hidetrans()" onclick="add('ح')">h</span>
-<span class="t" onmouseover="showtrans('ج')" onmouseout="hidetrans()" onclick="add('ج')">j</span>
-<span class="t" onmouseover="showtrans('جھ')" onmouseout="hidetrans()" onclick="add('جھ')">jh</span>
-<span class="t" onmouseover="showtrans('ک')" onmouseout="hidetrans()" onclick="add('ک')">k</span>
-<span class="t" onmouseover="showtrans('کھ')" onmouseout="hidetrans()" onclick="add('کھ')">kh</span>
-<span class="t" onmouseover="showtrans('خ')" onmouseout="hidetrans()" onclick="add('خ')">k͟h</span>
-<span class="t" onmouseover="showtrans('ل')" onmouseout="hidetrans()" onclick="add('ل')">l</span>
-<span class="t" onmouseover="showtrans('م')" onmouseout="hidetrans()" onclick="add('م')">m</span>
-<span class="t" onmouseover="showtrans('ن')" onmouseout="hidetrans()" onclick="add('ن')">n</span>
-<span class="t" onmouseover="showtrans('ن')" onmouseout="hidetrans()" onclick="add('ن')">ṉ</span>
-<span class="t" onmouseover="showtrans('ں')" onmouseout="hidetrans()" onclick="add('ں')">ṉ</span>
-<span class="t" onmouseover="showtrans('ں')" onmouseout="hidetrans()" onclick="add('ں')">ṅ</span>
-<br/>
-<span class="t" onmouseover="showtrans('پ')" onmouseout="hidetrans()" onclick="add('پ')">p</span>
-<span class="t" onmouseover="showtrans('پھ')" onmouseout="hidetrans()" onclick="add('پھ')">ph</span>
-<span class="t" onmouseover="showtrans('ق')" onmouseout="hidetrans()" onclick="add('ق')">q</span>
-<span class="t" onmouseover="showtrans('ر')" onmouseout="hidetrans()" onclick="add('ر')">r</span>
-<span class="t" onmouseover="showtrans('ڑ')" onmouseout="hidetrans()" onclick="add('ڑ')">ṛ</span>
-<span class="t" onmouseover="showtrans('ڑھ')" onmouseout="hidetrans()" onclick="add('ڑھ')">ṛh</span>
-<span class="t" onmouseover="showtrans('س')" onmouseout="hidetrans()" onclick="add('س')">s</span>
-<span class="t" onmouseover="showtrans('ث')" onmouseout="hidetrans()" onclick="add('ث')">s</span>
-<span class="t" onmouseover="showtrans('ص')" onmouseout="hidetrans()" onclick="add('ص')">s</span>
-<span class="t" onmouseover="showtrans('ص')" onmouseout="hidetrans()" onclick="add('ص')">ṣ</span>
-<span class="t" onmouseover="showtrans('ث')" onmouseout="hidetrans()" onclick="add('ث')">s̱</span>
-<span class="t" onmouseover="showtrans('ش')" onmouseout="hidetrans()" onclick="add('ش')">š</span>
-<span class="t" onmouseover="showtrans('ش')" onmouseout="hidetrans()" onclick="add('ش')">sh</span>
-<span class="t" onmouseover="showtrans('ت')" onmouseout="hidetrans()" onclick="add('ت')">t</span>
-<span class="t" onmouseover="showtrans('ط')" onmouseout="hidetrans()" onclick="add('ط')">t</span>
-<span class="t" onmouseover="showtrans('ط')" onmouseout="hidetrans()" onclick="add('ط')">t̤</span>
-<span class="t" onmouseover="showtrans('ٹ')" onmouseout="hidetrans()" onclick="add('ٹ')">ṭ</span>
-<span class="t" onmouseover="showtrans('تھ')" onmouseout="hidetrans()" onclick="add('تھ')">th</span>
-<span class="t" onmouseover="showtrans('ٹھ')" onmouseout="hidetrans()" onclick="add('ٹھ')">ṭh</span>
-<span class="t" onmouseover="showtrans('و')" onmouseout="hidetrans()" onclick="add('و')">v</span>
-<span class="t" onmouseover="showtrans('خ')" onmouseout="hidetrans()" onclick="add('خ')">x</span>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">y</span>
-<span class="t" onmouseover="showtrans('ذ')" onmouseout="hidetrans()" onclick="add('ذ')">z</span>
-<span class="t" onmouseover="showtrans('ز')" onmouseout="hidetrans()" onclick="add('ز')">z</span>
-<span class="t" onmouseover="showtrans('ض')" onmouseout="hidetrans()" onclick="add('ض')">z</span>
-<span class="t" onmouseover="showtrans('ظ')" onmouseout="hidetrans()" onclick="add('ظ')">z</span>
-<span class="t" onmouseover="showtrans('ذ')" onmouseout="hidetrans()" onclick="add('ذ')">ẕ</span>
-<span class="t" onmouseover="showtrans('ض')" onmouseout="hidetrans()" onclick="add('ض')">z̤</span>
-<span class="t" onmouseover="showtrans('ظ')" onmouseout="hidetrans()" onclick="add('ظ')">ẓ</span>
-<span class="t" onmouseover="showtrans('ژ')" onmouseout="hidetrans()" onclick="add('ژ')">ž</span>
-<span class="t" onmouseover="showtrans('ژ')" onmouseout="hidetrans()" onclick="add('ژ')">zh</span>
-<span class="t" onmouseover="showtrans('ع')" onmouseout="hidetrans()" onclick="add('ع')">'</span>
-<span class="t" onmouseover="showtrans('ء')" onmouseout="hidetrans()" onclick="add('ء')">'</span>
-<br/>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">∅</span>
-<span class="t" onmouseover="showtrans('ا')" onmouseout="hidetrans()" onclick="add('ا')">∅</span>
-<span class="t" onmouseover="showtrans('ع')" onmouseout="hidetrans()" onclick="add('ع')">∅</span>
-<span class="t" onmouseover="showtrans('ل')" onmouseout="hidetrans()" onclick="add('ل')">∅</span>
-<span class="t" onmouseover="showtrans('و')" onmouseout="hidetrans()" onclick="add('و')">∅</span>
-<span class="t" onmouseover="showtrans('ء')" onmouseout="hidetrans()" onclick="add('ء')">∅</span>
-<br/>
-<span class="t" onmouseover="showtrans('ا')" onmouseout="hidetrans()" onclick="add('ا')">a</span>
-<span class="t" onmouseover="showtrans('ہ')" onmouseout="hidetrans()" onclick="add('ہ')">a</span>
-<span class="t" onmouseover="showtrans('ا')" onmouseout="hidetrans()" onclick="add('ا')">ā</span>
-<span class="t" onmouseover="showtrans('آ')" onmouseout="hidetrans()" onclick="add('آ')">ā</span>
-<span class="t" onmouseover="showtrans('ے')" onmouseout="hidetrans()" onclick="add('ے')">ai</span>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">ai</span>
-<span class="t" onmouseover="showtrans('ای')" onmouseout="hidetrans()" onclick="add('ای')">ai</span>
-<span class="t" onmouseover="showtrans('ۓ')" onmouseout="hidetrans()" onclick="add('ۓ')">ai</span>
-<span class="t" onmouseover="showtrans('و')" onmouseout="hidetrans()" onclick="add('و')">au</span>
-<span class="t" onmouseover="showtrans('او')" onmouseout="hidetrans()" onclick="add('او')">au</span>
-<span class="t" onmouseover="showtrans('ے')" onmouseout="hidetrans()" onclick="add('ے')">e</span>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">e</span>
-<span class="t" onmouseover="showtrans('ای')" onmouseout="hidetrans()" onclick="add('ای')">e</span>
-<span class="t" onmouseover="showtrans('ا')" onmouseout="hidetrans()" onclick="add('ا')">i</span>
-<span class="t" onmouseover="showtrans('ئ')" onmouseout="hidetrans()" onclick="add('ئ')">i</span>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">ī</span>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">ī</span>
-<span class="t" onmouseover="showtrans('ای')" onmouseout="hidetrans()" onclick="add('ای')">ī</span>
-<span class="t" onmouseover="showtrans('و')" onmouseout="hidetrans()" onclick="add('و')">o</span>
-<span class="t" onmouseover="showtrans('او')" onmouseout="hidetrans()" onclick="add('او')">o</span>
-<span class="t" onmouseover="showtrans('ا')" onmouseout="hidetrans()" onclick="add('ا')">u</span>
-<span class="t" onmouseover="showtrans('و')" onmouseout="hidetrans()" onclick="add('و')">ū</span>
-<span class="t" onmouseover="showtrans('او')" onmouseout="hidetrans()" onclick="add('او')">ū</span>
-<br/>
-vowelled:
-<span class="t" onmouseover="showtrans('&#x064E;')" onmouseout="hidetrans()" onclick="add('&#x064E;')">a</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x064E;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x064E;')">a</span>
-<span class="t" onmouseover="showtrans('&#x064E;&#x06C1;')" onmouseout="hidetrans()" onclick="add('&#x064E;&#x06C1;')">a</span>
-<span class="t" onmouseover="showtrans('&#x0627;')" onmouseout="hidetrans()" onclick="add('&#x0627;')">&#x0101;</span>
-<span class="t" onmouseover="showtrans('&#x0622;,')" onmouseout="hidetrans()" onclick="add('&#x0622;')">&#x0101;</span>
-<span class="t" onmouseover="showtrans('&#x0639;&#x064E;&#x0627;')" onmouseout="hidetrans()" onclick="add('&#x0639;&#x064E;&#x0627;')">&#x0101;</span>
-<span class="t" onmouseover="showtrans('&#x064E;&#x06D2;')" onmouseout="hidetrans()" onclick="add('&#x064E;&#x06D2;')">ai</span>
-<span class="t" onmouseover="showtrans('&#x064E;&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x064E;&#x06CC;')">ai</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x064E;&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x064E;&#x06CC;')">ai</span>
-<span class="t" onmouseover="showtrans('&#x06D3;')" onmouseout="hidetrans()" onclick="add('&#x06D3;')">ai</span>
-<span class="t" onmouseover="showtrans('&#x064E;&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x064E;&#x0648;')">au</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x064E;&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x064E;&#x0648;')">au</span>
-<span class="t" onmouseover="showtrans('&#x06D2;')" onmouseout="hidetrans()" onclick="add('&#x06D2;')">e</span>
-<span class="t" onmouseover="showtrans('&#x06CC;,&#x0627;&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x06CC;,&#x0627;&#x06CC;')">e</span>
-<span class="t" onmouseover="showtrans('&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x06CC;')">e</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x0650;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x0650;')">i</span>
-<span class="t" onmouseover="showtrans('&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x06CC;')">&#x012B;</span>
-<span class="t" onmouseover="showtrans('&#x0650;&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x0650;&#x06CC;')">&#x012B;</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x0650;&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x0650;&#x06CC;')">&#x012B;</span>
-<span class="t" onmouseover="showtrans('&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x0648;')">o</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x0648;')">o</span>
-<span class="t" onmouseover="showtrans('&#x064F;')" onmouseout="hidetrans()" onclick="add('&#x064F;')">u</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x064F;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x064F;')">u</span>
-<span class="t" onmouseover="showtrans('&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x0648;')">u</span>
-<span class="t" onmouseover="showtrans('&#x064F;&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x064F;&#x0648;')">&#x016B;</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x064F;&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x064F;&#x0648;')">&#x016B;</span>
-<span class="t" onmouseover="showtrans('&#x0648;&#x0657;')" onmouseout="hidetrans()" onclick="add('&#x0648;&#x0657;')">&#x016B;</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x0648;&#x0657;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x0648;&#x0657;')">&#x016B;</span>
-<span class="t" onmouseover="showtrans('&#x06BA;')" onmouseout="hidetrans()" onclick="add('&#x06BA;')">&#x0303;</span>
-</div>
-
-
-
-
-<div id="ipatranscript" class="transcript" style="display:none;">
-<span class="t" onmouseover="showtrans('ب')" onmouseout="hidetrans()" onclick="add('ب')">b</span>
-<span class="t" onmouseover="showtrans('بھ')" onmouseout="hidetrans()" onclick="add('بھ')">bʰ</span>
-<span class="t" onmouseover="showtrans('و')" onmouseout="hidetrans()" onclick="add('و')">β</span>
-<span class="t" onmouseover="showtrans('چ')" onmouseout="hidetrans()" onclick="add('چ')">c</span>
-<span class="t" onmouseover="showtrans('چھ')" onmouseout="hidetrans()" onclick="add('چھ')">cʰ</span>
-<span class="t" onmouseover="showtrans('د')" onmouseout="hidetrans()" onclick="add('د')">d</span>
-<span class="t" onmouseover="showtrans('دھ')" onmouseout="hidetrans()" onclick="add('دھ')">dʰ</span>
-<span class="t" onmouseover="showtrans('ڈ')" onmouseout="hidetrans()" onclick="add('ڈ')">ɖ</span>
-<span class="t" onmouseover="showtrans('ڈھ')" onmouseout="hidetrans()" onclick="add('ڈھ')">ɖʰ</span>
-<span class="t" onmouseover="showtrans('ج')" onmouseout="hidetrans()" onclick="add('ج')">ʤ</span>
-<span class="t" onmouseover="showtrans('جھ')" onmouseout="hidetrans()" onclick="add('جھ')">ʤʰ</span>
-<span class="t" onmouseover="showtrans('ف')" onmouseout="hidetrans()" onclick="add('ف')">f</span>
-<span class="t" onmouseover="showtrans('گ')" onmouseout="hidetrans()" onclick="add('گ')">g</span>
-<span class="t" onmouseover="showtrans('گھ')" onmouseout="hidetrans()" onclick="add('گھ')">gʰ</span>
-<span class="t" onmouseover="showtrans('ہ')" onmouseout="hidetrans()" onclick="add('ہ')">h</span>
-<span class="t" onmouseover="showtrans('ح')" onmouseout="hidetrans()" onclick="add('ح')">h</span>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">j</span>
-<span class="t" onmouseover="showtrans('ک')" onmouseout="hidetrans()" onclick="add('ک')">k</span>
-<span class="t" onmouseover="showtrans('کھ')" onmouseout="hidetrans()" onclick="add('کھ')">kʰ</span>
-<span class="t" onmouseover="showtrans('ل')" onmouseout="hidetrans()" onclick="add('ل')">l</span>
-<span class="t" onmouseover="showtrans('م')" onmouseout="hidetrans()" onclick="add('م')">m</span>
-<span class="t" onmouseover="showtrans('ن')" onmouseout="hidetrans()" onclick="add('ن')">n</span>
-<br/>
-<span class="t" onmouseover="showtrans('پ')" onmouseout="hidetrans()" onclick="add('پ')">p</span>
-<span class="t" onmouseover="showtrans('پھ')" onmouseout="hidetrans()" onclick="add('پھ')">pʰ</span>
-<span class="t" onmouseover="showtrans('ق')" onmouseout="hidetrans()" onclick="add('ق')">q</span>
-<span class="t" onmouseover="showtrans('ر')" onmouseout="hidetrans()" onclick="add('ر')">r</span>
-<span class="t" onmouseover="showtrans('ڑ')" onmouseout="hidetrans()" onclick="add('ڑ')">ɽ</span>
-<span class="t" onmouseover="showtrans('ڑھ')" onmouseout="hidetrans()" onclick="add('ڑھ')">ɽʰ</span>
-<span class="t" onmouseover="showtrans('غ')" onmouseout="hidetrans()" onclick="add('غ')">ʁ</span>
-<span class="t" onmouseover="showtrans('س')" onmouseout="hidetrans()" onclick="add('س')">s</span>
-<span class="t" onmouseover="showtrans('ث')" onmouseout="hidetrans()" onclick="add('ث')">s</span>
-<span class="t" onmouseover="showtrans('ص')" onmouseout="hidetrans()" onclick="add('ص')">s</span>
-<span class="t" onmouseover="showtrans('ش')" onmouseout="hidetrans()" onclick="add('ش')">ʃ</span>
-<span class="t" onmouseover="showtrans('ت')" onmouseout="hidetrans()" onclick="add('ت')">t</span>
-<span class="t" onmouseover="showtrans('ط')" onmouseout="hidetrans()" onclick="add('ط')">t</span>
-<span class="t" onmouseover="showtrans('تھ')" onmouseout="hidetrans()" onclick="add('تھ')">tʰ</span>
-<span class="t" onmouseover="showtrans('ٹ')" onmouseout="hidetrans()" onclick="add('ٹ')">ʈ</span>
-<span class="t" onmouseover="showtrans('ٹھ')" onmouseout="hidetrans()" onclick="add('ٹھ')">ʈʰ</span>
-<span class="t" onmouseover="showtrans('خ')" onmouseout="hidetrans()" onclick="add('خ')">x</span>
-<span class="t" onmouseover="showtrans('ذ')" onmouseout="hidetrans()" onclick="add('ذ')">z</span>
-<span class="t" onmouseover="showtrans('ز')" onmouseout="hidetrans()" onclick="add('ز')">z</span>
-<span class="t" onmouseover="showtrans('ض')" onmouseout="hidetrans()" onclick="add('ض')">z</span>
-<span class="t" onmouseover="showtrans('ظ')" onmouseout="hidetrans()" onclick="add('ظ')">z</span>
-<span class="t" onmouseover="showtrans('ژ')" onmouseout="hidetrans()" onclick="add('ژ')">ʒ</span>
-<span class="t" onmouseover="showtrans('ع')" onmouseout="hidetrans()" onclick="add('ع')">ʔ</span>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">∅</span>
-<span class="t" onmouseover="showtrans('ا')" onmouseout="hidetrans()" onclick="add('ا')">∅</span>
-<span class="t" onmouseover="showtrans('ع')" onmouseout="hidetrans()" onclick="add('ع')">∅</span>
-<span class="t" onmouseover="showtrans('ل')" onmouseout="hidetrans()" onclick="add('ل')">∅</span>
-<span class="t" onmouseover="showtrans('و')" onmouseout="hidetrans()" onclick="add('و')">∅</span>
-<span class="t" onmouseover="showtrans('ء')" onmouseout="hidetrans()" onclick="add('ء')">∅</span>
-<br/>
-<span class="t" onmouseover="showtrans('ا')" onmouseout="hidetrans()" onclick="add('ا')">ə</span>
-<span class="t" onmouseover="showtrans('ے')" onmouseout="hidetrans()" onclick="add('ے')">ɛ</span>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">ɛ</span>
-<span class="t" onmouseover="showtrans('ای')" onmouseout="hidetrans()" onclick="add('ای')">ɛ</span>
-<span class="t" onmouseover="showtrans('ۓ')" onmouseout="hidetrans()" onclick="add('ۓ')">ɛ</span>
-<span class="t" onmouseover="showtrans('ہ')" onmouseout="hidetrans()" onclick="add('ہ')">ɑː</span>
-<span class="t" onmouseover="showtrans('و')" onmouseout="hidetrans()" onclick="add('و')">ɔ</span>
-<span class="t" onmouseover="showtrans('او')" onmouseout="hidetrans()" onclick="add('او')">ɔ</span>
-<span class="t" onmouseover="showtrans('ے')" onmouseout="hidetrans()" onclick="add('ے')">e</span>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">e</span>
-<span class="t" onmouseover="showtrans('ای')" onmouseout="hidetrans()" onclick="add('ای')">e</span>
-<span class="t" onmouseover="showtrans('ا+ئ')" onmouseout="hidetrans()" onclick="add('ا+ئ')">ɪ</span>
-<span class="t" onmouseover="showtrans('ی')" onmouseout="hidetrans()" onclick="add('ی')">iː</span>
-<span class="t" onmouseover="showtrans('ای')" onmouseout="hidetrans()" onclick="add('ای')">iː</span>
-<span class="t" onmouseover="showtrans('و')" onmouseout="hidetrans()" onclick="add('و')">o</span>
-<span class="t" onmouseover="showtrans('او')" onmouseout="hidetrans()" onclick="add('او')">o</span>
-<span class="t" onmouseover="showtrans('ا')" onmouseout="hidetrans()" onclick="add('ا')">ʊ</span>
-<span class="t" onmouseover="showtrans('و')" onmouseout="hidetrans()" onclick="add('و')">uː</span>
-<span class="t" onmouseover="showtrans('او')" onmouseout="hidetrans()" onclick="add('او')">uː</span>
-<br/>
-vowelled:
-<span class="t" onmouseover="showtrans('&#x064E;')" onmouseout="hidetrans()" onclick="add('&#x064E;')">&#x0259;</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x064E;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x064E;')">&#x0259;</span>
-<span class="t" onmouseover="showtrans('&#x064E;')" onmouseout="hidetrans()" onclick="add('&#x064E;')">&#x025B;</span>
-<span class="t" onmouseover="showtrans('&#x064E;&#x06D2;')" onmouseout="hidetrans()" onclick="add('&#x064E;&#x06D2;')">&#x025B;</span>
-<span class="t" onmouseover="showtrans('&#x064E;&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x064E;&#x06CC;')">&#x025B;</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x064E;&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x064E;&#x06CC;')">&#x025B;</span>
-<span class="t" onmouseover="showtrans('&#x06D3;')" onmouseout="hidetrans()" onclick="add('&#x06D3;')">&#x025B;</span>
-<span class="t" onmouseover="showtrans('&#x064E;')" onmouseout="hidetrans()" onclick="add('&#x064E;')">&#x0251;&#x02D0;</span>
-<span class="t" onmouseover="showtrans('&#x0627;')" onmouseout="hidetrans()" onclick="add('&#x0627;')">&#x0251;&#x02D0;</span>
-<span class="t" onmouseover="showtrans('&#x0622;')" onmouseout="hidetrans()" onclick="add('&#x0622;')">&#x0251;&#x02D0;</span>
-<span class="t" onmouseover="showtrans('&#x0639;&#x064E;&#x0627;')" onmouseout="hidetrans()" onclick="add('&#x0639;&#x064E;&#x0627;')">&#x0251;&#x02D0;</span>
-<span class="t" onmouseover="showtrans('&#x064E;&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x064E;&#x0648;')">&#x0254;</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x064E;&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x064E;&#x0648;')">&#x0254;</span>
-<span class="t" onmouseover="showtrans('&#x06D2;')" onmouseout="hidetrans()" onclick="add('&#x06D2;')">e</span>
-<span class="t" onmouseover="showtrans('&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x06CC;')">e</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x06CC;')">e</span>
-<span class="t" onmouseover="showtrans('&#x0650;')" onmouseout="hidetrans()" onclick="add('&#x0650;')">e</span>
-<span class="t" onmouseover="showtrans('&#x0650;')" onmouseout="hidetrans()" onclick="add('&#x0650;')">&#x026A;</span>
-<span class="t" onmouseover="showtrans('&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x06CC;')">i&#x02D0;</span>
-<span class="t" onmouseover="showtrans('&#x0650;&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x0650;&#x06CC;')">i&#x02D0;</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x0650;&#x06CC;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x0650;&#x06CC;')">i&#x02D0;</span>
-<span class="t" onmouseover="showtrans('&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x0648;')">o</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x0648;')">o</span>
-<span class="t" onmouseover="showtrans('&#x064F;')" onmouseout="hidetrans()" onclick="add('&#x064F;')">o</span>
-<span class="t" onmouseover="showtrans('&#x064F;')" onmouseout="hidetrans()" onclick="add('&#x064F;')">&#x028A;</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x064F;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x064F;')">&#x028A;</span>
-<span class="t" onmouseover="showtrans('&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x0648;')">&#x028A;</span>
-<span class="t" onmouseover="showtrans('&#x064F;&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x064F;&#x0648;')">u&#x02D0;</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x064F;&#x0648;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x064F;&#x0648;')">u&#x02D0;</span>
-<span class="t" onmouseover="showtrans('&#x0648;&#x0657;')" onmouseout="hidetrans()" onclick="add('&#x0648;&#x0657;')">u&#x02D0;</span>
-<span class="t" onmouseover="showtrans('&#x0627;&#x0648;&#x0657;')" onmouseout="hidetrans()" onclick="add('&#x0627;&#x0648;&#x0657;')">u&#x02D0;</span>
-
-</div>
-
-
-</div>
 
 
 
@@ -426,6 +55,34 @@ vowelled:
 
 
 <div id="alphabet" class="default">
+
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<img alt=" " src="images/shape1.png" onclick="findShape('627,622,623,6F1','لا',true)" />
+<img alt=" " src="images/shape2.png" onclick="findShape('637,638','کا,گا,کل,گل',true)" />
+<img alt=" " src="images/shape3.png" onclick="findShape('628,67E,62A,679,62B,641,6D2,600,601','',true)" />
+<img alt=" " src="images/shape4.png" onclick="findShape('62D,62E,62C,686','',true)" />
+<img alt=" " src="images/shape5.png" onclick="findShape('6BA,646,644,6A9,6AF,633,634,635,636,642,6CC','',true)" />
+<img alt=" " src="images/shape6.png" onclick="findShape('639,63A,60F','',true)" />
+<img alt=" " src="images/shape7.png" onclick="findShape('62F,62F6BE,688,6886BE,631,6316BE,691,6916BE,632,698,648,624,66C','',true)" />
+<img alt=" " src="images/shape8.png" onclick="findShape('648,624,642,641','',true)" />
+<img alt=" " src="images/shape9.png" onclick="findShape('6C1,6C3,6C2,6BE,647,6C0','',true)" />
+<img alt=" " src="images/shape10.png" onclick="findShape('6BE,6286BE,67E6BE,62A6BE,6796BE,62C6BE,6866BE,62F6BE,6886BE,6316BE,6916BE,6A96BE,6AF6BE','',true)" />
+<img alt=" " src="images/shape11.png" onclick="findShape('628,6286BE,62C,62C6BE','',true)" />
+<img alt=" " src="images/shape12.png" onclick="findShape('632,62E,636,63A,638,641','',true)" />
+<img alt=" " src="images/shape14.png" onclick="findShape('62A,642,6C3,62A6BE','',true)" />
+<img alt=" " src="images/shape15.png" onclick="findShape('67E,67E6BE,686,6866BE','',true)" />
+<img alt=" " src="images/shape16.png" onclick="findShape('62B,698,634','',true)" />
+<img alt=" " src="images/shape17.png" onclick="findShape('679,6796BE,688,6886BE,691,6916BE','',true)" />
+<img alt=" " src="images/shape18.png" onclick="findShape('623,6D3,624,6C2,60D,64E,657,657,6AF,6AF6BE,626','',true)" />
+</div>
+
+<div id="extrashapes"></div>
+</div>
+
+
 
 
 <div class="spaceline">
@@ -612,33 +269,6 @@ vowelled:
 
 
 
-
-
-
-
- <div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
-<img alt=" " src="images/shape1.png" onclick="findShape('627,622,623,6F1','لا',true)" />
-<img alt=" " src="images/shape2.png" onclick="findShape('637,638','کا,گا,کل,گل',true)" />
-<img alt=" " src="images/shape3.png" onclick="findShape('628,67E,62A,679,62B,641,6D2,600,601','',true)" />
-<img alt=" " src="images/shape4.png" onclick="findShape('62D,62E,62C,686','',true)" />
-<img alt=" " src="images/shape5.png" onclick="findShape('6BA,646,644,6A9,6AF,633,634,635,636,642,6CC','',true)" />
-<img alt=" " src="images/shape6.png" onclick="findShape('639,63A,60F','',true)" />
-<img alt=" " src="images/shape7.png" onclick="findShape('62F,62F6BE,688,6886BE,631,6316BE,691,6916BE,632,698,648,624,66C','',true)" />
-<img alt=" " src="images/shape8.png" onclick="findShape('648,624,642,641','',true)" />
-<img alt=" " src="images/shape9.png" onclick="findShape('6C1,6C3,6C2,6BE,647,6C0','',true)" />
-<img alt=" " src="images/shape10.png" onclick="findShape('6BE,6286BE,67E6BE,62A6BE,6796BE,62C6BE,6866BE,62F6BE,6886BE,6316BE,6916BE,6A96BE,6AF6BE','',true)" />
-<img alt=" " src="images/shape11.png" onclick="findShape('628,6286BE,62C,62C6BE','',true)" />
-<img alt=" " src="images/shape12.png" onclick="findShape('632,62E,636,63A,638,641','',true)" />
-<img alt=" " src="images/shape14.png" onclick="findShape('62A,642,6C3,62A6BE','',true)" />
-<img alt=" " src="images/shape15.png" onclick="findShape('67E,67E6BE,686,6866BE','',true)" />
-<img alt=" " src="images/shape16.png" onclick="findShape('62B,698,634','',true)" />
-<img alt=" " src="images/shape17.png" onclick="findShape('679,6796BE,688,6886BE,691,6916BE','',true)" />
-<img alt=" " src="images/shape18.png" onclick="findShape('623,6D3,624,6C2,60D,64E,657,657,6AF,6AF6BE,626','',true)" />
-</div>
-</div>
-
-<div id="extrashapes"></div>
 
 
 <div id="temp"></div>
