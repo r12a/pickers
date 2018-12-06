@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Persian character picker 22</title>
+<title>Persian character picker 23</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared22/code.js">  </script>
+<script src="../shared23/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared22/pagetemplate.js">  </script>
+<script src="../shared23/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
 <script src="localtranscription.js">  </script>
@@ -39,236 +39,9 @@
 
 
 <div id="phonemelist" style="position:relative;">
- <div id="transcriptionChoice"></div>
-
-<div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('a')">a</span>
-<span class="t" onclick="dotrans('ā')">ā</span>
-<span class="t" onclick="dotrans('á')">á</span>
-<span class="t" onclick="dotrans('æ')">æ</span>
-<span class="t" onclick="dotrans('ɑ')">ɑ</span>
-<span class="t" onclick="dotrans('ɑː')">ɑː</span>
-<span class="t" onclick="dotrans('ɒː')">ɒː</span>
-<span class="t" onclick="dotrans('e')">e</span>
-<span class="t" onclick="dotrans('ē')">ē</span>
-<span class="t" onclick="dotrans('i')">i</span>
-<span class="t" onclick="dotrans('ī')">ī</span>
-<span class="t" onclick="dotrans('iː')">iː</span>
-<span class="t" onclick="dotrans('o')">o</span>
-<span class="t" onclick="dotrans('oː')">oː</span>
-<span class="t" onclick="dotrans('u')">u</span>
-<span class="t" onclick="dotrans('ū')">ū</span>
-<span class="t" onclick="dotrans('uː')">uː</span>
-<span class="t" style="margin-left: 30px;" onclick="dotrans('.')">.</span>
-<span class="t" onclick="dotrans(',')">,</span>
-<span class="t" onclick="dotrans(';')">;</span>
-<span class="t" onclick="dotrans('(')">(</span>
-<span class="t" onclick="dotrans(')')">)</span>
-<span class="t" onclick="dotrans('[')">[</span>
-<span class="t" onclick="dotrans(']')">]</span>
-<span class="t" onclick="dotrans('/')">/</span>
-<span class="t" onclick="dotrans('?')">?</span>
-<br/>
-<span class="t" onclick="dotrans('ʼ')">ʼ</span>
-<span class="t" onclick="dotrans('b')">b</span>
-<span class="t" onclick="dotrans('č')">č</span>
-<span class="t" onclick="dotrans('d')">d</span>
-<span class="t" onclick="dotrans('ʤ')">ʤ</span>
-<span class="t" onclick="dotrans('ɡ')">ɡ</span>
-<span class="t" onclick="dotrans('ɢ')">ɢ</span>
-<span class="t" onclick="dotrans('h')">h</span>
-<span class="t" onclick="dotrans('ħ')">ħ</span>
-<span class="t" onclick="dotrans('ḥ')">ḥ</span>
-<span class="t" onclick="dotrans('j')">j</span>
-<span class="t" onclick="dotrans('ɟ')">j</span>
-<span class="t" onclick="dotrans('k')">k</span>
-<span class="t" onclick="dotrans('l')">l</span>
-<span class="t" onclick="dotrans('m')">m</span>
-<span class="t" onclick="dotrans('n')">n</span>
-<span class="t" onclick="dotrans('q')">q</span>
-<span class="t" onclick="dotrans('r')">r</span>
-<span class="t" onclick="dotrans('s')">s</span>
-<span class="t" onclick="dotrans('š')">š</span>
-<span class="t" onclick="dotrans('s̱')">s̱</span>
-<span class="t" onclick="dotrans('ʃ')">ʃ</span>
-<span class="t" onclick="dotrans('t')">t</span>
-<span class="t" onclick="dotrans('ʧ')">ʧ</span>
-<span class="t" onclick="dotrans('w')">w</span>
-<span class="t" onclick="dotrans('x')">x</span>
-<span class="t" onclick="dotrans('χ')">χ</span>
-<span class="t" onclick="dotrans('y')">y</span>
-<span class="t" onclick="dotrans('z')">z</span>
-<span class="t" onclick="dotrans('ž')">ž</span>
-<span class="t" onclick="dotrans('ẓ')">ẓ</span>
-<span class="t" onclick="dotrans('ʒ')">ʒ</span>
-<span class="t" onclick="dotrans('ʔ')">ʔ</span>
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 </div>
 
-
-<div id="transliteration" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('َ')">a</span>
-<span class="t" onclick="dotrans('أ')">ᵃ</span>
-<span class="t" onclick="dotrans('ا')">ˡ</span>
-<span class="t" onclick="dotrans('آ')">ā</span>
-<span class="t" onclick="dotrans('ً')">aⁿ</span>
-<span class="t" onclick="dotrans('ِ')">i</span>
-<span class="t" onclick="dotrans('ٍ')">iⁿ</span>
-<span class="t" onclick="dotrans('ُ')">u</span>
-<span class="t" onclick="dotrans('ٌ')">uⁿ</span>
-<span class="t" onclick="dotrans('ّ')">ᵚ</span>
-<span class="t" onclick="dotrans('ْ')">̊</span>
-<span class="t" onclick="dotrans('ٔ')">͗</span>
-<span class="t" onclick="dotrans('ٕ')">̹</span>
-<br/>
-<span class="t" onclick="dotrans('ء')">ʾ</span>
-<span class="t" onclick="dotrans('ع')">ʿ</span>
-<span class="t" onclick="dotrans('ب')">b</span>
-<span class="t" onclick="dotrans('چ')">č</span>
-<span class="t" onclick="dotrans('د')">d</span>
-<span class="t" onclick="dotrans('ف')">f</span>
-<span class="t" onclick="dotrans('گ')">g</span>
-<span class="t" onclick="dotrans('غ')">ġ</span>
-<span class="t" onclick="dotrans('ج')">ǧ</span>
-<span class="t" onclick="dotrans('ح')">ḥ</span>
-<span class="t" onclick="dotrans('ه')">h</span>
-<span class="t" onclick="dotrans('خ')">ẖ</span>
-<span class="t" onclick="dotrans('ۀ')">hٔ</span>
-<span class="t" onclick="dotrans('ک')">k</span>
-<span class="t" onclick="dotrans('ل')">l</span>
-<span class="t" onclick="dotrans('م')">m</span>
-<span class="t" onclick="dotrans('ن')">n</span>
-<span class="t" onclick="dotrans('پ')">p</span>
-<span class="t" onclick="dotrans('ق')">q</span>
-<span class="t" onclick="dotrans('ر')">r</span>
-<span class="t" onclick="dotrans('س')">s</span>
-<span class="t" onclick="dotrans('ش')">š</span>
-<span class="t" onclick="dotrans('ص')">ṣ</span>
-<span class="t" onclick="dotrans('ث')">s̱</span>
-<span class="t" onclick="dotrans('ت')">t</span>
-<span class="t" onclick="dotrans('ط')">t̤</span>
-<span class="t" onclick="dotrans('ة')">ẗ</span>
-<span class="t" onclick="dotrans('و')">v</span>
-<span class="t" onclick="dotrans('ؤ')">wٔ</span>
-<span class="t" onclick="dotrans('ی')">y</span>
-<span class="t" onclick="dotrans('ئ')">yٔ</span>
-<span class="t" onclick="dotrans('ز')">z</span>
-<span class="t" onclick="dotrans('ذ')">ẕ</span>
-<span class="t" onclick="dotrans('ژ')">ž</span>
-<span class="t" onclick="dotrans('ض')">z̤</span>
-<span class="t" onclick="dotrans('ظ')">ẓ</span>
-<br/>
-<span class="t" onclick="dotrans('۰')">0</span>
-<span class="t" onclick="dotrans('۱')">1</span>
-<span class="t" onclick="dotrans('۲')">2</span>
-<span class="t" onclick="dotrans('۳')">3</span>
-<span class="t" onclick="dotrans('۴')">4</span>
-<span class="t" onclick="dotrans('۵')">5</span>
-<span class="t" onclick="dotrans('۶')">6</span>
-<span class="t" onclick="dotrans('۷')">7</span>
-<span class="t" onclick="dotrans('۸')">8</span>
-<span class="t" onclick="dotrans('۹')">9</span>
-&nbsp;•&nbsp;
-<span class="t" onclick="dotrans('ـ')">_</span>
-<span class="t" onclick="dotrans('،')">,</span>
-<span class="t" onclick="dotrans('۔')">.</span>
-<span class="t" onclick="dotrans('؛')">;</span>
-<span class="t" onclick="dotrans('؟')">?</span>
-<span class="t" onclick="dotrans('٪')">%</span>
-</div>
-
-
-<div id="loctranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('ا,ؤ,ع')">ʼ</span>
-<span class="t" onclick="dotrans('ب')">b</span>
-<span class="t" onclick="dotrans('چ')">č</span>
-<span class="t" onclick="dotrans('د')">d</span>
-<span class="t" onclick="dotrans('ف')">f</span>
-<span class="t" onclick="dotrans('گ')">g</span>
-<span class="t" onclick="dotrans('ح,ه')">h</span>
-<span class="t" onclick="dotrans('ج')">j</span>
-<span class="t" onclick="dotrans('ک')">k</span>
-<span class="t" onclick="dotrans('ل')">l</span>
-<span class="t" onclick="dotrans('م')">m</span>
-<span class="t" onclick="dotrans('ن')">n</span>
-<span class="t" onclick="dotrans('پ')">p</span>
-<span class="t" onclick="dotrans('ق,غ')">q</span>
-<span class="t" onclick="dotrans('ر')">r</span>
-<span class="t" onclick="dotrans('ث,س,ص')">s</span>
-<span class="t" onclick="dotrans('ش')">š</span>
-<span class="t" onclick="dotrans('ت,ط')">t</span>
-<span class="t" onclick="dotrans('و')">v</span>
-<span class="t" onclick="dotrans('خ')">x</span>
-<span class="t" onclick="dotrans('ی')">y</span>
-<span class="t" onclick="dotrans('ذ,ز,ض,ظ')">z</span>
-<span class="t" onclick="dotrans('ژ')">ž</span>
-<br/>
-<span class="t" onclick="dotrans('ا')">ā</span>
-<span class="t" onclick="dotrans('ی,ه')">e</span>
-<span class="t" onclick="dotrans('ی')">i</span>
-<span class="t" onclick="dotrans('و')">u</span>
-&nbsp;&nbsp; diacritics:
-<span class="t" onclick="dotrans('\u064B')">an</span>
-<span class="t" onclick="dotrans('\u064D')">in</span>
-<span class="t" onclick="dotrans('\u064C')">un</span>
-<span class="t" onclick="dotrans('\u0652')">°</span>
-<span class="t" onclick="dotrans('\u0651')">ᵚ</span>
-<span class="t" onclick="dotrans('\u064F')">u</span>
-<span class="t" onclick="dotrans('\u0650')">o</span>
-<span class="t" onclick="dotrans('\u064E')">a</span>
-</div>
-
-
-
-
-<div id=ipatranscript class=transcript style="display:none;">
-<span class="t" onclick="dotrans('ب')">b</span>
-<span class="t" onclick="dotrans('د')">d</span>
-<span class="t" onclick="dotrans('ض')">dˤ</span>
-<span class="t" onclick="dotrans('ظ')">ðˤ</span>
-<span class="t" onclick="dotrans('ذ')">ð</span>
-<span class="t" onclick="dotrans('ف,ڢ')">f</span>
-<span class="t" onclick="dotrans('ہ')">h</span>
-<span class="t" onclick="dotrans('ح')">ħ</span>
-<span class="t" onclick="dotrans('ي')">j</span>
-<span class="t" onclick="dotrans('ك')">k</span>
-<span class="t" onclick="dotrans('ل')">l</span>
-<span class="t" onclick="dotrans('م')">m</span>
-<span class="t" onclick="dotrans('ن')">n</span>
-<span class="t" onclick="dotrans('ق,ڧ')">q</span>
-<span class="t" onclick="dotrans('ر')">r</span>
-<span class="t" onclick="dotrans('س')">s</span>
-<span class="t" onclick="dotrans('ص')">sˤ</span>
-<span class="t" onclick="dotrans('ش')">ʃ</span>
-<span class="t" onclick="dotrans('ت')">t</span>
-<span class="t" onclick="dotrans('ط')">tˤ</span>
-<span class="t" onclick="dotrans('و')">w</span>
-<span class="t" onclick="dotrans('خ')">x</span>
-<span class="t" onclick="dotrans('ز')">z</span>
-<span class="t" onclick="dotrans('ج')">ʒ</span>
-<span class="t" onclick="dotrans('ث')">θ</span>
-<span class="t" onclick="dotrans('غ')">ɣ</span>
-<span class="t" onclick="dotrans('ع')">ʕ</span>
-<span class="t" onclick="dotrans('ء')">ʔ</span>
-<br/>
-<span class="t" onclick="dotrans('ا')">ɑː</span>
-<span class="t" onclick="dotrans('ة,ى')">ɑ</span>
-<span class="t" onclick="dotrans('ة')">ɑt</span>
-<span class="t" onclick="dotrans('آ')">ʔɑː</span>
-<span class="t" onclick="dotrans('ي')">iː</span>
-<span class="t" onclick="dotrans('و')">uː</span>
-&nbsp;&nbsp; diacritics:
-<span class="t" onclick="dotrans('َ')">a</span>
-<span class="t" onclick="dotrans('ِ')">i</span>
-<span class="t" onclick="dotrans('ُ')">u</span>
-<span class="t" onclick="dotrans('ً')">an</span>
-<span class="t" onclick="dotrans('ٍ')">in</span>
-<span class="t" onclick="dotrans('ٌ')">un</span>
-<span class="t" onclick="dotrans('\u0652')">°</span>
-<span class="t" onclick="dotrans('\u0651')">ᵚ</span>
-</div>
-
-
-</div>
 
 
 

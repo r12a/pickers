@@ -40,6 +40,145 @@ var keyboarddef = [
 "`|z ظ ك|x ط ٓ|c ز ژ|v ر ٰ|b ذ|n د ٔ|m پ ء|, و|. . |/ ؟"
 ]
 
+var justLatinMap = `
+a ɑ ɑ͑ ɑ̄ ā á æ ɑ ɑː ɒː 3
+c č 1
+d ʤ 1
+e ē ɛ 0
+ɡ ɢ 0
+h ħ h͑ ḥ 2
+i ī iː 0
+n ⁿ 1
+o oː ɔ 0
+s ʃ ŝ ṡ š s̱ 3
+t t̂ ẗ ʧ 2
+u ū uː 0
+w w͑ ᵚ 2
+x χ 0
+y ɣ y͑ 2
+z ż ʒ ẑ ž ẓ 4
+{ ʔ̇ ʿ 1
+} ʔ ˓ 1
+0 0̣ 1
+1 1̣ 1
+2 2̣ 1
+3 3̣ 1
+4 4̣ 1
+5 5̣ 1
+6 6̣ 1
+7 7̣ 1
+8 8̣ 1
+9 9̣ 1
+`
+
+
+
+var translitCharacterMap = `
+a ɑ ا ɑ͑ أ ɑ̄ آ 
+A a َ aⁿ ً
+b b ب
+c č چ
+d d د
+D ʤ ج
+f f ف
+g g گ
+h h ه ħ ح h͑ ۀ
+I i ِ iⁿ ٍ
+k k ک
+l l ل
+m m م
+n n ن
+p p پ
+q q ق
+r r ر
+s s س ʃ ش ŝ ص ṡ ث
+t t ت t̂ ط ẗ ة
+U u ُ uⁿ ٌ
+v v و
+w w͑ ؤ ᵚ ّ
+x x خ
+y y ی y͑ ئ ɣ غ
+z z ز ż ذ ʒ ژ ẑ ض ž ظ
+{ ʔ̇ ع
+} ʔ ء
+* ͓ ْ
+0 0̣ ۰
+1 1̣ ۱
+2 2̣ ۲
+3 3̣ ۳
+4 4̣ ۴
+5 5̣ ۵
+6 6̣ ۶
+7 7̣ ۷
+8 8̣ ۸
+9 9̣ ۹
+; ; ؛
+_ _ ـ
+, , ،
+. . ۔
+? ? ؟
+% % ٪
+`
+
+
+var unCharacterMap = `
+' ʼ ا ʼ ؤ ʼ ع
+b b ب
+c č چ
+d d د
+f f ف
+g g گ
+h h ح h ه
+j j ج
+k k ک
+l l ل
+m m م
+n n ن
+p p پ
+q q ق q غ
+r r ر
+s s س s ث s ص š ش
+t t ت t ط
+v v و
+x x خ
+y y ی
+z z ذ z ز z ض z ظ ž ژ
+a ā ا an ً a َ
+e e ی e ه
+i i ی in ٍ
+o o ِ
+u u و un ٌ u ُ
+[ ° ْ ᵚ ّ 
+`
+
+
+var ipaCharacterMap = `
+b b ب
+d d د dˤ ض ðˤ ظ ð ذ
+f f ف f ڢ
+h h ہ ħ ح
+j j ي
+k k ك
+l l ل
+m m م
+n n ن
+q q ق q ڧ
+r r ر
+s s س sˤ ص ʃ ش
+t t ت tˤ ط
+w w و
+x x خ
+z z ز ʒ ج
+O θ ث
+y ɣ غ
+? ʕ ع ʔ ء
+a ɑː ا ɑ ى ɑ ة ɑt ة ʔɑː آ a َ an ً
+i iː ي i ِ in ٍ
+u uː و u ُ un ٌ
+[ ᵚ ّ ° ْ 
+`
+
+
 
 var rightOnly = new Set(['ا', 'آ', 'أ', 'إ', 'ٱ', 'ة', 'و', 'ؤ', 'ر', 'ز', 'د', 'ذ', 'ۀ', 'ژ'])
 
