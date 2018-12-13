@@ -60,25 +60,25 @@ function toggleShift (node, LC, UC) {
 
 
 var justLatinMap = `
-a ã ạ ạ̃ 3
-b ɓ 1
-d ɗ ð ʤ 3 
-e ẽ ẹ ẹ̃ 3
-E ɛ ɛ̃ ɛ̣ ɛ̣̃ 4
-g gb 1
-i ĩ ị ị̃ 3
-k kp 1
-m mɓ mgb 2
-n nɗ nʤ 2 
-N ŋg ɲ ŋ ŋ̽ 4
-o õ ọ ọ̃ 3
-O ɔ ɔ̃ ɔ̣ ɔ̣̃ 4
-s ʃ 1
-t ʧ 1
-u ũ ụ ụ̃ 3
-z ʒ 1
-@ θ 1
-_ = 1
+a ã ạ ạ̃
+b ɓ
+d ɗ ð ʤ
+e ẽ ẹ ẹ̃
+E ɛ ɛ̃ ɛ̣ ɛ̣̃
+g gb
+i ĩ ị ị̃
+k kp
+m mɓ mgb
+n nɗ nʤ
+N ŋg ɲ ŋ ŋ̽
+o õ ọ ọ̃
+O ɔ ɔ̃ ɔ̣ ɔ̣̃
+s ʃ
+t ʧ
+u ũ ụ ụ̃
+z ʒ
+@ θ
+_ =
 `
 
 
