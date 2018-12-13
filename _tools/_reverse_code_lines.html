@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Character map generator</title>
+
+<!-- 
+Creates markup for input to the key event feature in v23
+Output is added to a line in localcode.js starting with var xyzCharacters = {
+Output for justLatin is slightly different - no double key
+-->
+
+<script type="text/javascript" src="../../../../uniview/u.js"></script>
+<script type="text/javascript" src="../../../../uniview/descriptions.js"></script>
+<script type="text/javascript">
+
+
+
+function makeList (inp) {
+    var out = ''
+	var fulllist = inp.split('\n')
+	for (let i=fulllist.length-1;i>-1;i--) {
+        out += fulllist[i]
+        out += '\n'
+        }
+	return out
+	}
+
+	
+</script>
+<style>
+p, input, #character, #inputArea  { font-size: 120%; }
+</style>
+</head>
+
+<body>
+<p>Reverses the order of lines: used for creating reverse transliterations</p>
+<p>&nbsp;
+<textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;" placeholder="Add characters here"></textarea></p>
+
+<p><button type="submit" onClick="document.getElementById('output').value  = makeList(document.getElementById('inputArea').value); document.getElementById('output').select(); return false;">Create lists!</button></p>
+
+<p>&nbsp;
+<textarea id="output" style="width: 90%; height: 600px;"></textarea></p>
+
+</body>
+</html>

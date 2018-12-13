@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Reverse replace code</title>
+
+<!-- 
+Creates markup for input to the key event feature in v23
+Output is added to a line in localcode.js starting with var xyzCharacters = {
+Output for justLatin is slightly different - no double key
+-->
+
+<script type="text/javascript">
+
+
+
+function makeList (inp) {
+    var lines = []
+    var lines1=[], lines2=[], lines3=[], lines4=[], linesmore=[]
+	var fulllist = inp.split('\n')
+	for (let i=0;i<fulllist.length;i++) {
+        fulllist[i] = fulllist[i].trim()
+        if (fulllist[i]==='') continue
+        var pairs = fulllist[i].split(' ')
+        var key = pairs.shift()
+        for (let j=0;j<pairs.length;j++) {
+            var out = ''
+            out += 'str = str.replace(/'+pairs[j]+'/g, "'+pairs[j+1]+'")\n' // this line reverses the mapping
+            if (pairs[j].length === 1) lines1.push(out)
+            else if (pairs[j].length === 2) lines2.push(out)
+            else if (pairs[j].length === 3) lines3.push(out)
+            else if (pairs[j].length === 4) lines4.push(out)
+            else linesmore.push(out)
+            j++
+            }
+        }
+    lines1.sort()
+    lines2.sort()
+    lines3.sort()
+    lines4.sort()
+    linesmore.sort()
+    lines = linesmore.concat(lines4, lines3, lines2, lines1)
+    //lines.reverse()
+    return lines.join('')
+	}
+
+	
+</script>
+<style>
+p, input, #character, #inputArea  { font-size: 120%; }
+</style>
+</head>
+
+<body>
+<p>Reverses the order of lines: used for creating reverse transliterations</p>
+<p>&nbsp;
+<textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;" placeholder="Add characters here"></textarea></p>
+
+<p>
+<button type="submit" onClick="document.getElementById('output').value  = makeList(document.getElementById('inputArea').value); document.getElementById('output').select(); return false;">Create reversed code!</button></p>
+
+<p>&nbsp;
+<textarea id="output" style="width: 90%; height: 600px;"></textarea></p>
+
+</body>
+</html>

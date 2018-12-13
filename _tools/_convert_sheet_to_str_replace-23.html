@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Make str replace from sheet</title>
+
+<!-- creates part of an associative array for transcription routines -->
+
+<script type="text/javascript">
+
+
+
+
+
+function makeList (list, from, to) {
+    var lines1=[], lines2=[], lines3=[], lines4=[], linesmore=[]
+	list = list.trim()
+	list = list.replace(/ +/g,' ')
+	var listarray = list.split('\n')
+	
+	for (let i=0;i<listarray.length;i++) {
+		pair = listarray[i].trim()
+		if (pair === '') continue
+		pairarray = pair.split('\t')
+        
+        var out = ''
+		out += 'str = str.replace(/'
+        out += pairarray[from]
+        out += '/g, "'
+        
+        console.log(pairarray[from], pairarray[to])
+        if (pairarray[to]) var result = pairarray[to].replace(/ +/g,' ')
+        else result = ''
+        console.log(result)
+        if (result.includes(' ') && result !== ' ') out += '['+result.replace(/ /g,'{')+']'
+        else out += result
+        out += '")\n'
+
+        if (pairarray[from].length === 1) lines1.push(out)
+        else if (pairarray[from].length === 2) lines2.push(out)
+        else if (pairarray[from].length === 3) lines3.push(out)
+        else if (pairarray[from].length === 4) lines4.push(out)
+        else linesmore.push(out)         
+		}
+    
+    lines1.sort()
+    lines2.sort()
+    lines3.sort()
+    lines4.sort()
+    linesmore.sort()
+    lines = linesmore.concat(lines4, lines3, lines2, lines1)
+
+    return lines.join('')
+	}
+
+
+
+
+
+function makeListX (list, from, to) {
+    var lines1=[], lines2=[], lines3=[], lines4=[], linesmore=[]
+	list = list.trim()
+	list = list.replace(/ +/g,' ')
+	var listarray = list.split('\n')
+	
+	for (let i=0;i<listarray.length;i++) {
+		pair = listarray[i].trim()
+		if (pair === '') continue
+		pairarray = pair.split('\t')
+        
+        var out = ''
+		out += 'str = str.replace(/'
+        out += pairarray[from]
+        out += '/g, "'
+        
+        console.log(pairarray[from], pairarray[to])
+        if (pairarray[to]) var result = pairarray[to].replace(/ +/g,'')
+        else result = ''
+        console.log(result)
+        if (result.includes(',') && result !== ',') out += '['+result.replace(/,/g,'{')+']'
+        else out += result
+        out += '")\n'
+
+        if (pairarray[from].length === 1) lines1.push(out)
+        else if (pairarray[from].length === 2) lines2.push(out)
+        else if (pairarray[from].length === 3) lines3.push(out)
+        else if (pairarray[from].length === 4) lines4.push(out)
+        else linesmore.push(out)         
+		}
+    
+    lines1.sort()
+    lines2.sort()
+    lines3.sort()
+    lines4.sort()
+    linesmore.sort()
+    lines = linesmore.concat(lines4, lines3, lines2, lines1)
+
+    return lines.join('')
+	}
+
+
+
+
+
+function makeListOLD (list, from, to) {
+	console.log('list',list)
+	list = list.trim()
+	list = list.replace(/ +/g,' ')
+	var listarray = list.split('\n')
+	var out = ''
+	console.log('listarray length',listarray.length)
+	
+	for (var i=0;i<listarray.length;i++) {
+		listarray[i] = listarray[i].trim()
+		if (listarray[i] === '') continue
+		var pair = listarray[i]
+		console.log(pair)
+		pair = pair.trim()
+		pairarray = pair.split('\t')
+        //if (! document.getElementById('esc').checked) out += 'str = str.replace(/'+pairarray[from]+'/g, "'+pairarray[to]+'")\n'
+		//else out += 'str = str.replace(/'+convertCharStr2jEsc(pairarray[from],'')+'/g, "'+convertCharStr2jEsc(pairarray[to],'')+'")\n'
+		out += 'str = str.replace(/'
+        if (document.getElementById('escLeft').checked) out += convertCharStr2jEsc(pairarray[from],'')
+        else out += pairarray[from]
+        out += '/g, "'
+        if (document.getElementById('escRight').checked) out += convertCharStr2jEsc(pairarray[to],'')
+        else out += pairarray[to]
+        out += '")\n'
+		//out += '<span class="t" onclick="dotrans(\''+pairarray[1]+'\')">'+pairarray[0]+'</span>\n'
+		}
+	return out
+	}
+
+	//	str = str.replace(/ئ/g,'’') 
+
+</script>
+<style>
+input, #character, #inputArea  { font-size: 200%; }
+</style>
+</head>
+
+<body>
+<h1>str.replace generator</h1>
+<small>This is used for straightforward conversions. More complicated conversions are done in code in the transcription.js file.</small>
+
+<p>Input is a copy of two or more columns from the Google sheet.</p>
+<p>comma&amp;space separated items are converted to [a{b{c].</p>
+<p><button onClick="document.getElementById('inputArea').value = ''">Clear input</button></p>
+<p>&nbsp;
+<textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;" placeholder="Input goes here."></textarea></p>
+
+<p>
+From: <select id="from"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+To: <select id="to"><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+</select>
+<label>Escape <input id="escLeft" type="checkbox"/> <input id="escRight" type="checkbox"/></label>
+
+<button type="submit" onClick="document.getElementById('output').value  = makeList(document.getElementById('inputArea').value, document.getElementById('from').value-1, document.getElementById('to').value-1); document.getElementById('output').select(); return false;">Create lists!</button></p>
+
+<p>&nbsp;
+<textarea id="output" style="width: 90%; height: 600px;"></textarea></p>
+
+</body>
+</html>

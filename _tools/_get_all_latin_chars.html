@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Get all latin chars</title>
+
+<!-- 
+Creates markup for input to the key event feature in v23
+Output is added to a line in localcode.js starting with var xyzCharacters = {
+Output for justLatin is slightly different - no double key
+-->
+
+<script type="text/javascript">
+
+
+/*
+
+a ā ာ ǟ ါ a͡i ဲ
+i i ိ ī ီ
+u u ု ū ူ
+e e ေ
+o o ို
+A ‘a အ ạu ဪ
+E ‘e အေ ẹ ဧ eā ော eā͓ ေါ eǟ ေါ eǟ͓ ေါ်
+I ‘i အိ ‘ī အီ ị ဣ ị̄ ဤ
+O ‘o အို ọ ဩ
+U ‘u အု ‘ū အူ ụ ဥ ụ̄ ဦ
+' ‘ အ
+b b ဗ
+B bʰ ဘ
+c c စ
+C cʰ ဆ
+d d ဒ ḍ ဍ
+D dʰ ဓ ḍʰ ဎ
+G g ဂ gʰ ဃ
+h h ဟ h̆ ှ
+j j ဇ
+J jʰ ဈ
+k k က
+K kʰ ခ
+l l လ l̆ ္လ
+m m မ
+n n န ñ ည ṅ င ṅ̽ င်္ n̽ ံ ṇ ဏ ᵰ ဉ
+p p ပ
+
+str = str.replace(/ဃ/g, "gʰ")
+
+*/
+
+function makeListOLD (inp) {
+    var charArray = []
+	var fulllist = inp.split('\n')
+	for (let i=0;i<fulllist.length;i++) {
+        fulllist[i] = fulllist[i].trim()
+        fulllist[i] = fulllist[i].replace(/\s+/g, ' ')
+        if (fulllist[i]==='') continue
+        var chars = fulllist[i].split('\s')
+        //console.log(key, pairs)
+        for (let j=0;j<chars.length;j++) {
+            charArray.push(chars[j])
+            }
+        }
+    
+    charArray.sort()
+    
+    out = charArray[0]
+    for (let i=1;i<charArray.length;i++) {
+        if (charArray[i] !== charArray[i-1]) out += ' '+charArray[i]
+        }
+    return out
+	}
+
+	
+function makeList (inp) {
+    var charArray = []
+    inp = inp.replace(/\t/g,' ')
+    inp = inp.replace(/,/g, ' ')
+    inp = inp.replace(/\s+/g, ' ')
+    inp = inp.trim()
+    var chars = inp.split(' ')
+    for (let j=0;j<chars.length;j++) {
+        if (document.getElementById('minimise').checked && chars[j].length === 1 && chars[j].match(/[a-zA-Z0-9]/)) continue
+        charArray.push(chars[j])
+        }
+    
+    if (document.getElementById('reorder').checked) charArray.sort()
+    
+    out = charArray[0]
+    for (let i=1;i<charArray.length;i++) {
+        if (charArray[i] !== charArray[i-1]) out += ' '+charArray[i]
+        }
+    return out
+	}
+
+	
+</script>
+<style>
+p, input, #character, #inputArea  { font-size: 120%; }
+</style>
+</head>
+
+<body>
+<p>Produces a list of all latin characters for a picker.</p>
+<p>&nbsp;
+<textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;" placeholder="Drop all the panel data here"></textarea></p>
+
+<p><label><input type="checkbox" id="reorder" checked /> Reorder</label> <label><input type="checkbox" id="minimise" checked /> Minimise output</label>
+<button type="submit" onClick="document.getElementById('output').value  = makeList(document.getElementById('inputArea').value); document.getElementById('output').select(); return false;">Create list!</button></p>
+
+<p>&nbsp;
+<textarea id="output" style="width: 90%; height: 600px;"></textarea></p>
+
+</body>
+</html>

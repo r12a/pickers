@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Make charMap</title>
+
+<!-- 
+Creates markup for input to the key event feature in v23
+Output is added to a line in localcode.js starting with var xyzCharacters = {
+Output for justLatin is slightly different - no double key
+-->
+
+<script type="text/javascript">
+
+
+function compare(a, b) {
+  var nameA = a.toUpperCase(); // ignore upper and lowercase
+  var nameB = b.toUpperCase(); // ignore upper and lowercase
+  if (nameA < nameB) {
+    return -1;
+  }
+  if (nameA > nameB) {
+    return 1;
+  }
+
+  // names must be equal
+  return 0;
+}
+
+debug=true
+
+var sortIndex = ['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I','j','J','k','K','l','L','m','M','n','N','o','O','p','P','q','Q','r','R','s','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z','{','}','§','0','1','2','3','4','5','6','7','8','9','#','[',',','.',';',':','?','_',"'",'*','!']
+
+function makeList (inp, col) {
+    var charArray = {}
+    inp = inp.replace(/\ +/g, ' ')
+    inp = inp.trim()
+    var lines = inp.split('\n')
+    
+    var chars = []
+    // suck out the relevant data into the chars array
+    for (let j=0;j<lines.length;j++) {
+         if (lines[j] === '') continue
+        var bits = lines[j].split('\t')
+                    if (debug) console.log('lines[j]',lines[j])
+                    if (debug) console.log('bits.length',bits.length)
+                    if (debug) console.log('bits[col]', bits[col])
+        
+        // if there's no equivalent listed, continue
+        if (bits[col] === '') continue
+        
+        // get the key mapping for this item, and push it to the chars array
+        //if (col=== "3") var key = bits[0]
+        //else 
+        key = bits[col-1]
+        if (key === '') continue
+                    if (debug) console.log('col is',col, 'key is',key)
+        
+       chars.push(key+'\t'+bits[0]+'\t'+bits[col])
+    }
+
+    // process the chars array
+    for (let i=0;i<chars.length;i++) {
+                     if (debug) console.log('========')
+                     if (debug) console.log('chars[i]',chars[i])
+        var mapping = chars[i].split('\t')
+        key = mapping[0]
+        native = mapping[1]
+        latin = mapping[2]
+        if (debug) console.log('key',key,'native',native,'latin',latin)
+
+        // if there are multiple keys, add pairs to the end of the array and continue
+        if (key.includes(' ')) {
+            var keylist = key.split(' ')
+            var collist = latin.split(' ')
+            key = keylist[0]
+            latin = collist[0]
+            for (let q=1;q<keylist.length;q++) chars.push(keylist[q]+'\t'+native+'\t'+collist[q])
+            }
+        
+        // check for a marker that this pair should come first
+        var primary = false  
+        if (key.includes('¶')) {
+            primary = true
+            key = key.replace('¶', '')
+            }
+        
+        // create entry for the item
+        if (charArray[key]) {
+            if (primary) charArray[key] = charArray[key].replace(key, key+' '+latin+' '+native)
+            else charArray[key] += ' '+latin+' '+native
+            }
+        else {
+            charArray[key] = key+' '+latin+' '+native
+            }
+        }
+    console.log(charArray)
+    
+    var out = ''
+    for (let i=0;i<window.sortIndex.length;i++) {
+        if (charArray[window.sortIndex[i]]) out += charArray[window.sortIndex[i]]+'\n'
+        }
+    return out
+	}
+
+
+	
+</script>
+<style>
+p, input, #character, #inputArea  { font-size: 120%; }
+</style>
+</head>
+
+<body>
+<p>Produces a translitCharacterMap for a picker.</p>
+<p>&nbsp;
+<textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;" placeholder="From the Google sheet, copy the key, character and translit columns here, and check there are no incomplete lines. The columns should be tab-separated and in that order, one item per line."></textarea></p>
+
+<p><button onClick="document.getElementById('inputArea').value  = ''">Clear input</button> &nbsp;&nbsp;&nbsp;&nbsp;
+Select latin column: <select id="col"><option value="2" selected>2</option>
+    <option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
+    </select>
+<button type="submit" onClick="document.getElementById('output').value  = makeList(document.getElementById('inputArea').value, document.getElementById('col').value-1); document.getElementById('output').select(); return false;">Create list!</button></p>
+
+<p>&nbsp;
+<textarea id="output" style="width: 90%; height: 600px;"></textarea></p>
+
+</body>
+</html>
