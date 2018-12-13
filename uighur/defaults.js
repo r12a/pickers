@@ -38,7 +38,7 @@ var inputAids = [
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Uighur text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-{"title":"Trans-<br/>scribe", "alt":"Convert Uighur text to a ULY Latin transcription.", "code":"doTranscription('toULY')"},
+{"title":"Uighur<br/>to ULY", "alt":"Convert Uighur text to a ULY Latin transcription.", "code":"doTranscription('toULY')"},
 ]
 
 

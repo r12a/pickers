@@ -126,19 +126,19 @@ function event_mouseoverChar ()  {
 	}
 
 var justLatinMap = `
-a ɑ 0
-c č 1
-d ʤ 1
-e ë ɛ 1
-n ŋ 1
-o ø ɔ ö 1
-r ʁ ɾ 1
-s ʃ 1
-u ü ʊ 1
-x χ 1
-y ɣ ʏ 0
-z ʒ 1
-{ ʿ ’ 1
+a ɑ
+c č
+d ʤ
+e ë ɛ
+n ŋ
+o ø ɔ ö
+r ʁ ɾ
+s ʃ
+u ü ʊ
+x χ
+y ɣ ʏ
+z ʒ
+{ ʿ ’
 `
 
 
