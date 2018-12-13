@@ -29,9 +29,10 @@ var template = {}
 
 
 var inputAids = [
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Capital Latin characters", "dataVar":"showLatinCapsTrans", "dataLocn":"latincapstranscript", "dataShortTitle":"C", "type":"palette"},
-{"title":"Latin to Egyptian", "dataVar":"showLOCTrans", "dataLocn":"loctranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+{"title":"Latin to Egyptian", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+//{"title":"Capital Latin characters", "dataVar":"showLatinCapsTrans", "dataLocn":"latincapstranscript", "dataShortTitle":"C", "type":"palette"},
+//{"title":"Latin to Egyptian", "dataVar":"showLOCTrans", "dataLocn":"loctranscript", "dataShortTitle":"L", "type":"palette"},
 {"title":"Egyptian alphabet", "dataVar":"showAlphaTrans", "dataLocn":"alphatranscript", "dataShortTitle":"E", "type":"palette"},
 ]
 

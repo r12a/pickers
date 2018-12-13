@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Egyptian character picker 22</title>
+<title>Egyptian character picker 23</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared22/code.js">  </script>
+<script src="../shared23/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared22/pagetemplate.js">  </script>
+<script src="../shared23/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
 <script src="localtranscription.js">  </script>
@@ -45,117 +45,7 @@
 
 
 <div id="phonemelist" style="position:relative;">
- <div id="transcriptionChoice"></div>
-
-<div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('a')">a</span>
-<span class="t" onclick="dotrans('e')">e</span>
-<span class="t" onclick="dotrans('i')">i</span>
-<span class="t" onclick="dotrans('i̓')">i̓</span>
-<span class="t" onclick="dotrans('i͗')">i͗</span>
-<span class="t" onclick="dotrans('o')">o</span>
-<span class="t" onclick="dotrans('u')">u</span>
-<span class="t" onclick="dotrans('⸗')">⸗</span>
-<span class="t" onclick="dotrans('ꜣ')">ꜣ</span>
-<span class="t" onclick="dotrans('ꜥ')">ꜥ</span>
-<span class="t" style="margin-left: 30px;" onclick="dotrans('.')">.</span>
-<span class="t" onclick="dotrans(',')">,</span>
-<span class="t" onclick="dotrans(';')">;</span>
-<span class="t" onclick="dotrans('(')">(</span>
-<span class="t" onclick="dotrans(')')">)</span>
-<span class="t" onclick="dotrans('[')">[</span>
-<span class="t" onclick="dotrans(']')">]</span>
-<span class="t" onclick="dotrans('/')">/</span>
-<span class="t" onclick="dotrans('⸢')">⸢</span>
-<span class="t" onclick="dotrans('⸣')">⸣</span>
-<span class="t" onclick="dotrans('?')">?</span>
-<br/>
-<span class="t" onclick="dotrans('b')">b</span>
-<span class="t" onclick="dotrans('c')">c</span>
-<span class="t" onclick="dotrans('d')">d</span>
-<span class="t" onclick="dotrans('ḏ')">ḏ</span>
-<span class="t" onclick="dotrans('f')">f</span>
-<span class="t" onclick="dotrans('g')">g</span>
-<span class="t" onclick="dotrans('h')">h</span>
-<span class="t" onclick="dotrans('ḥ')">ḥ</span>
-<span class="t" onclick="dotrans('ḫ')">ḫ</span>
-<span class="t" onclick="dotrans('ẖ')">ẖ</span>
-<span class="t" onclick="dotrans('j')">j</span>
-<span class="t" onclick="dotrans('k')">k</span>
-<span class="t" onclick="dotrans('ḳ')">ḳ</span>
-<span class="t" onclick="dotrans('l')">l</span>
-<span class="t" onclick="dotrans('m')">m</span>
-<span class="t" onclick="dotrans('n')">n</span>
-<span class="t" onclick="dotrans('p')">p</span>
-<span class="t" onclick="dotrans('q')">q</span>
-<span class="t" onclick="dotrans('r')">r</span>
-<span class="t" onclick="dotrans('s')">s</span>
-<span class="t" onclick="dotrans('š')">š</span>
-<span class="t" onclick="dotrans('ś')">ś</span>
-<span class="t" onclick="dotrans('t')">t</span>
-<span class="t" onclick="dotrans('ṯ')">ṯ</span>
-<span class="t" onclick="dotrans('ṱ')">ṱ</span>
-<span class="t" onclick="dotrans('v')">v</span>
-<span class="t" onclick="dotrans('w')">w</span>
-<span class="t" onclick="dotrans('x')">x</span>
-<span class="t" onclick="dotrans('y')">y</span>
-<span class="t" onclick="dotrans('z')">z</span>
-</div>
-
-
-<div id="latincapstranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('A')">A</span>
-<span class="t" onclick="dotrans('E')">E</span>
-<span class="t" onclick="dotrans('I')">I</span>
-<span class="t" onclick="dotrans('I̓')">I̓</span>
-<span class="t" onclick="dotrans('I͗')">I͗</span>
-<span class="t" onclick="dotrans('O')">O</span>
-<span class="t" onclick="dotrans('U')">U</span>
-<span class="t" onclick="dotrans('⸗')">⸗</span>
-<span class="t" onclick="dotrans('Ꜣ')">Ꜣ</span>
-<span class="t" onclick="dotrans('Ꜥ')">Ꜥ</span>
-<span class="t" style="margin-left: 30px;" onclick="dotrans('.')">.</span>
-<span class="t" onclick="dotrans(',')">,</span>
-<span class="t" onclick="dotrans(';')">;</span>
-<span class="t" onclick="dotrans('(')">(</span>
-<span class="t" onclick="dotrans(')')">)</span>
-<span class="t" onclick="dotrans('[')">[</span>
-<span class="t" onclick="dotrans(']')">]</span>
-<span class="t" onclick="dotrans('/')">/</span>
-<span class="t" onclick="dotrans('⸢')">⸢</span>
-<span class="t" onclick="dotrans('⸣')">⸣</span>
-<span class="t" onclick="dotrans('?')">?</span>
-<br/>
-<span class="t" onclick="dotrans('B')">B</span>
-<span class="t" onclick="dotrans('C')">C</span>
-<span class="t" onclick="dotrans('D')">D</span>
-<span class="t" onclick="dotrans('Ḏ')">Ḏ</span>
-<span class="t" onclick="dotrans('F')">F</span>
-<span class="t" onclick="dotrans('G')">G</span>
-<span class="t" onclick="dotrans('H')">H</span>
-<span class="t" onclick="dotrans('Ḥ')">Ḥ</span>
-<span class="t" onclick="dotrans('Ḫ')">Ḫ</span>
-<span class="t" onclick="dotrans('J')">J</span>
-<span class="t" onclick="dotrans('K')">K</span>
-<span class="t" onclick="dotrans('Ḳ')">Ḳ</span>
-<span class="t" onclick="dotrans('L')">L</span>
-<span class="t" onclick="dotrans('M')">M</span>
-<span class="t" onclick="dotrans('N')">N</span>
-<span class="t" onclick="dotrans('P')">P</span>
-<span class="t" onclick="dotrans('Q')">Q</span>
-<span class="t" onclick="dotrans('R')">R</span>
-<span class="t" onclick="dotrans('S')">S</span>
-<span class="t" onclick="dotrans('Š')">Š</span>
-<span class="t" onclick="dotrans('Ś')">Ś</span>
-<span class="t" onclick="dotrans('T')">T</span>
-<span class="t" onclick="dotrans('Ṯ')">Ṯ</span>
-<span class="t" onclick="dotrans('Ṱ')">Ṱ</span>
-<span class="t" onclick="dotrans('V')">V</span>
-<span class="t" onclick="dotrans('W')">W</span>
-<span class="t" onclick="dotrans('X')">X</span>
-<span class="t" onclick="dotrans('Y')">Y</span>
-<span class="t" onclick="dotrans('Z')">Z</span>
-</div>
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 
 
 <div id="manueldecodage" class="transcript" style="display:none;">
