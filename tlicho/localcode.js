@@ -44,3 +44,38 @@ var keyboardguide = [
 
 var keyboardRowOffset = ['5px','20px','30px','50px']
 */
+
+
+var justLatinMap = `
+i ı I
+l ł Ł
+? ɂ Ɂ
+( ‹ «
+) › »
+= ̀
+[ ̨
+] ̨̀
+`
+
+var translitCharacterMap = `
+i i ı
+I I I
+l l ł
+L L Ł
+/ / ɂ
+? ? Ɂ
+( ( ‹
+) ( ›
+- « - - -
+_ _ » _ _
+= = ̀
+{ { ̨ { {
+} } ̨̀ } }
+`
+
+
+
+
+
+
+
