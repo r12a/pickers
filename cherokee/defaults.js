@@ -30,10 +30,11 @@ var template = {}
 
 var inputAids = [
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "initialCode":"kbd=document.getElementById('alphabet'); if (kbd.style.display==='none') {kbd.style.display='block';} else {kbd.style.display='none';}"},
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Cherokee text to a Latin transliteration.", "code":"doTranscription('toTranslit')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Cherokee text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Reverse<br/>translit.", "alt":"Convert Cherokee transliteration back to Cherokee.", "code":"doTranscription('reverse')"},
 ]
