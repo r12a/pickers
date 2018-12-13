@@ -98,24 +98,24 @@ function event_mouseoverChar ()  {
 
 
 var justLatinMap = `
-a ɑ ɑ͑ ɑ̜ ɑ̄ ā ɑ̃ ɑː á 4
-d ð d̴ dˤ ḍ ðˤ 2
-h ħ ḥ 1
-i ī iː 0
-n ⁿ ñ 1
-o ö 0
-r ʁ 0
-s s̴ ʃ ṣ sˤ 2
-t ẗ t̴ tˤ ṭ 2
-u ū uː 0
-w w͑ ᵚ 2
-y ɣ y͑ 2
-z ʒ z̴ ẓ 2
-@ θ 1
-* ͓ 1
-{ ʕ ˤ ʿ ˓ 1
-} ʔ ʾ 1
-' ʼ ʻ ′ 0
+a ɑ ɑ͑ ɑ̜ ɑ̄ ā ɑ̃ ɑː á
+d ð d̴ dˤ ḍ ðˤ
+h ħ ḥ
+i ī iː
+n ⁿ ñ
+o ö
+r ʁ
+s s̴ ʃ ṣ sˤ
+t ẗ t̴ tˤ ṭ
+u ū uː
+w w͑ ᵚ
+y ɣ y͑
+z ʒ z̴ ẓ
+@ θ
+* ͓
+{ ʕ ˤ ʿ ˓
+} ʔ ʾ
+' ʼ ʻ ′
 `
 
 
