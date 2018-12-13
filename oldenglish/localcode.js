@@ -58,3 +58,35 @@ function blankEndings () {
 	var cells = document.getElementById('caseEndings').querySelectorAll('td')
 	for (var c=0;c<cells.length;c++) cells[c].style.backgroundColor = 'white'
 	}
+
+
+var justLatinMap = `
+a ā æ ǣ
+c ċ
+d ð
+e ē
+g ġ
+i ī
+o ō œ
+p þ
+u ū
+y ȳ
+; ͡
+`
+var ipaCharacterMap = `
+a aː ɑ ɑː æ æː
+e eː ə̯
+i iː
+o oː ø œː ɔ
+u uː 
+d ʤ ð 
+l l̥ 
+n n̥ ŋ
+r r̥
+s ʃ
+t ʧ
+w ʍ
+y yː ɣ
+z θ
+`
+

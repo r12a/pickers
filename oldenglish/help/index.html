@@ -2,13 +2,13 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Old English character picker 22</title>
+<title>Help for Old English character picker 23</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js" type="text/javascript"></script>
 <script type="text/javascript" src="/shared/code/toc_2016.js"></script>
-<script type="text/javascript" src="../../shared22/helptemplate.js"></script>
+<script type="text/javascript" src="../../shared23/helptemplate.js"></script>
 <script>var direction = 'ltr'</script>
 </head>
 
@@ -33,7 +33,7 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->25-Feb-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=oldenglish" title="Show all blog posts tagged with 'oldenglish'">oldenglish</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->13-Dec-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=oldenglish" title="Show all blog posts tagged with 'oldenglish'">oldenglish</a></p>
 
 <p>This Unicode character picker allows you to produce or analyse runs of Old English text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>Note that there is also a <a href="/pickers/runic/" target="_blank">Runic picker</a>, which deals with conventional Latin transliterations, and includes characters from a wider range of fuþarks.&nbsp;</p>
@@ -84,10 +84,15 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <script>document.getElementById('inputAids1').innerHTML = addInputAids('intro')</script>
 
 
-    <p><b class="leadin">IPA transcription.</b> Displays a panel of  characters you may need while typing in an IPA (International Phonetic Alphabet) transcription from the keyboard. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want in order to add it to the text area.</p>
-	<p><img src="../../shared22/images/help/translit_option.png" alt=" "/></p>
-    
+<p><b class="leadin">Type characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  typing Old English, and sets up the <strong>Latin type-in mode</strong>. (This can be switched on/off by hitting the ` key.)</p>
+    <p>As you type, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or click directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already see the character you want, just continue typing.)</p>
+    <p style="text-align:center;"><img src="character-selector.png" alt=""></p>
+    <p>Keys that produce such suggestions are highlighted in orange in a panel that appears below the text area. You can also click on the items in that panel in order to insert them. </p>
+<p style="text-align:center;"><img src="latin-panel.png" alt=""></p>
+<p>Alternative characters are associated with a key on the keyboard that resembles them when displayed – eg. ɂ will  be brought up by clicking on the '?' key.</p>    
 
+
+    <p><b class="leadin">IPA characters.</b> Displays a panel of  characters you may need while typing in an IPA (International Phonetic Alphabet) transcription for Old English.    It works as described in the section just above called <samp>Type characters</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>.</p>
 <div id="inputAids2"></div>
 <script>document.getElementById('inputAids2').innerHTML = addInputAids('')</script>
 
