@@ -30,6 +30,46 @@ var keyboardUC = [
 ]
 
 
+var justLatinMap = `
+; ‹ › « » ͡
+a á æ
+d ð
+e é
+i í
+o œ ǫ ó ø
+p þ
+r ʀ
+u ú
+y ý
+`
+
+
+
+var ipaCharacterMap = `
+a aː æ
+e eː
+i iː
+o oː ø œː ɔ
+u uː
+b bː
+d dː ð
+f fː
+g gː
+k kː
+l lː
+m mː
+n nː ŋ
+p pː
+r rː
+s sː
+t tː ʦ
+y yː ɣ
+O θ
+`
+
+
+
+
 function event_toggleKbdShift () {
     if (this.classList.contains('shiftKeyOn')) {
         makeKeyboard(keyboarddef, keyboardLCGuide)
