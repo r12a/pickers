@@ -222,12 +222,14 @@ function toggleSideBarOption (node, fullTitle, variable, id) {
 		node.style.color='white'
 		if (id != '') document.getElementById(id).style.display = 'none'
 		if (id != '') window.latinCharacters = {}
+        document.getElementById('output').focus()
 		} 
 	else {
 		globals[variable] = ' ✓'
 		node.textContent=fullTitle+globals[variable]
 		node.style.color='orange'
 		if (id != '') document.getElementById(id).style.display = 'block'
+        document.getElementById('output').focus()
 		} 
 	return false
 	}
@@ -1699,24 +1701,28 @@ function drawCharSelectionPanelX (key) {
 	
 function drawCharSelectionPanel (key) {
         out = ''
-        if (window.latinOnly) { // deal with # at end indicating how many translit chars
-            translitTotal = parseInt(latinCharacters[key][latinCharacters[key].length-1][0])
-            last = latinCharacters[key].length-1
-            }
-        else {
-            last = latinCharacters[key].length
-            translitTotal = -1
-            }
-        for (let i=0;i<last;i++) {
+        //if (window.latinOnly) { // deal with # at end indicating how many translit chars
+        //    translitTotal = parseInt(latinCharacters[key][latinCharacters[key].length-1][0])
+        //    last = latinCharacters[key].length-1
+        //    }
+        //else {
+         //   last = latinCharacters[key].length
+        //    translitTotal = -1
+        //    }
+        //for (let i=0;i<last;i++) {
+        console.log(latinCharacters[key].length, latinCharacters[key])
+        for (let i=0;i<latinCharacters[key].length;i++) {
             if (i > 9) {
                 out += ' &nbsp; Warning: More than 10 items.'
                 break
                 }
             out += ' <sup'
-            if (i<translitTotal) out += ' style="color: orange;"'
-            out += '>'+eval(i % 10)
+            out += '>'
             if (! window.latinOnly) out += latinCharacters[key][i][0]
-            out += '</sup> '
+            out += '</sup><sub'
+            //if (i<translitTotal) 
+            //out += ' style="color: orange;"'
+            out += '>'+eval(i % 10)+'</sub> '
             out += '<bdi onclick="'
             out += 'addReplacement'
             out += '(\''+latinCharacters[key][i][1]+'\'); window.awaitingInput=\'\'; document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+latinCharacters[key][i][1]+'</bdi>'
@@ -1732,7 +1738,30 @@ function showDown (evt) {
 	if (evt) {
         console.log(evt.key, evt.code)
         if (evt.metaKey ) {} // skip if this is Cmd+C 
-
+        else if (evt.key==='`') { // switch to Latin palette
+            var latinSwitch = document.getElementById('showLatinTransSwitch')
+            if (globals[latinSwitch.dataset.var]==''){
+                closeSidebarPalettes(latinSwitch)
+                window.latinOnly=true
+                makePalette(justLatinMap)
+                makeKbdEventList(justLatinMap)
+                }
+            toggleSideBarOption(latinSwitch, latinSwitch.title, latinSwitch.dataset.var, latinSwitch.dataset.locn)
+            latinSwitch.textContent=latinSwitch.dataset.shorttitle
+            evt.preventDefault()
+            }
+        else if (evt.key==='~') { // switch to Reverse translit palette
+            var revSwitch = document.getElementById('showRevTransSwitch')
+            if (globals[revSwitch.dataset.var]==''){
+                closeSidebarPalettes(revSwitch)
+                window.latinOnly=false
+                makePalette(translitCharacterMap)
+                makeKbdEventList(translitCharacterMap)
+                }
+            toggleSideBarOption(revSwitch, revSwitch.title, revSwitch.dataset.var, revSwitch.dataset.locn)
+            revSwitch.textContent=revSwitch.dataset.shorttitle
+            evt.preventDefault()
+            }
         else if (panelVisible==='' && ! latinCharacters[evt.key]) {
             // no panel up and none for this character
             console.log('no panel up and none for this character')
@@ -1799,14 +1828,16 @@ function makePalette (mappingTable) {
         list = fulllist[i]
         list = list.trim()
         list = list.replace(/\s+/g,' ')
+        list = list.replace(/\u0008/g,'')
         if (list==='') continue
         out = ''
         var charArray = list.split(' ')
         var theKey = charArray.shift()
         out = '<b>'+theKey+'</b>\n'
-        if (window.latinOnly) last = charArray.length-1 // this removes the translit count
-        else last = charArray.length
-        for (let j=0;j<last;j++) {
+        //if (window.latinOnly) last = charArray.length-1 // this removes the translit count
+        //else last = charArray.length
+        //for (let j=0;j<last;j++) {
+        for (let j=0;j<charArray.length;j++) {
             if (window.latinOnly) {
                 out += '<span class="t" onclick="add(\''+charArray[j]+'\')">'+charArray[j]+'</span>\n'
                 }
@@ -1827,6 +1858,7 @@ function makePalette (mappingTable) {
 function makeKbdEventList (mappingTable) {
     // populates kbdEventList from a map of transcription characters
     window.latinCharacters = {}
+    mappingTable = mappingTable.replace(/\u0008/g,'')
 	var fulllist = mappingTable.split('\n')
 	for (let i=0;i<fulllist.length;i++) {
         list = fulllist[i]

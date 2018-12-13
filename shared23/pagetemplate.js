@@ -67,7 +67,7 @@ out += `</header>
 for (let i=0;i<window.controls.length;i++){
 	out += '<button onclick="'+window.controls[i].code+'" '
     if (window.controls[i].warning) {
-        var warningMsg = window.controls[i].warning+' See help file.'
+        var warningMsg = window.controls[i].warning+'<br/><small>See help file for more information</small>.'
         var warningLocn = "document.getElementById(\'warning\')"
         out += 'onmouseover="'+warningLocn+'.style.display=\'inline-block\'; '+warningLocn+'.innerHTML = \''+warningMsg+'\'" '
         out += 'onmouseout="'+warningLocn+'.style.display=\'none\'" '
@@ -158,7 +158,10 @@ for (let i=0;i<inputAids.length;i++) {
     out += `" title="`+inputAids[i].title+`" data-var="`+inputAids[i].dataVar+ `" data-locn="`+inputAids[i].dataLocn+`" data-shorttitle="`+inputAids[i].dataShortTitle+`"
     onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
     onmouseout="this.textContent=this.dataset.shorttitle"  
-    onclick="if (globals[this.dataset.var] ==''){` + inputAids[i].initialCode + `}toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)">`+inputAids[i].dataShortTitle+`</div>
+    onclick="if (globals[this.dataset.var] ==''){` + inputAids[i].initialCode + `}toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)"`
+    if (inputAids[i].dataVar==="showLatinTrans") out += ' id="showLatinTransSwitch" '
+    if (inputAids[i].dataVar==="showTranslit") out += ' id="showRevTransSwitch" '
+    out += '>'+inputAids[i].dataShortTitle+`</div>
     `
 	}
 

@@ -756,6 +756,11 @@ summary:hover {
     font-family: "doulos sil wf", "doulos sil";
     font-size: 1.5em;
     }
+#charChoice sub {
+    padding-left: .2em;
+    font-size: 50%;
+    color: coral;
+    }
 #charChoice sup {
     color: #999;
     font-size: 80%;
