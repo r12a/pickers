@@ -4,9 +4,42 @@ function localtranscribe (direction, str) {
 	if (direction == 'toLatin') { return toLatin(str) }
 	}
 		
-		
 
-function transliterate (str) { // this version for abgidas
+function transliterate (str) {
+str += ' '
+
+str = str.replace(/𑻠/g, "k")
+str = str.replace(/𑻡/g, "g")
+str = str.replace(/𑻢/g, "ŋ")
+str = str.replace(/𑻣/g, "p")
+str = str.replace(/𑻤/g, "b")
+str = str.replace(/𑻥/g, "m")
+str = str.replace(/𑻦/g, "t")
+str = str.replace(/𑻧/g, "d")
+str = str.replace(/𑻨/g, "n")
+str = str.replace(/𑻩/g, "c")
+str = str.replace(/𑻪/g, "j")
+str = str.replace(/𑻫/g, "ɳ")
+str = str.replace(/𑻬/g, "y")
+str = str.replace(/𑻭/g, "r")
+str = str.replace(/𑻮/g, "l")
+str = str.replace(/𑻯/g, "w")
+str = str.replace(/𑻰/g, "s")
+str = str.replace(/𑻱/g, "a")
+str = str.replace(/𑻲/g, "˖˖")
+str = str.replace(/𑻳/g, "i")
+str = str.replace(/𑻴/g, "u")
+str = str.replace(/𑻵/g, "e")
+str = str.replace(/𑻶/g, "o")
+str = str.replace(/𑻷/g, "•")
+str = str.replace(/𑻸/g, "¶")
+
+return str.trim()
+}
+
+	
+
+function OLDtransliterate (str) { // this version for abgidas
     
 str = str + '  '
 

@@ -54,4 +54,44 @@ var keyboarddef = [
 ]
 
 
+var justLatinMap = `
+e ə
+o ɔ
+d ʤ
+j ɟ
+n ŋ ɲ
+t ʧ
+`
+
+
+
+var translitCharacterMap = `
+a a 𑻱
+b b 𑻤
+c c 𑻩
+d d 𑻧
+e e 𑻵
+g g 𑻡
+i i 𑻳
+j j 𑻪
+k k 𑻠
+l l 𑻮
+m m 𑻥
+n n 𑻨 ɳ 𑻫
+N ŋ 𑻢
+o o 𑻶
+p p 𑻣
+r r 𑻭
+s s 𑻰
+t t 𑻦
+u u 𑻴
+w w 𑻯
+y y 𑻬
+. • 𑻷
+| ¶ 𑻸
+& ˖˖ 𑻲
+`
+
+
+
 
