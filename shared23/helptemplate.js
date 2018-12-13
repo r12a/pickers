@@ -119,26 +119,25 @@ if (aidsList.match('shape')) {
 
 if (aidsList.match('latin')) {
 	out += `
-	<p><b class="leadin">Latin characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  transcription, and sets up the <strong>Latin type-in mode</strong>.</p>
-    <p>As you type, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or click directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already typed the character you wanted, just continue typing.)</p>
+	<p><b class="leadin">Latin characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  transcription, and sets up the <strong>Latin type-in mode</strong>. (This can be switched on/off by hitting the \` key.)</p>
+    <p>As you type, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or click directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already see the character you want, just continue typing.)</p>
     <p style="text-align:center;"><img src="../../shared23/images/help/character-selector.png" alt=""/></p>
-    <p>The digits coloured orange identify items used by this picker's transliteration scheme. The other items will be used for other types of transcription, such as phonetic, or ISO, etc.</p>
-    <p>The key that produces the suggestions is highlighted in orange in a panel that appears below the text area.</p>
+    <p>Keys that produce such suggestions are highlighted in orange in a panel that appears below the text area. You can also click on the items in that panel in order to insert them.</p>
     <p style="text-align:center;"><img src="../../shared23/images/help/latin-panel.png" alt=""/></p>
-    <p>You can also click on the items in that panel in order to insert them. In general, alternative characters are associate with a key on the keyboard that ressembles them when displayed - eg. &#x0263; will usually be brought up by clicking on the 'y' key (rather than, say 'g').</p>
+    <p>In general, alternative characters are associate with a key on the keyboard that resembles them when displayed - eg. &#x0263; will usually be brought up by clicking on the 'y' key (rather than, say 'g').</p>
 	`
 	}
 
 if (aidsList.match('translit')) {
 	out += `
-	<p><b class="leadin">Reverse transliteration.</b> Displays a panel of the transliteration characters used for this picker, and sets up the <strong>Transcription type-in mode</strong>. It allows you to generate text in the native script.</p>
+	<p><b class="leadin">Reverse transliteration.</b> Displays a panel of the transliteration characters used for this picker, and sets up the <strong>Transcription type-in mode</strong>. It allows you to generate text in the native script. (This can be switched on/off by hitting the ~ key.)</p>
     <p style="text-align:center;"><img src="../../shared23/images/help/reverse-transcription.png" alt=""/></p>
     <p>This works similarly to the <samp>Latin characters</samp> input aid described just above, however there are a couple of differences:</p>
     <ol>
     <li>When you type a character, the list of alternates that appears shows (in addition to the number key to press) a set of latin transcription characters (grey), and the native character(s) that will result if that item is selected (red). To replace the character you typed with a native character, just select the appropriate number key, or click on the item itself.</li>
     <li>If a key on the keyboard is only associated with a single native character, that character will be inserted immediately.</li>
-    <li>If you continue typing, the picker will insert the character assigned to the number 0 in place of the character you typed. (If you want to type Latin characters, switch to the Latin type-in mode.)</li>
-    <li>Although the panel below the text area shows only the latin transcription characters associated with each key, if you mouse over those characters the corresponding native character will appear at the bottom right of the text area (ie. the yellow box in the picture above).</li>
+    <li>If you continue typing, the picker will insert the character assigned to the number 0 in place of the character you typed. (If you want to type Latin characters, switch to the Latin type-in mode. See <samp>Latin characters</samp> above.)</li>
+    <li>Although the panel below the text area shows only the Latin transcription characters associated with each key, if you mouse over those characters the corresponding native character will appear at the bottom right of the text area (ie. the yellow box in the picture above).</li>
     </ol>
     <p>You should find that very little practise is needed to learn to enter native text quickly. This method is much faster than picking items from the selection area below.</p>
     <p>Most other input aids that produce a panel will operate in the same way, but rather than converting from <em><a href="#translit">transliteration</a></em> characters, they convert from characters used in other <em><a href="#translit">transcriptions</a></em>, such as IPA symbols, or ISO transcription systems. In transcription systems there is not always a one-to-one correspondence between latin and native characters, but this is taken care of in the lists by repeating the necessary characters.</p>
