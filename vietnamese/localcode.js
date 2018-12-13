@@ -35,3 +35,20 @@ function toggleShift (node, LC, UC) {
 		node.className = 'unshifted'
 		}
 	}
+
+
+var justLatinMap = `
+a â ă
+A Â Ă
+d đ
+D Đ
+e ê
+E Ê
+o ô
+O Ô Ơ ơ
+u Ư ư
+§ đ ă â ê ô ̀ ̉ ̃ ́ ̣
+[ ư
+] ơ
+`
+
