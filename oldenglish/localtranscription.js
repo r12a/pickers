@@ -9,7 +9,7 @@
 
 
 function oldEnglishToIPA (str) {
-	// transcribes vowelled Old Norse text into a rough IPA transcription
+	// transcribes vowelled Old English text into a rough IPA transcription
 	
 	
 	
@@ -76,11 +76,11 @@ function oldEnglishToIPA (str) {
 	str = str.replace(/x/g,'KS') 
 	
 	str = str.replace(/ea/g,'æɑ') 
-	str = str.replace(/ēa/g,'æ:ɑ') 
+	str = str.replace(/ēa/g,'æːɑ') 
 	str = str.replace(/eo/g,'eo') 
-	str = str.replace(/ēo/g,'e:o') 
+	str = str.replace(/ēo/g,'eːo') 
 	str = str.replace(/ie/g,'Iə̯') 
-	str = str.replace(/īe/g,'I:ə̯') 
+	str = str.replace(/īe/g,'Iːə̯') 
 
 	str = str.replace(/a/g,'ɑ') 
 	str = str.replace(/ā/g,'ɑː') 
@@ -94,10 +94,10 @@ function oldEnglishToIPA (str) {
 	str = str.replace(/-/g,'')
 	
 	// add markup for ambiguous cases
-	str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
-	str = str.replace(/\|/g,'</span><span class=alt>')
-	str = str.replace(/\{/g,'</span><span class=altlast>')
-	str = str.replace(/\]/g,'</span></span>')
+	//str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
+	//str = str.replace(/\|/g,'</span><span class=alt>')
+	//str = str.replace(/\{/g,'</span><span class=altlast>')
+	//str = str.replace(/\]/g,'</span></span>')
 	str = str.replace(/¶/g,'')
 
 
