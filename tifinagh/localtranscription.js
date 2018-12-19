@@ -1,11 +1,161 @@
 function localtranscribe (direction, str) {
 	
+	if (direction == 'transliterate') { return transliterate(str) }
 	if (direction == 'toIRCAM') { return toIRCAM(str) }
-	if (direction == 'toDeva') { return toDeva(str) }
 	}
 		
-		
+
+
+function transliterate (str) {
+
+str += ' '
+
+str = str.replace(/\u200C/g, "ₓ")
+str = str.replace(/\u200D/g, "₊")
+str = str.replace(/◌⵿/g, "͓")
+str = str.replace(/ⴰ/g, "a")
+str = str.replace(/ⴱ/g, "b")
+str = str.replace(/ⴲ/g, "β")
+str = str.replace(/ⴳ/g, "g")
+str = str.replace(/ⴴ/g, "ʝ")
+str = str.replace(/ⴵ/g, "ʤ")
+str = str.replace(/ⴶ/g, "ʤ̇")
+str = str.replace(/ⴷ/g, "d")
+str = str.replace(/ⴸ/g, "ð")
+str = str.replace(/ⴹ/g, "dˁ")
+str = str.replace(/ⴺ/g, "ðˁ")
+str = str.replace(/ⴻ/g, "e")
+str = str.replace(/ⴼ/g, "f")
+str = str.replace(/ⴽ/g, "k")
+str = str.replace(/ⴾ/g, "k̇")
+str = str.replace(/ⴿ/g, "ç")
+str = str.replace(/ⵀ/g, "h")
+str = str.replace(/ⵁ/g, "ḣ")
+str = str.replace(/ⵂ/g, "ḧ")
+str = str.replace(/ⵃ/g, "ħ")
+str = str.replace(/ⵄ/g, "ʕ")
+str = str.replace(/ⵅ/g, "χ")
+str = str.replace(/ⵆ/g, "χ̇")
+str = str.replace(/ⵇ/g, "q")
+str = str.replace(/ⵈ/g, "q̇")
+str = str.replace(/ⵉ/g, "i")
+str = str.replace(/ⵊ/g, "ʒ")
+str = str.replace(/ⵋ/g, "ʒ̇")
+str = str.replace(/ⵌ/g, "ʒ̈")
+str = str.replace(/ⵍ/g, "l")
+str = str.replace(/ⵎ/g, "m")
+str = str.replace(/ⵏ/g, "n")
+str = str.replace(/ⵐ/g, "ɲ")
+str = str.replace(/ⵑ/g, "ŋ")
+str = str.replace(/ⵒ/g, "p")
+str = str.replace(/ⵓ/g, "u")
+str = str.replace(/ⵔ/g, "r")
+str = str.replace(/ⵕ/g, "rˤ")
+str = str.replace(/ⵖ/g, "ʁ")
+str = str.replace(/ⵗ/g, "ʁ̇")
+str = str.replace(/ⵘ/g, "ʁ̈")
+str = str.replace(/ⵙ/g, "s")
+str = str.replace(/ⵚ/g, "sˁ")
+str = str.replace(/ⵛ/g, "ʃ")
+str = str.replace(/ⵜ/g, "t")
+str = str.replace(/ⵝ/g, "θ")
+str = str.replace(/ⵞ/g, "ʧ")
+str = str.replace(/ⵟ/g, "tˁ")
+str = str.replace(/ⵠ/g, "v")
+str = str.replace(/ⵡ/g, "w")
+str = str.replace(/ⵢ/g, "y")
+str = str.replace(/ⵣ/g, "z")
+str = str.replace(/ⵤ/g, "ż")
+str = str.replace(/ⵥ/g, "zˁ")
+str = str.replace(/ⵦ/g, "ė")
+str = str.replace(/ⵧ/g, "o")
+str = str.replace(/ⵯ/g, "ʷ")
+str = str.replace(/⵰/g, "[{•]")
+
+return str.trim()
+}
+
+
+
+
 function toIRCAM (str) {
+
+str = str.normalize('NFC')+' '
+
+str = str.replace(/\u200C/g, "ₓ")
+str = str.replace(/\u200D/g, "₊")
+str = str.replace(/◌⵿/g, "")
+str = str.replace(/ⴰ/g, "a")
+str = str.replace(/ⴱ/g, "b")
+str = str.replace(/ⴲ/g, "ḇ")
+str = str.replace(/ⴳ/g, "g")
+str = str.replace(/ⴴ/g, "g̱")
+str = str.replace(/ⴵ/g, "ǧ")
+str = str.replace(/ⴶ/g, "dj")
+str = str.replace(/ⴷ/g, "d")
+str = str.replace(/ⴸ/g, "ḏ")
+str = str.replace(/ⴹ/g, "ḍ")
+str = str.replace(/ⴺ/g, "ḍ̱")
+str = str.replace(/ⴻ/g, "e")
+str = str.replace(/ⴼ/g, "f")
+str = str.replace(/ⴽ/g, "k")
+str = str.replace(/ⴾ/g, "k")
+str = str.replace(/ⴿ/g, "ḵ")
+str = str.replace(/ⵀ/g, "h")
+str = str.replace(/ⵁ/g, "h")
+str = str.replace(/ⵂ/g, "h")
+str = str.replace(/ⵃ/g, "ḥ")
+str = str.replace(/ⵄ/g, "[ɛ{ʕ]")
+str = str.replace(/ⵅ/g, "x")
+str = str.replace(/ⵆ/g, "[kh{x]")
+str = str.replace(/ⵇ/g, "q")
+str = str.replace(/ⵈ/g, "q")
+str = str.replace(/ⵉ/g, "i")
+str = str.replace(/ⵊ/g, "j")
+str = str.replace(/ⵋ/g, "j")
+str = str.replace(/ⵌ/g, "j")
+str = str.replace(/ⵍ/g, "l")
+str = str.replace(/ⵎ/g, "m")
+str = str.replace(/ⵏ/g, "n")
+str = str.replace(/ⵐ/g, "ny")
+str = str.replace(/ⵑ/g, "ng")
+str = str.replace(/ⵒ/g, "p")
+str = str.replace(/ⵓ/g, "u")
+str = str.replace(/ⵔ/g, "r")
+str = str.replace(/ⵕ/g, "ṛ")
+str = str.replace(/ⵖ/g, "ɣ")
+str = str.replace(/ⵗ/g, "[gh{γ]")
+str = str.replace(/ⵘ/g, "[gh{γ]")
+str = str.replace(/ⵙ/g, "s")
+str = str.replace(/ⵚ/g, "ṣ")
+str = str.replace(/ⵛ/g, "š")
+str = str.replace(/ⵜ/g, "t")
+str = str.replace(/ⵝ/g, "ṯ")
+str = str.replace(/ⵞ/g, "č")
+str = str.replace(/ⵟ/g, "ṭ")
+str = str.replace(/ⵠ/g, "v")
+str = str.replace(/ⵡ/g, "w")
+str = str.replace(/ⵢ/g, "y")
+str = str.replace(/ⵣ/g, "z")
+str = str.replace(/ⵤ/g, "z")
+str = str.replace(/ⵥ/g, "ẓ")
+str = str.replace(/ⵦ/g, "e")
+str = str.replace(/ⵧ/g, "o")
+str = str.replace(/ⵯ/g, "ʷ")
+str = str.replace(/⵰/g, "[{•]")
+
+return str.trim()
+}
+
+
+
+
+
+
+
+
+	
+function OLDtoIRCAM (str) {
 	str += '  '
 
     str = str.replace(/\u2D30/g, "a")
@@ -65,209 +215,3 @@ function toIRCAM (str) {
 	}
 
 
-
-function toDeva (str) {
-	str += '  '
-	var consonants = 'kgṉcjñṭḍtdnṇpqbmyrvśṣshlXṛṚṟẏḷḻfzɠʄɗɓġ'
-	var aspiratedconsonants = 'kgcjṭḍtdpbṛ'
-	var vowels = 'aāiīuūeēoōɛʊȓřɫḹ'
-	var highvowels = 'īɛoōuॕeēoōʊ'
-	var nasals = 'ṉñnmṅ'
-	
-	var out=''
-	str = ' '+str
-	str = str.replace(/ã/g,'a\u0303')
-	str = str.replace(/ĩ/g,'i\u0303')
-	str = str.replace(/ũ/g,'u\u0303')
-	str = str.replace(/ẽ/g,'e\u0303')
-	str = str.replace(/õ/g,'o\u0303')
-	str = str.replace(/aĩ/g,'ai\u0303')
-	str = str.replace(/aũ/g,'au\u0303')
-	str = str.replace(/ai/g,'ɛ')
-	str = str.replace(/au/g,'ʊ')
-	str = str.replace(/k͟h/g,'X')
-	str = str.replace(/r̥̄/g,'ř')
-	str = str.replace(/r̥/g,'ȓ')
-	str = str.replace(/l̥̄/g,'ḹ')
-	str = str.replace(/l̥/g,'ɫ')
-	
-	for (var i=1; i<str.length-2; i++) {
-		var ch = str.charAt(i)
-		var conjunct = false
-		var skipOne = false
-		
-		// conjuncts
-		//if (consonants.indexOf(ch) > -1 && consonants.indexOf(str.charAt(i+1)) > -1  && str.charAt(i+1) != 'h') { conjunct = true }
-		if (inSet(consonants, ch) && inSet(consonants, str.charAt(i+1)) && str.charAt(i+1) != 'h') { conjunct = true }
-		if (inSet(consonants, ch) && str.charAt(i+1) == ':') { conjunct = true }
-		
-		// aspirated consonants
-		if (aspiratedconsonants.indexOf(ch) > -1 && str.charAt(i+1) == 'h') { 
-			ch = ch.toUpperCase() 
-			skipOne = true
-			}
-		
-		// upper case vowel signs, lowercase independent vowels
-		if (inSet(vowels, ch) && inSet(consonants, str.charAt(i-1)) ) { 
-			ch = ch.toUpperCase()
-			}
-		
-		// candrabindu vs anusvara
-		if (str.charAt(i) == '\u0303' && highvowels.indexOf(str.charAt(i-1)) > -1) {
-			ch = '\u0D02'
-			}
-		else if (str.charAt(i) == '\u0303') { ch = '\u0D01' }
-		
-		// anusvara before conjunct
-		if (nasals.indexOf(ch) > -1 && consonants.indexOf(str.charAt(i-1)) == -1 && consonants.indexOf(str.charAt(i+1)) > -1 ) {
-			switch (ch) {
-				case 'ṅ': ch = 'ङ\u0D4D'; break
-				case 'ñ': ch = 'ञ\u0D4D'; break
-				case 'ṇ': ch = 'ण\u0D4D'; break
-				case 'n': ch = 'न\u0D4D'; break
-				case 'm': ch = 'म\u0D4D'; break
-				}
-			ch = '<span class=alts><span class=altfirst>&nbsp;\u0D02</span><span class=altlast>'+ch+'</span></span>'
-			conjunct = false
-			}
-		
-		if (typeof mapToDeva[ch] != 'undefined') { out += mapToDeva[ch] }
-		else { out += ch }
-		if (conjunct) { out += '\u0D4D' }
-		if (skipOne) { i++ }
-		}
-
-	return out.trim()
-	}
-
-
-var mapToDeva = {
-'k': '\u0D15', 
-'K': '\u0D16', 
-'g': '\u0D17', 
-'G': '\u0D18', 
-'ṅ': '\u0D19', 
-'q': '\u0D15\u0D3C', 
-'X': '\u0D16\u0D3C', 
-'c': '\u0D1A', 
-'C': '\u0D1B', 
-'j': '\u0D1C', 
-'J': '\u0D1D', 
-'ñ': '\u0D1E', 
-'ġ': '\u0D17\u0D3C', 
-'ṉ': '\u0D29', 
-'ṭ': '\u0D1F', 
-'Ṭ': '\u0D20', 
-'ḍ': '\u0D21', 
-'Ḍ': '\u0D22', 
-'ṇ': '\u0D23', 
-'ṛ': '\u0D21\u0D3C', 
-'Ṛ': '\u0D22\u0D3C', 
-'t': '\u0D24', 
-'T': '\u0D25', 
-'d': '\u0D26', 
-'D': '\u0D27', 
-'n': '\u0D28', 
-'ṟ': '\u0D31', 
-'ẏ': '\u0D2F\u0D3C', 
-'p': '\u0D2A', 
-'P': '\u0D2B', 
-'b': '\u0D2C', 
-'B': '\u0D2D', 
-'m': '\u0D2E', 
-'ḷ': '\u0D33', 
-'ḻ': '\u0D34', 
-'y': '\u0D2F', 
-'r': '\u0D30', 
-'l': '\u0D32', 
-'v': '\u0D35', 
-'f': '\u0D2B\u0D3C', 
-'z': '\u0D1C\u0D3C', 
-'ś': '\u0D36', 
-'ṣ': '\u0D37', 
-'s': '\u0D38', 
-'h': '\u0D39', 
-'?': '\u0D79', '?': '\u0D7A', 
-'ɠ': '\u0D7B', 
-'ʄ': '\u0D7C', 
-'ɗ': '\u0D7E', 
-'ɓ': '\u0D7F',
-
-
-'A': '',
-'Ā': '\u0D3E',
-'I': '\u0D3F',
-'Ī': '\u0D40',
-'U': '\u0D41',
-'Ū': '\u0D42',
-'?': '\u0D56',
-'?': '\u0D57',
-'Ȓ': '\u0D43',
-'Ř': '\u0D44',
-'Ɫ': '\u0D62',
-'Ḹ': '\u0D63',
-'ê': '\u0D45',
-'E': '\u0D46',
-'Ē': '\u0D47',
-'Ɛ': '\u0D48',
-'Ô': '\u0D49',
-'O': '\u0D4A',
-'Ō': '\u0D4B',
-'Ʊ': '\u0D4C',
-'?': '\u0D4F',
-'?': '\u0D3A',
-'?': '\u0D3B',
-'?': '\u0D4E',
-
-
-
-// independent vowels
-'x': 'ऄ',
-'a': 'अ', 
-'ā': 'आ', 
-'i': 'इ', 
-'ī': 'ई', 
-'u': 'उ', 
-'ū': 'ऊ', 
-'?': 'ॶ', '?': 'ॷ', 
-'ȓ': 'ऋ', 
-'ř': 'ॠ', 
-'ɫ': 'ऌ', 
-'ḹ': 'ॡ', 
-'â': 'ॲ', 
-'ê': 'ऍ', 
-'e': 'ऎ', 
-'ē': 'ए', 
-'ɛ': 'ऐ', 
-'x': 'ऑ', 
-'o': 'ऒ', 
-'ō': 'ओ', 
-'ô': 'ऑ', 
-'ʊ': 'औ', 
-'?': 'ॵ', '?': 'ॳ', '?': 'ॴ',
-
-//virama
-'\u0D4D':'',
-
-// candrabindu
-'\u0303': '\u0D01',
-
-// punctuation
-'.': ' ।',
-'\'': '\u0D3D',
-'ḥ': '\u0D03',
-':': '',
-
-// numbers
-'0': '०',
-'1': '१', 
-'2': '२', 
-'3': '३', 
-'4': '४', 
-'5': '५', 
-'6': '६', 
-'7': '७', 
-'8': '८', 
-'9': '९' 
-
-}
