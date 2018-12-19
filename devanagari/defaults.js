@@ -30,12 +30,14 @@ var template = {}
 
 var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+{"title":"ISO to Devanagari", "dataVar":"showISOCharMap", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(isoCharacterMap);makeKbdEventList(isoCharacterMap);"},
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Devanagari<br/>to ISO 15919", "alt":"Convert devanagari text to a ISO 15919 transcription.", "code":"doTranscription('toISO15919')"},
-{"title":"ISO 15919 to<br/>Devanagari", "alt":"Convert an ISO 15919 transcription to devanagari text.", "code":"doTranscription('toDeva')"}
+{"title":"Trans-<br/>literate", "alt":"Convert devanagari text to a latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Devanagari<br/>to ISO", "alt":"Convert devanagari text to a ISO 15919 transcription.", "code":"doTranscription('toISO15919')"},
+{"title":"ISO to<br/>Devanagari", "alt":"Convert an ISO 15919 transcription to devanagari text.", "code":"doTranscription('toDeva')"}
 ]

@@ -133,3 +133,157 @@ var keyboarddef = [
 "` ॊ ऒ `|z ॆ ऎ|x ं ँ ॐ|c म ण|v न ऩ|b व ऴ|n ल ळ ऌ|m स श|,  ष|. । ॥|/ य य़"
 ]
 
+
+var justLatinMap = `
+a ā â æ aʲ aʷ aː
+A ạ ạʲ ạʷ ạ̄ ậ ɒ
+b bʰ ɓ
+c cʰ ɕ
+d dʰ ɖ ɗ
+e ē ê ə
+E ẹ ẹ̄ ệ
+f f̣
+g gʰ ɠ
+h h̽ ḥ
+i ī iː
+I ị ị̄
+j jʰ ɟ
+k kʰ
+l l̥ l̥̄ l̥̣ l̥̣̄ ɭ ɭʱä ɭ̆
+m m̽
+n ṉ ŋ ɲ ɳ ŋ̽
+o ō ô
+O ọ ọ̄ ộ
+p pʰ
+q q̣
+r ɾ ɾʰ ɾ̣ ɾ̣ʰ ɾʱ
+R r̥ r̥̄ r̥̣ r̥̣̄
+s ʂ ʃ ʄ
+t tʰ ʈ ʈʰ ʧ
+u ū uː
+U ụ ụ̄
+v ʋ ʌ
+x x̣
+y ẏ ỵ̇ ɣ ɣ̣
+z ẓ ʒ ʒ̣
+[  ̣ ͓ ¶ ’
+: ː
+`
+
+
+
+var translitCharacterMap = `
+a ā ा â ॕ aʲ ै aʷ ौ
+A ạ अ ạ̄ आ ậ ॲ ạʲ ऐ ạʷ औ
+b b ब bʰ भ ɓ ॿ
+c c च cʰ छ
+d ɖ ड ɖʰ ढ d द dʰ ध ɗ ॾ
+e e ॆ ē े ê ॅ
+E ẹ ऎ ẹ̄ ए ệ ऍ
+f f फ़ f̣ फ़
+g g ग gʰ घ ɠ ॻ
+h h ह h̽ ः
+i i ि ī ी
+I ị इ ị̄ ई
+j j ज jʰ झ
+k k क kʰ ख
+l l ल ɭ ळ
+L l̥ ॢ l̥̄ ॣ l̥̣ ऌ l̥̣̄ ॡ
+m m म m̽ ं
+n n न ɲ ञ ɳ ण ṉ ऩ
+N ŋ ङ ŋ̽ ँ
+o o ॊ ō ो ô ॉ
+O ọ ऒ ọ̄ ओ ộ ऑ
+p p प pʰ फ
+q q क़ q̣ क़
+r r र ɾ ड़ ɾ̣ ड़ ɾʰ ढ़ ɾ̣ʰ ढ़
+R r̥ ृ r̥̄ ॄ r̥̣ ऋ r̥̣̄ ॠ
+s s स ʃ श ʂ ष ʄ ॼ
+t ʈ ट ʈʰ ठ t त tʰ थ
+u u ु ū ू
+U ụ उ ụ̄ ऊ
+v ʋ व
+x x ख़ x̣ ख़
+y y य ɣ ग़ ɣ̣ ग़ ẏ य़ ỵ̇ य़
+z z ज़ ẓ ज़ ʒ̣ झ़
+0 0 ०
+1 1 १
+2 2 २
+3 3 ३
+4 4 ४
+5 5 ५
+6 6 ६
+7 7 ७
+8 8 ८
+9 9 ९
+/ ̣ ़
+| ¶ ॥
+. . ।
+* ͓ ्
+' ’ ऽ
+`
+
+
+globals.showISOCharMap = ''
+
+var isoCharacterMap = `
+a ā ा ai ै au ौ
+A a अ ā आ ai ऐ au औ
+b b ब
+B bh भ
+c c च
+C ch छ
+d d द ḍ ड
+D dh ध ḍh ढ
+e e ॆ ē े ê ॅ
+E e ऎ ē ए ê ऍ
+f f \u095E f फ़
+g g ग ġ \u095A ġ ग़
+G gh घ
+h h ह ḥ ः
+i i ि ī ी
+I i इ ī ई
+j j ज
+J jh झ
+k k क k͟h ख़
+K kh ख k͟h \u0959
+l l ल ḷ ळ ḻ \u0934 ḻ ऴ
+L l̥ ॢ l̥ ऌ
+m m म ṁ ं
+n n न ñ ञ ṇ ण ṉ \u0929 ṉ ऩ
+N ṅ ङ
+o o ॊ ō ो ô ॉ
+O o ऒ ō ओ ô ऑ
+p p प
+P ph फ
+q q \u0958 q क़
+r r र ṟ \u0931 ṛ \u095C ṛh \u095D ṟ ऱ ṛ ड़ ṛh ढ़
+R r̥ ृ r̥ ऋ r̥̄ ॠ
+s s स ś श ṣ ष
+t t त ṭ ट
+T th थ ṭh ठ
+u u ु ū ू
+U u उ ū ऊ
+v v व
+y y य ẏ \u095F ẏ य़
+z z \u095B z ज़
+0 0 ०
+1 1 १
+2 2 २
+3 3 ३
+4 4 ४
+5 5 ५
+6 6 ६
+7 7 ७
+8 8 ८
+9 9 ९
+[ ¶ ॥
+. . ।
+* ͓ ्
+`
+
+
+
+
+
+
