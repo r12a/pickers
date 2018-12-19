@@ -30,13 +30,16 @@ var template = {}
 
 var inputAids = [
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Reverse transliteration", "dataVar":"showTransPanel", "dataLocn":"toSinhala", "dataShortTitle":"R", "type":"palette"},
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+{"title":"ISO to Sinhala", "dataVar":"showISOCharMap", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(isoCharacterMap);makeKbdEventList(isoCharacterMap);"},
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Sinhalese text to a Latin transliteration.", "code":"doTranscription('toISO15919')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Sinhalese text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>scribe", "alt":"Convert Sinhalese text to a Latin transcription.", "code":"doTranscription('transcription')"},
+{"title":"Sinhala<br/>to ISO", "alt":"Convert Sinhalese text to an ISO 15919 Latin transcription.", "code":"doTranscription('toISO15919')"},
 ]
 
 
