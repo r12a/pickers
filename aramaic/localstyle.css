@@ -162,17 +162,6 @@ span.hint {
     margin: auto;
     }
 
-#transcriptionChoice {
-	position:absolute;
-	left:60px;
-	font-size: 60px; 
-	background-color: #FFFACD; 
-	border: 1px solid #ccc; 
-	border-radius:10px; 
-	padding: 7px;
-	display: none;
-    font-family:  "Doulos SIL", "East Syriac Ctesiphon", "East Syriac Adiabene", "Noto Sans Syriac Eastern WF", serif;
-	}
 #cursive {
     width: 4em;
     display: inline-block;

@@ -1,5 +1,4 @@
 globals.showLOCTrans = ''
-globals.showIPATrans = ''
 globals.showCursive = ''
 
 function localInitialise () {
@@ -122,3 +121,122 @@ function event_mouseoverChar ()  {
 	}
 
 
+var justLatinMap = `
+a å ā ȃ ȧ ḁ ạ ɑ
+b ḇ
+c č
+d ḏ ð ʤ
+e ẹ ē ė ɛ
+g ǧ ḡ ɡ
+h ħ ḥ
+i ị ɪ î ï
+j jʰ
+k ḵ
+o ô ȯ
+p p̄
+s ṡ ṣ š sˤ ʃ
+t ṭ ṯ tˤ ʧ
+u ụ ů û
+x χ
+y ɣ
+z ẑ ž ʒ
+} ʔ ʾ
+{ ʕ ʿ
+@ θ
+`
+
+
+
+var translitCharacterMap = `
+a a ܲ ā ܵ ȧ ܰ ạ ܱ å ܳ ḁ ܴ
+b b ܒ
+d d ܕ
+e e ܸ ē ܹ ė ܶ ẹ ܷ
+g g ܓ
+h h ܗ ħ ܚ
+i i ܼ ï ܺ ị ܻ
+j jʰ ܞ
+k k ܟ
+l l ܠ
+m m ܡ
+n n ܢ
+o o ܿ ȯ ّ
+p p ܦ
+q q ܩ
+r r ܪ
+s s ܣ sˤ ܨ ʃ ܫ ṡ ܤ
+t tˤ ܛ t ܬ
+u ů ܽ ụ ܾ
+w w ܘ
+y y ܝ
+z z ܙ
+{ ʿ ܥ
+} ʾ ܐ
+[ ̋ ̈ ʺ ݀
+, , ،
+; ; ؛
+? ? ؟
+`
+
+
+globals.showIPATrans = ''
+
+var ipaCharacterMap = `
+a a ܲ ɑ ܵ a ܰ a ܱ ɑ ܳ ɑ ܴ a \u0735\u0710\b a \u0732\u0710\b ɑ ܐ
+b b ܒ
+d d ܕ ð ܕ݂ ʤ ܓ̰
+e ɛ ܸ e ܹ ɛ ܶ ɛ ܷ e ܸ e ܶ e ܷ
+f f ܦ݂
+g g ܓ
+h h ܗ ħ ܚ
+i i ܼ i ܺ i ܻ ɪ \u0738\u0710\b i ܝܼ ɪ ܸ
+j jʰ ܞ
+k k ܟ
+l l ܠ
+m m ܡ
+n n ܢ
+o o ܿ o ّ o ܘܿ
+p p ܦ
+q q ܩ
+r r ܪ
+s s ܣ sˤ ܨ ʃ  ܫ ṡ ܤ
+t tˤ ܛ t ܬ ʧ ܟ̃ ʧ ܟ݂
+u u ܽ u ܾ u ܘܼ
+v v ܒ݂
+w w ܘ
+x x ܟ݂
+y j ܝ ɣ ܓ݂
+z z ܙ ʒ ܙ̃ ʒ ܙ̰ ʒ ܫ̰ ʒ ܫ̃
+{ ʕ ܥ
+} ʔ ܐ
+[ ̋ ̈ ʺ ݀ ¶ ܀
+, , ،
+. . . . ܁ . ܂ . ܊
+; ; ؛ ; ܈
+: : ܃ : ܄ : ܅ : ܆ : ܇
+? ? ؟ ? ܉
+`
+
+
+/*
+
+' ʾ ʔ ʿ ʕe
+b b b ḇ w
+c c ʔ c ʕ č ʧ
+d d d ḏ ð
+g g ɡ ḡ ɟ ḡ ʔ ḡ ɣ ḡ j ǧ ʤ
+h h h ḥ x
+k k cʰ ḵ x
+p p pʰ ꝑ f q q
+s s s ṣ s š ʃ
+t t tʰ t t ṯ θ ṭ t
+w w w w u
+y y i y e y j
+z z z ž ʒ
+a ă a a a aw o ay e
+i ĭ i î i 
+e e ɪ
+u û u
+o ô u
+`
+*/

@@ -1,14 +1,215 @@
 ﻿function localtranscribe (direction, str) {
 	
 	if (direction == 'transliterate') { return transliterate(str) }
+	if (direction == 'transcription') { return transcription(str) }
+	if (direction == 'toIPA') { return toIPA(str) }
 	if (direction == 'toUN') { return transcribetoUN(str) }
 	}
 
 
 
-
-
 function transliterate (str) {
+str += ' '
+
+str = str.replace(/̈/g, "̋")
+str = str.replace(/،/g, ",")
+str = str.replace(/؛/g, ";")
+str = str.replace(/؟/g, "?")
+str = str.replace(/ّ/g, "ȯ")
+str = str.replace(/ܐ/g, "ʾ")
+str = str.replace(/ܒ/g, "b")
+str = str.replace(/ܓ/g, "g")
+str = str.replace(/ܕ/g, "d")
+str = str.replace(/ܗ/g, "h")
+str = str.replace(/ܘ/g, "w")
+str = str.replace(/ܙ/g, "z")
+str = str.replace(/ܚ/g, "ħ")
+str = str.replace(/ܛ/g, "tˤ")
+str = str.replace(/ܝ/g, "y")
+str = str.replace(/ܞ/g, "jʰ")
+str = str.replace(/ܟ/g, "k")
+str = str.replace(/ܠ/g, "l")
+str = str.replace(/ܡ/g, "m")
+str = str.replace(/ܢ/g, "n")
+str = str.replace(/ܣ/g, "s")
+str = str.replace(/ܤ/g, "ṡ")
+str = str.replace(/ܥ/g, "ʿ")
+str = str.replace(/ܦ/g, "p")
+str = str.replace(/ܨ/g, "sˤ")
+str = str.replace(/ܩ/g, "q")
+str = str.replace(/ܪ/g, "r")
+str = str.replace(/ܫ/g, "ʃ")
+str = str.replace(/ܬ/g, "t")
+str = str.replace(/ܰ/g, "ȧ")
+str = str.replace(/ܱ/g, "ạ")
+str = str.replace(/ܲ/g, "a")
+str = str.replace(/ܳ/g, "å")
+str = str.replace(/ܴ/g, "ḁ")
+str = str.replace(/ܵ/g, "ā")
+str = str.replace(/ܶ/g, "ė")
+str = str.replace(/ܷ/g, "ẹ")
+str = str.replace(/ܸ/g, "e")
+str = str.replace(/ܹ/g, "ē")
+str = str.replace(/ܺ/g, "ï")
+str = str.replace(/ܻ/g, "ị")
+str = str.replace(/ܼ/g, "i")
+str = str.replace(/ܽ/g, "ů")
+str = str.replace(/ܾ/g, "ụ")
+str = str.replace(/ܿ/g, "o")
+str = str.replace(/݀/g, "ʺ")
+
+return str.trim()
+}
+
+
+
+function toIPA (str) {
+
+str = str.normalize('NFC')+' '
+
+str = str.replace(/&#x070F;/g, "")
+str = str.replace(/\u0732\u0710\b/g, "a")
+str = str.replace(/\u0735\u0710\b/g, "a")
+str = str.replace(/\u0738\u0710\b/g, "ɪ")
+str = str.replace(/ܒ݂/g, "v")
+str = str.replace(/ܓ̰/g, "ʤ")
+str = str.replace(/ܓ݂/g, "ɣ")
+str = str.replace(/ܕ݂/g, "ð")
+str = str.replace(/ܘܼ/g, "u")
+str = str.replace(/ܘܿ/g, "o")
+str = str.replace(/ܙ̃/g, "ʒ")
+str = str.replace(/ܙ̰/g, "ʒ")
+str = str.replace(/ܝܼ/g, "i")
+str = str.replace(/ܟ̃/g, "ʧ")
+str = str.replace(/ܟ݂/g, "[x{ʧ]")
+str = str.replace(/ܦ݂/g, "f")
+str = str.replace(/ܫ̃/g, "ʒ")
+str = str.replace(/ܫ̰/g, "ʒ")
+str = str.replace(/ܬ݂/g, "θ")
+str = str.replace(/\./g, ".")
+str = str.replace(/̃/g, "")
+str = str.replace(/̄/g, "")
+str = str.replace(/̇/g, "")
+str = str.replace(/̈/g, "̋")
+str = str.replace(/̊/g, "")
+str = str.replace(/̠/g, "")
+str = str.replace(/̣/g, "")
+str = str.replace(/̤/g, "")
+str = str.replace(/̥/g, "")
+str = str.replace(/̮/g, "")
+str = str.replace(/̰/g, "")
+str = str.replace(/،/g, ",")
+str = str.replace(/؛/g, ";")
+str = str.replace(/؟/g, "?")
+str = str.replace(/ً/g, "")
+str = str.replace(/ٌ/g, "")
+str = str.replace(/ٍ/g, "")
+str = str.replace(/َ/g, "")
+str = str.replace(/ُ/g, "")
+str = str.replace(/ِ/g, "")
+str = str.replace(/ّ/g, "")
+str = str.replace(/ّ/g, "o")
+str = str.replace(/ْ/g, "")
+str = str.replace(/ٓ/g, "")
+str = str.replace(/ٔ/g, "")
+str = str.replace(/ٕ/g, "")
+str = str.replace(/ٰ/g, "")
+str = str.replace(/܀/g, "¶")
+str = str.replace(/܁/g, ".")
+str = str.replace(/܂/g, ".")
+str = str.replace(/܃/g, ":")
+str = str.replace(/܄/g, ":")
+str = str.replace(/܅/g, ":")
+str = str.replace(/܆/g, ":")
+str = str.replace(/܇/g, ":")
+str = str.replace(/܈/g, ";")
+str = str.replace(/܉/g, "?")
+str = str.replace(/܊/g, ".")
+str = str.replace(/܋/g, "")
+str = str.replace(/܌/g, "")
+str = str.replace(/܍/g, "")
+str = str.replace(/ܐ/g, "ʔ")
+str = str.replace(/ܑ/g, "")
+str = str.replace(/ܒ/g, "b")
+str = str.replace(/ܓ/g, "g")
+str = str.replace(/ܔ/g, "")
+str = str.replace(/ܕ/g, "d")
+str = str.replace(/ܖ/g, "d")
+str = str.replace(/ܗ/g, "h")
+str = str.replace(/ܘ/g, "w")
+str = str.replace(/ܙ/g, "z")
+str = str.replace(/ܚ/g, "ħ")
+str = str.replace(/ܛ/g, "tˤ")
+str = str.replace(/ܜ/g, "")
+str = str.replace(/ܝ/g, "j")
+str = str.replace(/ܞ/g, "jʰ")
+str = str.replace(/ܟ/g, "k")
+str = str.replace(/ܠ/g, "l")
+str = str.replace(/ܡ/g, "m")
+str = str.replace(/ܢ/g, "n")
+str = str.replace(/ܣ/g, "s")
+str = str.replace(/ܤ/g, "ṡ")
+str = str.replace(/ܥ/g, "ʕ")
+str = str.replace(/ܦ/g, "p")
+str = str.replace(/ܧ/g, "p")
+str = str.replace(/ܨ/g, "sˤ")
+str = str.replace(/ܩ/g, "q")
+str = str.replace(/ܪ/g, "r")
+str = str.replace(/ܫ/g, "ʃ")
+str = str.replace(/ܬ/g, "t")
+str = str.replace(/ܭ/g, "v")
+str = str.replace(/ܮ/g, "ɣ")
+str = str.replace(/ܯ/g, "ð")
+str = str.replace(/ܰ/g, "a")
+str = str.replace(/ܱ/g, "a")
+str = str.replace(/ܲ/g, "a")
+str = str.replace(/ܳ/g, "ɑ")
+str = str.replace(/ܴ/g, "ɑ")
+str = str.replace(/ܵ/g, "ɑ")
+str = str.replace(/ܶ/g, "[ɛ{e]")
+str = str.replace(/ܷ/g, "[ɛ{e]")
+str = str.replace(/ܸ/g, "[ɛ{ɪ{e]")
+str = str.replace(/ܹ/g, "e")
+str = str.replace(/ܺ/g, "i")
+str = str.replace(/ܻ/g, "i")
+str = str.replace(/ܼ/g, "i")
+str = str.replace(/ܽ/g, "u")
+str = str.replace(/ܾ/g, "u")
+str = str.replace(/ܿ/g, "o")
+str = str.replace(/݀/g, "ʺ")
+str = str.replace(/݁/g, "")
+str = str.replace(/݂/g, "")
+str = str.replace(/݃/g, "")
+str = str.replace(/݄/g, "")
+str = str.replace(/݅/g, "")
+str = str.replace(/݆/g, "")
+str = str.replace(/݇/g, "")
+str = str.replace(/݈/g, "")
+str = str.replace(/݉/g, "")
+str = str.replace(/݊/g, "")
+str = str.replace(/ݍ/g, "ʒ")
+str = str.replace(/ݎ/g, "x")
+str = str.replace(/ݏ/g, "f")
+
+
+// add markup for ambiguous cases
+str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
+str = str.replace(/\|/g,'</span><span class=alt>')
+str = str.replace(/\{/g,'</span><span class=altlast>')
+str = str.replace(/\]/g,'</span></span>')
+
+
+return str.trim()
+}
+
+
+
+
+
+
+
+
+function transcription (str) {
 	// transcribes syriac text into a Latin transcription
 	
     
