@@ -50,6 +50,56 @@ end: {}
 
 
 
+var justLatinMap = `
+c č
+d ʤ
+g ǧ
+h h̠
+r ʁ
+s ʃ
+t ʦ ʧ
+x χ
+z ž ʒ
+? ʔ
+e ɛ
+o ɔ
+`
+
+
+
+var translitCharacterMap = `
+a a ַ ɑ ָ ă ֲ
+d d ד
+e e ֵ ɛ ֶ ĕ ֱ
+f f פ f̽ ף
+g g ג
+h h ה
+i i ִ
+k k ק
+l l ל
+m m מ m̽ ם
+n n נ n̽ ן
+o o ֹ ŏ ֳ
+r ʁ ר
+s s ס ṡ ש
+t t ט ʦ צ ʦ̽ ץ ṫ ת
+u u ֻ
+v v ב v̇ ו
+w w װ
+x x ח ẋ כ x̽ ך
+y y י
+z z ז
+} ʔ א ʔ̇ ע
+: ː ֽ ˘ ְ
++ ¨ ״
+} ʔ א ʔ̇ ע
+/ ̣ ּ ´ ׳
+= ₓ \u{200C} ₊ \u{200D} ˡʳᵐ \u{200E} ʳˡᵐ \u{200F} ᵃˡᵐ \u{61C} ʳˡⁱ \u{2067} ˡʳⁱ \u{2066} ʳˡᵉ \u{202B} ˡʳᵉ \u{202A} ᵖᵈⁱ \u{2069} ᵖᵈᶠ \u{202C}
+/ ̎ ׁ ̍ ׂ
+`
+
+
+
 
 
 

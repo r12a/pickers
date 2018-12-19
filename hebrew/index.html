@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Hebrew character picker 22</title>
+<title>Hebrew character picker 23</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,12 +14,12 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared22/code.js">  </script>
+<script src="../shared23/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared22/pagetemplate.js">  </script>
+<script src="../shared23/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
-<!--script src="localtranscription.js">  </script-->
+<script src="localtranscription.js">  </script>
 <script src="composite-names.js"></script>
 <script src="/shared/fontlists/hebrew.js"> </script>
 <style id="dynamicUIFont"></style>
@@ -39,136 +39,8 @@
 
 
 <div id="phonemelist" style="position:relative;">
- <div id="transcriptionChoice"></div>
-
-<div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('č')">č</span>
-<span class="t" onclick="dotrans('ʤ')">ʤ</span>
-<span class="t" onclick="dotrans('ǧ')">ǧ</span>
-<span class="t" onclick="dotrans('h̠')">h̠</span>
-<span class="t" onclick="dotrans('ʁ')">ʁ</span>
-<span class="t" onclick="dotrans('ʃ')">ʃ</span>
-<span class="t" onclick="dotrans('ʦ')">ʦ</span>
-<span class="t" onclick="dotrans('ʧ')">ʧ</span>
-<span class="t" onclick="dotrans('χ')">χ</span>
-<span class="t" onclick="dotrans('ž')">ž</span>
-<span class="t" onclick="dotrans('ʒ')">ʒ</span>
-<span class="t" onclick="dotrans(''')">'</span>
-<span class="t" onclick="dotrans('ʔ')">ʔ</span>
-&nbsp;&nbsp;
-<span class="t" onclick="dotrans('ɛ')">ɛ</span>
-<span class="t" onclick="dotrans('ɔ')">ɔ</span>
-<span class="t" onclick="dotrans('u')">u</span>
-</div>
-
-
-<div id="acadtranscript" class="transcript" style="display:none;">
-<span class="t" onmouseover="showtrans('ב')" onmouseout="hidetrans()" onclick="add('ב')">b</span>
-<span class="t" onmouseover="showtrans('בּ')" onmouseout="hidetrans()" onclick="add('בּ')">b</span>
-<span class="t" onmouseover="showtrans('צ׳')" onmouseout="hidetrans()" onclick="add('צ׳')">č</span>
-<span class="t" onmouseover="showtrans('ץ׳')" onmouseout="hidetrans()" onclick="add('ץ׳')">č</span>
-<span class="t" onmouseover="showtrans('ד')" onmouseout="hidetrans()" onclick="add('ד')">d</span>
-<span class="t" onmouseover="showtrans('פ')" onmouseout="hidetrans()" onclick="add('פ')">f</span>
-<span class="t" onmouseover="showtrans('ף')" onmouseout="hidetrans()" onclick="add('ף')">f</span>
-<span class="t" onmouseover="showtrans('ג')" onmouseout="hidetrans()" onclick="add('ג')">g</span>
-<span class="t" onmouseover="showtrans('ג׳')" onmouseout="hidetrans()" onclick="add('ג׳')">ǧ</span>
-<span class="t" onmouseover="showtrans('ה')" onmouseout="hidetrans()" onclick="add('ה')">h</span>
-<span class="t" onmouseover="showtrans('ח')" onmouseout="hidetrans()" onclick="add('ח')">h̠</span>
-<span class="t" onmouseover="showtrans('כּ')" onmouseout="hidetrans()" onclick="add('כּ')">k</span>
-<span class="t" onmouseover="showtrans('כ')" onmouseout="hidetrans()" onclick="add('כ')">k</span>
-<span class="t" onmouseover="showtrans('ךּ')" onmouseout="hidetrans()" onclick="add('ךּ')">k</span>
-<span class="t" onmouseover="showtrans('ך')" onmouseout="hidetrans()" onclick="add('ך')">k</span>
-<span class="t" onmouseover="showtrans('ק')" onmouseout="hidetrans()" onclick="add('ק')">k</span>
-<span class="t" onmouseover="showtrans('כ')" onmouseout="hidetrans()" onclick="add('כ')">kh</span>
-<span class="t" onmouseover="showtrans('ך')" onmouseout="hidetrans()" onclick="add('ך')">kh</span>
-<span class="t" onmouseover="showtrans('ל')" onmouseout="hidetrans()" onclick="add('ל')">l</span>
-<span class="t" onmouseover="showtrans('מ')" onmouseout="hidetrans()" onclick="add('מ')">m</span>
-<span class="t" onmouseover="showtrans('ם')" onmouseout="hidetrans()" onclick="add('ם')">m</span>
-<span class="t" onmouseover="showtrans('נ')" onmouseout="hidetrans()" onclick="add('נ')">n</span>
-<span class="t" onmouseover="showtrans('ן')" onmouseout="hidetrans()" onclick="add('ן')">n</span>
-<br/>
-<span class="t" onmouseover="showtrans('פּ')" onmouseout="hidetrans()" onclick="add('פּ')">p</span>
-<span class="t" onmouseover="showtrans('פ')" onmouseout="hidetrans()" onclick="add('פ')">p</span>
-<span class="t" onmouseover="showtrans('ר')" onmouseout="hidetrans()" onclick="add('ר')">r</span>
-<span class="t" onmouseover="showtrans('ס')" onmouseout="hidetrans()" onclick="add('ס')">s</span>
-<span class="t" onmouseover="showtrans('ש')" onmouseout="hidetrans()" onclick="add('ש')">s</span>
-<span class="t" onmouseover="showtrans('שׂ')" onmouseout="hidetrans()" onclick="add('שׂ')">s</span>
-<span class="t" onmouseover="showtrans('ש')" onmouseout="hidetrans()" onclick="add('ש')">sh</span>
-<span class="t" onmouseover="showtrans('שׁ')" onmouseout="hidetrans()" onclick="add('שׁ')">sh</span>
-<span class="t" onmouseover="showtrans('ט')" onmouseout="hidetrans()" onclick="add('ט')">t</span>
-<span class="t" onmouseover="showtrans('ת')" onmouseout="hidetrans()" onclick="add('ת')">t</span>
-<span class="t" onmouseover="showtrans('תּ')" onmouseout="hidetrans()" onclick="add('תּ')">t</span>
-<span class="t" onmouseover="showtrans('צ')" onmouseout="hidetrans()" onclick="add('צ')">ʦ</span>
-<span class="t" onmouseover="showtrans('ץ')" onmouseout="hidetrans()" onclick="add('ץ')">ʦ</span>
-<span class="t" onmouseover="showtrans('װ')" onmouseout="hidetrans()" onclick="add('װ')">w</span>
-<span class="t" onmouseover="showtrans('ו׳')" onmouseout="hidetrans()" onclick="add('ו׳')">w</span>
-<span class="t" onmouseover="showtrans('ב')" onmouseout="hidetrans()" onclick="add('ב')">v</span>
-<span class="t" onmouseover="showtrans('ו')" onmouseout="hidetrans()" onclick="add('ו')">v</span>
-<span class="t" onmouseover="showtrans('י')" onmouseout="hidetrans()" onclick="add('י')">y</span>
-<span class="t" onmouseover="showtrans('ז')" onmouseout="hidetrans()" onclick="add('ז')">z</span>
-<span class="t" onmouseover="showtrans('ז׳')" onmouseout="hidetrans()" onclick="add('ז׳')">ž</span>
-<span class="t" onmouseover="showtrans('א,ע')" onmouseout="hidetrans()" onclick="add('א,ע')">'</span>
-<span class="t" onmouseover="showtrans('א')" onmouseout="hidetrans()" onclick="add('א')">∅</span>
-<span class="t" onmouseover="showtrans('ה')" onmouseout="hidetrans()" onclick="add('ה')">∅</span>
-<span class="t" onmouseover="showtrans('ע')" onmouseout="hidetrans()" onclick="add('ע')">∅</span>
-<br/>
-matres: 
-<span class="t" onmouseover="showtrans('א')" onmouseout="hidetrans()" onclick="add('א')">a</span>
-<span class="t" onmouseover="showtrans('ה')" onmouseout="hidetrans()" onclick="add('ה')">a</span>
-<span class="t" onmouseover="showtrans('י')" onmouseout="hidetrans()" onclick="add('י')">e</span>
-<span class="t" onmouseover="showtrans('א')" onmouseout="hidetrans()" onclick="add('א')">e</span>
-<span class="t" onmouseover="showtrans('ה')" onmouseout="hidetrans()" onclick="add('ה')">e</span>
-<span class="t" onmouseover="showtrans('י')" onmouseout="hidetrans()" onclick="add('י')">i</span>
-<span class="t" onmouseover="showtrans('ו')" onmouseout="hidetrans()" onclick="add('ו')">o</span>
-<span class="t" onmouseover="showtrans('א')" onmouseout="hidetrans()" onclick="add('א')">o</span>
-<span class="t" onmouseover="showtrans('ה')" onmouseout="hidetrans()" onclick="add('ה')">o</span>
-<span class="t" onmouseover="showtrans('ו')" onmouseout="hidetrans()" onclick="add('ו')">u</span>
-<br/>
-points:
-<span class="t" onmouseover="showtrans('&#x05B7;')" onmouseout="hidetrans()" onclick="add('&#x05B7;')">a</span>
-<span class="t" onmouseover="showtrans('&#x05B7;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05B7;&#x05D4;')">a</span>
-<span class="t" onmouseover="showtrans('&#x05B7;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05B7;&#x05D0;')">a</span>
-<span class="t" onmouseover="showtrans('&#x05B8;')" onmouseout="hidetrans()" onclick="add('&#x05B8;')">a</span>
-<span class="t" onmouseover="showtrans('&#x05B8;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05B8;&#x05D4;')">a</span>
-<span class="t" onmouseover="showtrans('&#x05B8;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05B8;&#x05D0;')">a</span>
-<span class="t" onmouseover="showtrans('&#x05B2;')" onmouseout="hidetrans()" onclick="add('&#x05B2;')">a</span>
-
-<span class="t" onmouseover="showtrans('&#x05B5;')" onmouseout="hidetrans()" onclick="add('&#x05B5;')">e</span>
-<span class="t" onmouseover="showtrans('&#x05B5;&#x05D9;')" onmouseout="hidetrans()" onclick="add('&#x05B5;&#x05D9;')">e</span>
-<span class="t" onmouseover="showtrans('&#x05B5;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05B5;&#x05D4;')">e</span>
-<span class="t" onmouseover="showtrans('&#x05B5;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05B5;&#x05D0;')">e</span>
-<span class="t" onmouseover="showtrans('&#x05B6;')" onmouseout="hidetrans()" onclick="add('&#x05B6;')">e</span>
-<span class="t" onmouseover="showtrans('&#x05B6;&#x05D9;')" onmouseout="hidetrans()" onclick="add('&#x05B6;&#x05D9;')">e</span>
-<span class="t" onmouseover="showtrans('&#x05B6;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05B6;&#x05D4;')">e</span>
-<span class="t" onmouseover="showtrans('&#x05B6;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05B6;&#x05D0;')">e</span>
-<span class="t" onmouseover="showtrans('&#x05B1;')" onmouseout="hidetrans()" onclick="add('&#x05B1;')">e</span>
-<span class="t" onmouseover="showtrans('&#x05B0;')" onmouseout="hidetrans()" onclick="add('&#x05B0;')">e</span>
-
-<span class="t" onmouseover="showtrans('&#x05B5;&#x05D9;')" onmouseout="hidetrans()" onclick="add('&#x05B5;&#x05D9;')">ei</span>
-
-<span class="t" onmouseover="showtrans('&#x05B4;&#x05D9;')" onmouseout="hidetrans()" onclick="add('&#x05B4;&#x05D9;')">i</span>
-<span class="t" onmouseover="showtrans('&#x05B4;')" onmouseout="hidetrans()" onclick="add('&#x05B4;')">i</span>
-<span class="t" onmouseover="showtrans('&#x05D9;&#x05B4;')" onmouseout="hidetrans()" onclick="add('&#x05D9;&#x05B4;')">i</span>
-
-<span class="t" onmouseover="showtrans('&#x05B9;')" onmouseout="hidetrans()" onclick="add('&#x05B9;')">o</span>
-<span class="t" onmouseover="showtrans('&#x05D5;&#x05B9;')" onmouseout="hidetrans()" onclick="add('&#x05D5;&#x05B9;')">o</span>
-<span class="t" onmouseover="showtrans('&#x05B9;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05B9;&#x05D4;')">o</span>
-<span class="t" onmouseover="showtrans('&#x05B9;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05B9;&#x05D0;')">o</span>
-<span class="t" onmouseover="showtrans('&#x05B8;')" onmouseout="hidetrans()" onclick="add('&#x05B8;')">o</span>
-<span class="t" onmouseover="showtrans('&#x05B3;')" onmouseout="hidetrans()" onclick="add('&#x05B3;')">o</span>
-
-<span class="t" onmouseover="showtrans('&#x05D5;&#x05BC;')" onmouseout="hidetrans()" onclick="add('&#x05D5;&#x05BC;')">u</span>
-<span class="t" onmouseover="showtrans('&#x05D5;&#x05BC;&#x05D4;')" onmouseout="hidetrans()" onclick="add('&#x05D5;&#x05BC;&#x05D4;')">u</span>
-<span class="t" onmouseover="showtrans('&#x05D5;&#x05BC;&#x05D0;')" onmouseout="hidetrans()" onclick="add('&#x05D5;&#x05BC;&#x05D0;')">u</span>
-<span class="t" onmouseover="showtrans('&#x05BB;')" onmouseout="hidetrans()" onclick="add('&#x05BB;')">u</span>
-
-<span class="t" onmouseover="showtrans('&#x05B0;')" onmouseout="hidetrans()" onclick="add('&#x05B0;')">∅</span>
-<span class="t" onmouseover="showtrans('&#x05BC;')" onmouseout="hidetrans()" onclick="add('&#x05BC;')">∅</span>
-</div>
-
-
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 <div id="cursive" class="transcript" style="display:none;"></div>
-
 </div>
 
 
@@ -187,7 +59,26 @@ points:
   <div id="alphabet" class="default">
   
   
-  
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<img alt=" " src="images/shape1.png" onclick="findShape('5D1,5D2,5E0,5DB,5C6','',true)" />
+<img alt=" " src="images/shape2.png" onclick="findShape('5D3,5E8,5D5,5D6,5DA,5DF,5F1,5F0','',true)" />
+<img alt=" " src="images/shape3.png" onclick="findShape('5D9,5F2,5F1,5F3,5F4,599,5A8','',true)" />
+<img alt=" " src="images/shape4.png" onclick="findShape('5C0,5D5,5DF,5F1,5F0','',true)" />
+<img alt=" " src="images/shape5.png" onclick="findShape('5D4,5D7,5DE,5EA','',true)" />
+<img alt=" " src="images/shape6.png" onclick="findShape('5D8','',true)" />
+<img alt=" " src="images/shape7.png" onclick="findShape('5E1,5DD','',true)" />
+<img alt=" " src="images/shape8.png" onclick="findShape('5E2,5E5,5E6','',true)" />
+<img alt=" " src="images/shape9.png" onclick="findShape('5E3,5E4,5E7,5DC','',true)" />
+<img alt=" " src="images/shape10.png" onclick="findShape('5B9,5C2,5C1','',true)" />
+<img alt=" " src="images/shape11.png" onclick="findShape('5B4,5B5,5B6,5B1,5B0,5B7,5B2,5B8,5B3,5BB','',true)" />
+<img alt=" " src="images/shape0.png" onclick="findShape('5D0,5E7,5DC,5E9,5C3,5BC,5BE,5F3,5F4,5C6','',true)" />
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
   
 <div class="spaceline">
 <span class="touch" dir="auto" onClick="ccb=document.getElementById('controlchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">Format chars</span> 
@@ -217,18 +108,18 @@ points:
         <table id="consonants">
           <tr>
             <td><span class="g"><span class="hint">ʔ</span><span class="c">&#x5D0;</span></span></td>
-            <td><span class="g"><span class="hint">b,v</span><span class="c">&#x5D1;</span></span></td>
+            <td><span class="g"><span class="hint">v</span><span class="c">&#x5D1;</span></span></td>
             <td><span class="g"><span class="hint">g</span><span class="c">&#x5D2;</span></span></td>
             <td><span class="g"><span class="hint">d</span><span class="c">&#x5D3;</span></span></td>
             <td><span class="g"><span class="hint">h</span><span class="c">&#x5D4;</span></span></td>
-            <td><span class="g"><span class="hint">v</span><span class="c">&#x5D5;</span></span></td>
+            <td><span class="g"><span class="hint">v̇</span><span class="c">&#x5D5;</span></span></td>
           </tr>
           <tr>
             <td><span class="g"><span class="hint">z</span><span class="c">&#x5D6;</span></span></td>
-            <td><span class="g"><span class="hint">ẖ</span><span class="c">&#x5D7;</span></span></td>
+            <td><span class="g"><span class="hint">x</span><span class="c">&#x5D7;</span></span></td>
             <td><span class="g"><span class="hint">t</span><span class="c">&#x5D8;</span></span></td>
             <td><span class="g"><span class="hint">y</span><span class="c">&#x5D9;</span></span></td>
-            <td colspan="2"><span class="g"><span class="hint">kh</span><span class="c">&#x5DA;</span><span class="c">&#x5DB;</span></span></td>
+            <td colspan="2"><span class="g"><span class="hint">ẋ</span><span class="c">&#x5DA;</span><span class="c">&#x5DB;</span></span></td>
           </tr>
           <tr>
              <td><span class="g"><span class="hint">l</span><span class="c">&#x5DC;</span></span></td>
@@ -237,15 +128,15 @@ points:
             <td><span class="g"><span class="hint">s</span><span class="c">&#x5E1;</span></span></td>
           </tr>
           <tr>
-            <td><span class="g"><span class="hint">ʕ</span><span class="c">&#x5E2;</span></span></td>
+            <td><span class="g"><span class="hint">ʔ̇</span><span class="c">&#x5E2;</span></span></td>
             <td colspan="2"><span class="g"><span class="hint">f</span><span class="c">&#x5E3;</span> <span class="c">&#x5E4;</span></span></td>
             <td colspan="2"><span class="g"><span class="hint">ʦ</span><span class="c">&#x5E5;</span> <span class="c">&#x5E6;</span></span></td>
             <td><span class="g"><span class="hint">k</span><span class="c">&#x5E7;</span></span></td>
           </tr>
           <tr>
-            <td><span class="g"><span class="hint">r</span><span class="c">&#x5E8;</span></span></td>
-            <td><span class="g"><span class="hint">s,sh</span><span class="c">&#x5E9;</span></span></td>
-            <td><span class="g"><span class="hint">t</span><span class="c">&#x5EA;</span></span></td>
+            <td><span class="g"><span class="hint">ʁ</span><span class="c">&#x5E8;</span></span></td>
+            <td><span class="g"><span class="hint">ṡ</span><span class="c">&#x5E9;</span></span></td>
+            <td><span class="g"><span class="hint">ṫ</span><span class="c">&#x5EA;</span></span></td>
             <td><span class="c">&#x5F0;</span></td>
             <td><span class="c">&#x5F1;</span></td>
             <td><span class="c">&#x5F2;</span></td>
@@ -259,22 +150,22 @@ points:
             <td> </td>
           </tr>
           <tr>
-            <td><span class="c">&#x5B4;</span></td>
-            <td><span class="c">&#x5B5;</span></td>
-            <td><span class="c">&#x5B6;</span></td>
-            <td><span class="c">&#x5B7;</span></td>
+            <td><span class="g"><span class="hint">i</span><span class="c">&#x5B4;</span></span></td>
+            <td><span class="g"><span class="hint">e</span><span class="c">&#x5B5;</span></span></td>
+            <td><span class="g"><span class="hint">ɛ</span><span class="c">&#x5B6;</span></span></td>
+            <td><span class="g"><span class="hint">a</span><span class="c">&#x5B7;</span></span></td>
           </tr>
           <tr>
-            <td><span class="c">&#x5B8;</span></td>
-            <td><span class="c">&#x5B9;</span></td>
-            <td><span class="c">&#x5BB;</span></td>
+            <td><span class="g"><span class="hint">ɑ</span><span class="c">&#x5B8;</span></span></td>
+            <td><span class="g"><span class="hint">o</span><span class="c">&#x5B9;</span></span></td>
+            <td><span class="g"><span class="hint">u</span><span class="c">&#x5BB;</span></span></td>
             <td> </td>
           </tr>
           <tr>
-            <td><span class="c">&#x5B0;</span></td>
-            <td><span class="c">&#x5B1;</span></td>
-            <td><span class="c">&#x5B2;</span></td>
-            <td><span class="c">&#x5B3;</span></td>
+            <td><span class="g"><span class="hint">˘</span><span class="c">&#x5B0;</span></span></td>
+            <td><span class="g"><span class="hint">ĕ</span><span class="c">&#x5B1;</span></span></td>
+            <td><span class="g"><span class="hint">ă</span><span class="c">&#x5B2;</span></span></td>
+            <td><span class="g"><span class="hint">ŏ</span><span class="c">&#x5B3;</span></span></td>
           </tr>
         </table></td>
         <td style="vertical-align:middle;">
@@ -332,26 +223,6 @@ points:
 
 
 
-
-
- <div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
-<img alt=" " src="images/shape1.png" onclick="findShape('5D1,5D2,5E0,5DB,5C6','',true)" />
-<img alt=" " src="images/shape2.png" onclick="findShape('5D3,5E8,5D5,5D6,5DA,5DF,5F1,5F0','',true)" />
-<img alt=" " src="images/shape3.png" onclick="findShape('5D9,5F2,5F1,5F3,5F4,599,5A8','',true)" />
-<img alt=" " src="images/shape4.png" onclick="findShape('5C0,5D5,5DF,5F1,5F0','',true)" />
-<img alt=" " src="images/shape5.png" onclick="findShape('5D4,5D7,5DE,5EA','',true)" />
-<img alt=" " src="images/shape6.png" onclick="findShape('5D8','',true)" />
-<img alt=" " src="images/shape7.png" onclick="findShape('5E1,5DD','',true)" />
-<img alt=" " src="images/shape8.png" onclick="findShape('5E2,5E5,5E6','',true)" />
-<img alt=" " src="images/shape9.png" onclick="findShape('5E3,5E4,5E7,5DC','',true)" />
-<img alt=" " src="images/shape10.png" onclick="findShape('5B9,5C2,5C1','',true)" />
-<img alt=" " src="images/shape11.png" onclick="findShape('5B4,5B5,5B6,5B1,5B0,5B7,5B2,5B8,5B3,5BB','',true)" />
-<img alt=" " src="images/shape0.png" onclick="findShape('5D0,5E7,5DC,5E9,5C3,5BC,5BE,5F3,5F4,5C6','',true)" />
-</div>
-</div>
-
-<div id="extrashapes"></div>
 
 
 <div id="temp"></div>
