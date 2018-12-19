@@ -29,12 +29,14 @@ var template = {}
 
 
 var inputAids = [
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Reverse transliteration", "dataVar":"showNeoTrans", "dataLocn":"neotranscript", "dataShortTitle":"R", "type":"palette"},
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+{"title":"ISO to Russian", "dataVar":"showISOCharMap", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(isoCharacterMap);makeKbdEventList(isoCharacterMap);"},
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Russian text to a Latin transliteration.", "code":"doTranscription('toTranslit')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Russian text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Russian<br/>to ISO", "alt":"Convert Russian text to an ISO 9:1995 Latin transliteration.", "code":"doTranscription('toISO')"},
 ]
 
