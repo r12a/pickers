@@ -1,6 +1,7 @@
 ﻿function localtranscribe (direction, str) {
 	
 	if (direction == 'transliterate') { return transliterate(str) }
+	if (direction == 'transcription') { return transcription(str) }
 	if (direction == 'rtoBeng') { return radiceToBengali(str) }
 	if (direction == 'toBeng') { return isoToBengali(str) }
 	if (direction == 'toISO') { return bengaliToISO(str) }
@@ -13,33 +14,53 @@
 function transliterate (str) { 
     
 str = str + '  '
-str = str.normalize('NFC')
 
-str = str.replace(/\u09CD/g, "͓") // virama
+// REPLACE VIRAMA WITH \u02D6 & ESCAPE .
 
-// nuktas & specials
-str = str.replace(/ৎ/g, "ṯ")
-str = str.replace(/ড়/g, "ṛ")
-str = str.replace(/ঢ়/g, "ṛʰ")
+str = str.replace(/\u09BC/g, "\u0323")
+str = str.replace(/ড\u09BC/g, "ɽ̣")
+str = str.replace(/ঢ\u09BC/g, "ɽ̣̇")
+str = str.replace(/য\u09BC/g, "ỵ̇")
+str = str.replace(/ড়/g, "ɽ")
+str = str.replace(/ঢ়/g, "ɽ̇")
 str = str.replace(/য়/g, "ẏ")
-
-
-// consonants 
+str = str.replace(/ৠ়/g, "r̥̣̄")
+str = str.replace(/,/g, ",")
+str = str.replace(/\./g, ".")
+str = str.replace(/«/g, "“")
+str = str.replace(/»/g, "”")
+str = str.replace(/।/g, ",")
+str = str.replace(/॥/g, ".")
+str = str.replace(/ঁ/g, "m̽")
+str = str.replace(/ং/g, "ŋ̽")
+str = str.replace(/ঃ/g, "h̽")
+str = str.replace(/অ/g, "ɔ̣")
+str = str.replace(/আ/g, "ɑ̣")
+str = str.replace(/ই/g, "ị")
+str = str.replace(/ঈ/g, "ị̄")
+str = str.replace(/উ/g, "ụ")
+str = str.replace(/ঊ/g, "ụ̄")
+str = str.replace(/ঋ/g, "r̥̣")
+str = str.replace(/ঌ/g, "l̥̣")
+str = str.replace(/এ/g, "ẹ")
+str = str.replace(/ঐ/g, "ọʲ")
+str = str.replace(/ও/g, "ọ")
+str = str.replace(/ঔ/g, "ọʷ")
 str = str.replace(/ক/g, "k")
 str = str.replace(/খ/g, "kʰ")
 str = str.replace(/গ/g, "g")
 str = str.replace(/ঘ/g, "gʰ")
-str = str.replace(/ঙ/g, "ṅ")
+str = str.replace(/ঙ/g, "ŋ")
 str = str.replace(/চ/g, "c")
 str = str.replace(/ছ/g, "cʰ")
-str = str.replace(/জ/g, "j")
-str = str.replace(/ঝ/g, "jʰ")
+str = str.replace(/জ/g, "ʤ")
+str = str.replace(/ঝ/g, "ʤʰ")
 str = str.replace(/ঞ/g, "ñ")
-str = str.replace(/ট/g, "ṭ")
-str = str.replace(/ঠ/g, "ṭʰ")
-str = str.replace(/ড/g, "ḍ")
-str = str.replace(/ঢ/g, "ḍʰ")
-str = str.replace(/ণ/g, "ṇ")
+str = str.replace(/ট/g, "ʈ")
+str = str.replace(/ঠ/g, "ʈʰ")
+str = str.replace(/ড/g, "ɖ")
+str = str.replace(/ঢ/g, "ɖʰ")
+str = str.replace(/ণ/g, "n̈")
 str = str.replace(/ত/g, "t")
 str = str.replace(/থ/g, "tʰ")
 str = str.replace(/দ/g, "d")
@@ -50,55 +71,123 @@ str = str.replace(/ফ/g, "pʰ")
 str = str.replace(/ব/g, "b")
 str = str.replace(/ভ/g, "bʰ")
 str = str.replace(/ম/g, "m")
-str = str.replace(/য/g, "y")
+str = str.replace(/য/g, "ý")
 str = str.replace(/র/g, "r")
 str = str.replace(/ল/g, "l")
-str = str.replace(/শ/g, "ś")
-str = str.replace(/ষ/g, "ṣ")
-str = str.replace(/স/g, "s")
+str = str.replace(/শ/g, "ʃ")
+str = str.replace(/ষ/g, "ʃ̇")
+str = str.replace(/স/g, "š")
 str = str.replace(/হ/g, "h")
-
-
-// medials
-
-// finals
-
-// vocalics
-
-// independent vowels
-str = str.replace(/অ/g, "a")
-str = str.replace(/আ/g, "ā")
-str = str.replace(/ই/g, "i")
-str = str.replace(/ঈ/g, "ī")
-str = str.replace(/উ/g, "u")
-str = str.replace(/ঊ/g, "ū")
-str = str.replace(/ঋ/g, "r̥")
-str = str.replace(/এ/g, "e")
-str = str.replace(/ঐ/g, "ai")
-str = str.replace(/ও/g, "o")
-str = str.replace(/ঔ/g, "au")
-
-
-// vowel signs
-str = str.replace(/া/g, "ā")
+str = str.replace(/া/g, "ɑ")
 str = str.replace(/ি/g, "i")
 str = str.replace(/ী/g, "ī")
 str = str.replace(/ু/g, "u")
 str = str.replace(/ূ/g, "ū")
 str = str.replace(/ৃ/g, "r̥")
-str = str.replace(/ে/g, "e")
-str = str.replace(/ৈ/g, "ai")
+str = str.replace(/ৄ/g, "r̥̄")
+str = str.replace(/ৈ/g, "oʲ")
+str = str.replace(/ৌ/g, "oʷ")
 str = str.replace(/ো/g, "o")
-str = str.replace(/ৌ/g, "au")
+str = str.replace(/ে/g, "e")
+str = str.replace(/্/g, "͓")
+str = str.replace(/ৎ/g, "t̽")
+str = str.replace(/ৡ/g, "l̥̣̄")
+str = str.replace(/ৢ/g, "l̥")
+str = str.replace(/ৣ/g, "l̥̄")
+str = str.replace(/০/g, "0")
+str = str.replace(/১/g, "1")
+str = str.replace(/২/g, "2")
+str = str.replace(/৩/g, "3")
+str = str.replace(/৪/g, "4")
+str = str.replace(/৫/g, "5")
+str = str.replace(/৬/g, "6")
+str = str.replace(/৭/g, "7")
+str = str.replace(/৮/g, "8")
+str = str.replace(/৯/g, "9")
+str = str.replace(/“/g, "“")
+str = str.replace(/”/g, "”")
+
+return str.trim()
 
 
-// diacritics
-str = str.replace(/ঁ/g, "m̐")
-str = str.replace(/ং/g, "ṁ")
-str = str.replace(/ঃ/g, "ḥ")
+    }
 
 
-// digits
+
+
+function transliterate (str) {
+str += ' '
+
+str = str.replace(/\u{9DC}/g, "ɽ")
+str = str.replace(/\u{9DD}/g, "ɽ̇")
+str = str.replace(/\u{9DF}/g, "ẏ")
+str = str.replace(/।/g, ".")
+str = str.replace(/ঁ/g, "m̽")
+str = str.replace(/ং/g, "ŋ̽")
+str = str.replace(/ঃ/g, "h̽")
+str = str.replace(/অ/g, "ɔ̣")
+str = str.replace(/আ/g, "ɑ")
+str = str.replace(/ই/g, "ị")
+str = str.replace(/ঈ/g, "ị̄")
+str = str.replace(/উ/g, "ụ")
+str = str.replace(/ঊ/g, "ụ̄")
+str = str.replace(/ঋ/g, "r̥̣")
+str = str.replace(/ঌ/g, "l̥̣")
+str = str.replace(/এ/g, "ẹ")
+str = str.replace(/ঐ/g, "ọʲ")
+str = str.replace(/ও/g, "ọ")
+str = str.replace(/ঔ/g, "ọʷ")
+str = str.replace(/ক/g, "k")
+str = str.replace(/খ/g, "kʰ")
+str = str.replace(/গ/g, "g")
+str = str.replace(/ঘ/g, "gʰ")
+str = str.replace(/ঙ/g, "ŋ")
+str = str.replace(/চ/g, "c")
+str = str.replace(/ছ/g, "cʰ")
+str = str.replace(/জ/g, "ʤ")
+str = str.replace(/ঝ/g, "ʤʰ")
+str = str.replace(/ঞ/g, "ñ")
+str = str.replace(/ট/g, "ʈ")
+str = str.replace(/ঠ/g, "ʈʰ")
+str = str.replace(/ড/g, "ɖ")
+str = str.replace(/ঢ/g, "ɖʰ")
+str = str.replace(/ণ/g, "n̈")
+str = str.replace(/ত/g, "t")
+str = str.replace(/থ/g, "tʰ")
+str = str.replace(/দ/g, "d")
+str = str.replace(/ধ/g, "dʰ")
+str = str.replace(/ন/g, "n")
+str = str.replace(/প/g, "p")
+str = str.replace(/ফ/g, "pʰ")
+str = str.replace(/ব/g, "b")
+str = str.replace(/ভ/g, "bʰ")
+str = str.replace(/ম/g, "m")
+str = str.replace(/য/g, "ý")
+str = str.replace(/র/g, "r")
+str = str.replace(/ল/g, "l")
+str = str.replace(/শ/g, "ʃ")
+str = str.replace(/ষ/g, "ʃ̇")
+str = str.replace(/স/g, "ʃ̈")
+str = str.replace(/হ/g, "h")
+str = str.replace(/়/g, "̣")
+str = str.replace(/া/g, "ɑ")
+str = str.replace(/ি/g, "i")
+str = str.replace(/ী/g, "ī")
+str = str.replace(/ু/g, "u")
+str = str.replace(/ূ/g, "ū")
+str = str.replace(/ৃ/g, "r̥")
+str = str.replace(/ৄ/g, "r̥̄")
+str = str.replace(/ে/g, "e")
+str = str.replace(/ৈ/g, "oʲ")
+str = str.replace(/ো/g, "o")
+str = str.replace(/ৌ/g, "oʷ")
+str = str.replace(/্/g, "͓")
+str = str.replace(/ৎ/g, "t̽")
+str = str.replace(/ৗ/g, "ː")
+str = str.replace(/ৠ/g, "r̥̣̄")
+str = str.replace(/ৡ/g, "l̥̣̄")
+str = str.replace(/ৢ/g, "l̥")
+str = str.replace(/ৣ/g, "l̥̄")
 str = str.replace(/০/g, "0")
 str = str.replace(/১/g, "1")
 str = str.replace(/২/g, "2")
@@ -110,17 +199,53 @@ str = str.replace(/৭/g, "7")
 str = str.replace(/৮/g, "8")
 str = str.replace(/৯/g, "9")
 
-
-// punctuation
-str = str.replace(/।/g, ".")
-str = str.replace(/॥/g, ".")
+return str.trim()
+}
 
 
 
-	return str.trim()
 
 
-    }
+
+function transcription (str) {
+
+var consonants = new Set(['ক','খ','গ','ঘ','ঙ','চ','ছ','জ','ঝ','ঞ','ট','ঠ','ড','ঢ','ণ','ত','থ','দ','ধ','ন','প','ফ','ব','ভ','ম','য','র','ল','শ','ষ','স','হ','ড়','ঢ়','য়','ৰ','ৱ'])
+var indvowels = new Set(['அ','ஆ','இ','ஈ','உ','ஊ','எ','ஏ','ஒ','ஓ','ஐ','ஔ'])
+
+str = str.normalize('NFC')+' '
+
+str = str.replace(/ড়/g, "ɽ")
+str = str.replace(/ঢ়/g, "ɽ̇")
+str = str.replace(/য়/g, "ẏ")
+
+
+// add inherent vowels
+var withConjuncts = ''
+for (let i=0; i<str.length-1; i++) {
+	if (consonants.has(str[i]) && (consonants.has(str[i+1]) || indvowels.has(str[i+1])))  withConjuncts += str[i]+'o'
+    else if (consonants.has(str[i]) && str[i+1] === ' ') withConjuncts += str[i]+'[o{∅]'
+	else  withConjuncts += str[i]
+	}
+str=withConjuncts
+
+
+str = transliterate(str)
+
+
+// add markup for ambiguous cases
+str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
+str = str.replace(/\|/g,'</span><span class=alt>')
+str = str.replace(/\{/g,'</span><span class=altlast>')
+str = str.replace(/\]/g,'</span></span>')
+
+return str.trim()
+}
+
+
+
+
+
+
 
 
 
