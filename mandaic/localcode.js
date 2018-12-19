@@ -55,4 +55,79 @@ var keyboarddef = [
 // source: http://www.mandaeannetwork.com/mandaean/ma/books/mandaeannetwork_mandaean_mandaic_font.html
 
 
+var justLatinMap = `
+c č
+d ḏ ð δ
+g ɡ
+h ḥ ẖ
+j ǰ
+k kḏ
+s ṣ š ʃ
+t ṭ t̴
+x χ
+y γ
+z ẓ ž
+O θ
+' ʿ 
+`
+
+
+
+var translitCharacterMap = `
+a ā ࡀ
+A a ࡉ࡚
+b b ࡁ
+C č ࡔ࡙
+d d ࡃ ḏ ࡖ
+D δ ࡃ࡙
+e ʿ ࡏ
+E e ࡉ࡚
+F f ࡐ࡙
+g g ࡂ
+h h ࡄ ẖ ࡇ
+H ḥ ࡄ࡙
+i i ࡉ
+k k ࡊ k͟d ࡗ
+l l ࡋ
+m m ࡌ
+n n ࡍ
+O o ࡅ࡚
+p p ࡐ
+q q ࡒ
+Q θ ࡕ࡙
+r r ࡓ
+s s ࡎ ᵴ ࡑ ʃ ࡔ
+t t ࡕ
+u u ࡅ
+X χ ࡊ࡙
+y ᵵ ࡈ
+Y γ ࡂ࡙
+z z ࡆ
+Z ẓ ࡈ࡙ ž ࡑ࡙
+{ ʕ ࡘ
+[ ̱ \u085A
+& ˖ \u085B
+| ¶ ࡞
+/ ̤ \u0859
+0 0 ٠
+1 1 ١
+2 2 ٢
+3 3 ٣
+4 4 ٤
+5 5 ٥
+6 6 ٦
+7 7 ٧
+8 8 ٨
+9 9 ٩
+, , ،
+. . ۔
+; ; ؛
+? ? ؟
+_ _ ـ
+% % ٪
+`
+
+
+
+
 

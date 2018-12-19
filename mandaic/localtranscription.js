@@ -1,10 +1,118 @@
 function localtranscribe (direction, str) {
 	
+	if (direction == 'transliterate') { return transliterate(str) }
+	if (direction == 'transcription') { return transcription(str) }
 	if (direction == 'toLatin') { return toLatin(str) }
 	if (direction == 'toLatinTranslit') { return toLatinTranslit(str) }
 	}
-		
-		
+
+
+
+function transliterate (str) {
+str += ' '
+
+str = str.replace(/\u0859/g, "̤")
+str = str.replace(/\u085A/g, "̱")
+str = str.replace(/\u085B/g, "˖")
+str = str.replace(/ࡀ/g, "ā")
+str = str.replace(/ࡁ/g, "b")
+str = str.replace(/ࡂ/g, "g")
+str = str.replace(/ࡃ/g, "d")
+str = str.replace(/ࡄ/g, "h")
+str = str.replace(/ࡅ/g, "u")
+str = str.replace(/ࡆ/g, "z")
+str = str.replace(/ࡇ/g, "ẖ")
+str = str.replace(/ࡈ/g, "ᵵ")
+str = str.replace(/ࡉ/g, "i")
+str = str.replace(/ࡊ/g, "k")
+str = str.replace(/ࡋ/g, "l")
+str = str.replace(/ࡌ/g, "m")
+str = str.replace(/ࡍ/g, "n")
+str = str.replace(/ࡎ/g, "s")
+str = str.replace(/ࡏ/g, "ʿ")
+str = str.replace(/ࡐ/g, "p")
+str = str.replace(/ࡑ/g, "ᵴ")
+str = str.replace(/ࡒ/g, "q")
+str = str.replace(/ࡓ/g, "r")
+str = str.replace(/ࡔ/g, "ʃ")
+str = str.replace(/ࡕ/g, "t")
+str = str.replace(/ࡖ/g, "ḏ")
+str = str.replace(/ࡗ/g, "k͟d")
+str = str.replace(/ࡘ/g, "ʕ")
+str = str.replace(/࡞/g, "¶")
+str = str.replace(/،/g, ",")
+str = str.replace(/؛/g, ";")
+str = str.replace(/؟/g, "?")
+str = str.replace(/ـ/g, "_")
+str = str.replace(/٠/g, "0")
+str = str.replace(/١/g, "1")
+str = str.replace(/٢/g, "2")
+str = str.replace(/٣/g, "3")
+str = str.replace(/٤/g, "4")
+str = str.replace(/٥/g, "5")
+str = str.replace(/٦/g, "6")
+str = str.replace(/٧/g, "7")
+str = str.replace(/٨/g, "8")
+str = str.replace(/٩/g, "9")
+str = str.replace(/٪/g, "%")
+str = str.replace(/۔/g, ".")
+str = str.replace(/࡞/g, "¶")
+
+
+return str.trim()
+}
+	
+
+
+function transcription (str) {
+
+str = ' '+str.normalize('NFC')+' '
+
+	// collect a list of punctuation, in order
+	var punctuationSet = /!|\(|\)|\-|\.|:|\[|\]|\*|\/|\\|،|؟|«|»|‹|›| /g
+	var punctuationList = str.match(punctuationSet)
+	str = str.replace(punctuationSet,' ')
+
+	// handle consonant duplication
+	var re = /(.)([\u0859]?)\u085B/g
+	str = str.replace(re,'$1$1$2')  // shadda
+	
+	
+str = str.replace(/\bࡏࡅ/g, "u")
+str = str.replace(/ࡏࡉ\b/g, "i")
+str = str.replace(/ࡂ࡙/g, "γ")
+str = str.replace(/ࡃ࡙/g, "δ")
+str = str.replace(/ࡄ࡙/g, "ḥ")
+str = str.replace(/ࡅ࡚/g, "o")
+str = str.replace(/ࡈ࡙/g, "ẓ")
+str = str.replace(/ࡀ࡚/g, "a")
+str = str.replace(/ࡉ࡚/g, "e")
+str = str.replace(/ࡊ࡙/g, "χ")
+str = str.replace(/ࡐ࡙/g, "f")
+str = str.replace(/ࡑ࡙/g, "ž")
+str = str.replace(/ࡔ࡙/g, "č")
+str = str.replace(/ࡕ࡙/g, "θ")
+
+
+	// replace punctuation
+	var ptr = 0
+	var out = ''
+	for (var c=0;c<str.length;c++) {
+		if (str.charAt(c) == ' ') out += punctuationList[ptr++]
+		else out += str.charAt(c)
+		}
+	str = out
+
+str = transliterate(str)
+
+
+return str.trim()
+}
+
+
+
+
+
 
 function toLatin (str) {
 	// transcribes mandaic text into an Daniels/Bright transcription, trying to figure out vowels
