@@ -1,13 +1,13 @@
 function localtranscribe (direction, str) {
 	
-	if (direction == 'toLatin') { return toLatin(str) }
-	if (direction == 'toEthi') { return toEthi(str) }
+	if (direction == 'transliterate') { return transliterate(str) }
+	if (direction == 'reverse') { return reverse(str) }
 	}
 		
 		
 
 
-function toLatin (str) {
+function transliterate (str) {
 	// transcribes ethiopic text into a transliteration
     // works on the main Ethiopic block only
     
@@ -435,76 +435,440 @@ str = str.replace(/ᎏ/g, "pʷə")
 		
 
 
-function OLDtoLatin (str) {
-	// transcribes ethiopic text into a transliteration
+function reverse (str) {
     // works on the main Ethiopic block only
     
-    
-    var consonants = 
-    ['h','l','ḥ','m','ś','r','s','š','ḳ','ḳʷ','ḳʰ','ḳʰʷ','b','v', 't','č','ḫ','ḫʷ','n','ñ','ʾ','k', 'kʷ','x','xʷ','w', 'ʿ','z','ž','y','d','d?','ǧ','g','gʷ','ŋ','ṭ','č̣',
-    'p̣','ṣ','ṣ́','f','p']
-    var vowels = 
-    ['ä','u','i','a','e','ə','o','wa']
-    
-    var chars = [...str]
-    //console.log(chars)
-    for (let i=0;i<chars.length;i++) {
-        var dec = chars[i].codePointAt(0)
-        if (dec > 4607 && dec < 4952) {
-            consonant = Math.floor((dec-4608)/8)
-            //console.log(dec, consonant)
-            vowel = dec % 8
-            //console.log(consonants[consonant], vowels[vowel])
-            chars[i] = consonants[consonant]+vowels[vowel]
-        }
-    }
-	
-    str = chars.join('')
-		
 	// add initial space so that space-based rules work
 	str = ' '+str+' '
 	
-	// collect a list of punctuation, in order
-	var punctuationSet = /!|\(|\)|\-|\.|:|\[|\]|\*|\/|\\|،|؟|«|»|‹|›| /g
-	var punctuationList = str.match(punctuationSet)
-	str = str.replace(punctuationSet,' ')
 	
 	// handle syllables that have -oa rather than -wa
-	str = str.replace('ḳwa','ḳao')
-	str = str.replace('ḫwa','ḫao')
-	str = str.replace('kwa','kao')
-	str = str.replace('wwa','wao')
-	str = str.replace('ywa','yao')
-	str = str.replace('gwa','gao')
-	str = str.replace('ṣ́wa','ṣ́ao')
+	//str = str.replace('ḳwa','ḳao')
+	//str = str.replace('ḫwa','ḫao')
+	//str = str.replace('kwa','kao')
+	//str = str.replace('wwa','wao')
+	//str = str.replace('ywa','yao')
+	//str = str.replace('gwa','gao')
+	//str = str.replace('ṣ́wa','ṣ́ao')
 	
-	str = str.replace(/ፘ/g,'ryä') 
-	str = str.replace(/ፙ/g,'myä') 
-	str = str.replace(/ፚ/g,'fyä') 
-	
-	// punctuation
-	str = str.replace(/፡/g,' ') // wordspace 
-	str = str.replace(/።/g,'. ') // wordspace 
-	str = str.replace(/፣/g,', ') // wordspace 
-	str = str.replace(/፤/g,'; ') // wordspace 
-	str = str.replace(/፥/g,': ') // wordspace 
-	str = str.replace(/፦/g,': ') // wordspace 
-	str = str.replace(/፧/g,'? ') // wordspace 
-	str = str.replace(/፨/g,'–—') // wordspace 
-
-
+	str = str.replace(/0/g, "۰")
+	str = str.replace(/9/g, "፱")
+	str = str.replace(/8/g, "፰")
+	str = str.replace(/7/g, "፯")
+	str = str.replace(/6/g, "፮")
+	str = str.replace(/5/g, "፭") 
+	str = str.replace(/4/g, "፬") 
+	str = str.replace(/3/g, "፫") 
+	str = str.replace(/2/g, "፪") 
+	str = str.replace(/1/g, "፩") 
     // numbers
-	str = str.replace(/፩/g,'1') 
-	str = str.replace(/፪/g,'2') 
-	str = str.replace(/፫/g,'3') 
-	str = str.replace(/፬/g,'4') 
-	str = str.replace(/፭/g,'5') 
-	str = str.replace(/፮/g,'6')
-	str = str.replace(/፯/g,'7')
-	str = str.replace(/፰/g,'8')
-	str = str.replace(/፱/g,'9')
-	str = str.replace(/۰/g,'0')
+
+
+	str = str.replace(/–—/g, "፨") // wordspace 
+	str = str.replace(/\? /g, "፧") // wordspace 
+	str = str.replace(/: /g, "፦") // wordspace 
+	str = str.replace(/: /g, "፥") // wordspace 
+	str = str.replace(/; /g, "፤") // wordspace 
+	str = str.replace(/, /g, "፣") // wordspace 
+	str = str.replace(/\. /g, "።") // wordspace 
+	str = str.replace(/ /g, "፡") // wordspace 
+	// punctuation
 	
+
+str = str.replace(/pʷə/g, "ᎏ")
+str = str.replace(/pʷe/g, "ᎎ")
+str = str.replace(/pʷi/g, "ᎍ")
+str = str.replace(/pʷä/g, "ᎌ")
+str = str.replace(/poa/g, "ⶒ")
+str = str.replace(/pwa/g, "ፗ")
+str = str.replace(/po/g, "ፖ")
+str = str.replace(/pə/g, "ፕ")
+str = str.replace(/pe/g, "ፔ")
+str = str.replace(/pa/g, "ፓ")
+str = str.replace(/pi/g, "ፒ")
+str = str.replace(/pu/g, "ፑ")
+str = str.replace(/pä/g, "ፐ")
+
+str = str.replace(/fʷə/g, "ᎋ")
+str = str.replace(/fʷe/g, "ᎊ")
+str = str.replace(/fʷi/g, "ᎉ")
+str = str.replace(/fʷä/g, "ᎈ")
+str = str.replace(/fya/g, "ፚ")
+str = str.replace(/fwa/g, "ፏ")
+str = str.replace(/fo/g, "ፎ")
+str = str.replace(/fə/g, "ፍ")
+str = str.replace(/fe/g, "ፌ")
+str = str.replace(/fa/g, "ፋ")
+str = str.replace(/fi/g, "ፊ")
+str = str.replace(/fu/g, "ፉ")
+str = str.replace(/fä/g, "ፈ")
+
+str = str.replace(/ṣ́oa/g, "ፇ")
+str = str.replace(/ṣ́o/g, "ፆ")
+str = str.replace(/ṣ́ə/g, "ፅ")
+str = str.replace(/ṣ́e/g, "ፄ")
+str = str.replace(/ṣ́a/g, "ፃ")
+str = str.replace(/ṣ́i/g, "ፂ")
+str = str.replace(/ṣ́u/g, "ፁ")
+str = str.replace(/ṣ́ä/g, "ፀ")
+
+str = str.replace(/ṣwa/g, "ጿ")
+str = str.replace(/ṣo/g, "ጾ")
+str = str.replace(/ṣə/g, "ጽ")
+str = str.replace(/ṣe/g, "ጼ")
+str = str.replace(/ṣa/g, "ጻ")
+str = str.replace(/ṣi/g, "ጺ")
+str = str.replace(/ṣu/g, "ጹ")
+str = str.replace(/ṣä/g, "ጸ")
+
+str = str.replace(/p̣oa/g, "ⶑ")
+str = str.replace(/p̣wa/g, "ጷ")
+str = str.replace(/p̣o/g, "ጶ")
+str = str.replace(/p̣ə/g, "ጵ")
+str = str.replace(/p̣e/g, "ጴ")
+str = str.replace(/p̣a/g, "ጳ")
+str = str.replace(/p̣i/g, "ጲ")
+str = str.replace(/p̣u/g, "ጱ")
+str = str.replace(/p̣ä/g, "ጰ")
+
+str = str.replace(/č̣oa/g, "ⶐ")
+str = str.replace(/č̣wa/g, "ጯ")
+str = str.replace(/č̣o/g, "ጮ")
+str = str.replace(/č̣ə/g, "ጭ")
+str = str.replace(/č̣e/g, "ጬ")
+str = str.replace(/č̣a/g, "ጫ")
+str = str.replace(/č̣i/g, "ጪ")
+str = str.replace(/č̣u/g, "ጩ")
+str = str.replace(/č̣ä/g, "ጨ")
+
+str = str.replace(/ṭoa/g, "ⶏ")
+str = str.replace(/ṭwa/g, "ጧ")
+str = str.replace(/ṭo/g, "ጦ")
+str = str.replace(/ṭə/g, "ጥ")
+str = str.replace(/ṭe/g, "ጤ")
+str = str.replace(/ṭa/g, "ጣ")
+str = str.replace(/ṭi/g, "ጢ")
+str = str.replace(/ṭu/g, "ጡ")
+str = str.replace(/ṭä/g, "ጠ")
+
+str = str.replace(/ŋʷə/g, "ⶖ")
+str = str.replace(/ŋʷe/g, "ⶕ")
+str = str.replace(/ŋʷi/g, "ⶔ")
+str = str.replace(/ŋʷä/g, "ⶓ")
+str = str.replace(/ŋwa/g, "ጟ")
+str = str.replace(/ŋo/g, "ጞ")
+str = str.replace(/ŋə/g, "ጝ")
+str = str.replace(/ŋe/g, "ጜ")
+str = str.replace(/ŋa/g, "ጛ")
+str = str.replace(/ŋi/g, "ጚ")
+str = str.replace(/ŋu/g, "ጙ")
+str = str.replace(/ŋä/g, "ጘ")
+
+str = str.replace(/gʷə/g, "ጕ")
+str = str.replace(/gʷe/g, "ጔ")
+str = str.replace(/gʷa/g, "ጓ")
+str = str.replace(/gʷu/g, "ጒ")
+str = str.replace(/gʷä/g, "ጐ")
+str = str.replace(/goa/g, "ጏ")
+str = str.replace(/go/g, "ጎ")
+str = str.replace(/gə/g, "ግ")
+str = str.replace(/ge/g, "ጌ")
+str = str.replace(/ga/g, "ጋ")
+str = str.replace(/gi/g, "ጊ")
+str = str.replace(/gu/g, "ጉ")
+str = str.replace(/gä/g, "ገ")
+str = str.replace(/ǧoa/g, "ⶎ")
+str = str.replace(/ǧwa/g, "ጇ")
+str = str.replace(/ǧo/g, "ጆ")
+str = str.replace(/ǧə/g, "ጅ")
+str = str.replace(/ǧe/g, "ጄ")
+str = str.replace(/ǧa/g, "ጃ")
+str = str.replace(/ǧi/g, "ጂ")
+str = str.replace(/ǧu/g, "ጁ")
+str = str.replace(/ǧä/g, "ጀ")
+
+str = str.replace(/doa/g, "ⶌ")
+str = str.replace(/dwa/g, "ዷ")
+str = str.replace(/do/g, "ዶ")
+str = str.replace(/də/g, "ድ")
+str = str.replace(/de/g, "ዴ")
+str = str.replace(/da/g, "ዳ")
+str = str.replace(/di/g, "ዲ")
+str = str.replace(/du/g, "ዱ")
+str = str.replace(/dä/g, "ደ")
+
+str = str.replace(/yoa/g, "ዯ")
+str = str.replace(/yo/g, "ዮ")
+str = str.replace(/yə/g, "ይ")
+str = str.replace(/ye/g, "ዬ")
+str = str.replace(/ya/g, "ያ")
+str = str.replace(/yi/g, "ዪ")
+str = str.replace(/yu/g, "ዩ")
+str = str.replace(/yä/g, "የ")
+
+str = str.replace(/žoa/g, "ⶋ")
+str = str.replace(/žwa/g, "ዧ")
+str = str.replace(/žo/g, "ዦ")
+str = str.replace(/žə/g, "ዥ")
+str = str.replace(/že/g, "ዤ")
+str = str.replace(/ža/g, "ዣ")
+str = str.replace(/ži/g, "ዢ")
+str = str.replace(/žu/g, "ዡ")
+str = str.replace(/žä/g, "ዠ")
+
+str = str.replace(/zwa/g, "ዟ")
+str = str.replace(/zo/g, "ዞ")
+str = str.replace(/zə/g, "ዝ")
+str = str.replace(/ze/g, "ዜ")
+str = str.replace(/za/g, "ዛ")
+str = str.replace(/zi/g, "ዚ")
+str = str.replace(/zu/g, "ዙ")
+str = str.replace(/zä/g, "ዘ")
+
+str = str.replace(/woa/g, "ዏ")
+str = str.replace(/wo/g, "ዎ")
+str = str.replace(/wə/g, "ው")
+str = str.replace(/we/g, "ዌ")
+str = str.replace(/wa/g, "ዋ")
+str = str.replace(/wi/g, "ዊ")
+str = str.replace(/wu/g, "ዉ")
+str = str.replace(/wä/g, "ወ")
+
+str = str.replace(/xʷə/g, "ዅ")
+str = str.replace(/xʷe/g, "ዄ")
+str = str.replace(/xʷa/g, "ዃ")
+str = str.replace(/xʷi/g, "ዂ")
+str = str.replace(/xʷä/g, "ዀ")
+
+str = str.replace(/xo/g, "ኾ")
+str = str.replace(/xə/g, "ኽ")
+str = str.replace(/xe/g, "ኼ")
+str = str.replace(/xa/g, "ኻ")
+str = str.replace(/xi/g, "ኺ")
+str = str.replace(/xu/g, "ኹ")
+str = str.replace(/xä/g, "ኸ")
+
+str = str.replace(/kʷə/g, "ኵ")
+str = str.replace(/kʷe/g, "ኴ")
+str = str.replace(/kʷa/g, "ኳ")
+str = str.replace(/kʷi/g, "ኲ")
+str = str.replace(/kʷä/g, "ኰ")
+str = str.replace(/koa/g, "ኯ")
+str = str.replace(/ko/g, "ኮ")
+str = str.replace(/kə/g, "ክ")
+str = str.replace(/ke/g, "ኬ")
+str = str.replace(/ka/g, "ካ")
+str = str.replace(/ki/g, "ኪ")
+str = str.replace(/ku/g, "ኩ")
+str = str.replace(/kä/g, "ከ")
+
+str = str.replace(/ʾoa/g, "ⶊ")
+str = str.replace(/ʾwa/g, "ኧ")
+str = str.replace(/ʾo/g, "ኦ")
+str = str.replace(/ʾə/g, "እ")
+str = str.replace(/ʾe/g, "ኤ")
+str = str.replace(/ʾa/g, "ኣ")
+str = str.replace(/ʾi/g, "ኢ")
+str = str.replace(/ʾu/g, "ኡ")
+str = str.replace(/ʾä/g, "አ")
+
+str = str.replace(/ʿo/g, "ዖ")
+str = str.replace(/ʿə/g, "ዕ")
+str = str.replace(/ʿe/g, "ዔ")
+str = str.replace(/ʿa/g, "ዓ")
+str = str.replace(/ʿi/g, "ዒ")
+str = str.replace(/ʿu/g, "ዑ")
+str = str.replace(/ʿä/g, "ዐ")
+
+
+str = str.replace(/ñoa/g, "ⶉ")
+str = str.replace(/ñwa/g, "ኟ")
+str = str.replace(/ño/g, "ኞ")
+str = str.replace(/ñə/g, "ኝ")
+str = str.replace(/ñe/g, "ኜ")
+str = str.replace(/ña/g, "ኛ")
+str = str.replace(/ñi/g, "ኚ")
+str = str.replace(/ñu/g, "ኙ")
+str = str.replace(/ñä/g, "ኘ")
+str = str.replace(/noa/g, "ⶈ")
+str = str.replace(/nwa/g, "ኗ")
+str = str.replace(/no/g, "ኖ")
+str = str.replace(/nə/g, "ን")
+str = str.replace(/ne/g, "ኔ")
+str = str.replace(/na/g, "ና")
+str = str.replace(/ni/g, "ኒ")
+str = str.replace(/nu/g, "ኑ")
+str = str.replace(/nä/g, "ነ")
+
+str = str.replace(/ḫʷə/g, "ኍ")
+str = str.replace(/ḫʷe/g, "ኌ")
+str = str.replace(/ḫʷa/g, "ኋ")
+str = str.replace(/ḫʷi/g, "ኊ")
+str = str.replace(/ḫʷä/g, "ኈ")
+str = str.replace(/ḫoa/g, "ኇ")
+str = str.replace(/ḫo/g, "ኆ")
+str = str.replace(/ḫə/g, "ኅ")
+str = str.replace(/ḫe/g, "ኄ")
+str = str.replace(/ḫa/g, "ኃ")
+str = str.replace(/ḫi/g, "ኂ")
+str = str.replace(/ḫu/g, "ኁ")
+str = str.replace(/ḫä/g, "ኀ")
+
+str = str.replace(/čoa/g, "ⶇ")
+str = str.replace(/čwa/g, "ቿ")
+str = str.replace(/čo/g, "ቾ")
+str = str.replace(/čə/g, "ች")
+str = str.replace(/če/g, "ቼ")
+str = str.replace(/ča/g, "ቻ")
+str = str.replace(/či/g, "ቺ")
+str = str.replace(/ču/g, "ቹ")
+str = str.replace(/čä/g, "ቸ")
+
+str = str.replace(/toa/g, "ⶆ")
+str = str.replace(/twa/g, "ቷ")
+str = str.replace(/to/g, "ቶ")
+str = str.replace(/tə/g, "ት")
+str = str.replace(/te/g, "ቴ")
+str = str.replace(/ta/g, "ታ")
+str = str.replace(/ti/g, "ቲ")
+str = str.replace(/tu/g, "ቱ")
+str = str.replace(/tä/g, "ተ")
+
+str = str.replace(/vwa/g, "ቯ")
+str = str.replace(/vo/g, "ቮ")
+str = str.replace(/və/g, "ቭ")
+str = str.replace(/ve/g, "ቬ")
+str = str.replace(/va/g, "ቫ")
+str = str.replace(/vi/g, "ቪ")
+str = str.replace(/vu/g, "ቩ")
+str = str.replace(/vä/g, "ቨ")
+
+str = str.replace(/bʷə/g, "ᎇ")
+str = str.replace(/bʷe/g, "ᎆ")
+str = str.replace(/bʷi/g, "ᎅ")
+str = str.replace(/bʷä/g, "ᎄ")
+str = str.replace(/boa/g, "ⶅ")
+str = str.replace(/bwa/g, "ቧ")
+str = str.replace(/bo/g, "ቦ")
+str = str.replace(/bə/g, "ብ")
+str = str.replace(/be/g, "ቤ")
+str = str.replace(/ba/g, "ባ")
+str = str.replace(/bi/g, "ቢ")
+str = str.replace(/bu/g, "ቡ")
+str = str.replace(/bä/g, "በ")
+
+str = str.replace(/ḳʰʷə/g, "ቝ")
+str = str.replace(/ḳʰʷe/g, "ቜ")
+str = str.replace(/ḳʰʷa/g, "ቛ")
+str = str.replace(/ḳʰʷi/g, "ቚ")
+str = str.replace(/ḳʰʷä/g, "ቘ")
+str = str.replace(/ḳʰo/g, "ቖ")
+str = str.replace(/ḳʰə/g, "ቕ")
+str = str.replace(/ḳʰe/g, "ቔ")
+str = str.replace(/ḳʰa/g, "ቓ")
+str = str.replace(/ḳʰi/g, "ቒ")
+str = str.replace(/ḳʰu/g, "ቑ")
+str = str.replace(/ḳʰä/g, "ቐ")
+str = str.replace(/ḳʷə/g, "ቍ")
+str = str.replace(/ḳʷe/g, "ቌ")
+str = str.replace(/ḳʷa/g, "ቋ")
+str = str.replace(/ḳʷi/g, "ቊ")
+str = str.replace(/ḳʷä/g, "ቈ")
+str = str.replace(/ḳoa/g, "ቇ")
+str = str.replace(/ḳo/g, "ቆ")
+str = str.replace(/ḳə/g, "ቅ")
+str = str.replace(/ḳe/g, "ቄ")
+str = str.replace(/ḳa/g, "ቃ")
+str = str.replace(/ḳi/g, "ቂ")
+str = str.replace(/ḳu/g, "ቁ")
+str = str.replace(/ḳä/g, "ቀ")
+
+str = str.replace(/šoa/g, "ⶄ")
+str = str.replace(/šwa/g, "ሿ")
+str = str.replace(/šo/g, "ሾ")
+str = str.replace(/šə/g, "ሽ")
+str = str.replace(/še/g, "ሼ")
+str = str.replace(/ša/g, "ሻ")
+str = str.replace(/ši/g, "ሺ")
+str = str.replace(/šu/g, "ሹ")
+str = str.replace(/šä/g, "ሸ")
+str = str.replace(/soa/g, "ⶃ")
+str = str.replace(/swa/g, "ሷ")
+str = str.replace(/so/g, "ሶ")
+str = str.replace(/sə/g, "ስ")
+str = str.replace(/se/g, "ሴ")
+str = str.replace(/sa/g, "ሳ")
+str = str.replace(/si/g, "ሲ")
+str = str.replace(/su/g, "ሱ")
+str = str.replace(/sä/g, "ሰ")
+
+str = str.replace(/rya/g, "ፘ")
+str = str.replace(/roa/g, "ⶂ")
+str = str.replace(/rwa/g, "ሯ")
+str = str.replace(/ro/g, "ሮ")
+str = str.replace(/rə/g, "ር")
+str = str.replace(/re/g, "ሬ")
+str = str.replace(/ra/g, "ራ")
+str = str.replace(/ri/g, "ሪ")
+str = str.replace(/ru/g, "ሩ")
+str = str.replace(/rä/g, "ረ")
+
+str = str.replace(/śwa/g, "ሧ")
+str = str.replace(/śo/g, "ሦ")
+str = str.replace(/śə/g, "ሥ")
+str = str.replace(/śe/g, "ሤ")
+str = str.replace(/śa/g, "ሣ")
+str = str.replace(/śi/g, "ሢ")
+str = str.replace(/śu/g, "ሡ")
+str = str.replace(/śä/g, "ሠ")
+
+str = str.replace(/mʷə/g, "ᎃ")
+str = str.replace(/mʷe/g, "ᎂ")
+str = str.replace(/mʷi/g, "ᎁ")
+str = str.replace(/mʷä/g, "ᎀ")
+str = str.replace(/mya/g, "ፙ")
+str = str.replace(/moa/g, "ⶁ")
+str = str.replace(/mwa/g, "ሟ")
+str = str.replace(/mo/g, "ሞ")
+str = str.replace(/mə/g, "ም")
+str = str.replace(/me/g, "ሜ")
+str = str.replace(/ma/g, "ማ")
+str = str.replace(/mi/g, "ሚ")
+str = str.replace(/mu/g, "ሙ")
+str = str.replace(/mä/g, "መ")
+
+str = str.replace(/ḥwa/g, "ሗ")
+str = str.replace(/ḥo/g, "ሖ")
+str = str.replace(/ḥə/g, "ሕ")
+str = str.replace(/ḥe/g, "ሔ")
+str = str.replace(/ḥa/g, "ሓ")
+str = str.replace(/ḥi/g, "ሒ")
+str = str.replace(/ḥu/g, "ሑ")
+str = str.replace(/ḥä/g, "ሐ")
+
+str = str.replace(/loa/g, "ⶀ")
+str = str.replace(/lwa/g, "ሏ")
+str = str.replace(/lo/g, "ሎ")
+str = str.replace(/lə/g, "ል")
+str = str.replace(/le/g, "ሌ")
+str = str.replace(/la/g, "ላ")
+str = str.replace(/li/g, "ሊ")
+str = str.replace(/lu/g, "ሉ")
+str = str.replace(/lä/g, "ለ")
+
+str = str.replace(/hoa/g, "ሇ")
+str = str.replace(/ho/g, "ሆ")
+str = str.replace(/hə/g, "ህ")
+str = str.replace(/he/g, "ሄ")
+str = str.replace(/ha/g, "ሃ")
+str = str.replace(/hi/g, "ሂ")
+str = str.replace(/hu/g, "ሁ")
+str = str.replace(/hä/g, "ሀ")
+
+str = str.replace(/oa/g, "ⶍ")
+str = str.replace(/wa/g, "ዿ")
+
+
 	
 	// add markup for ambiguous cases
 	str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
@@ -516,210 +880,5 @@ function OLDtoLatin (str) {
 
 	return str.trim()
 	}
-
-
-function toDeva (str) {
-	str += '  '
-	var consonants = 'kgṉcjñṭḍtdnṇpqbmyrvśṣshlXṛṚṟẏḷḻfzɠʄɗɓġ'
-	var aspiratedconsonants = 'kgcjṭḍtdpbṛ'
-	var vowels = 'aāiīuūeēoōɛʊȓřɫḹ'
-	var highvowels = 'īɛoōuॕeēoōʊ'
-	var nasals = 'ṉñnmṅ'
-	
-	var out=''
-	str = ' '+str
-	str = str.replace(/ã/g,'a\u0303')
-	str = str.replace(/ĩ/g,'i\u0303')
-	str = str.replace(/ũ/g,'u\u0303')
-	str = str.replace(/ẽ/g,'e\u0303')
-	str = str.replace(/õ/g,'o\u0303')
-	str = str.replace(/aĩ/g,'ai\u0303')
-	str = str.replace(/aũ/g,'au\u0303')
-	str = str.replace(/ai/g,'ɛ')
-	str = str.replace(/au/g,'ʊ')
-	str = str.replace(/k͟h/g,'X')
-	str = str.replace(/r̥̄/g,'ř')
-	str = str.replace(/r̥/g,'ȓ')
-	str = str.replace(/l̥̄/g,'ḹ')
-	str = str.replace(/l̥/g,'ɫ')
-	
-	for (var i=1; i<str.length-2; i++) {
-		var ch = str.charAt(i)
-		var conjunct = false
-		var skipOne = false
 		
-		// conjuncts
-		//if (consonants.indexOf(ch) > -1 && consonants.indexOf(str.charAt(i+1)) > -1  && str.charAt(i+1) != 'h') { conjunct = true }
-		if (inSet(consonants, ch) && inSet(consonants, str.charAt(i+1)) && str.charAt(i+1) != 'h') { conjunct = true }
-		if (inSet(consonants, ch) && str.charAt(i+1) == ':') { conjunct = true }
-		
-		// aspirated consonants
-		if (aspiratedconsonants.indexOf(ch) > -1 && str.charAt(i+1) == 'h') { 
-			ch = ch.toUpperCase() 
-			skipOne = true
-			}
-		
-		// upper case vowel signs, lowercase independent vowels
-		if (inSet(vowels, ch) && inSet(consonants, str.charAt(i-1)) ) { 
-			ch = ch.toUpperCase()
-			}
-		
-		// candrabindu vs anusvara
-		if (str.charAt(i) == '\u0303' && highvowels.indexOf(str.charAt(i-1)) > -1) {
-			ch = '\u0902'
-			}
-		else if (str.charAt(i) == '\u0303') { ch = '\u0901' }
-		
-		// anusvara before conjunct
-		if (nasals.indexOf(ch) > -1 && consonants.indexOf(str.charAt(i-1)) == -1 && consonants.indexOf(str.charAt(i+1)) > -1 ) {
-			switch (ch) {
-				case 'ṅ': ch = 'ङ\u094D'; break
-				case 'ñ': ch = 'ञ\u094D'; break
-				case 'ṇ': ch = 'ण\u094D'; break
-				case 'n': ch = 'न\u094D'; break
-				case 'm': ch = 'म\u094D'; break
-				}
-			ch = '<span class=alts><span class=altfirst>&nbsp;\u0902</span><span class=altlast>'+ch+'</span></span>'
-			conjunct = false
-			}
-		
-		if (typeof mapToDeva[ch] != 'undefined') { out += mapToDeva[ch] }
-		else { out += ch }
-		if (conjunct) { out += '\u094D' }
-		if (skipOne) { i++ }
-		}
 
-	return out.trim()
-	}
-
-
-var mapToDeva = {
-'k': '\u0915', 
-'K': '\u0916', 
-'g': '\u0917', 
-'G': '\u0918', 
-'ṅ': '\u0919', 
-'q': '\u0915\u093C', 
-'X': '\u0916\u093C', 
-'c': '\u091A', 
-'C': '\u091B', 
-'j': '\u091C', 
-'J': '\u091D', 
-'ñ': '\u091E', 
-'ġ': '\u0917\u093C', 
-'ṉ': '\u0929', 
-'ṭ': '\u091F', 
-'Ṭ': '\u0920', 
-'ḍ': '\u0921', 
-'Ḍ': '\u0922', 
-'ṇ': '\u0923', 
-'ṛ': '\u0921\u093C', 
-'Ṛ': '\u0922\u093C', 
-'t': '\u0924', 
-'T': '\u0925', 
-'d': '\u0926', 
-'D': '\u0927', 
-'n': '\u0928', 
-'ṟ': '\u0931', 
-'ẏ': '\u092F\u093C', 
-'p': '\u092A', 
-'P': '\u092B', 
-'b': '\u092C', 
-'B': '\u092D', 
-'m': '\u092E', 
-'ḷ': '\u0933', 
-'ḻ': '\u0934', 
-'y': '\u092F', 
-'r': '\u0930', 
-'l': '\u0932', 
-'v': '\u0935', 
-'f': '\u092B\u093C', 
-'z': '\u091C\u093C', 
-'ś': '\u0936', 
-'ṣ': '\u0937', 
-'s': '\u0938', 
-'h': '\u0939', 
-'?': '\u0979', '?': '\u097A', 
-'ɠ': '\u097B', 
-'ʄ': '\u097C', 
-'ɗ': '\u097E', 
-'ɓ': '\u097F',
-
-
-'A': '',
-'Ā': '\u093E',
-'I': '\u093F',
-'Ī': '\u0940',
-'U': '\u0941',
-'Ū': '\u0942',
-'?': '\u0956',
-'?': '\u0957',
-'Ȓ': '\u0943',
-'Ř': '\u0944',
-'Ɫ': '\u0962',
-'Ḹ': '\u0963',
-'ê': '\u0945',
-'E': '\u0946',
-'Ē': '\u0947',
-'Ɛ': '\u0948',
-'Ô': '\u0949',
-'O': '\u094A',
-'Ō': '\u094B',
-'Ʊ': '\u094C',
-'?': '\u094F',
-'?': '\u093A',
-'?': '\u093B',
-'?': '\u094E',
-
-
-
-// independent vowels
-'x': 'ऄ',
-'a': 'अ', 
-'ā': 'आ', 
-'i': 'इ', 
-'ī': 'ई', 
-'u': 'उ', 
-'ū': 'ऊ', 
-'?': 'ॶ', '?': 'ॷ', 
-'ȓ': 'ऋ', 
-'ř': 'ॠ', 
-'ɫ': 'ऌ', 
-'ḹ': 'ॡ', 
-'â': 'ॲ', 
-'ê': 'ऍ', 
-'e': 'ऎ', 
-'ē': 'ए', 
-'ɛ': 'ऐ', 
-'x': 'ऑ', 
-'o': 'ऒ', 
-'ō': 'ओ', 
-'ô': 'ऑ', 
-'ʊ': 'औ', 
-'?': 'ॵ', '?': 'ॳ', '?': 'ॴ',
-
-//virama
-'\u094D':'',
-
-// candrabindu
-'\u0303': '\u0901',
-
-// punctuation
-'.': ' ।',
-'\'': '\u093D',
-'ḥ': '\u0903',
-':': '',
-
-// numbers
-'0': '०',
-'1': '१', 
-'2': '२', 
-'3': '३', 
-'4': '४', 
-'5': '५', 
-'6': '६', 
-'7': '७', 
-'8': '८', 
-'9': '९' 
-
-}

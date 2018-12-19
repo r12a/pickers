@@ -35,3 +35,28 @@ function revealExtended (show) {
     else for (let i=0;i<hints.length;i++) hints[i].style.display = 'inline'
     }
 
+var justLatinMap = `
+a ä
+e ə ɛ
+i ɨ
+o ɔ
+u ʊ
+w wə
+y yä
+b b β
+c č
+d dʒ
+g ǧ ɡ
+h ḥ ḫ ʰ
+k ḳ
+n ñ ŋ ɲ
+p pʼ
+s ś š
+t tʼ tsʼ tʃ
+w ʷ
+x xʼ
+z ž ʒ
+' ʾ ʿ
+`
+
+
