@@ -38,3 +38,64 @@ function toggleShift (node, LC, UC) {
 		}
 	}
 
+
+var justLatinMap = `
+a ǟ ā aː æ æ̈ a͡i a͡u
+e ë
+i ī iː
+o ɔ
+u ū uː
+' ‘
+c cʰ
+g ɡ
+k kʰ
+n ñ ṅ ɲ ŋ
+p pʰ
+r r̆
+s ʃ
+t ʨ tʰ tʰ
+w w̆
+y y̆
+? ʔ
+O θ
+`
+
+
+
+var translitCharacterMap = `
+a a ႃ ā ၢ æ ႄ æ̇ ႅ aʲ ႆ
+b b ၿ
+c c ၸ
+d d ၻ
+e e ေ ė ဵ
+f f ၾ
+g g ၷ
+h h ႁ
+i i ိ ī ီ
+k k ၵ kʰ ၶ
+l l လ
+m m မ
+n n ၼ ŋ င ɲ ၺ
+o o ႟ ɔ ွ
+p p ပ pʰ ၽ
+Q θ ႀ
+r r ရ r̆ ြ
+s s သ
+t t တ tʰ ထ
+u u ု ū ူ
+w w ဝ w̆ ႂ
+y y ယ y̆ ျ
+z z ၹ
+} ʔ ဢ
+§ 0̣ ႐ 1̣ ႑ 2̣ ႒ 3̣ ႓ 4̣ ႔ 5̣ ႕ 6̣ ႖ 7̣ ႗ 8̣ ႘ 9̣ ႙
+± 0̤ ၀ 1̤ ၁ 2̤ ၂ 3̤ ၃ 4̤ ၄ 5̤ ၅ 6̤ ၆ 7̤ ၇ 8̤ ၈ 9̤ ၉
+, , ၊
+. . ။
+* ͓ ္
+^ ² ႇ ³ ႈ ⁴ း ⁵ ႉ ⁶ ႊ
+\\ ˣ ်
+`
+
+
+
+
