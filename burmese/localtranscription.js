@@ -3,13 +3,99 @@
 	if (direction == 'toMLC') { return transcribetomlc(str) }
 	if (direction == 'toIPA') { return transcribetoipa(str) }
 	if (direction == 'transliterate') { return transliterate(str) }
+	if (direction == 'reverse') { return reverse(str) }
 	}
 
 
 
 
-
 function transliterate (str) {
+
+str += ' '
+
+str = str.replace(/\u200B/g, "␣")
+str = str.replace(/\u200C/g, "ₓ")
+str = str.replace(/\u200D/g, "₊")
+str = str.replace(/က/g, "k")
+str = str.replace(/ခ/g, "kʰ")
+str = str.replace(/ဂ/g, "g")
+str = str.replace(/ဃ/g, "ġ")
+str = str.replace(/င/g, "ŋ")
+str = str.replace(/စ/g, "ṡ")
+str = str.replace(/ဆ/g, "ṡʰ")
+str = str.replace(/ဇ/g, "ż")
+str = str.replace(/ဈ/g, "z̈")
+str = str.replace(/ဉ/g, "ɲ̇")
+str = str.replace(/ည/g, "ɲ")
+str = str.replace(/ဋ/g, "ṫ")
+str = str.replace(/ဌ/g, "ẗ")
+str = str.replace(/ဍ/g, "ḋ")
+str = str.replace(/ဎ/g, "d̈")
+str = str.replace(/ဏ/g, "ṅ")
+str = str.replace(/တ/g, "t")
+str = str.replace(/ထ/g, "tʰ")
+str = str.replace(/ဒ/g, "d")
+str = str.replace(/ဓ/g, "d̊")
+str = str.replace(/န/g, "n")
+str = str.replace(/ပ/g, "p")
+str = str.replace(/ဖ/g, "pʰ")
+str = str.replace(/ဗ/g, "b")
+str = str.replace(/ဘ/g, "ḃ")
+str = str.replace(/မ/g, "m")
+str = str.replace(/ယ/g, "y")
+str = str.replace(/ရ/g, "ṙ")
+str = str.replace(/လ/g, "l")
+str = str.replace(/ဝ/g, "w")
+str = str.replace(/သ/g, "θ")
+str = str.replace(/ဟ/g, "h")
+str = str.replace(/အ/g, "ʔ")
+str = str.replace(/ဣ/g, "ị")
+str = str.replace(/ဤ/g, "ị̈")
+str = str.replace(/ဥ/g, "ụ")
+str = str.replace(/ဦ/g, "ụ̇")
+str = str.replace(/ဧ/g, "ẹ")
+str = str.replace(/ဩ/g, "ɔ̣")
+str = str.replace(/ဪ/g, "ɔ̣̇")
+str = str.replace(/ါ/g, "ä")
+str = str.replace(/ာ/g, "a")
+str = str.replace(/ိ/g, "i")
+str = str.replace(/ီ/g, "ï")
+str = str.replace(/ု/g, "u")
+str = str.replace(/ူ/g, "u̇")
+str = str.replace(/ေ/g, "e")
+str = str.replace(/ဲ/g, "ɛ")
+str = str.replace(/ံ/g, "n̽")
+str = str.replace(/့/g, "¹")
+str = str.replace(/း/g, "²")
+str = str.replace(/္/g, "͓")
+str = str.replace(/်/g, "ˣ")
+str = str.replace(/ျ/g, "y̆")
+str = str.replace(/ြ/g, "j̆")
+str = str.replace(/ွ/g, "w̆")
+str = str.replace(/ှ/g, "h̆")
+str = str.replace(/ဿ/g, "θː")
+str = str.replace(/၀/g, "0")
+str = str.replace(/၁/g, "1")
+str = str.replace(/၂/g, "2")
+str = str.replace(/၃/g, "3")
+str = str.replace(/၄/g, "4")
+str = str.replace(/၅/g, "5")
+str = str.replace(/၆/g, "6")
+str = str.replace(/၇/g, "7")
+str = str.replace(/၈/g, "8")
+str = str.replace(/၉/g, "9")
+str = str.replace(/၊/g, ",")
+str = str.replace(/။/g, ".")
+str = str.replace(/၌/g, "(loc)")
+str = str.replace(/၍/g, "(sub)")
+str = str.replace(/၎/g, "(afore)")
+str = str.replace(/၏/g, "(gen)")
+
+return str.trim()
+}
+
+
+function OLDtransliterate (str) {
     
 str = str + '  '
 str = str.normalize('NFC')
@@ -187,6 +273,126 @@ return str.trim()
 
 }
 
+
+
+
+
+function reverse (str) {
+    
+str = str + '  '
+str = str.normalize('NFC')
+
+
+str = str.replace(/͓/g, "\u103A") // asat
+str = str.replace(/͍/g, "\u1039") // virama
+
+// zwnj
+str = str.replace(/\u200C/g,'ⁿʲ')
+
+// tones
+str = str.replace(/¹/g, "့")
+str = str.replace(/²/g, "\u1038")
+
+
+// kinzi
+str = str.replace(/ṅ̽/g, "\u1004\u103A\u1039")
+
+// finals
+str = str.replace(/n̽/g, "\u1036")
+
+// medials
+str = str.replace(/y̆/g, "ျ")
+str = str.replace(/r̆/g, "ြ")
+str = str.replace(/w̆/g, "ွ")
+str = str.replace(/h̆/g, "ှ")
+str = str.replace(/l̆/g, "္လ")
+
+// basic consonants
+str = str.replace(/kʰ/g, "ခ")
+str = str.replace(/k/g, "က")
+str = str.replace(/gʰ/g, "ဃ")
+str = str.replace(/g/g, "ဂ")
+str = str.replace(/ṅ/g, "င")
+str = str.replace(/cʰ/g, "ဆ")
+str = str.replace(/c/g, "စ")
+str = str.replace(/jʰ/g, "ဈ")
+str = str.replace(/j/g, "ဇ")
+str = str.replace(/ñ/g, "ည")
+str = str.replace(/ᵰ/g, "ဉ")
+str = str.replace(/ṭʰ/g, "ဌ")
+str = str.replace(/ṭ/g, "ဋ")
+str = str.replace(/ḍʰ/g, "ဎ")
+str = str.replace(/ḍ/g, "ဍ")
+str = str.replace(/ṇ/g, "ဏ")
+str = str.replace(/tʰ/g, "ထ")
+str = str.replace(/t/g, "တ")
+str = str.replace(/d/g, "ဒ")
+str = str.replace(/dʰ/g, "ဓ")
+str = str.replace(/n/g, "န")
+str = str.replace(/pʰ/g, "ဖ")
+str = str.replace(/p/g, "ပ")
+str = str.replace(/bʰ/g, "ဘ")
+str = str.replace(/b/g, "ဗ")
+str = str.replace(/m/g, "မ")
+str = str.replace(/y/g, "ယ")
+str = str.replace(/r/g, "ရ")
+str = str.replace(/l/g, "လ")
+str = str.replace(/v/g, "ဝ")
+str = str.replace(/ṡ/g, "ဿ")
+str = str.replace(/s/g, "သ")
+str = str.replace(/h/g, "ဟ")
+str = str.replace(/‘/g, "အ")
+
+
+
+// independent vowels
+str = str.replace(/ị̄/g, "ဤ")
+str = str.replace(/ị/g, "ဣ")
+str = str.replace(/ụ̄/g, "ဦ")
+str = str.replace(/ụ/g, "ဥ")
+str = str.replace(/ẹ/g, "ဧ")
+str = str.replace(/ọ/g, "ဩ")
+str = str.replace(/ạʷ/g, "ဪ")
+
+
+
+// vowel signs
+str = str.replace(/ā/g, "ာ")
+str = str.replace(/ǟ/g, "ါ")
+str = str.replace(/i/g, "ိ")
+str = str.replace(/ī/g, "ီ")
+str = str.replace(/u/g, "ု")
+str = str.replace(/ū/g, "ူ")
+str = str.replace(/e/g, "ေ")
+str = str.replace(/aʲ/g, "ဲ")
+
+
+
+// digits
+str = str.replace(/0/g, "၀")
+str = str.replace(/1/g, "၁")
+str = str.replace(/2/g, "၂")
+str = str.replace(/3/g, "၃")
+str = str.replace(/4/g, "၄")
+str = str.replace(/5/g, "၅")
+str = str.replace(/6/g, "၆")
+str = str.replace(/7/g, "၇")
+str = str.replace(/8/g, "၈")
+str = str.replace(/9/g, "၉")
+
+
+
+// punctuation
+str = str.replace(/,/g, "၊")
+str = str.replace(/\./g, "။")
+
+
+
+
+return str.trim()
+
+
+}
 
 
 

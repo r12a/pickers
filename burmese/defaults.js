@@ -31,16 +31,18 @@ var template = {}
 var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"latintranscript", "dataShortTitle":"L", "type":"palette"},
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
-{"title":"MLC to Burmese", "dataVar":"showISOTrans", "dataLocn":"mlctranscript", "dataShortTitle":"M", "type":"palette"},
-{"title":"Mesher to Burmese", "dataVar":"showMesherTrans", "dataLocn":"meshertranscript", "dataShortTitle":"M", "type":"palette"},
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+{"title":"MLC to Burmese", "dataVar":"showISOTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"M", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(mlcCharacterMap);makeKbdEventList(mlcCharacterMap);"},
+{"title":"Mesher to Burmese", "dataVar":"showMesherTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"M", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(mesherCharacterMap);makeKbdEventList(mesherCharacterMap);"},
+
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Balinese text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-{"title":"MLC<br/>transcript", "alt":"Convert Burmese text to an MLC Latin transcription.", "code":"doTranscription('toMLC')"},
-{"title":"IPA<br/>transcript", "alt":"Convert Burmese text to an *approximation* to an IPA transcription.", "code":"doTranscription('toIPA')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Burmese text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+//{"title":"Reverse<br/>translit.", "alt":"Convert Latin transliteration back to Burmese.", "code":"doTranscription('reverse')"},
+{"title":"Burmese<br/>to MLC", "alt":"Convert Burmese text to an MLC Latin transcription.", "code":"doTranscription('toMLC')"},
+{"title":"Burmese<br/>to IPA", "alt":"Convert Burmese text to an *approximation* to an IPA transcription.", "code":"doTranscription('toIPA')"},
 {"title":"Split<br/>syllables", "alt":"Split the text into syllables.", "code":"add(splitSyllables(getHighlightedText(document.getElementById('output')))); return false;"},
 ]

@@ -93,6 +93,163 @@ var keyboarddef = [
 
 
 
+var justLatinMap = `
+a ā ä ạ
+b ḃ
+d ḋ d̈ d̊ ḍ ʥ ð
+e ẹ ɛ
+g ġ ɡ
+h h̆
+i ī ï ị ị̄ ị̈ ɪ
+j j̆ ʲ
+l l̆
+n ñ ṅ ṅ̽ ṇ n̽ ŋ ɲ ɲ̇ ᵰ
+o ọ ɔ̣ ɔ̣̇
+Q θ
+r r̆ ṙ
+s ṡ ʃ
+t ṫ ẗ ṭ ṭʰ ʨ
+u ū u̇ ụ ụ̄ ụ̇ ʊ
+w w̆ ʷ
+y y̆ y͓
+z ż z̈
+[ ² ¹
+} ʔ
+: ː
+`
+
+
+
+var translitCharacterMap = `
+a a ာ ä ါ
+b b ဗ ḃ ဘ
+d d ဒ ḋ ဍ d̈ ဎ d̊ ဓ
+e e ေ ɛ ဲ
+E ẹ ဧ
+g g ဂ ġ ဃ
+h h ဟ
+i i ိ ï ီ
+I ị ဣ ị̈ ဤ
+j j̆ ြ
+k k က kʰ ခ
+l l လ
+m m မ
+n n န ŋ င ɲ ည ɲ̇ ဉ ṅ ဏ n̽ ံ
+O ɔ̣ ဩ ɔ̣̇ ဪ
+p p ပ pʰ ဖ
+r ṙ ရ
+s ṡ စ ṡʰ ဆ
+t t တ ṫ ဋ ẗ ဌ tʰ ထ
+u u ု u̇ ူ
+U ụ ဥ ụ̇ ဦ
+w w ဝ w̆ ွ
+y y ယ y̆ ျ
+z ż ဇ z̈ ဈ
+} ʔ အ
+0 0 ၀
+1 1 ၁
+2 2 ၂
+3 3 ၃
+4 4 ၄
+5 5 ၅
+6 6 ၆
+7 7 ၇
+8 8 ၈
+9 9 ၉
+[ ¹ ့ ² း
+, , ၊
+. . ။
+Q θ သ θː ဿ
+$ (loc) ၌ (sub) ၍ (afore) ၎ (gen) ၏
+} ʔ အ
+= ₓ \u200C ₊ \u200D
+] ␣ \u200B
+* ͓ ္
+\\ ˣ ်
+`
+
+
+
+var mlcCharacterMap = `
+a a ာ a: ား ai ယ်‌ ai: ဲ ai. ဲ့ au ော်‌ au: ော au. ော့
+A a အ
+u u ူ u: ူး u. ု ui ို ui: ိုး ui. ို့
+i i ီ i: ီး i. ိ
+e e ေ e: ေး e. ေ့ 
+b b ဗ bb ဗ္ဗ
+B bh ဘ bbh ဗ္ဘ
+c c စ cc စ္စ
+C hc ဆ chc စ္ဆ
+d d ဍ d ဒ dd ဍ္ဍ dd ဒ္ဒ
+D dh ဎ dh ဓ ddh ဍ္ဎ
+g g ဂ gg ဂ္ဂ ggh ဂ္ဃ g င်္ဂ
+G gh ဃ
+h h ဟ h- ှ
+j j ဇ jj ဇ္ဇ
+J jh ဈ jjh ဇ္ဈ
+k k က kk က္က
+K hk ခ khk က္ခ
+l l လ l ဠ ll လ္လ
+m m မ mb မ္ဗ mbh မ္ဘ mm မ္မ mp မ္ပ
+n n န n ဏ ng င ny ည nd ဏ္ဍ nd န္ဒ ndh န္ဓ ng င်္ဂ nht န္ထ nn န္န
+N nt န္တ nyc ဉ္စ nyj ဉ္ဇ
+p p ပ pp ပ္ပ
+P hp ဖ
+r r ရ -r- ြ
+s s သ ss ဿ
+t t တ t ဋ tt တ္တ tt ဋ္ဋ
+T ht ထ ht ဌ htht ထ္ထ tht ဋ္ဌ
+w w ဝ -w- ွ
+y y ယ -y- ျ
+; asat ် virama ္
+`
+
+
+
+var mesherCharacterMap = `
+a a ာ a ါ ai ို au ော au ေါ
+e e ဲ e ယ် e အည် ei ေ ei- ိ ə အ
+i ɪ အ i ိ i ီ
+o o ို o- ု ɔ  ော ɔ ေါ
+u u ု u ူ
+A a အ
+E e အ ei ဧ
+I i ဣ i ဤ
+O ɔ ဩ ɔ ဪ
+U u ဥ u ဦ
+b b ဗ b ဘ b ပ b ဖ
+c ch ချ ch ခြ
+d d ဒ d ဓ d ဍ d ဎ d တ d ထ dh သ
+g g ဂ g ဃ g က g ခ
+h h ဟ ʰ ှ
+j j ကျ j ကြ ʝ ချ ʝ ခြ ʝ ဂျ ʝ ဂြ ʝ ကျ ʝ ကြ
+k k က kh খ
+K hk ခ
+l l လ
+L hl လှ
+m m မ
+M hm မှ
+n n န n ဏ ny ည ny ဉ ng င ng င်္
+N hn နှ hny ညှ hng ငှ
+p p ပ
+P hp ဖ hp ဘ
+r r ရ
+s s စ sh ရှ sh လျှ
+S hs ဆ
+t t တ t ဋ t ဌ th သ th ဿ
+T ht ထ
+v v ဗ v ဗွ
+w w ဝ w ွ
+W hw ဝှ
+y y ယ y ရ y ြ y ျ
+z z ဇ z စ z စျ z ဈ z ဆ
+; asat ် virama ္
+' ့ ့ း း
+| -' အ် -' က် -' စ် -' တ် -' ပ် -n ံ -n မ် -n န် -n ဉ် -n င်
+`
+
+
+
 
 
 
