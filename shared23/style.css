@@ -55,7 +55,8 @@ table td { border: 0; }
 	position: relative;
 	}
 #outputDiv {
-	margin: 5px 20px 0 20px; 
+	margin: 5px 20px 0 20px;
+    clear: both;
 	}
 #warning {
     position: absolute;

@@ -218,18 +218,31 @@ out = `
   
   
   
-  <div class="control">Add codepoint:
+  <div class="control">Add codepoint(s):
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
-      <input name="addcode" id="addcode"  type="text" style="width: 90px; text-align:right;" />
+      <input name="addcode" id="addcode"  type="text" style="width: 10em; text-align:right;" />
     </form>
   </div>
+  
+  
   <div class="control">Search for:
     <form action="none" onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
-      <input name="search" id="search"  type="text" />
+      <input name="search" id="search"  type="text" style="width: 7em;"/>
       <img src="/pickers/images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
     </form>
   </div>
   
+<div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+<img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+    onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFC');
+    document.getElementById('n11nform').innerHTML = 'NFC';"/> 
+<img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+    onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFD');
+    document.getElementById('n11nform').innerHTML = 'NFD';"/> 
+<img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+    onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/>
+    </div>
+
 <a class="interactiveHelpButton" href="help/#yellow_controls" target="_help" title="Help with main yellow controls."><img alt="help" src="../images/help.png"/></a>
 
 <div class="control" id="helpcontrol" onclick="showCSHelp();return false;">Help<br/><img src="../images/help.png" alt=""/></div>
@@ -245,45 +258,9 @@ out = `
 
 <div id="extracontrols">
 
-<details>
-<summary>manage fonts</summary>
-
-
-<div class="control" id="uiFontControl">Change selection area font:<br />
-    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
-` +
-  fontSelection
-  +
- `
-    </select>
-	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
-
-
-<div id="userFontMgt" class="control" style="width: 26em; height: 5em;padding: .5em; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: start;">
-<span style="padding-right: 1em; flex:4; text-align:start;">List fonts you want to add to the font selection lists. One font name per line.</span>
-<textarea id="fontManagementList" style="flex:6; height: 100%;"></textarea>
-<button style="flex:.5; margin-left:.5em;" onclick="manageUserFonts(document.getElementById('fontManagementList').value)">Set</button>
-</div>
-
-<a class="interactiveHelpButton" href="help/#manage_fonts" target="_help" title="Help with font management controls."><img alt="help" src="../images/help.png"/></a>
-
-</details>
-
-
-
-
 
 <details>
 <summary>more controls</summary>
-
-  <div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
-    <img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
-							onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFC');
-							document.getElementById('n11nform').innerHTML = 'NFC';"/> <img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
-							onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFD');
-							document.getElementById('n11nform').innerHTML = 'NFD';"/> <img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
-							onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/></div>
-
     
   <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
      <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
@@ -363,7 +340,35 @@ out += `<div class="control" id="ccFactoryReset">Reset<br/><button onClick="rese
 <a class="interactiveHelpButton" href="help/#more_controls" target="_help" title="Help with more yellow controls."><img alt="help" src="../images/help.png"/></a>
 
 
-</details>`
+</details>
+
+
+
+<details>
+<summary>manage fonts</summary>
+
+
+<div class="control" id="uiFontControl">Change selection area font:<br />
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+` +
+  fontSelection
+  +
+ `
+    </select>
+	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+
+
+<div id="userFontMgt" class="control" style="width: 26em; height: 5em;padding: .5em; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: start;">
+<span style="padding-right: 1em; flex:4; text-align:start;">List fonts you want to add to the font selection lists. One font name per line.</span>
+<textarea id="fontManagementList" style="flex:6; height: 100%;"></textarea>
+<button style="flex:.5; margin-left:.5em;" onclick="manageUserFonts(document.getElementById('fontManagementList').value)">Set</button>
+</div>
+
+<a class="interactiveHelpButton" href="help/#manage_fonts" target="_help" title="Help with font management controls."><img alt="help" src="../images/help.png"/></a>
+
+</details>
+
+`
 
 
 if (template.scriptcode) {

@@ -726,15 +726,15 @@ function transcribe (chstring, direction) {
 	// direction: a string that the local routine will recognise to do the right transcription
 	if (chstring=='') { return }
 
-	// for security, remmove angle brackets
+	// for security, remove angle brackets
 	chstring = chstring.replace(/</g,'&lt;')
 	chstring = chstring.replace(/>/g,'&gt;')
-	chstring = chstring.replace(/\[/g,'&#x5B;')
-	chstring = chstring.replace(/\]/g,'&#x5D;')
+	//chstring = chstring.replace(/\[/g,'&#x5B;')
+	//chstring = chstring.replace(/\]/g,'&#x5D;')
 	chstring = chstring.replace(/\{/g,'&#x7B;')
 	
 	var transcription = localtranscribe(direction, chstring)
-	//var transcription = localtranscribe(direction, chstring)
+	console.log(transcription)//var transcription = localtranscribe(direction, chstring)
 	document.getElementById('transcription').innerHTML = transcription
 	document.getElementById('transcriptionWrapper').style.display = 'block' 
 	alts = document.querySelectorAll('.altfirst, .altlast, .alt')
@@ -1647,7 +1647,7 @@ function drawCharSelectionPanelOLD (key) {
         out = ''
         for (let i=1;i<latinCharacters[key].length;i++) {
             if (i > 9) {
-                out += ' &nbsp; Warning: More than 10 items.'
+                out += ' &nbsp; See panel for more.'
                 break
                 }
             out += ' <sup>'+eval(i % 10)
@@ -1675,7 +1675,7 @@ function drawCharSelectionPanelX (key) {
         if (window.latinOnly) translitTotal = parseInt(latinCharacters[key].pop())
         for (let i=1;i<latinCharacters[key].length;i++) {
             if (i > 9) {
-                out += ' &nbsp; Warning: More than 10 items.'
+                out += ' &nbsp; See panel for more.'
                 break
                 }
             out += ' <sup'
@@ -1713,7 +1713,7 @@ function drawCharSelectionPanel (key) {
         console.log(latinCharacters[key].length, latinCharacters[key])
         for (let i=0;i<latinCharacters[key].length;i++) {
             if (i > 9) {
-                out += ' &nbsp; Warning: More than 10 items.'
+                out += ' &nbsp; See panel for '+eval(latinCharacters[key].length-10)+' more.'
                 break
                 }
             out += ' <sup'
@@ -1826,17 +1826,15 @@ function makePalette (mappingTable) {
 	var fulllist = mappingTable.split('\n')
 	for (let i=0;i<fulllist.length;i++) {
         list = fulllist[i]
-        list = list.trim()
-        list = list.replace(/\s+/g,' ')
+        //list = list.trim('') // can't be used because it removes NNBSP
+        list = list.replace(/^[ \t\uFEFF]+|[\ \t\uFEFF]+$/g, '')
+        list = list.replace(/ +/g,' ')
         list = list.replace(/\u0008/g,'')
         if (list==='') continue
         out = ''
-        var charArray = list.split(' ')
+        var charArray = list.split('\u0020')
         var theKey = charArray.shift()
         out = '<b>'+theKey+'</b>\n'
-        //if (window.latinOnly) last = charArray.length-1 // this removes the translit count
-        //else last = charArray.length
-        //for (let j=0;j<last;j++) {
         for (let j=0;j<charArray.length;j++) {
             if (window.latinOnly) {
                 out += '<span class="t" onclick="add(\''+charArray[j]+'\')">'+charArray[j]+'</span>\n'
