@@ -63,6 +63,88 @@ function setLocalButtons () {
 	
 	}
 
+var justLatinMap = `
+a å ā ȃ ȧ ḁ ạ ɑ
+b ḇ
+c č
+d ḏ ð ʤ
+e ẹ ē ė ɛ
+g ǧ ḡ ɡ
+h ħ ḥ
+i ị ɪ î ï
+j jʰ
+k ḵ
+o ô ȯ
+p p̄
+s ṡ ṣ š sˤ ʃ
+t ṭ ṯ tˤ ʧ
+u ụ ů û
+x χ
+y ɣ
+z ẑ ž ʒ
+} ʔ ʾ
+{ ʕ ʿ
+@ θ
+`
+
+
+
+var translitCharacterMap = `
+a a ܲ ā ܵ ȧ ܰ ạ ܱ å ܳ ḁ ܴ
+b b ܒ
+d d ܕ
+e e ܸ ē ܹ ė ܶ ẹ ܷ
+g g ܓ
+h h ܗ ħ ܚ
+i i ܼ ï ܺ ị ܻ
+j jʰ ܞ
+k k ܟ
+l l ܠ
+m m ܡ
+n n ܢ
+o o ܿ ȯ ّ
+p p ܦ
+q q ܩ
+r r ܪ
+s s ܣ sˤ ܨ ʃ ܫ ṡ ܤ
+t tˤ ܛ t ܬ
+u ů ܽ ụ ܾ
+w w ܘ
+y y ܝ
+z z ܙ
+{ ʿ ܥ
+} ʾ ܐ
+[ ̋ ̈ ʺ ݀
+, , ،
+; ; ؛
+? ? ؟
+`
+
+var ipaCharacterMap = `
+' ʾ ʔ ʿ ʕe
+a a a ā ɑ
+b b b ḇ w ḇ v
+d d d ḏ ð
+e e ɛ e e ē e
+g g ɡ ḡ ɣ
+h h h ḥ ħ
+i i ɪ ī i ī e
+k k k ḵ x
+l l l
+m m m
+n n n
+o ō o
+p p p p̄ f
+q q q
+r r r
+s s s ṣ sˤ š ʃ
+t t t ṯ θ ṭ tˤ
+u ū u
+w w w
+z z z z ʒ
+y y j
+`
+
 
 function applyLowerCase () {
 	var output = document.getElementById('output')

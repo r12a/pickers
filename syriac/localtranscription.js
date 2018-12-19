@@ -1,9 +1,63 @@
 ﻿function localtranscribe (direction, str) {
 	
+	if (direction == 'transliterate') { return transliterate(str) }
 	if (direction == 'toLatin') { return toLatin(str) }
 	if (direction == 'toUN') { return transcribetoUN(str) }
 	}
 
+
+function transliterate (str) {
+str += ' '
+
+str = str.replace(/̈/g, "̋")
+str = str.replace(/،/g, ",")
+str = str.replace(/؛/g, ";")
+str = str.replace(/؟/g, "?")
+str = str.replace(/ّ/g, "ȯ")
+str = str.replace(/ܐ/g, "ʾ")
+str = str.replace(/ܒ/g, "b")
+str = str.replace(/ܓ/g, "g")
+str = str.replace(/ܕ/g, "d")
+str = str.replace(/ܗ/g, "h")
+str = str.replace(/ܘ/g, "w")
+str = str.replace(/ܙ/g, "z")
+str = str.replace(/ܚ/g, "ħ")
+str = str.replace(/ܛ/g, "tˤ")
+str = str.replace(/ܝ/g, "y")
+str = str.replace(/ܞ/g, "jʰ")
+str = str.replace(/ܟ/g, "k")
+str = str.replace(/ܠ/g, "l")
+str = str.replace(/ܡ/g, "m")
+str = str.replace(/ܢ/g, "n")
+str = str.replace(/ܣ/g, "s")
+str = str.replace(/ܤ/g, "ṡ")
+str = str.replace(/ܥ/g, "ʿ")
+str = str.replace(/ܦ/g, "p")
+str = str.replace(/ܨ/g, "sˤ")
+str = str.replace(/ܩ/g, "q")
+str = str.replace(/ܪ/g, "r")
+str = str.replace(/ܫ/g, "ʃ")
+str = str.replace(/ܬ/g, "t")
+str = str.replace(/ܰ/g, "ȧ")
+str = str.replace(/ܱ/g, "ạ")
+str = str.replace(/ܲ/g, "a")
+str = str.replace(/ܳ/g, "å")
+str = str.replace(/ܴ/g, "ḁ")
+str = str.replace(/ܵ/g, "ā")
+str = str.replace(/ܶ/g, "ė")
+str = str.replace(/ܷ/g, "ẹ")
+str = str.replace(/ܸ/g, "e")
+str = str.replace(/ܹ/g, "ē")
+str = str.replace(/ܺ/g, "ï")
+str = str.replace(/ܻ/g, "ị")
+str = str.replace(/ܼ/g, "i")
+str = str.replace(/ܽ/g, "ů")
+str = str.replace(/ܾ/g, "ụ")
+str = str.replace(/ܿ/g, "o")
+str = str.replace(/݀/g, "ʺ")
+
+return str.trim()
+}
 
 
 
