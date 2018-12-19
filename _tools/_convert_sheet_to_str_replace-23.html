@@ -19,19 +19,29 @@ function makeList (list, from, to) {
 	var listarray = list.split('\n')
 	
 	for (let i=0;i<listarray.length;i++) {
-		pair = listarray[i].trim()
-		if (pair === '') continue
-		pairarray = pair.split('\t')
+		pair = listarray[i].replace(/^[ \t\uFEFF]+|[\ \t\uFEFF]+$/g, '') // nnbsp friendly .trim()
+		// skip blank lines
+        if (pair === '') continue
         
+		pairarray = pair.split('\t')
+        // skip lines with no key
+        console.log('from',pairarray[from], 'to',pairarray[to],'key',pairarray[to-1])
+        if (to > from && pairarray[to-1] === undefined) { console.log('quitting'); continue}
+        else if (to < from && pairarray[from-1] === undefined) continue
+
+
         var out = ''
 		out += 'str = str.replace(/'
+        if (pairarray[from].includes('-')) {
+            pairarray[from] = pairarray[from].replace(/-/,'(.)')
+            pairarray[to] = '\$1'+pairarray[to]
+            }
         out += pairarray[from]
         out += '/g, "'
         
-        console.log(pairarray[from], pairarray[to])
         if (pairarray[to]) var result = pairarray[to].replace(/ +/g,' ')
         else result = ''
-        console.log(result)
+        console.log('result', result)
         if (result.includes(' ') && result !== ' ') out += '['+result.replace(/ /g,'{')+']'
         else out += result
         out += '")\n'
@@ -54,84 +64,6 @@ function makeList (list, from, to) {
 	}
 
 
-
-
-
-function makeListX (list, from, to) {
-    var lines1=[], lines2=[], lines3=[], lines4=[], linesmore=[]
-	list = list.trim()
-	list = list.replace(/ +/g,' ')
-	var listarray = list.split('\n')
-	
-	for (let i=0;i<listarray.length;i++) {
-		pair = listarray[i].trim()
-		if (pair === '') continue
-		pairarray = pair.split('\t')
-        
-        var out = ''
-		out += 'str = str.replace(/'
-        out += pairarray[from]
-        out += '/g, "'
-        
-        console.log(pairarray[from], pairarray[to])
-        if (pairarray[to]) var result = pairarray[to].replace(/ +/g,'')
-        else result = ''
-        console.log(result)
-        if (result.includes(',') && result !== ',') out += '['+result.replace(/,/g,'{')+']'
-        else out += result
-        out += '")\n'
-
-        if (pairarray[from].length === 1) lines1.push(out)
-        else if (pairarray[from].length === 2) lines2.push(out)
-        else if (pairarray[from].length === 3) lines3.push(out)
-        else if (pairarray[from].length === 4) lines4.push(out)
-        else linesmore.push(out)         
-		}
-    
-    lines1.sort()
-    lines2.sort()
-    lines3.sort()
-    lines4.sort()
-    linesmore.sort()
-    lines = linesmore.concat(lines4, lines3, lines2, lines1)
-
-    return lines.join('')
-	}
-
-
-
-
-
-function makeListOLD (list, from, to) {
-	console.log('list',list)
-	list = list.trim()
-	list = list.replace(/ +/g,' ')
-	var listarray = list.split('\n')
-	var out = ''
-	console.log('listarray length',listarray.length)
-	
-	for (var i=0;i<listarray.length;i++) {
-		listarray[i] = listarray[i].trim()
-		if (listarray[i] === '') continue
-		var pair = listarray[i]
-		console.log(pair)
-		pair = pair.trim()
-		pairarray = pair.split('\t')
-        //if (! document.getElementById('esc').checked) out += 'str = str.replace(/'+pairarray[from]+'/g, "'+pairarray[to]+'")\n'
-		//else out += 'str = str.replace(/'+convertCharStr2jEsc(pairarray[from],'')+'/g, "'+convertCharStr2jEsc(pairarray[to],'')+'")\n'
-		out += 'str = str.replace(/'
-        if (document.getElementById('escLeft').checked) out += convertCharStr2jEsc(pairarray[from],'')
-        else out += pairarray[from]
-        out += '/g, "'
-        if (document.getElementById('escRight').checked) out += convertCharStr2jEsc(pairarray[to],'')
-        else out += pairarray[to]
-        out += '")\n'
-		//out += '<span class="t" onclick="dotrans(\''+pairarray[1]+'\')">'+pairarray[0]+'</span>\n'
-		}
-	return out
-	}
-
-	//	str = str.replace(/ئ/g,'’') 
 
 </script>
 <style>
