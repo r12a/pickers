@@ -101,3 +101,156 @@ function toggleShift (node) {
 		node.className = 'unshifted'
 		}
 	}
+
+
+var justLatinMap = `
+a à ā ạ ạ̰ à̰
+b b̰
+d ʣ ʣ̰ ʤ ʤ̰ d̰ ɖ ɖ̰ d̪ʱ
+e ē
+g g̰
+h ʰ ḥ h̰ h̽
+i ī ï ï̄
+k k̰
+l ḷ ḹ l̥ l̥̄ l̰
+m ṃ m̰ m̽ m̽̇
+n n̰ ŋ ŋ̰ ɲ ɲ̰ ɳ ɳ̰
+o ō
+p p̰
+r r̄ ṛ r̥ r̥̄ r̰ r̰̄ ṝ ɽ
+s s̰ ʂ̰ ʃ ʃ̰ ʂ ˢ
+t t̰ ʦ ʦ̰ ʧ ʧ̰ ʈ ʈ̰ ᵗ
+u ū
+w w̰ w̰̄
+y y̰ ȳ̰
+z z̰ ʒ ʒ̰
+[ ¯ ː ˖ — ‖ • ␣
+/ ̣
+* ͓
+`
+
+
+
+var translitCharacterMap = `
+a à འ ạ ཨ
+A à̰ ྰ ạ̰ ྸ à ཱ
+b b བ
+B b̰ ྦ bʰ བྷ b̰ʰ ྦྷ
+d d ད ʤ ཇ ʣ ཛ
+D ʣ̰ ྫ d̰ ྡ ʤ̰ ྗ ɖ ཌ ɖ̰ ྜ ɖʰ ཌྷ dʰ དྷ ʣʰ ཛྷ ɖ̰ʰ ྜྷ d̰ʰ ྡྷ ʣ̰ʰ ྫྷ
+e e ེ
+E ē ཻ
+f f ཕ༹
+g g ག
+G g̰ ྒ gʰ གྷ g̰ʰ ྒྷ
+h h ཧ
+H h̰ ྷ h̽ ཿ
+i i ི
+I ï ྀ ī ཱི ï̄ ཱྀ
+k k ཀ kʰ ཁ
+K k̰ ྐ k̰ʰ ྑ kˢ ཀྵ k̰ˢ ྐྵ
+l l ལ
+L l̰ ླ l̥ ླྀ l̥̄ ླཱྀ
+m m མ
+M m̰ ྨ m̽ ཾ m̽̇ ྃ
+n n ན ŋ ང ɲ ཉ
+N n̰ ྣ ŋ̰ ྔ ɲ̰ ྙ ɳ ཎ ɳ̰ ྞ
+o o ོ
+O ō ཽ
+p p པ pʰ ཕ
+P p̰ ྤ p̰ʰ ྥ
+Q q ཫ
+r r ར
+R r̰ ྲ ɽ ཬ r̄ ཪ r̰̄ ྼ r̥ ྲྀ r̥̄ ྲཱྀ
+s ʃ ཤ s ས
+S ʃ̰ ྵ s̰ ྶ ʂ ཥ ʂ̰ ྴ
+t t ཏ ʧ ཅ ʧʰ ཆ tʰ ཐ ʦ ཙ ʦʰ ཚ
+T t̰ ྟ ʧ̰ ྕ ʧ̰ʰ ྖ t̰ʰ ྠ ʦ̰ ྩ ʦ̰ʰ ྪ ʈ ཊ ʈʰ ཋ ʈ̰ ྚ ʈ̰ʰ ྛ
+u u ུ
+U ū ཱུ
+v v བ༹
+w w ཝ
+W w̰ ྭ w̰̄ ྺ
+y y ཡ
+Y y̰ ྱ ȳ̰ ྻ
+z ʒ ཞ z ཟ
+Z ʒ̰ ྮ z̰ ྯ
+0 0 ༠
+1 1 ༡
+2 2 ༢
+3 3 ༣
+4 4 ༤
+5 5 ༥
+6 6 ༦
+7 7 ༧
+8 8 ༨
+9 9 ༩
+# ᵗ> ༄ > ༅
+[ • ༉
+: ː ྅
+' ¯ ༌
+* ͓ ྄
+& ˖ ༴
+| | ། ‖ ༎ — ༈
+( [ ༺ { ༼
+) ] ༻ } ༽
+/ ̣ ༹
+] ␣ ་
+`
+
+
+var wylieCharacterMap = `
+b b བ bh བྷ
+c c ཅ ch ཆ
+d d ད ḍ ཌ dh དྷ ḍh ཌྷ dz ཛ dzh ཛྷ
+j j ཇ
+f f ཕ༹
+g g ག gh གྷ
+h h ཧ
+k k ཀ kh ཁ kṣ ཀྵ
+l l ལ
+m m མ
+n n ན ṇ ཎ ng ང ny ཉ
+p p པ ph ཕ
+r r ར rr ཬ
+s s ས ṣ ཥ sh ཤ
+t t ཏ ṭ ཊ ṭh ཋ th ཐ ts ཙ tsh ཚ
+v v བ༹
+w w ཝ
+y y ཡ
+z z ཟ zh ཞ
+B b ྦ bh ྦྷ
+C c ྕ ch ྖ
+D d ྡ ḍ ྜ dh ྡྷ ḍh ྜྷ dz ྫ dzh ྫྷ
+J j ྗ
+G g ྒ gh ྒྷ
+H h ྷ
+K k ྐ kh ྑ kṣ ྐྵ
+L l ླ l-i ླྀ
+M m ྨ
+N n ྣ ṇ ྞ ng ྔ ny ྙ
+P p ྤ ph ྥ
+R r ྲ rr ཫ r-i ྲྀ
+S s ྶ ṣ ྵ sh ྴ
+T t ྟ ṭ ྚ ṭh ྛ th ྠ ts ྩ tsh ྪ
+W w ྭ
+Y y ྱ
+Z z ྯ zh ྮ
+a ā ཱ a ཨ -a འ ai ཻ au ཽ
+e e ེ
+i i ི ī ཱི -i ྀ -ī ཱྀ
+o o ོ
+u u ུ ū ཱུ
+0 0 ༠
+1 1 ༡
+2 2 ༢
+3 3 ༣
+4 4 ༤
+5 5 ༥
+6 6 ༦
+7 7 ༧
+8 8 ༨
+9 9 ༩ 
+`
+
+
