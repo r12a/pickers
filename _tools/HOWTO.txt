@@ -9,16 +9,17 @@ SET UP FONTS
 - Make webfont(s) and add to /shared
 - Set font in localstyle.css
 
+SET DEFAULTS
+- Edit defaults.js
+- Create sample text
+
+
 POSITION KEYS
 - Plan the zones for characters
 - Use UniView to make a list of characters for the picker
 - Use _tools/_make-characters.html to generate spans
   Add result to #temp div
 - Move #temp markup to appropriate positions
-
-SET DEFAULTS
-- Edit defaults.js
-- Create sample text
 
 
 
