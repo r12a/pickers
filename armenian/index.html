@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Armenian character picker 22</title>
+<title>Armenian character picker 23</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared22/code.js">  </script>
+<script src="../shared23/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared22/pagetemplate.js">  </script>
+<script src="../shared23/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
 <script src="localtranscription.js">  </script>
@@ -39,161 +39,9 @@
 
 
 <div id="phonemelist" style="position:relative;">
- <div id="transcriptionChoice"></div>
 
-<div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('a')">a</span>
-<span class="t" onclick="dotrans('e')">e</span>
-<span class="t" onclick="dotrans('ē')">ē</span>
-<span class="t" onclick="dotrans('ë')">ë</span>
-<span class="t" onclick="dotrans('i')">i</span>
-<span class="t" onclick="dotrans('o')">o</span>
-<span class="t" onclick="dotrans('ô')">ô</span>
-<span class="t" onclick="dotrans('u')">u</span>
-<br/>
-<span class="t" onclick="dotrans('b')">b</span>
-<span class="t" onclick="dotrans('c')">c</span>
-<span class="t" onclick="dotrans('c‛')">c‛</span>
-<span class="t" onclick="dotrans('č')">č</span>
-<span class="t" onclick="dotrans('č‛')">č‛</span>
-<span class="t" onclick="dotrans('d')">d</span>
-<span class="t" onclick="dotrans('dž')">dž</span>
-<span class="t" onclick="dotrans('f')">f</span>
-<span class="t" onclick="dotrans('g')">g</span>
-<span class="t" onclick="dotrans('h')">h</span>
-<span class="t" onclick="dotrans('j')">j</span>
-<span class="t" onclick="dotrans('ǰ')">ǰ</span>
-<span class="t" onclick="dotrans('k')">k</span>
-<span class="t" onclick="dotrans('k‛')">k‛</span>
-<span class="t" onclick="dotrans('k’')">k’</span>
-<span class="t" onclick="dotrans('l')">l</span>
-<span class="t" onclick="dotrans('ł')">ł</span>
-<span class="t" onclick="dotrans('m')">m</span>
-<span class="t" onclick="dotrans('n')">n</span>
-<span class="t" onclick="dotrans('p')">p</span>
-<span class="t" onclick="dotrans('p‛')">p‛</span>
-<span class="t" onclick="dotrans('p’')">p’</span>
-<span class="t" onclick="dotrans('q')">q</span>
-<br/>
-<span class="t" onclick="dotrans('r')">r</span>
-<span class="t" onclick="dotrans('ṙ')">ṙ</span>
-<span class="t" onclick="dotrans('r̄')">r̄</span>
-<span class="t" onclick="dotrans('r’')">r’</span>
-<span class="t" onclick="dotrans('s')">s</span>
-<span class="t" onclick="dotrans('š')">š</span>
-<span class="t" onclick="dotrans('t')">t</span>
-<span class="t" onclick="dotrans('t’')">t’</span>
-<span class="t" onclick="dotrans('t‛')">t‛</span>
-<span class="t" onclick="dotrans('tš')">tš</span>
-<span class="t" onclick="dotrans('tš’')">tš’</span>
-<span class="t" onclick="dotrans('ts’')">ts’</span>
-<span class="t" onclick="dotrans('v')">v</span>
-<span class="t" onclick="dotrans('w')">w</span>
-<span class="t" onclick="dotrans('x')">x</span>
-<span class="t" onclick="dotrans('y')">y</span>
-<span class="t" onclick="dotrans('z')">z</span>
-<span class="t" onclick="dotrans('ž')">ž</span>
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 
-</div>
-
-
-<div id="transliteration" class="transcript" style="display:none;">
-
-<div id="unshiftedTrans">
-<span class="t" onclick="dotrans('ա')">a</span>
-<span class="t" onclick="dotrans('ե')">e</span>
-<span class="t" onclick="dotrans('և')">ew</span>
-<span class="t" onclick="dotrans('ը')">ë</span>
-<span class="t" onclick="dotrans('է')">ɛ</span>
-<span class="t" onclick="dotrans('ի')">i</span>
-<span class="t" onclick="dotrans('ո')">o</span>
-<span class="t" onclick="dotrans('օ')">ò</span>
-<span class="unshifted" style="font-size: 80%; padding: 3px; margin-left: 2em;" dir="auto" onclick="this.parentNode.style.display='none'; document.getElementById('shiftedTrans').style.display='block';">SHIFT</span>
-<br/>
-<span class="t" onclick="dotrans('բ')">b</span>
-<span class="t" onclick="dotrans('ծ')">ç</span>
-<span class="t" onclick="dotrans('չ')">č</span>
-<span class="t" onclick="dotrans('ճ')">č̣</span>
-<span class="t" onclick="dotrans('ց')">c’</span>
-<span class="t" onclick="dotrans('դ')">d</span>
-<span class="t" onclick="dotrans('ֆ')">f</span>
-<span class="t" onclick="dotrans('գ')">g</span>
-<span class="t" onclick="dotrans('ղ')">ġ</span>
-<span class="t" onclick="dotrans('հ')">h</span>
-<span class="t" onclick="dotrans('ձ')">j</span>
-<span class="t" onclick="dotrans('ջ')">ǰ</span>
-<span class="t" onclick="dotrans('կ')">k</span>
-<span class="t" onclick="dotrans('ք')">k’</span>
-<span class="t" onclick="dotrans('լ')">l</span>
-<span class="t" onclick="dotrans('մ')">m</span>
-<span class="t" onclick="dotrans('ն')">n</span>
-<span class="t" onclick="dotrans('պ')">p</span>
-<span class="t" onclick="dotrans('փ')">p’</span>
-<span class="t" onclick="dotrans('ր')">r</span>
-<span class="t" onclick="dotrans('ռ')">ṙ</span>
-<span class="t" onclick="dotrans('ս')">s</span>
-<span class="t" onclick="dotrans('շ')">š</span>
-<span class="t" onclick="dotrans('տ')">t</span>
-<span class="t" onclick="dotrans('թ')">t’</span>
-<span class="t" onclick="dotrans('վ')">v</span>
-<span class="t" onclick="dotrans('ւ')">w</span>
-<span class="t" onclick="dotrans('խ')">x</span>
-<span class="t" onclick="dotrans('յ')">y</span>
-<span class="t" onclick="dotrans('զ')">z</span>
-<span class="t" onclick="dotrans('ժ')">ž</span>
-</div>
-<div id="shiftedTrans" style="display:none;">
-<span class="t" onclick="dotrans('Ա')">A</span>
-<span class="t" onclick="dotrans('Ե')">E</span>
-<span class="t" onclick="dotrans('Ը')">Ë</span>
-<span class="t" onclick="dotrans('Է')">Ɛ</span>
-<span class="t" onclick="dotrans('Ի')">I</span>
-<span class="t" onclick="dotrans('Ո')">O</span>
-<span class="t" onclick="dotrans('Օ')">Ò</span>
-<span class="shifted" style="font-size: 80%; padding: 3px; margin-left: 2em; color:white;" dir="auto" onclick="this.parentNode.style.display='none'; document.getElementById('unshiftedTrans').style.display='block';">SHIFT</span>
-<br/>
-<span class="t" onclick="dotrans('Բ')">B</span>
-<span class="t" onclick="dotrans('Ծ')">Ç</span>
-<span class="t" onclick="dotrans('Չ')">Č</span>
-<span class="t" onclick="dotrans('Ճ')">Č̣</span>
-<span class="t" onclick="dotrans('Ց')">C’</span>
-<span class="t" onclick="dotrans('Դ')">D</span>
-<span class="t" onclick="dotrans('Ֆ')">F</span>
-<span class="t" onclick="dotrans('Գ')">G</span>
-<span class="t" onclick="dotrans('Ղ')">Ġ</span>
-<span class="t" onclick="dotrans('Հ')">H</span>
-<span class="t" onclick="dotrans('Ձ')">J</span>
-<span class="t" onclick="dotrans('Ջ')">J̌</span>
-<span class="t" onclick="dotrans('Կ')">K</span>
-<span class="t" onclick="dotrans('Ք')">K’</span>
-<span class="t" onclick="dotrans('Լ')">L</span>
-<span class="t" onclick="dotrans('Մ')">M</span>
-<span class="t" onclick="dotrans('Ն')">N</span>
-<span class="t" onclick="dotrans('Պ')">P</span>
-<span class="t" onclick="dotrans('Փ')">P’</span>
-<span class="t" onclick="dotrans('Ր')">R</span>
-<span class="t" onclick="dotrans('Ռ')">Ṙ</span>
-<span class="t" onclick="dotrans('Ս')">S</span>
-<span class="t" onclick="dotrans('Շ')">Š</span>
-<span class="t" onclick="dotrans('Տ')">T</span>
-<span class="t" onclick="dotrans('Թ')">T’</span>
-<span class="t" onclick="dotrans('Վ')">V</span>
-<span class="t" onclick="dotrans('Ւ')">W</span>
-<span class="t" onclick="dotrans('Խ')">X</span>
-<span class="t" onclick="dotrans('Յ')">Y</span>
-<span class="t" onclick="dotrans('Զ')">Z</span>
-<span class="t" onclick="dotrans('Ժ')">Ž</span>
-<br/>
-<span class="t" onclick="dotrans('․')">;</span>
-<span class="t" onclick="dotrans('՝')">:</span>
-<span class="t" onclick="dotrans('։')">.</span>
-<span class="t" onclick="dotrans('«')">“</span>
-<span class="t" onclick="dotrans('»')">”</span>
-<span class="t" onclick="dotrans('՞')">?</span>
-<span class="t" onclick="dotrans('՜')">!</span>
-<span class="t" onclick="dotrans('՛')">!</span>
-</div>
-</div>
 
 </div>
 
@@ -208,125 +56,6 @@
 <div class="kbdWrapper"><div dir="ltr" id="keyboard"></div>
 
 <div id="alphabet" class="default">
-
-<div id="spaceline">
-<span class="unshifted" dir="auto" onclick="toggleShift(this, 'defaultLC', 'defaultUC')">SHIFT</span>
-<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
-</div>
-
-
-<div id="kbdGrid">
-
-<div id="ligatureGrid">
-<span class="g"><span class="hint">mn</span><span class="c" data-uc="&nbsp;" data-lc="&#xFB13;">&#xFB13;</span></span>
-<span class="g"><span class="hint">me</span><span class="c" data-uc="&nbsp;" data-lc="&#xFB14;">&#xFB14;</span></span>
-<span class="g"><span class="hint">mi</span><span class="c" data-uc="&nbsp;" data-lc="&#xFB15;">&#xFB15;</span></span>
-<span class="g"><span class="hint">vn</span><span class="c" data-uc="&nbsp;" data-lc="&#xFB16;">&#xFB16;</span></span>
-<span class="g"><span class="hint">mx</span><span class="c" data-uc="&nbsp;" data-lc="&#xFB17;">&#xFB17;</span></span>
-</div>
-
-<div id="consonantGrid">      
-<span class="g"><span class="hint">b</span><span class="c">&#x0562;</span></span>
-<span class="g"><span class="hint">g</span><span class="c">&#x0563;</span></span>
-<span class="g"><span class="hint">d</span><span class="c">&#x0564;</span></span>
-<span class="g"><span class="hint">z</span><span class="c">&#x0566;</span></span>
-<span class="g"><span class="hint">t’</span><span class="c">&#x0569;</span></span>
-<span class="g"><span class="hint">ž</span><span class="c">&#x056A;</span></span>
-<span class="g"><span class="hint">l</span><span class="c">&#x056C;</span></span>
-<span class="g"><span class="hint">x</span><span class="c">&#x056D;</span></span>
-<span class="g"><span class="hint">ç</span><span class="c">&#x056E;</span></span>
-<span class="g"><span class="hint">k</span><span class="c">&#x056F;</span></span>
-<span class="g"><span class="hint">h</span><span class="c">&#x0570;</span></span>
-<span class="g"><span class="hint">j</span><span class="c">&#x0571;</span></span>
-<span class="g"><span class="hint">ġ</span><span class="c">&#x0572;</span></span>
-<span class="g"><span class="hint">č̣</span><span class="c">&#x0573;</span></span>
-<span class="g"><span class="hint">m</span><span class="c">&#x0574;</span></span>
-<span class="g"><span class="hint">y</span><span class="c">&#x0575;</span></span>
-<span class="g"><span class="hint">n</span><span class="c">&#x0576;</span></span>
-<span class="g"><span class="hint">š</span><span class="c">&#x0577;</span></span>
-<span class="g"><span class="hint">č</span><span class="c">&#x0579;</span></span>
-<span class="g"><span class="hint">p</span><span class="c">&#x057A;</span></span>
-<span class="g"><span class="hint">ǰ</span><span class="c">&#x057B;</span></span>
-<span class="g"><span class="hint">ṙ</span><span class="c">&#x057C;</span></span>
-<span class="g"><span class="hint">s</span><span class="c">&#x057D;</span></span>
-<span class="g"><span class="hint">v</span><span class="c">&#x057E;</span></span>
-<span class="g"><span class="hint">t</span><span class="c">&#x057F;</span></span>
-<span class="g"><span class="hint">r</span><span class="c">&#x0580;</span></span>
-<span class="g"><span class="hint">c’</span><span class="c">&#x0581;</span></span>
-<span class="g"><span class="hint">w</span><span class="c">&#x0582;</span></span>
-<span class="g"><span class="hint">p’</span><span class="c">&#x0583;</span></span>
-<span class="g"><span class="hint">k’</span><span class="c">&#x0584;</span></span>
-<span class="g"><span class="hint">f</span><span class="c">&#x0586;</span></span>
-</div>
- 
- <div id="vowelGrid">
-<span class="g"><span class="hint">a</span><span class="c">&#x0561;</span></span>
-<span class="g"><span class="hint">e</span><span class="c">&#x0565;</span></span>
-<span class="g"><span class="hint">ew</span><span class="c" data-uc="&nbsp;" data-lc="&#x0587;">&#x0587;</span></span>
-<span class="g"><span class="hint">ɛ</span><span class="c">&#x0567;</span></span>
-<span class="g"><span class="hint">ë</span><span class="c">&#x0568;</span></span>
-<span class="g"><span class="hint">i</span><span class="c">&#x056B;</span></span>
-<span class="g"><span class="hint">o</span><span class="c">&#x0578;</span></span>
-<span class="g"><span class="hint">ò</span><span class="c">&#x0585;</span></span>
-</div>
-
-<div id="numberGrid">
-<span class="c">&#x0037;</span>
-<span class="c">&#x0038;</span>
-<span class="c">&#x0039;</span>
-<span class="c">&#x0034;</span>
-<span class="c">&#x0035;</span>
-<span class="c">&#x0036;</span>
-<span class="c">&#x0031;</span>
-<span class="c">&#x0032;</span>
-<span class="c">&#x0033;</span>
-<span class="c">&#x0030;</span>
-<span class="c">,</span>
-<span class="c">.</span>
-</div>
-</div>
-
-
-<div id="punctuation">
-<span class="c">&#x002C;</span>
-<span class="g"><span class="hint">;</span><span class="c">&#x2024;</span></span>
-<span class="g"><span class="hint">:</span><span class="c">&#x055D;</span></span>
-<span class="g"><span class="hint">.</span><span class="c">&#x0589;</span></span>
-<span class="g"><span class="hint">“</span><span class="c">&#x00AB;</span></span>
-<span class="g"><span class="hint">”</span><span class="c">&#x00BB;</span></span>
-<span class="g"><span class="hint">?</span><span class="c">&#x055E;</span></span>
-<span class="g"><span class="hint">!</span><span class="c">&#x055C;</span></span>
-<span class="g"><span class="hint">!</span><span class="c">&#x055B;</span></span>
-
-<span class="c">&#x0028;</span>
-<span class="c">&#x0029;</span>
-<span class="c">&#x002D;</span>
-<span class="c">&#x058A;</span>
-<span class="c">֏</span>
-</div>
-
-
-
-
-
-<details>
-<summary>Show other characters</summary>
-<div id="obsolete">
-<span class="g"><span class="hint">deprecated</span><span class="c">&#x0559;</span> 
-<span class="c">&#x055A;</span></span>
-<span class="g"><span class="hint">old-fashioned &nbsp;&nbsp;&nbsp;</span><span class="c">&#x055F;</span></span><span class="g"><span class="hint">symbols</span> <span class="c">&#x058D;</span> <span class="c">&#x058E;</span></span>
-</div>
-</details>
-
-
-</div>
-
-
 
 
 
@@ -353,6 +82,127 @@
 </div>
 
 <div id="extrashapes"></div>
+
+
+
+
+<div id="spaceline">
+<span class="unshifted" dir="auto" onclick="toggleShift(this, 'defaultLC', 'defaultUC')">SHIFT</span>
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+<div id="kbdGrid">
+
+<div id="ligatureGrid">
+<span class="g"><span class="hint">mⁿ</span><span class="c" data-uc=" " data-lc="ﬓ">ﬓ</span></span>
+<span class="g"><span class="hint">mᵉ</span><span class="c" data-uc=" " data-lc="ﬔ">ﬔ</span></span>
+<span class="g"><span class="hint">mⁱ</span><span class="c" data-uc=" " data-lc="ﬕ">ﬕ</span></span>
+<span class="g"><span class="hint">vⁿ</span><span class="c" data-uc=" " data-lc="ﬖ">ﬖ</span></span>
+<span class="g"><span class="hint">mˣ</span><span class="c" data-uc=" " data-lc="ﬗ">ﬗ</span></span>
+</div>
+
+<div id="consonantGrid">      
+<span class="g"><span class="hint">b</span><span class="c">բ</span></span>
+<span class="g"><span class="hint">g</span><span class="c">գ</span></span>
+<span class="g"><span class="hint">d</span><span class="c">դ</span></span>
+<span class="g"><span class="hint">z</span><span class="c">զ</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">թ</span></span>
+<span class="g"><span class="hint">ʒ</span><span class="c">ժ</span></span>
+<span class="g"><span class="hint">l</span><span class="c">լ</span></span>
+<span class="g"><span class="hint">x</span><span class="c">խ</span></span>
+<span class="g"><span class="hint">ʦ</span><span class="c">ծ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">կ</span></span>
+<span class="g"><span class="hint">h</span><span class="c">հ</span></span>
+<span class="g"><span class="hint">ʣ</span><span class="c">ձ</span></span>
+<span class="g"><span class="hint">ʁ</span><span class="c">ղ</span></span>
+<span class="g"><span class="hint">ʧ</span><span class="c">ճ</span></span>
+<span class="g"><span class="hint">m</span><span class="c">մ</span></span>
+<span class="g"><span class="hint">y</span><span class="c">յ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ն</span></span>
+<span class="g"><span class="hint">ʃ</span><span class="c">շ</span></span>
+<span class="g"><span class="hint">ʧʰ</span><span class="c">չ</span></span>
+<span class="g"><span class="hint">p</span><span class="c">պ</span></span>
+<span class="g"><span class="hint">ʤ</span><span class="c">ջ</span></span>
+<span class="g"><span class="hint">ṙ</span><span class="c">ռ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">ս</span></span>
+<span class="g"><span class="hint">v</span><span class="c">վ</span></span>
+<span class="g"><span class="hint">t</span><span class="c">տ</span></span>
+<span class="g"><span class="hint">r</span><span class="c">ր</span></span>
+<span class="g"><span class="hint">ʦʰ</span><span class="c">ց</span></span>
+<span class="g"><span class="hint">w</span><span class="c">ւ</span></span>
+<span class="g"><span class="hint">pʰ</span><span class="c">փ</span></span>
+<span class="g"><span class="hint">kʰ</span><span class="c">ք</span></span>
+<span class="g"><span class="hint">f</span><span class="c">ֆ</span></span>
+</div>
+ 
+ <div id="vowelGrid">
+<span class="g"><span class="hint">a</span><span class="c">ա</span></span>
+<span class="g"><span class="hint">e</span><span class="c">ե</span></span>
+<span class="g"><span class="hint">eᵛ</span><span class="c">և</span></span>
+<span class="g"><span class="hint">ɛ</span><span class="c">է</span></span>
+<span class="g"><span class="hint">ə</span><span class="c">ը</span></span>
+<span class="g"><span class="hint">i</span><span class="c">ի</span></span>
+<span class="g"><span class="hint">ɔ</span><span class="c">ո</span></span>
+<span class="g"><span class="hint">o</span><span class="c">օ</span></span>
+</div>
+
+<div id="numberGrid">
+<span class="c">7</span>
+<span class="c">8</span>
+<span class="c">9</span>
+<span class="c">4</span>
+<span class="c">5</span>
+<span class="c">6</span>
+<span class="c">1</span>
+<span class="c">2</span>
+<span class="c">3</span>
+<span class="c">0</span>
+<span class="c">,</span>
+<span class="c">.</span>
+</div>
+</div>
+
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="g"><span class="hint">;</span><span class="c">․</span></span>
+<span class="g"><span class="hint">:</span><span class="c">՝</span></span>
+<span class="g"><span class="hint">.</span><span class="c">։</span></span>
+<span class="g"><span class="hint">“</span><span class="c">«</span></span>
+<span class="g"><span class="hint">”</span><span class="c">»</span></span>
+<span class="g"><span class="hint">?</span><span class="c">՞</span></span>
+<span class="g"><span class="hint">!</span><span class="c">՜</span></span>
+<span class="g"><span class="hint">!</span><span class="c">՛</span></span>
+
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+<span class="c">֊</span>
+<span class="c">֏</span>
+</div>
+
+
+
+
+
+<details>
+<summary>Show other characters</summary>
+<div id="obsolete">
+<span class="g"><span class="hint">deprecated</span><span class="c">ՙ</span> 
+<span class="c">՚</span></span>
+<span class="g"><span class="hint">old-fashioned    </span><span class="c">՟</span></span><span class="g"><span class="hint">symbols</span> <span class="c">֍</span> <span class="c">֎</span></span>
+</div>
+</details>
+
+
+</div>
+
 
 
 <div id="temp"></div>

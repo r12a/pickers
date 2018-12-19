@@ -1,5 +1,4 @@
-globals.showTranslit =  ''
-
+ 
 
 
 function localInitialise () {
@@ -114,4 +113,213 @@ function toggleShift (node, LC, UC) {
         node[n].title = 'U+'+id+': '+charData[content]
 		}
 	}
+
+
+
+var justLatinMap = `
+a ɑ
+c ç č č̣ c’
+d ʣ ʤ
+e ɛ ə ë eᵛ ē
+g ġ ɡ
+j ǰ
+k kʰ k’
+m mˣ mᵉ mⁱ mⁿ
+n ŋ
+o ò ɔ
+p p’
+r ɾ ṙ ʁ
+s ʃ š
+t ʦ tsʰ tʃ tʃʰ tʰ t’
+v vⁿ ʋɔ
+x χ
+z ž ʒ
+" “ ”
+`
+
+
+var translitCharacterMap = `
+a a ա
+A ạ Ա
+b b բ
+B ḅ Բ
+d d դ ʣ ձ ʤ ջ
+D ḍ Դ ʣ̣ Ձ ʤ̣ Ջ
+e e ե ɛ է ə ը eʷ և
+E ẹ Ե ɛ̣ Է ə̣ Ը
+f f ֆ
+F f̣ Ֆ
+g g գ
+G g̣ Գ
+h h հ
+H ḥ Հ
+i i ի
+I ị Ի
+k k կ kʰ ք
+K ḳ Կ ḳʰ Ք
+l l լ
+L ḷ Լ
+m m մ mⁿ ﬓ mᵉ ﬔ mⁱ ﬕ mˣ ﬗ
+M ṃ Մ
+n n ն
+N ṇ Ն
+o ɔ ո o օ
+O ɔ̣ Ո ọ Օ
+p p պ pʰ փ
+P p̣ Պ p̣ʰ Փ
+r ʁ ղ ṙ ռ r ր
+R ʁ̣ Ղ ṛ̇ Ռ ṛ Ր
+s ʃ շ s ս
+S ʃ̣ Շ ṣ Ս
+t tʰ թ ʦ ծ ʧ ճ ʧʰ չ t տ ʦʰ ց
+T ṭʰ Թ ʦ̣ Ծ ʧ̣ Ճ ʧ̣ʰ Չ ṭ Տ ʦ̣ʰ Ց
+v v վ vⁿ ﬖ
+V ṿ Վ
+w w ւ ẉ Ւ
+x x խ
+X x̣ Խ
+y y յ
+Y ỵ Յ
+z z զ ʒ ժ
+Z ẓ Զ ʒ̣ Ժ
+, , ,
+. . ։
+; ; ՝
+: : ․
+? ? ՞
+! ! ՜ ! ՛
+< “ «
+> ” »
+- - ֊
+± ¤ ֏
+`
+
+
+globals.showISOCharMap = ''
+
+var isoCharacterMap = `
+a a ա
+A A Ա
+b b բ
+B B Բ
+d d դ dz ձ dž ջ
+D D Դ Dz Ձ Dž Ջ
+e e ե ē է ë ը ew և
+E E Ե Ē Է Ë Ը
+f f ֆ
+F F Ֆ
+g g գ
+G G Գ
+h h հ
+H H Հ
+i i ի
+I I Ի
+j j յ
+J J Յ
+k k կ k’ ք
+K K Կ K’ Ք
+l l լ
+L L Լ
+m m մ mn ﬓ me ﬔ mi ﬕ mx ﬗ
+M M Մ
+n n ն
+N N Ն
+o o ո o օ
+O O Ո O Օ
+p p պ p’ փ
+P P Պ P’ Փ
+r ṙ ղ r ռ r’ ր
+R Ṙ Ղ R Ռ R’ Ր
+s š շ s ս
+S Š Շ S Ս
+t t’ թ ts ծ tš ճ tš’ չ t տ ts’ ց
+T T’ Թ Ts’ Ծ Tš Ճ Tš’ Չ T Տ Ts’ Ց
+v v վ vn ﬖ
+V V Վ
+w w ւ
+W W Ւ
+x x խ
+X X Խ
+z z զ ž ժ
+Z Z Զ Ž Ժ
+, , ,
+. . ։
+; ; ՝
+: : ․
+? ? ՞
+! ! ՜ ! ՛
+`
+
+
+/*
+var justLatinMap = `
+e ē ë
+o ô
+c c‛ č č‛
+d dž
+j ǰ
+k k‛ k’
+l ł
+p p‛ p’
+r ṙ r̄ r’
+s š
+t t’ t‛ tš tš’ ts’
+z ž
+`
+
+
+
+var translitCharacterMap = `
+a a ա
+A A Ա 
+e e ե ew և ë ը ɛ է
+E E Ե Ë Ը Ɛ Է
+i i ի
+I I Ի 
+o o ո ò օ
+O O Ո Ò Օ
+b b բ
+B B Բ 
+c ç ծ č չ č̣ ճ c’ ց
+C Ç Ծ Č Չ Č̣ Ճ C’ Ց
+d d դ
+D D Դ
+f f ֆ
+F F Ֆ
+g g գ ġ ղ
+G G Գ Ġ Ղ
+h h հ
+H H Հ
+j j ձ ǰ ջ
+J J Ձ ǰ Ջ
+k k կ k’ ք
+K K Կ K’ Ք
+l l լ
+L L Լ
+m m մ mn ﬓ me ﬔ mi ﬕ vn ﬖ mx ﬗ
+M M Մ
+n n ն
+N N Ն
+p p պ p’ փ
+P P Պ P’ Փ
+r r ր ṙ ռ
+R R Ր Ṙ Ռ
+s s ս š շ
+S S Ս Š Շ
+t t տ t’ թ
+T T Տ T’ Թ
+v v վ
+V V Վ
+w w ւ
+W W Ւ
+x x խ
+X X Խ
+y y յ
+Y Y Յ
+z z զ ž ժ
+Z Z Զ Ž Ժ
+; , , : ․ * ՝ . ։ “ « ” » ? ՞ ! ՜
+`
+*/
+
 
