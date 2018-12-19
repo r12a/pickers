@@ -33,7 +33,7 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->13-Dec-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=khmer" title="Show all blog posts tagged with 'khmer'">khmer</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->19-Dec-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=khmer" title="Show all blog posts tagged with 'khmer'">khmer</a></p>
 
 <p>This Unicode character picker allows you to produce or analyse runs of Khmer text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[khmer%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/khmer">the Github commit list</a>.</p>
@@ -67,9 +67,18 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <p>The transliteration scheme  was developed for this picker, and, where possible, uses  symbols that represent sounds typically associated with their XXXXXX equivalents, rather than the sometimes fairly arbitrary selection of diacritics found in other systems. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription, XXXX and it doesn't show inherent vowels, but the process is reversible (unlike most  transcriptions).</p>
 <p>Transliterations produced this way are particularly useful for understanding the composition of text in  scripts, where the individual parts are not well separated in the text.</p>
 
-<p><b class="leadin">Transcribe.</b> Builds on the transliteration scheme just mentioned by adding symbols for inherent vowels (approximate), by converting sequences representing foreign sounds to a single symbol, by representing multi-part vowels as a single symbol, etc. This transcription may not be reversible. The aim is to produce a Latin-based version of the original text that is a little more readable than the transliteration.</p>
+<p><b class="leadin">Transcribe.</b> Builds on the transliteration scheme just mentioned by:</p>
+<ul>
+<li> adding symbols for inherent vowels (approximate), </li>
+<li> converting sequences representing foreign sounds to a single symbol, </li>
+<li> representing multi-part vowels as a single symbol, </li>
+<li>etc. </li>
+</ul>
+<p>This transcription may not be reversible. Nor does it fully describe the phonetics of the text. The aim is to produce a Latin-based version of the original text that is a little more readable than the transliteration.</p>
+
 <p><b class="leadin">XXXXXX to ISO.</b> Converts the contents of the text area to an XXXXXX Latin transcription. </p>
 <p>This transcription adds 'a' to indicate possible locations for the inherent vowel, however, this is not entirely predictable in XXXXXX. Consonants at the end of a word may or may not end with an inherent vowel, so you are offered a choice – click on the yellow background to select what you want in the final result. XXXX and you may need to make manual adjustments.</p>
+
 <div id="controlsAbove2"></div>
 <script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
