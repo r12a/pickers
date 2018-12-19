@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Mongolian character picker 22</title>
+<title>Mongolian character picker 23</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared22/code.js">  </script>
+<script src="../shared23/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared22/pagetemplate.js">  </script>
+<script src="../shared23/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
 <script src="localtranscription.js">  </script>
@@ -39,117 +39,7 @@
 
 
 <div id="phonemelist" style="position:relative;">
- <div id="transcriptionChoice"></div>
-
-<div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('a')">a</span>
-<span class="t" onclick="dotrans('e')">e</span>
-<span class="t" onclick="dotrans('ē')">ē</span>
-<span class="t" onclick="dotrans('ə')">ə</span>
-<span class="t" onclick="dotrans('i')">i</span>
-<span class="t" onclick="dotrans('o')">o</span>
-<span class="t" onclick="dotrans('ö')">ö</span>
-<span class="t" onclick="dotrans('ɔ')">ɔ</span>
-<span class="t" onclick="dotrans('u')">u</span>
-<span class="t" onclick="dotrans('ü')">ü</span>
-<span class="t" onclick="dotrans('ʊ')">ʊ</span>
-<span class="t" style="margin-left: 30px;" onclick="dotrans('.')">.</span>
-<span class="t" onclick="dotrans(',')">,</span>
-<span class="t" onclick="dotrans(';')">;</span>
-<span class="t" onclick="dotrans('(')">(</span>
-<span class="t" onclick="dotrans(')')">)</span>
-<span class="t" onclick="dotrans('[')">[</span>
-<span class="t" onclick="dotrans(']')">]</span>
-<span class="t" onclick="dotrans('/')">/</span>
-<span class="t" onclick="dotrans('?')">?</span>
-<br/>
-<span class="t" onclick="dotrans('b')">b</span>
-<span class="t" onclick="dotrans('c')">c</span>
-<span class="t" onclick="dotrans('č')">č</span>
-<span class="t" onclick="dotrans('d')">d</span>
-<span class="t" onclick="dotrans('ʣ')">ʣ</span>
-<span class="t" onclick="dotrans('ʤ')">ʤ</span>
-<span class="t" onclick="dotrans('f')">f</span>
-<span class="t" onclick="dotrans('h')">h</span>
-<span class="t" onclick="dotrans('j')">j</span>
-<span class="t" onclick="dotrans('k')">k</span>
-<span class="t" onclick="dotrans('ḳ')">ḳ</span>
-<span class="t" onclick="dotrans('l')">l</span>
-<span class="t" onclick="dotrans('m')">m</span>
-<span class="t" onclick="dotrans('n')">n</span>
-<span class="t" onclick="dotrans('ṅ')">ṅ</span>
-<span class="t" onclick="dotrans('ŋ')">ŋ</span>
-<span class="t" onclick="dotrans('p')">p</span>
-<span class="t" onclick="dotrans('q')">q</span>
-<span class="t" onclick="dotrans('r')">r</span>
-<span class="t" onclick="dotrans('ř')">ř</span>
-<span class="t" onclick="dotrans('s')">s</span>
-<span class="t" onclick="dotrans('š')">š</span>
-<span class="t" onclick="dotrans('ʃ')">ʃ</span>
-<span class="t" onclick="dotrans('t')">t</span>
-<span class="t" onclick="dotrans('ʦ')">ʦ</span>
-<span class="t" onclick="dotrans('ʧ')">ʧ</span>
-<span class="t" onclick="dotrans('v')">v</span>
-<span class="t" onclick="dotrans('w')">w</span>
-<span class="t" onclick="dotrans('x')">x</span>
-<span class="t" onclick="dotrans('y')">y</span>
-<span class="t" onclick="dotrans('γ')">γ</span>
-</div>
-
-
-<div id="transliteration" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('ᠠ')">a</span>
-<span class="t" onclick="dotrans('ᠡ')">e</span>
-<span class="t" onclick="dotrans('ᠧ')">ē</span>
-<span class="t" onclick="dotrans('ᠢ')">i</span>
-<span class="t" onclick="dotrans('ᠣ')">o</span>
-<span class="t" onclick="dotrans('ᠥ')">ö</span>
-<span class="t" onclick="dotrans('ᠤ')">u</span>
-<span class="t" onclick="dotrans('ᠦ')">ü</span>
-<br/>
-<span class="t" onclick="dotrans('ᠪ')">b</span>
-<span class="t" onclick="dotrans('ᠼ')">c</span>
-<span class="t" onclick="dotrans('ᠴ')">č</span>
-<span class="t" onclick="dotrans('ᡂ')">chi</span>
-<span class="t" onclick="dotrans('ᠳ')">d</span>
-<span class="t" onclick="dotrans('ᠹ')">f</span>
-<span class="t" onclick="dotrans('ᠭ')">g</span>
-<span class="t" onclick="dotrans('ᠾ')">h</span>
-<span class="t" onclick="dotrans('ᠵ')">j</span>
-<span class="t" onclick="dotrans('ᠺ')">ḳ</span>
-<span class="t" onclick="dotrans('ᠯ')">l</span>
-<span class="t" onclick="dotrans('ᡀ')">lh</span>
-<span class="t" onclick="dotrans('ᠮ')">m</span>
-<span class="t" onclick="dotrans('ᠨ')">n</span>
-<span class="t" onclick="dotrans('ᠩ')">ṅ</span>
-<br/>
-<span class="t" onclick="dotrans('ᠫ')">p</span>
-<span class="t" onclick="dotrans('ᠬ')">q</span>
-<span class="t" onclick="dotrans('ᠷ')">r</span>
-<span class="t" onclick="dotrans('ᠿ')">ř</span>
-<span class="t" onclick="dotrans('ᠰ')">s</span>
-<span class="t" onclick="dotrans('ᠱ')">š</span>
-<span class="t" onclick="dotrans('ᠲ')">t</span>
-<span class="t" onclick="dotrans('ᠸ')">v</span>
-<span class="t" onclick="dotrans('ᠶ')">y</span>
-<span class="t" onclick="dotrans('ᠽ')">z</span>
-<span class="t" onclick="dotrans('ᡁ')">zh</span>
-<br/>
-<span class="t" onclick="dotrans('᠁')">…</span>
-<span class="t" onclick="dotrans('᠂')">,</span>
-<span class="t" onclick="dotrans('᠃')">.</span>
-<span class="t" onclick="dotrans('᠄')">:</span>
-<span class="t" onclick="dotrans('᠊')">_</span>
-
-<span class="t" onclick="dotrans('&#x180B;')">¹</span>
-<span class="t" onclick="dotrans('&#x180C;')">²</span>
-<span class="t" onclick="dotrans('&#x180D;')">³</span>
-<span class="t" onclick="dotrans('&#x180E;')">-</span>
-<span class="t" onclick="dotrans('&#x202F;')">·</span>
-
-</div>
-
-
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 </div>
 
 
@@ -190,44 +80,44 @@
           <td><span class="g"><span class="hint">f</span><span class="c" data-variants="s i m f">&#x1839;</span></span></td>
           </tr>
         <tr>
-          <td><span class="g"><span class="hint">ṅ</span><span class="c" data-variants="s i m f">&#x1829;</span></span></td>
-          <td><span class="g"><span class="hint">š</span><span class="c" data-variants="s i m f">&#x1831;</span></span></td>
-          <td><span class="g"><span class="hint">kh</span><span class="c" data-variants="s i m f">&#x183B;</span></span></td>
+          <td><span class="g"><span class="hint">ŋ</span><span class="c" data-variants="s i m f">&#x1829;</span></span></td>
+          <td><span class="g"><span class="hint">ʃ</span><span class="c" data-variants="s i m f">&#x1831;</span></span></td>
+          <td><span class="g"><span class="hint">k̇</span><span class="c" data-variants="s i m f">&#x183B;</span></span></td>
           </tr>
         <tr>
           <td><span class="g"><span class="hint">b</span><span class="c" data-variants="s i m f f1">&#x182A;</span></span></td>
           <td><span class="g"><span class="hint">t</span><span class="c" data-variants="s i m m1 f">&#x1832;</span></span></td>
-          <td><span class="g"><span class="hint">c</span><span class="c" data-variants="s i m f">&#x183C;</span></span></td>
+          <td><span class="g"><span class="hint">ʦ</span><span class="c" data-variants="s i m f">&#x183C;</span></span></td>
           </tr>
         <tr>
           <td><span class="g"><span class="hint">p</span><span class="c" data-variants="s i m f">&#x182B;</span></span></td>
           <td><span class="g"><span class="hint">d</span><span class="c" data-variants="s i i1 m m1 f f1">&#x1833;</span></span></td>
-          <td><span class="g"><span class="hint">z</span><span class="c" data-variants="s i m f">&#x183D;</span></span></td>
+          <td><span class="g"><span class="hint">ʣ</span><span class="c" data-variants="s i m f">&#x183D;</span></span></td>
           </tr>
         <tr>
-          <td><span class="g"><span class="hint">q</span><span class="c" data-variants="s s1 s2 i i1 i2 m m1 m2 m3">&#x182C;</span></span></td>
+          <td><span class="g"><span class="hint">x</span><span class="c" data-variants="s s1 s2 i i1 i2 m m1 m2 m3">&#x182C;</span></span></td>
           <td><span class="g"><span class="hint">č</span><span class="c" data-variants="s i m f">&#x1834;</span></span></td>
           <td><span class="g"><span class="hint">h</span><span class="c" data-variants="s i m f">&#x183E;</span></span></td>
           </tr>
         <tr>
           <td><span class="g"><span class="hint">g</span><span class="c" data-variants="s s1 s2 i i1 i2 m m1 m2 m3 f f1 f2">&#x182D;</span></span></td>
-          <td><span class="g"><span class="hint">j</span><span class="c" data-variants="s i m m1 f">&#x1835;</span></span></td>
-          <td><span class="g"><span class="hint">zh</span><span class="c" data-variants="s i m f">&#x1841;</span></span></td>
+          <td><span class="g"><span class="hint">ʤ</span><span class="c" data-variants="s i m m1 f">&#x1835;</span></span></td>
+          <td><span class="g"><span class="hint">ʑ</span><span class="c" data-variants="s i m f">&#x1841;</span></span></td>
           </tr>
         <tr>
-          <td><span class="g"><span class="hint">ḳ</span><span class="c" data-variants="s i m f">&#x183A;</span></span></td>
+          <td><span class="g"><span class="hint">k̇</span><span class="c" data-variants="s i m f">&#x183A;</span></span></td>
           <td><span class="g"><span class="hint">y</span><span class="c" data-variants="s i i1 m m1 f">&#x1836;</span></span></td>
-          <td><span class="g"><span class="hint">ř</span><span class="c" data-variants="s i m f">&#x183F;</span></span></td>
+          <td><span class="g"><span class="hint">ʐ</span><span class="c" data-variants="s i m f">&#x183F;</span></span></td>
           </tr>
         <tr>
           <td><span class="g"><span class="hint">m</span><span class="c" data-variants="s i m f">&#x182E;</span></span></td>
           <td><span class="g"><span class="hint">r</span><span class="c" data-variants="s i m f">&#x1837;</span></span></td>
-          <td><span class="g"><span class="hint">ch</span><span class="c" data-variants="s i m f">&#x1842;</span></span></td>
+          <td><span class="g"><span class="hint">ɕ</span><span class="c" data-variants="s i m f">&#x1842;</span></span></td>
           </tr>
         <tr>
           <td><span class="g"><span class="hint">l</span><span class="c" data-variants="s i m f">&#x182F;</span></span></td>
           <td><span class="g"><span class="hint">v</span><span class="c" data-variants="s i m m1 f f1">&#x1838;</span></span></td>
-          <td><span class="g"><span class="hint">lh</span><span class="c" data-variants="s i m f">&#x1840;</span></span></td>
+          <td><span class="g"><span class="hint">lʰ</span><span class="c" data-variants="s i m f">&#x1840;</span></span></td>
           </tr>
         <tr>
         <td class="variantImage"><img src="images/180B.png" alt="᠌" title="180B: MONGOLIAN FREE VARIATION SELECTOR ONE" onclick="add('&#x180B;')" /></td>
@@ -243,11 +133,11 @@
             <td><span class="c">&#x180E;&#x1820;</span></td>
         </tr>
           <tr>
-            <td><span class="g"><span class="hint">o</span><span class="c" data-variants="s i m m1 f f1">&#x1823;</span></span></td>
+            <td><span class="g"><span class="hint">ɔ</span><span class="c" data-variants="s i m m1 f f1">&#x1823;</span></span></td>
             <td>&nbsp;</td>
         </tr>
           <tr>
-            <td style="padding-bottom:1em;"><span class="g"><span class="hint">u</span><span class="c" data-variants="s s1 i m m1 f f1 f2">&#x1824;</span></span></td>
+            <td style="padding-bottom:1em;"><span class="g"><span class="hint">ʊ</span><span class="c" data-variants="s s1 i m m1 f f1 f2">&#x1824;</span></span></td>
             <td>&nbsp;</td>
         </tr>
           <tr>
@@ -259,15 +149,15 @@
             <td><span class="c">&#x180E;&#x1821;</span></td>
         </tr>
           <tr>
-            <td><span class="g"><span class="hint">ö</span><span class="c" data-variants="s i m m1 m2 f f1">&#x1825;</span></span></td>
+            <td><span class="g"><span class="hint">o</span><span class="c" data-variants="s i m m1 m2 f f1">&#x1825;</span></span></td>
             <td>&nbsp;</td>
         </tr>
           <tr>
-            <td><span class="g"><span class="hint">ü</span><span class="c" data-variants="s s1 s2 i m m1 m2 m3 f f1 f2">&#x1826;</span></span></td>
+            <td><span class="g"><span class="hint">u</span><span class="c" data-variants="s s1 s2 i m m1 m2 m3 f f1 f2">&#x1826;</span></span></td>
             <td>&nbsp;</td>
         </tr>
           <tr>
-            <td><span class="g"><span class="hint">ē</span><span class="c" data-variants="s i m f">&#x1827;</span></span></td>
+            <td><span class="g"><span class="hint">ə</span><span class="c" data-variants="s i m f">&#x1827;</span></span></td>
             <td>&nbsp;</td>
         </tr>
       </tbody>
