@@ -86,3 +86,92 @@ function event_toggleKbdShift () {
         }
     else makeKeyboard(keyboardUC, keyboardUCGuide)
     }
+
+
+
+var justLatinMap = `
+d ɖ ʤ Ḓ Ḏ
+e ẹ ə ɛ
+h h̽ ʰ
+i ī ị ị̂ ị̄
+j ʲ J̱
+l l̥ ŀ̥
+m m̽
+n ŋ ŋ̽ ɲ Ñ
+o ȯ ọ ɔ ∅
+r r̆ ṙ r̥ r̥̆ r̽
+s S̱
+t ʧ ʈ ᵗ Ṯ
+u ū ụ
+v ɤ
+y y̆
+[ ° ² ¶ ̣ ͓
+: ː
+`
+
+
+
+var translitCharacterMap = `
+a aʲ ꦻ
+A ạ ꦄ
+b b ꦧ
+B B ꦨ
+C C ꦖ
+d d ꦢ ʤ ꦗ ɖ ꦝ
+D Ḏ ꦣ Ḓ ꦞ
+e e ꦺ ə ꦼ
+E ẹ ꦌ
+g g ꦒ
+G G ꦓ
+h h ꦲ h̽ ꦃ
+i i ꦶ ī ꦷ
+I ị ꦆ ị̄ ꦇ ị̂ ꦅ
+J J̱ ꦙ
+k k ꦏ
+K K ꦑ
+l l ꦭ
+L l̥ ꦊ ŀ̥ ꦋ
+m m ꦩ m̽ ꦀ
+n n ꦤ ŋ ꦔ ɲ ꦚ ŋ̽ ꦁ
+N Ñ ꦘ N ꦟ
+o ȯ ꦵ
+O ọ ꦎ
+p p ꦥ
+P P ꦦ
+q q ꦐ
+r r ꦫ r̥̆ ꦽ r̽ ꦂ
+R ṙ ꦬ r̥ ꦉ
+s s ꦱ
+S S ꦯ S̱ ꦰ
+t t ꦠ ʧ ꦕ ʈ ꦛ
+T T ꦡ Ṯ ꦜ
+u u ꦸ ū ꦹ
+U ụ ꦈ
+w w ꦮ
+y y ꦪ y̆ ꦾ r̆ ꦿ.
+0 0 ꧐
+1 1 ꧑
+2 2 ꧒
+3 3 ꧓
+4 4 ꧔
+5 5 ꧕
+6 6 ꧖
+7 7 ꧗
+8 8 ꧘
+9 9 ꧙
+# <ᵗ ꧁ ᵗ> ꧂ <ʰ ꧅ [ʰ ꧄ {ʰ ꧃ ° ꧆
+, , ꧈
+. . ꧉
+: ː ꦴ : ꧇
+* ͓ ꧀
+& ² ꧏ
+| | ꧊ ¶ ꧋
+( ( ꧌
+) ) ꧍
+= ₓ \u200C ₊ \u200D
+] ␣ \u200B
+/ ̣ ꦳
+`
+
+
+

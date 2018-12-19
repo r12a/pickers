@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Javanese character picker 22</title>
+<title>Javanese character picker 23</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script type="text/javascript" src="../../shared/code/boilerplate.js"></script>
 <script type="text/javascript" src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script type="text/javascript" src="../../shared/code/scriptGroups.js"></script>
 <script type="text/javascript" src="../../shared/code/all-names.js"></script>
 <script type="text/javascript" src="defaults.js">  </script>
-<script type="text/javascript" src="../shared22/code.js">  </script>
+<script type="text/javascript" src="../shared23/code.js">  </script>
 <script type="text/javascript" src="localcode.js">  </script>
-<script type="text/javascript" src="../shared22/pagetemplate.js">  </script>
+<script type="text/javascript" src="../shared23/pagetemplate.js">  </script>
 <script type="text/javascript" src="/scripts/linkdata/linkdb.js"></script>
 
 <script type="text/javascript" src="localtranscription.js">  </script>
@@ -39,155 +39,7 @@
 
 
 <div id="phonemelist" style="position:relative;">
- <div id="transcriptionChoice"></div>
-
-<div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('a')">a</span>
-<span class="t" onclick="dotrans('e')">e</span>
-<span class="t" onclick="dotrans('é')">é</span>
-<span class="t" onclick="dotrans('è')">è</span>
-<span class="t" onclick="dotrans('ə')">ə</span>
-<span class="t" onclick="dotrans('ɛ')">ɛ</span>
-<span class="t" onclick="dotrans('i')">i</span>
-<span class="t" onclick="dotrans('o')">o</span>
-<span class="t" onclick="dotrans('ɔ')">ɔ</span>
-<span class="t" onclick="dotrans('u')">u</span>
-<span class="t" onclick="dotrans('b')">b</span>
-<span class="t" onclick="dotrans('b̥')">b̥</span>
-<span class="t" onclick="dotrans('c')">c</span>
-<span class="t" onclick="dotrans('d')">d</span>
-<span class="t" onclick="dotrans('d̪')">d̪</span>
-<span class="t" onclick="dotrans('ɖ')">ɖ</span>
-<span class="t" onclick="dotrans('ɖ̥')">ɖ̥</span>
-<span class="t" onclick="dotrans('dh')">dh</span>
-<span class="t" onclick="dotrans('ʤ')">ʤ</span>
-<span class="t" onclick="dotrans('dʒ̊')">dʒ̊</span>
-<span class="t" onclick="dotrans('f')">f</span>
-<span class="t" onclick="dotrans('ɡ')">ɡ</span>
-<span class="t" onclick="dotrans('ɡ̊')">ɡ̊</span>
-<span class="t" onclick="dotrans('h')">h</span>
-<span class="t" onclick="dotrans('j')">j</span>
-<span class="t" onclick="dotrans('k')">k</span>
-<span class="t" onclick="dotrans('l')">l</span>
-<span class="t" onclick="dotrans('ɭ')">ɭ</span>
-<span class="t" onclick="dotrans('m')">m</span>
-<span class="t" onclick="dotrans('n')">n</span>
-<span class="t" onclick="dotrans('ng')">ng</span>
-<span class="t" onclick="dotrans('ny')">ny</span>
-<span class="t" onclick="dotrans('ŋ')">ŋ</span>
-<span class="t" onclick="dotrans('ɲ')">ɲ</span>
-<span class="t" onclick="dotrans('ɳ')">ɳ</span>
-<span class="t" onclick="dotrans('p')">p</span>
-<span class="t" onclick="dotrans('q')">q</span>
-<span class="t" onclick="dotrans('r')">r</span>
-<span class="t" onclick="dotrans('ɽ')">ɽ</span>
-<span class="t" onclick="dotrans('s')">s</span>
-<span class="t" onclick="dotrans('t')">t</span>
-<span class="t" onclick="dotrans('t̪')">t̪</span>
-<span class="t" onclick="dotrans('ʈ')">ʈ</span>
-<span class="t" onclick="dotrans('th')">th</span>
-<span class="t" onclick="dotrans('ʧ')">ʧ</span>
-<span class="t" onclick="dotrans('w')">w</span>
-<span class="t" onclick="dotrans('x')">x</span>
-<span class="t" onclick="dotrans('y')">y</span>
-<span class="t" onclick="dotrans('ʔ')">ʔ</span>
-</div>
-
-
-
-<div id="transliteration" class="transcript" style="display:none;">
-<span class="t" onmouseover="showtrans('ꦴ')" onmouseout="hidetrans()" onclick="add('ꦴ')">ā</span>
-<span class="t" onmouseover="showtrans('ꦼ')" onmouseout="hidetrans()" onclick="add('ꦼ')">e</span>
-<span class="t" onmouseover="showtrans('ꦺ')" onmouseout="hidetrans()" onclick="add('ꦺ')">é</span>
-<span class="t" onmouseover="showtrans('ꦶ')" onmouseout="hidetrans()" onclick="add('ꦶ')">i</span>
-<span class="t" onmouseover="showtrans('ꦺꦴ')" onmouseout="hidetrans()" onclick="add('ꦺꦴ')">o</span>
-<span class="t" onmouseover="showtrans('ꦸ')" onmouseout="hidetrans()" onclick="add('ꦸ')">u</span>
-&nbsp; • &nbsp;
-<span class="t" onmouseover="showtrans('ꦄ')" onmouseout="hidetrans()" onclick="add('ꦄ')">ạ</span>
-<span class="t" onmouseover="showtrans('ꦌ')" onmouseout="hidetrans()" onclick="add('ꦌ')">ẹ</span>
-<span class="t" onmouseover="showtrans('ꦆ')" onmouseout="hidetrans()" onclick="add('ꦆ')">ị</span>
-<span class="t" onmouseover="showtrans('ꦎ')" onmouseout="hidetrans()" onclick="add('ꦎ')">ọ</span>
-<span class="t" onmouseover="showtrans('ꦈ')" onmouseout="hidetrans()" onclick="add('ꦈ')">ụ</span>
-&nbsp; • &nbsp;
-<span class="t" onmouseover="showtrans('꧀')" onmouseout="hidetrans()" onclick="add('꧀')">virama</span>
-<span class="t" onmouseover="showtrans('꦳')" onmouseout="hidetrans()" onclick="add('꦳')">cecek</span>
-<br/>
-<span class="t" onmouseover="showtrans('ꦧ')" onmouseout="hidetrans()" onclick="add('ꦧ')">b</span>
-<span class="t" onmouseover="showtrans('ꦨ')" onmouseout="hidetrans()" onclick="add('ꦨ')">B</span>
-<span class="t" onmouseover="showtrans('ꦕ')" onmouseout="hidetrans()" onclick="add('ꦕ')">c</span>
-<span class="t" onmouseover="showtrans('ꦖ')" onmouseout="hidetrans()" onclick="add('ꦖ')">C</span>
-<span class="t" onmouseover="showtrans('ꦢ')" onmouseout="hidetrans()" onclick="add('ꦢ')">d</span>
-<span class="t" onmouseover="showtrans('ꦝ')" onmouseout="hidetrans()" onclick="add('ꦝ')">D</span>
-<span class="t" onmouseover="showtrans('ꦞ')" onmouseout="hidetrans()" onclick="add('ꦞ')">Ḓ</span>
-<span class="t" onmouseover="showtrans('ꦣ')" onmouseout="hidetrans()" onclick="add('ꦣ')">Ḏ</span>
-<span class="t" onmouseover="showtrans('ꦢ꦳')" onmouseout="hidetrans()" onclick="add('ꦢ꦳')">ð</span>
-<span class="t" onmouseover="showtrans('ꦥ꦳')" onmouseout="hidetrans()" onclick="add('ꦥ꦳')">f</span>
-<span class="t" onmouseover="showtrans('ꦒ')" onmouseout="hidetrans()" onclick="add('ꦒ')">g</span>
-<span class="t" onmouseover="showtrans('ꦓ')" onmouseout="hidetrans()" onclick="add('ꦓ')">G</span>
-<span class="t" onmouseover="showtrans('ꦒ꦳')" onmouseout="hidetrans()" onclick="add('ꦒ꦳')">ɣ</span>
-<span class="t" onmouseover="showtrans('ꦲ')" onmouseout="hidetrans()" onclick="add('ꦲ')">h</span>
-<span class="t" onmouseover="showtrans('ꦲ꦳')" onmouseout="hidetrans()" onclick="add('ꦲ꦳')">ħ</span>
-<span class="t" onmouseover="showtrans('ꦃ')" onmouseout="hidetrans()" onclick="add('ꦃ')">-h̽</span>
-<span class="t" onmouseover="showtrans('ꦗ')" onmouseout="hidetrans()" onclick="add('ꦗ')">j</span>
-<span class="t" onmouseover="showtrans('ꦙ')" onmouseout="hidetrans()" onclick="add('ꦙ')">J̱</span>
-<span class="t" onmouseover="showtrans('ꦏ')" onmouseout="hidetrans()" onclick="add('ꦏ')">k</span>
-<span class="t" onmouseover="showtrans('ꦑ')" onmouseout="hidetrans()" onclick="add('ꦑ')">K</span>
-<span class="t" onmouseover="showtrans('ꦭ')" onmouseout="hidetrans()" onclick="add('ꦭ')">l</span>
-<span class="t" onmouseover="showtrans('ꦊ')" onmouseout="hidetrans()" onclick="add('ꦊ')">lĕ</span>
-<span class="t" onmouseover="showtrans('ꦩ')" onmouseout="hidetrans()" onclick="add('ꦩ')">m</span>
-<span class="t" onmouseover="showtrans('ꦀ')" onmouseout="hidetrans()" onclick="add('ꦀ')">-ṁ</span>
-<br/>
-<span class="t" onmouseover="showtrans('ꦤ')" onmouseout="hidetrans()" onclick="add('ꦤ')">n</span>
-<span class="t" onmouseover="showtrans('ꦟ')" onmouseout="hidetrans()" onclick="add('ꦟ')">N</span>
-<span class="t" onmouseover="showtrans('ꦁ')" onmouseout="hidetrans()" onclick="add('ꦁ')">-ṅ̽</span>
-<span class="t" onmouseover="showtrans('ꦚ')" onmouseout="hidetrans()" onclick="add('ꦚ')">ñ</span>
-<span class="t" onmouseover="showtrans('ꦘ')" onmouseout="hidetrans()" onclick="add('ꦘ')">Ñ</span>
-<span class="t" onmouseover="showtrans('ꦔ')" onmouseout="hidetrans()" onclick="add('ꦔ')">ṅ</span>
-<span class="t" onmouseover="showtrans('ꦥ')" onmouseout="hidetrans()" onclick="add('ꦥ')">p</span>
-<span class="t" onmouseover="showtrans('ꦦ')" onmouseout="hidetrans()" onclick="add('ꦦ')">P</span>
-<span class="t" onmouseover="showtrans('ꦫ')" onmouseout="hidetrans()" onclick="add('ꦫ')">r</span>
-<span class="t" onmouseover="showtrans('ꦂ')" onmouseout="hidetrans()" onclick="add('ꦂ')">-r̽</span>
-<span class="t" onmouseover="showtrans('ꦿ.')" onmouseout="hidetrans()" onclick="add('ꦿ.')">-r̆-</span>
-<span class="t" onmouseover="showtrans('ꦉ')" onmouseout="hidetrans()" onclick="add('ꦉ')">rĕ</span>
-<span class="t" onmouseover="showtrans('ꦽ')" onmouseout="hidetrans()" onclick="add('ꦽ')">-ṛĕ</span>
-<span class="t" onmouseover="showtrans('ꦱ')" onmouseout="hidetrans()" onclick="add('ꦱ')">s</span>
-<span class="t" onmouseover="showtrans('ꦯ')" onmouseout="hidetrans()" onclick="add('ꦯ')">S</span>
-<span class="t" onmouseover="showtrans('ꦰ')" onmouseout="hidetrans()" onclick="add('ꦰ')">S̱</span>
-<span class="t" onmouseover="showtrans('ꦱ꦳')" onmouseout="hidetrans()" onclick="add('ꦱ꦳')">ʃ</span>
-<span class="t" onmouseover="showtrans('ꦠ')" onmouseout="hidetrans()" onclick="add('ꦠ')">t</span>
-<span class="t" onmouseover="showtrans('ꦡ')" onmouseout="hidetrans()" onclick="add('ꦡ')">T</span>
-<span class="t" onmouseover="showtrans('ꦛ')" onmouseout="hidetrans()" onclick="add('ꦛ')">ṭ</span>
-<span class="t" onmouseover="showtrans('ꦜ')" onmouseout="hidetrans()" onclick="add('ꦜ')">Ṯ</span>
-<span class="t" onmouseover="showtrans('ꦮ')" onmouseout="hidetrans()" onclick="add('ꦮ')">w</span>
-<span class="t" onmouseover="showtrans('ꦏ꦳')" onmouseout="hidetrans()" onclick="add('ꦏ꦳')">x</span>
-<span class="t" onmouseover="showtrans('ꦪ')" onmouseout="hidetrans()" onclick="add('ꦪ')">y</span>
-<span class="t" onmouseover="showtrans('ꦾ')" onmouseout="hidetrans()" onclick="add('ꦾ')">-y̆-</span>
-<span class="t" onmouseover="showtrans('ꦗ꦳')" onmouseout="hidetrans()" onclick="add('ꦗ꦳')">z</span>
-<span class="t" onmouseover="showtrans('ꦔ꦳')" onmouseout="hidetrans()" onclick="add('ꦔ꦳')">ʔ</span>
-<br/>
-<span class="t" onmouseover="showtrans('꧊')" onmouseout="hidetrans()" onclick="add('꧊')">|</span>
-<span class="t" onmouseover="showtrans('꧋')" onmouseout="hidetrans()" onclick="add('꧋')">||</span>
-<span class="t" onmouseover="showtrans('꧌')" onmouseout="hidetrans()" onclick="add('꧌')">(</span>
-<span class="t" onmouseover="showtrans('꧍')" onmouseout="hidetrans()" onclick="add('꧍')">)</span>
-<span class="t" onmouseover="showtrans('꧈')" onmouseout="hidetrans()" onclick="add('꧈')">,</span>
-<span class="t" onmouseover="showtrans('꧉')" onmouseout="hidetrans()" onclick="add('꧉')">.</span>
-<span class="t" onmouseover="showtrans('꧇')" onmouseout="hidetrans()" onclick="add('꧇')">:</span>
-<span class="t" onmouseover="showtrans('ꧏ')" onmouseout="hidetrans()" onclick="add('ꧏ')">²</span>
-&nbsp; • &nbsp;
-<span class="t" onmouseover="showtrans('꧐')" onmouseout="hidetrans()" onclick="add('꧐')">0</span>
-<span class="t" onmouseover="showtrans('꧑')" onmouseout="hidetrans()" onclick="add('꧑')">1</span>
-<span class="t" onmouseover="showtrans('꧒')" onmouseout="hidetrans()" onclick="add('꧒')">2</span>
-<span class="t" onmouseover="showtrans('꧓')" onmouseout="hidetrans()" onclick="add('꧓')">3</span>
-<span class="t" onmouseover="showtrans('꧔')" onmouseout="hidetrans()" onclick="add('꧔')">4</span>
-<span class="t" onmouseover="showtrans('꧕')" onmouseout="hidetrans()" onclick="add('꧕')">5</span>
-<span class="t" onmouseover="showtrans('꧖')" onmouseout="hidetrans()" onclick="add('꧖')">6</span>
-<span class="t" onmouseover="showtrans('꧗')" onmouseout="hidetrans()" onclick="add('꧗')">7</span>
-<span class="t" onmouseover="showtrans('꧘')" onmouseout="hidetrans()" onclick="add('꧘')">8</span>
-<span class="t" onmouseover="showtrans('꧙')" onmouseout="hidetrans()" onclick="add('꧙')">9</span>
-
-
-</div>
-
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 </div>
 
 
@@ -203,7 +55,24 @@
 
 
 <div id="alphabet" class="default">
- 
+
+  <div id="shapelist">
+    <div id="shapekeys">
+    <span onclick="findShape('A994,A9A7,A99A,A986,A985,A987,A998,A99C','ꦔ,ꦧ,ꦚ,ꦆ,ꦅ,ꦇ,ꦘ,ꦜ',true)">ꦔ</span>
+    <span onclick="findShape('A988,A98A,A9D2,A98B,A9D3,A999','ꦈ,ꦊ,꧒,ꦋ,꧓,ꦙ',true)">ꦈ</span>
+    <span onclick="findShape('A98C,A9D6,A98D','ꦌ,꧖,ꦍ',true)">ꦌ</span>
+    <span onclick="findShape('A9A5,A9B2,A9AA,A9D9,A989,A9AE,A98E','ꦥ,ꦲ,ꦪ,꧙,ꦉ,ꦮ,ꦎ',true)">ꦥ</span>
+    <span onclick="findShape('A9A4,A9A2,A98F,A991,A9B1,A995,A99C','ꦤ,ꦢ,ꦏ,ꦑ,ꦱ,ꦕ,ꦜ',true)">ꦤ</span>
+    <span onclick="findShape('A9AB,A992,A9D1,A99F,A9AC,A9AF,A9AD,A9D7','ꦒ,꧑,ꦟ,ꦬ,ꦯ,ꦫ,ꦭ,꧗',true)">ꦒ</span>
+    <span onclick="findShape('A99E,A99D,A9A3,A993','ꦞ,ꦝ,ꦣ,ꦓ',true)">ꦞ</span>
+    <span onclick="findShape('A984,A9D4,A9D5','꧔,꧕,ꦄ',true)">꧔</span>
+    <span onclick="findShape('A9A6,A9D8,A9B0','ꦦ,꧘,ꦰ',true)">ꦦ</span>
+    <span onclick="findShape('A996,A9A1,A9A0,A9A8,A9A9','ꦫ,ꦖ,ꦡ,ꦠ,ꦨ,ꦩ',true)">other</span>
+    </div>
+  <div id="extrashapes"></div>
+</div>
+
+
 <div class="spaceline">
     <span id="shift" class="shifted" onClick="toggleShift(this, 'subConsonantGrid', 'consonantGrid')">SS</span>
     <span class="touch" style="padding: 5px 30px;" onClick="add(' ');">SPACE</span> 
@@ -237,28 +106,28 @@
             <span class="g"><span class="hint">ŋ</span><span class="c">ꦔ</span></span>
             </div>
             <div>
-            <span class="g"><span class="hint">c</span><span class="c">ꦕ</span> <span class="c">ꦖ</span></span>
-            <span class="g"><span class="hint">j</span><span class="c">ꦗ</span></span>
-            <span class="g"><span class="hint">ñ</span><span class="c">ꦚ</span> <span class="c">ꦘ</span></span>
+            <span class="g"><span class="hint">ʧ</span><span class="c">ꦕ</span> <span class="c">ꦖ</span></span>
+            <span class="g"><span class="hint">ʤ</span><span class="c">ꦗ</span></span>
+            <span class="g"><span class="hint">ɲ</span><span class="c">ꦚ</span> <span class="c">ꦘ</span></span>
             </div>
             <div>
             <span class="g"><span class="hint">t</span><span class="c">ꦠ</span> <span class="c">ꦡ</span></span>
-            <span class="g"><span class="hint">ṭ</span><span class="c">ꦛ</span></span>
+            <span class="g"><span class="hint">ʈ</span><span class="c">ꦛ</span></span>
             <span class="g"><span class="hint">d</span><span class="c">ꦢ</span></span>
             <span class="g"><span class="hint">n</span><span class="c">ꦤ</span> <span class="c">ꦟ</span></span>
             </div>
             <div>
             <span class="g"><span class="hint">p</span><span class="c">ꦥ</span> <span class="c">ꦦ</span></span>
             <span class="g"><span class="hint">b</span><span class="c">ꦧ</span> <span class="c">ꦨ</span></span>
-            <span class="g"><span class="hint">ḍ</span><span class="c">ꦝ</span></span>
+            <span class="g"><span class="hint">ɖ</span><span class="c">ꦝ</span></span>
             <span class="g"><span class="hint">m</span><span class="c">ꦩ</span></span>
             </div>
             <div>
             <span class="g"><span class="hint">y</span><span class="c">ꦪ</span></span>
             <span class="g"><span class="hint">r</span><span class="c">ꦫ</span></span>
             <span class="g"><span class="hint">l</span><span class="c">ꦭ</span></span>
-            <span class="g"><span class="hint">rĕ</span><span class="c">ꦉ</span></span>
-            <span class="g"><span class="hint">lĕ</span><span class="c">ꦊ</span></span>
+            <span class="g"><span class="hint">r̥</span><span class="c">ꦉ</span></span>
+            <span class="g"><span class="hint">l̥</span><span class="c">ꦊ</span></span>
             </div>
             <div>
             <span class="g"><span class="hint">s</span><span class="c">ꦱ</span> <span class="c">ꦯ</span></span>
@@ -303,22 +172,22 @@
 </div>
 
  <div id="moreconsonants">
-<span class="g"><span class="hint">ṛĕ</span><span class="c">ꦽ</span></span>
-<span class="g"><span class="hint">ỵ</span><span class="c">ꦾ</span></span> 
-<span class="g"><span class="hint">ṛ</span><span class="c">ꦿ</span></span>
-<span class="g"><span class="hint">ṁ</span><span class="c">ꦀ</span></span>
-<span class="g"><span class="hint">ṅ</span><span class="c">ꦁ</span></span>
-<span class="g"><span class="hint">ṙ</span><span class="c">ꦂ</span></span>
-<span class="g"><span class="hint">ḣ</span><span class="c">ꦃ</span></span>
+<span class="g"><span class="hint">r̥̆</span><span class="c">ꦽ</span></span>
+<span class="g"><span class="hint">y̆</span><span class="c">ꦾ</span></span> 
+<span class="g"><span class="hint">r̆</span><span class="c">ꦿ</span></span>
+<span class="g"><span class="hint">m̽</span><span class="c">ꦀ</span></span>
+<span class="g"><span class="hint">ŋ̽</span><span class="c">ꦁ</span></span>
+<span class="g"><span class="hint">r̽</span><span class="c">ꦂ</span></span>
+<span class="g"><span class="hint">h̽</span><span class="c">ꦃ</span></span>
 </div>
 
 <div id="vowelGrid">
-<div><span class="g"><span class="hint">ā</span><span class="c">ꦴ</span></span></div>
+<div><span class="g"><span class="hint">ː</span><span class="c">ꦴ</span></span></div>
 <div><span class="g"><span class="hint">i</span><span class="c">ꦶ</span></span></div>
 <div><span class="g"><span class="hint">u</span><span class="c">ꦸ</span></span></div>
-<div><span class="g"><span class="hint">é</span><span class="c">ꦺ</span></span></div>
+<div><span class="g"><span class="hint">e</span><span class="c">ꦺ</span></span></div>
 <div><span class="g"><span class="hint">o</span><span class="c">ꦺꦴ</span></span></div>
-<div><span class="g"><span class="hint">e</span><span class="c">ꦼ</span></span></div> 
+<div><span class="g"><span class="hint">ə</span><span class="c">ꦼ</span></span></div> 
 </div>
 
 <div id="numberGrid">
@@ -414,24 +283,9 @@
     </div>
 
   
-  <div id="shapelist">
-    <div id="shapekeys">
-    <span onclick="findShape('A994,A9A7,A99A,A986,A985,A987,A998,A99C','ꦔ,ꦧ,ꦚ,ꦆ,ꦅ,ꦇ,ꦘ,ꦜ',true)">ꦔ</span>
-    <span onclick="findShape('A988,A98A,A9D2,A98B,A9D3,A999','ꦈ,ꦊ,꧒,ꦋ,꧓,ꦙ',true)">ꦈ</span>
-    <span onclick="findShape('A98C,A9D6,A98D','ꦌ,꧖,ꦍ',true)">ꦌ</span>
-    <span onclick="findShape('A9A5,A9B2,A9AA,A9D9,A989,A9AE,A98E','ꦥ,ꦲ,ꦪ,꧙,ꦉ,ꦮ,ꦎ',true)">ꦥ</span>
-    <span onclick="findShape('A9A4,A9A2,A98F,A991,A9B1,A995,A99C','ꦤ,ꦢ,ꦏ,ꦑ,ꦱ,ꦕ,ꦜ',true)">ꦤ</span>
-    <span onclick="findShape('A9AB,A992,A9D1,A99F,A9AC,A9AF,A9AD,A9D7','ꦒ,꧑,ꦟ,ꦬ,ꦯ,ꦫ,ꦭ,꧗',true)">ꦒ</span>
-    <span onclick="findShape('A99E,A99D,A9A3,A993','ꦞ,ꦝ,ꦣ,ꦓ',true)">ꦞ</span>
-    <span onclick="findShape('A984,A9D4,A9D5','꧔,꧕,ꦄ',true)">꧔</span>
-    <span onclick="findShape('A9A6,A9D8,A9B0','ꦦ,꧘,ꦰ',true)">ꦦ</span>
-    <span onclick="findShape('A996,A9A1,A9A0,A9A8,A9A9','ꦫ,ꦖ,ꦡ,ꦠ,ꦨ,ꦩ',true)">other</span>
-    </div>
-  <div id="extrashapes"></div>
 </div>
 
 
-</div>
 <!-- end of tables -->
 
  <div id="temp"></div>

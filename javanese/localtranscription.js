@@ -9,6 +9,121 @@ function localtranscribe (direction, str) {
 	if (direction == 'toDeva') { return toDeva(str) }
 	}
 		
+
+function transliterate (str) {
+
+str += ' '
+
+str = str.replace(/\u200B/g, "␣")
+str = str.replace(/\u200C/g, "ₓ")
+str = str.replace(/\u200D/g, "₊")
+str = str.replace(/ꦿ./g, "r̆")
+str = str.replace(/ꦀ/g, "m̽")
+str = str.replace(/ꦁ/g, "ŋ̽")
+str = str.replace(/ꦂ/g, "r̽")
+str = str.replace(/ꦃ/g, "h̽")
+str = str.replace(/ꦄ/g, "ạ")
+str = str.replace(/ꦅ/g, "ị̂")
+str = str.replace(/ꦆ/g, "ị")
+str = str.replace(/ꦇ/g, "ị̄")
+str = str.replace(/ꦈ/g, "ụ")
+str = str.replace(/ꦉ/g, "r̥")
+str = str.replace(/ꦊ/g, "l̥")
+str = str.replace(/ꦋ/g, "ŀ̥")
+str = str.replace(/ꦌ/g, "ẹ")
+str = str.replace(/ꦍ/g, "")
+str = str.replace(/ꦎ/g, "ọ")
+str = str.replace(/ꦏ/g, "k")
+str = str.replace(/ꦐ/g, "q")
+str = str.replace(/ꦑ/g, "K")
+str = str.replace(/ꦒ/g, "g")
+str = str.replace(/ꦓ/g, "G")
+str = str.replace(/ꦔ/g, "ŋ")
+str = str.replace(/ꦕ/g, "ʧ")
+str = str.replace(/ꦖ/g, "C")
+str = str.replace(/ꦗ/g, "ʤ")
+str = str.replace(/ꦘ/g, "Ñ")
+str = str.replace(/ꦙ/g, "J̱")
+str = str.replace(/ꦚ/g, "ɲ")
+str = str.replace(/ꦛ/g, "ʈ")
+str = str.replace(/ꦜ/g, "Ṯ")
+str = str.replace(/ꦝ/g, "ɖ")
+str = str.replace(/ꦞ/g, "Ḓ")
+str = str.replace(/ꦟ/g, "N")
+str = str.replace(/ꦠ/g, "t")
+str = str.replace(/ꦡ/g, "T")
+str = str.replace(/ꦢ/g, "d")
+str = str.replace(/ꦣ/g, "Ḏ")
+str = str.replace(/ꦤ/g, "n")
+str = str.replace(/ꦥ/g, "p")
+str = str.replace(/ꦦ/g, "P")
+str = str.replace(/ꦧ/g, "b")
+str = str.replace(/ꦨ/g, "B")
+str = str.replace(/ꦩ/g, "m")
+str = str.replace(/ꦪ/g, "y")
+str = str.replace(/ꦫ/g, "r")
+str = str.replace(/ꦬ/g, "ṙ")
+str = str.replace(/ꦭ/g, "l")
+str = str.replace(/ꦮ/g, "w")
+str = str.replace(/ꦯ/g, "S")
+str = str.replace(/ꦰ/g, "S̱")
+str = str.replace(/ꦱ/g, "s")
+str = str.replace(/ꦲ/g, "h")
+str = str.replace(/꦳/g, "̣")
+str = str.replace(/ꦴ/g, "ː")
+str = str.replace(/ꦵ/g, "ȯ")
+str = str.replace(/ꦶ/g, "i")
+str = str.replace(/ꦷ/g, "ī")
+str = str.replace(/ꦸ/g, "u")
+str = str.replace(/ꦹ/g, "ū")
+str = str.replace(/ꦺ/g, "e")
+str = str.replace(/ꦻ/g, "aʲ")
+str = str.replace(/ꦼ/g, "ə")
+str = str.replace(/ꦽ/g, "r̥̆")
+str = str.replace(/ꦾ/g, "y̆")
+str = str.replace(/꧀/g, "͓")
+str = str.replace(/꧁/g, "<ᵗ")
+str = str.replace(/꧂/g, "ᵗ>")
+str = str.replace(/꧃/g, "{ʰ")
+str = str.replace(/꧄/g, "[ʰ")
+str = str.replace(/꧅/g, "<ʰ")
+str = str.replace(/꧆/g, "°")
+str = str.replace(/꧇/g, ":")
+str = str.replace(/꧈/g, ",")
+str = str.replace(/꧉/g, ".")
+str = str.replace(/꧊/g, "|")
+str = str.replace(/꧋/g, "¶")
+str = str.replace(/꧌/g, "(")
+str = str.replace(/꧍/g, ")")
+str = str.replace(/ꧏ/g, "²")
+str = str.replace(/꧐/g, "0")
+str = str.replace(/꧑/g, "1")
+str = str.replace(/꧒/g, "2")
+str = str.replace(/꧓/g, "3")
+str = str.replace(/꧔/g, "4")
+str = str.replace(/꧕/g, "5")
+str = str.replace(/꧖/g, "6")
+str = str.replace(/꧗/g, "7")
+str = str.replace(/꧘/g, "8")
+str = str.replace(/꧙/g, "9")
+str = str.replace(/꧞/g, "")
+str = str.replace(/꧟/g, "")
+
+return str.trim()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 function inSet (group, ch) {
 	if (group.indexOf(ch) > -1) return true
@@ -19,7 +134,7 @@ function inSet (group, ch) {
 
 
 
-function transliterate (str) {
+function OLDtransliterate (str) {
     
 str = str + '  '
 str = str.normalize('NFC')
