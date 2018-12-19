@@ -56,6 +56,48 @@ var latinkbd = [
 
 
 
+var justLatinMap = `
+a ã ą æ
+e e͡a
+i ï ɨ
+o ǫ œ
+u ü
+b b̈
+p þ þ̈
+f f̈
+g g̈
+k k̈
+n ŋ
+r ʀ
+t ẗ
+; ᛬ ᛫
+`
+
+
+
+var translitCharacterMap = `
+a aː ɑ ɑː æ æː
+e eː ə̯
+i iː
+o oː ø œː ɔ
+u uː
+y yː ɣ
+b bː
+d ʤ dː ð
+f fː
+g gː
+k kː
+l lː l̥
+m mː
+n nː n̥ ŋ
+p pː
+r rː r̥
+s sː ʃ
+t tː ʧ ʦ
+w ʍ
+O θ
+`
+
 
 
 

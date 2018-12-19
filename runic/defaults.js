@@ -29,8 +29,8 @@ var template = {}
 
 
 var inputAids = [
-{"title":"Transliteration characters", "dataVar":"showTranslitTrans", "dataLocn":"translittranscript", "dataShortTitle":"T", "type":"palette"},
-{"title":"IPA characters", "dataVar":"showIPATrans", "dataLocn":"ipatranscript", "dataShortTitle":"I", "type":"palette"}
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+{"title":"IPA characters", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
 ]
 
 var controls = [
