@@ -1,13 +1,105 @@
 function localtranscribe (direction, str) {
-	
-	if (direction == 'toTranslit') { return toTranslit(str) }
 	if (direction == 'transliterate') { return transliterate(str) }
+	if (direction == 'transcription') { return transcription(str) }
+	if (direction == 'toTranslit') { return toTranslit(str) }
 	if (direction == 'toDeva') { return toDeva(str) }
 	}
 		
 
+function transliterate (str) {
+str += ' '
+console.log(str)
+str = str.replace(/ક્ષ/g, "k͓ʃ")
+str = str.replace(/જ્ઞ/g, "ʤ͓ɲ")
+str = str.replace(/।/g, ".")
+str = str.replace(/॥/g, "¶")
+str = str.replace(/ં/g, "˜")
+str = str.replace(/ઃ/g, "h̽")
+str = str.replace(/અ/g, "ə̣")
+str = str.replace(/આ/g, "ạ̄")
+str = str.replace(/ઇ/g, "ị")
+str = str.replace(/ઈ/g, "ị̄")
+str = str.replace(/ઉ/g, "ụ")
+str = str.replace(/ઊ/g, "ụ̄")
+str = str.replace(/ઋ/g, "r̥̣")
+str = str.replace(/ઌ/g, "l̥̣")
+str = str.replace(/ઍ/g, "æ̣")
+str = str.replace(/એ/g, "ẹ")
+str = str.replace(/ઐ/g, "ə̣ʲ")
+str = str.replace(/ઑ/g, "ɔ̣")
+str = str.replace(/ઓ/g, "ọ")
+str = str.replace(/ઔ/g, "ə̣ʷ")
+str = str.replace(/ક/g, "k")
+str = str.replace(/ખ/g, "kʰ")
+str = str.replace(/ગ/g, "g")
+str = str.replace(/ઘ/g, "gʰ")
+str = str.replace(/ઙ/g, "ŋ")
+str = str.replace(/ચ/g, "c")
+str = str.replace(/છ/g, "cʰ")
+str = str.replace(/જ/g, "ʤ")
+str = str.replace(/ઝ/g, "ʤʰ")
+str = str.replace(/ઞ/g, "ɲ")
+str = str.replace(/ટ/g, "ʈ")
+str = str.replace(/ઠ/g, "ʈʰ")
+str = str.replace(/ડ/g, "ɖ")
+str = str.replace(/ઢ/g, "ɖʰ")
+str = str.replace(/ણ/g, "ɳ")
+str = str.replace(/ત/g, "t")
+str = str.replace(/થ/g, "tʰ")
+str = str.replace(/દ/g, "d")
+str = str.replace(/ધ/g, "dʰ")
+str = str.replace(/ન/g, "n")
+str = str.replace(/પ/g, "p")
+str = str.replace(/ફ/g, "f")
+str = str.replace(/બ/g, "b")
+str = str.replace(/ભ/g, "bʰ")
+str = str.replace(/મ/g, "m")
+str = str.replace(/ય/g, "y")
+str = str.replace(/ર/g, "r")
+str = str.replace(/લ/g, "l")
+str = str.replace(/ળ/g, "ɭ")
+str = str.replace(/વ/g, "ʋ")
+str = str.replace(/શ/g, "ɕ")
+str = str.replace(/ષ/g, "ʃ")
+str = str.replace(/સ/g, "s")
+str = str.replace(/હ/g, "h")
+str = str.replace(/઼/g, "̣")
+str = str.replace(/ા/g, "ə")
+str = str.replace(/િ/g, "i")
+str = str.replace(/ી/g, "ī")
+str = str.replace(/ુ/g, "u")
+str = str.replace(/ૂ/g, "ū")
+str = str.replace(/ૃ/g, "r̥")
+str = str.replace(/ૄ/g, "r̥̄")
+str = str.replace(/ૅ/g, "æ")
+str = str.replace(/ે/g, "e")
+str = str.replace(/ૈ/g, "əʲ")
+str = str.replace(/ૉ/g, "ɔ")
+str = str.replace(/ો/g, "o")
+str = str.replace(/ૌ/g, "əʷ")
+str = str.replace(/્/g, "͓")
+str = str.replace(/ૠ/g, "r̥̣̄")
+str = str.replace(/ૡ/g, "l̥̣̄")
+str = str.replace(/ૢ/g, "l̥")
+str = str.replace(/ૣ/g, "l̥̄")
+str = str.replace(/૦/g, "0")
+str = str.replace(/૧/g, "1")
+str = str.replace(/૨/g, "2")
+str = str.replace(/૩/g, "3")
+str = str.replace(/૪/g, "4")
+str = str.replace(/૫/g, "5")
+str = str.replace(/૬/g, "6")
+str = str.replace(/૭/g, "7")
+str = str.replace(/૮/g, "8")
+str = str.replace(/૯/g, "9")
 
-function transliterate (str) { // this version for abgidas
+return str.trim()
+}
+
+
+
+
+function transcription (str) { // this version for abgidas
     
 str = str + '  '
 str = str.normalize('NFC')
