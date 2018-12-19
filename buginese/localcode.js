@@ -57,5 +57,46 @@ var keyboarddef = [
 ]
 
 
+var justLatinMap = `
+a ɑ
+e ə
+i iya i͡a
+j ɟ
+g ɡ
+m ᵐp
+n ŋ ɲ ᵑk ᶮc ⁿr
+| ¶
+`
+
+
+
+var translitCharacterMap = `
+a ɑ ᨕ
+b b ᨅ
+c c ᨌ
+d d ᨉ
+e e ᨙ ə ᨛ
+g g ᨁ
+h h ᨖ
+i i ᨗ
+j ɟ ᨍ
+k k ᨀ
+l l ᨒ
+m m ᨆ ᵐp ᨇ
+n n ᨊ ŋ ᨂ ñ ᨎ ᵑk ᨃ ᶮc ᨏ ⁿr ᨋ
+o o ᨚ
+p p ᨄ
+r r ᨑ
+s s ᨔ
+t t ᨈ
+u u ᨘ
+w w ᨓ
+y y ᨐ
+, , ᨞
+| ¶ ᨟
+`
+
+
+
 
 
