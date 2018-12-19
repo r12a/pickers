@@ -2,7 +2,7 @@ function localtranscribe (direction, str) {
 	
 	if (direction == 'toTranslit') { return toTranslit(str) }
 	if (direction == 'transliterate') { return transliterate(str) }
-	if (direction == 'toDeva') { return toDeva(str) }
+	if (direction == 'transcription') { return transcription(str) }
 	}
 		
 
@@ -11,8 +11,29 @@ function localtranscribe (direction, str) {
 function transliterate (str) { 
 	str += '  '
 
-// consonants
-str = str.replace(/ߒ/g, "ṉ")
+str = str.replace(/،/g, ",")
+str = str.replace(/؛/g, ";")
+str = str.replace(/؟/g, "?")
+str = str.replace(/٪/g, "%")
+str = str.replace(/߀/g, "0")
+str = str.replace(/߁/g, "1")
+str = str.replace(/߂/g, "2")
+str = str.replace(/߃/g, "3")
+str = str.replace(/߄/g, "4")
+str = str.replace(/߅/g, "5")
+str = str.replace(/߆/g, "6")
+str = str.replace(/߇/g, "7")
+str = str.replace(/߈/g, "8")
+str = str.replace(/߉/g, "9")
+str = str.replace(/ߊ/g, "a")
+str = str.replace(/ߋ/g, "e")
+str = str.replace(/ߌ/g, "i")
+str = str.replace(/ߍ/g, "ɛ")
+str = str.replace(/ߎ/g, "u")
+str = str.replace(/ߏ/g, "o")
+str = str.replace(/ߐ/g, "ɔ")
+str = str.replace(/ߑ/g, "ˣ")
+str = str.replace(/ߒ/g, "ŋ")
 str = str.replace(/ߓ/g, "b")
 str = str.replace(/ߔ/g, "p")
 str = str.replace(/ߕ/g, "t")
@@ -28,26 +49,12 @@ str = str.replace(/ߞ/g, "k")
 str = str.replace(/ߟ/g, "l")
 str = str.replace(/ߠ/g, "ł")
 str = str.replace(/ߡ/g, "m")
-str = str.replace(/ߢ/g, "ñ")
+str = str.replace(/ߢ/g, "ɲ")
 str = str.replace(/ߣ/g, "n")
 str = str.replace(/ߤ/g, "h")
 str = str.replace(/ߥ/g, "w")
 str = str.replace(/ߦ/g, "y")
 str = str.replace(/ߧ/g, "j")
-
-
-// vowels
-str = str.replace(/ߊ/g, "a")
-str = str.replace(/ߋ/g, "e")
-str = str.replace(/ߌ/g, "i")
-str = str.replace(/ߍ/g, "ɛ")
-str = str.replace(/ߎ/g, "u")
-str = str.replace(/ߏ/g, "o")
-str = str.replace(/ߐ/g, "ɔ")
-str = str.replace(/ߑ/g, "ˣ")
-
-
-// tones
 str = str.replace(/߫/g, "¹")
 str = str.replace(/߬/g, "²")
 str = str.replace(/߭/g, "³")
@@ -55,30 +62,79 @@ str = str.replace(/߮/g, "⁴")
 str = str.replace(/߯/g, "⁵")
 str = str.replace(/߰/g, "⁶")
 str = str.replace(/߱/g, "⁷")
+str = str.replace(/߲/g, "x̃")
+str = str.replace(/߳/g, "x̣")
 str = str.replace(/ߴ/g, "⁸")
 str = str.replace(/ߵ/g, "⁹")
-
-// punctuation
 str = str.replace(/߸/g, ",")
 str = str.replace(/߹/g, "!")
 str = str.replace(/ߺ/g, "_")
-str = str.replace(/،/g, ",")
-str = str.replace(/؛/g, ";")
-str = str.replace(/؟/g, "?")
-str = str.replace(/٪/g, "%")
 
-// diacritics
-str = str.replace(/\u07F2/g, "\u0303")
-str = str.replace(/\u07F3/g, "\u0323")
-
-
-console.log(str)
 	return str.trim()
 	}
 
 
 
-function transcription (str) { // this version for abgidas
+function transcription (str) {
+
+str = str.normalize('NFC')+' '
+
+	// collect a list of punctuation, in order
+	var punctuationSet = /!|\(|\)|\-|\.|:|\[|\]|\*|\/|\\|،|؟|«|»|‹|›|߸|߹|ߺ| /g
+	var punctuationList = str.match(punctuationSet)
+	str = str.replace(punctuationSet,' ')
+
+	// handle consonant duplication
+	var re = /(.)([\u0859]?)\u085B/g
+	str = str.replace(re,'$1$1$2')  // shadda
+
+str = str.replace(/ߊ߳/g, "ä")
+str = str.replace(/ߋ߳/g, "ǝ̈")
+str = str.replace(/ߎ߳/g, "ü")
+str = str.replace(/ߓ߭/g, "bʰ")
+str = str.replace(/ߕ߭/g, "ᵵ")
+str = str.replace(/ߖ߭/g, "z")
+str = str.replace(/ߖ߳/g, "ƶ")
+str = str.replace(/ߗ߭/g, "ð")
+str = str.replace(/ߘ߭/g, "đ")
+str = str.replace(/ߙ߭/g, "ʀ")
+str = str.replace(/ߙ߳/g, "dʰ")
+str = str.replace(/ߛ߫/g, "ᵴ")
+str = str.replace(/ߛ߭/g, "ʃ")
+str = str.replace(/ߛ߳/g, "θ")
+str = str.replace(/ߜ߫/g, "ɣ")
+str = str.replace(/ߜ߭/g, "ɡ")
+str = str.replace(/ߜ߳/g, "kᵖ")
+str = str.replace(/ߝ߭/g, "v")
+str = str.replace(/ߞ߫/g, "q")
+str = str.replace(/ߞ߭/g, "x")
+str = str.replace(/ߟ߭/g, "lʰ")
+str = str.replace(/ߡ߭/g, "mʰ")
+str = str.replace(/ߢ߭/g, "nʰ")
+str = str.replace(/ߤ߭/g, "ḣ")
+str = str.replace(/ߦ߭/g, "yʰ")
+
+	// replace punctuation
+	var ptr = 0
+	var out = ''
+	for (var c=0;c<str.length;c++) {
+		if (str.charAt(c) == ' ') out += punctuationList[ptr++]
+		else out += str.charAt(c)
+		}
+	str = out
+
+str = transliterate(str)
+
+
+return str.trim()
+}
+
+
+
+
+
+
+function OLDtranscription (str) { // this version for abgidas
     
 str = str + '  '
 str = str.normalize('NFC')
@@ -236,13 +292,4 @@ str = str.replace(/ꧏ/g, "2")
 
 
 
-
-function toDeva (str) {
-	// add markup for ambiguous cases
-	chstring = chstring.replace(/\[/g,'<span class=alts><span class=altfirst>')
-	chstring = chstring.replace(/\|/g,'</span><span class=alt>')
-	chstring = chstring.replace(/\{/g,'</span><span class=altlast>')
-	chstring = chstring.replace(/\]/g,'</span></span>')
-	chstring = chstring.replace(/¶/g,'')
-	}
 

@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>N'Ko character picker 22</title>
+<title>N'Ko character picker 23</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared22/code.js">  </script>
+<script src="../shared23/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared22/pagetemplate.js">  </script>
+<script src="../shared23/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
 <script src="localtranscription.js">  </script>
@@ -39,160 +39,10 @@
 
 
 <div id="phonemelist" style="position:relative;">
- <div id="transcriptionChoice"></div>
-
-<div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="add('¹')">¹</span>
-<span class="t" onclick="add('²')">²</span>
-<span class="t" onclick="add('³')">³</span>
-<span class="t" onclick="add('⁴')">⁴</span>
-<span class="t" onclick="add('⁵')">⁵</span>
-<span class="t" onclick="add('⁶')">⁶</span>
-<span class="t" onclick="add('⁷')">⁷</span>
-<span class="t" onclick="add('⁸')">⁸</span>
-<span class="t" onclick="add('⁹')">⁹</span>
-
-<br>
-<span class="t" onclick="add('a')">a</span>
-<span class="t" onclick="add('e')">e</span>
-<span class="t" onclick="add('i')">i</span>
-<span class="t" onclick="add('ɛ')">ɛ</span>
-<span class="t" onclick="add('u')">u</span>
-<span class="t" onclick="add('o')">o</span>
-<span class="t" onclick="add('ɔ')">ɔ</span>
-<span class="t" onclick="add('ˣ')">ˣ</span>
-&nbsp; • &nbsp;
-<span class="t" onclick="add('̃')">x̃</span>
-<span class="t" onclick="add('̣')">x̣</span>
-
-
-
-<br/>
-<span class="t" onclick="add('ṉ')">ṉ</span>
-<span class="t" onclick="add('b')">b</span>
-<span class="t" onclick="add('p')">p</span>
-<span class="t" onclick="add('t')">t</span>
-<span class="t" onclick="add('ʤ')">ʤ</span>
-<span class="t" onclick="add('ʧ')">ʧ</span>
-<span class="t" onclick="add('d')">d</span>
-<span class="t" onclick="add('r')">r</span>
-<span class="t" onclick="add('ṙ')">ṙ</span>
-<span class="t" onclick="add('s')">s</span>
-<span class="t" onclick="add('gᵇ')">gᵇ</span>
-<span class="t" onclick="add('f')">f</span>
-<span class="t" onclick="add('k')">k</span>
-<span class="t" onclick="add('l')">l</span>
-<span class="t" onclick="add('ł')">ł</span>
-<span class="t" onclick="add('m')">m</span>
-<span class="t" onclick="add('ñ')">ñ</span>
-<span class="t" onclick="add('n')">n</span>
-<span class="t" onclick="add('h')">h</span>
-<span class="t" onclick="add('w')">w</span>
-<span class="t" onclick="add('y')">y</span>
-<span class="t" onclick="add('j')">j</span>
-
-<br/>
-<span class="t" onclick="add(',')">,</span>
-<span class="t" onclick="add('!')">!</span>
-<span class="t" onclick="add('_')">_</span>
-<span class="t" onclick="add(',')">,</span>
-<span class="t" onclick="add(';')">;</span>
-<span class="t" onclick="add('?')">?</span>
-<span class="t" onclick="add('%')">%</span>
-&nbsp; • &nbsp;
-<span class="t" onclick="add('0')">0</span>
-<span class="t" onclick="add('1')">1</span>
-<span class="t" onclick="add('2')">2</span>
-<span class="t" onclick="add('3')">3</span>
-<span class="t" onclick="add('4')">4</span>
-<span class="t" onclick="add('5')">5</span>
-<span class="t" onclick="add('6')">6</span>
-<span class="t" onclick="add('7')">7</span>
-<span class="t" onclick="add('8')">8</span>
-<span class="t" onclick="add('9')">9</span>
-
-
-</div>
-
-
-
-<div id="transliteration" class="transcript" style="display:none;">
-<span class="t" onmouseover="showtrans('߫')" onmouseout="hidetrans()" onclick="add('߫')">¹</span>
-<span class="t" onmouseover="showtrans('߬')" onmouseout="hidetrans()" onclick="add('߬')">²</span>
-<span class="t" onmouseover="showtrans('߭')" onmouseout="hidetrans()" onclick="add('߭')">³</span>
-<span class="t" onmouseover="showtrans('߮')" onmouseout="hidetrans()" onclick="add('߮')">⁴</span>
-<span class="t" onmouseover="showtrans('߯')" onmouseout="hidetrans()" onclick="add('߯')">⁵</span>
-<span class="t" onmouseover="showtrans('߰')" onmouseout="hidetrans()" onclick="add('߰')">⁶</span>
-<span class="t" onmouseover="showtrans('߱')" onmouseout="hidetrans()" onclick="add('߱')">⁷</span>
-<span class="t" onmouseover="showtrans('ߴ')" onmouseout="hidetrans()" onclick="add('ߴ')">⁸</span>
-<span class="t" onmouseover="showtrans('ߵ')" onmouseout="hidetrans()" onclick="add('ߵ')">⁹</span>
-
-<br>
-<span class="t" onmouseover="showtrans('ߊ')" onmouseout="hidetrans()" onclick="add('ߊ')">a</span>
-<span class="t" onmouseover="showtrans('ߋ')" onmouseout="hidetrans()" onclick="add('ߋ')">e</span>
-<span class="t" onmouseover="showtrans('ߌ')" onmouseout="hidetrans()" onclick="add('ߌ')">i</span>
-<span class="t" onmouseover="showtrans('ߍ')" onmouseout="hidetrans()" onclick="add('ߍ')">ɛ</span>
-<span class="t" onmouseover="showtrans('ߎ')" onmouseout="hidetrans()" onclick="add('ߎ')">u</span>
-<span class="t" onmouseover="showtrans('ߏ')" onmouseout="hidetrans()" onclick="add('ߏ')">o</span>
-<span class="t" onmouseover="showtrans('ߐ')" onmouseout="hidetrans()" onclick="add('ߐ')">ɔ</span>
-<span class="t" onmouseover="showtrans('ߑ')" onmouseout="hidetrans()" onclick="add('ߑ')">ˣ</span>
-&nbsp; • &nbsp;
-<span class="t" onmouseover="showtrans('߲')" onmouseout="hidetrans()" onclick="add('߲')">x̃</span>
-<span class="t" onmouseover="showtrans('߳')" onmouseout="hidetrans()" onclick="add('߳')">x̣</span>
-
-
-
-<br/>
-<span class="t" onmouseover="showtrans('ߒ')" onmouseout="hidetrans()" onclick="add('ߒ')">ṉ</span>
-<span class="t" onmouseover="showtrans('ߓ')" onmouseout="hidetrans()" onclick="add('ߓ')">b</span>
-<span class="t" onmouseover="showtrans('ߔ')" onmouseout="hidetrans()" onclick="add('ߔ')">p</span>
-<span class="t" onmouseover="showtrans('ߕ')" onmouseout="hidetrans()" onclick="add('ߕ')">t</span>
-<span class="t" onmouseover="showtrans('ߖ')" onmouseout="hidetrans()" onclick="add('ߖ')">ʤ</span>
-<span class="t" onmouseover="showtrans('ߗ')" onmouseout="hidetrans()" onclick="add('ߗ')">ʧ</span>
-<span class="t" onmouseover="showtrans('ߘ')" onmouseout="hidetrans()" onclick="add('ߘ')">d</span>
-<span class="t" onmouseover="showtrans('ߙ')" onmouseout="hidetrans()" onclick="add('ߙ')">r</span>
-<span class="t" onmouseover="showtrans('ߚ')" onmouseout="hidetrans()" onclick="add('ߚ')">ṙ</span>
-<span class="t" onmouseover="showtrans('ߛ')" onmouseout="hidetrans()" onclick="add('ߛ')">s</span>
-<span class="t" onmouseover="showtrans('ߜ')" onmouseout="hidetrans()" onclick="add('ߜ')">gᵇ</span>
-<span class="t" onmouseover="showtrans('ߝ')" onmouseout="hidetrans()" onclick="add('ߝ')">f</span>
-<span class="t" onmouseover="showtrans('ߞ')" onmouseout="hidetrans()" onclick="add('ߞ')">k</span>
-<span class="t" onmouseover="showtrans('ߟ')" onmouseout="hidetrans()" onclick="add('ߟ')">l</span>
-<span class="t" onmouseover="showtrans('ߠ')" onmouseout="hidetrans()" onclick="add('ߠ')">ł</span>
-<span class="t" onmouseover="showtrans('ߡ')" onmouseout="hidetrans()" onclick="add('ߡ')">m</span>
-<span class="t" onmouseover="showtrans('ߢ')" onmouseout="hidetrans()" onclick="add('ߢ')">ñ</span>
-<span class="t" onmouseover="showtrans('ߣ')" onmouseout="hidetrans()" onclick="add('ߣ')">n</span>
-<span class="t" onmouseover="showtrans('ߤ')" onmouseout="hidetrans()" onclick="add('ߤ')">h</span>
-<span class="t" onmouseover="showtrans('ߥ')" onmouseout="hidetrans()" onclick="add('ߥ')">w</span>
-<span class="t" onmouseover="showtrans('ߦ')" onmouseout="hidetrans()" onclick="add('ߦ')">y</span>
-<span class="t" onmouseover="showtrans('ߧ')" onmouseout="hidetrans()" onclick="add('ߧ')">j</span>
-
-<br/>
-<span class="t" onmouseover="showtrans('߸')" onmouseout="hidetrans()" onclick="add('߸')">,</span>
-<span class="t" onmouseover="showtrans('߹')" onmouseout="hidetrans()" onclick="add('߹')">!</span>
-<span class="t" onmouseover="showtrans('ߺ')" onmouseout="hidetrans()" onclick="add('ߺ')">_</span>
-<span class="t" onmouseover="showtrans('،')" onmouseout="hidetrans()" onclick="add('،')">,</span>
-<span class="t" onmouseover="showtrans('؛')" onmouseout="hidetrans()" onclick="add('؛')">;</span>
-<span class="t" onmouseover="showtrans('؟')" onmouseout="hidetrans()" onclick="add('؟')">?</span>
-<span class="t" onmouseover="showtrans('٪')" onmouseout="hidetrans()" onclick="add('٪')">%</span>
-&nbsp; • &nbsp;
-<span class="t" onmouseover="showtrans('߀')" onmouseout="hidetrans()" onclick="add('߀')">0</span>
-<span class="t" onmouseover="showtrans('߁')" onmouseout="hidetrans()" onclick="add('߁')">1</span>
-<span class="t" onmouseover="showtrans('߂')" onmouseout="hidetrans()" onclick="add('߂')">2</span>
-<span class="t" onmouseover="showtrans('߃')" onmouseout="hidetrans()" onclick="add('߃')">3</span>
-<span class="t" onmouseover="showtrans('߄')" onmouseout="hidetrans()" onclick="add('߄')">4</span>
-<span class="t" onmouseover="showtrans('߅')" onmouseout="hidetrans()" onclick="add('߅')">5</span>
-<span class="t" onmouseover="showtrans('߆')" onmouseout="hidetrans()" onclick="add('߆')">6</span>
-<span class="t" onmouseover="showtrans('߇')" onmouseout="hidetrans()" onclick="add('߇')">7</span>
-<span class="t" onmouseover="showtrans('߈')" onmouseout="hidetrans()" onclick="add('߈')">8</span>
-<span class="t" onmouseover="showtrans('߉')" onmouseout="hidetrans()" onclick="add('߉')">9</span>
-
-
-</div>
-
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 
 
 <div id="cursive" class="transcript" style="display:none;"></div>
-
 </div>
 
 
@@ -246,9 +96,9 @@
             <span class="g"><span class="hint">b</span><span class="c">ߓ</span></span>
 </div>
   <div>
-            <span class="g"><span class="hint">ṉ</span><span class="c">ߒ</span></span>
+            <span class="g"><span class="hint">ŋ</span><span class="c">ߒ</span></span>
             <span class="g"><span class="hint">n</span><span class="c">ߣ</span></span>
-            <span class="g"><span class="hint">ñ</span><span class="c">ߢ</span></span>
+            <span class="g"><span class="hint">ɲ</span><span class="c">ߢ</span></span>
             <span class="g"><span class="hint">m</span><span class="c">ߡ</span></span>
 </div>
   <div>
@@ -263,7 +113,7 @@
             <span class="g"><span class="hint">s</span><span class="c">ߛ</span></span>
             <span class="g"><span class="hint">f</span><span class="c">ߝ</span></span>
             <span class="g"><span class="hint">ł</span><span class="c">ߠ</span></span>
-            <span class="g"><span class="hint">yw</span><span class="c">ߧ</span></span>
+            <span class="g"><span class="hint">j</span><span class="c">ߧ</span></span>
 </div>
 </div>
 
@@ -275,16 +125,16 @@
       <span class="g"><span class="hint">u</span><span class="c">ߎ</span></span>
 </div>
     <div>
-      <span class="g"><span class="hint">ee</span><span class="c">ߋ</span></span>
-      <span class="g"><span class="hint">oo</span><span class="c">ߏ</span></span>
+      <span class="g"><span class="hint">e</span><span class="c">ߋ</span></span>
+      <span class="g"><span class="hint">o</span><span class="c">ߏ</span></span>
 </div>
     <div>
-      <span class="g"><span class="hint">y</span><span class="c">ߌ</span></span>
-      <span class="g"><span class="hint">o</span><span class="c">ߐ</span></span>
+      <span class="g"><span class="hint">i</span><span class="c">ߌ</span></span>
+      <span class="g"><span class="hint">ɔ</span><span class="c">ߐ</span></span>
 </div>
     <div>
-      <span class="g"><span class="hint">e</span><span class="c">ߍ</span></span>
-      <span class="c">ߑ</span>
+      <span class="g"><span class="hint">ɛ</span><span class="c">ߍ</span></span>
+      <span class="g"><span class="hint">ˣ</span><span class="c">ߑ</span></span>
 </div>
 </div>
 
