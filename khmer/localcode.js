@@ -265,11 +265,194 @@ function syllabify (str) {
 
 
 
+var justLatinMap = `
+a ɑ à æ ā ă ạ æ̣ á à ᵃ
+b ɓ
+c ɕ c̱
+d ɗ̱ ɗ ḍ̱ ḍ
+e ə̆ ə ɛ ᵊ
+h h̽ ḥ ʰ
+i ī ɨ ɨ̄ ị ị̄
+j ʲ
+k ḵ
+l ḻ ḷ  l̥̄ₔ l̥ₔ
+m m̱ m̽ ṃ
+n ṉ ŋ ɲ ñ ṅ ṇ
+o ọ ɔ ∅ ᵒ
+p p̄ ꝑ
+r ṟ r̥̄ₔ r̥ₔ ʳ
+s ś ʂ ṣ
+t ṭ̱ ṫ ṯ̇ ṭ ṱ
+u ū ụ ụ̄ ʉ
+v v̱ ʋ
+x ˟ ͓
+w ʷ
+y ȳ ý
+. ...
+? ʔ
+: ː
+[ ˘ 
+| ¶
+' ′ ʻ
+" ″
+* ⁎
+`
+
+
+var translitCharacterMap = `
+a ā ា a ៈ æ ែ aʲ ៃ aʷ ៅ aᵊ ើ ă ័
+A æ̣ ឯ ạʲ ឰ ạʷ ឳ ạᵒ ឲ
+b b ប
+c c ច c̱ ជ
+C cʰ ឆ c̱ʰ ឈ
+d ɗ ដ ɗ̱ ឌ
+e e េ ᵊ ៝
+h h ហ h̽ ះ
+i i ិ ī ី ɨ ឹ ɨ̄ ឺ ɨᵊ ឿ iᵊ ៀ
+I ị ឥ ị̄ ឦ ɨ̣ ឪ
+k k ក ḵ គ
+K kʰ ខ ḵʰ ឃ
+l l ឡ ḻ ល
+L l̥ₔ ឭ l̥̄ₔ ឮ
+m m̱ ម m̽ ំ
+n ɲ ញ n ណ ṉ ន
+N ŋ ង
+o o ោ
+O ọ ឱ
+p pʰ ផ p̄ ព p̄ʰ ភ
+r ṟ រ
+R r̥ₔ ឫ r̥̄ₔ ឬ
+s s ស
+t ṫʰ ឋ ṯ̇ʰ ឍ t ត tʰ ថ ṯ ទ ṯʰ ធ
+u u ុ ū ូ uᵊ ួ
+U ụ ឧ ụ̄ ឩ
+v v̱ វ
+y ȳ យ
+} ʔ អ
+± ¤ ៛
+0 0 ០
+1 1 ១
+2 2 ២
+3 3 ៣
+4 4 ៤
+5 5 ៥
+6 6 ៦
+7 7 ៧
+8 8 ៨
+9 9 ៩
+|  ¶  ៕
+[ ʳ ៌ ˟ ៍ ˘ ់ ⁎ ៏ ″ ៉ ′ ៊
+. . ។ ... ៘
+: : ៖
+* ͓ ្
+! ⸯ ៎
+\\ ¯ ៑
+} ʔ អ
+`
 
 
 
+/*
+var translitCharacterMap = `
+A æ̣ ឯ ạʲ ឰ ạᵒ ឲ ạʷ ឳ
+I ị ឥ ị̄ ឦ ɨ̣ ឪ
+L l̥ ឭ l̥̄ ឮ
+O ọ ឱ
+R r̥ ឫ r̥̄ ឬ
+U ụ ឧ ụ̄ ឩ
+a a ៈ ā ័ ă ័ āṃ ាំ æ ែ aᵊ ើ aʲ ៃ aʷ ៅ
+e e េ eḥ េះ
+i i ិ ī ី iᵊ ៀ ɨ ឹ ɨ̄ ឺ ɨᵊ ឿ
+o o ោ oḥ ោះ
+u u ុ ū ូ uᵊ ួ uḥ ុះ uṃ ុំ
+' ‘ អ
+b b ប
+c c ច cʰ ឆ c̱ʰ ឈ c̱ ជ
+d ḍ̱ ដ ḍ̱ ឌ
+h h ហ ḥ ះ
+k k ក kʰ ខ ḵʰ ខ ḵ គ
+l l ឡ ḷ ល
+m m ម ṃ ំ
+n ṇ ណ n ន ñ ញ ṅ ង
+p pʰ ផ p ព p̄ʰ ភ
+r r រ
+s ś ឝ ṣ ឞ s ស
+t t ត tʰ ថ ṭʰ ឋ ṭ̱ʰ ឍ ṯʰ ធ ṯ ទ
+v v វ
+y y យ
+;   ͓ ្
+| ʳ ៌ ˟ ៍ ˘ ់ ă ័ ᵊ ៝ ⸯ ៎ ⁎ ៏ ″ ៉ ′ ៊
+0 0 ០
+1 1 ១
+2 2 ២
+3 3 ៣
+4 4 ៤
+5 5 ៥
+6 6 ៦
+7 7 ៧
+8 8 ៨
+9 9 ៩
+`
+*/
+
+var huffmanCharacterMap = `
+b b ប
+c c ច c ជ c ឆ c ឈ ch ឆ ch ឈ
+d d ដ d ត d ឌ
+f f ហ្វ
+h h ស
+k k ក k គ k ខ k ឃ kh ខ kh ឃ
+l l ល l ឡ
+m m ម
+n n ណ n ន n̄ ញ ŋ ង
+p p ព p ប p ប៉ p ផ p ភ ph ផ ph ភ
+r r រ
+s s ស
+t t ត t ទ t ដ t ឋ t ឌ t ឍ t ធ th ឋ th ឍ th ថ th ធ
+w w វ
+y y យ
+a a ័ a ា a ់ a ៈ aa ា aə ើ ae ែ ae ឯ ah ះ am ាំ aŋ ាំង aŋ ំ aŋ ាំង aŋ ំ ao ោ ao ឧ ao ឱ ao ឲ aw ៅ aw ឳ ay ័យ ay ័ៃ ay ័ឰ ɑ ់  ɑh ោះ ɑh ស់ ɑm ំ ɑm ម់
+e e ិ ee េ eə̆ ័ eə̆ ា eə̆ ់ eə̆ ៈ eə̆h ះ eə̆h ាះ eə̆ŋ ាំង eh ិះ eh េះ eh ែះ eh ែស ei េ ə ិ ə ឹ ə េ ə ឥ əə ើ əh ើះ ើះ əh əɨ ឺ əw ូវ əw ឪ əy ិយ əy ី əy ឥ əy ឦ ɛ ិ ɛɛ ែ
+i i ិ ii ិយ ii ី iə ា iə ៀ ih ិះ ih េះ ɨ ិ ɨ ឹ ɨ េ ɨ ឥ ɨɨ ឺ ɨə ឿ ɨw ូវ ɨw ៅ ɨy ័យ ɨy ៃ ɨy េយ
+o o ុ o ឧ oo ោ oə̆ ័ oə̆ ា oə̆ ់ oh ុះ oə̆m ាំ om ុំ ou ូ ou ឩ ɔə ័រ ɔə ៌
+u u ុ u ់ u ឧ uu ូ uu ឩ uə ួ uə̆ ់ uə̆ ់ uə̆h ោះ uə̆h ស់ uh ុះ um ម់ um ុំ um ំ um ុម up ប់
+R rə ៌ rɨ ឫ rɨɨ ឬ
+L lɨ ឭ lɨɨ ឮ
+`
 
 
+var gilbertCharacterMap = `
+b b ប b ព b ភ bp ព bp ប៉
+c ch ឆ ch ឈ
+d d ដ d ត d ឌ dt ត dt ទ
+f f ហ្វ
+g g ក g គ
+h h ហ h ស
+j j ហ j ស
+k k ខ k ឃ k ក k គ
+l l ល l ឡ
+m m ម
+n n ណ n ន n̄ ញ ng ង
+p p ផ p ប៉ p ប p ផ p ភ
+q q អ q ក q គ q ខ q ឃ
+r r រ
+s s ស
+t t ថ t ធ t ឋ t ឍ t ទ t ដ t ឋ t ឍ t ត
+T th ឋ th ឍ th ថ th ធ
+v vw វ
+w w វ
+y y យ
+a a ា a ់ a ័ a ៈ aa ា ae ែ ae ឯ ah ះ ai ៃ ai ឰ
+A am ាំ ang ាំង ao ោ ao ឱ au ៅ aʉ ើ ay ័យ
+e e ិ e ័ ee េ ee េ ee ឦ eh េះ eh ិះ ei ៃ ei ឥ ey ី ey ័យ
+E ə ឹ ə ឹ əə ើ əm ំ əʉ ៅ ɛɛ ែ ɛa ា ɛa ់ ɛah ះ ɛah ៈ ɛang ាំង
+i i ិ ii ី ii យ ia ា ia ៀ ih េះ ih ិះ ik ច ik ជ
+o o ុ o ់ oo ូ oo ោ oo ឧ oa ា oa ់ oa ៌ oa ័ oa ័រ oam ាំ oh ុះ om ុំ ow ឪ
+O ɔɔ អ ɔh ោះ ɔm ំ
+u u ុ uu ូ ua ួ uah ោះ uh ុះ um ុំ ʉʉ ឺ ʉa ឿ
+R re ឫ rʉʉ ឬ
+L lə ឭ lʉʉ ឮ
+`
 
 
 
