@@ -75,5 +75,149 @@ var keyboarddef = [
 ]
 
 
+var justLatinMap = `
+a ā ɑ ɑ̄ ɑ̣̄
+b β
+c ɕ
+d d̪ ʤ ð ɖ
+e ē ẹ ẹ̄
+h ʰ
+i ī ị ị̄
+j ʲ
+l ḷ ḻ ɭ
+n ṅ ṇ ṉ n̪ ñ ɲ ɳ ŋ
+o ō ọ ọ̄
+r ṛ ṟ ɻ ɽ ɾ
+s ṣ ʂ ʃ
+t ṭ t̪ ʈ ʧ
+u ū ụ ụ̄
+v ʋ ʌ ʌ̣
+w ʷ ɯ
+y ɣ
+z ẓ ʒ
+[ ː ˜
+* ͓
+`
+
+
+
+var translitCharacterMap = `
+a ɑː ா
+A ɑː̣ ஆ
+c c ச
+d ʤ ஜ
+e e ெ ē ே
+E ẹ எ ẹ̄ ஏ
+f f ஃப
+h h ஹ
+i i ி ī ீ
+I ị இ ị̄ ஈ
+k k க k͓ʂ க்ஷ
+l l ல ɭ ள
+m m ம
+n n ன ŋ ங ɲ ஞ ɳ ண ṅ ந
+o o ோ ō ை o \u{BC7}\u{BBE}
+O ọ ஓ ọ̄ ஐ
+p p ப
+r r ற ɾ ர ɻ ழ
+s s ஸ ʃ ஶ ʂ ஷ
+t t த ʈ ட
+u u ு ū ூ
+U ụ உ ụ̄ ஊ
+v ʋ வ ʌʲ ொ ʌʷ ௌ ʌʲ \u{BC6}\u{BBE} ʌʷ \u{BC6}\u{BD7}
+V ʌ̣ அ ʌ̣ʲ ஒ ʌ̣ʷ ஔ ʌ̣ʷ \u{B92}\u{BD7}
+y y ய
+z z ஃஜ
+[ ˜ ஃ
+: ː ௗ
+| ¶ ॥
+, . ।
+* ͓ ்
+$ (om) ௐ (year) ௵ (month) ௴ (day) ௳
+± # ௺ {10} ௰ {100} ௱ {1000} ௲
+§ 0 ௦ 1 ௧ 2 ௨ 3 ௩ 4 ௪ 5 ௫ 6 ௬ 7 ௭ 8 ௮ 9 ௯
+`
+
+
+globals.showIPACharMap = ''
+
+var ipaCharacterMap = `
+a ɑː ா
+A ɑː ஆ oː ஐ
+b b ப β ப
+c ɕ ஶ
+d ʤ- ஜ ʤ ச ɖ ட d̪ த ð த d ற
+e e ெ eː ே
+E e எ eː ஏ
+f f ஃப f ப
+g ɡ க
+h h ஹ h க
+i i ி iː ீ
+I i இ iː ஈ
+k k- க kʂ க்ஷ
+l l ல ɭ ள
+m m ம
+n n ன ŋ ங ɲ ஞ ɳ ண n̪ ந
+o o ொ oː ோ
+O o ஓ
+p p- ப
+r r ற ɾ ர ɻ ழ ɽ ட
+s s ஸ ʂ ஷ ʃ ச s ச ʃ ஶ
+t t̪- த ʧ- ச ʈ- ட t ற
+u u ு uː ூ
+U u உ uː ஊ
+v ʋ வ ʌj ை ʌʋ ௌ
+V ʌ அ ʌj ஒ ʌʋ ஔ
+w ɯ ு
+W ɯ உ
+x x க
+y j ய ɣ க
+z z ஃஜ ʒ ச z ஜ
+§ 0 ௦ 1 ௧ 2 ௨ 3 ௩ 4 ௪ 5 ௫ 6 ௬ 7 ௭ 8 ௮ 9 ௯
+# ? ௺ ? ௰ ? ௱ ? ௲
+[ - ஃ ː ௗ
+* ͓ ்
+! ? ௐ ? ௵ ? ௴ ? ௳
+`
+
+globals.showISOCharMap = ''
+
+var isoCharacterMap = `
+a a அ ā ா ai ை aw ௌ
+A ā ஆ ai ஐ aw ஔ
+c c ச
+d d ஜ
+e e ெ ē ே
+E e எ ē ஏ
+f f ஃப
+h h ஹ
+i i ி ī ீ
+I i இ ī ஈ
+k k க kṣ க்ஷ
+l l ல ḷ ள ḻ ழ
+m m ம
+n ṉ ன ṅ ங ñ ஞ ṇ ண n ந
+o o ொ ō ோ
+O o ஒ ō ஓ
+p p ப
+r ṟ ற r ர ṛ ழ
+s s ஸ ? ஶ ṣ ஷ
+t t த ṭ ட
+u u ு ū ூ
+U u உ ū ஊ
+v v வ
+y y ய
+z ẓ ழ z ஃஜ
+§ 0 ௦ 1 ௧ 2 ௨ 3 ௩ 4 ௪ 5 ௫ 6 ௬ 7 ௭ 8 ௮ 9 ௯
+# # ௺ (ten) ௰ (hundred) ௱ (thousand) ௲
+[ ˜ ஃ ː ௗ ¶ ॥
+, . ।
+* ͓ ்
+! (om) ௐ (year) ௵ (month) ௴ (day) ௳
+`
+
+
+
+
 
 

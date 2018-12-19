@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Tamil character picker 22</title>
+<title>Tamil character picker 23</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared22/code.js">  </script>
+<script src="../shared23/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared22/pagetemplate.js">  </script>
+<script src="../shared23/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
 <script src="localtranscription.js">  </script>
@@ -39,141 +39,9 @@
 
 
 <div id="phonemelist" style="position:relative;">
- <div id="transcriptionChoice"></div>
-
-<div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('b')">b</span>
-<span class="t" onclick="dotrans('β')">β</span>
-<span class="t" onclick="dotrans('c')">c</span>
-<span class="t" onclick="dotrans('ɕ')">ɕ</span>
-<span class="t" onclick="dotrans('d')">d</span>
-<span class="t" onclick="dotrans('d̪')">d̪</span>
-<span class="t" onclick="dotrans('ɖ')">ɖ</span>
-<span class="t" onclick="dotrans('ð')">ð</span>
-<span class="t" onclick="dotrans('ʤ')">ʤ</span>
-<span class="t" onclick="dotrans('f')">f</span>
-<span class="t" onclick="dotrans('ɡ')">ɡ</span>
-<span class="t" onclick="dotrans('h')">h</span>
-<span class="t" onclick="dotrans('ɦ')">ɦ</span>
-<span class="t" onclick="dotrans('j')">j</span>
-<span class="t" onclick="dotrans('k')">k</span>
-<span class="t" onclick="dotrans('l')">l</span>
-<span class="t" onclick="dotrans('ḷ')">ḷ</span>
-<span class="t" onclick="dotrans('ɭ')">ɭ</span>
-<span class="t" onclick="dotrans('ḻ')">ḻ</span>
-<span class="t" onclick="dotrans('m')">m</span>
-<span class="t" onclick="dotrans('n')">n</span>
-<span class="t" onclick="dotrans('ṇ')">ṇ</span>
-<span class="t" onclick="dotrans('ṉ')">ṉ</span>
-<span class="t" onclick="dotrans('n̪')">n̪</span>
-<span class="t" onclick="dotrans('ṅ')">ṅ</span>
-<span class="t" onclick="dotrans('ñ')">ñ</span>
-<span class="t" onclick="dotrans('ŋ')">ŋ</span>
-<span class="t" onclick="dotrans('ɳ')">ɳ</span>
-<span class="t" onclick="dotrans('ɲ')">ɲ</span>
-<span class="t" onclick="dotrans('p')">p</span>
-<span class="t" onclick="dotrans('r')">r</span>
-<span class="t" onclick="dotrans('ṟ')">ṟ</span>
-<span class="t" onclick="dotrans('r̪')">r̪</span>
-<span class="t" onclick="dotrans('ɾ')">ɾ</span>
-<span class="t" onclick="dotrans('ɽ')">ɽ</span>
-<span class="t" onclick="dotrans('ɻ')">ɻ</span>
-<span class="t" onclick="dotrans('s')">s</span>
-<span class="t" onclick="dotrans('ś')">ś</span>
-<span class="t" onclick="dotrans('ṣ')">ṣ</span>
-<span class="t" onclick="dotrans('ʂ')">ʂ</span>
-<span class="t" onclick="dotrans('ʃ')">ʃ</span>
-<span class="t" onclick="dotrans('t')">t</span>
-<span class="t" onclick="dotrans('ṭ')">ṭ</span>
-<span class="t" onclick="dotrans('ʈ')">ʈ</span>
-<span class="t" onclick="dotrans('t̪')">t̪</span>
-<span class="t" onclick="dotrans('ʧ')">ʧ</span>
-<span class="t" onclick="dotrans('v')">v</span>
-<span class="t" onclick="dotrans('ʋ')">ʋ</span>
-<span class="t" onclick="dotrans('x')">x</span>
-<span class="t" onclick="dotrans('z')">z</span>
-<span class="t" onclick="dotrans('ʒ')">ʒ</span>
-<span class="t" onclick="dotrans('ɣ')">ɣ</span>
-<span class="t" onclick="dotrans('θ')">θ</span>
-<br/>
-<span class="t" onclick="dotrans('ʌ')">ʌ</span>
-<span class="t" onclick="dotrans('a')">a</span>
-<span class="t" onclick="dotrans('ā')">ā</span>
-<span class="t" onclick="dotrans('ɑː')">ɑː</span>
-<span class="t" onclick="dotrans('e')">e</span>
-<span class="t" onclick="dotrans('eː')">eː</span>
-<span class="t" onclick="dotrans('ē')">ē</span>
-<span class="t" onclick="dotrans('ə')">ə</span>
-<span class="t" onclick="dotrans('i')">i</span>
-<span class="t" onclick="dotrans('ī')">ī</span>
-<span class="t" onclick="dotrans('iː')">iː</span>
-<span class="t" onclick="dotrans('o')">o</span>
-<span class="t" onclick="dotrans('ō')">ō</span>
-<span class="t" onclick="dotrans('oː')">oː</span>
-<span class="t" onclick="dotrans('u')">u</span>
-<span class="t" onclick="dotrans('ū')">ū</span>
-<span class="t" onclick="dotrans('uː')">uː</span>
-<span class="t" onclick="dotrans('ɯ')">ɯ</span>
-<span class="t" onclick="dotrans('ː')">ː</span>
-<span class="t" onclick="dotrans('')"></span>
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 </div>
 
-
-<div id="isotranscript" class="transcript" style="display:none;">
-<span class="t" onclick="dotrans('ச')">c</span>
-<span class="t" onclick="dotrans('ஃப')">f</span>
-<span class="t" onclick="dotrans('ஹ')">h</span>
-<span class="t" onclick="dotrans('ஜ')">j</span>
-<span class="t" onclick="dotrans('க')">k</span>
-<span class="t" onclick="dotrans('ள')">ḷ</span>
-<span class="t" onclick="dotrans('ழ')">ḻ</span>
-<span class="t" onclick="dotrans('ம')">m</span>
-<span class="t" onclick="dotrans('ந')">n</span>
-<span class="t" onclick="dotrans('ன')">ṉ</span>
-<span class="t" onclick="dotrans('ண')">ṇ</span>
-<span class="t" onclick="dotrans('ஞ')">ñ</span>
-<span class="t" onclick="dotrans('ங')">ṅ</span>
-<span class="t" onclick="dotrans('ப')">p</span>
-<span class="t" onclick="dotrans('ர')">r</span>
-<span class="t" onclick="dotrans('ற')">ṟ</span>
-<span class="t" onclick="dotrans('ஸ')">s</span>
-<span class="t" onclick="dotrans('ஶ')">ś</span>
-<span class="t" onclick="dotrans('ஷ')">ṣ</span>
-<span class="t" onclick="dotrans('த')">t</span>
-<span class="t" onclick="dotrans('ட')">ṭ</span>
-<span class="t" onclick="dotrans('வ')">v</span>
-<span class="t" onclick="dotrans('ய')">y</span>
-<span class="t" onclick="dotrans('ஃஜ')">z</span>
-<span class="t" style="border-radius:7px; border: solid #ccc 1px; font-size: 80%;padding:0 2px;" onclick="dotrans('\u0BCD')">virama</span>
-	<br/>
-<span class="t" onclick="dotrans('ா')">a</span>
-<span class="t" onclick="dotrans('ை')">ai</span>
-<span class="t" onclick="dotrans('ௌ')">au</span>
-<span class="t" onclick="dotrans('ெ')">e</span>
-<span class="t" onclick="dotrans('ே')">ē</span>
-<span class="t" onclick="dotrans('ி')">i</span>
-<span class="t" onclick="dotrans('ீ')">ī</span>
-<span class="t" onclick="dotrans('ொ')">o</span>
-<span class="t" onclick="dotrans('ோ')">ō</span>
-<span class="t" onclick="dotrans('ு')">u</span>
-<span class="t" onclick="dotrans('ூ')">ū</span>
-&nbsp;&nbsp;&nbsp; independent:
-<span class="t" onclick="dotrans('அ')">a</span>
-<span class="t" onclick="dotrans('ஆ')">ā</span>
-<span class="t" onclick="dotrans('ஐ')">ai</span>
-<span class="t" onclick="dotrans('ஔ')">au</span>
-<span class="t" onclick="dotrans('எ')">e</span>
-<span class="t" onclick="dotrans('ஏ')">ē</span>
-<span class="t" onclick="dotrans('இ')">i</span>
-<span class="t" onclick="dotrans('ஈ')">ī</span>
-<span class="t" onclick="dotrans('ஒ')">o</span>
-<span class="t" onclick="dotrans('ஓ')">ō</span>
-<span class="t" onclick="dotrans('உ')">u</span>
-<span class="t" onclick="dotrans('ஊ')">ū</span>
-</div>
-
-
-</div>
 
 
 
@@ -189,7 +57,33 @@
 
 
 <div id="alphabet" class="default">
- 
+
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<img alt="" src="images/shape1.png" onclick="findShape('B9A,B95,BE7,BA4,BEA,BEC,BF2,BEF,B95BCDBB7','சு,கூ,கு,சூ,து,தூ,க்ஷு,க்ஷூ',true)" /> 
+<img alt=" " src="images/shape3.png" onclick="findShape('B9F,BAA,BAF,BAE,BF4,BB4,BF6','டி,டீ,பு,யு,மீ,மு,மூ,ழு,ழூ',true)" />
+<img alt=" " src="images/shape2.png" onclick="findShape('BB0,B88,BBE,BE9,B99,BA8,BEB,BFA,BF9','ர்,ரி,ரீ,ஙு,நு,நூ,ரு,ரூ,நீ',true)" />
+<img alt=" " src="images/shape14.png" onclick="findShape('BB1,BF1','று,றூ,றா',true)" />
+<img alt=" " src="images/shape4.png" onclick="findShape('BB3,BD7,BB8,B8E,BED,B8F,BF7,BCC,B8A,B94,BB2','ஸி,ஸீ,ஸு,ஸூ,ளு,ளூ,ஞு,ஞூ',true)" />
+<img alt=" " src="images/shape5.png" onclick="findShape('BA9,BC8,BA3','னு,ணு,னூ,ணூ,னா,ணா',true)" />
+<img alt=" " src="images/shape6.png" onclick="findShape('BF3,BB5,BB7,BB9,BF5','ஷு,ஷூ,ஹு,ஹூ',true)" />
+<img alt=" " src="images/shape15.png" onclick="findShape('BB2','லி,லீ,லு,லூ',true)" />
+<img alt=" " src="images/shape7.png" onclick="findShape('B9C,B90','ஜு,ஜூ',true)" />
+<img alt=" " src="images/shape8.png" onclick="findShape('B85,BEE,B86,B87','',true)" />
+<img alt=" " src="images/shape9.png" onclick="findShape('BE8,B89,B8A,BC8','',true)" />
+<img alt=" " src="images/shape10.png" onclick="findShape('BC6,BCA,BCC,BF8','றொ,னொ,ணொ',true)" />
+<img alt=" " src="images/shape11.png" onclick="findShape('BC7,BCB','றோ,னோ,ணோ',true)" />
+<img alt=" " src="images/shape12.png" onclick="findShape('B92,B93,B94,BD0','',true)" />
+<img alt=" " src="images/shape0.png" onclick="findShape('BB6,BC8,BBF,BC0,BC1,BC2,BF0,BE6,B83,B82,B87','டு,டூ',true)" />
+</div>
+
+<div id="extrashapes"></div>
+</div>
+
+
+
 <div class="spaceline">
 <span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
 <span class="touch" title="Zero width non-joiner" style="padding: 5px;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
@@ -337,30 +231,6 @@
 </details>
   </div>
 
-
-
-
- <div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
-<img alt="" src="images/shape1.png" onclick="findShape('B9A,B95,BE7,BA4,BEA,BEC,BF2,BEF,B95BCDBB7','சு,கூ,கு,சூ,து,தூ,க்ஷு,க்ஷூ',true)" /> 
-<img alt=" " src="images/shape3.png" onclick="findShape('B9F,BAA,BAF,BAE,BF4,BB4,BF6','டி,டீ,பு,யு,மீ,மு,மூ,ழு,ழூ',true)" />
-<img alt=" " src="images/shape2.png" onclick="findShape('BB0,B88,BBE,BE9,B99,BA8,BEB,BFA,BF9','ர்,ரி,ரீ,ஙு,நு,நூ,ரு,ரூ,நீ',true)" />
-<img alt=" " src="images/shape14.png" onclick="findShape('BB1,BF1','று,றூ,றா',true)" />
-<img alt=" " src="images/shape4.png" onclick="findShape('BB3,BD7,BB8,B8E,BED,B8F,BF7,BCC,B8A,B94,BB2','ஸி,ஸீ,ஸு,ஸூ,ளு,ளூ,ஞு,ஞூ',true)" />
-<img alt=" " src="images/shape5.png" onclick="findShape('BA9,BC8,BA3','னு,ணு,னூ,ணூ,னா,ணா',true)" />
-<img alt=" " src="images/shape6.png" onclick="findShape('BF3,BB5,BB7,BB9,BF5','ஷு,ஷூ,ஹு,ஹூ',true)" />
-<img alt=" " src="images/shape15.png" onclick="findShape('BB2','லி,லீ,லு,லூ',true)" />
-<img alt=" " src="images/shape7.png" onclick="findShape('B9C,B90','ஜு,ஜூ',true)" />
-<img alt=" " src="images/shape8.png" onclick="findShape('B85,BEE,B86,B87','',true)" />
-<img alt=" " src="images/shape9.png" onclick="findShape('BE8,B89,B8A,BC8','',true)" />
-<img alt=" " src="images/shape10.png" onclick="findShape('BC6,BCA,BCC,BF8','றொ,னொ,ணொ',true)" />
-<img alt=" " src="images/shape11.png" onclick="findShape('BC7,BCB','றோ,னோ,ணோ',true)" />
-<img alt=" " src="images/shape12.png" onclick="findShape('B92,B93,B94,BD0','',true)" />
-<img alt=" " src="images/shape0.png" onclick="findShape('BB6,BC8,BBF,BC0,BC1,BC2,BF0,BE6,B83,B82,B87','டு,டூ',true)" />
-</div>
-
-<div id="extrashapes"></div>
-</div>
 
 
 <div id="temp"></div>
