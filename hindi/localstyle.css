@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Noto Serif Devanagari WF';
+    src: url('/shared/webfonts/notoserifdevanagari-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notoserifdevanagari-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+
+[lang=hi] { font-family: 'Noto Serif Devanagari WF', serif; }
+
+
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Serif Devanagari WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#consonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 7.2em;
+    justify-content: space-between;
+    line-height: 1.5;
+    }
+#consonantGrid > span {
+    min-width: 1em;
+    }
+#moreconsonants {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 3em;
+    justify-content: center;
+    line-height: 1.5;
+    align-content: flex-start;
+    }
+#ivowelGrid {
+    white-space: normal;
+    max-width: 5.46em;
+    max-height: 15em;
+    justify-content: flex-end;
+    line-height: 1.5;
+    text-align: right;
+    }
+#vowelGrid {
+    white-space: normal;
+    max-width: 6em;
+    max-height: 15em;
+    justify-content: space-between;
+    line-height: 1.5;
+    margin-left: 1em;
+    }
+#pulli {
+    width: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 .5em 0 .75em;
+    justify-content: center;
+    align-items: center;
+    }
+#numberGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 4em;
+    max-height: 8em;
+    justify-content: space-between;
+    margin-left: 1.2em;
+    line-height: 1.5;
+    font-size: 90%;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#obsolete {
+    text-align: center;
+    font-size: 90%;
+    }
+
+
