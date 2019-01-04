@@ -10,8 +10,8 @@ For a list of links to pickers see https://r12a.github.io/pickers/
 
 They currently include:
     <span><a href="arabic/">Arabic</a></span> •
-    <span><a href="arabicblock/">All Arabic</a></span> •
-    <span><a href="aramaic/">Assyrian Neo-Aramaic</a></span> •
+    <span><a href="arabicblock/">All&nbsp;Arabic</a></span> •
+    <span><a href="aramaic/">Assyrian&nbsp;Neo-Aramaic</a></span> •
     <span><a href="armenian/">Armenian</a></span> •
     <span><a href="balinese/">Balinese</a></span> •
     <span><a href="buginese/">Buginese</a></span> •
@@ -25,6 +25,7 @@ They currently include:
     <span><a href="gujarati/">Gujarati</a></span> •
     <span><a href="gurmukhi/">Gurmukhi</a></span> •
     <span><a href="hebrew/">Hebrew</a></span> •
+    <span><a href="hindi/">Hindi</a></span> •
     <span><a href="ipa/">IPA</a></span> •
     <span><a href="javanese/">Javanese</a></span> •
     <span><a href="khmer/">Khmer</a></span> •
@@ -32,12 +33,12 @@ They currently include:
     <span><a href="latin/">Latin&nbsp;&amp;&nbsp;diacritics</a></span> •
     <span><a href="lisu/">Lisu (Fraser script)</a></span> •
     <span><a href="makasar/">Makasar</a></span> •
-    <span><a href="mandaic/">Mandaic</a></span> •
     <span><a href="malayalam/">Malayalam</a></span> •
+    <span><a href="mandaic/">Mandaic</a></span> •
     <span><a href="mongolian/">Mongolian</a></span> •
     <span><a href="newtailue/">New&nbsp;Tai&nbsp;Lue</a></span> •
     <span><a href="nko/">N'Ko</a></span> •
-    <span><a href="northernthai/">Northern Thai</a></span> •
+    <span><a href="northernthai/">Northern&nbsp;Thai</a></span> •
     <span><a href="oldenglish/">Old&nbsp;English</a></span> •
     <span><a href="oldnorse/">Old&nbsp;Norse</a></span> •
     <span><a href="persian/">Persian</a></span> •
