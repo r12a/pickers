@@ -136,5 +136,64 @@ function addVowel (ch) {
 	}
 
 
+var justLatinMap = `
+a ā ạ aː aːw aʲ aj aᵐ am aⁿ an aᵖ ap
+e ə əʷ əw ɛ
+i iᵊ iə ɨ ɨᵊ ɨə
+o ɔ
+u uᵊ uə
+[ ¹̱ ²̱ ¹ ² ³ ⁴ ⁵ ⁶
+b ḇ
+c c̱ cʰ c̱ʰ
+d ḏ
+f f̱
+g ḡ gʰ
+h ẖ
+k ḵ kʰ ḵʰ kⁿ kon⁴
+l ḻ
+m m̱
+n ṉ nɨŋ⁵ nᵑ ɲ ɲ̄ ŋ ŋ̄
+p p̄ pʰ p̄ʰ
+r ṟ
+s s̱ ʃ
+ṯ ʨ ʨʰ tʰ ṯʰ
+w w̱ ʷɛ
+x x̱
+y ȳ
+? ʔ ʔ̱ 
+`
+
+
+
+var translitCharacterMap = `
+? ʔ ꪯ ʔ̱ ꪮ
+a a ꪰ ā ꪱ aʲ ꪼ aᵐ ꪾ aⁿ ꪽ aᵖ ꪚꪾ
+e əʷ ꪻ ɛ ꪵ
+i i ꪲ iᵊ ꪸ ɨ ꪳ ɨᵊ ꪹ
+o o ꪶ ɔ ꪷ
+u u ꪴ uᵊ ꪺ
+[ ¹ ꪿ ² ꫁ ¹̱ ꫀ ²̱ ꫂ
+b b ꪛ ḇ ꪚ
+c c ꪋ c̱ ꪊ cʰ ꪍ c̱ʰ ꪌ
+d d ꪓ ḏ ꪒ
+f f ꪡ f̱ ꪠ
+g g ꪆ ḡ ꪇ
+h h ꪭ ẖ ꪬ
+k k ꪁ ḵ ꪀ kʰ ꪃ ḵʰ ꪂ kⁿ ꫛ
+l l ꪩ ḻ ꪨ
+m m ꪣ m̱ ꪢ
+n n ꪙ ŋ ꪉ ṉ ꪘ ŋ̄ ꪈ nᵑ ꫜ ɲ ꪑ ɲ̄ ꪐ
+p p ꪝ p̄ ꪜ pʰ ꪟ p̄ʰ ꪞ
+r r ꪧ ṟ ꪦ
+s s ꪏ s̱ ꪎ
+t t ꪕ ṯ ꪔ tʰ ꪗ ṯʰ ꪖ
+w w ꪫ w̱ ꪪ
+x x ꪅ x̱ ꪄ
+y y ꪥ ȳ ꪤ
+`
+
+
+
+
 
 
