@@ -210,3 +210,147 @@ function addVowel (ch) {
 	else if (globals.n11n=='nfd') { outputNode.value = outputNode.value.normalize('NFD') }
 	}
 
+
+
+
+
+
+var justLatinMap = `
+a ä ā aː aj aʲ äʲ aᵐ
+e eː ɛ ɛː
+i ī iː
+o oː ɔː
+u ū uː ɯ ɯ ɯ̄ ɯ̃ ɯː
+b b̯
+c c̯ cʰ c̱ʰ ċ̱ʰ
+d d̯ ḍ̯
+f f̱ ḟ̱
+h ẖ
+k k̯ kʰ k̈ʰ ḵʰ ḵ̇ʰ ḵ̈ʰ
+l ḻ ḻ̇ l̥
+m m̱
+n ṉ ṇ̱
+N ŋ̱ ŋ̱
+p p̯ pʰ p̱ʰ ṗ̱ʰ
+r ṟ r̥
+s ś ṣ ṡ̱ s
+t t̯ tʰ ṯʰ tʰ tɕ tɕʰ
+T ṭ̯ ṭʰ ṯ̇ʰ ṭ̲ʰ ṭ̲̇ʰ
+w w̱
+y y̱ ẏ̱
+? ʔ
+; ¹ ² ³ ⁴ ˟ ˘
+`
+
+
+
+var translitCharacterMap = `
+a äʲ ใ aʲ ไ a ะ ä ั ā า aᵐ ำ
+b b̯ บ
+c c̯ จ cʰ ฉ c̱ʰ ช ċ̱ʰ ฌ
+d ḍ̯ ฎ d̯ ด
+e e เ ɛ แ
+f f̱ ฝ ḟ̱ ฟ
+h h ห ẖ ฮ
+i i ิ ī ี
+k k̯ ก kʰ ข k̈ʰ ฃ ḵʰ ค ḵ̇ʰ ฆ ḵ̈ʰ ฅ
+l ḻ ล ḻ̇ ฬ l̥ ฦ
+m m̱ ม
+n ŋ̱ ง ṇ̱ ณ ṉ น
+o o โ
+p p̯ ป pʰ ผ p̱ʰ พ ṗ̱ʰ ภ
+r ṟ ร r̥ ฤ
+s s ส ś ศ ṣ ษ ṡ̱ ซ
+t ṭ̯ ฏ ṭʰ ฐ ṭ̲ʰ ฑ ṭ̲̇ʰ ฒ t̯ ต tʰ ถ ṯʰ ท ṯ̇ʰ ธ
+u ɯ ึ ɯ̄ ื u ุ ū ู ɯ̃ ๅ
+w w̱ ว
+y y̱ ย ẏ̱ ญ
+} ʔ อ
+0 0 ໐
+1 1 ໑
+2 2 ໒
+3 3 ໓
+4 4 ໔
+5 5 ໕
+6 6 ໖
+7 7 ໗
+8 8 ໘
+9 9 ໙
+[ ˘ ็
+. ⋯ ฯ
+* ˟ ์
+& ˖ ๆ
+| ¶ ๚ | ๛
+± ¤ ฿
+^ ¹ ่ ² ้ ³ ๊ ⁴ ๋
+- • ๏
+`
+
+var beckerCharacterMap = `
+b b บ bp ป
+c ch ฉ ch ช ch ฌ
+d d ฎ d ด dt ฏ dt ต
+f f ฝ f ฟ
+g g ก
+h h ห h ฮ
+j j จ
+k k ข k ค k ฆ k ก
+l l ล l ฬ
+m m ม
+n n น n ณ ng ง
+p p ผ p พ p ภ p บ
+r r ร rʉ ฤ rʉʉ ฤๅ
+s s ศ s ษ s ส s ซ s ซ s ทร
+t t ฐ t ถ t ฑ t ฒ t ท t ธ
+w w ว
+y y ย y ญ
+a a ะ a ั a รร aa า ai ไ- ai ใ- ai ัย aai าย ao เ-า ao เ-ัว
+A am ำ aao าว an รร
+e e เ-ะ e เ-็ ee เ- eo เ-็ว eeo เ-ว ə เ-อะ əə เ-อ əə เ-ิ əəi เ-ย
+E ɛ แ-ะ ɛ แ-็ ɛɛ แ- ɛɛo แ-ว
+i i ย ii ี ia เ-ีย ia เ-ียะ iao เ-ียว iu ิว
+o o โ-ะ oo โ- ooi โ-ย ɔ เ-าะ ɔ ็อ ɔɔ อ ɔɔi อย
+u u ุ ua ัวะ ua ัว ua ว uai วย ui ุย uu ู ʉ ึ ʉʉ ือ ʉʉ ื
+U ʉa เ-ือะ ʉa เ-ือ ʉai เ-ือย
+§ 0 ໐ 1 ໑ 2 ໒ 3 ໓ 4 ໔ 5 ໕ 6 ໖ 7 ໗ 8 ໘ 9 ໙
+B B ฿
+`
+
+
+var isoCharacterMap = `
+c c จ ch ฉ ch ช ch ฌ
+d d ฎ d ด
+f f ฝ f ฟ
+h h ห h ฮ
+k k ก kh ข kh ฃ kh ค kh ฅ kh ฆ
+l l ล l ฬ
+m m ม
+n n น n ณ ng ง
+p p ป ph ผ ph พ ph ภ
+r r ร
+s s ซ s ศ s ษ s ส
+t t ฏ t ต th ฐ th ถ th ฑ th ฒ th ท th ธ
+w w ว
+y y ย y ญ
+
+a a ะ a ั a า a แ-ว aeo แ-ว ai าย ai ไ- ai ใ- ai ไ-ย ai ัย
+A ao าว ao เ-า
+e e เ-ะ e เ- eo เ-ว eo เ-็ว
+i i ิ i ี ia เ-ีย ia เ-ียะ iao เ-ียว io ิว
+o o โ-ะ o โ- o เ-าะ o อ oe เ-อะ oe เ-อ oei เ-ย oi อย oi โ-ย
+u u ุ u ู ua ัว ua ัวะ uai วย ue ึ ue ื uea เ-ืย uea เ-ืยะ ueai เ-ือย
+U ui ูย ui ุก
+
+§ 0 ໐ 1 ໑ 2 ໒ 3 ໓ 4 ໔ 5 ໕ 6 ໖ 7 ໗ 8 ໘ 9 ໙
+B B ฿
+
+' ¹ ่ ² ้ ³ ๊ ⁴ ๋ ˟  ์
+`
+
+
+
+
+
+
+
+
