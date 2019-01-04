@@ -136,5 +136,71 @@ function addVowel (ch) {
 	}
 
 
+var justLatinMap = `
+' ’
+a ạ ạ̱ aʲ aʲ
+e əʲ ɛ̄
+o ō oʲ ɔ ɔʲ
+u ū uʲ ɯ ɯʲ
+[ ¹ ²
+b ḇ
+c c̱
+d ḏ
+f f̱
+h ẖ
+k k̽ ḵ kʷ ḵʷ
+l ḻ l̥̄ l̥
+m m̽ m̱
+n ṅ ṅ̽ n̽ ṉ ṉ̇
+p p̄ p̽ pʰ p̄ʰ
+s s̱ sʷ s̱ʷ
+t t̽ ṯ tʰ ṯʰ
+w w̽ w̱
+x x̱ xʷ x̱ʷ
+y ȳ
+1 1̣
+`
+
+
+
+var translitCharacterMap = `
+' ’ ᦰ
+a ạ ᦀ ạ̱ ᦁ a ᦱ aʲ ᦺ aʲ ᦻ
+e e ᦵ əʲ ᧀ ɛ̄ ᦶ
+i i ᦲ
+o ō ᦷ oʲ ᦽ ɔ ᦸ ɔʲ ᦾ
+u u ᦳ ū ᦴ uʲ ᦼ ɯ ᦹ ɯʲ ᦿ
+[ ¹ ᧈ ² ᧉ
+b b ᦢ ḇ ᦥ
+c c ᦈ c̱ ᦋ
+d d ᦡ ḏ ᦤ
+f f ᦚ f̱ ᦝ
+h h ᦠ ẖ ᦣ
+k k ᦂ k̽ ᧅ ḵ ᦅ kʷ ᦦ ḵʷ ᦨ
+l l ᦜ ḻ ᦟ l̥̄ ᧟ l̥ ᧞
+m m ᦖ m̽ ᧄ m̱ ᦙ
+n n ᦐ ṅ ᦄ ṅ̽ ᧂ n̽ ᧃ ṉ ᦓ ṉ̇ ᦇ
+p p ᦔ p̄ ᦗ p̽ ᧇ pʰ ᦕ p̄ʰ ᦘ
+s s ᦉ s̱ ᦌ sʷ ᦪ s̱ʷ ᦫ
+t t ᦎ t̽ ᧆ ṯ ᦑ tʰ ᦏ ṯʰ ᦒ
+w w ᦛ w̽ ᧁ w̱ ᦞ
+x x ᦃ x̱ ᦆ xʷ ᦧ x̱ʷ ᦩ
+y y ᦊ ȳ ᦍ
+; ( 〈 ) 〉 ( 《 ) 》 ( （ ) ） ! ！ ? ？ : ： ; ； . 。 , 、 , ， . ．
+0 0 ᧐
+1 1 ᧑ 1̣ ᧚
+2 2 ᧒
+3 3 ᧓
+4 4 ᧔
+5 5 ᧕
+6 6 ᧖
+7 7 ᧗
+8 8 ᧘
+9 9 ᧙
+`
+
+
+
+
 
 
