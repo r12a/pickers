@@ -95,6 +95,9 @@ str = str.replace(/८/g, "8")
 str = str.replace(/९/g, "9")
 str = str.replace(/॰/g, "¨")
 str = str.replace(/₹/g, "¤")
+str = str.replace(/\u200C/g, "ₓ")
+str = str.replace(/\u200D/g, "₊")
+
 
 
 
