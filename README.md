@@ -22,6 +22,7 @@ They currently include:
     <span><a href="devanagari/">Devanagari</a></span> •
     <span><a href="egyptian/">Egyptian&nbsp;hieroglyphs</a></span> •
     <span><a href="ethiopic/">Ethiopic</a></span> •
+    <span><a href="greek/">Greek</a></span> •
     <span><a href="gujarati/">Gujarati</a></span> •
     <span><a href="gurmukhi/">Gurmukhi</a></span> •
     <span><a href="hebrew/">Hebrew</a></span> •
