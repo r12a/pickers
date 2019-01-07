@@ -32,7 +32,7 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->07-Jan-2019<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=latin" title="Show all blog posts tagged with 'latin'">latin</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->07-Jan-2019<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=latin" title="Show all blog posts tagged with 'latin'">latin</a></p>
 
 <p>This Unicode character picker allows you to produce or analyse runs of Latin text. It is particularly useful for locating infrequently used characters, or characters that are spread across several Unicode blocks.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[latin%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/latin">the Github commit list</a>.</p>
@@ -50,6 +50,8 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <h2 href="#about">About the chart</h2>
       <p>Includes characters in the Unicode Basic Latin, Latin-1 Supplement, Latin Extended A-E, and Latin Extended Additional blocks, as well as IPA and Phonetics blocks, and Modifier and Punctuation blocks.</p>
 <p>To add a character in this picker, click on one of the orange items in the selection area that ressembles the shape of the character you are looking for. Then click on one of the grey shapes that appears below to add the character to the text area. The orange ellipsis (<span style="color:orange">...</span>) gives access to a mix of characters with shapes that didn't fit elsewhere.</p>
+<p>To view uppercase characters, click on the <samp>Shift</samp> button just below the text area. </p>
+<p><strong>NOTE:</strong> Clicking on the shift button more than once may produce undesirable conversions – for example,  under <samp>B</samp> there is ß: if you click on <samp>Shift</samp> it will uppercase to SS, and if you click the <samp>Shift</samp> button again it will then lowercase to ss. In this case, to get back to the original lowercase set of characters it is best to click on <samp>B</samp> again. Similar issues occur for the following characters: ǲ, ǅ, İ, ı, Ʃ, ẛ, ǈ, ǋ.</p>
 <div id="aboutBP">
 </div>
 <script>document.getElementById('aboutBP').innerHTML = addAboutBP()
