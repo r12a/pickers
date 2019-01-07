@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Cyrillic character picker 22</title>
+<title>Cyrillic character picker 23</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,9 +14,9 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared22/code.js">  </script>
+<script src="../shared23/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared22/pagetemplate.js">  </script>
+<script src="../shared23/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
 <!--script src="localtranscription.js">  </script-->
@@ -39,16 +39,7 @@
 
 
 <div id="phonemelist" style="position:relative;">
- <div id="transcriptionChoice"></div>
-
-<div id="latintranscript" class="transcript" style="display:none;">
-</div>
-
-
-<div id="toArmenianPallet" class="transcript" style="display:none;">
-</div>
-
-
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 </div>
 
 
@@ -59,7 +50,8 @@
 
 <div id="tables" dir="ltr">
   
-    <div id="alphabet" class="default">
+<div id="alphabet" class="default">
+
       <table id="kbd">
         <tr>
           <td colspan="3">
@@ -102,8 +94,7 @@
       <span class="selector" onclick="findShape('','Я,Ԙ,•,я,ԙ',false)">Я</span> 
       <span class="selector" onclick="findShape('','Ѡ,Ѽ,Ѿ,Ꙍ,Ԝ,•,ѡ,ѽ,ѿ,ꙍ,ԝ',false)">Ѡ</span> 
       <span class="selector" onclick="findShape('','Һ,Ԧ,Ꚕ,•,һ,ԧ,ꚕ,ћ,ђ',false)">Һ</span> 
-      <span class="selector" onclick="findShape('','⁰,₀,¹,₁,²,₂,ƻ,Ꝛ,ꝛ,³,₃,⁴,₄,Ꜭ,ꜭ,Ꜯ,ꜯ,Ꝝ,ꝝ,⁵,₅,Ƽ,ƽ,⁶,₆,Ỽ,ỽ,⁷,₇,⁸,₈,Ȣ,ȣ,ᴕ,⁹,₉,Ꝯ,ꝯ,ꝰ,¼,½,¾',true)">#</span> 
-     <span class="selector" onclick="findShape('','Ԁ,Ԃ,Ԍ,Ј,Ԛ,Ѕ,Ꙅ,Ꚃ,Ѵ,Ѷ,Ꙁ,Ꙃ,•,ԁ,ԃ,ԍ,ј,ԛ,ѕ,ꙅ,ꚃ,ѵ,ѷ,ꙁ,ꙃ',false)">…¹</span> 
+      <span class="selector" onclick="findShape('','Ԁ,Ԃ,Ԍ,Ј,Ԛ,Ѕ,Ꙅ,Ꚃ,Ѵ,Ѷ,Ꙁ,Ꙃ,•,ԁ,ԃ,ԍ,ј,ԛ,ѕ,ꙅ,ꚃ,ѵ,ѷ,ꙁ,ꙃ',false)">…¹</span> 
       <span class="selector" onclick="findShape('','Ѫ,Ѭ,Ꙛ,Ꙉ,Ѯ,Ҩ,Ԅ,Ԇ,Ԭ,Ꙋ,Ꙟ,•,ѫ,ѭ,ꙛ,ꙉ,ѯ,ҩ,ԅ,ԇ,ԭ,ꙋ,ꙟ',false)">…²</span> 
 
 

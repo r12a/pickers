@@ -32,7 +32,7 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->21-Feb-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=cyrillic" title="Show all blog posts tagged with 'cyrillic'">cyrillic</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->07-Jan-2019<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=cyrillic" title="Show all blog posts tagged with 'cyrillic'">cyrillic</a></p>
 
 <p>This Unicode character picker allows you to produce or analyse runs of Cyrillic text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[cyrillic%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/cyrillic">the Github commit list</a>.</p>
@@ -49,6 +49,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <section id="about">
 <h2 href="#about">About the chart</h2>
       <p>Includes most, but not all characters in the 5 Unicode <a href="/uniview/?block=cyrillic" target="_blank">Cyrillic</a> blocks. It doesn't include combining characters, symbols or punctuation.</p>
+<p>To add a character in this picker, click on one of the orange items in the selection area that ressembles the shape of the character you are looking for. Then click on one of the grey shapes that appears below to add the character to the text area. The orange ellipsis (<span style="color:orange">...</span>) gives access to a mix of characters with shapes that didn't fit elsewhere.</p>
 <div id="aboutBP">
 </div>
 <script>document.getElementById('aboutBP').innerHTML = addAboutBP()
@@ -62,6 +63,10 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <h2 href="#top_controls">Controls above the text area</h2>
 <div id="controlsAbove1"></div>
 <script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
+
+<p><strong class="leadin">Uppercase.</strong> Converts selected text to uppercase. If no text is selected, it adds an uppercase version to the text in the text area.</p>
+<p><strong class="leadin">Lowercase.</strong> Converts selected text to lowercase. If no text is selected, it adds an lowercase version to the text in the text area.</p>
+
 <div id="controlsAbove2"></div>
 <script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
