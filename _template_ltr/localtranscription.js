@@ -1,13 +1,65 @@
 function localtranscribe (direction, str) {
 	
-	if (direction == 'toTranslit') { return toTranslit(str) }
 	if (direction == 'transliterate') { return transliterate(str) }
-	if (direction == 'toDeva') { return toDeva(str) }
+	if (direction == 'transcribe') { return transcribe(str) }
 	}
 		
 
 
-function transliterate (str) { // this version for abgidas
+
+function transliterate (str) {
+
+str += ' '
+
+str = str.replace(/ກ/g, "k̯")
+str = str.replace(/ຂ/g, "kʰ")
+str = str.replace(/ຄ/g, "ḵʰ")
+str = str.replace(/ງ/g, "ŋ̱")
+str = str.replace(/ຈ/g, "c")
+str = str.replace(/ຊ/g, "s̱")
+str = str.replace(/ຍ/g, "ɲ̱")
+str = str.replace(/ດ/g, "d̯")
+str = str.replace(/ຕ/g, "t̯")
+str = str.replace(/ຖ/g, "tʰ")
+str = str.replace(/ທ/g, "ṯʰ")
+str = str.replace(/ນ/g, "ṉ")
+str = str.replace(/ບ/g, "b̯")
+str = str.replace(/ປ/g, "p̯")
+str = str.replace(/ຜ/g, "pʰ")
+str = str.replace(/ຝ/g, "f")
+str = str.replace(/ພ/g, "p̱ʰ")
+str = str.replace(/ຟ/g, "f̱")
+str = str.replace(/ມ/g, "m̱")
+str = str.replace(/ຢ/g, "y̯")
+str = str.replace(/ຣ/g, "ṟ")
+str = str.replace(/໋/g, "⁴")
+str = str.replace(/໌/g, "̒")
+str = str.replace(/ໍ/g, "ɔ̄")
+str = str.replace(/໐/g, "0")
+str = str.replace(/໑/g, "1")
+str = str.replace(/໒/g, "2")
+str = str.replace(/໓/g, "3")
+str = str.replace(/໔/g, "4")
+str = str.replace(/໕/g, "5")
+str = str.replace(/໖/g, "6")
+str = str.replace(/໗/g, "7")
+str = str.replace(/໘/g, "8")
+str = str.replace(/໙/g, "9")
+str = str.replace(/ໜ/g, "n")
+str = str.replace(/ໝ/g, "m")
+
+return str.trim()
+}
+
+
+
+
+
+
+
+
+
+function transcribe (str) { // this version for abgidas
     
 str = str + '  '
 str = str.normalize('NFC')

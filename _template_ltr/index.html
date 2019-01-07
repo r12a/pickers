@@ -40,30 +40,7 @@
 
 
 <div id="phonemelist" style="position:relative;">
- <div id="transcriptionChoice"></div>
-
-<div id="latintranscript" class="transcript" style="display:none;">
-<span class="t" onclick="add('ʰ')">ʰ</span>
-<span class="t" onclick="add('ŋ')">ŋ</span>
-<span class="t" onclick="add('ɲ')">ɲ</span>
-<span class="t" onclick="add('ʨ')">ʨ</span>
-</div>
-
-
-<div id="transliteration" class="transcript" style="display:none;">
-<span class="t" onmouseover="showtrans('ະ')" onmouseout="hidetrans()" onclick="add('ະ')">a</span>
-<span class="t" onmouseover="showtrans('ັ')" onmouseout="hidetrans()" onclick="add('ັ')">ä</span>
-<span class="t" onmouseover="showtrans('າ')" onmouseout="hidetrans()" onclick="add('າ')">ā</span>
-<span class="t" onmouseover="showtrans('ໃ')" onmouseout="hidetrans()" onclick="add('ໃ')">aʲ</span>
-</div>
-
-<div id="transcription" class="transcript" style="display:none;">
-<span class="t" onmouseover="showtrans('ເ-ົາ')" onMouseOut="hidetrans()" onclick="addVowel('ເ-ົາ')">aao</span>
-<span class="t" onmouseover="showtrans('າວ')" onMouseOut="hidetrans()" onclick="add('າວ')">aao</span>
-<span class="t" onmouseover="showtrans('ໄ-')" onMouseOut="hidetrans()" onclick="addVowel('ໄ-')">ai</span>
-<span class="t" onmouseover="showtrans('ໃ-')" onMouseOut="hidetrans()" onclick="addVowel('ໃ-')">ai</span>
-</div>
-
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 </div>
 
 
@@ -84,7 +61,9 @@
 
 <div id="shapelist" style="display:none; text-align:center;">
  <div id="shapekeys">
- <span class="selector" onclick="findShape('2D54,2D59,2D5A,2D55,2D41,2D31,2D40,2D32','',true)" />a</span>
+ <span class="selector" onclick="findShape('2D54,2D59,2D5A,2D55,2D41,2D31,2D40,2D32','',true)">a</span>
+ <img alt=" " src="images/shape3.png" onclick="findShape('E82,E8A,E8A','',true)" /> 
+ <span class="selector" onclick="findShape('','А,Ӑ,Ӓ,Ӕ,Ѧ,Ꙙ,•,а,ӑ,ӓ,ӕ,ѧ,ꙙ',false)">А</span> 
  </div>
 </div>
 
@@ -154,7 +133,7 @@ YYYYYY
 
 
 <details>
-<summary>Show obsolete letters</summary>
+<summary>Obsolete letters</summary>
 <div id="obsolete">
 <span class="g"><span class="hint">ī</span><span class="c">&#x0456;</span></span>
 <span class="g"><span class="hint">ḟ</span><span class="c">&#x0473;</span></span>
