@@ -36,5 +36,5 @@ var inputAids = [
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert N'Ko text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-{"title":"Trans-<br/>scribe", "alt":"Convert N'Ko text to a Latin transcription.", "code":"doTranscription('transcription')", "warning","Convert sequences for foreign sounds to single Latin symbols."},
+{"title":"Trans-<br/>scribe", "alt":"Convert N'Ko text to a Latin transcription.", "code":"doTranscription('transcription')", "warning":"Convert sequences for foreign sounds to single Latin symbols."},
 ]
