@@ -38,5 +38,7 @@ var inputAids = [
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Lü text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>scribe", "alt":"Convert Lü text to a Latin transcription.", "code":"doTranscription('transcription')"},
+{"title":"Add<br/>spaces", "alt":"Add spaces between syllables.", "code":"doTranscription('addSpaces')"},
 ]
 
