@@ -82,7 +82,7 @@ var keyboarddef = [
 
 var justLatinMap = `
 a ā æ ɑ
-d ḍ ɖ ʤ
+d ḍ ɖ ʤ d͡ʒ
 e ẹ
 h ʰ ḥ h̽ ɦ
 i ī ĭ ị ị̄
@@ -92,7 +92,7 @@ n ṅ ṇ ñ n̈ ɳ ŋ ŋ̽
 o ô oʲ oʷ ọ ọʲ ọʷ ɔ ɔ̣
 r ṛ r̥ r̥̄ r̥̣ r̥̣̄ ɽ ɽ̇
 s ṣ ś ʂ ʃ ʃ̇ ʃ̈
-t ṭ t̽ ṯ ʈ
+t ṭ t̽ ṯ ʈ ʧ t͡ʃ
 u ū ŭ ụ ụ̄
 y ý y̌ ẏ
 [ ~ ː ̃ ̣ “ ” ∅
