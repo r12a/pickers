@@ -66,10 +66,11 @@ span.hint {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 3em;
+    max-width: 1.5em;
     justify-content: center;
     line-height: 1.5;
     align-content: flex-start;
+    margin-left: 1em;
     }
 #ivowelGrid {
     white-space: normal;
