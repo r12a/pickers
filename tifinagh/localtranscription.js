@@ -12,7 +12,7 @@ str += ' '
 
 str = str.replace(/\u200C/g, "ₓ")
 str = str.replace(/\u200D/g, "₊")
-str = str.replace(/◌⵿/g, "͓")
+str = str.replace(/⵿/g, "͓")
 str = str.replace(/ⴰ/g, "a")
 str = str.replace(/ⴱ/g, "b")
 str = str.replace(/ⴲ/g, "β")
