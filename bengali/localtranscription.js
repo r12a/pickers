@@ -66,7 +66,7 @@ str = str.replace(/শ/g, "ʃ")
 str = str.replace(/ষ/g, "ʃ̇")
 str = str.replace(/স/g, "ʃ̈")
 str = str.replace(/হ/g, "h")
-str = str.replace(/়/g, "̣")
+str = str.replace(/়/g, "ˑ")
 str = str.replace(/া/g, "ɑ")
 str = str.replace(/ি/g, "i")
 str = str.replace(/ী/g, "ī")
@@ -110,16 +110,19 @@ var indvowels = new Set(['অ', 'আ', 'ই', 'ঈ', 'উ', 'ঊ', 'এ', 'ঐ',
 
 str = ' '+str.normalize('NFC')+'  '
 
-// stop viramas being treated as combining characters (otherwise they're difficult to extract from cchar sequences later)
+// stop viramas being treated as combining characters
+// (otherwise they're difficult to extract from cchar sequences later)
 str = str.replace(/\u09CD/g,'V')
-console.log(str)
+
 
 // add inherent vowels
 var withInherents = ''
 for (let i=0; i<str.length-1; i++) {
 	if (consonants.has(str[i]) && (consonants.has(str[i+1]) || indvowels.has(str[i+1])))  withInherents += str[i]+'ʘ'
-    //else if (consonants.has(str[i]) && str[i+1] === ' ') withInherents += str[i]+'O'
-    else if (consonants.has(str[i]) && str[i+1] === '\u09BC' && ((consonants.has(str[i+2]) || indvowels.has(str[i+2])))) withInherents += str[i]+str[i+1]+'ʘ'
+    else if (consonants.has(str[i]) && str[i+1] === '\u09BC' && ((consonants.has(str[i+2]) || indvowels.has(str[i+2])))) { // deals with nukta
+        withInherents += str[i]+str[i+1]+'ʘ'
+        i++
+        }
 	else  withInherents += str[i]
 	}
 str=withInherents
@@ -191,11 +194,14 @@ str = str.replace(/ফ/g, "[PF{F]")
 
 str = ' '+transliterate(str)+'  '
 
-// convert these to uppercase, then lowercase later, so there's no interference
+
+
+// convert translit letters to ipa letters
+// convert these to uppercase first, then lowercase all later, so there's no interference
 // nuktas
-str = str.replace(/ɖ̣/g, "Ɽ")
-str = str.replace(/ɖʰ̣/g, "Ɽ")
-str = str.replace(/ỵ́/g, "[J{E|W|∅]")
+str = str.replace(/ɖʰˑ/g, "Ɽ")
+str = str.replace(/ɖˑ/g, "Ɽ")
+str = str.replace(/ýˑ/g, "[J{E|W|∅]")
 str = str.replace(/ɽ̇/g, "Ɽ")
 str = str.replace(/ẏ/g, "[J{E|W|∅]")
 
@@ -229,7 +235,7 @@ str = str.replace(/H(.)/g, "$1$1")
 str = str.replace(/ʘ /g, "[ɔ{o|∅] ")
 str = str.replace(/ʘ/g, "[ɔ{o]")
 
-// remove superfluous diacritics
+// remove superfluous diacritics from translit letters
 str = str.normalize('NFD')
 str = str.replace(/\u0323/g, "") // dot below
 str = str.replace(/\u0353/g, "") // virama cchar
@@ -258,123 +264,6 @@ return str.trim().toLowerCase()
 
 
 
-
-
-
-function toIPAXXXX (str) {
-// THIS WAS AN EXPERIMENT IN CONVERTING EARLY TO LATIN CHARACTERS
-// PARTLY ABANDONED BECAUSE JS DOESN'T DETECT GRAPHEMES IN REGEX
-var consonants = new Set(['k','kʰ','g','gʰ','ŋ','c','cʰ','ʤ','ʤʰ','ñ','ʈ','ʈʰ','ɖ','ɖʰ','n̈','t','tʰ','d','dʰ','n','p','pʰ','b','bʰ','m','ý','r','l','ʃ','ʃ̇','ʃ̈','h','ɖ̣','ɖʰ̣','ỵ́','ɹ','v'])
-var indvowels = new Set(['அ','ஆ','இ','ஈ','உ','ஊ','எ','ஏ','ஒ','ஓ','ஐ','ஔ'])
-
-str = str.normalize('NFC')+' '
-
-// stop viramas being treated as combining characters (otherwise they're difficult to extract from cchar sequences later)
-str = str.replace(/\u09CD/,'V')
-console.log(str)
-
-str = transliterate(str)+' '
-
-
-// add inherent vowels
-var withInherents = ''
-for (let i=0; i<str.length-1; i++) {
-	if (consonants.has(str[i]) && (consonants.has(str[i+1]) || indvowels.has(str[i+1])))  withInherents += str[i]+'O'
-    else if (consonants.has(str[i]) && str[i+1] === ' ') withInherents += str[i]+'O'
-	else  withInherents += str[i]
-	}
-str=' '+withInherents+' '
-
-// grapheme cluster detector
-// (.[\u0323\u0325\u0303\u0308\u0301\u0307\u033D\u0304\u02B0\u02B2\u02B7\u02D0]*)
-
-
-// bo-phola at start of word
-str = str.replace(/ (.[\u0323\u0325\u0303\u0308\u0301\u0307\u033D\u0304\u02B0\u02B2\u02B7\u02D0]*)Vb/g, " $1")
-console.log(str)
-
-// deal with sound changes for consonant clusters
-str = str.replace(/ক্ষ্ম/g, "kkʰ")
-str = str.replace(/ক্ষ্য/g, "kkʰ")
-str = str.replace(/চ্ছ্ব/g, "ccʰ")
-str = str.replace(/জ্জ্ব/g, "jj")
-str = str.replace(/ জ্ঞা/g, " gæ")
-str = str.replace(/জ্ঞা/g, "ggæ")
-str = str.replace(/ত্ম্য/g, "tt")
-str = str.replace(/স্ত্য/g, "stt")
-str = str.replace(/দ্ব্য/g, "dd")
-str = str.replace(/স্ত্র/g, "str")
-str = str.replace(/স্মৃ/g, "sৃ")
-str = str.replace(/xxx/g, "xxx")
-str = str.replace(/xxx/g, "xxx")
-str = str.replace(/xxx/g, "xxx")
-str = str.replace(/xxx/g, "xxx")
-
-str = str.replace(/ ক্ষ/g, " kʰ")
-str = str.replace(/ক্ষ/g, "kkʰ")
-str = str.replace(/ জ্ঞ/g, " g")
-str = str.replace(/জ্ঞ/g, "gg")
-str = str.replace(/হ্ণ/g, "[nn{nh]")
-str = str.replace(/হ্ন/g, "[nn{nh]")
-str = str.replace(/ত্ম/g, "tt")
-str = str.replace(/ত্ব/g, "tt")
-str = str.replace(/থ্ব/g, "ttʰ")
-str = str.replace(/দ্ম/g, "dd")
-str = str.replace(/দ্ব/g, "dd")
-str = str.replace(/ধ্ব/g, "ddʰ")
-str = str.replace(/ম্ব/g, "[mm{mb]")
-str = str.replace(/ল্ম/g, "ll")
-str = str.replace(/শ্ম/g, "ʃʃ")
-str = str.replace(/শ্ব/g, "ʃʃ")
-str = str.replace(/শ্র/g, "sr")
-str = str.replace(/ষ্ম/g, "ʃʃ")
-str = str.replace(/স্ত/g, "st")
-str = str.replace(/স্থ/g, "stʰ")
-str = str.replace(/স্ন/g, "sn")
-str = str.replace(/স্ম/g, "ʃʃ")
-str = str.replace(/হ্ম/g, "[mh{mm]")
-str = str.replace(/হ্য/g, "jj")
-str = str.replace(/xx/g, "xx")
-str = str.replace(/xx/g, "xx")
-str = str.replace(/xx/g, "xx")
-str = str.replace(/xx/g, "xx")
-str = str.replace(/xx/g, "xx")
-
-// nuktas
-str = str.replace(/ড়/g, "ɽ")
-str = str.replace(/ঢ়/g, "ɽ̇")
-str = str.replace(/য়/g, "ẏ")
-
-
-str = str.replace(/ঞ/g, "n")
-str = str.replace(/ফ/g, "[pf{f]")
-
-
-
-
-
-// remove superfluous diacritics
-str = str.normalize('NFD')
-str = str.replace(/\u0323/g, "") // dot below
-str = str.replace(/\u0353/g, "") // virama cchar
-str = str.replace(/\u0307/g, "") // dot above
-str = str.replace(/\u0308/g, "") // diaeresis
-str = str.replace(/\u0304/g, "ː") // macron
-str = str.replace(/n̈/g, "n") 
-
-
-
-// add markup for ambiguous cases
-str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
-str = str.replace(/\|/g,'</span><span class=alt>')
-str = str.replace(/\{/g,'</span><span class=altlast>')
-str = str.replace(/\]/g,'</span></span>')
-
-// convert the inherent vowels
-// withConjuncts += str[i]+'[o{∅]'
-
-return str.trim()
-}
 
 
 
