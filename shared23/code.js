@@ -1738,7 +1738,7 @@ function showDown (evt) {
 	if (evt) {
         console.log(evt.key, evt.code)
         if (evt.metaKey ) {} // skip if this is Cmd+C 
-        else if (evt.key==='`') { // switch to Latin palette
+        else if (evt.key==='~') { // switch to Latin palette
             var latinSwitch = document.getElementById('showLatinTransSwitch')
             if (globals[latinSwitch.dataset.var]==''){
                 closeSidebarPalettes(latinSwitch)
@@ -1750,7 +1750,7 @@ function showDown (evt) {
             latinSwitch.textContent=latinSwitch.dataset.shorttitle
             evt.preventDefault()
             }
-        else if (evt.key==='~') { // switch to Reverse translit palette
+        else if (evt.key==='`') { // switch to Reverse translit palette
             var revSwitch = document.getElementById('showRevTransSwitch')
             if (globals[revSwitch.dataset.var]==''){
                 closeSidebarPalettes(revSwitch)
