@@ -12,10 +12,8 @@ function transliterate (str) {
 
 str += ' '
 
-str = str.replace(/්‍/g, "͓")
-str = str.replace(/◌ං/g, "ŋ̽")
-str = str.replace(/◌ඃ/g, "h̽")
-str = str.replace(/්/g, "ˣ")
+str = str.replace(/\u200C/g, "ₓ")
+str = str.replace(/\u200D/g, "₊")
 str = str.replace(/𑇡/g, "1̣")
 str = str.replace(/𑇢/g, "2̣")
 str = str.replace(/𑇣/g, "3̣")
@@ -36,6 +34,8 @@ str = str.replace(/𑇱/g, "{80}")
 str = str.replace(/𑇲/g, "{90}")
 str = str.replace(/𑇳/g, "{100}")
 str = str.replace(/𑇴/g, "{1000}")
+str = str.replace(/ං/g, "ŋ̽")
+str = str.replace(/ඃ/g, "h̽")
 str = str.replace(/අ/g, "ạ")
 str = str.replace(/ආ/g, "ạ̄")
 str = str.replace(/ඇ/g, "æ̣")
@@ -44,10 +44,10 @@ str = str.replace(/ඉ/g, "ị")
 str = str.replace(/ඊ/g, "ị̄")
 str = str.replace(/උ/g, "ụ")
 str = str.replace(/ඌ/g, "ụ̄")
-str = str.replace(/ඍ/g, "r̥")
-str = str.replace(/ඎ/g, "r̥̄")
-str = str.replace(/ඏ/g, "l̥")
-str = str.replace(/ඐ/g, "l̥̄")
+str = str.replace(/ඍ/g, "r̥̣")
+str = str.replace(/ඎ/g, "r̥̣̄")
+str = str.replace(/ඏ/g, "l̥̣")
+str = str.replace(/ඐ/g, "l̥̣̄")
 str = str.replace(/එ/g, "ẹ")
 str = str.replace(/ඒ/g, "ẹ̄")
 str = str.replace(/ඓ/g, "ạʲ")
@@ -60,12 +60,12 @@ str = str.replace(/ග/g, "g")
 str = str.replace(/ඝ/g, "gʰ")
 str = str.replace(/ඞ/g, "ŋ")
 str = str.replace(/ඟ/g, "ᵑɡ")
-str = str.replace(/ච/g, "c")
-str = str.replace(/ඡ/g, "cʰ")
+str = str.replace(/ච/g, "ʧ")
+str = str.replace(/ඡ/g, "ʧʰ")
 str = str.replace(/ජ/g, "ʤ")
 str = str.replace(/ඣ/g, "ʤʰ")
 str = str.replace(/ඤ/g, "ɲ")
-str = str.replace(/ඥ/g, "ǰɲ")
+str = str.replace(/ඥ/g, "ᵑǰ")
 str = str.replace(/ඦ/g, "ⁿʤ")
 str = str.replace(/ට/g, "ʈ")
 str = str.replace(/ඨ/g, "ʈʰ")
@@ -93,8 +93,9 @@ str = str.replace(/ශ/g, "ʃ")
 str = str.replace(/ෂ/g, "ʃ̇")
 str = str.replace(/ස/g, "s")
 str = str.replace(/හ/g, "h")
-str = str.replace(/ළ/g, "ḷ")
+str = str.replace(/ළ/g, "ɭ")
 str = str.replace(/ෆ/g, "f")
+str = str.replace(/්/g, "͓")
 str = str.replace(/ා/g, "ā")
 str = str.replace(/ැ/g, "æ")
 str = str.replace(/ෑ/g, "ǣ")
@@ -125,6 +126,7 @@ str = str.replace(/ෳ/g, "l̥̄")
 str = str.replace(/෴/g, "¶")
 
 
+
 return str.trim()
 }
 
@@ -144,7 +146,7 @@ str = str.replace(/\u0DD9\u0DCA/g, "ē")
 str = str.replace(/\u0DD9\u0DCF/g, "o")
 str = str.replace(/\u0DD9\u0DDF/g, "aʷ")
 str = str.replace(/\u0DDC\u0DCA/g, "ō")
-str = str.replace(/\u{DD9}\u{DCF}\u{DCA}/g, "ō")
+str = str.replace(/\u0DD9\u0DCF\u0DCA/g, "ō")
 
 
 // add inherent vowels
@@ -157,6 +159,10 @@ str=withConjuncts
 
 
 str = transliterate(str)
+
+// remove virama & zwj
+str = str.replace(/͓/g, "")
+str = str.replace(/₊/g, "")
 
 return str.trim()
 }
