@@ -76,7 +76,7 @@ var keyboarddef = [
 
 
 var justLatinMap = `
-a ā ɑ ɑ̄ ɑ̣̄
+a ā ɑ ɑ̄ ạ ɑ̣̄
 b β
 c ɕ
 d d̪ ʤ ð ɖ
@@ -103,7 +103,7 @@ z ẓ ʒ
 
 
 var translitCharacterMap = `
-a ɑː ா
+a ɑː ா ạ அ
 A ɑː̣ ஆ
 c c ச
 d ʤ ஜ
@@ -126,7 +126,7 @@ t t த ʈ ட
 u u ு ū ூ
 U ụ உ ụ̄ ஊ
 v ʋ வ ʌʲ ொ ʌʷ ௌ ʌʲ \u{BC6}\u{BBE} ʌʷ \u{BC6}\u{BD7}
-V ʌ̣ அ ʌ̣ʲ ஒ ʌ̣ʷ ஔ ʌ̣ʷ \u{B92}\u{BD7}
+V ʌ̣ʲ ஒ ʌ̣ʷ ஔ ʌ̣ʷ \u{B92}\u{BD7}
 y y ய
 z z ஃஜ
 / ˑ ஃ
