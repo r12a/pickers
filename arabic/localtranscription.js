@@ -10,6 +10,8 @@ function transliterate ( str ) {
 
 str += '  '
 str = str.replace(/اللّٰه/g, "Allāh")
+str = str.replace(/\u200C/g, "ₓ")
+str = str.replace(/\u200D/g, "₊")
 str = str.replace(/ال/g, "ɑl")
 str = str.replace(/،/g, ",")
 str = str.replace(/؛/g, ";")
