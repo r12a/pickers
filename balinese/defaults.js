@@ -36,5 +36,5 @@ var inputAids = [
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Balinese text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-{"title":"Trans-<br/>scribe", "alt":"Convert Balinese text to a Latin transcription.", "code":"doTranscription('toLatin')"},
+{"title":"Balinese<br/>to LOC", "alt":"Convert Balinese text to an LOC Latin transcription.", "code":"doTranscription('toLatin')"},
 ]

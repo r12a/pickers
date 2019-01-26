@@ -11,6 +11,9 @@ function transliterate (str) {
 
 str += ' '
 
+str = str.replace(/\u200C/g, "ₓ")
+str = str.replace(/\u200D/g, "₊")
+
 str = str.replace(/ᬀ/g, "m̽")
 str = str.replace(/ᬁ/g, "ŋ̽")
 str = str.replace(/ᬂ/g, "ŋ̇̽")
@@ -36,7 +39,7 @@ str = str.replace(/ᬕ/g, "g")
 str = str.replace(/ᬖ/g, "ĝ")
 str = str.replace(/ᬗ/g, "ŋ")
 str = str.replace(/ᬘ/g, "c")
-str = str.replace(/ᬙ/g, "ĉ")
+str = str.replace(/ᬙ/g, "C")
 str = str.replace(/ᬚ/g, "ʤ")
 str = str.replace(/ᬛ/g, "ʤ̇")
 str = str.replace(/ᬜ/g, "ɲ")
@@ -60,10 +63,10 @@ str = str.replace(/ᬭ/g, "r")
 str = str.replace(/ᬮ/g, "l")
 str = str.replace(/ᬯ/g, "w")
 str = str.replace(/ᬰ/g, "ŝ")
-str = str.replace(/ᬱ/g, "s")
-str = str.replace(/ᬲ/g, "ṡ̂")
+str = str.replace(/ᬱ/g, "ṡ̂")
+str = str.replace(/ᬲ/g, "s")
 str = str.replace(/ᬳ/g, "h")
-str = str.replace(/᬴/g, "̣")
+str = str.replace(/᬴/g, "ˑ")
 str = str.replace(/ᬵ/g, "ɑ̄")
 str = str.replace(/ᬶ/g, "i")
 str = str.replace(/ᬷ/g, "ī")
@@ -155,9 +158,8 @@ for (let i=0; i<chars.length-2; i++) {
     
     out += chars[i] // '\u200B'+chars[i]
     if (nuktas) out += nuktas
-    if (consonants.has(chars[i]) && vowelsign === '' && hasVirama === false) vowelsign = 'ᵃ'
+    if (consonants.has(chars[i]) && vowelsign === '' && hasVirama === false) vowelsign = 'a'
     out += medials + vowelsign + otherCombining + finals
-    //if (vowelsign === 'ᵃ' && (chars[ptr] === 'ਇ' || chars[ptr] === 'ਉ')) out += ':'
     if (hasAddak) out += chars[ptr]
     
     i = ptr-1
@@ -168,105 +170,89 @@ for (let i=0; i<chars.length-2; i++) {
 str = out+'  '
 console.log(out)
 
-str = str.replace(/\u1B44/g, "͓") // virama
+str = str.replace(/\u1B44/g, "") // virama
 //str = str.replace(/\u200B/g, " ") // virama
 
 // zwnj
 str = str.replace(/\u200C/g,'ⁿʲ')
 
-// do 'nuktas'
+str = str.replace(/ᬓ᬴/g, "kh")
+str = str.replace(/ᬕ᬴/g, "gh")
+str = str.replace(/ᬗ᬴/g, "‘")
 str = str.replace(/ᬚ᬴/g, "z")
 str = str.replace(/ᬧ᬴/g, "f")
-str = str.replace(/ᬯ᬴/g, "v")
-str = str.replace(/ᬓ᬴/g, "x")
-str = str.replace(/ᬳ᬴/g, "ħ")
-str = str.replace(/ᬕ᬴/g, "ɣ")
-str = str.replace(/ᬗ᬴/g, "ʕ")
+str = str.replace(/ᬯ᬴/g, "?")
+str = str.replace(/ᬳ᬴/g, "h")
 
-
-
-// basic consonants
+str = str.replace(/ᬀ/g, "?")
+str = str.replace(/ᬁ/g, "?")
+str = str.replace(/ᬂ/g, "ng")
+str = str.replace(/ᬃ/g, "r")
+str = str.replace(/ᬄ/g, "h")
+str = str.replace(/ᬅ/g, "a")
+str = str.replace(/ᬆ/g, "ā")
+str = str.replace(/ᬇ/g, "i")
+str = str.replace(/ᬈ/g, "ī")
+str = str.replace(/ᬉ/g, "u")
+str = str.replace(/ᬊ/g, "ū")
+str = str.replace(/ᬋ/g, "rĕ")
+str = str.replace(/ᬌ/g, "rö")
+str = str.replace(/ᬍ/g, "lĕ")
+str = str.replace(/ᬎ/g, "lö")
+str = str.replace(/ᬏ/g, "e")
+str = str.replace(/ᬐ/g, "ai")
+str = str.replace(/ᬑ/g, "o")
+str = str.replace(/ᬒ/g, "au")
 str = str.replace(/ᬓ/g, "k")
-str = str.replace(/ᬔ/g, "kʰ")
+str = str.replace(/ᬔ/g, "?")
 str = str.replace(/ᬕ/g, "g")
-str = str.replace(/ᬖ/g, "gʰ")
-str = str.replace(/ᬗ/g, "ṅ")
+str = str.replace(/ᬖ/g, "[g{gh]")
+str = str.replace(/ᬗ/g, "ng")
 str = str.replace(/ᬘ/g, "c")
-str = str.replace(/ᬙ/g, "cʰ")
+str = str.replace(/ᬙ/g, "[c{ch]")
 str = str.replace(/ᬚ/g, "j")
-str = str.replace(/ᬛ/g, "jʰ")
+str = str.replace(/ᬛ/g, "?")
 str = str.replace(/ᬜ/g, "ñ")
-str = str.replace(/ᬝ/g, "ṭ")
-str = str.replace(/ᬞ/g, "ṭʰ")
+str = str.replace(/ᬝ/g, "?")
+str = str.replace(/ᬞ/g, "ṭ")
 str = str.replace(/ᬟ/g, "ḍ")
-str = str.replace(/ᬠ/g, "ḍʰ")
-str = str.replace(/ᬡ/g, "ṇ")
+str = str.replace(/ᬠ/g, "?")
+str = str.replace(/ᬡ/g, "[n{ṇ]")
 str = str.replace(/ᬢ/g, "t")
-str = str.replace(/ᬣ/g, "tʰ")
+str = str.replace(/ᬣ/g, "[t{th]")
 str = str.replace(/ᬤ/g, "d")
-str = str.replace(/ᬥ/g, "dʰ")
+str = str.replace(/ᬥ/g, "dh")
 str = str.replace(/ᬦ/g, "n")
 str = str.replace(/ᬧ/g, "p")
-str = str.replace(/ᬨ/g, "pʰ")
+str = str.replace(/ᬨ/g, "[p{ph]")
 str = str.replace(/ᬩ/g, "b")
-str = str.replace(/ᬪ/g, "bʰ")
+str = str.replace(/ᬪ/g, "[b{bh]")
 str = str.replace(/ᬫ/g, "m")
 str = str.replace(/ᬬ/g, "y")
 str = str.replace(/ᬭ/g, "r")
 str = str.replace(/ᬮ/g, "l")
-str = str.replace(/ᬯ/g, "v")
-str = str.replace(/ᬰ/g, "ś")
-str = str.replace(/ᬲ/g, "ṣ")
-str = str.replace(/ᬱ/g, "s")
-str = str.replace(/ᬳ/g, "h")
-
-// vocalics
-str = str.replace(/ᬋ/g, "r̥ᵊ")
-str = str.replace(/ᬌ/g, "r̥̄ᵊ")
-str = str.replace(/ᬍ/g, "l̥ᵊ")
-str = str.replace(/ᬎ/g, "l̥̄ᵊ")
-
-
-// finals
-str = str.replace(/ᬂ/g, "ṅ̽")
-str = str.replace(/ᬃ/g, "r̽")
-str = str.replace(/ᬄ/g, "h̽")
-str = str.replace(/ᬀ/g, "m̽")
-str = str.replace(/ᬁ/g, "ṃ̽")
-
-
-// independent vowels
-str = str.replace(/ᬅ/g, "ạ")
-str = str.replace(/ᬆ/g, "ạ̄")
-str = str.replace(/ᬇ/g, "ị")
-str = str.replace(/ᬈ/g, "ị̄")
-str = str.replace(/ᬉ/g, "ụ")
-str = str.replace(/ᬊ/g, "ụ̄")
-str = str.replace(/ᬏ/g, "ẹ")
-str = str.replace(/ᬐ/g, "ạ͡i")
-str = str.replace(/ᬑ/g, "ọ")
-str = str.replace(/ᬒ/g, "ạ͡u")
-
-
-// vowel signs
+str = str.replace(/ᬯ/g, "w")
+str = str.replace(/ᬰ/g, "[s{ṣ]")
+str = str.replace(/ᬱ/g, "[s{ś]")
+str = str.replace(/ᬲ/g, "s")
+str = str.replace(/ᬳ/g, "[h{∅]")
+str = str.replace(/᬴/g, "?")
 str = str.replace(/ᬵ/g, "ā")
 str = str.replace(/ᬶ/g, "i")
 str = str.replace(/ᬷ/g, "ī")
 str = str.replace(/ᬸ/g, "u")
 str = str.replace(/ᬹ/g, "ū")
-str = str.replace(/ᬺ/g, "r̥ₔ")
-str = str.replace(/ᬻ/g, "r̥̄ₔ")
-str = str.replace(/ᬼ/g, "l̥ₔ")
-str = str.replace(/ᬽ/g, "l̥̄ₔ")
+str = str.replace(/ᬺ/g, "rĕ")
+str = str.replace(/ᬻ/g, "rö")
+str = str.replace(/ᬼ/g, "lĕ")
+str = str.replace(/ᬽ/g, "lö")
 str = str.replace(/ᬾ/g, "e")
-str = str.replace(/ᬿ/g, "a͡i")
+str = str.replace(/ᬿ/g, "ai")
 str = str.replace(/ᭀ/g, "o")
-str = str.replace(/ᭁ/g, "a͡u")
-str = str.replace(/ᭂ/g, "ə")
-str = str.replace(/ᭃ/g, "ə̄")
-
-
-// digits
+str = str.replace(/ᭁ/g, "au")
+str = str.replace(/ᭂ/g, "ĕ")
+str = str.replace(/ᭃ/g, "ö")
+str = str.replace(/᭄/g, "?")
 str = str.replace(/᭐/g, "0")
 str = str.replace(/᭑/g, "1")
 str = str.replace(/᭒/g, "2")
@@ -279,6 +265,7 @@ str = str.replace(/᭘/g, "8")
 str = str.replace(/᭙/g, "9")
 
 
+
 // punctuation
 str = str.replace(/᭞/g, ",")
 str = str.replace(/᭟/g, ".")
@@ -287,11 +274,16 @@ str = str.replace(/᭠/g, "-")
 
 
 
+// add markup for ambiguous cases
+str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
+str = str.replace(/\|/g,'</span><span class=alt>')
+str = str.replace(/\{/g,'</span><span class=altlast>')
+str = str.replace(/\]/g,'</span></span>')
 
-	return str.trim()
 
 
-    }
+return str.trim()
+}
 
 
 
