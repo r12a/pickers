@@ -146,6 +146,18 @@ function condense (str) {
 	}
 
 
+function showInvisibles () { 
+    output = document.getElementById('output')
+    output.value = output.value.replace(/\u200B/g,'ᶻˢ')
+   output.value = output.value.replace(/\u2060/g,'ʷʲ')
+    }
+
+function hideInvisibles () {
+    output = document.getElementById('output')
+    output.value = output.value.replace(/ᶻˢ/g,'\u200B')
+    output.value = output.value.replace(/ʷʲ/g,'\u2060')
+    }
+
 
 function sendVowelLeft (str) {
 	lv = str.match(/เ|แ|ไ|โ|ใ/)

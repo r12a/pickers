@@ -46,5 +46,7 @@ var controls = [
 {"title":"Thai to<br>ISO 11940", "alt":"Convert Thai text to an ISO 11940-2 Latin transcription.", "code":"doTranscription('toISO2')", "warning":"Separate syllables with spaces before use."},
 {"title":"Transcribe<br>to IPA", "alt":"Convert Thai text to an approximate IPA transcription.", "code":"doTranscription('toIPA')", "warning":"Separate syllables with spaces before use."},
 {"title":"Remove<br>sp/hyph", "alt":"Remove spaces and hyphens.", "code":"add(condense(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
+{"title":"Show<br>invis.", "alt":"Show ZWSP and WJ locations.", "code":"showInvisibles()"},
+{"title":"Hide<br>invis.", "alt":"Replace ZWSP and WJ characters.", "code":"hideInvisibles()"},
 ]
 
