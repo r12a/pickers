@@ -1888,7 +1888,63 @@ function makeKbdEventList (mappingTable) {
 	}
 
 
+function toggleInvisibles () {
+    // toggle between showing invisible characters or visible mnemonics in the text area
+    
+    var str = document.getElementById('output').value
+    // in the following list put the longest abbreviations at the top, to avoid clashes
+    var invisibles = [
+        { cp:"\u202F", abbr:"ⁿⁿᵇˢᵖ"},
+        { cp:"\u200C", abbr:"ᶻʷⁿʲ"},
+        { cp:"\u200B", abbr:"ᶻʷˢᵖ"},
+        { cp:"\u00A0", abbr:"ⁿᵇˢᵖ"},
+        { cp:"\u180B", abbr:"ᶠᵛˢ¹"},
+        { cp:"\u180C", abbr:"ᶠᵛˢ²"},
+        { cp:"\u180D", abbr:"ᶠᵛˢ³"},
+        { cp:"\u200D", abbr:"ᶻʷʲ"},
+        { cp:"\u2067", abbr:"ʳˡⁱ"},
+        { cp:"\u202B", abbr:"ʳˡᵉ"},
+        { cp:"\u2066", abbr:"ˡʳᵉ"},
+        { cp:"\u2069", abbr:"ᵖᵈⁱ"},
+        { cp:"\u202C", abbr:"ᵖᵈᶠ"},
+        { cp:"\u200F", abbr:"ʳˡᵐ"},
+        { cp:"\u200E", abbr:"ˡʳᵐ"},
+        { cp:"\u061C", abbr:"ᵃˡᵐ"},
+        { cp:"\u202D", abbr:"ˡʳᵒ"},
+        { cp:"\u202E", abbr:"ʳˡᵒ"},
+        { cp:"\u180E", abbr:"ᵐᵛˢ"},
+        { cp:"\u00AD", abbr:"ˢʰʸ"},
+        { cp:"\u034F", abbr:"ᶜᵍʲ"},
+        { cp:"\u070F", abbr:"ˢᵃᵐ"},
+        { cp:"\u0F0C", abbr:"ⁿᵇ"},
+        { cp:"\u2060", abbr:"ʷʲ"},
+        ]
+    
+    // ascertain which way to switch
+    var show = false
+    for (let i=0;i<invisibles.length;i++) {
+        if (str.match(invisibles[i].cp)) {
+            show = true
+            break
+            }
+        }
+    
+    // make the substitutions
+    var re
+    if (show) {
+        for (let i=0;i<invisibles.length;i++) {
+            re = new RegExp(invisibles[i].cp, 'g')
+            str = str.replace(re, invisibles[i].abbr)
+            }
+        }
+    else {
+        for (let i=0;i<invisibles.length;i++) {
+            re = new RegExp(invisibles[i].abbr, 'g')
+            str = str.replace(re, invisibles[i].cp)
+            }
+        }
 
-
+    document.getElementById('output').value = str
+    }
 
 

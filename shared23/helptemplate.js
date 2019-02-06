@@ -32,7 +32,7 @@ return `
 `
 }
 
-
+ 
 
 function addControlsAbove1 () {
 return `
@@ -41,6 +41,7 @@ return `
       <p><b class="leadin" id="icons">Icons.</b> The icons on the left above the input box allow you to do the following:</p>
       <blockquote>📋 copy the text to the clipboard<br/>
       🔶 select all the text<br/>
+      ⛶ show/hide invisible characters<br/>
       ❌ delete all the text<br/>
       <img src="../../images/share.png" alt="Share icon"/> generate a URL to share with others that will reproduce for them what you see in the text box<br/>
       <img src="../../images/sample.png" alt="plus sign" style="vertical-align:middle;"/> add some sample text to the text area</blockquote>

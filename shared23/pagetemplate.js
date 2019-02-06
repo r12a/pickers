@@ -51,6 +51,7 @@ out += `</header>
 <span id="copydelete">
   <button title="Copy to clipboard." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
+  <button title="Toggle invisible code points." onclick="toggleInvisibles()">⛶</button>
   <button title="Delete all the text." onclick="deleteAll()">❌</button>
   <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
   <button title="Add sample text." style="font-size: 150%;" onclick="add('` + template.sample +`')">+</button>
