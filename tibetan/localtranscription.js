@@ -438,7 +438,7 @@ function toWylie (str) {
 			}
 		out += ' '
 		}
-	return out
+	return out.trim()
 	}
 
 
