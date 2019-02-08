@@ -11,7 +11,7 @@ function localtranscribe (direction, str) {
 function transliterate (str) {
 str += ' '
 
-str = str.replace(/\u0859/g, "̤")
+str = str.replace(/\u0859/g, "ˑ")
 str = str.replace(/\u085A/g, "̱")
 str = str.replace(/\u085B/g, "˖")
 str = str.replace(/ࡀ/g, "ā")
