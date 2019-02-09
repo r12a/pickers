@@ -1738,6 +1738,10 @@ function showDown (evt) {
 	if (evt) {
         console.log(evt.key, evt.code)
         if (evt.metaKey ) {} // skip if this is Cmd+C 
+        else if (evt.key==='§') { // move second text area contents to main text area
+            moveTranscription()
+            evt.preventDefault()
+            }
         else if (evt.key==='~') { // switch to Latin palette
             var latinSwitch = document.getElementById('showLatinTransSwitch')
             if (globals[latinSwitch.dataset.var]==''){
