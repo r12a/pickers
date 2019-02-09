@@ -1739,6 +1739,8 @@ function showDown (evt) {
         console.log(evt.key, evt.code)
         if (evt.metaKey ) {} // skip if this is Cmd+C 
         else if (evt.key==='§') { // move second text area contents to main text area
+			doTranscription('transliterate')
+   			document.getElementById('transcription').textContent = '/'+document.getElementById('transcription').textContent+'/'
             moveTranscription()
             evt.preventDefault()
             }
