@@ -759,6 +759,7 @@ function setLanguage (value) {
 	// sets the defaults.language value, which is used for generating examples
 	
 	defaults.language = value
+	document.getElementById('output').lang = value
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
 	}
 

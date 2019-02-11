@@ -89,7 +89,9 @@ out += `
 
 <div id="outputDiv" style="position: relative;">
 <div id="warning"></div>
-<textarea dir="auto" rows="2" cols="80" id="output" name="output" placeholder="›"></textarea>
+<textarea dir="auto" rows="2" cols="80" id="output" name="output" placeholder="›" lang="`
++ defaults.language +
+`"></textarea>
 <div id="charChoice"></div>
  <div id="transcriptionChoice"></div>
 </div>
