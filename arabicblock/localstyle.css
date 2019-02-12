@@ -40,7 +40,7 @@ span.hint {
     text-align: center;
     color: orange;
     }
-#prompts span, #prompts img {
+#prompts span, #prompts img, #prompts bdi {
     cursor: pointer;
     }
 #extrashapes {
