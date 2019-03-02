@@ -89,7 +89,7 @@ function germanToBritish (str) {
 
 
 
-function mdcToHieroglyphs (str) {
+function OLDmdcToHieroglyphs (str) {
 	// converts Manuel de Codage transcriptions to hieroglyphs
 	
 	str = str.trim()
@@ -156,7 +156,83 @@ function mdcToHieroglyphs (str) {
 
 
 
-function hieroglyphsToMdC (str) {
+function mdcToHieroglyphs (str) {
+	// converts Manuel de Codage transcriptions to Unicode characters
+	
+	str = str.trim()
+	
+	// collect a list of separators, in order
+	var separatorSet = /\-|:|\*|\u000A|\(|\)| /g
+	var separatorList = str.match(separatorSet)
+	str = str.replace(separatorSet,' ')
+
+
+	var catNumRe = /([A-Z]+)([0-9]+)([A-Z])*/
+	var units = str.split(' ')
+	var out = ''
+	
+	for (var u=0;u<units.length;u++) {
+		var hg = units[u].match(catNumRe)
+		if (hg) {  // this is a catalog number
+			var catNum = ' '
+			catNum += hg[1]
+			while (hg[2].length < 3) hg[2] = '0' + hg[2]
+			catNum += hg[2]
+			if (hg[3]) catNum += hg[3]
+			var found = false
+			for (char in charDB) {
+				if (charDB[char].n && charDB[char].n.match(catNum)) {
+					found = true
+					break
+					}
+				}
+			if (found) out += char+' '
+			else out += '? '
+			}
+		else {
+			found = ''
+			for (char in charDB) {
+				if (charDB[char].c) {
+					var readings = charDB[char].c.split(',')
+					for (r=0;r<readings.length;r++) {
+						if (readings[r] == units[u]) {
+							found = char
+							break
+							}
+						}
+					}
+				}
+			if (found) out += found+' '
+			else out += units[u]+' '
+			}
+		}
+
+	// replace separators
+	var ptr = 0
+	var output = ''
+	for (var c=0;c<out.length-1;c++) {
+		if (out.charAt(c) == ' ') output += separatorList[ptr++]
+		else output += out.charAt(c)
+		}
+
+
+	// convert separators
+	output = output.replace(/-/g,'')
+	output = output.replace(/\*/g,'𓐱')
+	output = output.replace(/:/g,'𓐰')
+	output = output.replace(/\(/g,'𓐷')
+	output = output.replace(/\)/g,'𓐸')
+	output = output.replace(/\&lt;/g,'𓍹')
+	output = output.replace(/\&gt;/g,'𓍺')
+
+	return output.trim()
+	}
+
+
+
+
+
+function OLDhieroglyphsToMdC (str) {
 	// converts hieroglyphs to Manuel de Codage transcriptions 
 	
 	str = str.trim()
@@ -188,6 +264,65 @@ function hieroglyphsToMdC (str) {
 			}
 		else out += chars[i]
 		}
+
+	// add markup for ambiguous cases
+	out = out.replace(/\[/g,'<span class=alts><span class=altfirst>')
+	out = out.replace(/\|/g,'</span><span class=alt>')
+	out = out.replace(/\{/g,'</span><span class=altlast>')
+	out = out.replace(/\]/g,'</span></span>')
+
+	return out.trim()
+	}
+
+
+
+
+
+
+
+function hieroglyphsToMdC (str) {
+	// converts hieroglyphs to Manuel de Codage transcriptions 
+	
+	str = str.trim()
+	var syntax = new Set(['*',':','𓐷','𓐰','𓐸','𓐰'])
+
+	// replace syntax markers
+	str = str.replace(/𓐱/g,'*')
+	str = str.replace(/𓐰/g,':')
+	str = str.replace(/𓐷/g,'(')
+	str = str.replace(/𓐸/g,')')
+	str = str.replace(/𓍹/g,'<')
+	str = str.replace(/𓍺/g,'>')
+		
+	var catNumRe = /([A-Z]+)([0-9]+)([A-Z])*/
+	var out = ''
+
+	var chars = [...str]
+	
+	for (var i=0;i<chars.length;i++) {
+		if (charDB[chars[i]]) {
+			if (charDB[chars[i]].c) {
+				var values = charDB[chars[i]].c.split(',')
+				if (values.length > 1) {
+					out += '['+values[0]
+					for (var v=1;v<values.length;v++) out += '{'+values[v]
+					out += ']'
+					}
+				else out += values[0]
+				}
+			else if (charDB[chars[i]].n.match('EGYPTIAN')) {
+				var name = charDB[chars[i]].n.match(catNumRe)
+				var number = name[2]
+				while (number.charAt(0) == '0') number = number.substr(1)
+				out += name[1]+number
+				if (name[3]) out += name[3]
+				}
+			else out += chars[i]
+			}
+		else out += chars[i]
+		if (chars[i] !== '*' && chars[i] !== ':' && i<chars.length-1) out += '-'
+		}
+
 
 	// add markup for ambiguous cases
 	out = out.replace(/\[/g,'<span class=alts><span class=altfirst>')

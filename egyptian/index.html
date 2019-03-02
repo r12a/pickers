@@ -188,7 +188,21 @@
   
     <div id="alphabet" class="default">
     
-  <div class="spaceline">
+ <div class="spaceline">
+<span class="touch" style="border:0;" title="Cartouche start" dir="auto" onClick="add('\u{13379}');"><img src="images/13379.png" alt="&#x13379;"/></span> 
+<span class="touch" style="border:0;" title="Cartouche end" dir="auto" onClick="add('\u{1337A}');"><img src="images/1337A.png" alt="&#x1337A;"/></span> 
+<span class="touch" style="border:0;" title="Cartouche start" dir="auto" onClick="add('\u{3C}');"><img src="images/003C.png" alt="&#x3C;"/></span><span class="touch" style="border:0;" title="Cartouche end" dir="auto" onClick="add('\u{3E}');"><img src="images/003E.png" alt="&#x3E;"/></span><span class="touch" style="border:0;" title="Vertical joiner" dir="auto" onClick="add('\u{3A}');"><img src="images/003A.png" alt="&#x3A;"/></span><span class="touch" style="border:0;" title="Horizontal joiner" dir="auto" onClick="add('\u{2A}');"><img src="images/002A.png" alt="&#x2A;"/></span><span class="touch" style="border:0;" title="Separator" dir="auto" onClick="add('\u{2D}');"><img src="images/002D.png" alt="&#x2D;"/></span><span class="touch" style="border:0;" title="Exclamation mark" dir="auto" onClick="add('\u{21}');"><img src="images/0021.png" alt="&#x21;"/></span> 
+
+<span class="touch" style="border:0; margin-left: 1em;" title="Vertical joiner" dir="auto" onClick="add('𓐰');"><img src="images/13430.png" alt="𓐰"/></span> 
+<span class="touch" style="border:0" title="Horizontal joiner" dir="auto" onClick="add('𓐱');"><img src="images/13431.png" alt="𓐱"/></span> 
+<span class="touch" style="border:0" title="Insert at top start" dir="auto" onClick="add('𓐲');"><img src="images/13432.png" alt="𓐲"/></span> 
+<span class="touch" style="border:0" title="Insert at bottom start" dir="auto" onClick="add('𓐳');"><img src="images/13433.png" alt="𓐳"/></span> 
+<span class="touch" style="border:0" title="Insert at top end" dir="auto" onClick="add('𓐴');"><img src="images/13434.png" alt="𓐴"/></span> 
+<span class="touch" style="border:0" title="Insert at bottom end" dir="auto" onClick="add('𓐵');"><img src="images/13435.png" alt="𓐵"/></span> 
+<span class="touch" style="border:0" title="Overlay middle" dir="auto" onClick="add('𓐶');"><img src="images/13436.png" alt="𓐶"/></span> 
+<span class="touch" style="border:0" title="Begin segment" dir="auto" onClick="add('𓐷');"><img src="images/13437.png" alt="𓐷"/></span> 
+<span class="touch" style="border:0" title="End segment" dir="auto" onClick="add('𓐸');"><img src="images/13438.png" alt="𓐸"/></span> 
+ <br/>
 <span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="NBSP" style="padding: 5px;" dir="auto" onClick="add('&#xA0;');">NBSP</span>
 <span class="touch" title="RLO" style="padding: 5px;" dir="auto" onClick="add('\u202E');">RLO</span>
@@ -204,7 +218,34 @@
       <div id="keywordSearch" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
       <div>Search for: <input onInput="searchForKeywords(this.value, false);" type="text" placeholder="keywords"/> 
       <!--input id="includeUsage" type="checkbox"/><span style="font-size: 80%">Include usage</span-->
+	<span onclick="searchFor('xxxxxx', 'egyptian');" style="cursor: pointer; vertical-align:middle; margin:0 30px 0 0; border:0; padding:0; font-size: 22px;">X</span>
+	<span id="searchResults"></span>
+
       </div>
+      
+      <!--div>
+          <span class="c" style="margin-left: 2em;">&#x13379;</span>
+          <span class="c">&#x1337A;</span>
+          <span class="c">&lt;</span>
+          <span class="c">&gt;</span>
+          <span class="c">*</span>
+          <span class="c">-</span>
+          <span class="c">!</span>
+      </div-->
+       
+      <!--div>
+        <span onclick="searchFor('xxxxxx', 'egyptian');" style="cursor: pointer; vertical-align:middle; float: right; margin:0 30px 0 0; border:0; padding:0; font-size: 22px;">X</span>
+    </div-->
+    </div>
+   <!--div id="searchResults"></div-->
+
+
+
+      
+      <!--div id="keywordSearch" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
+      <div>Search for: <input onInput="searchForKeywords(this.value, false);" type="text" placeholder="keywords"/--> 
+      <!--input id="includeUsage" type="checkbox"/><span style="font-size: 80%">Include usage</span-->
+      <!--/div>
       
       <div>
           <span class="c" style="margin-left: 2em;">&#x13379;</span>
@@ -220,7 +261,7 @@
         <span onclick="searchFor('xxxxxx', 'egyptian');" style="cursor: pointer; vertical-align:middle; float: right; margin:0 30px 0 0; border:0; padding:0; font-size: 22px;">X</span>
     </div>
     </div>
-   <div id="searchResults"></div>
+   <div id="searchResults"></div-->
 
     </div><!-- end of alphabet -->
 
@@ -250,7 +291,7 @@
       <span title="O. Buildings, parts of buildings, etc." class="selector" onclick="findShape('','𓉐,𓉑,𓉒,𓉓,𓉔,𓉕,𓉖,𓉗,𓉘,𓉙,𓉚,𓉛,𓉜,𓉝,𓉞,𓉟,𓉠,𓉡,𓉢,𓉣,𓉤,𓉥,𓉦,𓉧,𓉨,𓉩,𓉪,𓉫,𓉬,𓉭,𓉮,𓉯,𓉰,𓉱,𓉲,𓉳,𓉴,𓉵,𓉶,𓉷,𓉸,𓉹,𓉺,𓉻,𓉼,𓉽,𓉾,𓉿,𓊀,𓊁,𓊂,𓊃,𓊄,𓊅,𓊆,𓊇,𓊈,𓊉,𓊊,𓊋,𓊌,𓊍,𓊎,𓊏,𓊐,𓊑,𓊒,𓊓,𓊔,𓊕,𓊖,𓊗,𓊘,𓊙,𓊚',true)">𓉐</span> 
       <span title="P. Ships and parts of ships" class="selector" onclick="findShape('','𓊛,𓊜,𓊝,𓊞,𓊟,𓊠,𓊡,𓊢,𓊣,𓊤,𓊥,𓊦,𓊧',true)">𓊝</span> 
       <span title="Q. Domestic and funerary furniture" class="selector" onclick="findShape('','𓊨,𓊩,𓊪,𓊫,𓊬,𓊭,𓊮',true)">𓊩</span> 
-      <span title="R. Temple furniture and sacred emblems" class="selector" onclick="findShape('','𓊯,𓊰,𓊱,𓊲,𓊳,𓊴,𓊵,𓊶,𓊷,𓊸,𓊹,𓊺,𓊻,𓊼,𓊽,𓊾,𓊿,𓋀,𓋁,𓋂,𓋃,𓋄,𓋅,𓋆,𓋇,𓋈,𓋉,𓋊,𓋋,𓋌,𓋍,𓋎,𓋏,𓋐',true)">𓊯</span> 
+      <span title="R. Temple furniture and sacred emblems" class="selector" onclick="findShape('','𓊯,𓊰,𓊱,𓊲,𓊳,𓊴,𓊵,𓊶,𓊷,𓊸,𓊹,𓊺,𓊻,𓊼,𓊽,𓊾,𓊿,𓋀,𓋁,𓋂,𓋃,𓋄,𓋅,𓋆,𓋇,𓋈,𓋉,𓋊,𓋋,𓋌,𓋍,𓋎,𓋏,𓋐',true)">&#x133B5;</span> 
       <span title="S. Crowns, dress, staves, etc." class="selector" onclick="findShape('','𓋑,𓋒,𓋓,𓋔,𓋕,𓋖,𓋗,𓋘,𓋙,𓋚,𓋛,𓋜,𓋝,𓋞,𓋟,𓋠,𓋡,𓋢,𓋣,𓋤,𓋥,𓋦,𓋧,𓋨,𓋩,𓋪,𓋫,𓋬,𓋭,𓋮,𓋯,𓋰,𓋱,𓋲,𓋳,𓋴,𓋵,𓋶,𓋷,𓋸,𓋹,𓋺,𓋻,𓋼,𓋽,𓋾,𓋿,𓌀,𓌁,𓌂,𓌃,𓌄,𓌅,𓌆',true)">𓋑</span> 
       <span title="T. Warfare, hunting, butchery" class="selector" onclick="findShape('','𓌇,𓌈,𓌉,𓌊,𓌋,𓌌,𓌍,𓌎,𓌏,𓌐,𓌑,𓌒,𓌓,𓌔,𓌕,𓌖,𓌗,𓌘,𓌙,𓌚,𓌛,𓌜,𓌝,𓌞,𓌟,𓌠,𓌡,𓌢,𓌣,𓌤,𓌥,𓌦,𓌧,𓌨,𓌩,𓌪,𓌫,𓌬,𓌭,𓌮,𓌯,𓌰,𓌱,𓌲',true)">𓌪</span> 
       <span title="U. Agriculture, crafts, and professions" class="selector" onclick="findShape('','𓌳,𓌴,𓌵,𓌶,𓌷,𓌸,𓌹,𓌺,𓌻,𓌼,𓌽,𓌾,𓌿,𓍀,𓍁,𓍂,𓍃,𓍄,𓍅,𓍆,𓍇,𓍈,𓍉,𓍊,𓍋,𓍌,𓍍,𓍎,𓍏,𓍐,𓍑,𓍒,𓍓,𓍔,𓍕,𓍖,𓍗,𓍘,𓍙,𓍚,𓍛,𓍜,𓍝,𓍞,𓍟,𓍠,𓍡',true)">𓌳</span> 

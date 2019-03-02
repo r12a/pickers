@@ -162,7 +162,7 @@ function searchForKeywords ( str, usage ) {
 	if (out == '') out = 'Not found'
 	
 	var resultsCell = document.getElementById('searchResults')
-	resultsCell.style.display = 'block'
+	resultsCell.style.display = 'inline'
 	resultsCell.innerHTML = out
 	
 	// set up mouseovers
