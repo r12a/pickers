@@ -323,6 +323,9 @@ function hieroglyphsToMdC (str) {
 		if (chars[i] !== '*' && chars[i] !== ':' && i<chars.length-1) out += '-'
 		}
 
+	out = out.replace(/-:/g,':')
+	out = out.replace(/-\*/g,'*')
+
 
 	// add markup for ambiguous cases
 	out = out.replace(/\[/g,'<span class=alts><span class=altfirst>')
