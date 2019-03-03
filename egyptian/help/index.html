@@ -2,22 +2,24 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Egyptian Hieroglyph character picker 20</title>
+<title>Help for Egyptian hieroglyphs picker 23</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../../shared20/style.css" />
+<link rel="stylesheet" type="text/css" href="../../shared23/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js" type="text/javascript"></script>
 <script type="text/javascript" src="/shared/code/toc_2016.js"></script>
+<script type="text/javascript" src="../../shared23/helptemplate.js"></script>
+<script>var direction = 'ltr'</script>
 </head>
 
 <body class="app notes">
 <header>
   <div id="header-boilerplate"></div>
-  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Egyptian Hieroglyph picker','');</script> 
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Egyptian hieroglyphs picker','');</script> 
 </header>
 
 
-<h1>Notes/help</h1>
+<h1>Egyptian hieroglyphs picker notes/help</h1>
 
 
 <aside class="sidebar">
@@ -25,83 +27,33 @@
   <div id="toc"><!-- placeholder --></div>
   <div class="noprint">
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
-        <p><a href="/scripts/links?script=egyptian">Egyptian Hieroglyph script links</a></p>
+        <p><a href="../index.html">Egyptian hieroglyphs picker</a></p>
+        <p><a href="/scripts/links?iso=Egyp">Egyptian hieroglyphs script links</a></p>
         <p><a href="/pickers/">List of pickers </a></p>
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->05-Aug-2017<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=egyptian" title="Show all blog posts tagged with 'egyptian'">egyptian</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->03-Mar-2019<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=egyptian" title="Show all blog posts tagged with 'egyptian'">egyptian</a></p>
 
-<p>This Unicode character picker allows you to produce or analyse runs of text using the Egyptian Hieroglyphic script. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[egyptian%20hieroglyphs%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/egyptian">the Github commit list</a>.</p>
+<p>This Unicode character picker allows you to produce or analyse runs of Egyptian hieroglyphic text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p>There are a number of unusual features in this picker. They are described below.</p>
+<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[egyptian%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/egyptian">the Github commit list</a>.</p>
 
 
 <section id="basics">
-  <h2 href="#basics">Basic use</h2>
-<p>To produce characters in the text area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the controls to get further information about the characters. You must have JavaScript enabled.</p>
-
-<p><b class="leadin">Sample text</b> If you want to add some sample text to the text area, click on the <img src="../../images/sample.png" alt="plus sign"/> icon.</p>
-<p><b class="leadin">Fonts</b>
-  To properly display the text you will need to choose a font that is loaded on your system or device, or use the web fonts downloaded with the page  (Noto Sans Egyptian Hieroglyphs). Free fonts such as Noto Sans Egyptian Hieroglyphs and Aegyptus can be found by searching Web.</p>
-<p><b class="leadin">Mobile devices</b>
-  When working on an iPad or similar device, you should turn off<code class="kw" translate="no"> Autofocus</code> (just below the text area). This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</p>
 </section>
+<script>
+document.getElementById('basics').innerHTML = addBasicUse(direction)
+</script>
+
 
 <section id="about">
 <h2 href="#about">About the chart</h2>
-      <p>Includes characters in the  <a href="/uniview/?block=Egyptian_Hieroglyphs" target="_blank">Egyptian Hieroglyphs</a> block used for writing Burmese.</p>
-      <p>All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</p>
-      <p><b class="leadin">Sources</b> The main source for keywords and consonant mappings so far has been Gardiner's 1957 List of Hieroglyphic Signs,  and <cite>Middle Egyptian</cite> by James P Allen (<a href="http://std.dkuug.dk/jtc1/sc2/wg2/docs/n3182.pdf">here</a>).</p>
-    <p>A key source for the manuel de codage was <a href="http://www.catchpenny.org/codage/">http://www.catchpenny.org/codage/</a>.</p>
-    <p>Another useful site is <a href="http://aoineko.free.fr/index.php?lang=en">http://aoineko.free.fr/index.php?lang=en</a>, which composes two-dimensional hieroglyphic runs from the manuel de codage syntax.</p>
-</section>
+      <p>Includes all the characters in the Unicode <a href="/uniview/?block=egyptian_hieroglyphs" target="_blank">Egyptian hieroglyphs</a> and <a href="/uniview/?block=egyptian_hieroglyph_format_controls" target="_blank">Egyptian hieroglyph format controls</a> blocks.</p>
+<p>This picker has a number of special features that are different from other pickers, and which are described here.</p>
 
-
-
-<section id="help">
-<h2 href="#help">Interactive help</h2>
-
-
-
-<p><strong>Select the thing you want help with:</strong></p>
-
-<map name="helpSelector">
-  <area shape="rect" coords="0,40,600,80" href="#top_controls" />
-  <area shape="rect" coords="0,41,600,280" href="#text_area" />
-  <area shape="rect" coords="0,281,600,345" href="#secondary_output" />
-  <area shape="rect" coords="0,346,600,385" href="#wikiHiero" />
-  <area shape="rect" coords="0,388,14,490" href="#input_aids" />
-  <area shape="rect" coords="15,386,365,402" href="#character_names" />
-  <area shape="rect" coords="500,386,600,400" href="#autofocus" />
-  <area shape="rect" coords="15,403,400,430" href="#buttons" />
-  <area shape="rect" coords="15,431,600,465" href="#keyword_search" />
-  <area shape="rect" coords="15,466,600,575" href="#category_selector" />
-  <area shape="rect" coords="0,576,602,615" href="#yellow_controls" />
-  <area shape="rect" coords="0,616,600,650" href="#more_controls" />
-</map>
-<p><img usemap="#helpSelector" alt="Help selector." src="images/selector.png"/></p>
-
-
-
-
-<section id="text_area">
-  <h3 href="#text_area">Text area</h3>
-  <p><img src="images/text_area.png" alt=""/></p>
-  <p>This is where you see characters appearing as you select them from the panels lower down or where you paste text into the picker. Once you have some text here, you can perform various operations on it, or simply copy it to the clipboard for use elsewhere. </p>
-  <p>The controls just above the text area allow you to interactive with the text in various ways. They mostly work on highlighted text within the text area, or if there is no highlight they work on all the text. Controls near the bottom of the picker allow you to change font, font size, line-height, text direction, etc.</p>
-</section>
-
-
-<section id="buttons">
-  <h3 href="#buttons">Selection area</h3>
-  <p><img src="images/selection_area.png" alt=""/></p>
-  <p>Click on characters or buttons in this area to add them to the  text area above.</p>
-  <p><b class="leadin">Character buttons.</b> <samp>RLO</samp> is the invisible Unicode control character that starts a range of text that displays all characters from right-to-left. Such a range should be terminated using the <samp>PDF</samp> control. <samp>RLO</samp> will make the characters that follow it to progress from right to left.( Alternatively, you can select <samp translate="no">more controls</samp> &gt; <samp translate="no">Output direction</samp> to set the direction of the whole text area to RTL/LTR override. The latter approach will also align the text to the right of the box.) </p>
-  <p>I haven’t yet found a Unicode font that also flips the glyphs horizontally as a result of apply right-to-left directionality. I’m not entirely sure about the best way to apply directionality to Egyptian hieroglyphs, so I’m happy to hear suggestions.</p>
-
-<p>Alongside the direction controls are some characters used for markup in the Manuel de Codage, which allows you to prepare text for an engine that knows how to lay it out two-dimensionally. (The picker doesn’t do that.)</p>
-  <p><b class="leadin" id="keyword_search">Keyword search.</b> The picker associates most hieroglyphs with keywords that describe the glyph. These are based on the descriptions in lists by Gardiner and James P. Allen. This part of the picker allows you to search for characters by keyword. </p>
-    <p>The results appear immediately below the input field. Click on characters in the results to add them to the main text area.</p>
+  <p><b class="leadin" id="keyword_search">Keyword search.</b> The picker associates most hieroglyphs with keywords that describe the glyph. These are based on the descriptions in lists by Gardiner and James P. Allen. </p>
+<p>The input field <samp>Search for</samp> allows you to search for characters by keyword. As you type, matching characters appear. Click on those characters to add them to the main text area.</p>
     <p>Searching for <samp>ripple</samp> will match both <samp>ripple</samp> and <samp>ripples</samp>. Searching for <samp>king</samp> will match <samp>king</samp> and <samp>walking</samp>. If you want to only match whole words, surround the search term with colons, ie.<samp> :ripple:</samp> or <samp>:king:</samp>.</p>
     <p>Note that the keywords are written in British English, so you need to look for <samp>sceptre</samp> rather than <samp>scepter</samp>.</p>
     <p>Keywords can be entered in any order. Results will be for characters that have all the space-separated keywords present in the database.</p>
@@ -109,106 +61,95 @@
     <p>Each space-separated item of search input is treated as a regular expression, so if you want to search for two words that may have other words between them, use <samp>.*</samp>. For example,<samp> ox .* palm</samp> will match <samp>ox horns with stripped palm branch</samp>. You can search for the union of two or more items by separating words by |, eg. <kbd>king|queen</kbd> will search for characters with descriptions containing either king or queen.</p>
     <!--p>Many of the hieroglyphs have also been associated with other keywords related to their use (eg. words they are used in). If you select <code class="kw" translate="no">Include usage</code>, these keywords will also be selected. Note that this keyword list is not exhaustive by any means, but it may occasionally be useful. For example, a search for Anubis  will produce <span lang="egy">𓁢 𓃢 𓃣 𓃤 </span>.</p-->
     <p>(Note: to search for a character based on the Unicode name for that character, eg. <samp>w004</samp>, use the search box in the yellow area below.)</p>
-  <p><b class="leadin" id="category_selector">Category-based input.</b> In this part of the picker, characters are grouped into Gardiner's standard categories. Click on one of the orange characters, chosen as a nominal representative of the class, to show below all the characters in that category. </p>
-    <p>Click on one of those to add it to the main text area.</p>
+	
+  <p><b class="leadin" id="category_selector">Category-based input.</b>  Click on one of the orange characters, chosen as nominal representatives of Gardiner's standard categories, to show below all the characters in that category. Click on one of the hieroglyphs that appear to add it to the main text area.</p>
   <p> As you mouse over the orange characters, you’ll see the name of the category appear just below the text area.</p>
+
+<p><b class="leadin">Format controls.</b> The picker comes with 2 webfonts. The default is Noto Sans Egyptian Hieroglyphs, and the second is Aaron UMdC Phonetic Alpha. The former doesn't contain glyphs for the new format controls, but the latter does. If you <a href="https://github.com/HieroglyphsEverywhere/Fonts/blob/master/HieroglyphicFontList.md">download</a> and install the Aaron font, the font fallback feature of the browser should show glyphs for the format controls, whichever font you use.</p>
+<p>I don't know of an available font at the moment that actually uses the format controls to rearrange the Unicode characters.</p>
+
+<p><b class="leadin">Text direction.</b> The characters → ↔ ←︎︎︎ (just below the right side of the text area) allow you to set the base direction of the text area to LTR, auto, and RTL, respectively. The symbol ⇐︎ sets the direction to RTL override.</p>
+<p><strong>Particularly useful for Egyptian hieroglyphs</strong> is the symbol ⭅︎ . This mirrors the character glyphs at the same time as applying a RTL override. This allows you to display text from right to left. It doesn't change the order of the underlying characters in the text, nor does it require you to type any differently than normal.</p>
+<p><b class="leadin">Character names.</b> As you mouse over characters in the selection areas of the picker, you will see the code point and character name appear here.  Also, keywords are appended to the character names, where they exist. For example:</p>
+<p><code>U+1314E: EGYPTIAN HIEROGLYPH G012 (falcon archaic image flail flagellum)</code></p>
+<p>In this picker you will also see the category as you mouse over the orange category selectors, which makes it much easier to find a given category, eg.:</p>
+<p><code>A. Man and his occupations ( man seated )</code></p>
+
+      <p><b class="leadin">Sources.</b> The main source for keywords and consonant mappings so far has been Gardiner's 1957 List of Hieroglyphic Signs,  and <cite>Middle Egyptian</cite> by James P Allen (<a href="http://std.dkuug.dk/jtc1/sc2/wg2/docs/n3182.pdf">here</a>).</p>
+    <p>A key source for the manuel de codage was <a href="http://www.catchpenny.org/codage/">http://www.catchpenny.org/codage/</a>.</p>
+    <p>Another useful site is <a href="http://aoineko.free.fr/index.php?lang=en">http://aoineko.free.fr/index.php?lang=en</a>, which composes two-dimensional hieroglyphic runs from the manuel de codage syntax.</p>
+<div id="aboutBP">
+</div>
+<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
+</script>
+
 </section>
 
 
 
 <section id="top_controls">
-  <h3 href="#top_controls">Controls above the text area</h3>
-      <p><img src="images/controls_above.png" alt=""/></p>
-      <p>Controls above the input box allow you to run various operations on the text in the box. <strong>Most of them work on what you have selected</strong> within the box, or the whole box if nothing is selected.</p>
-      
-      <p><b class="leadin">Copy, select, delete (<img src="images/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b>  The icons on the left above the input box allow you to copy the text to the clipboard, select the text or delete the text, respectively. </p>
-      <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
-      <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
-    <p><b class="leadin">MDC to heiroglyphs.</b> Converts text written in the Manuel de Codage style into hieroglyphs.</p>
-    <p>You can do this for a single MdC code, or for a string of them. For example, add the following to the text area:</p>
-      <p> z:A1*Z1-p-Z7-wn:n-i-n:p*Z7-E15-x:D43-Z7-Y1:n-A1-r:n-f-!</p>
-      <p>Then click on this control and the following converted string will appear in the secondary text area. </p>
-      <p lang="egy">𓊃:𓀀*𓏤-𓊪-𓏲-𓃹:𓈖-𓇋-𓈖:𓊪*𓏲-𓃢-𓐍:𓂤-𓏲-𓏛:𓈖-𓀀-𓂋:𓈖-𓆑-!</p>
-      <p>From there you can replace the original text or add to it, or copy-paste the result elsewhere.</p>
-    <p><b class="leadin">Hieroglyphs to MdC.</b> Does the opposite to that of the previous control, converting text written in hieroglyphs into the Manuel de Codage style. Try the example above in reverse.</p>
-    <p>When converting in this direction, because one hieroglyph may map to alternative MdC strings, you may need to select from the alternatives offered by the control (shown in a yellow box). Simply click on the alternative you want when they are displayed by the picker.  </p>
+  <h2 href="#top_controls">Controls above the text area</h2>
+<div id="controlsAbove1"></div>
+<script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
+
   <p id="wikiHiero"><b class="leadin">MdC to WikiHiero.</b> Displays the highlighted MdC (ASCII) string as hieroglyphs in 2-dimensional arrangements just below the text area. For example, <kbd style="white-space:nowrap;">&lt;-i-mn:n-R4:t*p-&gt;</kbd> becomes:</p>
   <p><img src="images/amenhotep.png" alt="Amenhotep in 2-dimensional words."></p>
   <p>The code for this section was derived from the WikiHiero pages at <a href="http://aoineko.free.fr/">http://aoineko.free.fr/</a>. The logic and graphics were developed by Guillaume Blanchard (Aoineko), S. Rosmorduc, G. Watson, and J. Hirst.</p>
-  <p>Images are currently used to represent characters, in order to achieve the correct placement. At some point in the future,  font designs with appropriate positioning rules and a few new Unicode characters should allow for this positioning to be achieved easily using fonts.</p>
-    <p><b class="leadin">MdC to Unicode.</b> Converts MdC codes, singly or in combination, to Unicode-based phonetic strings. For example, <kbd>H-mA-A-t</kbd> becomes <samp>ḥ-mꜣ-ꜣ-t</samp>.</p>
+  <p>Images are currently used to represent characters, in order to achieve the correct placement. At some point in the future,  font designs with appropriate positioning rules and a few new Unicode characters should allow for this positioning to be achieved easily using fonts and the new format controls.</p>
+  
+  
+    <p><b class="leadin">MDC to Unicode.</b> Converts text written in the Manuel de Codage style into Unicode hieroglyphs.</p>
+    <p>You can do this for a single MdC code, or for a string of them. For example, add the following to the text area:</p>
+      <p> z:A1*Z1-p-Z7-wn:n-i-n:p*Z7-E15-x:D43-Z7-Y1:n-A1-r:n-f</p>
+      <p>Then click on this control and the following converted string will appear in the secondary text area. </p>
+      <p lang="egy">𓊃𓐰𓀀𓐱𓏤𓊪𓏲𓃹𓐰𓈖𓇋𓈖𓐰𓊪𓐱𓏲𓃢𓐍𓐰𓂤𓏲𓏛𓐰𓈖𓀀𓂋𓐰𓈖𓆑</p>
+      <p>From there you can replace the original text or add to it, or copy-paste the result elsewhere.</p>
+    <p><b class="leadin">Unicode to MdC.</b> Does the opposite to that of the previous control, converting text written in Unicode characters into the Manuel de Codage style. Try the example above in reverse.</p>
+    <p>When converting in this direction, because one hieroglyph may map to alternative MdC strings, you may need to select from the alternatives offered by the control (shown in a yellow box). Simply click on the alternative you want when they are displayed by the picker.  </p>
+
     <p><b class="leadin">Phonetic look up.</b> Many of the hieroglyphs are associated with 1-, 2- or 3-consonant pronunciations. Many such pronunciations are stored in the database behind the picker. If you know the pronunciation, you can look for corresponding hieroglyphs as follows. (Note that this lookup is far from exhaustive!)</p>
     <p>Type the sequence of consonants using Unicode characters (not McD equivalents) into the text area and highlight them. Then click on <samp translate="no">Phonetic look up</samp>. Hieroglyphs that match that character or sequence of characters will be displayed below the text area, and can be added to the text area by clicking on them. (Note that if you still have the search string highlighted in the text area those characters will be replaced by the hieroglyph.)</p>
     <p>You will find the panel <samp translate="no">Latin characters</samp> useful for typing characters that are not accessible via your keyboard. The panel is displayed by clicking on the higher <samp translate="no">L</samp> in the grey bar to the left. Click on a character to add it to the text area.</p>
     <p>For example, if you want to obtain the hieroglyph <span lang="egy">𓎝</span>, which is represented by the 3-character sequence wꜣḥ, add wꜣḥ to the text area and select it. Then click on <samp translate="no">Latin characters</samp>. You will see the character you need just above the <samp>SPACE</samp> button. Click on that hieroglyph and it will replace the wꜣḥ text in the text area. (Unhighlight the text in the text area if you want to keep both and add the hierglyph at the cursor position.)</p>
- <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] Egyptian text, [2] IPA transcription, [3] other transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use //.</p>
- <p><b class="leadin">Character markup.</b> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the text area, then click this button.  It will return something like the following for each of the characters:</p>
-      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;codepoint&quot;&gt;&lt;span lang=&quot;egy&quot;&gt;&amp;#13002;&lt;/span&gt; &lt;span class=&quot;uname&quot;&gt;U+13002 EGYPTIAN HIEROGLYPH A003&lt;/span&gt;&lt;/span&gt;</code></p>
-      <p>When you add it to your document, it will look like this.</p>
-      <p><span class="codepoint"><span lang="egy">&#x13002;</span> <span class="uname">U+13002 EGYPTIAN HIEROGLYPH A003</span></span></p>
+
+<div id="controlsAbove2"></div>
+<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+
 </section>
 
-<section>
-  <h3 id="secondary_output">Secondary text area</h3>
-  <p><img src="images/secondary_text.png" alt=""/></p>
-  <p>This area receives the output of various tools. Note that the text is editable.</p>
-  <p>The icons to the right ( <img src="images/second_copy_etc.png" alt="" style="vertical-align:middle;"/> ) allow you to copy the contents of this area to the clipboard, insert the contents into the main text area, or close this subwindow, respectively. When you insert the contents of this subwindow into the main text area, the text will overwrite any highlighted text, otherwise it will just be inserted at the current cursor position.</p>
-  <p>Some conversions produce ambiguous output. In this case, you will be offered two alternatives on a yellow background, eg. <img src="images/alternatives.png" alt="" style="vertical-align:top;"/> presents you with the alternatives 'h' or 't'. Simply click on the alternative you want, and the picker will discard the rest.</p>
+<section id="secondaryText">
 </section>
+<script>document.getElementById('secondaryText').innerHTML = addSecondaryText()</script>
 
-<section id="character_names">
-  <h3 href="#character_names">Character names</h3>
-  <p><img src="images/character_names.png" alt=""/></p>
-  <p>As you mouse over characters in the selection areas of the picker, you will see the code point and character name appear here.  Also, keywords are appended to the character names, where they exist.</p>
-  <p><img src="images/character_names0.png" alt=""/></p>
-  <p>In this picker you will also see the category as you mouse over the orange category selectors, which makes it much easier to find a given category.</p>
-</section>
 
-<section id="autofocus">
-  <h3 href="#autofocus">Autofocus</h3>
-  <p style="text-align:right;"><img src="images/autofocus.png" alt=""/></p>
-  <p>When working on an iPad or similar device, you should set this to <samp>Off</samp>. This prevents the keyboard popping up after you input every character.</p>
-</section>
 
 <section id="input_aids">
-  <h3 href="#input_aids">Input aids</h3>
-    <p><img src="images/input_aids.png" style="float:left; margin-right:1em; " alt=""/></p>
-    <p>The vertical grey bar to the left allows you to turn on/off a number of panels that can help create the text you want.</p>
-    <p><b class="leadin">Default.</b> Turns off all input aids and closes all panels.</p>
-    <p><b class="leadin">Latin characters.</b> Displays a panel of lowercase Latin characters you are likely to need for phonetic transcription. It is particularly useful for setting up a search by pronunciation (see above).</p>
-    <p><b class="leadin">Capital Latin characters.</b>  Displays a panel of uppercase Latin characters for use in phonetic transcription.</p>
-    <p><b class="leadin">Latin to Egyptian.</b>  Displays a panel of Latin characters used for transcription, but when you click on them they insert hieroglyphs into the text area. These are 26 hieroglyphs represented by a single consonant. Think of it as a shortcut if you want to find 1-consonant hieroglyphs by pronunciation.</p>
-    <p>Where a single consonant can be represented by more than one hieroglyph, a small pop-up will present you with the available choices. Just click on the one you want.</p>
-    <p><b class="leadin">Egyptian alphabet.</b> Displays a panel with the 26 hieroglyphs that the previous panel produces. In many cases this is a quicker way of typing in these hieroglyphs.</p>
+<h2 href="#input_aids">Input aids</h2>
+
+<div id="inputAids1"></div>
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, latin')</script>
+
+
+    <p><b class="leadin">Latin to Egyptian.</b> Displays a panel of Latin characters used for transcription, but when you click on them they insert hieroglyphs into the text area. These are 26 hieroglyphs represented by a single consonant. Think of it as a shortcut if you want to find 1-consonant hieroglyphs by pronunciation.</p>
+<p><b class="leadin">Egyptian alphabet.</b> Displays a panel with the 26 hieroglyphs that the previous panel produces. In many cases this is a quicker way of typing in these hieroglyphs.</p>
+    
+
+<div id="inputAids2"></div>
+<script>document.getElementById('inputAids2').innerHTML = addInputAids('')</script>
+
 </section>
+
+
 
 <section id="yellow_controls">
-  <h3 href="#yellow_controls">Controls on the yellow background</h3>
-    <p><img src="images/yellow_controls.png" alt=""/></p>
-    <p><b class="leadin">Left-hand controls.</b> These controls at the bottom of the page allow you to modify fonts used, the font size, line height, and the height of the text area. </p>
-    <p><b class="leadin">Add codepoint.</b> You can add characters to the text area by typing codepoints and escapes in the <samp>Add codepoint</samp> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</p>
-    <p><b class="leadin">Search for. </b>If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the <samp translate="no">X</samp> next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <kbd  translate="no">\bha\b</kbd> (or the shortcut, <kbd  translate="no">:ha:</kbd>).</p>
 </section>
+<script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
+
+
+
 <section id="more_controls">
-  <h3 href="#more_controls">More controls</h3>
-  <p><img src="images/more_controls.png" alt=""/></p>
-  <p>Click on <samp>more controls</samp> to reveal the less commonly used controls described here.</p>
-  <p><b class="leadin">Normalise. </b>All text is added to the main text area in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character – text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. </p>
-  <p><b class="leadin">Change table font. </b>Allows you to change the font and size of the characters you click on in the main selection areas. </p>
-    <p><b class="leadin">CC base.</b> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://rishida.net/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. </p>
-    <p>The <samp class="kw" translate="no">CC base</samp> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</p>
-    <p><b class="leadin">Text area direction.</b> This allows you to set the direction of the characters in the whole text area to be right-to-left or left-to-right. </p>
-  <p>If you set the control to <samp translate="no">RTL bidi</samp> the picker will set a right-to-left override on the text area. This will mean that the line moves to the right side of the text area, and when you type in  characters, they are added to the left of the line. What it doesn't do, however, is flip the direction of the glyphs (since you should normally read into the faces of the people and animals depicted). In principle,  this should  be done by the font you are using, but the fonts currently listed in the <samp>Font list</samp> control don't do this.</p>
-  <p>If you set the control to <samp translate="no">RTL mirror</samp>, the picker will use CSS to mirror the contents of the text area. The characters will be right-aligned and will progress from right to left as you type, however the glyphs will now also be flipped so that they face the way you would expect. This is what we need for hieroglyphics. The drawback of this approach is that Latin text is also reflected, which may or may not be an issue.</p>
-  <p>If you set the control to <samp translate="no">RTL mirror</samp> the output from <samp translate="no">MdC to WikiHiero</samp> will also be mirror-imaged.</p>
-  <p>Note that the effects described above do not carry over to a target document when you cut and paste the text elsewhere. However, the options may be useful for demonstration within the picker, or to allow you to create screen snap images (which can, of course, be used elsewhere to show  text in a right-to-left direction).&nbsp;</p>
 </section>
-</section>
-
-
-
-
-
+<script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
 
 <div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
 </body>
