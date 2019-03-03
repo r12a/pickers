@@ -6,6 +6,14 @@
     font-weight: normal;
     font-style: normal;
 	}
+@font-face {
+    font-family: 'Aaron UMdC Phonetic Alpha WF';
+    src: local("Aaron UMdC Phonetic Alpha"),
+		url('/shared/webfonts/AaronUMdCPhoneticAlpha100.woff2') format('woff2'),
+		url('/shared/webfonts/AaronUMdCPhoneticAlpha100.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
 
 #shape { display: none; }
 #alphabet { display: block; }
@@ -20,14 +28,14 @@
 
 
 [lang='egy'] {
-	font-family: 'Noto Sans Egyptian Hieroglyphs WF', 'Noto Sans Egyptian Hieroglyphs', Aegyptus, serif;
+	font-family: 'Noto Sans Egyptian Hieroglyphs WF', 'Aaron UMdC Phonetic Alpha WF', Aegyptus, serif;
 	}
 
 .shapeSelect {
 	color: orange;
 	font-size: 1.5em;
 	cursor: pointer;
-	font-family: 'Noto Sans Egyptian Hieroglyphs WF', Aegyptus;
+	font-family: 'Noto Sans Egyptian Hieroglyphs WF', 'Aaron UMdC Phonetic Alpha WF', Aegyptus;
 	}
 
 #alphabet img { 

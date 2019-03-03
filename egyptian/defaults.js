@@ -37,8 +37,8 @@ var inputAids = [
 ]
 
 var controls = [
-{"title":"MdC to<br/>Unicode", "alt":"Convert Manuel de Codage transcriptions to Unicode.", "code":"doTranscription('mdcToHieroglyphs')"},
 {"title":"MdC to<br/>WikiHiero", "alt":"Display Manuel de Codage transcriptions on WikiHiero page.", "code":"doWikiHiero()"},
+{"title":"MdC to<br/>Unicode", "alt":"Convert Manuel de Codage transcriptions to Unicode.", "code":"doTranscription('mdcToHieroglyphs')"},
 {"title":"Unicode<br/>to MdC", "alt":"Convert Unicode to Manuel de Codage transcription.", "code":"doTranscription('hieroglyphsToMdC')"},
 {"title":"Change<br/>Transliteration", "alt":"Convert one transcription to another.", "code":"document.getElementById('translitSelector').style.display = 'block';"},
 {"title":"Phonetic<br/>look up", "alt":"Look up a Latin consonant or consonant sounds.", "code":"convertPhonemes()"},
