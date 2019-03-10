@@ -14,6 +14,7 @@ function makeList (list, cs) {
     out = ''
     var listarray = []
     var transarray = []
+	var transcol = document.getElementById('col').value
     var temp = list.split('\n')
      console.log(temp)
    for (let i=0;i<temp.length;i++) {
@@ -23,7 +24,7 @@ function makeList (list, cs) {
             temp[i] = temp[i].replace(/\s+/g,' ')
             var line = temp[i].split(' ')
             listarray.push(line[0])
-            if (line.length > 1) transarray.push(line[1])
+            if (line.length > 1) transarray.push(line[transcol])
             else transarray.push('')
             }
         }
@@ -78,7 +79,7 @@ p, input, #character, #inputArea  { font-size: 100%; }
 
 <body>
 <p>Make a set of spans for the selection area of a picker</p>
-<p>Add  lines here containing character+tab+transliteration:</p>
+<p>Column number for transliteration (0-based): <select id="col"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></p>
 <p><button onClick="
     document.getElementById('inputArea').value  = '' 
     ">Clear input area</button></p>

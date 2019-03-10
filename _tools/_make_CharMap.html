@@ -100,6 +100,7 @@ function makeList (inp, col) {
     for (let i=0;i<window.sortIndex.length;i++) {
         if (charArray[window.sortIndex[i]]) out += charArray[window.sortIndex[i]]+'\n'
         }
+	
     return out
 	}
 
@@ -116,8 +117,10 @@ p, input, #character, #inputArea  { font-size: 120%; }
 <p>&nbsp;
 <textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;" placeholder="From the Google sheet, copy the key, character and translit columns here, and check there are no incomplete lines. The columns should be tab-separated and in that order, one item per line."></textarea></p>
 
-<p><button onClick="document.getElementById('inputArea').value  = ''">Clear input</button> &nbsp;&nbsp;&nbsp;&nbsp;
-Select latin column: <select id="col"><option value="2" selected>2</option>
+<p><button onClick="document.getElementById('inputArea').value  = ''">Clear input</button> 
+&nbsp;&nbsp;&nbsp;&nbsp;
+Select latin column (NOT -based): 
+<select id="col"><option value="2" selected>2</option>
     <option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
     </select>
 <button type="submit" onClick="document.getElementById('output').value  = makeList(document.getElementById('inputArea').value, document.getElementById('col').value-1); document.getElementById('output').select(); return false;">Create list!</button></p>
