@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Noto Sans Georgian WF';
+    src: url('../../shared/webfonts/NotoSansGeorgian-regular.woff2') format('woff2'),
+         url('../../shared/webfonts/NotoSansGeorgian-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+[lang=ka] { font-family: 'Noto Sans Georgian WF', sans-serif; }
+
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  "Noto Sans Georgian WF",  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+#kbdGrid {
+    display: flex;
+    flex-direction: row;
+	line-height: 1.4;
+    justify-content: center;
+    }
+#mkhedruli, #mtavruli, #asomtavruli, #nuskhuri {
+    display: flex;
+    flex-direction: row;
+	line-height: 1.4;
+    justify-content: center;
+    }
+#mkhedruli + #mtavruli, #mtavruli + #asomtavruli, #asomtavruli + #nuskhuri {
+    margin-top: 1em;
+    }
+#consonantGrid, #mtavruliConsonantGrid, #asomtavruliConsonantGrid, #nuskhuriConsonantGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 12em;
+    justify-content: space-between;
+    }
+#consonantGrid > span, #mtavruliConsonantGrid > span, #asomtavruliConsonantGrid > span, #nuskhuriConsonantGrid > span {
+    min-width: 1em;
+    }
+#vowelGrid, #mtavruliVowelGrid, #asomtavruliVowelGrid, #nuskhuriVowelGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 2.75em;
+    max-height: 15em;
+    justify-content: space-between;
+    margin-left: 1.5em;
+    line-height: 1.3;
+    }
+#extraGrid, #mtavruliExtraGrid, #asomtavruliExtraGrid, #nuskhuriExtraGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 2.5em;
+    max-height: 15em;
+    justify-content: space-between;
+    margin-left: 1.5em;
+    line-height: 1.3;
+    }
+#numberGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 2.42em;
+    max-height: 6em;
+    justify-content: center;
+    margin-left: 1.2em;
+    line-height: 1.3;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+
+#alphabet summary {
+    font-size: 50%;
+    }
+#obsolete {
+    text-align: center;
+    }
+#mtavruli, #asomtavruli, #nuskhuri {
+    display: none;
+	}
