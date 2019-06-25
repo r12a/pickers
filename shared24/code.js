@@ -196,6 +196,14 @@ function makeCharLink (script, lang, dir) {
 	}
 
 
+function getDBInfo (script, lang, dir) {
+	var output = document.getElementById('output')
+	document.getElementById('transcriptionWrapper').style.display='block'
+	document.getElementById('transcription').style.display = 'block'
+	document.getElementById('transcription').innerHTML = displayDBInfo(getHighlightedText(output), script, lang, dir)
+	}
+
+
 function switchAutofocus (desiredState) {
 	if (desiredState == 'on') {
 		document.getElementById('afon').className='on' 
@@ -734,7 +742,7 @@ function transcribe (chstring, direction) {
 	chstring = chstring.replace(/\{/g,'&#x7B;')
 	
 	var transcription = localtranscribe(direction, chstring)
-	console.log(transcription)//var transcription = localtranscribe(direction, chstring)
+	//var transcription = localtranscribe(direction, chstring)
 	document.getElementById('transcription').innerHTML = transcription
 	document.getElementById('transcriptionWrapper').style.display = 'block' 
 	alts = document.querySelectorAll('.altfirst, .altlast, .alt')
@@ -1080,6 +1088,11 @@ function initialise() {
 		
 		// set title
 		if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ucsName]) node[n].title = window.spreadsheetRows[content][cols.ucsName]
+		else {
+			hex = content.codePointAt(0).toString(16).toUpperCase()
+			while (hex.length < 4) hex = '0'+hex
+			node[n].title = 'U+'+hex+': '+charData[content]
+			}
 		
 		// set mouseover/out
 		node[n].onmouseover = event_mouseoverChar
@@ -1369,6 +1382,173 @@ function makeCharacterLink (cp, block, lang, direction) {
 	return out.trim()
 	}
 
+
+function displayDBInfoOLD (cp, block, lang, direction) { 
+	// displays information about cp from db
+	// cp: a unicode character, or sequence of unicode characters
+	// block: 
+	// lang: the BCP47 language tag for the context
+	// direction: either rtl or ltr or ''
+
+	//var chars = []
+	//convertStr2DecArray(cp, chars)
+	var chars = [...cp]
+
+	var out = '<span style="display:flex; flex-direction:column;">'
+	console.log(spreadsheetRows)
+	
+	for (let i=0;i<chars.length;i++) {
+		hex = chars[i].codePointAt(0).toString(16).toUpperCase()
+		while (hex.length < 4) hex = '0'+hex
+		out += '<span class="dbCharContainer" onMouseOver="document.getElementById(\'chardata\').textContent = \'U+'+hex+': '+charData[chars[i]]+'\'">'+chars[i]+' '
+		if (spreadsheetRows[chars[i]]) {
+		
+			// get transliteration
+			out += '<span><em>translit</em> '
+			if (spreadsheetRows[chars[i]][cols.transLoc]) out += ' <span class="ipa">'+spreadsheetRows[chars[i]][cols.transLoc]+'</span>'
+			else out += '-'
+			for (item in spreadsheetRows) {
+				if (item.length > 1 && item.includes(chars[i])) out += ' ('+item+' <span class="ipa">'+spreadsheetRows[item][cols.transLoc]+'</span>) '
+				}
+			out += '</span>'
+			
+			// get transcription
+			out += '<span><em>transcr</em> '
+			if (spreadsheetRows[chars[i]][cols.transcription]) out += ' <span class="ipa">'+spreadsheetRows[chars[i]][cols.transcription]+'</span>'
+			else out += '-'
+			for (item in spreadsheetRows) {
+				if (item.length > 1 && item.includes(chars[i])) out += ' ('+item+' <span class="ipa">'+spreadsheetRows[item][cols.transcription]+'</span>) '
+				}
+			out += '</span>'
+			
+			// get ipa info
+			out += '<span><em>ipa</em> '
+			if (spreadsheetRows[chars[i]][cols.ipaLoc]) out += ' <span class="ipa">'+spreadsheetRows[chars[i]][cols.ipaLoc]+'</span>'
+			else out += '-'
+			for (item in spreadsheetRows) {
+				if (item.length > 1 && item.includes(chars[i])) out += ' ('+item+' <span class="ipa">'+spreadsheetRows[item][cols.ipaLoc]+'</span>) '
+				}
+			out += '</span>'
+			
+			// get type
+			out += '<span><em>type</em> '
+			if (spreadsheetRows[chars[i]][cols.typeLoc]) out += ' <span class="ipa">'+spreadsheetRows[chars[i]][cols.typeLoc]+'</span>'
+			else out += '-'
+			out += '</span>'
+			
+			// get status
+			if (spreadsheetRows[chars[i]][cols.statusLoc] && cols.statusLoc > 0) {
+				out += '<span><em>status</em> '
+				out += ' <span>'+spreadsheetRows[chars[i]][cols.statusLoc]+'</span>'
+				out += '</span>'
+				}
+			
+			// get name
+			if (spreadsheetRows[chars[i]][cols.nameLoc] && cols.nameLoc > 0) {
+				out += '<span><em>name</em> '
+				out += ' <span>'+spreadsheetRows[chars[i]][cols.nameLoc]
+				if (spreadsheetRows[chars[i]][cols.nnameLoc] && cols.nnameLoc > 0) out += ' ('+spreadsheetRows[chars[i]][cols.nnameLoc]+')'
+				out += '</span></span>'
+				}
+			
+			
+			}
+		
+		out += '</span> '
+		}
+	
+	out += '</span>'
+
+
+	return out.trim()
+	}
+
+
+function displayDBInfo (cp, block, lang, direction) { 
+	// displays information about cp from db
+	// cp: a unicode character, or sequence of unicode characters
+	// block: 
+	// lang: the BCP47 language tag for the context
+	// direction: either rtl or ltr or ''
+
+	//var chars = []
+	//convertStr2DecArray(cp, chars)
+	var chars = [...cp]
+
+	var out = '<span style="display:flex; flex-direction:column;">'
+	console.log(spreadsheetRows)
+	
+	for (let i=0;i<chars.length;i++) {
+		out += buildDBInfoLine(chars[i], true)
+		}
+	
+	out += '</span>'
+
+
+	return out.trim()
+	}
+
+
+function buildDBInfoLine (char, toplevel) {
+		hex = char.codePointAt(0).toString(16).toUpperCase()
+		while (hex.length < 4) hex = '0'+hex
+		
+		out = '<span class="dbCharContainer" onMouseOver="document.getElementById(\'chardata\').textContent = \'U+'+hex+': '+charData[char]+'\'"'
+		if (!toplevel) out += ' style="margin-left: 3em;"'
+		out += '>'+char+' '
+		if (spreadsheetRows[char]) {
+		
+			// get transliteration
+			out += '<span><em>tl</em> '
+			if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transLoc]+'</span>'
+			else out += '-'
+			out += '</span>'
+			
+			// get transcription
+			out += '<span><em>ts</em> '
+			if (spreadsheetRows[char][cols.transcription]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transcription]+'</span>'
+			else out += '-'
+			out += '</span>'
+			
+			// get ipa info
+			out += '<span><em>ipa</em> '
+			if (spreadsheetRows[char][cols.ipaLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.ipaLoc]+'</span>'
+			else out += '-'
+			out += '</span>'
+			
+			// get type
+			out += '<span><em>type</em> '
+			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
+			else out += '-'
+			out += '</span>'
+			
+			// get status
+			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
+				out += '<span><em>status</em> '
+				out += ' <span>'+spreadsheetRows[char][cols.statusLoc]+'</span>'
+				out += '</span>'
+				}
+			
+			// get name
+			if (spreadsheetRows[char][cols.nameLoc] && cols.nameLoc > 0) {
+				out += '<span><em>name</em> '
+				out += ' <span>'+spreadsheetRows[char][cols.nameLoc]
+				if (spreadsheetRows[char][cols.nnameLoc] && cols.nnameLoc > 0) out += ' ('+spreadsheetRows[char][cols.nnameLoc]+')'
+				out += '</span></span>'
+				}
+			
+			}
+		
+		out += '</span> '
+		// find related items
+		if (toplevel) {
+			for (item in spreadsheetRows) {
+				if (item.length > 1 && item.includes(char)) out += buildDBInfoLine(item, false)
+				}
+			}
+		
+		return out
+}
 
 function getData (script) {
     // adds link data to 'related links' expander

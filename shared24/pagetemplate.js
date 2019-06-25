@@ -47,7 +47,7 @@ out += `</header>
 <div id="welcome"></div>
 
 
-<div id="topControls">
+<div id="topControls" style="position:relative;">
 <span id="copydelete">
   <button title="Copy to clipboard." onclick="copyToClipboard()">📋</button>
   <button title="Select all the text." onclick="selectAll()">🔶</button>
@@ -77,14 +77,40 @@ for (let i=0;i<window.controls.length;i++){
 	}
 
 out += ` 
-    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button>
+    <!--button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button-->
 
     <button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" 
     title="Create an example.">Make<br>example</button>
     
     <button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" 
     title="Create an character link.">Character<br/>markup</button>
+    
+    <img src="../shared24/images/menu.png"" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="console.log(document.getElementById(\'pulldown\').style.display); if (document.getElementById(\'pulldown\').style.display===\'none\'){document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\' }; document.getElementById(\'output\').focus();"/>
     </span>
+    
+    <div id="pulldown" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;">
+    <button onclick="openEscapeWindow(); return false;">Convert to escapes</button><br/>
+
+    <button  id="showDB" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction)" 
+    title="Show information in the database for a character.">Analyse text</button><br/>
+    `
+if (window.pulldown) {
+for (let i=0;i<window.pulldown.length;i++){
+	out += '<button onclick="'+window.pulldown[i].code+'" '
+	
+    if (window.pulldown[i].warning) {
+        var warningMsg = window.pulldown[i].warning+'<br/><small>See help file for more information</small>.'
+        var warningLocn = "document.getElementById(\'warning\')"
+        out += 'onmouseover="'+warningLocn+'.style.display=\'inline-block\'; '+warningLocn+'.innerHTML = \''+warningMsg+'\'" '
+        out += 'onmouseout="'+warningLocn+'.style.display=\'none\'" '
+        }
+    out += 'title="'+window.pulldown[i].alt+'">'+window.pulldown[i].title+'</button><br/>\n\n'
+	}
+	}
+
+	out += `
+	<div id="closePulldown" onclick="document.getElementById(\'pulldown\').style.display=\'none\'; document.getElementById(\'output\').focus();">X</div>
+    </div>
 </div>
 
 <div id="outputDiv" style="position: relative;">
@@ -419,6 +445,7 @@ out += `
 
 
 <div class="smallprint">
+Updates on <a href="https://twitter.com/r12a" target="_blank">Twitter</a>.
 See <a href="https://github.com/r12a/pickers/tree/gh-pages/`+template.github+`">recent changes</a>.
 Make a <a href="https://github.com/r12a/pickers/issues/new?title=[`+template.github+`%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
 Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 

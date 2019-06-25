@@ -92,6 +92,10 @@ table td { border: 0; }
 	font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif;
 	cursor: pointer;
 	}
+#closePulldown {
+	margin-right: 1em;
+	cursor: pointer;
+	}
 #moveTranscription {
 	position: absolute; 
 	bottom: 0; 
@@ -466,6 +470,22 @@ dt {
 	padding: 1px;
 	border-radius: 5px;
 	}
+#pulldown button {
+	cursor:pointer; 
+	display: inline-block; 
+	line-height:1;
+	text-align:center;
+	padding: 1px;
+	border-radius: 5px;
+	border: 0;
+	background-color: white;
+	box-shadow: none;
+	font-size: smaller;
+	color: gray;
+	margin: 0;
+	margin-right: .5em;
+	border: 1px solid white; 
+	}
 #tools button {
 	cursor:pointer; 
 	display: inline-block; 
@@ -773,4 +793,24 @@ summary:hover {
     color: red;
     cursor: pointer;
     }
+
+.dbCharContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0 1em;
+	font-size: large;
+	cursor: pointer;
+	}
+.dbCharContainer > span {
+	margin: 0 1em;
+	}
+.dbCharContainer em {
+	color: tan;
+	}
+
+
+
+
+
 
