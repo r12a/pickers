@@ -61,14 +61,14 @@ table td { border: 0; }
 #warning {
     position: absolute;
     top: 4em;
-    right: 0;
+    left: 50%;
+	margin-left: -25%;
     z-index: 100;
     background-color: blanchedalmond;
     padding: .5em 1em;
     border-radius: .5em;
     font-size: 80%;
     width: 50%;
-    margin: auto;
     display: none;
     text-align: center;
 }
@@ -485,6 +485,11 @@ dt {
 	margin: 0;
 	margin-right: .5em;
 	border: 1px solid white; 
+	padding: .5em;
+	width: 100%;
+	}
+#pulldown button:hover {
+	background-color: #eee;
 	}
 #tools button {
 	cursor:pointer; 
@@ -501,9 +506,11 @@ dt {
 	margin: 0;
 	margin-right: .5em;
 	border: 1px solid white; 
+	padding: .5em;
 	}
 #tools button:hover {
-	color: #c33;
+	/*color: #c33;*/
+	background-color: #eee;
 	}
 /*#tools button:hover {
 	border: 1px solid #ccc; 
@@ -811,6 +818,7 @@ summary:hover {
 .dbCharContainer a {
 	font-style: italic;
 	font-size: 90%;
+	cursor: pointer;
 	}
 
 
