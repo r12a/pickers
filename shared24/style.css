@@ -808,6 +808,10 @@ summary:hover {
 .dbCharContainer em {
 	color: tan;
 	}
+.dbCharContainer a {
+	font-style: italic;
+	font-size: 90%;
+	}
 
 
 

@@ -1537,6 +1537,13 @@ function buildDBInfoLine (char, toplevel) {
 				out += '</span></span>'
 				}
 			
+			// add link to notes page
+			var blockfile = getScriptGroup(parseInt(hex,16), true)
+            if (blockfile) {
+				out += '<a href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">notes</a>'
+                }
+			
+			
 			}
 		
 		out += '</span> '
