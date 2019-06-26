@@ -174,6 +174,7 @@ function makeSharingLink () {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
 	document.getElementById('transcriptionWrapper').style.display='block'
+	document.getElementById('transcription').contentEditable = true
 	document.getElementById('transcription').style.display = 'block'
 	document.getElementById('transcription').textContent = window.location.protocol+'//'+window.location.hostname+window.location.pathname+'?text='+encodeURIComponent(chars)
 	output.focus()
@@ -184,6 +185,7 @@ function makeExample (lang, dir) {
 	var chars = getHighlightedText(output)
 	document.getElementById('transcriptionWrapper').style.display='block'
 	document.getElementById('transcription').style.display = 'block'
+	document.getElementById('transcription').contentEditable = true
 	document.getElementById('transcription').textContent = getExample(chars, lang, dir)
 	output.focus()
 	}
@@ -192,6 +194,7 @@ function makeCharLink (script, lang, dir) {
 	var output = document.getElementById('output')
 	document.getElementById('transcriptionWrapper').style.display='block'
 	document.getElementById('transcription').style.display = 'block'
+	document.getElementById('transcription').contentEditable = true
 	document.getElementById('transcription').textContent = makeCharacterLink(getHighlightedText(output), script, lang, dir)
 	}
 
@@ -201,6 +204,8 @@ function getDBInfo (script, lang, dir) {
 	document.getElementById('transcriptionWrapper').style.display='block'
 	document.getElementById('transcription').style.display = 'block'
 	document.getElementById('transcription').innerHTML = displayDBInfo(getHighlightedText(output), script, lang, dir)
+	document.getElementById('transcription').contentEditable = false
+	output.focus()
 	}
 
 
@@ -726,6 +731,7 @@ function choose () {
 
 function closeTranscription () {
 	document.getElementById('transcriptionWrapper').style.display = 'none'
+	document.getElementById('transcription').contentEditable = true
 	}
 
 
@@ -744,6 +750,7 @@ function transcribe (chstring, direction) {
 	var transcription = localtranscribe(direction, chstring)
 	//var transcription = localtranscribe(direction, chstring)
 	document.getElementById('transcription').innerHTML = transcription
+	document.getElementById('transcription').contentEditable = true
 	document.getElementById('transcriptionWrapper').style.display = 'block' 
 	alts = document.querySelectorAll('.altfirst, .altlast, .alt')
 	for (i=0;i<alts.length;i++) {
@@ -1540,7 +1547,7 @@ function buildDBInfoLine (char, toplevel) {
 			// add link to notes page
 			var blockfile = getScriptGroup(parseInt(hex,16), true)
             if (blockfile) {
-				out += '<a href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">notes</a>'
+				out += '<a title="Right-click to open notes file." href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">notes</a>'
                 }
 			
 			
