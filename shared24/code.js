@@ -1483,7 +1483,7 @@ function displayDBInfo (cp, block, lang, direction) {
 	var chars = [...cp]
 
 	var out = '<span style="display:flex; flex-direction:column;">'
-	console.log(spreadsheetRows)
+	//console.log(spreadsheetRows)
 	
 	for (let i=0;i<chars.length;i++) {
 		out += buildDBInfoLine(chars[i], true)
@@ -1497,6 +1497,7 @@ function displayDBInfo (cp, block, lang, direction) {
 
 
 function buildDBInfoLine (char, toplevel) {
+		
 		hex = char.codePointAt(0).toString(16).toUpperCase()
 		while (hex.length < 4) hex = '0'+hex
 		
@@ -1556,8 +1557,8 @@ function buildDBInfoLine (char, toplevel) {
 		out += '</span> '
 		// find related items
 		if (toplevel) {
-			for (item in spreadsheetRows) {
-				if (item.length > 1 && item.includes(char)) out += buildDBInfoLine(item, false)
+			for (item in spreadsheetRows) { 
+				if (item.length > 1 && item.includes(char) && spreadsheetRows[item][cols.key]) out += buildDBInfoLine(item, false)
 				}
 			}
 		
