@@ -62,6 +62,9 @@ out += `</header>
 <span id="tools">
 <a class="interactiveHelpButton" style="margin-right:.5em;" href="help/#top_controls" target="_help" title="Help for top level controls."><img alt="help" src="../images/help.png"/></a>
     <button onclick="showCodepoints()">Show<br/>codepoints</button>
+
+    <button  id="showDB" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction)" 
+    title="Show information in the database for a character.">Analyse<br/>text</button>
     
  ` 
 	
@@ -89,10 +92,7 @@ out += `
     </span>
     
     <div id="pulldown" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;">
-    <button onclick="openEscapeWindow(); return false;">Convert to escapes</button><br/>
-
-    <button  id="showDB" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction)" 
-    title="Show information in the database for a character.">Analyse text</button><br/>
+    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button><br/>
     `
 if (window.pulldown) {
 for (let i=0;i<window.pulldown.length;i++){
