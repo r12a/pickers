@@ -1,20 +1,20 @@
 @font-face {
     font-family: 'Tuladha Jejeg WF';
-    src: url('/shared/webfonts/tuladhajejeg_gr-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/tuladhajejeg_gr-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/tuladhajejeg_gr-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/tuladhajejeg_gr-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Sans Javanese WF';
-    src: url('/shared/webfonts/notosansjavanese-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notosansjavanese-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosansjavanese-regular-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/notosansjavanese-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
 
-[lang=jv] { font-family: 'Tuladha Jejeg WF', 'Noto Sans Javanese WF', serif; }
+[lang=jv] { font-family: 'Noto Sans Javanese WF', 'Tuladha Jejeg WF', serif; }
 
 
 
@@ -27,6 +27,7 @@ span.hint {
 	margin-right: 1px;
     margin-left: 2px;
 	font-size: 50%;
+	color: tan;
 	}
 .c { 
 	min-width: .75em;

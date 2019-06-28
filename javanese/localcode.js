@@ -110,7 +110,7 @@ y y̆
 `
 
 
-
+/*
 var translitCharacterMap = `
 a aʲ ꦻ
 A ạ ꦄ
@@ -172,6 +172,5 @@ y y ꦪ y̆ ꦾ r̆ ꦿ.
 ] ␣ \u200B
 / ˑ ꦳
 `
-
-
+*/
 
