@@ -19,75 +19,24 @@ var ONvowels = {'a':'a', 'á':'u', 'e':'e', 'é':'e', 'i':'i', 'í':'i', 'o':'o'
 
 
 function transliterate (str) {
-str += ' '
 
-str = str.replace(/ᚠ/g, "f")
-str = str.replace(/ᚢ/g, "u")
-str = str.replace(/ᚣ/g, "y̱")
-str = str.replace(/ᚤ/g, "ụ̈")
-str = str.replace(/ᚦ/g, "þ")
-str = str.replace(/ᚧ/g, "þ̈")
-str = str.replace(/ᚨ/g, "a")
-str = str.replace(/ᚩ/g, "o")
-str = str.replace(/ᚪ/g, "a̱")
-str = str.replace(/ᚫ/g, "æ̱")
-str = str.replace(/ᚬ/g, "ạ̃")
-str = str.replace(/ᚭ/g, "ạ̃̇")
-str = str.replace(/ᚮ/g, "ḅ̇")
-str = str.replace(/ᚯ/g, "ǫ")
-str = str.replace(/ᚱ/g, "r")
-str = str.replace(/ᚲ/g, "k")
-str = str.replace(/ᚳ/g, "c̱")
-str = str.replace(/ᚴ/g, "ḳ")
-str = str.replace(/ᚵ/g, "ḳ̈")
-str = str.replace(/ᚷ/g, "g")
-str = str.replace(/ᚸ/g, "g̱̈")
-str = str.replace(/ᚹ/g, "w")
-str = str.replace(/ᚺ/g, "ḣ")
-str = str.replace(/ᚻ/g, "h")
-str = str.replace(/ᚼ/g, "ḥ")
-str = str.replace(/ᚽ/g, "ḥ̇")
-str = str.replace(/ᚾ/g, "n")
-str = str.replace(/ᚿ/g, "ṇ")
-str = str.replace(/ᛁ/g, "i")
-str = str.replace(/ᛂ/g, "ị̈")
-str = str.replace(/ᛃ/g, "j")
-str = str.replace(/ᛄ/g, "j̱")
-str = str.replace(/ᛅ/g, "ạ")
-str = str.replace(/ᛆ/g, "ạ̇")
-str = str.replace(/ᛇ/g, "ɨ")
-str = str.replace(/ᛈ/g, "p")
-str = str.replace(/ᛉ/g, "z")
-str = str.replace(/ᛊ/g, "ṡ")
-str = str.replace(/ᛋ/g, "s")
-str = str.replace(/ᛌ/g, "ṣ")
-str = str.replace(/ᛍ/g, "c")
-str = str.replace(/ᛏ/g, "t")
-str = str.replace(/ᛐ/g, "ṭ")
-str = str.replace(/ᛑ/g, "ṭ̈")
-str = str.replace(/ᛒ/g, "b")
-str = str.replace(/ᛓ/g, "ḅ")
-str = str.replace(/ᛔ/g, "ḅ̈")
-str = str.replace(/ᛕ/g, "p̣")
-str = str.replace(/ᛖ/g, "e̱")
-str = str.replace(/ᛗ/g, "m")
-str = str.replace(/ᛘ/g, "ṃ")
-str = str.replace(/ᛙ/g, "ṃ̇")
-str = str.replace(/ᛚ/g, "l")
-str = str.replace(/ᛜ/g, "ŋ")
-str = str.replace(/ᛝ/g, "ŋ̱")
-str = str.replace(/ᛞ/g, "ḏ")
-str = str.replace(/ᛟ/g, "œ̱")
-str = str.replace(/ᛠ/g, "e̱ᵃ")
-str = str.replace(/ᛡ/g, "j̱")
-str = str.replace(/ᛣ/g, "y")
-str = str.replace(/ᛤ/g, "ḵ̈")
-str = str.replace(/ᛦ/g, "ʀ̣")
-str = str.replace(/ᛧ/g, "ʀ̣̇")
-str = str.replace(/᛬/g, "-̇")
+str = ' '+str
+
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
+
 
 return str.trim()
 }
+
+
 
 
 

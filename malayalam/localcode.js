@@ -110,7 +110,7 @@ v ʋ
 `
 
 
-
+/*
 var translitCharacterMap = `
 a ā ാ aʲ ൈ aʷ ൗ ȧʷ ൌ
 A ạ̄ അ ậ ആ ạʲ ഐ ạʷ ഔ
@@ -164,7 +164,7 @@ y y യ
 . . ।
 * ͓ ്
 `
-
+*/
 
 globals.showISOCharMap = ''
 

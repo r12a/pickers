@@ -1,12 +1,12 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Doulos SIL' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "30";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "3"; // number representing number of times 100px for height of text area
-	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
+	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
+	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
+	factoryDefaults.lineheight = "1.2"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'non' // language to use for examples
 	factoryDefaults.uifont = 'Doulos SIL'; // font name  for selection area (a single font, no quotes)
-	factoryDefaults.uisize = "40";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.uisize = "32";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "\u25CC";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
@@ -28,16 +28,30 @@ var template = {}
 
 
 
-var inputAids = [
-{"title":"Type characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
-{"title":"IPA characters", "dataVar":"showIPATrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(ipaCharacterMap);makeKbdEventList(ipaCharacterMap);"},
-{"title":"Show case endings", "dataVar":"showCaseEndings", "dataLocn":"caseEndings", "dataShortTitle":"S", "type":"other"}
-]
 
 var controls = [
+]
+
+
+
+var pulldown = [
 {"title":"Old Norse<br/>to IPA", "alt":"Convert Old Norse text to a rough IPA transcription.", "code":"doTranscription('toIPA')"},
+
 {"title":"Old Norse<br/>to LB runes", "alt":"Convert Old Norse text to a rough runic long-branch transcription.", "code":"doTranscription('toRunes')"},
+
 {"title":"Old Norse<br/>to ST runes", "alt":"Convert Old Norse text to a rough runic short-twig transcription.", "code":"doTranscription('toShortRunes')"},
+
 {"title":"Transcribe<br/>from NION", "alt":"Convert text from 'New Introduction to Old Norse' to Unicode.", "code":"doTranscription('fromNItON')"},
+
 {"title":"Glossary<br/>lookup", "alt":"Look up Old Norse text in A New Introduction to Old Norse' to Unicode.", "code":"openGlossaryWindow(transcribe(getHighlightedText(_output),'toGloss'));_output.focus();"},
+]
+
+
+
+var inputAids = [
+{"title":"Type characters", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+
+{"title":"Show all characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"S", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+
+{"title":"Show case endings", "dataVar":"showCaseEndings", "dataLocn":"caseEndings", "dataShortTitle":"S", "type":"other"},
 ]

@@ -2,7 +2,7 @@ var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Junicode WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "3"; // number representing number of times 100px for height of text area
+	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'non' // language to use for examples
 	factoryDefaults.uifont = 'Junicode WF'; // font name  for selection area (a single font, no quotes)
@@ -28,20 +28,38 @@ var template = {}
 
 
 
-var inputAids = [
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
-{"title":"IPA characters", "dataVar":"showIPAChars", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(ipaCharMap);makeKbdEventList(ipaCharMap);"},
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
-]
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert runes to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+]
+
+
+
+
+var pulldown = [
 {"title":"LB/ST<br/>to Latin", "alt":"Transliterate Long Branch or Short Twig runes.", "code":"doTranscription('transliterateRunes')"},
+
 {"title":"Medieval<br/>to Latin", "alt":"Transliterate Medieval runes.", "code":"doTranscription('transliterateMedievalRunes')"},
+
 {"title":"AS/F<br/>to Latin", "alt":"Transliterate Anglo-Saxon/Frisian runes.", "code":"doTranscription('transliterateASRunes')"},
+
 {"title":"Latin to<br/>LB", "alt":"Convert latin text to Long Branch Norwegian runes.", "code":"doTranscription('toLB')"},
+
 {"title":"Latin to<br/>ST", "alt":"Convert latin text to Short Twig Norwegian runes.", "code":"doTranscription('toST')"},
+
 {"title":"Latin to<br/>Medieval", "alt":"Convert latin text to Medieval Norwegian runes.", "code":"doTranscription('toMedieval')"},
+
 {"title":"Latin to<br/>AS/F", "alt":"Convert latin text to Anglo-Saxon/Frisian runes.", "code":"doTranscription('toASF')"},
+
 {"title":"Transcribe<br/>from NION", "alt":"Convert text from New Introduction to Old Norse to Unicode.", "code":"doTranscription('fromNItON')"},
+]
+
+
+
+var inputAids = [
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+
+{"title":"IPA characters", "dataVar":"showIPAChars", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(ipaCharMap);makeKbdEventList(ipaCharMap);"},
 ]

@@ -44,7 +44,7 @@ Z Ž ʐ
 `
 
 
-
+/*
 var translitCharacterMap = `
 a a а
 A ạ А
@@ -93,7 +93,7 @@ Z ʐ̣ Ж ẓ З
 [ ' ь ' Ь
 ] " ъ " Ъ
 `
-
+*/
 
 
 globals.showISOCharMap = ''

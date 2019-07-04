@@ -1,6 +1,6 @@
 globals.showLOCTrans = ''
-globals.showIPATrans = ''
 globals.showCaseEndings = ''
+globals.showLatinTrans = ''
 
 function localInitialise () {
 
@@ -16,21 +16,23 @@ end: {}
 
 
 var keyboarddef = [
-"§|1 1|2 2|3 3|4 4|5 5|6 6|7 7|8 8|9 9 ‹|0 0 ›|- «|= »",
-"q q œ|w w|e e é|r r ʀ|t t þ|y y ý|u u ú|i i í|o o ǫ ó|p p p|[ ø|]",
-"a a á|s s|d d ð|f f|g g|h h|j j|k k|l l|; ’|' æ|\\",
-"z z|x x|c c|v v|b b|n n|m m|, , ;|. . :|/ \u0361"
+"§|1|2|3|4|5|6|7|8|9 ‹|0 ›|- «|= »",
+"q æ|w|e é|r ʀ|t þ|y ý|u ú|i í|o ǫ ó|p|[ ø|] œ",
+"a á|s|d ð|f|g|h|j|k|l|;|' ʼ|\\",
+"z|x|c|v|b|n|m|,|.|/ \u0361"
 ]
 
 var keyboardUC = [
-"§|1 1|2 2|3 3|4 4|5 5|6 6|7 7|8 8|9 9 ‹|0 0 ›|- «|= »",
-"Q Q Œ|W W|E E É|R R Ʀ|T T Þ|Y Y Ý|U U Ú|I I Í|O O Ǫ Ó|P P P|[ Ø|]",
-"A A Á|S S|D D Ð|F F|G G|H H|J J|K K|L L|; ’|' Æ|\\",
-"Z Z|X X|C C|V V|B B|N N|M M|, , ;|. . :|/ \U0361"
+"§|1|2|3|4|5|6|7|8|9 ‹|0 ›|- «|= »",
+"Q Æ|W|E É|R Ʀ|T Þ|Y Ý|U Ú|I Í|O Ǫ Ó|P|[ Ø|] Œ",
+"A Á|S|D Ð|F|G|H|J|K|L|;|' ʼ|\\",
+"Z|X|C|V|B|N|M|,|.|/ \u0361"
 ]
 
 
-var justLatinMap = `
+globals.showTypeIn = ''
+
+var typeinCharacterMap = `
 ; ‹ › « » ͡
 a á æ
 d ð
@@ -41,10 +43,19 @@ p þ
 r ʀ
 u ú
 y ý
+A Á Æ
+D Ð
+E É
+I Í
+O Œ Ǫ Ó Ø
+P Þ
+R Ʀ
+U Ú
+Y Ý
 `
 
 
-
+/*
 var ipaCharacterMap = `
 a aː æ
 e eː
@@ -66,6 +77,25 @@ t tː ʦ
 y yː ɣ
 O θ
 `
+*/
+
+
+function toggleShift (node) {
+	if (node.className =='unshifted') {
+		lcs = document.querySelectorAll('.lowercase')
+		for (let i=0;i<lcs.length;i++) lcs[i].classList.add('hidden')
+		ucs = document.querySelectorAll('.uppercase')
+		for (let i=0;i<ucs.length;i++) ucs[i].classList.remove('hidden')
+		node.className = 'shifted'
+		} 
+	else {
+		lcs = document.querySelectorAll('.lowercase')
+		for (let i=0;i<lcs.length;i++) lcs[i].classList.remove('hidden')
+		ucs = document.querySelectorAll('.uppercase')
+		for (let i=0;i<ucs.length;i++) ucs[i].classList.add('hidden')
+		node.className = 'unshifted'
+		}
+	}
 
 
 

@@ -163,7 +163,7 @@ y γ
 `
 
 
-
+/*
 var translitCharacterMap = `
 a a ᠠ
 b b ᠪ
@@ -216,7 +216,7 @@ _ _ ᠊
 = ˖ \u200D ˣ \u200C
 ] - \u202F
 `
-
+*/
 
 
 globals.showJSMCharMap = ''

@@ -55,7 +55,7 @@ z ʑ ʒ
 `
 
 
-
+/*
 var translitCharacterMap = `
 a ɑ ꓮ ä ˍ
 b b ꓐ
@@ -85,7 +85,7 @@ z ʒ ꓣ z ꓤ ʑ ꓬ
 ( < 《
 ) > 》
 `
-
+*/
 
 
 

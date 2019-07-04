@@ -72,7 +72,7 @@ z ż ʒ ẑ ž ẓ
 `
 
 
-
+/*
 var translitCharacterMap = `
 a ɑ ا ɑ͑ أ ɑ̄ آ 
 A a َ aⁿ ً
@@ -119,7 +119,7 @@ _ _ ـ
 ? ? ؟
 % % ٪
 `
-
+*/
 
 var unCharacterMap = `
 ' ʼ ا ʼ ؤ ʼ ع

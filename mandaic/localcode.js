@@ -72,7 +72,7 @@ O θ
 `
 
 
-
+/*
 var translitCharacterMap = `
 a ā ࡀ
 A a ࡉ࡚
@@ -126,7 +126,7 @@ Z ẓ ࡈ࡙ ž ࡑ࡙
 _ _ ـ
 % % ٪
 `
-
+*/
 
 
 

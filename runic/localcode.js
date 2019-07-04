@@ -56,22 +56,6 @@ var latinkbd = [
 
 
 
-var justLatinMap = `
-a ã ą æ
-e e͡a
-i ï ɨ
-o ǫ œ
-u ü
-b b̈
-p þ þ̈
-f f̈
-g g̈
-k k̈
-n ŋ
-r ʀ
-t ẗ
-; ᛬ ᛫
-`
 
 globals.showIPAChars = ''
 
@@ -101,32 +85,6 @@ O θ
 
 
 
-var translitCharacterMap = `
-a a ᚨ a̱ ᚪ æ̱ ᚫ ạ̃ ᚬ ạ̃̇ ᚭ ạ ᛅ ạ̇ ᛆ
-b ḅ̇ ᚮ b ᛒ ḅ̈ ᛔ
-c c̱ ᚳ c ᛍ
-d ḏ ᛞ
-e e̱ ᛖ e̱ᵃ ᛠ
-f f ᚠ
-g g ᚷ g̱̈ ᚸ
-h ḣ ᚺ h ᚻ ḥ ᚼ ḥ̇ ᚽ
-i i ᛁ ị̈ ᛂ ɨ ᛇ
-j j ᛃ j̱ ᛄ j̱ ᛡ
-k k ᚲ ḳ ᚴ ḳ̈ ᚵ ḵ̈ ᛤ
-l l ᛚ
-m m ᛗ ṃ ᛘ ṃ̇ ᛙ
-n n ᚾ ṇ ᚿ ŋ ᛜ ŋ̱ ᛝ
-o o ᚩ ǫ ᚯ œ̱ ᛟ
-p þ ᚦ þ̈ ᚧ p ᛈ p̣ ᛕ
-r r ᚱ ʀ̣ ᛦ ʀ̣̇ ᛧ
-s ṡ ᛊ s ᛋ ṣ ᛌ
-t t ᛏ ṭ ᛐ ṭ̈ ᛑ
-u u ᚢ ụ̈ ᚤ
-w w ᚹ
-y y̱ ᚣ y ᛣ
-z z ᛉ
-] - ᛬
-`
 
 
 

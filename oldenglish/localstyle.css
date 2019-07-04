@@ -27,8 +27,28 @@ span.hint {
 	font-size: 50%;
 	}
 .c { 
-	min-width: .75em;
+	width: 1em;
 	text-align: center;
+	}
+
+#grid {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	}
+#grid > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	}
+
+#grid div.hidden {
+	display: none;
+	}
+
+#punctuation {
+	font-size: 80%;
 	}
 
     

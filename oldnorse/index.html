@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Old Norse character picker 23</title>
+<title>Old Norse picker 24</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared24/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,13 +14,15 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared23/code.js">  </script>
+<script src="../shared24/setup.js">  </script>
+<script src="../shared24/code.js">  </script>
+<script src="../shared24/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared23/pagetemplate.js">  </script>
+<script src="../shared24/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
+<script src="../../shared/scriptdb/oldnorse.js">  </script>
 <script src="localtranscription.js">  </script>
-<script src="composite-names.js"></script>
 <script src="/shared/fontlists/oldgermanicfonts.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
@@ -45,7 +47,7 @@
 
 
 
-<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+<div id="chardata"><span id="charname">Click on T (left), for assisted typing, or on keyboard below.</span></div>
 
 
 
@@ -56,14 +58,60 @@
 <div id="alphabet" class="default">
 
 <div class="spaceline">
-<span class="touch" title="Space" style="padding: 5px 140px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Space" style="padding: 5px 100px;" onClick="add(' ');">SPACE</span> 
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
 <span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
 <span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
 </div>
 
-
-  </div>
+  <!--div id="grid">
+        <div class="uppercase hidden">
+          <span class="c">Ð</span>
+          <span class="c">Þ</span>
+          <span class="c">Ʀ</span>
+          <span class="c">Ý</span>
+        </div>
+        <div class="uppercase hidden">
+          <span class="c">Á</span>
+          <span class="c">Æ</span>
+          <span class="c">É</span>
+          <span class="c">Í</span>
+          <span class="c">Œ</span>
+          <span class="c">Ǫ</span>
+          <span class="c">Ó</span>
+          <span class="c">Ø</span>
+          <span class="c">Ú</span>
+        </div>
+        <div class="lowercase">
+          <span class="c">ð</span>
+          <span class="c">þ</span>
+          <span class="c">ʀ</span>
+          <span class="c">ý</span>
+        </div>
+        <div class="lowercase">
+          <span class="c">á</span>
+          <span class="c">æ</span>
+          <span class="c">é</span>
+          <span class="c">í</span>
+          <span class="c">œ</span>
+          <span class="c">ǫ</span>
+          <span class="c">ó</span>
+          <span class="c">ø</span>
+          <span class="c">ú</span>
+        </div>
+      <div id="punctuation">
+        <div>
+          <span class="c">‹</span>
+          <span class="c">›</span>
+          <span class="c">«</span>
+          <span class="c">»</span>
+          <span class="c">&#x0361;</span>
+        </div>
+      </div>
+    </div>
+  </div-->
 
 
 

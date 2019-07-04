@@ -60,7 +60,9 @@ function blankEndings () {
 	}
 
 
-var justLatinMap = `
+globals.showTypeIn = ''
+
+var typeinCharacterMap = `
 a ā æ ǣ
 c ċ
 d ð
@@ -73,6 +75,8 @@ u ū
 y ȳ
 ; ͡
 `
+
+/*
 var ipaCharacterMap = `
 a aː ɑ ɑː æ æː
 e eː ə̯
@@ -89,4 +93,23 @@ w ʍ
 y yː ɣ
 z θ
 `
+*/
+
+
+function toggleShift (node) {
+	if (node.className =='unshifted') {
+		lcs = document.querySelectorAll('.lowercase')
+		for (let i=0;i<lcs.length;i++) lcs[i].classList.add('hidden')
+		ucs = document.querySelectorAll('.uppercase')
+		for (let i=0;i<ucs.length;i++) ucs[i].classList.remove('hidden')
+		node.className = 'shifted'
+		} 
+	else {
+		lcs = document.querySelectorAll('.lowercase')
+		for (let i=0;i<lcs.length;i++) lcs[i].classList.remove('hidden')
+		ucs = document.querySelectorAll('.uppercase')
+		for (let i=0;i<ucs.length;i++) ucs[i].classList.add('hidden')
+		node.className = 'unshifted'
+		}
+	}
 

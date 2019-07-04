@@ -151,7 +151,7 @@ y y̯
 `
 
 
-
+/*
 var translitCharacterMap = `
 a aʲ ໄ äʲ ໃ ā າ a ະ ä ັ aᵐ ຳ
 b b̯ ບ
@@ -189,7 +189,7 @@ y y̯ ຢ
 ^ ¹ ່ ² ້ ³ ໊ ⁴ ໋
 } ʔ ອ
 `
-
+*/
 
 
 var simmalaCharacterMap = `

@@ -28,17 +28,31 @@ var template = {}
 
 
 
+
+var controls = [
+{"title":"Trans-<br/>literate", "alt":"Convert Mongolian text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+]
+
+
+
+var pulldown = [
+{"title":"Mongolian<br/>to JSM", "alt":"Convert Mongolian text to a Joint Sino-Mongolian transcription.", "code":"doTranscription('toJSM')"},
+
+//{"title":"Cyrillic<br/>to Mongolian", "alt":"Convert Mongolian text in Cyrillic to Traditional Mongolian.", "code":"doTranscription('cyrlToMong')"},
+]
+
+
+
 var inputAids = [
 {"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
+
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+
 {"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+
 {"title":"JSM to Mongolian", "dataVar":"showJSMCharMap", "dataLocn":"transcriptionPalette", "dataShortTitle":"S", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(jsmCharacterMap);makeKbdEventList(jsmCharacterMap);"},
+
 {"title":"Variants show on hover", "dataVar":"showVariantsOnMouseover", "dataLocn":"", "dataShortTitle":"V", "type":"keyboard"},
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
-var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Mongolian text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-{"title":"Mongolian<br/>to JSM", "alt":"Convert Mongolian text to a Joint Sino-Mongolian transcription.", "code":"doTranscription('toJSM')"},
-//{"title":"Cyrillic<br/>to Mongolian", "alt":"Convert Mongolian text in Cyrillic to Traditional Mongolian.", "code":"doTranscription('cyrlToMong')"},
-]
