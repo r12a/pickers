@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Vai character picker 23</title>
+<title>Vai picker 24</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared23/style.css" />
+<link rel="stylesheet" href="../shared24/style.css" />
 <link rel="stylesheet" href="localstyle.css" />
 
 <script src="../../shared/code/boilerplate.js"></script>
@@ -15,13 +15,15 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared23/code.js">  </script>
+<script src="../shared24/setup.js">  </script>
+<script src="../shared24/code.js">  </script>
+<script src="../shared24/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared23/pagetemplate.js">  </script>
-<script src="../../scripts/linkdata/linkdb.js"></script>
+<script src="../shared24/pagetemplate.js">  </script>
+<script src="/scripts/linkdata/linkdb.js"></script>
 
+<script src="../../shared/scriptdb/vai.js">  </script>
 <script src="localtranscription.js">  </script>
-<script src="composite-names.js"></script>
 <script src="../../shared/fontlists/vai.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
@@ -45,7 +47,7 @@
 
 
 
-<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+<div id="chardata"><span id="charname">Click S (shape lookup), or on characters below.</span></div>
 
 
 
@@ -91,7 +93,7 @@
 
 
 <div class="spaceline">
-<span class="shifted" dir="auto" onclick="toggleShift(this, 'kbdGrid', 'twoStep')">TABLE VIEW</span>
+<span class="unshifted" dir="auto" onclick="toggleShift(this, 'kbdGrid', 'twoStep')">TABLE VIEW</span>
 <span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
@@ -100,7 +102,7 @@
 <span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
 </div>
 
-<div id="twoStep">
+<div id="twoStep" style="display: none;">
       <span class="selector" title="e" onclick="findShape('','ꔀ,ꔁ,ꔂ,ꔃ,ꔄ,ꔅ,ꔆ,ꔇ,ꔈ,ꔉ,ꔊ,ꔋ,ꔌ,ꔍ,ꔎ,ꔏ,ꔐ,ꔑ,ꔒ,ꔓ,ꔔ,ꔕ,ꔖ,ꔗ,ꔘ,ꔙ,ꔚ,ꔛ,ꔜ,ꔝ,ꔞ,ꔟ,ꔠ,ꔡ,ꔢ,ꔣ',false)">ꔀ</span> 
       <span class="selector" title="i" onclick="findShape('','ꔤ,ꔥ,ꔦ,ꔧ,ꔨ,ꔩ,ꔪ,ꔫ,ꔬ,ꔭ,ꔮ,ꔯ,ꔰ,ꔱ,ꔲ,ꔳ,ꔴ,ꔵ,ꔶ,ꔷ,ꔸ,ꔹ,ꔺ,ꔻ,ꔼ,ꔽ,ꔾ,ꔿ,ꕀ,ꕁ,ꕂ,ꕃ,ꕄ,ꕅ,ꕆ,ꕇ,ꕈ',false)">ꔤ</span> 
       <span class="selector"  title="a" onclick="findShape('','ꕉ,ꕊ,ꕋ,ꕌ,ꕍ,ꕎ,ꕏ,ꕐ,ꕑ,ꕒ,ꕓ,ꕔ,ꕕ,ꕖ,ꕗ,ꕘ,ꕙ,ꕚ,ꕛ,ꕜ,ꕝ,ꕞ,ꕟ,ꕠ,ꕡ,ꕢ,ꕣ,ꕤ,ꕥ,ꕦ,ꕧ,ꕨ,ꕩ,ꕪ,ꕫ,ꕬ,ꕭ,ꕮ,ꕯ,ꕰ',false)">ꕉ</span> 
@@ -119,7 +121,7 @@
 <div id="extrashapes"></div>
 </div>
 
-<div id="kbdGrid" style="display: none; flex-direction: row; flex-wrap: wrap;">
+<div id="kbdGrid" style="display: flex; flex-direction: row; flex-wrap: wrap;">
 
 <div id="part1">      
 <table>

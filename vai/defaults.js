@@ -28,17 +28,28 @@ var template = {}
 
 
 
+var controls = [
+{"title":"Trans-<br/>scribe", "alt":"Convert Vai text to a Latin transcription.", "code":"doTranscription('transliterate')"},
+
+//{"title":"XXXXXXXXXX<br/>to XXXXXXXXXX", "alt":"XXXXXXXXXX.", "code":"doTranscription('XXXXXXXXXX')", "warning":"Still in development. Separate syllables before use."},
+]
+
+
+
+var pulldown = [
+{"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Vai.", "code":"doTranscription('reverse')"},
+]
+
+
+
+
 var inputAids = [
 //{"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 {"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
+
 {"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+
 //{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transliteration", "dataShortTitle":"R", "type":"palette"},
 //{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
-]
-
-var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Vai text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-{"title":"Reverse<br/>translit.", "alt":"Convert Latin transliterated text to Vai.", "code":"doTranscription('reverse')"},
-//{"title":"XXXXXXXXXX<br/>to XXXXXXXXXX", "alt":"XXXXXXXXXX.", "code":"doTranscription('XXXXXXXXXX')", "warning":"Still in development. Separate syllables before use."},
 ]
 

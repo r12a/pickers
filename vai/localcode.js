@@ -82,7 +82,7 @@ _ =
 `
 
 
-
+/*
 var translitCharacterMap = `
 a a ա
 A A Ա 
@@ -134,7 +134,7 @@ z z զ ž ժ
 Z Z Զ Ž Ժ
 ; , , : ․ * ՝ . ։ “ « ” » ? ՞ ! ՜
 `
-
+*/
 
 
 

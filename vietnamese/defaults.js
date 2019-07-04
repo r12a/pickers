@@ -28,13 +28,22 @@ var template = {}
 
 
 
-var inputAids = [
-{"title":"Type characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
-]
 
 var controls = [
 {"title":"North Việt<br>to IPA", "alt":"Convert North Vietnamese text to an *approximation* of an IPA transcription.", "code":"doTranscription('toIPAN')"},
 {"title":"South Việt<br>to IPA", "alt":"Convert South Vietnamese text to an *approximation* of an IPA transcription.", "code":"doTranscription('toIPAS')"},
+]
+
+
+
+var pulldown = [
+]
+
+
+
+var inputAids = [
+{"title":"Type characters", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+
+{"title":"Show all characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"S", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
 ]
 

@@ -7,18 +7,34 @@ function localInitialise () {
 	
 
 var _h = {
-
 end: {}
 }
 
 
 
 var keyboarddef = [
-"§ ¤ ±|1 ă Ă|2 â Â|3 ê Ê|4 ô Ô|5 ̀ `|6 ̉|7 ̃ ~|8 ́ ´|9 ̣|0 đ Đ|-|= ₫ +",
-"q q Q|w w W|e e E|r r R|t t T|y y Y|u u U|i i I|o o O|p p P|[ ư Ư|] ơ Ơ",
-"a a A|s s S|d d D|f f F|g g G|h h H|j j J|k k K|l l L|; ; :|' ' \"|\\ \\ \|",
-"` ` ~|z z Z|x x X|c c C|v v V|b b B|n n N|m m M|, , <|. . >|/ / ?"
+"§ ¤ ±|1|2 ₫|3|4|5 ̀|6 ̉|7 ̃|8 ́|9 ̣|0|-|=",
+"q|w|e ê|r|t|y|u ư|i|o ô ơ|p|[|]",
+"a ă â|s|d đ|f|g|h|j|k|l|;|'|\\|",
+"`|z|x|c|v|b|n|m|,|.|/"
 ]
+
+
+var keyboardUC = [
+"§ ¤ ±|1|2 ₫|3|4|5 ̀|6 ̉|7 ̃|8 ́|9 ̣|0|-|=",
+"q|w|e Ê|r|t|y|u Ư|i|o Ô Ơ|p|[|]",
+"a Ă Â|s|d Đ|f|g|h|j|k|l|;|'|\\|",
+"`|z|x|c|v|b|n|m|,|.|/"
+]
+
+
+function event_toggleKbdShift () {
+    if (this.classList.contains('shiftKeyOn')) {
+        makeKeyboard(keyboarddef, keyboardLCGuide)
+        }
+    else makeKeyboard(keyboardUC, keyboardUCGuide)
+    }
+
 
 
 
@@ -35,20 +51,4 @@ function toggleShift (node, LC, UC) {
 		node.className = 'unshifted'
 		}
 	}
-
-
-var justLatinMap = `
-a â ă
-A Â Ă
-d đ
-D Đ
-e ê
-E Ê
-o ô
-O Ô Ơ ơ
-u Ư ư
-§ đ ă â ê ô ̀ ̉ ̃ ́ ̣
-[ ư
-] ơ
-`
 
