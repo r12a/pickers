@@ -75,69 +75,6 @@ var keyboarddef = [
 ]
 
 
-var justLatinMap = `
-a ā ɑ ɑ̄ ạ ɑ̣̄
-b β
-c ɕ
-d d̪ ʤ ð ɖ
-e ē ẹ ẹ̄
-h ʰ
-i ī ị ị̄
-j ʲ
-l ḷ ḻ ɭ
-n ṅ ṇ ṉ n̪ ñ ɲ ɳ ŋ
-o ō ọ ọ̄
-r ṛ ṟ ɻ ɽ ɾ
-s ṣ ʂ ʃ
-t ṭ t̪ ʈ ʧ
-u ū ụ ụ̄
-v ʋ ʌ ʌ̣
-w ʷ ɯ
-y ɣ
-z ẓ ʒ
-[ ː
-/ ˑ
-* ͓
-`
-
-
-
-var translitCharacterMap = `
-a ɑː ா ạ அ
-A ɑː̣ ஆ
-c c ச
-d ʤ ஜ
-e e ெ ē ே
-E ẹ எ ẹ̄ ஏ
-f f ஃப
-h h ஹ
-i i ி ī ீ
-I ị இ ị̄ ஈ
-k k க k͓ʂ க்ஷ
-l l ல ɭ ள
-m m ம
-n n ன ŋ ங ɲ ஞ ɳ ண ṅ ந
-o o ோ ō ை o \u{BC7}\u{BBE}
-O ọ ஓ ọ̄ ஐ
-p p ப
-r r ற ɾ ர ɻ ழ
-s s ஸ ʃ ஶ ʂ ஷ
-t t த ʈ ட
-u u ு ū ூ
-U ụ உ ụ̄ ஊ
-v ʋ வ ʌʲ ொ ʌʷ ௌ ʌʲ \u{BC6}\u{BBE} ʌʷ \u{BC6}\u{BD7}
-V ʌ̣ʲ ஒ ʌ̣ʷ ஔ ʌ̣ʷ \u{B92}\u{BD7}
-y y ய
-z z ஃஜ
-/ ˑ ஃ
-: ː ௗ
-| ¶ ॥
-, . ।
-* ͓ ்
-$ (om) ௐ (year) ௵ (month) ௴ (day) ௳
-± # ௺ {10} ௰ {100} ௱ {1000} ௲
-§ 0 ௦ 1 ௧ 2 ௨ 3 ௩ 4 ௪ 5 ௫ 6 ௬ 7 ௭ 8 ௮ 9 ௯
-`
 
 
 globals.showIPACharMap = ''

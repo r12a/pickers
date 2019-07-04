@@ -156,7 +156,7 @@ z ż ž ẑ ʒ ẓ ẕ z̤
 `
 
 
-
+/*
 var translitCharacterMap = `
 a ɑ ا ɑ͑ أ ɑ̜ إ ɑ̄ آ ɑ̇ ٰ
 A a َ aⁿ ً
@@ -213,7 +213,7 @@ _ _ ـ
 8 8̣ ۸
 9 9̣ ۹
 `
-
+*/
 
 var locCharacterMap = `
 b b ب

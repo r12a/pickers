@@ -5,6 +5,16 @@
     font-weight: normal;
     font-style: normal;
 	}
+@font-face {
+    font-family: 'Junicode WF';
+    src: url('/shared/webfonts/Junicode.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+[lang=ang] { font-family: 'Doulos SIL WF', serif; } 
+
 
 #alphabet { 
 	display: block; 
@@ -17,19 +27,37 @@ span.hint {
 	font-size: 50%;
 	}
 .c { 
-	min-width: .75em;
+	width: 1em;
 	text-align: center;
 	}
 
+#grid {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	}
+#grid > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	}
 
+#grid div.hidden {
+	display: none;
+	}
 
+#punctuation {
+	font-size: 80%;
+	}
 
-
+    
+    
 /* KEYBOARD */
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  "Doulos SIL",  serif;  
+	font-family:  "Doulos SIL WF", "Junicode WF",  sans-serif;  
     line-height: 1;
 	}
 
@@ -38,4 +66,22 @@ span.hint {
 
 
 
-
+#endings {
+	margin-top: 2em;
+	text-align:center;
+	}
+#endings span {
+	display: inline-block;
+	width: 2em;
+	font-size: 120%;
+	font-weight: normal;
+	}
+#caseEndings table {
+	margin: auto;
+	margin-bottom: 2em;
+	}
+#caseEndings td {
+	min-width: 2em;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	}

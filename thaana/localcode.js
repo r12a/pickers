@@ -70,7 +70,7 @@ z z̺ ʒ
 `
 
 
-
+/*
 var translitCharacterMap = `
 b b ބ
 c c ޗ
@@ -109,7 +109,7 @@ Z ʒ ޜ z̴ ޡ
 ; ; ؛
 * ͓ ް
 `
-
+*/
 
 
 var mlCharacterMap = `
@@ -188,5 +188,23 @@ z z ޒ ʒ ޜ ظ ޡ
 , , ،
 ; ; ؛
 `
+
+function toggleArabic (node, LC, UC) {
+    var chars = document.querySelectorAll('.x')
+
+    if (node.className =='shifted') {
+        for (let i=0;i<chars.length;i++) {
+			chars[i].style.display='none'
+            }
+		node.className = 'unshifted'
+		} 
+	else {
+        for (let i=0;i<chars.length;i++) {
+            chars[i].style.display='inline-block'
+            }
+		node.className = 'shifted'
+		}
+	}
+
 
 

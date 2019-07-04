@@ -10,197 +10,23 @@ function localtranscribe (direction, str) {
 
 
 function transliterate (str) {
-str += ' '
 
-str = str.replace(/̀/g, "⁴")
-str = str.replace(/́/g, "⁶")
-str = str.replace(/̇/g, "⁵")
-str = str.replace(/̈/g, "²")
-str = str.replace(/̌/g, "³")
-str = str.replace(/ᥐ/g, "k")
-str = str.replace(/ᥑ/g, "x")
-str = str.replace(/ᥒ/g, "ŋ")
-str = str.replace(/ᥓ/g, "ʦ")
-str = str.replace(/ᥔ/g, "s")
-str = str.replace(/ᥕ/g, "y")
-str = str.replace(/ᥖ/g, "t")
-str = str.replace(/ᥗ/g, "tʰ")
-str = str.replace(/ᥘ/g, "l")
-str = str.replace(/ᥙ/g, "p")
-str = str.replace(/ᥚ/g, "pʰ")
-str = str.replace(/ᥛ/g, "m")
-str = str.replace(/ᥜ/g, "f")
-str = str.replace(/ᥝ/g, "v")
-str = str.replace(/ᥞ/g, "h")
-str = str.replace(/ᥟ/g, "ʔ")
-str = str.replace(/ᥠ/g, "kʰ")
-str = str.replace(/ᥡ/g, "ʦʰ")
-str = str.replace(/ᥢ/g, "n")
-str = str.replace(/ᥣ/g, "a")
-str = str.replace(/ᥤ/g, "i")
-str = str.replace(/ᥥ/g, "e")
-str = str.replace(/ᥦ/g, "ɛ")
-str = str.replace(/ᥧ/g, "u")
-str = str.replace(/ᥨ/g, "o")
-str = str.replace(/ᥩ/g, "ɔ")
-str = str.replace(/ᥪ/g, "ɯ")
-str = str.replace(/ᥫ/g, "ə")
-str = str.replace(/ᥬ/g, "aᵚ")
-str = str.replace(/ᥭ/g, "ʲ")
-str = str.replace(/ᥰ/g, "²̱")
-str = str.replace(/ᥱ/g, "³̱")
-str = str.replace(/ᥲ/g, "⁴̱")
-str = str.replace(/ᥳ/g, "⁵̱")
-str = str.replace(/ᥴ/g, "⁶̱")
-str = str.replace(/、/g, ",")
-str = str.replace(/。/g, ".")
-str = str.replace(/〈/g, "(")
-str = str.replace(/〉/g, ")")
-str = str.replace(/《/g, "(")
-str = str.replace(/》/g, ")")
-str = str.replace(/！/g, "!")
-str = str.replace(/（/g, "(")
-str = str.replace(/）/g, ")")
-str = str.replace(/，/g, ",")
-str = str.replace(/．/g, ".")
-str = str.replace(/：/g, ":")
-str = str.replace(/；/g, ";")
-str = str.replace(/？/g, "?")
+str = ' '+str
+
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
+
 
 return str.trim()
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function OLDtransliterate ( str ) { 
-// based on harmonised translit for se asian scripts
-
-str += '  '
-
-// move left-positioned consonants to the right
-//str = str.replace(/(ᩮ|ᩯ|ᩱ|ᩰ|ᩲ)(.)/g, '$2$1')
-
-// virama
-str = str.replace(/᩠/g, "͓")
-
-
-// consonants
-str = str.replace(/ᥐ/g, "k")
-str = str.replace(/ᥠ/g, "kʰ")
-str = str.replace(/ᥒ/g, "ŋ")
-str = str.replace(/ᥓ/g, "c")
-str = str.replace(/ᥡ/g, "cʰ")
-str = str.replace(/ᥖ/g, "t")
-str = str.replace(/ᥗ/g, "tʰ")
-str = str.replace(/ᥢ/g, "n")
-str = str.replace(/ᥙ/g, "p")
-str = str.replace(/ᥚ/g, "pʰ")
-str = str.replace(/ᥛ/g, "m")
-str = str.replace(/ᥕ/g, "y")
-str = str.replace(/ᥘ/g, "l")
-str = str.replace(/ᥝ/g, "w")
-str = str.replace(/ᥞ/g, "h")
-str = str.replace(/ᥑ/g, "x")
-str = str.replace(/ᥔ/g, "s")
-str = str.replace(/ᥜ/g, "f")
-str = str.replace(/ᥟ/g, "ʔ")
-
-
-// medials
-
-
-// finals
-
-
-// vocalics
-
-
-// independent vowels
-
-// vowel signs
-str = str.replace(/ᥣ/g, "a")
-str = str.replace(/ᥥ/g, "e")
-str = str.replace(/ᥫ/g, "ə")
-str = str.replace(/ᥦ/g, "ɛ")
-str = str.replace(/ᥤ/g, "i")
-str = str.replace(/ᥪ/g, "ɯ")
-str = str.replace(/ᥩ/g, "ɔ")
-str = str.replace(/ᥨ/g, "o")
-str = str.replace(/ᥧ/g, "u")
-str = str.replace(/ᥬ/g, "aᵚ")
-str = str.replace(/ᥭ/g, "ʲ")
-
-
-
-// tones
-str = str.replace(/ᥰ/g, "¹̱")
-str = str.replace(/ᥱ/g, "²̱")
-str = str.replace(/ᥲ/g, "³̱")
-str = str.replace(/ᥳ/g, "⁴̱")
-str = str.replace(/ᥴ/g, "⁵̱")
-
-str = str.replace(/̈/g, "¹")
-str = str.replace(/̌/g, "²")
-str = str.replace(/̀/g, "³")
-str = str.replace(/̇/g, "⁴")
-str = str.replace(/́/g, "⁵")
-
-
-
-// diacritics
-
-
-
-// punctuation
-str = str.replace(/〈/g, "(")
-str = str.replace(/〉/g, ")")
-str = str.replace(/《/g, "(")
-str = str.replace(/》/g, ")")
-str = str.replace(/（/g, "(")
-str = str.replace(/）/g, ")")
-str = str.replace(/！/g, "!")
-str = str.replace(/？/g, "?")
-str = str.replace(/：/g, ": ")
-str = str.replace(/；/g, "; ")
-str = str.replace(/。/g, ". ")
-str = str.replace(/、/g, ", ")
-str = str.replace(/，/g, ", ")
-str = str.replace(/．/g, ". ")
-
-
-
-// digits
-str = str.replace(/၀/g, "0̣")
-str = str.replace(/၁/g, "1̣")
-str = str.replace(/၂/g, "2̣")
-str = str.replace(/၃/g, "3̣")
-str = str.replace(/၄/g, "4̣")
-str = str.replace(/၅/g, "5̣")
-str = str.replace(/၆/g, "6̣")
-str = str.replace(/၇/g, "7̣")
-str = str.replace(/၈/g, "8̣")
-str = str.replace(/၉/g, "9̣")
-
-
-
-
-
-console.log(str)
-return str.trim()
-}
 
 
 		

@@ -16,7 +16,8 @@
 span.hint { 
 	margin-right: 0px;
     margin-left: 0px;
-	font-size: 40%;
+	font-size: 50%;
+	color: tan;
 	}
 .c { 
 	min-width: .75em;
@@ -68,7 +69,6 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: space-between;
-    height: 12em;
     line-height: 1.5;
     }
 #consonantGrid div {

@@ -10,6 +10,27 @@
 
 function transliterate (str) {
 
+str = ' '+str
+
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
+
+
+return str.trim()
+}
+
+
+
+/*
+function transliterate (str) {
+
 // add initial space so that beginning of word rules work
 str = ' '+str+' '
 
@@ -94,7 +115,7 @@ str = str.replace(/۹/g, "9̣")
 
 return str.trim()
 }
-
+*/
 
 
 

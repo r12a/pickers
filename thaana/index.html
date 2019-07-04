@@ -2,11 +2,12 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Thaana character picker 23</title>
+<title>Thaana picker 24</title>
 
-<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
-<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared24/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
 <script src="../../shared/code/show_codepoints.js"></script>
@@ -14,13 +15,15 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared23/code.js">  </script>
+<script src="../shared24/setup.js">  </script>
+<script src="../shared24/code.js">  </script>
+<script src="../shared24/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared23/pagetemplate.js">  </script>
+<script src="../shared24/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
+<script src="../../shared/scriptdb/dhivehi.js">  </script>
 <script src="localtranscription.js">  </script>
-<script src="composite-names.js"></script>
 <script src="/shared/fontlists/thaana.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
@@ -47,11 +50,11 @@
 
 <div id="cursive" class="transcript" style="display:none;"></div>
 
-</div>
 
 
 
-<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+
+<div id="chardata"><span id="charname">Click S (shape lookup), R (type-assist), K (keyboard), or on characters below.</span></div>
 
 
 
@@ -64,8 +67,27 @@
  <div id="alphabet" class="default">
  
  
- 
+  <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<span onclick="findShape('787,7A3,7A2','',true)">އ</span>
+<span onclick="findShape('78C,7A0,797,798,788,7A1,7B1,7A5','',true)">ތ</span>
+<span onclick="findShape('793,784','',true)">ޓ</span>
+<span onclick="findShape('7A4,78E,78A','',true)">ޤ</span>
+<span onclick="findShape('78B,796,78A,795','',true)">ދ</span>
+<span onclick="findShape('790,79F,79E,79D','',true)">ސ</span>
+<span onclick="findShape('781,782,78F','',true)">ށ</span>
+<span onclick="findShape('780,79A,799','',true)">ހ</span>
+<span onclick="findShape('783,79C,785,78D,794','',true)">ރ</span>
+<span onclick="findShape('2026,789,786,791,792','',true)">…</span>
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+
  <div class="spaceline">
+<span class="unshifted" dir="auto" onclick="toggleArabic(this)">+ARABIC</span>
 <span class="touch" dir="auto" onClick="ccb=document.getElementById('controlchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">Format</span> 
 <span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
 <span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
@@ -88,53 +110,56 @@
 
 <div id="consonantGrid">
   <div>
-    <span class="g"><span class="hint">h</span><span class="c">&#x0780;</span></span>
-    <span class="g"><span class="hint">ʂ</span><span class="c">&#x0781;</span></span>
-    <span class="g"><span class="hint">n</span><span class="c">&#x0782;</span></span>
-    <span class="g"><span class="hint">r</span><span class="c">&#x0783;</span></span>
-    <span class="g"><span class="hint">b</span><span class="c">&#x0784;</span></span>
-    <span class="g"><span class="hint">ɭ</span><span class="c">&#x0785;</span></span>
+    <span class="g"><span class="hint">p</span><span class="c">&#x0795;</span></span>
+    <span class="g"><span class="hint">t</span><span class="c">&#x078C;</span></span>
+    <span class="g x"><span class="hint">طt̴</span><span class="c">&#x07A0;</span></span>
+    <span class="g"><span class="hint">c</span><span class="c">&#x0797;</span></span>
+    <span class="g"><span class="hint">ʈ</span><span class="c">&#x0793;</span></span>
     <span class="g"><span class="hint">k</span><span class="c">&#x0786;</span></span>
+    <span class="g x"><span class="hint">قq</span><span class="c">&#x07A4;</span></span>
     <span class="g"><span class="hint">ʿ</span><span class="c">&#x0787;</span></span>
-    </div>
+  </div>
+  <div>
+    <span class="g"><span class="hint">b</span><span class="c">&#x0784;</span></span>
+    <span class="g"><span class="hint">d</span><span class="c">&#x078B;</span></span>
+    <span class="g x"><span class="hint">ضd̴</span><span class="c">&#x079F;</span></span>
+    <span class="g"><span class="hint">ɖ</span><span class="c">&#x0791;</span></span>
+    <span class="g"><span class="hint">ɟ</span><span class="c">&#x0796;</span></span>
+    <span class="g"><span class="hint">g</span><span class="c">&#x078E;</span></span>
+    <span class="g"><span class="hint"> </span><span class="c"> </span></span>
+  </div>
+  <div>
+    <span class="g"><span class="hint">f</span><span class="c">&#x078A;</span></span>
+    <span class="g x"><span class="hint">ثθ</span><span class="c">&#x0798;</span></span>
+    <span class="g"><span class="hint">s</span><span class="c">&#x0790;</span></span>
+    <span class="g x"><span class="hint">صs̴</span><span class="c">&#x079E;</span></span>
+    <span class="g x"><span class="hint">شʃ</span><span class="c">&#x079D;</span></span>
+    <span class="g"><span class="hint">ʂ</span><span class="c">&#x0781;</span></span>
+    <span class="g"><span class="hint">h</span><span class="c">&#x0780;</span></span>
+    <span class="g x"><span class="hint">خx</span><span class="c">&#x079A;</span></span>
+    <span class="g x"><span class="hint">حħ</span><span class="c">&#x0799;</span></span>
+  </div>
   <div>
     <span class="g"><span class="hint">v</span><span class="c">&#x0788;</span></span>
-    <span class="g"><span class="hint">m</span><span class="c">&#x0789;</span></span>
-    <span class="g"><span class="hint">f</span><span class="c">&#x078A;</span></span>
-    <span class="g"><span class="hint">d</span><span class="c">&#x078B;</span></span>
-    <span class="g"><span class="hint">t</span><span class="c">&#x078C;</span></span>
-    <span class="g"><span class="hint">l</span><span class="c">&#x078D;</span></span>
-    <span class="g"><span class="hint">g</span><span class="c">&#x078E;</span></span>
-    <span class="g"><span class="hint">ɲ</span><span class="c">&#x078F;</span></span>
-    </div>
-  <div>
-    <span class="g"><span class="hint">s</span><span class="c">&#x0790;</span></span>
-    <span class="g"><span class="hint">ɖ</span><span class="c">&#x0791;</span></span>
+    <span class="g x"><span class="hint">ذð</span><span class="c">&#x079B;</span></span>
     <span class="g"><span class="hint">z</span><span class="c">&#x0792;</span></span>
-    <span class="g"><span class="hint">ʈ</span><span class="c">&#x0793;</span></span>
+    <span class="g x"><span class="hint">ظz̴</span><span class="c">&#x07A1;</span></span>
+    <span class="g x"><span class="hint">ʒ</span><span class="c">&#x079C;</span></span>
+    <span class="g x"><span class="hint">غɣ</span><span class="c">&#x07A3;</span></span>
+    <span class="g x"><span class="hint">عʕ</span><span class="c">&#x07A2;</span></span>
+  </div>
+  <div>
+    <span class="g"><span class="hint">m</span><span class="c">&#x0789;</span></span>
+    <span class="g"><span class="hint">n</span><span class="c">&#x0782;</span></span>
+    <span class="g"><span class="hint">ɲ</span><span class="c">&#x078F;</span></span>
+    <span class="g x"><span class="hint">ɳ</span><span class="c">&#x07B1;</span></span>
+    </div>
+  <div>
+    <span class="g"><span class="hint">r</span><span class="c">&#x0783;</span></span>
+    <span class="g"><span class="hint">ɭ</span><span class="c">&#x0785;</span></span>
+    <span class="g"><span class="hint">l</span><span class="c">&#x078D;</span></span>
     <span class="g"><span class="hint">y</span><span class="c">&#x0794;</span></span>
-    <span class="g"><span class="hint">p</span><span class="c">&#x0795;</span></span>
-    <span class="g"><span class="hint">ɟ</span><span class="c">&#x0796;</span></span>
-    <span class="g"><span class="hint">c</span><span class="c">&#x0797;</span></span>
-    </div>
-  <div>
-    <span class="g"><span class="hint">ثθ</span><span class="c">&#x0798;</span></span>
-    <span class="g"><span class="hint">حħ</span><span class="c">&#x0799;</span></span>
-    <span class="g"><span class="hint">خx</span><span class="c">&#x079A;</span></span>
-    <span class="g"><span class="hint">ذð</span><span class="c">&#x079B;</span></span>
-    <span class="g"><span class="hint">ʒ</span><span class="c">&#x079C;</span></span>
-    <span class="g"><span class="hint">شʃ</span><span class="c">&#x079D;</span></span>
-    <span class="g"><span class="hint">صs̴</span><span class="c">&#x079E;</span></span>
-    <span class="g"><span class="hint">ضd̴</span><span class="c">&#x079F;</span></span>
-    </div>
-  <div>
-    <span class="g"><span class="hint">طt̴</span><span class="c">&#x07A0;</span></span>
-    <span class="g"><span class="hint">ظz̴</span><span class="c">&#x07A1;</span></span>
-    <span class="g"><span class="hint">عʕ</span><span class="c">&#x07A2;</span></span>
-    <span class="g"><span class="hint">غɣ</span><span class="c">&#x07A3;</span></span>
-    <span class="g"><span class="hint">قq</span><span class="c">&#x07A4;</span></span>
-    <span class="g"><span class="hint">وw</span><span class="c">&#x07A5;</span></span>
-    <span class="g"><span class="hint">ɳ</span><span class="c">&#x07B1;</span></span>
+    <span class="g x"><span class="hint">وw</span><span class="c">&#x07A5;</span></span>
     </div>
 </div>
 
@@ -142,25 +167,28 @@
 
 <div id="vowelGrid">
      <div>
-      <span class="g"><span class="hint">ə</span><span class="c">&#x07A6;</span></span>
+      <span class="g"><span class="hint">i</span><span class="c">&#x07A8;</span></span>
       <span class="g"><span class="hint">u</span><span class="c">&#x07AA;</span></span>
+      </div>
+    <div>
+      <span class="g"><span class="hint">ī</span><span class="c">&#x07A9;</span></span>
+      <span class="g"><span class="hint">ū</span><span class="c">&#x07AB;</span></span>
+      </div>
+    <div style="border-top:1px dotted gray;">
+      <span class="g"><span class="hint">e</span><span class="c">&#x07AC;</span></span>
+      <span class="g"><span class="hint">ē</span><span class="c">&#x07AD;</span></span>
+      </div>
+    <div style="border-top:1px dotted gray;">
+      <span class="g"><span class="hint">ə</span><span class="c">&#x07A6;</span></span>
       <span class="g"><span class="hint">o</span><span class="c">&#x07AE;</span></span>
       </div>
     <div>
       <span class="g"><span class="hint">ə̄</span><span class="c">&#x07A7;</span></span>
-      <span class="g"><span class="hint">ū</span><span class="c">&#x07AB;</span></span>
       <span class="g"><span class="hint">ō</span><span class="c">&#x07AF;</span></span>
       </div>
-    <div>
-      <span class="g"><span class="hint">i</span><span class="c">&#x07A8;</span></span>
-      <span class="g"><span class="hint">e</span><span class="c">&#x07AC;</span></span>
-      &nbsp;
-      </div>
-    <div>
-      <span class="g"><span class="hint">ī</span><span class="c">&#x07A9;</span></span>
-      <span class="g"><span class="hint">ē</span><span class="c">&#x07AD;</span></span>
+    <div style="border-top:1px dotted gray;">
       <span class="g"><span class="hint"> ͓</span><span class="c">&#x07B0;</span></span>
-      </div>
+</div>
 </div>
 
 
@@ -221,14 +249,6 @@
 
 
 
-
-
- <div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
-</div>
-</div>
-
-<div id="extrashapes"></div>
 
 
 <div id="temp"></div>

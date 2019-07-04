@@ -8,69 +8,18 @@ function localtranscribe (direction, str) {
 
 function transliterate (str) {
 
-str += ' '
+str = ' '+str
 
-str = str.replace(/\u200C/g, "ₓ")
-str = str.replace(/\u200D/g, "₊")
-str = str.replace(/⵿/g, "͓")
-str = str.replace(/ⴰ/g, "a")
-str = str.replace(/ⴱ/g, "b")
-str = str.replace(/ⴲ/g, "β")
-str = str.replace(/ⴳ/g, "g")
-str = str.replace(/ⴴ/g, "ʝ")
-str = str.replace(/ⴵ/g, "ʤ")
-str = str.replace(/ⴶ/g, "ʤ̇")
-str = str.replace(/ⴷ/g, "d")
-str = str.replace(/ⴸ/g, "ð")
-str = str.replace(/ⴹ/g, "dˁ")
-str = str.replace(/ⴺ/g, "ðˁ")
-str = str.replace(/ⴻ/g, "e")
-str = str.replace(/ⴼ/g, "f")
-str = str.replace(/ⴽ/g, "k")
-str = str.replace(/ⴾ/g, "k̇")
-str = str.replace(/ⴿ/g, "ç")
-str = str.replace(/ⵀ/g, "h")
-str = str.replace(/ⵁ/g, "ḣ")
-str = str.replace(/ⵂ/g, "ḧ")
-str = str.replace(/ⵃ/g, "ħ")
-str = str.replace(/ⵄ/g, "ʕ")
-str = str.replace(/ⵅ/g, "χ")
-str = str.replace(/ⵆ/g, "χ̇")
-str = str.replace(/ⵇ/g, "q")
-str = str.replace(/ⵈ/g, "q̇")
-str = str.replace(/ⵉ/g, "i")
-str = str.replace(/ⵊ/g, "ʒ")
-str = str.replace(/ⵋ/g, "ʒ̇")
-str = str.replace(/ⵌ/g, "ʒ̈")
-str = str.replace(/ⵍ/g, "l")
-str = str.replace(/ⵎ/g, "m")
-str = str.replace(/ⵏ/g, "n")
-str = str.replace(/ⵐ/g, "ɲ")
-str = str.replace(/ⵑ/g, "ŋ")
-str = str.replace(/ⵒ/g, "p")
-str = str.replace(/ⵓ/g, "u")
-str = str.replace(/ⵔ/g, "r")
-str = str.replace(/ⵕ/g, "rˤ")
-str = str.replace(/ⵖ/g, "ʁ")
-str = str.replace(/ⵗ/g, "ʁ̇")
-str = str.replace(/ⵘ/g, "ʁ̈")
-str = str.replace(/ⵙ/g, "s")
-str = str.replace(/ⵚ/g, "sˁ")
-str = str.replace(/ⵛ/g, "ʃ")
-str = str.replace(/ⵜ/g, "t")
-str = str.replace(/ⵝ/g, "θ")
-str = str.replace(/ⵞ/g, "ʧ")
-str = str.replace(/ⵟ/g, "tˁ")
-str = str.replace(/ⵠ/g, "v")
-str = str.replace(/ⵡ/g, "w")
-str = str.replace(/ⵢ/g, "y")
-str = str.replace(/ⵣ/g, "z")
-str = str.replace(/ⵤ/g, "ż")
-str = str.replace(/ⵥ/g, "zˁ")
-str = str.replace(/ⵦ/g, "ė")
-str = str.replace(/ⵧ/g, "o")
-str = str.replace(/ⵯ/g, "ʷ")
-str = str.replace(/⵰/g, "[{•]")
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
+
 
 return str.trim()
 }

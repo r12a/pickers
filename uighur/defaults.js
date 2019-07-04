@@ -28,17 +28,28 @@ var template = {}
 
 
 
-var inputAids = [
-{"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
-{"title":"ULY to Uighur", "dataVar":"showULYTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"U", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(ulyCharacterMap);makeKbdEventList(ulyCharacterMap);"},
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
-]
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Uighur text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+]
+
+
+
+
+var pulldown = [
 {"title":"Uighur<br/>to ULY", "alt":"Convert Uighur text to a ULY Latin transcription.", "code":"doTranscription('toULY')"},
 ]
 
 
+
+var inputAids = [
+{"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
+
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+
+{"title":"ULY to Uighur", "dataVar":"showULYTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"U", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(ulyCharacterMap);makeKbdEventList(ulyCharacterMap);"},
+
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
+]

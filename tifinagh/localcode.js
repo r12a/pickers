@@ -33,66 +33,6 @@ var _h = {
 end: {}
 }
 
-var justLatinMap = `
-a æ
-b β
-c ç
-d dˁ ð ðˁ ʤ ʤ̇
-e ə ė
-g ɡ ɢ
-h ḣ ḧ ħ
-j ʝ
-k k̇
-l ɫ
-n ŋ ɲ
-q q̇ θ
-r rˤ ʁ ʁ̇ ʁ̈
-s sˁ ʃ
-t tˁ ʧ
-u ʊ
-w ʷ
-x χ χ̇
-y ɣ
-z zˁ ż ʒ ʒ̇ ʒ̈
-{ ʕ
-[  ͓ • ₊ ₓ
-`
-
-
-
-var translitCharacterMap = `
-a a ⴰ
-b b ⴱ β ⴲ
-c ç ⴿ
-d d ⴷ ð ⴸ dˁ ⴹ ðˁ ⴺ ʤ ⴵ ʤ̇ ⴶ
-e e ⴻ ė ⵦ
-f f ⴼ
-g g ⴳ
-h h ⵀ ħ ⵃ ḣ ⵁ ḧ ⵂ
-i i ⵉ
-j ʝ ⴴ
-k k ⴽ k̇ ⴾ
-l l ⵍ
-m m ⵎ
-n n ⵏ ɲ ⵐ ŋ ⵑ
-o o ⵧ
-p p ⵒ
-q q ⵇ q̇ ⵈ
-Q θ ⵝ
-r r ⵔ rˤ ⵕ ʁ ⵖ ʁ̇ ⵗ ʁ̈ ⵘ
-s s ⵙ sˁ ⵚ ʃ ⵛ
-t t ⵜ tˁ ⵟ ʧ ⵞ
-u u ⵓ
-v v ⵠ
-w w ⵡ ʷ ⵯ
-x χ ⵅ χ̇ ⵆ
-y y ⵢ
-z ʒ ⵊ z ⵣ zˁ ⵥ ʒ̇ ⵋ ʒ̈ ⵌ ż ⵤ
-{ ʕ ⵄ
-.  •  ⵰
-* ͓ ⵿
-= ₓ \u200C ₊ \u200D
-`
 
 var ipaCharacterMap = `
 a æ ⴰ

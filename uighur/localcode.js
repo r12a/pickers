@@ -142,7 +142,7 @@ z ʒ
 `
 
 
-
+/*
 var translitCharacterMap = `
 a a ا
 A ’a ئا
@@ -179,6 +179,7 @@ z z ز ʒ ژ
 ; ; ؛
 ? ? ؟
 `
+*/
 
 
 

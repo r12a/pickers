@@ -88,7 +88,7 @@ z ẑ ž ʒ
 `
 
 
-
+/*
 var translitCharacterMap = `
 a a ܲ ā ܵ ȧ ܰ ạ ܱ å ܳ ḁ ܴ
 b b ܒ
@@ -119,6 +119,7 @@ z z ܙ
 ; ; ؛
 ? ? ؟
 `
+*/
 
 var ipaCharacterMap = `
 ' ʾ ʔ ʿ ʕe

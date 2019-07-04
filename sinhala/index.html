@@ -2,11 +2,12 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Sinhala picker 23</title>
+<title>Sinhala picker 24</title>
 
-<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
-<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared24/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
 <script src="../../shared/code/show_codepoints.js"></script>
@@ -14,13 +15,15 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared23/code.js">  </script>
+<script src="../shared24/setup.js">  </script>
+<script src="../shared24/code.js">  </script>
+<script src="../shared24/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared23/pagetemplate.js">  </script>
+<script src="../shared24/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
+<script src="../../shared/scriptdb/sinhala.js">  </script>
 <script src="localtranscription.js">  </script>
-<script src="composite-names.js"></script>
 <script src="/shared/fontlists/sinhala.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
@@ -48,7 +51,7 @@
 
 
 
-<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+<div id="chardata"><span id="charname">Click S (shape lookup), R (type-assist), K (keyboard), or on characters below.</span></div>
 
 
 
@@ -95,32 +98,32 @@
       <tr>
         <td id="independentvowels"><table>
           <tr>
-            <td><span class="g"><span class="c">&#x0D85;</span><span class="hint">a</span></span></td>
-<td><span class="g"><span class="c">&#x0D86;</span><span class="hint">ā</span></span></td>
+            <td><span class="g"><span class="hint">a</span><span class="c">&#x0D85;</span></span></td>
+<td><span class="g"><span class="hint">ā</span><span class="c">&#x0D86;</span></span></td>
 </tr>
           <tr>
-            <td><span class="g"><span class="c">&#x0D87;</span><span class="hint">æ</span></span></td>
-<td><span class="g"><span class="c">&#x0D88;</span><span class="hint">ǣ</span></span></td>
+            <td><span class="g"><span class="hint">æ</span><span class="c">&#x0D87;</span></span></td>
+<td><span class="g"><span class="hint">ǣ</span><span class="c">&#x0D88;</span></span></td>
 </tr>
           <tr>
-            <td><span class="g"><span class="c">&#x0D89;</span><span class="hint">i</span></span></td>
-<td><span class="g"><span class="c">&#x0D8A;</span><span class="hint">ī</span></span></td>
+            <td><span class="g"><span class="hint">i</span><span class="c">&#x0D89;</span></span></td>
+<td><span class="g"><span class="hint">ī</span><span class="c">&#x0D8A;</span></span></td>
 </tr>
           <tr>
-            <td><span class="g"><span class="c">&#x0D8B;</span><span class="hint">u</span></span></td>
-<td><span class="g"><span class="c">&#x0D8C;</span><span class="hint">ū</span></span></td>
+            <td><span class="g"><span class="hint">u</span><span class="c">&#x0D8B;</span></span></td>
+<td><span class="g"><span class="hint">ū</span><span class="c">&#x0D8C;</span></span></td>
 </tr>
           <tr>
-            <td><span class="g"><span class="c">&#x0D91;</span><span class="hint">e</span></span></td>
-<td><span class="g"><span class="c">&#x0D92;</span><span class="hint">ē</span></span></td>
+            <td><span class="g"><span class="hint">e</span><span class="c">&#x0D91;</span></span></td>
+<td><span class="g"><span class="hint">ē</span><span class="c">&#x0D92;</span></span></td>
 </tr>
           <tr>
-            <td><span class="g"><span class="c">&#x0D93;</span><span class="hint">ai</span></span></td>
-<td><span class="g"><span class="c">&#x0D96;</span><span class="hint">au</span></span></td>
+            <td><span class="g"><span class="hint">ai</span><span class="c">&#x0D93;</span></span></td>
+<td><span class="g"><span class="hint">au</span><span class="c">&#x0D96;</span></span></td>
 </tr>
           <tr>
-            <td><span class="g"><span class="c">&#x0D94;</span><span class="hint">o</span></span></td>
-<td><span class="g"><span class="c">&#x0D95;</span><span class="hint">ō</span></span></td>
+            <td><span class="g"><span class="hint">o</span><span class="c">&#x0D94;</span></span></td>
+<td><span class="g"><span class="hint">ō</span><span class="c">&#x0D95;</span></span></td>
 </tr>
         </table></td>
         <!--td id="adegadeg" style="text-align: center;"><span class="c" style="padding: 1em .25em">&#x0DCA;</span><br/>
@@ -198,58 +201,58 @@
                 <td id="vowels" style="padding: 0 .25em;"><table>
 <tr>
 <td>&nbsp;</td>
-<td><span class="g"><span class="c">&#x0DCF;</span><span class="hint">ā</span></span></td>
+<td><span class="g"><span class="hint">ā</span><span class="c">&#x0DCF;</span></span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">&#x0DD0;</span><span class="hint">æ</span></span></td>
-<td><span class="g"><span class="c">&#x0DD1;</span><span class="hint">ǣ</span></span></td>
+<td><span class="g"><span class="hint">æ</span><span class="c">&#x0DD0;</span></span></td>
+<td><span class="g"><span class="hint">ǣ</span><span class="c">&#x0DD1;</span></span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">&#x0DD2;</span><span class="hint">i</span></span></td>
-<td><span class="g"><span class="c">&#x0DD3;</span><span class="hint">ī</span></span></td>
+<td><span class="g"><span class="hint">i</span><span class="c">&#x0DD2;</span></span></td>
+<td><span class="g"><span class="hint">ī</span><span class="c">&#x0DD3;</span></span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">&#x0DD4;</span><span class="hint">u</span></span></td>
-<td><span class="g"><span class="c">&#x0DD6;</span><span class="hint">ū</span></span></td>
+<td><span class="g"><span class="hint">u</span><span class="c">&#x0DD4;</span></span></td>
+<td><span class="g"><span class="hint">ū</span><span class="c">&#x0DD6;</span></span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">&#x0DD9;</span><span class="hint">e</span></span></td>
-<td><span class="g"><span class="c">&#x0DDA;</span><span class="hint">ē</span></span></td>
+<td><span class="g"><span class="hint">e</span><span class="c">&#x0DD9;</span></span></td>
+<td><span class="g"><span class="hint">ē</span><span class="c">&#x0DDA;</span></span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">&#x0DDB;</span><span class="hint">ai</span></span></td>
-<td><span class="g"><span class="c">&#x0DDE;</span><span class="hint">au</span></span></td>
+<td><span class="g"><span class="hint">ai</span><span class="c">&#x0DDB;</span></span></td>
+<td><span class="g"><span class="hint">au</span><span class="c">&#x0DDE;</span></span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">&#x0DDC;</span><span class="hint">o</span></span></td>
-<td><span class="g"><span class="c">&#x0DDD;</span><span class="hint">ō</span></span></td>
+<td><span class="g"><span class="hint">o</span><span class="c">&#x0DDC;</span></span></td>
+<td><span class="g"><span class="hint">ō</span><span class="c">&#x0DDD;</span></span></td>
 </tr>
         </table></td>
 
-        </td>
+        
 
 
 
       <td id="numbers" style="padding-left: 1em;">
        <table>
             <tr>
-<td><span class="g"><span class="c">1</span></span></td>
-            <td><span class="g"><span class="c">2</span></span></td>
-            <td><span class="g"><span class="c">3</span></span></td>
+<td><span class="c">1</span></td>
+            <td><span class="c">2</span></td>
+            <td><span class="c">3</span></td>
 </tr>
           <tr>
-            <td><span class="g"><span class="c">4</span></span></td>
-            <td><span class="g"><span class="c">5</span></span></td>
-            <td><span class="g"><span class="c">6</span></span></td>
+            <td><span class="c">4</span></td>
+            <td><span class="c">5</span></td>
+            <td><span class="c">6</span></td>
 </tr>
           <tr>
-            <td><span class="g"><span class="c">7</span></span></td>
-            <td><span class="g"><span class="c">8</span></span></td>
-            <td><span class="g"><span class="c">9</span></span></td>
+            <td><span class="c">7</span></td>
+            <td><span class="c">8</span></td>
+            <td><span class="c">9</span></td>
 </tr>
          <tr>
 			   <td>&nbsp;</td>
-            <td><span class="g"><span class="c">0</span></span></td>
+            <td><span class="c">0</span></td>
             <td>&nbsp;</td>
 </tr>
        </table>
@@ -287,26 +290,26 @@
           <tr>
             <td><table>
 <tr>
-<td><span class="g"><span class="c">&#x0D8D;</span><span class="hint">r̥</span></span></td>
-<td><span class="g"><span class="c">&#x0D8E;</span><span class="hint">r̥̄</span></span></td>
+<td><span class="g"><span class="hint">r̥</span><span class="c">&#x0D8D;</span></span></td>
+<td><span class="g"><span class="hint">r̥̄</span><span class="c">&#x0D8E;</span></span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">&#x0D8F;</span><span class="hint">l̥</span></span></td>
-<td><span class="g"><span class="c">&#x0D90;</span><span class="hint">l̥̄</span></span></td>
+<td><span class="g"><span class="hint">l̥</span><span class="c">&#x0D8F;</span></span></td>
+<td><span class="g"><span class="hint">l̥̄</span><span class="c">&#x0D90;</span></span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">&#x0DD8;</span><span class="hint">r̥</span></span></td>
-<td><span class="g"><span class="c">&#x0DF2;</span><span class="hint">r̥̄</span></span></td>
+<td><span class="g"><span class="hint">r̥</span><span class="c">&#x0DD8;</span></span></td>
+<td><span class="g"><span class="hint">r̥̄</span><span class="c">&#x0DF2;</span></span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">&#x0DDF;</span><span class="hint">l̥</span></span></td>
-<td><span class="g"><span class="c">&#x0DF3;</span><span class="hint">l̥̄</span></span></td>
+<td><span class="g"><span class="hint">l̥</span><span class="c">&#x0DDF;</span></span></td>
+<td><span class="g"><span class="hint">l̥̄</span><span class="c">&#x0DF3;</span></span></td>
 </tr>
 </table></td>
           <td>
             <span class="g"><span class="hint">jñ</span><span class="c">&#x0DA5;</span></span><br/>
             <span class="g"><span class="hint">ňj</span><span class="c">&#x0DA6;</span></span><br/>
-			 <span class="g"><span class="c">&#x0DF4;</span></span>
+			 <span class="c">&#x0DF4;</span>
           </td>
             <td><table>
 <tr>
@@ -333,32 +336,32 @@
 <td><table>
 <tr>
 <tr>
-<td><span class="g"><span class="c">𑇡</span></span></td>
-<td><span class="g"><span class="c">𑇢</span></span></td>
-<td><span class="g"><span class="c">𑇣</span></span></td>
-<td><span class="g"><span class="c">𑇤</span></span></td>
-<td><span class="g"><span class="c">𑇥</span></span></td>
+<td><span class="c">𑇡</span></td>
+<td><span class="c">𑇢</span></td>
+<td><span class="c">𑇣</span></td>
+<td><span class="c">𑇤</span></td>
+<td><span class="c">𑇥</span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">𑇦</span></span></td>
-<td><span class="g"><span class="c">𑇧</span></span></td>
-<td><span class="g"><span class="c">𑇨</span></span></td>
-<td><span class="g"><span class="c">𑇩</span></span></td>
-<td><span class="g"><span class="c">𑇪</span></span></td>
+<td><span class="c">𑇦</span></td>
+<td><span class="c">𑇧</span></td>
+<td><span class="c">𑇨</span></td>
+<td><span class="c">𑇩</span></td>
+<td><span class="c">𑇪</span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">𑇫</span></span></td>
-<td><span class="g"><span class="c">𑇬</span></span></td>
-<td><span class="g"><span class="c">𑇭</span></span></td>
-<td><span class="g"><span class="c">𑇮</span></span></td>
-<td><span class="g"><span class="c">𑇯</span></span></td>
+<td><span class="c">𑇫</span></td>
+<td><span class="c">𑇬</span></td>
+<td><span class="c">𑇭</span></td>
+<td><span class="c">𑇮</span></td>
+<td><span class="c">𑇯</span></td>
 </tr>
 <tr>
-<td><span class="g"><span class="c">𑇰</span></span></td>
-<td><span class="g"><span class="c">𑇱</span></span></td>
-<td><span class="g"><span class="c">𑇲</span></span></td>
-<td><span class="g"><span class="c">𑇳</span></span></td>
-<td><span class="g"><span class="c">𑇴</span></span></td>
+<td><span class="c">𑇰</span></td>
+<td><span class="c">𑇱</span></td>
+<td><span class="c">𑇲</span></td>
+<td><span class="c">𑇳</span></td>
+<td><span class="c">𑇴</span></td>
 </tr>
 </table></td>
           </tr>

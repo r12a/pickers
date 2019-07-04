@@ -10,63 +10,22 @@ var vowels = {'\u064E':'a', '\u064F':'u', '\u0650':'i', '\u0652':'sukun', 	'\u06
 
 
 function transliterate (str) {
-	// transliterates uighur text 
-	
-	
-	// add initial space so that beginning of word rules work
-	str = '  '+str+'  '
 
-str = str.replace(/ئا/g, "’a")
-str = str.replace(/ئو/g, "’o")
-str = str.replace(/ئى/g, "’i")
-str = str.replace(/ئۆ/g, "’ø")
-str = str.replace(/ئۇ/g, "’u")
-str = str.replace(/ئۈ/g, "’ü")
-str = str.replace(/ئې/g, "’ë")
-str = str.replace(/ئە/g, "’e")
-str = str.replace(/،/g, ",")
-str = str.replace(/؛/g, ";")
-str = str.replace(/؟/g, "?")
-str = str.replace(/ئ/g, "ʿ")
-str = str.replace(/ا/g, "a")
-str = str.replace(/ب/g, "b")
-str = str.replace(/ت/g, "t")
-str = str.replace(/ج/g, "ʤ")
-str = str.replace(/خ/g, "χ")
-str = str.replace(/د/g, "d")
-str = str.replace(/ر/g, "r")
-str = str.replace(/ز/g, "z")
-str = str.replace(/س/g, "s")
-str = str.replace(/ش/g, "ʃ")
-str = str.replace(/غ/g, "ʁ")
-str = str.replace(/ف/g, "f")
-str = str.replace(/ق/g, "q")
-str = str.replace(/ك/g, "k")
-str = str.replace(/ل/g, "l")
-str = str.replace(/م/g, "m")
-str = str.replace(/ن/g, "n")
-str = str.replace(/و/g, "o")
-str = str.replace(/ى/g, "i")
-str = str.replace(/ي/g, "y")
-str = str.replace(/٪/g, "%")
-str = str.replace(/پ/g, "p")
-str = str.replace(/چ/g, "č")
-str = str.replace(/ژ/g, "ʒ")
-str = str.replace(/ڭ/g, "ŋ")
-str = str.replace(/گ/g, "g")
-str = str.replace(/ھ/g, "h")
-str = str.replace(/ۆ/g, "ø")
-str = str.replace(/ۇ/g, "u")
-str = str.replace(/ۈ/g, "ü")
-str = str.replace(/ۋ/g, "w")
-str = str.replace(/ې/g, "ë")
-str = str.replace(/ە/g, "e")
+str = ' '+str
 
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
 
-
-
-	return str.trim()
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
 	}
+
+
+return str.trim()
+}
 
 
 

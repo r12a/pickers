@@ -164,7 +164,7 @@ y ȳ
 `
 
 
-
+/*
 var translitCharacterMap = `
 ? ʔ ꪯ ʔ̱ ꪮ
 a a ꪰ ā ꪱ aʲ ꪼ aᵐ ꪾ aⁿ ꪽ aᵖ ꪚꪾ
@@ -191,7 +191,7 @@ w w ꪫ w̱ ꪪ
 x x ꪅ x̱ ꪄ
 y y ꪥ ȳ ꪤ
 `
-
+*/
 
 
 

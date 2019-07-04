@@ -1,7 +1,7 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'A Tai Tham KH New WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
+	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'nod' // language to use for examples
@@ -28,15 +28,28 @@ var template = {}
 
 
 
-var inputAids = [
-{"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
-{"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
-]
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Khün text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 ]
 
+
+
+
+
+var pulldown = [
+]
+
+
+
+var inputAids = [
+{"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
+
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"},
+
+{"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
+
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+]

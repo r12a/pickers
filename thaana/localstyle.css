@@ -24,10 +24,17 @@ span.hint {
 	margin-right: 2px;
     margin-left: 2px;
 	font-size: 40%;
+	color: tan;
 	}
 .c { 
 	min-width: .5em;
 	text-align: center;
+	}
+.x {
+	display: none;
+	}
+.x .c {
+	color: #aaa;
 	}
 
 
@@ -80,7 +87,7 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     line-height: 1.4;
     vertical-align: baseline;
     }
