@@ -1,8 +1,7 @@
 globals.showNeoTrans =  ''
 globals.showIPATrans = ''
 
-function localInitialise () {
-	}
+function localInitialise () {}
 	
 
 var _h = {
@@ -18,76 +17,7 @@ var keyboarddef = [
 ]
 
 
-var justLatinMap = `
-a á
-A Á
-c ç
-d ð
-D Ð
-e é
-E É
-i í ï ḯ  ı
-I Í Ï İ
-j ʝ
-k k͡s
-K K͡S
-n ɲ
-o ó ô õ ȯ
-O Ó Ô Õ Ȯ
-p p͡s
-P P͡S
-q Θ θ
-s s̽
-y ý ÿ ÿ́ ɣ
-Y Ý Ÿ Ɣ
-[ ¨ ˊ
-`
 
-
-
-var translitCharacterMap = `
-a a α á ά
-A A Α Á Ά
-d ð δ
-D Ð Δ
-e e ε é έ
-E E Ε É Έ
-f f φ
-F F Φ
-i ı ι i η í ή ḯ ΐ ï ϊ
-I I Ι İ Η Í Ή Ï Ϊ
-k k κ k͡s ξ
-K K Κ K͡S Ξ
-l l λ
-L L Λ
-m m μ
-M M Μ
-n n ν
-N N Ν
-o o ο ȯ ω ô ί ó ό õ ώ
-O O Ο Ȯ Ω Ô Ί Ó Ό Õ Ώ
-p p π p͡s ψ
-P P Π P͡S Ψ
-q θ θ
-Q Θ Θ
-r r ρ
-R R Ρ
-s s σ s̽ ς
-S S Σ
-t t τ
-T T Τ
-v v β
-V V Β
-x x χ
-X X Χ
-y ɣ γ y υ ý ύ ÿ ϋ ÿ́ ΰ
-Y Ɣ Γ Y Υ Ý Ύ Ÿ Ϋ
-z z ζ
-Z Z Ζ
-[ ˊ \u0301 ¨ \u0308
-; ; ·
-? ? ;
-`
 
 
 

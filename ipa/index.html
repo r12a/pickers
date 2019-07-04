@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>IPA character picker 23</title>
+<title>IPA picker 24</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared24/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,13 +14,14 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared23/code.js">  </script>
+<script src="../shared24/setup.js">  </script>
+<script src="../shared24/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared23/pagetemplate.js">  </script>
+<script src="../shared24/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
+<script src="../../shared/scriptdb/ipa.js">  </script>
 <!--script src="localtranscription.js">  </script-->
-<script src="../latin/composite-names.js"></script>
 <script src="/shared/fontlists/ipafonts.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
@@ -64,6 +65,8 @@
 <span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
 </div>
 
+
+<div id="phoneticInfo" style="color: gray; line-height: 1; text-align: center; font-size: 70%; font-family: sans-serif;">&nbsp;</div>
 
   <table id="kbd">
     <tr>
@@ -220,7 +223,7 @@
       </td>
       
       
-    <!--img title="25CC: DOTTED CIRCLE" src="images/25CC.png" alt="◌" id="dottedcircle" /--></td>
+    <!--img title="25CC: DOTTED CIRCLE" src="images/25CC.png" alt="◌" id="dottedcircle" /-->
       <td><!-- TONES -->
         <table id="tones">
           <tbody>
@@ -341,7 +344,21 @@
 
 </div><!-- end of tables -->
 
-  
+<!--script>
+function doit () {
+	cells=document.querySelectorAll('.c')
+	out=''  
+	for (i=0;i<cells.length;i++) {   	
+		half = cells[i].title.split(',')   	
+		out += cells[i].textContent+'\t'+half[1]+'\t'+half[0]+'\n' 
+		}    
+	document.getElementById('output').value = out
+	
+	return out
+	}
+</script>
+
+  <button onclick="document.getElementById('output').value = doit();">Go</button-->
 
 
 <div id="bottomBP"></div>

@@ -64,6 +64,36 @@ function clearHighlights () {
 	}
 
 
+// overwrite standard function to display phonetic description
+
+function event_mouseoverChar ()  {
+	// display character information
+	span = document.createElement( 'span' );
+	span.setAttribute( 'id', 'charname' );
+	charinfo = document.createTextNode( this.title );
+	span.appendChild(charinfo);
+	var chardata = document.getElementById('chardata');	
+	chardata.replaceChild( span, chardata.firstChild );
+	
+	document.getElementById('phoneticInfo').textContent = spreadsheetRows[this.textContent][cols.typeLoc]
+	
+	// highlight this character
+	this.style.backgroundColor = '#F4630B';
+	this.style.color = '#ddd'
+
+	
+	// highlight similar characters
+	if (globals.showShapeHints && _h[this.id]) {
+		ptr = this.id
+		for (i=0;i<_h[ptr].length;i++) {
+			document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
+			}
+		}
+	}
+
+
+
+
 var justLatinMap = `
 a æ ɐ ɑ ɒ
 b ʙ β ɓ

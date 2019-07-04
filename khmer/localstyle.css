@@ -25,6 +25,7 @@ span.hint {
 	margin-right: 0px;
     margin-left: 0px;
 	font-size: 50%;
+	color: tan;
 	}
 .c { 
 	min-width: .75em;
@@ -71,12 +72,11 @@ span.hint {
     height: 12.5em;
     }
 #consonantGrid div {
-    white-space: normal;
+    white-space: nowrap;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 12.5em;
-    justify-content: space-between;
+    justify-content: space-around;
     }
 #translitGrid {
     display: flex;
@@ -120,7 +120,9 @@ span.hint {
     padding: 0 .25em;
     }
 #ivowelGrid div {
-    text-align: right;
+	justify-content: center;
+	flex-wrap: nowrap;
+	text-align: center; 
     }
 #vowelGrid {
     display: flex;
@@ -128,7 +130,6 @@ span.hint {
     height: 12.5em;
     justify-content: space-around;
     padding-right: 0.2em;
-    
     border: 1px solid #ccc;
     border-radius: .5em;
     }
@@ -136,7 +137,6 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    width: 8em;
     justify-content: space-around;
     }
 #moreconsonants {

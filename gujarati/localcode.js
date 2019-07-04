@@ -78,7 +78,7 @@ v ʋ
 `
 
 
-
+/*
 var translitCharacterMap = `
 a æ ૅ
 A ạ̄ આ æ̣ ઍ
@@ -130,7 +130,7 @@ y y ય
 . . ।
 * ͓ ્
 `
-
+*/
 
 
 

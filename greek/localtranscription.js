@@ -9,85 +9,24 @@ function localtranscribe (direction, str) {
 
 
 function transliterate (str) {
-str += ' '
 
-str = str.replace(/\u0301/g, "ˊ")
-str = str.replace(/\u0308/g, "¨")
-str = str.replace(/;/g, "?")
-str = str.replace(/·/g, ";")
-str = str.replace(/Ά/g, "Á")
-str = str.replace(/Έ/g, "É")
-str = str.replace(/Ή/g, "Í")
-str = str.replace(/Ί/g, "Ô")
-str = str.replace(/Ό/g, "Ó")
-str = str.replace(/Ύ/g, "Ý")
-str = str.replace(/Ώ/g, "Õ")
-str = str.replace(/ΐ/g, "ḯ")
-str = str.replace(/Α/g, "A")
-str = str.replace(/Β/g, "V")
-str = str.replace(/Γ/g, "Ɣ")
-str = str.replace(/Δ/g, "Ð")
-str = str.replace(/Ε/g, "E")
-str = str.replace(/Ζ/g, "Z")
-str = str.replace(/Η/g, "İ")
-str = str.replace(/Θ/g, "Θ")
-str = str.replace(/Ι/g, "I")
-str = str.replace(/Κ/g, "K")
-str = str.replace(/Λ/g, "L")
-str = str.replace(/Μ/g, "M")
-str = str.replace(/Ν/g, "N")
-str = str.replace(/Ξ/g, "K͡S")
-str = str.replace(/Ο/g, "O")
-str = str.replace(/Π/g, "P")
-str = str.replace(/Ρ/g, "R")
-str = str.replace(/Σ/g, "S")
-str = str.replace(/Τ/g, "T")
-str = str.replace(/Υ/g, "Y")
-str = str.replace(/Φ/g, "F")
-str = str.replace(/Χ/g, "X")
-str = str.replace(/Ψ/g, "P͡S")
-str = str.replace(/Ω/g, "Ȯ")
-str = str.replace(/Ϊ/g, "Ï")
-str = str.replace(/Ϋ/g, "Ÿ")
-str = str.replace(/ά/g, "á")
-str = str.replace(/έ/g, "é")
-str = str.replace(/ή/g, "í")
-str = str.replace(/ί/g, "ô")
-str = str.replace(/ΰ/g, "ÿ́")
-str = str.replace(/α/g, "a")
-str = str.replace(/β/g, "v")
-str = str.replace(/γ/g, "ɣ")
-str = str.replace(/δ/g, "ð")
-str = str.replace(/ε/g, "e")
-str = str.replace(/ζ/g, "z")
-str = str.replace(/η/g, "i")
-str = str.replace(/θ/g, "θ")
-str = str.replace(/ι/g, "ı")
-str = str.replace(/κ/g, "k")
-str = str.replace(/λ/g, "l")
-str = str.replace(/μ/g, "m")
-str = str.replace(/ν/g, "n")
-str = str.replace(/ξ/g, "k͡s")
-str = str.replace(/ο/g, "o")
-str = str.replace(/π/g, "p")
-str = str.replace(/ρ/g, "r")
-str = str.replace(/ς/g, "s̽")
-str = str.replace(/σ/g, "s")
-str = str.replace(/τ/g, "t")
-str = str.replace(/υ/g, "y")
-str = str.replace(/φ/g, "f")
-str = str.replace(/χ/g, "x")
-str = str.replace(/ψ/g, "p͡s")
-str = str.replace(/ω/g, "ȯ")
-str = str.replace(/ϊ/g, "ï")
-str = str.replace(/ϋ/g, "ÿ")
-str = str.replace(/ό/g, "ó")
-str = str.replace(/ύ/g, "ý")
-str = str.replace(/ώ/g, "õ")
+str = ' '+str
+
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
 
 
 return str.trim()
 }
+
+
 
 
 

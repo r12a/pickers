@@ -29,21 +29,29 @@ var template = {}
 
 
 
+var controls = [
+{"title":"Trans-<br/>literate", "alt":"Convert Georgian text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+]
+
+
+
+var pulldown = [
+{"title":"Georgian to<br/>National Tr", "alt":"Convert Georgian text to a national Georgian transcription.", "code":"doTranscription('toNational')"},
+]
+
+
+
 var inputAids = [
-//{"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 //{"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
 
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+//{"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
 
 {"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
 
 {"title":"Georgian Natl transliteration", "dataVar":"showNationalTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"G", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(nationalCharacterMap);makeKbdEventList(nationalCharacterMap);"},
 
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
-]
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
 
-var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Georgian text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-{"title":"Georgian to<br/>National Tr", "alt":"Convert Georgian text to a national Georgian transcription.", "code":"doTranscription('toNational')"},
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 

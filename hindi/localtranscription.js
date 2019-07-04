@@ -1,108 +1,108 @@
 function localtranscribe (direction, str) {
 	
 	if (direction == 'transliterate') { return transliterate(str) }
+	if (direction == 'transcription') { return transcription(str) }
 	if (direction == 'toISO15919') { return toISO15919(str) }
 	if (direction == 'toDeva') { return toDeva(str) }
 	}
 		
 
 
+
 function transliterate (str) {
 
 str = ' '+str
 
-str = str.replace(/\u0958/g, "q")
-str = str.replace(/\u0959/g, "x")
-str = str.replace(/\u095A/g, "ɣ")
-str = str.replace(/\u095B/g, "z")
-str = str.replace(/\u095C/g, "ɾ")
-str = str.replace(/\u095D/g, "ɾʰ")
-str = str.replace(/\u095E/g, "f")
-str = str.replace(/ँ/g, "ŋ̽")
-str = str.replace(/ं/g, "m̽")
-str = str.replace(/ः/g, "h̽")
-str = str.replace(/अ/g, "ạ")
-str = str.replace(/आ/g, "ạ̄")
-str = str.replace(/इ/g, "ị")
-str = str.replace(/ई/g, "ị̄")
-str = str.replace(/उ/g, "ụ")
-str = str.replace(/ऊ/g, "ụ̄")
-str = str.replace(/ऋ/g, "r̥̣")
-str = str.replace(/ए/g, "ẹ̄")
-str = str.replace(/ऐ/g, "ɛ̣̄")
-str = str.replace(/ओ/g, "ọ̄")
-str = str.replace(/औ/g, "ɔ̣̄")
-str = str.replace(/क/g, "k")
-str = str.replace(/ख/g, "kʰ")
-str = str.replace(/ग/g, "g")
-str = str.replace(/घ/g, "gʰ")
-str = str.replace(/ङ/g, "ŋ")
-str = str.replace(/च/g, "c")
-str = str.replace(/छ/g, "cʰ")
-str = str.replace(/ज/g, "ɟ")
-str = str.replace(/झ/g, "ɟʰ")
-str = str.replace(/ञ/g, "ɲ")
-str = str.replace(/ट/g, "ʈ")
-str = str.replace(/ठ/g, "ʈʰ")
-str = str.replace(/ड/g, "ɖ")
-str = str.replace(/ढ/g, "ɖʰ")
-str = str.replace(/ण/g, "ɳ")
-str = str.replace(/त/g, "t")
-str = str.replace(/थ/g, "tʰ")
-str = str.replace(/द/g, "d")
-str = str.replace(/ध/g, "dʰ")
-str = str.replace(/न/g, "n")
-str = str.replace(/प/g, "p")
-str = str.replace(/फ/g, "pʰ")
-str = str.replace(/ब/g, "b")
-str = str.replace(/भ/g, "bʰ")
-str = str.replace(/म/g, "m")
-str = str.replace(/य/g, "y")
-str = str.replace(/र/g, "r")
-str = str.replace(/ल/g, "l")
-str = str.replace(/ळ/g, "ɭ")
-str = str.replace(/व/g, "ʋ")
-str = str.replace(/श/g, "ʃ")
-str = str.replace(/ष/g, "ʂ")
-str = str.replace(/स/g, "s")
-str = str.replace(/ह/g, "h")
-str = str.replace(/़/g, "ˑ")
-str = str.replace(/ऽ/g, "´")
-str = str.replace(/ा/g, "ā")
-str = str.replace(/ि/g, "i")
-str = str.replace(/ी/g, "ī")
-str = str.replace(/ु/g, "u")
-str = str.replace(/ू/g, "ū")
-str = str.replace(/ृ/g, "r̥")
-str = str.replace(/ॄ/g, "r̥̄")
-str = str.replace(/े/g, "ē")
-str = str.replace(/ै/g, "ɛ̄")
-str = str.replace(/ो/g, "ō")
-str = str.replace(/ौ/g, "ɔ̄")
-str = str.replace(/्/g, "͓")
-str = str.replace(/ॠ/g, "r̥̣̄")
-str = str.replace(/।/g, ".")
-str = str.replace(/॥/g, "¶")
-str = str.replace(/०/g, "0")
-str = str.replace(/१/g, "1")
-str = str.replace(/२/g, "2")
-str = str.replace(/३/g, "3")
-str = str.replace(/४/g, "4")
-str = str.replace(/५/g, "5")
-str = str.replace(/६/g, "6")
-str = str.replace(/७/g, "7")
-str = str.replace(/८/g, "8")
-str = str.replace(/९/g, "9")
-str = str.replace(/॰/g, "¨")
-str = str.replace(/₹/g, "¤")
-str = str.replace(/\u200C/g, "ₓ")
-str = str.replace(/\u200D/g, "₊")
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
 
-
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
 
 
 return str.trim()
 }
+
+
+
+
+
+
+
+
+
+
+
+function transcription (str) {
+
+var consonants = new Set(['क', 'ख', 'ग', 'घ', 'ङ', 'च', 'छ', 'ज', 'झ', 'ञ', 'ट', 'ठ', 'ड', 'ढ', 'ण', 'त', 'थ', 'द', 'ध', 'न', 'प', 'फ', 'ब', 'भ', 'म', 'य', 'र', 'ल', 'ळ', 'व', 'श', 'ष', 'स', 'ह', '\u0958', '\u0959', '\u095A', '\u095B', '\u095C', '\u095D', '\u095E'])
+var indvowels = new Set(['अ', 'आ', 'इ', 'ई', 'उ', 'ऊ', 'ए', 'ऐ', 'ओ', 'औ', 'ऋ', 'ॠ', 'ं', 'ः'])
+var vowels = new Set(['ा', 'ि', 'ी', 'ु', 'ू', 'े', 'ै', 'ो', 'ौ', 'ृ', 'ॄ'])
+
+str = ' '+str.normalize('NFC')+'        '
+
+// stop viramas being treated as combining characters
+// (otherwise they're difficult to extract from cchar sequences later)
+str = str.replace(/\u094D/g,'V')
+
+
+// add inherent vowels
+var withInherents = ''
+for (let i=0; i<str.length-1; i++) {
+console.log(str[i])
+    if (consonants.has(str[i]) && consonants.has(str[i+1]) && vowels.has(str[i+2]) && str[i+3] === ' ') { console.log('hey');withInherents += str[i] } // penultimate syllable
+	else if (consonants.has(str[i]) && (consonants.has(str[i+1]) || indvowels.has(str[i+1])))  withInherents += str[i]+'ʘ'
+    else if (consonants.has(str[i]) && str[i+1] === '\u093C' && ((consonants.has(str[i+2]) || indvowels.has(str[i+2])))) { // nukta
+        withInherents += str[i]+str[i+1]+'ʘ'
+        i++
+        }
+	else  withInherents += str[i]
+	}
+str=withInherents
+
+
+str = ' '+transliterate(str)+'  '
+
+
+
+// convert translit letters to ipa letters
+// convert these to uppercase first, then lowercase all later, so there's no interference
+// nuktas
+str = str.replace(/kʰˑ/g, "x")
+str = str.replace(/kˑ/g, "q")
+str = str.replace(/gˑ/g, "ɣ")
+str = str.replace(/ɖʰˑ/g, "R")
+str = str.replace(/ɖˑ/g, "ɾ")
+str = str.replace(/pʰˑ/g, "f")
+str = str.replace(/ɟˑ/g, "z")
+
+str = str.replace(/R/g, "ɾʰ")
+
+
+// remove virama
+str = str.replace(/V/g, "")
+
+// replace 0 for inherent vowel
+str = str.replace(/ʘ/g, "ə")
+
+
+
+// add markup for ambiguous cases
+str = str.replace(/\[/g,'<span class=alts><span class=altfirst>')
+str = str.replace(/\|/g,'</span><span class=alt>')
+str = str.replace(/\{/g,'</span><span class=altlast>')
+str = str.replace(/\]/g,'</span></span>')
+
+return str.trim().toLowerCase()
+}
+
+
+
+
 
 
 
