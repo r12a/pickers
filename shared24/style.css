@@ -219,6 +219,7 @@ table td { border: 0; }
 	display: inline-block;
 	min-width: .75em;
 	padding: 3px 0;
+	color:tan;
 	}
 .g:hover .hint {
 	font-weight: normal;
@@ -804,25 +805,50 @@ summary:hover {
 .dbCharContainer {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
-	margin: 0 1em;
+	flex-wrap: nowrap;
+	margin: 0.1em 1em;
 	font-size: large;
-	cursor: pointer;
+	/*cursor: pointer;*/
+	/*align-items: baseline;*/
 	}
-.dbCharContainer > span {
+.dbCharSubContainer {
 	margin: 0 1em;
 	}
-.dbCharContainer em {
+.dbCharInfo, .dbCharName {
+	margin: 0;
+	line-height: 1;
+	font-size: 90%;
+	}
+.dbCharInfo span {
+	margin: 0 1em 0 0;
+	}
+.dbCharInfo em {
 	color: tan;
 	}
-.dbCharContainer a {
+.dbCharInfo a {
 	font-style: italic;
 	font-size: 90%;
 	cursor: pointer;
 	}
+.dbCharName {
+	font-size: 60%;
+	color:tan;
+	vertical-align:top;
+	font-size: 60%;
+	line-height: 2;
+	}
 
-
-
-
-
+.dbCharItem, .dbCharItemLevel2 {
+    background-color: darkorange;
+    padding: 0 .2em;
+    color: white;
+    border-radius: 3px;
+    min-width: .75em;
+    text-align: center;
+	font-size: 1.5em;
+	}
+.dbCharItemLevel2 {
+	background-color: #bbb;
+	color: white;
+	}
 

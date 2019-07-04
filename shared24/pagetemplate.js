@@ -63,8 +63,8 @@ out += `</header>
 <a class="interactiveHelpButton" style="margin-right:.5em;" href="help/#top_controls" target="_help" title="Help for top level controls."><img alt="help" src="../images/help.png"/></a>
     <button onclick="showCodepoints()">Show<br/>codepoints</button>
 
-    <button  id="showDB" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction)" 
-    title="Show information in the database for a character.">Analyse<br/>text</button>
+    <button  id="showDB" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false)" 
+    title="Show information in the database for the selection.">Analyse<br/>text</button>
     
  ` 
 	
@@ -80,8 +80,6 @@ for (let i=0;i<window.controls.length;i++){
 	}
 
 out += ` 
-    <!--button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button-->
-
     <button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" 
     title="Create an example.">Make<br>example</button>
     
@@ -93,6 +91,9 @@ out += `
     
     <div id="pulldown" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;">
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button><br/>
+
+    <button  id="showDBAll" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, true)" 
+    title="Show all information in the database for each character in the selection.">Show all<br/>db entries</button>
     `
 if (window.pulldown) {
 for (let i=0;i<window.pulldown.length;i++){
@@ -274,7 +275,7 @@ out = `
 
 <a class="interactiveHelpButton" href="help/#yellow_controls" target="_help" title="Help with main yellow controls."><img alt="help" src="../images/help.png"/></a>
 
-<div class="control" id="helpcontrol" onclick="showCSHelp();return false;">Help<br/><img src="../images/help.png" alt=""/></div>
+<div class="control" id="helpcontrol" onclick="showCSHelp();return false;" accesskey="h">Help<br/><img src="../images/help.png" alt=""/></div>
 </div>
 
 
@@ -387,7 +388,7 @@ out += `<div class="control" id="ccFactoryReset">Reset<br/><button onClick="rese
 	<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
 
 
-<div id="userFontMgt" class="control" style="width: 26em; height: 5em;padding: .5em; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: start;">
+<div id="userFontMgt" class="control" style="width: 26em; height: 6em;padding: .5em; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: start;">
 <span style="padding-right: 1em; flex:4; text-align:start;">List fonts you want to add to the font selection lists. One font name per line.</span>
 <textarea id="fontManagementList" style="flex:6; height: 100%;"></textarea>
 <button style="flex:.5; margin-left:.5em;" onclick="manageUserFonts(document.getElementById('fontManagementList').value)">Set</button>

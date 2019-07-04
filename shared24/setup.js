@@ -51,8 +51,8 @@ function makeTranslitCharacterMap () {
             primary = true
             keypress = keypress.replace('¶', '')
             }
-			
-        // create entry for the item
+
+		// create entry for the item
         if (charArray[keypress]) {
             if (primary) charArray[keypress] = charArray[keypress].replace(keypress, keypress+' '+spreadsheetRows[line][cols.transLoc]+' '+line)
             else charArray[keypress] += ' '+spreadsheetRows[line][cols.transLoc]+' '+line

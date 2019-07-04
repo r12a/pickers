@@ -199,11 +199,11 @@ function makeCharLink (script, lang, dir) {
 	}
 
 
-function getDBInfo (script, lang, dir) {
+function getDBInfo (script, lang, dir, showAll) {
 	var output = document.getElementById('output')
 	document.getElementById('transcriptionWrapper').style.display='block'
 	document.getElementById('transcription').style.display = 'block'
-	document.getElementById('transcription').innerHTML = displayDBInfo(getHighlightedText(output), script, lang, dir)
+	document.getElementById('transcription').innerHTML = displayDBInfo(getHighlightedText(output), script, lang, dir, showAll)
 	document.getElementById('transcription').contentEditable = false
 	output.focus()
 	}
@@ -379,6 +379,9 @@ function add (ch) {
 	// ch: string, the text to be added
 	// _cluster: boolean, global variable, set if this is a consonant cluster (used for vowels that surround base)
 	// globals.view: string, indicates which view is showing - this is important, since non-intelligent ordering is needed in the default view
+
+	//if (typeof ch === 'undefined') return
+	//console.log(ch)
 	
 	// remove leading base characters if this is a combining character
 	if (ch.length > 1) {
@@ -1038,7 +1041,7 @@ function getWelcome (dir) {
 	// rtl indicates whether or not to include UI direction msg
 	var out = "<p>You can change the contrast for this app by clicking on the 🌓 icon in the top right corner of the page.<br/>"
 	if (dir === 'rtl') out += "The selection area for this picker is ordered RTL by default, but can be set to LTR at <samp>more controls/table direction</samp>.<br/>"
-	out += "Use the controls at the bottom of the page to change other settings, and <samp>more controls/reset defaults</samp> to return to the default setup. It is recommended that you familiarise yourself with <a href='help/'>the notes on usage</a> before use.<br/>Click one of the following buttons to remove this message. Click <samp>Ok to store</samp> if you want this and other pickers to remember your settings between sessions. Settings are stored locally on the computer/device you are using.<br/><button onClick='savePreferences(this)'>Ok to store</button> <button onClick='dontStore(this)'>Don't store</button></p>"
+	out += "Find characters by shape, transliteration, or by selecting from the panel. Explore and transform text using the controls above the large box. Use the controls at the bottom of the page to change other settings, and <samp>more controls/reset</samp> to return to the default setup. Familiarise yourself with <a href='help/'>the help page</a> before use.<br/>Click one of the following buttons to remove this message. Click <samp>Ok to store</samp> if you want this and other pickers to remember your settings between sessions. Settings are stored locally on the computer/device you are using.<br/><button onClick='savePreferences(this)'>Ok to store</button> <button onClick='dontStore(this)'>Don't store</button></p>"
 	return out
 	}
 
@@ -1139,6 +1142,7 @@ function setUpValues () {
 	initialise(); 
 	localInitialise()
 	makeTranslitCharacterMap()
+	makeLatinOnlyCharacterMap()
 	makeAutoTranslitArray()
 	if (defaults.userfonts) {
         var flistArray = defaults.userfonts.split(',')
@@ -1390,93 +1394,15 @@ function makeCharacterLink (cp, block, lang, direction) {
 	}
 
 
-function displayDBInfoOLD (cp, block, lang, direction) { 
+
+
+function displayDBInfo (cp, block, lang, direction, showAll) { 
 	// displays information about cp from db
 	// cp: a unicode character, or sequence of unicode characters
 	// block: 
 	// lang: the BCP47 language tag for the context
 	// direction: either rtl or ltr or ''
-
-	//var chars = []
-	//convertStr2DecArray(cp, chars)
-	var chars = [...cp]
-
-	var out = '<span style="display:flex; flex-direction:column;">'
-	console.log(spreadsheetRows)
-	
-	for (let i=0;i<chars.length;i++) {
-		hex = chars[i].codePointAt(0).toString(16).toUpperCase()
-		while (hex.length < 4) hex = '0'+hex
-		out += '<span class="dbCharContainer" onMouseOver="document.getElementById(\'chardata\').textContent = \'U+'+hex+': '+charData[chars[i]]+'\'">'+chars[i]+' '
-		if (spreadsheetRows[chars[i]]) {
-		
-			// get transliteration
-			out += '<span><em>translit</em> '
-			if (spreadsheetRows[chars[i]][cols.transLoc]) out += ' <span class="ipa">'+spreadsheetRows[chars[i]][cols.transLoc]+'</span>'
-			else out += '-'
-			for (item in spreadsheetRows) {
-				if (item.length > 1 && item.includes(chars[i])) out += ' ('+item+' <span class="ipa">'+spreadsheetRows[item][cols.transLoc]+'</span>) '
-				}
-			out += '</span>'
-			
-			// get transcription
-			out += '<span><em>transcr</em> '
-			if (spreadsheetRows[chars[i]][cols.transcription]) out += ' <span class="ipa">'+spreadsheetRows[chars[i]][cols.transcription]+'</span>'
-			else out += '-'
-			for (item in spreadsheetRows) {
-				if (item.length > 1 && item.includes(chars[i])) out += ' ('+item+' <span class="ipa">'+spreadsheetRows[item][cols.transcription]+'</span>) '
-				}
-			out += '</span>'
-			
-			// get ipa info
-			out += '<span><em>ipa</em> '
-			if (spreadsheetRows[chars[i]][cols.ipaLoc]) out += ' <span class="ipa">'+spreadsheetRows[chars[i]][cols.ipaLoc]+'</span>'
-			else out += '-'
-			for (item in spreadsheetRows) {
-				if (item.length > 1 && item.includes(chars[i])) out += ' ('+item+' <span class="ipa">'+spreadsheetRows[item][cols.ipaLoc]+'</span>) '
-				}
-			out += '</span>'
-			
-			// get type
-			out += '<span><em>type</em> '
-			if (spreadsheetRows[chars[i]][cols.typeLoc]) out += ' <span class="ipa">'+spreadsheetRows[chars[i]][cols.typeLoc]+'</span>'
-			else out += '-'
-			out += '</span>'
-			
-			// get status
-			if (spreadsheetRows[chars[i]][cols.statusLoc] && cols.statusLoc > 0) {
-				out += '<span><em>status</em> '
-				out += ' <span>'+spreadsheetRows[chars[i]][cols.statusLoc]+'</span>'
-				out += '</span>'
-				}
-			
-			// get name
-			if (spreadsheetRows[chars[i]][cols.nameLoc] && cols.nameLoc > 0) {
-				out += '<span><em>name</em> '
-				out += ' <span>'+spreadsheetRows[chars[i]][cols.nameLoc]
-				if (spreadsheetRows[chars[i]][cols.nnameLoc] && cols.nnameLoc > 0) out += ' ('+spreadsheetRows[chars[i]][cols.nnameLoc]+')'
-				out += '</span></span>'
-				}
-			
-			
-			}
-		
-		out += '</span> '
-		}
-	
-	out += '</span>'
-
-
-	return out.trim()
-	}
-
-
-function displayDBInfo (cp, block, lang, direction) { 
-	// displays information about cp from db
-	// cp: a unicode character, or sequence of unicode characters
-	// block: 
-	// lang: the BCP47 language tag for the context
-	// direction: either rtl or ltr or ''
+	// showAll: boolean, if true shows all db entries for every character; otherwise, shows only entries that start with the character
 
 	//var chars = []
 	//convertStr2DecArray(cp, chars)
@@ -1486,7 +1412,8 @@ function displayDBInfo (cp, block, lang, direction) {
 	//console.log(spreadsheetRows)
 	
 	for (let i=0;i<chars.length;i++) {
-		out += buildDBInfoLine(chars[i], true)
+		//out += buildDBInfoLine(chars[i], true)
+		out += buildDBInfoLine(chars[i], true, cp, i, showAll)
 		}
 	
 	out += '</span>'
@@ -1496,47 +1423,65 @@ function displayDBInfo (cp, block, lang, direction) {
 	}
 
 
-function buildDBInfoLine (char, toplevel) {
+function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 		
 		hex = char.codePointAt(0).toString(16).toUpperCase()
 		while (hex.length < 4) hex = '0'+hex
 		
-		out = '<span class="dbCharContainer" onMouseOver="document.getElementById(\'chardata\').textContent = \'U+'+hex+': '+charData[char]+'\'"'
+		out = '<span class="dbCharContainer"'
 		if (!toplevel) out += ' style="margin-left: 3em;"'
-		out += '>'+char+' '
-		if (spreadsheetRows[char]) {
+		if (toplevel) out += '><span class="dbCharItem">'+char+'</span> '
+		else if (! showAll) out += '><span class="dbCharItem">'+char+'</span> '
+		else out += '><span class="dbCharItemLevel2">'+char+'</span> '
 		
+		// skip items with an x in the class column
+		var ignorable = false
+		if (spreadsheetRows[char] && spreadsheetRows[char][cols.class] && spreadsheetRows[char][cols.class].includes('x')) ignorable = true
+		
+		
+		out += '<span class="dbCharSubContainer" style="display:flex;flex-direction:column;">'
+
+		if (spreadsheetRows[char] && ignorable === false) {
+					
+			out += '<span class="dbCharInfo">'
+
 			// get transliteration
-			out += '<span><em>tl</em> '
-			if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transLoc]+'</span>'
-			else out += '-'
-			out += '</span>'
-			
+			if (spreadsheetRows[char][cols.transLoc] && spreadsheetRows[char][cols.transLoc] !== char) {
+				out += '<span><em>tl</em> '
+				if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transLoc]+'</span>'
+				else out += '-'
+				out += '</span>'
+				}
+
 			// get transcription
-			out += '<span><em>ts</em> '
-			if (spreadsheetRows[char][cols.transcription]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transcription]+'</span>'
-			else out += '-'
-			out += '</span>'
-			
+			if (cols.transcription) {
+				out += '<span><em>ts</em> '
+				if (spreadsheetRows[char][cols.transcription]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transcription]+'</span>'
+				else out += '-'
+				out += '</span>'
+				}
+
 			// get ipa info
-			out += '<span><em>ipa</em> '
-			if (spreadsheetRows[char][cols.ipaLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.ipaLoc]+'</span>'
-			else out += '-'
-			out += '</span>'
-			
+			if (cols.ipaLoc) {
+				out += '<span><em>ipa</em> '
+				if (spreadsheetRows[char][cols.ipaLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.ipaLoc]+'</span>'
+				else out += '-'
+				out += '</span>'
+				}
+
 			// get type
 			out += '<span><em>type</em> '
 			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
 			else out += '-'
 			out += '</span>'
-			
+
 			// get status
 			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
 				out += '<span><em>status</em> '
 				out += ' <span>'+spreadsheetRows[char][cols.statusLoc]+'</span>'
 				out += '</span>'
 				}
-			
+
 			// get name
 			if (spreadsheetRows[char][cols.nameLoc] && cols.nameLoc > 0) {
 				out += '<span><em>name</em> '
@@ -1544,26 +1489,67 @@ function buildDBInfoLine (char, toplevel) {
 				if (spreadsheetRows[char][cols.nnameLoc] && cols.nnameLoc > 0) out += ' ('+spreadsheetRows[char][cols.nnameLoc]+')'
 				out += '</span></span>'
 				}
-			
+
 			// add link to notes page
 			var blockfile = getScriptGroup(parseInt(hex,16), true)
-            if (blockfile) {
-				out += '<a title="Right-click to open notes file." href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">notes</a>'
-                }
-			
-			
+			//console.log(blockfile)
+			if (blockfile) {
+				out += '<a title="Right-click to open notes file." href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">details</a>'
+				}
+			out += '</span><span class="dbCharName">'	
+
+			// add unicode name
+			if (spreadsheetRows[char][cols.ucsName]) out += spreadsheetRows[char][cols.ucsName]
+			else {
+				for (let i=0;i<char.length;i++) {
+					if (i>0) out += ', '
+					out += 'U+'+hex+': '+charData[char[i]]
+					}
+				}
+			out += '</span>'	
 			}
 		
+		else {
+			// if class is x, just display ucs name
+			out += '<span class="dbCharInfo">'
+			out += '</span><span class="dbCharName">'	
+			
+			// add unicode name
+			var blockfile = getScriptGroup(parseInt(hex,16), true)
+			if (blockfile) {
+				for (let i=0;i<char.length;i++) {
+					if (i>0) out += ', '
+					out += 'U+'+hex+': '+charData[char[i]]
+					}
+				}
+			out += '</span>'	
+			}
+
 		out += '</span> '
+		out += '</span> '
+		
+		
 		// find related items
 		if (toplevel) {
-			for (item in spreadsheetRows) { 
-				if (item.length > 1 && item.includes(char) && spreadsheetRows[item][cols.key]) out += buildDBInfoLine(item, false)
+			if (showAll) {
+				for (item in spreadsheetRows) { 
+					if (item.length > 1 && item.includes(char) && spreadsheetRows[item][2] !== 'x') out += buildDBInfoLine(item, false, originStr, ptr, showAll)
+					}
+				}
+			else {
+				for (item in spreadsheetRows) { 
+					if (item.length > 1 && item.startsWith(char) && spreadsheetRows[item][2] !== 'x' && originStr.substr(ptr,item.length) === item) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
+					}
 				}
 			}
 		
 		return out
 }
+
+//function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
+
+
+
 
 function getData (script) {
     // adds link data to 'related links' expander
@@ -1981,7 +1967,7 @@ function makePalette (mappingTable) {
                 }
             else {
                 out += '<span class="t" onmouseover="showtrans(\''+charArray[j+1]+'\')" onmouseout="hidetrans()" onclick="add'
-                if (charArray[j+1].includes('-')) out += 'Vowel'
+                if (charArray[j+1] && charArray[j+1].includes('-')) out += 'Vowel'
                 out += '(\''+charArray[j+1]+'\')">'+charArray[j]+'</span>\n'
                 j++
                 }
@@ -2091,22 +2077,92 @@ function toggleInvisibles () {
 
 function parseSpreadsheet () {
     // create an object called spreadsheetRows from the Google spreadsheet data
+	// newStyleSpreadsheet is defined in the db.js file - if set, the character column is one higher
+	// it should eventually become the only pattern
 
     if (typeof window.spreadsheet == 'undefined') {
 		alert("Spreadsheet not loaded !")
 		return
 		}
     
-    // make an object from the spreadsheet
-    var temp = window.spreadsheet.split('\n')
-    window.spreadsheetRows = {}
-    for (var x=0; x<temp.length; x++) {
-        if (temp[x].trim() == '') continue
-        var items = temp[x].split('\t')
-        if (items[0] === '') continue
+    if (typeof window.newStyleSpreadsheet == 'undefined') {
+		// make an object from the spreadsheet
+		var temp = window.spreadsheet.split('\n')
+		window.spreadsheetRows = {}
+		for (var x=0; x<temp.length; x++) {
+			if (temp[x].trim() == '') continue
+			var items = temp[x].split('\t')
+			if (items[0] === '') continue
 
-        window.spreadsheetRows[items[0]] = ['0']
-        for (let i=1;i<items.length;i++) window.spreadsheetRows[items[0]].push(items[i])
-        }
-    //console.log(spreadsheetRows)
+			window.spreadsheetRows[items[0]] = ['0']
+			for (let i=1;i<items.length;i++) window.spreadsheetRows[items[0]].push(items[i])
+			}
+		}
+	else {
+		// make an object from the spreadsheet
+		var temp = window.spreadsheet.split('\n')
+		window.spreadsheetRows = {}
+		for (var x=0; x<temp.length; x++) {
+			if (temp[x].trim() == '') continue
+			var items = temp[x].split('\t')
+			if (items[1] === '') continue
+
+			window.spreadsheetRows[items[1]] = ['0']
+			for (let i=1;i<items.length;i++) window.spreadsheetRows[items[1]].push(items[i])
+			}
 	}
+	}
+	
+
+
+function makeLatinOnlyCharacterMap () {
+	// create a data object for the Latin only palette
+	// uses latinRegister from shared24/latinregister
+	
+	// quit if the spreadsheet hasn't been updated
+	if (typeof cols.class === 'undefined') {
+		console.log("justLatinMap exists. Quitting.")
+		return
+		}
+	
+	// get the data
+	var collector = []
+	for (item in spreadsheetRows) {
+		if (spreadsheetRows[item][cols.transLoc]) collector.push(spreadsheetRows[item][cols.transLoc])
+		if (cols.transcKey && spreadsheetRows[item][cols.transcKey]) collector.push(spreadsheetRows[item][cols.transcKey])
+		if (cols.ipaLoc && spreadsheetRows[item][cols.ipaLoc]) {
+			var items = spreadsheetRows[item][cols.ipaLoc].split(' ')
+			for (let i=0;i<items.length;i++) collector.push(items[i])
+			}
+		}
+	
+	// remove duplicates from collector
+	const uniqueSet = new Set(collector)
+	collector = [...uniqueSet]
+	
+	outObj = {}
+	for (let i=0;i<collector.length;i++) {
+		var asciiOnly = true
+		for (let c=0;c<collector[i].length;c++) {
+			if (collector[i].codePointAt(c) > 127) asciiOnly = false
+			continue
+			}
+		if (asciiOnly) continue
+		//if (collector[i].length === 1 && collector[i].codePointAt(0) < 127) continue
+		if (latinRegister[collector[i][0]]) { 
+			if (outObj[latinRegister[collector[i][0]]]) outObj[latinRegister[collector[i][0]]] +=  ' '+collector[i]
+			else outObj[latinRegister[collector[i][0]]] = latinRegister[collector[i][0]] + ' ' +collector[i]
+			}
+		else console.log('Register didn\'t have:', collector[i])
+		}
+	
+	var outArray = Object.values(outObj)
+	outArray.sort()
+	
+	window.justLatinMap = ''
+	for (i=0;i<outArray.length;i++) window.justLatinMap += outArray[i] + '\n'
+	
+	console.log('justLatinMap',justLatinMap)
+	}
+
+
