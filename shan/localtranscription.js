@@ -9,81 +9,25 @@
 
 function transliterate (str) {
 
-str += ' '
+str = ' '+str
 
-str = str.replace(/င/g, "ŋ")
-str = str.replace(/တ/g, "t")
-str = str.replace(/ထ/g, "tʰ")
-str = str.replace(/ပ/g, "p")
-str = str.replace(/မ/g, "m")
-str = str.replace(/ယ/g, "y")
-str = str.replace(/ရ/g, "r")
-str = str.replace(/လ/g, "l")
-str = str.replace(/ဝ/g, "w")
-str = str.replace(/သ/g, "s")
-str = str.replace(/ဢ/g, "ʔ")
-str = str.replace(/ိ/g, "i")
-str = str.replace(/ီ/g, "ī")
-str = str.replace(/ု/g, "u")
-str = str.replace(/ူ/g, "ū")
-str = str.replace(/ေ/g, "e")
-str = str.replace(/ဵ/g, "ė")
-str = str.replace(/း/g, "⁴")
-str = str.replace(/္/g, "͓")
-str = str.replace(/်/g, "ˣ")
-str = str.replace(/ျ/g, "y̆")
-str = str.replace(/ြ/g, "r̆")
-str = str.replace(/ွ/g, "ɔ")
-str = str.replace(/၊/g, ",")
-str = str.replace(/။/g, ".")
-str = str.replace(/ၢ/g, "ā")
-str = str.replace(/ၵ/g, "k")
-str = str.replace(/ၶ/g, "kʰ")
-str = str.replace(/ၷ/g, "g")
-str = str.replace(/ၸ/g, "c")
-str = str.replace(/ၹ/g, "z")
-str = str.replace(/ၺ/g, "ɲ")
-str = str.replace(/ၻ/g, "d")
-str = str.replace(/ၼ/g, "n")
-str = str.replace(/ၽ/g, "pʰ")
-str = str.replace(/ၾ/g, "f")
-str = str.replace(/ၿ/g, "b")
-str = str.replace(/ႀ/g, "θ")
-str = str.replace(/ႁ/g, "h")
-str = str.replace(/ႂ/g, "w̆")
-str = str.replace(/ႃ/g, "a")
-str = str.replace(/ႄ/g, "æ")
-str = str.replace(/ႅ/g, "æ̇")
-str = str.replace(/ႆ/g, "aʲ")
-str = str.replace(/ႇ/g, "²")
-str = str.replace(/ႈ/g, "³")
-str = str.replace(/ႉ/g, "⁵")
-str = str.replace(/ႊ/g, "⁶")
-str = str.replace(/႐/g, "0̣")
-str = str.replace(/႑/g, "1̣")
-str = str.replace(/႒/g, "2̣")
-str = str.replace(/႓/g, "3̣")
-str = str.replace(/႔/g, "4̣")
-str = str.replace(/႕/g, "5̣")
-str = str.replace(/႖/g, "6̣")
-str = str.replace(/႗/g, "7̣")
-str = str.replace(/႘/g, "8̣")
-str = str.replace(/႙/g, "9̣")
-str = str.replace(/႟/g, "o")
-str = str.replace(/၀/g, "0̤")
-str = str.replace(/၁/g, "1̤")
-str = str.replace(/၂/g, "2̤")
-str = str.replace(/၃/g, "3̤")
-str = str.replace(/၄/g, "4̤")
-str = str.replace(/၅/g, "5̤")
-str = str.replace(/၆/g, "6̤")
-str = str.replace(/၇/g, "7̤")
-str = str.replace(/၈/g, "8̤")
-str = str.replace(/၉/g, "9̤")
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
 
 
 return str.trim()
 }
+
+
+
+
 
 
 

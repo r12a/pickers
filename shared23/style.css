@@ -250,6 +250,7 @@ span.c {
 	border-radius: 3px;
 	cursor: pointer;
 	display: inline-block;
+	color: #a52a2a;
 	}
 span.c:hover {
 	background-color: #CF9;
