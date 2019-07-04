@@ -2,7 +2,7 @@ var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Scheherazade WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "50";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "3"; // number representing number of times 100px for height of text area
+	factoryDefaults.rows = "2.5"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "2"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'ar' // language to use for examples
 	factoryDefaults.uifont = 'Scheherazade WF'; // font name  for selection area (a single font, no quotes)
@@ -28,18 +28,34 @@ var template = {}
 
 
 
-var inputAids = [
-//{"title":"Show cursive forms", "dataVar":"showCursive", "dataLocn":"cursive", "dataShortTitle":"S", "type":"hint"},
-{"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
-{"title":"IPA to Arabic", "dataVar":"showIPATrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(ipaCharacterMap);makeKbdEventList(ipaCharacterMap);"},
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
-]
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Arabic text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+]
+
+
+
+var pulldown = [
 {"title":"Transcribe<br/>to LOC", "alt":"Convert Arabic text to an Library of Congress Latin transcription.", "warning": "Full transcription requires fully vowelled text!", "code":"doTranscription('toLOC')"},
+
 {"title":"Transcribe<br/>to ISO", "alt":"Convert Arabic text to an ISO Latin transcription.", "code":"doTranscription('toISO')"},
+]
+
+
+
+
+var inputAids = [
+//{"title":"Show cursive forms", "dataVar":"showCursive", "dataLocn":"cursive", "dataShortTitle":"S", "type":"hint"},
+{"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
+
+{"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
+
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+
+{"title":"IPA to Arabic", "dataVar":"showIPATrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(ipaCharacterMap);makeKbdEventList(ipaCharacterMap);"},
+
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 

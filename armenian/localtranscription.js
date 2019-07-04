@@ -5,106 +5,34 @@ function localtranscribe (direction, str) {
 	if (direction == 'reverse') { return reverse(str) }
 	}
 		
-		
-function transliterate (str) {
-str += '  '
 
-str = str.replace(/,/g, ",")
-str = str.replace(/«/g, "“")
-str = str.replace(/»/g, "”")
-str = str.replace(/Ա/g, "ạ")
-str = str.replace(/Բ/g, "ḅ")
-str = str.replace(/Գ/g, "g̣")
-str = str.replace(/Դ/g, "ḍ")
-str = str.replace(/Ե/g, "ẹ")
-str = str.replace(/Զ/g, "ẓ")
-str = str.replace(/Է/g, "ɛ̣")
-str = str.replace(/Ը/g, "ə̣")
-str = str.replace(/Թ/g, "ṭʰ")
-str = str.replace(/Ժ/g, "ʒ̣")
-str = str.replace(/Ի/g, "ị")
-str = str.replace(/Լ/g, "ḷ")
-str = str.replace(/Խ/g, "x̣")
-str = str.replace(/Ծ/g, "ʦ̣")
-str = str.replace(/Կ/g, "ḳ")
-str = str.replace(/Հ/g, "ḥ")
-str = str.replace(/Ձ/g, "ʣ̣")
-str = str.replace(/Ղ/g, "ʁ̣")
-str = str.replace(/Ճ/g, "ʧ̣")
-str = str.replace(/Մ/g, "ṃ")
-str = str.replace(/Յ/g, "ỵ")
-str = str.replace(/Ն/g, "ṇ")
-str = str.replace(/Շ/g, "ʃ̣")
-str = str.replace(/Ո/g, "ɔ̣")
-str = str.replace(/Չ/g, "ʧ̣ʰ")
-str = str.replace(/Պ/g, "p̣")
-str = str.replace(/Ջ/g, "ʤ̣")
-str = str.replace(/Ռ/g, "ṛ̇")
-str = str.replace(/Ս/g, "ṣ")
-str = str.replace(/Վ/g, "ṿ")
-str = str.replace(/Տ/g, "ṭ")
-str = str.replace(/Ր/g, "ṛ")
-str = str.replace(/Ց/g, "ʦ̣ʰ")
-str = str.replace(/Ւ/g, "ẉ")
-str = str.replace(/Փ/g, "p̣ʰ")
-str = str.replace(/Ք/g, "ḳʰ")
-str = str.replace(/Օ/g, "ọ")
-str = str.replace(/Ֆ/g, "f̣")
-str = str.replace(/՛/g, "!")
-str = str.replace(/՜/g, "!")
-str = str.replace(/՝/g, ";")
-str = str.replace(/՞/g, "?")
-str = str.replace(/ա/g, "a")
-str = str.replace(/բ/g, "b")
-str = str.replace(/գ/g, "g")
-str = str.replace(/դ/g, "d")
-str = str.replace(/ե/g, "e")
-str = str.replace(/զ/g, "z")
-str = str.replace(/է/g, "ɛ")
-str = str.replace(/ը/g, "ə")
-str = str.replace(/թ/g, "tʰ")
-str = str.replace(/ժ/g, "ʒ")
-str = str.replace(/ի/g, "i")
-str = str.replace(/լ/g, "l")
-str = str.replace(/խ/g, "x")
-str = str.replace(/ծ/g, "ʦ")
-str = str.replace(/կ/g, "k")
-str = str.replace(/հ/g, "h")
-str = str.replace(/ձ/g, "ʣ")
-str = str.replace(/ղ/g, "ʁ")
-str = str.replace(/ճ/g, "ʧ")
-str = str.replace(/մ/g, "m")
-str = str.replace(/յ/g, "y")
-str = str.replace(/ն/g, "n")
-str = str.replace(/շ/g, "ʃ")
-str = str.replace(/ո/g, "ɔ")
-str = str.replace(/չ/g, "ʧʰ")
-str = str.replace(/պ/g, "p")
-str = str.replace(/ջ/g, "ʤ")
-str = str.replace(/ռ/g, "ṙ")
-str = str.replace(/ս/g, "s")
-str = str.replace(/վ/g, "v")
-str = str.replace(/տ/g, "t")
-str = str.replace(/ր/g, "r")
-str = str.replace(/ց/g, "ʦʰ")
-str = str.replace(/ւ/g, "w")
-str = str.replace(/փ/g, "pʰ")
-str = str.replace(/ք/g, "kʰ")
-str = str.replace(/օ/g, "o")
-str = str.replace(/ֆ/g, "f")
-str = str.replace(/և/g, "eʷ")
-str = str.replace(/։/g, ".")
-str = str.replace(/֊/g, "-")
-str = str.replace(/․/g, ":")
-str = str.replace(/ﬓ/g, "mⁿ")
-str = str.replace(/ﬔ/g, "mᵉ")
-str = str.replace(/ﬕ/g, "mⁱ")
-str = str.replace(/ﬖ/g, "vⁿ")
-str = str.replace(/ﬗ/g, "mˣ")
+
+
+
+function transliterate (str) {
+
+str = ' '+str
+
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
 
 
 return str.trim()
 }
+
+
+
+
+
+
+
 
 
 

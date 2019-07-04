@@ -31,6 +31,7 @@ span.hint {
 	margin-right: 0px;
     margin-left: 0px;
 	font-size: 40%;
+	color: tan;
 	}
 .c { 
 	min-width: .5em;
@@ -86,7 +87,7 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
-    line-height: 1.4;
+    line-height: 1;
     vertical-align: baseline;
     }
 #kbd #vowels {
@@ -97,7 +98,6 @@ span.hint {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 2em;
     height: 5em;
     justify-content: space-between;
     margin: 0 .25em;
@@ -157,6 +157,12 @@ span.hint {
     vertical-align: middle;
 	margin-bottom: 1em;
     }
+#initials {
+    text-align: center;
+    font-size: 100%;
+    line-height: 1;
+    }
+
 #punctuation {
     text-align: center;
     font-size: 80%;
@@ -172,5 +178,6 @@ span.hint {
 #cursive {
     width: 4em;
     display: inline-block;
+	color: tan;
     }
 

@@ -8,41 +8,24 @@ function localtranscribe (direction, str) {
 
 
 function transliterate (str) {
-str += ' '
 
-str = str.replace(/ᨀ/g, "k")
-str = str.replace(/ᨁ/g, "g")
-str = str.replace(/ᨂ/g, "ŋ")
-str = str.replace(/ᨃ/g, "ᵑk")
-str = str.replace(/ᨄ/g, "p")
-str = str.replace(/ᨅ/g, "b")
-str = str.replace(/ᨆ/g, "m")
-str = str.replace(/ᨇ/g, "ᵐp")
-str = str.replace(/ᨈ/g, "t")
-str = str.replace(/ᨉ/g, "d")
-str = str.replace(/ᨊ/g, "n")
-str = str.replace(/ᨋ/g, "ⁿr")
-str = str.replace(/ᨌ/g, "c")
-str = str.replace(/ᨍ/g, "ɟ")
-str = str.replace(/ᨎ/g, "ɲ")
-str = str.replace(/ᨏ/g, "ᶮc")
-str = str.replace(/ᨐ/g, "y")
-str = str.replace(/ᨑ/g, "r")
-str = str.replace(/ᨒ/g, "l")
-str = str.replace(/ᨓ/g, "w")
-str = str.replace(/ᨔ/g, "s")
-str = str.replace(/ᨕ/g, "ɑ")
-str = str.replace(/ᨖ/g, "h")
-str = str.replace(/ᨗ/g, "i")
-str = str.replace(/ᨘ/g, "u")
-str = str.replace(/ᨙ/g, "e")
-str = str.replace(/ᨚ/g, "o")
-str = str.replace(/ᨛ/g, "ə")
-str = str.replace(/᨞/g, ",")
-str = str.replace(/᨟/g, "¶")
+str = ' '+str
+
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
+
 
 return str.trim()
 }
+
+
 
 
 

@@ -27,12 +27,25 @@ span.hint {
 	margin-right: 1px;
     margin-left: 2px;
 	font-size: 50%;
+	color: tan;
 	}
 .c { 
 	min-width: .75em;
 	text-align: center;
+	color: #666;
 	}
-
+.g {
+	margin: 0 .1em;
+	}
+.x {
+	display: none;
+	}
+.x .c {
+	color: #aaa;
+	}
+.spaceline {
+    margin-bottom: .5em;
+	}
     
     
 /* KEYBOARD */
@@ -63,11 +76,11 @@ span.hint {
     height: 14em;
     }
 #consonantGrid div {
-    white-space: normal;
+    white-space: nowrap;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 9em;
+    /*max-width: 12em;*/
     justify-content: space-between;
     }
 #translitGrid {
@@ -96,23 +109,31 @@ span.hint {
     justify-content: center;
     height: 14em;
     align-content: space-around;
-    margin-left: .25em;
+    margin-left: 1.5em;
     }
 #ivowelGrid {
     display: flex;
     flex-direction: column;
     height: 12em;
-    justify-content: space-between;
-    }
+    justify-content: flex-start;
+	line-height: 2em;
+	margin-right: 1.5em;
+	}
 #ivowelGrid div {
-    text-align: right;
+	justify-content: space-around;
+	display: flex;
     }
 #vowelGrid {
     display: flex;
     flex-direction: column;
     height: 14em;
     justify-content: space-between;
-    margin-left: 1em;
+    margin-left: 1.5em;
+	white-space: nowrap;
+    }
+#vowelGrid div {
+	justify-content: space-around;
+	display: flex;
     }
 #virama {
     width: 2em;
@@ -129,10 +150,9 @@ span.hint {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 5em;
     max-height: 8em;
     justify-content: space-between;
-    margin-left: 1.2em;
+    margin-left: 1.5em;
     line-height: 1.8;
     font-size: 90%;
     }
@@ -140,7 +160,7 @@ span.hint {
     text-align: center;
     font-size: 80%;
     line-height: 1.7;
-    margin-top: .5em;
+    margin-top: 1em;
     }
 #spaceEtc {
     text-align: center;

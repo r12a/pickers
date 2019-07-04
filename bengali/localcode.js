@@ -80,24 +80,9 @@ var keyboarddef = [
 ]
 
 
-var justLatinMap = `
-a ā æ ɑ
-d ḍ ɖ ʤ d͡ʒ
-e ẹ
-h ʰ ḥ h̽ ɦ
-i ī ĭ ị ị̄
-l l̥ l̥̄ l̥̣ l̥̣̄
-m ṁ m̐ m̽ ɱ
-n ṅ ṇ ñ n̈ ɳ ŋ ŋ̽
-o ô oʲ oʷ ọ ọʲ ọʷ ɔ ɔ̣
-r ṛ r̥ r̥̄ r̥̣ r̥̣̄ ɽ ɽ̇
-s ṣ ś ʂ ʃ ʃ̇ ʃ̈
-t ṭ t̽ ṯ ʈ ʧ t͡ʃ
-u ū ŭ ụ ụ̄
-y ý y̌ ẏ
-[ ~ ː ̃ ̣ “ ” ∅
-* ͓
-`
+
+
+
 
 globals.showISOCharMap = ''
 
@@ -154,59 +139,6 @@ y ý য ẏ \u{9DF}
 `
 
 
-
-
-var translitCharacterMap = `
-a ɑ া
-A ɑ আ
-b b ব
-B bʰ ভ
-c c চ
-C cʰ ছ
-d d দ ʤ জ ɖ ড
-D ʤʰ ঝ ɖʰ ঢ dʰ ধ
-e e ে
-E ẹ এ
-g g গ
-G gʰ ঘ
-h h হ h̽ ঃ
-i i ি ī ী
-I ị ই ị̄ ঈ
-k k ক
-K kʰ খ
-l l ল
-L l̥ ৢ l̥̄ ৣ l̥̣ ঌ l̥̣̄ ৡ
-m m ম m̽ ঁ
-n n ন ñ ঞ n̈ ণ
-N ŋ ঙ ŋ̽ ং
-o oʲ ৈ o ো oʷ ৌ
-O ɔ̣ অ ọʲ ঐ ọ ও ọʷ ঔ
-p p প
-P pʰ ফ
-r r র ɽ \u{9DC} ɽ̇ \u{9DD}
-R r̥ ৃ r̥̄ ৄ r̥̣ ঋ r̥̣̄ ৠ
-s ʃ̈ স ʃ শ ʃ̇ ষ
-t t ত ʈ ট t̽ ৎ
-T ʈʰ ঠ tʰ থ
-u u ু ū ূ
-U ụ উ ụ̄ ঊ
-y ý য ẏ \u{9DF}
-0 0 ০
-1 1 ১
-2 2 ২
-3 3 ৩
-4 4 ৪
-5 5 ৫
-6 6 ৬
-7 7 ৭
-8 8 ৮
-9 9 ৯
-/ ̣ ়
-| ¶ ॥
-. . ।
-: ː ৗ
-* ͓ ্
-`
 
 
 

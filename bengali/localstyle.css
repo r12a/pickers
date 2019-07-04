@@ -22,6 +22,7 @@ span.hint {
 	margin-right: 1px;
     margin-left: 2px;
 	font-size: 50%;
+	color: tan;
 	}
 .c { 
 	min-width: .75em;
@@ -51,11 +52,10 @@ span.hint {
     justify-content: center;
     }
 #consonantGrid div {
-    white-space: normal;
+    white-space: nowrap;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 7.2em;
     justify-content: space-between;
     line-height: 1.5;
     }
@@ -71,6 +71,7 @@ span.hint {
     justify-content: center;
     line-height: 1.5;
     align-content: flex-start;
+	margin-left: 1em;
     }
 #ivowelGrid {
     white-space: normal;
@@ -79,6 +80,7 @@ span.hint {
     justify-content: flex-end;
     line-height: 1.5;
     text-align: right;
+	margin-right: 1em;
     }
 #vowelGrid {
     white-space: normal;

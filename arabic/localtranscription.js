@@ -6,77 +6,28 @@
 	}
 
 
-function transliterate ( str ) { 
 
-str += '  '
-str = str.replace(/اللّٰه/g, "Allāh")
-str = str.replace(/\u200C/g, "ₓ")
-str = str.replace(/\u200D/g, "₊")
-str = str.replace(/ال/g, "ɑl")
-str = str.replace(/،/g, ",")
-str = str.replace(/؛/g, ";")
-str = str.replace(/؟/g, "?")
-str = str.replace(/ء/g, "ʔ")
-str = str.replace(/آ/g, "ɑ̄")
-str = str.replace(/أ/g, "ɑ͑")
-str = str.replace(/ؤ/g, "w͑")
-str = str.replace(/إ/g, "ɑ̜")
-str = str.replace(/ئ/g, "y͑")
-str = str.replace(/ا/g, "ɑ")
-str = str.replace(/ب/g, "b")
-str = str.replace(/ة/g, "ẗ")
-str = str.replace(/ت/g, "t")
-str = str.replace(/ث/g, "θ")
-str = str.replace(/ج/g, "ʒ")
-str = str.replace(/ح/g, "ħ")
-str = str.replace(/خ/g, "x")
-str = str.replace(/د/g, "d")
-str = str.replace(/ذ/g, "ð")
-str = str.replace(/ر/g, "r")
-str = str.replace(/ز/g, "z")
-str = str.replace(/س/g, "s")
-str = str.replace(/ش/g, "ʃ")
-str = str.replace(/ص/g, "s̴")
-str = str.replace(/ض/g, "d̴")
-str = str.replace(/ط/g, "t̴")
-str = str.replace(/ظ/g, "z̴")
-str = str.replace(/ع/g, "ʕ")
-str = str.replace(/غ/g, "ɣ")
-str = str.replace(/ـ/g, "_")
-str = str.replace(/ف/g, "f")
-str = str.replace(/ق/g, "q")
-str = str.replace(/ك/g, "k")
-str = str.replace(/ل/g, "l")
-str = str.replace(/م/g, "m")
-str = str.replace(/ن/g, "n")
-str = str.replace(/ه/g, "h")
-str = str.replace(/و/g, "w")
-str = str.replace(/ى/g, "ā")
-str = str.replace(/ي/g, "y")
-str = str.replace(/ً/g, "aⁿ")
-str = str.replace(/ٌ/g, "uⁿ")
-str = str.replace(/ٍ/g, "iⁿ")
-str = str.replace(/َ/g, "a")
-str = str.replace(/ُ/g, "u")
-str = str.replace(/ِ/g, "i")
-str = str.replace(/ّ/g, "ᵚ")
-str = str.replace(/ْ/g, "͓")
-str = str.replace(/٠/g, "0")
-str = str.replace(/١/g, "1")
-str = str.replace(/٢/g, "2")
-str = str.replace(/٣/g, "3")
-str = str.replace(/٤/g, "4")
-str = str.replace(/٥/g, "5")
-str = str.replace(/٦/g, "6")
-str = str.replace(/٧/g, "7")
-str = str.replace(/٨/g, "8")
-str = str.replace(/٩/g, "9")
-str = str.replace(/٪/g, "%")
-str = str.replace(/ٱ/g, "ɑ̃")
-str = str.replace(/۔/g, ".")
+function transliterate (str) {
+
+str = ' '+str
+
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
+
 
 return str.trim()
 }
+
+
+
+
 
 
 

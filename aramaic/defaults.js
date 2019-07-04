@@ -2,7 +2,7 @@ var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'East Syriac Adiabene' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "50";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2.5"; // number representing number of times 100px for height of text area
+	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.2"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'aii' // language to use for examples
 	factoryDefaults.uifont = 'East Syriac Adiabene'; // font name  for selection area (a single font, no quotes)
@@ -28,18 +28,27 @@ var template = {}
 
 
 
-var inputAids = [
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
-//{"title":"Transcribe to IPA", "dataVar":"showIPATrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(ipaCharacterMap);makeKbdEventList(ipaCharacterMap);"},
-//{"title":"Transcribe to IPA", "dataVar":"showLOCTrans", "dataLocn":"loctranscript", "dataShortTitle":"T", "type":"palette"},
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
-]
-
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Assyrian text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 //{"title":"Trans-<br/>scribe", "alt":"Convert Assyrian text to a Latin transcription.", "code":"doTranscription('transcription')"},
 //{"title":"Transcribe<br/>to IPA", "alt":"Convert Assyrian text to an *approximate* phonetic transcription.", "code":"doTranscription('toIPA')"},
 ]
 
+
+
+var pulldown = [
+]
+
+
+
+var inputAids = [
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+
+//{"title":"Transcribe to IPA", "dataVar":"showIPATrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(ipaCharacterMap);makeKbdEventList(ipaCharacterMap);"},
+//{"title":"Transcribe to IPA", "dataVar":"showLOCTrans", "dataLocn":"loctranscript", "dataShortTitle":"T", "type":"palette"},
+
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
+]
 

@@ -11,93 +11,27 @@
 
 
 
-
 function transliterate (str) {
-str += ' '
 
-str = str.replace(/\u09DC/g, "ɽ")
-str = str.replace(/\u09DD/g, "ɽ̇")
-str = str.replace(/\u09DF/g, "ẏ")
-str = str.replace(/।/g, ".")
-str = str.replace(/ঁ/g, "m̽")
-str = str.replace(/ং/g, "ŋ̽")
-str = str.replace(/ঃ/g, "h̽")
-str = str.replace(/অ/g, "ɔ̣")
-str = str.replace(/আ/g, "ɑ")
-str = str.replace(/ই/g, "ị")
-str = str.replace(/ঈ/g, "ị̄")
-str = str.replace(/উ/g, "ụ")
-str = str.replace(/ঊ/g, "ụ̄")
-str = str.replace(/ঋ/g, "r̥̣")
-str = str.replace(/ঌ/g, "l̥̣")
-str = str.replace(/এ/g, "ẹ")
-str = str.replace(/ঐ/g, "ọʲ")
-str = str.replace(/ও/g, "ọ")
-str = str.replace(/ঔ/g, "ọʷ")
-str = str.replace(/ক/g, "k")
-str = str.replace(/খ/g, "kʰ")
-str = str.replace(/গ/g, "g")
-str = str.replace(/ঘ/g, "gʰ")
-str = str.replace(/ঙ/g, "ŋ")
-str = str.replace(/চ/g, "c")
-str = str.replace(/ছ/g, "cʰ")
-str = str.replace(/জ/g, "ʤ")
-str = str.replace(/ঝ/g, "ʤʰ")
-str = str.replace(/ঞ/g, "ñ")
-str = str.replace(/ট/g, "ʈ")
-str = str.replace(/ঠ/g, "ʈʰ")
-str = str.replace(/ড/g, "ɖ")
-str = str.replace(/ঢ/g, "ɖʰ")
-str = str.replace(/ণ/g, "n̈")
-str = str.replace(/ত/g, "t")
-str = str.replace(/থ/g, "tʰ")
-str = str.replace(/দ/g, "d")
-str = str.replace(/ধ/g, "dʰ")
-str = str.replace(/ন/g, "n")
-str = str.replace(/প/g, "p")
-str = str.replace(/ফ/g, "pʰ")
-str = str.replace(/ব/g, "b")
-str = str.replace(/ভ/g, "bʰ")
-str = str.replace(/ম/g, "m")
-str = str.replace(/য/g, "ý")
-str = str.replace(/র/g, "r")
-str = str.replace(/ল/g, "l")
-str = str.replace(/শ/g, "ʃ")
-str = str.replace(/ষ/g, "ʃ̇")
-str = str.replace(/স/g, "ʃ̈")
-str = str.replace(/হ/g, "h")
-str = str.replace(/়/g, "ˑ")
-str = str.replace(/া/g, "ɑ")
-str = str.replace(/ি/g, "i")
-str = str.replace(/ী/g, "ī")
-str = str.replace(/ু/g, "u")
-str = str.replace(/ূ/g, "ū")
-str = str.replace(/ৃ/g, "r̥")
-str = str.replace(/ৄ/g, "r̥̄")
-str = str.replace(/ে/g, "e")
-str = str.replace(/ৈ/g, "oʲ")
-str = str.replace(/ো/g, "o")
-str = str.replace(/ৌ/g, "oʷ")
-str = str.replace(/্/g, "͓")
-str = str.replace(/ৎ/g, "t̽")
-str = str.replace(/ৗ/g, "ː")
-str = str.replace(/ৠ/g, "r̥̣̄")
-str = str.replace(/ৡ/g, "l̥̣̄")
-str = str.replace(/ৢ/g, "l̥")
-str = str.replace(/ৣ/g, "l̥̄")
-str = str.replace(/০/g, "0")
-str = str.replace(/১/g, "1")
-str = str.replace(/২/g, "2")
-str = str.replace(/৩/g, "3")
-str = str.replace(/৪/g, "4")
-str = str.replace(/৫/g, "5")
-str = str.replace(/৬/g, "6")
-str = str.replace(/৭/g, "7")
-str = str.replace(/৮/g, "8")
-str = str.replace(/৯/g, "9")
+str = ' '+str
+
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
+
 
 return str.trim()
 }
+
+
+
+
 
 
 

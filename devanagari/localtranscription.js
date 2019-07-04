@@ -7,107 +7,27 @@ function localtranscribe (direction, str) {
 		
 
 
+
 function transliterate (str) {
 
 str = ' '+str
 
-str = str.replace(/ँ/g, "ŋ̽")
-str = str.replace(/ं/g, "m̽")
-str = str.replace(/ः/g, "h̽")
-str = str.replace(/अ/g, "ạ")
-str = str.replace(/आ/g, "ạ̄")
-str = str.replace(/इ/g, "ị")
-str = str.replace(/ई/g, "ị̄")
-str = str.replace(/उ/g, "ụ")
-str = str.replace(/ऊ/g, "ụ̄")
-str = str.replace(/ऋ/g, "r̥̣")
-str = str.replace(/ऌ/g, "l̥̣")
-str = str.replace(/ऍ/g, "ệ")
-str = str.replace(/ऎ/g, "ẹ")
-str = str.replace(/ए/g, "ẹ̄")
-str = str.replace(/ऐ/g, "ạʲ")
-str = str.replace(/ऑ/g, "ộ")
-str = str.replace(/ऒ/g, "ọ")
-str = str.replace(/ओ/g, "ọ̄")
-str = str.replace(/औ/g, "ạʷ")
-str = str.replace(/क/g, "k")
-str = str.replace(/ख/g, "kʰ")
-str = str.replace(/ग/g, "g")
-str = str.replace(/घ/g, "gʰ")
-str = str.replace(/ङ/g, "ŋ")
-str = str.replace(/च/g, "c")
-str = str.replace(/छ/g, "cʰ")
-str = str.replace(/ज/g, "j")
-str = str.replace(/झ/g, "jʰ")
-str = str.replace(/ञ/g, "ɲ")
-str = str.replace(/ट/g, "ʈ")
-str = str.replace(/ठ/g, "ʈʰ")
-str = str.replace(/ड/g, "ɖ")
-str = str.replace(/ढ/g, "ɖʰ")
-str = str.replace(/ण/g, "ɳ")
-str = str.replace(/त/g, "t")
-str = str.replace(/थ/g, "tʰ")
-str = str.replace(/द/g, "d")
-str = str.replace(/ध/g, "dʰ")
-str = str.replace(/न/g, "n")
-str = str.replace(/ऩ/g, "ṉ")
-str = str.replace(/प/g, "p")
-str = str.replace(/फ/g, "pʰ")
-str = str.replace(/ब/g, "b")
-str = str.replace(/भ/g, "bʰ")
-str = str.replace(/म/g, "m")
-str = str.replace(/य/g, "y")
-str = str.replace(/र/g, "r")
-str = str.replace(/ल/g, "l")
-str = str.replace(/ळ/g, "ɭ")
-str = str.replace(/व/g, "ʋ")
-str = str.replace(/श/g, "ʃ")
-str = str.replace(/ष/g, "ʂ")
-str = str.replace(/स/g, "s")
-str = str.replace(/ह/g, "h")
-str = str.replace(/़/g, "ˑ")
-str = str.replace(/ा/g, "ā")
-str = str.replace(/ि/g, "i")
-str = str.replace(/ी/g, "ī")
-str = str.replace(/ु/g, "u")
-str = str.replace(/ू/g, "ū")
-str = str.replace(/ृ/g, "r̥")
-str = str.replace(/ॄ/g, "r̥̄")
-str = str.replace(/ॅ/g, "ê")
-str = str.replace(/ॆ/g, "e")
-str = str.replace(/े/g, "ē")
-str = str.replace(/ै/g, "aʲ")
-str = str.replace(/ॉ/g, "ô")
-str = str.replace(/ॊ/g, "o")
-str = str.replace(/ो/g, "ō")
-str = str.replace(/ौ/g, "aʷ")
-str = str.replace(/्/g, "͓")
-str = str.replace(/ॕ/g, "â")
-str = str.replace(/ॠ/g, "r̥̣̄")
-str = str.replace(/ॡ/g, "l̥̣̄")
-str = str.replace(/ॢ/g, "l̥")
-str = str.replace(/ॣ/g, "l̥̄")
-str = str.replace(/।/g, ".")
-str = str.replace(/॥/g, "¶")
-str = str.replace(/०/g, "0")
-str = str.replace(/१/g, "1")
-str = str.replace(/२/g, "2")
-str = str.replace(/३/g, "3")
-str = str.replace(/४/g, "4")
-str = str.replace(/५/g, "5")
-str = str.replace(/६/g, "6")
-str = str.replace(/७/g, "7")
-str = str.replace(/८/g, "8")
-str = str.replace(/९/g, "9")
-str = str.replace(/ॲ/g, "ậ")
-str = str.replace(/ॻ/g, "ɠ")
-str = str.replace(/ॼ/g, "ʄ")
-str = str.replace(/ॾ/g, "ɗ")
-str = str.replace(/ॿ/g, "ɓ")
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
+	}
 
 
 return str.trim()
 }
+
+
+
 
 
 

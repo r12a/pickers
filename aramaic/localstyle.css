@@ -34,6 +34,7 @@ span.hint {
 	margin-right: 1px;
     margin-left: 1px;
 	font-size: 40%;
+	color: tan;
 	}
 .c { 
 	min-width: .75em;
@@ -163,8 +164,9 @@ span.hint {
     }
 
 #cursive {
-    width: 4em;
+    width: 5em;
     display: inline-block;
+	color: tan;
     }
 
 #translit {

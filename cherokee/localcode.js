@@ -86,16 +86,6 @@ function event_toggleKbdShift () {
 
 
 
-var justLatinMap = `
-e ə̃ 
-; ː
-h ʰ
-l ɬ ˡ
-t ʦ ʧ
-w ʷ 
-? ʔ
-`
-
 
 
 

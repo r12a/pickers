@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Armenian character picker 23</title>
+<title>Armenian character picker 24</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared23/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared24/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,13 +14,15 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared23/code.js">  </script>
+<script src="../shared24/setup.js">  </script>
+<script src="../shared24/code.js">  </script>
+<script src="../shared24/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared23/pagetemplate.js">  </script>
+<script src="../shared24/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
+<script src="../../shared/scriptdb/armenian.js">  </script>
 <script src="localtranscription.js">  </script>
-<script src="composite-names.js"></script>
 <script src="/shared/fontlists/armenian.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
@@ -47,7 +49,7 @@
 
 
 
-<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+<div id="chardata"><span id="charname">Click S (shape lookup), R (type-assist), K (keyboard), or on characters below..</span></div>
 
 
 
@@ -107,49 +109,79 @@
 <span class="g"><span class="hint">mˣ</span><span class="c" data-uc=" " data-lc="ﬗ">ﬗ</span></span>
 </div>
 
-<div id="consonantGrid">      
-<span class="g"><span class="hint">b</span><span class="c">բ</span></span>
-<span class="g"><span class="hint">g</span><span class="c">գ</span></span>
-<span class="g"><span class="hint">d</span><span class="c">դ</span></span>
-<span class="g"><span class="hint">z</span><span class="c">զ</span></span>
-<span class="g"><span class="hint">tʰ</span><span class="c">թ</span></span>
-<span class="g"><span class="hint">ʒ</span><span class="c">ժ</span></span>
-<span class="g"><span class="hint">l</span><span class="c">լ</span></span>
-<span class="g"><span class="hint">x</span><span class="c">խ</span></span>
-<span class="g"><span class="hint">ʦ</span><span class="c">ծ</span></span>
-<span class="g"><span class="hint">k</span><span class="c">կ</span></span>
-<span class="g"><span class="hint">h</span><span class="c">հ</span></span>
-<span class="g"><span class="hint">ʣ</span><span class="c">ձ</span></span>
-<span class="g"><span class="hint">ʁ</span><span class="c">ղ</span></span>
-<span class="g"><span class="hint">ʧ</span><span class="c">ճ</span></span>
-<span class="g"><span class="hint">m</span><span class="c">մ</span></span>
-<span class="g"><span class="hint">y</span><span class="c">յ</span></span>
-<span class="g"><span class="hint">n</span><span class="c">ն</span></span>
-<span class="g"><span class="hint">ʃ</span><span class="c">շ</span></span>
-<span class="g"><span class="hint">ʧʰ</span><span class="c">չ</span></span>
+
+
+<div id="consonantGrid">
+            <div>
 <span class="g"><span class="hint">p</span><span class="c">պ</span></span>
-<span class="g"><span class="hint">ʤ</span><span class="c">ջ</span></span>
-<span class="g"><span class="hint">ṙ</span><span class="c">ռ</span></span>
-<span class="g"><span class="hint">s</span><span class="c">ս</span></span>
-<span class="g"><span class="hint">v</span><span class="c">վ</span></span>
 <span class="g"><span class="hint">t</span><span class="c">տ</span></span>
-<span class="g"><span class="hint">r</span><span class="c">ր</span></span>
-<span class="g"><span class="hint">ʦʰ</span><span class="c">ց</span></span>
-<span class="g"><span class="hint">w</span><span class="c">ւ</span></span>
+<span class="g"><span class="hint">ʦ</span><span class="c">ծ</span></span>
+<span class="g"><span class="hint">ʧ</span><span class="c">ճ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">կ</span></span>
+           </div>
+             <div>
 <span class="g"><span class="hint">pʰ</span><span class="c">փ</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">թ</span></span>
+<span class="g"><span class="hint">ʦʰ</span><span class="c">ց</span></span>
+<span class="g"><span class="hint">ʧʰ</span><span class="c">չ</span></span>
 <span class="g"><span class="hint">kʰ</span><span class="c">ք</span></span>
+           </div>
+           <div>
+<span class="g"><span class="hint">b</span><span class="c">բ</span></span>
+<span class="g"><span class="hint">d</span><span class="c">դ</span></span>
+<span class="g"><span class="hint">ʣ</span><span class="c">ձ</span></span>
+<span class="g"><span class="hint">ʤ</span><span class="c">ջ</span></span>
+<span class="g"><span class="hint">g</span><span class="c">գ</span></span>
+           </div>
+            <div>
 <span class="g"><span class="hint">f</span><span class="c">ֆ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">ս</span></span>
+<span class="g"><span class="hint">ʃ</span><span class="c">շ</span></span>
+<span class="g"><span class="hint">x</span><span class="c">խ</span></span>
+<span class="g"><span class="hint">h</span><span class="c">հ</span></span>
+            </div>
+            <div>
+<span class="g"><span class="hint">v</span><span class="c">վ</span></span>
+<span class="g"><span class="hint">z</span><span class="c">զ</span></span>
+<span class="g"><span class="hint">ʒ</span><span class="c">ժ</span></span>
+            </div>
+            <div>
+<span class="g"><span class="hint">m</span><span class="c">մ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ն</span></span>
+            </div>
+            <div>
+<span class="g"><span class="hint">r</span><span class="c">ր</span></span>
+<span class="g"><span class="hint">ṙ</span><span class="c">ռ</span></span>
+<span class="g"><span class="hint">ʁ</span><span class="c">ղ</span></span>
+<span class="g"><span class="hint">l</span><span class="c">լ</span></span>
+<span class="g"><span class="hint">y</span><span class="c">յ</span></span>
+<span class="g"><span class="hint">w</span><span class="c">ւ</span></span>
+            </div>
 </div>
+
+
+
+
  
  <div id="vowelGrid">
-<span class="g"><span class="hint">a</span><span class="c">ա</span></span>
+<div>
+<span class="g"><span class="hint">i</span><span class="c">ի</span></span>
+<span class="g"><span class="hint"></span><span class="c">&nbsp;</span></span>
+<span class="g"><span class="hint"></span><span class="c">&nbsp;</span></span>
+</div>
+<div>
 <span class="g"><span class="hint">e</span><span class="c">ե</span></span>
 <span class="g"><span class="hint">eᵛ</span><span class="c">և</span></span>
+<span class="g"><span class="hint">o</span><span class="c">օ</span></span>
+</div>
+<div>
 <span class="g"><span class="hint">ɛ</span><span class="c">է</span></span>
 <span class="g"><span class="hint">ə</span><span class="c">ը</span></span>
-<span class="g"><span class="hint">i</span><span class="c">ի</span></span>
 <span class="g"><span class="hint">ɔ</span><span class="c">ո</span></span>
-<span class="g"><span class="hint">o</span><span class="c">օ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">a</span><span class="c">ա</span></span>
+</div>
 </div>
 
 <div id="numberGrid">

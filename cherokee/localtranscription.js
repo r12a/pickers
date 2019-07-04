@@ -5,100 +5,28 @@ function localtranscribe (direction, str) {
 	}
 		
 		
+
+
 function transliterate (str) {
-	str += '  '
 
-str = str.toUpperCase()
+str = ' '+str
 
-str = str.replace(/Ꭰ/g, "a")
-str = str.replace(/Ꭱ/g, "e")
-str = str.replace(/Ꭲ/g, "i")
-str = str.replace(/Ꭳ/g, "o")
-str = str.replace(/Ꭴ/g, "u")
-str = str.replace(/Ꭵ/g, "v")
-str = str.replace(/Ꭶ/g, "ga")
-str = str.replace(/Ꭷ/g, "ka")
-str = str.replace(/Ꭸ/g, "ge")
-str = str.replace(/Ꭹ/g, "gi")
-str = str.replace(/Ꭺ/g, "go")
-str = str.replace(/Ꭻ/g, "gu")
-str = str.replace(/Ꭼ/g, "gv")
-str = str.replace(/Ꭽ/g, "ha")
-str = str.replace(/Ꭾ/g, "he")
-str = str.replace(/Ꭿ/g, "hi")
-str = str.replace(/Ꮀ/g, "ho")
-str = str.replace(/Ꮁ/g, "hu")
-str = str.replace(/Ꮂ/g, "hv")
-str = str.replace(/Ꮃ/g, "la")
-str = str.replace(/Ꮄ/g, "le")
-str = str.replace(/Ꮅ/g, "li")
-str = str.replace(/Ꮆ/g, "lo")
-str = str.replace(/Ꮇ/g, "lu")
-str = str.replace(/Ꮈ/g, "lv")
-str = str.replace(/Ꮉ/g, "ma")
-str = str.replace(/Ꮊ/g, "me")
-str = str.replace(/Ꮋ/g, "mi")
-str = str.replace(/Ꮌ/g, "mo")
-str = str.replace(/Ꮍ/g, "mu")
-str = str.replace(/Ᏽ/g, "mv")
-str = str.replace(/Ꮎ/g, "na")
-str = str.replace(/Ꮏ/g, "hna")
-str = str.replace(/Ꮐ/g, "nah")
-str = str.replace(/Ꮑ/g, "ne")
-str = str.replace(/Ꮒ/g, "ni")
-str = str.replace(/Ꮓ/g, "no")
-str = str.replace(/Ꮔ/g, "nu")
-str = str.replace(/Ꮕ/g, "nv")
-str = str.replace(/Ꮖ/g, "qa")
-str = str.replace(/Ꮗ/g, "qe")
-str = str.replace(/Ꮘ/g, "qi")
-str = str.replace(/Ꮙ/g, "qo")
-str = str.replace(/Ꮚ/g, "qu")
-str = str.replace(/Ꮛ/g, "qv")
-str = str.replace(/Ꮝ/g, "s")
-str = str.replace(/Ꮜ/g, "sa")
-str = str.replace(/Ꮞ/g, "se")
-str = str.replace(/Ꮟ/g, "si")
-str = str.replace(/Ꮠ/g, "so")
-str = str.replace(/Ꮡ/g, "su")
-str = str.replace(/Ꮢ/g, "sv")
-str = str.replace(/Ꮣ/g, "da")
-str = str.replace(/Ꮤ/g, "ta")
-str = str.replace(/Ꮥ/g, "de")
-str = str.replace(/Ꮦ/g, "te")
-str = str.replace(/Ꮧ/g, "di")
-str = str.replace(/Ꮨ/g, "ti")
-str = str.replace(/Ꮩ/g, "do")
-str = str.replace(/Ꮪ/g, "du")
-str = str.replace(/Ꮫ/g, "dv")
-str = str.replace(/Ꮬ/g, "dla")
-str = str.replace(/Ꮭ/g, "tla")
-str = str.replace(/Ꮮ/g, "dle")
-str = str.replace(/Ꮯ/g, "dli")
-str = str.replace(/Ꮰ/g, "dlo")
-str = str.replace(/Ꮱ/g, "dlu")
-str = str.replace(/Ꮲ/g, "dlv")
-str = str.replace(/Ꮳ/g, "tsa")
-str = str.replace(/Ꮴ/g, "tse")
-str = str.replace(/Ꮵ/g, "tsi")
-str = str.replace(/Ꮶ/g, "tso")
-str = str.replace(/Ꮷ/g, "tsu")
-str = str.replace(/Ꮸ/g, "tsv")
-str = str.replace(/Ꮹ/g, "wa")
-str = str.replace(/Ꮺ/g, "we")
-str = str.replace(/Ꮻ/g, "wi")
-str = str.replace(/Ꮼ/g, "wo")
-str = str.replace(/Ꮽ/g, "wu")
-str = str.replace(/Ꮾ/g, "wv")
-str = str.replace(/Ꮿ/g, "ya")
-str = str.replace(/Ᏸ/g, "ye")
-str = str.replace(/Ᏹ/g, "yi")
-str = str.replace(/Ᏺ/g, "yo")
-str = str.replace(/Ᏻ/g, "yu")
-str = str.replace(/Ᏼ/g, "yv")
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
 
-	return str.trim()
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! autoTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, autoTranslitArray[strArray[i]])
 	}
+
+
+return str.trim()
+}
+
+
+
 
 
 

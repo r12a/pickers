@@ -28,13 +28,28 @@ var template = {}
 
 
 
+var controls = [
+{"title":"Trans-<br/>literate", "alt":"Convert Balinese text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+]
+
+
+
+var pulldown = [
+{"title":"Balinese to LOC", "alt":"Convert Balinese text to an LOC Latin transcription.", "code":"doTranscription('toLatin')"},
+]
+
+
+
 var inputAids = [
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+{"title":"Shape lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape"},
+
+{"title":"Hint at confusables", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
+
 {"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+
+{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
 ]
 
-var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Balinese text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-{"title":"Balinese<br/>to LOC", "alt":"Convert Balinese text to an LOC Latin transcription.", "code":"doTranscription('toLatin')"},
-]
+
