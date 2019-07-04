@@ -1434,9 +1434,10 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 		else if (! showAll) out += '><span class="dbCharItem">'+char+'</span> '
 		else out += '><span class="dbCharItemLevel2">'+char+'</span> '
 		
-		// skip items with an x in the class column
+		// skip items with an x in the class column unless this is the top level
+		// ie. characters in the text will be reported, but not linked to - options
 		var ignorable = false
-		if (spreadsheetRows[char] && spreadsheetRows[char][cols.class] && spreadsheetRows[char][cols.class].includes('x')) ignorable = true
+		if (! toplevel && spreadsheetRows[char] && spreadsheetRows[char][cols.class] && spreadsheetRows[char][cols.class].includes('-')) ignorable = true
 		
 		
 		out += '<span class="dbCharSubContainer" style="display:flex;flex-direction:column;">'
@@ -1470,7 +1471,7 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 
 			// get status
 			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
-				out += '<span><em>status</em> '
+				out += '<span><em>usage</em> '
 				out += ' <span style="color:black; font-weight: bold;">'+spreadsheetRows[char][cols.statusLoc]+'</span>'
 				out += '</span>'
 				}
@@ -1536,12 +1537,12 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 		if (toplevel) {
 			if (showAll) {
 				for (item in spreadsheetRows) { 
-					if (item.length > 1 && item.includes(char) && spreadsheetRows[item][2] !== 'x') out += buildDBInfoLine(item, false, originStr, ptr, showAll)
+					if (((item.length > 1 && item.includes(char)) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(char))) && spreadsheetRows[item][cols.class] !== '-') out += buildDBInfoLine(item, false, originStr, ptr, showAll)
 					}
 				}
 			else {
 				for (item in spreadsheetRows) { 
-					if (item.length > 1 && item.startsWith(char) && spreadsheetRows[item][2] !== 'x' && originStr.substr(ptr,item.length) === item) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
+					if (((item.length > 1 && item.startsWith(char)) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(item))) && spreadsheetRows[item][cols.class] !== '-' && originStr.substr(ptr,item.length) === item) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
 					}
 				}
 			}
