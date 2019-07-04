@@ -1447,16 +1447,9 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 
 			// get transliteration
 			if (spreadsheetRows[char][cols.transLoc] && spreadsheetRows[char][cols.transLoc] !== char) {
-				out += '<span><em>tl</em> '
+				out += '<span>'
+				//out += '<span><em>tl</em> '
 				if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transLoc]+'</span>'
-				else out += '-'
-				out += '</span>'
-				}
-
-			// get transcription
-			if (cols.transcription) {
-				out += '<span><em>ts</em> '
-				if (spreadsheetRows[char][cols.transcription]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transcription]+'</span>'
 				else out += '-'
 				out += '</span>'
 				}
@@ -1478,8 +1471,18 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 			// get status
 			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
 				out += '<span><em>status</em> '
-				out += ' <span>'+spreadsheetRows[char][cols.statusLoc]+'</span>'
+				out += ' <span style="color:black; font-weight: bold;">'+spreadsheetRows[char][cols.statusLoc]+'</span>'
 				out += '</span>'
+				}
+
+			// get transcription
+			if (cols.othertranscriptions) {
+				for (let t=0;t<cols.othertranscriptions.length;t++) {
+					out += '<span><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
+					if (spreadsheetRows[char][cols.othertranscriptions[t][0]]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.othertranscriptions[t][0]]+'</span>'
+					else out += ' -'
+					out += '</span>'
+					}
 				}
 
 			// get name
