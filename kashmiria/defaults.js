@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Awami Nastaliq WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Noto Nastaliq Urdu WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "48";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "3"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "2"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'ks' // language to use for examples
-	factoryDefaults.uifont = 'Awami Nastaliq WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Noto Nastaliq Urdu WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "24";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "rtl" // indicates the base direction for the selection area
