@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Make set</title>
+
+<!-- creates markup for a list of Latin characters -->
+
+<script type="text/javascript" src="../../uniview/u.js"></script>
+<script type="text/javascript" src="../../uniview/descriptions.js"></script>
+<script type="text/javascript">
+
+
+
+function makeCharsetObject () {
+	// takes a list of characters or character sequences from  Google sheet and makes a javascript set 
+	
+	charArray = document.getElementById('inputArea').value.split('\n')
+	
+	var out = 'var consonants = new Set(['
+	for (i=0;i<charArray.length;i++) {
+		if (charArray[i].trim() != '') out += "'"+charArray[i].trim()+"', "
+		}
+	
+	out += '])'
+
+	return out
+	}
+
+	
+</script>
+<style>
+p, input, #character, #inputArea  { font-size: 200%; }
+</style>
+</head>
+
+<body>
+<p>Turn a column of characters into a JS set</p>
+<p>Copy a column of characters here:</p>
+<p><button onClick="document.getElementById('inputArea').value = '';">Clear input</button></p>
+<p>&nbsp;
+<textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;"></textarea></p>
+
+<p><button type="submit" onClick="document.getElementById('output').value  = makeCharsetObject(document.getElementById('inputArea').value); document.getElementById('output').select(); return false;">Create set!</button></p>
+
+<p>&nbsp;
+<textarea id="output" style="width: 90%; height: 600px;"></textarea></p>
+
+</body>
+</html>
