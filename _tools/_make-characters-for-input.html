@@ -16,7 +16,7 @@ function makeList (list, cs) {
     var transarray = []
 	var transcol = document.getElementById('col').value
     var temp = list.split('\n')
-     console.log(temp)
+    console.log(temp, 'transcol',transcol)
    for (let i=0;i<temp.length;i++) {
         temp[i] = temp[i].trim()
         if (temp[i]) {
@@ -91,7 +91,9 @@ p, input, #character, #inputArea  { font-size: 100%; }
     <button type="submit" onClick="
     checked = false; 
     document.getElementById('output').value  = makeList(document.getElementById('inputArea').value, checked); 
-    document.getElementById('output').select(); return false;
+    document.getElementById('output').focus(); 
+	document.getElementById('output').select();
+	return false;
     ">Create spans!</button></p>
 
 <p>&nbsp;
