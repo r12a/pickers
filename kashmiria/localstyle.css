@@ -33,6 +33,7 @@
     }
 .spaceline {
     margin-bottom: 0;
+	line-height: 2;
     }
 
 
@@ -40,7 +41,7 @@
 span.hint { 
 	margin-right: 1px;
     margin-left: 2px;
-	font-size: 60%;
+	font-size: 70%;
 	color: tan;
 	}
 .c { 
@@ -61,7 +62,11 @@ span.hint {
 
 #keyboard { display: none; }
 
-
+.block {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
 
 
 
@@ -78,7 +83,7 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     }
 #consonantGrid > span {
     min-width: 1em;
@@ -89,7 +94,7 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
-    line-height: 1.5;
+    line-height: 2;
     vertical-align: baseline;
     }
 #vowelGrid {
@@ -98,18 +103,18 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 0 .5em;
+    margin: 0 .5em 0 0;
     line-height: 2;
     /*border: 1px solid #ccc;
     border-radius: .3em;*/
-    padding: .2em .5em;
+    padding: .2em .5em .2em 0;
     }
 #vowelGrid div {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     max-height: 15em;
-    justify-content: flex-end;
+    justify-content: space-between;
     }
 #numberGrid {
     white-space: normal;
@@ -179,3 +184,14 @@ span.hint {
 	color: tan;
     }
 
+#alef {
+    display: flex;
+    align-self: center;
+    width: 1em;
+    justify-content: center;
+    margin-left: 1em;
+}
+#alef > span {
+	padding: 4em 0;
+	width: 1em;
+}
