@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Help for Tifinagh character picker 23</title>
+<link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../shared23/style.css" />
+<link rel="stylesheet" type="text/css" href="../localstyle.css" />
+<script src="/shared/code/boilerplate.js" type="text/javascript"></script>
+<script type="text/javascript" src="/shared/code/toc_2016.js"></script>
+<script type="text/javascript" src="../../shared23/helptemplate.js"></script>
+</head>
+
+<body class="app notes">
+<header>
+  <div id="header-boilerplate"></div>
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Tifinagh picker','');</script> 
+</header>
+
+
+<h1>Tifinagh picker notes/help</h1>
+
+
+<aside class="sidebar">
+  <h2 class="notoc flush"><a id="tochead">Contents</a></h2>
+  <div id="toc"><!-- placeholder --></div>
+  <div class="noprint">
+        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="../index.html">Tifinagh picker</a></p>
+        <p><a href="/scripts/links?script=tifinagh">Tifinagh script links</a></p>
+        <p><a href="/pickers/">List of pickers </a></p>
+  </div>
+</aside>     
+
+<p id="status">Updated  <!-- #BeginDate format:En2 -->17-Dec-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=tifinagh" title="Show all blog posts tagged with 'tifinagh'">tifinagh</a></p>
+
+<p>This Unicode character picker allows you to produce or analyse runs of Tifinagh text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[tifinagh%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/tifinagh">the Github commit list</a>.</p>
+
+
+<section id="basics">
+</section>
+<script>
+var direction = 'ltr'
+document.getElementById('basics').innerHTML = addBasicUse(direction)
+</script>
+
+
+<section id="about">
+<h2 href="#about">About the chart</h2>
+      <p>Includes characters in the Unicode <a href="/uniview/?block=tifinagh" target="_blank">Tifinagh</a> block. </p>
+<div id="aboutBP">
+</div>
+<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
+</script>
+
+</section>
+
+
+
+<section id="top_controls">
+<h2 href="#top_controls">Controls above the text area</h2>
+<div id="controlsAbove1"></div>
+<script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
+
+       <p><b class="leadin">Transliterate.</b> Converts the contents of the text area to a Latin transliteration that provides a one-to-one correspondence between  Tifinagh and Latin symbols.</p>
+<p>The transliteration scheme  was developed for this picker, and, where possible, uses  symbols that represent sounds typically associated with their Tifinagh equivalents, rather than the sometimes fairly arbitrary selection of diacritics found in other systems. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription, but the process is reversible (unlike most  transcriptions).</p>
+
+<p><b class="leadin">Tifinagh to IRCAM.</b> The algorithm  generates Tifinagh text in line with a transcription used in particular for northern Berber transcriptions of Neo-Tifinagh. This still needs a little refinement (suggestions welcome).</p>
+
+<div id="controlsAbove2"></div>
+<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+
+</section>
+
+<section id="secondaryText">
+</section>
+<script>document.getElementById('secondaryText').innerHTML = addSecondaryText()</script>
+
+
+
+<section id="input_aids">
+<h2 href="#input_aids">Input aids</h2>
+
+<div id="inputAids1"></div>
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, hinting, shape, latin, translit')</script>
+
+
+    <p><b class="leadin">IPA to Tifinagh. </b>Displays a panel of lowercase phonetic symbols. As you click on them the picker generates Tifinagh text in line with some rough phonetic principles. Think of this as a way to speed things up, rather than a foolproof system.     It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>.</p>
+    
+    
+<div id="inputAids2"></div>
+<script>document.getElementById('inputAids2').innerHTML = addInputAids('keyboard')</script>
+
+</section>
+
+
+
+<section id="yellow_controls">
+</section>
+<script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
+
+
+
+<section id="more_controls">
+</section>
+<script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+</body>
+<script type="text/javascript">
+createtoc(3);
+</script>
+</html>
