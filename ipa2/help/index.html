@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Help for IPA character picker 23</title>
+<link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../shared23/style.css" />
+<link rel="stylesheet" type="text/css" href="../localstyle.css" />
+<script src="/shared/code/boilerplate.js" type="text/javascript"></script>
+<script type="text/javascript" src="/shared/code/toc_2016.js"></script>
+<script type="text/javascript" src="../../shared23/helptemplate.js"></script>
+</head>
+
+<body class="app notes">
+<header>
+  <div id="header-boilerplate"></div>
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','IPA picker','');</script> 
+</header>
+
+
+<h1>IPA picker notes/help</h1>
+
+
+<aside class="sidebar">
+  <h2 class="notoc flush"><a id="tochead">Contents</a></h2>
+  <div id="toc"><!-- placeholder --></div>
+  <div class="noprint">
+        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="../index.html">IPA picker</a></p>
+        <p><a href="/scripts/links?script=latin">Latin script links</a></p>
+        <p><a href="/pickers/">List of pickers </a></p>
+  </div>
+</aside>     
+
+<p id="status">Updated  <!-- #BeginDate format:En2 -->13-Dec-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=ipa" title="Show all blog posts tagged with 'ipa'">ipa</a></p>
+
+<p>This Unicode character picker allows you to produce or analyse runs of IPA text. Character pickers are especially useful for people who don't know a writing system well, as characters are displayed in ways that aid identification.</p>
+<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[ipa%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/ipa">the Github commit list</a>.</p>
+
+
+<section id="basics">
+</section>
+<script>
+var direction = 'ltr'
+document.getElementById('basics').innerHTML = addBasicUse(direction)
+</script>
+
+
+<section id="about">
+<h2 href="#about">About the chart</h2>
+      <p>Includes all the symbols in <a href="http://www.arts.gla.ac.uk/IPA/IPA_chart_(C)2005.pdf">the standard IPA chart.</a> The table draws together characters from several Unicode blocks.  There are also a number of additional diacritics and symbols requested by phoneticians using the chart.</p>
+<p> Many characters are arranged similarly to the standard IPA chart. The trill and tap or flap rows of the standard chart have been merged to save space. The same applies to the approximant and lateral approximant rows. Non-pulmonic symbols were also added to the last two rows of the table for the same reason.</p>
+<div id="aboutBP">
+</div>
+<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
+</script>
+
+</section>
+
+
+
+<section id="top_controls">
+<h2 href="#top_controls">Controls above the text area</h2>
+<div id="controlsAbove1"></div>
+<script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
+
+      <!--p><b class="leadin">Transliterate.</b> <strong></strong>Converts the contents of the text area to a Latin transliteration that provides a single correspondence between each IPA symbol and a Latin symbol. It doesn't lead to a good phonetic transcription, but the process is reversible (unlike most phonetic transcriptions).</p-->
+      
+
+<div id="controlsAbove2"></div>
+<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+
+</section>
+
+<section id="secondaryText">
+</section>
+<script>document.getElementById('secondaryText').innerHTML = addSecondaryText()</script>
+
+
+
+<section id="input_aids">
+<h2 href="#input_aids">Input aids</h2>
+
+<div id="inputAids1"></div>
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro')</script>
+
+
+<p><b class="leadin">Type characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  typing IPA, and sets up the <strong>Latin type-in mode</strong>. (This can be switched on/off by hitting the ` key.)</p>
+    <p>As you type, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or click directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already see the character you want, just continue typing.)</p>
+    <p style="text-align:center;"><img src="type_characters.png" alt=""></p>
+    <p>Keys that produce such suggestions are highlighted in orange in a panel that appears below the text area. You can also click on the items in that panel in order to insert them. </p>
+<p style="text-align:center;"><img src="latin_panel.png" alt=""></p>
+<p>In general, alternative characters are associated with a key on the keyboard that resembles them when displayed – eg. ɣ will usually be brought up by clicking on the 'y' key (rather than, say 'g'). Diacritics are accessed using various non-alpha keys, and tend to be grouped by function or position.</p>
+
+<div id="inputAids2"></div>
+<script>document.getElementById('inputAids2').innerHTML = addInputAids('keyboard')</script>
+
+<p>The keyboard contains a subset of the characters in the default view, which are arranged as per the <a href="http://www.phon.ucl.ac.uk/resource/phonetics/">Unicode Phonetic Keyboard (UCL)</a> v1.01 designed by Mark Huckvale.</p>
+
+</section>
+
+
+
+<section id="yellow_controls">
+</section>
+<script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
+
+
+
+<section id="more_controls">
+</section>
+<script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+</body>
+<script type="text/javascript">
+createtoc(3);
+</script>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>IPA picker 24</title>
+
+<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="../shared24/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="defaults.js">  </script>
+<script src="../shared24/setup.js">  </script>
+<script src="../shared24/code.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared24/pagetemplate.js">  </script>
+<script src="/scripts/linkdata/linkdb.js"></script>
+
+<script src="../../shared/scriptdb/ipa.js">  </script>
+<!--script src="localtranscription.js">  </script-->
+<script src="/shared/fontlists/ipafonts.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+
+
+
+<div id="tables" dir="ltr">
+  
+<div class="kbdWrapper"><div id="keyboard"></div></div>
+
+
+<div id="alphabet" class="default">
+
+<div class="spaceline">
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+<div id="phoneticInfo" style="color: gray; line-height: 1; text-align: center; font-size: 70%; font-family: sans-serif;">&nbsp;</div>
+
+  <table id="kbd">
+    <tr>
+      <td rowspan="2"><table id="consonants">
+   <tr>
+  <th>labial</th>
+  <th>dental</th>
+  <th>alveolar</th>
+  <th>retrofl.</th>
+  <th>palatal</th>
+  <th>velar</th>
+  <th>uvular</th>
+  <th>pharyng.</th>
+  <th>epiglott.</th>
+  <th>glottal</th>
+  </tr>
+        <tr>
+          <td><span class="c" title="Unvoiced bilabial implosive">&#x01A5;</span><span class="c" title="Voiced bilabial implosive">&#x0253;</span></td>
+         <td>&nbsp;</td>
+<td><span class="c" title="Unvoiced alveolar implosive">&#x01AD;</span><span class="c" title="Voiced alveolar implosive">&#x0257;</span></td>
+         <td></td>
+<td><span class="c" title="Unvoiced palatal implosive">&#x0188;</span><span class="c" title="Voiced palatal implosive">&#x0284;</span></td>
+<td><span class="c" title="Unvoiced velar implosive">&#x0199;</span><span class="c" title="Voiced velar implosive">&#x0260;</span></td>
+<td><span class="c" title="Unvoiced uvular implosive">&#x02A0;</span><span class="c" title="Voiced uvular implosive">&#x029B;</span></td>
+          <td></td>
+<td></td>
+          <td></td>
+        </tr>
+       <tr>
+          <td><span class="c" title="Unvoiced bilabial plosive">&#x0070;</span><span class="c" title="Voiced bilabial plosive">&#x0062;</span></td>
+       <td><span class="c" title="Unvoiced dental plosive">&#x0074;</span><span class="c" title="Voiced dental plosive">&#x0064;</span></td>
+<td></td>
+       <td><span class="c" title="Unvoiced retroflex plosive">&#x0288;</span><span class="c" title="Voiced retroflex plosive">&#x0256;</span></td>
+<td><span class="c" title="Unvoiced palatal plosive">&#x0063;</span><span class="c" title="Voiced palatal plosive">&#x025F;</span></td>
+<td><span class="c" title="Unvoiced velar plosive">&#x006B;</span><span class="c" title="Voiced velar plosive">&#x0261;</span></td>
+<td><span class="c" title="Unvoiced uvular plosive">&#x0071;</span><span class="c" title="Voiced uvular plosive">&#x0262;</span></td>
+          <td></td>
+<td><span class="c" title="Epiglottal plosive">&#x02A1;</span></td>
+          <td><span class="c" title="Glottal plosive">&#x0294;</span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        <td><span class="c" title="Voiceless dental affricate">t͡s</span><span class="c" title="Voiceless dental affricate">d͡z</span></td>
+<td><span class="c">t͡ʃ</span><span class="c">d͡ʒ</span><span class="c" title="Simultaneous unvoiced postalveolar &amp; velar fricative">t͡ɕ</span><span class="c" title="Simultaneous unvoiced postalveolar &amp; velar fricative">d͡ʑ</span></td>
+        <td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+          <td></td>
+<td></td>
+          <td></td>
+        </tr>
+         <tr>
+          <td><span class="c" title="Unvoiced bilabial fricative">&#x0278;</span><span class="c" title="Voiced bilabial fricative">&#x03B2;</span><span class="c" title="Unvoiced labiodental fricative">&#x0066;</span><span class="c">&#x0076;</span></td>
+         <td><span class="c" title="Unvoiced dental fricative">&#x03B8;</span><span class="c">&#x00F0;</span></td>
+<td><span class="c" title="Unvoiced alveolar fricative">&#x0073;</span><span class="c">&#x007A;</span><span class="c" title="Unvoiced postalveolar fricative">&#x0283;</span><span class="c">&#x0292;</span><span class="c">&#x0267;</span><span class="c" title="Voiceless alveolo-palatal fricative">&#x0255;</span><span class="c">&#x0291;</span><span class="c" title="Unvoiced alveolar lateral fricative">&#x026C;</span><span class="c">&#x026E;</span></td>
+         <td><span class="c" title="Unvoiced retroflex fricative">&#x0282;</span><span class="c">&#x0290;</span></td>
+<td><span class="c" title="Unvoiced palatal fricative">&#x00E7;</span><span class="c">&#x029D;</span></td>
+<td><span class="c" title="Unvoiced velar fricative">&#x0078;</span><span class="c">&#x0263;</span></td>
+<td><span class="c" title="Unvoiced uvular fricative">&#x03C7;</span><span class="c">&#x0281;</span></td>
+          <td><span class="c" title="Unvoiced pharyngeal fricative">&#x0127;</span><span class="c">&#x0295;</span></td>
+<td><span class="c" title="Voiceless epiglottal fricative">&#x029C;</span><span class="c">&#x02A2;</span></td>
+          <td><span class="c" title="Unvoiced glottal fricative">&#x0068;</span><span class="c">&#x0266;</span></td>
+        </tr>
+       <tr>
+          <td><span class="c" title="Bilabial nasal">&#x006D;</span><span class="c">&#x0271;</span></td>
+       <td></td>
+<td><span class="c" title="Alveolar nasal">&#x006E;</span></td>
+       <td><span class="c" title="Retroflex nasal">&#x0273;</span></td>
+<td><span class="c" title="Palatal nasal">&#x0272;</span></td>
+<td><span class="c" title="Velar nasal">&#x014B;</span></td>
+<td><span class="c" title="Uvular nasal">&#x0274;</span></td>
+          <td></td>
+<td></td>
+          <td></td>
+        </tr>
+         <tr>
+          <td><span class="c">&#x028B;</span><span class="c">&#x0265;</span><span class="c" title="Voiceless labial velar plosive">&#x028D;</span><span class="c" title="Voiced labial velar approximant">&#x0077;</span></td>
+         <td></td>
+<td><span class="c">&#x0279;</span><span class="c">&#x006C;</span><span class="c">&#x026B;</span></td>
+         <td><span class="c" title="Retroflex approximant">&#x027B;</span><span class="c">&#x026D;</span></td>
+<td><span class="c" title="Palatal approximant">&#x006A;</span><span class="c">&#x028E;</span></td>
+<td><span class="c" title="Velar approximant">&#x0270;</span><span class="c">&#x029F;</span></td>
+<td></td>
+          <td></td>
+<td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+       <tr>
+          <td><span class="c" title="Bilabial trill">&#x0299;</span><span class="c">&#x2C71;</span></td>
+       <td></td>
+<td><span class="c" title="Alveolar trill">&#x0072;</span><span class="c" title="Alveolar tap or flap">&#x027E;</span><span class="c">&#x027A;</span></td>
+       <td><span class="c" title="Retroflex tap or flap">&#x027D;</span></td>
+<td></td>
+<td></td>
+<td><span class="c" title="Uvular trill">&#x0280;</span></td>
+          <td></td>
+<td></td>
+          <td></td>
+      </tr>
+        <tr>
+          <td><span class="c" title="Bilabial click">&#x0298;</span></td>
+        <td><span class="c" title="Dental click">&#x01C0;</span></td>
+<td><span class="c">&#x01C3;</span><span class="c">ǂ</span><span class="c">&#x01C1;</span></td>
+        <td>&nbsp;</td>
+<td></td>
+<td>&nbsp;</td>
+<td></td>
+          <td></td>
+<td></td>
+          <td><span class="c" title="Null">∅</span></td>
+        </tr>
+      </table></td>
+      <td><div id="vowels" style="width: 270px;">
+        <div style="position:relative;">
+        <span class="c" style="position:absolute; left: 2px;" title="High front vowel unrounded">i</span>
+        <span class="c" style="position:absolute; left: 30px;" title="High front vowel rounded">y</span>
+        <span class="c" style="position:absolute; left: 104px;" title="High central vowel unrounded">ɨ</span>
+        <span class="c" style="position:absolute; left: 132px;" title="High central vowel rounded">ʉ</span>
+        <span class="c" style="position:absolute; left: 198px;" title="High back vowel unrounded">ɯ</span>
+        <span class="c" style="position:absolute; left: 238px;" title="High back vowel rounded">u</span>
+        </div>
+        <div style="position:relative;">
+        <span class="c" style="position:absolute; left:  56px;" title="Semi-high front vowel unrounded">ɪ</span>
+        <span class="c" style="position:absolute; left: 80px;" title="Semi-high front vowel rounded">ʏ</span>
+        <span class="c" style="position:absolute; left:  180px;" title="Semi-high back vowel rounded">ʊ</span>
+        </div>
+        <div style="position:relative;">
+        <span class="c" style="position:absolute; left:  32px;" title="Upper mid front vowel unrounded">e</span>
+        <span class="c" style="position:absolute; left:  65px;" title="Upper mid front vowel rounded">ø</span>
+        <span class="c" style="position:absolute; left:  120px;" title="Upper-mid central unrounded vowel">ɘ</span>
+        <span class="c" style="position:absolute; left:  154px;" title="Mid central vowel rounded">ɵ</span>
+        <span class="c" style="position:absolute; left:  200px;" title="Upper mid back vowel unrounded">ɤ</span>
+        <span class="c" style="position:absolute; left:  238px;" title="Upper mid back vowel rounded">o</span>
+        </div>
+        <div style="position:relative;"> 
+        <span class="c" style="position:absolute; left: 145px;" title="Mid central vowel unrounded">ə</span>
+        </div>
+        <div style="position:relative;">
+        <span class="c" style="position:absolute; left: 70px;" title="Lower mid front vowel unrounded">ɛ</span>
+        <span class="c" style="position:absolute; left: 104px;" title="Lower mid front vowel rounded">œ</span>
+        <span class="c" style="position:absolute; left: 136px;" title="Lower-mid central unrounded vowel">ɜ</span>
+        <span class="c" style="position:absolute; left: 170px;" title="Lower-mid central rounded vowel">ɞ</span>
+        <span class="c" style="position:absolute; left: 200px;" title="Lower mid back vowel unrounded">ʌ</span>
+        <span class="c" style="position:absolute; left: 238px;" title="Lower mid back vowel rounded">ɔ</span>
+        </div>
+        <div style="position:relative;"> 
+        <span class="c" style="position:absolute; left: 82px;" title="Lower mid front vowel">æ</span>
+        <span class="c" style="position:absolute; left: 166px;" title="Lower central vowel rounded">ɐ</span>	
+      </div>
+        <div style="position:relative;"> 
+        <span class="c" style="position:absolute; left: 108px;" title="Low front vowel unrounded">a</span>
+         <span class="c" style="position:absolute; left: 142px;" title="Low front vowel rounded">ɶ</span>
+         <span class="c" style="position:absolute; left: 200px;" title="Low back vowel unrounded">ɑ</span>
+         <span class="c" style="position:absolute; left: 238px;" title="Low back vowel rounded">ɒ</span>
+        </div>
+      </div>
+      </td>
+      
+      
+    <!--img title="25CC: DOTTED CIRCLE" src="images/25CC.png" alt="◌" id="dottedcircle" /-->
+      <td><!-- TONES -->
+        <table id="tones">
+          <tbody>
+            <tr>
+              <td><span class="c" title="Extra high tone">&#x030B;</span></td>
+              <td><span class="c" title="Extra high tone bar">&#x02E5;</span></td>
+              <td><span class="c" title="Rising contour">&#x030C;</span></td>
+              <td><span class="c" title="Rising contour">&#x02E9;&#x02E5;</span></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="High tone">&#x0301;</span></td>
+              <td><span class="c" title="High tone bar">&#x02E6;</span></td>
+              <td><span class="c" title="Falling contour">&#x0302;</span></td>
+              <td><span class="c" title="Falling contour">&#x02E5;&#x02E9;</span></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="Mid tone">&#x0304;</span></td>
+              <td><span class="c" title="Mid tone bar">&#x02E7;</span></td>
+              <td><span class="c" title="High rising contour">&#x1DC4;</span></td>
+              <td><span class="c" title="High rising contour">&#x02E6;&#x02E5;</span></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="Low tone">&#x0300;</span></td>
+              <td><span class="c" title="Low tone bar">&#x02E8;</span></td>
+              <td><span class="c" title="Low rising contour">&#x1DC5;</span></td>
+              <td><span class="c" title="Low rising contour">&#x02E9;&#x02E8;</span></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="Extra low tone">&#x030F;</span></td>
+              <td><span class="c" title="Extra low tone bar">&#x02E9;</span></td>
+              <td><span class="c" title="Rising-falling contour">&#x1DC8;</span></td>
+              <td><span class="c" title="Rising-falling contour">&#x02E7;&#x02E6;&#x02E7;</span></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="Downstep">&#x2193;</span></td>
+              <td></td>
+              <td><span class="c" title="Global rise">&#x2197;</span></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><span class="c" title="Upstep">&#x2191;</span></td>
+              <td></td>
+              <td><span class="c" title="Global fall">&#x2198;</span></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table></td>
+    </tr>
+    
+    <tr>
+          <td colspan="2" style="text-align: center; line-height: .8; vertical-align: top;">
+      <span class="c" title="Long">&#x02D0;</span> <span class="c" title="Half-long">&#x02D1;</span> <span class="c" title="Extra short diacritic">&#x0306;</span> <span class="c" title="Primary stress">&#x02C8;</span> <span class="c" title="Secondary stress">&#x02CC;</span> <span class="c" title="Minor (foot) group">&#x007C;</span> <span class="c" title="Major (intonation) group">&#x2016;</span>  <span class="c" title="Syllable break">&#x002E;</span> <span class="c" title="Linking (absence of a break)">&#x203F;</span> <span class="c"  style="margin-left: 10px" title="Prosodic phrase">&#x03C6;</span> <span class="c" title="Prosodic word">&#x03C9;</span> <span class="c" title="Syllable">&#x03C3;</span> <span class="c" title="Mora">&#x03BC;</span>
+      </td>
+      </tr>
+     <tr>
+      <td style="text-align: center;"><div id="other2"><span class="c" title="Voiceless dental affricate">&#x02A6;</span> <span class="c" title="Voiced dental affricate">&#x02A3;</span> <span class="c" title="Voiceless postalveolar affricate">&#x02A7;</span> <span class="c" title="Voiced postalveolar affricate">&#x02A4;</span> <span class="c" title="Voiceless alveolo-palatal affricate">&#x02A8;</span> <span class="c" title="Voiced alveolo-palatal affricate">&#x02A5;</span> <span class="c" title="Rhoticised schwa">&#x025A;</span> <span class="c" title="Rhoticised lower mid central vowel">&#x025D;</span></div></td>
+      <td  class="bottomrighttop" style="text-align: center;"><span class="c" style="padding:0 4px;" title="Ejective diacritic">&#x02BC;</span> <span class="c" title="Aspirated diacritic">&#x02B0;</span> <span class="c" title="Unaspirated diacritic">&#x02ED;</span> <span class="c" title="Nasal release">&#x207F;</span> <span class="c" style="padding:0 3px;" title="Lateral release">&#x02E1;</span> <span class="c" title="Pharyngealised diacritic">&#x02E4;</span> <span class="c" title="Velarised diacritic">&#x02E0;</span> <span class="c" style="padding:0 3px;" title="Palatalised diacritic">&#x02B2;</span> <span class="c" title="Labialised diacritic">&#x02B7;</span></td>
+      <td style="text-align: center;"><span class="c" style="padding-left:10px;" title="">&#x002F;</span> <span class="c" title="">&#x005B;</span> <span style="margin-right:20px;" class="c" title="">&#x005D;</span></td>
+      </tr>
+ </table>
+  <table id="bottomphones">
+    <tr>
+      <td colspan="2"><div> <span class="c" title="Voiceless diacritic">&#x0325;</span> <span class="c" title="Voiceless diacritic">&#x030A;</span> <span class="c" title="Voiced diacritic">&#x032C;</span> <span class="c" title="Breathy voiced diacritic">&#x0324;</span> <span class="c" title="Creaky voiced diacritic">&#x0330;</span> <span class="c" title="Frictionalised diacritic">&#x0353;</span> <span class="c" title="Linguolabial diacritic">&#x033C;</span> <span class="c" title="Dental diacritic">&#x032A;</span> <span class="c" title="Apical diacritic">&#x033A;</span> <span class="c" title="Laminal diacritic">&#x033B;</span> <span class="c" title="More rounded diacritic">&#x0339;</span> <span class="c" title="Less rounded diacritic">&#x031C;</span> <span class="c" title="Advanced diacritic">&#x031F;</span> <span class="c" title="Retracted diacritic">&#x0320;</span> <span class="c" title="Centralised diacritic">&#x0308;</span> <span class="c" title="Mid-centralised diacritic">&#x033D;</span> <span class="c" title="Syllabic diacritic">&#x0329;</span> <span class="c" title="Non-syllabic diacritic">&#x032F;</span> <span class="c" style="padding:0 3px;" title="Rhoticity diacritic">&#x02DE;</span> <span class="c" title="Derhoticised diacritic">&#x032E;</span> <span class="c" title="Retracted tongue root diacritic">&#x0319;</span> <span class="c" title="Advanced tongue root diacritic">&#x0318;</span> <span class="c" title="Lowered diacritic">&#x031E;</span> <span class="c" title="Raised diacritic">&#x031D;</span> <span class="c" title="Velarised or pharyngealised diacritic">&#x0334;</span> <span class="c" title="Nasalised diacritic">&#x0303;</span>  <span class="c" title="Alternate nasalised diacritic">&#x0328;</span> <span class="c" title="Denasalised diacritic">&#x034A;</span> <span class="c" title="Nasal emission">&#x034B;</span> <span class="c" title="No audible release diacritic">&#x031A;</span>  <span class="c" title="">&#x1D4A;</span> <span class="c" title="Upper ligature tie">&#x0361;</span> <span class="c" title="Lower ligature tie">&#x035C;</span> <span class="c" title="">&#x25CC;</span></div></td>
+    </tr>
+  </table>
+
+
+<details>
+<summary>Show more tone marks</summary>
+<div id="moreTones">
+<span class="g"><span class="hint">Dotted</span>
+<span class="c">꜈</span>
+<span class="c">꜉</span>
+<span class="c">꜊</span>
+<span class="c">꜋</span>
+<span class="c">꜌</span>
+<span class="c">꜍</span>
+<span class="c">꜎</span>
+<span class="c">꜏</span>
+<span class="c">꜐</span>
+<span class="c">꜑</span>
+<span class="c">꜒</span>
+<span class="c">꜓</span>
+<span class="c">꜔</span>
+<span class="c">꜕</span>
+<span class="c">꜖</span>
+</span>
+ 
+ &nbsp;&nbsp;
+ 
+<span class="g"><span class="hint">Reversed</span>
+<span class="c">꜒</span>
+<span class="c">꜓</span>
+<span class="c">꜔</span>
+<span class="c">꜕</span>
+<span class="c">꜖</span>
+</span>
+
+</div>
+</details>
+
+
+
+</div>
+
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+<!--script>
+function doit () {
+	cells=document.querySelectorAll('.c')
+	out=''  
+	for (i=0;i<cells.length;i++) {   	
+		half = cells[i].title.split(',')   	
+		out += cells[i].textContent+'\t'+half[1]+'\t'+half[0]+'\n' 
+		}    
+	document.getElementById('output').value = out
+	
+	return out
+	}
+</script>
+
+  <button onclick="document.getElementById('output').value = doit();">Go</button-->
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
