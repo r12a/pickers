@@ -191,6 +191,17 @@ var keyboarddef = [
 
 
 
+function toggleSubjoined (node) {
+	var chars = document.querySelectorAll('.x')
+	if (node.className === 'unshifted') {
+		for (let i=0;i<chars.length;i++) chars[i].style.display = 'inline-block'
+		node.className = 'shifted'
+		}
+	else {
+		for (let i=0;i<chars.length;i++) chars[i].style.display = 'none'
+		node.className = 'unshifted'
+		}
+	}
 
 function condense (str) {
 	// removes spaces and hyphens from a string
@@ -265,135 +276,6 @@ function syllabify (str) {
 
 
 
-var justLatinMap = `
-a ɑ à æ ā ă ạ æ̣ á à ᵃ
-b ɓ
-c ɕ c̱
-d ɗ̱ ɗ ḍ̱ ḍ
-e ə̆ ə ɛ ᵊ
-h h̽ ḥ ʰ
-i ī ɨ ɨ̄ ị ị̄
-j ʲ
-k ḵ
-l ḻ ḷ  l̥̄ₔ l̥ₔ
-m m̱ m̽ ṃ
-n ṉ ŋ ɲ ñ ṅ ṇ
-o ọ ɔ ∅ ᵒ
-p p̄ ꝑ
-r ṟ r̥̄ₔ r̥ₔ ʳ
-s ś ʂ ṣ
-t ṭ̱ ṫ ṯ̇ ṭ ṱ
-u ū ụ ụ̄ ʉ
-v v̱ ʋ
-x ˟ ͓
-w ʷ
-y ȳ ý
-. ...
-? ʔ
-: ː
-[ ˘ 
-| ¶
-' ′ ʻ
-" ″
-* ⁎
-`
-
-/*
-var translitCharacterMap = `
-a ā ា a ៈ æ ែ aʲ ៃ aʷ ៅ aᵊ ើ ă ័
-A æ̣ ឯ ạʲ ឰ ạʷ ឳ ạᵒ ឲ
-b b ប
-c c ច c̱ ជ
-C cʰ ឆ c̱ʰ ឈ
-d ɗ ដ ɗ̱ ឌ
-e e េ ᵊ ៝
-h h ហ h̽ ះ
-i i ិ ī ី ɨ ឹ ɨ̄ ឺ ɨᵊ ឿ iᵊ ៀ
-I ị ឥ ị̄ ឦ ɨ̣ ឪ
-k k ក ḵ គ
-K kʰ ខ ḵʰ ឃ
-l l ឡ ḻ ល
-L l̥ₔ ឭ l̥̄ₔ ឮ
-m m̱ ម m̽ ំ
-n ɲ ញ n ណ ṉ ន
-N ŋ ង
-o o ោ
-O ọ ឱ
-p pʰ ផ p̄ ព p̄ʰ ភ
-r ṟ រ
-R r̥ₔ ឫ r̥̄ₔ ឬ
-s s ស
-t ṫʰ ឋ ṯ̇ʰ ឍ t ត tʰ ថ ṯ ទ ṯʰ ធ
-u u ុ ū ូ uᵊ ួ
-U ụ ឧ ụ̄ ឩ
-v v̱ វ
-y ȳ យ
-} ʔ អ
-± ¤ ៛
-0 0 ០
-1 1 ១
-2 2 ២
-3 3 ៣
-4 4 ៤
-5 5 ៥
-6 6 ៦
-7 7 ៧
-8 8 ៨
-9 9 ៩
-|  ¶  ៕
-[ ʳ ៌ ˟ ៍ ˘ ់ ⁎ ៏ ″ ៉ ′ ៊
-. . ។ ... ៘
-: : ៖
-* ͓ ្
-! ⸯ ៎
-\\ ¯ ៑
-} ʔ អ
-`
-*/
-
-
-/*
-var translitCharacterMap = `
-A æ̣ ឯ ạʲ ឰ ạᵒ ឲ ạʷ ឳ
-I ị ឥ ị̄ ឦ ɨ̣ ឪ
-L l̥ ឭ l̥̄ ឮ
-O ọ ឱ
-R r̥ ឫ r̥̄ ឬ
-U ụ ឧ ụ̄ ឩ
-a a ៈ ā ័ ă ័ āṃ ាំ æ ែ aᵊ ើ aʲ ៃ aʷ ៅ
-e e េ eḥ េះ
-i i ិ ī ី iᵊ ៀ ɨ ឹ ɨ̄ ឺ ɨᵊ ឿ
-o o ោ oḥ ោះ
-u u ុ ū ូ uᵊ ួ uḥ ុះ uṃ ុំ
-' ‘ អ
-b b ប
-c c ច cʰ ឆ c̱ʰ ឈ c̱ ជ
-d ḍ̱ ដ ḍ̱ ឌ
-h h ហ ḥ ះ
-k k ក kʰ ខ ḵʰ ខ ḵ គ
-l l ឡ ḷ ល
-m m ម ṃ ំ
-n ṇ ណ n ន ñ ញ ṅ ង
-p pʰ ផ p ព p̄ʰ ភ
-r r រ
-s ś ឝ ṣ ឞ s ស
-t t ត tʰ ថ ṭʰ ឋ ṭ̱ʰ ឍ ṯʰ ធ ṯ ទ
-v v វ
-y y យ
-;   ͓ ្
-| ʳ ៌ ˟ ៍ ˘ ់ ă ័ ᵊ ៝ ⸯ ៎ ⁎ ៏ ″ ៉ ′ ៊
-0 0 ០
-1 1 ១
-2 2 ២
-3 3 ៣
-4 4 ៤
-5 5 ៥
-6 6 ៦
-7 7 ៧
-8 8 ៨
-9 9 ៩
-`
-*/
 
 var huffmanCharacterMap = `
 b b ប

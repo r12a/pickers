@@ -83,7 +83,8 @@
 
 
 <div class="spaceline">
-<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span id="shift" class="shifted" onClick="toggleSubjoined(this)">Show SJ</span>
+<!--span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span-->
 <span class="touch" title="Space" style="padding: 5px 20px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="Coeng" style="padding: 5px 60px;" dir="auto" onClick="add('្');">្</span>
 <span class="touch" title="Zero width space" style="padding: 5px 50px;" dir="auto" onClick="add('\u200B');">ZWSP</span>
@@ -121,8 +122,8 @@
 <span class="g"><span class="hint">ạʲ</span><span class="c">&#x17B0;</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">r̥̄</span><span class="c">&#x17AC;</span><!--span class="c">&#x17D2;&#x17AC;</span--></span>
-<span class="g"><span class="hint">r̥</span><span class="c">&#x17AB;</span><!--span class="c">&#x17D2;&#x17AB;</span--></span>
+<span class="g"><span class="hint">r̥̄</span><span class="c">&#x17AC;</span><!--span class="c x">&#x17D2;&#x17AC;</span--></span>
+<span class="g"><span class="hint">r̥</span><span class="c">&#x17AB;</span><!--span class="c x">&#x17D2;&#x17AB;</span--></span>
 </div>
 <div>
 <span class="g"><span class="hint">l̥̄</span><span class="c">&#x17AE;</span></span>
@@ -134,60 +135,60 @@
 <div id="consonantGrid">
 <div>
 <span class="g"><span class="hint"> </span><span class="c">&nbsp;</span><span class="c">&nbsp;</span></span>
-<span class="g"><span class="hint">t</span><span class="c">&#x178F;</span><span class="c">&#x17D2;&#x178F;</span></span>
+<span class="g"><span class="hint">t</span><span class="c">&#x178F;</span><span class="c x">&#x17D2;&#x178F;</span></span>
 <span class="g"><span class="hint"> </span><span class="c">&nbsp;</span><span class="c">&nbsp;</span></span>
-<span class="g"><span class="hint">c</span><span class="c">&#x1785;</span><span class="c">&#x17D2;&#x1785;</span></span>
-<span class="g"><span class="hint">k</span><span class="c">&#x1780;</span><span class="c">&#x17D2;&#x1780;</span></span>
+<span class="g"><span class="hint">c</span><span class="c">&#x1785;</span><span class="c x">&#x17D2;&#x1785;</span></span>
+<span class="g"><span class="hint">k</span><span class="c">&#x1780;</span><span class="c x">&#x17D2;&#x1780;</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">p̄</span><span class="c">&#x1796;</span><span class="c">&#x17D2;&#x1796;</span></span>
-<span class="g"><span class="hint">ṯ</span><span class="c">&#x1791;</span><span class="c">&#x17D2;&#x1791;</span></span>
+<span class="g"><span class="hint">p̄</span><span class="c">&#x1796;</span><span class="c x">&#x17D2;&#x1796;</span></span>
+<span class="g"><span class="hint">ṯ</span><span class="c">&#x1791;</span><span class="c x">&#x17D2;&#x1791;</span></span>
 <span class="g"><span class="hint"> </span><span class="c">&nbsp;</span><span class="c">&nbsp;</span></span>
-<span class="g"><span class="hint">c̱</span><span class="c">&#x1787;</span><span class="c">&#x17D2;&#x1787;</span></span>
-<span class="g"><span class="hint">ḵ</span><span class="c">&#x1782;</span><span class="c">&#x17D2;&#x1782;</span></span>
+<span class="g"><span class="hint">c̱</span><span class="c">&#x1787;</span><span class="c x">&#x17D2;&#x1787;</span></span>
+<span class="g"><span class="hint">ḵ</span><span class="c">&#x1782;</span><span class="c x">&#x17D2;&#x1782;</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">pʰ</span><span class="c">&#x1795;</span><span class="c">&#x17D2;&#x1795;</span></span>
-<span class="g"><span class="hint">tʰ</span><span class="c">&#x1790;</span><span class="c">&#x17D2;&#x1790;</span></span>
-<span class="g"><span class="hint">ṫʰ</span><span class="c">&#x178B;</span><span class="c">&#x17D2;&#x178B;</span></span>
-<span class="g"><span class="hint">cʰ</span><span class="c">&#x1786;</span><span class="c">&#x17D2;&#x1786;</span></span>
-<span class="g"><span class="hint">kʰ</span><span class="c">&#x1781;</span><span class="c">&#x17D2;&#x1781;</span></span>
+<span class="g"><span class="hint">pʰ</span><span class="c">&#x1795;</span><span class="c x">&#x17D2;&#x1795;</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">&#x1790;</span><span class="c x">&#x17D2;&#x1790;</span></span>
+<span class="g"><span class="hint">ṫʰ</span><span class="c">&#x178B;</span><span class="c x">&#x17D2;&#x178B;</span></span>
+<span class="g"><span class="hint">cʰ</span><span class="c">&#x1786;</span><span class="c x">&#x17D2;&#x1786;</span></span>
+<span class="g"><span class="hint">kʰ</span><span class="c">&#x1781;</span><span class="c x">&#x17D2;&#x1781;</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">p̄ʰ</span><span class="c">&#x1797;</span><span class="c">&#x17D2;&#x1797;</span></span>
-<span class="g"><span class="hint">ṯʰ</span><span class="c">&#x1792;</span><span class="c">&#x17D2;&#x1792;</span></span>
-<span class="g"><span class="hint">ṯ̇ʰ</span><span class="c">&#x178D;</span><span class="c">&#x17D2;&#x178D;</span></span>
-<span class="g"><span class="hint">c̱ʰ</span><span class="c">&#x1788;</span><span class="c">&#x17D2;&#x1788;</span></span>
-<span class="g"><span class="hint">ḵʰ</span><span class="c">&#x1783;</span><span class="c">&#x17D2;&#x1783;</span></span>
+<span class="g"><span class="hint">p̄ʰ</span><span class="c">&#x1797;</span><span class="c x">&#x17D2;&#x1797;</span></span>
+<span class="g"><span class="hint">ṯʰ</span><span class="c">&#x1792;</span><span class="c x">&#x17D2;&#x1792;</span></span>
+<span class="g"><span class="hint">ṯ̇ʰ</span><span class="c">&#x178D;</span><span class="c x">&#x17D2;&#x178D;</span></span>
+<span class="g"><span class="hint">c̱ʰ</span><span class="c">&#x1788;</span><span class="c x">&#x17D2;&#x1788;</span></span>
+<span class="g"><span class="hint">ḵʰ</span><span class="c">&#x1783;</span><span class="c x">&#x17D2;&#x1783;</span></span>
 </div>
 <div style="justify-content: left;">
-<span class="g"><span class="hint">b</span><span class="c">&#x1794;</span><span class="c">&#x17D2;&#x1794;</span></span>
-<span class="g"><span class="hint">ɗ</span><span class="c">&#x178A;</span><span class="c">&#x17D2;&#x178A;</span></span>
-<span class="g"><span class="hint">ɗ̱</span><span class="c">&#x178C;</span><span class="c">&#x17D2;&#x178C;</span></span>
+<span class="g"><span class="hint">b</span><span class="c">&#x1794;</span><span class="c x">&#x17D2;&#x1794;</span></span>
+<span class="g"><span class="hint">ɗ</span><span class="c">&#x178A;</span><span class="c x">&#x17D2;&#x178A;</span></span>
+<span class="g"><span class="hint">ɗ̱</span><span class="c">&#x178C;</span><span class="c x">&#x17D2;&#x178C;</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">v̱</span><span class="c">&#x179C;</span><span class="c">&#x17D2;&#x179C;</span></span>
-<span class="g"><span class="hint">s</span><span class="c">&#x179F;</span><span class="c">&#x17D2;&#x179F;</span></span>
-<span class="g"><span class="hint">h</span><span class="c">&#x17A0;</span><span class="c">&#x17D2;&#x17A0;</span></span>
+<span class="g"><span class="hint">v̱</span><span class="c">&#x179C;</span><span class="c x">&#x17D2;&#x179C;</span></span>
+<span class="g"><span class="hint">s</span><span class="c">&#x179F;</span><span class="c x">&#x17D2;&#x179F;</span></span>
+<span class="g"><span class="hint">h</span><span class="c">&#x17A0;</span><span class="c x">&#x17D2;&#x17A0;</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">m̱</span><span class="c">&#x1798;</span><span class="c">&#x17D2;&#x1798;</span></span>
-<span class="g"><span class="hint">n</span><span class="c">&#x178E;</span><span class="c">&#x17D2;&#x178E;</span></span>
-<span class="g"><span class="hint">ṉ</span><span class="c">&#x1793;</span><span class="c">&#x17D2;&#x1793;</span></span>
-<span class="g"><span class="hint">ɲ</span><span class="c">&#x1789;</span><span class="c">&#x17D2;&#x1789;</span></span>
-<span class="g"><span class="hint">ŋ</span><span class="c">&#x1784;</span><span class="c">&#x17D2;&#x1784;</span></span>
+<span class="g"><span class="hint">m̱</span><span class="c">&#x1798;</span><span class="c x">&#x17D2;&#x1798;</span></span>
+<span class="g"><span class="hint">n</span><span class="c">&#x178E;</span><span class="c x">&#x17D2;&#x178E;</span></span>
+<span class="g"><span class="hint">ṉ</span><span class="c">&#x1793;</span><span class="c x">&#x17D2;&#x1793;</span></span>
+<span class="g"><span class="hint">ɲ</span><span class="c">&#x1789;</span><span class="c x">&#x17D2;&#x1789;</span></span>
+<span class="g"><span class="hint">ŋ</span><span class="c">&#x1784;</span><span class="c x">&#x17D2;&#x1784;</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">ṟ</span><span class="c">&#x179A;</span><span class="c">&#x17D2;&#x179A;</span></span>
-<span class="g"><span class="hint">l</span><span class="c">&#x17A1;</span><span class="c">&#x17D2;&#x17A1;</span></span>
-<span class="g"><span class="hint">ḻ</span><span class="c">&#x179B;</span><span class="c">&#x17D2;&#x179B;</span></span>
-<span class="g"><span class="hint">ȳ</span><span class="c">&#x1799;</span><span class="c">&#x17D2;&#x1799;</span></span>
+<span class="g"><span class="hint">ṟ</span><span class="c">&#x179A;</span><span class="c x">&#x17D2;&#x179A;</span></span>
+<span class="g"><span class="hint">l</span><span class="c">&#x17A1;</span><span class="c x">&#x17D2;&#x17A1;</span></span>
+<span class="g"><span class="hint">ḻ</span><span class="c">&#x179B;</span><span class="c x">&#x17D2;&#x179B;</span></span>
+<span class="g"><span class="hint">ȳ</span><span class="c">&#x1799;</span><span class="c x">&#x17D2;&#x1799;</span></span>
 </div>
 </div>
 
 
 <div id="diacritics">
-  <span class="g"><span class="hint">ʔ</span><span class="c">&#x17A2;</span><!--span class="c">&#x17D2;&#x17A2;</span--></span><br />
+  <span class="g"><span class="hint">ʔ</span><span class="c">&#x17A2;</span><!--span class="c x">&#x17D2;&#x17A2;</span--></span><br />
   <span class="c">&#x17CC;</span><br /><span class="c">&#x17C9;</span><br /><span class="c">&#x17CA;</span><!--br/>
   <span class="c">&#x17D2;</span-->
 </div>
@@ -306,7 +307,7 @@
  <div class="rare">
  <div>
  <span class="g"><span class="hint">deprecated</span> <span class="c">&#x17A4;</span><span class="c">&#x17A3;</span> <span class="c">&#x17B4;</span> <span class="c">&#x17B5;</span> <span class="c">&#x17D3;</span> <span class="c">&#x17A8;</span></span>
- <span class="g"><span class="hint">rarely used</span> <span class="c">&#x179D;</span> <span class="c">&#x17D2;&#x179D;</span> <span class="c">&#x179E;</span> <span class="c">&#x17D2;&#x179E;</span> <span class="c">&#x17D8;</span> <span class="c">&#x17DC;</span> <span class="c">&#x17DD;</span> <span class="c">&#x17D1;</span></span>
+ <span class="g"><span class="hint">rarely used</span> <span class="c">&#x179D;</span> <span class="c x">&#x17D2;&#x179D;</span> <span class="c">&#x179E;</span> <span class="c x">&#x17D2;&#x179E;</span> <span class="c">&#x17D8;</span> <span class="c">&#x17DC;</span> <span class="c">&#x17DD;</span> <span class="c">&#x17D1;</span></span>
  </div>
  </div>
  </details>
