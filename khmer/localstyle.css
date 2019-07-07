@@ -24,7 +24,7 @@
 span.hint { 
 	margin-right: 0px;
     margin-left: 0px;
-	font-size: 50%;
+	font-size: 65%;
 	color: tan;
 	}
 .c { 
@@ -37,7 +37,7 @@ span.hint {
 	text-align: center;
     cursor: pointer;
 	}
-
+.g { margin: 0 .1em; }
 
 
     
@@ -90,7 +90,6 @@ span.hint {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 1.5em;
     justify-content: center;
     margin-left: 0;
     }
@@ -284,3 +283,15 @@ span.hint {
     text-align: center;
     margin: 0 20%;
     }
+
+.topDivider {
+	border-top: 1px dotted tan;
+	}
+.bottomDivider {
+	border-bottom: 1px dotted tan;
+	}
+
+
+
+
+
