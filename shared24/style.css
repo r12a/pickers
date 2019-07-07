@@ -852,3 +852,15 @@ summary:hover {
 	color: white;
 	}
 
+
+.topDivider {
+	border-top: 1px dotted tan;
+	}
+.bottomDivider {
+	border-bottom: 1px dotted tan;
+	}
+
+
+
+
+
