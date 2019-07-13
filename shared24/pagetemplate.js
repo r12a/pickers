@@ -30,7 +30,6 @@ function clearBidiOverride () {
 
 
 function setTop (title,sample) {
-console.log(setTop)
 var out
 out = `<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
 <a class="interactiveHelpButton" style="float:right; margin-right:.5em;" href="help/#contrast" target="_help" title="Help with contrast."><img alt="help" src="../images/help.png"/></a>
