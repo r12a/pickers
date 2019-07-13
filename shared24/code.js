@@ -765,7 +765,7 @@ function transcribe (chstring, direction) {
 function clearHighlights () {
 	// called when a character is clicked on - removes any highlighting added by shape
 	
-	nodelist = document.querySelectorAll('.c')
+	nodelist = document.querySelectorAll('.c, .v')
 	for (var i=0;i<nodelist.length;i++) {
 		nodelist[i].style.backgroundColor = 'transparent'
 		}
@@ -1080,7 +1080,7 @@ function initialise() {
 	console.log(defaults)	
 
 	// set ids to codepoint values of character sequence (with no leading zeros)
-	node = document.querySelectorAll( '.c' ); 
+	node = document.querySelectorAll( '.c, .v' ); 
 	for (var n = 0; n < node.length; n++ ) { 
 		content = node[n].textContent
 		
@@ -1109,7 +1109,7 @@ function initialise() {
 		node[n].onmouseout = event_mouseoutChar
 		
 		// set onclicks
-		if(! node[n].classList.contains(/noOnclick/)) { 
+		if(! node[n].classList.contains(/noOnclick/) && ! node[n].classList.contains('v')) { 
 			node[n].onclick = event_clickOnChar
 			}
 
@@ -1542,7 +1542,9 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 				}
 			else {
 				for (item in spreadsheetRows) { 
-					if (((item.length > 1 && item.startsWith(char)) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(item))) && spreadsheetRows[item][cols.class] !== '-' && originStr.substr(ptr,item.length) === item) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
+					var matchStr = item.replace(/-/g,'.')
+					var  regex = new RegExp(matchStr)
+					if (((item.length > 1 && item.startsWith(char)) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(item))) && spreadsheetRows[item][cols.class] !== '-' && originStr.substr(ptr,item.length).match(regex)) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
 					}
 				}
 			}
