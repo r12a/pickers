@@ -69,7 +69,7 @@ function makeTranslitCharacterMap () {
 		if (charArray[window.sortIndex[i]]) translitCharacterMap += charArray[window.sortIndex[i]]+'\n'
 		}
 
- 	//console.log(translitCharacterMap)
+ 	console.log(translitCharacterMap)
 	}
 
 
