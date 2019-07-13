@@ -4,70 +4,21 @@
 <meta charset="utf-8" />
 <title>Unicode character picker list</title>
 <base target="_parent">
-<link rel="stylesheet" href="/shared/style/docs.css" type="text/css" />
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="../shared/style/docs.css" />
+<script src="pickerlistdb.js"></script>
 </head>
 
-<body style="font-size: 90%;">
-    <span><a href="arabic/">Arabic</a></span> •
-    <span><a href="arabicblock/">All&nbsp;Arabic</a></span> •
-    <span><a href="aramaic/">Assyrian&nbsp;Neo-Aramaic</a></span> •
-    <span><a href="armenian/">Armenian</a></span> •
-    <span><a href="balinese/">Balinese</a></span> •
-    <span><a href="bengali/">Bengali</a></span> •
-    <span><a href="buginese/">Buginese</a></span> •
-    <span><a href="burmese/">Burmese</a></span> •
-    <span><a href="cherokee/">Cherokee</a></span> •
-    <span><a href="cyrillic/">Cyrillic</a></span> •
-    <span><a href="devanagari/">Devanagari</a></span> •
-    <span><a href="egyptian/">Egyptian&nbsp;hieroglyphs</a></span> •
-    <span><a href="ethiopic/">Ethiopic</a></span> •
-    <span><a href="georgian/">Georgian</a></span> •
-    <span><a href="greek/">Greek</a></span> •
-    <span><a href="gujarati/">Gujarati</a></span> •
-    <span><a href="gurmukhi/">Gurmukhi</a></span> •
-    <span><a href="hebrew/">Hebrew</a></span> •
-    <span><a href="hindi/">Hindi</a></span> •
-    <span><a href="ipa/">IPA</a></span> •
-    <span><a href="ipa2/">IPA&nbsp;2</a></span> •
-    <span><a href="ipa3/">IPA&nbsp;3</a></span> •
-    <span><a href="javanese/">Javanese</a></span> •
-    <span><a href="kashmiri/">Kashmiri&nbsp;(deva)</a></span> •
-    <span><a href="kashmiria/">Kashmiri&nbsp;(arab)</a></span> •
-    <span><a href="khmer/">Khmer</a></span> •
-    <span><a href="lao/">Lao</a></span> •
-    <span><a href="latin/">Latin&nbsp;&amp;&nbsp;diacritics</a></span> •
-    <span><a href="lisu/">Lisu (Fraser script)</a></span> •
-    <span><a href="makasar/">Makasar</a></span> •
-    <span><a href="malayalam/">Malayalam</a></span> •
-    <span><a href="mandaic/">Mandaic</a></span> •
-    <span><a href="mongolian/">Mongolian</a></span> •
-    <span><a href="neotifinagh/">Neo-tifinagh</a></span> •
-    <span><a href="newtailue/">New&nbsp;Tai&nbsp;Lue</a></span> •
-    <span><a href="nko/">N'Ko</a></span> •
-    <span><a href="northernthai/">Northern&nbsp;Thai</a></span> •
-    <span><a href="oldenglish/">Old&nbsp;English</a></span> •
-    <span><a href="oldnorse/">Old&nbsp;Norse</a></span> •
-    <span><a href="persian/">Persian</a></span> •
-    <span><a href="runic/">Runic</a></span> •
-    <span><a href="russian/">Russian</a></span> •
-    <span><a href="shan/">Shan</a></span> •
-    <span><a href="sinhala/">Sinhala</a></span> •
-    <span><a href="sundanese/">Sundanese</a></span> •
-    <span><a href="syriac/">Syriac</a></span> •
-    <span><a href="taikhuen/">Tai&nbsp;Khün</a></span> •
-    <span><a href="taile/">Tai&nbsp;Le</a></span> •
-    <span><a href="taitham/">Tai&nbsp;Tham</a></span> •
-    <span><a href="taiviet/">Tai&nbsp;Viet</a></span> •
-    <span><a href="tamil/">Tamil</a></span> •
-    <span><a href="thaana/">Thaana</a></span> •
-    <span><a href="thai/">Thai</a></span> •
-    <span><a href="tibetan/">Tibetan</a></span> •
-    <span><a href="tifinagh/">Tifinagh </a></span> •
-    <span><a href="tlicho/">Tłı̨chǫ&nbsp;(Dogrib)</a></span> •
-    <span><a href="uighur/">Uighur</a></span> •
-    <span><a href="urdu/">Urdu</a></span> •
-    <span><a href="vai/">Vai</a></span> •
-    <span><a href="vietnamese/">Vietnamese</a></span>
+<body id="body" style="font-size: 90%;">
+<div id="placeholder"></div>
+
+
+<script>
+out = ''
+for (let i=0;i<plist.length;i++) {
+	out += '<a title="'+plist[i].tag+'" href="'+plist[i].url+'">'+plist[i].name+'</a>'
+	if (i<plist.length-1) out += '&nbsp;• \n'
+	}
+document.getElementById('placeholder').innerHTML = out
+</script>
 </body>
 </html>
