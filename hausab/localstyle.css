@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'Doulos SIL WF';
+    src: url('/shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2'),
+         url('/shared/webfonts/DoulosSIL-R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+[lang=ha] { font-family: 'Gentium Plus', serif; }
+
+
+
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 60%;
+	color: tan;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	margin: 0 .2em;
+	}
+
+.v { 
+	min-width: .75em;
+	text-align: center;
+    cursor: pointer;
+	}
+.g {
+	margin: 0 .1em;
+	}
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.1em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Lao WF',  sans-serif;  
+    line-height: 1;
+	}
+.key {padding: 4px 0 0 0; }
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+    justify-content: center;
+    }
+#consonantGrid, #UC#consonantGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 10em;
+    }
+#consonantGrid div, #UCconsonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+#toneGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 10em;
+    margin-left: .25em;
+    border: 1px dotted #ccc;
+    border-radius: .5em;
+    padding: 0 .25em;
+    }
+#toneGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 0;
+    }
+#consonantGrid > span, #UCconsonantGrid > span {
+    min-width: 1em;
+    }
+#finals {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-width: 2em;
+    justify-content:flex-start;
+    align-content: space-around;
+	margin-left: .35em;
+    }
+#vowelGrid, #UCvowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 2em;
+    }
+#vowelGrid div, #UCvowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    }
+#virama {
+    width: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 .5em 0 .75em;
+    justify-content: center;
+    align-items: center;
+    height: 10em;
+    }
+#numberGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 5em;
+    max-height: 8em;
+    justify-content: space-between;
+    margin-left: 2em;
+    line-height: 1.8;
+    font-size: 90%;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#mahaprana, #rare, #otherpunctuation {
+    text-align: center;
+    font-size: 90%;
+    }
+#otherpunctuation {
+    font-size: 80%;
+    }
+#vowelclusters {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: .5em;
+    width: 20em;
+    margin: auto;
+    }
+
+#vowelsupport {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-right: .5em;
+}
+#vowelsupport > span {
+	padding: 3em 0;
+	width: 1em;
+}
+
+#kbdGrid .hidden {
+	display: none;
+	}
