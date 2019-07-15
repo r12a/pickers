@@ -16,6 +16,8 @@ var plist = [
     { tag:'grek', name:'Greek', url:'greek/' },
     { tag:'gujr', name:'Gujarati', url:'gujarati/' },
     { tag:'guru', name:'Gurmukhi', url:'gurmukhi/' },
+    { tag:'arab', name:'Hausa (ajami)', url:'arab-ha/' },
+    { tag:'latn', name:'Hausa (boko)', url:'latn-ha/' },
     { tag:'hebr', name:'Hebrew', url:'hebrew/' },
     { tag:'deva', name:'Hindi', url:'hindi/' },
     { tag:'latn', name:'IPA', url:'ipa/' },
