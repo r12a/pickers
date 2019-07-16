@@ -405,7 +405,15 @@ if (template.scriptcode) {
     <summary>related links</summary>
     <div id="linklist">`
 
-    out += getData(template.scriptcode)
+    //out += getData(template.scriptcode)
+    
+    out += '<a href="../../scripts/links?iso=' + template.scriptcode + '" target="_blank">Script-related links</a><br/>\n'
+    out += '<a href="../../app-charuse?language=' + defaults.language + '" target="_blank">Character usage for '+defaults.language+'</a><br/>\n'
+    out += `
+    	<a href="../../uniview/" target="_blank">UniView</a><br/>
+    	<a href="../../app-listcharacters" target="_blank">List characters</a><br/>
+    	<a href="../../app-conversion" target="_blank">Character converter</a>
+    	</div>`
     
     out += '</details>'
     }
