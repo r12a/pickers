@@ -20,7 +20,7 @@
 span.hint { 
 	margin-right: 1px;
     margin-left: 2px;
-	font-size: 50%;
+	font-size: 60%;
 	color: tan;
 	}
 .c { 
@@ -33,7 +33,9 @@ span.hint {
 	text-align: center;
     cursor: pointer;
 	}
-
+.g {
+	margin: 0 .1em;
+	}
     
     
 /* KEYBOARD */
@@ -54,7 +56,6 @@ span.hint {
 #kbdGrid {
  display: flex;
  flex-direction: row;
-	line-height: 1.2;
     justify-content: center;
     }
 #consonantGrid {
@@ -66,33 +67,31 @@ span.hint {
 #consonantGrid div {
     white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 9em;
     justify-content: space-between;
     }
-#translitGrid {
+#toneGrid {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 10em;
-    margin-left: .5em;
+    margin-left: .25em;
     border: 1px dotted #ccc;
     border-radius: .5em;
     padding: 0 .25em;
     }
-#translitGrid div {
+#toneGrid div {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 1.5em;
     justify-content: center;
     margin-left: 0;
     }
 #consonantGrid > span {
     min-width: 1em;
     }
-#moreconsonants {
+#finals {
     white-space: normal;
     display: flex;
     flex-wrap: wrap;
@@ -101,6 +100,7 @@ span.hint {
     justify-content:flex-start;
     height: 10em;
     align-content: space-around;
+	margin-left: .35em;
     }
 #ivowelGrid {
     display: flex;
@@ -120,13 +120,12 @@ span.hint {
     flex-direction: column;
     height: 10em;
     justify-content: space-between;
-    margin-left: 1em;
+    margin-left: .5em;
     }
 #vowelGrid div {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    width: 3em;
     justify-content: center;
     }
 #virama {
@@ -181,4 +180,14 @@ span.hint {
     margin: auto;
     }
 
+#vowelsupport {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-right: .5em;
+}
+#vowelsupport > span {
+	padding: 3em 0;
+	width: 1em;
+}
 

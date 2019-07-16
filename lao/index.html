@@ -62,6 +62,32 @@
 
 <div id="shapelist" style="display:none; text-align:center;">
  <div id="shapekeys">
+<span onclick="findShape('E81,E96,ED7','',true)">ກ</span>
+<span onclick="findShape('EA3,EAE','',true)">ຣ</span>
+<span onclick="findShape('E82,E8A','',true)">ຂ</span>
+<span onclick="findShape('EA5,EAA,E88','',true)">ລ</span>
+<span onclick="findShape('E94,E95,E84,ED8','',true)">ດ</span>
+<span onclick="findShape('E8D,EA2,EC02DEB1E8DEB0,EC02DEB1E8D,EC02DE8D,EC02DEB5E8D,2DEB1E8D,2DEB2E8D','',true)">ຍ</span>
+<span onclick="findShape('E97,EAB,EDD,EDC,EABEBC','',true)">ທ</span>
+<span onclick="findShape('E9A,E9B,EA1,E99','',true)">ບ</span>
+<span onclick="findShape('E9E,E9C,E9D,E9F,ED6','',true)">ພ</span>
+<span onclick="findShape('ED2,ED4,ED5','',true)">໒</span>
+<span onclick="findShape('EC2,EC3,EC4,EC22DEB0','',true)">ໂ</span>
+<span onclick="findShape('EC0,EC1,EC02DEB0,EC02DEB1,EC02DEB4,EC02DEB5,EC12DEB0,EC12DEB1,EC02DEB2EB0,EC02DEB1E8DEB0,EC02DEB1E8D,EC02DE8D,EC02DEB6EAD,EC02DEB7EAD,EC02DEB5EBD,EC02DEB5E8D,EC12DEA7,EC02DEBBEB2','',true)">ເ</span>
+<span onclick="findShape('EB0,EC02DEB0,EC22DEB0,EC12DEB0,EC02DEB2EB0,EC02DEB1E8DEB0,2DEBBEA7EB0','',true)">ະ</span>
+<span onclick="findShape('EA7,EAD,2DEB1EAD,2DEB4EA7,2DEB5EA7,EC02DEB6EAD,EC02DEB7EAD,2DEBBEA7EB0,2DEBBEA7,EC12DEA7','',true)">ວ</span>
+<span onclick="findShape('EBD,2DEB1EBD,EC02DEB5EBD,2DEB2EBD','',true)">ຽ</span>
+<span onclick="findShape('EC6,EC6EA5EC6,E87','',true)">ໆ</span>
+<span onclick="findShape('EB2,2DEB2E8D,2DEB2EBD,EC02DEBBEB2,ED1,EB3','',true)">າ</span>
+<span onclick="findShape('EB4,EB5,EB6,EB7,EC02DEB4,EC02DEB5,2DEB4EA7,2DEB5EA7,EC02DEB6EAD,EC02DEB7EAD,EC02DEB5EBD,EC02DEB5E8D','',true)">&nbsp; ິ</span>
+<span onclick="findShape('EBB,EB1,EC02DEB1,EC12DEB1,2DEB1EAD,EC02DEB1E8DEB0,EC02DEB1E8D,2DEB1EBD,2DEBBEA7EB0,2DEBBEA7,2DEB1E8D,EC02DEBBEB2','',true)">&nbsp; ົ</span>
+<span onclick="findShape('ECD,EB3,ECC','',true)">&nbsp; ໍ</span>
+
+<span onclick="findShape('2026,E88,ED0,EAF','',true)">…</span>
+<span onclick="findShape('','',true)"></span>
+
+ 
+ <!--
     <img alt=" " src="images/shape1.png" onclick="findShape('E81,E96,ED7','',true)" /> 
     <img alt=" " src="images/shape2.png" onclick="findShape('EA3,EAE','',true)" /> 
     <img alt=" " src="images/shape3.png" onclick="findShape('E82,E8A,E8A','',true)" /> 
@@ -77,6 +103,7 @@
     <img alt=" " src="images/shape14.png" onclick="findShape('E87,EC6','',true)" /> 
     <img alt=" " src="images/shape15.png" onclick="findShape('EB4,EB5,EB6,EB7,EBB','',true)" /> 
     <img alt=" " src="images/shape0	.png" onclick="findShape('EB0,EAF,EBD,EBD,EBD,EBD,EA7,EAD,E88,ED9,ED1,ED0','',true)" /> 
+-->
 </div>
 </div>
 
@@ -86,7 +113,7 @@
 
 <div class="spaceline">
 <span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="Zero width joiner" style="padding: 5px 60px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Zero width space" style="padding: 5px 60px;" dir="auto" onClick="add('\u200B');">ZWSP</span>
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
 <span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
 <span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
@@ -98,132 +125,151 @@
 
 <div id="kbdGrid">
 <div id="ivowelGrid">
-<div><span class="g"><span class="hint">e</span><span class="c">&#x0EC0;</span></span></div>
-<div><span class="g"><span class="hint">ɛ</span><span class="c">&#x0EC1;</span></span></div>
-<div><span class="g"><span class="hint">o</span><span class="c">&#x0EC2;</span></span></div>
-<div><span class="g"><span class="hint">äʲ</span><span class="c">&#x0EC3;</span></span></div>
-<div><span class="g"><span class="hint">aʲ</span><span class="c">&#x0EC4;</span></span></div>
+<div><span class="g"><span class="hint">e</span><span class="c">ເ</span></span></div>
+<div><span class="g"><span class="hint">o</span><span class="c">ໂ</span></span></div>
+<div><span class="g"><span class="hint">ɛ</span><span class="c">ແ</span></span></div>
+<div><span class="g"><span class="hint">äʲ</span><span class="c">ໃ</span></span></div>
+<div><span class="g"><span class="hint">aʲ</span><span class="c">ໄ</span></span></div>
 </div>
+
+
+
+
+
 <div id="consonantGrid">
 <div>
-<span class="g"><span class="hint">k̯</span><span class="c">&#x0E81;</span></span>
-<span class="g"><span class="hint">kʰ</span><span class="c">&#x0E82;</span></span>
-<span class="g"><span class="hint">ḵʰ</span><span class="c">&#x0E84;</span></span>
-<span class="g"><span class="hint">ŋ̱</span><span class="c">&#x0E87;</span></span>
-<span class="g"><span class="hint">c</span><span class="c">&#x0E88;</span></span>
-<span class="g"><span class="hint">ɲ̱</span><span class="c">&#x0E8D;</span></span>
+<span class="g"><span class="hint">p̯</span><span class="c">ປ</span></span>
+<span class="g"><span class="hint">b̯</span><span class="c">ບ</span></span>
+<span class="g"><span class="hint">t̯</span><span class="c">ຕ</span></span>
+<span class="g"><span class="hint">d̯</span><span class="c">ດ</span></span>
+<span class="g"><span class="hint">ʨ̯</span><span class="c">ຈ</span></span>
+<span class="g"><span class="hint">k̯</span><span class="c">ກ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">pʰ</span><span class="c">ຜ</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">ຖ</span></span>
+<span class="g"><span class="hint">kʰ</span><span class="c">ຂ</span></span>
+
+<span class="g"><span class="hint">p̱ʰ</span><span class="c">ພ</span></span>
+<span class="g"><span class="hint">ṯʰ</span><span class="c">ທ</span></span>
+<span class="g"><span class="hint">ḵʰ</span><span class="c">ຄ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">f</span><span class="c">ຝ</span></span>
+<span class="g"><span class="hint">f̱</span><span class="c">ຟ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">ສ</span></span>
+<span class="g"><span class="hint">s̱</span><span class="c">ຊ</span></span>
+<span class="g"><span class="hint">h</span><span class="c">ຫ</span></span>
+<span class="g"><span class="hint">ẖ</span><span class="c">ຮ</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">t̯</span><span class="c">&#x0E95;</span></span>
-<span class="g"><span class="hint">tʰ</span><span class="c">&#x0E96;</span></span>
-<span class="g"><span class="hint">ṯʰ</span><span class="c">&#x0E97;</span></span>
-<span class="g"><span class="hint">d̯</span><span class="c">&#x0E94;</span></span>
-<span class="g"><span class="hint">n</span><span class="c">&#x0EDC;</span></span>
-<span class="g"><span class="hint">ṉ</span><span class="c">&#x0E99;</span></span>
+<span class="g"><span class="hint">m</span><span class="c">ໝ</span></span>
+<span class="g"><span class="hint">m̱</span><span class="c">ມ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ໜ</span></span>
+<span class="g"><span class="hint">ṉ</span><span class="c">ນ</span></span>
+<span class="g"><span class="hint">ɲ̱</span><span class="c">ຍ</span></span>
+<span class="g"><span class="hint">ŋ̱</span><span class="c">ງ</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">p̯</span><span class="c">&#x0E9B;</span></span>
-<span class="g"><span class="hint">pʰ</span><span class="c">&#x0E9C;</span></span>
-<span class="g"><span class="hint">p̱ʰ</span><span class="c">&#x0E9E;</span></span>
-<span class="g"><span class="hint">b̯</span><span class="c">&#x0E9A;</span></span>
-<span class="g"><span class="hint">m</span><span class="c">&#x0EDD;</span></span>
-<span class="g"><span class="hint">m̱</span><span class="c">&#x0EA1;</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">ḻ</span><span class="c">&#x0EA5;</span></span>
-<span class="g"><span class="hint">hl̆</span><span class="c">&#x0EAB;&#x0EBC;</span></span>
-<span class="g"><span class="hint">y̯</span><span class="c">&#x0EA2;</span></span>
-<span class="g"><span class="hint">ṟ</span><span class="c">&#x0EA3;</span></span>
-<span class="g"><span class="hint">w̱</span><span class="c">&#x0EA7;</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">h</span><span class="c">&#x0EAB;</span></span>
-<span class="g"><span class="hint">ẖ</span><span class="c">&#x0EAE;</span></span>
-<span class="g"><span class="hint">s</span><span class="c">&#x0EAA;</span></span>
-<span class="g"><span class="hint">s̱</span><span class="c">&#x0E8A;</span></span>
-<span class="g"><span class="hint">f</span><span class="c">&#x0E9D;</span></span>
-<span class="g"><span class="hint">f̱</span><span class="c">&#x0E9F;</span></span>
+<span class="g"><span class="hint">w̱</span><span class="c">ວ</span></span>
+<span class="g"><span class="hint">ṟ</span><span class="c">ຣ</span></span>
+<span class="g"><span class="hint">ḻ</span><span class="c">ລ</span></span>
+<span class="g"><span class="hint">hl̆</span><span class="c">ຫຼ</span></span>
+<span class="g"><span class="hint">y̯</span><span class="c">ຢ</span></span>
 </div>
 </div>
+   
+  
+  
 <div id="vowelGrid">
+<div class="bottomDivider" style="justify-content: space-between">
+<span class="g"><span class="hint">i</span><span class="c">ິ</span></span>
+<span class="g"><span class="hint">ī</span><span class="c">ີ</span></span>
+<span class="g"><span class="hint">ɯ</span><span class="c">ຶ</span></span>
+<span class="g"><span class="hint">ɯ̄</span><span class="c">ື</span></span>
+<span class="g"><span class="hint">u</span><span class="c">ຸ</span></span>
+<span class="g"><span class="hint">ū</span><span class="c">ູ</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: space-between">
+<span class="g"><span class="hint">e</span><span class="v" onClick="addVowel(this.textContent)">ເ-ະ</span> 
+<span class="v" onClick="addVowel(this.textContent)">ເ-ັ</span></span>
+<span class="g"><span class="hint">ɤ</span><span class="v" onClick="addVowel(this.textContent)">ເ-ິ</span></span>
+<span class="g"><span class="hint">ɤː</span><span class="v" onClick="addVowel(this.textContent)">ເ-ີ</span></span>
+<span class="g"><span class="hint">o</span><span class="c">ົ</span> <span class="v" onClick="addVowel(this.textContent)">ໂ-ະ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">ɛ</span><span class="v" onClick="addVowel(this.textContent)">ແ-ະ</span> <span class="v" onClick="addVowel(this.textContent)">ແ-ັ</span></span>
+<span class="g"><span class="hint">ɔ</span><span class="v" onClick="addVowel(this.textContent)">ເ-າະ</span> <span class="v" onClick="addVowel(this.textContent)">-ັອ</span></span>
+<span class="g"><span class="hint">ɔ̄</span><span class="c">ໍ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">a</span><span class="c">ະ</span></span>
+<span class="c">ັ</span>
+<span class="g"><span class="hint">ā</span><span class="c">າ</span></span>
+</div>
+
+
 <div>
-<span class="g"><span class="hint">ʔ</span><span class="c">&#x0EAD;</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">ä</span><span class="c">&#x0EB1;</span></span>
-<span class="g"><span class="hint">ā</span><span class="c">&#x0EB2;</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">i</span><span class="c">&#x0EB4;</span></span>
-<span class="g"><span class="hint">ī</span><span class="c">&#x0EB5;</span></span>
-</div>
-<div>
- <span class="g"><span class="hint">ɯ</span><span class="c">&#x0EB6;</span></span>
- <span class="g"><span class="hint">ɯ̄</span><span class="c">&#x0EB7;</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">u</span><span class="c">&#x0EB8;</span></span>
-<span class="g"><span class="hint">ū</span><span class="c">&#x0EB9;</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">ɔ̄</span><span class="c">&#x0ECD;</span></span>
-<span class="g"><span class="hint">o</span><span class="c">&#x0EBB;</span></span>
+<span class="g"><span class="hint">iᵊ</span><span class="c">ຽ</span></span>
+<span class="g"><span class="hint" >aᵐ</span><span class="c">ຳ</span></span>
+<span class="b"><span class="hint">ʷ</span><span class="c">ວ</span></span>
+<span class="b"><span class="hint">ʲ</span><span class="c">ຍ</span></span>
 </div>
 </div>
-<div id="moreconsonants"><span class="g"><span class="hint">a</span><span class="c">&#x0EB0;</span></span><span class="g"><span class="hint" style="margin-top:.75em;">aᵐ</span><span class="c">&#x0EB3;</span></span><span class="g"><span class="hint">iᵊ</span><span class="c">&#x0EBD;</span></span><span class="g"><span class="hint">uᵊ</span><span class="c">&#x0EA7;</span></span><span class="g"><span class="hint">ɔː</span><span class="c">&#x0E8D;</span></span></div>
-<div id="translitGrid">
-<div> <span class="g"><span class="hint"></span><span class="c">&#x0ECC;</span></span></div>
-<div> <span class="g"><span class="hint">²</span><span class="c">&#x0EC8;</span></span></div>
-<div> <span class="g"><span class="hint">³</span><span class="c">&#x0EC9;</span></span></div>
-<div> <span class="g"><span class="hint">⁴</span><span class="c">&#x0ECA;</span></span></div>
-<div> <span class="g"><span class="hint">⁵</span><span class="c">&#x0ECB;</span></span></div>
+ 
+ 
+
+<div id="vowelsupport">
+<span class="c">ອ</span>
 </div>
+
+
+
+
+<div id="toneGrid">
+<div> <span class="g"><span class="hint"></span><span class="c">໌</span></span></div>
+<div> <span class="g"><span class="hint">²</span><span class="c">່</span></span></div>
+<div> <span class="g"><span class="hint">³</span><span class="c">້</span></span></div>
+<div> <span class="g"><span class="hint">⁴</span><span class="c">໊</span></span></div>
+<div> <span class="g"><span class="hint">⁵</span><span class="c">໋</span></span></div>
+</div>
+
+
+
+
 <div id="numberGrid">
-<div><span class="g"><span class="hint">1</span><span class="c">&#x0ED1;</span></span><span class="g"><span class="hint">2</span><span class="c">&#x0ED2;</span></span><span class="g"><span class="hint">3</span><span class="c">&#x0ED3;</span></span></div>
-<div><span class="g"><span class="hint">4</span><span class="c">&#x0ED4;</span></span><span class="g"><span class="hint">5</span><span class="c">&#x0ED5;</span></span><span class="g"><span class="hint">6</span><span class="c">&#x0ED6;</span></span></div>
-<div><span class="g"><span class="hint">7</span><span class="c">&#x0ED7;</span></span><span class="g"><span class="hint">8</span><span class="c">&#x0ED8;</span></span><span class="g"><span class="hint">9</span><span class="c">&#x0ED9;</span></span></div>
-<div><span class="g"><span class="hint">0</span><span class="c">&#x0ED0;</span></span> <span class="c">,</span> <span class="c">.</span> </div>
-<div style="margin-top: .5em;"><span class="c">₭</span> <span class="c">&#x0EAF;</span> <span class="c">&#x0EC6;</span></div>
-<div><span class="c">&#x0EC6;&#x0EA5;&#x0EC6;</span></div>
+<div><span class="g"><span class="hint">1</span><span class="c">໑</span></span><span class="g"><span class="hint">2</span><span class="c">໒</span></span><span class="g"><span class="hint">3</span><span class="c">໓</span></span></div>
+<div><span class="g"><span class="hint">4</span><span class="c">໔</span></span><span class="g"><span class="hint">5</span><span class="c">໕</span></span><span class="g"><span class="hint">6</span><span class="c">໖</span></span></div>
+<div><span class="g"><span class="hint">7</span><span class="c">໗</span></span><span class="g"><span class="hint">8</span><span class="c">໘</span></span><span class="g"><span class="hint">9</span><span class="c">໙</span></span></div>
+<div><span class="g"><span class="hint">0</span><span class="c">໐</span></span> <span class="c">,</span> <span class="c">.</span> </div>
+<div style="margin-top: .5em;"><span class="c">₭</span> <span class="c">ຯ</span> <span class="c">ໆ</span></div>
+<div><span class="c">ໆລໆ</span></div>
 </div>
 </div>
 
 
 <div id="punctuation">
-<span class="c">&#x002C;</span>
-<span class="c">&#x002E;</span>
-<span class="c">&#x003B;</span>
-<span class="c">&#x003A;</span>
-<span class="c">&#x003F;</span>
-<span class="c">&#x0021;</span>
-<span class="c">&#x2018;</span>
-<span class="c">&#x2019;</span>
-<span class="c">&#x201C;</span>
-<span class="c">&#x201D;</span>
-<span class="c">&#x00AB;</span>
-<span class="c">&#x00BB;</span>
-<span class="c">&#x0028;</span>
-<span class="c">&#x0029;</span>
-<span class="c">&#x002D;</span>
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<span class="c">«</span>
+<span class="c">»</span>
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
 </div>
 
 
 <details>
-<summary>Show vowel clusters</summary>
+<summary>more vowels</summary>
  <div id="vowelclusters">
- <span class="g"><span class="hint">aj</span><span class="v" onClick="addVowel(this.textContent)">-ັຍ</span></span>
-<span class="g"><span class="hint">aːj</span><span class="v" onClick="addVowel(this.textContent)">-າຍ</span>
-<span class="v" onClick="addVowel(this.textContent)">-າຽ</span></span>
-<span class="g"><span class="hint">aw</span><span class="v" onClick="addVowel(this.textContent)">ເ-ົາ</span></span>
-<span class="g"><span class="hint">e</span><span class="v" onClick="addVowel(this.textContent)">ເ-ະ</span> <span class="v" onClick="addVowel(this.textContent)">ເ-ັ</span></span>
-<span class="g"><span class="hint">ɛ</span><span class="v" onClick="addVowel(this.textContent)">ແ-ະ</span> <span class="v" onClick="addVowel(this.textContent)">ແ-ັ</span></span>
-<span class="g"><span class="hint">o</span><span class="v" onClick="addVowel(this.textContent)">ໂ-ະ</span></span>
-<br/>
-<span class="g"><span class="hint">ɔ</span><span class="v" onClick="addVowel(this.textContent)">ເ-າະ</span> <span class="v" onClick="addVowel(this.textContent)">-ັອ</span></span>
-<span class="g"><span class="hint">ɤ</span><span class="v" onClick="addVowel(this.textContent)">ເ-ິ</span></span>
-<span class="g"><span class="hint">ɤː</span><span class="v" onClick="addVowel(this.textContent)">ເ-ີ</span></span>
-<br/>
-<span class="g"><span class="hint">ɛːw</span><span class="v" onClick="addVowel(this.textContent)">ແ-ວ</span></span>
 <span class="g"><span class="hint">ia</span><span class="v" onClick="addVowel(this.textContent)">ເ-ັຍະ</span></span>
 <span class="g"><span class="hint">iːə</span><span class="v" onClick="addVowel(this.textContent)">ເ-ັຍ</span></span>
 <span class="g"><span class="hint">iə</span><span class="v" onClick="addVowel(this.textContent)">-ັຽ</span></span>
@@ -234,6 +280,15 @@
 <span class="g"><span class="hint">ɯə</span><span class="v" onClick="addVowel(this.textContent)">ເ-ຶອ</span></span>
 <span class="g"><span class="hint">ɯːə</span><span class="v" onClick="addVowel(this.textContent)">ເ-ືອ</span></span>
 <span class="g"><span class="hint">uə</span><span class="v" onClick="addVowel(this.textContent)">-ົວະ</span> <span class="v" onClick="addVowel(this.textContent)">-ົວ</span></span>
+<br/>
+<span class="g"><span class="hint">ɤːj</span><span class="v" onClick="addVowel(this.textContent)">ເ-ີຽ</span> <span class="v" onClick="addVowel(this.textContent)">ເ-ີຍ</span></span>
+<br/>
+<span class="g"><span class="hint">ɛːw</span><span class="v" onClick="addVowel(this.textContent)">ແ-ວ</span></span>
+<br/>
+<span class="g"><span class="hint">aj</span><span class="v" onClick="addVowel(this.textContent)">-ັຍ</span></span>
+<span class="g"><span class="hint">aːj</span><span class="v" onClick="addVowel(this.textContent)">-າຍ</span>
+<span class="v" onClick="addVowel(this.textContent)">-າຽ</span></span>
+<span class="g"><span class="hint">aw</span><span class="v" onClick="addVowel(this.textContent)">ເ-ົາ</span></span>
 </div>
 </details>
 
