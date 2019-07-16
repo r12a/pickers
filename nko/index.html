@@ -83,60 +83,82 @@
  <span class="touch" dir="auto" onClick="add('\u061C');">ALM</span>
  </div>
 
+
+<div id="shapelist" style="display:none; text-align:center;">
+<div id="shapekeys">
+<span onclick="findShape('7D3,7D4,7C3,7D37ED','',true)">ߓ</span>
+<span onclick="findShape('7D5,7E5,7D57ED','',true)">ߕ</span>
+<span onclick="findShape('7DE,7E4,7E3,7C2,,7DE7EB,7DE7ED,7E47ED','',true)">ߞ</span>
+<span onclick="findShape('7D8,7D87ED','',true)">ߘ</span>
+<span onclick="findShape('7D6,7D67ED,7D67F3','',true)">ߖ</span>
+<span onclick="findShape('7DC,7E1,7CD,7C7,7C8,7DC7F3,7DC7ED,7DC7EB,7E17ED','',true)">ߜ</span>
+<span onclick="findShape('7DD,7DD7ED','',true)">ߝ</span>
+<span onclick="findShape('7DB,7CB,7CF,7C0,7DB7F3,7DB7EB,7DB7ED,7CB7F3','',true)">ߛ</span>
+<span onclick="findShape('7CA,7E0,7D9,7DA,7C1,7EA,7D7,7D97F3,7D77ED,7D97ED,7CA7F3','',true)">ߊ</span>
+<span onclick="findShape('7E6,7E7,7E2,7E27ED,7E67ED','',true)">ߦ</span>
+<span onclick="findShape('7DF,7D2,7C9,7D0,7DF7ED','',true)">ߟ</span>
+<span onclick="findShape('7CE,7DA,7CE7F3','',true)">ߎ</span>
+<span onclick="findShape('2026,7F6,7F7,7E5,7CC','',true)">…</span>
+</div>
+</div>
+<div id="extrashapes"></div>
+
+
+
 <div id="kbdGrid">
 
 <div id="consonantGrid">
-  <div>
-            <span class="g"><span class="hint">k</span><span class="c">ߞ</span></span>
-            <span class="g"><span class="hint">gᵇ</span><span class="c">ߜ</span></span>
-            <span class="g"><span class="hint">ʧ</span><span class="c">ߗ</span></span>
-            <span class="g"><span class="hint">ʤ</span><span class="c">ߖ</span></span>
-</div>
-  <div>
-            <span class="g"><span class="hint">t</span><span class="c">ߕ</span></span>
-            <span class="g"><span class="hint">d</span><span class="c">ߘ</span></span>
+<div>
             <span class="g"><span class="hint">p</span><span class="c">ߔ</span></span>
-            <span class="g"><span class="hint">b</span><span class="c">ߓ</span></span>
+            <span class="g"><span class="hint">t</span><span class="c">ߕ</span></span>
+            <span class="g"><span class="hint">ʧ</span><span class="c">ߗ</span></span>
+            <span class="g"><span class="hint">k</span><span class="c">ߞ</span></span>
 </div>
-  <div>
-            <span class="g"><span class="hint">ŋ</span><span class="c">ߒ</span></span>
+<div>
+            <span class="g"><span class="hint">b</span><span class="c">ߓ</span></span>
+            <span class="g"><span class="hint">d</span><span class="c">ߘ</span></span>
+            <span class="g"><span class="hint">ʤ</span><span class="c">ߖ</span></span>
+            <span class="g"><span class="hint">gᵇ</span><span class="c">ߜ</span></span>
+</div>
+<div>
+            <span class="g"><span class="hint">f</span><span class="c">ߝ</span></span>
+            <span class="g"><span class="hint">s</span><span class="c">ߛ</span></span>
+            <span class="g"><span class="hint">h</span><span class="c">ߤ</span></span>
+            <span class="g"><span class="hint">ł</span><span class="c">ߠ</span></span>
+            <span class="g"><span class="hint">j</span><span class="c">ߧ</span></span>
+</div>
+<div>
+            <span class="g"><span class="hint">m</span><span class="c">ߡ</span></span>
             <span class="g"><span class="hint">n</span><span class="c">ߣ</span></span>
             <span class="g"><span class="hint">ɲ</span><span class="c">ߢ</span></span>
-            <span class="g"><span class="hint">m</span><span class="c">ߡ</span></span>
+            <span class="g"><span class="hint">ŋ</span><span class="c">ߒ</span></span>
 </div>
-  <div>
+<div>
+            <span class="g"><span class="hint">w</span><span class="c">ߥ</span></span>
             <span class="g"><span class="hint">r</span><span class="c">ߙ</span></span>
             <span class="g"><span class="hint">ṙ</span><span class="c">ߚ</span></span>
             <span class="g"><span class="hint">l</span><span class="c">ߟ</span></span>
-            <span class="g"><span class="hint">w</span><span class="c">ߥ</span></span>
             <span class="g"><span class="hint">y</span><span class="c">ߦ</span></span>
-</div>
-  <div>
-            <span class="g"><span class="hint">h</span><span class="c">ߤ</span></span>
-            <span class="g"><span class="hint">s</span><span class="c">ߛ</span></span>
-            <span class="g"><span class="hint">f</span><span class="c">ߝ</span></span>
-            <span class="g"><span class="hint">ł</span><span class="c">ߠ</span></span>
-            <span class="g"><span class="hint">j</span><span class="c">ߧ</span></span>
 </div>
 </div>
 
 
 
 <div id="vowelGrid">
-     <div>
-      <span class="g"><span class="hint">a</span><span class="c">ߊ</span></span>
+<div>
+      <span class="g"><span class="hint">i</span><span class="c">ߌ</span></span>
       <span class="g"><span class="hint">u</span><span class="c">ߎ</span></span>
 </div>
-    <div>
+<div>
       <span class="g"><span class="hint">e</span><span class="c">ߋ</span></span>
       <span class="g"><span class="hint">o</span><span class="c">ߏ</span></span>
 </div>
-    <div>
-      <span class="g"><span class="hint">i</span><span class="c">ߌ</span></span>
+<div>
+      <span class="g"><span class="hint">ɛ</span><span class="c">ߍ</span></span>
       <span class="g"><span class="hint">ɔ</span><span class="c">ߐ</span></span>
 </div>
-    <div>
-      <span class="g"><span class="hint">ɛ</span><span class="c">ߍ</span></span>
+<div>
+      <span class="g"><span class="hint">a</span><span class="c">ߊ</span></span>
       <span class="g"><span class="hint">ˣ</span><span class="c">ߑ</span></span>
 </div>
 </div>
@@ -232,7 +254,50 @@
 
 
 <details>
- <summary>show/hide archaic characters</summary>
+ <summary>extended repertoire</summary>
+ 
+ <div id="extended">
+ <div>
+<span class="g"><span class="hint">bʰ</span><span class="c">ߓ߭</span></span>
+<span class="g"><span class="hint">ᵵ</span><span class="c">ߕ߭</span></span>
+<span class="g"><span class="hint">dʰ</span><span class="c">ߙ߳</span></span>
+<span class="g"><span class="hint">đ</span><span class="c">ߘ߭</span></span>
+<span class="g"><span class="hint">q</span><span class="c">ߞ߫</span></span>
+<span class="g"><span class="hint">kᵖ</span><span class="c">ߜ߳</span></span>
+<span class="g"><span class="hint">ɡ</span><span class="c">ߜ߭</span></span>
+ </div>
+ 
+ <div>
+ <span class="g"><span class="hint">v</span><span class="c">ߝ߭</span></span>
+<span class="g"><span class="hint">θ</span><span class="c">ߛ߳</span></span>
+<span class="g"><span class="hint">ð</span><span class="c">ߗ߭</span></span>
+<span class="g"><span class="hint">ᵴ</span><span class="c">ߛ߫</span></span>
+<span class="g"><span class="hint">z</span><span class="c">ߖ߭</span></span>
+<span class="g"><span class="hint">ᵶ</span><span class="c">ߖ߳</span></span>
+<span class="g"><span class="hint">ʃ</span><span class="c">ߛ߭</span></span>
+<span class="g"><span class="hint">ɣ</span><span class="c">ߜ߫</span></span>
+<span class="g"><span class="hint">x</span><span class="c">ߞ߭</span></span>
+<span class="g"><span class="hint">ħ</span><span class="c">ߤ߭</span></span>
+</div>
+
+<div>
+<span class="g"><span class="hint">mʰ</span><span class="c">ߡ߭</span></span>
+<span class="g"><span class="hint">nʰ</span><span class="c">ߢ߭</span></span>
+•
+<span class="g"><span class="hint">lʰ</span><span class="c">ߟ߭</span></span>
+<span class="g"><span class="hint">yʰ</span><span class="c">ߦ߭</span></span>
+<span class="g"><span class="hint">ʀ</span><span class="c">ߙ߭</span></span>
+•
+<span class="g"><span class="hint">ä</span><span class="c">ߊ߳</span></span>
+<span class="g"><span class="hint">ǝ̈</span><span class="c">ߋ߳</span></span>
+<span class="g"><span class="hint">ü</span><span class="c">ߎ߳</span></span>
+</div>
+ </details>
+
+
+
+<details>
+ <summary>archaic characters</summary>
  
  <div id="hidden">
  <span class="c">&#x07E8;</span>
@@ -247,14 +312,6 @@
 
 
 
-
-
- <div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
-</div>
-</div>
-
-<div id="extrashapes"></div>
 
 
 <div id="temp"></div>
