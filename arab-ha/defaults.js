@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Scheherazade WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Alkalami WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "50";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "2"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'ha' // language to use for examples
-	factoryDefaults.uifont = 'Scheherazade WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Alkalami WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "40";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "rtl" // indicates the base direction for the selection area

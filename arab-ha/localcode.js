@@ -7,7 +7,7 @@ function localInitialise () {
 	}
 
 
-var _h = {
+var _h = {/*
 '636': ['635'],
 '635': ['636'],
 '634': ['633'],
@@ -61,7 +61,7 @@ var _h = {
 '672': ['627', '622', '6C4622', '6F1'],
 '627': ['622', '6C4622', '6F1', '672'],
 '646': ['6BA'],
-'6BA': ['646'],
+'6BA': ['646'],*/
 end: {}
 }
 
@@ -138,4 +138,14 @@ hints
 ں ن
 
 */
+
+
+
+function showAlternatives (className, state) {
+	nodes = document.querySelectorAll(className)
+	if (state) state = 'inline-block'
+	else state = 'none'
+	for (let i=0;i<nodes.length;i++) nodes[i].style.display = state
+	}
+
 

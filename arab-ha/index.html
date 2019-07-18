@@ -21,11 +21,16 @@
 <script src="../shared24/pagetemplate.js">  </script>
 <script src="../../scripts/linkdata/linkdb.js"></script>
 
-<script src="../../shared/scriptdb/hausaa.js">  </script>
+<script src="../../shared/scriptdb/arab-ha.js">  </script>
 <script src="localtranscription.js">  </script>
-<script src="../../shared/fontlists/arabic.js"> </script>
+<script src="../../shared/fontlists/ajami.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
+<style>
+.h { background-color: lightcyan; }
+.w { background-color: greenyellow; }
+.x { background-color: plum; }
+</style>
 </head>
 
 <body class="app">
@@ -118,39 +123,39 @@
 
 <div id="consonantGrid">
 <div style="justify-content: space-around;">
-<span class="g"><span class="hint">ɓ</span><span class="c">ٻ</span></span>
+<span class="g"><span class="hint">ɓ</span><span class="c h">ٻ</span><span class="c w">ݑ</span></span>
 <span class="g"><span class="hint">ɗ</span><span class="c">ط</span></span>
 <span class="g"><span class="hint">ʦ</span><span class="c">ڟ</span></span>
-<span class="g"><span class="hint">ƙ</span><span class="c">ق</span></span>
+<span class="g"><span class="hint">ƙ</span><span class="c h">ق</span><span class="c w">ࢼ</span></span>
 </div>
 <div class="bottomDivider">
 <span class="g"><span class="hint">b</span><span class="c">ب</span></span>
 <span class="g"><span class="hint">t</span><span class="c">ت</span></span>
 <span class="g"><span class="hint">d</span><span class="c">د</span></span>
 <span class="g"><span class="hint">ʧ</span><span class="c">ث</span></span>
-<span class="g"><span class="hint">k</span><span class="c">ك</span></span>
+<span class="g"><span class="hint">k</span><span class="c h">ك</span><span class="c w">ک</span></span>
 <span class="g"><span class="hint">ɡ</span><span class="c">غ</span></span>
 <span class="g"><span class="hint">ʔ</span><span class="c">ع</span></span>
 </div>
 <div class="bottomDivider">
-<span class="g"><span class="hint">f</span><span class="c">ف</span></span>
-<span class="g"><span class="hint">s</span><span class="c">س</span></span>
-<span class="g"><span class="hint">z</span><span class="c">ز</span></span>
-<span class="g"><span class="hint">ż</span><span class="c">ذ</span></span>
+<span class="g"><span class="hint">f</span><span class="c h">ف</span><span class="c w">ࢻ</span><span class="c x">پ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">س</span><span class="c x">ص</span></span>
+<span class="g"><span class="hint">z</span><span class="c">ز</span><span class="c x">ذ</span><span class="c x">ظ</span></span>
 <span class="g"><span class="hint">ʃ</span><span class="c">ش</span></span>
 <span class="g"><span class="hint">ʒ</span><span class="c">ج</span></span>
-<span class="g"><span class="hint">h</span><span class="c">ه</span></span>
+<span class="g"><span class="hint">h</span><span class="c">ه</span><span class="c">ح</span></span>
 </div>
 <div style="justify-content: center;">
 <span class="g"><span class="hint">m</span><span class="c">م</span></span>
 <span class="b">&nbsp;&nbsp;</span>
-<span class="g"><span class="hint">n</span><span class="c">ن</span></span>
+<span class="g"><span class="hint">n</span><span class="c h">ن</span><span class="c w">ࢽ</span></span>
 </div>
 <div style="justify-content: space-around;">
 <span class="g"><span class="hint">w</span><span class="c">و</span></span>
-<span class="g"><span class="hint">l</span><span class="c">ل</span></span>
+<span class="g"><span class="hint">l</span><span class="c">ل</span><span class="c x">ض</span></span>
 <span class="g"><span class="hint">r</span><span class="c">ر</span></span>
 <span class="g"><span class="hint">y</span><span class="c">ی</span></span>
+<span class="g"><span class="hint">j</span><span class="c h">ۑ</span><span class="c w">ؿ</span></span>
 </div>
 </div>
 
@@ -245,8 +250,8 @@
   
 <div id="vowelGrid">   
 	 	<div style="border-bottom: 1px dotted gray;">
-<span class="g"><span class="hint">i</span><span class="c">ِ</span></span>
-<span class="g"><span class="hint">i</span><span class="c">ِى</span></span>
+<span class="g"><span class="hint">i</span><span class="c">ِ</span><span class="c">إِ</span></span>
+<span class="g"><span class="hint">i</span><span class="c">ِى</span><span class="c">ىِٕ</span></span>
 <span class="g"><span class="hint">u</span><span class="c">ُ</span></span>
 <span class="g"><span class="hint">u</span><span class="c">ُو</span></span>
 
@@ -262,13 +267,13 @@
 		
 		<div style="border-bottom: 1px dotted gray;">
 <span class="g"><span class="hint">e</span><span class="c">ٜ</span></span>
-<span class="g"><span class="hint">e</span><span class="c">ٰٜ</span></span>
-<span class="hint">o</span><span class="c">ُ</span>
+<span class="g"><span class="hint">e</span><span class="c">ٰٜى</span><span class="c">ٰٜ</span><span class="c">ىٰٜ</span></span>
 <span class="hint">o</span><span class="c">ُو</span>
+<span class="hint">ō</span><span class="c">ُواْ</span><span class="c">ُو</span>
 		</div>
 		
 		<div style="border-bottom: 1px dotted gray; justify-content: flex-end;">
-<span class="g"><span class="hint">a</span><span class="c">َ</span></span>
+<span class="g"><span class="hint">a</span><span class="c">َ</span><span class="c">أَ</span></span>
 <span class="g"><span class="hint">a</span><span class="c">َا</span></span>
 		</div>
 		
@@ -330,6 +335,28 @@
          </div>
 
 
+<div class="spaceline">
+<span class="touch unshifted" dir="auto" onClick="
+	if (this.classList.contains('unshifted')) { 
+		showAlternatives('.w',true); 
+		this.classList.remove('unshifted'); 
+		this.classList.add('shifted');} 
+	else { 
+		showAlternatives('.w',false); 
+		this.classList.remove('shifted'); 
+		this.classList.add('unshifted');}
+		">Show Warsh</span> 
+<span class="touch unshifted" dir="auto" onClick="
+	if (this.classList.contains('unshifted')) { 
+		showAlternatives('.x',true); 
+		this.classList.remove('unshifted'); 
+		this.classList.add('shifted');} 
+	else { 
+		showAlternatives('.x',false); 
+		this.classList.remove('shifted'); 
+		this.classList.add('unshifted');}
+		">Show alternatives</span> 
+</div>
 
  <!--details>
  <summary>show/hide rare characters</summary>
