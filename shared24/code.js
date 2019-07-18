@@ -1014,7 +1014,8 @@ function event_mouseoutChar ()  {
 	if (_h[this.id]) {
 		ptr = this.id
 		for (i=0;i<_h[ptr].length;i++) {
-			document.getElementById(_h[ptr][i]).style.backgroundColor = 'transparent'
+			if(document.getElementById(_h[ptr][i]) === null) console.log('Couldn\'t find _h[',_h[ptr][i],']')
+			else document.getElementById(_h[ptr][i]).style.backgroundColor = 'transparent'
 			}
 		}
 	}
