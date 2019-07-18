@@ -229,6 +229,12 @@ table td { border: 0; }
 	color: brown;
 	border-radius: 3px;
 	}
+.g .c:hover {
+	font-weight: normal;
+	background-color:rgba(244,99,11);
+	color:rgba(238,238,238);
+	border-radius: 3px;
+	}
 
 
 
@@ -258,10 +264,10 @@ span.c {
 	display: inline-block;
 	/*color: #a52a2a;*/
 	}
-span.c:hover {
+/*span.c:hover {
 	background-color: #CF9;
 	border-radius: 3px;
-	}
+	}*/
 
 #toggleRare {
 	font-size: 80%;
@@ -866,7 +872,10 @@ summary:hover {
 	border-bottom: 1px dotted tan;
 	}
 
-
+.highlightedChar {
+	background-color: #FFE6B2;
+	background-color: #blue;
+	}
 
 
 

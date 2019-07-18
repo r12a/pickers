@@ -672,13 +672,15 @@ function findShape (shapelist, extrashapes, show) {
 			for (let i=0;i<shapelistarray.length;i++) { 
                 ids = document.querySelectorAll('[data-c=c'+shapelistarray[i]+']')
                 for (let x=0;x<ids.length;x++) {
-                    ids[x].style.backgroundColor = '#FFE6B2'
+                    //ids[x].style.backgroundColor = '#FFE6B2'
+                    ids[x].classList.add('highlightedChar')
                     }
 				}
 			}
 		else {
 			for (let i=0;i<shapelistarray.length;i++) {
-				document.getElementById(shapelistarray[i]).style.backgroundColor = 'transparent'
+				//document.getElementById(shapelistarray[i]).style.backgroundColor = 'transparent'
+				document.getElementById(shapelistarray[i]).classList.remove('highlightedChar')
 				}
 			}
 		}
@@ -767,7 +769,8 @@ function clearHighlights () {
 	
 	nodelist = document.querySelectorAll('.c, .v')
 	for (var i=0;i<nodelist.length;i++) {
-		nodelist[i].style.backgroundColor = 'transparent'
+		//nodelist[i].style.backgroundColor = 'transparent'
+		nodelist[i].classList.remove('highlightedChar')
 		}
 	}
 	
@@ -980,6 +983,7 @@ function unshiftAll (kbdList) {
 	for (var i=0;i<kbds.length;i++) document.getElementById(kbds[i]).className = 'unshifted'
 	}
 
+
 function event_mouseoverChar ()  {
 	// display character information
 	span = document.createElement( 'span' );
@@ -989,35 +993,45 @@ function event_mouseoverChar ()  {
 	var chardata = document.getElementById('chardata');	
 	chardata.replaceChild( span, chardata.firstChild );
 	
-	// highlight this character
-	this.style.backgroundColor = '#F4630B';
-	this.style.color = '#ddd'
+	// add cursive forms to table
+	if (template.cursive) {
+	var char = this.textContent
+		if (spreadsheetRows[char] && spreadsheetRows[char][cols.shape]) {
+			document.getElementById('cursive').innerHTML = spreadsheetRows[char][cols.shape].replace(/ /g,'&nbsp;&nbsp;').replace(/ـ/g,'\u200D')
+			}
+		}
 
 	
 	// highlight similar characters
 	if (globals.showShapeHints && _h[this.id]) {
+		clearHighlights()
 		ptr = this.id
 		for (i=0;i<_h[ptr].length;i++) {
-			document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
+			//document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
+			document.getElementById(_h[ptr][i]).classList.add('highlightedChar')
 			}
 		}
 	}
 
 function event_mouseoutChar ()  {
 	// unhighlight this character
-	this.style.backgroundColor = 'transparent'
+	//this.style.backgroundColor = 'transparent'
 	if (this.classList.contains('gkey')) this.style.color = 'orange'
 	else if (this.classList.contains('sj')) this.style.color = 'chocolate'
-    else this.style.color = '#666'
+    //else this.style.color = '#666'
 	
 	// unhighlight similar characters
-	if (_h[this.id]) {
+	//clearHighlights()
+	
+	// unhighlight similar characters
+	/*if (_h[this.id]) {
 		ptr = this.id
 		for (i=0;i<_h[ptr].length;i++) {
 			if(document.getElementById(_h[ptr][i]) === null) console.log('Couldn\'t find _h[',_h[ptr][i],']')
-			else document.getElementById(_h[ptr][i]).style.backgroundColor = 'transparent'
+			//else document.getElementById(_h[ptr][i]).style.backgroundColor = 'transparent'
+			else document.getElementById(_h[ptr][i]).classList.remove('highlightedChar')
 			}
-		}
+		}*/
 	}
 
 function event_clickOnChar () {
