@@ -65,6 +65,8 @@ span.hint {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
+	margin-left: .25em;
+	text-align: end;
 }
 
 
@@ -83,6 +85,7 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: flex-start;
+	line-height: 1.6;
     }
 #consonantGrid > span {
     min-width: 1em;
@@ -166,6 +169,7 @@ span.hint {
     font-size: 90%;
     line-height: 1.4;
 	margin-bottom: .2em;
+	margin-top: .5em;
     }
 
 #alphabet summary {
@@ -193,6 +197,8 @@ span.hint {
 }
 
 span.x, span.w { display: none; }
+.w { color:#B5F6A4; color:#00B0F0; }
+.x { color:#EFBBF6; color:#9BBB59; }
 
 
 

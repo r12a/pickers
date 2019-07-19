@@ -203,6 +203,7 @@ table td { border: 0; }
 	height: 1.2em; 
 	color: #ccc;
 	margin-bottom: .25em;
+	text-align: start;
 	}
 #charname { 
 	margin-left: 5px; 

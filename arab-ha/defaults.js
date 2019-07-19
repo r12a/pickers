@@ -6,7 +6,7 @@ var factoryDefaults = {}
 	factoryDefaults.lineheight = "2"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'ha' // language to use for examples
 	factoryDefaults.uifont = 'Alkalami WF'; // font name  for selection area (a single font, no quotes)
-	factoryDefaults.uisize = "40";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.uisize = "32";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "rtl" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
@@ -20,12 +20,13 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Hausa (ajami) character picker'
-	template.sample = "رَایُوَا بَبَّنْ رَبُو نَا | غُنْ مَسَاٻِى دُونْ شِدَیْنَا | تَرْسَشِنْ أیْكِى نَ ٻَرْنَا | فَیْ دَ ٻُویٜ سِڟَیْدَ سُنَّا | شِبِ أللَّهْ بَادَكَنْغَرَا بَا"
+	template.sample = "رَایُوَا بَبَّنْ رَبُو نَا | غُنْ مَسَاٻِى دُونْ شِدَیْنَا | تَرْسَشِنْ أَیْكِى نَ ٻَرْنَا | فَیْ دَ ٻُویٜ سِڟَیْدَ سُنَّا | شِبِ أَللَّهْ بَادَكَنْغَرَا بَا"
 	template.sampleSource = 'A verse from Aljiyu Namangi, Imfiraji, Part 3 (Verse 3), Omniglot http://www.omniglot.com/writing/hausa.htm'
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'hausaa'
 	template.scriptcode = 'Arab'
+	template.cursive = true
 
 
 
