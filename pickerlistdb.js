@@ -29,7 +29,7 @@ var plist = [
     { tag:'khmr', name:'Khmer', url:'khmer/' },
     { tag:'laoo', name:'Lao', url:'lao/' },
     { tag:'latn', name:'Latin&nbsp;&amp;&nbsp;diacritics', url:'latin/' },
-    { tag:'lisu', name:'Lisu (Fraser nnnn)', url:'lisu/' },
+    { tag:'lisu', name:'Lisu (Fraser script)', url:'lisu/' },
     { tag:'maka', name:'Makasar', url:'makasar/' },
     { tag:'mlym', name:'Malayalam', url:'malayalam/' },
     { tag:'mand', name:'Mandaic', url:'mandaic/' },
