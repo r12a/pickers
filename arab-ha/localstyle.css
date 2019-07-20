@@ -150,6 +150,7 @@ span.hint {
     margin-bottom: 0;
     line-height: .8;
 	}
+#otherCharacters { text-align: center; }
 .touch {
     margin: 0;
     }
@@ -196,8 +197,8 @@ span.hint {
 	width: 1em;
 }
 
-span.x, span.w { display: none; }
-.w { color:#B5F6A4; color:#00B0F0; }
+span.x, span.h { display: none; }
+.h { color:#B5F6A4; color:#00B0F0; }
 .x { color:#EFBBF6; color:#9BBB59; }
 
 

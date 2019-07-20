@@ -5,10 +5,10 @@ var factoryDefaults = {}
 	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "2"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'ha' // language to use for examples
-	factoryDefaults.uifont = 'Alkalami WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Alkalami Light WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "32";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
-	factoryDefaults.uidir = "rtl" // indicates the base direction for the selection area
+	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
 
 
