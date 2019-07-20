@@ -185,7 +185,7 @@ function event_mouseoverCharx ()  {
 	}
 
 
-function event_mouseoverChar ()  {
+function event_mouseoverCharXXX ()  {
 	// overrides the function in shared20/code.js to add shaping forms for all syriac styles
 	
 	// add cursive forms to table

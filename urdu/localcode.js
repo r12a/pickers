@@ -80,7 +80,7 @@ var rightOnly = new Set(['ا', 'و', 'د', 'دھ', 'ڈ', 'ڈھ', 'ذ', 'ر', 'ر
 var bothJoin = new Set(['ب', 'بھ', 'پ', 'پھ', 'ت', 'تھ', 'ٹ', 'ٹھ', 'ث', 'ن', 'ج', 'جھ', 'چ', 'چھ', 'ح', 'خ', 'ک', 'کھ', 'گ', 'گھ', 'ل', 'م', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ہ', 'ی', 'ئ', 'ۂ', 'ۃ', 'ں', 'ھ', 'ه'])
 
 
-function event_mouseoverChar ()  {
+function event_mouseoverCharXXX ()  {
 	// overrides the function in shared20/code.js to add shaping forms for all arabic styles
 	
 	// add cursive forms to table

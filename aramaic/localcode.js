@@ -42,7 +42,7 @@ var rightOnly = new Set(['ܐ', 'ܕ', 'ܗ', 'ܞ', 'ܘ', 'ܙ', 'ܩ', 'ܪ', 'ܨ', '
 var bothJoin = new Set(['ܒ', 'ܓ', 'ܚ', 'ܛ', 'ܝ', 'ܟ', 'ܠ', 'ܡ', 'ܢ', 'ܣ', 'ܤ', 'ܥ', 'ܦ', 'ܫ'])
 
 
-function event_mouseoverChar ()  {
+function event_mouseoverCharXX ()  {
 	// overrides the function in shared20/code.js to add shaping forms for all arabic styles
 	
 	// add cursive forms to table
@@ -82,7 +82,7 @@ function event_mouseoverChar ()  {
 
 
 
-function event_mouseoverChar ()  {
+function event_mouseoverCharXX ()  {
 	// overrides the function in shared20/code.js to add shaping forms for all arabic styles
 	
 	// add cursive forms to table

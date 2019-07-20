@@ -8,7 +8,7 @@ var factoryDefaults = {}
 	factoryDefaults.uifont = 'Scheherazade WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "40";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "ـ";  // default base for combining characters
-	factoryDefaults.uidir = "rtl" // indicates the base direction for the selection area
+	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
 
 
@@ -25,6 +25,7 @@ var template = {}
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'arabic'
 	template.scriptcode = 'Arab'
+	template.cursive = true
 
 
 
