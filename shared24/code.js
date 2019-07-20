@@ -994,8 +994,9 @@ function event_mouseoverChar ()  {
 	chardata.replaceChild( span, chardata.firstChild );
 	
 	// add cursive forms to table
+	document.getElementById('cursive').innerHTML = ''
 	if (template.cursive) {
-	var char = this.textContent
+		var char = this.textContent
 		if (spreadsheetRows[char] && spreadsheetRows[char][cols.shape]) {
 			document.getElementById('cursive').innerHTML = spreadsheetRows[char][cols.shape].replace(/ /g,'&nbsp;&nbsp;').replace(/ـ/g,'\u200D')
 			}
@@ -1093,6 +1094,7 @@ function initialise() {
 	
 	
 	console.log(defaults)	
+	var lastNode = null
 
 	// set ids to codepoint values of character sequence (with no leading zeros)
 	node = document.querySelectorAll( '.c, .v' ); 
@@ -1108,7 +1110,12 @@ function initialise() {
         node[n].dataset.c = 'c'+id
 
 		// set hints
-		if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.transLoc] && node[n].parentNode.className === 'g') node[n].parentNode.firstChild.textContent = window.spreadsheetRows[content][cols.transLoc]
+		if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.transLoc] && node[n].parentNode.className === 'g') {
+			if (node[n].parentNode !== lastNode) {
+				node[n].parentNode.firstChild.textContent = window.spreadsheetRows[content][cols.transLoc]
+				lastNode = node[n].parentNode
+				}
+			}
 		//if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.transLoc]) console.log(window.spreadsheetRows[content][cols.transLoc])
 		
 		// set title
