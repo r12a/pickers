@@ -407,12 +407,12 @@ if (template.scriptcode) {
 
     //out += getData(template.scriptcode)
     
-    out += '<a href="../../scripts/links?iso=' + template.scriptcode + '" target="_blank">Script-related links</a><br/>\n'
+    out += '<a href="../../scripts/links?iso=' + template.scriptcode + '" target="_blank">Script-related links for '+template.scriptcode+'</a><br/>\n'
     out += '<a href="../../app-charuse?language=' + defaults.language + '" target="_blank">Character usage for '+defaults.language+'</a><br/>\n'
     out += `
-    	<a href="../../uniview/" target="_blank">UniView</a><br/>
-    	<a href="../../app-listcharacters" target="_blank">List characters</a><br/>
-    	<a href="../../app-conversion" target="_blank">Character converter</a>
+    	<a onclick="this.href = '../../uniview/?charlist='+getHighlightedText(_output)" target="_blank" href="#">UniView</a><br/>
+    	<a onclick="this.href = '../../app-listcharacters/?chars='+getHighlightedText(_output)" target="_blank" href="#">List characters</a><br/>
+    	<a onclick="this.href = '../../app-conversion/?q='+getHighlightedText(_output)" target="_blank" href="#">Character converter</a>
     	</div>`
     
     out += '</details>'
