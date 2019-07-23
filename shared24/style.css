@@ -222,7 +222,7 @@ table td { border: 0; }
 	padding: 3px 0;
 	color:tan;
 	}
-.g:hover .hint {
+.g:hover .hint, .b:hover .hint {
 	font-weight: normal;
 	background-color:rgba(244,99,11,1.00);
 	background-color:rgba(255,204,102,1.00);
@@ -230,12 +230,19 @@ table td { border: 0; }
 	color: brown;
 	border-radius: 3px;
 	}
-.g .c:hover {
+.c:hover, .v:hover {
 	font-weight: normal;
 	background-color:rgba(244,99,11);
 	color:rgba(238,238,238);
 	border-radius: 3px;
 	}
+
+/*.g .c:hover, .g .v:hover, .b .c:hover {
+	font-weight: normal;
+	background-color:rgba(244,99,11);
+	color:rgba(238,238,238);
+	border-radius: 3px;
+	}*/
 
 
 
