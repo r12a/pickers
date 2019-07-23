@@ -994,8 +994,8 @@ function event_mouseoverChar ()  {
 	chardata.replaceChild( span, chardata.firstChild );
 	
 	// add cursive forms to table
-	document.getElementById('cursive').innerHTML = ''
 	if (template.cursive) {
+		document.getElementById('cursive').innerHTML = ''
 		var char = this.textContent
 		if (spreadsheetRows[char] && spreadsheetRows[char][cols.shape]) {
 			document.getElementById('cursive').innerHTML = spreadsheetRows[char][cols.shape].replace(/ /g,'&nbsp;&nbsp;').replace(/ـ/g,'\u200D')
