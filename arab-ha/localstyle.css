@@ -77,6 +77,23 @@ span.hint {
 	line-height: 1.2;
     justify-content: center;
     }
+#ivowelGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 1em 0 0;
+    padding: .2em .5em .2em 0;
+    }
+#ivowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-height: 15em;
+    justify-content: space-between;
+	line-height: 1.5;
+    }
 #consonantGrid {
     white-space: normal;
     display: flex;
@@ -102,7 +119,7 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 0 0 0 2em;
+    margin: 0 0 0 1em;
     padding: .2em .5em .2em 0;
     }
 #vowelGrid div {

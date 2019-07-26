@@ -20,7 +20,7 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Hausa (ajami) character picker'
-	template.sample = "رَایُوَا بَبَّنْ رَبُو نَا | غُنْ مَسَاٻِى دُونْ شِدَیْنَا | تَرْسَشِنْ أَیْكِى نَ ٻَرْنَا | فَیْ دَ ٻُویٜ سِڟَیْدَ سُنَّا | شِبِ أَللَّهْ بَادَكَنْغَرَا بَا"
+	template.sample = "رَایُوَا بَبَّنْ رَبُو نَا ، غُنْ مَسَاٻِى دُونْ شِدَیْنَا ، تَرْسَشِنْ أَیْكِى نَ ٻَرْنَا ، فَیْ دَ ٻُویٜ سِڟَیْدَ سُنَّا ، شِبِ أَللَّهْ بَادَكَنْغَرَا بَا"
 	template.sampleSource = 'A verse from Aljiyu Namangi, Imfiraji, Part 3 (Verse 3), Omniglot http://www.omniglot.com/writing/hausa.htm'
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
@@ -33,6 +33,7 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Arabic text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Transl<br/>++", "alt":"Convert Kashmiri text to a latin transliteration with vowels and other changes.", "code":"doTranscription('translitPlus')"},
 ]
 
 
