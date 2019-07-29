@@ -38,7 +38,9 @@ span.hint {
     cursor: pointer;
 	}
 .g { margin: 0 .1em; }
-
+.x {
+	color: goldenrod;
+	}
 
     
 /* KEYBOARD */
