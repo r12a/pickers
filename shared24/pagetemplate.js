@@ -184,10 +184,11 @@ for (let i=0;i<inputAids.length;i++) {
     if (inputAids[i].type === 'palette') inputAids[i].initialCode = 'closeSidebarPalettes(this);'+inputAids[i].initialCode
 	out += `<div class="vmtab`
     if (inputAids[i].type === 'palette') out += ' palette'
-    out += `" title="`+inputAids[i].title+`" data-var="`+inputAids[i].dataVar+ `" data-locn="`+inputAids[i].dataLocn+`" data-shorttitle="`+inputAids[i].dataShortTitle+`"
-    onmouseover="this.textContent=this.title+globals[this.dataset.var]" 
+    if (! inputAids[i].desc) inputAids[i].desc = inputAids[i].title
+    out += `" title="`+inputAids[i].desc+`" data-title="`+inputAids[i].title+`" data-var="`+inputAids[i].dataVar+ `" data-locn="`+inputAids[i].dataLocn+`" data-shorttitle="`+inputAids[i].dataShortTitle+`"
+    onmouseover="this.textContent=this.dataset.title+globals[this.dataset.var]" 
     onmouseout="this.textContent=this.dataset.shorttitle"  
-    onclick="if (globals[this.dataset.var] ==''){` + inputAids[i].initialCode + `}toggleSideBarOption(this, this.title, this.dataset.var, this.dataset.locn)"`
+    onclick="if (globals[this.dataset.var] ==''){` + inputAids[i].initialCode + `}toggleSideBarOption(this, this.dataset.title, this.dataset.var, this.dataset.locn)"`
     if (inputAids[i].dataVar==="showLatinTrans") out += ' id="showLatinTransSwitch" '
     if (inputAids[i].dataVar==="showTranslit") out += ' id="showRevTransSwitch" '
     out += '>'+inputAids[i].dataShortTitle+`</div>
