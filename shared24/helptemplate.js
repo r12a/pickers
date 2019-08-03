@@ -47,6 +47,16 @@ return `
       <img src="../../images/sample.png" alt="plus sign" style="vertical-align:middle;"/> add some sample text to the text area</blockquote>
       <!--p><b class="leadin">Copy, select, delete, etc. (<img src="../../shared23/images/help/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p-->
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
+      <p><b class="leadin">Analyze text.</b> This control is particularly useful for understanding the composition of the text. For each character highlighted (or the whole text box if nothing is highlighted) this lists information such as the following:</p>
+       <ul>
+       <li>transliteration</li>
+       <li>phonetic equivalence (IPA)</li>
+       <li>type of character</li>
+       <li>special usage-related information</li>
+       <li>equivalents in one or more transcriptions</li>
+       <li>a link to that character's description in the detailed character notes.</li>
+       </ul>
+      <p>If the picker recognises a sequence of characters that has a particular significance in its own right, it will show that sequence (slightly indented) after the initial character.</p>
 
 `
 }
@@ -55,7 +65,6 @@ return `
 
 function addControlsAbove2 () {
 return `
-        <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
         <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] native text, [2] transliteration, [3] IPA transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use nothing between the slashes.</p>
         <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
        <p>For example, the following in a Russian picker:</p>
@@ -73,6 +82,8 @@ return `
       <p>When you add it to your document, it will look like this.</p>
       <p><span class="codepoint" translate="no"><span lang="en">&#x04A7;</span> [<span class="uname">U+04A7 CYRILLIC SMALL LETTER PE WITH MIDDLE HOOK</span>]</span></p>
       </blockquote>
+        <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
+        <p><b class="leadin">Show all db entries.</b> This is like 'Analyse text', described above, except that it will list all meaningful sequences in the backend database which include each character.</p>
 `
 }
 
@@ -104,36 +115,26 @@ if (aidsList.match('intro')) {
     if (notes) out+= notes
     }
  
-if (aidsList.match('hinting')) {
-	out += `
-	<p><b class="leadin">Hinting.</b> Changes the selection area so that, when you mouse over a character, characters that are 	similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</p>
-	`
-	}
 	
 if (aidsList.match('shape')) {
 	out += `
-	<p><b class="leadin">Shape lookup.</b> This adds a row of orange pictures that represent basic shapes associated with the characters in the selection area. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</p>
+	<p><b class="leadin">Shape-based lookup.</b> This adds a row of orange pictures that represent basic shapes associated with the characters in the selection area. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</p>
 	<p> Each orange key represents a significant part of the shape of two or more characters; when you click on the keys, characters and combinations of characters that incorporate that shape are highlighted below.</p>
 	<p>Some pickers show additional characters below the orange row. These are typically clusters of characters which include the same shape. Click on these characters to add them to the text area.</p>
 	`
 	}
 
-if (aidsList.match('latin')) {
+if (aidsList.match('hinting')) {
 	out += `
-	<p><b class="leadin">Latin characters.</b> Displays a panel of lowercase Latin characters you are likely to need for  transcription, and sets up the <strong>Latin type-in mode</strong>. (This can be switched on/off by hitting the \` key.)</p>
-    <p>As you type, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or click directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already see the character you want, just continue typing.)</p>
-    <p style="text-align:center;"><img src="../../shared23/images/help/character-selector.png" alt=""/></p>
-    <p>Keys that produce such suggestions are highlighted in orange in a panel that appears below the text area. You can also click on the items in that panel in order to insert them.</p>
-    <p style="text-align:center;"><img src="../../shared23/images/help/latin-panel.png" alt=""/></p>
-    <p>In general, alternative characters are associate with a key on the keyboard that resembles them when displayed - eg. &#x0263; will usually be brought up by clicking on the 'y' key (rather than, say 'g').</p>
+	<p><b class="leadin">Hint at similar shapes/Hinting.</b> Changes the selection area so that, when you mouse over a character, characters that are similar in appearance, and may be easily confused, are automatically highlighted. This can be particularly useful for people who are not familiar with the script, to avoid confusing similar characters, or to find the right character when two or more look similar.</p>
 	`
 	}
 
 if (aidsList.match('translit')) {
 	out += `
-	<p><b class="leadin">Reverse transliteration.</b> Displays a panel of the transliteration characters used for this picker, and sets up the <strong>Transcription type-in mode</strong>. It allows you to generate text in the native script. (This can be switched on/off by hitting the ~ key.)</p>
+	<p><b class="leadin">IME-like assisted typing/Reverse transliteration.</b> Displays a panel of the transliteration characters used for this picker, and sets up the <strong>Transcription type-in mode</strong>. It allows you to generate text in the native script. (This can be switched on/off by hitting the \` key.)</p>
     <p style="text-align:center;"><img src="../../shared23/images/help/reverse-transcription.png" alt=""/></p>
-    <p>This works similarly to the <samp>Latin characters</samp> input aid described just above, however there are a couple of differences:</p>
+    <p>This works similarly to the <samp>Latin characters</samp> input aid described just below, however with a couple of differences:</p>
     <ol>
     <li>When you type a character, the list of alternates that appears shows (in addition to the number key to press) a set of latin transcription characters (grey), and the native character(s) that will result if that item is selected (red). To replace the character you typed with a native character, just select the appropriate number key, or click on the item itself.</li>
     <li>If a key on the keyboard is only associated with a single native character, that character will be inserted immediately.</li>
@@ -141,7 +142,37 @@ if (aidsList.match('translit')) {
     <li>Although the panel below the text area shows only the Latin transcription characters associated with each key, if you mouse over those characters the corresponding native character will appear at the bottom right of the text area (ie. the yellow box in the picture above).</li>
     </ol>
     <p>You should find that very little practise is needed to learn to enter native text quickly. This method is much faster than picking items from the selection area below.</p>
-    <p>Most other input aids that produce a panel will operate in the same way, but rather than converting from <em><a href="#translit">transliteration</a></em> characters, they convert from characters used in other <em><a href="#translit">transcriptions</a></em>, such as IPA symbols, or ISO transcription systems. In transcription systems there is not always a one-to-one correspondence between latin and native characters, but this is taken care of in the lists by repeating the necessary characters.</p>
+    <p>If there are other input aids that produce a panel, they will operate in the same way, but rather than converting from <em><a href="#translit">transliteration</a></em> characters, they convert from characters used in other <em><a href="#translit">transcriptions</a></em>, such as IPA symbols, or ISO transcription systems. In transcription systems there is not always a one-to-one correspondence between latin and native characters, but this is taken care of in the lists by repeating the necessary characters.</p>
+	`
+	}
+
+if (aidsList.match('typeAssist')) {
+	out += `
+	<p><b class="leadin">Type-assist.</b> Displays a panel of characters linked to ASCII keystrokes (in orange), and sets up the <strong>Latin type-in mode</strong>. (This can be switched on/off by hitting the \` (backquote) key.)</p>
+    <p>You should find that very little practise is needed to learn to enter native text quickly. This method is much faster than picking items from the selection area below.</p>
+    <p>As you type the orange characters, suggestions for input may appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or click directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already see the character you want, just continue typing.)</p>
+    <p style="text-align:center;"><img src="../../shared23/images/help/character-selector.png" alt=""/></p>
+    <p>Keys that produce such suggestions are highlighted in orange in a panel that appears below the text area. You can also click on the items in that panel in order to insert them.</p>
+    <p style="text-align:center;"><img src="../../shared23/images/help/latin-panel.png" alt=""/></p>
+    <p>In general, alternative characters are associated with a key on the keyboard that resembles them when displayed - eg. &#x0263; will usually be brought up by clicking on the 'y' key (rather than, say 'g').</p>
+	`
+	}
+
+if (aidsList.match('transcription')) {
+	out += `
+	<p><b class="leadin">Show transcription characters.</b> Displays a panel of lowercase Latin characters you are likely to need for transcription, and sets up the <strong>Latin type-in mode</strong>. (This can be switched on/off by hitting the ~ key.)</p>
+    <p>This works in the same way as <samp>Type-assist</samp>, described just above, except that the 0-based alternative is not inserted automatically.</p>
+	`
+	}
+
+if (aidsList.match('latin')) {
+	out += `
+	<p><b class="leadin">Latin character input.</b> Displays a panel of lowercase Latin characters you are likely to need for  transcription, and sets up the <strong>Latin type-in mode</strong>. (This can be switched on/off by hitting the ~ key.)</p>
+    <p>As you type, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or click directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already see the character you want, just continue typing.)</p>
+    <p style="text-align:center;"><img src="../../shared23/images/help/character-selector.png" alt=""/></p>
+    <p>Keys that produce such suggestions are highlighted in orange in a panel that appears below the text area. You can also click on the items in that panel in order to insert them.</p>
+    <p style="text-align:center;"><img src="../../shared23/images/help/latin-panel.png" alt=""/></p>
+    <p>In general, alternative characters are associated with a key on the keyboard that resembles them when displayed - eg. &#x0263; will usually be brought up by clicking on the 'y' key (rather than, say 'g').</p>
 	`
 	}
 
