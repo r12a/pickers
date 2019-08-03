@@ -662,7 +662,8 @@ summary:hover {
 #pickerlist {
 	border: 0;
 	width: 90%;
-	height: 12em;
+	height: 24em;
+	margin-left: 1em;
 	}
 	
 #linklist {
