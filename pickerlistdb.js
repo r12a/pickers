@@ -73,6 +73,7 @@ var plistByRegion = {
 			  ['Hausa (ajami)', 'arab-ha/'],
 			  ["N’Ko", 'nko/'],
 			  ['Neotifinagh', 'neotifinagh/'],
+			  ['Pan-African&nbsp;Latin', 'latn-afr/'],
 			  ['Tifinagh', 'tifinagh/'],
 			  ['Vai', 'vai/']
 			  ],
