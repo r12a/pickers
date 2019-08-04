@@ -5,8 +5,8 @@ var out
 out = `<section id="basics">
   <h2 href="#basics">Basic use.</h2>
 <p>To produce characters in the text area, click on character shapes, or use your keyboard for Latin characters, delete, etc. Then cut &amp; paste the result to your document, or use the controls to get further information about the characters. You must have JavaScript enabled. </p>
-<p>The controls just above the text area allow you to interact with the text in various ways. <strong>They nearly all work on highlighted text within the text area, or if there is no highlight, on all the text.</strong> Controls near the bottom of the picker allow you to change font, font size, line-height, text direction, etc.</p>
-<p><b class="leadin" id="contrast">Contrast.</b> To change the contrast level for the text on the picker user interface, click on the <img src="../../images/contrast.png" alt="plus sign"/> icon, found at the top right of the page. If you chose to save your settings between sessions, this will also be remembered.</p>
+<p>The controls just above the text area allow you to interact with the text in various ways. <strong>They nearly all work on highlighted text within the text area, or if there is no highlight, on all the text.</strong> Controls near the bottom of the app allow you to change font, font size, line-height, text direction, etc.</p>
+<p><b class="leadin" id="contrast">Contrast.</b> To change the contrast level for the text on the app user interface, click on the <img src="../../images/contrast.png" alt="plus sign"/> icon, found at the top right of the page. If you chose to save your settings between sessions, this will also be remembered.</p>
 <p><b class="leadin">Sample text.</b> If you want to add some sample text to the text area, click on the <img src="../../images/sample.png" alt="plus sign"/> icon.</p>
 <p><b class="leadin">Fonts.</b>
 To properly display the text you will need to choose a font that is loaded on your system or device, or use the web fonts downloaded with the page (the names end in ' WF'). Where applicable, the font list indicates which fonts are standard for Mac and Windows operating systems, and fonts that are freely available from Google and SIL. See more information about <a href="/scripts/fontlist/#khmer" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
@@ -14,7 +14,7 @@ To properly display the text you will need to choose a font that is loaded on yo
 When working on an iPad or similar device, you should turn off <code class="kw" translate="no">Autofocus</code> (just below the text area). This prevents the keyboard popping up after you input every character.  You may also need to select a character twice to add it to the output field.</p>
 `
 if (direction === 'rtl') out += `<p><b class="leadin">Text direction</b> The characters → ↔ ←︎︎︎ (just below the right side of the text area) allow you to set the base direction of the text area to LTR, auto, and RTL, respectively. The symbol ⇐︎ sets the direction to RTL override.</p>
-<p>In some pickers you will also see the symbol ⭅︎ . This mirrors the character glyph at the same time as applying a RTL override.</p>
+<p>In some character apps you will also see the symbol ⭅︎ . This mirrors the character glyph at the same time as applying a RTL override.</p>
 `
 
 out += `
@@ -26,7 +26,7 @@ return out
 
 function addAboutBP () {
 return `
-<p><b class="leadin" id="translit">Transliteration vs transcription.</b> Pickers distinguish between transliteration and transcription. In <strong>transliteration</strong> each native character has an equivalent Latin character associated with it. The transliteration may not accurately represent pronunciation, but does allow straightforward and reversible conversion between the two scripts. One transliteration scheme is chosen as the default for the picker (usually a method designed by myself), and the picker has controls to convert to and from that transliteration. A <strong>transcription</strong>, on the other hand, is more likely to be phonetically accurate (though may still reflect only an approximation), and is likely not to allow reversible conversions.</p>
+<p><b class="leadin" id="translit">Transliteration vs transcription.</b> Character apps distinguish between transliteration and transcription. In <strong>transliteration</strong> each native character has an equivalent Latin character associated with it. The transliteration may not accurately represent pronunciation, but does allow straightforward and reversible conversion between the two scripts. One transliteration scheme is chosen as the default for the app (usually a method designed by myself), and the app has controls to convert to and from that transliteration. A <strong>transcription</strong>, on the other hand, is more likely to be phonetically accurate (though may still reflect only an approximation), and is likely not to allow reversible conversions.</p>
 <p><b class="leadin">Normalisation.</b> All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</p>
 
 `
@@ -56,7 +56,7 @@ return `
        <li>equivalents in one or more transcriptions</li>
        <li>a link to that character's description in the detailed character notes.</li>
        </ul>
-      <p>If the picker recognises a sequence of characters that has a particular significance in its own right, it will show that sequence (slightly indented) after the initial character.</p>
+      <p>If the app recognises a sequence of characters that has a particular significance in its own right, it will show that sequence (slightly indented) after the initial character.</p>
 
 `
 }
@@ -67,7 +67,7 @@ function addControlsAbove2 () {
 return `
         <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] native text, [2] transliteration, [3] IPA transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use nothing between the slashes.</p>
         <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
-       <p>For example, the following in a Russian picker:</p>
+       <p>For example, the following in a Russian character app:</p>
       <p><span lang="ru">ру́сский язы́к</span>/rússkiy yazýk/ˈruskʲɪj jɪˈzɨk/Russian (language)</p>
       <p>will produce:</p>
       <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;charExample&quot; translate=&quot;no&quot;&gt;&lt;span class=&quot;ex&quot; lang=&quot;ru&quot;&gt;ру́сский язы́к&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;rússkiy yazýk&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;ˈruskʲɪj jɪˈzɨk&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Russian (language)&lt;/span&gt;&lt;/span&gt;</code></p>
@@ -96,7 +96,7 @@ return `
   <p><img src="../../shared23/images/help/secondary_text.png" alt=""/></p>
   <p>This area receives the output of various tools. Note that the text is editable.</p>
   <p>The icons to the right ( <img src="../../shared23/images/help/second_copy_etc.png" alt="" style="vertical-align:middle;"/> ) allow you to copy the contents of this area to the clipboard, insert the contents into the main text area, or close this subwindow, respectively. When you insert the contents of this subwindow into the main text area, the text will overwrite any highlighted text, otherwise it will just be inserted at the current cursor position.</p>
-  <p>Some conversions produce ambiguous output. In this case, you will be offered two alternatives on a yellow background, eg. <img src="../../shared23/images/help/alternatives.png" alt="" style="vertical-align:top;"/> presents you with the alternatives 'h' or 't'. Simply click on the alternative you want, and the picker will discard the rest.</p>
+  <p>Some conversions produce ambiguous output. In this case, you will be offered two alternatives on a yellow background, eg. <img src="../../shared23/images/help/alternatives.png" alt="" style="vertical-align:top;"/> presents you with the alternatives 'h' or 't'. Simply click on the alternative you want, and the app will discard the rest.</p>
 
 `
 }
@@ -120,7 +120,7 @@ if (aidsList.match('shape')) {
 	out += `
 	<p><b class="leadin">Shape-based lookup.</b> This adds a row of orange pictures that represent basic shapes associated with the characters in the selection area. When you click on a picture, characters that incorporate that shape are highlighted. This is particularly helpful for those who don't know the script at all and want to pick characters based on their shape, or for those times when you just can't find the character you want and need a hint.</p>
 	<p> Each orange key represents a significant part of the shape of two or more characters; when you click on the keys, characters and combinations of characters that incorporate that shape are highlighted below.</p>
-	<p>Some pickers show additional characters below the orange row. These are typically clusters of characters which include the same shape. Click on these characters to add them to the text area.</p>
+	<p>Some characer apps show additional characters below the orange row. These are typically clusters of characters which include the same shape. Click on these characters to add them to the text area.</p>
 	`
 	}
 
@@ -132,13 +132,13 @@ if (aidsList.match('hinting')) {
 
 if (aidsList.match('translit')) {
 	out += `
-	<p><b class="leadin">IME-like assisted typing/Reverse transliteration.</b> Displays a panel of the transliteration characters used for this picker, and sets up the <strong>Transcription type-in mode</strong>. It allows you to generate text in the native script. (This can be switched on/off by hitting the \` key.)</p>
+	<p><b class="leadin">IME-like assisted typing/Reverse transliteration.</b> Displays a panel of the transliteration characters used for this app, and sets up the <strong>Transcription type-in mode</strong>. It allows you to generate text in the native script. (This can be switched on/off by hitting the \` key.)</p>
     <p style="text-align:center;"><img src="../../shared23/images/help/reverse-transcription.png" alt=""/></p>
     <p>This works similarly to the <samp>Latin characters</samp> input aid described just below, however with a couple of differences:</p>
     <ol>
     <li>When you type a character, the list of alternates that appears shows (in addition to the number key to press) a set of latin transcription characters (grey), and the native character(s) that will result if that item is selected (red). To replace the character you typed with a native character, just select the appropriate number key, or click on the item itself.</li>
     <li>If a key on the keyboard is only associated with a single native character, that character will be inserted immediately.</li>
-    <li>If you continue typing, the picker will insert the character assigned to the number 0 in place of the character you typed. (If you want to type Latin characters, switch to the Latin type-in mode. See <samp>Latin characters</samp> above.)</li>
+    <li>If you continue typing, the app will insert the character assigned to the number 0 in place of the character you typed. (If you want to type Latin characters, switch to the Latin type-in mode. See <samp>Latin characters</samp> above.)</li>
     <li>Although the panel below the text area shows only the Latin transcription characters associated with each key, if you mouse over those characters the corresponding native character will appear at the bottom right of the text area (ie. the yellow box in the picture above).</li>
     </ol>
     <p>You should find that very little practise is needed to learn to enter native text quickly. This method is much faster than picking items from the selection area below.</p>
@@ -243,7 +243,7 @@ out +=  `
 <p><img alt="Add space:" src="../../images/count.png"/> &nbsp; Counts the number of characters in the text area.</p>
 <p><b class="leadin">Replace.</b> Allows you to remove a character from the text area, or replace it with something else. Type in the left-hand box a single character or the hex code point value for the character you want to delete/replace. If replacing, type the replacement text in the right-hand box.</p>
 
-<p><b class="leadin">CC base.</b> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://r12a.github.io/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The picker is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. </p>
+<p><b class="leadin">CC base.</b> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://r12a.github.io/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The app is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. </p>
     <p>The <samp class="kw" translate="no">CC base</samp> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</p>
     `
     

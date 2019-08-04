@@ -2,7 +2,7 @@
 
 
 function setBidiOverride (mirror) {
-    // used by the small arrows below the input area when picker base direction is bidi
+    // used by the small arrows below the input area when character app base direction is bidi
     // sets the direction to rlo with optional mirroring
     // mirror: boolean, sets the mirroring if true
     
@@ -19,7 +19,7 @@ function setBidiOverride (mirror) {
     }
 
 function clearBidiOverride () {
-    // used by the small arrows below the input area when picker base direction is bidi
+    // used by the small arrows below the input area when character app base direction is bidi
     // clears the rlo and any mirroring
     
     document.getElementById('output').classList.remove('bdoRTL')
@@ -218,7 +218,7 @@ var out
 out = `
   <div id="helpBanner" style="text-align: center;color: white;background-color: #60ADFB;">
   <div style="float:right; margin:1em;" onclick="hideCSHelp()">X</div>
-  <div><a href="help/" target="_help">Get basic information</a> about how to use this picker.</div>
+  <div><a href="help/" target="_help">Get basic information</a> about how to use this app.</div>
   <div style="font-size:80%">For context-sensitive help, click on one of these icons: <img src="../images/help.png" alt=""/></div>
   </div>
   
@@ -420,7 +420,7 @@ if (template.scriptcode) {
     }
     
 out += `<details>
-<summary>more pickers</summary>
+<summary>more character apps</summary>
 <iframe id="pickerlist" src="../pickerlist"></iframe>
 </details>
 `
@@ -456,7 +456,7 @@ out += `
 <div class="smallprint">
 Updates on <a href="https://twitter.com/r12a" target="_blank">Twitter</a>.
 See <a href="https://github.com/r12a/pickers/tree/gh-pages/`+template.github+`">recent changes</a>.
-Make a <a href="https://github.com/r12a/pickers/issues/new?title=[`+template.github+`%20picker]%20%20ADD%20TITLE%20HERE">comment</a>. 
+Make a <a href="https://github.com/r12a/pickers/issues/new?title=[`+template.github+`%20char%20app]%20%20ADD%20TITLE%20HERE">comment</a>. 
 Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
 </div>
 `
