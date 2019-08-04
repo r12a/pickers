@@ -62,3 +62,88 @@ var plist = [
     { tag:'vaii', name:'Vai', url:'vai/' },
     { tag:'latn', name:'Vietnamese', url:'vietnamese/' },
 ]
+
+
+
+var plistByRegion = {
+	'Africa':[
+			  ['Egyptian&nbsp;hieroglyphs', 'egyptian/'],
+			  ['Ethiopic', 'ethiopic/'],
+			  ['Hausa (boko)', 'latn-ha/'],
+			  ['Hausa (ajami)', 'arab-ha/'],
+			  ["N’Ko", 'nko/'],
+			  ['Neotifinagh', 'neotifinagh/'],
+			  ['Tifinagh', 'tifinagh/'],
+			  ['Vai', 'vai/']
+			  ],
+	'Europe':[
+			  ['Armenian','armenian/'],
+			  ['Cyrillic', 'cyrillic/'],
+			  ['Georgian', 'georgian/'],
+			  ['Greek', 'greek/'],
+			  ['IPA', 'ipa/'],
+			  ['IPA&nbsp;2', 'ipa2/'],
+			  ['IPA&nbsp;3', 'ipa3/'],
+			  ['Latin&nbsp;&amp;&nbsp;diacritics', 'latin/'],
+			  ['Old&nbsp;English', 'oldenglish/'],
+			  ['Old&nbsp;Norse', 'oldnorse/'],
+			  ['Runic', 'runic/'],
+			  ['Russian', 'russian/'],
+			  ],
+	'West&nbsp;Asia':[
+			  ['Arabic','arabic/'],
+			  ['All Arabic','arabicblock/'],
+			  ['Assyrian&nbsp;Neo-Aramaic', 'aramaic/'],
+			  ['Hebrew', 'hebrew/'],
+			  ['Mandaic', 'mandaic/'],
+			  ['Persian', 'persian/'],
+			  ['Syriac', 'syriac/']
+			  ],
+	'Central&nbsp;Asia':[
+			  ['Tibetan', 'tibetan/'],
+			  ['Uighur', 'uighur/']
+			  ],
+	'East&nbsp;Asia':[
+			    ['Lisu (Fraser script)', 'lisu/'],
+			    ['Mongolian', 'mongolian/']
+			    ],
+	'South&nbsp;Asia':[
+			  ['Bengali', 'bengali/'],
+			  ['Devanagari', 'devanagari/'],
+			  ['Gujarati', 'gujarati/'],
+			  ['Gurmukhi', 'gurmukhi/'],
+			  ['Hindi', 'hindi/'],
+			  ['Kashmiri&nbsp;(arab)', 'kashmiria/'],
+			  ['Kashmiri&nbsp;(deva)', 'kashmiri'],
+			  ['Malayalam', 'malayalam'],
+			  ['Sinhala', 'sinhala/'],
+			  ['Tamil', 'tamil/'],
+			  ['Thaana/Dhivehi', 'thaana/'],
+			  ['Urdu', 'urdu/']
+			  ],
+	'SE&nbsp;Asia':[
+			   ['Burmese', 'burmese/'],
+			   ['Khmer', 'khmer/'],
+			   ['Lao', 'lao/'],
+			   ['New&nbsp;Tai&nbsp;Lü', 'newtailue/'],
+			   ['Northern&nbsp;Thai', 'northernthai/'],
+			   ['Shan', 'shan/'],
+			   ['Tai&nbsp;Khün', 'taikhuen/'],
+			   ['Tai&nbsp;Le', 'taile/'],
+			   ['Tai&nbsp;Tham', 'taitham/'],
+			   ['Tai&nbsp;Viet', 'taiviet/'],
+			   ['Thai', 'thai/'],
+			   ['Vietnamese', 'vietnamese/']
+			   ],
+	'MSE Asia':[
+			   ['Balinese', 'balinese/'],
+			   ['Buginese', 'buginese/'],
+			   ['Javanese', 'javanese/'],
+			   ['Makasar', 'makasar/'],
+			   ['Sundanese', 'sundanese/']
+			   ],
+	'Americas':[
+				['Cherokee', 'cherokee/'],
+			    ['Tłı̨chǫ&nbsp;(Dogrib)', 'tlicho/']
+			    ]
+	}

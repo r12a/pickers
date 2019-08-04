@@ -8,17 +8,29 @@
 <script src="pickerlistdb.js"></script>
 </head>
 
-<body id="body" style="font-size: 90%;">
+<body id="body" style="font-size: 80%;">
 <div id="placeholder"></div>
 
 
 <script>
-out = ''
-for (let i=0;i<plist.length;i++) {
-	out += '<a title="'+plist[i].tag+'" href="'+plist[i].url+'">'+plist[i].name+'</a>'
-	if (i<plist.length-1) out += '&nbsp;• \n'
-	}
-document.getElementById('placeholder').innerHTML = out
+//out = ''
+//for (let i=0;i<plist.length;i++) {
+//	out += '<a title="'+plist[i].tag+'" href="'+plist[i].url+'">'+plist[i].name+'</a>'
+//	if (i<plist.length-1) out += '&nbsp;• \n'
+//	}
+//document.getElementById('placeholder').innerHTML = out
+
+	out = ''
+	for (item in plistByRegion) {
+		out += '<span style="font-size: 100%; color:brown;font-weight:bold;">'+item+'</span> &nbsp;&nbsp;'
+		for (let i=0;i<plistByRegion[item].length;i++) {
+			out += '<a href="'+plistByRegion[item][i][1]+'">'+plistByRegion[item][i][0]+'</a> '
+			if (i<plistByRegion[item].length-1) out += '&bull; '
+			}
+		out += '<br/>'
+		}
+	document.getElementById('placeholder').innerHTML = out
+
 </script>
 </body>
 </html>
