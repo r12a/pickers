@@ -40,6 +40,7 @@ var plist = [
     { tag:'lana', name:'Northern&nbsp;Thai', url:'northernthai/' },
     { tag:'latn', name:'Old&nbsp;English', url:'oldenglish/' },
     { tag:'latn', name:'Old&nbsp;Norse', url:'oldnorse/' },
+    { tag:'latn', name:'Pan-African Latin', url:'latn-afr/' },
     { tag:'arab', name:'Persian', url:'persian/' },
     { tag:'runr', name:'Runic', url:'runic/' },
     { tag:'cyrl', name:'Russian', url:'russian/' },
