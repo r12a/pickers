@@ -672,14 +672,12 @@ function findShape (shapelist, extrashapes, show) {
 			for (let i=0;i<shapelistarray.length;i++) { 
                 ids = document.querySelectorAll('[data-c=c'+shapelistarray[i]+']')
                 for (let x=0;x<ids.length;x++) {
-                    //ids[x].style.backgroundColor = '#FFE6B2'
                     ids[x].classList.add('highlightedChar')
                     }
 				}
 			}
 		else {
 			for (let i=0;i<shapelistarray.length;i++) {
-				//document.getElementById(shapelistarray[i]).style.backgroundColor = 'transparent'
 				document.getElementById(shapelistarray[i]).classList.remove('highlightedChar')
 				}
 			}
@@ -1002,14 +1000,15 @@ function event_mouseoverChar ()  {
 			}
 		}
 
-	
 	// highlight similar characters
-	if (globals.showShapeHints && _h[this.id]) {
+	ptr = this.dataset.c.replace('c','')
+	if (globals.showShapeHints && _h[ptr]) { 
 		clearHighlights()
-		ptr = this.id
-		for (i=0;i<_h[ptr].length;i++) {
-			//document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
-			document.getElementById(_h[ptr][i]).classList.add('highlightedChar')
+		for (let i=0;i<_h[ptr].length;i++) { 
+			ids = document.querySelectorAll('[data-c=c'+_h[ptr][i]+']')
+			for (let x=0;x<ids.length;x++) {
+				ids[x].classList.add('highlightedChar')
+				}
 			}
 		}
 	}
@@ -1100,13 +1099,15 @@ function initialise() {
 	node = document.querySelectorAll( '.c, .v' ); 
 	for (var n = 0; n < node.length; n++ ) { 
 		content = node[n].textContent
+		codepoints = [... node[n].textContent]
+		console.log(content)
 		
 		// set id and dataset.c
 		id=''
-		for (i=0;i<content.length;i++) {
-			id += convertChar2CP(content[i])
+		for (i=0;i<codepoints.length;i++) {
+			id += convertChar2CP(codepoints[i])
 			}
-		node[n].id = id
+		//node[n].id = id
         node[n].dataset.c = 'c'+id
 
 		// set hints
