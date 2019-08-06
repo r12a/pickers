@@ -1,4 +1,5 @@
 var plist = [
+    { tag:'adlm', name:'Adlam', url:'adlm/' },
     { tag:'arab', name:'Arabic', url:'arabic/' },
     { tag:'arab', name:'All&nbsp;Arabic', url:'arabicblock/' },
     { tag:'syrc', name:'Assyrian&nbsp;Neo-Aramaic', url:'aramaic/' },
@@ -68,6 +69,7 @@ var plist = [
 
 var plistByRegion = {
 	'Africa':[
+			  ['Adlam', 'adlm/'],
 			  ['Egyptian&nbsp;hieroglyphs', 'egyptian/'],
 			  ['Ethiopic', 'ethiopic/'],
 			  ['Hausa (boko)', 'latn-ha/'],
