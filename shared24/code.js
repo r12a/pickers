@@ -1567,7 +1567,8 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 				for (item in spreadsheetRows) { 
 					var matchStr = item.replace(/-/g,'.')
 					var  regex = new RegExp(matchStr)
-					if (((item.length > 1 && item.startsWith(char)) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(item))) && spreadsheetRows[item][cols.class] !== '-' && originStr.substr(ptr,item.length).match(regex)) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
+					itemArray = [... item] // to handle surrogates
+					if (((itemArray.length > 1 && itemArray[0] === char) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(item))) && spreadsheetRows[item][cols.class] !== '-' && originStr.substr(ptr,item.length).match(regex)) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
 					}
 				}
 			}
