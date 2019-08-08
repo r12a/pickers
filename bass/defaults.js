@@ -19,7 +19,7 @@ else  defaults = factoryDefaults
  
  
 var template = {}
-	template.title = 'Bassah Vah character app'
+	template.title = 'Bassa Vah character app'
 	template.sample = "𖫞𖫫𖫰 𖫐𖫭𖫱𖫐-𖫗𖫭𖫰𖫞𖫭𖫰 𖫑𖫫𖫱 𖫔𖫬𖫱𖫞𖫬𖫱𖫭𖫱𖫐-𖫕𖫭𖫰  𖫔𖫪𖫰𖫬𖫲, 𖫞𖫫𖫰𖫬𖫱 𖫕𖫨𖫲𖫐-𖫕𖫪𖫱 𖫒𖫫𖫰𖫭𖫰𖫐 𖫛𖫩𖫰𖫞𖫩𖫰𖫬𖫲 𖫔𖫬𖫰𖫭𖫱𖫐 𖫛𖫨𖫐𖫵"
 	template.blocklocation= 'bassavah'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
