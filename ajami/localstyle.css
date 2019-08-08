@@ -13,6 +13,18 @@
     font-weight: normal;
     font-style: normal;
 	}
+@font-face {
+    font-family: 'Alkalami WF';
+    src: url('../../shared/webfonts/Alkalami-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Alkalami Light WF';
+    src: url('../../shared/webfonts/Alkalami-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
 
 
 *[lang=ar] { font-family: "Noto Naskh Arabic WF", serif; }
