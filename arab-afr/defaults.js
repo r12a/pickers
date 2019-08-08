@@ -12,7 +12,7 @@ var factoryDefaults = {}
 	factoryDefaults.contrast = "low" // contrast for UI text colours
 
 
-var thisPicker = 'ajamiPicker'
+var thisPicker = 'arabafrPicker'
 
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
@@ -23,7 +23,7 @@ var template = {}
 	template.sample = "رَایُوَا بَبَّنْ رَبُو نَا ، غُنْ مَسَاٻِى دُونْ شِدَیْنَا ، تَرْسَشِنْ أَیْكِى نَ ٻَرْنَا ، فَیْ دَ ٻُویٜ سِڟَیْدَ سُنَّا ، شِبِ أَللَّهْ بَادَكَنْغَرَا بَا"
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
-	template.github = 'arabic'
+	template.github = 'arab-afr'
 	template.scriptcode = 'Arab'
 	template.cursive = true
 
