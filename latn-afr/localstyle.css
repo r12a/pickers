@@ -1,13 +1,20 @@
 @font-face {
-    font-family: 'Doulos SIL WF';
-    src: url('/shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2'),
-         url('/shared/webfonts/DoulosSIL-R.woff') format('woff');
+    font-family: 'Gentium Plus WF';
+    src: url('../../shared/webfonts/gentiumplus-r-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/gentiumplus-r-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Adelle Sans Ext Light WF';
+    src: url('../../shared/webfonts/adellesansext-light-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/adellesansext-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
 
-[lang=ha] { font-family: 'Gentium Plus', serif; }
+[lang=en] { font-family: 'Gentium Plus', 'Gentium Plus WF', serif; }
 
 
 
@@ -43,7 +50,7 @@ span.hint {
 .key span { 
 	font-size: 1.1em; 
 	font-weight: normal; 
-	font-family:  'Noto Sans Lao WF',  sans-serif;  
+	font-family:  'Gentium Plus', 'Gentium Plus WF',  sans-serif;  
     line-height: 1;
 	}
 .key {padding: 4px 0 0 0; }
