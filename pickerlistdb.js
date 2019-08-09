@@ -5,6 +5,7 @@ var plist = [
     { tag:'syrc', name:'Assyrian&nbsp;Neo-Aramaic', url:'aramaic/' },
     { tag:'armn', name:'Armenian', url:'armenian/' },
     { tag:'bali', name:'Balinese', url:'balinese/' },
+    { tag:'bass', name:'Bassa Vah', url:'bass/' },
     { tag:'beng', name:'Bengali', url:'bengali/' },
     { tag:'bugi', name:'Buginese', url:'buginese/' },
     { tag:'mymr', name:'Burmese', url:'burmese/' },
@@ -42,6 +43,7 @@ var plist = [
     { tag:'latn', name:'Old&nbsp;English', url:'oldenglish/' },
     { tag:'latn', name:'Old&nbsp;Norse', url:'oldnorse/' },
     { tag:'latn', name:'Pan-African Latin', url:'latn-afr/' },
+    { tag:'arab', name:'Pan-African Ajami', url:'arab-afr/' },
     { tag:'arab', name:'Persian', url:'persian/' },
     { tag:'runr', name:'Runic', url:'runic/' },
     { tag:'cyrl', name:'Russian', url:'russian/' },
@@ -70,6 +72,7 @@ var plist = [
 var plistByRegion = {
 	'Africa':[
 			  ['Adlam', 'adlm/'],
+			  ['Bassa Vah', 'bass/'],
 			  ['Egyptian&nbsp;hieroglyphs', 'egyptian/'],
 			  ['Ethiopic', 'ethiopic/'],
 			  ['Hausa (boko)', 'latn-ha/'],
@@ -77,6 +80,7 @@ var plistByRegion = {
 			  ["N’Ko", 'nko/'],
 			  ['Neotifinagh', 'neotifinagh/'],
 			  ['Pan-African&nbsp;Latin', 'latn-afr/'],
+			  ['Pan-African&nbsp;Ajami', 'arab-afr/'],
 			  ['Tifinagh', 'tifinagh/'],
 			  ['Vai', 'vai/']
 			  ],
