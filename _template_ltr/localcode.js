@@ -2,132 +2,108 @@ globals.showTranslit =  ''
 
 
 function localInitialise () {
+
 	}
 
 
 
-var justLatinMap = `
-a ā ä äʲ aᵐ
-b b̯
-d d̯
-e ē ɛ ɛ̄ ə ᵊ
-f f̱
-h ẖ ʰ
-i ī
-j ʲ
-k k̯ ḵʰ
-l l̆ ḻ
-y y̯
-[ ² ³ ¹ ⁴ ˖ ̀ ́ ̂ ̌ ̒
-: ː
-} ʔ
-`
-
-
-
-var translitCharacterMap = `
-a aʲ ໄ äʲ ໃ ā າ a ະ ä ັ aᵐ ຳ
-b b̯ ບ
-c c ຈ
-d d̯ ດ
-e ē ເ ɛ̄ ແ
-f f ຝ f̱ ຟ
-6 6 ໖
-7 7 ໗
-8 8 ໘
-9 9 ໙
-. ... ຯ
-* ̒ ໌
-& ˖ ໆ
-^ ¹ ່ ² ້ ³ ໊ ⁴ ໋
-} ʔ ອ
-`
-
-/*
-globals.showSimTrans = ''
-
-var simmalaCharacterMap = `
-b b ບ bp ປ
-d d ດ dt ຕ
-f f ຝ f ຟ
-g g ກ
-h h ຫ h ຮ
-j j ຈ
-k k ຂ k ຄ -k ກ
-O ∅ ອ ∅ ຫ
-a a ະ a ັ aa າ aai າຍ aao ເ-ົາ aao າວ ai ໄ- ai ໃ- am ຳ ao ເ-ົາ
-e e ເ-ະ e ເ-ັ ee ເ- eeo ເ-ວ ə ເ-ຶ əə ເ-ິ əəi ເ-ີຍ əi ເ-ີຍ ɛ ແ-ະ ɛɛ ແ- ɛo ແ-ວ ɛɛo ແ-ວ
-i i ິ ii ີ ia ເ-ັຍ ia ເ-ັຍະ ia ັຽ ia ເ-ຍ ia ເ-ຽ ia ຽ iao ຽວ iu ິວ
-o o ໂ-ະ o ວ oo ໂ- ooi ໂ-ຍ ɔ ເ-າະ ɔ ັອ ɔi ອຍ ɔɔ ໍ ɔɔi ອຍ
-u ua ົວ ua ົວະ ua ັວ ua ວ uai ວຍ ui ຸຍ uu ູ ʉ ຶ ʉa ເ-ຶອ ʉa ເ-ືອ ʉai ເ-ືອຍ ʉʉ ື
-`
-*/
-
-
-
 var _h = {
-'E81': ['E96', 'ED7'],
+'974': ['973', '93B', '93A', '93E', '93B'],
+'973': ['93B', '93A', '93E', '93B', '974'],
+'93B': ['93A', '93E', '93B', '974', '973'],
+'93A': ['93E', '93B', '974', '973', '93B'],
+'93E': ['93B', '974', '973', '93B', '93A'],
+'93B': ['974', '973', '93B', '93A', '93E'],
+'908': ['919', '939', '907'],
+'919': ['939', '907', '908'],
+'939': ['907', '908', '919'],
+'907': ['908', '919', '939'],
+'946': ['947', '94A', '94B', '90E'],
+'947': ['94A', '94B', '90E', '946'],
+'94A': ['94B', '90E', '946', '947'],
+'94B': ['90E', '946', '947', '94A'],
+'90E': ['946', '947', '94A', '94B'],
+'92B': ['915'],
+'915': ['92B'],
+'92A': ['925', '92F'],
+'925': ['92F', '92A'],
+'92F': ['92A', '925'],
+'938': ['92E'],
+'92E': ['938'],
+'92C': ['937', '935'],
+'937': ['935', '92C'],
+'935': ['92C', '937'],
 
 end: {}
 }
 
 
-
-
 var keyboarddef = [
-"§|1|2|3|4|5|6|7|8|9|0|-|=",
-"q|w|e|r|t|y|u|i|o|p|[|]",
-"a|s|d|f|g|h|j|k|l|;|'|\\",
-"`|z|x|c|v|b|n|m|,|.|/"
+"§ ॊ ऒ|1 १ ऍ|2 २ ॅ ऽ|3 ३ ्र|4 ४ र् ₹|5 ५ ज्ञ|6 ६ त्र|7 ७ क्ष|8 ८ श्र|9 ९ (|0 ० ) ॰|- ः ॢ|= ृ ऋ ॄ",
+"q ौ औ|w ै ऐ|e ा आ|r ी ई|t ू ऊ|y ब भ|u ह ङ|i ग घ ग़|o द ध|p ज झ ज़|[ ड ढ ड़|] ़ ञ",
+"a ो ओ|s े ए|d ् अ|f ि इ|g ु उ|h प फ|j र ऱ|k क ख क़|l त थ|; च छ|' ट ठ ॑|\\ ॉ ऑ",
+"` ॊ ऒ `|z ॆ ऎ|x ं ँ ॐ|c म ण|v न ऩ|b व ऴ|n ल ळ ऌ|m स श|,  ष|. । ॥|/ य य़"
 ]
 
 
-/*  FOR KEYBOARDS WITH DIFFERENT CHARS ON SHIFT LEVEL
-var keyboardUC = [
-"§|1|2|3|4|5|6|7|8|9|0|-|=",
-"q|w|e|r|t උ|y|u|i|o|p|[|]",
-"a ඒ ඌ ඖ|s|d ො ඎ ෲ|f|g|h|j|k|l|;|'|\\",
-"`|z|x|c|v|b|n|m|,|.|/"
-]
+
+globals.showISOCharMap = ''
+
+var isoCharacterMap = `
+a ā ा ai ै au ौ
+A a अ ā आ ai ऐ au औ
+b b ब
+B bh भ
+c c च
+C ch छ
+d d द ḍ ड
+D dh ध ḍh ढ
+e ē े
+E ē ए
+f f \u095E
+g g ग ġ \u095A
+G gh घ
+h h ह ḥ ः
+i i ि ī ी
+I i इ ī ई
+j j ज
+J jh झ
+k k क
+K kh ख k͟h \u0959
+l l ल ḷ ळ
+m m म ṁ ं
+n n न ñ ञ ṇ ण
+N ṅ ङ ̃ ँ
+o ō ो
+O ō ओ
+p p प
+P ph फ
+q q \u0958
+r r र ṛ \u095C ṛh \u095D
+R r̥ ृ r̥̄ ॄ r̥ ऋ r̥̄ ॠ
+s s स ś श ṣ ष
+t t त ṭ ट
+T th थ ṭh ठ
+u u ु ū ू
+U u उ ū ऊ
+v v व
+y y य
+z z \u095B
+0 0 ०
+1 1 १
+2 2 २
+3 3 ३
+4 4 ४
+5 5 ५
+6 6 ६
+7 7 ७
+8 8 ८
+9 9 ९
+\\ ' ऽ
+`
 
 
-function event_toggleKbdShift () {
-    if (this.classList.contains('shiftKeyOn')) {
-        makeKeyboard(keyboarddef, keyboardLCGuide)
-        }
-    else makeKeyboard(keyboardUC, keyboardUCGuide)
-    }
-*/
 
 
-function toggleShift (node, LC, UC) {
-    var chars = document.querySelectorAll('.c')
 
-    if (node.className =='unshifted') {
-        for (let i=0;i<chars.length;i++) {
-            chars[i].textContent = chars[i].textContent.toLowerCase()
-            }
-		node.className = 'shifted'
-		} 
-	else {
-        for (let i=0;i<chars.length;i++) {
-            chars[i].textContent = chars[i].textContent.toUpperCase()
-            }
-		node.className = 'unshifted'
-		}
-	// reinitialise ids to codepoint values of character sequence (with no leading zeros)
-	node = document.querySelectorAll( '.c' ); 
-	for (var n = 0; n < node.length; n++ ) { 
-		content = node[n].textContent
-		id=''
-		for (i=0;i<content.length;i++) {
-			id += convertChar2CP(content[i])
-			}
-		node[n].id = id
-        node[n].dataset.c = 'c'+id
-        dec = parseInt(id, 16)
-        while (id.length<4) id = '0'+id
-        node[n].title = 'U+'+id+': '+charData[content]
-		}
-	}
 

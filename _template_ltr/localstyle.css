@@ -1,12 +1,15 @@
 @font-face {
-    font-family: 'Arian AMU WF';
-    src: url('../../shared/webfonts/arnamu-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/arnamu-webfont.woff') format('woff');
+    font-family: 'Noto Serif Devanagari WF';
+    src: url('/shared/webfonts/notoserifdevanagari-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notoserifdevanagari-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
-[lang=ber] { font-family: 'Noto Sans Tifinagh WF', Tagmukay, serif; }
+
+
+[lang=hi] { font-family: 'Noto Serif Devanagari WF', serif; }
+
 
 
 #alphabet { 
@@ -18,6 +21,7 @@ span.hint {
 	margin-right: 1px;
     margin-left: 2px;
 	font-size: 50%;
+	color:tan;
 	}
 .c { 
 	min-width: .75em;
@@ -30,7 +34,7 @@ span.hint {
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  "Arian Amu WF", "Noto serif Armenian",  sans-serif;  
+	font-family:  'Noto Serif Devanagari WF',  sans-serif;  
     line-height: 1;
 	}
 
@@ -46,99 +50,62 @@ span.hint {
 	line-height: 1.2;
     justify-content: center;
     }
-#ivowelGrid {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    height: 9em;
-    justify-content: space-between;
-    line-height: 1.5;
-    text-align: right;
-    }
-#ivowelGrid div {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 3.5em;
-    justify-content: flex-end;
-    }
-#virama {
-    width: 2em;
-    display: flex;
-    flex-direction: column;
-    margin: 0 .3em 0 .4em;
-    justify-content: center;
-    align-items: center;
-    }
-#consonantGrid {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 9em;
-    }
 #consonantGrid div {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    width: 8em;
-    justify-content: space-between;
+    justify-content: space-around;
+    line-height: 1.5;
+    }
+#consonantGrid > span {
+    min-width: 1em;
     }
 #moreconsonants {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    width: 2em;
-    justify-content: flex-start;
-    align-content: center;
-    height: 9em;
-    margin-left: .3em;
-   }
-#diacritics {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: center;
-    height: 9em;
-    margin-left: .5em;
-    line-height: 1.75;
-    }
-#vowelGrid {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 8em;
-    margin-left: .3em;
-    padding: .25em .3em .25em .2em;
-    border: 1px solid #ccc;
-    border-radius: .5em;
-    }
-#vowelGrid div {
+    white-space: normal;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    width: 3em;
-    justify-content: space-between;
+    justify-content: center;
+    line-height: 1.5;
+    align-content: flex-start;
+    margin-left: 1em;
     }
-#numberGrid {
-    display: flex;
+#ivowelGrid {
     flex-wrap: nowrap;
+    justify-content: flex-end;
+    line-height: 1.5;
+    text-align: right;
+	margin-right: 1em;
+    }
+#vowelGrid div {
+    flex-wrap: nowrap;
+    justify-content: end;
+    }
+#vowelGrid {
+    flex-wrap: nowrap;
+    justify-content: end;
+    line-height: 1.5;
+    margin-left: 1em;
+    }
+#cchars {
+    width: 2em;
+    text-align: center;
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    height: 9em;
-    margin-left: .5em;
+    margin: .5em .5em 0 .5em;
+    justify-content: start;
+    align-items: center;
     }
 #numberGrid div {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 4em;
     justify-content: space-between;
+    margin-left: 1.2em;
+    line-height: 1.5;
     font-size: 90%;
-    line-height: 1.75;
     }
-#punctuation {
+#punctuation, #flatnumbers, #other {
     text-align: center;
     font-size: 80%;
     line-height: 1.7;
@@ -153,12 +120,8 @@ span.hint {
 #alphabet summary {
     font-size: 14px;
     }
-#hidden {
+#obsolete {
     text-align: center;
     font-size: 90%;
     }
-
-
-
-
 
