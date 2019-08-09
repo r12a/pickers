@@ -1100,7 +1100,6 @@ function initialise() {
 	for (var n = 0; n < node.length; n++ ) { 
 		content = node[n].textContent
 		codepoints = [... node[n].textContent]
-		console.log(content)
 		
 		// set id and dataset.c
 		id=''
