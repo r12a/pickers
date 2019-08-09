@@ -8,7 +8,7 @@
 
 
 
-[lang=hi] { font-family: 'Noto Sans Bassah Vah WF', serif; }
+[lang=bsq] { font-family: 'Noto Sans Bassah Vah WF', serif; }
 
 
 
@@ -61,35 +61,21 @@ span.hint {
 #consonantGrid > span {
     min-width: 1em;
     }
-#moreconsonants {
-    white-space: normal;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: center;
-    line-height: 1.5;
-    align-content: flex-start;
-    margin-left: 1em;
-    }
-#ivowelGrid {
-    white-space: normal;
-    max-height: 15em;
-    justify-content: flex-end;
-    line-height: 1.5;
-    text-align: right;
-	margin-right: 1em;
-    }
 #vowelGrid {
-    white-space: normal;
-    justify-content: end;
+    display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
     line-height: 1.5;
     margin-left: 1em;
     }
 #vowelGrid div {
-    justify-content: end;
+    display: flex;
+	justify-content: end;
+	flex-wrap: nowrap;
     }
 #cchars {
 	display: flex;
+	flex-direction: row;
     flex-wrap: nowrap;
     text-align: center;
     flex-direction: column;
