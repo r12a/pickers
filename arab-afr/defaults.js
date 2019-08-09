@@ -5,8 +5,8 @@ var factoryDefaults = {}
 	factoryDefaults.rows = "2.5"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'ar' // language to use for examples
-	factoryDefaults.uifont = 'Noto Naskh Arabic WF'; // font name  for selection area (a single font, no quotes)
-	factoryDefaults.uisize = "32";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.uifont = 'Noto Arabic Sans Light WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "ـ";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
@@ -19,7 +19,7 @@ else  defaults = factoryDefaults
  
  
 var template = {}
-	template.title = 'Pan-African ajami character app'
+	template.title = 'Pan-African Ajami character app'
 	template.sample = "رَایُوَا بَبَّنْ رَبُو نَا ، غُنْ مَسَاٻِى دُونْ شِدَیْنَا ، تَرْسَشِنْ أَیْكِى نَ ٻَرْنَا ، فَیْ دَ ٻُویٜ سِڟَیْدَ سُنَّا ، شِبِ أَللَّهْ بَادَكَنْغَرَا بَا"
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script

@@ -6,10 +6,9 @@
     font-style: normal;
 	}
 @font-face {
-    font-family: 'Noto Naskh Arabic WF';
-    src: 	local('Noto Naskh Arabic'),
-			url('/shared/webfonts/NotoNaskhArabic-Regular.woff2') format('woff2'),
-         	url('/shared/webfonts/NotoNaskhArabic-Regular.woff') format('woff');
+    font-family: 'Noto Arabic Sans Light WF';
+    src: 	url('/shared/webfonts/notosansarabic-light-webfont.woff2') format('woff2'),
+         	url('/shared/webfonts/notosansarabic-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
@@ -55,7 +54,7 @@ span.hint {
 	color: tan;
 	}
 .c { 
-	min-width: .5em;
+	min-width: .7em;
 	text-align: center;
 	margin: 0 .05em;
 	}
@@ -106,21 +105,18 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
-    line-height: 1;
+    line-height: 1.5;
     vertical-align: baseline;
     }
 #kbd #vowels {
     padding: 0;
     }
 #vowelGrid {
-    white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
-    height: 5em;
     justify-content: space-between;
     margin: 0 .25em;
-    line-height: 1.5;
     border: 1px solid #ccc;
     border-radius: .3em;
     padding: .2em .5em;
@@ -129,16 +125,14 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    max-height: 15em;
     justify-content: space-between;
+	line-height: 1.5;
     }
 #numberGrid {
     white-space: normal;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 2.5em;
-    max-height: 15em;
     justify-content: space-between;
     margin: 0 .2em;
     line-height: 1;
@@ -150,7 +144,6 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    max-height: 15em;
     justify-content: space-between;
     }
 #alphabet #controlchars {
