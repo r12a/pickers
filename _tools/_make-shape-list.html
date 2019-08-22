@@ -31,9 +31,12 @@ function makeList (charlist) {
 		var targets = firsthalf.split(' ')
 		for (let t=0;t<targets.length;t++) {
 			var codepoint = ''
-			for (let c=0; c<targets[t].length; c++) {
-				codepoint += targets[t].codePointAt(c).toString(16).toUpperCase()
-				}
+			//for (let c=0; c<targets[t].length; c++) {
+				sequence = [... targets[t]]
+				for (z=0;z<sequence.length;z++) codepoint += sequence[z].codePointAt(0).toString(16).toUpperCase()
+
+				//codepoint += targets[t].codePointAt(c).toString(16).toUpperCase()
+				//}
 			currentLine += codepoint
 			if (t < targets.length-1) currentLine += ','
 			}
