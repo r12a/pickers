@@ -81,7 +81,7 @@ p, input, #character, #inputArea  { font-size: 100%; }
 <p>Make a set of spans for the selection area of a picker</p>
 <p>Column number for transliteration (0-based): <select id="col"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></p>
 <p><button onClick="
-    document.getElementById('inputArea').value  = '' 
+    document.getElementById('inputArea').value  = ''; document.getElementById('inputArea').focus()
     ">Clear input area</button></p>
 <textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;"></textarea>
 
