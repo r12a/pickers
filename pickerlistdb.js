@@ -53,7 +53,6 @@ var plist = [
     { tag:'syrc', name:'Syriac', url:'syriac/' },
     { tag:'lana', name:'Tai&nbsp;Khün', url:'lana-kkh/' },
     { tag:'tale', name:'Tai&nbsp;Le', url:'taile/' },
-    { tag:'lana', name:'Tai&nbsp;Tham', url:'taitham/' },
     { tag:'tavt', name:'Tai&nbsp;Viet', url:'taiviet/' },
     { tag:'taml', name:'Tamil', url:'tamil/' },
     { tag:'thaa', name:'Thaana', url:'thaana/' },
@@ -138,7 +137,6 @@ var plistByRegion = {
 			   ['Shan', 'shan/'],
 			   ['Tai&nbsp;Khün', 'lana-kkh/'],
 			   ['Tai&nbsp;Le', 'taile/'],
-			   ['Tai&nbsp;Tham', 'taitham/'],
 			   ['Tai&nbsp;Viet', 'taiviet/'],
 			   ['Thai', 'thai/'],
 			   ['Vietnamese', 'vietnamese/']
