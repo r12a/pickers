@@ -1001,13 +1001,15 @@ function event_mouseoverChar ()  {
 		}
 
 	// highlight similar characters
-	ptr = this.dataset.c.replace('c','')
-	if (globals.showShapeHints && _h[ptr]) { 
-		clearHighlights()
-		for (let i=0;i<_h[ptr].length;i++) { 
-			ids = document.querySelectorAll('[data-c=c'+_h[ptr][i]+']')
-			for (let x=0;x<ids.length;x++) {
-				ids[x].classList.add('highlightedChar')
+	if (this.dataset.c) {
+		ptr = this.dataset.c.replace('c','')
+		if (globals.showShapeHints && _h[ptr]) { 
+			clearHighlights()
+			for (let i=0;i<_h[ptr].length;i++) { 
+				ids = document.querySelectorAll('[data-c=c'+_h[ptr][i]+']')
+				for (let x=0;x<ids.length;x++) {
+					ids[x].classList.add('highlightedChar')
+					}
 				}
 			}
 		}
