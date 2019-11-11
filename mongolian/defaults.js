@@ -38,6 +38,8 @@ var controls = [
 var pulldown = [
 {"title":"Mongolian<br/>to JSM", "alt":"Convert Mongolian text to a Joint Sino-Mongolian transcription.", "code":"doTranscription('toJSM')"},
 
+{"title":"Toggle<br/>direction", "alt":"Switch direction of input area between vertical &amp; horizontal.", "code":"toggleDirectionality()"},
+
 //{"title":"Cyrillic<br/>to Mongolian", "alt":"Convert Mongolian text in Cyrillic to Traditional Mongolian.", "code":"doTranscription('cyrlToMong')"},
 ]
 

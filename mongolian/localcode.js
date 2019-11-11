@@ -16,7 +16,6 @@ function showVariants (node)  {
 	// display any variant forms in the dedicated area
 		// first, get the character code point
 		var codepoint = node.dataset.c.substr(1)
-		console.log(codepoint)
 		// now generate the img code for the variants
 		var variants = node.dataset.variants.split(' ');
 		var variantimgs = '<table><tbody>';
@@ -45,6 +44,13 @@ function showVariants (node)  {
 		document.getElementById('variantshapes').innerHTML = variantimgs;
 	}
 
+
+
+function toggleDirectionality () {
+	// switch the direction of the input box between vertical and horizontal
+	if (document.getElementById('output').style.writingMode === 'vertical-lr') document.getElementById('output').style.writingMode = 'horizontal-tb' 
+	else document.getElementById('output').style.writingMode = 'vertical-lr' 
+	}
 
 
 
