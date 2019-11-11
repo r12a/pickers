@@ -15,7 +15,8 @@ function event_clickOnChar () {
 function showVariants (node)  {
 	// display any variant forms in the dedicated area
 		// first, get the character code point
-		var codepoint = node.id;
+		var codepoint = node.dataset.c.substr(1)
+		console.log(codepoint)
 		// now generate the img code for the variants
 		var variants = node.dataset.variants.split(' ');
 		var variantimgs = '<table><tbody>';
@@ -47,7 +48,7 @@ function showVariants (node)  {
 
 
 
-function event_mouseoverChar ()  {
+function event_mouseoverCharXX ()  {
 	// display character information
 	span = document.createElement( 'span' );
 	span.setAttribute( 'id', 'charname' );
