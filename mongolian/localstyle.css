@@ -152,6 +152,12 @@ dt { color: #FF6600; }
 	-webkit-text-orientation: sideways-right;
  	}
  
+#punctuation2 .c { 
+	-moz-writing-mode: horizontal-tb;
+	-webkit-writing-mode: horizontal-tb;
+	writing-mode: horizontal-tb;
+ 	}
+ 
 #numbers .c { 
 	writing-mode: horizontal-tb;
 	-webkit-writing-mode: horizontal-tb;
