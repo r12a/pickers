@@ -1,6 +1,8 @@
 globals.showLOCTrans = ''
 globals.showCaseEndings = ''
 globals.showLatinTrans = ''
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = false
 
 function localInitialise () {
 

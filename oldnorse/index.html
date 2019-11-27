@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Old Norse picker 24</title>
+<title>Old Norse character picker 25</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared24/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared25/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,14 +14,14 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared24/setup.js">  </script>
-<script src="../shared24/code.js">  </script>
-<script src="../shared24/latinregister.js">  </script>
+<script src="../shared25/setup.js">  </script>
+<script src="../shared25/code.js">  </script>
+<script src="../shared25/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared24/pagetemplate.js">  </script>
+<script src="../shared25/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
-<script src="../../shared/scriptdb/oldnorse.js">  </script>
+<script src="../../shared/scriptdb/latn-non.js">  </script>
 <script src="localtranscription.js">  </script>
 <script src="/shared/fontlists/oldgermanicfonts.js"> </script>
 <style id="dynamicUIFont"></style>
@@ -47,13 +47,14 @@
 
 
 
-<div id="chardata"><span id="charname">Click on T (left), for assisted typing, or on keyboard below.</span></div>
+<div id="chardata"><span id="charname">Type assist (T) is on. Click on the vertical list to the left for alternative input aids.</span></div>
 
 
 
 <div id="tables" dir="ltr">
   
-<div class="kbdWrapper"><div dir="ltr" id="keyboard" style="display: block;"></div></div>
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
 
 <div id="alphabet" class="default">
 
@@ -66,7 +67,7 @@
 <span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
 </div>
 
-  <!--div id="grid">
+  <div id="grid">
         <div class="uppercase hidden">
           <span class="c">Ð</span>
           <span class="c">Þ</span>
@@ -111,7 +112,7 @@
         </div>
       </div>
     </div>
-  </div-->
+  </div>
 
 
 
