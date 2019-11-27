@@ -1,6 +1,9 @@
 globals.showLOCTrans = ''
 globals.showIPATrans = ''
 globals.showTransliteration = ''
+globals.typeAssist = ''
+globals.showKeysTranslitToggle = true
+
 
 function localInitialise () {
 
