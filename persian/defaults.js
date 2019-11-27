@@ -19,7 +19,7 @@ else  defaults = factoryDefaults
  
  
 var template = {}
-	template.title = 'Persian character picker'
+	template.title = 'Persian character app'
     template.sample = "(۲) هر کس حق دارد هر کشوری و از جمله کشور خود را ترک کند یا به کشور خود باز گردد."
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
