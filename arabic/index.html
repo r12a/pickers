@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Arabic picker 24</title>
+<title>Arabic character app 25</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared24/style.css" />
+<link rel="stylesheet" href="../shared25/style.css" />
 <link rel="stylesheet" href="localstyle.css" />
 
 <script src="../../shared/code/boilerplate.js"></script>
@@ -15,14 +15,14 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared24/setup.js">  </script>
-<script src="../shared24/code.js">  </script>
-<script src="../shared24/latinregister.js">  </script>
+<script src="../shared25/setup.js">  </script>
+<script src="../shared25/code.js">  </script>
+<script src="../shared25/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared24/pagetemplate.js">  </script>
+<script src="../shared25/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
-<script src="../../shared/scriptdb/arabic.js">  </script>
+<script src="../../shared/scriptdb/arab-ar.js">  </script>
 <script src="localtranscription.js">  </script>
 <script src="/shared/fontlists/arabic.js"> </script>
 <style id="dynamicUIFont"></style>
@@ -102,7 +102,7 @@
 
 
 
-<div id="chardata"><span id="charname">Click S (shape lookup), R (type-assist), K (keyboard), or on characters below.</span></div>
+<div id="chardata"><span id="charname">Type-assist (T) is on. Click on the vertical list to the left for alternative input aids.</span></div>
 
 
 
@@ -128,8 +128,14 @@
 <span onclick="findShape('631,632,648,624','',true)">ر</span>
 <span onclick="findShape('62F,630','',true)">د</span>
 <span onclick="findShape('649,626,64A','',true)">ى</span>
-<span onclick="findShape('628,62A,62B,646','',true)">ب</span>
+<span onclick="findShape('628,62A,62B,646','',true)">ٮ</span>
 <span onclick="findShape('635,636,633,634','',true)">ص</span>
+/
+<span onclick="findShape('62A,629,642','',true)">ت</span>
+<span onclick="findShape('64A','',true)">ي</span>
+<span onclick="findShape('628,62C','',true)">ب</span>
+<span onclick="findShape('646,636,641,62E,630,632,638,63A','',true)">ن</span>
+<span onclick="findShape('62B,634','',true)">ث</span>
 </div>
 </div>
 
@@ -191,9 +197,9 @@
 		<span class="g"><span class="hint">b</span><span class="c">ب</span></span>
 		<span class="g"><span class="hint">t</span><span class="c">ت</span></span>
 		<span class="g"><span class="hint">d</span><span class="c">د</span></span>
-		<span class="g"><span class="hint">t̴</span><span class="c">ط</span></span>
-		<span class="g"><span class="hint">d̴</span><span class="c">ض</span></span>
-		<span class="g"><span class="hint">ẗ</span><span class="c">ة</span></span>
+		<span class="g"><span class="hint">T</span><span class="c">ط</span></span>
+		<span class="g"><span class="hint">d</span><span class="c">ض</span></span>
+		<span class="g"><span class="hint">t</span><span class="c">ة</span></span>
 		<span class="g"><span class="hint">k</span><span class="c">ك</span></span>
 		<span class="g"><span class="hint">q</span><span class="c">ق</span></span>
 		<span class="g"><span class="hint">ʔ</span><span class="c">ء</span></span>
@@ -355,7 +361,7 @@
 
 
  <details>
- <summary>show/hide rare characters</summary>
+ <summary>infrequent characters</summary>
  <table id="rare"><tbody>
  
  	<tr>
