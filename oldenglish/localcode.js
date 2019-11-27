@@ -3,7 +3,8 @@
 globals.showLOCTrans = ''
 globals.showIPATrans = ''
 globals.showCaseEndings = ''
-
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = false
 
 
 function localInitialise () {
@@ -60,6 +61,7 @@ function blankEndings () {
 	}
 
 
+/*
 globals.showTypeIn = ''
 
 var typeinCharacterMap = `
@@ -76,7 +78,6 @@ y ȳ
 ; ͡
 `
 
-/*
 var ipaCharacterMap = `
 a aː ɑ ɑː æ æː
 e eː ə̯
