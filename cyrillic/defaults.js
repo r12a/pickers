@@ -19,7 +19,7 @@ else  defaults = factoryDefaults
  
  
 var template = {}
-	template.title = 'All Cyrillic character picker'
+	template.title = 'Cyrillic character app'
 	template.sample = "Дарбанзаалак ауаҩы аҧсҭазаареи, ахақәиҭреи, хаҭала аӡә диламкьысуа аҟазаареи рзин имоуп."
 	template.blocklocation= '/scripts/cyrillic/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
