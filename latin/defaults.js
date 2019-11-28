@@ -19,7 +19,7 @@ else  defaults = factoryDefaults
  
  
 var template = {}
-	template.title = 'Latin & diacritic character picker'
+	template.title = 'Latin & diacritic character app'
 	template.sample = "2. Paa ɛyʊ weyi, ɛwɛna waɖɛ se ɛkʊyɩ ɛjaɖɛ nɖɩ ɛwɛ ɖɩ-taa yɔ, paa pɩkɛ ɛ-ñɩnɖɛ, nɛ pɩmaɣ-ɩ ɖooye lɛ, ɛpɩsɩ. ïñƭèřñáƭïôñáł"
 	template.blocklocation= '/scripts/latin/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
@@ -28,10 +28,12 @@ var template = {}
 
 
 
-var inputAids = [
-]
-
 var controls = [
 {"title":"Upper-<br>case", "alt":"Convert selection to uppercase.", "code":"add(getHighlightedText(document.getElementById('output')).toUpperCase());document.getElementById('output').focus();"},
 {"title":"Lower-<br>case", "alt":"Convert selection to lowercase.", "code":"add(getHighlightedText(document.getElementById('output')).toLowerCase());document.getElementById('output').focus();"},
 ]
+
+
+var inputAids = [
+]
+
