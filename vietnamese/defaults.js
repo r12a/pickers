@@ -19,7 +19,7 @@ else  defaults = factoryDefaults
  
  
 var template = {}
-	template.title = 'Vietnamese character picker'
+	template.title = 'Vietnamese character app'
 	template.sample = "2. Mọi người đều có quyền rời khỏi bất cứ nước nào, kể cả nước mình, cũng như có quyền trở về nước mình."
 	template.blocklocation= '/scripts/latin/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
@@ -30,20 +30,20 @@ var template = {}
 
 
 var controls = [
+]
+
+
+
+var pulldown = [
 {"title":"North Việt<br>to IPA", "alt":"Convert North Vietnamese text to an *approximation* of an IPA transcription.", "code":"doTranscription('toIPAN')"},
 {"title":"South Việt<br>to IPA", "alt":"Convert South Vietnamese text to an *approximation* of an IPA transcription.", "code":"doTranscription('toIPAS')"},
 ]
 
 
 
-var pulldown = [
-]
-
-
-
 var inputAids = [
-{"title":"Type characters", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"makePalette(''); window.latinOnly=false;makeKbdEventList(translitCharacterMap);", "desc":"Use ASCII characters to type Vietnamese from the keyboard."},
 
-{"title":"Show all characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"S", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+{"title":"More latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"M", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);", "desc":"Show characters needed for IPA or other transcriptions, as well as normal letters."},
 ]
 
