@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Tłı̨chǫ (Dogrib) picker 24</title>
+<title>Tłı̨chǫ (Dogrib) character app 25</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared24/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared25/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,14 +14,14 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared24/setup.js">  </script>
-<script src="../shared24/code.js">  </script>
-<script src="../shared24/latinregister.js">  </script>
+<script src="../shared25/setup.js">  </script>
+<script src="../shared25/code.js">  </script>
+<script src="../shared25/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared24/pagetemplate.js">  </script>
+<script src="../shared25/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
-<script src="../../shared/scriptdb/tlicho.js">  </script>
+<script src="../../shared/scriptdb/latn-dgr.js">  </script>
 <script src="localtranscription.js">  </script>
 <script src="/shared/fontlists/latin.js"> </script>
 <style id="dynamicUIFont"></style>
@@ -48,22 +48,22 @@
 
 
 
-<div id="chardata"><span id="charname">Click on T (left), for assisted typing, or on keyboard below.</span></div>
+<div id="chardata"><span id="charname">Type-assist (T) is on. Click on the vertical list to the left for alternative input aids.</span></div>
 
 
 
 <div id="tables" dir="ltr">
   
 
-<div class="kbdWrapper"><div dir="ltr" id="keyboard" style="display: block;"></div></div>
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
 
 
   <div id="alphabet" class="default">
 
 <div class="spaceline">
-<!--span class="unshifted" dir="auto" onClick="toggleShift(this)">SHIFT</span-->
+<span class="unshifted" dir="auto" onClick="toggleShift(this)">SHIFT</span>
 <span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
-<span class="touch" title="Space" style="padding: 5px 100px;" onClick="add(' ');">SPACE</span> 
+<span class="touch" title="Space" style="padding: 5px 50px;" onClick="add(' ');">SPACE</span> 
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
 <span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
 <span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
@@ -72,31 +72,31 @@
 
 
 
-  <!--div id="grid">
+  <div id="grid">
         <div class="uppercase hidden">
-          <span class="c">I</span>
-          <span class="c">Ł</span>
-          <span class="c">Ɂ</span>
+           <span class="g"><span class="hint">I</span><span class="c">I</span></span>
+           <span class="g"><span class="hint">L</span><span class="c">Ł</span></span>
+           <span class="g"><span class="hint">'</span><span class="c">ʼ</span></span>
         </div>
         <div class="lowercase">
-          <span class="c">ı</span>
-          <span class="c">ł</span>
-          <span class="c">ɂ</span>
+           <span class="g"><span class="hint">i</span><span class="c">ı</span></span>
+           <span class="g"><span class="hint">l</span><span class="c">ł</span></span>
+           <span class="g"><span class="hint">'</span><span class="c">ʼ</span></span>
         </div>
         <div id="tones">
-          <span class="c">̀</span>
-          <span class="c">̨</span>
-          <span class="c">̨̀</span>
+          <span class="g"><span class="hint">[</span><span class="c">̀</span></span>
+          <span class="g"><span class="hint">]</span><span class="c">̨</span></span>
+          <span class="g"><span class="hint">{</span><span class="c">̨̀</span></span>
         </div>
       <div id="punctuation">
         <div>
-          <span class="c">‹</span>
-          <span class="c">›</span>
-          <span class="c">«</span>
-          <span class="c">»</span>
+          <span class="g"><span class="hint">&lt;</span><span class="c">‹</span></span>
+          <span class="g"><span class="hint">&gt;</span><span class="c">›</span></span>
+          <span class="g"><span class="hint">&lt;</span><span class="c">«</span></span>
+          <span class="g"><span class="hint">&gt;</span><span class="c">»</span></span>
         </div>
       </div>
-    </div-->
+    </div>
   </div>
 
 

@@ -3,6 +3,8 @@
 globals.showLOCTrans = ''
 globals.showIPATrans = ''
 globals.showCaseEndings = ''
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = false
 
 
 
