@@ -1,5 +1,10 @@
 globals.showLOCTrans = ''
 globals.showCursive = ''
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = true
+
+
+
 
 function localInitialise () {
 
