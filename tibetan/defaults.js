@@ -19,7 +19,7 @@ else  defaults = factoryDefaults
  
  
 var template = {}
-	template.title = 'Tibetan character picker'
+	template.title = 'Tibetan character app'
 	template.sample = "༢ སྐྱེ་བོ་རེ་རེར་རང་ཡུལ་ཐེ་བས་ཡུལ་ལུང་གང་འདྲ་ཞིག་ནས་ཕྱིར་ཐོན་བྱེད་པའམ། ཡང་ན་རང་ཡུལ་དུ་ཕྱིར་ལོག་བྱེད་པའི་ཐོབ་ཐང་ཡོད༎"
 	template.blocklocation= '/scripts/tibetan/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
@@ -48,13 +48,15 @@ var pulldown = [
 
 
 var inputAids = [
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);"},
+//{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
 
-{"title":"Wylie to Tibetan", "dataVar":"showWylieTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"W", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(wylieCharacterMap);makeKbdEventList(wylieCharacterMap);"},
+{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
-//{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard"}
+{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"makePalette(''); window.latinOnly=false;makeKbdEventList(translitCharacterMap);", "desc":"Use ASCII characters to type Tibetan from the keyboard."},
 
-{"title":"Hinting", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint"},
+{"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
 
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+{"title":"Wylie to Tibetan", "dataVar":"showWylieTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"W", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(wylieCharacterMap);makeKbdEventList(wylieCharacterMap);", "desc":"Produce Tibetan text from a Wylie transcription."},
+
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);", "desc":"Use ASCII characters to type Tibetan from the keyboard via reverse transliteration."},
 ]
