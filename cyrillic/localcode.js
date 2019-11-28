@@ -1,3 +1,7 @@
+globals.typeAssist = ''
+globals.showKeysTranslitToggle = false
+
+
 function localInitialise () {
 	}
 	
