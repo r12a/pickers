@@ -2,24 +2,24 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Hausa boko character picker 24</title>
+<title>Help for Hausa boko character app 25</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../../shared24/style.css" />
+<link rel="stylesheet" type="text/css" href="../../shared25/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js" type="text/javascript"></script>
 <script type="text/javascript" src="/shared/code/toc_2016.js"></script>
-<script type="text/javascript" src="../../shared24/helptemplate.js"></script>
+<script type="text/javascript" src="../../shared25/helptemplate.js"></script>
 <script>var direction = 'ltr'</script>
 </head>
 
 <body class="app notes">
 <header>
   <div id="header-boilerplate"></div>
-  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Hausa boko picker','');</script> 
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Hausa boko character app','');</script> 
 </header>
 
 
-<h1>Hausa boko picker notes/help</h1>
+<h1>Hausa boko character app notes/help</h1>
 
 
 <aside class="sidebar">
@@ -27,15 +27,15 @@
   <div id="toc"><!-- placeholder --></div>
   <div class="noprint">
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
-        <p><a href="../index.html">Hausa boko picker</a></p>
-        <p><a href="/pickers/">List of pickers </a></p>
+        <p><a href="../index.html">Hausa boko character app</a></p>
+        <p><a href="/pickers/">List of character apps </a></p>
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->03-Aug-2019<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=latn-ha" title="Show all blog posts tagged with 'latn-ha'">latn-ha</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->28-Nov-2019<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=latn-ha" title="Show all blog posts tagged with 'latn-ha'">latn-ha</a></p>
 
-<p>This Unicode character picker allows you to produce, analyse or manipulate runs of Hausa boko text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[latn-ha%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/latn-ha">the Github commit list</a>.</p>
+<p>This Unicode character app allows you to produce, analyse or manipulate runs of Hausa boko text. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[latn-ha%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/latn-ha">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
 
 
 <section id="basics">
@@ -46,7 +46,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 
 <section id="about">
-<h2 href="#about">About the chart</h2>
+<h2 href="#about">About the selection area</h2>
       <p>Includes characters in the Unicode Latin and other blocks used for Hausa's boko orthography. </p>
 <div id="aboutBP">
 </div>
@@ -77,14 +77,32 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <h2 href="#input_aids">Input aids</h2>
 
 <div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, typeAssist, transcription')</script>
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro')</script>
 
 
-    <!--p><b class="leadin">Simmala transcription.</b>  Allows you to generate Lao text from a transcription as used by Simmala &amp; Poonam Becker in <cite>Lao for Beginners</cite>.    It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>.</p-->
+<p><b class="leadin">Type assist.</b> Allows you to generate text  from QWERTY input. This can also be switched on/off by hitting the ` (backquote) key, but <strong>it is on by default</strong> when you open the character app.</p>
+    <p>You should find that very little practise is needed to learn to enter  text quickly. This method is much faster than picking items from the selection area below.</p>
+    <p>When there are alternatives, the app will allow you to select characters from a list. For each alternative you'll see the character to be inserted in red. To its left you'll see the transliteration for that character (in grey, above), and the number key to press (in orange, below) to insert the character into the text box.  You can also just tap on the character (often more useful when using hand-held devices).
+    </p><p style="text-align:center;"><img src="../../shared25/images/help/type-assist.png" alt=""></p>
+	<p>This sets up the <strong>Transcription type-in mode</strong>, which means two things:</p>
+	<ol>
+    <li>If a key on the keyboard is only associated with a single native character, that character will be inserted immediately.</li>
+	<li>If there are alternatives but you continue typing, the app will replace the character you typed with the character assigned to the number 0.</li>
+	</ol>
+
+
+
+
+<p><b class="leadin">More Latin characters.</b> Displays a panel of  Latin characters you are likely to need for  typing Hausa text. This can also be switched on/off by hitting the ~ (tilde) key.</p>
+    <p style="text-align:center;"><img src="../../shared25/images/help/latin-panel.png" alt=""></p>
+    <p>As you type the orange characters, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or tap directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already see the character you want, just continue typing.)</p>
+    <p style="text-align:center;"><img src="../../shared25/images/help/character-selector.png" alt=""></p>
+    <p>Because this sets up the <strong>Latin type-in mode</strong>, alternative characters are <strong>only</strong> inserted after you click on a number key.</p>
+    <p>In general, alternative characters are associated with a key on the keyboard that resembles them when displayed - eg. ɣ will usually be brought up by clicking on the 'y' key (rather than, say 'g').</p>
     
 
 <div id="inputAids2"></div>
-<script>document.getElementById('inputAids2').innerHTML = addInputAids('')</script>
+<script>document.getElementById('inputAids2').innerHTML = addInputAids('close')</script>
 
 </section>
 
