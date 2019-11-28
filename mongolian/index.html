@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Mongolian picker 24</title>
+<title>Mongolian character app 25</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared24/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared25/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -14,13 +14,13 @@
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
 <script src="defaults.js">  </script>
-<script src="../shared24/setup.js">  </script>
-<script src="../shared24/code.js">  </script>
+<script src="../shared25/setup.js">  </script>
+<script src="../shared25/code.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared24/pagetemplate.js">  </script>
+<script src="../shared25/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
-<script src="../../shared/scriptdb/mongolian.js">  </script>
+<script src="../../shared/scriptdb/mong-mn.js">  </script>
 <script src="localtranscription.js">  </script>
 <script src="/shared/fontlists/mongolian.js"> </script>
 <style id="dynamicUIFont"></style>
@@ -45,7 +45,7 @@
 
 
 
-<div id="chardata"><span id="charname">Click on characters to create text in the box, then copy &amp; paste to your content.</span></div>
+<div id="chardata"><span id="charname">Type-assist (T) is on. Click on the vertical list to the left for alternative input aids.</span></div>
 
 
 
@@ -131,9 +131,9 @@
           <td><span class="g"><span class="hint">lʰ</span><span class="c" data-variants="s i m f">&#x1840;</span></span></td>
           </tr>
         <tr>
-        <td class="variantImage"><img src="images/180B.png" alt="᠌" title="180B: MONGOLIAN FREE VARIATION SELECTOR ONE" onclick="add('&#x180B;')" /></td>
-        <td class="variantImage"><img src="images/180C.png" alt="᠌" title="180C: MONGOLIAN FREE VARIATION SELECTOR TWO" onclick="add('&#x180C;')" /></td>
-          <td class="variantImage"><img src="images/180D.png" alt="᠍" title="180D: MONGOLIAN FREE VARIATION SELECTOR THREE" onclick="add('&#x180D;')" /></td>
+        <td class="variantImage"><span class="g"><span class="hint">¹</span><span class="c" data-variants="" style="display:none;">&#x180B;</span><img src="images/180B.png" alt="᠌" title="180B: MONGOLIAN FREE VARIATION SELECTOR ONE" onclick="add('&#x180B;')" /></span></td>
+        <td class="variantImage"><span class="g"><span class="hint">¹</span><span class="c" data-variants="" style="display:none;">&#x180C;</span><img src="images/180C.png" alt="᠌" title="180C: MONGOLIAN FREE VARIATION SELECTOR TWO" onclick="add('&#x180C;')" /></span></td>
+         <td class="variantImage"><span class="g"><span class="hint">¹</span><span class="c" data-variants="" style="display:none;">&#x180D;</span><img src="images/180D.png" alt="᠍" title="180D: MONGOLIAN FREE VARIATION SELECTOR THREE" onclick="add('&#x180D;')" /></span></td>
           </tr>
         </table></td>
       <td>&nbsp;</td>
@@ -173,9 +173,19 @@
         </tr>
       </tbody>
         </table></td>
-      <td id="punctuation"><span class="c">&#x1800;</span><br/><span class="c">&#x1801;</span><br/>
-        <span class="c">&#x1802;</span><br/>
-        <span class="c">&#x1803;</span><br/><span class="c">&#x1804;</span><br/><span class="c">&#x1805;</span><br/><span class="c">&#x180A;</span></td>
+		
+		
+      <td id="punctuation">
+	  <span class="g"><span class="hint">¶</span><span class="c">&#x1800;</span></span><br/>
+	  <span class="g"><span class="hint">#</span><span class="c">&#x1805;</span></span><br/>
+      <span class="g"><span class="hint">.</span><span class="c">&#x1803;</span></span><br/>
+	  <span class="g"><span class="hint">:</span><span class="c">&#x1804;</span></span><br/>
+	  <span class="g"><span class="hint">…</span><span class="c">&#x1801;</span></span><br/>
+	  <span class="g"><span class="hint">,</span><span class="c">&#x1802;</span></span><br/>
+	  <span class="g"><span class="hint">_</span><span class="c">&#x180A;</span></span>
+	  </td>
+	  
+	  
       <td><table id="numbers" style="margin: 0 10px 10px 0;">
         <tbody>
           <tr>
@@ -219,8 +229,8 @@
 <span class="c">&#x201C;</span>
 <span class="c">&#x201D;</span>
 <span class="c">&#x0028;</span>
-<span class="c">&#x0029;</span>
-<span class="c">&#x002D;</span>
+<!--span class="c">&#x0029;</span>
+<span class="c">&#x002D;</span-->
 <br/>
 <span class="c">&#xFF08;</span>
 <span class="c">&#xff09;</span>
