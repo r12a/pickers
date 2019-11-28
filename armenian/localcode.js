@@ -1,3 +1,5 @@
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = true
  
 
 
