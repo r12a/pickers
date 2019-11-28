@@ -2,24 +2,24 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Vai character picker 23</title>
+<title>Help for Vai character app 25</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../../shared23/style.css" />
+<link rel="stylesheet" type="text/css" href="../../shared25/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js" type="text/javascript"></script>
 <script type="text/javascript" src="/shared/code/toc_2016.js"></script>
-<script type="text/javascript" src="../../shared23/helptemplate.js"></script>
+<script type="text/javascript" src="../../shared25/helptemplate.js"></script>
 <script>var direction = 'ltr'</script>
 </head>
 
 <body class="app notes">
 <header>
   <div id="header-boilerplate"></div>
-  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Vai picker','');</script> 
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Vai character app','');</script> 
 </header>
 
 
-<h1>Vai picker notes/help</h1>
+<h1>Vai character app notes/help</h1>
 
 
 <aside class="sidebar">
@@ -27,16 +27,16 @@
   <div id="toc"><!-- placeholder --></div>
   <div class="noprint">
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
-        <p><a href="../index.html">Vai picker</a></p>
+        <p><a href="../index.html">Vai character app</a></p>
         <p><a href="/scripts/links?script=vaii">Vai script links</a></p>
-        <p><a href="/pickers/">List of pickers </a></p>
+        <p><a href="/pickers/">List of character apps </a></p>
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->04-Dec-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=vai" title="Show all blog posts tagged with 'vai'">vai</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->28-Nov-2019<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=vai" title="Show all blog posts tagged with 'vai'">vai</a></p>
 
-<p>This Unicode character picker allows you to produce or analyse runs of Vai text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[vai%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/vai">the Github commit list</a>.</p>
+<p>This Unicode character app allows you to produce or analyse runs of Vai text. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[vai%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/vai">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
 
 
 <section id="basics">
@@ -47,7 +47,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 
 <section id="about">
-<h2 href="#about">About the chart</h2>
+<h2 href="#about">About the selection area</h2>
       <p>Includes all the characters in the Unicode <a href="/uniview/?block=vai" target="_blank">Vai</a> block.</p>
 <p>There are two ways of accessing the characters: (a) through a 2-click selector based on phonetics, and (b) from a table. The former is for people who know the phonetics and characters well. The latter is for people who are unfamiliar with the script. </p>
 <p>To switch between the two, click on TABLE VIEW.</p>
@@ -72,9 +72,12 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
       <p><b class="leadin">Transliterate.</b> <strong></strong>Converts the contents of the text area to a Latin transliteration that provides a unique correspondence between each Vai symbol and a Latin symbol. It doesn't lead to a good phonetic transcription, but the process is reversible (unlike most phonetic transcriptions).</p>
-<p><b class="leadin">Reverse translit.</b> <strong></strong>Converts  a Latin transliteration to Vai text. Pickers usually include the reverse transliteration command in the bar on the left, but the size of Vai makes the normal approach unfeasible. Instead, just write the text in Latin in the main box, highlight it, and click the <samp>Reverse translit.</samp> button. You can then quickly pull the Vai text into the main box using the controls to the right.</p>
+
 <div id="controlsAbove2"></div>
 <script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+
+
+<p><b class="leadin">Reverse translit.</b> <strong></strong>Converts  a Latin transliteration to Vai text. Character apps usually include the reverse transliteration command in the bar on the left, but the size of Vai makes the normal approach unfeasible. Instead, just write the text in Latin in the main box, highlight it, and click the <samp>Reverse translit.</samp> button. You can then quickly pull the Vai text into the main box using the controls to the right.</p>
 
 </section>
 
@@ -94,7 +97,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 
     <!--p><b class="leadin">Huffman transcription.</b> Displays a panel that  allows you to generate Vai text from a transcription as used by Huffman in <cite>Cambodian System of Writing</cite>. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want in order to add it to the text area.</p>
-	<p><img src="../../shared23/images/help/translit_option.png" alt=" "/></p-->
+	<p><img src="../../shared25/images/help/translit_option.png" alt=" "/></p-->
     
 
 <div id="inputAids2"></div>
