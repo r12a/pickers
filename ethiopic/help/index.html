@@ -2,24 +2,24 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Ethiopic character picker 22</title>
+<title>Help for All Ethiopic character app 25</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../../shared22/style.css" />
+<link rel="stylesheet" type="text/css" href="../../shared25/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js" type="text/javascript"></script>
 <script type="text/javascript" src="/shared/code/toc_2016.js"></script>
-<script type="text/javascript" src="../../shared22/helptemplate.js"></script>
+<script type="text/javascript" src="../../shared25/helptemplate.js"></script>
 <script>var direction = 'ltr'</script>
 </head>
 
 <body class="app notes">
 <header>
   <div id="header-boilerplate"></div>
-  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Ethiopic picker','');</script> 
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Ethiopic character app','');</script> 
 </header>
 
 
-<h1>Ethiopic picker notes/help</h1>
+<h1>All Ethiopic character app notes/help</h1>
 
 
 <aside class="sidebar">
@@ -27,16 +27,16 @@
   <div id="toc"><!-- placeholder --></div>
   <div class="noprint">
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
-        <p><a href="../index.html">Ethiopic picker</a></p>
+        <p><a href="../index.html">Ethiopic character app</a></p>
         <p><a href="/scripts/links?script=ethiopic">Ethiopic script links</a></p>
-        <p><a href="/pickers/">List of pickers </a></p>
+        <p><a href="/pickers/">List of character apps </a></p>
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->23-Feb-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=ethiopic" title="Show all blog posts tagged with 'ethiopic'">ethiopic</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->28-Nov-2019<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=ethiopic" title="Show all blog posts tagged with 'ethiopic'">ethiopic</a></p>
 
-<p>This Unicode character picker allows you to produce or analyse runs of Ethiopic text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[ethiopic%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/ethiopic">the Github commit list</a>.</p>
+<p>This Unicode character app allows you to produce or analyse runs of Ethiopic text. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[ethiopic%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/ethiopic">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps</p>
 
 
 <section id="basics">
@@ -47,7 +47,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 
 <section id="about">
-<h2 href="#about">About the chart</h2>
+<h2 href="#about">About the selection area</h2>
       <p>Includes all the characters in the Unicode <a href="/uniview/?block=ethiopic" target="_blank">Ethiopic</a>, <a href="/uniview/?block=ethiopic_supplement" target="_blank">Ethiopic Supplement</a>, <a href="/uniview/?block=ethiopic_extended" target="_blank">Ethiopic Extended</a> and <a href="/uniview/?block=ethiopic_extended-a" target="_blank">Ethiopic Extended-A</a> blocks. The extended repertoire is initially hidden, but can be revealed using a selection in the input aids, to the left side.</p>
 <div id="aboutBP">
 </div>
@@ -64,6 +64,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
       <p><b class="leadin">Transliterate.</b> <strong></strong>Converts the contents of the text area to a Latin transliteration that provides a unique correspondence between each Ethiopic symbol and a Latin symbol. It doesn't necessarily lead to a good phonetic transcription, but the process is reversible (unlike most phonetic transcriptions).</p>
+	  
 <div id="controlsAbove2"></div>
 <script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
@@ -79,13 +80,15 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <h2 href="#input_aids">Input aids</h2>
 
 <div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, latin')</script>
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro')</script>
 
 
-    <p><b class="leadin">Show hints.</b> When this is on, transliterations are shown for the syllabic characters.</p>
+    <p><b class="leadin">Show hints.</b> When this is on, transliterations are shown for the syllabic characters. This helps people less familiary with the Ethiopic script to find characters.</p>
+	
 <p><b class="leadin">Extended repertoire.</b> Allows you to toggle on or off the extension characters. The basic repertoire covers characters needed for Amharic, Tigrinya, Tigre, and Blin. The extension characters are for writing the sounds of other languages, such as Me'en, Sebatbeit, Gamo-Gofa-Dawro, Basketo, Gumuz, etc.</p>
+
 <div id="inputAids2"></div>
-<script>document.getElementById('inputAids2').innerHTML = addInputAids('keyboard')</script>
+<script>document.getElementById('inputAids2').innerHTML = addInputAids('latin,close')</script>
 
 </section>
 

@@ -19,7 +19,7 @@ else  defaults = factoryDefaults
  
  
 var template = {}
-	template.title = 'Ethiopic character picker'
+	template.title = 'All Ethiopic character picker'
 	template.sample = "፪/፡ እያንዳንዱ፡ሰው፡ከማንኛውም፡አገር፡ሆነ፡ከራሱ፡አገር፡ወጥቶ፡እንደገና፡ወደ፡አገሩ፡የመመለስ፡መብት፡አለው።"
 	template.blocklocation= 'ethiopic'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
@@ -42,9 +42,9 @@ var pulldown = [
 
 
 var inputAids = [
-{"title":"Show hints", "dataVar":"showRevealHints", "dataLocn":"", "dataShortTitle":"S", "type":"code", "initialCode":"if(globals.showRevealHints){revealHints(true)}else{revealHints(false);}"},
+{"title":"Show hints", "dataVar":"showRevealHints", "dataLocn":"", "dataShortTitle":"S", "type":"code", "initialCode":"if(globals.showRevealHints){revealHints(true)}else{revealHints(false);}", "desc":"Show transliterations alongside syllables to help find things."},
 
-{"title":"Extended repertoire", "dataVar":"showExtended", "dataLocn":"", "dataShortTitle":"E", "type":"code", "initialCode":"if(globals.showExtended){revealExtended(true)}else{revealExtended(false);}"},
+{"title":"Extended repertoire", "dataVar":"showExtended", "dataLocn":"", "dataShortTitle":"E", "type":"code", "initialCode":"if(globals.showExtended){revealExtended(true)}else{revealExtended(false);}", "desc":"Show the extended repertoire of syllables."},
 
-{"title":"Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);"},
+{"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);", "desc":"Show characters needed for IPA or other transcriptions."},
 ]

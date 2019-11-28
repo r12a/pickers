@@ -1,5 +1,7 @@
 globals.showRevealHints =  ''
 globals.showExtended =  ''
+globals.typeAssist = ''
+globals.showKeysTranslitToggle = false
 
 
 function localInitialise () {
@@ -22,6 +24,7 @@ function reveal (id) {
 function revealHints (show) {
     // turns on or off the hints for the characters in the selection area
     
+    toggleGridHints()
     var hints = document.querySelectorAll('#consonants .hint, #reveal .hint')
     if (show) for (let i=0;i<hints.length;i++) hints[i].style.display = 'none'
     else for (let i=0;i<hints.length;i++) hints[i].style.display = 'inline'
