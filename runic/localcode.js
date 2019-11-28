@@ -1,6 +1,10 @@
 globals.showTranslitTrans = ''
 globals.showIPATrans = ''
 globals.showCaseEndings = ''
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = false
+
+
 
 function localInitialise () {
 
