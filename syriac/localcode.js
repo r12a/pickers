@@ -2,6 +2,10 @@ globals.showLOCTrans = ''
 globals.showIPATrans = ''
 globals.showTransliteration = ''
 globals.showCursive = ''
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = true
+
+
 
 function localInitialise () {
 
