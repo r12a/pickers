@@ -2,23 +2,23 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Khmer character picker 23</title>
+<title>Help for Khmer character app 25</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../../shared23/style.css" />
+<link rel="stylesheet" type="text/css" href="../../shared25/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js" type="text/javascript"></script>
 <script type="text/javascript" src="/shared/code/toc_2016.js"></script>
-<script type="text/javascript" src="../../shared23/helptemplate.js"></script>
+<script type="text/javascript" src="../../shared25/helptemplate.js"></script>
 </head>
 
 <body class="app notes">
 <header>
   <div id="header-boilerplate"></div>
-  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Khmer picker','');</script> 
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Khmer character app','');</script> 
 </header>
 
 
-<h1>Khmer picker notes/help</h1>
+<h1>Khmer character app notes/help</h1>
 
 
 <aside class="sidebar">
@@ -26,16 +26,16 @@
   <div id="toc"><!-- placeholder --></div>
   <div class="noprint">
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
-        <p><a href="../index.html">Khmer picker</a></p>
+        <p><a href="../index.html">Khmer character app</a></p>
         <p><a href="/scripts/links?script=khmer">Khmer script links</a></p>
-        <p><a href="/pickers/">List of pickers </a></p>
+        <p><a href="/pickers/">List of character apps </a></p>
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->15-Dec-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=khmer" title="Show all blog posts tagged with 'khmer'">khmer</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->29-Nov-2019<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=khmer" title="Show all blog posts tagged with 'khmer'">khmer</a></p>
 
-<p>This Unicode character picker allows you to produce or analyse runs of Khmer text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[khmer%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/khmer">the Github commit list</a>.</p>
+<p>This Unicode character app allows you to produce or analyse runs of Khmer text. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[khmer%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/khmer">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
 
 
 <section id="basics">
@@ -47,7 +47,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 
 <section id="about">
-<h2 href="#about">About the chart</h2>
+<h2 href="#about">About the selection area</h2>
       <p>Includes all the characters in the Unicode <a href="/uniview/?block=khmer" target="_blank">Khmer</a> and <a href="/uniview/?block=khmer_symbols" target="_blank">Khmer Symbols</a> blocks (in the default panel).</p>
 <div id="aboutBP">
 </div>
@@ -64,8 +64,11 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
       <p><b class="leadin">Transliterate.</b> Converts the contents of the text area to a Latin transliteration that provides a one-to-one correspondence between  Khmer and Latin symbols.</p>
-<p>The transliteration scheme  was developed for this picker, and, where possible, uses  symbols that represent sounds typically associated with their Khmer equivalents, rather than the sometimes fairly arbitrary selection of diacritics found in other systems. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription,  and it doesn't show inherent vowels, but the process is reversible (unlike most  transcriptions).</p>
+<p>The transliteration scheme  was developed for this character app, and, where possible, uses  symbols that represent sounds typically associated with their Khmer equivalents, rather than the sometimes fairly arbitrary selection of diacritics found in other systems. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription,  and it doesn't show inherent vowels, but the process is reversible (unlike most  transcriptions).</p>
 <p>Transliterations produced this way are particularly useful for understanding the composition of text in  scripts, where the individual parts are not well separated in the text.</p>
+
+<div id="controlsAbove2"></div>
+<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
       <!--p><b class="leadin">Transliterate.</b>   Converts the contents of the text area to a Latin transliteration based on a cross between the ALA LOC and UNGEGN systems, with a few small additions to help eliminate ambiguity. In addition, the transliterations  show inherent vowels. </p>
 <p>Transliterations provide a single correspondence between each Khmer symbol and a Latin symbol, so that the process is reversible. It doesn't  represent the actual pronunciation very well, but it does allow you to convert the Latin text back to the original Khmer. (<em>Transcriptions</em> to UNGEGN or IPA provide a Latin version of the Khmer text that is closer to the actual pronunciation, but is not reversible.) </p-->
@@ -81,8 +84,6 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
       <p>After the first syllable on the line, put an ordinary space before each consonant or independent vowel sign that begins a new <em>syllable</em> (not word). (Note that this may split consonant clusters. The Khmer text will look strange but still work.) You should also indicate unstressed syllables by following the syllable with a hyphen, rather than a space. For many bisyllabic words, this means putting a hyphen after the first of the two syllables. For example, converting <span class="khmer" lang="km">ប្រកាន់និទៀន</span> to <span class="khmer" lang="km">ប្រ-កាន់ និ-ទៀន</span> will produce the following transcription <span class="ipa">prɑkannitiən</span>. Note that, if you don't know Khmer well enough to know when a syllable is unstressed, you can still get an approximation to the pronunciation using only spaces. For instance, the previous example separated by spaces only will yield <span class="ipa">prɑːkanniʔtiən</span>.    </p>
 <p>Although the transcription is based on rules by Franklin Huffman in <em>Cambodian System of Writing</em>, some symbols are changed to be more recognizable to those familiar with IPA. While the transcription rules are quite detailed, and Khmer is largely regular, there are a few exceptions, particularly in words from Sanskrit or Pali,  or ambiguities, for example in a few independent vowel signs, that cause problems for the transcription. The transcription is non-reversible. I created it to help me quickly reproduce (simple) phonetic alternatives for examples in my notes on Khmer.&nbsp;</p>
       <p><b class="leadin">Remove space/hyphen.</b> Removes the spaces from the highlighted range (or the whole output area, if nothing is highlighted).</p>
-<div id="controlsAbove2"></div>
-<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
 </section>
 
@@ -96,7 +97,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <h2 href="#input_aids">Input aids</h2>
 
 <div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, hinting, shape, translit')</script>
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, shape, hinting, typeAssist, latin')</script>
 
 
     <p><b class="leadin">Huffman to Khmer.</b> Allows you to generate Khmer text from a transcription as used by Huffman in <cite>Cambodian System of Writing</cite>. It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>.</p>
@@ -104,7 +105,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
     <p> In a small number of cases, you will need to click twice on the components that make up the sound (eg. when bantoc is used on the following consonant). These cases are indicated by a red plus sign between two clickable shapes (one of which may be just a hyphen). You need to click on the item to the left of the plus sign, then add a consonant, then click on the item to the right of the plus sign. In several cases the item to the left is a hyphen (representing the inherent vowel), in which case just add another consonant followed by the item to the right.</p>
 <p><b class="leadin">Gilbert to Khmer.</b> Allows you to generate Khmer text from a transcription as used by Gilbert and Hang in <cite>Cambodian for Beginners</cite>. It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>.</p>
 <div id="inputAids2"></div>
-<script>document.getElementById('inputAids2').innerHTML = addInputAids('keyboard')</script>
+<script>document.getElementById('inputAids2').innerHTML = addInputAids('translit, keyboard, keys, close')</script>
 
 </section>
 
