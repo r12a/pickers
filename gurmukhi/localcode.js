@@ -1,4 +1,9 @@
 globals.showTranslit =  ''
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = true
+
+
+
 
 function localInitialise () {
 
