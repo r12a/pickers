@@ -1,4 +1,6 @@
 globals.showTranslit =  ''
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = true
 
 
 
