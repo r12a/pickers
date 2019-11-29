@@ -185,9 +185,11 @@ span.hint {
     align-self: center;
     justify-content: center;
     margin-right: .5em;
+	width: 2em;
 }
-#vowelsupport > span {
+
+/*#vowelsupport > span {
 	padding: 3em 0;
 	width: 1em;
-}
+}*/
 
