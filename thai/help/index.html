@@ -2,24 +2,24 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Thai character picker 23</title>
+<title>Help for Thai character app 25</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../../shared23/style.css" />
+<link rel="stylesheet" type="text/css" href="../../shared25/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js" type="text/javascript"></script>
 <script type="text/javascript" src="/shared/code/toc_2016.js"></script>
-<script type="text/javascript" src="../../shared23/helptemplate.js"></script>
+<script type="text/javascript" src="../../shared25/helptemplate.js"></script>
 <script>var direction = 'ltr'</script>
 </head>
 
 <body class="app notes">
 <header>
   <div id="header-boilerplate"></div>
-  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Thai picker','');</script> 
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Thai character app','');</script> 
 </header>
 
 
-<h1>Thai picker notes/help</h1>
+<h1>Thai character app notes/help</h1>
 
 
 <aside class="sidebar">
@@ -27,16 +27,16 @@
   <div id="toc"><!-- placeholder --></div>
   <div class="noprint">
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
-        <p><a href="../index.html">Thai picker</a></p>
+        <p><a href="../index.html">Thai character app</a></p>
         <p><a href="/scripts/links?script=thai">Thai script links</a></p>
-        <p><a href="/pickers/">List of pickers </a></p>
+        <p><a href="/pickers/">List of character apps </a></p>
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->17-Dec-2018<!-- #EndDate --> • tags <a href="http://rishida.net/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://rishida.net/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://rishida.net/blog/?tag=thai" title="Show all blog posts tagged with 'thai'">thai</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->29-Nov-2019<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=thai" title="Show all blog posts tagged with 'thai'">thai</a></p>
 
-<p>This Unicode character picker allows you to produce or analyse runs of Thai text. Character pickers are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
-<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[thai%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/thai">the Github commit list</a>.</p>
+<p>This Unicode character app allows you to produce or analyse runs of Thai text. Character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[thai%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/thai">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
 
 
 <section id="basics">
@@ -47,7 +47,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 
 <section id="about">
-<h2 href="#about">About the chart</h2>
+<h2 href="#about">About the selection area</h2>
       <p>Includes characters in the Unicode <a href="/uniview/?block=thai" target="_blank">Thai</a> block. </p>
 <div id="aboutBP">
 </div>
@@ -64,13 +64,14 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
       <p><b class="leadin">Transliterate.</b> Converts the contents of the text area to a Latin transliteration that provides a one-to-one correspondence between  Thai and Latin symbols.</p>
-<p>The transliteration scheme  was developed for this picker, and, where possible, uses  symbols that represent sounds typically associated with their Thai equivalents, rather than the sometimes fairly arbitrary selection of diacritics found in other systems. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription,  and it doesn't show inherent vowels, but the process is reversible (unlike most  transcriptions).</p>
+<p>The transliteration scheme  was developed for this character app, and, where possible, uses  symbols that represent sounds typically associated with their Thai equivalents, rather than the sometimes fairly arbitrary selection of diacritics found in other systems. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription,  and it doesn't show inherent vowels, but the process is reversible (unlike most  transcriptions).</p>
+
+<div id="controlsAbove2"></div>
+<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
       <p><b class="leadin">Thai to ISO 11940.</b> <strong></strong>Converts the contents of the text area to an ISO 11940-2  Latin transcription. <strong>NOTE: Before using this button you need to add spaces or hyphens between each syllable of the Thai text.</strong> Syllable boundaries are important for correct interpretation of the text, and they are not detected automatically.</p>
 <p><b class="leadin">Transcribe to IPA.</b> Produces an output that is intended to <strong>approximately</strong> reflect actual pronunciation in IPA notation. It will work fine most of the time, but there are occasional ambiguities and idiosynchrasies in Thai which will cause the converter to render certain, less common syllables incorrectly. It also  automatically adds accent marks. So the output of these buttons should be treated as something that gets you 90% of the way. <strong>NOTE: Before using this button you need to add spaces or hyphens between each syllable of the Thai text.</strong> Syllable boundaries are important for correct interpretation of the text, and they are not detected automatically.</p>
 <p><b class="leadin">Remove sp/hyphen.</b> Removes the spaces or hyphens from the highlighted range, or the whole output area, if nothing is highlighted. This is useful to restore the text after adding those breaks in order to do one of the conversions above.</p>
-<div id="controlsAbove2"></div>
-<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
 </section>
 
@@ -84,14 +85,14 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <h2 href="#input_aids">Input aids</h2>
 
 <div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, hinting, shape, latin, translit')</script>
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, shape, hinting, typeAssist, latin')</script>
 <p><b class="leadin">ISO to Thai.</b> Allows you to generate Thai text from an ISO 11940-2 transcription.    It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>. This may need more work to be fully-operational. For example, it is not clear how to input 'an' and get รร.</p>
 	<p>This transcription tool will insert vowel characters such as ไ to the left of the character(s) they ought to preceed, but may need a little help when a syllable begins with a consonant cluster, such as 'pr'.</p>
 <p><b class="leadin">Becker to Thai.</b> Allows you to generate Thai text from transcription in the book <cite>Thai for Beginners</cite>, by Benjawan Poomsan Becker.    It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>. The reordering described for the ISO transcription just above also applies for this.</p>
     
 
 <div id="inputAids2"></div>
-<script>document.getElementById('inputAids2').innerHTML = addInputAids('keyboard')</script>
+<script>document.getElementById('inputAids2').innerHTML = addInputAids('translit, keyboard, keys, close')</script>
 
 </section>
 

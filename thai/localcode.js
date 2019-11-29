@@ -1,6 +1,10 @@
 globals.showBeckerTrans =  ''
 globals.showISO2Trans = ''
 globals.showTranslit =  ''
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = true
+
+
 
 function localInitialise () {
 
