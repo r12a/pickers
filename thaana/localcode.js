@@ -1,6 +1,10 @@
-
 globals.showMLTrans = ''
 globals.showTransliteration = ''
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = true
+
+
+
 
 function localInitialise () {
 	}
