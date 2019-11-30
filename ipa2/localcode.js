@@ -1,5 +1,8 @@
-
 globals.keyboard = ''
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = false
+
+
 
 function localInitialise () {
 	}
@@ -70,7 +73,17 @@ function event_mouseoverChar ()  {
 	// display character information
 	span = document.createElement( 'span' );
 	span.setAttribute( 'id', 'charname' );
-	charinfo = document.createTextNode( this.title );
+	
+	// add transliteration symbol and key binding
+	var trans_key = ''
+	var content = this.textContent.replace(defaults.ccbase,'')
+	if (window.spreadsheetRows[content]) {
+		//if (window.spreadsheetRows[content][cols.transLoc]) trans_key += '\u00A0\u00A0\u00A0\u00A0' + window.spreadsheetRows[content][cols.transLoc]+'\u00A0'
+		if (window.spreadsheetRows[content][cols.key]) trans_key += '\u00A0\u00A0\u00A0[\u00A0' + window.spreadsheetRows[content][cols.key]+'\u00A0]'
+		charinfo = document.createTextNode( this.title + trans_key )
+		}
+
+
 	span.appendChild(charinfo);
 	var chardata = document.getElementById('chardata');	
 	chardata.replaceChild( span, chardata.firstChild );
