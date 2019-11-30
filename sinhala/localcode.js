@@ -1,5 +1,7 @@
 globals.showTransPanel =  ''
 globals.showShapeLookup =  ''
+globals.typeAssist = ' ✓'
+globals.showKeysTranslitToggle = true
 
 
 function localInitialise () {
