@@ -51,11 +51,17 @@ span.hint {
 #consonantGrid {
     white-space: normal;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 7.2em;
+    flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: space-between;
     line-height: 1.5;
+    }
+#consonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
     }
 #consonantGrid > span {
     min-width: 1em;
