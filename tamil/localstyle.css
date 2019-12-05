@@ -93,11 +93,9 @@ span.hint {
 #numberGrid {
     white-space: normal;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 2.42em;
-    max-height: 8em;
-    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
     margin-left: 1.2em;
     line-height: 1.5;
     font-size: 90%;
