@@ -192,15 +192,15 @@ for (let i=0;i<inputAids.length;i++) {
 if (inputAids.length > 0) {
 if (globals.showKeysTranslitToggle) { out += `
     <div class="vmtab" 
-	onmouseover="this.textContent='key <> translit'" 
-    onmouseout="this.textContent='k'"
-    data-fulltitle="key <> translit"
-    data-shorttitle="k"  
+	onmouseover="this.textContent='<> key/translit'" 
+    onmouseout="this.textContent='<>'"
+    data-fulltitle="<> key/translit"
+    data-shorttitle="&lt;&gt;"  
     title="Switch the hints in the selection area between keys and transliteration."
     data-location=""
     data-var=""
     onclick="toggleGridHints();
-     return false;">k</div>
+     return false;">&lt;&gt;</div>
      ` }
 out += `
     <div class="vmtab" 
