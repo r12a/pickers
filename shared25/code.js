@@ -994,8 +994,9 @@ function event_mouseoverChar ()  {
 	var trans_key = ''
 	var content = this.textContent.replace(defaults.ccbase,'')
 	if (window.spreadsheetRows[content]) {
-		if (window.spreadsheetRows[content][cols.transLoc]) trans_key += '\u00A0\u00A0\u00A0(\u00A0' + window.spreadsheetRows[content][cols.transLoc]+'\u00A0)'
-		if (window.spreadsheetRows[content][cols.key]) trans_key += '\u00A0\u00A0\u00A0[\u00A0' + window.spreadsheetRows[content][cols.key]+'\u00A0]'
+		if (window.spreadsheetRows[content][cols.transLoc]) trans_key += '\u00A0\u00A0\u00A0ᵗ\u00A0' + window.spreadsheetRows[content][cols.transLoc]+'\u00A0'
+		if (window.spreadsheetRows[content][cols.key]) trans_key += '\u00A0\u00A0\u00A0ᵏ\u00A0' + window.spreadsheetRows[content][cols.key]+'\u00A0'
+		if (window.spreadsheetRows[content][cols.ipaLoc]) trans_key += '\u00A0\u00A0\u00A0ᵖ\u00A0' + window.spreadsheetRows[content][cols.ipaLoc]+'\u00A0'
 		charinfo = document.createTextNode( this.title + trans_key )
 		}
 	
