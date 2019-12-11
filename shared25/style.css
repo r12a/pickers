@@ -880,6 +880,11 @@ summary:hover {
 .bottomDivider {
 	border-bottom: 1px dotted tan;
 	}
+.box {
+	border: 1px dotted tan;
+	border-radius: .25em;
+	padding: .1em .1em;
+	}
 
 .highlightedChar {
 	background-color: #FFE6B2;
