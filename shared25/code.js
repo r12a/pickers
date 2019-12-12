@@ -1752,7 +1752,8 @@ function getData (script) {
 function addSpacesToPicker (type) {
     var charArray = [...document.getElementById('output').value]
     out = ''
-    for (var i=0;i<charArray.length;i++) out += charArray[i]+type
+    for (var i=0;i<charArray.length-1;i++) out += charArray[i]+type
+	out += charArray[charArray.length-1]
     document.getElementById('output').value = out
     }
 
