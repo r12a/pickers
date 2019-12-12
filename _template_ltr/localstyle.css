@@ -45,66 +45,93 @@ span.hint {
 /* SELECTION AREA */
 
 #kbdGrid {
- display: flex;
- flex-direction: row;
+ 	display: flex;
+ 	flex-direction: row;
 	line-height: 1.2;
     justify-content: center;
     }
-#consonantGrid div {
+#ivowelGrid {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	margin-right: 1em;
+    }
+#ivowelGrid div {
+    text-align: right;
     flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-around;
-    line-height: 1.5;
     }
-#consonantGrid > span {
-    min-width: 1em;
+#consonantGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     }
-#moreconsonants {
+#consonantGrid div {
     white-space: normal;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: center;
-    line-height: 1.5;
-    align-content: flex-start;
-    margin-left: 1em;
+    justify-content: space-between;
     }
-#ivowelGrid {
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    line-height: 1.5;
-    text-align: right;
-	margin-right: 1em;
+#consonantGrid > span {
+    min-width: 1em;
     }
-#vowelGrid div {
-    flex-wrap: nowrap;
-    justify-content: end;
-    }
-#vowelGrid {
-    flex-wrap: nowrap;
-    justify-content: end;
-    line-height: 1.5;
-    margin-left: 1em;
-    }
-#cchars {
-    width: 2em;
+#vowelbase {
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin: .5em .5em 0 .5em;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     }
-#numberGrid div {
+#vowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+#vowelGrid > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:space-between;
+	}
+#finals {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 1.5em;
+    justify-content:flex-start;
+    align-content: space-around;
+    }
+#tones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: .5em;
+    }
+#tones div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 1.5em;
+    justify-content: center;
+    margin-left: 0;
+    }
+#numberGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 90%;
+	margin-left: 1em;
+    }
+#digitKeypad div {
+    white-space: normal;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 1.2em;
-    line-height: 1.5;
-    font-size: 90%;
     }
+
 #punctuation, #flatnumbers, #other {
     text-align: center;
     font-size: 80%;
