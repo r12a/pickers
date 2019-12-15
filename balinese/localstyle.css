@@ -67,7 +67,7 @@ span.hint {
 #kbdGrid {
  	display: flex;
  	flex-direction: row;
-	line-height: 1.4;
+	line-height: 1.2;
     justify-content: center;
     }
 #ivowelGrid {
@@ -75,7 +75,7 @@ span.hint {
     flex-direction: column;
     justify-content: flex-start;
 	margin-right: 1em;
-	line-height: 2.5em;
+	line-height: 2em;
     }
 #ivowelGrid div {
 	display: flex;
@@ -112,7 +112,7 @@ span.hint {
     flex-direction: column;
     justify-content: space-between;
 	margin-left: 1em;
-	padding: .75em .25em;
+	padding: .5em .25em;
     }
 #vowelGrid > div {
 	display: flex;
