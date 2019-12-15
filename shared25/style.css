@@ -890,11 +890,20 @@ summary:hover {
 	flex-direction: row;
 	flex-wrap: nowrap;
 	}
+.stackGroup {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	}
+.stack {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	}
 
 
 .highlightedChar {
 	background-color: #FFE6B2;
-	background-color: #blue;
 	}
 
 
