@@ -57,9 +57,13 @@ span.hint {
 	margin-right: 1em;
     }
 #ivowelGrid div {
-    text-align: right;
+	display: flex;
+    justify-content: flex-end;
     flex-wrap: nowrap;
     }
+#ivowelGrid .verticalAlign {
+	justify-content: flex-end;
+	}
 #consonantGrid {
     display: flex;
     flex-direction: column;
@@ -86,6 +90,7 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+	margin-left: 1em;
     }
 #vowelGrid > div {
 	display: flex;
@@ -93,14 +98,12 @@ span.hint {
 	flex-wrap: nowrap;
 	justify-content:space-between;
 	}
-#finals {
-    white-space: normal;
+#moreconsonants {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 1.5em;
+    flex-wrap: nowrap;
+    flex-direction: column;
     justify-content:flex-start;
-    align-content: space-around;
+    text-align: end;
     }
 #tones {
     display: flex;

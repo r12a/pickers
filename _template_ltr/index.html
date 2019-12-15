@@ -87,8 +87,8 @@
 <div class="spaceline">
 <span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
 <span class="touch" title="Zero width non-joiner" style="padding: 5px;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
-<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
-<span class="touch" title="Virama" style="padding: 5px 50px;" dir="auto" onClick="add('\u094D');">&#x094D;</span>
+<span class="touch" title="Nukta" style="padding: 5px;" dir="auto" onClick="add('\u0ABC');">&#x0ABC;</span>
+<span class="touch" title="Virama" style="padding: 5px 50px;" dir="auto" onClick="add('\u094D');"><span class="hint">*</span> &nbsp; &#x094D;</span>
 <span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
 <span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
@@ -176,6 +176,139 @@
 <span class="g"><span class="hint">w</span><span class="c">व</span></span>
             </div>
 </div>
+
+
+
+
+
+
+<div id="vowelGrid" class="box">
+<div class="verticalAlign bottomDivider">
+<div>
+<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
+<span class="g"><span class="hint"></span><span class="c"></span></span>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
+<span class="g"><span class="hint">ɯ̄</span><span class="c"></span></span>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
+<span class="g"><span class="hint"></span><span class="c"></span></span>
+</div>
+</div>
+
+
+<div class="verticalAlign bottomDivider">
+<div>
+<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
+<span class="g"><span class="hint"></span><span class="c"></span></span>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c">เ-อะ</span></span><br/>
+<span class="g"><span class="hint"></span><span class="c"></span></span>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
+<span class="g"><span class="hint"></span><span class="c"></span></span>
+</div>
+</div>
+
+
+<div class="verticalAlign bottomDivider">
+<div>
+<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
+<span class="g"><span class="hint"></span><span class="c"></span></span>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c">เ-าะ</span></span><br/>
+<span class="g"><span class="hint"></span><span class="c"></span></span>
+</div>
+</div>
+
+
+<div class="verticalAlign bottomDivider">
+<div>
+<span class="g"><span class="hint"></span><span class="c"></span></span>
+<span class="g"><span class="hint"></span><span class="c"></span></span>
+<span class="g"><span class="hint">aᵐ</span><span class="c"></span></span>
+</div>
+</div>
+
+
+<div>
+<span class="g"><span class="hint">aj</span><span class="c"></span></span><br/>
+<span class="g"><span class="hint">aj</span><span class="c"></span></span><br/>
+<span class="g"><span class="hint">r̥</span><span class="c"></span></span>
+</div>
+</div>
+
+
+
+
+
+<div id="vowelGrid" class="box">
+<div class="verticalAlign bottomDivider">
+<div>
+<span class="g"><span class="hint">i</span><span class="c">ิ</span></span><br/>
+<span class="g"><span class="hint">ī</span><span class="c">ี</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ɯ</span><span class="c">ึ</span></span><br/>
+<span class="g"><span class="hint">ɯ̄</span><span class="c">ื</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">u</span><span class="c">ุ</span></span><br/>
+<span class="g"><span class="hint">ū</span><span class="c">ู</span></span>
+</div>
+</div>
+
+
+<div class="verticalAlign bottomDivider">
+<div>
+<span class="g"><span class="hint">E</span><span class="v" onClick="addVowel(this.textContent)">เ-ะ</span></span><br/>
+<span class="g"><span class="hint">E</span><span class="v" onClick="addVowel(this.textContent)">เ-</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">V</span><span class="v" onClick="addVowel(this.textContent)">เ-อะ</span></span><br/>
+<span class="g"><span class="hint">V</span><span class="v" onClick="addVowel(this.textContent)">เ-อ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">O</span><span class="v" onClick="addVowel(this.textContent)">โ-ะ</span></span><br/>
+<span class="g"><span class="hint">o</span><span class="v" onClick="addVowel(this.textContent)">โ-</span></span>
+</div>
+</div>
+
+
+<div class="verticalAlign bottomDivider">
+<div>
+<span class="g"><span class="hint">E</span><span class="v" onClick="addVowel(this.textContent)">แ-ะ</span></span><br/>
+<span class="g"><span class="hint">E</span><span class="v" onClick="addVowel(this.textContent)">แ-</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">O</span><span class="v" onClick="addVowel(this.textContent)">เ-าะ</span></span><br/>
+<span class="g"><span class="hint">O</span><span class="v" onClick="addVowel(this.textContent)">-อ</span></span>
+</div>
+</div>
+
+
+<div class="verticalAlign bottomDivider">
+<div>
+<span class="g"><span class="hint">ä</span><span class="c">ั</span></span>
+<span class="g"><span class="hint">ā</span><span class="c">า</span></span>
+<span class="g"><span class="hint">aᵐ</span><span class="c">ำ</span></span>
+</div>
+</div>
+
+
+<div>
+<span class="g"><span class="hint">aj</span><span class="v" onClick="addVowel(this.textContent)">ไ-</span></span><br/>
+<span class="g"><span class="hint">aj</span><span class="v" onClick="addVowel(this.textContent)">ใ-</span></span><br/>
+<span class="g"><span class="hint">r̥</span><span class="c">ฤ</span></span>
+</div>
+</div>
+
+
 
 
 <div id="vowelGrid">
