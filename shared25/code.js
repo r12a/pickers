@@ -1093,7 +1093,7 @@ function resetDefaults () {
 
 
 
-function toggleGridHints () {
+function toggleGridHintsOLD () {
 	// switch the hints alongside characters between key indicators and transliterations
 	
 	var lastNode = null
@@ -1105,7 +1105,7 @@ function toggleGridHints () {
 			var content = nodes[n].textContent.replace(factoryDefaults.ccbase,'').replace(/-/,'')
 			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.transLoc] && nodes[n].parentNode.className === 'g') {
 				//if (nodes[n].parentNode !== lastNode) {
-					var keyContent = window.spreadsheetRows[content][cols.transLoc] ? window.spreadsheetRows[content][cols.transLoc] : ''
+					var keyContent = window.spreadsheetRows[content][cols.transLoc] ? window.spreadsheetRows[content][cols.transLoc] : ''		
 					nodes[n].parentNode.firstChild.textContent = keyContent
 					//console.log(n,'Spreadsheet row',window.spreadsheetRows[content], 'content',content, 'transloc',window.spreadsheetRows[content][cols.transLoc], 'keyContent', keyContent, 'firstchild', nodes[n].parentNode.firstChild.textContent)
 					//lastNode = nodes[n].parentNode
@@ -1118,6 +1118,51 @@ function toggleGridHints () {
 	else {
 		for (let n = 0; n < nodes.length; n++ ) { 
 			var content = nodes[n].textContent.replace(factoryDefaults.ccbase,'').replace(/-/,'')
+			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.key] && nodes[n].parentNode.className === 'g') {
+				//if (nodes[n].parentNode !== lastNode) {
+					var keyContent = window.spreadsheetRows[content][cols.key] ? window.spreadsheetRows[content][cols.key].replace(/¶/,'\u0331') : ''
+					nodes[n].parentNode.firstChild.textContent = keyContent
+					//console.log(n,'Spreadsheet row',window.spreadsheetRows[content], 'content',content, 'transloc',window.spreadsheetRows[content][cols.transLoc], 'keyContent', keyContent, 'firstchild', nodes[n].parentNode.firstChild.textContent)
+					//lastNode = nodes[n].parentNode
+					//}
+				}
+			}
+		globals.keyHints = 'key'
+		}
+	}
+
+
+
+function toggleGridHints () {
+	// switch the hints alongside characters between key indicators and transliterations
+	
+	var lastNode = null
+	var nodes = document.querySelectorAll( '.c, .v' )
+	//console.log(nodes)
+	
+	if (globals.keyHints === 'key') {
+		for (let n = 0; n < nodes.length; n++ ) { 
+			var content = nodes[n].textContent.replace(factoryDefaults.ccbase,'')
+			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.transLoc] && nodes[n].parentNode.className === 'g') {
+				//if (nodes[n].parentNode !== lastNode) {
+					
+					// change twice so that items without ipa show translit
+					var keyContent = window.spreadsheetRows[content][cols.transLoc] ? window.spreadsheetRows[content][cols.transLoc] : ''
+					if (window.spreadsheetRows[content][cols.ipaLoc]) keyContent = window.spreadsheetRows[content][cols.ipaLoc]
+					
+					
+					nodes[n].parentNode.firstChild.textContent = keyContent
+					//console.log(n,'Spreadsheet row',window.spreadsheetRows[content], 'content',content, 'transloc',window.spreadsheetRows[content][cols.transLoc], 'keyContent', keyContent, 'firstchild', nodes[n].parentNode.firstChild.textContent)
+					//lastNode = nodes[n].parentNode
+					//}
+				}
+			}
+		globals.keyHints = 'translit'
+		}
+
+	else {
+		for (let n = 0; n < nodes.length; n++ ) { 
+			var content = nodes[n].textContent.replace(factoryDefaults.ccbase,'')
 			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.key] && nodes[n].parentNode.className === 'g') {
 				//if (nodes[n].parentNode !== lastNode) {
 					var keyContent = window.spreadsheetRows[content][cols.key] ? window.spreadsheetRows[content][cols.key].replace(/¶/,'\u0331') : ''

@@ -885,6 +885,12 @@ summary:hover {
 	border-radius: .25em;
 	padding: .1em .1em;
 	}
+.verticalAlign {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	}
+
 
 .highlightedChar {
 	background-color: #FFE6B2;
