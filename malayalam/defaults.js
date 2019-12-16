@@ -36,6 +36,8 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
+
 {"title":"Malayalam<br/>to ISO", "alt":"Convert Malayalam text to an ISO Latin transcription.", "code":"doTranscription('toISO')"},
 
 {"title":"ISO to<br/>Malayalam", "alt":"Convert ISO latin text to Malayalam transcription.", "code":"doTranscription('toMalayalam')"},
