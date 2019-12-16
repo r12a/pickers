@@ -741,20 +741,27 @@ function closeTranscription () {
 	}
 
 
+
 function transcribe (chstring, direction) {
 	// node: the output element
 	// direction: a string that the local routine will recognise to do the right transcription
 	if (chstring=='') { return }
 
-	// for security, remove angle brackets
-	chstring = chstring.replace(/</g,'&lt;')
-	chstring = chstring.replace(/>/g,'&gt;')
-	//chstring = chstring.replace(/\[/g,'&#x5B;')
-	//chstring = chstring.replace(/\]/g,'&#x5D;')
-	chstring = chstring.replace(/\{/g,'&#x7B;')
-	
-	var transcription = localtranscribe(direction, chstring)
-	//var transcription = localtranscribe(direction, chstring)
+	var transcription
+
+	if (direction === 'revTransliterate') transcription =  reverseTransliterate(chstring)
+
+	else {
+		// for security, remove angle brackets
+		chstring = chstring.replace(/</g,'&lt;')
+		chstring = chstring.replace(/>/g,'&gt;')
+		//chstring = chstring.replace(/\[/g,'&#x5B;')
+		//chstring = chstring.replace(/\]/g,'&#x5D;')
+		chstring = chstring.replace(/\{/g,'&#x7B;')
+
+		transcription = localtranscribe(direction, chstring)
+		}
+
 	document.getElementById('transcription').innerHTML = transcription
 	document.getElementById('transcription').contentEditable = true
 	document.getElementById('transcriptionWrapper').style.display = 'block' 
@@ -764,6 +771,8 @@ function transcribe (chstring, direction) {
 		}
 	return transcription
 	}
+
+
 
 function clearHighlights () {
 	// called when a character is clicked on - removes any highlighting added by shape
@@ -2311,3 +2320,25 @@ function makeLatinOnlyCharacterMap () {
 	}
 
 
+function reverseTransliterate (str) {
+// uses array created in setup.js to convert Latin back to native
+
+str = ' '+str
+// exclusions list deals with characters problematic for regex
+var exclusions = new Set(['(',')','[',']','.',' ','|','+','*','?'])
+var exclusionList = []
+
+for (i=0;i<revTranslitArray.length;i++) {
+	if (exclusions.has(revTranslitArray[i][0])) { exclusionList.push(i); continue }
+	re = new RegExp(revTranslitArray[i][0],'g')
+	//console.log(re)
+	str = str.replace(re, revTranslitArray[i][1])
+	}
+
+// replace any exclusions
+for (x=0;x<exclusionList.length;x++) {
+	xre = new RegExp('\\'+revTranslitArray[exclusionList[x]][0],'g')
+	str = str.replace(xre, revTranslitArray[exclusionList[x]][1])
+	}
+return str.trim()
+}

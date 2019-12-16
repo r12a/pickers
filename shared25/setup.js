@@ -77,5 +77,20 @@ function makeAutoTranslitArray () {
         else autoTranslitArray[line] = spreadsheetRows[line][cols.transLoc]
 		
 		}
+
+	// swap the keys and values of autoTranslitArray to create an array that can be use for latin->native
+	// then move all the values to an array, sorted by the number of characters in the key
+	// this is so that the actual reverse transliteration can find base+combining first when
+	// running through the array to do replacements
+  	window.revTranslitArray = []
+	
+	for (i=5;i>-1;i--) {
+		for(var key in autoTranslitArray) {
+			if (autoTranslitArray[key].length === i) {
+				revTranslitArray.push([autoTranslitArray[key],key])
+				//revTranslitArray[autoTranslitArray[key]] = key
+				}
+			}
+		}
 	}
 
