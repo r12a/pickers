@@ -62,6 +62,113 @@ span.hint {
 	line-height: 1.2;
     justify-content: center;
     }
+#consonantGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 .5em;
+    }
+#consonantGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 1;
+    vertical-align: baseline;
+    }
+#kbd #vowels {
+    padding: 0;
+    }
+#vowelGrid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 .5em;
+    line-height: 1.5;
+    }
+#vowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+#numberGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 2.5em;
+    max-height: 15em;
+    justify-content: space-between;
+    margin: 0 .2em;
+    line-height: 1;
+    border: 1px solid #ccc;
+    border-radius: .3em;
+    padding: .2em .4em;
+    }
+#numberGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-height: 15em;
+    justify-content: space-between;
+    }
+#alphabet #controlchars {
+	display: flex;
+    width: 2em;
+    flex-wrap: wrap;
+    align-items: stretch;
+    text-align: center;
+    align-content: space-between;
+    justify-content: center;
+	}
+#alphabet #controlchars p {
+	margin: .1em 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: .8;
+	}
+.touch {
+    margin: 0;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+#initials {
+    text-align: center;
+    font-size: 100%;
+    line-height: 1;
+    }
+
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#obsolete {
+    text-align: center;
+    }
+#cursive {
+    width: 4em;
+    display: inline-block;
+	color: tan;
+    }
+
+/*
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
 #ligatureGrid {
     white-space: normal;
     display: flex;
@@ -181,3 +288,4 @@ span.hint {
 	color: tan;
     }
 
+*/
