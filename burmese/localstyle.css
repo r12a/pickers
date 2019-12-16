@@ -58,28 +58,28 @@ span.hint {
 #kbdGrid {
  display: flex;
  flex-direction: row;
-	line-height: 1.2;
+	line-height: 1.5;
     justify-content: center;
     }
 #consonantGrid {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 12em;
+	border: 2px dotted tan;
+	border-radius: .25em;
+	padding: .1em .1em;
     }
 #consonantGrid div {
     white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 9em;
     justify-content: space-between;
     }
 #translitGrid {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 12em;
+    justify-content: center;
     }
 #translitGrid div {
     display: flex;
@@ -99,47 +99,55 @@ span.hint {
     flex-direction: row;
     max-width: 2em;
     justify-content: center;
-    height: 12em;
     align-content: space-around;
     margin-left: .25em;
     }
 #ivowelGrid {
     display: flex;
     flex-direction: column;
-    height: 12em;
     justify-content: space-between;
+	margin-right: 1em;
+	border: 2px dotted tan;
+	border-radius: .25em;
+	padding: .1em .1em;
     }
 #ivowelGrid div {
     text-align: right;
+    flex-wrap: nowrap;
     }
 #vowelGrid {
     display: flex;
     flex-direction: column;
-    height: 12em;
     justify-content: space-between;
-    margin-left: 1em;
+	border: 2px dotted tan;
+	border-radius: .25em;
+	padding: .1em .1em;
     }
 #virama {
-    width: 2em;
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin: 0 .5em 0 .75em;
     justify-content: center;
     align-items: center;
-    height: 12em;
     }
-#numberGrid div {
+#numberGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 90%;
+    }
+#digitKeypad {
+	border: 2px dotted tan;
+	border-radius: .25em;
+	padding: .1em .1em;
+	}
+#digitKeypad div {
     white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    max-width: 5em;
-    max-height: 8em;
     justify-content: space-between;
-    margin-left: 1.2em;
-    line-height: 1.8;
-    font-size: 90%;
     }
 #punctuation {
     text-align: center;
@@ -166,110 +174,4 @@ span.hint {
 
 
 
-
-
-/*
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
-
-span.hint { 
-	margin-right: 3px;
-	}
-
-
-#kbd { 	
-	margin: auto; 
-	}
-#kbd table {
-	margin:0;
-	}
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: left;
-	font-size: 25px;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1.4;
-	}
-#kbd td.hint {  
-	font-size: 12px;
-	color: #ccc;
-	text-align: right;
-	vertical-align: top;
-	}
-#kbd img {
-	vertical-align: top;
-	}
-
-
-#kbd #independentvowels { 
-	width: 90px; 
-	border: dotted 1px #999; 
-	text-align: right; 
-	padding-right: 4px; 
-	vertical-align: middle; 
-	line-height: 1.4;
-	}
-
-#consonants td {
-	text-align: center;
-	}
-#consonants td span.c {
-	min-width: 1em;
-	}
-#symbols span.c {
-	min-width: .75em;
-	text-align: center;
-	}
-#symbols {
-	line-height: 1.6;
-	margin-top: 20px;
-	}
-
-#punctuation {
-	text-align:right;
-	}
-
-#kbd #numbers {
-	padding-left: 20px;
-	}
-#kbd #numbers td {	
-	line-height: 1.6;
-	}
-
-#kbd #zwspcol {
-	padding-left: 10px; 
-	padding-right: 10px; 
-	width: 28px; 
-	vertical-align: middle;
-	}
-
-#symbols img { 
-	margin-right: 5px; 
-	}
-#digits img { 
-	margin-right: 4px; 
-	}
-
-
-#kbd .vowels {
-	border: dotted 1px #999; 
-	border-radius: 5px;
-	margin: 20px 0;
-	line-height: 1.8;
-	}
-#kbd .vowels div[0] {
-	border-bottom: dotted 1px #999; 
-	}
-#kbd .combining { 
-	border-top: dotted 1px #999; 
-	margin-top: 10px;
-	padding-top: 5px; 
-	}
-
-*/
 
