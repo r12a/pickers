@@ -37,6 +37,8 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
+
 {"title":"Tiginagh<br/>to IRCAM", "alt":"Convert Neo-Tifinagh text to an IRCAM transcription.", "code":"doTranscription('toIRCAM')","warning":"This still needs a little refinement."},
 ]
 

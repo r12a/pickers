@@ -81,7 +81,7 @@
 
 <div class="spaceline">
 <span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u2D7F');">TFNCJ</span>
+<span class="touch" title="Tifinagh consonant joiner" style="padding: 5px;" dir="auto" onClick="add('\u2D7F');">TFNCJ</span>
 <span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
 <span class="touch" title="Tab" dir="auto" onClick="add('\n');">⏎</span> 
@@ -91,17 +91,17 @@
 
 
 <div id="kbdGrid">
-   <div id="consonantGrid">
+   <div id="consonantGrid" class="box">
    <div>
  <span>&nbsp;</span>
-<span class="g"><span class="hint">p</span><span class="c">ⵒ</span></span>
+<span class="g"><span class="hint">p</span><span class="c x">ⵒ</span></span>
 <span class="g"><span class="hint">t</span><span class="c">ⵜ</span></span>
 <span class="g"><span class="hint">tˁ</span><span class="c">ⵟ</span></span>
 <span class="g"><span class="hint">k</span><span class="c">ⴽ</span></span>
 <span class="g"><span class="hint">q</span><span class="c">ⵇ</span></span>
  <span>&nbsp;</span>
 </div>
-<div>
+<div class="bottomDivider">
  <span>&nbsp;</span>
 <span class="g"><span class="hint">b</span><span class="c">ⴱ</span></span>
 <span class="g"><span class="hint">d</span><span class="c">ⴷ</span></span>
@@ -111,25 +111,25 @@
 </div>
 <div style="justify-content: space-between;"><!-- ɸ f θ s ʃ ʂ ç x χ ħ h -->
 <span class="g"><span class="hint">f</span><span class="c">ⴼ</span></span>
-<span class="g"><span class="hint">θ</span><span class="c">ⵝ</span></span>
+<span class="g"><span class="hint">θ</span><span class="c x">ⵝ</span></span>
 <span class="g"><span class="hint">s</span><span class="c">ⵙ</span></span>
 <span class="g"><span class="hint">sˁ</span><span class="c">ⵚ</span></span>
 <span class="g"><span class="hint">ʃ</span><span class="c">ⵛ</span></span>
-<span class="g"><span class="hint">x</span><span class="c">ⴿ</span></span>
+<span class="g"><span class="hint">x</span><span class="c x">ⴿ</span></span>
 <span class="g"><span class="hint">χ</span><span class="c">ⵅ</span></span>
 <span class="g"><span class="hint">ħ</span><span class="c">ⵃ</span></span>
 <span class="g"><span class="hint">h</span><span class="c">ⵀ</span></span>
 <!--span class="g"><span class="hint">ḣ</span><span class="c">ⵁ</span></span-->
 </div>
-<div style="justify-content: space-between;"><!-- β v ð z ʒ ʐ ʝ ɣ ʁ ʕ ɦ -->
-<span class="g"><span class="hint">β</span><span class="c">ⴲ</span></span>
-<span class="g"><span class="hint">v</span><span class="c">ⵠ</span></span>
-<span class="g"><span class="hint">ð</span><span class="c">ⴸ</span></span>
-<span class="g"><span class="hint">ðˁ</span><span class="c">ⴺ</span></span>
+<div style="justify-content: space-between;" class="bottomDivider"><!-- β v ð z ʒ ʐ ʝ ɣ ʁ ʕ ɦ -->
+<span class="g"><span class="hint">β</span><span class="c x">ⴲ</span></span>
+<span class="g"><span class="hint">v</span><span class="c x">ⵠ</span></span>
+<span class="g"><span class="hint">ð</span><span class="c x">ⴸ</span></span>
+<span class="g"><span class="hint">ðˁ</span><span class="c x">ⴺ</span></span>
 <span class="g"><span class="hint">z</span><span class="c">ⵣ</span></span>
 <span class="g"><span class="hint">zˁ</span><span class="c">ⵥ</span></span>
 <span class="g"><span class="hint">ʒ</span><span class="c">ⵊ</span></span>
-<span class="g"><span class="hint">ʝ</span><span class="c">ⴴ</span></span>
+<span class="g"><span class="hint">ʝ</span><span class="c x">ⴴ</span></span>
 <span class="g"><span class="hint">ʁ</span><span class="c">ⵖ</span></span>
 <span class="g"><span class="hint">ʕ</span><span class="c">ⵄ</span></span>
 </div>
@@ -153,13 +153,18 @@
 </div>
    
  </div>
- 
-     <div id="vowelGrid">
-          <span class="g"><span class="hint">i</span><span class="c">ⵉ</span></span>
-          <span class="g"><span class="hint">u</span><span class="c">ⵓ</span></span>
-          <span class="g"><span class="hint">e</span><span class="c">ⴻ</span></span>
-          <span class="g"><span class="hint">a</span><span class="c">ⴰ</span></span>
-        </div>
+
+
+
+
+<div id="vowelGrid" class="box">
+  <span class="g"><span class="hint">i</span><span class="c">ⵉ</span></span>
+  <span class="g"><span class="hint">u</span><span class="c">ⵓ</span></span>
+  <span class="g"><span class="hint">e</span><span class="c">ⴻ</span></span>
+  <span class="g"><span class="hint">a</span><span class="c">ⴰ</span></span>
+</div>
+
+
 
 
 <div id="numberGrid">

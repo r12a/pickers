@@ -25,6 +25,9 @@ span.hint {
 	min-width: .75em;
 	text-align: center;
 	}
+.x { 
+	color: tan;
+	}
 
     
     
@@ -78,8 +81,8 @@ span.hint {
     flex-direction: row;
     max-width: 2em;
     max-height: 15em;
-    justify-content: space-between;
-    margin-left: 2em;
+    justify-content: center;
+    margin-left: 1em;
     line-height: 1.3;
     }
 #numberGrid {
