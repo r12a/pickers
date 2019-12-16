@@ -36,6 +36,8 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Georgian text.", "code":"doTranscription('revTransliterate')"},
+
 {"title":"Georgian to<br/>National Tr", "alt":"Convert Georgian text to a national Georgian transcription.", "code":"doTranscription('toNational')"},
 ]
 
