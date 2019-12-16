@@ -1,12 +1,12 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Noto Sans Thai WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Noto Serif Thai WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'th' // language to use for examples
-	factoryDefaults.uifont = 'Noto Sans Thai WF'; // font name  for selection area (a single font, no quotes)
-	factoryDefaults.uisize = "32";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.uifont = 'Noto Serif Thai WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "\u00A0";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
@@ -41,7 +41,7 @@ var pulldown = [
 
 //{"title":"Trans-<br/>literate", "alt":"Convert Thai text to an ISO 11940-1 Latin transcription.", "code":"doTranscription('toISO1')"},
 
-//{"title":"Reverse<br/>translit.", "alt":"Convert Latin transliteration back to Burmese.", "code":"doTranscription('reverse')"},
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
 
 {"title":"Thai to<br>ISO 11940", "alt":"Convert Thai text to an ISO 11940-2 Latin transcription.", "code":"doTranscription('toISO2')", "warning":"Separate syllables with spaces before use."},
 
