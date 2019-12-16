@@ -38,6 +38,8 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
+
 {"title":"Trans-<br>scribe", "alt":"Convert to a Latin transcription.", "code":"doTranscription('transcription')", "warning":"Normalise text, add inherent vowels, and simplify some sequences."},
 
 {"title":"Tamil<br>to ISO", "alt":"Convert Tamil text to an ISO Latin transcription.", "code":"doTranscription('toISO')", "warning":"Produce an ISO Latin transcription."},

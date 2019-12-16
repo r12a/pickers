@@ -90,8 +90,9 @@
 <div class="spaceline">
 <span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
 <span class="touch" title="Zero width non-joiner" style="padding: 5px;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
-<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
-<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<!--pan class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span-->
+<span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Virama" style="padding: 5px 60px;" dir="auto" onClick="add('&#x0BCD;');"><span class="g">*</span> &#x0BCD;</span>
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
 <span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
 <span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
@@ -99,9 +100,10 @@
 </div>
 
 
+
 <div id="kbdGrid">
  
- <div id="ivowelGrid">
+ <div id="ivowelGrid" class="box">
  <div>
  <span class="g"><span class="hint">i</span><span class="c">&#xB87;</span></span> 
  <span class="g"><span class="hint">u</span><span class="c">&#xB89;</span></span>
@@ -128,7 +130,7 @@
  </div>
 </div>
 
-<div id="consonantGrid">
+<div id="consonantGrid" class="box">
 	<div>
 	<span class="g"><span class="hint">p</span><span class="c">ப</span></span>
 	<span class="g"><span class="hint">t</span><span class="c">த</span></span>
@@ -167,9 +169,9 @@
 	</div>
 </div>
 
-<div id="pulli"><span class="c" style="line-height: 2; padding: 2em 5px; border: 1px dotted #999;">&#xBCD;</span></div>
+<!--div id="pulli"><span class="c" style="line-height: 2; padding: 2em 5px; border: 1px dotted #999;">&#xBCD;</span></div-->
 
- <div id="vowelGrid">
+ <div id="vowelGrid" class="box">
  <div>
 <span class="g"><span class="hint">i</span><span class="c">&#xBBF;</span></span> 
 <span class="g"><span class="hint">u</span><span class="c">&#xBC1;</span></span>
@@ -195,32 +197,37 @@
 </div>
 </div>
 
+
 <div id="numberGrid">
-<div>
-<div>
-<span class="c">&#x0031;</span>
-<span class="c">&#x0032;</span>
-<span class="c">&#x0033;</span>
-</div>
-<div>
-<span class="c">&#x0034;</span>
-<span class="c">&#x0035;</span>
-<span class="c">&#x0036;</span>
-</div>
-<div>
-<span class="c">&#x0037;</span>
-<span class="c">&#x0038;</span>
-<span class="c">&#x0039;</span>
-</div>
-<div>
-<span class="c">&#x0030;</span>
-<span class="c">,</span>
-<span class="c">.</span>
-</div>
-</div>
-<div style="margin-top: 1em;">
-	<span class="g"><span class="hint">0</span><span class="c">௹</span></span>
-</div>
+	<div id="digitKeypad" class="box">
+		<div>
+		<span class="c">&#x0031;</span>
+		<span class="c">&#x0032;</span>
+		<span class="c">&#x0033;</span>
+		</div>
+		<div>
+		<span class="c">&#x0034;</span>
+		<span class="c">&#x0035;</span>
+		<span class="c">&#x0036;</span>
+		</div>
+		<div>
+		<span class="c">&#x0037;</span>
+		<span class="c">&#x0038;</span>
+		<span class="c">&#x0039;</span>
+		</div>
+		<div>
+		<span class="c">&#x0030;</span>
+		<span class="c">,</span>
+		<span class="c">.</span>
+		</div>
+		</div>
+	<div id="symbols">
+		<div style="margin-top: .5em;">
+	<span class="g"><span class="hint">0</span><span class="c">௹</span></span>		</div>
+		<!--div>
+		<span class="g"><span class="hint">0</span><span class="c">ฯลฯ</span></span>
+		</div-->
+		</div>
 </div>
 </div>
 

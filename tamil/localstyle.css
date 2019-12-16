@@ -81,6 +81,7 @@ span.hint {
     max-height: 15em;
     justify-content: space-between;
     line-height: 1.5;
+	margin-left: 1em;
     }
 #pulli {
     width: 2em;
@@ -91,15 +92,22 @@ span.hint {
     align-items: center;
     }
 #numberGrid {
-    white-space: normal;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-left: 1.2em;
-    line-height: 1.5;
+    justify-content: space-between;
     font-size: 90%;
+	margin-left: 1em;
+    line-height: 1.5;
     }
+#digitKeypad div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+
 #punctuation {
     text-align: center;
     font-size: 80%;
