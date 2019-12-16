@@ -5,6 +5,7 @@
 function localtranscribe (direction, str) {
 	
 	if (direction == 'transliterate') { return transliterate(str) }
+	if (direction == 'revTransliterate') { return reverseTransliterate(str) }
 	if (direction == 'toLatin') { return toLatin(str) }
 	if (direction == 'toDeva') { return toDeva(str) }
 	}
@@ -27,6 +28,50 @@ for (i=0;i<strArray.length;i++) {
 	}
 
 
+return str.trim()
+}
+
+
+
+function reverseTransliterate (str) {
+
+str = ' '+str
+
+var strArray = [...str]
+var exclusions = new Set(['(',')','[',']','.',' '])
+
+for (i=0;i<strArray.length;i++) {
+	if (exclusions.has(strArray[i])) continue
+	if (! revTranslitArray[strArray[i]]) continue
+	re = new RegExp(strArray[i],'g')
+	str = str.replace(re, revTranslitArray[strArray[i]])
+	}
+
+
+return str.trim()
+}
+
+
+function reverseTransliterate (str) {
+
+str = ' '+str
+var exclusions = new Set(['(',')','[',']','.',' ','|'])
+var exclusionList = []
+
+for (i=0;i<revTranslitArray.length;i++) {
+	if (exclusions.has(revTranslitArray[i][0])) { exclusionList.push(i); continue }
+	re = new RegExp(revTranslitArray[i][0],'g')
+	str = str.replace(re, revTranslitArray[i][1])
+	console.log(re, revTranslitArray[i][1], str)
+	}
+
+// ADD REPLACE STATEMENTS FOR EXCLUSIONS !
+console.log(exclusionList)
+for (x=0;x<exclusionList.length;x++) {
+	xre = new RegExp('\\'+revTranslitArray[exclusionList[x]][0],'g')
+	str = str.replace(xre, revTranslitArray[exclusionList[x]][1])
+	console.log(xre, revTranslitArray[exclusionList[x]][1], str)
+	}
 return str.trim()
 }
 
