@@ -7,7 +7,7 @@ var factoryDefaults = {}
 	factoryDefaults.language = 'lo' // language to use for examples
 	factoryDefaults.uifont = 'Saysettha OT'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
-	factoryDefaults.ccbase = "-";  // default base for combining characters
+	factoryDefaults.ccbase = "\u00A0";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
 
@@ -35,6 +35,8 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
+
 {"title":"Transcribe", "alt":"Convert Lao text to an LOC Latin transcription.", "code":"doTranscription('toLOC')"},
 
 {"title":"Split<br/>syllables", "alt":"Break text into syllabic units.", "code":"doTranscription('toSyllables')"},
