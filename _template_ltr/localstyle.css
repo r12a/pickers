@@ -104,6 +104,7 @@ span.hint {
     flex-direction: column;
     justify-content:flex-start;
     text-align: end;
+	margin: 0 .5em;
     }
 #tones {
     display: flex;
