@@ -37,7 +37,9 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Thaana to Maldivian Latin", "alt":"Convert Thaana text to a Maldivian Latin transliteration.", "code":"doTranscription('toMaldivian')"},
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Thaana text.", "code":"doTranscription('revTransliterate')"},
+
+{"title":"Thaana to<br/>Maldivian Latin", "alt":"Convert Thaana text to a Maldivian Latin transliteration.", "code":"doTranscription('toMaldivian')"},
 ]
 
 
