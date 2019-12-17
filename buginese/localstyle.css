@@ -58,27 +58,22 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 10em;
     }
 #consonantGrid div {
-    white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 5em;
     justify-content: space-between;
     }
 #translitGrid {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 10em;
     }
 #translitGrid div {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 2.5em;
     justify-content: center;
     margin-left: 1em;
     }
@@ -96,43 +91,25 @@ span.hint {
     align-content: center;
     margin-left: 1em;
     }
-#ivowelGrid {
-    display: flex;
-    flex-direction: column;
-    max-height: 10em;
-    justify-content: space-between;
-    line-height: 1.5;
-    }
-#ivowelGrid div {
-    text-align: right;
-    }
 #vowelGrid {
     display: flex;
     flex-direction: column;
-    height: 10em;
     justify-content: space-between;
     margin-left: 1em;
     }
-#virama {
-    width: 2em;
-    text-align: center;
+#vowelGrid div {
     display: flex;
-    flex-direction: column;
-    margin: 0 .5em 0 .75em;
+    flex-wrap: nowrap;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    height: 10em;
     }
 #numberGrid div {
-    white-space: normal;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 5em;
-    max-height: 8em;
     justify-content: space-between;
     margin-left: 1.2em;
-    line-height: 1.8;
+    line-height: 1.4;
     font-size: 90%;
     }
 #punctuation {
@@ -149,13 +126,6 @@ span.hint {
 
 #alphabet summary {
     font-size: 14px;
-    }
-#mahaprana, #rare, #otherpunctuation {
-    text-align: center;
-    font-size: 90%;
-    }
-#otherpunctuation {
-    font-size: 80%;
     }
 
 
