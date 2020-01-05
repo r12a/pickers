@@ -56,6 +56,83 @@ span.hint {
 
 /* SELECTION AREA */
 
+
+#kbdGrid {
+ 	display: flex;
+ 	flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#consonantGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 .25em;
+    }
+#consonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+#consonantGrid > span {
+    min-width: 1em;
+    }
+#finals {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 1.5em;
+    justify-content:flex-start;
+    align-content: space-around;
+    }
+#hamza {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 .25em;
+    flex-wrap: nowrap;
+    }
+#vowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 .25em;
+    }
+#vowelGrid > div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+#vowelbase {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+#numberGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 90%;
+    margin: 0 .25em;
+    }
+#digitKeypad div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+
+
+
+/*
 #kbdGrid {
  display: flex;
  flex-direction: row;
@@ -138,12 +215,13 @@ span.hint {
     vertical-align: middle;
 	margin-bottom: 1em;
     }
+*/
+
 #initials {
     text-align: center;
     font-size: 100%;
     line-height: 1;
     }
-
 #punctuation {
     text-align: center;
     font-size: 80%;
