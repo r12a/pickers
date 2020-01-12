@@ -39,6 +39,7 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Northern Thai text.", "code":"doTranscription('revTransliterate')"},
 ]
 
 

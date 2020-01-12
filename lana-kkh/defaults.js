@@ -38,6 +38,7 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Tai Khün text.", "code":"doTranscription('revTransliterate')"},
 ]
 
 

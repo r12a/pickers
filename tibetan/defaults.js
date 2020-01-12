@@ -38,6 +38,8 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
+
 {"title":"Trans-<br/>scribe", "alt":"Convert Tibetan text to a Latin transcription.", "code":"doTranscription('transcription')", "warning":"Reduces sanskrit, eg. dh̰ài → dʰī; ␣ → space."},
 
 {"title":"Transcribe<br/>to Wylie", "alt":"Convert Tibetan text to a Latin (Wylie) transcription.", "code":"doTranscription('toWylie')"},

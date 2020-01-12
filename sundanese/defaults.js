@@ -39,6 +39,7 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
 {"title":"Trans-<br/>scribe", "alt":"Convert Sundanese text to a Latin transcription.", "code":"doTranscription('toLatin')"},
 ]
 
