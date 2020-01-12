@@ -2,7 +2,7 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Georgian character app 25</title>
+<title>Help for All Georgian character app 25</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="../../shared25/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
@@ -19,7 +19,7 @@
 </header>
 
 
-<h1>Georgian character app notes/help</h1>
+<h1>All Georgian character app notes/help</h1>
 
 
 <aside class="sidebar">
@@ -33,7 +33,7 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->28-Nov-2019<!-- #EndDate --> • tags <a href="http://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://r12a.github.io/blog/?tag=georgian" title="Show all blog posts tagged with 'georgian'">georgian</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->12-Jan-2020<!-- #EndDate --> • tags <a href="http://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="http://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="http://r12a.github.io/blog/?tag=georgian" title="Show all blog posts tagged with 'georgian'">georgian</a></p>
 
 <p>This Unicode character app allows you to produce or analyse runs of Georgian script text for various languages. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[georgian%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/georgian">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
@@ -49,6 +49,15 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <section id="about">
 <h2 href="#about">About the selection area</h2>
       <p>Includes all the characters in the Unicode <a href="/uniview/?block=georgian" target="_blank">Georgian</a>, <a href="/uniview/?block=georgian_supplement" target="_blank">Georgian Supplement</a>, and <a href="/uniview/?block=georgian_extended" target="_blank">Georgian Supplement</a> blocks (in the default panel).</p>
+<p>Click on the relevant buttons to show the various Georgian scripts. Multiple scripts can be shown at the same time.</p>
+<p>For each script, the panels shown (from left to right) are:</p>
+<ul>
+<li>consonants</li>
+<li>vowels</li>
+<li>additional consonants not used in Georgian</li>
+<li>digits &amp; currency symbol</li>
+</ul>
+<p>The 2 leftmost panels mix archaic and non-Georgian characters with those used for the Georgian language.</p>
 <div id="aboutBP">
 </div>
 <script>document.getElementById('aboutBP').innerHTML = addAboutBP()
