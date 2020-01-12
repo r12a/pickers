@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Georgian character app 25</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="defaults.js">  </script>
+<script src="../shared25/setup.js">  </script> 
+<script src="../shared25/code.js">  </script>
+<script src="../shared25/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared25/pagetemplate.js">  </script>
+<script src="../../scripts/linkdata/linkdb.js"></script>
+
+<script src="../../shared/scriptdb/geor-ka.js">  </script>
+<script src="localtranscription.js">  </script>
+<script src="../../shared/fontlists/geor.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+<div id="chardata"><span id="charname">Type-assist (T) is on. Click on the vertical list to the left for alternative input aids.</span></div>
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+<div id="alphabet" class="default">
+
+
+
+<div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<span onclick="findShape('10D1,1C91,10D2,1C92,10D6,1C96','',true)">ბ</span>
+<span onclick="findShape('10D7,10D3,10D8,1C93,1C97,1C98','',true)">თ</span>
+<span onclick="findShape('10EB,10E8,10DB,1CAB,1CA8,1C9B','',true)">ძ</span>
+<span onclick="findShape('10DE,10D9,10E4,10EA,10D5,10F0,1C9E,1C99,1CA4,1CAA,1C95,1CB0','',true)">პ</span>
+<span onclick="findShape('10EE,10E9,10DC,10E1,1CA9,1CAE,1C9C,1CA1','',true)">ხ</span>
+<span onclick="findShape('10D4,10E5,10DF,10E3,1CA5,1C9F,1CA3,1C94','',true)">ე</span>
+<span onclick="findShape('10DD,10E6,10E0,10DA,1CA6,1CA0,1C9A,1C9D,1CA3,10E3','',true)">ო</span>
+<span onclick="findShape('10E2,10EC,10ED,10E7,10E4,10EF,1CA2,1CAC,1CAD,1CA7,1CA4,1CAF','',true)">…</span>
+ </div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+
+<div class="spaceline">
+<span id="mkhed" class="shifted" dir="auto" onclick="
+	if (this.className=='unshifted') { 
+		this.className='shifted'; 
+		document.getElementById('mtav').className='unshifted'
+		document.getElementById('mkhedruli').style.display='flex'
+		document.getElementById('mtavruli').style.display='none'
+		}
+		">Mkhed</span>
+
+<span id="mtav" class="unshifted" dir="auto" onclick="
+	if (this.className=='unshifted') { 
+		this.className='shifted'; 
+		document.getElementById('mkhed').className='unshifted'
+		document.getElementById('mtavruli').style.display='flex'
+		document.getElementById('mkhedruli').style.display='none'
+		}
+		">Mtav</span>
+		
+<span class="touch" title="Space" style="padding: 5px 60px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+<div id="kbdGrid">
+
+<div id="alternatives">
+
+<div id="mkhedruli">
+
+<div id="consonantGrid" class="box">
+<div>
+<span class="g"><span class="hint">b</span><span class="c">ბ</span></span>
+<span class="g"><span class="hint">d</span><span class="c">დ</span></span>
+<span class="g"><span class="hint">ʣ</span><span class="c">ძ</span></span>
+<span class="g"><span class="hint">ʤ</span><span class="c">ჯ</span></span>
+<span class="g"><span class="hint">g</span><span class="c">გ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ṗ</span><span class="c">პ</span></span>
+<span class="g"><span class="hint">ṫ</span><span class="c">ტ</span></span>
+<span class="g"><span class="hint">ʦ̇</span><span class="c">წ</span></span>
+<span class="g"><span class="hint">ʧ̇</span><span class="c">ჭ</span></span>
+<span class="g"><span class="hint">k̇</span><span class="c">კ</span></span>
+<span class="g"><span class="hint">q̇</span><span class="c">ყ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">pʰ</span><span class="c">ფ</span></span>
+<span class="g"><span class="hint">t</span><span class="c">თ</span></span>
+<span class="g"><span class="hint">ʦ̇ʰ</span><span class="c">ც</span></span>
+<span class="g"><span class="hint">ʧ̇ʰ</span><span class="c">ჩ</span></span>
+<span class="g"><span class="hint">kʰ</span><span class="c">ქ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">v</span><span class="c">ვ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">ს</span></span>
+<span class="g"><span class="hint">z</span><span class="c">ზ</span></span>
+<span class="g"><span class="hint">ʃ</span><span class="c">შ</span></span>
+<span class="g"><span class="hint">ʒ</span><span class="c">ჟ</span></span>
+<span class="g"><span class="hint">ɣ</span><span class="c">ღ</span></span>
+<span class="g"><span class="hint">χ</span><span class="c">ხ</span></span>
+<span class="g"><span class="hint">h</span><span class="c">ჰ</span></span>
+</div>
+<div style="justify-content: space-around">
+<span class="g"><span class="hint">m</span><span class="c">მ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ნ</span></span>
+
+<span class="g"><span class="hint">r</span><span class="c">რ</span></span>
+<span class="g"><span class="hint">l</span><span class="c">ლ</span></span>
+</div>
+</div>
+ 
+
+<div id="vowelGrid" class="box">
+<div>
+<span class="g"><span class="hint">i</span><span class="c">ი</span></span>
+<span class="g"><span class="hint">u</span><span class="c">უ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ɛ</span><span class="c">ე</span></span>
+<span class="g"><span class="hint">ɔ</span><span class="c">ო</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">a</span><span class="c">ა</span></span>
+</div>
+</div>
+ 
+
+</div>
+
+
+
+
+
+<div id="mtavruli">
+
+<div id="mtavruliConsonantGrid" class="box">      
+<div>
+<span class="g"><span class="hint">B</span><span class="c">Ბ</span></span>
+<span class="g"><span class="hint">D</span><span class="c">Დ</span></span>
+<span class="g"><span class="hint">Ǳ</span><span class="c">Ძ</span></span>
+<span class="g"><span class="hint">Ǆ</span><span class="c">Ჯ</span></span>
+<span class="g"><span class="hint">G</span><span class="c">Გ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">Ṗ</span><span class="c">Პ</span></span>
+<span class="g"><span class="hint">Ṫ</span><span class="c">Ტ</span></span>
+<span class="g"><span class="hint">ʦ̄̇</span><span class="c">Წ</span></span>
+<span class="g"><span class="hint">ʧ̄̇</span><span class="c">Ჭ</span></span>
+<span class="g"><span class="hint">K̇</span><span class="c">Კ</span></span>
+<span class="g"><span class="hint">Q̇</span><span class="c">Ყ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">Pʰ</span><span class="c">Ფ</span></span>
+<span class="g"><span class="hint">T</span><span class="c">Თ</span></span>
+<span class="g"><span class="hint">ʦ̄̇</span><span class="c">Ც</span></span>
+<span class="g"><span class="hint">ʧ̄̇</span><span class="c">Ჩ</span></span>
+<span class="g"><span class="hint">Kʰ</span><span class="c">Ქ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">V</span><span class="c">Ვ</span></span>
+<span class="g"><span class="hint">S</span><span class="c">Ს</span></span>
+<span class="g"><span class="hint">Z</span><span class="c">Ზ</span></span>
+<span class="g"><span class="hint">Ʃ</span><span class="c">Შ</span></span>
+<span class="g"><span class="hint">Ʒ</span><span class="c">Ჟ</span></span>
+<span class="g"><span class="hint">Ɣ</span><span class="c">Ღ</span></span>
+<span class="g"><span class="hint">Χ</span><span class="c">Ხ</span></span>
+<span class="g"><span class="hint">H</span><span class="c">Ჰ</span></span>
+</div>
+<div style="justify-content: space-around">
+<span class="g"><span class="hint">M</span><span class="c">Მ</span></span>
+<span class="g"><span class="hint">N</span><span class="c">Ნ</span></span>
+
+<span class="g"><span class="hint">R</span><span class="c">Რ</span></span>
+<span class="g"><span class="hint">L</span><span class="c">Ლ</span></span>
+</div>
+</div>
+ 
+<div id="mtavruliVowelGrid" class="box">
+<div>
+<span class="g"><span class="hint">I</span><span class="c">Ი</span></span>
+<span class="g"><span class="hint">U</span><span class="c">Უ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">Ɛ</span><span class="c">Ე</span></span>
+<span class="g"><span class="hint">Ɔ</span><span class="c">Ო</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">A</span><span class="c">Ა</span></span>
+</div>
+</div>
+ 
+
+
+</div>
+</div>
+
+
+
+
+<div id="numberGrid">
+	<div id="digitKeypad" class="box">
+		<div>
+<span class="c">&#x0031;</span>
+<span class="c">&#x0032;</span>
+<span class="c">&#x0033;</span>
+		</div>
+		<div>
+<span class="c">&#x0034;</span>
+<span class="c">&#x0035;</span>
+<span class="c">&#x0036;</span>
+		</div>
+		<div>
+<span class="c">&#x0037;</span>
+<span class="c">&#x0038;</span>
+<span class="c">&#x0039;</span>
+		</div>
+		<div>
+<span class="c">&#x0030;</span>
+<span class="c">,</span>
+<span class="c">.</span>
+		</div>
+		</div>
+	<div id="symbols">
+		<div style="margin-top: .5em;">
+		<span class="g"><span class="hint">0</span><span class="c">₾</span></span>
+		</div>
+		<!--div>
+		<span class="g"><span class="hint">0</span><span class="c">ฯลฯ</span></span>
+		</div-->
+		</div>
+</div>
+</div>
+
+
+
+<div id="punctuation">
+<span class="c">჻</span>
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">‚</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<span class="c">„</span>
+<span class="c">«</span>
+<span class="c">»</span>
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+</div>
+
+
+
+
+<details>
+<summary>Obsolete letters</summary>
+<div id="obsolete">
+<span class="g"><span class="hint">qʰ</span><span class="c">ჴ</span></span>
+<span class="g"><span class="hint">w</span><span class="c">ჳ</span></span>
+<span class="g"><span class="hint">j</span><span class="c">ჲ</span></span>
+<span class="g"><span class="hint">e</span><span class="c">ჱ</span></span>
+<br/>
+<span class="g"><span class="hint">Qʰ</span><span class="c">Ჴ</span></span>
+<span class="g"><span class="hint">W</span><span class="c">Ჳ</span></span>
+<span class="g"><span class="hint">J</span><span class="c">Ჲ</span></span>
+<span class="g"><span class="hint">E</span><span class="c">Ჱ</span></span>
+</div>
+</details>
+
+
+</div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
