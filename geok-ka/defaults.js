@@ -20,7 +20,7 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Khutsuri character app'
-	template.sample = "მუხლი 1. ყველა ადამიანი იბადება თავისუფალი და თანასწორი თავისი ღირსებითა და უფლებებით. მათ მინიჭებული აქვთ გონება და სინდისი და ერთმანეთის მიმართ უნდა იქცეოდნენ ძმობის სულისკვეთებით."
+	template.sample = "Ⴋⴓⴞⴊⴈ 1. Ⴗⴅⴄⴊⴀ ⴀⴃⴀⴋⴈⴀⴌⴈ ⴈⴁⴀⴃⴄⴁⴀ ⴇⴀⴅⴈⴑⴓⴔⴀⴊⴈ ⴃⴀ ⴇⴀⴌⴀⴑⴜⴍⴐⴈ ⴖⴈⴐⴑⴄⴁⴈⴇⴀ ⴃⴀ ⴓⴔⴊⴄⴁⴈⴇ. Ⴋⴀⴇ ⴋⴈⴌⴈⴝⴄⴁⴓⴊⴈ ⴀⴕⴅⴇ ⴂⴍⴌⴄⴁⴀ ⴃⴀ ⴑⴈⴌⴃⴈⴑⴈ ⴃⴀ ⴄⴐⴇⴋⴀⴌⴄⴇⴈⴑ ⴋⴈⴋⴀⴐⴇ ⴓⴌⴃⴀ ⴈⴕⴚⴄⴍⴃⴌⴄⴌ ⴛⴋⴍⴁⴈⴑ ⴑⴓⴊⴈⴑⴉⴅⴄⴇⴄⴁⴈⴇ."
 	// source: https://unicode.org/udhr/d/udhr_kat.html
 	template.blocklocation= '/scripts/georgian/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
