@@ -12,7 +12,7 @@ var factoryDefaults = {}
 	factoryDefaults.contrast = "low" // contrast for UI text colours
 
 
-var thisPicker = 'georgian'
+var thisPicker = 'allgeorgian'
 
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
