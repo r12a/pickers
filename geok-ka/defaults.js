@@ -24,7 +24,7 @@ var template = {}
 	// source: https://unicode.org/udhr/d/udhr_kat.html
 	template.blocklocation= '/scripts/georgian/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
-	template.github = 'georgian'
+	template.github = 'geok-ka'
 	template.scriptcode = 'Geok'
 
 
