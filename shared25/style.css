@@ -8,6 +8,12 @@
 
 
 
+#charname .hint {
+	font-size: 100%;
+	margin-left: 1em;
+	color: chocolate;
+	}
+
 /* higher contrast settings */
 body.contrast #chardata, 
 body.contrast #autofocusswitch, 
@@ -204,6 +210,7 @@ table td { border: 0; }
 	color: #ccc;
 	margin-bottom: .25em;
 	text-align: start;
+	color: tan;
 	}
 #charname { 
 	margin-left: 5px; 
