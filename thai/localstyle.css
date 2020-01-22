@@ -136,7 +136,12 @@ span.hint {
     flex-direction: row;
     justify-content: space-between;
     }
-
+#symbols div {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	height: 5em;
+	}
 #punctuation {
     text-align: center;
     font-size: 80%;
