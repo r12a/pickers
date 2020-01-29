@@ -14,14 +14,14 @@ function generateCode () {
 			out += "'";  // print the trigger character
 			//for (let i=0;i<chars[0].length;i++) {
 				sequence = [... chars[0]]
-				for (let z=0;z<sequence.length;z++) out += 'c'+sequence[z].codePointAt(0).toString(16).toUpperCase()
+				for (let z=0;z<sequence.length;z++) out += sequence[z].codePointAt(0).toString(16).toUpperCase()
 				//}
 			out += "': ["
 			for (let c=1;c<chars.length;c++) { // for each remaining character on the line
 				out += "'"
 				//for (j=0;j<chars[c].length;j++) { // print that character
 					sequence = [... chars[c]]
-					for (let z=0;z<sequence.length;z++) out += 'c'+sequence[z].codePointAt(0).toString(16).toUpperCase()
+					for (let z=0;z<sequence.length;z++) out += sequence[z].codePointAt(0).toString(16).toUpperCase()
 					//}
 				out += "'"
 				if (c<chars.length-1) { out += ", " }
