@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Telugu character app 25</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="defaults.js">  </script>
+<script src="../shared25/setup.js">  </script>
+<script src="../shared25/code.js">  </script>
+<script src="../shared25/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared25/pagetemplate.js">  </script>
+<script src="/scripts/linkdata/linkdb.js"></script>
+
+<script src="../../shared/scriptdb/telu.js">  </script>
+<script src="localtranscription.js">  </script>
+<script src="../../shared/fontlists/telu.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+<div id="chardata"><span id="charname">Type-assist (T) is on. Click on the vertical list to the left for alternative input aids.</span></div>
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+<div id="alphabet" class="default">
+
+
+<div id="shapelist" style="display:none; text-align:center;">
+<div id="shapekeys">
+<span onclick="findShape('C07,C10,C1E','',true)">ఇ</span>
+<span onclick="findShape('C21,C22,C09,C0A','',true)">డ</span>
+<span onclick="findShape('C0E,C0F,C2A,C2B,C37,C39,C2E,C35','',true)">ఎ</span>
+<span onclick="findShape('C12,C13,C14,C1C,C2D,C19,C0B,C60,C59,C2C','',true)">ఒ</span>
+<span onclick="findShape('C16','',true)">ఖ</span>
+<span onclick="findShape('C06,C05,C24,C31,C34','',true)">ఆ</span>
+<span onclick="findShape('C1A,C1F,C2C,C1B,C58','',true)">చ</span>
+<span onclick="findShape('C15','',true)">క</span>
+<span onclick="findShape('C26,C25,C27','',true)">ద</span>
+<span onclick="findShape('C17,C67','',true)">గ</span>
+<span onclick="findShape('C20,C1D,C30,C2F,C02,C66,C08','',true)">ఠ</span>
+<span onclick="findShape('C18','',true)">ఘ</span>
+<span onclick="findShape('C38,C28','',true)">స</span>
+<span onclick="findShape('C36,C33','',true)">శ</span>
+<span onclick="findShape('C23','',true)">ణ</span>
+<span onclick="findShape('C6C,C6F','',true)">౬</span>
+<span onclick="findShape('C3D,C7D,C6D','',true)">ఽ</span>
+<span onclick="findShape('C41,C42,C2E,C2F,C0B,C60','',true)">ు</span>
+<span onclick="findShape('','్ప,్బ,్ఫ,్భ,్క,్స,్శ,్మ,్న,్వ,్ళ,్య',true)">్ప</span>
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+
+
+<div class="spaceline">
+<span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Zero width non-joiner" style="padding: 5px;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" title="Virama" style="padding: 5px 50px;" dir="auto" onClick="add('\u0C4D');" onMouseOver="document.getElementById('charname').innerHTML = 'U+0C4D: TELUGU SIGN VIRAMA <span class=hint>ᵗ</span>͓<span class=hint>ᵏ</span>*'"><span class="hint">*</span> &nbsp; &#x0C4D;</span>
+<span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+<div id="kbdGrid"> 
+ 
+<div id="ivowelGrid" class="box">
+<div>
+<span class="g"><span class="hint">ị</span><span class="c">ఇ</span></span>
+<span class="g"><span class="hint">ụ</span><span class="c">ఉ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ị̄</span><span class="c">ఈ</span></span>
+<span class="g"><span class="hint">ụ̄</span><span class="c">ఊ</span></span>
+</div>
+<div class="topDivider">
+<span class="g"><span class="hint">ẹ</span><span class="c">ఎ</span></span>
+<span class="g"><span class="hint">ọ</span><span class="c">ఒ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">ẹ̄</span><span class="c">ఏ</span></span>
+<span class="g"><span class="hint">ọ̄</span><span class="c">ఓ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">ạ</span><span class="c">అ</span></span>
+<span class="g"><span class="hint">ạ̄</span><span class="c">ఆ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ə̣ʲ</span><span class="c">ఐ</span></span>
+<span class="g"><span class="hint">ə̣ʷ</span><span class="c">ఔ</span></span>
+</div>
+</div>
+
+<!--div id="pulli"><span class="c" style="line-height: 2; padding: 2em 5px; border: 1px dotted #999;">&#x094D;</span> &nbsp;
+<span class="c">&#x093C;</span></div-->
+
+
+<div id="consonantGrid" class="box">
+            <div>
+<span class="g"><span class="hint"></span><span class="c">ప</span></span>
+<span class="g"><span class="hint"></span><span class="c">త</span></span>
+<span class="g"><span class="hint"></span><span class="c">చ</span></span>
+<span class="g"><span class="hint">ʧ</span><span class="c">ట</span></span>
+<span class="g"><span class="hint">ʈ</span><span class="c">క</span></span>
+           </div>
+           <div>
+<span class="g"><span class="hint">b</span><span class="c">బ</span></span>
+<span class="g"><span class="hint">d</span><span class="c">ద</span></span>
+<span class="g"><span class="hint">ʤ</span><span class="c">జ</span></span>
+<span class="g"><span class="hint">ɖ</span><span class="c">డ</span></span>
+<span class="g"><span class="hint">g</span><span class="c">గ</span></span>
+           </div>
+           <div>
+<span class="g"><span class="hint">pʰ</span><span class="c">ఫ</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">థ</span></span>
+<span class="g"><span class="hint">ch</span><span class="c">ఛ</span></span>
+<span class="g"><span class="hint">ʧʰ</span><span class="c">ఠ</span></span>
+<span class="g"><span class="hint">ʈʰ</span><span class="c">ఖ</span></span>
+           </div>
+           <div class="bottomDivider">
+<span class="g"><span class="hint">pʰ</span><span class="c">భ</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">ధ</span></span>
+<span class="g"><span class="hint">ch</span><span class="c">ఝ</span></span>
+<span class="g"><span class="hint">ʧʰ</span><span class="c">ఢ</span></span>
+<span class="g"><span class="hint">ʈʰ</span><span class="c">ఘ</span></span>
+           </div>
+            <div class="bottomDivider">
+<span class="g"><span class="hint">w</span><span class="c">స</span></span>
+<span class="g"><span class="hint">s</span><span class="c">శ</span></span>
+<span class="g"><span class="hint">z</span><span class="c">ష</span></span>
+<span class="g"><span class="hint">ʃ</span><span class="c">హ</span></span>
+            </div>
+            <div>
+<span class="g"><span class="hint">m</span><span class="c">మ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">న</span></span>
+<span class="g"><span class="hint">m</span><span class="c">ఞ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ణ</span></span>
+<span class="g"><span class="hint">m</span><span class="c">ఙ</span></span>
+            </div>
+            <div>
+<span class="g"><span class="hint">r</span><span class="c">వ</span></span>
+<span class="g"><span class="hint">l</span><span class="c">ర</span></span>
+<span class="g"><span class="hint">y</span><span class="c">ఱ</span></span>
+<span class="g"><span class="hint">w</span><span class="c">ల</span></span>
+<span class="g"><span class="hint">w</span><span class="c">ళ</span></span>
+<span class="g"><span class="hint">y</span><span class="c">య</span></span>
+            </div>
+</div>
+
+
+
+
+
+<div id="vowelGrid" class="box">
+<div>
+<span class="g"><span class="hint">i</span><span class="c">ి</span></span>
+<span class="g"><span class="hint">u</span><span class="c">ు</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ī</span><span class="c">ీ</span></span>
+<span class="g"><span class="hint">ū</span><span class="c">ూ</span></span>
+</div>
+<div class="topDivider">
+<span class="g"><span class="hint">e</span><span class="c">ె</span></span>
+<span class="g"><span class="hint">o</span><span class="c">ొ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ē</span><span class="c">ే</span></span>
+<span class="g"><span class="hint">ō</span><span class="c">ో</span></span>
+</div>
+<div class="topDivider">
+<span class="g"><span class="hint">ā</span><span class="c">ా</span></span>
+</div>
+<div class="topDivider">
+<span class="g"><span class="hint">əʲ</span><span class="c">ై</span></span>
+<span class="g"><span class="hint">əʷ</span><span class="c">ౌ</span></span>
+</div>
+</div>
+
+
+<div id="cchars">
+<div>
+<span class="g"><span class="hint"></span><span class="c">ం</span></span>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c">ః</span></span>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c">ృ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c">ఋ</span></span>
+</div>
+</div>
+
+
+<div id="numberGrid">
+	<div id="digitKeypad" class="box">
+		<div>
+		<span class="g"><span class="hint">1</span><span class="c">౧</span></span>
+		<span class="g"><span class="hint">2</span><span class="c">౨</span></span>
+		<span class="g"><span class="hint">3</span><span class="c">౩</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">4</span><span class="c">౪</span></span>
+		<span class="g"><span class="hint">5</span><span class="c">౫</span></span>
+		<span class="g"><span class="hint">6</span><span class="c">౬</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">7</span><span class="c">౭</span></span>
+		<span class="g"><span class="hint">8</span><span class="c">౮</span></span>
+		<span class="g"><span class="hint">9</span><span class="c">౯</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">0</span><span class="c">౦</span></span>
+		<span class="c">,</span>
+		<span class="c">.</span>
+		</div>
+</div>
+	<div id="symbols">
+		<div style="margin-top: .5em;">
+		<span class="g"><span class="hint">0</span><span class="c">₹</span></span>
+		</div>
+		<div>
+		</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="hintType">
+</div>
+
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+<span class="c">।</span> 
+<span class="c">॥</span>
+</div>
+
+
+
+<details>
+  <summary>other characters</summary>
+	<div id="other">
+	<span class="c">ౕ</span>
+	<span class="c">ౖ</span>
+	&nbsp;
+	<span class="c">ౢ</span>
+	<span class="c">ౄ</span>
+	<span class="c">ౣ</span>
+	<span class="c">ౠ</span>
+	<span class="c">ఌ</span>
+	<span class="c">ౡ</span>
+	&nbsp;
+	<span class="c">ఴ</span>
+	<span class="c">ఽ</span>
+	<span class="c">ౘ</span>
+	<span class="c">ౙ</span>
+	<span class="c">ౚ</span>
+	&nbsp;
+	<span class="c">ఁ</span>
+	<span class="c">ఀ</span>
+	<span class="c">ఄ</span>
+	<span class="c">౷</span>
+	<br/>
+	<span class="c">౸</span>
+	<span class="c">౹</span>
+	<span class="c">౺</span>
+	<span class="c">౻</span>
+	<span class="c">౼</span>
+	<span class="c">౽</span>
+	<span class="c">౾</span>
+	<span class="c">౿</span>
+	</div>
+    </details>        
+</div>
+
+
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
