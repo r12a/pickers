@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<title>Language pack creation process</title>
+<style>
+body { font-family: raleway; }
+h2 { margin-top: 3em; }
+.sequence { margin-top: 1em; }
+.sequence p { margin: 0 0 .5em 0; }
+</style>
+</head>
+
+<body>
+<h1>Language pack creation process</h1>
+
+
+<h2>Preliminaries</h2>
+
+<h3>Set up fonts</h3>
+<ol>
+<li>Create /shared/fontlists/scriptname.js</li>
+<li>Download needed fonts</li>
+<li>Make webfont(s) and add to /shared</li>
+<li>Set font in localstyle.css</li>
+</ol>
+
+
+
+<h2>Create a spreadsheet</h2>
+
+<div class="sequence">
+<p><input type="checkbox"> Copy a similar script in and arrange columns</p>
+<p><input type="checkbox"> Get all characters from UniView block(s), rotate, and add.</p>
+<p><input type="checkbox"> Organise into consonants, vowels, marks, punctuation, etc.</p>
+<p><input type="checkbox"> Add phonetics from Wikipedia.</p>
+<p><input type="checkbox"> Add transliteration based on phonetics.</p>
+<p><input type="checkbox"> Add class info and additional entries based on Notes:instructions/Google Spreadsheet Guidelines.</p>
+<p><input type="checkbox"> Add unicode names using <a href="/pickers/_tools/_list_codes_and_names">_list_codes_and_names</a>.</p>
+<p><input type="checkbox"> Add block name column.</p>
+</div>
+
+
+
+
+
+
+<h2>Create a character app</h2>
+<p>Get a template</p>
+
+
+<p>Do case-sensitive change of script name throughout index.html</p>
+
+
+<h3>Set defaults</h3>
+<ol>
+<li>Edit defaults.js</li>
+<li>Create sample text</li>
+</ol>
+
+<h3>Position keys</h3>
+<p>Copy characters to the appropriate place. </p>
+<p>Or, if needed, create code using the following:</p>
+<ol>
+<li>Plan the zones for characters</li>
+<li>Use UniView to make a list of characters for the picker</li>
+<li>Use <a href="/pickers/_tools/_make-characters-for-input">_make-characters-for-input.html</a> to generate spans</li>
+<li>Add result to #temp div</li>
+<li>Move #temp markup to appropriate positions</li>
+</ol>
+
+
+<h3>Make shape list</h3>
+<ol>
+<li>Use the picker to create a list of similar glyphs on each line, separated by spaces.</li>
+<li>Move the simplest shape to the start of the list.</li>
+<li>Create the code using <a href="/pickers/_tools/_make-shape-list">_make-shape-list</a>.</li>
+<li>Copy to main source inside <code>&lt;div id=&quot;shapekeys&quot;&gt;</code>.</li>
+</ol>
+
+
+<h3>Make hint list</h3>
+<ol>
+<li>Take the list created in the last step.</li>
+<li>Create the code using <a href="/pickers/_tools/hint-maker">hint-maker</a>.</li>
+<li>Copy to localcode <code>_h</code>.</li>
+</ol>
+<p>&nbsp;</p>
+
+
+
+<h2>Create a character notes page</h2>
+<div class="sequence">
+<p><input type="checkbox"> Copy a template for <strong>block</strong> &amp; <strong>local.css</strong>.</p>
+<p><input type="checkbox"> 
+Create initial code for all characters in block order using <a href="/scripts/_tools/generate_block_page_content_NEW">generate_block_page_content_NEW</a>.</p>
+<p><input type="checkbox"> Organise into consonants, vowels, marks, punctuation, etc.</p>
+<p><input type="checkbox"> Add phonetics from Wikipedia.</p>
+<p><input type="checkbox"> Add transliteration based on phonetics.</p>
+<p><input type="checkbox"> Add class info and additional entries based on Notes:instructions/Google Spreadsheet Guidelines.</p>
+<p><input type="checkbox"> Add unicode names using <a href="/pickers/_tools/_list_codes_and_names">_list_codes_and_names</a>.</p>
+<p><input type="checkbox"> Add block name column.</p>
+</div>
+
+
+
+<h2>Creating examples</h2>
+
+<p>Use <a href="/app-findword/">find-word</a>.</p>
+<p>Use <a href="https://en.wiktionary.org/wiki/Category:Swadesh_lists_by_language">Swadesh list</a> - see also <a href="https://en.wiktionary.org/wiki/Appendix:Dravidian_Swadesh_lists">Dravidian Swadesh list</a>.</p>
+<p>With <a href="https://translate.google.com/">Google Translate</a>.</p>
+</body>
+</html>
