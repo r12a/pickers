@@ -2,7 +2,7 @@ globals.showSimTrans = ''
 globals.showTranslit =  ''
 globals.typeAssist = ''
 globals.typeAssist = ' ✓'
-globals.showKeysTranslitToggle = true
+globals.showKeysTranslitToggle = false
 
 
 
