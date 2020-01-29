@@ -913,5 +913,12 @@ summary:hover {
 	background-color: #FFE6B2;
 	}
 
-
+#hintType {
+	float: left;
+	font-size: 50%;
+	margin-top: 1em;
+	cursor: pointer;
+	color: tan;
+	font-family: Helvetica, Arial, sans-serif;
+	}
 
