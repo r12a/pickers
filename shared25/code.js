@@ -1276,7 +1276,7 @@ function initialise() {
 		<span id="noneHintType" onClick="setGridHints('none')" title="Show no hints.">0</span>
 		`
 	if (defaults.hints) setGridHints(defaults.hints)
-	else setGridHints('key')
+	//else if (! defaults.hints == '') setGridHints('key')
 
 
 	// set ids to codepoint values of character sequence (with no leading zeros)
