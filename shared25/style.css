@@ -913,9 +913,17 @@ summary:hover {
 	background-color: #FFE6B2;
 	}
 
+
+#ktp0Wrapper {
+	position: relative;
+	}
 #hintType {
-	float: left;
-	font-size: 50%;
+	/*float: left;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 16px;
+	line-height: 1;
 	margin-top: 1em;
 	cursor: pointer;
 	color: tan;
