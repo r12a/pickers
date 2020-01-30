@@ -175,6 +175,7 @@ span.hint {
     text-align: center;
     font-size: 80%;
     line-height: 1;
+	margin: .5em 0 .5em 0;
     }
 
 #alphabet summary {

@@ -2,7 +2,7 @@ globals.showTranslit =  ''
 globals.showMesherTrans =  ''
 globals.showISOTrans = ''
 globals.typeAssist = ' ✓'
-globals.showKeysTranslitToggle = true
+globals.showKeysTranslitToggle = false
 
 
 function localInitialise () {

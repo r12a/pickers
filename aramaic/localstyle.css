@@ -144,7 +144,7 @@ span.hint {
     text-align: center;
     font-size: 70%;
     line-height: 1;
-    margin-top: .5em;
+	margin: .5em 0 .5em 0;
     }
 #spaceEtc {
     text-align: center;

@@ -1,7 +1,7 @@
 globals.showTranslit =  ''
 globals.showVariantsOnMouseover = ''
 globals.typeAssist = ' ✓'
-globals.showKeysTranslitToggle = true
+globals.showKeysTranslitToggle = false
 
 
 

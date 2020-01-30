@@ -10,6 +10,7 @@ var factoryDefaults = {}
 	factoryDefaults.ccbase = "\u25CC";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
+	factoryDefaults.hints = "none" // type of hint to show alongside characters in the grids
 
 
 var thisPicker = 'tamilPicker'

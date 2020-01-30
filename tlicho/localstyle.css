@@ -64,6 +64,13 @@ span.hint {
 #keyboard { display: none; }
 
 
+#punctuation2 {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
+    }
+
 
 
 #endings {

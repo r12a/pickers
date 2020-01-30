@@ -2,7 +2,7 @@ globals.showLOCTrans = ''
 globals.showIPATrans = ''
 globals.showTranslit =  ''
 globals.typeAssist = ' ✓'
-globals.showKeysTranslitToggle = true
+globals.showKeysTranslitToggle = false
 
 
 
@@ -132,7 +132,7 @@ g ɡ ǧ g͟h
 h ʰ h͑ ḫ
 i ɪ͑ ᵢ ī ɪ
 k k͟h
-n ṇ̃ ⁿ ᵑ ṅ
+n ṇ̃ ⁿ ᵑ ṅ
 o ɔ
 r ɽ ṛ ʁ
 s ŝ ṡ ʃ ṣ š ʂ s̱

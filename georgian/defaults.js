@@ -10,6 +10,7 @@ var factoryDefaults = {}
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
+	factoryDefaults.hints = "" // type of hint to show alongside characters in the grids
 
 
 var thisPicker = 'allgeorgian'

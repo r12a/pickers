@@ -1,7 +1,7 @@
 globals.showLOCTrans = ''
 globals.showCursive = ''
 globals.typeAssist = ' ✓'
-globals.showKeysTranslitToggle = true
+globals.showKeysTranslitToggle = false
 
 
 

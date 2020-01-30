@@ -73,20 +73,16 @@ span.hint {
     min-width: 1em;
     }
 #vowelGrid {
-    white-space: normal;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    max-height: 15em;
-    max-width: 5em;
-    justify-content: start;
-    margin-left: 1.5em;
-    line-height: 1.3;
-	}
-#vowelGrid div {
-    white-space: nowrap;
-    justify-content: end;
-    display: flex;
+    justify-content: space-between;
+	margin-left: 1em;
+    }
+#vowelGrid > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:space-between;
 	}
 #numberGrid {
     white-space: normal;
@@ -102,6 +98,7 @@ span.hint {
 #punctuation {
     text-align: center;
     font-size: 80%;
+	margin: .5em 0 .5em 0;
     }
 #spaceEtc {
     text-align: center;

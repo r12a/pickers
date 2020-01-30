@@ -83,10 +83,10 @@ span.hint {
 	margin-left: 20px; 
 	margin-right: 20px; 
 	}
-#kbd #punctuation { 
+#kbd #punctuationtable { 
 	margin-left: 20px; 
 	}
-#kbd #punctuation td { 
+#kbd #punctuationtable td { 
 	text-align: center;
 	}
 
@@ -109,8 +109,8 @@ span.hint {
 
 #punctuation {
     text-align: center;
-    font-size: 80%;
+    font-size: 70%;
     line-height: 1;
-    margin-top: .5em;
+	margin: .5em 0 .5em 0;
     }
 

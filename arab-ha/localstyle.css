@@ -120,7 +120,6 @@ span.hint {
     flex-direction: column;
     justify-content: flex-start;
     margin: 0 0 0 1em;
-    padding: .2em .5em .2em 0;
     }
 #vowelGrid div {
     display: flex;
@@ -182,7 +181,7 @@ span.hint {
 
 #punctuation {
     text-align: center;
-    font-size: 90%;
+    font-size: 80%;
     line-height: 1.4;
 	margin-bottom: .2em;
 	margin-top: .5em;

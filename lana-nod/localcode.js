@@ -1,7 +1,7 @@
 globals.showTranslit =  ''
 globals.showShapeHints =  ''
 globals.typeAssist = ' ✓'
-globals.showKeysTranslitToggle = true
+globals.showKeysTranslitToggle = false
 
 
 function localInitialise () {

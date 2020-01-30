@@ -85,7 +85,7 @@ span.hint {
     width: 4em;
     justify-content: space-between;
     }
-#toneGrid {
+/* #toneGrid {
     width: 2.5em;
     display: flex;
     flex-wrap: wrap;
@@ -93,6 +93,18 @@ span.hint {
     height: 8em;
     justify-content: center;
     align-items: center;
+    }*/
+#toneGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	margin-left: 1em;
+    }
+#toneGrid div{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:center;
     }
 #numberGrid {
     white-space: normal;
@@ -107,7 +119,8 @@ span.hint {
     }
 #punctuation {
     text-align: center;
-    font-size: 80%;
+    font-size: 70%;
+	margin: .5em 0 .5em 0;
     }
 #spaceEtc {
     text-align: center;

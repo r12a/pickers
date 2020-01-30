@@ -1,5 +1,6 @@
 globals.showSimTrans = ''
 globals.showTranslit =  ''
+globals.showKeysTranslitToggle = false
 
 
 

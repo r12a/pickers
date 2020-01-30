@@ -68,7 +68,7 @@ span.hint {
 #consonantGrid > span {
     min-width: 1.5em;
     }
-#vowelGrid {
+/*#vowelGrid {
     white-space: normal;
     display: flex;
     flex-wrap: wrap;
@@ -82,8 +82,20 @@ span.hint {
     border: 1px dotted #ccc;
     border-radius: .25em;
     padding: 0 .5em;
+    }*/
+#vowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	margin-left: 1em;
     }
-#punctuationGrid {
+#vowelGrid div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:space-between;
+    }
+/*#punctuationGrid {
     white-space: normal;
     display: flex;
     flex-wrap: wrap;
@@ -95,6 +107,18 @@ span.hint {
     margin-end: 0 .5em;
     line-height: 2;
     padding: 0 .5em;
+    }*/
+#punctuationGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	margin-left: 1em;
+    }
+#punctuationGrid div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:space-between;
     }
 #numberGrid {
     white-space: normal;

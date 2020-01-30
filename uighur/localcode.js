@@ -1,7 +1,7 @@
 globals.showULYTrans = ''
 globals.showTransliteration = ''
 globals.typeAssist = ' ✓'
-globals.showKeysTranslitToggle = true
+globals.showKeysTranslitToggle = false
 
 
 

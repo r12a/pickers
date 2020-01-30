@@ -36,7 +36,6 @@ span.hint {
     margin-left: 2px;
     margin: 0;
 	font-size: 50%;
-	color: #ccc;
 	text-align: right;
 	vertical-align: top;
 	}
@@ -106,4 +105,9 @@ span.hint {
     font-size: 14px;
     }
 
+#punctuation {
+    text-align: center;
+    font-size: 70%;
+	margin: .5em 0 .5em 0;
+    }
 

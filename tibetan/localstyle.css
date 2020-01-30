@@ -184,6 +184,11 @@ span.hint {
 	cursor: pointer;
 	color: #aaa;
 	}
+#extend {
+    text-align: center;
+    font-size: 70%;
+	margin: .5em 0 .5em 0;
+    }
 
 
 
