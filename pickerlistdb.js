@@ -57,6 +57,7 @@ var plist = [
     { tag:'tale', name:'Tai&nbsp;Le', url:'taile/' },
     { tag:'tavt', name:'Tai&nbsp;Viet', url:'taiviet/' },
     { tag:'taml', name:'Tamil', url:'tamil/' },
+    { tag:'telu', name:'Telugu', url:'telu/' },
     { tag:'thaa', name:'Thaana', url:'thaana/' },
     { tag:'thai', name:'Thai', url:'thai/' },
     { tag:'tibt', name:'Tibetan', url:'tibetan/' },
@@ -129,6 +130,7 @@ var plistByRegion = {
 			  ['Malayalam', 'malayalam'],
 			  ['Sinhala', 'sinhala/'],
 			  ['Tamil', 'tamil/'],
+			  ['Telugu', 'telu/'],
 			  ['Thaana/Dhivehi', 'thaana/'],
 			  ['Urdu', 'urdu/']
 			  ],
