@@ -40,7 +40,11 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Hausa text.", "code":"doTranscription('revTransliterate')"},
 ]
+
+
+
 
 
 
