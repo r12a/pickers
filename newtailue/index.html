@@ -22,9 +22,9 @@
 <script src="../shared25/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 
-<script src="../../shared/scriptdb/newtailue.js">  </script>
+<script src="../../shared/scriptdb/talu.js">  </script>
 <script src="localtranscription.js">  </script>
-<script src="../../shared/fontlists/newtailue.js"> </script>
+<script src="../../shared/fontlists/talu.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
 </head>
@@ -58,7 +58,30 @@
 
 
 <div id="alphabet" class="default">
-    
+
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<img alt="shape1" src="images/shape1.png" onclick="findShape('E01,E16,E20,E24,E26,E0E,E0F,E13,E0C,E0D,E12','',true)" /> 
+<img alt="shape2" src="images/shape2.png" onclick="findShape('E32,E33,E45,E27,E08,E2D,E09,E25,E2A,E26','',true)" /> 
+<img alt="shape3" src="images/shape3.png" onclick="findShape('E04,E14,E28,E05,E15,E12,E0C,E24','',true)" /> 
+<img alt="shape4" src="images/shape4.png" onclick="findShape('E17,E2B,E11','',true)" /> 
+<img alt="shape5" src="images/shape5.png" onclick="findShape('E06,E19,E21,E1A,E1B,E29,E2E,E18,E52,E22','',true)" /> 
+<img alt="shape6" src="images/shape6.png" onclick="findShape('E02,E03,E0A,E0B','',true)" /> 
+<img alt="shape7" src="images/shape7.png" onclick="findShape('E1C,E1D,E1E,E1F,E2C','',true)" /> 
+<img alt="shape8" src="images/shape8.png" onclick="findShape('E2F,E5A,E46','',true)" /> 
+<img alt="shape10" src="images/shape10.png" onclick="findShape('E40,E41,E42,E43,E44','',true)" /> 
+<img alt="shape11" src="images/shape11.png" onclick="findShape('E34,E35,E36,E37','',true)" /> 
+<img alt="shape9" src="images/shape9.png" onclick="findShape('E30,E31,E4C,E49','',true)" /> 
+<img alt="shape16" src="images/shape0.png" onclick="findShape('E07,E23,E10,E4D,E47,E4E,E3A,E38,E39,E48,E4B,E49,E4A,E5B,E3F,E4F,E50,E51,E53,E54,E55,E56,E57,E58,E59','',true)" /> 
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+
     
 <div class="spaceline">
 <span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
@@ -77,104 +100,81 @@
 
 
 <div id="ivowelGrid">
-<span class="g"><span class="hint">a͕ʲ</span><span class="c">ᦺ</span></span>
 <span class="g"><span class="hint">e͕</span><span class="c">ᦵ</span></span>
-<span class="g"><span class="hint">ɛ͕</span><span class="c">ᦶ</span></span>
 <span class="g"><span class="hint">o͕</span><span class="c">ᦷ</span></span>
+<span class="g"><span class="hint">ɛ͕</span><span class="c">ᦶ</span></span>
+<span class="g"><span class="hint">a͕ʲ</span><span class="c">ᦺ</span></span>
 </div>
 
 
 
-<div id="consonantGrid">
-<div>
-<span class="g"><span class="hint">k</span><span class="c">ᦂ</span></span>
-<span class="g"><span class="hint">ḵ</span><span class="c">ᦅ</span></span>
-<span class="g"><span class="hint">kʷ</span><span class="c">ᦦ</span></span>
-<span class="g"><span class="hint">ḵʷ</span><span class="c">ᦨ</span></span>
-<span class="g"><span class="hint">ŋ</span><span class="c">ᦄ</span></span>
-<span class="g"><span class="hint">ŋ̱</span><span class="c">ᦇ</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">t</span><span class="c">ᦎ</span></span>
-<span class="g"><span class="hint">ṯ</span><span class="c">ᦑ</span></span>
-<span class="g"><span class="hint">tʰ</span><span class="c">ᦏ</span></span>
-<span class="g"><span class="hint">ṯʰ</span><span class="c">ᦒ</span></span>
-<span class="g"><span class="hint">d</span><span class="c">ᦡ</span></span>
-<span class="g"><span class="hint">ḏ</span><span class="c">ᦤ</span></span>
-<span class="g"><span class="hint">n</span><span class="c">ᦐ</span></span>
-<span class="g"><span class="hint">ṉ</span><span class="c">ᦓ</span></span>
-</div>
+<div id="consonantGrid" class="box">
 <div>
 <span class="g"><span class="hint">p</span><span class="c">ᦔ</span></span>
-<span class="g"><span class="hint">p̱</span><span class="c">ᦗ</span></span>
-<span class="g"><span class="hint">pʰ</span><span class="c">ᦕ</span></span>
-<span class="g"><span class="hint">p̱ʰ</span><span class="c">ᦘ</span></span>
 <span class="g"><span class="hint">b</span><span class="c">ᦢ</span></span>
+<span class="g"><span class="hint">t</span><span class="c">ᦎ</span></span>
+<span class="g"><span class="hint">d</span><span class="c">ᦡ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ᦂ</span></span>
+<span class="g"><span class="hint">ạ</span><span class="c">ᦀ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">p̱</span><span class="c">ᦗ</span></span>
 <span class="g"><span class="hint">ḇ</span><span class="c">ᦥ</span></span>
-<span class="g"><span class="hint">m</span><span class="c">ᦖ</span></span>
-<span class="g"><span class="hint">m̱</span><span class="c">ᦙ</span></span>
+<span class="g"><span class="hint">ṯ</span><span class="c">ᦑ</span></span>
+<span class="g"><span class="hint">ḏ</span><span class="c">ᦤ</span></span>
+<span class="g"><span class="hint">ḵ</span><span class="c">ᦅ</span></span>
+<span class="g"><span class="hint">ạ̱</span><span class="c">ᦁ</span></span>
 </div>
-<div>
-<span class="g"><span class="hint">y</span><span class="c">ᦊ</span></span>
-<span class="g"><span class="hint">y̱</span><span class="c">ᦍ</span></span>
-<span class="g"><span class="hint">l</span><span class="c">ᦜ</span></span>
-<span class="g"><span class="hint">ḻ</span><span class="c">ᦟ</span></span>
-<span class="g"><span class="hint">w</span><span class="c">ᦛ</span></span>
-<span class="g"><span class="hint">w̱</span><span class="c">ᦞ</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">x</span><span class="c">ᦃ</span></span>
-<span class="g"><span class="hint">x̱</span><span class="c">ᦆ</span></span>
-<span class="g"><span class="hint">xʷ</span><span class="c">ᦧ</span></span>
-<span class="g"><span class="hint">x̱ʷ</span><span class="c">ᦩ</span></span>
+<div style="justify-content: space-around">
+<span class="g"><span class="hint">pʰ</span><span class="c">ᦕ</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">ᦏ</span></span>
+<span class="g"><span class="hint">kʷ</span><span class="c">ᦦ</span></span>
 <span class="g"><span class="hint">ʦ</span><span class="c">ᦈ</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: space-around">
+<span class="g"><span class="hint">p̱ʰ</span><span class="c">ᦘ</span></span>
+<span class="g"><span class="hint">ṯʰ</span><span class="c">ᦒ</span></span>
+<span class="g"><span class="hint">ḵʷ</span><span class="c">ᦨ</span></span>
 <span class="g"><span class="hint">ʦ̱</span><span class="c">ᦋ</span></span>
 </div>
 <div>
+<span class="g"><span class="hint">f</span><span class="c">ᦚ</span></span>
 <span class="g"><span class="hint">s</span><span class="c">ᦉ</span></span>
+<span class="g"><span class="hint">s̱ʷ</span><span class="c">ᦫ</span></span>
+<span class="g"><span class="hint">x</span><span class="c">ᦃ</span></span>
+<span class="g"><span class="hint">xʷ</span><span class="c">ᦧ</span></span>
+<span class="g"><span class="hint">h</span><span class="c">ᦠ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">f̱</span><span class="c">ᦝ</span></span>
 <span class="g"><span class="hint">s̱</span><span class="c">ᦌ</span></span>
 <span class="g"><span class="hint">sʷ</span><span class="c">ᦪ</span></span>
-<span class="g"><span class="hint">s̱ʷ</span><span class="c">ᦫ</span></span>
-<span class="g"><span class="hint">f</span><span class="c">ᦚ</span></span>
-<span class="g"><span class="hint">f̱</span><span class="c">ᦝ</span></span>
-<span class="g"><span class="hint">h</span><span class="c">ᦠ</span></span>
+<span class="g"><span class="hint">x̱</span><span class="c">ᦆ</span></span>
+<span class="g"><span class="hint">x̱ʷ</span><span class="c">ᦩ</span></span>
 <span class="g"><span class="hint">ẖ</span><span class="c">ᦣ</span></span>
 </div>
-<div style="justify-content: flex-start;">
-<span class="g"><span class="hint">lˀ</span><span class="c">᧞</span></span>
-<span>&nbsp;&nbsp;&nbsp;</span>
-<span class="g"><span class="hint">lʷ</span><span class="c">᧟</span></span>
-<span>&nbsp;&nbsp;&nbsp;</span>
-</div>
-</div>
-
-<!--div id="moreconsonants">
-<span class="g" style="margin-top:.5em;"><span class="hint">-r̆-</span><span class="c">ᩕ</span></span>
-<span class="g"><span class="hint">-l̆-</span><span class="c">ᩖ</span></span>
-<span class="g"><span class="hint">h-</span><span class="c">ᩉ᩠</span></span>
-<span class="g"><span class="hint">-w-</span><span class="c">᩠ᩅ</span></span>
-<span class="g"><span class="hint">-ȳ</span><span class="c">᩠ᨿ</span></span>
-<span class="g"><span class="hint">ᵽ</span><span class="c">ᩛ</span></span>
-<span class="g"><span class="hint">S</span><span class="c">ᩔ</span></span>
-<span class="g"><span class="hint">p̆</span><span class="c">ᩚ</span></span>
-<span class="g"><span class="hint">L</span><span class="c">ᩓ</span></span>
-</div>
-
-
-<div id="virama"><span class="c" style="line-height: 2; padding: 2em 5px; ">&#x1A60;</span></div-->
-
-
-
-<div id="vowelGrid">
 <div>
-<span class="g"><span class="hint">ạ</span><span class="c">ᦀ</span></span>
-<span class="g"><span class="hint">ạ̱</span><span class="c">ᦁ</span></span>
-<span class="g"><span class="hint">ʔ</span><span class="c">ᦰ</span></span>
-</div>
+<span class="g"><span class="hint">m</span><span class="c">ᦖ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ᦐ</span></span>
+<span class="g"><span class="hint">ŋ</span><span class="c">ᦄ</span></span>
+<span class="g"><span class="hint">w</span><span class="c">ᦛ</span></span>
+<span class="g"><span class="hint">l</span><span class="c">ᦜ</span></span>
+<span class="g"><span class="hint">y</span><span class="c">ᦊ</span></span></div>
 <div>
-<span class="g"><span class="hint">ā</span><span class="c">ᦱ</span></span>
-<span class="g"><span class="hint">aʲ</span><span class="c">ᦻ</span></span>
+<span class="g"><span class="hint">m̱</span><span class="c">ᦙ</span></span>
+<span class="g"><span class="hint">ŋ̱</span><span class="c">ᦇ</span></span>
+<span class="g"><span class="hint">ṉ</span><span class="c">ᦓ</span></span>
+<span class="g"><span class="hint">w̱</span><span class="c">ᦞ</span></span>
+<span class="g"><span class="hint">ḻ</span><span class="c">ᦟ</span></span>
+<span class="g"><span class="hint">y̱</span><span class="c">ᦍ</span></span>
 </div>
+</div>
+
+
+
+
+
+<div id="vowelGrid" class="box">
 <div>
 <span class="g"><span class="hint">i</span><span class="c">ᦲ</span></span>
 <span class="g"><span class="hint">əʲ</span><span class="c">ᧀ</span></span>
@@ -183,30 +183,53 @@
 <span class="g"><span class="hint">ɯ</span><span class="c">ᦹ</span></span>
 <span class="g"><span class="hint">ɯʲ</span><span class="c">ᦿ</span></span>
 </div>
-<div>
+<div class="bottomDivider">
 <span class="g"><span class="hint">u</span><span class="c">ᦳ</span></span>
 <span class="g"><span class="hint">ū</span><span class="c">ᦴ</span></span>
 <span class="g"><span class="hint">uʲ</span><span class="c">ᦼ</span></span>
 </div>
 <div>
+<span class="g"><span class="hint">e͕</span><span class="c">ᦵ</span></span>
+</div>
+<div style="font-size:80%">
+<span class="g"><span class="hint">ɤ</span><span class="v" onClick="addVowel(this.textContent)">ᦵ-ᦲ</span></span>
+<span class="g"><span class="hint">ɤ</span><span class="v" onClick="addVowel(this.textContent)">ᦵ-ᧀ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">o͕</span><span class="c">ᦷ</span></span>
+<span class="g"><span class="hint">oʲ</span><span class="c">ᦽ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ɛ͕</span><span class="c">ᦶ</span></span>
+</div>
+<div class="bottomDivider">
 <span class="g"><span class="hint">ɔ</span><span class="c">ᦸ</span></span>
 <span class="g"><span class="hint">ɔʲ</span><span class="c">ᦾ</span></span>
 </div>
 <div>
-<span class="g"><span class="hint">oʲ</span><span class="c">ᦽ</span></span>
+<span class="g"><span class="hint">ā</span><span class="c">ᦱ</span></span>
+<span class="g"><span class="hint">aʲ</span><span class="c">ᦻ</span></span>
+<span class="g"><span class="hint">a͕ʲ</span><span class="c">ᦺ</span></span>
 </div>
 </div>
-<!--
--->
 
 
-<div id="finals">
-<span class="g"><span class="hint">k̽</span><span class="c">ᧅ</span></span>
-<span class="g"><span class="hint">ṅ̽</span><span class="c">ᧂ</span></span>
-<span class="g"><span class="hint">t̽</span><span class="c">ᧆ</span></span>
-<span class="g"><span class="hint">m̽</span><span class="c">ᧄ</span></span>
+
+<div id="virama">
+<span class="g"><span class="hint">ʔ</span><span class="c">ᦰ</span></span>
+</div>
+
+
+
+
+
+<div id="finals" class="box">
 <span class="g"><span class="hint">p̽</span><span class="c">ᧇ</span></span>
+<span class="g"><span class="hint">t̽</span><span class="c">ᧆ</span></span>
+<span class="g"><span class="hint">k̽</span><span class="c">ᧅ</span></span>
+<span class="g"><span class="hint">m̽</span><span class="c">ᧄ</span></span>
 <span class="g"><span class="hint">n̽</span><span class="c">ᧃ</span></span>
+<span class="g"><span class="hint">ṅ̽</span><span class="c">ᧂ</span></span>
 <span class="g"><span class="hint">w̽</span><span class="c">ᧁ</span></span>
 </div>
 
@@ -220,20 +243,35 @@
 </div>
 
 <div id="numberGrid">
-<div><span class="g"><span class="hint">1</span><span class="c">᧑</span></span><span class="g"><span class="hint">2</span><span class="c">᧒</span></span><span class="g"><span class="hint">3</span><span class="c">᧓</span></span></div>
-<div><span class="g"><span class="hint">4</span><span class="c">᧔</span></span><span class="g"><span class="hint">5</span><span class="c">᧕</span></span><span class="g"><span class="hint">6</span><span class="c">᧖</span></span></div>
-<div><span class="g"><span class="hint">7</span><span class="c">᧗</span></span><span class="g"><span class="hint">8</span><span class="c">᧘</span></span><span class="g"><span class="hint">9</span><span class="c">᧙</span></span></div>
-<div><span class="g"><span class="hint">0</span><span class="c">᪀</span></span> <span class="c">,</span> <span class="c">.</span> </div>
-
-<div style="margin-top: 1em;"><span class="g"><span class="hint">1̣</span><span class="c">᧚</span></span>
+	<div id="digitKeypad" class="box">
+		<div><span class="g"><span class="hint">1</span><span class="c">᧑</span></span><span class="g"><span class="hint">2</span><span class="c">᧒</span></span><span class="g"><span class="hint">3</span><span class="c">᧓</span></span></div>
+		<div><span class="g"><span class="hint">4</span><span class="c">᧔</span></span><span class="g"><span class="hint">5</span><span class="c">᧕</span></span><span class="g"><span class="hint">6</span><span class="c">᧖</span></span></div>
+		<div><span class="g"><span class="hint">7</span><span class="c">᧗</span></span><span class="g"><span class="hint">8</span><span class="c">᧘</span></span><span class="g"><span class="hint">9</span><span class="c">᧙</span></span></div>
+		<div><span class="g"><span class="hint">0</span><span class="c">᪀</span></span> <span class="c">,</span> <span class="c">.</span> </div>
+		</div>
+	<div id="symbols">
+		<div style="margin-top: .5em;">
+		<span class="g"><span class="hint">1̣</span><span class="c">᧚</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">lˀ</span><span class="c">᧞</span></span>
+		<span class="g"><span class="hint">lʷ</span><span class="c">᧟</span></span>
+		</div>
+	</div>
 </div>
+
 </div>
 
 
+
+
+
+
+
+<div id="ktp0Wrapper">
+<div id="hintType">
 </div>
-  
-  
- 
+
 
 <div id="punctuation">
 <span class="c">,</span>
@@ -264,46 +302,11 @@
 <span class="c">、</span>
 <span class="c">，</span>
 <span class="c">．</span>
-
-</div>
- 
-
-<details>
-<summary>Show vowel clusters</summary>
- <div id="vowelclusters">
-<span class="g"><span class="hint">é</span><span class="v" onClick="addVowel(this.textContent)">ᦵ-ᦰ</span></span>
-<span class="g"><span class="hint">i</span><span class="v" onClick="addVowel(this.textContent)">-ᦲᦰ</span></span>
-<span class="g"><span class="hint">e</span><span class="v" onClick="addVowel(this.textContent)">ᦵ-ᦰ</span></span>
-<span class="g"><span class="hint">ɛ</span><span class="v" onClick="addVowel(this.textContent)">ᦶ-ᦰ</span></span>
-<span class="g"><span class="hint">o</span><span class="v" onClick="addVowel(this.textContent)">ᦷ-ᦰ</span></span>
-<span class="g"><span class="hint">ə</span><span class="v" onClick="addVowel(this.textContent)">ᦵ-ᦲᦰ</span></span>
-<span class="g"><span class="hint">ə̄</span><span class="v" onClick="addVowel(this.textContent)">ᦵ-ᦲ</span></span>
-</div>
-</details>
-
-</div>
-
-
-
-
- <div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
-<img alt="shape1" src="images/shape1.png" onclick="findShape('E01,E16,E20,E24,E26,E0E,E0F,E13,E0C,E0D,E12','',true)" /> 
-<img alt="shape2" src="images/shape2.png" onclick="findShape('E32,E33,E45,E27,E08,E2D,E09,E25,E2A,E26','',true)" /> 
-<img alt="shape3" src="images/shape3.png" onclick="findShape('E04,E14,E28,E05,E15,E12,E0C,E24','',true)" /> 
-<img alt="shape4" src="images/shape4.png" onclick="findShape('E17,E2B,E11','',true)" /> 
-<img alt="shape5" src="images/shape5.png" onclick="findShape('E06,E19,E21,E1A,E1B,E29,E2E,E18,E52,E22','',true)" /> 
-<img alt="shape6" src="images/shape6.png" onclick="findShape('E02,E03,E0A,E0B','',true)" /> 
-<img alt="shape7" src="images/shape7.png" onclick="findShape('E1C,E1D,E1E,E1F,E2C','',true)" /> 
-<img alt="shape8" src="images/shape8.png" onclick="findShape('E2F,E5A,E46','',true)" /> 
-<img alt="shape10" src="images/shape10.png" onclick="findShape('E40,E41,E42,E43,E44','',true)" /> 
-<img alt="shape11" src="images/shape11.png" onclick="findShape('E34,E35,E36,E37','',true)" /> 
-<img alt="shape9" src="images/shape9.png" onclick="findShape('E30,E31,E4C,E49','',true)" /> 
-<img alt="shape16" src="images/shape0.png" onclick="findShape('E07,E23,E10,E4D,E47,E4E,E3A,E38,E39,E48,E4B,E49,E4A,E5B,E3F,E4F,E50,E51,E53,E54,E55,E56,E57,E58,E59','',true)" /> 
 </div>
 </div>
 
-<div id="extrashapes"></div>
+
+</div>
 
 
 <div id="temp"></div>
