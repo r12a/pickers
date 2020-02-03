@@ -19,7 +19,7 @@
 span.hint { 
 	margin-right: 1px;
     margin-left: 2px;
-	font-size: 50%;
+	font-size: 60%;
 	color: tan;
 	}
 .c { 
@@ -54,21 +54,29 @@ span.hint {
 #kbdGrid {
  display: flex;
  flex-direction: row;
-	line-height: 1.2;
+	line-height: 1.4;
     justify-content: center;
+    }
+#ivowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: .5em;
+	line-height: 2;
+	text-align: end;
+    }
+#ivowelGrid div {
+    text-align: right;
     }
 #consonantGrid {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 12em;
     }
 #consonantGrid div {
-    white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 12em;
     justify-content: space-between;
     }
 #tones {
@@ -77,17 +85,12 @@ span.hint {
     justify-content: space-around;
     height: 5em;
     margin-left: .5em;
-    border: 1px dotted #ccc;
-    border-radius: .5em;
-    padding: 0 .1em;
     }
 #tones div {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 1.5em;
     justify-content: center;
-    margin-left: 0;
     }
 #consonantGrid > span {
     min-width: 1em;
@@ -119,56 +122,44 @@ span.hint {
     border-radius: .5em;
     padding: 0 .25em;
     }
-#ivowelGrid {
-    display: flex;
-    flex-direction: column;
-    height: 7em;
-    justify-content: space-between;
-    margin-left: .5em;
-    border: 1px dotted #ccc;
-    border-radius: .5em;
-    padding: 0 .25em;
-    }
-#ivowelGrid div {
-    text-align: right;
-    }
 #vowelGrid {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-left: .5em;
-    padding: .5em .1em;
-    border: 1px dotted #ccc;
     }
 #vowelGrid div {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    width: 5em;
-    justify-content: center;
+    justify-content: flex-start;
     }
 #virama {
-    width: .75em;
     text-align: center;
     display: flex;
     flex-direction: column;
+	flex-wrap: nowrap;
     margin: 0 0 0 .25em;
     justify-content: center;
     align-items: center;
     }
+#virama .c {
+	padding: 3em 0;
+	}
 #numberGrid {
-    max-height: 9em;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 90%;
+	margin-left: .5em;
     }
-#numberGrid div {
+#digitKeypad div {
     white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    max-width: 5em;
     justify-content: space-between;
-    margin-left: 1.2em;
-    line-height: 1.6;
-    font-size: 90%;
     }
 #punctuation {
     text-align: center;

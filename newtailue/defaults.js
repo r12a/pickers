@@ -10,6 +10,7 @@ var factoryDefaults = {}
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
+	factoryDefaults.hints = "none" // type of hint to show alongside characters in the grids
 
 
 var thisPicker = 'newtailuePicker'
@@ -37,6 +38,8 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
+
 {"title":"Trans-<br/>scribe", "alt":"Convert Lü text to a Latin transcription.", "code":"doTranscription('transcription')"},
 
 {"title":"Add<br/>spaces", "alt":"Add spaces between syllables.", "code":"doTranscription('addSpaces')"},
