@@ -83,7 +83,6 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 5em;
     margin-left: .5em;
     }
 #tones div {
@@ -96,31 +95,13 @@ span.hint {
     min-width: 1em;
     }
 #finals {
-    white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
-    max-width: 2em;
-    justify-content:flex-start;
-    height: 12em;
     justify-content: space-around;
     align-content: center;
     margin-left: .5em;
     text-align: right;
-    }
-#moreconsonants {
-    white-space: normal;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    max-width: 3em;
-    margin-left: 1em;
-    text-align: center;
-    justify-content: space-between;
-    font-size: 90%;
-    border: 1px dotted #ccc;
-    border-radius: .5em;
-    padding: 0 .25em;
     }
 #vowelGrid {
     display: flex;
