@@ -30,7 +30,7 @@ return `
 
 <p><b class="leadin">Normalisation.</b> All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character - text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area.</p>
 
-<p><b class="leadin">Hints.</b> Many of the character apps display light-coloured characters alongside the main characters in the selection area. By default, these represent the key to press during type-assisted keyboard entry in order to add that character to the text area.</p>
+<p><b class="leadin">Hints.</b> The character apps can display light-coloured characters alongside the main characters in the selection area. The <samp>K T P 0</samp> selectors associated with the selection area allow you to choose whether to display the keypress used when type-assist is on (K), the transliteration symbol for the character (T), likely IPA pronunciation(s) for the character (P), or nothing (0).</p>
 `
 }
 
