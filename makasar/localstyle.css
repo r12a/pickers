@@ -57,13 +57,11 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: space-between;
-    height: 9em;
     }
 #consonantGrid div {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    width: 5em;
     justify-content: space-between;
     }
 #vowelGrid {
@@ -71,40 +69,32 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: space-between;
-    height: 8em;
-    margin-left: .3em;
-    padding: .25em .3em .25em .2em;
-    border: 1px solid #ccc;
-    border-radius: .5em;
     margin: 0 1em 0 1.5em;
     }
 #vowelGrid div {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    width: 2em;
     justify-content: center;
     }
 #numberGrid {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: flex-start;
-    height: 9em;
-    margin-left: .5em;
-    }
-#numberGrid div {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 3em;
     justify-content: space-between;
     font-size: 90%;
-    line-height: 1.75;
+	margin-left: 1em;
+    }
+#digitKeypad div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
     }
 #punctuation {
     text-align: center;
-    font-size: 80%;
+    font-size: 70%;
     line-height: 1.7;
     margin-top: .5em;
     }
