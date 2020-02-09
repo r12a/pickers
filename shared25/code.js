@@ -1592,55 +1592,14 @@ function selectCCBase (base) {
 	}
 
 
-function makeCharacterLink (cp, block, lang, direction) { 
-	// returns markup with information about cp
-	// only wraps in a link if not on r12a.github.io
-	// cp: a unicode character, or sequence of unicode characters
-	// block: 
-	// lang: the BCP47 language tag for the context
-	// direction: either rtl or ltr or ''
-	//var chars = cp.split('')
-	var chars = []
-	convertStr2DecArray(cp, chars)
-	
 
-	var out = ''
-	var charstr = ''
-	for (var i=0;i<chars.length;i++) {
-		charstr = String.fromCodePoint(chars[i])
-		out += '<span class="codepoint">'
-		var mark = false
-		var cbase = ''
-		var dir = ''
-		
-		if (charData[charstr]) {
-			var hex = chars[i].toString(16).toUpperCase()
-			while (hex.length < 4) hex = '0'+hex 
-			
-			var name = charData[charstr]
-			if (charData[charstr].match('\u200B')) mark = true
-			if (mark && defaults.ccbase != '') cbase = '&#x'+convertChar2CP(defaults.ccbase)+';'
-			if (direction === 'rtl') dir = ' dir="rtl"'
-			}
-		else return 'Character not found in database.'
-	
-		out += '<span lang="'+lang+'"'+dir+'>'+cbase+'&#x'+hex+';</span> '
-	
-		if (! window.location.href.match('r12a.github.io')) out +=  '<a href="'+block+'#char'+hex+'">'
-		out +=  '[<span class="uname">U+'+hex+' '+name+'</span>]'
-		if (! window.location.href.match('r12a.github.io')) out +=  '</a>'
-		out += '</span> '
-		}
-	
-	return out.trim()
-	}
 
 
 function makeCharacterLink (cp, block, lang, direction) { 
 	// returns markup with information about cp
 	// only wraps in a link if not on r12a.github.io
 	// cp: a unicode character, or sequence of unicode characters
-	// block: 
+	// block: default directory for scripts block file
 	// lang: the BCP47 language tag for the context
 	// direction: either rtl or ltr or ''
 	//var chars = cp.split('')
@@ -1679,10 +1638,15 @@ function makeCharacterLink (cp, block, lang, direction) {
 		var name = charData[charstr]
 
 
-       if (! window.location.href.match('r12a.github.io')) out +=  '<a href="'+block+'#char'+hex+'">'
+		if (! window.location.href.match('r12a.github.io')) {
+			var char = String.fromCodePoint(chars[i])
+			if (spreadsheetRows[char] && spreadsheetRows[char][cols.block]) block = '/scripts/'+spreadsheetRows[char][cols.block]+'/block'
+			console.log(spreadsheetRows)
+			out +=  '<a href="'+block+'#char'+hex+'">'
+			}
 		out +=  '<span class="uname">U+'+hex+' '+name+'</span>'
 		if (! window.location.href.match('r12a.github.io')) out +=  '</a>'
-        if (i===chars.length-1) out += ']'
+		if (i===chars.length-1) out += ']'
 		}
     out += '</span> '
 	
