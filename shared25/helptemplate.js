@@ -141,19 +141,15 @@ if (aidsList.match('typeAssist')) {
     <p>You should find that very little practise is needed to learn to enter native text quickly. This method is much faster than picking items from the selection area below.</p>
     <p>When there are alternatives, the app will allow you to select characters from a list. For each alternative you'll see the character to be inserted in red. To its left you'll see the transliteration for that character (in grey, above), and the number key to press (in orange, below) to insert the character into the text box.  You can also just tap on the character (often more useful when using hand-held devices).
     <p style="text-align:center;"><img src="../../shared25/images/help/type-assist.png" alt=""/></p>
-	<p>This sets up the <strong>Transcription type-in mode</strong>, which means two things:</p>
-	<ol>
-    <li>If a key on the keyboard is only associated with a single native character, that character will be inserted immediately.</li>
-	<li>If there are alternatives but you continue typing, the app will replace the character you typed with the character assigned to the number 0.</li>
-	</ol>
+    <p>This feature sets up the <strong>Transcription type-in mode</strong>, which means that the first item on the list is automatically added to the text area.</p>
 	`
 	}
 
 if (aidsList.match('latin')) {
 	out += `
-	<p><b class="leadin">Latin type-assist.</b> Displays a panel of characters associated with QWERTY keystrokes (in orange). This can also be switched on/off by hitting the ~ (tilde) key.</p>
+	<p><b class="leadin">Latin type-assist.</b> Displays a panel of Latin characters associated with QWERTY keystrokes (in orange). This can also be switched on/off by hitting the ~ (tilde) key.</p>
     <p style="text-align:center;"><img src="../../shared25/images/help/latin-panel.png" alt=""/></p>
-    <p>As you type the orange characters, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or tap directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already see the character you want, just continue typing.)</p>
+    <p>As you type the characters indicated by the orange circles, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or tap directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already see the character you want, just continue typing.)</p>
     <p style="text-align:center;"><img src="../../shared25/images/help/character-selector.png" alt=""/></p>
     <p>Because this sets up the <strong>Latin type-in mode</strong>, alternative characters are <strong>only</strong> inserted after you click on a number key.</p>
     <p>In general, alternative characters are associated with a key on the keyboard that resembles them when displayed - eg. &#x0263; will usually be brought up by clicking on the 'y' key (rather than, say 'g').</p>
@@ -162,7 +158,7 @@ if (aidsList.match('latin')) {
 
 if (aidsList.match('translit')) {
 	out += `
-	<p><b class="leadin">Reverse transliteration.</b> Displays a panel of the transliteration characters used for this app, and sets up the <strong>Transcription type-in mode</strong>. It allows you to generate text in the native script.</p>
+	<p><b class="leadin">Reverse transliteration.</b> Displays a panel of the transliteration characters used for this app, and sets up the <strong>Transcription type-in mode</strong>. It allows you to generate text in the native script when you know the transcription.</p>
     <p style="text-align:center;"><img src="../../shared25/images/help/reverse-transcription.png" alt=""/></p>
     <p>This works in the same way as the <samp>Type assist</samp> input aid described just earlier, however it displays a panel to help with selection. Although the panel below the text area shows only the Latin transcription characters associated with each key, if you mouse over those characters the corresponding native character will appear at the bottom right of the text area (ie. the yellow box in the picture above).</p>
 	`
