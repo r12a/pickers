@@ -69,7 +69,7 @@ function clearHighlights () {
 
 // overwrite standard function to display phonetic description
 
-function event_mouseoverChar ()  {
+/*function event_mouseoverChar ()  {
 	// display character information
 	span = document.createElement( 'span' );
 	span.setAttribute( 'id', 'charname' );
@@ -103,8 +103,52 @@ function event_mouseoverChar ()  {
 			}
 		}
 	}
+*/
+
+function event_mouseoverChar ()  {
+	// display character information
+	var out = '<span id="charname">'+this.title
+	var content = this.textContent.replace(defaults.ccbase,'')
+	if (window.spreadsheetRows[content]) {
+		if (window.spreadsheetRows[content][cols.transLoc]) out += '<span class="hint">ᵗ</span>' + window.spreadsheetRows[content][cols.transLoc]
+		if (window.spreadsheetRows[content][cols.key]) out += '<span class="hint">ᵏ</span>' + window.spreadsheetRows[content][cols.key]
+		if (window.spreadsheetRows[content][cols.ipaLoc]) out += '<span class="hint">ᵖ</span>' + window.spreadsheetRows[content][cols.ipaLoc]
+		}
+	out += '</span>'
+	document.getElementById('chardata').innerHTML = out
+	
+	
+	// add cursive forms to table
+	if (template.cursive) {
+		document.getElementById('cursive').innerHTML = ''
+		var char = this.textContent
+		if (spreadsheetRows[char] && spreadsheetRows[char][cols.shape]) {
+			document.getElementById('cursive').innerHTML = spreadsheetRows[char][cols.shape].replace(/ /g,'&nbsp;&nbsp;').replace(/ـ/g,'\u200D')
+			}
+		}
+
+	// THIS IS DIFFERENT FROM STANDARD.  Writes description to special area.
+	document.getElementById('phoneticInfo').textContent = spreadsheetRows[this.textContent][cols.typeLoc]
+	
+	// highlight this character
+	this.style.backgroundColor = '#F4630B';
+	this.style.color = '#ddd'
 
 
+	// highlight similar characters
+	if (this.dataset.c) {
+		ptr = this.dataset.c.replace('c','')
+		if (globals.showShapeHints && _h[ptr]) { 
+			clearHighlights()
+			for (let i=0;i<_h[ptr].length;i++) { 
+				ids = document.querySelectorAll('[data-c=c'+_h[ptr][i]+']')
+				for (let x=0;x<ids.length;x++) {
+					ids[x].classList.add('highlightedChar')
+					}
+				}
+			}
+		}
+	}
 
 
 var justLatinMap = `
