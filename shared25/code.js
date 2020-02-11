@@ -1,5 +1,8 @@
 ﻿// GLOBAL VARIABLES
 
+var debug=true
+var kbdEventList = {}
+
 var globals = {}
 globals.view = 'alphabet';
 globals.n11n = 'nfc';
@@ -16,6 +19,7 @@ var _output
 
 function addReplacement (ch) { 
 	// ch: string, the text to be added
+	if (debug) console.log('addReplacement(',ch,')')
 	
 	if (document.getElementById('output').style.display == 'none') { return; }
 	var outputNode = document.getElementById( 'output' ); // points to the output textarea
@@ -45,7 +49,8 @@ function addReplacement (ch) {
         var consonant
         if (startPos === endPos) startPos = startPos-1
         consonant = outputNode.value.substring(startPos-1,endPos-1)
-        console.log('Consonant',consonant)
+		if (consonant.codePointAt(0) > 0xD800 && consonant.codePointAt(0) < 0xDFFF) startPos--
+        if (debug) console.log('Consonant',consonant)
         
         // merge the base and the vowels
         if (ch.includes('-')) {
@@ -226,7 +231,6 @@ function switchAutofocus (desiredState) {
 
 
 
-var latinCharacters = []
 
 
 function toggleSideBarOption (node, fullTitle, variable, id) {
@@ -235,7 +239,7 @@ function toggleSideBarOption (node, fullTitle, variable, id) {
 		node.textContent = fullTitle
 		node.style.color='white'
 		if (id != '') document.getElementById(id).style.display = 'none'
-		if (id != '') window.latinCharacters = {}
+		if (id != '') window.kbdEventList = {}
         document.getElementById('output').focus()
 		} 
 	else {
@@ -265,7 +269,7 @@ function setSidebarDefaults (node) {
     for (i=0;i<menuitems.length-1;i++) { 
 		if (menuitems[i].dataset.locn) {
 			document.getElementById(menuitems[i].dataset.locn).style.display = 'none'
-			window.latinCharacters = {}
+			window.kbdEventList = {}
 			document.getElementById('output').focus()
 			}
 		if (globals[menuitems[i].dataset.var]) globals[menuitems[i].dataset.var] = ''
@@ -394,6 +398,7 @@ function add (ch) {
 		}
 	if (document.getElementById('output').style.display == 'none') { return; }
 
+    document.getElementById("charChoice").innerHTML = '' // clear any left over selection panel
 	
 	var outputNode = document.getElementById( 'output' ); // points to the output textarea
 
@@ -1430,7 +1435,7 @@ function setUpValues () {
 	initialise(); 
 	localInitialise()
 	makeTranslitCharacterMap()
-	makeLatinOnlyCharacterMap()
+	makeLatinTypeAssistMap()
 	makeAutoTranslitArray()
 	if (defaults.userfonts) {
         var flistArray = defaults.userfonts.split(',')
@@ -1507,8 +1512,8 @@ function setUpValues () {
 		
 	// activate type assist/ime input
 	if (document.getElementById('showRevTransSwitch')) {
-		makePalette(translitCharacterMap)
-		makeKbdEventList(translitCharacterMap)
+		makePalette(typeAssistMap)
+		makeKbdEventList(typeAssistMap)
 		}
 
 
@@ -2050,84 +2055,62 @@ addOnLoadEvent(setKeyboardEvents)
 
 // KEY EVENT ROUTINES
 
-var panelVisible = ''
+var typeAssistBuffer = ''
 //var awaitingInput = ''
-var latinOnly = false
+var latinTypeAssist = false
 var charChoiceKeys = new Set(['0','1','2','3','4','5','6','7','8','9'])
 
 
-	
-function drawCharSelectionPanelX (key) {
-        out = ''
-        translitTotal = -1
-        if (window.latinOnly) translitTotal = parseInt(latinCharacters[key].pop())
-        for (let i=1;i<latinCharacters[key].length;i++) {
-            if (i > 9) {
-                out += ' &nbsp; See panel for more.'
-                break
-                }
-            out += ' <sup'
-            if (i<translitTotal) out += ' style="color: orange;"'
-            out += '>'+eval(i % 10)
-            if (! window.latinOnly) out += latinCharacters[key][i][0]
-            out += '</sup> '
-            out += '<bdi onclick="'
-            out += 'addReplacement'
-            out += '(\''+latinCharacters[key][i][1]+'\'); window.awaitingInput=\'\'; document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+latinCharacters[key][i][1]+'</bdi>'
-            }
-        out += ' <sup'
-        if (translitTotal>0) out += ' style="color: orange;"'
-        out += '>0'
-        if (! window.latinOnly) out += latinCharacters[key][0][0]
-        out += '</sup> <bdi onclick="'
-        out += 'addReplacement'
-        out += '(\''+latinCharacters[key][0][1]+'\'); window.awaitingInput=\'\'; document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+latinCharacters[key][0][1]+'</bdi>'
 
-        document.getElementById("charChoice").innerHTML = out
-    }
+
+
+function setUpTypeAssist (latin, palette, map) {
+	// called from defaults.js, sets up type-in modes with any panels required
 	
-	
+	window.latinTypeAssist=latin
+	makePalette(palette)
+	makeKbdEventList(map)
+	}
+
+
+
+
+// draw a selection panel for a type-assist keypress
 function drawCharSelectionPanel (key) {
-        out = ''
-        //if (window.latinOnly) { // deal with # at end indicating how many translit chars
-        //    translitTotal = parseInt(latinCharacters[key][latinCharacters[key].length-1][0])
-        //    last = latinCharacters[key].length-1
-        //    }
-        //else {
-         //   last = latinCharacters[key].length
-        //    translitTotal = -1
-        //    }
-        //for (let i=0;i<last;i++) {
-		
-        //console.log(latinCharacters[key].length, latinCharacters[key])
-        for (let i=0;i<latinCharacters[key].length;i++) {
-            if (i > 9) {
-                out += ' &nbsp; See panel for '+eval(latinCharacters[key].length-10)+' more.'
-                break
-                }
-            out += ' <sup'
-            out += '>'
-            if (! window.latinOnly) out += latinCharacters[key][i][0]
-            out += '</sup><sub'
-            //if (i<translitTotal) 
-            //out += ' style="color: orange;"'
-            out += '>'+eval(i % 10)+'</sub> '
-            out += '<bdi onclick="'
-            out += 'addReplacement'
-            out += '(\''+latinCharacters[key][i][1]+'\'); window.awaitingInput=\'\'; document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+latinCharacters[key][i][1]+'</bdi>'
-            }
+	out = ''
 
-        document.getElementById("charChoice").innerHTML = out
+	// omit the first item, since we want that at the end
+	for (let i=0;i<kbdEventList[key].length;i++) {
+		if (i > 9) {
+			out += ' &nbsp; <span style="font-size:80%;">See panel for '+eval(kbdEventList[key].length-10)+' more.</span>'
+			break
+			}
+		if (! window.latinTypeAssist) out += ' <sup>'+ kbdEventList[key][i][0] +'</sup>'
+		else out += ' <sup></sup>'
+		out += '<sub>'+ ((i+1) % 10)+'</sub> '
+		out += '<bdi onclick="'
+		out += 'addReplacement'
+		out += '(\''+kbdEventList[key][i][1]+'\'); document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+kbdEventList[key][i][1]+'</bdi>'
+		}
+
+	document.getElementById("charChoice").innerHTML = out
     }
+
 	
+
+
 	
 // decipher key down codes
 function showDown (evt) {
 	evt = (evt) ? evt : ((event) ? event : null)
 	if (evt) {
-        console.log(evt.key, evt.code)
-        if (evt.metaKey ) {} // skip if this is Cmd+C 
-        else if (evt.key==='§') { // move second text area contents to main text area
+        if (debug) console.log(evt.key, evt.code)
+		
+		// skip if this is Cmd+C, Ctrl+C, etc
+        if (evt.metaKey || evt.ctrlKey || evt.altKey) { if (debug) console.log( evt.key,' pressed.')}
+		
+		// capture special keys
+        else if (evt.key==='§') { // transliterate & move second text area contents to main text area
 			doTranscription('transliterate')
    			document.getElementById('transcription').textContent = '/'+document.getElementById('transcription').textContent+'/'
             moveTranscription()
@@ -2137,9 +2120,9 @@ function showDown (evt) {
             var latinSwitch = document.getElementById('showLatinTransSwitch')
             if (globals[latinSwitch.dataset.var]==''){
                 closeSidebarPalettes(latinSwitch)
-                window.latinOnly=true
-                makePalette(justLatinMap)
-                makeKbdEventList(justLatinMap)
+                window.latinTypeAssist=true
+                makePalette(latinTypeAssistMap)
+                makeKbdEventList(latinTypeAssistMap)
                 }
             toggleSideBarOption(latinSwitch, latinSwitch.title, latinSwitch.dataset.var, latinSwitch.dataset.locn)
             latinSwitch.textContent=latinSwitch.dataset.shorttitle
@@ -2149,57 +2132,61 @@ function showDown (evt) {
             var revSwitch = document.getElementById('showRevTransSwitch')
             if (globals[revSwitch.dataset.var]==''){
                 closeSidebarPalettes(revSwitch)
-                window.latinOnly=false
-                //makePalette(translitCharacterMap)
-                makeKbdEventList(translitCharacterMap)
+                window.latinTypeAssist=false
+                //makePalette(typeAssistMap)
+                makeKbdEventList(typeAssistMap)
                 }
             toggleSideBarOption(revSwitch, revSwitch.title, revSwitch.dataset.var, revSwitch.dataset.locn)
             revSwitch.textContent=revSwitch.dataset.shorttitle
             evt.preventDefault()
             }
-        else if (panelVisible==='' && ! latinCharacters[evt.key]) {
-            // no panel up and none for this character
-            console.log('no panel up and none for this character')
-            }
-        else if (panelVisible && charChoiceKeys.has(evt.key)) {
-            // there's a panel up and a number key was hit
-            console.log('panel up and a number key was hit')
-            num = evt.key
-        
+			
+		
+		// Type-assist selector showing, and a number key was hit
+		else if (charChoiceKeys.has(evt.key) && document.getElementById('charChoice').textContent !== '') {
+            if (debug) console.log('Type-assist selector showing, and a number key was hit')
+
+			num = parseInt(evt.key)-1
+			if (num === -1) num = 9
+			choices =  document.getElementById('charChoice').querySelectorAll('bdi')
+
             // add the chosen character
-            addReplacement(latinCharacters[panelVisible][num][1])
-            
+			if (num < 0 || num > choices.length-1) console.log('Number ',num+1, 'is out of range.')
+			else addReplacement(choices[num].textContent)
+			
+            //if (num < choices.length+1) {
+			//	if (--num === 0) num = 10
+			//	addReplacement(choices[num].textContent)
+			//	}
+			//else console.log('Number ',num, 'is out of range.')
+			
             // tidy up
-            window.panelVisible = ''
             evt.preventDefault()
             document.getElementById("charChoice").innerHTML = ''
-            }
-        else if (latinCharacters[evt.key]) {
-            // character typed has a panel
-            console.log('character typed has a panel')
-            if (!window.latinOnly && latinCharacters[evt.key].length === 1) {
-                if (!window.latinOnly && window.panelVisible) addReplacement(latinCharacters[panelVisible][0][1])
-                add(latinCharacters[evt.key][0][1])
-                window.panelVisible = ''
-                evt.preventDefault()
-                }
-            else {
-                if (!window.latinOnly && window.panelVisible) addReplacement(latinCharacters[panelVisible][0][1])
-                drawCharSelectionPanel(evt.key)
-                window.panelVisible = evt.key
-                evt.preventDefault()
-                add(evt.key)
-                }
-            }
+			}
+		
+
+		// Not a number key, and character typed has a panel
+        else if (kbdEventList[evt.key]) {
+            if (debug) console.log(evt.key,' is not a number key, but is in the list')
+			
+			// if this is not Latin type-assist, or a Latin-based picker, display the first item in the keyEventList
+			//if (! window.latinTypeAssist  && template.scriptcode !== 'Latn') {
+			if (! window.latinTypeAssist) {
+				add(kbdEventList[evt.key][0][1])
+				}
+			else add(evt.key)
+			
+			// display the selection list
+			drawCharSelectionPanel(evt.key)
+			evt.preventDefault()
+			}
+			
+		// No type-assist buffer, and unrecognised character
         else {
-            // there's a panel but there's no panel for the character typed
-            console.log('panel up but no panel for the character typed')
+            if (debug) console.log('Unrecognised character.')
             document.getElementById("charChoice").innerHTML = ''
-            if (!window.latinOnly) {
-                addReplacement(latinCharacters[panelVisible][0][1])
-                window.panelVisible = ''
-                }
-           }
+            }
 		}
 	}
 	
@@ -2226,12 +2213,13 @@ function makePalette (mappingTable) {
         list = list.replace(/ +/g,' ')
         list = list.replace(/\u0008/g,'')
         if (list==='') continue
+		
         out = ''
         var charArray = list.split('\u0020')
         var theKey = charArray.shift()
         out = '<b>'+theKey+'</b>\n'
         for (let j=0;j<charArray.length;j++) {
-            if (window.latinOnly) {
+            if (window.latinTypeAssist) {
                 out += '<span class="t" onclick="add(\''+charArray[j]+'\')">'+charArray[j]+'</span>\n'
                 }
             else {
@@ -2249,8 +2237,10 @@ function makePalette (mappingTable) {
 
 
 function makeKbdEventList (mappingTable) {
-    // populates kbdEventList from a map of transcription characters
-    window.latinCharacters = {}
+    // populates window.kbdEventList object from a map of transcription characters (either typeAssistMap or latinTypeAssistMap)
+    window.kbdEventList = {}
+	
+	// convert the mapping list from a long string with spaces and line-breaks to an object
     mappingTable = mappingTable.replace(/\u0008/g,'')
 	var fulllist = mappingTable.split('\n')
 	for (let i=0;i<fulllist.length;i++) {
@@ -2262,20 +2252,16 @@ function makeKbdEventList (mappingTable) {
         var charArray = list.split(' ')
         var theKey = charArray.shift()
         
-        window.latinCharacters[theKey] = []
+        window.kbdEventList[theKey] = []
         
         for (let j=0;j<charArray.length;j++) {
-            if (window.latinOnly) {
-                temp = []
-                temp[0] = charArray[j]
-                temp[1] = charArray[j]
-                window.latinCharacters[theKey].push(temp)
+            if (window.latinTypeAssist) {
+                newItem = [charArray[j], charArray[j]]
+                window.kbdEventList[theKey].push(newItem)
                 }
             else {
-                temp = []
-                temp[0] = charArray[j]
-                temp[1] = charArray[j+1]
-                window.latinCharacters[theKey].push(temp)
+                newItem = [charArray[j], charArray[j+1]]
+                window.kbdEventList[theKey].push(newItem)
                 j++
                 }
             }
@@ -2384,13 +2370,13 @@ function parseSpreadsheet () {
 	
 
 
-function makeLatinOnlyCharacterMap () {
+function makeLatinTypeAssistMap () {
 	// create a data object for the Latin only palette
 	// uses latinRegister from shared24/latinregister
 	
 	// quit if the spreadsheet hasn't been updated
 	if (typeof cols.class === 'undefined') {
-		console.log("justLatinMap exists. Quitting.")
+		console.log("latinTypeAssistMap exists. Quitting.")
 		return
 		}
 	
@@ -2428,10 +2414,10 @@ function makeLatinOnlyCharacterMap () {
 	var outArray = Object.values(outObj)
 	outArray.sort()
 	
-	window.justLatinMap = ''
-	for (i=0;i<outArray.length;i++) window.justLatinMap += outArray[i] + '\n'
+	window.latinTypeAssistMap = ''
+	for (i=0;i<outArray.length;i++) window.latinTypeAssistMap += outArray[i] + '\n'
 	
-	console.log('justLatinMap',justLatinMap)
+	console.log('latinTypeAssistMap done')
 	}
 
 
