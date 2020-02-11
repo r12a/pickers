@@ -40,9 +40,9 @@ var pulldown = [
 
 
 var inputAids = [
-{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"makePalette(''); window.latinOnly=false;makeKbdEventList(translitCharacterMap);", "desc":"Use ASCII characters to type IPA from the keyboard."},
+{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type IPA from the keyboard."},
 
-{"title":"Palette for type-assist", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"P", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);", "desc":"Use ASCII characters to type XXXX from the keyboard via reverse transliteration."},
+{"title":"Palette for type-assist", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"P", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Input characters from a palette."},
 
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
 ]
