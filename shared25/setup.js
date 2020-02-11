@@ -13,16 +13,15 @@ function compareLength (a, b) {
   return 0;
 }
 
-debug=true
 
 var sortIndex = ['a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I','j','J','k','K','l','L','m','M','n','N','o','O','p','P','q','Q','r','R','s','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z','{','}','§','0','1','2','3','4','5','6','7','8','9','#','[',',','.',';',':','?','_',"'",'*','!','&','|',   '§', '±', '@', '$', '%', '^', '(', ')', '+', '-', '=', ']', '{', '}', '\'', '\\', '<', '>', ',', '/']
 
 
-var translitCharacterMap = ''
+var typeAssistMap = ''
 
 
 function makeTranslitCharacterMap () {
-	// creates a string to be used for reverse translation and assigns it to translitCharacterMap
+	// creates a string to be used for reverse translation and assigns it to typeAssistMap
 	// that is then used elsewhere to set up the reverse translation panel
 	// takes its information from the spreadsheet
     var charArray = {}
@@ -51,12 +50,12 @@ function makeTranslitCharacterMap () {
 		}
 	//console.log(charArray)
     
-	//for (item in charArray) translitCharacterMap += item+('\n')
+	//for (item in charArray) typeAssistMap += item+('\n')
 	for (let i=0;i<window.sortIndex.length;i++) {
-		if (charArray[window.sortIndex[i]]) translitCharacterMap += charArray[window.sortIndex[i]]+'\n'
+		if (charArray[window.sortIndex[i]]) typeAssistMap += charArray[window.sortIndex[i]]+'\n'
 		}
 
- 	console.log(translitCharacterMap)
+ 	console.log('typeAssistMap done')
 	}
 
 
