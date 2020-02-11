@@ -159,6 +159,14 @@ table td { border: 0; }
 	}
 #phonemelist b {
 	color: orange;
+	
+	color: white;
+	background-color: darkorange;
+	border-radius: 1em;
+	padding: 1px 3px;
+	font-weight: normal;
+	min-width: 1em;
+	display: inline-block;
 	}
 #phonemelist span {
 	cursor: pointer;
