@@ -10,6 +10,7 @@ var plist = [
     { tag:'bugi', name:'Buginese', url:'buginese/' },
     { tag:'mymr', name:'Burmese', url:'burmese/' },
     { tag:'cher', name:'Cherokee', url:'cherokee/' },
+    { tag:'hani', name:'Chinese', url:'hani/' },
     { tag:'cyrl', name:'All Cyrillic', url:'cyrillic/' },
     { tag:'deva', name:'All Devanagari', url:'devanagari/' },
     { tag:'egyp', name:'Egyptian&nbsp;hieroglyphs', url:'egyptian/' },
@@ -116,6 +117,7 @@ var plistByRegion = {
 			  ['Uighur', 'uighur/']
 			  ],
 	'East&nbsp;Asia':[
+			    ['Chinese', 'hani/'],
 			    ['Lisu (Fraser script)', 'lisu/'],
 			    ['Mongolian', 'mongolian/']
 			    ],
