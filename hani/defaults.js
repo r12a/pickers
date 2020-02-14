@@ -30,12 +30,14 @@ var template = {}
 
 
 var controls = [
-{"title":"Toggle<br/>direction", "alt":"Switch direction of input area between vertical &amp; horizontal.", "code":"toggleDirectionality()"},
+{"title":"Lookup<br>Han", "alt":"Find Han characters from pinyin.", "code":"doTranscription('pinyinToHan')"},
 ]
 
 
 
 var pulldown = [
+{"title":"Toggle<br/>direction", "alt":"Switch direction of input area between vertical &amp; horizontal.", "code":"toggleDirectionality()"},
+{"title":"English<br>to Han", "alt":"Find Han characters from english prompts.", "code":"doTranscription('englishToHan')"},
 ]
 
 
