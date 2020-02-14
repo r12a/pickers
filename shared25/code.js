@@ -1,6 +1,6 @@
 ﻿// GLOBAL VARIABLES
 
-var debug=true
+var debug=false
 var kbdEventList = {}
 
 var globals = {}
@@ -2144,7 +2144,7 @@ function showDown (evt) {
 		
 		// Type-assist selector showing, and a number key was hit
 		else if (charChoiceKeys.has(evt.key) && document.getElementById('charChoice').textContent !== '') {
-            if (debug) console.log('Type-assist selector showing, and a number key was hit')
+            if (debug) console.log('Type-assist selector showing, and a number key '+evt.key+' was hit')
 
 			num = parseInt(evt.key)-1
 			if (num === -1) num = 9
@@ -2168,7 +2168,7 @@ function showDown (evt) {
 
 		// Not a number key, and character typed has a panel
         else if (kbdEventList[evt.key]) {
-            if (debug) console.log(evt.key,' is not a number key, but is in the list')
+            if (debug) console.log(evt.key,'triggers',kbdEventList[evt.key][0][1])
 			
 			// if this is not Latin type-assist, or a Latin-based picker, display the first item in the keyEventList
 			//if (! window.latinTypeAssist  && template.scriptcode !== 'Latn') {
