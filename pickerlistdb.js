@@ -28,6 +28,7 @@ var plist = [
     { tag:'latn', name:'IPA', url:'ipa/' },
     { tag:'latn', name:'IPA&nbsp;2', url:'ipa2/' },
     { tag:'latn', name:'IPA&nbsp;3', url:'ipa3/' },
+    { tag:'jpan', name:'Japanese', url:'jpan/' },
     { tag:'java', name:'Javanese', url:'javanese/' },
     { tag:'deva', name:'Kashmiri&nbsp;(deva)', url:'kashmiri/' },
     { tag:'arab', name:'Kashmiri&nbsp;(arab)', url:'kashmiria/' },
@@ -118,6 +119,7 @@ var plistByRegion = {
 			  ],
 	'East&nbsp;Asia':[
 			    ['Chinese', 'hani/'],
+			    ['Japanese', 'jpan/'],
 			    ['Lisu (Fraser script)', 'lisu/'],
 			    ['Mongolian', 'mongolian/']
 			    ],
