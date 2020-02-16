@@ -21,7 +21,7 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Japanese character app'
-	template.sample = "第１条 すべての人間は、生まれながらにして自由であり、かつ、尊厳と権利とについて平等である。人間は、理性と良心とを授けられており、互いに同胞の精神をもって行動しなければならない。"
+	template.sample ="第１条　すべての人間は、生まれながらにして自由であり、かつ、尊厳と権利とについて平等である。人間は、理性と良心とを授けられており、互いに同胞の精神をもって行動しなければならない。"
 	template.blocklocation= '/scripts/punctuation/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'jpan'
