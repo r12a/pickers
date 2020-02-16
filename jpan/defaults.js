@@ -37,7 +37,8 @@ var controls = [
 
 var pulldown = [
 {"title":"Toggle<br/>direction", "alt":"Switch direction of input area between vertical &amp; horizontal.", "code":"toggleDirectionality()"},
-{"title":"English<br>to Han", "alt":"Find Han characters from english prompts.", "code":"doTranscription('englishToHan')"},
+
+{"title":"English<br>to Kanji", "alt":"Find kanji characters from english prompts.", "code":"doTranscription('englishToHan')"},
 ]
 
 
