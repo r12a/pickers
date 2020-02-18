@@ -196,6 +196,23 @@ function makeExample (lang, dir) {
 	output.focus()
 	}
 
+function makeRuby (lang, dir) {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var segments = chars.split('/')
+	document.getElementById('transcriptionWrapper').style.display='block'
+	document.getElementById('transcription').style.display = 'block'
+	document.getElementById('transcription').contentEditable = true
+	var out = '<ruby>'
+	for (var i=0;i<segments.length-1;i++) {
+		out += '<rb lang="'+lang+'">'+segments[i]+'</rb><rt>'+segments[i+1]+'</rt>'
+		i++
+		}
+	out += '</ruby>'
+	document.getElementById('transcription').textContent = out.trim()
+	output.focus()
+	}
+
 function makeCharLink (script, lang, dir) {
 	var output = document.getElementById('output')
 	document.getElementById('transcriptionWrapper').style.display='block'
