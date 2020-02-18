@@ -37,7 +37,10 @@ var controls = [
 
 var pulldown = [
 {"title":"Toggle<br/>direction", "alt":"Switch direction of input area between vertical &amp; horizontal.", "code":"toggleDirectionality()"},
+
 {"title":"English<br>to Han", "alt":"Find Han characters from english prompts.", "code":"doTranscription('englishToHan')"},
+
+{"title":"Make<br>ruby", "alt":"Make HTML ruby markup from the highlighted text.", "code":"makeRuby(defaults.language,template.direction)"},
 ]
 
 
