@@ -205,7 +205,7 @@ function makeRuby (lang, dir) {
 	document.getElementById('transcription').contentEditable = true
 	var out = '<ruby>'
 	for (var i=0;i<segments.length-1;i++) {
-		out += '<rb lang="'+lang+'">'+segments[i]+'</rb><rt>'+segments[i+1]+'</rt>'
+		out += '<rb>'+segments[i]+'</rb><rt>'+segments[i+1]+'</rt>'
 		i++
 		}
 	out += '</ruby>'
