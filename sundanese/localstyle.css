@@ -64,29 +64,25 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 10em;
     }
 #consonantGrid div {
     white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 5em;
     justify-content: space-between;
     }
 #translitGrid {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 10em;
+    margin-left: 1em;
     }
 #translitGrid div {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 2.5em;
     justify-content: center;
-    margin-left: 1em;
     }
 #consonantGrid > span {
     min-width: 1em;
@@ -96,18 +92,17 @@ span.hint {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 2em;
     justify-content: center;
-    height: 10em;
     align-content: center;
-    margin-left: 1em;
+    margin-left: .75em;
+	width: 1.5em;
     }
 #ivowelGrid {
     display: flex;
     flex-direction: column;
-    max-height: 10em;
     justify-content: space-between;
     line-height: 1.5;
+	margin-right: .75em;
     }
 #ivowelGrid div {
     text-align: right;
@@ -115,9 +110,9 @@ span.hint {
 #vowelGrid {
     display: flex;
     flex-direction: column;
-    height: 10em;
     justify-content: space-between;
     margin-left: 1em;
+	padding-top: 1em;
     }
 #virama {
     width: 2em;
@@ -127,19 +122,21 @@ span.hint {
     margin: 0 .5em 0 .75em;
     justify-content: center;
     align-items: center;
-    height: 10em;
     }
-#numberGrid div {
+#numberGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 90%;
+	margin-left: 1em;
+    }
+#digitKeypad div {
     white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    max-width: 5em;
-    max-height: 8em;
     justify-content: space-between;
-    margin-left: 1.2em;
-    line-height: 1.8;
-    font-size: 90%;
     }
 #punctuation {
     text-align: center;
@@ -167,86 +164,3 @@ span.hint {
 
 
 
-
-
-
-
-
-/*
-#kbd { 	
-	margin: auto; 
-	}
-table {
-	margin:0;
-	}
-td {
-	padding: 0;
-	}
-
-#vowels {
-	border: 1px dotted #ccc;
-	border-radius: 5px; 
-	vertical-align: middle;
-	}
-
-#numbers {
-	border: 1px dotted #ccc;
-	border-radius: 5px; 
-	vertical-align: middle;
-	line-height: 2;
-	}
-
-#punctuation {
-	padding-left: 15px;
-	padding-right: 10px;
-	vertical-align: middle;
-	line-height: 2.4;
-	}
-	
-#independentvowels {
-	margin: 0;
-	padding: 0;
-	}
-#independentvowels td {
-	text-align: right;
-	}
-#otherpunctuation {
-	margin:auto;
-	}
-#otherpunctuation .c {
-	line-height: 2.2;
-	}
-#medialsfinals {
-	padding: 0 .75em;
-	vertical-align: middle;
-	}
-#consonants {
-	margin-left: 10px; 
-	margin: 0;
-	}
-#consonants td {
-	text-align: left;
-	}
-#consonants2  {
-	margin-left: 10px; 
-	display: none;
-	}
-#consonants2 td {
-	text-align: left;
-	}
-#consonants2 td span.c {
-	min-width: 2em;
-	}
-.g {
-	display: inline-block;
-	}
-.c {
-	min-width: .75em;
-	}
-#shift {
-	cursor:pointer;
-	}
-#adegadeg {
-	vertical-align:middle;
-	}
-*/
