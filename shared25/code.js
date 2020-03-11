@@ -359,7 +359,8 @@ function getExample (str, lang, dir) {
 		out += '<span class="trans">'+parts[1]+'</span> '
 		}
 	if (parts[2]) {
-		out += '<span class="ipa">'+parts[2]+'</span> '
+		if (parts[2].startsWith(':')) out += '(<span class="trans">'+parts[2].substr(1)+'</span>) '
+		else out += '<span class="ipa">'+parts[2]+'</span> '
 		}
 	if (parts[3]) {
 		out += '<span class="meaning">'+parts[3]+'</span> '
