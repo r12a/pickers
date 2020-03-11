@@ -54,6 +54,7 @@ var plist = [
     { tag:'mymr', name:'Shan', url:'shan/' },
     { tag:'sinh', name:'Sinhala', url:'sinhala/' },
     { tag:'sund', name:'Sundanese', url:'sundanese/' },
+    { tag:'syrc', name:'Surayt', url:'syr-tru/' },
     { tag:'syrc', name:'Syriac', url:'syriac/' },
     { tag:'lana', name:'Tai&nbsp;Khün', url:'lana-kkh/' },
     { tag:'tale', name:'Tai&nbsp;Le', url:'taile/' },
@@ -111,6 +112,7 @@ var plistByRegion = {
 			  ['Hebrew', 'hebrew/'],
 			  ['Mandaic', 'mandaic/'],
 			  ['Persian', 'persian/'],
+			  ['Surayt', 'syr-tru/'],
 			  ['Syriac', 'syriac/']
 			  ],
 	'Central&nbsp;Asia':[
