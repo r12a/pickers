@@ -3,7 +3,7 @@ globals.showIPATrans = ''
 globals.showTransliteration = ''
 globals.showCursive = ''
 globals.typeAssist = ' ✓'
-globals.showKeysTranslitToggle = true
+globals.showKeysTranslitToggle = false
 
 
 
@@ -11,9 +11,6 @@ function localInitialise () {
 
 	}
 
-
-_characterSet = 
-"ئا ا ئە ە ب پ ت ج چ خ د ر ز ژ س ش غ ف ق ك گ ڭ ل م ن ھ ئو و ئۇ ۇ ئۆ ۆ ئۈ ۈ ۋ ئې ې ئى ىي ي ٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ؟ ، ؛"
 
 
 var _h = {
@@ -39,21 +36,6 @@ var _h = {
 end: {}
 }
 
-
-//var keyboarddef = [
-//"§ ܏ ̮|1 ! p|2 ̊܂|3  ̥܃|4  ݉܄|5 ♰ ܅|6 ♱ ܈|7 ܊ ܉|8 > ܋|9 ( ܌|0 )|- < ܍|= +",
-//"q ܩ ܰ|w ܘ ܳ|e ܖ ܶ|r ܪ ܺ|t ܬ ܽ|y ܝ ܸ|u ܛ ̄|i ܥ|o ܧ|p ܦ|[|]",
-//"a ܐ ܱ|s ܣ ܴ|d ܕ ܷ|f ܔ ܻ|g ܓ ܾ|h ܗ ܑ|j ܛ ـ|k ܟ ݀|l ܠ ݁|; ܚ ̰|' ܞ|\\",
-//"`|z ܙ ܲ|x ܨ ܵ|c ܤ ܼ|v ܫ ܿ|b ܒ ܹ|n ܢ ݂|m ܡ ،|, ܀ ؛|. ؟|/ ܇"
-//]
-/*
-var keyboarddef = [
-"§ ܏ ̮|1 !|2 ̊ ܂|3 ̥ ܃|4 ݉ ܄|5 ♰ ܅|6 ♱ ܈|7 ܊ ܉|8 > ܋|9( ܌|0 )|- ܍|= +",
-"q ܩ ܰ|w ܘ ܳ|e ܖ ܶ|r ܪ ܺ|t ܬ ܽ|y ܝ ܸ|u ܛ ̄|i ܥ|o ܧ|p ܦ|[|]",
-"a ܐ ܱ|s ܣ ܴ|d ܕ ܷ|f ܔ ܻ|g ܓ ܾ|h ܗ ܑ|j ܛ ـ|k ܟ ݀|l ܠ ݁|; ܚ ̰|' ܞ|\\",
-"`|z ܙ ܲ|x ܨ ܵ|c ܤ ܼ|v ܫ ܿ|b ܒ ܹ|n ܢ ݂|m ܡ ،|, ܀ ؛|. ؟|/ ܇"
-]
-*/
 
 var keyboarddef = [
 "\u00A7 \u070F \u032E|1 !|2 \u030A \u0702|3 \u0325 \u0703|4 \u0749 \u0704|5 \u2670 \u0705|6 \u2671 \u0708|7 \u070A \u0709|8 » \u070B|9( \u070C|0 )|- « \u070D|= +",
@@ -92,38 +74,6 @@ z ẑ ž ʒ
 `
 
 
-/*
-var translitCharacterMap = `
-a a ܲ ā ܵ ȧ ܰ ạ ܱ å ܳ ḁ ܴ
-b b ܒ
-d d ܕ
-e e ܸ ē ܹ ė ܶ ẹ ܷ
-g g ܓ
-h h ܗ ħ ܚ
-i i ܼ ï ܺ ị ܻ
-j jʰ ܞ
-k k ܟ
-l l ܠ
-m m ܡ
-n n ܢ
-o o ܿ ȯ ّ
-p p ܦ
-q q ܩ
-r r ܪ
-s s ܣ sˤ ܨ ʃ ܫ ṡ ܤ
-t tˤ ܛ t ܬ
-u ů ܽ ụ ܾ
-w w ܘ
-y y ܝ
-z z ܙ
-{ ʿ ܥ
-} ʾ ܐ
-[ ̋ ̈ ʺ ݀
-, , ،
-; ; ؛
-? ? ؟
-`
-*/
 
 var ipaCharacterMap = `
 ' ʾ ʔ ʿ ʕe
@@ -160,73 +110,4 @@ function applyLowerCase () {
 	output.focus()
 	}
 
-var rightOnly = new Set(['\u0715', '\u0717', '\u071E', '\u0718', '\u0719', '\u0728', '\u072A', '\u072C', '\u072F', '\u074D', '\u0716'])
 
-var bothJoin = new Set(['\u0712', '\u0713', '\u071A', '\u071B', '\u071D', '\u071F', '\u0720', '\u0721', '\u0722', '\u0723', '\u0725', '\u0726', '\u0729', '\u072B', '\u0714', '\u071C', '\u072D', '\u072E', '\u074E', '\u074F', '\u0727'])
-
-
-function event_mouseoverCharx ()  {
-	// display character information
-	span = document.createElement( 'span' );
-	span.setAttribute( 'id', 'charname' );
-	charinfo = document.createTextNode( this.title );
-	span.appendChild(charinfo);
-	var chardata = document.getElementById('chardata');	
-	chardata.replaceChild( span, chardata.firstChild );
-	
-	// highlight this character
-	this.style.backgroundColor = '#F4630B';
-	this.style.color = '#ddd'
-
-	
-	// highlight similar characters
-	if (globals.showShapeHints && _h[this.id]) {
-		ptr = this.id
-		for (i=0;i<_h[ptr].length;i++) {
-			document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
-			}
-		}
-	}
-
-
-function event_mouseoverCharXXX ()  {
-	// overrides the function in shared20/code.js to add shaping forms for all syriac styles
-	
-	// add cursive forms to table
-    if (this.id) {
-        var ncr = String.fromCodePoint('0x'+this.id)
-        if (ncr === '\u0710') ncr = 'ܝ'+ncr+' \u0715'+ncr+' '+ncr
-        else if (window.rightOnly.has(ncr)) ncr = 'ܝ'+ncr+' '+ncr
-        else if (bothJoin.has(ncr)) ncr = ncr+'ܝ'+ncr+'ܝ'+ncr+' '+ncr
-        var cursive = '<span style="font-family:eastern;">'+ncr+'</span> &nbsp; <span style="font-family:estrangela;">'+ncr+'</span> &nbsp; <span style="font-family:serta;">'+ncr+'</span>'
-        document.getElementById('cursive').innerHTML = cursive
-        }
-	
-	
-	// display character information
-	var span = document.createElement( 'span' );
-	span.setAttribute( 'id', 'charname' );
-	var charinfo = document.createTextNode( this.title );
-	span.appendChild(charinfo);
-	
-	var chardata = document.getElementById('chardata');	
-	chardata.replaceChild( span, chardata.firstChild );
-	
-	// highlight this character
-	this.style.backgroundColor = '#CF9'
-	this.style.backgroundColor = '#fc6'
-	//this.style.backgroundColor = '#FC0'
-		this.style.backgroundColor = '#F4630B';
-		this.style.color = '#eee'
-	
-	// highlight similar characters
-	if (globals.showShapeHints && _h[this.id]) {
-		ptr = this.id
-		for (i=0;i<_h[ptr].length;i++) {
-			//document.getElementById(_h[ptr][i]).style.backgroundColor = '#E6FFCD'
-			document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
-			//document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE680'
-			}
-		}
-	}
-	
