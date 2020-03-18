@@ -20,7 +20,7 @@ else  defaults = factoryDefaults
  
  
 var template = {}
-	template.title = 'Surayt character picker'
+	template.title = 'Turoyo character picker'
 	template.sample = "ܐܘ ܢܳܫܐ ܟܷܬܠܶܗ ܚܰܡܫܐ ܪܷܓ݂ܫܶܐ: ܚܙܳܝܐ ܒܰܥ ܥܰܝܢܶܐ، ܫܡܳܥܐ ܒܰܢ ܐܰܕ݂ܢܶܐ، ܢܩܳܚܐ ܒܘ ܢܚܝܪܐ، ܓܝܳܫܐ ܒܰܢ ܐܝܕ݂ܶܐ ܘܛܥܳܡܐ ܒܘ ܠܝܫܳܢܐ."
 	template.blocklocation= '/scripts/syriac/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
@@ -31,7 +31,7 @@ var template = {}
 
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Surayt text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Turoyo text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 //{"title":"Trans-<br/>scribe", "alt":"Convert Assyrian text to a Latin transcription.", "code":"doTranscription('transcription')"},
 //{"title":"Transcribe<br/>to IPA", "alt":"Convert Assyrian text to an *approximate* phonetic transcription.", "code":"doTranscription('toIPA')"},
 ]
@@ -39,6 +39,7 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Syriac text.", "code":"doTranscription('revTransliterate')"},
 ]
 
 
@@ -52,6 +53,6 @@ var inputAids = [
 
 {"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
 
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type Surayt from the keyboard via reverse transliteration."},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type Turoyo from the keyboard via reverse transliteration."},
 ]
 
