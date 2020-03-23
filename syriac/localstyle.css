@@ -93,7 +93,7 @@ span.hint {
 #kbdGrid {
  display: flex;
  flex-direction: row;
-	line-height: 1.2;
+	line-height: 1.4;
     justify-content: center;
     }
 #consonantGrid {
@@ -196,6 +196,10 @@ span.hint {
     
 }
 
+
+#rare, #rare2, #translit { 	
+	margin: auto; 
+	}
 
 /*
 #alphabet { 
