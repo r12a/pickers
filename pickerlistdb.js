@@ -2,7 +2,7 @@ var plist = [
     { tag:'adlm', name:'Adlam', url:'adlm/' },
     { tag:'arab', name:'Arabic', url:'arabic/' },
     { tag:'arab', name:'All&nbsp;Arabic', url:'arabicblock/' },
-    { tag:'syrc', name:'Assyrian&nbsp;Neo-Aramaic', url:'aramaic/' },
+    { tag:'syrc', name:'Assyrian&nbsp;Neo-Aramaic', url:'syrc-aii/' },
     { tag:'armn', name:'Armenian', url:'armenian/' },
     { tag:'bali', name:'Balinese', url:'balinese/' },
     { tag:'bass', name:'Bassa Vah', url:'bass/' },
@@ -54,7 +54,6 @@ var plist = [
     { tag:'mymr', name:'Shan', url:'shan/' },
     { tag:'sinh', name:'Sinhala', url:'sinhala/' },
     { tag:'sund', name:'Sundanese', url:'sundanese/' },
-    { tag:'syrc', name:'Surayt', url:'syr-tru/' },
     { tag:'syrc', name:'Syriac', url:'syriac/' },
     { tag:'lana', name:'Tai&nbsp;Khün', url:'lana-kkh/' },
     { tag:'tale', name:'Tai&nbsp;Le', url:'taile/' },
@@ -66,6 +65,7 @@ var plist = [
     { tag:'tibt', name:'Tibetan', url:'tibetan/' },
     { tag:'tfng', name:'All Tifinagh ', url:'tifinagh/' },
     { tag:'latn', name:'Tłı̨chǫ&nbsp;(Dogrib)', url:'tlicho/' },
+    { tag:'syrc', name:'Turoyo', url:'syrc-tru/' },
     { tag:'arab', name:'Uighur', url:'uighur/' },
     { tag:'arab', name:'Urdu', url:'urdu/' },
     { tag:'vaii', name:'Vai', url:'vai/' },
@@ -108,11 +108,11 @@ var plistByRegion = {
 	'West&nbsp;Asia':[
 			  ['Arabic','arabic/'],
 			  ['All Arabic','arabicblock/'],
-			  ['Assyrian&nbsp;Neo-Aramaic', 'aramaic/'],
+			  ['Assyrian&nbsp;Neo-Aramaic', 'syrc-aii/'],
 			  ['Hebrew', 'hebrew/'],
 			  ['Mandaic', 'mandaic/'],
 			  ['Persian', 'persian/'],
-			  ['Surayt', 'syr-tru/'],
+			  ['Turoyo', 'syrc-tru/'],
 			  ['Syriac', 'syriac/']
 			  ],
 	'Central&nbsp;Asia':[
