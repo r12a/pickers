@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'Noto Sans Syriac Eastern WF';
+    src: url('/shared/webfonts/notosanssyriaceastern-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosanssyriaceastern-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Noto Sans Syriac Estrangela WF';
+    src: url('/shared/webfonts/notosanssyriacestrangela-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosanssyriacestrangela-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Noto Sans Syriac Western WF';
+    src: url('/shared/webfonts/notosanssyriacwestern-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosanssyriacwestern-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'East Syriac Adiabene WF';
+    src: url('/shared/webfonts/syrcomadiabene.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Estrangelo Edessa WF';
+    src: url('/shared/webfonts/syrcomedessa.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Serto Jerusalem WF';
+    src: url('/shared/webfonts/syrcomjerusalem.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+[lang=aii] { font-family: "East Syriac Ctesiphon", "East Syriac Adiabene", "Noto Sans Syriac Eastern WF", serif; font-size: 180%; }
+
+
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 1px;
+	font-size: 40%;
+	color: tan;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+.v { 
+	min-width: .75em;
+	text-align: center;
+    cursor: pointer;
+	}
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.4em; 
+	font-weight: normal; 
+	font-family:  'Scheherazade WF',  sans-serif;  
+    line-height: 1;
+	}
+.key {padding: 4px 0 0 0; }
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+#controlchars {
+    text-align: center;
+    margin-bottom: .25em;
+    line-height: 1;
+    }
+.spaceline {
+    margin-bottom: 0;
+    }
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.4;
+    justify-content: center;
+    }
+#consonantGrid {
+    display: flex;
+    flex-direction: column;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    }
+#consonantGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+#consonantGrid > span {
+    min-width: 1em;
+    }
+#vowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 .5em;
+    flex-wrap: nowrap;
+    }
+#vowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    }
+#diacriticGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    }
+#diacriticGrid div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    }
+#numberGrid {
+    height: 4em;
+    margin: 0 .5em;
+	padding-bottom: 1em;
+    }
+#numberGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 2.5em;
+    justify-content: space-between;
+    line-height: 1.2;
+    font-size: 90%;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 70%;
+    line-height: 1;
+	margin: .5em 0 .5em 0;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 0;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#vowelclusters {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: .5em;
+    width: 20em;
+    margin: auto;
+    }
+
+#cursive {
+    width: 5em;
+    display: inline-block;
+	color: tan;
+    }
+
+#translit {
+    margin: auto;
+    
+}
