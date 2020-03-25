@@ -32,10 +32,27 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->29-Nov-2019<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=syriac" title="Show all blog posts tagged with 'syriac'">syriac</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->25-Mar-2020<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=syriac" title="Show all blog posts tagged with 'syriac'">syriac</a></p>
 
 <p>This Unicode character app allows you to produce or analyse runs of Syriac text. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[syriac%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/syriac">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
+
+
+
+
+
+<section id="about">
+<h2 href="#about">About the app</h2>
+      <p>Includes all the characters in the Unicode <a href="/uniview/?block=syriac" target="_blank">Syriac</a> block, and several from the Arabic and Combining Diacritical Marks blocks.</p>
+<div id="aboutBP">
+</div>
+<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
+</script>
+
+</section>
+
+
+
 
 
 <section id="basics">
@@ -46,15 +63,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 </script>
 
 
-<section id="about">
-<h2 href="#about">About the selection area</h2>
-      <p>Includes all the characters in the Unicode <a href="/uniview/?block=syriac" target="_blank">Syriac</a> block, and several from the Arabic and Latin blocks.</p>
-<div id="aboutBP">
-</div>
-<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
-</script>
 
-</section>
 
 
 
@@ -82,18 +91,15 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <h2 href="#input_aids">Input aids</h2>
 
 <div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro')</script>
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, shape, hinting, typeAssist, latin, translit')</script>
 
 
-    <p><b class="leadin">Show cursive forms.</b> This helps locate a particular shape in cursive script. Once this is turned on you'll see a gap open below the text area. As you mouse over the characters in the selection area, that gap will show what those characters look like using each of the three webfonts that come with the character app, ie. in East, Estrangela, and Western Syriac. If the character is one that joins with a character next to it, you'll see the various joining forms.</p>
+    <!--p><b class="leadin">ISO to Template.</b> Allows you to generate Template text from an ISO 15919 transcription.    It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>.</p-->
+    
 
-<div id="inputAids3"></div>
-<script>document.getElementById('inputAids3').innerHTML = addInputAids('typeAssist, latin')</script>
-
-
-    <!--p><b class="leadin">Latin to IPA.</b> Displays a panel of  Latin characters representing the transcriptions used for examples in my documents. As you click on those characters the character app inserts the equivalent IPA sound into the text area. Note that this produces <strong>only very approximate </strong> phonological transcriptions! It's mainly meant to be a way to interpret the intended sound of the transcription characters.</p-->
 <div id="inputAids2"></div>
-<script>document.getElementById('inputAids2').innerHTML = addInputAids('translit, keyboard, keys, close')</script>
+<script>document.getElementById('inputAids2').innerHTML = addInputAids('keyboard, close')</script>
+
 
 </section>
 
