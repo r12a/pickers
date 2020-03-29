@@ -750,6 +750,11 @@ function findShape (shapelist, extrashapes, show) {
 	}
 
 
+
+
+
+
+
 function choose () {
 	var replacement = this.textContent
 	if (replacement.charAt(0) == '\u00A0') { replacement = replacement.substr(1) }
@@ -2402,9 +2407,13 @@ function makeLatinTypeAssistMap () {
 	var collector = []
 	for (item in spreadsheetRows) {
 		if (spreadsheetRows[item][cols.transLoc]) collector.push(spreadsheetRows[item][cols.transLoc])
-		if (cols.transcKey && spreadsheetRows[item][cols.transcKey]) collector.push(spreadsheetRows[item][cols.transcKey])
+		//if (cols.transcKey && spreadsheetRows[item][cols.transcKey]) collector.push(spreadsheetRows[item][cols.transcKey])
+		if (cols.transcription && spreadsheetRows[item][cols.transcription]) {
+			var items = spreadsheetRows[item][cols.transcription].split(' ')
+			for (let i=0;i<items.length;i++) collector.push(items[i])
+			}
 		if (cols.ipaLoc && spreadsheetRows[item][cols.ipaLoc]) {
-			var items = spreadsheetRows[item][cols.ipaLoc].split(' ')
+			items = spreadsheetRows[item][cols.ipaLoc].split(' ')
 			for (let i=0;i<items.length;i++) collector.push(items[i])
 			}
 		}
