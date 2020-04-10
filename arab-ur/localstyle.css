@@ -5,113 +5,195 @@
     font-weight: normal;
     font-style: normal;
 	}
-
-
-*[lang=ur] { font-family: 'Noto Nastaliq Urdu WF', serif; }
-
-/* KEYBOARD */
-.key span { 
-	font-size: 1.4em; 
-	font-weight: normal; 
-	font-family:  'Scheherazade WF',  'Arial', sans-serif;  
-    line-height: 1;
+@font-face {
+    font-family: 'Scheherazade WF';
+    src: url('/shared/webfonts/scheherazaderegotwebfont.woff2') format('woff2'),
+         url('/shared/webfonts/scheherazaderegotwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 	}
-.key {padding: 4px 0 0 0; }
-#keyboard { display: none; }
-
-
-
-/* SELECTION AREA */
-
-#alphabet { display: block; margin-right: 20px;  }
-
-#alphabet td.hint {  
-	font-size: 14px;
-	color: #ccc;
-	text-align: left;
-	text-align: end;
-	vertical-align: top;
+@font-face {
+    font-family: 'Awami Nastaliq WF';
+    src: url('/shared/webfonts/AwamiNastaliq-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 	}
 
-.spaceline {
-    line-height: 1.5em;
-    }
 
-#kbd, #additional, #punctuation { 	
-	margin: auto; 
-	}
-#kbd table {
-	margin:0;
-	}
-	
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: right;
-	text-align: start;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 2;
-	}
-#kbd #consonants {
-    width: 18em;
-    padding: 0 .5em;
-	}
-#kbd #consonants div {
-    display: flex;
-	justify-content: space-between;
-	}
-#kbd #consonants td  {
-	padding: 0 2px;
+
+#alphabet { 
+	display: block; 
+	color: #666;
 	}
 
-#kbd #vowels .hint {
-	padding-left: 10px; 
-	}
-
-#kbd #numbers {
-	padding-left: 20px;
-	}
-#kbd #additional span {
-	padding: 0 4px;
-	min-width: 20px;
-	}
-
-#punctuation {
+#formatchars {
     text-align: center;
-    font-size: 90%;
+    margin-bottom: .25em;
     line-height: 1;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    }
+.spaceline {
+    margin-bottom: 0;
+	line-height: 2;
     }
 
 
-#alphabet #controlchars {
-	padding: 0 10px; text-align:center;
-	}
-#alphabet #controlchars p {
-	margin: 0;
-	line-height: 1;
-	}
 
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 70%;
+	color: tan;
+	}
 .c { 
 	min-width: .75em;
 	text-align: center;
 	}
 
-.touch {
-	margin: 0;
+#kbdGrid .b { width: 1em; }
+
+
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Awami Nastaliq WF',  sans-serif;  
+    line-height: 1;
 	}
-#shapekeys {
-    margin-top: 1.5em;
+
+#keyboard { display: none; }
+
+.block {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
 }
 
 
+
+/* SELECTION AREA */
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#consonantGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    }
+#consonantGrid > span {
+    min-width: 1em;
+    }
+#consonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 1.8;
+    vertical-align: baseline;
+    }
+#vowelGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 .5em 0 0;
+    line-height: 1.5;
+    }
+#vowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+#numberGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 90%;
+	margin-left: 1em;
+    }
+#digitKeypad div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+	line-height: 2;
+    }
+
+
+
+#alphabet #controlchars {
+	display: flex;
+    width: 2em;
+    flex-wrap: wrap;
+    align-items: stretch;
+    text-align: center;
+    align-content: space-between;
+    justify-content: center;
+	}
+#alphabet #controlchars p {
+	margin: .1em 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: .8;
+	}
+.touch {
+    margin: 0;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+#initials {
+    text-align: center;
+    font-size: 100%;
+    line-height: 1;
+    }
+
+#punctuation {
+    text-align: center;
+    font-size: 90%;
+    line-height: 1.4;
+	margin-bottom: .2em;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#obsolete {
+    text-align: center;
+    }
 #cursive {
     width: 6em;
     display: inline-block;
-    color: tan;
+	color: tan;
     }
+
+#alef, #hamza {
+    display: flex;
+	flex-direction: column;
+    align-self: center;
+    width: 1em;
+    justify-content: center;
+    margin: 0 .5em;
+	line-height: 2	;
+	}
+#hamza { margin-right: 0; }
+
+
+
+#punctuation, #flatnumbers, #other {
+    text-align: center;
+    line-height: 1.7;
+    }
+
 
 
