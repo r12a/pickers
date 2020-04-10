@@ -24,7 +24,7 @@ var template = {}
 	template.sample = "سٔری لُکھ چھہٕ حقوٗق تِہ عزت لِحاظٕ ہِہی ژامِت."
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
-	template.github = 'kashimiria'
+	template.github = 'arab-ks'
 	template.scriptcode = 'Arab'
 	template.cursive = true
 
