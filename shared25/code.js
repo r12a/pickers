@@ -1168,7 +1168,7 @@ function resetDefaults () {
 
 
 
-function setGridHints (type) {
+function setGridHintsVOLD (type) {
 	// switch the hints alongside characters between key indicators and transliterations
 	
 	if (document.getElementById('keyHintType')) { // this if statement is for backwards compatibility
@@ -1235,7 +1235,10 @@ function setGridHints (type) {
 
 
 
-function setGridHints (type) {
+
+
+
+function setGridHintsOLD (type) {
 	// switch the hints alongside characters between key indicators and transliterations
 	
 	if (document.getElementById('keyHintType')) { // this if statement is for backwards compatibility
@@ -1303,6 +1306,77 @@ function setGridHints (type) {
 						nodes[n].parentNode.firstChild.textContent = ''
 					}
 				}
+			}
+		globals.keyHints = 'none'
+		}
+	}
+
+
+
+function setGridHints (type) {
+	// switch the hints alongside characters between key indicators and transliterations
+	
+	if (document.getElementById('keyHintType')) { // this if statement is for backwards compatibility
+		document.getElementById('keyHintType').style.textDecoration = 'none'
+		document.getElementById('translitHintType').style.textDecoration = 'none'
+		document.getElementById('ipaHintType').style.textDecoration = 'none'
+		document.getElementById('noneHintType').style.textDecoration = 'none'
+		document.getElementById(type+'HintType').style.textDecoration = 'underline'
+		}
+
+	defaults.hints = type
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+
+	var lastNode = null
+	var nodes = document.querySelectorAll( '.g' )
+	var charNode, hintNode, content, keyContent
+
+	if (type === 'key') {
+		globals.keyHints = 'key'
+		for (let n=0; n<nodes.length; n++ ) {
+			charNode = nodes[n].querySelector('.c, .v')
+			hintNode = nodes[n].querySelector('.hint')
+			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'')
+			hintNode.textContent = ''
+			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.key]) {
+				keyContent = window.spreadsheetRows[content][cols.key] ? window.spreadsheetRows[content][cols.key].replace(/¶/,'\u0331') : ''
+				hintNode.textContent = keyContent
+				}
+			}
+		}
+
+	else if (type === 'ipa') {
+		globals.keyHints = 'ipa'
+		for (let n=0; n<nodes.length; n++ ) {
+			charNode = nodes[n].querySelector('.c, .v')
+			hintNode = nodes[n].querySelector('.hint')
+			content = charNode.textContent.replace(factoryDefaults.ccbase,'')
+			hintNode.textContent = ''
+			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ipaLoc]) {
+				keyContent = window.spreadsheetRows[content][cols.ipaLoc] ? window.spreadsheetRows[content][cols.ipaLoc] : ''
+				hintNode.textContent = keyContent
+				}
+			}
+		}
+
+	else if (type === 'translit') {
+		globals.keyHints = 'translit'
+		for (let n=0; n<nodes.length; n++ ) { 
+			charNode = nodes[n].querySelector('.c, .v')
+			hintNode = nodes[n].querySelector('.hint')
+			content = charNode.textContent.replace(factoryDefaults.ccbase,'')
+			hintNode.textContent = ''
+			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.transLoc]) {
+				keyContent = window.spreadsheetRows[content][cols.transLoc] ? window.spreadsheetRows[content][cols.transLoc] : ''
+				hintNode.textContent = keyContent
+				}
+			}
+		}
+
+	else {
+		for (let n = 0; n < nodes.length; n++ ) { 
+			hintNode = nodes[n].querySelector('.hint')
+			if (hintNode) hintNode.textContent = ''
 			}
 		globals.keyHints = 'none'
 		}
@@ -1656,6 +1730,184 @@ function makeCharacterLink (cp, block, lang, direction) {
 		out += '<span lang="'+lang+'"'+dir+'>'+cbase+'&#x'+hex+';</span> '
         }
 	
+	for (let i=0;i<chars.length;i++) {
+        if (i===0) out += '['
+        if (i>0 && i<chars.length) out += ' + '
+        
+		charstr = String.fromCodePoint(chars[i])
+        var hex = chars[i].toString(16).toUpperCase()
+		while (hex.length < 4) hex = '0'+hex 
+		var name = charData[charstr]
+
+
+		if (! window.location.href.match('r12a.github.io')) {
+			var char = String.fromCodePoint(chars[i])
+			if (spreadsheetRows[char] && spreadsheetRows[char][cols.block]) block = '/scripts/'+spreadsheetRows[char][cols.block]+'/block'
+			console.log(spreadsheetRows)
+			out +=  '<a href="'+block+'#char'+hex+'">'
+			}
+		out +=  '<span class="uname">U+'+hex+' '+name+'</span>'
+		if (! window.location.href.match('r12a.github.io')) out +=  '</a>'
+		if (i===chars.length-1) out += ']'
+		}
+    out += '</span> '
+	
+	return out.trim()
+	}
+
+
+
+
+
+function makeCharacterLink (cp, block, lang, direction) { 
+	// returns markup with information about cp
+	// only wraps in a link if not on r12a.github.io
+	// cp: a unicode character, or sequence of unicode characters
+	// block: default directory for scripts block file
+	// lang: the BCP47 language tag for the context
+	// direction: either rtl or ltr or ''
+	//var chars = cp.split('')
+	var chars = []
+	convertStr2DecArray(cp, chars)
+	if (direction==='rtl') direction = ' dir="rtl"'
+	else direction = ''
+	var shortForm = false
+	if (cp.startsWith(':')) {
+		shortForm = true
+		var colon = chars.shift()
+		}
+	
+	var out = '<span class="codepoint" translate="no">'
+	var charstr = ''
+	if (shortForm) {
+		out += '<span lang="'+lang+'"'+direction+'>'
+		for (let i=0;i<chars.length;i++) {
+			charstr = String.fromCodePoint(chars[i])
+			var mark = false
+			var cbase = ''
+			var dir = ''
+
+			if (charData[charstr]) {
+				var hex = chars[i].toString(16).toUpperCase()
+				while (hex.length < 4) hex = '0'+hex 
+				}
+			else return 'Character not found in database.'
+			out += cbase+'&#x'+hex+';'
+			}
+		out += '</span> '
+		}
+	
+	else {
+		for (let i=0;i<chars.length;i++) {
+			if (i>0) out += ' + '
+			charstr = String.fromCodePoint(chars[i])
+			var mark = false
+			var cbase = ''
+			var dir = ''
+
+			if (charData[charstr]) {
+				var hex = chars[i].toString(16).toUpperCase()
+				while (hex.length < 4) hex = '0'+hex 
+
+				if (charData[charstr].match('\u200B')) mark = true
+				if (mark && defaults.ccbase != '') cbase = '&#x'+convertChar2CP(defaults.ccbase)+';'
+				if (direction === 'rtl') dir = ' dir="rtl"'
+				}
+			else return 'Character not found in database.'
+			out += '<span lang="'+lang+'"'+dir+'>'+cbase+'&#x'+hex+';</span> '
+			}
+		}
+
+
+	for (let i=0;i<chars.length;i++) {
+        if (i===0) out += '['
+        if (i>0 && i<chars.length) out += ' + '
+        
+		charstr = String.fromCodePoint(chars[i])
+        var hex = chars[i].toString(16).toUpperCase()
+		while (hex.length < 4) hex = '0'+hex 
+		var name = charData[charstr]
+
+
+		if (! window.location.href.match('r12a.github.io')) {
+			var char = String.fromCodePoint(chars[i])
+			if (spreadsheetRows[char] && spreadsheetRows[char][cols.block]) block = '/scripts/'+spreadsheetRows[char][cols.block]+'/block'
+			console.log(spreadsheetRows)
+			out +=  '<a href="'+block+'#char'+hex+'">'
+			}
+		out +=  '<span class="uname">U+'+hex+' '+name+'</span>'
+		if (! window.location.href.match('r12a.github.io')) out +=  '</a>'
+		if (i===chars.length-1) out += ']'
+		}
+    out += '</span> '
+	
+	return out.trim()
+	}
+
+
+
+
+
+function makeCharacterLink (cp, block, lang, direction) { 
+	// returns markup with information about cp
+	// only wraps in a link if not on r12a.github.io
+	// cp: a unicode character, or sequence of unicode characters
+	// block: default directory for scripts block file
+	// lang: the BCP47 language tag for the context
+	// direction: either rtl or ltr or ''
+	//var chars = cp.split('')
+	var chars = []
+	convertStr2DecArray(cp, chars)
+	if (direction==='rtl') direction = ' dir="rtl"'
+	else direction = ''
+	var shortForm = true
+	if (cp.startsWith(':')) {
+		shortForm = false
+		var colon = chars.shift()
+		}
+	
+	var out = '<span class="codepoint" translate="no">'
+	var charstr = ''
+	if (shortForm) {
+		out += '<span lang="'+lang+'"'+direction+'>'
+		for (let i=0;i<chars.length;i++) {
+			charstr = String.fromCodePoint(chars[i])
+			var mark = false
+			var cbase = ''
+			var dir = ''
+
+			if (charData[charstr]) {
+				var hex = chars[i].toString(16).toUpperCase()
+				while (hex.length < 4) hex = '0'+hex 
+				}
+			else return 'Character not found in database.'
+			out += cbase+'&#x'+hex+';'
+			}
+		out += '</span> '
+		}
+	
+	else {
+		for (let i=0;i<chars.length;i++) {
+			if (i>0) out += ' + '
+			charstr = String.fromCodePoint(chars[i])
+			var mark = false
+			var cbase = ''
+			var dir = ''
+
+			if (charData[charstr]) {
+				var hex = chars[i].toString(16).toUpperCase()
+				while (hex.length < 4) hex = '0'+hex 
+
+				if (charData[charstr].match('\u200B')) mark = true
+				if (mark && defaults.ccbase != '') cbase = '&#x'+convertChar2CP(defaults.ccbase)+';'
+				if (direction === 'rtl') dir = ' dir="rtl"'
+				}
+			else return 'Character not found in database.'
+			out += '<span lang="'+lang+'"'+dir+'>'+cbase+'&#x'+hex+';</span> '
+			}
+		}
+
+
 	for (let i=0;i<chars.length;i++) {
         if (i===0) out += '['
         if (i>0 && i<chars.length) out += ' + '
