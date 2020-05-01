@@ -27,6 +27,7 @@
 <script src="/shared/fontlists/arabic.js"> </script>
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
+<style>#shapelist img { vertical-align: middle; }</style>
 </head>
 
 <body class="app">
@@ -115,7 +116,7 @@
 <div id="alphabet" class="default">
 
 
- <div id="shapelist" style="display:none; text-align:center;">
+ <!--div id="shapelist" style="display:none; text-align:center;">
  <div id="shapekeys">
 <span onclick="findShape('627,622,623,625,671,661','',true)">ا</span>
 <span onclick="findShape('644627,644622,644623,644625','',true)">لا</span>
@@ -136,6 +137,31 @@
 <span onclick="findShape('628,62C','',true)">ب</span>
 <span onclick="findShape('646,636,641,62E,630,632,638,63A','',true)">ن</span>
 <span onclick="findShape('62B,634','',true)">ث</span>
+</div>
+</div-->
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<span onclick="findShape('627,622,623,625,671,661','',true)">ا</span>
+<span onclick="findShape('644627,644622,644623,644625','',true)">لا</span>
+<span onclick="findShape('644,643','',true)">ل</span>
+<span onclick="findShape('639,63A','',true)">ع</span>
+<span onclick="findShape('62D,62E,62C','',true)">ح</span>
+<span onclick="findShape('641,642','',true)">ف</span>
+<span onclick="findShape('637,638','',true)">ط</span>
+<span onclick="findShape('647,629,621,645','',true)">ه</span>
+<span onclick="findShape('631,632,648,624','',true)">ر</span>
+<span onclick="findShape('62F,630','',true)">د</span>
+<span onclick="findShape('649,626,64A','',true)">ى</span>
+<span onclick="findShape('628,62A,62B,646','',true)">ٮ</span>
+<span onclick="findShape('635,636,633,634','',true)">ص</span>
+/
+<span onclick="findShape('62F,637,43,633,635,62D,639,645,648,644,631','',true)"><img src="images/dot_none.png" alt=" "></span>
+<span onclick="findShape('628,62C','',true)"><img src="images/dot_below_1.png" alt="﮳"></span>
+<span onclick="findShape('646,636,641,62E,630,632,638,63A','',true)"><img src="images/dot_above_1.png" alt="﮲"></span>
+<span onclick="findShape('62A,629,642','',true)"><img src="images/dot_above_2.png" alt="﮴"></span>
+<span onclick="findShape('64A','',true)"><img src="images/dot_below_2.png" alt="﮵"></span>
+<span onclick="findShape('62B,634','',true)"><img src="images/dot_above_3.png" alt="﮶"></span>
 </div>
 </div>
 
@@ -167,6 +193,7 @@
 <span class="touch" dir="auto" onClick="add('\u200E');">LRM</span>
 <span class="touch" dir="auto" onClick="add('\u034F');">CGJ</span>
 <span class="touch" dir="auto" onClick="add('\u061C');">ALM</span>
+<span class="touch" dir="auto" onClick="add('\u0640');">ـــ</span>
 </div>
 
 
@@ -236,7 +263,8 @@
 		<span class="g"><span class="hint">l</span><span class="c">ل</span></span>
 		<span class="g"><span class="hint">r</span><span class="c">ر</span></span>
 		<span class="g"><span class="hint">y</span><span class="c">ي</span></span>
-        </div>
+ 		<span class="g"><span class="hint">à</span><span class="c">ى</span></span>
+       </div>
 
         </div>
   
@@ -244,6 +272,7 @@
    <div id="hamza" class="box">
 		<span class="g"><span class="hint">ʔ</span><span class="c">ء</span></span>
 		<span class="g"><span class="hint">ɑ͑</span><span class="c">أ</span></span>
+		<span class="g"><span class="hint">ɑ̜</span><span class="c">إ</span></span>
 		<span class="g"><span class="hint">w͑</span><span class="c">ؤ</span></span>
 		<span class="g"><span class="hint">y͑</span><span class="c">ئ</span></span>
 		</div>
@@ -251,18 +280,18 @@
    
      <div id="vowelGrid" class="box">   
 	 	<div>
-		<span class="g"><span class="hint">y</span><span class="c">ي</span></span>
+		<span class="g"><span class="hint">y</span><span class="c">ِي</span></span>
 		<span class="g"><span class="hint">i</span><span class="c">ِ</span></span>
 		<span class="g"><span class="hint">iⁿ</span><span class="c">ٍ</span></span>
 		</div>
 		<div class="bottomDivider">
-		<span class="g"><span class="hint">w</span><span class="c">و</span></span>
+		<span class="g"><span class="hint">w</span><span class="c">ُو</span></span>
 		<span class="g"><span class="hint">u</span><span class="c">ُ</span></span>
 		<span class="g"><span class="hint">uⁿ</span><span class="c">ٌ</span></span>
 		</div>
 		
 		<div class="bottomDivider">
-		<span class="g"><span class="hint">à</span><span class="c">ى</span></span>
+		<span class="g"><span class="hint">a</span><span class="c">َا</span></span>
 		<span class="g"><span class="hint">a</span><span class="c">َ</span></span>
 		<span class="g"><span class="hint">aⁿ</span><span class="c">ً</span></span>
 		<span class="g"><span class="hint">̍</span><span class="c">ٰ</span></span>
