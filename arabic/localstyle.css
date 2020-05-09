@@ -37,7 +37,9 @@ span.hint {
 	min-width: .5em;
 	text-align: center;
 	}
-
+.x {
+	color: tan;
+	}
 
 
 /* KEYBOARD */
