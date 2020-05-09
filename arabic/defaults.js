@@ -33,12 +33,16 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Arabic text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+
+{"title":"Remove<br/>vowels", "alt":"Remove harakat, etc. from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 ]
 
 
 
 var pulldown = [
 {"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Arabic text.", "code":"doTranscription('revTransliterate')"},
+
+{"title":"Transcribe<br/>to IPA", "alt":"Convert Arabic text to a basic IPA transcription.", "warning": "Full transcription requires fully vowelled text!", "code":"doTranscription('toIPA')"},
 
 {"title":"Transcribe<br/>to LOC", "alt":"Convert Arabic text to an Library of Congress Latin transcription.", "warning": "Full transcription requires fully vowelled text!", "code":"doTranscription('toLOC')"},
 
