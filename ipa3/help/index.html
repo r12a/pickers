@@ -32,10 +32,24 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->30-Nov-2019<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=ipa" title="Show all blog posts tagged with 'ipa'">ipa</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->18-May-2020<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=ipa" title="Show all blog posts tagged with 'ipa'">ipa</a></p>
 
 <p>This Unicode character app allows you to produce or analyse runs of IPA text. The consonants are arranged in rows representing the type of articulation, and columns representing the place of articulation. To see this matrix the other way around, use the <a href="../../ipa2/">IPA2 character app</a>.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[ipa%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/ipa">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
+
+
+
+
+<section id="about">
+<h2 href="#about">About the app</h2>
+      <p>Includes all the symbols in <a href="https://www.internationalphoneticassociation.org/content/full-ipa-chart">the standard IPA chart</a>. The table draws together characters from several Unicode blocks.  There are also a number of additional diacritics and symbols requested by phoneticians using the chart.</p>
+<div id="aboutBP">
+</div>
+<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
+</script>
+</section>
+
+
 
 
 <section id="basics">
@@ -44,17 +58,6 @@
 var direction = 'ltr'
 document.getElementById('basics').innerHTML = addBasicUse(direction)
 </script>
-
-
-<section id="about">
-<h2 href="#about">About the selection area</h2>
-      <p>Includes all the symbols in <a href="http://www.arts.gla.ac.uk/IPA/IPA_chart_(C)2005.pdf">the standard IPA chart</a>. The table draws together characters from several Unicode blocks.  There are also a number of additional diacritics and symbols requested by phoneticians using the chart.</p>
-<div id="aboutBP">
-</div>
-<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
-</script>
-
-</section>
 
 
 
