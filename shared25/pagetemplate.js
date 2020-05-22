@@ -88,7 +88,7 @@ out += `
     <img src="../shared25/images/menu.png"" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="console.log(document.getElementById(\'pulldown\').style.display); if (document.getElementById(\'pulldown\').style.display===\'none\'){document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\' }; document.getElementById(\'output\').focus();"/>
     </span>
     
-    <div id="pulldown" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;">
+    <div id="pulldown" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
     <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button><br/>
 
     <button  id="showDBAll" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, true)" 
@@ -402,7 +402,7 @@ out += `<div class="control" id="ccFactoryReset">Reset<br/><button onClick="rese
 </div>
 
 
-<div class="control" onclick="document.getElementById('fontManagementList').value = JSON.stringify(autoTranslitArray);document.getElementById('fontManagementList').select();"
+<div class="control" onclick="document.getElementById('fontManagementList').value = escapeNonASCII(JSON.stringify(autoTranslitArray));document.getElementById('fontManagementList').select();"
 </div>
 
 <a class="interactiveHelpButton" href="help/#manage_fonts" target="_help" title="Help with font management controls."><img alt="help" src="../images/help.png"/></a>
