@@ -33,8 +33,16 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Arabic text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-]
 
+{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"arabic=getHighlightedText(document.getElementById('output'));ipa=transcribetoIPA(arabic);devowelled=removeVowels(arabic); add(devowelled+'||'+ipa+'|'+arabic);document.getElementById('output').focus();"},
+
+{"title":"⇨", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
+
+//{"title":"⇨", "alt":"Convert a vocab sequence to example markup.", "code":"items=getHighlightedText(document.getElementById('output')).split('|');str=items[0]+'/'+transliterate(items[0])+'/'+items[2]+'/'+items[1];makeExample(defaults.language,template.direction,str)"},
+]
+//onclick="makeExample(defaults.language,template.direction)" title="Create an example.">Make<br>example</button>
+
+//doTranscription('transliterate')" title="Convert Arabic text to a Latin transliteration.">T
 
 
 var pulldown = [
