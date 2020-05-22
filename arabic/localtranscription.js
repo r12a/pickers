@@ -74,8 +74,15 @@ function transcribetoIPA (str) {
 	str = str.replace(re,'$1$1$2')  // shadda
 	
 	str = str.replace(/ ال/g,' al-') // definite article
+	str = str.replace(/ا /g,'a ') // final alef
 	
 	str = str.replace(/\u200C([^ ])/g,'ʹ$1')  // zwnj creating final form in middle of word
+
+	// deal with yeh and waw that have vowel diacritics
+	var re = /ي([\u064E|\u064F|\u0650|\u064B|\u064C|\u064D])/g
+	str = str.replace(re,'j$1')
+	var re = /و([\u064E|\u064F|\u0650|\u064B|\u064C|\u064D])/g
+	str = str.replace(re,'w$1')
 
 	str = str.replace(/\u064E[\u0651]?ا/g,'aː') 
 	str = str.replace(/\u064E[\u0651]?ى/g,'aː') 
@@ -83,14 +90,14 @@ function transcribetoIPA (str) {
 	str = str.replace(/\u0650[\u0651]?ى/g,'iː') 
 	str = str.replace(/\u0650[\u0651]?ي/g,'iː') 
 	str = str.replace(/\u064E[\u0651]?و\u0652/g,'aw') 
-	str = str.replace(/\u064E[\u0651]?ى\u0652/g,'ay') 
+	str = str.replace(/\u064E[\u0651]?ي\u0652/g,'aj') 
 	
 	
 	str = str.replace(/ء/g,'ʔ') 
 	str = str.replace(/م/g,'m') 
 	str = str.replace(/\bا/g,'ʔa') 
 	str = str.replace(/ا/g,'') 
-	str = str.replace(/ آ/g,'ʔaː') 
+	str = str.replace(/آ/g,'ʔaː') 
 	//str = str.replace(/آ/g,'[’ā{ā]') 
 	//str = str.replace(/ أ/g,'') 
 	str = str.replace(/أ/g,'ʔ') 
@@ -125,9 +132,9 @@ function transcribetoIPA (str) {
 	str = str.replace(/ن/g,'n')
 	str = str.replace(/ه/g,'h')
 	str = str.replace(/و/g,'w') 
-	str = str.replace(/ي/g,'y') 
-	str = str.replace(/ة/g,'') 
-	str = str.replace(/ى/g,'ỳ') 
+	str = str.replace(/ي/g,'j') 
+	str = str.replace(/ة/g,'ʰ') 
+	str = str.replace(/ى/g,'aː') 
 	
 	str = str.replace(/\u064E/g,'a') 
 	str = str.replace(/\u064F/g,'ʊ') 
