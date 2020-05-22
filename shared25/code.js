@@ -186,9 +186,21 @@ function makeSharingLink () {
 	output.focus()
 	}
 
-function makeExample (lang, dir) {
+function vocab2Example (input) {
+	// converts a sequence of vocab data, ie. str|ipa|meaning|... to example code
+	items=input.split('|')
+	console.log(items)
+	str=items[0]+'/'+transliterate(items[0])+'/'+items[2]+'/'+items[1]
+	console.log(str)
+	makeExample(defaults.language,template.direction,str)
+	}
+
+
+function makeExample (lang, dir, str) {
+	// str is populated when we're generating from a vocab string
 	var output = document.getElementById('output')
-	var chars = getHighlightedText(output)
+	if (str) chars = str
+	else var chars = getHighlightedText(output)
 	document.getElementById('transcriptionWrapper').style.display='block'
 	document.getElementById('transcription').style.display = 'block'
 	document.getElementById('transcription').contentEditable = true
