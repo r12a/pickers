@@ -2734,3 +2734,24 @@ for (x=0;x<exclusionList.length;x++) {
 	}
 return str.trim()
 }
+
+
+
+function getVocab (str) {
+// converts a string of native text to native_text||ipa_transcription
+	var parts = str.split('|')
+	if (parts.length===1) parts[1] = ''
+	var ipa=toLatin(parts[0])
+	ipa = ipa.replace(/altfirst|altlast|alts|alt|syllable/g,'')
+	ipa = ipa.replace(/"/g,'')
+	ipa = ipa.replace(/span|class/g,'')
+	ipa = ipa.replace(/=|<|>/g,'')
+	ipa = ipa.replace(/\//g,'')
+	ipa = ipa.replace(/\s+/g,' ').trim()
+	//ipa = ipa.replace(/\<span class=syllable\>/g,'').replace(/<span class=alt>/,'').replace(/span\>/g,'').replace(regex,'')
+	out = condense(parts[0])+'|'+parts[1]+'|'+ipa
+	
+	return out
+	}
+
+
