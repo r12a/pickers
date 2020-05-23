@@ -34,7 +34,7 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Arabic text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
-{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"arabic=getHighlightedText(document.getElementById('output'));ipa=transcribetoIPA(arabic);devowelled=removeVowels(arabic); add(devowelled+'||'+ipa+'|'+arabic);document.getElementById('output').focus();"},
+{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"input=getHighlightedText(document.getElementById('output')).split('|'); if (typeof input[2]==='undefined') notes=input[0]; else notes=input[0]+' '+input[2]; add(getVocab(removeVowels(input[0]), input[1], notes, transcribetoIPA(input[0])));document.getElementById('output').focus();"},
 
 {"title":"⇨", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 
