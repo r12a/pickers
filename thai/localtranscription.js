@@ -222,7 +222,8 @@ function inSet (group, ch) {
 
 
 function toLatin (str, target) {
-	
+	if (typeof str==='undefined') return
+
 	leftvowels = 'เแโใไ'
 	tonemarks = '\u0E48\u0E49\u0E4A\u0E4B'
 	vowels = '\u0E31\u0E47\u0E33\u0E34\u0E35\u0E36\u0E37\u0E38\u0E39\u0E30ายวอฤ'
