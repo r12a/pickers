@@ -33,7 +33,7 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Thai text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
-{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"thai=getHighlightedText(document.getElementById('output')); ipa=toLatin(thai).replace(/\<span class=syllable\>/g,'').replace(/span\>/g,'').replace('</',''); add(thai.replace(' ','')+'||'+ipa);document.getElementById('output').focus();"},
+{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"add(getVocab(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 
 {"title":"⇨", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
