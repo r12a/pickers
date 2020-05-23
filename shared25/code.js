@@ -2737,7 +2737,7 @@ return str.trim()
 
 
 
-function getVocab (str) {
+function getVocabOLD (str) {
 // converts a string of native text to native_text||ipa_transcription
 	var parts = str.split('|')
 	if (parts.length===1) parts[1] = ''
@@ -2752,6 +2752,35 @@ function getVocab (str) {
 	out = condense(parts[0])+'|'+parts[1]+'|'+ipa
 	
 	return out
+	}
+
+
+
+function getVocab (foreign, meaning, notes, transcription) {
+// converts a string of native text to native_text||transcription_transcription
+	if ( typeof meaning == 'undefined' ) meaning = ''
+	if ( typeof notes == 'undefined' ) notes = ''
+	if ( typeof transcription == 'undefined' ) transcription = ''
+
+	transcription = cleanTranscription(transcription)
+	out = foreign+'|'+meaning+'|'+transcription
+	if (notes) out += '|'+notes
+	
+	return out
+	}
+
+
+
+function cleanTranscription (str) {
+// removes markup from the result of a conversion to transcription
+	str = str.replace(/altfirst|altlast|alts|alt|syllable/g,'')
+	str = str.replace(/"/g,'')
+	str = str.replace(/span|class/g,'')
+	str = str.replace(/=|<|>/g,'')
+	str = str.replace(/\//g,'')
+	str = str.replace(/\s+/g,' ').trim()
+	
+	return str
 	}
 
 
