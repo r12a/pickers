@@ -32,9 +32,18 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Inuktitut text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
-{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"input=getHighlightedText(document.getElementById('output')).split('|'); add(getVocab(input[0], input[1],input[2], transcribetoIPA(input[0])));document.getElementById('output').focus();"},
+{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+input=getHighlightedText(_output).split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+ipa = transcribetoIPA(input[0]);
+latin = transcribetoLatin(input[0]); 
+notes = input[2]? input[2] : ''; 
+if (ipa !== latin) notes = latin + ' ' +notes; 
+add(getVocab(input[0], input[1], notes, ipa));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 
-{"title":"⇨", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
+//{"title":">", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 
 //{"title":"XXXXXXXXXX<br/>to XXXXXXXXXX", "alt":"XXXXXXXXXX.", "code":"doTranscription('XXXXXXXXXX')", "warning":"Still in development. Separate syllables before use."},
 ]
@@ -43,6 +52,12 @@ var controls = [
 
 var pulldown = [
 {"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Inuktitut.", "code":"transcribe(getHighlightedText(document.getElementById('output')), 'revTransliterate')"},
+
+{"title":"Transcribe<br>to IPA", "alt":"Convert Inuktitut text to an approximate IPA transcription.", "code":"doTranscription('toIPA');"},
+
+{"title":"Transcribe<br>to Latin", "alt":"Convert Inuktitut text to the Latin orthography.", "code":"doTranscription('toLatin');"},
+
+{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
 
 

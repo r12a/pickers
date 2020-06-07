@@ -2,6 +2,7 @@ function localtranscribe (direction, str) {
 	
 	if (direction == 'transliterate') { return transliterate(str) }
 	if (direction == 'toIPA') { return transcribetoIPA(str) }
+	if (direction == 'toLatin') { return transcribetoLatin(str) }
 	if (direction == 'reverse') { return reverse(str) }
 	}
 		
@@ -32,15 +33,44 @@ return str.trim()
 function transcribetoIPA (str) {
 	str = transliterate(str)
 	
+	str = str.replace(/qk/g, "qq")
+	str = str.replace(/ⁱ̠/g, "iː")
+	str = str.replace(/ᵘ̱/g, "uː")
+	str = str.replace(/ᵃ̱/g, "aː")
 	str = str.replace(/ⁱ/g, "i")
 	str = str.replace(/ᵃ/g, "a")
 	str = str.replace(/ᵘ/g, "u")
-	str = str.replace(/ⁱ̠/g, "ii")
-	str = str.replace(/ᵘ̱/g, "uu")
-	str = str.replace(/ᵃ̱/g, "aa")
 	str = str.replace(/ᵑ/g, "ŋ")
 	str = str.replace(/ɫ/g, "ɬ")
 	str = str.replace(/r/g, "ʁ")
+	str = str.replace(/ī/g, "iː")
+	str = str.replace(/ū/g, "uː")
+	str = str.replace(/ā/g, "aː")
+	str = str.replace(/ʜ/g, "h")
+
+	return str.trim()
+	}
+
+
+
+
+function transcribetoLatin (str) {
+	str = transliterate(str)
+	
+	str = str.replace(/qk/g, "qq")
+	str = str.replace(/ⁱ̠/g, "ii")
+	str = str.replace(/ᵘ̱/g, "uu")
+	str = str.replace(/ᵃ̱/g, "aa")
+	str = str.replace(/ⁱ/g, "i")
+	str = str.replace(/ᵃ/g, "a")
+	str = str.replace(/ᵘ/g, "u")
+	str = str.replace(/ŋᵑ/g, "nng")
+	str = str.replace(/ᵑ/g, "n")
+	str = str.replace(/ī/g, "ii")
+	str = str.replace(/ū/g, "uu")
+	str = str.replace(/ā/g, "aa")
+	str = str.replace(/ŋ/g, "ng")
+	str = str.replace(/ʜ/g, "h")
 
 	return str.trim()
 	}
