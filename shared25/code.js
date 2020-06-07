@@ -356,6 +356,13 @@ function getHighlightedText (node) {
 	}
 
 
+function hasHighlight (node) {
+// checks whether some text is highlighted in the node (output)
+	if (node.value.substring(node.selectionStart, node.selectionEnd) == '') return false
+	else return true
+	}
+
+
 function paste () {
 	document.execCommand('paste')
 	}
