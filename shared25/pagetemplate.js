@@ -48,12 +48,12 @@ out += `</header>
 
 <div id="topControls" style="position:relative;">
 <span id="copydelete">
-  <button title="Copy to clipboard." onclick="copyToClipboard()">📋</button>
-  <button title="Select all the text." onclick="selectAll()">🔶</button>
-  <button title="Toggle invisible code points." onclick="toggleInvisibles()">⛶</button>
-  <button title="Delete all the text." onclick="deleteAll()">❌</button>
-  <button title="Generate a URL including text." onclick="makeSharingLink()"><img height="19px" style="margin-left: 3px;" src="../images/share.png" alt="URL"/></button>
-  <button title="Add sample text." style="font-size: 150%;" onclick="add('` + template.sample +`')">+</button>
+  <img title="Copy to clipboard." onclick="copyToClipboard()" src="../shared25/images/copy.png" alt="Copy" style="vertical-align: bottom;">
+  <img title="Select all the text." onclick="selectAll()" src="../shared25/images/select.png" alt="Select" style="vertical-align: bottom;">
+  <img title="Toggle invisible code points." onclick="toggleInvisibles()" src="../shared25/images/toggle.png" alt="Toggle" style="vertical-align: bottom;">
+  <img title="Generate a URL including text." onclick="makeSharingLink()"  src="../shared25/images/share.png" alt="Share">
+  <img title="Add sample text." onclick="add('` + template.sample +`')" src="../shared25/images/sample.png" alt="Sample">
+  <img title="Delete all the text." onclick="deleteAll()" src="../shared25/images/clear.png" alt="Clear" style="margin-left: 1em;">
 <a class="interactiveHelpButton" href="help/#icons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
   </span>
   
@@ -127,8 +127,8 @@ for (let i=0;i<window.pulldown.length;i++){
 
 <div id="transcriptionWrapper">
 <a class="interactiveHelpButton" href="help/#secondary_output" target="_help" style= "float: left; margin: 1em 1em 0 1em;" title="Help with the secondary text area."><img alt="help" src="../images/help.png"/></a>
-<div id="copyTranscription" onclick="copyTranscription()">📋</div>
-<div id="moveTranscription" onclick="moveTranscription()">⌃</div>
+<div id="copyTranscription" onclick="copyTranscription()"><img src="../shared25/images/copy.png" alt="Copy"></div>
+<div id="moveTranscription" onclick="moveTranscription()"><img src="../shared25/images/move.png" alt="Move"></div>
 <div id="closeTranscription" onclick="closeTranscription()">X</div>
 <div id="transcription" contenteditable="true"></div>
 </div>

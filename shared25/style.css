@@ -671,7 +671,15 @@ summary:hover {
 	}
 */
 #copydelete img {
-	vertical-align: top;
+	vertical-align: bottom;
+	margin-left: 3px;
+	cursor: pointer;
+	}
+	
+#copydelete {
+	vertical-align: bottom;
+	line-height: 2.4;
+	padding-left: 1em;
 	}
 	
 #pickerlist {
