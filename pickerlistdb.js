@@ -1,7 +1,7 @@
 var plist = [
     { tag:'adlm', name:'Adlam', url:'adlm/' },
     { tag:'arab', name:'Arabic', url:'arabic/' },
-    { tag:'arab', name:'All&nbsp;Arabic', url:'arabicblock/' },
+    { tag:'arab', name:'All&nbsp;Arabic', url:'arab-all/' },
     { tag:'syrc', name:'Assyrian&nbsp;Neo-Aramaic', url:'syrc-aii/' },
     { tag:'armn', name:'Armenian', url:'armenian/' },
     { tag:'bali', name:'Balinese', url:'balinese/' },
@@ -107,7 +107,7 @@ var plistByRegion = {
 			  ],
 	'West&nbsp;Asia':[
 			  ['Arabic','arabic/'],
-			  ['All Arabic','arabicblock/'],
+			  ['All Arabic','arab-all/'],
 			  ['Assyrian&nbsp;Neo-Aramaic', 'syrc-aii/'],
 			  ['Hebrew', 'hebrew/'],
 			  ['Mandaic', 'mandaic/'],
@@ -162,6 +162,7 @@ var plistByRegion = {
 			   ],
 	'Americas':[
 				['Cherokee', 'cherokee/'],
-			    ['Tłı̨chǫ&nbsp;(Dogrib)', 'tlicho/']
+			    ['Tłı̨chǫ&nbsp;(Dogrib)', 'tlicho/'],
+				['Eastern Canadian Inuktitut', 'cans-ike/'],
 			    ]
 	}
