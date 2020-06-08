@@ -73,6 +73,31 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <p>The transliteration scheme  was developed for this character app, and, where possible, uses  symbols that represent sounds typically associated with their Inuktitut equivalents. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription but the process is reversible (unlike most  transcriptions).</p>
 <p>Transliterations produced this way are particularly useful for understanding the composition of text in  scripts.</p>
 
+
+<p><b class="leadin">Make vocab.</b> This helps speed up the creation of entries for the <a href="../../../app-vocab/">vocabulary app</a>. You can create a vocab item with up to 3 parts, delimited by |, in the following order: [1] native text, [2] meaning, [3] notes (optional). Much of the time, only the first 2 items are needed.</p>
+<p>The text will be replaced with the following: </p>
+<p><code>native_text|meaning|IPA_transcription(|notes)</code></p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="ike">ᐅᒥᐊᖅ</span>|boat</code></p>
+<p>will produce:</p>
+<p><code><span lang="ike">ᐅᒥᐊᖅ</span>|boat|umiaq</code></p>
+</blockquote>
+<p>The app will automatically generate a Latin transcription in the notes location if the Latin differs from the IPA.</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat</code></p>
+<p>will produce:</p>
+<p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat|umiaŋa|umianga </code></p>
+</blockquote>
+<p>Where needed, the app will add a transcription to existing notes. </p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|(South Qikiqtaaluk)</code></p>
+<p>will produce:</p>
+<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|nakuʁmiːk|nakurmiik (South Qikiqtaaluk)</code></p>
+</blockquote>
+<p>The app will also, simultaneously, produce markup for examples in the secondary text area (see below).</p>
+<p>If you have more than one line of text in the text area, you must highlight the row you want to convert.</p>
+
+
 <div id="controlsAbove2"></div>
 <script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
