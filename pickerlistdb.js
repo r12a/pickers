@@ -69,6 +69,7 @@ var plist = [
     { tag:'arab', name:'Uighur', url:'uighur/' },
     { tag:'arab', name:'Urdu', url:'arab-ur/' },
     { tag:'vaii', name:'Vai', url:'vai/' },
+    { tag:'cans', name:'Eastern Canadian Inuktitut', url:'cans-ike/' },
     { tag:'latn', name:'Vietnamese', url:'vietnamese/' },
 ]
 
