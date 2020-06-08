@@ -6,20 +6,20 @@
 <link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="../../shared25/style.css" />
 <link rel="stylesheet" type="text/css" href="../localstyle.css" />
-<script src="/shared/code/boilerplate.js" type="text/javascript"></script>
-<script type="text/javascript" src="/shared/code/toc_2016.js"></script>
-<script type="text/javascript" src="../../shared25/helptemplate.js"></script>
+<script src="/shared/code/boilerplate.js"></script>
+<script src="/shared/code/toc_2016.js"></script>
+<script src="../../shared25/helptemplate.js"></script>
 <script>var direction = 'ltr'</script>
 </head>
 
 <body class="app notes">
 <header>
   <div id="header-boilerplate"></div>
-  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Vai character app','');</script> 
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Inuktitut character app','');</script> 
 </header>
 
 
-<h1>Vai character app notes/help</h1>
+<h1>Eastern Canadian Inuktitut character app notes/help</h1>
 
 
 <aside class="sidebar">
@@ -27,16 +27,32 @@
   <div id="toc"><!-- placeholder --></div>
   <div class="noprint">
         <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
-        <p><a href="../index.html">Vai character app</a></p>
-        <p><a href="/scripts/links?script=vaii">Vai script links</a></p>
+        <p><a href="../index.html">Inuktitut character app</a></p>
+        <p><a href="/scripts/links?script=cans">Inuktitut script links</a></p>
         <p><a href="/pickers/">List of character apps </a></p>
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->28-Nov-2019<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=vai" title="Show all blog posts tagged with 'vai'">vai</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->08-Jun-2020<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=vai" title="Show all blog posts tagged with 'vai'">vai</a></p>
 
-<p>This Unicode character app allows you to produce or analyse runs of Vai text. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p>This Unicode character app allows you to produce or analyse runs of Inuktitut text. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[vai%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/vai">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
+
+
+
+
+<section id="about">
+<h2 href="#about">About the selection area</h2>
+<p>Includes  characters in the Unicode <a href="/uniview/?block=unified_canadian_aboriginal_syllabics" target="_blank">UCAS</a> block that are used for Eastern Canadian Inuktitut.</p>
+<p>There are two ways of accessing the characters: (a) through a 2-click selector based on shapes, and (b) from a table. To make the 2-click selector visible, click on <samp>S</samp> in the vertical grey panel to the left.</p>
+<p>A couple of infrequently used characters are squeezed into gaps in the matrix.</p>
+<div id="aboutBP">
+</div>
+<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
+</script>
+</section>
+
+
 
 
 <section id="basics">
@@ -46,24 +62,6 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 </script>
 
 
-<section id="about">
-<h2 href="#about">About the selection area</h2>
-      <p>Includes all the characters in the Unicode <a href="/uniview/?block=vai" target="_blank">Vai</a> block.</p>
-<p>There are two ways of accessing the characters: (a) through a 2-click selector based on phonetics, and (b) from a table. The former is for people who know the phonetics and characters well. The latter is for people who are unfamiliar with the script. </p>
-<p>To switch between the two, click on TABLE VIEW.</p>
-<p>Notes:</p>
-<ul>
-<li>  the shape lookup feature is designed to work with the table only.</li>
-<li>the table view doesn't allow selection or shape lookup of historical syllables, numbers, or logograms – for those, switch to the 2-click input.</li>
-<li>the table view generally follows a standard layout, but is made more compact than normal in order to aid input. Nasalised syllables don't occupy a line of their own (except for the 2nd row), but instead appear alongside the unnasalised syllable (eg. ꗇꗈ). Also, the commonly used logograms and syllable-final letters are squeezed into some otherwise empty space near the top of the table (look for the coloured background).</li>
-</ul>
-<div id="aboutBP">
-</div>
-<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
-</script>
-
-</section>
-
 
 
 <section id="top_controls">
@@ -71,13 +69,16 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <div id="controlsAbove1"></div>
 <script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
-      <p><b class="leadin">Transliterate.</b> <strong></strong>Converts the contents of the text area to a Latin transliteration that provides a unique correspondence between each Vai symbol and a Latin symbol. It doesn't lead to a good phonetic transcription, but the process is reversible (unlike most phonetic transcriptions).</p>
+      <p><b class="leadin">Transliterate.</b> Converts the contents of the text area to a Latin transliteration that provides a one-to-one correspondence between  Inuktitut and Latin symbols.</p>
+<p>The transliteration scheme  was developed for this character app, and, where possible, uses  symbols that represent sounds typically associated with their Inuktitut equivalents. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription but the process is reversible (unlike most  transcriptions).</p>
+<p>Transliterations produced this way are particularly useful for understanding the composition of text in  scripts.</p>
 
 <div id="controlsAbove2"></div>
 <script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
 
-<p><b class="leadin">Reverse translit.</b> <strong></strong>Converts  a Latin transliteration to Vai text. Character apps usually include the reverse transliteration command in the bar on the left, but the size of Vai makes the normal approach unfeasible. Instead, just write the text in Latin in the main box, highlight it, and click the <samp>Reverse translit.</samp> button. You can then quickly pull the Vai text into the main box using the controls to the right.</p>
+<p><b class="leadin">Transcribe to IPA.</b> <strong></strong>Converts   Inuktitut text to a rough IPA transcription. You may occasionally need to tweak the result. For the ᓯᓱᓴ series this produces <span class="ipa">s</span>, rather than <span class="ipa">h</span>.</p>
+<p><b class="leadin">Transcribe to Latin.</b> <strong></strong>Converts   Inuktitut text to the standard Latin transcription. You may occasionally need to tweak the result. Like the IPA transcription, for the ᓯᓱᓴ series this produces <span class="ipa">s</span>, rather than <span class="ipa">h</span>.</p>
 
 </section>
 
@@ -91,7 +92,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <h2 href="#input_aids">Input aids</h2>
 
 <div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, shape, latin',
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, shape, typeAssist, latin',
 '<p><strong>Note:</strong> <samp>Shape lookup</samp> only works with the table view.</p>'
 )</script>
 
@@ -119,7 +120,7 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 <div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
 </body>
-<script type="text/javascript">
+<script>
 createtoc(3);
 </script>
 </html>
