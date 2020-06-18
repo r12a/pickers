@@ -1,9 +1,8 @@
 ﻿function localtranscribe (direction, str) {
 	
 	if (direction == 'transliterate') { return transliterate(str) }
-	if (direction == 'translitPlus') { return translitPlus(str) }
-	if (direction == 'toISO') { return transcribetoISO(str) }
-	if (direction == 'toLOC') { return transcribetoLOC(str) }
+	if (direction == 'transcribetoIPA') { return transcribetoIPA(str) }
+	if (direction == 'transcribetoLatin') { return transcribetoLatin(str) }
 	}
 
 
@@ -27,6 +26,62 @@ return str.trim()
 }
 
 
+
+function transcribetoIPA (str) {
+	str = transliterate(str).toLowerCase()
+
+	str = str.replace(/n˜d/g, "ⁿd")
+	str = str.replace(/n˜g/g, "ᵑɡ")
+	str = str.replace(/n˜j/g, "ᶮd͡ʒ")
+	str = str.replace(/n˜b/g, "ᵐb")
+
+	str = str.replace(/(.)ˉ/g, "$1ː")
+	str = str.replace(/(.)˜/g, "$1ː")
+	str = str.replace(/(.)˖/g, "$1$1")
+
+	str = str.replace(/gᵇ/g, "g͡b")
+	str = str.replace(/kᵖ/g, "k͡p")
+	str = str.replace(/c/g, "t͡ʃ")
+	str = str.replace(/j/g, "d͡ʒ")
+	str = str.replace(/y/g, "j")
+	str = str.replace(/ƴ/g, "ʔʲ")
+	str = str.replace(/˜/g, "ʔ")
+	str = str.replace(/g/g, "ɡ")
+
+	str = str.replace(/t͡ʃt͡ʃ/g, "tt͡ʃ")
+	str = str.replace(/d͡ʒd͡ʒ/g, "dd͡ʒ")
+
+
+	return str.trim()
+	}
+
+
+
+
+
+function transcribetoLatin (str) {
+	str = transliterate(str)
+
+	str = str.replace(/n˜d/g, "nd")
+	str = str.replace(/n˜g/g, "ng")
+	str = str.replace(/n˜j/g, "nj")
+	str = str.replace(/n˜b/g, "mb")
+
+	str = str.replace(/(.)ː/g, "$1$1")
+	str = str.replace(/(.)ˉ/g, "$1$1")
+	str = str.replace(/(.)˜/g, "$1$1")
+	str = str.replace(/(.)˖/g, "$1$1")
+
+	str = str.replace(/gᵇ/g, "gb")
+	str = str.replace(/kᵖ/g, "kp")
+	str = str.replace(/ʃ/g, "sh")
+	str = str.replace(/ɲ/g, "ñ")
+	str = str.replace(/˜/g, "’")
+	str = str.replace(/ɛ/g, "e")
+	str = str.replace(/ɔ/g, "o")
+
+	return str.trim()
+	}
 
 
 
