@@ -34,9 +34,22 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Arabic text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
-{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"input=getHighlightedText(document.getElementById('output')).split('|'); if (typeof input[2]==='undefined') notes=input[0]; else notes=input[0]+' '+input[2]; add(getVocab(removeVowels(input[0]), input[1], notes, transcribetoIPA(input[0])));document.getElementById('output').focus();"},
+//{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"input=getHighlightedText(document.getElementById('output')).split('|'); if (typeof input[2]==='undefined') notes=input[0]; else notes=input[0]+' '+input[2]; add(getVocab(removeVowels(input[0]), input[1], notes, transcribetoIPA(input[0])));document.getElementById('output').focus();"},
 
-{"title":"⇨", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
+
+{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+input=getHighlightedText(_output).split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+ipa = transcribetoIPA(input[0]);
+ipa += ' (' + input[0] + ')';
+notes = input[2]? input[2] : ''; 
+
+add(getVocab(removeVowels(input[0]), input[1], notes, ipa));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
+
+//{"title":"⇨", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 
 //{"title":"⇨", "alt":"Convert a vocab sequence to example markup.", "code":"items=getHighlightedText(document.getElementById('output')).split('|');str=items[0]+'/'+transliterate(items[0])+'/'+items[2]+'/'+items[1];makeExample(defaults.language,template.direction,str)"},
 ]
@@ -55,6 +68,8 @@ var pulldown = [
 {"title":"Transcribe<br/>to ISO", "alt":"Convert Arabic text to an ISO Latin transcription.", "code":"doTranscription('toISO')"},
 
 {"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Arabic text.", "code":"doTranscription('revTransliterate')"},
+
+{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
