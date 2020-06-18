@@ -1,4 +1,12 @@
 @font-face {
+    font-family: 'Noto Sans Adlam New WF';
+    src:	local('Noto Sans Adlam New'),
+			url('../../shared/webfonts/notosansadlamnew-regular-webfont.woff2') format('woff2'),
+         	url('../../shared/webfonts/notosansadlamnew-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
     font-family: 'Noto Sans Adlam WF';
     src: url('../../shared/webfonts/notosansadlam-regular-webfont.woff2') format('woff');
     font-weight: normal;
