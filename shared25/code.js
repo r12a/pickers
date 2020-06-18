@@ -196,6 +196,26 @@ function vocab2Example (input) {
 	}
 
 
+function vocab2ExampleXX (input) {
+	// converts a sequence of vocab data, ie. str|ipa|latin|meaning|notes to example code
+	items=input.split('|')
+	console.log(items)
+	var native, meaning, ipa, latin, notes
+	native = items[0]
+	meaning = items[1]
+	ipa = items[2]
+	if (ipa.includes('(')) {
+		ipaSplit = ipa.split('(')
+		ipa = ipaSplit[0].trim()
+		latin = ipaSplit[1].replace(')','').trim()
+		}
+	else latin = ''
+	str=items[0]+'/'+transliterate(items[0])+'/'+items[2]+'/'+items[1]
+	console.log(str)
+	makeExample(defaults.language,template.direction,str)
+	}
+
+
 function makeExample (lang, dir, str) {
 	// str is populated when we're generating from a vocab string
 	var output = document.getElementById('output')
@@ -386,6 +406,35 @@ function getExample (str, lang, dir) {
 		}
 	return out.trim()+'</span>'
 	}
+
+
+
+
+function getExample (str, lang, dir) {
+	parts = str.split('/')
+	var out = '<span class="charExample" translate="no">'
+	out += '<span class="ex" lang="'+lang+'"'
+	if (dir==='rtl') { out += ' dir="rtl"' }
+	out += '>'+parts[0]+'</span> '
+	if (parts[1]) {
+		out += '<span class="trans">'+parts[1]+'</span> '
+		}
+	if (parts[2]) {
+		if (parts[2].startsWith(':')) out += '(<span class="trans">'+parts[2].substr(1)+'</span>) '
+		else if (parts[2].includes('(')) {
+			ipaSplit = parts[2].split('(')
+			out += ' (<span class="trans">'+ipaSplit[1].replace(')','').trim()+'</span>) '
+			out += '<span class="ipa">'+ipaSplit[0].trim()+'</span> '
+			}
+		else out += '<span class="ipa">'+parts[2]+'</span> '
+		}
+	if (parts[3]) {
+		out += '<span class="meaning">'+parts[3]+'</span> '
+		}
+	return out.trim()+'</span>'
+	}
+
+
 
 
 function toggleExtraControls () {
@@ -2775,6 +2824,7 @@ function getVocab (foreign, meaning, notes, transcription) {
 	
 	return out
 	}
+
 
 
 
