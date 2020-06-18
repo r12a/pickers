@@ -21,7 +21,7 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Adlam character app'
-	template.sample = "𞤑𞤵𞥅𞤤𞤢𞤤 𞤺𞤢𞤣𞤢𞤲𞤢𞤤 𞤋𞤲𞥆𞤢𞤥𞤢 𞤢𞥄𞤣𞤫𞥅𞤶𞤭 𞤬𞤮𞤬 𞤨𞤮𞤼𞤭، 𞤲ˈ𞤣𞤭𞤥𞤯𞤭𞤣𞤭 𞤫 𞤶𞤭𞤦𞤭𞤲𞤢𞤲𞥆𞤣𞤫 𞤼𞤮 𞤦𞤢𞤲𞥆𞤺𞤫 𞤸𞤢𞤳𞥆𞤫𞥅𞤶𞤭. 𞤉𞤩𞤫 𞤲ˈ𞤺𞤮𞥅𞤣𞤭 𞤥𞤭𞥅𞤶𞤮 𞤫 𞤸𞤢𞤳𞥆𞤭𞤤𞤢𞤲𞤼𞤢𞥄𞤺𞤢𞤤 𞤫𞤼𞤫 𞤫𞤩𞤫 𞤨𞤮𞤼𞤭 𞤸𞤵𞥅𞤬𞤮 𞤲ˈ𞤣𞤭𞤪𞤣𞤫 𞤫 𞤲ˈ𞤣𞤫𞤪 𞤩 𞤭𞤴𞤲𞤺𞤵𞤴𞤵𞤥𞥆𞤢𞥄𞤺𞤵."
+	template.sample = "𞤑𞤵𞥅𞤤𞤢𞤤 𞤺𞤢𞤣𞤢𞤲𞤢𞤤 𞤋𞤲𞥆𞤢𞤥𞤢 𞤢𞥄𞤣𞤫𞥅𞤶𞤭 𞤬𞤮𞤬 𞤨𞤮𞤼𞤭، 𞤲𞥋𞤣𞤭𞤥𞤯𞤭𞤣𞤭 𞤫 𞤶𞤭𞤦𞤭𞤲𞤢𞤲𞥆𞤣𞤫 𞤼𞤮 𞤦𞤢𞤲𞥆𞤺𞤫 𞤸𞤢𞤳𞥆𞤫𞥅𞤶𞤭. 𞤉𞤩𞤫 𞤲𞥋𞤺𞤮𞥅𞤣𞤭 𞤥𞤭𞥅𞤶𞤮 𞤫 𞤸𞤢𞤳𞥆𞤭𞤤𞤢𞤲𞤼𞤢𞥄𞤺𞤢𞤤 𞤫𞤼𞤫 𞤫𞤩𞤫 𞤨𞤮𞤼𞤭 𞤸𞤵𞥅𞤬𞤮 𞤲𞥋𞤣𞤭𞤪𞤣𞤫 𞤫 𞤲𞥋𞤣𞤫𞤪 𞤩 𞤭𞤴𞤲𞤺𞤵𞤴𞤵𞤥𞥆𞤢𞥄𞤺𞤵."
 	template.sampleSource = 'UDHR https://unicode.org/udhr/d/udhr_fuf_adlm.html'
     template.blocklocation= '/scripts/adlam/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
@@ -35,13 +35,37 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert ajami text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 //{"title":"Transl<br/>++", "alt":"Convert ajami text to a latin transliteration with vowels and other changes.", "code":"doTranscription('translitPlus')"},
+
+
+{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+input=getHighlightedText(_output).split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+ipa = transcribetoIPA(input[0]);
+latin = transcribetoLatin(input[0]);
+
+if (ipa !== latin) ipa += ' (' + latin + ')';
+notes = input[2]? input[2] : ''; 
+
+add(getVocab(input[0], input[1], notes, ipa));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 ]
 
+//if (ipa !== latin) notes += '|' + latin;
 
 
 var pulldown = [
 {"title":"Upper-<br>case", "alt":"Convert selection to uppercase.", "code":"add(getHighlightedText(document.getElementById('output')).toUpperCase());document.getElementById('output').focus();"},
 {"title":"Lower-<br>case", "alt":"Convert selection to lowercase.", "code":"add(getHighlightedText(document.getElementById('output')).toLowerCase());document.getElementById('output').focus();"},
+
+{"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Pular.", "code":"transcribe(getHighlightedText(document.getElementById('output')), 'revTransliterate')"},
+
+{"title":"Transcribe<br>to IPA", "alt":"Convert Pular text to an approximate IPA transcription.", "code":"doTranscription('toIPA');"},
+
+{"title":"Transcribe<br>to Latin", "alt":"Convert Pular text to the Latin orthography.", "code":"doTranscription('toLatin');"},
+
+{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
