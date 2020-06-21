@@ -37,7 +37,7 @@
 </aside>     
 
 <p id="status">Updated 
-<!-- #BeginDate format:Sw1 -->8 June, 2020<!-- #EndDate -->
+<!-- #BeginDate format:Sw1 -->18 June, 2020<!-- #EndDate -->
   <span id="versionTop">• recent changes <a target="_blank" href="https://github.com/r12a/pickers/commits/gh-pages" title="Show commits for the whole pickers repository.">pickers</a>/<a target="_blank" href="https://github.com/r12a/pickers/commits/gh-pages/foldername" title="Show commits for pickers/foldername.">foldername</a> • leave a <a target="_blank" href="https://github.com/r12a/pickers/issues/new?title=[template]%20%20BRIEF_TITLE_GOES_HERE&amp;body=%5Bsource%5D%20https%3A%2F%2Fr12a.github.io%2Fpickers%2Ffoldername%0A%0A" title="Leave a comment.">comment</a></span>
 </p>
 
@@ -75,24 +75,23 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 <p><b class="leadin">Make vocab.</b> This helps speed up the creation of entries for the <a href="../../../app-vocab/">vocabulary app</a>. You can create a vocab item with up to 3 parts, delimited by |, in the following order: [1] native text, [2] meaning, [3] notes (optional). Much of the time, only the first 2 items are needed.</p>
 <p>The text will be replaced with the following: </p>
-<p><code>native_text|meaning|IPA_transcription(|notes)</code></p>
-<p>You may need to minimally tweak the auto-generated text.</p>
+<p><code>native_text|meaning|IPA_transcription[|notes]</code></p>
+<p><em>You may need to minimally tweak the auto-generated text.</em></p>
 <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
 <p><code><span lang="ike">ᐅᒥᐊᖅ</span>|boat</code></p>
 <p>will produce:</p>
 <p><code><span lang="ike">ᐅᒥᐊᖅ</span>|boat|umiaq</code></p>
 </blockquote>
-<p>The app will automatically generate a Latin transcription in the notes location if the Latin differs from the IPA.</p>
+<p>The app will automatically generate a Latin transcription in parentheses if the Latin orthography differs from the IPA.</p>
 <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
 <p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat</code></p>
 <p>will produce:</p>
-<p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat|umiaŋa|umianga </code></p>
-</blockquote>
-<p>Where needed, the app will add a transcription to existing notes. </p>
+<p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat|umiaŋa (umianga)</code></p></blockquote>
+<p>Here's an example where notes are provided.</p>
 <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
-<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|(South Qikiqtaaluk)</code></p>
+<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|South Qikiqtaaluk</code></p>
 <p>will produce:</p>
-<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|nakuʁmiːk|nakurmiik (South Qikiqtaaluk)</code></p>
+<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|nakuʁmiːk (nakurmiik)|South Qikiqtaaluk</code></p>
 </blockquote>
 <p>The app will also, simultaneously, produce markup for examples in the secondary text area (see below).</p>
 <p>If you have more than one line of text in the text area, you must highlight the row you want to convert.</p>

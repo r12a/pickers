@@ -32,15 +32,30 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Kashmiri text to a latin transliteration.", "code":"doTranscription('transliterate')"},
 {"title":"Transl<br/>++", "alt":"Convert Kashmiri text to a latin transliteration with vowels and other changes.", "code":"doTranscription('translitPlus')"},
-//{"title":"Trans-<br/>scribe", "alt":"Convert hindi text to a latin transcription.", "code":"doTranscription('transcription')"},
-//{"title":"Hindi<br/>to ISO", "alt":"Convert hindi text to a ISO 15919 transcription.", "code":"doTranscription('toISO15919')"},
-//{"title":"ISO to<br/>Hindi", "alt":"Convert an ISO 15919 transcription to hindi text.", "code":"doTranscription('toDeva')"}
+
+
+{"title":"Make<br/>vocab", "alt":"Expand text to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+input=getHighlightedText(_output).split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+ipa = transcribetoIPA(input[0]);
+notes = input[2]? input[2] : ''; 
+
+add(getVocab(removeVowels(input[0]), input[1], notes, ipa));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 ]
 
 
 
 var pulldown = [
+//{"title":"Trans-<br/>scribe", "alt":"Convert hindi text to a latin transcription.", "code":"doTranscription('transcription')"},
+//{"title":"Hindi<br/>to ISO", "alt":"Convert hindi text to a ISO 15919 transcription.", "code":"doTranscription('toISO15919')"},
+//{"title":"ISO to<br/>Hindi", "alt":"Convert an ISO 15919 transcription to hindi text.", "code":"doTranscription('toDeva')"}
+
 {"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
+
+{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
