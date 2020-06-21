@@ -32,6 +32,21 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br>literate", "alt":"Convert Tamil text to a Latin transliteration.", "code":"doTranscription('transliterate')", "warning":"Produce a codepoint-by-codepoint, reversible Latin transliteration."},
+
+//{"title":"Tamil<br>to IPA", "alt":"Convert Tamil text to a rough IPA Latin transcription.", "code":"doTranscription('toIPA')", "warning":"This may need to be tweaked."},
+
+{"title":"Make<br/>vocab", "alt":"Expand text to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+input=getHighlightedText(_output).split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+trans = transcribeToISO(input[0]);
+ipa = input[2]? input[2] : ''; 
+notes = input[3]? input[3] : ''; 
+if (ipa) trans = ipa + ' (' + trans + ')'
+
+add(getVocab(input[0], input[1], notes, trans));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 ]
 
 
@@ -48,6 +63,8 @@ var pulldown = [
 //{"title":"Tamil<br>to IPA", "alt":"Convert Tamil text to an phonetic transcription.", "code":"doTranscription('toIPA')"},
 
 {"title":"ISO to<br/>Tamil", "alt":"Convert ISO latin text to Tamil transcription.", "code":"doTranscription('fromISO')"},
+
+{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
