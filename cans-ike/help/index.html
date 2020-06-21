@@ -33,7 +33,7 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->08-Jun-2020<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=vai" title="Show all blog posts tagged with 'vai'">vai</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->18-Jun-2020<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=vai" title="Show all blog posts tagged with 'vai'">vai</a></p>
 
 <p>This Unicode character app allows you to produce or analyse runs of Inuktitut text. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[vai%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/vai">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
@@ -83,17 +83,16 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <p>will produce:</p>
 <p><code><span lang="ike">ᐅᒥᐊᖅ</span>|boat|umiaq</code></p>
 </blockquote>
-<p>The app will automatically generate a Latin transcription in the notes location if the Latin differs from the IPA.</p>
+<p>The app will automatically generate a Latin transcription in parentheses if the Latin orthography differs from the IPA.</p>
 <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
 <p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat</code></p>
 <p>will produce:</p>
-<p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat|umiaŋa|umianga </code></p>
-</blockquote>
-<p>Where needed, the app will add a transcription to existing notes. </p>
+<p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat|umiaŋa (umianga)</code></p></blockquote>
+<p>Here's an example where notes are provided.</p>
 <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
-<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|(South Qikiqtaaluk)</code></p>
+<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|South Qikiqtaaluk</code></p>
 <p>will produce:</p>
-<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|nakuʁmiːk|nakurmiik (South Qikiqtaaluk)</code></p>
+<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|nakuʁmiːk (nakurmiik)|South Qikiqtaaluk</code></p>
 </blockquote>
 <p>The app will also, simultaneously, produce markup for examples in the secondary text area (see below).</p>
 <p>If you have more than one line of text in the text area, you must highlight the row you want to convert.</p>
