@@ -59,11 +59,11 @@ var pulldown = [
 {"title":"Upper-<br>case", "alt":"Convert selection to uppercase.", "code":"add(getHighlightedText(document.getElementById('output')).toUpperCase());document.getElementById('output').focus();"},
 {"title":"Lower-<br>case", "alt":"Convert selection to lowercase.", "code":"add(getHighlightedText(document.getElementById('output')).toLowerCase());document.getElementById('output').focus();"},
 
-{"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Pular.", "code":"transcribe(getHighlightedText(document.getElementById('output')), 'revTransliterate')"},
-
 {"title":"Transcribe<br>to IPA", "alt":"Convert Pular text to an approximate IPA transcription.", "code":"doTranscription('toIPA');"},
 
 {"title":"Transcribe<br>to Latin", "alt":"Convert Pular text to the Latin orthography.", "code":"doTranscription('toLatin');"},
+
+{"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Pular.", "code":"transcribe(getHighlightedText(document.getElementById('output')), 'revTransliterate')"},
 
 {"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
