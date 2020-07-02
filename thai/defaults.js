@@ -33,9 +33,21 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Thai text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
-{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"input=getHighlightedText(document.getElementById('output')).split('|'); add(getVocab(condense(input[0]), input[1],input[2], toLatin(input[0])));document.getElementById('output').focus();"},
+//{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"input=getHighlightedText(document.getElementById('output')).split('|'); add(getVocab(condense(input[0]), input[1],input[2], toLatin(input[0])));document.getElementById('output').focus();"},
 
-{"title":"⇨", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
+
+{"title":"Make<br/>vocab", "alt":"Expand text to create a line for a vocab file.", 
+"warning":"Remember to separate the syllables first.", 
+"code":`_output=document.getElementById('output'); 
+input=getHighlightedText(_output).split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+ipa = toLatin(input[0],'ipa');
+notes = input[2]? input[2] : ''; 
+
+add(getVocab(condense(input[0]), input[1], notes, ipa));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 ]
 
 
@@ -53,6 +65,8 @@ var pulldown = [
 {"title":"Transcribe<br>to IPA", "alt":"Convert Thai text to an approximate IPA transcription.", "code":"doTranscription('toIPA')", "warning":"Separate syllables with spaces before use."},
 
 {"title":"Remove<br>sp/hyph", "alt":"Remove spaces and hyphens.", "code":"add(condense(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
+
+{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
