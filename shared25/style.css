@@ -83,6 +83,7 @@ table td { border: 0; }
 	width: 100%; 
 	border-radius: 5px;
 	padding: 2px 5px;
+	padding-bottom: 1em;
 	}
 
 #transcriptionWrapper {
