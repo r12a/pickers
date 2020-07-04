@@ -186,13 +186,29 @@ function makeSharingLink () {
 	output.focus()
 	}
 
-function vocab2Example (input) {
+function vocab2ExampleOLD (input) {
 	// converts a sequence of vocab data, ie. str|ipa|meaning|... to example code
 	items=input.split('|')
 	console.log(items)
 	str=items[0]+'/'+transliterate(items[0])+'/'+items[2]+'/'+items[1]
 	console.log(str)
 	makeExample(defaults.language,template.direction,str)
+	}
+
+
+function vocab2Example (input) {
+	// converts a sequence of vocab data, ie. str|ipa|meaning|... to example code that can be automatically expanded
+	items=input.split('|')
+	console.log(items)
+	var str = '<span class="eg" lang="'+defaults.language+'"'
+	if (! typeof defaults.direction === 'undefined') str += ' dir="'+defaults.direction+'"'
+	str += '>'+items[0]+'</span>'
+	console.log(str)
+	
+	document.getElementById('transcription').textContent = str
+	document.getElementById('transcription').contentEditable = true
+	document.getElementById('transcriptionWrapper').style.display = 'block'
+	document.getElementById('output').focus
 	}
 
 
