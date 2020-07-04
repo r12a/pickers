@@ -46,6 +46,7 @@ var plist = [
     { tag:'lana', name:'Northern&nbsp;Thai', url:'lana-nod/' },
     { tag:'latn', name:'Old&nbsp;English', url:'oldenglish/' },
     { tag:'latn', name:'Old&nbsp;Norse', url:'oldnorse/' },
+    { tag:'osge', name:'Osage', url:'osge/' },
     { tag:'latn', name:'Pan-African Latin', url:'latn-afr/' },
     { tag:'arab', name:'Pan-African Ajami', url:'arab-afr/' },
     { tag:'arab', name:'Persian', url:'persian/' },
@@ -128,7 +129,7 @@ var plistByRegion = {
 			    ],
 	'South&nbsp;Asia':[
 			  ['Bengali', 'bengali/'],
-			  ['All Devanagari', 'devanagari/'],
+				['All Devanagari', 'devanagari/'],
 			  ['Gujarati', 'gujarati/'],
 			  ['Gurmukhi', 'gurmukhi/'],
 			  ['Hindi', 'deva-hi/'],
@@ -165,5 +166,6 @@ var plistByRegion = {
 				['Cherokee', 'cherokee/'],
 			    ['Tłı̨chǫ&nbsp;(Dogrib)', 'tlicho/'],
 				['Eastern Canadian Inuktitut', 'cans-ike/'],
+				['Osage', 'osge/'],
 			    ]
 	}
