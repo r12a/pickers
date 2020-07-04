@@ -37,7 +37,7 @@
 </aside>     
 
 <p id="status">Updated 
-<!-- #BeginDate format:Sw1 -->18 June, 2020<!-- #EndDate -->
+<!-- #BeginDate format:Sw1 -->4 July, 2020<!-- #EndDate -->
   <span id="versionTop">• recent changes <a target="_blank" href="https://github.com/r12a/pickers/commits/gh-pages" title="Show commits for the whole pickers repository.">pickers</a>/<a target="_blank" href="https://github.com/r12a/pickers/commits/gh-pages/foldername" title="Show commits for pickers/foldername.">foldername</a> • leave a <a target="_blank" href="https://github.com/r12a/pickers/issues/new?title=[template]%20%20BRIEF_TITLE_GOES_HERE&amp;body=%5Bsource%5D%20https%3A%2F%2Fr12a.github.io%2Fpickers%2Ffoldername%0A%0A" title="Leave a comment.">comment</a></span>
 </p>
 
@@ -45,21 +45,26 @@
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[template%20app]%20%20ADD%20TITLE%20HERE&amp;body=%5Bsource%5D%20https%3A%2F%2Fr12a.github.io%2Fpickers%2Ffoldername%0A%0A">raise an issue</a>. For release notes see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/template">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
 
 
+<section id="about">
+<h2 href="#about">About the selection area</h2>
+<p>Includes characters in the Unicode <a href="/uniview/?block=adlam">Adlam</a> block that are used for writing text in the  Adlam script. The characters in the chart are arranged along phonetic lines. When you mouse over the shapes, the character app displays the joining forms just above.</p>
+<p>Green characters are in the extended repertoire used for foriegn sounds.</p>
+<p>Click on <samp>FORMAT CHARS</samp> to access and input formatting characters to control direction, etc., including the Arabic tatweel.</p>
+<p>For the latest glyph shapes choose the Noto Sans Adlam New font (can be set for the text area and for the selection panel). The font named simply Noto Sans Adlam uses older glyph shapes.</p>
+<div id="aboutBP">
+</div>
+<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
+</script>
+</section>
+
+
+
 <section id="basics">
 </section>
 <script>
+var direction = 'rtl'
 document.getElementById('basics').innerHTML = addBasicUse(direction)
 </script>
-
-
-<section id="about">
-<h2 href="#about">About the selection area</h2>
-      <p>Includes characters in the Unicode <a href="/uniview/?block=template" target="_blank">Template</a> block used for Template, plus additional symbols and punctuation,</p>
-<div id="aboutBP"></div>
-<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
-</script>
-
-</section>
 
 
 
@@ -113,6 +118,22 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 <div id="controlsAbove2"></div>
 <script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+
+
+
+<p><b class="leadin">Upper-/Lower-case.</b> Converts text to upper- or lowercase.</p>
+
+
+
+<p><b class="leadin">Transcribe to IPA.</b> Converts Osage text to an IPA transcription. This is only a rough, phonemic transcription, and the result should be checked before use.</p>
+
+
+
+<!--p><b class="leadin">Transcribe to Latin.</b> Converts Adlam text to the Latin orthography for Pular. This will generally work, but may not capture some edge cases. The result should therefore always be checked.</p-->
+
+
+
+<p><b class="leadin">Vocab to Example.</b> If you have a line of vocab data, like those shown above, this will add example markup around the term.</p>
 
 </section>
 
