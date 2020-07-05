@@ -32,6 +32,17 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Tai Viet text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+
+//{"title":"Make<br/>vocab", "alt":"Expand text to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+//input=getHighlightedText(_output).split('|'); 
+//if (! hasHighlight(_output)) _output.value=''; 
+
+//ipa = transcribetoIPA(input[0]);
+//notes = input[2]? input[2] : ''; 
+
+//add(getVocab(input[0], input[1], notes, ipa));
+//vocab2Example(getHighlightedText(document.getElementById('output')));
+//_output.focus();`},
 ]
 
 
@@ -39,6 +50,8 @@ var controls = [
 
 var pulldown = [
 {"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
+
+{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
