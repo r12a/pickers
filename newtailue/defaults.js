@@ -32,6 +32,17 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Lü text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+
+{"title":"Make<br/>vocab", "alt":"Expand text to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+input=getHighlightedText(_output).split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+ipa = transcription(input[0]);
+notes = input[2]? input[2] : ''; 
+
+add(getVocab(input[0], input[1], notes, ipa));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 ]
 
 
@@ -43,6 +54,8 @@ var pulldown = [
 {"title":"Trans-<br/>scribe", "alt":"Convert Lü text to a Latin transcription.", "code":"doTranscription('transcription')"},
 
 {"title":"Add<br/>spaces", "alt":"Add spaces between syllables.", "code":"doTranscription('addSpaces')"},
+
+{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
