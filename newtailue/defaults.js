@@ -37,7 +37,7 @@ var controls = [
 input=getHighlightedText(_output).split('|'); 
 if (! hasHighlight(_output)) _output.value=''; 
 
-ipa = transcription(input[0]);
+ipa = '('+transcription(input[0])+')';
 notes = input[2]? input[2] : ''; 
 
 add(getVocab(input[0], input[1], notes, ipa));
