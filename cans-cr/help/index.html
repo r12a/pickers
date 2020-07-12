@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Help for Vai character app 25</title>
+<link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../../shared25/style.css" />
+<link rel="stylesheet" type="text/css" href="../localstyle.css" />
+<script src="/shared/code/boilerplate.js"></script>
+<script src="/shared/code/toc_2016.js"></script>
+<script src="../../shared25/helptemplate.js"></script>
+<script>var direction = 'ltr'</script>
+</head>
+
+<body class="app notes">
+<header>
+  <div id="header-boilerplate"></div>
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Inuktitut character app','');</script> 
+</header>
+
+
+<h1>Eastern Canadian Inuktitut character app notes/help</h1>
+
+
+<aside class="sidebar">
+  <h2 class="notoc flush"><a id="tochead">Contents</a></h2>
+  <div id="toc"><!-- placeholder --></div>
+  <div class="noprint">
+        <h2 class="notoc"><a id="links" tabindex="5">Related links</a></h2>
+        <p><a href="../index.html">Inuktitut character app</a></p>
+        <p><a href="/scripts/links?script=cans">Inuktitut script links</a></p>
+        <p><a href="/pickers/">List of character apps </a></p>
+  </div>
+</aside>     
+
+<p id="status">Updated  <!-- #BeginDate format:En2 -->18-Jun-2020<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=vai" title="Show all blog posts tagged with 'vai'">vai</a></p>
+
+<p>This Unicode character app allows you to produce or analyse runs of Inuktitut text. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
+<p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[vai%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/vai">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
+
+
+
+
+<section id="about">
+<h2 href="#about">About the selection area</h2>
+<p>Includes  characters in the Unicode <a href="/uniview/?block=unified_canadian_aboriginal_syllabics" target="_blank">UCAS</a> block that are used for Eastern Canadian Inuktitut.</p>
+<p>There are two ways of accessing the characters: (a) through a 2-click selector based on shapes, and (b) from a table. To make the 2-click selector visible, click on <samp>S</samp> in the vertical grey panel to the left.</p>
+<p>A couple of infrequently used characters are squeezed into gaps in the matrix.</p>
+<div id="aboutBP">
+</div>
+<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
+</script>
+</section>
+
+
+
+
+<section id="basics">
+</section>
+<script>
+document.getElementById('basics').innerHTML = addBasicUse(direction)
+</script>
+
+
+
+
+<section id="top_controls">
+  <h2 href="#top_controls">Controls above the text area</h2>
+<div id="controlsAbove1"></div>
+<script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
+
+      <p><b class="leadin">Transliterate.</b> Converts the contents of the text area to a Latin transliteration that provides a one-to-one correspondence between  Inuktitut and Latin symbols.</p>
+<p>The transliteration scheme  was developed for this character app, and, where possible, uses  symbols that represent sounds typically associated with their Inuktitut equivalents. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription but the process is reversible (unlike most  transcriptions).</p>
+<p>Transliterations produced this way are particularly useful for understanding the composition of text in  scripts.</p>
+
+
+<p><b class="leadin">Make vocab.</b> This helps speed up the creation of entries for the <a href="../../../app-vocab/">vocabulary app</a>. You can create a vocab item with up to 3 parts, delimited by |, in the following order: [1] native text, [2] meaning, [3] notes (optional). Much of the time, only the first 2 items are needed.</p>
+<p>The text will be replaced with the following: </p>
+<p><code>native_text|meaning|IPA_transcription(|notes)</code></p>
+<p>You may need to minimally tweak the auto-generated text.</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="ike">ᐅᒥᐊᖅ</span>|boat</code></p>
+<p>will produce:</p>
+<p><code><span lang="ike">ᐅᒥᐊᖅ</span>|boat|umiaq</code></p>
+</blockquote>
+<p>The app will automatically generate a Latin transcription in parentheses if the Latin orthography differs from the IPA.</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat</code></p>
+<p>will produce:</p>
+<p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat|umiaŋa (umianga)</code></p></blockquote>
+<p>Here's an example where notes are provided.</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|South Qikiqtaaluk</code></p>
+<p>will produce:</p>
+<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|nakuʁmiːk (nakurmiik)|South Qikiqtaaluk</code></p>
+</blockquote>
+<p>The app will also, simultaneously, produce markup for examples in the secondary text area (see below).</p>
+<p>If you have more than one line of text in the text area, you must highlight the row you want to convert.</p>
+
+
+<div id="controlsAbove2"></div>
+<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+
+
+<p><b class="leadin">Transcribe to IPA.</b> <strong></strong>Converts   Inuktitut text to a rough IPA transcription. You may occasionally need to tweak the result. For the ᓯᓱᓴ series this produces <span class="ipa">s</span>, rather than <span class="ipa">h</span>.</p>
+<p><b class="leadin">Transcribe to Latin.</b> <strong></strong>Converts   Inuktitut text to the standard Latin transcription. You may occasionally need to tweak the result. Like the IPA transcription, for the ᓯᓱᓴ series this produces <span class="ipa">s</span>, rather than <span class="ipa">h</span>.</p>
+
+</section>
+
+<section id="secondaryText">
+</section>
+<script>document.getElementById('secondaryText').innerHTML = addSecondaryText()</script>
+
+
+
+<section id="input_aids">
+<h2 href="#input_aids">Input aids</h2>
+
+<div id="inputAids1"></div>
+<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, shape, typeAssist, latin',
+'<p><strong>Note:</strong> <samp>Shape lookup</samp> only works with the table view.</p>'
+)</script>
+
+
+    <!--p><b class="leadin">Huffman transcription.</b> Displays a panel that  allows you to generate Vai text from a transcription as used by Huffman in <cite>Cambodian System of Writing</cite>. Where there are multiple possible choices, these choices are presented in a small pop-up box; click on the choice you want in order to add it to the text area.</p>
+	<p><img src="../../shared25/images/help/translit_option.png" alt=" "/></p-->
+    
+
+<div id="inputAids2"></div>
+<script>document.getElementById('inputAids2').innerHTML = addInputAids('close')</script>
+
+</section>
+
+
+
+<section id="yellow_controls">
+</section>
+<script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
+
+
+
+<section id="more_controls">
+</section>
+<script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+</body>
+<script>
+createtoc(3);
+</script>
+</html>
