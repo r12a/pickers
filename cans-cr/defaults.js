@@ -10,10 +10,10 @@ var factoryDefaults = {}
 	factoryDefaults.ccbase = "\u25CC";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
-	factoryDefaults.hints = "" // type of hint to show alongside characters in the grids
+	factoryDefaults.hints = "none" // type of hint to show alongside characters in the grids
 
 
-var thisPicker = 'cr'
+var thisPicker = 'crPicker'
 
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
@@ -21,8 +21,8 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Cree character app'
-	template.sample = "ᐃᓚᖓ 1. ᐃᓅᔪᓕᒫᑦ ᐊᓂᖅᑎᕆᔪᓕᒫᑦ ᐃᓅᓚᐅᕐᒪᑕ ᐃᓱᒪᕐᓱᕐᖢᑎᒃ ᐊᒻᒪᓗ ᐊᔾᔨᐅᖃᑎᒌᒃᖢᑎᒃ ᓂᕐᓱᐊᖑᓂᒃᑯᑦ ᐊᒻᒪᓗ ᐱᔪᓐᓇᐃᑎᑎᒍᑦ. ᐃᓱᖃᖅᑐᖁᑎᖃᕐᑎᑕᐅᕙᓕᕐᐳᑦ ᐱᔾᔪᑎᖃᕐᓂᒃᑯᑦ ᖃᑕᙳᑎᒌᑦᑎᐊᕆᐊᖃᕐᓂᒃᑯᓪᓗ."
-	template.blocklocation= '/scripts/cans-ike/block'  // blocklocation to use for examples
+	template.sample = "ᐁᐏᐊᒋᒧᐢᑖᑕᑯᐠ ᐁᑭ ᐃᑖᐸᐦᑕᒫᐣ ᐁᐏᑕᒪᑯᐏᔭᕁ ᐁᑐᑫ ᑕᐣᓯ ᓂᑲᐣ ᐁᐏᐊᑕᔨᐢᐸᔨᐠ ᐊᓄᐦᐨ ᑭᒥᔭᐢᑲᒧᐸᔨᑭ ᐅᒪ ᑲᒥᔪᐢᑲᒥ ᐏᑭᑎᒪᑭᓇᑯᐏᓯᐤ ᐊᔨᓯᔨᓂᐤ ᐊᐦᐳ ᑲᑯᓯᐟ ᑭᑕᒥᔺᔭᐤ᙮"
+	template.blocklocation= '/scripts/cans-cr/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cans-cr'
 	template.scriptcode = 'Cans'
@@ -52,11 +52,11 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Transcribe<br>to IPA", "alt":"Convert Inuktitut text to an approximate IPA transcription.", "code":"doTranscription('toIPA');"},
+{"title":"Transcribe<br>to IPA", "alt":"Convert Cree text to an approximate IPA transcription.", "code":"doTranscription('toIPA');"},
 
-{"title":"Transcribe<br>to Latin", "alt":"Convert Inuktitut text to the Latin orthography.", "code":"doTranscription('toLatin');"},
+{"title":"Transcribe<br>to Latin", "alt":"Convert Cree text to the Latin orthography.", "code":"doTranscription('toLatin');"},
 
-{"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Inuktitut.", "code":"transcribe(getHighlightedText(document.getElementById('output')), 'revTransliterate')"},
+{"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Cree.", "code":"transcribe(getHighlightedText(document.getElementById('output')), 'revTransliterate')"},
 
 {"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
