@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Plains Cree character app 25</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="defaults.js">  </script>
+<script src="../shared25/setup.js">  </script>
+<script src="../shared25/code.js">  </script>
+<script src="../shared25/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared25/pagetemplate.js">  </script>
+<script src="/scripts/linkdata/linkdb.js"></script>
+
+<script src="../../shared/scriptdb/cans-crk.js">  </script>
+<script src="localtranscription.js">  </script>
+<script src="../../shared/fontlists/cans.js"> </script>
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+<div id="alphabet" class="default">
+
+
+
+<div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<span onclick="findShape('1401,140D,1403,1404,140F,1411,1405,1406,1413,1415,140A,140B,1418,141A,1426,1424','ᐁ,ᐍ,ᐃ,ᐄ,ᐏ,ᐑ,ᐅ,ᐆ,ᐓ,ᐕ,ᐊ,ᐋ,ᐘ,ᐚ,ᐦ,ᐤ',true)">ᐁ</span>
+<span onclick="findShape('142F,143B,1431,1432,143D,143F,1433,1434,1441,1443,1438,1439,1445,1447,144A','ᐯ,ᐻ,ᐱ,ᐲ,ᐽ,ᐿ,ᐳ,ᐴ,ᑁ,ᑃ,ᐸ,ᐹ,ᑅ,ᑇ,ᑊ',true)">ᐯ</span>
+<span onclick="findShape('144C,1458,144E,144F,145A,145C,1450,1451,145E,1460,1455,1456,1462,1464,141F','ᑌ,ᑘ,ᑎ,ᑏ,ᑚ,ᑜ,ᑐ,ᑑ,ᑞ,ᑠ,ᑕ,ᑖ,ᑢ,ᑤ,ᐟ',true)">ᑌ</span>
+<span onclick="findShape('146B,1475,146D,146E,1477,1479,146F,1470,147B,147D,1472,1473,147F,1481,1420','ᑫ,ᑵ,ᑭ,ᑮ,ᑷ,ᑹ,ᑯ,ᑰ,ᑻ,ᑽ,ᑲ,ᑳ,ᑿ,ᒁ,ᐠ',true)">ᑫ</span>
+<span onclick="findShape('1489,1493,148B,148C,1495,1497,148D,148E,1499,149B,1490,1491,149D,149F,1428','ᒉ,ᒓ,ᒋ,ᒌ,ᒕ,ᒗ,ᒍ,ᒎ,ᒙ,ᒛ,ᒐ,ᒑ,ᒝ,ᒟ,ᐨ',true)">ᒉ</span>
+<span onclick="findShape('14ED,14F7,14EF,14F0,14F9,14FB,14F1,14F2,14FD,14FF,14F4,14F5,1501,1503,1422','ᓭ,ᓷ,ᓯ,ᓰ,ᓹ,ᓻ,ᓱ,ᓲ,ᓽ,ᓿ,ᓴ,ᓵ,ᔁ,ᔃ,ᐢ',true)">ᓭ</span>
+<span onclick="findShape('14A3,14AD,14A5,14A6,14AF,14B1,14A7,14A8,14B3,14B5,14AA,14AB,14B7,14B9,14BC','ᒣ,ᒭ,ᒥ,ᒦ,ᒯ,ᒱ,ᒧ,ᒨ,ᒳ,ᒵ,ᒪ,ᒫ,ᒷ,ᒹ,ᒼ',true)">ᒣ</span>
+<span onclick="findShape('14C0,14CA,14C2,14C3,14C4,14C5,14C7,14C8,14CC,14CE,1423','ᓀ,ᓊ,ᓂ,ᓃ,ᓄ,ᓅ,ᓇ,ᓈ,ᓌ,ᓎ,ᐣ',true)">ᓀ</span>
+<span onclick="findShape('1526,1530,1528,1529,1532,1534,152A,152B,1536,1538,152D,152E,153A,153C,1540,141D','ᔦ,ᔰ,ᔨ,ᔩ,ᔲ,ᔴ,ᔪ,ᔫ,ᔶ,ᔸ,ᔭ,ᔮ,ᔺ,ᔼ,ᕀ,ᐝ',true)">ᔦ</span>
+<span onclick="findShape('1552,14EC','ᕒ,ᓬ',true)">ᕒ</span>
+<span onclick="findShape('1426,144A,141F,1420,1428','ᐦ,ᑊ,ᐟ,ᐠ,ᐨ',true)">ᐦ</span>
+<span onclick="findShape('1422,14BC,1423','ᐢ,ᒼ,ᐣ',true)">ᐢ</span>
+<span onclick="findShape('1424,141D','ᐤ,ᐝ',true)">ᐤ</span>
+<span onclick="findShape('157D,166E,1540','ᕽ,᙮,ᕀ',true)">ᕽ</span>
+</div>
+<div id="extrashapes"></div>
+</div>
+
+
+
+
+<div class="spaceline">
+<!--span class="unshifted" dir="auto" onclick="toggleShift(this, 'kbdGrid', 'twoStep')">TABLE VIEW</span-->
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Narrow no-break space" style="padding: 5px;" dir="auto" onClick="add('\u202F');">NNBSP</span>
+<span class="touch" title="Double EM space" style="padding: 5px;" dir="auto" onClick="add('\u2003\u2003');">EM</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+<div id="kbdGrid" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
+
+
+<div id="part1">      
+<table>
+<!--thead>
+<tr>
+<th>&nbsp;</th>
+<th><span class="hint">i</span></th>
+<th><span class="hint">ī</span></th>
+<th><span class="hint">e</span></th>
+<th><span class="hint">o</span></th>
+<th><span class="hint">ō</span></th>
+<th><span class="hint">a</span></th>
+<th><span class="hint">ā</span></th>
+<th><span class="hint">-</span></th>
+</tr>
+</thead-->
+<tbody>
+<tr>
+<!--th>&nbsp;</th-->
+<td><span class="g"><span class="hint"></span><span class="c">ᐁ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐃ</span></span><span class="g"><span class="hint"></span><span class="c">ᐄ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐅ</span></span><span class="g"><span class="hint"></span><span class="c">ᐆ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐊ</span></span><span class="g"><span class="hint"></span><span class="c">ᐋ</span></span></td>
+<td><span class="g"><span class="hint">h</span><span class="c">ᐦ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐍ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐏ</span></span><span class="g"><span class="hint"></span><span class="c">ᐑ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐓ</span></span><span class="g"><span class="hint"></span><span class="c">ᐕ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐘ</span></span><span class="g"><span class="hint"></span><span class="c">ᐚ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐤ</span></span></td>
+</tr>
+<tr>
+<!--th><span class="hint">p</span></th-->
+<td><span class="g"><span class="hint"></span><span class="c">ᐯ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐱ</span></span><span class="g"><span class="hint"></span><span class="c">ᐲ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐳ</span></span><span class="g"><span class="hint"></span><span class="c">ᐴ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐸ</span></span><span class="g"><span class="hint"></span><span class="c">ᐹ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑊ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐻ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐽ</span></span><span class="g"><span class="hint"></span><span class="c">ᐿ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑁ</span></span><span class="g"><span class="hint"></span><span class="c">ᑃ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑅ</span></span><span class="g"><span class="hint"></span><span class="c">ᑇ</span></span></td>
+</tr>
+<tr>
+<!--th><span class="hint">t</span></th-->
+<td><span class="g"><span class="hint"></span><span class="c">ᑌ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑎ</span></span><span class="g"><span class="hint"></span><span class="c">ᑏ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑐ</span></span><span class="g"><span class="hint"></span><span class="c">ᑑ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑕ</span></span><span class="g"><span class="hint"></span><span class="c">ᑖ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐟ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑘ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑚ</span></span><span class="g"><span class="hint"></span><span class="c">ᑜ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑞ</span></span><span class="g"><span class="hint"></span><span class="c">ᑠ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑢ</span></span><span class="g"><span class="hint"></span><span class="c">ᑤ</span></span></td>
+</tr>
+<tr>
+<!--th><span class="hint">k</span></th-->
+<td><span class="g"><span class="hint"></span><span class="c">ᑫ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑭ</span></span><span class="g"><span class="hint"></span><span class="c">ᑮ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑯ</span></span><span class="g"><span class="hint"></span><span class="c">ᑰ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑲ</span></span><span class="g"><span class="hint"></span><span class="c">ᑳ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐠ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑵ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑷ</span></span><span class="g"><span class="hint"></span><span class="c">ᑹ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑻ</span></span><span class="g"><span class="hint"></span><span class="c">ᑽ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᑿ</span></span><span class="g"><span class="hint"></span><span class="c">ᒁ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕽ</span></span></td>
+</tr>
+<tr>
+<!--th><span class="hint">c</span></th-->
+<td><span class="g"><span class="hint"></span><span class="c">ᒉ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒋ</span></span><span class="g"><span class="hint"></span><span class="c">ᒌ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒍ</span></span><span class="g"><span class="hint"></span><span class="c">ᒎ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒐ</span></span><span class="g"><span class="hint"></span><span class="c">ᒑ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐨ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒓ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒕ</span></span><span class="g"><span class="hint"></span><span class="c">ᒗ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒙ</span></span><span class="g"><span class="hint"></span><span class="c">ᒛ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒝ</span></span><span class="g"><span class="hint"></span><span class="c">ᒟ</span></span></td>
+</tr>
+<tr>
+<!--th><span class="hint">f/v</span></th>
+<td><span class="g"><span class="hint"></span><span class="c">ᕓ</span></span></td><td><span class="g"><span class="hint"></span><span class="c">ᕕ</span></span><span class="g"><span class="hint"></span><span class="c">ᕖ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕗ</span></span><span class="g"><span class="hint"></span><span class="c">ᕘ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕙ</span></span><span class="g"><span class="hint"></span><span class="c">ᕚ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕝ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕜ</span></span></td>
+</tr>
+<tr>
+<th><span class="hint">ð</span></th>
+<td><span class="g"><span class="hint"></span><span class="c">ᖨ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᖩ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᖧ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᖪ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᖫ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᖬ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᖭ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᖮ</span></span></td>
+</tr>
+<tr>
+<th><span class="hint">ð</span></th>
+<td><span class="g"><span class="hint"></span><span class="c">ᕠ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕢ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕞ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕤ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕥ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕦ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕧ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕪ</span></span></td>
+</tr>
+<tr>
+<th><span class="hint">s</span></th-->
+<td><span class="g"><span class="hint"></span><span class="c">ᓭ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓯ</span></span><span class="g"><span class="hint"></span><span class="c">ᓰ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓱ</span></span><span class="g"><span class="hint"></span><span class="c">ᓲ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓴ</span></span><span class="g"><span class="hint"></span><span class="c">ᓵ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐢ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓷ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓹ</span></span><span class="g"><span class="hint"></span><span class="c">ᓻ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓽ</span></span><span class="g"><span class="hint"></span><span class="c">ᓿ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔁ</span></span><span class="g"><span class="hint"></span><span class="c">ᔃ</span></span></td>
+</tr>
+<tr>
+<!--th><span class="hint">s</span></th>
+<td><span class="g"><span class="hint"></span><span class="c">ᔐ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔑ</span></span><span class="g"><span class="hint"></span><span class="c">ᔒ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔓ</span></span><span class="g"><span class="hint"></span><span class="c">ᔔ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔕ</span></span><span class="g"><span class="hint"></span><span class="c">ᔖ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐡ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔘ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔚ</span></span><span class="g"><span class="hint"></span><span class="c">ᔜ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔞ</span></span><span class="g"><span class="hint"></span><span class="c">ᔠ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔢ</span></span><span class="g"><span class="hint"></span><span class="c">ᔤ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔥ</span></span></td>
+</tr>
+<tr>
+<th><span class="hint">m</span></th-->
+<td><span class="g"><span class="hint"></span><span class="c">ᒣ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒥ</span></span><span class="g"><span class="hint"></span><span class="c">ᒦ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒧ</span></span><span class="g"><span class="hint"></span><span class="c">ᒨ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒪ</span></span><span class="g"><span class="hint"></span><span class="c">ᒫ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒼ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒭ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒯ</span></span><span class="g"><span class="hint"></span><span class="c">ᒱ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒳ</span></span><span class="g"><span class="hint"></span><span class="c">ᒵ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᒷ</span></span><span class="g"><span class="hint"></span><span class="c">ᒹ</span></span></td>
+</tr>
+<tr>
+<!--th><span class="hint">n</span></th-->
+<td><span class="g"><span class="hint"></span><span class="c">ᓀ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓂ</span></span><span class="g"><span class="hint"></span><span class="c">ᓃ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓄ</span></span><span class="g"><span class="hint"></span><span class="c">ᓅ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓇ</span></span><span class="g"><span class="hint"></span><span class="c">ᓈ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐣ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓊ</span></span></td>
+<td></td>
+<td></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓌ</span></span><span class="g"><span class="hint"></span><span class="c">ᓎ</span></span></td>
+</tr>
+<!--th><span class="hint">r</span></th-->
+<!--td><span class="g"><span class="hint"></span><span class="c">ᖋ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᖊ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᖍ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c"></span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᖍ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c"></span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᙆ</span></span></td>
+</tr>
+<tr>
+<!--th><span class="hint">r</span></th>
+<td><span class="g"><span class="hint"></span><span class="c">ᕆ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕇ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕃ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕈ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕉ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕋ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕌ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕐ</span></span></td>
+</tr>
+<tr>
+<!--th><span class="hint">r</span></th>
+<td><span class="g"><span class="hint"></span><span class="c"></span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c"></span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕊ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᣡ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕍ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᣢ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔆ</span></span></td>
+</tr>
+<tr>
+<!--th><span class="hint">l</span></th>
+<td><span class="g"><span class="hint"></span><span class="c">ᓕ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓖ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓗ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓘ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓚ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓛ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓓ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓪ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐪ</span></span></td>
+</tr>
+<tr>
+<!--th><span class="hint">j</span></th-->
+<tr>
+<td><span class="g"><span class="hint"></span><span class="c">ᔦ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔨ</span></span><span class="g"><span class="hint"></span><span class="c">ᔩ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔪ</span></span><span class="g"><span class="hint"></span><span class="c">ᔫ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔭ</span></span><span class="g"><span class="hint"></span><span class="c">ᔮ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕀ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔰ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔲ</span></span><span class="g"><span class="hint"></span><span class="c">ᔴ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔶ</span></span><span class="g"><span class="hint"></span><span class="c">ᔸ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᔺ</span></span><span class="g"><span class="hint"></span><span class="c">ᔼ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᐝ</span></span></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕒ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᓬ</span></span></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+
+<div id="ktp0Wrapper">
+<div id="hintType">
+</div>
+
+
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="c">᙮</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">‚</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<!--span class="c">„</span>
+<span class="c">«</span>
+<span class="c">»</span-->
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+</div>
+
+
+
+
+<!--details>
+<summary>Rare letters</summary>
+<table style="margin:auto;">
+<tbody>
+<tr>
+<td><span class="g"><span class="hint"></span><span class="c">ᕵ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕶ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕷ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕸ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕹ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕺ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕴ</span></span></td>
+<td><span class="g"><span class="hint"></span><span class="c">ᕻ</span></span></td>
+</tr>
+</tbody>
+</table></details-->
+
+
+</div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
