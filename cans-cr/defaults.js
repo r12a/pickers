@@ -21,7 +21,7 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Cree character app'
-	template.sample = "ᐁᐏᐊᒋᒧᐢᑖᑕᑯᐠ ᐁᑭ ᐃᑖᐸᐦᑕᒫᐣ ᐁᐏᑕᒪᑯᐏᔭᕁ ᐁᑐᑫ ᑕᐣᓯ ᓂᑲᐣ ᐁᐏᐊᑕᔨᐢᐸᔨᐠ ᐊᓄᐦᐨ ᑭᒥᔭᐢᑲᒧᐸᔨᑭ ᐅᒪ ᑲᒥᔪᐢᑲᒥ ᐏᑭᑎᒪᑭᓇᑯᐏᓯᐤ ᐊᔨᓯᔨᓂᐤ ᐊᐦᐳ ᑲᑯᓯᐟ ᑭᑕᒥᔺᔭᐤ᙮"
+	template.sample = "ᐁᐏᐊᒋᒧᐢᑖᑕᑯᐠ ᐁᑭ ᐃᑖᐸᐦᑕᒫᐣ ᐁᐏᑕᒪᑯᐏᔭᕽ ᐁᑐᑫ ᑕᐣᓯ ᓂᑲᐣ ᐁᐏᐊᑕᔨᐢᐸᔨᐠ ᐊᓄᐦᐨ ᑭᒥᔭᐢᑲᒧᐸᔨᑭ ᐅᒪ ᑲᒥᔪᐢᑲᒥ ᐏᑭᑎᒪᑭᓇᑯᐏᓯᐤ ᐊᔨᓯᔨᓂᐤ ᐊᐦᐳ ᑲᑯᓯᐟ ᑭᑕᒥᔺᔭᐤ᙮"
 	template.blocklocation= '/scripts/cans-cr/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cans-cr'
