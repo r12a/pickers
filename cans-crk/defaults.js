@@ -2,7 +2,7 @@ var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Canadian Aboriginal WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "35";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
+	factoryDefaults.rows = "2.2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'crk' // language to use for examples
 	factoryDefaults.uifont = 'Noto Sans Canadian Aboriginal WF'; // font name  for selection area (a single font, no quotes)
@@ -21,7 +21,7 @@ else  defaults = factoryDefaults
  
 var template = {}
 	template.title = 'Plains Cree character app'
-	template.sample = "ᐁᐏᐊᒋᒧᐢᑖᑕᑯᐠ ᐁᑭ ᐃᑖᐸᐦᑕᒫᐣ ᐁᐏᑕᒪᑯᐏᔭᕽ ᐁᑐᑫ ᑕᐣᓯ ᓂᑲᐣ ᐁᐏᐊᑕᔨᐢᐸᔨᐠ ᐊᓄᐦᐨ ᑭᒥᔭᐢᑲᒧᐸᔨᑭ ᐅᒪ ᑲᒥᔪᐢᑲᒥ ᐏᑭᑎᒪᑭᓇᑯᐏᓯᐤ ᐊᔨᓯᔨᓂᐤ ᐊᐦᐳ ᑲᑯᓯᐟ ᑭᑕᒥᔺᔭᐤ᙮"
+	template.sample = "ᐁᑯᓯ ᒫᑲ ᐁᑎᑵ ᐊᓂᒪ ᑳ ᐃᑘᐟ ᐊᐘ ᐅᐢᑭᓃᑭᐤ, ᒥᔼᓯᐣ, ᑮᐢᐱᐣ ᑕ ᑲᑵ ᓂᓯᑐᐦᑕᒣᐠ ᐁᑿ ᒦᓇ ᑕ ᑲᑵ ᒥᑐᓂ ᐑᒋᐦᐃᓱᔦᐠ ᐊᓂᒪ, ᐆᒪ ᓀᐦᐃᔭᐍᐏᐣ ᑭᐢᐱᐣ ᑭᓅᐦᑌ ᑭᐢᑫᔨᐦᑌᓈᐚᐤ᙮"
 	template.blocklocation= '/scripts/cans/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cans-crk'

@@ -43,6 +43,7 @@ function transcribetoIPA (str) {
 	str = str.replace(/ʷ/g, "w")
 	str = str.replace(/ᵉ/g, "eː")
 	str = str.replace(/e/g, "eː")
+	str = str.replace(/ý/g, "y")
 	str = str.replace(/\u202F/g, "-")
 	str = str.replace(/\u00A0/g, "-")
 
@@ -66,6 +67,7 @@ function transcribetoLatin (str) {
 	str = str.replace(/ᵉ/g, "ē")
 	str = str.replace(/e/g, "ē")
 	str = str.replace(/j/g, "y")
+	str = str.replace(/ý/g, "y")
 	str = str.replace(/\u202F/g, "-")
 	str = str.replace(/\u00A0/g, "-")
 
