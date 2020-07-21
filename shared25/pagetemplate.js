@@ -1,4 +1,147 @@
+if (typeof fontDB === 'undefined') {
+	fontSelection = ''
+	webFonts = ''
+	}
+else {  
+	// create a subset of the fontDB
+	localeList = []
+	for (rec in fontDB) { //console.log(fontDB[rec].name)
+		if (fontDB[rec].locales.has(template.fontLocale)) localeList.push(fontDB[rec])
+		}
+	var macArray = ["Mac fonts"]
+	var winArray = ["Windows fonts"]
+	var gsArray = ["Google/SIL fonts"]
+	var otherArray = ["Other fonts"]
+	for (rec in localeList) {
+		if (localeList[rec].system.has('mac')) macArray.push(localeList[rec].name)
+		if (localeList[rec].system.has('win')) winArray.push(localeList[rec].name)
+		if (localeList[rec].system.has('goog') || localeList[rec].system.has('sil')) gsArray.push(localeList[rec].name)
+		if (localeList[rec].system.has('other')) otherArray.push(localeList[rec].name)
+		}
 
+	fontDB = []
+	fontDB.push(macArray)
+	fontDB.push(winArray)
+	fontDB.push(gsArray)
+	fontDB.push(otherArray)
+	macArray = []
+	winArray = []
+	gsArray = []
+	otherArray = []
+
+	createFontPulldowns()
+	}
+
+function createFontPulldowns () {
+	// create the select list markup for the font pulldowns (used if fontDB available)
+	
+	if (typeof webFonts === 'undefined') alert('The webFonts array is not defined.')
+	
+	out = '<optgroup label="Webfonts">\n'
+	for (let w=0;w<webFonts.length;w++) {
+		out += '<option value="'+webFonts[w]+'">'+webFonts[w]+'</option>\n'
+		}
+	out += '</optgroup>\n'
+	
+	out += '<optgroup label="System defaults">\n'
+	out += '<option value="serif">serif</option>\n'
+	out += '<option value="sans-serif">sans-serif</option>\n'
+	out += '</optgroup>\n'
+	
+	for (r=0; r<fontDB.length;r++) {
+		if (fontDB[r].length > 1) {
+			out += '<optgroup label="'+fontDB[r][0]+'">\n'
+			for (let i=1;i<fontDB[r].length;i++) {
+				out += '<option value="'+fontDB[r][i]+'">'+fontDB[r][i]+'</option>\n'
+				}
+			out += '</optgroup>\n'
+			}
+		}
+	fontSelection = out
+	}
+
+
+function createFontPicker () {
+// create the fontPickerCode which is used for the area above the text box
+
+
+	var webfontGroups = document.getElementById('fontList').querySelectorAll('optgroup')
+
+	// list the webfonts & system defaults horizontally
+	var webFonts = webfontGroups[0].querySelectorAll('option')
+	out = '<div><span class="fpOptgroup">Webfonts</span>'
+	for (let f=0;f<webFonts.length;f++) {
+		out += '<span class="fpOption'
+		if (webFonts[f].textContent === defaults.font) out += ' currentFont'	
+		out += '" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value); document.getElementById(\'fontPicker\').innerHTML=\'\';" data-value="'+webFonts[f].textContent+'">'+webFonts[f].textContent+'</span> &nbsp; \n'
+		}
+	out += '&nbsp; <span style="white-space:nowrap"><span class="fpOptgroup">System defaults</span>'
+	out += '<span class="fpOption" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value); document.getElementById(\'fontPicker\').innerHTML=\'\';" data-value="sans-serif">sans-serif</span> &nbsp; \n'
+	out += '<span class="fpOption" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value); document.getElementById(\'fontPicker\').innerHTML=\'\';" data-value="serif">serif</span>\n'
+	out += '</span></div>'
+
+	// list the other fonts, in columns
+	out += '<div id="fontPickerCols">\n'
+	for (let g=2;g<webfontGroups.length;g++) {
+		out += '<div class="fpOptgroup">'+webfontGroups[g].label+'\n'
+		var options = webfontGroups[g].querySelectorAll('option')
+		for (let o=0;o<options.length;o++) {
+			out += '<div class="fpOption'
+			if (options[o].textContent === defaults.font) out += ' currentFont'
+			out += '" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value);  document.getElementById(\'fontPicker\').innerHTML=\'\';"  data-value="'+options[o].textContent+'">'+options[o].textContent+'</div>\n'
+			}
+		out += '</div>'
+		}
+	out += '<div onclick="document.getElementById(\'fontPicker\').innerHTML=\'\';" style="cursor:pointer; font-size: 200%;">X</div></div>'
+	return out
+	}
+
+
+function createFontPickerOLD () {
+if (typeof fontDB === 'undefined') {
+	fontPickerCode = ''
+	fontSelection = ''
+	webFonts = ''
+	}
+else {
+	// create the fontPickerCode which is used for the area above the text box
+	var out = ''
+	for (r=0; r<fontDB.length;r++) {
+		if (fontDB[r].length > 1) {
+			out += '<div class="fpOptgroup">'+fontDB[r][0]+'\n'
+			for (let i=1;i<fontDB[r].length;i++) {
+				//out += '<div class="fpOption" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value); parentNode.parentNode.parentNode.style.display=\'none\';" onmouseout="applyFontPreview(defaults.font)" data-value="'+fontDB[r][i]+'"'
+				out += '<div class="fpOption" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value); parentNode.parentNode.parentNode.style.display=\'none\';"  data-value="'+fontDB[r][i]+'"'
+				if (fontDB[r][i] === defaults.font) out += ' class="currentFont"'
+				out += '>'+fontDB[r][i]+'</div>\n'
+				}
+			out += '</div>'
+			}
+		}
+	out += '<div onclick="parentNode.parentNode.style.display=\'none\'" style="cursor:pointer; font-size: 200%;">X</div></div>'
+	fontPickerCode = out
+	
+	// create the fontSelection markup, which is used in the pulldowns
+	out = ''
+	for (r=0; r<fontDB.length;r++) {
+		if (fontDB[r].length > 1) {
+			out += '<optgroup label="'+fontDB[r][0]+'">\n'
+			for (let i=1;i<fontDB[r].length;i++) {
+				out += '<option value="'+fontDB[r][i]+'">'+fontDB[r][i]+'</option>\n'
+				out += '</optgroup>\n'
+				}
+			}
+		}
+	fontSelection = out
+	}
+}
+
+
+
+
+function applyFontPreview (font) {
+	document.getElementById('output').style.fontFamily = font
+	}
 
 
 function setBidiOverride (mirror) {
@@ -52,8 +195,9 @@ out += `</header>
   <img title="Select all the text." onclick="selectAll()" src="../shared25/images/select.png" alt="Select" style="vertical-align: bottom;">
   <img title="Toggle invisible code points." onclick="toggleInvisibles()" src="../shared25/images/toggle.png" alt="Toggle" style="vertical-align: bottom;">
   <img title="Generate a URL including text." onclick="makeSharingLink()"  src="../shared25/images/share.png" alt="Share">
-  <img title="Add sample text." onclick="add('` + template.sample +`')" src="../shared25/images/sample.png" alt="Sample">
-  <img title="Delete all the text." onclick="deleteAll()" src="../shared25/images/clear.png" alt="Clear" style="margin-left: 1em;">
+  <img title="Add sample text." onclick="add('` + template.sample +`')" src="../shared25/images/sample.png" alt="Sample">`
+  if (typeof fontDB !== 'undefined') out += `<img title="Change the font." onclick="document.getElementById('fontPicker').innerHTML = createFontPicker();" src="../shared25/images/fonts.png" alt="Fonts">`
+  out += `<img title="Delete all the text." onclick="deleteAll()" src="../shared25/images/clear.png" alt="Clear" style="margin-left: 1em;">
 <a class="interactiveHelpButton" href="help/#icons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
   </span>
   
@@ -66,7 +210,8 @@ out += `</header>
     title="Show information in the database for the selection.">Analyse<br/>text</button>
     
  ` 
-	
+
+
 for (let i=0;i<window.controls.length;i++){
 	out += '<button onclick="'+window.controls[i].code+'" '
     if (window.controls[i].warning) {
@@ -115,9 +260,16 @@ for (let i=0;i<window.pulldown.length;i++){
 
 <div id="outputDiv" style="position: relative;">
 <div id="warning"></div>
-<textarea dir="auto" rows="2" cols="80" id="output" name="output" placeholder="›" lang="`
+<div>
+`
+
+out += '<div id="fontPicker">'
+out += `</div>`
+
+out += `<textarea dir="auto" id="output" name="output" placeholder="›" lang="`
 + defaults.language +
 `"></textarea>
+</div>
 <div id="charChoice"></div>
  <div id="transcriptionChoice"></div>
 </div>
@@ -233,7 +385,7 @@ out = `
 
 
 <div id="controls">
-  <div class="control">Change the text area font:<br />
+  <div class="control">Current font:<br />
     <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
 ` +
   fontSelection
@@ -473,3 +625,4 @@ Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-B
 `
 return out
 }
+

@@ -947,3 +947,14 @@ summary:hover {
 	font-family: Helvetica, Arial, sans-serif;
 	}
 
+
+
+
+#fontPicker { font-size: 80%; margin: 0; width: 100%; text-align: left;  }
+#fontPickerCols { display: flex; justify-content: space-between; }
+.fpOptgroup { font-weight: bold; margin: 1em; }
+.fpOption { cursor: pointer; font-weight: normal; }
+.fpOption:hover, .currentFont { background-color: antiquewhite; border-radius: .5em; }
+
+
+
