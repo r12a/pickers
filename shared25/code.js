@@ -2658,6 +2658,11 @@ function toggleInvisibles () {
         { cp:"\u070F", abbr:"ˢᵃᵐ"},
         { cp:"\u0F0C", abbr:"ⁿᵇ"},
         { cp:"\u2060", abbr:"ʷʲ"},
+
+        { cp:"\u2002", abbr:"ᵉⁿˢᵖ"},
+        { cp:"\u2003", abbr:"ᵉᵐˢᵖ"},
+        { cp:"\u2009", abbr:"ᵗʰˢᵖ"},
+        { cp:"\u2007", abbr:"ᶠˢᵖ"},
         ]
     
     // ascertain which way to switch
