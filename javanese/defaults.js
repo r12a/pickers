@@ -18,6 +18,8 @@ var thisPicker = 'javanesePicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
+var webFonts = [ "Noto Sans Javanese WF", "Tuladha Jejeg WF" ]
+
  
 var template = {}
 	template.title = 'Javanese character app'
@@ -27,6 +29,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'javanese'
 	template.scriptcode = 'Java'
+	template.fontLocale = 'java'
 
 
 // ꦏꦧꦺꦃꦥꦶꦤꦫꦶꦔꦤ꧀ꦲꦏꦭ꧀ꦭꦤ꧀ꦏꦭ꧀ꦧꦸꦱꦂꦠꦏꦲꦗꦧ꧀ꦥꦱꦿꦮꦸꦁꦔꦤ꧀ꦲꦁꦒꦺꦴꦤꦺꦩꦼꦩꦶꦠꦿꦤ꧀ꦱꦶꦗꦶꦭꦤ꧀ꦱꦶꦗꦶꦤꦺꦏꦤ꧀ꦛꦶꦗꦶꦮꦺꦴꦱꦸꦩꦢꦸꦭꦸꦂ

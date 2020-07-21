@@ -18,7 +18,9 @@ var thisPicker = 'latnAfrPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Gentium Plus WF", "Adelle Sans EXT Light WF", "Noto Sans Light WF" ]
+
+
 var template = {}
 	template.title = 'Pan-African Latin character app'
 	template.sample = "Bánlʊrʊ́ʊ ɩrʊ́ báa weení na kezéńbíídi gɛ bɩka bɛdɛ́ɛ ɖɔɔzɩ́tɩ na yíkowá kɛgɛ́ɛ ɖéyí-ɖéyí gɛ. Bɔwɛná laakárɩ na ɩrʊ́tɩ bɩka bɩɩbɔ́ɔ́zɩ bɔcɔɔná ɖamá koobíre cɔwʊrɛ." // from https://unicode.org/udhr/d/udhr_kdh.html
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'latin-afr'
 	template.scriptcode = 'Latn'
+	template.fontLocale = 'latn'
 
 
 

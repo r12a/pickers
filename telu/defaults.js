@@ -18,7 +18,9 @@ var thisPicker = 'teluguPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Sans Telugu WF" ]
+
+
 var template = {}
 	template.title = 'Telugu character app'
 	template.sample = "ప్రతిపత్తిస్వత్వముల విషయమున మానవులెల్లరును జన్మతః స్వతంత్రులును సమానులును నగుదురు."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'telugu'
 	template.scriptcode = 'Telu'
+	template.fontLocale = 'telu'
 
 
 

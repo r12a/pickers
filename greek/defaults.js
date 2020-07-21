@@ -18,7 +18,9 @@ var thisPicker = 'greekPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Doulos SIL WF" ]
+
+
 var template = {}
 	template.title = 'Modern Greek character app'
 	template.sample = "ΑΡΘΡΟ 1 Όλοι οι άνθρωποι γεννιούνται ελεύθεροι και ίσοι στην αξιοπρέπεια και τα δικαιώματα. Είναι προικισμένοι με λογική και συνείδηση, και οφείλουν να συμπεριφέρονται μεταξύ τους με πνεύμα αδελφοσύνης."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'greek'
 	template.scriptcode = 'Grek'
+	template.fontLocale = 'grek'
 
 
 

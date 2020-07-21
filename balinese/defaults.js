@@ -18,7 +18,9 @@ var thisPicker = 'balinesePicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Aksara Bali WF", "Noto Serif Balinese WF" ]
+
+
 var template = {}
 	template.title = 'Balinese character app'
 	template.sample = "ᬫᬓᬲᬫᬶᬫᬦᬸᬲᬦᬾᬓᬳᭂᬫ᭄ᬩᬲᬶᬦ᭄ᬫᬳᬃᬤᬶᬓᬮᬦ᭄ᬧᬢᭂᬄᬲᬚ᭄ᬭᭀᬦᬶᬂᬓᬳᬦᬦ᭄ᬮᬦ᭄ᬓ᭄ᬯᬲ᭟"
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'balinese'
 	template.scriptcode = 'Bali'
+	template.fontLocale = 'bali'
 
 
 

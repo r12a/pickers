@@ -18,7 +18,9 @@ var thisPicker = 'uighurPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Scheherazade WF" ]
+
+
 var template = {}
 	template.title = 'Uighur character app'
 	template.sample = "2. ھەممە ئادەم ھەرقانداق دۆلەتتىن كېتىشكە، جوملىدىن ئۆز دۆلىتىدىن كېتىشكە ھوقۇقلۇق ھەمدە ئۆزىنىڭ دۆلىتىگە قايتىپ كېلىشكە ھوقۇقلۇق."
@@ -27,6 +29,7 @@ var template = {}
 	template.github = 'uighur'
 	template.scriptcode = 'Arab'
 	template.cursive = true
+	template.fontLocale = 'arab-ug'
 
 
 

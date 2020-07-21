@@ -18,7 +18,9 @@ var thisPicker = 'devanagariPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Serif Devanagari WF" ]
+
+
 var template = {}
 	template.title = 'All Devanagari character app'
 	template.sample = "(२) प्रत्येक व्यक्ति को अपने या पराये किसी भी देश को छोड़नो और अपने देश को वापस आनो का अधिकार है ।"
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'devanagari'
 	template.scriptcode = 'Deva'
+	template.fontLocale = 'deva'
 
 
 

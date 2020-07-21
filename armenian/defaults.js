@@ -18,7 +18,9 @@ var thisPicker = 'armenianPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Arian AMU WF" ]
+
+
 var template = {}
 	template.title = 'Armenian character app'
 	template.sample = "2. Ամեն ոք ունի ցանկացած երկրից, այդ թվում իր երկրից հեռանալու և իր երկիր վերադառնալու իրավունք։"
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'armenian'
 	template.scriptcode = 'Armn'
+	template.fontLocale = 'armn'
 
 
 

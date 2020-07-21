@@ -18,7 +18,9 @@ var thisPicker = 'tlichoPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Doulos SIL WF" ]
+
+
 var template = {}
 	template.title = 'Tłı̨chǫ (Dogrib) character app'
 	template.sample = "Dıı  sah nàé t’à. Dıı deh nı̨ı̨lı̨. Dıı ndè nàgoèhdǫ-le nı̨dè Asıı ts’àgoèt’ǫ hǫı̨lı̨ ha nele."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'tlicho'
 	template.scriptcode = 'Latn'
+	template.fontLocale = 'latn'
 
 
 

@@ -18,7 +18,9 @@ var thisPicker = 'thaanaPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Sans Thaana WF" ]
+
+
 var template = {}
 	template.title = 'Thaana character app'
     template.sample = "2. ހަމަކޮންމެ މީހަކަށްމެ، އޭނާގެ އަމިއްލަ ޤައުމު ނުވަތަ އެހެން ޤައުމެއް ދޫކޮށް ދިއުމުގެ ޙައްޤާއި، އޭނާގެ އަމިއްލަ ޤައުމަށް އެނބުރި އައުމުގެ ޙައްޤު ލިބިގެންވެއެވެ."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'thaana'
 	template.scriptcode = 'Thaa'
+	template.fontLocale = 'thaa'
 
 
 

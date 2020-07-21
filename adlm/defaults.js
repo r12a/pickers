@@ -18,6 +18,8 @@ var thisPicker = 'adlamPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
+var webFonts = [ "Noto Sans Adlam New WF", "Noto Sans Adlam WF", "Noto Sans Adlam Unjoined WF" ]
+
  
 var template = {}
 	template.title = 'Adlam character app'
@@ -28,6 +30,7 @@ var template = {}
 	template.github = 'adlm'
 	template.scriptcode = 'Adlm'
 	template.cursive = true
+	template.fontLocale = "adlm"
 
 
 

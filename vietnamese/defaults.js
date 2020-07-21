@@ -18,7 +18,9 @@ var thisPicker = 'vietnamesePicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Doulos SIL WF" ]
+
+
 var template = {}
 	template.title = 'Vietnamese character app'
 	template.sample = "2. Mọi người đều có quyền rời khỏi bất cứ nước nào, kể cả nước mình, cũng như có quyền trở về nước mình."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'vietnamese'
 	template.scriptcode = 'Latn'
+	template.fontLocale = 'latn'
 
 
 

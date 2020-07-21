@@ -18,7 +18,9 @@ var thisPicker = 'persianPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Scheherazade WF", "Noto Naskh Arabic WF" ]
+
+
 var template = {}
 	template.title = 'Persian character app'
     template.sample = "(۲) هر کس حق دارد هر کشوری و از جمله کشور خود را ترک کند یا به کشور خود باز گردد."
@@ -27,6 +29,7 @@ var template = {}
 	template.github = 'persian'
 	template.scriptcode = 'Arab'
 	template.cursive = true
+	template.fontLocale = 'arab-fa'
 
 
 

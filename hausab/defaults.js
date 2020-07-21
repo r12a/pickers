@@ -18,7 +18,9 @@ var thisPicker = 'hausabPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Doulos SIL WF" ]
+
+
 var template = {}
 	template.title = 'Hausa (boko) character picker'
 	template.sample = "Abin nufi ga ilimi shi ne: ya sama wa ɗan‐adam jin daɗin rayuwa da ƙarfafa kiyayewa da hakkokinsa da muhimman abubuwan da ƴancinsa ya ƙunsa."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'hausab'
 	template.scriptcode = 'Latn'
+	template.fontLocale = 'latn'
 
 
 

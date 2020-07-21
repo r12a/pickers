@@ -18,7 +18,9 @@ var thisPicker = 'latinPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Doulos SIL WF", "Noto Sans Light WF" ]
+
+
 var template = {}
 	template.title = 'Latin & diacritic character app'
 	template.sample = "2. Paa ɛyʊ weyi, ɛwɛna waɖɛ se ɛkʊyɩ ɛjaɖɛ nɖɩ ɛwɛ ɖɩ-taa yɔ, paa pɩkɛ ɛ-ñɩnɖɛ, nɛ pɩmaɣ-ɩ ɖooye lɛ, ɛpɩsɩ. ïñƭèřñáƭïôñáł"
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'latin'
 	template.scriptcode = 'Latn'
+	template.fontLocale = 'latn'
 
 
 

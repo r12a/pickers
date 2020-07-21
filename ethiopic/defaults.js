@@ -18,7 +18,9 @@ var thisPicker = 'ethiopicPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Sans Ethiopic WF" ]
+
+
 var template = {}
 	template.title = 'All Ethiopic character picker'
 	template.sample = "፪/፡ እያንዳንዱ፡ሰው፡ከማንኛውም፡አገር፡ሆነ፡ከራሱ፡አገር፡ወጥቶ፡እንደገና፡ወደ፡አገሩ፡የመመለስ፡መብት፡አለው።"
@@ -26,7 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'ethiopic'
 	template.scriptcode = 'Ethi'
-
+	template.fontLocale = 'ethi'
 
 
 

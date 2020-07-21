@@ -18,7 +18,9 @@ var thisPicker = 'urduPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Nastaliq Urdu WF", "Scheherazade WF", "Awami Nastaliq WF" ]
+
+
 var template = {}
 	template.title = 'Urdu character app'
 	template.sample = "(۲) ہر شخص کو اس بات کا حق ہے کہ وہ ملک سے چلا جائے چاہے یہ ملک اس کا اپنا ہو۔ اور اسی طرح اسے ملک میں واپس آ جانے کا بھی حق ہے۔"
@@ -27,6 +29,7 @@ var template = {}
 	template.github = 'arab-ur'
 	template.scriptcode = 'Arab'
 	template.cursive = true
+	template.fontLocale = 'arab-ur'
 
 
 

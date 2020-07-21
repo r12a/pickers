@@ -18,7 +18,9 @@ var thisPicker = 'gujaratiPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Sans Gujarati WF" ]
+
+
 var template = {}
 	template.title = 'Gujarati character app'
 	template.sample = "અનુચ્છેદ ૧: પ્રતિષ્ઠા અને અધિકારોની દૃષ્ટિએ સર્વ માનવો જન્મથી સ્વતંત્ર અને સમાન હોય છે."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'gujarati'
 	template.scriptcode = 'Gujr'
+	template.fontLocale = 'gujr'
 
 
 

@@ -18,7 +18,9 @@ var thisPicker = 'neotifinaghPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Sans Tifinagh WF" ]
+
+
 var template = {}
 	template.title = 'Neo-tifinagh character app'
 	template.sample = "2. ⴽⵓ ⵢⴰⵏ ⴷⴰⵔⵙ ⵜⴰⴷⵔⴼⵉⵜⵏ ⴰⴷ ⵉⴼⴼⵖ ⵜⴰⵎⵓⵔⵜ, ⵜⵉⵏⵏⵙ ⵏⵖ ⵜⵉⵢⵢⴰⴹ, ⵏⵏⵙ ⵢⵉⵍⵉ ⴷⴰⵔⵙ ⵓⵣⵔⴼ ⴰⴷ ⴷⵉⵙ ⵢⵓⵔⵔⵉ."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "bidi" // indicates whether this is a picker for a RTL script
 	template.github = 'neotifinagh'
 	template.scriptcode = 'Tfng'
+	template.fontLocale = 'tfng'
 
 
 

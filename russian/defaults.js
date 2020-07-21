@@ -18,7 +18,9 @@ var thisPicker = 'russianPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Doulos SIL WF" ]
+
+
 var template = {}
 	template.title = 'Russian character app'
 	template.sample = "Статья 1 Все люди рождаются свободными и равными в своем достоинстве и правах. Они наделены разумом и совестью и должны поступать в отношении друг друга в духе братства."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cyrillic'
 	template.scriptcode = 'Cyrl'
+	template.fontLocale = 'cyrl'
 
 
 

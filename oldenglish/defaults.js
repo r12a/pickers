@@ -18,7 +18,9 @@ var thisPicker = 'oldenglishPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Doulos SIL WF", "Junicode WF" ]
+
+
 var template = {}
 	template.title = 'Old English character app'
 	template.sample = "Hwæt! wē Gār-Dena in ġēar-dagum þēod-cyninga þrym gefrūnon, hūðā æþelingas ellen fremedon."
@@ -27,6 +29,7 @@ var template = {}
 	template.github = 'oldenglish'
 	template.scriptcode = 'Latn'
 	template.initialInput = 'showTranslit'
+	template.fontLocale = 'germ'
 
 
 

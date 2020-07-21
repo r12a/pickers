@@ -18,7 +18,9 @@ var thisPicker = 'hausaaPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Scheherazade WF", "Alkalami WF", "Alkalami Light WF" ]
+
+
 var template = {}
 	template.title = 'Hausa (ajami) character app'
 	template.sample = "رَایُوَا بَبَّنْ رَبُو نَا ، غُنْ مَسَاٻِى دُونْ شِدَیْنَا ، تَرْسَشِنْ أَیْكِى نَ ٻَرْنَا ، فَیْ دَ ٻُویٜ سِڟَیْدَ سُنَّا ، شِبِ أَللَّهْ بَادَكَنْغَرَا بَا"
@@ -28,6 +30,7 @@ var template = {}
 	template.github = 'hausaa'
 	template.scriptcode = 'Arab'
 	template.cursive = true
+	template.fontLocale = 'arab-ajami'
 
 
 

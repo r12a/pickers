@@ -18,7 +18,9 @@ var thisPicker = 'thaiPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Serif Thai WF", "Noto Sans Thai WF" ]
+
+
 var template = {}
 	template.title = 'Thai character app'
 	template.sample = "2. ทุกคนมีสิทธิที่จะออกจากประเทศใด ๆ ไป รวมทั้งประเทศของตนเองด้วย และที่จะกลับยังประเทศตน"
@@ -26,11 +28,13 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'thai'
 	template.scriptcode = 'Thai'
+	template.fontLocale = 'thai'
 
 
 
 
 var controls = [
+{"title":"Change<br/>font", "alt":"Choose a different font. Only works if you have the font on your system.", "code":"document.getElementById('fontPicker').style.display=\'flex\'" },
 {"title":"Trans-<br/>literate", "alt":"Convert Thai text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
 //{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"input=getHighlightedText(document.getElementById('output')).split('|'); add(getVocab(condense(input[0]), input[1],input[2], toLatin(input[0])));document.getElementById('output').focus();"},

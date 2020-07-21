@@ -19,6 +19,9 @@ if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse
 else  defaults = factoryDefaults
  
  
+var webFonts = [ "Noto Sans Canadian Aboriginal WF" ]
+
+
 var template = {}
 	template.title = 'Plains Cree character app'
 	template.sample = "ᐁᑯᓯ ᒫᑲ ᐁᑎᑵ ᐊᓂᒪ ᑳ ᐃᑘᐟ ᐊᐘ ᐅᐢᑭᓃᑭᐤ, ᒥᔼᓯᐣ, ᑮᐢᐱᐣ ᑕ ᑲᑵ ᓂᓯᑐᐦᑕᒣᐠ ᐁᑿ ᒦᓇ ᑕ ᑲᑵ ᒥᑐᓂ ᐑᒋᐦᐃᓱᔦᐠ ᐊᓂᒪ, ᐆᒪ ᓀᐦᐃᔭᐍᐏᐣ ᑭᐢᐱᐣ ᑭᓅᐦᑌ ᑭᐢᑫᔨᐦᑌᓈᐚᐤ᙮"
@@ -26,6 +29,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cans-crk'
 	template.scriptcode = 'Cans'
+	template.fontLocale = 'cans'
 
 
 

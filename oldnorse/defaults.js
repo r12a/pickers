@@ -18,7 +18,9 @@ var thisPicker = 'oldnorsePicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Doulos SIL WF", "Junicode WF" ]
+
+
 var template = {}
 	template.title = 'Old Norse character app'
 	template.sample = "Ok sem leið at jólum, gørðusk menn þar ókátir. Bǫðvarr spurði Hǫtt hverju þat sætti; hann sagði honum at dýr eitt hafi komit þar tvá vetr í samt, mikit ok ógurligt."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'oldnorse'
 	template.scriptcode = 'Latn'
+	template.fontLocale = 'germ'
 
 
 

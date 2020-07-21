@@ -18,7 +18,9 @@ var thisPicker = 'bengaliPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Sans Bengali WF" ]
+
+
 var template = {}
 	template.title = 'Bengali character app'
 	template.sample = "২. প্রত্যেকের‌ই নিজ দেশ সহ যে কোন দেশ পরিত্যাগ এবং স্বদেশে প্রত্যাবর্তনের অধিকার রয়েছে।"
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'bengali'
 	template.scriptcode = 'Beng'
+	template.fontLocale = 'beng'
 
 
 

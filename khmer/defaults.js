@@ -18,7 +18,8 @@ var thisPicker = 'khmerPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Khmer OS Battambang WF", "Noto Serif Khmer WF", "Noto Sans Khmer WF" ]
+
 var template = {}
 	template.title = 'Khmer character app'
 	template.sample = "២. មនុស្សគ្រប់រូបមានសិទ្ធិចាកចេញពីប្រទេសណាមួយ រួមទាំងប្រទេសរបស់ខ្លួនផង និងមាន សិទ្ធិវិលត្រឡប់មកប្រទេសរបស់ខ្លួនវិញ។"
@@ -26,6 +27,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'khmer'
 	template.scriptcode = 'Khmr'
+	template.fontLocale = 'khmr'
 
 
 

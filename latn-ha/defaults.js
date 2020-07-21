@@ -17,7 +17,9 @@ var thisPicker = 'hausabPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Sans Light WF" ]
+
+
 var template = {}
 	template.title = 'Hausa (boko) character app'
 	template.sample = "Abin nufi ga ilimi shi ne: ya sama wa ɗan‐adam jin daɗin rayuwa da ƙarfafa kiyayewa da hakkokinsa da muhimman abubuwan da ƴancinsa ya ƙunsa."
@@ -26,6 +28,7 @@ var template = {}
 	template.github = 'hausab'
 	template.scriptcode = 'Latn'
 	template.initialInput = 'showTranslit'
+	template.fontLocale = 'latn'
 
 
 

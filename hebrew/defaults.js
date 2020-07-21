@@ -18,7 +18,9 @@ var thisPicker = 'hebrewPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Serif Hebrew WF" ]
+
+
 var template = {}
 	template.title = 'Hebrew character app'
     template.sample = "2. כל אדם זכאי לעזוב כל ארץ, לרבות ארצו, ולחזור אל ארצו."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'hebrew'
 	template.scriptcode = 'Hebr'
+	template.fontLocale = 'hebr'
 
 
 

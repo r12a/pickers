@@ -18,7 +18,8 @@ var thisPicker = 'arabicPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Scheherazade WF", "Noto Naskh Arabic WF" ]
+
 var template = {}
 	template.title = 'Arabic character app'
 	template.sample = "2. يحق لكل فرد أن يغادر أية بلاد بما في ذلك بلده كما يحق له العودة إليه."
@@ -28,7 +29,7 @@ var template = {}
 	template.scriptcode = 'Arab'
 	template.cursive = true
 	template.initialInput = ''
-
+	template.fontLocale = 'arab'
 
 
 var controls = [

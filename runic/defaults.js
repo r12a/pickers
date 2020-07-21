@@ -18,14 +18,17 @@ var thisPicker = 'runicPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Junicode WF", "Noto Sans Thai WF" ]
+
+
 var template = {}
-	template.title = 'Runic character app'
+	template.title = 'Doulos SIL WF'
 	template.sample = "ᚢᚴ᛬​ᛋᛁᛘ᛬​ᛚᛅᛁᚦ᛬​ᛅᛏ᛬​ᛁᚢᛚᚢᛘ᛬​ᚴᚢᚱᚦᚢᛋᚴ᛬​ᛘᛁᚾ᛬​ᚦᛅᚱ᛬​ᚢᚴᛅᛏᛁᚱ"
 	template.blocklocation= '/scripts/runic/block'  // blocklocation to use for examples
 	template.direction = "bidi" // indicates whether this is a picker for a RTL script
 	template.github = 'runic'
 	template.scriptcode = 'Runr'
+	template.fontLocale = 'runr'
 
 
 

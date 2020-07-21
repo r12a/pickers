@@ -18,7 +18,9 @@ var thisPicker = 'cherokeePicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Sans Cherokee WF" ]
+
+
 var template = {}
 	template.title = 'Cherokee character app'
 	template.sample = "2. Ꮒꭶꮫ ꭰꮒᏼꮻ ꭴꮒꮂ ꮎꮝꭹ ꮪᏻꭺꮫ ꭴꮒꭹꮝꮧ ꮒꭶꭵꮙ ꭰᏸꮅ ꮒꭼꮎꮫꭲ, ꭴꮰꮿꮝꮧ ꭴꮹꮜ ꭴꮴꮅ ꭱꭵꭲ, ꭰꮄ ꭲꭶꮇꭿꮝꮧ ꭴꮎꭲ ꭴꮹꮜ ꭴꮴꮅ ꭰᏸꮅ ꮒꭼꮎꮫꭲ."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = '/scripts/cherokee/block'
 	template.scriptcode = 'Cher'
+	template.fontLocale = 'cher'
 
 
 

@@ -18,7 +18,9 @@ var thisPicker = 'sinhalapicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Serif Sinhala WF" ]
+
+
 var template = {}
 	template.title = 'Sinhala character app'
 	template.sample = "1 වන වගන්තිය සියලු මනුෂ්‍යයෝ නිදහස්ව උපත ලබා ඇත. ගරුත්වයෙන් හා අයිතිවාසිකම්වලින් සමාන වෙති."
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'sinhala'
 	template.scriptcode = 'Sinh'
+	template.fontLocale = 'sinh'
 
 
 
