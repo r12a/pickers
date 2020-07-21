@@ -51,6 +51,12 @@ return `
       <img src="../../shared25/images/share.png" alt="Share icon"/> generate a URL to share with others that will reproduce for them what you see in the text box<br/>
       <img src="../../shared25/images/sample.png" alt="Sample icon"> add some sample text to the text area<br>
       <img src="../../shared25/images/fonts.png" alt="Fonts icon"> show the font preview list. Mouse over the font names to change the font used for the text area. (Only works for webfonts or fonts you have on your system.) Click on a font name to change the font and store the setting.</blockquote>
+	  	  
+	  <details>
+	  <summary style="margin-left:7.5%">See a video of the font preview in action</summary>
+	  <p><video controls width="100%; max-width:720px" aria-label="Embedded video" style="border:0;"><source src="../../shared25/images/help/font-preview.mp4" type="video/mp4"></video></p>
+	  </details>
+
       <!--p><b class="leadin">Copy, select, delete, etc. (<img src="../../shared25/images/help/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p-->
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
       <p><b class="leadin">Analyze text.</b> This control is particularly useful for understanding the composition of the text. For each character highlighted (or the whole text box if nothing is highlighted) this lists information such as the following:</p>
@@ -66,7 +72,6 @@ return `
 
 `
 }
-
 
 
 function addControlsAbove2 () {
@@ -211,6 +216,12 @@ return `
   <p>Click on <samp>manage fonts</samp> to reveal the controls described here.</p>
 
   <p><b class="leadin">Change selection area font. </b> Allows you to change the font and size of the characters you click on in the main selection areas. </p>
+	  	  
+	  <details>
+	  <summary style="margin-left:7.5%">See a video of how to add fonts to the selection lists.</summary>
+	  <p><video controls width="100%; max-width:720px" aria-label="Embedded video" style="border:0;"><source src="../../shared25/images/help/add-font.mp4" type="video/mp4"></video></p>
+	  </details>
+
 
     <p><b class="leadin">List fonts... </b> Add font names to this control (one per line) and they will be added to the font selector lists. If you agreed to store settings, they will be remembered for your next session on that device (you need to set these lists separately on each device you use).</p>
 `
