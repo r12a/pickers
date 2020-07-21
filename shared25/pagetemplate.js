@@ -69,7 +69,7 @@ function createFontPicker () {
 
 	// list the webfonts & system defaults horizontally
 	var webFonts = webfontGroups[0].querySelectorAll('option')
-	out = '<div><span class="fpOptgroup">Webfonts</span>'
+	out = '<div id="fontPickerWebfonts"><span class="fpOptgroup">Webfonts</span>'
 	for (let f=0;f<webFonts.length;f++) {
 		out += '<span class="fpOption'
 		if (webFonts[f].textContent === defaults.font) out += ' currentFont'	
