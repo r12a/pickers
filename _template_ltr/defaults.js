@@ -18,7 +18,9 @@ var thisPicker = 'templatePicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Noto Serif Thai WF", "Noto Sans Thai WF" ]
+
+
 var template = {}
 	template.title = 'Template character app'
 	template.sample = "कऻशुर छि सऻन्य् माजि ज़्यव। असि पज़ि पनॖन्यन शुर्यन सॗत्य् ॳथ्य् ज़बऻन्य् मंज़ कथ करॖनय्।"
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'template'
 	template.scriptcode = 'Tmp'
+	template.fontLocale = "tmp"
 
 
 
