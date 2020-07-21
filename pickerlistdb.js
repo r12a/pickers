@@ -71,6 +71,8 @@ var plist = [
     { tag:'arab', name:'Urdu', url:'arab-ur/' },
     { tag:'vaii', name:'Vai', url:'vai/' },
     { tag:'cans', name:'Eastern Canadian Inuktitut', url:'cans-ike/' },
+    { tag:'cans', name:'UCAS', url:'cans/' },
+    { tag:'cans', name:'Plains Cree', url:'cans-crk/' },
     { tag:'latn', name:'Vietnamese', url:'vietnamese/' },
 ]
 
@@ -109,7 +111,7 @@ var plistByRegion = {
 			  ],
 	'West&nbsp;Asia':[
 			  ['Arabic','arabic/'],
-			  ['All Arabic','arab-all/'],
+			  ['Arabic block','arab-all/'],
 			  ['Assyrian&nbsp;Neo-Aramaic', 'syrc-aii/'],
 			  ['Hebrew', 'hebrew/'],
 			  ['Mandaic', 'mandaic/'],
@@ -167,5 +169,7 @@ var plistByRegion = {
 			    ['Tłı̨chǫ&nbsp;(Dogrib)', 'tlicho/'],
 				['Eastern Canadian Inuktitut', 'cans-ike/'],
 				['Osage', 'osge/'],
+				['Plains Cree', 'cans-crk/'],
+				['UCAS block', 'cans/'],
 			    ]
 	}
