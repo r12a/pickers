@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Mandaic WF';
+    font-family: 'Noto Sans Mandaic WF';
     src: url('/shared/webfonts/notosansmandaic-regular-webfont.woff2') format('woff2'),
          url('/shared/webfonts/notosansmandaic-regular-webfont.woff') format('woff');
     font-weight: normal;
@@ -11,7 +11,7 @@
 #fontgrid { display: none; }
 
 
-[lang=mid] { font-family: 'Noto Sans Mandaic', 'Mandaic WF', serif; }
+[lang=mid] { font-family: 'Noto Sans Mandaic WF', serif; }
 
 
 
@@ -37,7 +37,7 @@ span.hint {
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  'Noto Sans Mandaic', 'Mandaic WF',  sans-serif;  
+	font-family:  'Noto Sans Mandaic WF',  sans-serif;  
     line-height: 1.2;
 	}
 
@@ -47,132 +47,106 @@ span.hint {
 
 /* SELECTION AREA */
 
-
+#controlchars {
+    text-align: center;
+    margin-bottom: .25em;
+    line-height: 1;
+    }
+.spaceline {
+    margin-bottom: 0;
+    }
 
 #kbdGrid {
-    display: flex;
-    flex-direction: row;
-    line-height: 1.2;
+ display: flex;
+ flex-direction: row;
+	line-height: 1.4;
     justify-content: center;
-    margin-top: .75em;
     }
 #consonantGrid {
-    white-space: normal;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 8em;
+    flex-direction: column;
+	flex-wrap: nowrap;
     justify-content: space-between;
-    line-height: 1.7;
+    }
+#consonantGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
     }
 #consonantGrid > span {
-    min-width: 1.5em;
+    min-width: 1em;
     }
-/*#vowelGrid {
-    white-space: normal;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 1.2em;
-    max-height: 15em;
-    justify-content: center;
-    align-items:center;
-    margin: 0 .5em;
-    line-height: 1.3;
-    border: 1px dotted #ccc;
-    border-radius: .25em;
-    padding: 0 .5em;
-    }*/
 #vowelGrid {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-	margin-left: 1em;
+    margin: 0 .5em;
+    flex-wrap: nowrap;
     }
 #vowelGrid div {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content:space-between;
-    }
-/*#punctuationGrid {
-    white-space: normal;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 1.2em;
-    max-height: 15em;
+    flex-wrap: nowrap;
+    flex-direction: row;
     justify-content: center;
-    align-items:center;
-    margin-end: 0 .5em;
-    line-height: 2;
-    padding: 0 .5em;
-    }*/
-#punctuationGrid {
+    }
+#diacriticGrid {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-	margin-left: 1em;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     }
-#punctuationGrid div {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content:space-between;
+#diacriticGrid div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     }
 #numberGrid {
+    height: 4em;
+    margin: 0 .5em;
+	padding-bottom: 1em;
+    }
+#numberGrid div {
     white-space: normal;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 2.42em;
-    max-height: 15em;
-    justify-content: center;
-    margin: 0 .5em;
-    line-height: 1.7;
-    align-content: center;
+    width: 2.5em;
+    justify-content: space-between;
+    line-height: 1.2;
+    font-size: 90%;
     }
 #punctuation {
     text-align: center;
-    font-size: 80%;
+    font-size: 70%;
+    line-height: 1;
+	margin: .5em 0 .5em 0;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 0;
     }
 
+#alphabet summary {
+    font-size: 14px;
+    }
+#vowelclusters {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: .5em;
+    width: 20em;
+    margin: auto;
+    }
 
+#cursive {
+    width: 5em;
+    display: inline-block;
+	color: tan;
+    }
 
-
-
-#kbd { 	
-	margin: auto;
-    line-height: 1.5;
-	}
-table {
-	margin: auto;
-	}
-td {
-	padding: 0;
-	}
-
-#vowels {
-	border: 1px dotted #ccc;
-	border-radius: 5px; 
-	vertical-align: middle;
-    width: 2em;
-	}
-
-#numbers {
-	border: 1px dotted #ccc;
-	border-radius: 5px; 
-	vertical-align: middle;
-	line-height: 1.4;
-	}
-
-#punctuation {
-	padding-left: 15px;
-	padding-right: 10px;
-	vertical-align: middle;
-	line-height: 2.4;
-	}
-	
-#consonants {
-	margin: auto;
-	}
+#translit {
+    margin: auto;
+    
+}
