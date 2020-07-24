@@ -1689,6 +1689,9 @@ function setUpValues () {
 		if (pairs[0] === 'text') { 
 			if (pairs[1]) document.getElementById('output').value = decodeURIComponent(pairs[1])
 			}
+		if (pairs[0] === 'showFonts') { 
+			document.getElementById('fontPicker').innerHTML = createFontPicker()
+			}
 		}
 		
 	// activate type assist/ime input
