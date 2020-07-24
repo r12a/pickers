@@ -28,7 +28,7 @@ var template = {}
 	template.direction = "bidi" // indicates whether this is a picker for a RTL script
 	template.github = 'neotifinagh'
 	template.scriptcode = 'Tfng'
-	template.fontLocale = 'tfng'
+	template.fontLocale = 'tfng-ber'
 
 
 
