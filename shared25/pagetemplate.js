@@ -73,7 +73,7 @@ function createFontPicker () {
 	for (let f=0;f<webFonts.length;f++) {
 		out += '<span class="fpOption'
 		if (webFonts[f].textContent === defaults.font) out += ' currentFont'	
-		out += '" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value); document.getElementById(\'fontPicker\').innerHTML=\'\';" data-value="'+webFonts[f].textContent+'">'+webFonts[f].textContent+'</span> &nbsp; \n'
+		out += '" onmouseover="applyFontPreview(String(this.dataset.value))" onclick="selectFont(this.dataset.value); document.getElementById(\'fontPicker\').innerHTML=\'\';" data-value="'+webFonts[f].textContent+'">'+webFonts[f].textContent+'</span> &nbsp; \n'
 		}
 	out += '&nbsp; <span style="white-space:nowrap"><span class="fpOptgroup">System defaults</span>'
 	out += '<span class="fpOption" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value); document.getElementById(\'fontPicker\').innerHTML=\'\';" data-value="sans-serif">sans-serif</span> &nbsp; \n'
@@ -89,58 +89,18 @@ function createFontPicker () {
 			out += '<div class="fpOption'
 			if (options[o].textContent === defaults.font) out += ' currentFont'
 			out += '" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value);  document.getElementById(\'fontPicker\').innerHTML=\'\';"  data-value="'+options[o].textContent+'">'+options[o].textContent+'</div>\n'
+			if (g===webfontGroups.length-1 && o===options.length-1) out += '<div class="fpOption"><a href="../shared25/fontpreview.html" target="_blank">Add more</a></div>'
 			}
 		out += '</div>'
 		}
-	out += '<div onclick="document.getElementById(\'fontPicker\').innerHTML=\'\';" style="cursor:pointer; font-size: 200%;">X</div></div>'
+	out += '<div onclick="document.getElementById(\'fontPicker\').innerHTML=\'\';" style="cursor:pointer; font-size: 200%;">X</div>'
+	out += '</div>'
 	return out
 	}
 
 
-function createFontPickerOLD () {
-if (typeof fontDB === 'undefined') {
-	fontPickerCode = ''
-	fontSelection = ''
-	webFonts = ''
-	}
-else {
-	// create the fontPickerCode which is used for the area above the text box
-	var out = ''
-	for (r=0; r<fontDB.length;r++) {
-		if (fontDB[r].length > 1) {
-			out += '<div class="fpOptgroup">'+fontDB[r][0]+'\n'
-			for (let i=1;i<fontDB[r].length;i++) {
-				//out += '<div class="fpOption" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value); parentNode.parentNode.parentNode.style.display=\'none\';" onmouseout="applyFontPreview(defaults.font)" data-value="'+fontDB[r][i]+'"'
-				out += '<div class="fpOption" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value); parentNode.parentNode.parentNode.style.display=\'none\';"  data-value="'+fontDB[r][i]+'"'
-				if (fontDB[r][i] === defaults.font) out += ' class="currentFont"'
-				out += '>'+fontDB[r][i]+'</div>\n'
-				}
-			out += '</div>'
-			}
-		}
-	out += '<div onclick="parentNode.parentNode.style.display=\'none\'" style="cursor:pointer; font-size: 200%;">X</div></div>'
-	fontPickerCode = out
-	
-	// create the fontSelection markup, which is used in the pulldowns
-	out = ''
-	for (r=0; r<fontDB.length;r++) {
-		if (fontDB[r].length > 1) {
-			out += '<optgroup label="'+fontDB[r][0]+'">\n'
-			for (let i=1;i<fontDB[r].length;i++) {
-				out += '<option value="'+fontDB[r][i]+'">'+fontDB[r][i]+'</option>\n'
-				out += '</optgroup>\n'
-				}
-			}
-		}
-	fontSelection = out
-	}
-}
-
-
-
-
 function applyFontPreview (font) {
-	document.getElementById('output').style.fontFamily = font
+	document.getElementById('output').style.fontFamily = "\'"+font+"\', 'Adobe NotDef'"
 	}
 
 
