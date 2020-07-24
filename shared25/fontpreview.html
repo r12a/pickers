@@ -1,12 +1,12 @@
 <html lang="en-gb"><head>
 <meta charset="UTF-8">
 <title>Help for using the Font preview</title>
-<link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css">
-<link rel="stylesheet" type="text/css" href="../../shared25/style.css">
-<link rel="stylesheet" type="text/css" href="../localstyle.css">
-<script src="/shared/code/boilerplate.js" type="text/javascript"></script>
-<script type="text/javascript" src="/shared/code/toc_2016.js"></script>
-<script type="text/javascript" src="../../shared25/helptemplate.js"></script>
+<link rel="stylesheet" href="../../shared/style/docs.css">
+<link rel="stylesheet" href="../shared25/style.css">
+<link rel="stylesheet" href="../localstyle.css">
+<script src="/shared/code/boilerplate.js"></script>
+<script src="/shared/code/toc_2016.js"></script>
+<script src="../../shared25/helptemplate.js"></script>
 </head>
 
 <body class="app notes">
@@ -27,10 +27,11 @@
 <div class="toc1"><a href="/pickers/">List of character apps</a></div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->23-Jul-2020<!-- #EndDate --></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->24-Jul-2020<!-- #EndDate --></p>
 
 <p>This page tells you how to add your own fonts to the font preview section of a character app, and provides additional hints.</p>
 <p>The font preview allows you to see what the text looks like with a particular font. Mouse over the font names to apply the new font temporarily to the text in the text area. Click on a font name to switch to that font and store your setting. This is useful for choosing a font for display, or for comparing one font with another.</p>
+<p><strong>Unless the font name points to a webfont, you will need to have the font present on your system to view the glyphs.</strong></p>
 <p>See a video of the font preview in action</p>
 <p><video controls="" aria-label="Embedded video" style="border:0;" width="100%; max-width:720px"><source src="images/help/font-preview.mp4" type="video/mp4"></video></p>
 
@@ -50,7 +51,8 @@
 <p>Because browsers do font substitution for characters that are missing from a font, it isn't always easy to spot those characters.</p>
 <p>If you download the <a href="https://github.com/adobe-fonts/adobe-notdef">Adobe NotDef font</a> and install it, the character app will clearly show these characters. See an example in this screen grab.</p>
 <p><img src="images/help/notdef_font.png" alt=" "></p>
-<p>Ideally, i would include that font as a webfont, but I didn't manage to create one successfully.</p>
+<p>(Ideally, i would include that font as a webfont, but I didn't manage to create one successfully.)</p>
+<p>To find out what characters are missing, simply select them and click on <samp>Show codepoints</samp> to reveal their names.</p>
 </section>
 
 
@@ -68,7 +70,7 @@
 
 <div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
 
-<script type="text/javascript">
+<script>
 createtoc(3);
 </script>
 </body></html>
