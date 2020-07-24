@@ -28,7 +28,7 @@ var template = {}
 	template.github = 'hausab'
 	template.scriptcode = 'Latn'
 	template.initialInput = 'showTranslit'
-	template.fontLocale = 'latn'
+	template.fontLocale = 'latn-ha'
 
 
 
