@@ -1,13 +1,13 @@
 @font-face {
-    font-family: 'Doulos SIL WF';
-    src: local("Doulos SIL"),
-		url('/shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2');
+    font-family: 'Gentium Plus WF';
+    src: local("Gentium Plus"),
+		url('/shared/webfonts/gentiumplus-r-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 
 
-[lang=ru] { font-family: 'Doulos SIL WF', "Times New Roman", serif; }
+[lang=ru] { font-family: 'Gentium Plus WF', "Times New Roman", serif; }
 
 
 #alphabet { 
@@ -35,7 +35,7 @@ span.hint {
 /* KEYBOARD */
 .key { 
 	font-weight: normal; 
-	font-family:  "Doulos SIL", "Times New Roman",  sans-serif;
+	font-family:  "Gentium Plus WF", "Times New Roman",  sans-serif;
 	}
 .key span { 
 	font-size: 1.2em; 
