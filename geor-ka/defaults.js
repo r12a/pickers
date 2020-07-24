@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'BGP 2017 DejaVu Serif WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'BPG 2017 DejaVu Serif WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "30";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'ka' // language to use for examples
-	factoryDefaults.uifont = 'BGP 2017 DejaVu Sans WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'BPG 2017 DejaVu Sans WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,7 +18,7 @@ var thisPicker = 'georgian'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Sans Georgian WF", "Noto Serif Georgian WF", "BGP 2017 DejaVu Serif WF", "BGP 2017 DejaVu Sans WF" ]
+var webFonts = [ "BPG 2017 DejaVu Serif WF", "BPG 2017 DejaVu Sans WF", "Noto Sans Georgian WF", "Noto Serif Georgian WF" ]
 
 
 var template = {}
