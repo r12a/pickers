@@ -18,7 +18,8 @@ var thisPicker = 'kashmiriaPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
- 
+var webFonts = [ "Scheherazade WF", "Noto Naskh Arabic WF" ]
+
 var template = {}
 	template.title = 'Kashmiri (arab) character app'
 	template.sample = "سٔری لُکھ چھہٕ حقوٗق تِہ عزت لِحاظٕ ہِہی ژامِت."
@@ -27,6 +28,7 @@ var template = {}
 	template.github = 'arab-ks'
 	template.scriptcode = 'Arab'
 	template.cursive = true
+	template.fontLocale = 'arab-ks'
 
 
 
