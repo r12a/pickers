@@ -10,13 +10,13 @@ else {
 		}
 	var macArray = ["Mac fonts"]
 	var winArray = ["Windows fonts"]
-	var gsArray = ["Google/SIL fonts"]
+	var gsArray = ["Google/SIL/other fonts"]
 	var otherArray = ["Other fonts"]
 	for (rec in localeList) {
 		if (localeList[rec].system.has('mac')) macArray.push(localeList[rec].name)
 		if (localeList[rec].system.has('win')) winArray.push(localeList[rec].name)
-		if (localeList[rec].system.has('goog') || localeList[rec].system.has('sil')) gsArray.push(localeList[rec].name)
-		if (localeList[rec].system.has('other')) otherArray.push(localeList[rec].name)
+		if (localeList[rec].system.has('goog') || localeList[rec].system.has('sil') || localeList[rec].system.has('other')) gsArray.push(localeList[rec].name)
+		//if (localeList[rec].system.has('other')) otherArray.push(localeList[rec].name)
 		}
 
 	fontDB = []
@@ -88,7 +88,9 @@ function createFontPicker () {
 		for (let o=0;o<options.length;o++) {
 			out += '<div class="fpOption'
 			if (options[o].textContent === defaults.font) out += ' currentFont'
-			out += '" onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value);  document.getElementById(\'fontPicker\').innerHTML=\'\';"  data-value="'+options[o].textContent+'">'+options[o].textContent+'</div>\n'
+			out += '"'
+			if (fontInfo[options[o].textContent]) out += ' title="'+fontInfo[options[o].textContent].notes+'"'
+			out += ' onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value);  document.getElementById(\'fontPicker\').innerHTML=\'\';"  data-value="'+options[o].textContent+'">'+options[o].textContent+'</div>\n'
 			if (g===webfontGroups.length-1 && o===options.length-1) out += '<div class="fpOption"><a href="../shared25/fontpreview.html" target="_blank">Add more</a></div>'
 			}
 		out += '</div>'
@@ -100,7 +102,7 @@ function createFontPicker () {
 
 
 function applyFontPreview (font) {
-	document.getElementById('output').style.fontFamily = "\'"+font+"\', 'Adobe NotDef'"
+	document.getElementById('output').style.fontFamily = "\'"+font+"\', 'Unicode BMP Fallback SIL', 'Adobe NotDef'"
 	}
 
 
