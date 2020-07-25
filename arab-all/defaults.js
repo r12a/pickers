@@ -18,6 +18,8 @@ var thisPicker = 'arabicblockPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
+var webFonts = [ "Scheherazade WF", "Noto Naskh Arabic WF" ]
+
  
 var template = {}
 	template.title = 'All Arabic character app'
@@ -26,6 +28,7 @@ var template = {}
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'arabicblock'
 	template.scriptcode = 'Arab'
+	template.fontLocale = 'arab'
 
 
 
