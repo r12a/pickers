@@ -29,7 +29,7 @@ var template = {}
 	template.scriptcode = 'Arab'
 	template.cursive = true
 	template.initialInput = ''
-	template.fontLocale = 'arab'
+	template.fontLocale = 'arab-arb'
 
 
 var controls = [
