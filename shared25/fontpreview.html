@@ -13,6 +13,9 @@
 <header>
   <div id="header-boilerplate"><div id="site-navigation"> <img id="bp_picture" class="app" alt=" " src="/shared/images/world.gif"></div><div id="boilerplate"><div id="line" class="app">&nbsp;</div></div><div id="topbar"><a href="/index">r12a</a> &gt;&gt; <a href="/applist">apps</a> &gt;&gt; Adlam character app <span class="versionnumber"></span></div><div id="sitelinks" class="noprint"><a href="http://rishida.net/blog/">blog</a>&nbsp; <a href="/doclist">docs</a>&nbsp; <a href="/maplist">maps</a>&nbsp; <a href="/applist">apps</a>&nbsp; <a href="/photos">photos</a>&nbsp;&nbsp;</div></div>
   <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Font preview','');</script> 
+  <style>
+  #suggestions dd { text-align:  start; }
+  </style>
 </header>
 
 
@@ -27,7 +30,7 @@
 <div class="toc1"><a href="/pickers/">List of character apps</a></div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->24-Jul-2020<!-- #EndDate --></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->25-Jul-2020<!-- #EndDate --></p>
 
 <p>This page tells you how to add your own fonts to the font preview section of a character app, and provides additional hints.</p>
 <p>The font preview allows you to see what the text looks like with a particular font. Mouse over the font names to apply the new font temporarily to the text in the text area. Click on a font name to switch to that font and store your setting. This is useful for choosing a font for display, or for comparing one font with another.</p>
@@ -49,7 +52,7 @@
 <section id="basics">
   <h2 href="#basics">Identifying missing characters</h2>
 <p>Because browsers do font substitution for characters that are missing from a font, it isn't always easy to spot those characters.</p>
-<p>If you download the <a href="https://github.com/adobe-fonts/adobe-notdef">Adobe NotDef font</a> and install it, the character app will clearly show these characters. See an example in this screen grab.</p>
+<p>If you download the <a href="https://unicode.org/policies/lastresortfont_eula.html">Unicode BMP Fallback SIL</a> and/or the <a href="https://github.com/adobe-fonts/adobe-notdef">Adobe NotDef font</a> and install it, the character app will clearly show these characters. See an example in this screen grab. (The SIL font only works for BMP characters. You'll need both for best coverage of BMP plus Supplementary ranges.)</p>
 <p><img src="images/help/notdef_font.png" alt=" "></p>
 <p>(Ideally, i would include that font as a webfont, but I didn't manage to create one successfully.)</p>
 <p>To find out what characters are missing, simply select them and click on <samp>Show codepoints</samp> to reveal their names.</p>
@@ -66,7 +69,282 @@
 <p>Simply mouse over the font names in the font preview to see which characters are supported and which are not.</p>
 <p>If the app recognises a sequence of characters that has a particular significance in its own right, it will show that sequence (slightly indented) after the initial character.</p>
 </section>
-<script>document.getElementById('secondaryText').innerHTML = addSecondaryText()</script><script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script><script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+
+
+<section id="suggestions">
+<h2>Suggested additional fonts</h2>
+<p>There are many other fonts out there which are not pointed to by the font preview pane, by default. Here are some suggestions for fonts you may want to add.</p>
+
+<dl>
+<dt>Adlam</dt>
+<dd>Kigelia</dd>
+
+<dt>Arabic, &amp; Arabic block</dt>
+<dd>Amiri,
+Amiri Quran,
+Aref Ruqaa</dd>
+
+<dt>Armenian</dt>
+<dd>Arian AMU,
+Arian AMU Serif,
+Arian Grqi</dd>
+
+<dt>Assyrian Neo-Aramaic</dt>
+<dd>EastSyriacAdiabeneRegular,
+EastSyriacCtesiphonRegular</dd>
+
+<dt>Balinese</dt>
+<dd>Aksara Bali,
+JG Aksara Bali,
+Kadiri,
+Pustaka Bali,
+Ubud,
+Vimala</dd>
+
+<dt>Bengali</dt>
+<dd>Lohit Bengali,
+SolaimanLipi</dd>
+
+<dt>Buginese</dt>
+<dd>Saweri</dd>
+
+<dt>Cherokee</dt>
+<dd>Aboriginal Sans,
+Aboriginal Serif,
+CherokeeLSU,
+Geneva,
+Marin</dd>
+
+<dt>Cyrillic all</dt>
+<dd>Brill</dd>
+
+<dt>Devanagari</dt>
+<dd>Chandas,
+Kalimati,
+Kanjirowa,
+Lohit Devanagari,
+Uttara</dd>
+
+<dt>Eastern Canadian Inuktitut</dt>
+<dd>Aboriginal Sans,
+Aboriginal Serif,
+Kayases,
+OskiDakelh,
+OskiEast,
+OskiWest,
+Pigiarniq,
+Rotinonhsonni</dd>
+
+<dt>Ethiopic</dt>
+<dd>Droid Sans Ethiopic</dd>
+
+<dt>Georgian, and Georgian all</dt>
+<dd>BPG 2017 DejaVu Sans,
+BPG 2017 DejaVu Serif</dd>
+
+<dt>Greek (modern)</dt>
+<dd>Brill, Geneva</dd>
+
+<dt>Gujarati</dt>
+<dd>Aakar,
+Lohit Gujarati,
+RaghuGujarati,
+Rekha</dd>
+
+<dt>Gurmukhi</dt>
+<dd>AnmolUni,
+AnmolBani,
+Lohit Punjabi,
+RaghuPunjabi,
+Saab</dd>
+
+<dt>Hausa (ajami)</dt>
+<dd>Amiri</dd>
+
+<dt>Hausa (boko)</dt>
+<dd>Adelle Sans EXT,
+Adelle Sans EXT Light,
+Brill,
+EversonMono,
+Symbola</dd>
+
+<dt>Hebrew</dt>
+<dd>SBL Unicode</dd>
+
+<dt>Hindi</dt>
+<dd>Kalimati,
+Kanjirowa,
+Lohit Devanagari</dd>
+
+<dt>IPA</dt>
+<dd>Brill, Symbola</dd>
+
+<dt>Javanese</dt>
+<dd>Nawatura beta,
+Tuladha Jejeg,
+Yogya,
+Yogyakarta</dd>
+
+<dt>Khutsuri</dt>
+<dd>BPG 2017 DejaVu Sans,
+BPG 2017 DejaVu Serif</dd>
+
+<dt>Lao</dt>
+<dd>Dhyana,
+Lao Muang Don,
+Lao Unicode,
+Phetsarath,
+Saysettha OT,
+Souliyo</dd>
+
+<dt>Latin &amp; diacritics</dt>
+<dd>Adelle Sans EXT,
+Adelle Sans EXT Light,
+Brill,
+EversonMono,
+Symbola</dd>
+
+<dt>Lisu</dt>
+<dd>Lisu Unicode,
+Geneva,
+Lisu Tzimu</dd>
+
+<dt>Malayalam</dt>
+<dd>AnjaliOldLipi,
+JanaMalayalam,
+RaghuMalayalam,
+Samyak Malayalam,
+ThoolikaUnicode,
+ThoolikaTraditionalUnicode</dd>
+
+<dt>Mongolian</dt>
+<dd>FZMWBTOT_Unicode,
+Mongolian Art,
+Mongolian Title,
+Mongolian Script,
+Oyun Qagan Tig</dd>
+
+<dt>Neo-tifinagh</dt>
+<dd>Hapax Berbere</dd>
+
+<dt>New Tai Lü</dt>
+<dd>Nokyung</dd>
+
+<dt>Old English</dt>
+<dd>Geneva, Junicode</dd>
+
+<dt>Old Norse</dt>
+<dd>Geneva, Junicode</dd>
+
+<dt>Osage</dt>
+<dd>Avant,
+GadugiBeta2,
+Nelagoney,
+Pawhuska,
+Prue,
+Wazhazhe,
+Wynona</dd>
+
+<dt>Northern Thai</dt>
+<dd>Lanna Alif,
+Tai Tham LN</dd>
+
+<dt>Pan-African latin</dt>
+<dd>Adelle Sans EXT,
+Adelle Sans EXT Light,
+Brill,
+EversonMono,
+Symbola</dd>
+
+<dt>Persian</dt>
+<dd>Amiri,
+Aref Ruqaa</dd>
+
+<dt>Plains Cree</dt>
+<dd>Aboriginal Sans,
+Aboriginal Serif,
+Kayases,
+OskiDakelh,
+OskiEast,
+OskiWest,
+Rotinonhsonni</dd>
+
+<dt>Runic</dt>
+<dd>Babelstone Runic Beagnoth,
+Babelstone Runic Beorhtnoth,
+Babelstone Runic Beowulf,
+Babelstone Runic Berhtwald,
+Babelstone Runic Byrhtferth,
+Geneva,
+Junicode</dd>
+
+<dt>Sinhala</dt>
+<dd>DinaminaUniWeb,
+Malithi Web,
+Potha</dd>
+
+<dt>Sundanese</dt>
+<dd>Bandung,
+Sundanese Unicode,
+Sundanese Unicode 2013</dd>
+
+<dt>Tai Khün</dt>
+<dd>A Tai Tham KH New</dd>
+
+<dt>Tamil</dt>
+<dd>Droid Sans Tamil,
+Karla Tamil Inclined,
+Karla Tamil Upright,
+Lohit Tamil,
+Maduram,
+Pavanam</dd>
+
+<dt>Thai</dt>
+<dd>Droid Sans Thai,
+Droid Serif Thai,
+Kanit,
+Sriracha</dd>
+
+<dt>Tibetan</dt>
+<dd>Jomolhari,
+Tibetan Machine Uni</dd>
+
+<dt>Thaana</dt>
+<dd>A_Ilham,
+A_Faseyha,
+A_Utheem,
+A_Waheed,
+Mv Jadheedh</dd>
+
+<dt>Urdu</dt>
+<dd>Gohar Urdu Unicode,
+Nafees Nastaleeq,
+Nafees Pakistani Naskh,
+Nafees Web Naskh,
+Nastaleeq Like,
+Urdu Naskh Asiatype,
+Urdu Naskh Unicode</dd>
+
+<dt>UCAS all</dt>
+<dd>Aboriginal Sans,
+Aboriginal Serif,
+Kayases,
+OskiDakelh,
+OskiEast,
+OskiWest,
+Pigiarniq,
+Rotinonhsonni</dd>
+
+<dt>Vietnamese</dt>
+<dd>Brill,
+EversonMono,
+Symbola</dd>
+
+
+</dl>
+</section>
+
 
 <div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
 
