@@ -28,7 +28,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'hindi'
 	template.scriptcode = 'Deva'
-	template.fontLocale = 'deva'
+	template.fontLocale = 'deva-hi'
 
 
 
