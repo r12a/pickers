@@ -23,7 +23,7 @@ var webFonts = [ "Noto Sans Cherokee WF" ]
 
 var template = {}
 	template.title = 'Cherokee character app'
-	template.sample = "2. Ꮒꭶꮫ ꭰꮒᏼꮻ ꭴꮒꮂ ꮎꮝꭹ ꮪᏻꭺꮫ ꭴꮒꭹꮝꮧ ꮒꭶꭵꮙ ꭰᏸꮅ ꮒꭼꮎꮫꭲ, ꭴꮰꮿꮝꮧ ꭴꮹꮜ ꭴꮴꮅ ꭱꭵꭲ, ꭰꮄ ꭲꭶꮇꭿꮝꮧ ꭴꮎꭲ ꭴꮹꮜ ꭴꮴꮅ ꭰᏸꮅ ꮒꭼꮎꮫꭲ."
+	template.sample = "2. ᏂᎦᏛ ᎠᏂᏴᏫ ᎤᏂᎲ ᎾᏍᎩ ᏚᏳᎪᏛ ᎤᏂᎩᏍᏗ ᏂᎦᎥᏉ ᎠᏰᎵ ᏂᎬᎾᏛᎢ, ᎤᏠᏯᏍᏗ ᎤᏩᏌ ᎤᏤᎵ ᎡᎥᎢ, ᎠᎴ ᎢᎦᎷᎯᏍᏗ ᎤᎾᎢ ᎤᏩᏌ ᎤᏤᎵ ᎠᏰᎵ ᏂᎬᎾᏛᎢ."
 	template.blocklocation= 'cherokee'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = '/scripts/cherokee/block'
