@@ -30,7 +30,7 @@ var template = {}
 	template.github = 'hausaa'
 	template.scriptcode = 'Arab'
 	template.cursive = true
-	template.fontLocale = 'arab-ajami'
+	template.fontLocale = 'arab-ha'
 
 
 
