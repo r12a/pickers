@@ -67,7 +67,7 @@ var plist = [
     { tag:'tfng', name:'All Tifinagh ', url:'tifinagh/' },
     { tag:'latn', name:'Tłı̨chǫ&nbsp;(Dogrib)', url:'tlicho/' },
     { tag:'syrc', name:'Turoyo', url:'syrc-tru/' },
-    { tag:'arab', name:'Uighur', url:'uighur/' },
+    { tag:'arab', name:'Uighur', url:'arab-ug/' },
     { tag:'arab', name:'Urdu', url:'arab-ur/' },
     { tag:'vaii', name:'Vai', url:'vai/' },
     { tag:'cans', name:'Eastern Canadian Inuktitut', url:'cans-ike/' },
@@ -121,7 +121,7 @@ var plistByRegion = {
 			  ],
 	'Central&nbsp;Asia':[
 			  ['Tibetan', 'tibetan/'],
-			  ['Uighur', 'uighur/']
+			  ['Uighur', 'arab-ug/']
 			  ],
 	'East&nbsp;Asia':[
 			    ['Chinese', 'hani/'],
