@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Hanunoo character app 25</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="defaults.js">  </script>
+<script src="/shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/hano.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared25/setup.js">  </script>
+<script src="../shared25/code.js">  </script>
+<script src="../shared25/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared25/pagetemplate.js">  </script>
+<script src="/scripts/linkdata/linkdb.js"></script>
+<script src="localtranscription.js">  </script>
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
+<div id="tables" dir="ltr">
+
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+  
+  <div id="shapelist">
+    <div id="shapekeys">
+<span onclick="findShape('1725,1729,172B','ᜥᜲ,ᜥᜳ,ᜩᜲ,ᜩᜳ,ᜫᜲ,ᜫᜳ',true)">ᜥ</span>
+<span onclick="findShape('1726','ᜦᜲᜦᜳ',true)">ᜦ</span>
+<span onclick="findShape('1723','ᜣᜲ,ᜣᜳ',true)">ᜣ</span>
+<span onclick="findShape('172A,1728','ᜪᜲ,ᜪᜳ,ᜨᜲ,ᜨᜳ',true)">ᜪ</span>
+<span onclick="findShape('1731,1727,1720,1721,172F','ᜱᜲ,ᜱᜳ,ᜧᜲ,ᜧᜳ,ᜯᜲ,ᜯᜳ',true)">ᜱ</span>
+<span onclick="findShape('1724,172C,172E,1730','ᜤᜲ,ᜤᜳ,ᜬᜲ,ᜬᜳ,ᜮᜲ,ᜮᜳ,ᜰᜲ,ᜰᜳ',true)">ᜤ</span>
+<span onclick="findShape('172D','ᜭᜲ,ᜭᜳ',true)">ᜭ</span>
+<span onclick="findShape('1722','',true)">ᜢ</span>
+    </div>
+  <div id="extrashapes"></div>
+</div>
+
+
+
+<div id="alphabet" class="default">
+  
+  
+  
+  <div class="spaceline">
+    <span class="touch" style="padding: 5px 60px;" onClick="add(' ');">SPACE</span> 
+    <span class="touch" style="padding: 5px 10px;" onClick="add('\u200D');">ZWJ</span> 
+    <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
+    <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+    <span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+    <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
+    <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span>
+</div>
+
+<div id="kbdGrid"> 
+ 
+
+
+<div id="consonantGrid" class="box">
+            <div>
+            <span class="g"><span class="hint">p</span><span class="c">ᜩ</span></span>
+            <span class="g"><span class="hint">t</span><span class="c">ᜦ</span></span>
+            <span class="g"><span class="hint">k</span><span class="c">ᜣ</span></span>
+            </div>
+            <div class="bottomDivider">
+            <span class="g"><span class="hint">b</span><span class="c">ᜪ</span></span>
+            <span class="g"><span class="hint">d</span><span class="c">ᜧ</span></span>
+            <span class="g"><span class="hint">g</span><span class="c">ᜤ</span></span>
+            </div>
+            <div class="bottomDivider">
+            <span class="g"><span class="hint"></span><span class="c"> </span></span>
+            <span class="g"><span class="hint">s</span><span class="c">ᜰ</span></span>
+            <span class="g"><span class="hint">h</span><span class="c">ᜱ</span></span>
+            <span class="g"><span class="hint"></span><span class="c"> </span></span>
+            </div>
+           <div>
+            <span class="g"><span class="hint">m</span><span class="c">ᜫ</span></span>
+            <span class="g"><span class="hint">n</span><span class="c">ᜨ</span></span>
+            <span class="g"><span class="hint">ŋ</span><span class="c">ᜥ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">w</span><span class="c">ᜯ</span></span>
+            <span class="g"><span class="hint">r</span><span class="c">ᜭ</span></span>
+            <span class="g"><span class="hint">l</span><span class="c">ᜮ</span></span>
+            <span class="g"><span class="hint">y</span><span class="c">ᜬ</span></span>
+            </div>
+</div>
+
+
+
+<div id="translitGrid">
+            <div>
+            <span class="g"><span class="hint">A</span><span class="c">ᜠ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">I</span><span class="c">ᜡ</span></span>
+            </div>
+            <div>
+            <span class="g"><span class="hint">U</span><span class="c">ᜢ</span></span>
+            </div>
+</div>
+
+
+
+
+<div id="vowelGrid" class="box">
+<div><span class="g"><span class="hint">i</span><span class="c">&#x1732;</span></span></div>
+<div><span class="g"><span class="hint">u</span><span class="c">&#x1733;</span></span></div>
+<div><span class="g"><span class="hint">*</span><span class="c">&#x1734;</span></span></div>
+</div>
+
+<div id="numberGrid">
+            <div><span class="c">1</span>
+            <span class="c">2</span>
+            <span class="c">3</span></div>
+             
+            <div><span class="c">4</span>
+            <span class="c">5</span>
+            <span class="c">6</span></div>
+
+           <div><span class="c">7</span> 
+            <span class="c">8</span>
+            <span class="c">9</span></div>
+            
+            <div><span class="c">0</span>
+<span class="c">,</span>
+<span class="c">.</span>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="ktp0Wrapper">
+<div id="hintType">
+</div>
+
+
+<div id="punctuation">
+<span class="c">&#x002C;</span>
+<span class="c">&#x002E;</span>
+<span class="c">&#x003B;</span>
+<span class="c">&#x003A;</span>
+<span class="c">&#x003F;</span>
+<span class="c">&#x0021;</span>
+<span class="c">&#x2018;</span>
+<span class="c">&#x2019;</span>
+<span class="c">&#x201C;</span>
+<span class="c">&#x201D;</span>
+<span class="c">&#x00AB;</span>
+<span class="c">&#x00BB;</span>
+<span class="c">&#x0028;</span>
+<span class="c">&#x0029;</span>
+<span class="c">&#x002D;</span>
+<span class="g"><span class="hint">,</span><span class="c">᜵</span></span>
+<span class="g"><span class="hint">.</span><span class="c">᜶</span></span>
+</div>
+</div>
+
+
+
+
+
+  </div>
+
+
+
+ <div id="temp"></div>
+
+</div>
+<!-- end of tables -->
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
