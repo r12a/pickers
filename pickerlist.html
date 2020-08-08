@@ -20,14 +20,25 @@
 //	}
 //document.getElementById('placeholder').innerHTML = out
 
+console.log(plistByRegion)
 	out = ''
 	for (item in plistByRegion) {
-		out += '<span style="font-size: 100%; color:brown;font-weight:bold;">'+item+'</span> &nbsp;&nbsp;'
+		out += '&nbsp;&nbsp;<span style="font-size: 100%; color:brown;font-weight:bold;">'+item+'</span>&nbsp;&nbsp;'
 		for (let i=0;i<plistByRegion[item].length;i++) {
-			out += '<a href="'+plistByRegion[item][i][1]+'">'+plistByRegion[item][i][0]+'</a> '
-			if (i<plistByRegion[item].length-1) out += '&bull; '
+			if (plistByRegion[item][i][0].includes('[')) {
+				var sublistEdge = true
+				out += ' '+plistByRegion[item][i][0]+' '
+				}
+			else if (plistByRegion[item][i][0] === ']') {
+				out += '] '
+				}
+			else {
+			 	if (i>0 && ! sublistEdge) out += '&bull; '
+				out += '<a href="'+plistByRegion[item][i][1]+'">'+plistByRegion[item][i][0]+'</a> '
+				sublistEdge = false
+				}
 			}
-		out += '<br/>'
+		out += '<br>'
 		}
 	document.getElementById('placeholder').innerHTML = out
 
