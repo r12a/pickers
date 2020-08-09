@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Mende Kikakui character app 25</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="defaults.js">  </script>
+<script src="/shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/mend.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared25/setup.js">  </script>
+<script src="../shared25/code.js">  </script>
+<script src="../shared25/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared25/pagetemplate.js">  </script>
+<script src="/scripts/linkdata/linkdb.js"></script>
+<script src="localtranscription.js">  </script>
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+<div id="chardata"><span id="charname">Click S (shape lookup), or on characters below.</span></div>
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+<div id="alphabet" class="default">
+
+
+
+<div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<bdi onclick="findShape('1E825,1E82B,1E82D,1E828,1E88E,1E88D,1E820,1E81F,1E821,1E81C,1E841,1E803,1E801,1E8A7,1E84C,1E845,1E8B5,1E8BA,1E85B,1E8BC,1E833,1E832,1E89C,1E815,1E866,1E864,1E881,1E889,1E87D,1E88A,1E87E,1E8C2,1E8C3,1E8C4,1E813,1E809,1E837,1E8CE,1E8CF','𞠥,𞠫,𞠭,𞠨,𞢎,𞢍,𞠠,𞠟,𞠡,𞠜,𞡁,𞠃,𞠁,𞢧,𞡌,𞡅,𞢵,𞢺,𞡛,𞢼,𞠳,𞠲,𞢜,𞠕,𞡦,𞡤,𞢁,𞢉,𞡽,𞢊,𞡾,𞣂,𞣃,𞣄,𞠓,𞠉,𞠷,𞣎,𞣏',true)">𞡁</bdi>
+<bdi onclick="findShape('1E86D,1E846,1E802,1E8A6,1E84D,1E85C,1E816,1E89E,1E865,1E87B,1E80A,1E838,1E80B,1E857','𞡭,𞡆,𞠂,𞢦,𞡍,𞡜,𞠖,𞢞,𞡥,𞡻,𞠊,𞠸,𞠋,𞡗',true)">𞡭</bdi>
+<bdi onclick="findShape('1E8AE,1E82C,1E8B6','𞢮,𞠬,𞢶',true)">𞢮</bdi>
+<bdi onclick="findShape('1E858,1E82A,1E842,1E843,1E883,1E888,1E8A5,1E852,1E8AC,1E8B7,1E8B8,1E8B5,1E8BD,1E831,1E868,1E8B3,1E880,1E882,1E810,1E83B','𞡘,𞠪,𞡂,𞡃,𞢃,𞢈,𞢥,𞡒,𞢬,𞢷,𞢸,𞢵,𞢽,𞠱,𞡨,𞢳,𞢀,𞢂,𞠐,𞠻',true)">𞡘</bdi>
+<bdi onclick="findShape('1E862,1E856,1E898,1E894,1E877,1E811,1E807,1E88C,1E891,1E892,1E885,1E887,1E83A,1E89F,1E8A2,1E860,1E861','𞡢,𞡖,𞢘,𞢔,𞡷,𞠑,𞠇,𞢌,𞢑,𞢒,𞢅,𞢇,𞠺,𞢟,𞢢,𞡠,𞡡',true)">𞡢</bdi>
+<bdi onclick="findShape('1E83C,1E83D','𞠼,𞠽',true)">𞠼</bdi>
+<bdi onclick="findShape('1E827,1E8A1,1E8A8,1E8AB,1E85A,1E85C,1E85D,A555,1E85B,1E8B9,1E8BC,1E8BA,1E818','𞠧,𞢡,𞢨,𞢫,𞡚,𞡜,𞡝,ꕕ,𞡛,𞢹,𞢼,𞢺,𞠘',true)">𞠧</bdi>
+<bdi onclick="findShape('1E805,1E804,1E871,1E89B,1E896,1E87C','𞠅,𞠄,𞡱,𞢛,𞢖,𞡼',true)">𞠅</bdi>
+<bdi onclick="findShape('1E822,1E82B,1E824,1E826,1E823,1E829,1E82E,1E830,1E831,1E82F,1E832,1E86A,1E86E,1E81A,1E867,1E8C7','𞠢,𞠫,𞠤,𞠦,𞠣,𞠩,𞠮,𞠰,𞠱,𞠯,𞠲,𞡪,𞡮,𞠚,𞡧,𞣇',true)">𞠢</bdi>
+<bdi onclick="findShape('1E844,1E846,1E848,1E845,1E8CF','𞡄,𞡆,𞡈,𞡅,𞣏',true)">𞡄</bdi>
+<bdi onclick="findShape('1E821,1E88C,1E8A4','𞠡,𞢌,𞢤',true)">𞠡</bdi>
+<bdi onclick="findShape('1E825,1E84A,1E841,1E843,1E84F,1E851,1E833,1E8AE,1E8C2,1E83A,1E83D','𞠥,𞡊,𞡁,𞡃,𞡏,𞡑,𞠳,𞢮,𞣂,𞠺,𞠽',true)">𞠥</bdi>
+<bdi onclick="findShape('1E836,1E838,1E837,1E878','𞠶,𞠸,𞠷,𞡸',true)">𞠶</bdi>
+<bdi onclick="findShape('1E80C,1E80F,1E80F,1E80C','𞠌,𞠏,𞠏,𞠌',true)">𞠌</bdi>
+<bdi onclick="findShape('1E81F,1E82D,1E88F,1E863,1E865,1E866,1E864,1E857,1E859,1E8C8,1E8CA,1E85F,1E8BE,1E897,1E8C0','𞠟,𞠭,𞢏,𞡣,𞡥,𞡦,𞡤,𞡗,𞡙,𞣈,𞣊,𞡟,𞢾,𞢗,𞣀',true)">𞠟</bdi>
+<bdi onclick="findShape('1E8A9,1E849,1E8A6','𞢩,𞡉,𞢦',true)">𞢩</bdi>
+<bdi onclick="findShape('1E814,1E816,1E817,1E899,1E815','𞠔,𞠖,𞠗,𞢙,𞠕',true)">𞠔</bdi>
+<bdi onclick="findShape('1E86B,1E86D,1E869','𞡫,𞡭,𞡩',true)">𞡫</bdi>
+<bdi onclick="findShape('1E81B,1E81D,1E81C,1E893','𞠛,𞠝,𞠜,𞢓',true)">𞠛</bdi>
+<bdi onclick="findShape('1E83E,1E840,1E83F,1E884,1E850,1E8AA,1E8B7,1E834,1E89D,1E8B0,1E8B1,1E856','𞠾,𞡀,𞠿,𞢄,𞡐,𞢪,𞢷,𞠴,𞢝,𞢰,𞢱,𞡖',true)">𞠾</bdi>
+<bdi onclick="findShape('1E800,1E802,1E803,1E801,1E883,1E886,1E873,1E875,1E877,1E87A,1E87E','𞠀,𞠂,𞠃,𞠁,𞢃,𞢆,𞡳,𞡵,𞡷,𞡺,𞡾',true)">𞠀</bdi>
+<bdi onclick="findShape('1E806,1E87D','𞠆,𞡽',true)">𞠆</bdi>
+<bdi onclick="findShape('1E84B,1E84C,1E84D,1E8B6,1E84E,1E87B','𞡋,𞡌,𞡍,𞢶,𞡎,𞡻',true)">𞡋</bdi>
+<bdi onclick="findShape('1E86C,1E874,1E876,1E895,1E88A,1E88B','𞡬,𞡴,𞡶,𞢕,𞢊,𞢋',true)">𞡬</bdi>
+<bdi onclick="findShape('1E872,1E82C','𞡲,𞠬',true)">𞡲</bdi>
+<bdi onclick="findShape('1E808,1E80A,1E80E,1E809,1E812,1E810','𞠈,𞠊,𞠎,𞠉,𞠒,𞠐',true)">𞠈</bdi>
+<bdi onclick="findShape('1E853,1E855,1E854','𞡓,𞡕,𞡔',true)">𞡓</bdi>
+<bdi onclick="findShape('20261E81E,1E847,1E85E,1E8BB,1E835,1E86F,1E870,1E89A,1E819,1E890,1E8B2,1E8B4,1E8AF,1E879,1E881,1E87F,1E8C3,1E8C4,1E8C1,1E813,1E80D,1E839,1E8AD,1E8C9,1E8CB,1E8CC,1E8CD,1E8CE','𞠞,𞡇,𞡞,𞢻,𞠵,𞡯,𞡰,𞢚,𞠙,𞢐,𞢲,𞢴,𞢯,𞡹,𞢁,𞡿,𞣃,𞣄,𞣁,𞠓,𞠍,𞠹,𞢭,𞣉,𞣋,𞣌,𞣍,𞣎',true)">…</bdi>
+
+ </div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+
+
+<div class="spaceline">
+<span class="unshifted" dir="auto" onclick="toggleShift(this, 'kbdGrid', 'twoStep')">TABLE VIEW</span>
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+<div id="twoStep" style="display: none;">
+      <span class="selector" title="e" onclick="findShape('','ꔀ,ꔁ,ꔂ,ꔃ,ꔄ,ꔅ,ꔆ,ꔇ,ꔈ,ꔉ,ꔊ,ꔋ,ꔌ,ꔍ,ꔎ,ꔏ,ꔐ,ꔑ,ꔒ,ꔓ,ꔔ,ꔕ,ꔖ,ꔗ,ꔘ,ꔙ,ꔚ,ꔛ,ꔜ,ꔝ,ꔞ,ꔟ,ꔠ,ꔡ,ꔢ,ꔣ',false)">ꔀ</span> 
+      <span class="selector" title="i" onclick="findShape('','ꔤ,ꔥ,ꔦ,ꔧ,ꔨ,ꔩ,ꔪ,ꔫ,ꔬ,ꔭ,ꔮ,ꔯ,ꔰ,ꔱ,ꔲ,ꔳ,ꔴ,ꔵ,ꔶ,ꔷ,ꔸ,ꔹ,ꔺ,ꔻ,ꔼ,ꔽ,ꔾ,ꔿ,ꕀ,ꕁ,ꕂ,ꕃ,ꕄ,ꕅ,ꕆ,ꕇ,ꕈ',false)">ꔤ</span> 
+      <span class="selector"  title="a" onclick="findShape('','ꕉ,ꕊ,ꕋ,ꕌ,ꕍ,ꕎ,ꕏ,ꕐ,ꕑ,ꕒ,ꕓ,ꕔ,ꕕ,ꕖ,ꕗ,ꕘ,ꕙ,ꕚ,ꕛ,ꕜ,ꕝ,ꕞ,ꕟ,ꕠ,ꕡ,ꕢ,ꕣ,ꕤ,ꕥ,ꕦ,ꕧ,ꕨ,ꕩ,ꕪ,ꕫ,ꕬ,ꕭ,ꕮ,ꕯ,ꕰ',false)">ꕉ</span> 
+      <span class="selector"  title="o" onclick="findShape('','ꕱ,ꕲ,ꕳ,ꕴ,ꕵ,ꕶ,ꕷ,ꕸ,ꕹ,ꕺ,ꕻ,ꕼ,ꕽ,ꕾ,ꕿ,ꖀ,ꖁ,ꖂ,ꖃ,ꖄ,ꖅ,ꖆ,ꖇ,ꖈ,ꖉ,ꖊ,ꖋ,ꖌ,ꖍ,ꖎ,ꖏ,ꖐ,ꖑ,ꖒ,ꖓ,ꖔ',false)">ꕱ</span> 
+      <span class="selector"  title="u" onclick="findShape('','ꖕ,ꖖ,ꖗ,ꖘ,ꖙ,ꖚ,ꖛ,ꖜ,ꖝ,ꖞ,ꖟ,ꖠ,ꖡ,ꖢ,ꖣ,ꖤ,ꖥ,ꖦ,ꖧ,ꖨ,ꖩ,ꖪ,ꖫ,ꖬ,ꖭ,ꖮ,ꖯ,ꖰ,ꖱ,ꖲ,ꖳ,ꖴ,ꖵ,ꖶ,ꖷ,ꖸ,ꖹ',false)">ꖕ</span> 
+      <span class="selector"  title="ɔ" onclick="findShape('','ꖺ,ꖻ,ꖼ,ꖽ,ꖾ,ꖿ,ꗀ,ꗁ,ꗂ,ꗃ,ꗄ,ꗅ,ꗆ,ꗇ,ꗈ,ꗉ,ꗊ,ꗋ,ꗌ,ꗍ,ꗎ,ꗏ,ꗐ,ꗑ,ꗒ,ꗓ,ꗔ,ꗕ,ꗖ,ꗗ,ꗘ,ꗙ,ꗚ,ꗛ,ꗜ,ꗝ,ꗞ,ꗟ,ꗠ',false)">ꖺ</span> 
+      <span class="selector"  title="ɛ" onclick="findShape('','ꗡ,ꗢ,ꗣ,ꗤ,ꗥ,ꗦ,ꗧ,ꗨ,ꗩ,ꗪ,ꗫ,ꗬ,ꗭ,ꗮ,ꗯ,ꗰ,ꗱ,ꗲ,ꗳ,ꗴ,ꗵ,ꗶ,ꗷ,ꗸ,ꗹ,ꗺ,ꗻ,ꗼ,ꗽ,ꗾ,ꗿ,ꘀ,ꘁ,ꘂ,ꘃ,ꘄ,ꘅ,ꘆ,ꘇ,ꘈ,ꘉ,ꘊ',false)">ꗡ</span> 
+      <span class="selector" onclick="findShape('','꘠,꘡,꘢,꘣,꘤,꘥,꘦,꘧,꘨,꘩',true)">#</span> 
+     <span class="selector" onclick="findShape('','ꘐ,ꘑ,ꘒ,ꘪ,ꘫ',false)">HS</span> 
+      <span class="selector" onclick="findShape('','ꘓ,ꘔ,ꘕ,ꘖ,ꘗ,ꘘ,ꘙ,ꘚ,ꘛ,ꘜ,ꘝ,ꘞ,ꘟ',false)">L</span> 
+      <span class="c">ꘌ</span>
+      <span class="c">ꘋ</span>
+      <span class="c">ꘘ</span>
+      <span class="c">ꘓ</span>
+</div>
+
+<div id="kbdGrid" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
+<div id="part1">      
+<table>
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th><span class="hint">i</span></th>
+<th><span class="hint">u</span></th>
+<th><span class="hint">e</span></th>
+<th><span class="hint">o</span></th>
+<th><span class="hint">ɛ</span></th>
+<th><span class="hint">ɔ</span></th>
+<th><span class="hint">a</span></th>
+<th><span class="hint">other</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th><span class="hint">-</span></th>
+<td><span class="c">𞠢</span><span class="c">𞠫</span><span class="c">𞠪</span></td>
+<td><span class="c">𞠤</span></td>
+<td><span class="c">𞠥</span></td>
+<td><span class="c">𞠧</span></td>
+<td><span class="c">𞠦</span><span class="c">𞠭</span></td>
+<td><span class="c">𞠨</span></td>
+<td><span class="c">𞠣</span><span class="c">𞠬</span></td>
+<td><span class="c">𞠩</span></td>
+</tr>
+<tr>
+<th><span class="hint">p</span></th>
+<td><span class="c">𞢌</span></td>
+<td><span class="c">𞢎</span></td>
+<td><span class="c">𞢏</span></td>
+<td><span class="c">𞢑</span></td>
+<td><span class="c">𞢐</span></td>
+<td><span class="c">𞢒</span></td>
+<td><span class="c">𞢍</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+<tr>
+<th><span class="hint">b</span></th>
+<td><span class="c">𞠛</span></td>
+<td><span class="c">𞠝</span></td>
+<td><span class="c">𞠞</span></td>
+<td><span class="c">𞠠</span></td>
+<td><span class="c">𞠟</span></td>
+<td><span class="c">𞠡</span></td>
+<td><span class="c">𞠜</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+<tr>
+<th><span class="hint">t</span></th>
+<td><span class="c">𞡄</span></td>
+<td><span class="c">𞡆</span></td>
+<td><span class="c">𞡇</span></td>
+<td><span class="c">𞡉</span></td>
+<td><span class="c">𞡈</span></td>
+<td><span class="c">𞡊</span></td>
+<td><span class="c">𞡅</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+<tr>
+<th><span class="hint">d</span></th>
+<td><span class="c">𞠾</span></td>
+<td><span class="c">𞡀</span></td>
+<td><span class="c">𞡁</span></td>
+<td><span class="c">𞡂</span></td>
+<td><span class="c">&nbsp;</span></td>
+<td><span class="c">𞡃</span></td>
+<td><span class="c">𞠿</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+<tr>
+<th><span class="hint">k</span></th>
+<td><span class="c">𞠀</span></td>
+<td><span class="c">𞠂</span></td>
+<td><span class="c">𞠃</span></td>
+<td><span class="c">𞠅</span></td>
+<td><span class="c">𞠄</span></td>
+<td><span class="c">𞠆</span></td>
+<td><span class="c">𞠁</span></td>
+<td><span class="c">𞠇</span></td>
+</tr>
+<tr>
+<th><span class="hint">g</span></th>
+<td><span class="c">𞢃</span></td>
+<td><span class="c">𞢅</span></td>
+<td><span class="c">𞢆</span></td>
+<td><span class="c"></span></td>
+<td><span class="c"></span></td>
+<td><span class="c"></span></td>
+<td><span class="c">𞢄</span></td>
+<td><span class="c">𞢇</span> <span class="c">𞢈</span></td>
+</tr>
+<tr>
+<th><span class="hint">kp</span></th>
+<td><span class="c">𞢟</span></td>
+<td><span class="c">𞢡</span></td>
+<td><span class="c">𞢢</span></td>
+<td><span class="c">𞢤</span></td>
+<td><span class="c">𞢣</span></td>
+<td><span class="c">𞢥</span></td>
+<td><span class="c">𞢠</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+<tr>
+<th><span class="hint">gb</span></th>
+<td><span class="c">𞢦</span></td>
+<td><span class="c">𞢨</span></td>
+<td><span class="c">𞢩</span></td>
+<td><span class="c">𞢫</span></td>
+<td><span class="c">𞢪</span></td>
+<td><span class="c">𞢬</span></td>
+<td><span class="c">𞢧</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+<tr>
+<th><span class="hint">j</span></th>
+<td><span class="c">𞡋</span></td>
+<td><span class="c">𞡍</span></td>
+<td><span class="c">𞡎</span></td>
+<td><span class="c">𞡐</span></td>
+<td><span class="c">𞡏</span></td>
+<td><span class="c">𞡑</span> <span class="c">𞡒</span></td>
+<td><span class="c">𞡌</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+<tr>
+<th><span class="hint">nj</span></th>
+<td><span class="c">&nbsp;</span></td>
+<td><span class="c">𞢶</span></td>
+<td><span class="c">𞢷</span></td>
+<td><span class="c">𞢸</span></td>
+<td><span class="c">&nbsp;</span></td>
+<td><span class="c">&nbsp;</span></td>
+<td><span class="c">𞢵</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+<tr>
+<th><span class="hint">f</span></th>
+<td><span class="c">𞡚</span></td>
+<td><span class="c">𞡜</span></td>
+<td><span class="c">𞡝</span> <span class="c">ꕕ</span></td>
+<td><span class="c">𞡟</span></td>
+<td><span class="c">𞡞</span></td>
+<td><span class="c">𞡠</span></td>
+<td><span class="c">𞡛</span> <span class="c">𞡢</span></td>
+<td><span class="c">𞡡</span></td>
+</tr>
+<tr>
+<th><span class="hint">v</span></th>
+<td><span class="c">𞢹</span></td>
+<td><span class="c">𞢻</span></td>
+<td><span class="c">𞢼</span></td>
+<td><span class="c">𞢾</span></td>
+<td><span class="c">𞢽</span></td>
+<td><span class="c">𞢿</span></td>
+<td><span class="c">𞢺</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+<tr>
+<th><span class="hint">s</span></th>
+<td><span class="c">𞠮</span></td>
+<td><span class="c">𞠰</span></td>
+<td><span class="c">𞠱</span></td>
+<td><span class="c">𞠳</span></td>
+<td><span class="c">𞠲</span></td>
+<td><span class="c">𞠴</span></td>
+<td><span class="c">𞠯</span></td>
+<td><span class="c">𞠵</span></td>
+</tr>
+<tr>
+<th><span class="hint">h</span></th>
+<td><span class="c">𞡨</span> <span class="c">𞡱</span></td>
+<td><span class="c">𞡪</span> <span class="c">𞡳</span></td>
+<td><span class="c">𞡫</span></td>
+<td><span class="c">𞡭</span></td>
+<td><span class="c">𞡬</span> <span class="c">𞡴</span></td>
+<td><span class="c">𞡮</span> <span class="c">𞡵</span></td>
+<td><span class="c">𞡩</span> <span class="c">𞡲</span></td>
+<td><span class="c">𞡯</span> <span class="c">𞡶</span> <span class="c">𞡰</span></td>
+</tr>
+<tr>
+<th><span class="hint">m</span></th>
+<td><span class="c">𞢓</span> <span class="c">𞠔</span></td>
+<td><span class="c">𞢕</span> <span class="c">𞢛</span> <span class="c">𞠖</span></td>
+<td><span class="c">𞢖</span> <span class="c">𞢗</span> <span class="c">𞠗</span></td>
+<td><span class="c">𞢙</span> <span class="c">𞢝</span> <span class="c">𞠘</span></td>
+<td><span class="c">𞢘</span> <span class="c">𞢜</span></td>
+<td><span class="c">𞢚</span><span class="c">𞢞</span></td>
+<td><span class="c">𞢔</span> <span class="c">𞠕</span></td>
+<td><span class="c">𞠙</span> <span class="c">𞠚</span></td>
+</tr>
+<tr>
+<th><span class="hint">n</span></th>
+<td><span class="c">𞡣</span></td>
+<td><span class="c">𞡥</span></td>
+<td><span class="c">&nbsp;</span></td>
+<td><span class="c">&nbsp;</span></td>
+<td><span class="c">𞡦</span></td>
+<td><span class="c">𞡧</span></td>
+<td><span class="c">𞡤</span></td>
+</tr>
+<tr>
+<th><span class="hint">nd</span></th>
+<td><span class="c">𞢮</span></td>
+<td><span class="c">𞢰</span></td>
+<td><span class="c">𞢱</span></td>
+<td><span class="c">𞢳</span></td>
+<td><span class="c">𞢲</span></td>
+<td><span class="c">𞢴</span></td>
+<td><span class="c">𞢯</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+<tr>
+<th><span class="hint">ng</span></th>
+<td><span class="c">𞡷</span></td>
+<td><span class="c">𞡹</span></td>
+<td><span class="c">𞡺</span></td>
+<td><span class="c">𞡼</span> <span class="c">𞢁</span></td>
+<td><span class="c">𞡻</span> <span class="c">𞢀</span> <span class="c">𞢉</span></td>
+<td><span class="c">𞡽</span> <span class="c">𞢂</span> <span class="c">𞢊</span></td>
+<td><span class="c">𞡸</span> <span class="c">𞡾</span></td>
+<td><span class="c">𞡿</span> <span class="c">𞢋</span></td>
+</tr>
+<tr>
+<th><span class="hint">ny</span></th>
+<td><span class="c">𞣀</span></td>
+<td><span class="c">𞣂</span></td>
+<td><span class="c">&nbsp;</span></td>
+<td><span class="c">&nbsp;</span></td>
+<td><span class="c">𞣃</span></td>
+<td><span class="c">𞣄</span></td>
+<td><span class="c">𞣁</span></td>
+</tr>
+<tr>
+<th><span class="hint">w</span></th>
+<td><span class="c">𞠈</span> <span class="c">𞠑</span></td>
+<td><span class="c">𞠊</span></td>
+<td><span class="c">𞠋</span> <span class="c">𞠓</span></td>
+<td><span class="c">𞠍</span></td>
+<td><span class="c">𞠌</span></td>
+<td><span class="c">𞠎</span></td>
+<td><span class="c">𞠉</span> <span class="c">𞠒</span></td>
+<td><span class="c">𞠏</span> <span class="c">𞠐</span></td>
+</tr>
+<tr>
+<th><span class="hint">l</span></th>
+<td><span class="c">𞠶</span></td>
+<td><span class="c">𞠸</span></td>
+<td><span class="c">𞠹</span></td>
+<td><span class="c">𞠻</span></td>
+<td><span class="c">𞠺</span> <span class="c">𞠽</span></td>
+<td><span class="c">𞠼</span></td>
+<td><span class="c">𞠷</span></td>
+<td><span class="c">𞢭</span></td>
+</tr>
+<tr>
+<th><span class="hint">y</span></th>
+<td><span class="c">𞡓</span></td>
+<td><span class="c">𞡕</span></td>
+<td><span class="c">𞡖</span></td>
+<td><span class="c">𞡘</span></td>
+<td><span class="c">𞡗</span></td>
+<td><span class="c">𞡙</span></td>
+<td><span class="c">𞡔</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+ 
+ <div id="part2">
+<table>
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th><span class="hint">#</span></th>
+<th><span class="hint">x</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th><span class="hint">1</span></th>
+<td><span class="c">𞣇</span></td>
+<td><span class="c">𞣐</span></td>
+</tr>
+<tr>
+<th><span class="hint">2</span></th>
+<td><span class="c">𞣈</span></td>
+<td><span class="c">𞣑</span></td>
+</tr>
+<tr>
+<th><span class="hint">3</span></th>
+<td><span class="c">𞣉</span></td>
+<td><span class="c">𞣒</span></td>
+</tr>
+<tr>
+<th><span class="hint">4</span></th>
+<td><span class="c">𞣊</span></td>
+<td><span class="c">𞣓</span></td>
+</tr>
+<tr>
+<th><span class="hint">5</span></th>
+<td><span class="c">𞣋</span></td>
+<td><span class="c">𞣔</span></td>
+</tr>
+<tr>
+<th><span class="hint">6</span></th>
+<td><span class="c">𞣌</span></td>
+<td><span class="c">𞣕</span></td>
+</tr>
+<tr>
+<th><span class="hint">7</span></th>
+<td><span class="c">𞣍</span></td>
+<td><span class="c">𞣖</span></td>
+</tr>
+<tr>
+<th><span class="hint">8</span></th>
+<td><span class="c">𞣎</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+<tr>
+<th><span class="hint">9</span></th>
+<td><span class="c">𞣏</span></td>
+<td><span class="c">&nbsp;</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">‚</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<span class="c">„</span>
+<span class="c">«</span>
+<span class="c">»</span>
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+<span class="c">꘍</span>
+<span class="c">꘎</span>
+<span class="c">꘏</span>
+</div>
+
+
+
+
+<!--details>
+<summary>Show obsolete letters</summary>
+<div id="obsolete">
+<span class="g"><span class="hint">ī</span><span class="c">&#x0456;</span></span>
+<span class="g"><span class="hint">ḟ</span><span class="c">&#x0473;</span></span>
+<span class="g"><span class="hint">i͡e</span><span class="c">&#x0463;</span></span>
+<span class="g"><span class="hint">ẏ</span><span class="c">&#x0475;</span></span>
+
+<span style="margin-left: 2em;" class="g"><span class="hint">ż</span><span class="c">&#x0455;</span></span>
+<span class="g"><span class="hint">k͡s</span><span class="c">&#x046F;</span></span>
+<span class="g"><span class="hint">p͡s</span><span class="c">&#x0471;</span></span>
+<span class="g"><span class="hint">ǫ</span><span class="c">&#x046B;</span></span>
+<span class="g"><span class="hint">ę</span><span class="c">&#x0467;</span></span>
+<span class="g"><span class="hint">i͡ǫ</span><span class="c">&#x046D;</span></span>
+<span class="g"><span class="hint">i͡ę</span><span class="c">&#x0469;</span></span>
+</div>
+</details-->
+
+
+</div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
