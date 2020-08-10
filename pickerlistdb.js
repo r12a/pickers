@@ -41,6 +41,7 @@ var plist = [
     { tag:'maka', name:'Makasar', url:'makasar/' },
     { tag:'mlym', name:'Malayalam', url:'malayalam/' },
     { tag:'mand', name:'Mandaic', url:'mandaic/' },
+    { tag:'mend', name:'Mende Kikakui', url:'mend/' },
     { tag:'mong', name:'Mongolian', url:'mongolian/' },
     { tag:'tfng', name:'Neo-tifinagh', url:'neotifinagh/' },
     { tag:'talu', name:'New&nbsp;Tai&nbsp;Lue', url:'newtailue/' },
