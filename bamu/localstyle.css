@@ -1,14 +1,14 @@
 @font-face {
-    font-family: 'Noto Serif Bamum WF';
-    src: url('/shared/webfonts/notoserifdevanagari-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notoserifdevanagari-regular-webfont.woff') format('woff');
+    font-family: 'Noto Sans Bamum WF';
+    src: url('/shared/webfonts/notosansbamum-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosansbamum-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
 
 
-[lang=hi] { font-family: 'Noto Serif Bamum WF', serif; }
+[lang=hi] { font-family: 'Noto Sans Bamum WF', serif; }
 
 
 
@@ -35,7 +35,7 @@ span.hint {
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  'Noto Serif Bamum WF',  sans-serif;  
+	font-family:  'Noto Sans Bamum WF',  sans-serif;  
     line-height: 1;
 	}
 
