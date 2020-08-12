@@ -33,14 +33,15 @@ var template = {}
 
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Bamum text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-
-//{"title":"XXXXXXXXXX<br/>to XXXXXXXXXX", "alt":"XXXXXXXXXX.", "code":"doTranscription('XXXXXXXXXX')", "warning":"Still in development. Separate syllables before use."},
+{"title":"Trans-<br/>literate", "alt":"Convert Bamum text to a Latin transliteration.", "code":"console.log('calling');doTranscription('transliterate')"},
 ]
 
 
 
 var pulldown = [
+
+{"title":"Bamum<br/>to Latin", "alt":"Convert Bamum text to Latin.", "code":"doTranscription('toLatin')"},
+
 {"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Bamum.", "code":"doTranscription('reverse')"},
 ]
 
