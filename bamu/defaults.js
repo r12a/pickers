@@ -34,6 +34,18 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Bamum text to a Latin transliteration.", "code":"console.log('calling');doTranscription('transliterate')"},
+
+{"title":"Make<br/>vocab", "alt":"Expand text to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+input=getHighlightedText(_output).split('|'); console.log(input);
+if (! hasHighlight(_output)) _output.value=''; 
+
+ipa = toLatin(input[0]);
+notes = input[2]? input[2] : ''; 
+
+console.log(input[0], input[1], notes, ipa);
+add(getVocab(input[0], input[1], notes, ipa));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 ]
 
 
