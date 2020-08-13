@@ -2450,7 +2450,7 @@ function drawCharSelectionPanel (key) {
 		if (! window.latinTypeAssist) out += ' <sup>'+ kbdEventList[key][i][0] +'</sup>'
 		else out += ' <sup></sup>'
 		out += '<sub>'+ ((i+1) % 10)+'</sub> '
-		out += '<bdi onclick="'
+		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'Doulos SIL WF\';" onclick="'
 		out += 'addReplacement'
 		out += '(\''+kbdEventList[key][i][1]+'\'); document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+kbdEventList[key][i][1]+'</bdi>'
 		}
@@ -2459,7 +2459,6 @@ function drawCharSelectionPanel (key) {
     }
 
 	
-
 
 	
 // decipher key down codes
