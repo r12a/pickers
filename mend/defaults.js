@@ -33,7 +33,7 @@ var template = {}
 
 
 var controls = [
-{"title":"Trans-<br/>scribe", "alt":"Convert Mende Kikakui text to a Latin transcription.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Mende Kikakui text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
 //{"title":"XXXXXXXXXX<br/>to XXXXXXXXXX", "alt":"XXXXXXXXXX.", "code":"doTranscription('XXXXXXXXXX')", "warning":"Still in development. Separate syllables before use."},
 ]
@@ -41,6 +41,8 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Mende to Latin", "alt":"Convert Mende Kikakui text to a Latin transcription.", "code":"doTranscription('toLatin')", "warning":"This conversion will likely need tweaking!"},
+
 {"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Mende Kikakui.", "code":"doTranscription('reverse')"},
 ]
 
