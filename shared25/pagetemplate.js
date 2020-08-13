@@ -136,6 +136,7 @@ function clearBidiOverride () {
 
 function setTop (title,sample) {
 var out
+
 out = `<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">🌓</button>
 <a class="interactiveHelpButton" style="float:right; margin-right:.5em;" href="help/#contrast" target="_help" title="Help with contrast."><img alt="help" src="../images/help.png"/></a>
 
@@ -192,7 +193,7 @@ out += `
     <button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" 
     title="Create an character link.">Character<br/>markup</button>
     
-    <img src="../shared25/images/menu.png"" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="console.log(document.getElementById(\'pulldown\').style.display); if (document.getElementById(\'pulldown\').style.display===\'none\'){document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\' }; document.getElementById(\'output\').focus();"/>
+    <img src="../shared25/images/menu.png" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="console.log(document.getElementById(\'pulldown\').style.display); if (document.getElementById(\'pulldown\').style.display===\'none\'){document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\' }; document.getElementById(\'output\').focus();"/>
     </span>
     
     <div id="pulldown" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
