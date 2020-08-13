@@ -5,6 +5,7 @@ var plist = [
     { tag:'syrc', name:'Assyrian&nbsp;Neo-Aramaic', url:'syrc-aii/' },
     { tag:'armn', name:'Armenian', url:'armenian/' },
     { tag:'bali', name:'Balinese', url:'balinese/' },
+    { tag:'bamu', name:'Bamum', url:'bamu/' },
     { tag:'bass', name:'Bassa Vah', url:'bass/' },
     { tag:'beng', name:'Bengali', url:'bengali/' },
     { tag:'bugi', name:'Buginese', url:'buginese/' },
@@ -99,6 +100,7 @@ var plistByRegion = {
 			  ],
 	'B':[
 			   ['Balinese', 'balinese/'],
+			   ['Bamum', 'bamu/'],
 			  ['Bassa Vah', 'bass/'],
 			  ['Bengali', 'bengali/'],
 			   ['Buginese', 'buginese/'],
