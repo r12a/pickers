@@ -23,6 +23,7 @@ var plist = [
     { tag:'grek', name:'Modern Greek', url:'greek/' },
     { tag:'gujr', name:'Gujarati', url:'gujarati/' },
     { tag:'guru', name:'Gurmukhi', url:'gurmukhi/' },
+    { tag:'rohg', name:'Hanifi Rohingya', url:'rohg/' },
     { tag:'hano', name:'Hanunoo', url:'hano/' },
     { tag:'arab', name:'Hausa (ajami)', url:'arab-ha/' },
     { tag:'latn', name:'Hausa (boko)', url:'latn-ha/' },
@@ -127,9 +128,10 @@ var plistByRegion = {
 			  ['Gurmukhi', 'gurmukhi/'],
 			  ],
 	'H':[
-			   ['Hanunoo', 'hano/'],
-			  ['Hebrew', 'hebrew/'],
-			  ],
+			['Hanifi Rohingya', 'rohg/'],
+			['Hanunoo', 'hano/'],
+			['Hebrew', 'hebrew/'],
+			],
 	'I':[
 			['IPA', 'ipa/'],
 			['IPA2', 'ipa2/'],
