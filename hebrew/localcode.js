@@ -68,6 +68,19 @@ e ɛ
 o ɔ
 `
 
+
+
+
+function showAlternatives (className, state) {
+	nodes = document.querySelectorAll(className)
+	if (state) state = 'inline-block'
+	else state = 'none'
+	for (let i=0;i<nodes.length;i++) nodes[i].parentNode.style.display = state
+	}
+
+
+
+
 /*
 
 var translitCharacterMap = `

@@ -10,107 +10,162 @@
 [lang=he] { font-family: 'Noto Serif Hebrew WF', serif; }
 
 
-
 #alphabet { 
 	display: block; 
 	color: #666;
-	margin-right: 0px;
 	}
-
 
 span.hint { 
 	margin-right: 1px;
-    margin-left: 1px;
-	font-size: 40%;
-	color: tan;
+    margin-left: 2px;
+	font-size: 50%;
+	color:tan;
 	}
 .c { 
 	min-width: .75em;
 	text-align: center;
 	}
-
-.v { 
-	min-width: .75em;
-	text-align: center;
-    cursor: pointer;
+.x {
+	color: #999;
+	}
+.f {
+	color: darkseagreen;
 	}
 
     
     
 /* KEYBOARD */
 .key span { 
-	font-size: 1.4em; 
+	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  'Arial',  sans-serif;  
+	font-family:  'Noto Serif Devanagari WF',  sans-serif;  
     line-height: 1;
 	}
-.key {padding: 4px 0 0 0; }
+
 #keyboard { display: none; }
 
 
 
 /* SELECTION AREA */
 
-#controlchars {
+#kbdGrid {
+ 	display: flex;
+ 	flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#ivowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	margin-right: 1em;
+    }
+#ivowelGrid div {
+	display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    }
+#ivowelGrid .verticalAlign {
+	justify-content: flex-end;
+	}
+#consonantGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+#consonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+#consonantGrid > span {
+    min-width: 1em;
+    }
+#aleph {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-left: 0;
+    justify-content: center;
+	}
+#vowelbase {
     text-align: center;
-    margin-bottom: .25em;
-    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     }
-.spaceline {
-    margin-bottom: 0;
+#vowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	margin-left: 0;
     }
-#kbd { 	
-	margin: auto; 
+#vowelGrid > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:space-between;
 	}
-#kbd table {
-	margin:0;
-	}
-#kbd td {  
-	margin: 0; 
-	padding: 0; 
-	padding-bottom: 3px; 
-	text-align: left;
-	cursor:pointer;
-	vertical-align: top; 
-	line-height: 1.4;
-	}
+#moreconsonants {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:flex-start;
+    text-align: end;
+	margin: 0 .5em;
+    }
+#tones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: .5em;
+    }
+#tones div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 1.5em;
+    justify-content: center;
+    margin-left: 0;
+    }
+#numberGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 90%;
+	margin-left: 1em;
+    }
+#digitKeypad div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
 
-
-#kbd #consonants td { 
-	text-align: center;
-	}
-#kbd #points { 
-	margin-left: 20px; 
-	margin-right: 20px; 
-	}
-#kbd #punctuationtable { 
-	margin-left: 20px; 
-	}
-#kbd #punctuationtable td { 
-	text-align: center;
-	}
-
-
-#rare {
-	margin: auto;
-	}
-#rare td {
-	text-align: start;
-	line-height: 1;
-	}
-
-
-#alphabet #controlchars {
-	padding: 0 10px; text-align:center;
-	}
-#alphabet #controlchars p {
-	margin: 0;
-	}
-
-#punctuation {
+#punctuation, #flatnumbers, #other {
     text-align: center;
-    font-size: 70%;
-    line-height: 1;
-	margin: .5em 0 .5em 0;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
     }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#obsolete {
+    text-align: center;
+    font-size: 90%;
+    }
+
+
 

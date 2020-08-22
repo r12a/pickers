@@ -35,12 +35,27 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Hebrew text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+
+{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+input=getHighlightedText(_output).split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+ipa = input[2]? input[2] : ''; 
+ipa += ' (' + input[0] + ')';
+notes = input[3]? input[3] : ''; 
+
+add(getVocab(removeVowels(input[0]), input[1], notes, ipa));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 ]
 
 
 
 var pulldown = [
 {"title":"Trans-<br/>scribe", "alt":"Convert Hebrew text to a Latin transcription.", "code":"doTranscription('transcription')"},
+
+
+{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
