@@ -17,6 +17,7 @@ var plist = [
     { tag:'cyrl', name:'All Cyrillic', url:'cyrillic/' },
     { tag:'deva', name:'All Devanagari', url:'devanagari/' },
     { tag:'egyp', name:'Egyptian&nbsp;hieroglyphs', url:'egyptian/' },
+    { tag:'elym', name:'Elymaic', url:'elym/' },
     { tag:'ethi', name:'All Ethiopic', url:'ethiopic/' },
     { tag:'geor', name:'Georgian', url:'geor-ka/' },
     { tag:'geor', name:'Khutsuri', url:'geok-ka/' },
@@ -26,6 +27,7 @@ var plist = [
     { tag:'guru', name:'Gurmukhi', url:'gurmukhi/' },
     { tag:'rohg', name:'Hanifi Rohingya', url:'rohg/' },
     { tag:'hano', name:'Hanunoo', url:'hano/' },
+    { tag:'hatr', name:'Hatran', url:'hatr/' },
     { tag:'arab', name:'Hausa (ajami)', url:'arab-ha/' },
     { tag:'latn', name:'Hausa (boko)', url:'latn-ha/' },
     { tag:'hebr', name:'Hebrew', url:'hebrew/' },
@@ -57,6 +59,7 @@ var plist = [
     { tag:'latn', name:'Pan-African Latin', url:'latn-afr/' },
     { tag:'arab', name:'Pan-African Ajami', url:'arab-afr/' },
     { tag:'arab', name:'Persian', url:'persian/' },
+    { tag:'prti', name:'Parthian', url:'prti/' },
     { tag:'phnx', name:'Phoenician', url:'phnx/' },
     { tag:'runr', name:'Runic', url:'runic/' },
     { tag:'cyrl', name:'Russian', url:'russian/' },
@@ -124,6 +127,7 @@ var plistByRegion = {
 			  ],
 	'E':[
 			  ['Egyptian&nbsp;hieroglyphs', 'egyptian/'],
+			  ['Elymaic', 'elym/'],
 			  ['Ethiopic', 'ethiopic/'],
 			  ],
 	'G':[
@@ -133,6 +137,7 @@ var plistByRegion = {
 	'H':[
 			['Hanifi Rohingya', 'rohg/'],
 			['Hanunoo', 'hano/'],
+			['Hatran', 'hatr/'],
 			['Hebrew', 'hebrew/'],
 			],
 	'I':[
@@ -178,6 +183,7 @@ var plistByRegion = {
 			  ],
 	'P':[
 				['Phoenician', 'phnx/'],
+				['Parthian', 'prti/'],
 			  ],
 	'S':[
 			  ['Sinhala', 'sinhala/'],
