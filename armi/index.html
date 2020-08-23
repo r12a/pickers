@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Aramaic character app 25</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="defaults.js">  </script>
+<script src="../../shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/armi.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared25/setup.js">  </script>
+<script src="../shared25/code.js">  </script>
+<script src="../shared25/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared25/pagetemplate.js">  </script>
+<script src="../../scripts/linkdata/linkdb.js"></script>
+<script src="localtranscription.js">  </script>
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+<div id="alphabet" class="default">
+
+
+<div id="shapelist" style="display:none; text-align:center;">
+<div id="shapekeys">
+<span onclick="findShape('921,907,908','',true)">ड</span>
+<span onclick="findShape('90F,910,90E','',true)">ए</span>
+<span onclick="findShape('905,976,976,973,974,906,909,90A,912,913,975,914,969,96C','',true)">अ</span>
+<span onclick="findShape('92F,92A,925','',true)">य</span>
+<span onclick="findShape('928,924,932','',true)">न</span>
+<span onclick="findShape('91A,91A93C,91C,91C93C','',true)">च</span>
+<span onclick="findShape('966,96A,91F,920,92C,935','',true)">०</span>
+<span onclick="findShape('92B,915','',true)">फ</span>
+<span onclick="findShape('967,968,96F,91B93C,91B,916,936','',true)">१</span>
+<span onclick="findShape('96B,926,939','',true)">५</span>
+<span onclick="findShape('96D,96E','',true)">७</span>
+<span onclick="findShape('92E,938,917,930','',true)">म</span>
+<span onclick="findShape('93F','',true)">ि</span>
+<span onclick="findShape('25CC353,956,957,941,942,93C','',true)">◌͓</span>
+<span onclick="findShape('93E,940,94A,93B,94B,94F,94C','',true)">ा</span>
+<span onclick="findShape('25CC33D,93A,946,947,948,901,902','',true)">◌̽</span>
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+
+
+<div class="spaceline">
+<!--span class="touch" title="Word separator" style="padding: 5px 50px;" dir="auto" onClick="add('𐤟');">𐤟</span-->
+<span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+<div id="kbdGrid"> 
+ 
+
+<!--div id="pulli"><span class="c" style="line-height: 2; padding: 2em 5px; border: 1px dotted #999;">&#x094D;</span> &nbsp;
+<span class="c">&#x093C;</span></div-->
+
+
+<div id="consonantGrid" class="box">
+            <div class="bottomDivider">
+<span class="g"><span class="hint"></span><span class="c">𐡐</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡁</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡕</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡃</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡈</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡊</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡂</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡒</span></span>
+           </div>
+             <div class="bottomDivider">
+<span class="g"><span class="hint"></span><span class="c">𐡎</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡆</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡑</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡔</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡇</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡏</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡄</span></span>
+           </div>
+           <div style="justify-content: space-around;">
+<span class="g"><span class="hint"></span><span class="c">𐡌</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡍</span></span>
+           </div>
+            <div style="justify-content: space-around;">
+<span class="g"><span class="hint"></span><span class="c">𐡅</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡓</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡋</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐡉</span></span>
+            </div>
+</div>
+
+
+
+
+
+<div id="aleph">
+<span class="g"><span class="hint"></span><span class="c" style="line-height: 2; padding: 2em 5px;">𐡀</span></span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="numberGrid">
+	<div id="digitKeypad" class="box">
+		<div>
+		<span class="g"><span class="hint">1</span><span class="c">𐡘</span></span>
+		<span class="g"><span class="hint">2</span><span class="c">𐡙</span></span>
+		<span class="g"><span class="hint">3</span><span class="c">𐡚</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">4</span><span class="c">𐡛</span></span>
+		<span class="g"><span class="hint">5</span><span class="c">𐡜</span></span>
+		<span class="g"><span class="hint">6</span><span class="c">𐡝</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">4</span><span class="c">𐡞</span></span>
+		<span class="g"><span class="hint">5</span><span class="c">𐡟</span></span>
+		<span class="g"><span class="hint">6</span><span class="c"> </span></span>
+		</div>
+		</div>
+	<!--div id="symbols">
+		<div style="margin-top: .5em;">
+		<span class="g"><span class="hint">0</span><span class="c">฿</span></span>
+		<span class="g"><span class="hint">0</span><span class="c">๚</span></span>
+		<span class="g"><span class="hint">0</span><span class="c">ๆ</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">0</span><span class="c">ฯลฯ</span></span>
+		</div>
+		</div-->
+</div>
+</div>
+
+
+
+
+
+<div id="ktp0Wrapper">
+<div id="hintType">
+</div>
+
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<span class="c">«</span>
+<span class="c">»</span>
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+<span class="c">𐡗</span> 
+</div>
+
+
+</div>
+
+</div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
