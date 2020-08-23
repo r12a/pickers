@@ -3,6 +3,7 @@ var plist = [
     { tag:'arab', name:'Arabic', url:'arabic/' },
     { tag:'arab', name:'All&nbsp;Arabic', url:'arab-all/' },
     { tag:'syrc', name:'Assyrian&nbsp;Neo-Aramaic', url:'syrc-aii/' },
+    { tag:'armi', name:'Aramaic', url:'armi/' },
     { tag:'armn', name:'Armenian', url:'armenian/' },
     { tag:'bali', name:'Balinese', url:'balinese/' },
     { tag:'bamu', name:'Bamum', url:'bamu/' },
@@ -56,6 +57,7 @@ var plist = [
     { tag:'latn', name:'Pan-African Latin', url:'latn-afr/' },
     { tag:'arab', name:'Pan-African Ajami', url:'arab-afr/' },
     { tag:'arab', name:'Persian', url:'persian/' },
+    { tag:'phnx', name:'Phoenician', url:'phnx/' },
     { tag:'runr', name:'Runic', url:'runic/' },
     { tag:'cyrl', name:'Russian', url:'russian/' },
     { tag:'mymr', name:'Shan', url:'shan/' },
@@ -98,6 +100,7 @@ var plistByRegion = {
 			  ['Uighur', 'arab-ug/'],
 			  ['Urdu', 'arab-ur/'],
 			  [']'],
+			  ['Aramaic (Imperial)','armi/'],
 			  ['Armenian','armenian/'],
 			  ],
 	'B':[
@@ -172,6 +175,9 @@ var plistByRegion = {
 			],
 	'O':[
 				['Osage', 'osge/'],
+			  ],
+	'P':[
+				['Phoenician', 'phnx/'],
 			  ],
 	'S':[
 			  ['Sinhala', 'sinhala/'],
