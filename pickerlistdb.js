@@ -59,6 +59,7 @@ var plist = [
     { tag:'latn', name:'Pan-African Latin', url:'latn-afr/' },
     { tag:'arab', name:'Pan-African Ajami', url:'arab-afr/' },
     { tag:'arab', name:'Persian', url:'persian/' },
+    { tag:'phli', name:'Pahlavi', url:'phli/' },
     { tag:'prti', name:'Parthian', url:'prti/' },
     { tag:'phnx', name:'Phoenician', url:'phnx/' },
     { tag:'runr', name:'Runic', url:'runic/' },
@@ -183,6 +184,7 @@ var plistByRegion = {
 			  ],
 	'P':[
 				['Phoenician', 'phnx/'],
+				['Pahlavi', 'phli/'],
 				['Parthian', 'prti/'],
 			  ],
 	'S':[
