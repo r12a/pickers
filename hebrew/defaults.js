@@ -47,7 +47,7 @@ notes = input[3]? input[3] : '';
 if (input[0] !== term) alt = input[0]? input[0] : '';
 else alt = ''
 
-add(getVocab2(term, meaning, ipa, notes, alt));
+add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
 ]
