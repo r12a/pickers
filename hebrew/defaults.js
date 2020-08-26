@@ -43,9 +43,9 @@ if (! hasHighlight(_output)) _output.value='';
 term = removeVowels(input[0]);
 meaning = input[1];
 ipa = input[2]? input[2] : '';
-notes = input[3]? input[3] : '';
 if (input[0] !== term) alt = input[0]? input[0] : '';
 else alt = ''
+notes = input[4]? input[4] : '';
 
 add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
