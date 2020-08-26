@@ -2851,6 +2851,24 @@ function getVocab (foreign, meaning, notes, transcription) {
 
 
 
+function getVocabWithAlt (term, meaning, transcription, notes, alt) {
+// converts a string of native text to native_text||transcription_transcription
+	if ( typeof meaning == 'undefined' ) meaning = ''
+	if ( typeof notes == 'undefined' ) notes = ''
+	if ( typeof transcription == 'undefined' ) transcription = ''
+	if ( typeof alt == 'undefined' ) notes = ''
+
+	transcription = cleanTranscription(transcription)
+	out = term+'|'+meaning+'|'+transcription
+	if (notes || alt) out += '|'+notes
+	if (alt) out += '|'+alt
+	
+	return out
+	}
+
+
+
+
 function cleanTranscription (str) {
 // removes markup from the result of a conversion to transcription
 	str = str.replace(/altfirst|altlast|alts|alt|syllable/g,'')
