@@ -2858,9 +2858,10 @@ function getVocabWithAlt (term, meaning, transcription, notes, alt) {
 	if ( typeof alt == 'undefined' ) notes = ''
 
 	transcription = cleanTranscription(transcription)
-	out = term+'|'+meaning+'|'+transcription
-	if (notes || alt) out += '|'+notes
-	if (alt) out += '|'+alt
+	out = term+'|'+meaning
+	if (transcription) out += '|'+transcription
+	if (notes || alt) out += '|'+alt
+	if (notes) out += '|'+notes
 	
 	return out
 	}
