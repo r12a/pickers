@@ -40,11 +40,14 @@ var controls = [
 input=getHighlightedText(_output).split('|'); 
 if (! hasHighlight(_output)) _output.value=''; 
 
-ipa = input[2]? input[2] : ''; 
-ipa += ' (' + input[0] + ')';
-notes = input[3]? input[3] : ''; 
+term = removeVowels(input[0]);
+meaning = input[1];
+ipa = input[2]? input[2] : '';
+notes = input[3]? input[3] : '';
+if (input[0] !== term) alt = input[0]? input[0] : '';
+else alt = ''
 
-add(getVocab(removeVowels(input[0]), input[1], notes, ipa));
+add(getVocab2(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
 ]
