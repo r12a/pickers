@@ -201,9 +201,8 @@ function vocab2Example (input) {
 	items=input.split('|')
 	console.log(items)
 	var str = '<span class="eg" lang="'+defaults.language+'"'
-	if (! typeof defaults.direction === 'undefined') str += ' dir="'+defaults.direction+'"'
+	if (typeof template.direction !== 'undefined') str += ' dir="'+template.direction+'"'
 	str += '>'+items[0]+'</span>'
-	console.log(str)
 	
 	document.getElementById('transcription').textContent = str
 	document.getElementById('transcription').contentEditable = true
