@@ -88,9 +88,10 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 
 <p><b class="leadin">Make vocab.</b> If you want to create data for  the <a href="../../../app-vocab/">vocabulary app</a>, you need to make a list of 2-5 items, separated by | in the following order: </p>
-<p>[1] native text, [2] meaning, [3] basic transcription (optional), [4] alternative transcription (optional), [5] notes (optional)</p>
-<p>The basic transcription should be in IPA, wherever possible. You can also add different transcription, such as an ISO or LOC transcription, to this field, surrounded with parentheses. This will be styled differently from the IPA.</p>
-<p>No automatic transformations are applied by this picker, but clicking on <samp>Make vocab</samp> will  produce some markup  in the secondary text area.</p>
+<p>[1] <em>native text</em>, [2] <em>meaning</em>, [3] <em>basic transcription</em> (optional), [4] <em>alternative transcription</em> (optional), [5] <em>notes</em> (optional)</p>
+<p style="font-style: italic; font-size: 80%;">Hint: For RTL script character apps it often helps to set the direction of the text area to LTR. (To do this, click on the →︎ arrow below the bottom right of the text area.)</p>
+<p>The <em>basic transcription</em> should be in IPA, wherever possible. You can also add different transcription, such as an ISO or LOC transcription, to this field, surrounded with parentheses. This will be styled differently from the IPA.</p>
+<p>You can separate items using  / rather than |. Clicking on <samp>Make vocab</samp> will convert all / characters to |. (It will also produce some markup  in the secondary text area.)</p>
 <p>Here's an Inuktitut example where notes are provided, but there is no alternative transcription.</p>
 <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
 <p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|nakuʁmiːk (nakurmiik)||South Qikiqtaaluk</code></p>
@@ -117,7 +118,15 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 
 
-<p><b class="leadin">Vocab to Example.</b> If you have a line of vocab data, like those shown above, this will add example markup around the term.</p>
+<p><b class="leadin">Vocab to Markup.</b> If you have a line of vocab data in the text area (see above), this will produce markup that includes all the items on the line except for the notes. That markup can then be dropped into an HTML page.</p>
+<p>For example, this vocab data line:</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><bdi>פּינגּוין</bdi>|penguin|ˈpinɡwin|<bdi>פִּינְגְּוִין</bdi></p>
+</blockquote>
+<p>will produce this markup:</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p>&lt;span class=&quot;charExample&quot; translate=&quot;no&quot;&gt;&lt;bdi class=&quot;ex&quot; lang=&quot;he&quot; dir=&quot;rtl&quot;&gt;פּינגּוין&lt;/bdi&gt; &lt;bdi class=&quot;trans&quot;&gt;fˑyngˑv̇yn̽&lt;/bdi&gt; (&lt;bdi lang=&quot;he&quot;&gt;פִּינְגְּוִין&lt;/bdi&gt;) &lt;bdi class=&quot;ipa&quot;&gt;ˈpinɡwin&lt;/bdi&gt; &lt;bdi class=&quot;meaning&quot;&gt;penguin&lt;/bdi&gt;&lt;/span&gt;</p>
+</blockquote>
 
 </section>
 

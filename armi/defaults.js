@@ -35,14 +35,17 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Aramaic text to a latin transliteration.", "code":"doTranscription('transliterate')"},
 
-{"title":"Make<br/>vocab", "alt":"Expand text to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
-input=getHighlightedText(_output).split('|'); 
+{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
 if (! hasHighlight(_output)) _output.value=''; 
 
-ipa = input[2]? input[2] : ''; 
-notes = input[3]? input[3] : ''; 
+term = input[0];
+meaning = input[1];
+ipa = input[2]? input[2] : '';
+alt = input[3]? input[3] : '';
+notes = input[4]? input[4] : '';
 
-add(getVocab(input[0], input[1], notes, ipa));
+add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
 ]
@@ -56,7 +59,7 @@ var pulldown = [
 
 {"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Aramaic text.", "code":"doTranscription('revTransliterate')"},
 
-{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 ]
 
 

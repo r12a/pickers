@@ -17,6 +17,14 @@ var _output
 
 
 
+function replaceSlash (str, replacement) {
+// does .replace(/\//g,str), since that doesn't seem to work
+	
+	strArray = [...str]
+	for (i=0;i<strArray.length;i++) if (strArray[i]==='/') strArray[i]=replacement
+	return strArray.join('')
+	}
+
 function addReplacement (ch) { 
 	// ch: string, the text to be added
 	if (debug) console.log('addReplacement(',ch,')')
@@ -229,6 +237,32 @@ function vocab2ExampleXX (input) {
 	console.log(str)
 	makeExample(defaults.language,template.direction,str)
 	}
+
+function vocab2Markup (input) {
+	// converts a sequence of vocab data, ie. str|ipa|meaning|... to example code that can be inserted directly (normally called from pull down menu)
+	items=input.split('|')
+	console.log(items)
+	var str = '<span class="charExample" translate="no">'
+	str += '<bdi class="ex" lang="'+defaults.language+'"'
+	if (typeof template.direction !== 'undefined') str += ' dir="'+template.direction+'"'
+	str += '>'+items[0]+'</bdi>'
+	
+	str += ' <bdi class="trans">'+transliterate(items[0])+'</bdi>'
+	
+	if (items[3]) str += ' (<bdi lang="'+defaults.language+'">'+items[3]+'</bdi>)'
+	
+	if (items[2]) str += ' <bdi class="ipa">'+items[2]+'</bdi>'
+	
+	if (items[1]) str += ' <bdi class="meaning">'+items[1]+'</bdi>'
+	
+	str += '</span>'
+	
+	document.getElementById('transcription').textContent = str
+	document.getElementById('transcription').contentEditable = true
+	document.getElementById('transcriptionWrapper').style.display = 'block'
+	document.getElementById('output').focus
+	}
+
 
 
 function makeExample (lang, dir, str) {
