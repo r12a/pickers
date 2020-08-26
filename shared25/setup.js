@@ -48,7 +48,7 @@ function makeTranslitCharacterMap () {
             }
 		
 		}
-	//console.log(charArray)
+	//console.log('charArray',charArray)
     
 	//for (item in charArray) typeAssistMap += item+('\n')
 	for (let i=0;i<window.sortIndex.length;i++) {
