@@ -34,7 +34,9 @@ return str.trim()
 function removeVowels (str) {
 // removes the nikkud etc from the text in the text area
 
-var vowels = ['ִ','ֻ','ְ','ֱ','ֵ','ֶ','ֳ','ֹ','ֺ','ֲ','ַ','ָ','\u05C1','\u05C2']
+//var vowels = ['ִ','ֻ','ְ','ֱ','ֵ','ֶ','ֳ','ֹ','ֺ','ֲ','ַ','ָ','\u05C1','\u05C2']
+
+var vowels =  ['ִ','ֻ','ְ','ֱ','ֵ','ֶ','ֳ','ֹ','ֺ','ֲ','ַ','ָ']
 
 for (var i=0;i<vowels.length;i++) {
 	re = new RegExp(vowels[i],'g')
