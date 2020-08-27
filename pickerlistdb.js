@@ -48,6 +48,7 @@ var plist = [
     { tag:'mand', name:'Mandaic', url:'mandaic/' },
     { tag:'mend', name:'Mende Kikakui', url:'mend/' },
     { tag:'mong', name:'Mongolian', url:'mongolian/' },
+    { tag:'nbat', name:'Nabataean', url:'nbat/' },
     { tag:'tfng', name:'Neo-tifinagh', url:'neotifinagh/' },
     { tag:'newa', name:'Newa', url:'newa/' },
     { tag:'talu', name:'New&nbsp;Tai&nbsp;Lue', url:'newtailue/' },
@@ -56,6 +57,7 @@ var plist = [
     { tag:'latn', name:'Old&nbsp;English', url:'oldenglish/' },
     { tag:'latn', name:'Old&nbsp;Norse', url:'oldnorse/' },
     { tag:'osge', name:'Osage', url:'osge/' },
+    { tag:'palm', name:'Palmyrene', url:'palm/' },
     { tag:'latn', name:'Pan-African Latin', url:'latn-afr/' },
     { tag:'arab', name:'Pan-African Ajami', url:'arab-afr/' },
     { tag:'arab', name:'Persian', url:'persian/' },
@@ -80,6 +82,7 @@ var plist = [
     { tag:'tfng', name:'All Tifinagh ', url:'tifinagh/' },
     { tag:'latn', name:'Tłı̨chǫ&nbsp;(Dogrib)', url:'tlicho/' },
     { tag:'syrc', name:'Turoyo', url:'syrc-tru/' },
+    { tag:'ugar', name:'Ugaritic', url:'ugar/' },
     { tag:'arab', name:'Uighur', url:'arab-ug/' },
     { tag:'arab', name:'Urdu', url:'arab-ur/' },
     { tag:'vaii', name:'Vai', url:'vai/' },
@@ -175,6 +178,7 @@ var plistByRegion = {
 			  [']'],
 			  ],
 	'N':[
+			['Nabataean', 'nbat/'],
 			['N’Ko', 'nko/'],
 			['New&nbsp;Tai&nbsp;Lü', 'newtailue/'],
 			['Newa', 'newa/'],
@@ -183,6 +187,7 @@ var plistByRegion = {
 				['Osage', 'osge/'],
 			  ],
 	'P':[
+				['Palmyrene', 'palm/'],
 				['Phoenician', 'phnx/'],
 				['Pahlavi', 'phli/'],
 				['Parthian', 'prti/'],
@@ -220,6 +225,7 @@ var plistByRegion = {
 			['Eastern Canadian Inuktitut', 'cans-ike/'],
 			['Plains Cree', 'cans-crk/'],
 			[']'],
+			['Ugaritic', 'ugar/'],
 			],
 	'V':[
 			  ['Vai', 'vai/'],
