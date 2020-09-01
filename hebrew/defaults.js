@@ -23,7 +23,7 @@ var webFonts = [ "Noto Serif Hebrew WF" ]
 
 var template = {}
 	template.title = 'Hebrew character app'
-    template.sample = "2. כל אדם זכאי לעזוב כל ארץ, לרבות ארצו, ולחזור אל ארצו."
+    template.sample = "כל בני אדם נולדו בני חורין ושווים בערכם ובזכויותיהם. כולם חוננו בתבונה ובמצפון, לפיכך חובה עליהם לנהוג איש ברעהו ברוח של אחוה."
     template.blocklocation= '/scripts/hebrew/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'hebrew'
@@ -36,8 +36,8 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Hebrew text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
-{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
-input=getHighlightedText(_output).split('|'); 
+{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output')
+input=replaceSlash(getHighlightedText(_output),'|').split('|')
 if (! hasHighlight(_output)) _output.value=''; 
 
 term = removeVowels(input[0]);
@@ -55,10 +55,12 @@ _output.focus();`},
 
 
 var pulldown = [
+{"title":"Remove<br/>vowels", "alt":"Remove points from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
+
 {"title":"Trans-<br/>scribe", "alt":"Convert Hebrew text to a Latin transcription.", "code":"doTranscription('transcription')"},
 
 
-{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 ]
 
 

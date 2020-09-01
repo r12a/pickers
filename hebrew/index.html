@@ -65,18 +65,32 @@
   
  <div id="shapelist" style="display:none; text-align:center;">
  <div id="shapekeys">
-<img alt=" " src="images/shape1.png" onclick="findShape('5D1,5D2,5E0,5DB,5C6','',true)" />
-<img alt=" " src="images/shape2.png" onclick="findShape('5D3,5E8,5D5,5D6,5DA,5DF,5F1,5F0','',true)" />
-<img alt=" " src="images/shape3.png" onclick="findShape('5D9,5F2,5F1,5F3,5F4,599,5A8','',true)" />
-<img alt=" " src="images/shape4.png" onclick="findShape('5C0,5D5,5DF,5F1,5F0','',true)" />
-<img alt=" " src="images/shape5.png" onclick="findShape('5D4,5D7,5DE,5EA','',true)" />
-<img alt=" " src="images/shape6.png" onclick="findShape('5D8','',true)" />
-<img alt=" " src="images/shape7.png" onclick="findShape('5E1,5DD','',true)" />
-<img alt=" " src="images/shape8.png" onclick="findShape('5E2,5E5,5E6','',true)" />
-<img alt=" " src="images/shape9.png" onclick="findShape('5E3,5E4,5E7,5DC','',true)" />
-<img alt=" " src="images/shape10.png" onclick="findShape('5B9,5C2,5C1','',true)" />
-<img alt=" " src="images/shape11.png" onclick="findShape('5B4,5B5,5B6,5B1,5B0,5B7,5B2,5B8,5B3,5BB','',true)" />
-<img alt=" " src="images/shape0.png" onclick="findShape('5D0,5E7,5DC,5E9,5C3,5BC,5BE,5F3,5F4,5C6','',true)" />
+<bdi onclick="findShape('5D1,5DB,5E0,5E4,5E45BC,5D2,5D15BC,5DB5BC,5D25F3','',true)">ב</bdi>
+<bdi onclick="findShape('5E8,5D3,5DA,5D35F3,5E3','',true)">ר</bdi>
+<bdi onclick="findShape('5D5,5F0,5DF,5D6,5D65F3,5D55F3,5C0','',true)">ו</bdi>
+<bdi onclick="findShape('5D9,5F3,5F4,5B45D9','',true)">י</bdi>
+<bdi onclick="findShape('5EA,5D7,5D4,5DE,5EA5BC,5EA5F3,5D75F3','',true)">ת</bdi>
+<bdi onclick="findShape('5DD,5E1,5D8','',true)">ם</bdi>
+<bdi onclick="findShape('5E2,5E5,5E6,5E65F3,5E25F3','',true)">ע</bdi>
+<bdi onclick="findShape('5DC,5E7,5E3','',true)">ל</bdi>
+<img alt=" " src="images/shape10.png" onclick="findShape('5B9,5B9,5E95C2,5E95C1,5D55B9','',true)" />
+<img alt=" " src="images/shape12.png" onclick="findShape('5BC,5BC,5D55BC,5E45BC,5D15BC,5EA5BC,5DB5BC,5DA5BC','',true)" />
+<img alt=" " src="images/shape11.png" onclick="findShape('5B4,5B4,5BB,5B5,5B6,5B1,5B3,5B0,5B8,5B7,5B2','',true)" />
+<bdi onclick="findShape('2026,5D0,5E9,5E95C2,5E95C1,20AA','',true)">…</bdi>
+
+<!--
+ב כ נ פ פּ ג בּ כּ ג׳
+ר ד ך ד׳
+ו װ ן ז ז׳ ו׳ ׀
+י ׳ ״ ִי
+ת ח ה מ תּ ת׳ ח׳
+ם ס ט
+ע ץ צ צ׳ ע׳
+ל ק ף
+ֹ ֹ שׂ שׁ וֹ
+ּ ּ וּ פּ בּ תּ כּ ךּ
+ִ ִ ֻ ֵ ֶ ֱ ֳ ְ ָ ַ ֲ
+-->
 </div>
 </div>
 
@@ -85,6 +99,16 @@
 
   
 <div class="spaceline">
+<span class="touch unshifted" dir="auto" onClick="
+	if (this.classList.contains('unshifted')) { 
+		showAlternatives('.x',true); 
+		this.classList.remove('unshifted'); 
+		this.classList.add('shifted');} 
+	else { 
+		showAlternatives('.x',false); 
+		this.classList.remove('shifted'); 
+		this.classList.add('unshifted');}
+		">Show extensions</span> 
 <span class="touch" dir="auto" onClick="ccb=document.getElementById('controlchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">Format chars</span> 
 <span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');" style="transform: rotateY(180deg);">⇥</span> 
@@ -94,15 +118,13 @@
 </div>
 
 
-<div id="controlchars" style="display: none;">
- <span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
-<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
-<span class="touch" dir="auto" onClick="add('\u2067');">RLI</span> <span class="touch" dir="auto" onClick="add('\u202B');">RLE</span>
- <span class="touch" dir="auto" onClick="add('\u2066');">LRI</span> <span class="touch"  dir="auto" onClick="add('\202A');">LRE</span>
- <span class="touch" dir="auto" onClick="add('\u2069');">PDI</span> <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
- <span class="touch" dir="auto" onClick="add('\u200F');">RLM</span> <span class="touch" dir="auto" onClick="add('\u200E');">LRM</span>
- <span class="touch" dir="auto" onClick="add('\u061C');">ALM</span>
- </div>
+<div id="controlchars" style="display: none; text-align: center;margin-top: -.4em;">
+<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span><span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" dir="auto" onClick="add('\u2067');">RLI</span><span class="touch" dir="auto" onClick="add('\u202B');">RLE</span><span class="touch" dir="auto" onClick="add('\u202D');">RLO</span>
+<span class="touch" dir="auto" onClick="add('\u2066');">LRI</span><span class="touch"  dir="auto" onClick="add('\u202A');">LRE</span><span class="touch"  dir="auto" onClick="add('\u202E');">LRO</span>
+<span class="touch" dir="auto" onClick="add('\u2069');">PDI</span><span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
+<span class="touch" dir="auto" onClick="add('\u200F');">RLM</span><span class="touch" dir="auto" onClick="add('\u200E');">LRM</span>
+</div>
 
 
 
@@ -116,10 +138,12 @@
 <span class="g"><span class="hint">ʧ</span><span class="c">ת</span></span>
 <span class="g"><span class="hint">ʈ</span><span class="c x">תּ</span></span>
 <span class="g"><span class="hint">k</span><span class="c">ד</span></span>
+<span class="g"><span class="hint">k</span><span class="c x">דּ</span></span>
 <span class="g"><span class="hint">pʰ</span><span class="c">ק</span></span>
 <span class="g"><span class="hint">tʰ</span><span class="c x">כּ</span></span>
 <span class="g"><span class="hint">ch</span><span class="c x">ךּ</span></span>
 <span class="g"><span class="hint">ʧʰ</span><span class="c">ג</span></span>
+<span class="g"><span class="hint">ʧʰ</span><span class="c x">גּ</span></span>
 <span class="g"><span class="hint">ʈʰ</span><span class="c">ע</span></span>
            </div>
              <div class="bottomDivider" style="justify-content: space-around">
@@ -132,9 +156,9 @@
 <span class="g"><span class="hint">b</span><span class="c">פ</span></span>
 <span class="g"><span class="hint">d</span><span class="c f">ף</span></span>
 <span class="g"><span class="hint">ʤ</span><span class="c x">ת׳</span></span>
+<span class="g"><span class="hint">ɖ</span><span class="c">ס</span></span>
 <span class="g"><span class="hint">w</span><span class="c">ש</span></span>
 <span class="g"><span class="hint">g</span><span class="c x">שׂ</span></span>
-<span class="g"><span class="hint">ɖ</span><span class="c">ס</span></span>
 <span class="g"><span class="hint">s</span><span class="c x">שׁ</span></span>
 <span class="g"><span class="hint">z</span><span class="c">ח</span></span>
 <span class="g"><span class="hint">ʃ</span><span class="c">כ</span></span>
@@ -159,11 +183,11 @@
 <span class="g"><span class="hint">l</span><span class="c f">ן</span></span>
             </div>
             <div style="justify-content: space-around">
-<span class="g"><span class="hint">r</span><span class="c">װ</span></span>
-<span class="g"><span class="hint">l</span><span class="c x">ו׳</span></span>
-<span class="g"><span class="hint">y</span><span class="c x">וו</span></span>
-<span class="g"><span class="hint">w</span><span class="c">ל</span></span>
-<span class="g"><span class="hint">w</span><span class="c">י</span></span>
+<span class="g"><span class="hint">w</span><span class="c">װ</span></span>
+<span class="g"><span class="hint">w</span><span class="c x">ו׳</span></span>
+<span class="g"><span class="hint">w</span><span class="c x">וו</span></span>
+<span class="g"><span class="hint">l</span><span class="c">ל</span></span>
+<span class="g"><span class="hint">y</span><span class="c">י</span></span>
             </div>
 </div>
 
@@ -235,18 +259,6 @@
 
 
 
-<div class="spaceline">
-<span class="touch unshifted" dir="auto" onClick="
-	if (this.classList.contains('unshifted')) { 
-		showAlternatives('.x',true); 
-		this.classList.remove('unshifted'); 
-		this.classList.add('shifted');} 
-	else { 
-		showAlternatives('.x',false); 
-		this.classList.remove('shifted'); 
-		this.classList.add('unshifted');}
-		">Show extensions</span> 
-</div>
 <div id="ktp0Wrapper">
 <div id="hintType">
 </div>
