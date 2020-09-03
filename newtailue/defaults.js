@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Noto Sans New Tai Lue WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Nokyung WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'khb' // language to use for examples
-	factoryDefaults.uifont = 'Noto Sans New Tai Lue WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Nokyung WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "26";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,7 +18,7 @@ var thisPicker = 'newtailuePicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Sans New Tai Lue WF" ]
+var webFonts = [ "Nokyung WF" ]
 
 
 var template = {}
@@ -64,9 +64,9 @@ var pulldown = [
 
 
 var inputAids = [
-//{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
+{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
 
-//{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
+{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
 {"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type New Tai Lü from the keyboard."},
 

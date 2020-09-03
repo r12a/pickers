@@ -1,13 +1,13 @@
 @font-face {
-    font-family: 'Noto Sans New Tai Lue WF';
-    src: url('/shared/webfonts/notosansnewtailue-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notosansnewtailue-regular-webfont.woff') format('woff');
+    font-family: 'Nokyung WF';
+    src: url('/shared/webfonts/nokyung-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/nokyung-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
 
-[lang=lu] { font-family: 'Noto Sans New Tai Lue WF', serif; }
+[lang=lu] { font-family: 'Nokyung WF', serif; }
 
 
 
@@ -39,7 +39,7 @@ span.hint {
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  "Noto Sans New Tai Lue WF",  sans-serif;  
+	font-family:  "Nokyung WF",  sans-serif;  
     line-height: 1;
 	}
 
