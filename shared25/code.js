@@ -2471,7 +2471,7 @@ function setUpTypeAssist (latin, palette, map) {
 
 
 // draw a selection panel for a type-assist keypress
-function drawCharSelectionPanel (key) {
+function drawCharSelectionPanelSAVED (key) {
 	out = ''
 
 	// omit the first item, since we want that at the end
@@ -2481,6 +2481,38 @@ function drawCharSelectionPanel (key) {
 			break
 			}
 		if (! window.latinTypeAssist) out += ' <sup>'+ kbdEventList[key][i][0] +'</sup>'
+		else out += ' <sup></sup>'
+		out += '<sub>'+ ((i+1) % 10)+'</sub> '
+		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'Doulos SIL WF\';" onclick="'
+		out += 'addReplacement'
+		out += '(\''+kbdEventList[key][i][1]+'\'); document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+kbdEventList[key][i][1]+'</bdi>'
+		}
+
+	document.getElementById("charChoice").innerHTML = out
+    }
+
+	
+
+	
+// draw a selection panel for a type-assist keypress
+function drawCharSelectionPanel (key) {
+	out = ''
+
+	// omit the first item, since we want that at the end
+	for (let i=0;i<kbdEventList[key].length;i++) {
+		if (i > 9) {
+			out += ' &nbsp; <span style="font-size:80%;">See panel for '+eval(kbdEventList[key].length-10)+' more.</span>'
+			break
+			}
+		
+		if (! window.latinTypeAssist) {
+			//console.log('ipa',spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc])
+			// if there is an ipa transcription, use that as a superscript hint
+			// otherwise, use the transliteration
+			if (spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc]) hint = spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc]
+			else hint = kbdEventList[key][i][0]
+			out += ' <sup>'+ hint +'</sup>'
+			}
 		else out += ' <sup></sup>'
 		out += '<sub>'+ ((i+1) % 10)+'</sub> '
 		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'Doulos SIL WF\';" onclick="'
@@ -2645,8 +2677,8 @@ function makeKbdEventList (mappingTable) {
 
         var charArray = list.split(' ')
         var theKey = charArray.shift()
-        
-        window.kbdEventList[theKey] = []
+
+		window.kbdEventList[theKey] = []
         
         for (let j=0;j<charArray.length;j++) {
             if (window.latinTypeAssist) {
