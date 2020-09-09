@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'Noto Serif Myanmar WF';
+    src: url('/shared/webfonts/notoserifmyanmar-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notoserifmyanmar-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
     font-family: 'Noto Sans Myanmar WF';
     src: url('/shared/webfonts/notosansmyanmar-regularwf.woff2') format('woff2'),
          url('/shared/webfonts/notosansmyanmar-regularwf.woff') format('woff');
@@ -44,7 +51,7 @@ span.hint {
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  'Noto Sans Javanese WF',  sans-serif;  
+	font-family:  'Noto Serif Myanmar WF';  
     line-height: 1;
 	}
 
@@ -65,9 +72,6 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-	border: 2px dotted tan;
-	border-radius: .25em;
-	padding: .1em .1em;
     }
 #consonantGrid div {
     white-space: normal;
@@ -105,11 +109,8 @@ span.hint {
 #ivowelGrid {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 	margin-right: 1em;
-	border: 2px dotted tan;
-	border-radius: .25em;
-	padding: .1em .1em;
     }
 #ivowelGrid div {
     text-align: right;
@@ -119,9 +120,6 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-	border: 2px dotted tan;
-	border-radius: .25em;
-	padding: .1em .1em;
     }
 #virama {
     text-align: center;
@@ -136,9 +134,10 @@ span.hint {
     flex-direction: column;
     justify-content: space-between;
     font-size: 90%;
+	margin-left: 1em;
     }
 #digitKeypad {
-	border: 2px dotted tan;
+	border: 1px solid tan;
 	border-radius: .25em;
 	padding: .1em .1em;
 	}

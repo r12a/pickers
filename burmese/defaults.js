@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Myanmar3 WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Noto Serif Myanmar WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'my' // language to use for examples
-	factoryDefaults.uifont = 'Myanmar3 WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Noto Serif Myanmar WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,7 +18,7 @@ var thisPicker = 'burmesePicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Sans Myanmar WF", "Myanmar3 WF", "Tharlon WF" ]
+var webFonts = [ "Noto Serif Myanmar WF", "Noto Sans Myanmar WF", "Myanmar3 WF", "Tharlon WF" ]
 
 
 var template = {}
@@ -35,6 +35,21 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Burmese text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 //{"title":"Reverse<br/>translit.", "alt":"Convert Latin transliteration back to Burmese.", "code":"doTranscription('reverse')"},
+
+
+{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+term = input[0];
+meaning = input[1];
+ipa = transcribetoipa(input[0]);
+alt = input[3]? input[3] : '';
+notes = input[4]? input[4] : '';
+
+add(getVocabWithAlt(term, meaning, ipa, notes, alt));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 ]
 
 
@@ -45,6 +60,8 @@ var pulldown = [
 {"title":"Burmese<br/>to IPA", "alt":"Convert Burmese text to an *approximation* to an IPA transcription.", "code":"doTranscription('toIPA')"},
 
 {"title":"Split<br/>syllables", "alt":"Split the text into syllables.", "code":"add(splitSyllables(getHighlightedText(document.getElementById('output')))); return false;"},
+
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
