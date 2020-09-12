@@ -123,7 +123,7 @@ var plistByRegion = {
 			    ['Chinese', 'hani/'],
 			  ],
 	'D':[
-				['Devanagari', 'devanagari/'],
+			  ['Devanagari', 'devanagari/'],
 			  ['['],
 			  ['Hindi', 'deva-hi/'],
 			  ['Kashmiri', 'deva-ks/'],
@@ -135,6 +135,11 @@ var plistByRegion = {
 			  ['Ethiopic', 'ethiopic/'],
 			  ],
 	'G':[
+			  ['Georgian', 'georgian/'],
+			  ['['],
+			  ['Georgian (modern)', 'geor-ka/'],
+			  ['Khutsuri', 'geok-ka/'],
+			  [']'],
 			  ['Gujarati', 'gujarati/'],
 			  ['Gurmukhi', 'gurmukhi/'],
 			  ],
