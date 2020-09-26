@@ -78,7 +78,8 @@ function createFontPicker () {
 	out += '&nbsp; <span style="white-space:nowrap"><span class="fpOptgroup">Generic fallbacks</span>'
 	out += '<span class="fpOption" onmouseover="document.getElementById(\'output\').style.fontFamily = \'sans-serif\'" data-value="sans-serif">sans-serif</span> &nbsp; \n'
 	out += '<span class="fpOption" onmouseover="document.getElementById(\'output\').style.fontFamily = \'serif\'" data-value="serif">serif</span>\n'
-	out += '</span></div>'
+	out += '</span> &nbsp;  &nbsp;  &nbsp; <a  class="fpOptgroup" href="../shared25/fontpreview.html" target="_blank">Usage tips</a>'
+	out += '</div>'
 
 	// list the other fonts, in columns
 	out += '<div id="fontPickerCols">\n'
@@ -91,12 +92,13 @@ function createFontPicker () {
 			out += '"'
 			if (fontInfo[options[o].textContent]) out += ' title="'+fontInfo[options[o].textContent].notes+'"'
 			out += ' onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value);  document.getElementById(\'fontPicker\').innerHTML=\'\';"  data-value="'+options[o].textContent+'">'+options[o].textContent+'</div>\n'
-			if (g===webfontGroups.length-1 && o===options.length-1) out += '<div class="fpOption"><a href="../shared25/fontpreview.html" target="_blank">Add more</a></div>'
+			if (g===webfontGroups.length-1 && o===options.length-1) out += '<div class="fpOption"><a href="../shared25/fontpreview.html" onclick="document.getElementById(\'fontManagementDetails\').open=true; return false;">Add more</a></div>'
 			}
 		out += '</div>'
 		}
-	out += '<div onclick="document.getElementById(\'fontPicker\').innerHTML=\'\';" style="cursor:pointer; font-size: 200%;">X</div>'
+	out += '<div onclick="document.getElementById(\'fontPicker\').innerHTML=\'\'; document.getElementById(\'fontManagementDetails\').style.display=\'none\';" style="cursor:pointer; font-size: 200%;">X</div>'
 	out += '</div>'
+	
 	return out
 	}
 
@@ -159,7 +161,7 @@ out += `</header>
   <img title="Toggle invisible code points." onclick="toggleInvisibles()" src="../shared25/images/toggle.png" alt="Toggle" style="vertical-align: bottom;">
   <img title="Generate a URL including text." onclick="makeSharingLink()"  src="../shared25/images/share.png" alt="Share">
   <img title="Add sample text." onclick="add('` + template.sample +`')" src="../shared25/images/sample.png" alt="Sample">`
-  if (typeof fontDB !== 'undefined') out += `<img title="Change the font." onclick="document.getElementById('fontPicker').innerHTML = createFontPicker();" src="../shared25/images/fonts.png" alt="Fonts">`
+  if (typeof fontDB !== 'undefined') out += `<img title="Change the font." onclick="if (document.getElementById('fontPicker').innerHTML=='') { document.getElementById('fontPicker').innerHTML = createFontPicker(); document.getElementById('fontManagementDetails').style.display='block'} else { document.getElementById('fontPicker').innerHTML=''; document.getElementById('fontManagementDetails').style.display='none'}" src="../shared25/images/fonts.png" alt="Fonts">`
   out += `<img title="Delete all the text." onclick="deleteAll()" src="../shared25/images/clear.png" alt="Clear" style="margin-left: 1em;">
 <a class="interactiveHelpButton" href="help/#icons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
   </span>
@@ -228,6 +230,34 @@ for (let i=0;i<window.pulldown.length;i++){
 
 out += '<div id="fontPicker">'
 out += `</div>`
+
+
+out += `<details id="fontManagementDetails" style="display: none;">
+<summary>manage fonts</summary>
+
+<div id="userFontMgt" class="control" style="width: 26em; height: 6em;padding: .5em; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: start;">
+<span style="padding-right: 1em; flex:4; text-align:start;">List fonts you want to add to the font selection lists. One font name per line.</span>
+<textarea id="fontManagementList" style="flex:6; height: 100%;"></textarea>
+<button style="flex:.5; margin-left:.5em;" onclick="manageUserFonts(document.getElementById('fontManagementList').value)">Set</button>
+</div>
+
+<div class="control" id="uiFontControl">Change selection area font:<br />
+    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+` +
+  fontSelection
+  +
+ `
+</select>
+<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+
+<div class="control" onclick="document.getElementById('fontManagementList').value = escapeNonASCII(JSON.stringify(autoTranslitArray));document.getElementById('fontManagementList').select();"
+</div>
+
+<a class="interactiveHelpButton" href="help/#manage_fonts" target="_help" title="Help with font management controls."><img alt="help" src="../images/help.png"/></a>
+</details>
+`
+
+
 
 out += `<textarea dir="auto" id="output" name="output" placeholder="›" lang="`
 + defaults.language +
@@ -411,9 +441,6 @@ out = `
 <div id="extracontrols">
 
 
-<details>
-<summary>more controls</summary>
-    
   <div class="control" title="One row is 100px. Decimals are ok."><span id="dimensions">Set dimensions:</span><br />
      <input name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);" onmouseover="document.getElementById('dimensions').textContent='Font size (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Font size (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
      <input name="rows" value="1.5" id="rows" size="3" onchange="changeBoxHeight(this.value)" onmouseover="document.getElementById('dimensions').textContent='Box height (px):'" onmouseout="document.getElementById('dimensions').textContent='Set dimensions:'" onfocus="document.getElementById('dimensions').textContent='Box height (px):'" onblur="document.getElementById('dimensions').textContent='Set dimensions:'" />
@@ -492,11 +519,9 @@ out += `<div class="control" id="ccFactoryReset">Reset<br/><button onClick="rese
 <a class="interactiveHelpButton" href="help/#more_controls" target="_help" title="Help with more yellow controls."><img alt="help" src="../images/help.png"/></a>
 
 
-</details>
 
 
-
-<details>
+<!--details>
 <summary>manage fonts</summary>
 
 
@@ -522,7 +547,7 @@ out += `<div class="control" id="ccFactoryReset">Reset<br/><button onClick="rese
 
 <a class="interactiveHelpButton" href="help/#manage_fonts" target="_help" title="Help with font management controls."><img alt="help" src="../images/help.png"/></a>
 
-</details>
+</details-->
 
 `
 

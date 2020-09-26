@@ -56,6 +56,8 @@ return `
 	  <summary style="margin-left:7.5%">See a video of the font preview in action</summary>
 	  <p><video controls width="100%; max-width:720px" aria-label="Embedded video" style="border:0;"><source src="../../shared25/images/help/font-preview.mp4" type="video/mp4"></video></p>
 	  </details>
+	  
+<p>Find <a href="../../shared25/fontpreview" target="_blank">more information</a> about using the font preview panel, including <cite>Adding your own fonts</cite>, <cite>Identifying missing characters</cite>, and <cite>Checking coverage for a specific language</cite>.</p>
 
       <!--p><b class="leadin">Copy, select, delete, etc. (<img src="../../shared25/images/help/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p-->
       <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
@@ -95,6 +97,7 @@ return `
       </blockquote>
         <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
         <p><b class="leadin">Show all db entries.</b> This is like 'Analyse text', described above, except that it will list all meaningful sequences in the backend database which include each character.</p>
+
 `
 }
 
@@ -103,10 +106,28 @@ return `
 
 function addSecondaryText () {
 return `
-  <h2 id="secondary_output">Secondary text area</h2>
-  <p><img src="../../shared25/images/help/secondary_text.png" alt=""/></p>
-  <p>This area receives the output of various tools. Note that the text is editable.</p>
-  <p>The icons to the right ( <img src="../../shared25/images/help/second_copy_etc.png" alt="" style="vertical-align:middle;"/> ) allow you to copy the contents of this area to the clipboard, insert the contents into the main text area, or close this subwindow, respectively. When you insert the contents of this subwindow into the main text area, the text will overwrite any highlighted text, otherwise it will just be inserted at the current cursor position.</p>
+<h2 id="manage_fonts" href="#manage_fonts">Manage fonts</h2>
+<p><img src="../../shared25/images/help/manage_fonts.png" alt=""/></p>
+    
+<p>To find this control, open the font preview panel by clicking on <img src="../../shared25/images/fonts.png" alt="Fonts icon" style="vertical-align:bottom;">, then click on <samp>manage fonts</samp> at the bottom of the panel.</p>
+
+<p><b class="leadin">Change selection area font. </b> Allows you to change the font and size of the characters you click on in the main selection areas. </p>
+
+
+<p><b class="leadin">List fonts... </b> Add font names to this control (one per line) and they will be added to the font selector lists. If you agreed to store settings, they will be remembered for your next session on that device (you need to set these lists separately on each device you use).</p>
+	  	  
+<details>
+<summary style="margin-left:7.5%">See a video of how to add fonts to the selection lists.</summary>
+<p><video controls width="100%; max-width:720px" aria-label="Embedded video" style="border:0;"><source src="../../shared25/images/help/add-font.mp4" type="video/mp4"></video></p>
+</details>
+
+<p>Find <a href="../../shared25/fontpreview" target="_blank">more information</a> about using the font preview panel.</p>
+
+
+<h2 id="secondary_output">Secondary text area</h2>
+<p><img src="../../shared25/images/help/secondary_text.png" alt=""/></p>
+<p>This area receives the output of various tools. Note that the text is editable.</p>
+<p>The icons to the right ( <img src="../../shared25/images/help/second_copy_etc.png" alt="" style="vertical-align:middle;"/> ) allow you to copy the contents of this area to the clipboard, insert the contents into the main text area, or close this subwindow, respectively. When you insert the contents of this subwindow into the main text area, the text will overwrite any highlighted text, otherwise it will just be inserted at the current cursor position.</p>
   <p>Some conversions produce ambiguous output. In this case, you will be offered two alternatives on a yellow background, eg. <img src="../../shared25/images/help/alternatives.png" alt="" style="vertical-align:top;"/> presents you with the alternatives 'h' or 't'. Simply click on the alternative you want, and the app will discard the rest.</p>
 
 `
@@ -208,22 +229,6 @@ return `
     <p><b class="leadin">Search for. </b>If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the <samp translate="no">X</samp> next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <kbd  translate="no">\bha\b</kbd> (or the shortcut, <kbd  translate="no">:ha:</kbd>).</p>
 
   <p><b class="leadin">Normalise.</b> All text is added to the main text area in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character – text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. </p>
-
-
-  <h2 id="manage_fonts" href="#manage_fonts">Manage fonts</h2>
-    <p><img src="../../shared25/images/help/manage_fonts.png" alt=""/></p>
-    
-  <p>Click on <samp>manage fonts</samp> to reveal the controls described here.</p>
-
-  <p><b class="leadin">Change selection area font. </b> Allows you to change the font and size of the characters you click on in the main selection areas. </p>
-	  	  
-	  <details>
-	  <summary style="margin-left:7.5%">See a video of how to add fonts to the selection lists.</summary>
-	  <p><video controls width="100%; max-width:720px" aria-label="Embedded video" style="border:0;"><source src="../../shared25/images/help/add-font.mp4" type="video/mp4"></video></p>
-	  </details>
-
-
-    <p><b class="leadin">List fonts... </b> Add font names to this control (one per line) and they will be added to the font selector lists. If you agreed to store settings, they will be remembered for your next session on that device (you need to set these lists separately on each device you use).</p>
 `
 }
 
@@ -239,17 +244,15 @@ out +=  `
   else out += '<p><img src="../../shared25/images/help/more_controls.png" alt=""/></p>'
   
   out += `
-  <p>Click on <samp>more controls</samp> to reveal the less commonly used controls described here.</p>
-
-  <p><b class="leadin">Set dimensions. </b>Allows you to change the font size, line height, and the box height, for the text area.</p>
+<p><b class="leadin">Set dimensions. </b>Allows you to change the font size, line height, and the box height, for the text area.</p>
 
 
 <p><b class="leadin">Set language.</b> Add a BCP47 language tag here (ie. what you would use as the value of a <code class="kw" translate="no">lang</code> attribute in HTML). It is used in code generated by <samp>Make example</samp> and <samp>Character markup</samp> controls to indicate the language of the text.</p>
 
 <p><b class="leadin">Change text.</b> Tools for manipulating the content in the text area.</p>
 <p><img alt="Add space:" src="../../images/addspace.png"/> &nbsp; Adds a space between every character in the text area.</p>
-<p><img alt="Add space:" src="../../images/addcomma.png"/> &nbsp; By default, adds a comma between every character in the text area. Put a different character or sequence of characters in the box just to the left in order to add something else between each character.</p>
 <p><img alt="Add space:" src="../../images/removespace.png"/> &nbsp; Removes all spaces from the text area.</p>
+<p><img alt="Add space:" src="../../images/addcomma.png"/> &nbsp; By default, adds ␣ between every character in the text area. Put a different character or sequence of characters in the box just to the left in order to add something else between each character.</p>
 <p><img alt="Add space:" src="../../images/count.png"/> &nbsp; Counts the number of characters in the text area.</p>
 <p><b class="leadin">Replace.</b> Allows you to remove a character from the text area, or replace it with something else. Type in the left-hand box a single character or the hex code point value for the character you want to delete/replace. If replacing, type the replacement text in the right-hand box.</p>
 
