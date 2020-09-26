@@ -121,6 +121,10 @@ var plistByRegion = {
 	'C':[
 				['Cherokee', 'cherokee/'],
 			    ['Chinese', 'hani/'],
+			  ['Cyrillic', 'cyrillic/'],
+			  ['['],
+			  ['Russian', 'russian/'],
+			  [']'],
 			  ],
 	'D':[
 			  ['Devanagari', 'devanagari/'],
@@ -140,6 +144,7 @@ var plistByRegion = {
 			  ['Georgian (modern)', 'geor-ka/'],
 			  ['Khutsuri', 'geok-ka/'],
 			  [']'],
+			  ['Greek', 'greek/'],
 			  ['Gujarati', 'gujarati/'],
 			  ['Gurmukhi', 'gurmukhi/'],
 			  ],
@@ -166,8 +171,11 @@ var plistByRegion = {
 			  ['Latin & diacritics','latin/'],
 			  ['['],
 			  ['Hausa (boko)', 'latn-ha/'],
+			  ['Old English', 'oldenglish/'],
+			  ['Old Norse', 'oldnorse/'],
 			  ['Pan-African&nbsp;Latin', 'latn-afr/'],
 			  ['Tłı̨chǫ&nbsp;(Dogrib)', 'tlicho/'],
+			  ['Vietnamese', 'vietnamese/'],
 			  [']'],
 			  ['Lisu (Fraser script)', 'lisu/'],
 			  ],
@@ -196,6 +204,9 @@ var plistByRegion = {
 				['Phoenician', 'phnx/'],
 				['Pahlavi', 'phli/'],
 				['Parthian', 'prti/'],
+			  ],
+	'R':[
+				['Runic', 'runic/'],
 			  ],
 	'S':[
 			  ['Sinhala', 'sinhala/'],
