@@ -220,11 +220,11 @@ var plistByRegion = {
 	'T':[
 			   ['Tagbanwa', 'tagb/'],
 			   ['Tai&nbsp;Le', 'taile/'],
-			   ['Tai&nbsp;Viet', 'taiviet/'],
 			  ['• Tai Tham ['],
 			   ['Northern&nbsp;Thai', 'lana-nod/'],
 			   ['Tai&nbsp;Khün', 'lana-kkh/'],
 			  [']'],
+			   ['Tai&nbsp;Viet', 'taiviet/'],
 			  ['Tamil', 'tamil/'],
 			  ['Telugu', 'telu/'],
 			  ['Thaana/Dhivehi', 'thaana/'],
