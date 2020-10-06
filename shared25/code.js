@@ -1355,79 +1355,6 @@ function setGridHintsVOLD (type) {
 
 
 
-function setGridHintsOLD (type) {
-	// switch the hints alongside characters between key indicators and transliterations
-	
-	if (document.getElementById('keyHintType')) { // this if statement is for backwards compatibility
-		document.getElementById('keyHintType').style.textDecoration = 'none'
-		document.getElementById('translitHintType').style.textDecoration = 'none'
-		document.getElementById('ipaHintType').style.textDecoration = 'none'
-		document.getElementById('noneHintType').style.textDecoration = 'none'
-		document.getElementById(type+'HintType').style.textDecoration = 'underline'
-		}
-
-	defaults.hints = type
-	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
-
-	var lastNode = null
-	var nodes = document.querySelectorAll( '.c, .v' )
-
-	if (type === 'key') {
-		globals.keyHints = 'key'
-		for (let n=0; n<nodes.length; n++ ) {
-			if (nodes[n].parentNode.classList && nodes[n].parentNode.classList.contains('g')) {
-				var content = nodes[n].textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'')
-				nodes[n].parentNode.firstChild.textContent = ''
-				if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.key]) {
-					nodes[n].parentNode.firstChild.textContent = ''
-					var keyContent = window.spreadsheetRows[content][cols.key] ? window.spreadsheetRows[content][cols.key].replace(/¶/,'\u0331') : ''
-					nodes[n].parentNode.firstChild.textContent = keyContent
-					}
-				}
-			}
-		}
-
-	else if (type === 'ipa') {
-		globals.keyHints = 'ipa'
-		for (let n=0; n<nodes.length; n++ ) { 
-			if (nodes[n].parentNode.classList && nodes[n].parentNode.classList.contains('g')) {
-				var content = nodes[n].textContent.replace(factoryDefaults.ccbase,'')
-				nodes[n].parentNode.firstChild.textContent = ''
-				if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ipaLoc]) {
-					var keyContent = window.spreadsheetRows[content][cols.ipaLoc] ? window.spreadsheetRows[content][cols.ipaLoc] : ''
-					nodes[n].parentNode.firstChild.textContent = keyContent
-					}
-				}
-			}
-		}
-
-	else if (type === 'translit') {
-		globals.keyHints = 'translit'
-		for (let n=0; n<nodes.length; n++ ) { 
-			if (nodes[n].parentNode.classList && nodes[n].parentNode.classList.contains('g')) {
-				var content = nodes[n].textContent.replace(factoryDefaults.ccbase,'')
-				nodes[n].parentNode.firstChild.textContent = ''
-				if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.transLoc]) {
-					var keyContent = window.spreadsheetRows[content][cols.transLoc] ? window.spreadsheetRows[content][cols.transLoc] : ''
-					nodes[n].parentNode.firstChild.textContent = keyContent
-					}
-				}
-			}
-		}
-
-	else {
-		for (let n = 0; n < nodes.length; n++ ) { 
-			if (nodes[n].parentNode.classList && nodes[n].parentNode.classList.contains('g')) {
-				var content = nodes[n].textContent.replace(factoryDefaults.ccbase,'')
-				if (window.spreadsheetRows[content]) {
-						nodes[n].parentNode.firstChild.textContent = ''
-					}
-				}
-			}
-		globals.keyHints = 'none'
-		}
-	}
-
 
 
 function setGridHints (type) {
@@ -1467,7 +1394,7 @@ function setGridHints (type) {
 		for (let n=0; n<nodes.length; n++ ) {
 			charNode = nodes[n].querySelector('.c, .v')
 			hintNode = nodes[n].querySelector('.hint')
-			content = charNode.textContent.replace(factoryDefaults.ccbase,'')
+			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ipaLoc]) {
 				keyContent = window.spreadsheetRows[content][cols.ipaLoc] ? window.spreadsheetRows[content][cols.ipaLoc] : ''
@@ -1481,7 +1408,7 @@ function setGridHints (type) {
 		for (let n=0; n<nodes.length; n++ ) { 
 			charNode = nodes[n].querySelector('.c, .v')
 			hintNode = nodes[n].querySelector('.hint')
-			content = charNode.textContent.replace(factoryDefaults.ccbase,'')
+			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.transLoc]) {
 				keyContent = window.spreadsheetRows[content][cols.transLoc] ? window.spreadsheetRows[content][cols.transLoc] : ''
