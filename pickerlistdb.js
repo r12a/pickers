@@ -66,7 +66,7 @@ var plist = [
     { tag:'phnx', name:'Phoenician', url:'phnx/' },
     { tag:'runr', name:'Runic', url:'runic/' },
     { tag:'cyrl', name:'Russian', url:'russian/' },
-    { tag:'mymr', name:'Shan', url:'shan/' },
+    { tag:'mymr', name:'Shan', url:'mymr-shn/' },
     { tag:'sinh', name:'Sinhala', url:'sinhala/' },
     { tag:'sund', name:'Sundanese', url:'sundanese/' },
     { tag:'syrc', name:'Syriac', url:'syriac/' },
@@ -187,7 +187,7 @@ var plistByRegion = {
 			  ['Mongolian', 'mongolian/'],
 			  ['• Myanmar ['],
 			   ['Burmese', 'burmese/'],
-			   ['Shan', 'shan/'],
+			   ['Shan', 'mymr-shn/'],
 			  [']'],
 			  ],
 	'N':[
