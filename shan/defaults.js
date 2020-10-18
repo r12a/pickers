@@ -18,7 +18,7 @@ var thisPicker = 'shanPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Sans Myanmar WF", "Tharlon WF" ]
+var webFonts = [ "Noto Serif Myanmar WF", "Noto Sans Myanmar WF" ]
 
 
 var template = {}
