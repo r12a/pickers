@@ -28,48 +28,25 @@
 
 *[lang=ar] { font-family: "Noto Naskh Arabic WF", serif; }
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
-
-#formatchars {
-    text-align: center;
-    margin-bottom: .25em;
-    line-height: 1;
-    }
-.spaceline {
-    margin-bottom: .25em;
-    }
 
 #kbd { margin:auto; }
 #kbd table {
 	margin:0;
 	}
 
-span.hint { 
-	margin-right: 0px;
-    margin-left: 0px;
-	font-size: 40%;
-	color: tan;
-	}
 .c { 
 	min-width: .7em;
 	text-align: center;
 	margin: 0 .05em;
 	}
 
+#cursive {
+    width: 6em;
+	font-size: 2em;
+    }
+
 
 /* KEYBOARD */
-.key { 
-	font-weight: normal; 
-	font-family:  eastern,  sans-serif;
-	}
-.key span { 
-	font-size: 1.2em; 
-    line-height: 1;
-	}
-
 #keyboard { display: none; }
 
 
@@ -161,9 +138,6 @@ span.hint {
     margin-bottom: 0;
     line-height: .8;
 	}
-.touch {
-    margin: 0;
-    }
 #spaceEtc {
     text-align: center;
     vertical-align: middle;
@@ -182,15 +156,7 @@ span.hint {
 	margin-top: 1em;
     }
 
-#alphabet summary {
-    font-size: 14px;
-    }
 #obsolete {
     text-align: center;
-    }
-#cursive {
-    width: 4em;
-    display: inline-block;
-	color: tan;
     }
 #u13 { text-align: center; }

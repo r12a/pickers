@@ -2,11 +2,11 @@ var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Scheherazade WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "50";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2.5"; // number representing number of times 100px for height of text area
+	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'ar' // language to use for examples
 	factoryDefaults.uifont = 'Noto Arabic Sans Light WF'; // font name  for selection area (a single font, no quotes)
-	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.uisize = "24";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "ـ";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
@@ -30,6 +30,7 @@ var template = {}
 	template.scriptcode = 'Arab'
 	template.cursive = true
 	template.fontLocale = 'arab-ajami'
+	template.hints = false
 
 
 
