@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'Doulos SIL WF';
+    src: local("Doulos SIL"),
+		url('/shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+[lang=ru] { font-family: 'Doulos SIL WF', "Times New Roman", serif; }
+
+
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	color:tan
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+
+#kbd { display: table; }
+    
+
+
+
+/* KEYBOARD */
+.key { 
+	font-weight: normal; 
+	font-family:  "Doulos SIL", "Times New Roman",  sans-serif;
+	}
+.key span { 
+	font-size: 1.2em; 
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+
+/* SELECTION AREA */
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#consonantGrid, #consonantGridAlpha {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 9.7em;
+    justify-content: space-between;
+    }
+#consonantGrid > span, #consonantGridAlpha > span {
+    min-width: 1em;
+    }
+#hardsoftGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 1em;
+    max-height: 15em;
+    justify-content: center;
+    margin-left: .75em;
+    line-height: 1.3;
+    }
+#vowelGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 5.46em;
+    max-height: 15em;
+    justify-content: space-between;
+    margin-left: .75em;
+    line-height: 1.3;
+    }
+#numberGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 2.42em;
+    max-height: 15em;
+    justify-content: center;
+    margin-left: 1.2em;
+    line-height: 1.3;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+
+#alphabet summary {
+    text-align: center;
+    }
+#obsolete {
+    text-align: center;
+    }
