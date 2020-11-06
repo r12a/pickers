@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Doulos SIL WF';
+    src: local("Doulos SIL"),
+		url('/shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Noto Sans Light WF';
+    src: url('../../shared/webfonts/notosans-light-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/notosans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+#shape { display: none; }
+#alphabet { display: block; }
+
+
+
+
+#alphabet img { 
+	cursor: pointer; 
+	}
+span.hint {
+	margin-right: 2px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+
+.spaceline {
+    margin-top: .55em;
+    }
+
+    
+#formatCharacters {
+    text-align: center;
+    line-height: 1;
+    }
+
+#prompts {
+    text-align: center;
+    color: orange;
+    }
+#prompts span, #prompts img {
+    cursor: pointer;
+	font-size: 1.4em;
+    }
+
+#punctuation {
+    line-height: 1;
+    text-align: center;
+    font-size: 80%;
+	margin-bottom: 1em;
+    }
+
+#extrashapes {
+    line-height: 1.5;
+	text-align:center;
+	margin-left: 3em;
+	margin-right: 3em;
+    min-height: 3.5em;
+	margin-bottom: 0;
+	}
+#extrashapes span {
+	cursor: pointer;
+	}
+
+
+
+
