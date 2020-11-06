@@ -7,6 +7,34 @@ function localInitialise () {
 
 	}
 
+function toggleExtended (node) {
+    var chars = document.querySelectorAll('.x')
+
+	if (node.classList.contains('shifted')) {
+        for (let i=0;i<chars.length;i++) {
+            chars[i].style.display = 'none'
+            }
+		document.getElementById('translitvowels').style.display = 'none'
+		}
+    else {
+        for (let i=0;i<chars.length;i++) {
+            chars[i].style.display = 'inline-block'
+            }
+		document.getElementById('translitvowels').style.display = 'block'
+		} 
+	}
+
+
+function toggleSubjoined (node) {
+	if (node.classList.contains('shifted')) {
+		document.getElementById('consonantGrid').style.display = 'flex'
+		document.getElementById('subjoinedGrid').style.display = 'none'
+		}
+    else {
+		document.getElementById('consonantGrid').style.display = 'none'
+		document.getElementById('subjoinedGrid').style.display = 'flex'
+		} 
+	}
 
 
 var _h = {

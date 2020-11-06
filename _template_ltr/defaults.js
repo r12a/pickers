@@ -1,13 +1,13 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Serif Devanagari WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
-	factoryDefaults.lineheight = "1.4"; // number representing line height of text area in pixels/100
+	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
+	factoryDefaults.rows = "150"; // px height of text area
+	factoryDefaults.lineheight = "1.4"; // line height of text area
 	factoryDefaults.language = 'ks' // language to use for examples
 	factoryDefaults.uifont = 'Noto Serif Devanagari WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
-	factoryDefaults.ccbase = "s\u25CC";  // default base for combining characters
+	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
 	factoryDefaults.hints = "none" // type of hint to show alongside characters in the grids
@@ -22,13 +22,14 @@ var webFonts = [ "Noto Serif Thai WF", "Noto Sans Thai WF" ]
 
 
 var template = {}
-	template.title = 'Template character app'
+	template.title = 'Template'
 	template.sample = "कऻशुर छि सऻन्य् माजि ज़्यव। असि पज़ि पनॖन्यन शुर्यन सॗत्य् ॳथ्य् ज़बऻन्य् मंज़ कथ करॖनय्।"
 	template.blocklocation= 'devanagari'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'template'
 	template.scriptcode = 'Tmp'
 	template.fontLocale = "tmp"
+	template.hints = true
 
 
 
@@ -54,6 +55,8 @@ _output.focus();`},
 
 
 
+
+
 var pulldown = [
 //{"title":"Trans-<br/>scribe", "alt":"Convert hindi text to a latin transcription.", "code":"doTranscription('transcription')"},
 //{"title":"Hindi<br/>to ISO", "alt":"Convert hindi text to a ISO 15919 transcription.", "code":"doTranscription('toISO15919')"},
@@ -63,6 +66,8 @@ var pulldown = [
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 ]
+
+
 
 
 

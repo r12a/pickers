@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>XXXXXX character app 25</title>
+<title>XXXXXX character app 26</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="../shared26/style.css" />
 <link rel="stylesheet" href="localstyle.css" />
 
 <script src="defaults.js">  </script>
@@ -18,11 +18,11 @@
 <script src="../../shared/fontlists/manage.js"></script>
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
-<script src="../shared25/setup.js">  </script>
-<script src="../shared25/code.js">  </script>
-<script src="../shared25/latinregister.js">  </script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared25/pagetemplate.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 <script src="localtranscription.js">  </script>
 
@@ -40,6 +40,12 @@
 
 
 
+<div id="chardata"><span id="charname">Type assist (T) is on.</span></div>
+
+
+<div id="sideMenu"></div>
+<script>document.getElementById('sideMenu').innerHTML = setSideMenu()</script>
+
 
 
 <div id="phonemelist" style="position:relative;">
@@ -48,54 +54,74 @@
 
 
 
-<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
-
-
 
 <div id="tables" dir="ltr">
   
 
 <div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+
 <div id="alphabet" class="default">
 
 
-<div id="shapelist" style="display:none; text-align:center;">
+<div id="shapelist">
 <div id="shapekeys">
 <span onclick="findShape('921,907,908','',true)">ड</span>
-<span onclick="findShape('90F,910,90E','',true)">ए</span>
-<span onclick="findShape('905,976,976,973,974,906,909,90A,912,913,975,914,969,96C','',true)">अ</span>
-<span onclick="findShape('92F,92A,925','',true)">य</span>
-<span onclick="findShape('928,924,932','',true)">न</span>
-<span onclick="findShape('91A,91A93C,91C,91C93C','',true)">च</span>
-<span onclick="findShape('966,96A,91F,920,92C,935','',true)">०</span>
-<span onclick="findShape('92B,915','',true)">फ</span>
-<span onclick="findShape('967,968,96F,91B93C,91B,916,936','',true)">१</span>
-<span onclick="findShape('96B,926,939','',true)">५</span>
-<span onclick="findShape('96D,96E','',true)">७</span>
-<span onclick="findShape('92E,938,917,930','',true)">म</span>
-<span onclick="findShape('93F','',true)">ि</span>
-<span onclick="findShape('25CC353,956,957,941,942,93C','',true)">◌͓</span>
-<span onclick="findShape('93E,940,94A,93B,94B,94F,94C','',true)">ा</span>
-<span onclick="findShape('25CC33D,93A,946,947,948,901,902','',true)">◌̽</span>
+<img alt=" " src="images/shape1.png" onclick="findShape('A986,A987,A99B','ꦆ,ꦇ,ꦛ',true)" />
 </div>
-</div>
-
 <div id="extrashapes"></div>
+</div>
+<!--
+𐡡 𐡱 𐡪 𐡮
+𐡣 𐡪 𐡯 𐡰 𐡽 𐡴
+𐡳 𐡬 𐡶
+𐡦 𐡭 𐡥 𐡫
+𐡢
+𐡲 𐡧
+𐡶
+𐡵
+𐡤
+𐡩
+𐡨
+𐡠
+-->
 
 
 
 
 <div class="spaceline">
-<span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
-<span class="touch" title="Zero width non-joiner" style="padding: 5px;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
-<span class="touch" title="Nukta" style="padding: 5px;" dir="auto" onClick="add('\u0ABC');">&#x0ABC;</span>
-<span class="touch" title="Virama" style="padding: 5px 50px;" dir="auto" onClick="add('\u094D');"><span class="hint">*</span> &nbsp; &#x094D;</span>
+<span class="touch" dir="auto" onclick="toggleSubjoined(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SUBJ</span>
+<span class="touch" dir="auto" onclick="toggleExtended(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">EXT</span>
+<span class="touch" dir="auto" onClick="ccb=document.getElementById('formatchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">FORMAT</span> 
+<span class="touch" title="Virama" style="padding: 5px 50px;" dir="auto" onClick="add('\u094D');">VIRAMA</span>
 <span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+<span class="touch" style="padding: 5px 30px;" onClick="add('\u200B');" title="Zero-width space">ZWSP</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
 </div>
+
+<div id="formatchars" style="display: none; text-align: center; line-height: 1; margin-bottom: 1em;">
+<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" dir="auto" onClick="add('\u00A0');">NBSP</span> 
+<span class="touch" dir="auto" onClick="add('\u2067');">RLI</span>
+<span class="touch" dir="auto" onClick="add('\u2066');">LRI</span>
+<span class="touch" dir="auto" onClick="add('\u2068');">FSI</span>
+<span class="touch" dir="auto" onClick="add('\u2069');">PDI</span>
+<span class="touch" dir="auto" onClick="add('\u202B');">RLE</span>
+<span class="touch" dir="auto" onClick="add('\u202A');">LRE</span>
+<span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
+<span class="touch" dir="auto" onClick="add('\u200F');">RLM</span>
+<span class="touch" dir="auto" onClick="add('\u200E');">LRM</span>
+<span class="touch" dir="auto" onClick="add('\u034F');">CGJ</span>
+<span class="touch" dir="auto" onClick="add('\u061C');">ALM</span>
+</div>
+
+
+
+
 
 <div id="kbdGrid"> 
  
@@ -177,9 +203,6 @@
 <span class="g"><span class="hint">w</span><span class="c">व</span></span>
             </div>
 </div>
-
-
-
 
 
 
@@ -411,9 +434,6 @@
 
 
 
-<div id="ktp0Wrapper">
-<div id="hintType">
-</div>
 
 
 <div id="punctuation">
@@ -455,9 +475,8 @@
 	<span class="g"><span class="hint"></span><span class="c">&#x095B;</span></span>
 	</div>
     </details>        
-</div>
 
-</div>
+</div><!-- end of alphabet -->
 
 
 <div id="temp"></div>
