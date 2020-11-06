@@ -54,18 +54,19 @@ end: {}
 }
 
 
-function toggleShift (node, LC, UC) {
-	if (node.className =='shifted') {
-		document.getElementById(LC).style.display = 'none'
-		document.getElementById(UC).style.display = 'block'
-		node.className = 'unshifted'
-		} 
-	else {
-		document.getElementById(LC).style.display = 'block'
-		document.getElementById(UC).style.display = 'none'
-		node.className = 'shifted'
+
+function toggleSubjoined (node) {
+	if (node.classList.contains('shifted')) {
+		document.getElementById('consonantGrid').style.display = 'flex'
+		document.getElementById('subConsonantGrid').style.display = 'none'
 		}
+    else {
+		document.getElementById('consonantGrid').style.display = 'none'
+		document.getElementById('subConsonantGrid').style.display = 'flex'
+		} 
 	}
+
+
 
 
 var keyboarddef = [

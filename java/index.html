@@ -37,9 +37,7 @@
 
 
 
-
-
-<div id="chardata"><span id="charname">Type-assist (T) is on. Click on the vertical list to the left for alternative input aids.</span></div>
+<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
 
 
 <div id="sideMenu"></div>
@@ -103,19 +101,30 @@
 
 
 <div class="spaceline">
-    <span id="shift" class="unshifted" onClick="toggleShift(this, 'subConsonantGrid', 'consonantGrid')">SS</span>
-    <span class="touch" style="padding: 5px 30px;" onClick="add(' ');">SPACE</span> 
-    <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
-	<span class="touch" title="Virama" style="padding: 5px 50px;" dir="auto" onClick="add('\uA9C0');"><span class="hint">*</span> &nbsp; &#xA9C0;</span>
-    <span class="touch" style="padding: 5px 30px;" onClick="add('\u200B');">ZWSP</span> 
-    <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-    <span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-    <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
-    <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span>
+<span class="touch" dir="auto" onclick="toggleSubjoined(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}" title="Show subjoined forms of consonants.">SUBJ</span>
+
+<span class="touch" dir="auto" onClick="ccb=document.getElementById('formatchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}" title="Show formatting characters.">FORMAT</span>
+
+<span class="touch" style="padding: 5px 30px;" onClick="add(' ');">SPACE</span> 
+<span class="touch" title="Virama" style="padding: 5px 30px;" dir="auto" onClick="add('\uA9C0');">PANGKON</span>
+<span class="touch" style="padding: 5px 30px;" onClick="add('\u200B');" title="Zero-width space">ZWSP</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
 </div>
 
+<div id="formatchars" style="display: none; text-align: center; line-height: 1; margin-bottom: 1em;">
+<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" dir="auto" onClick="add('\u00A0');">NBSP</span> 
+</div>
+
+
+
+
+
+
 <div id="kbdGrid"> 
- 
 
 <div id="ivowelGrid" class="box">
 <div><span class="g"><span class="hint">ị</span><span class="c">ꦆ</span></span></div>
@@ -204,22 +213,22 @@
             <span class="b">&nbsp;</span>
             <span class="g"><span class="hint">k</span><span class="c">&#xA9C0;ꦑ</span></span>
 	</div>
-	<div>
+	<div class="bottomDivider">
             <span class="g"><span class="hint">b</span><span class="c">&#xA9C0;ꦨ</span></span>
             <span class="g"><span class="hint">n</span><span class="c">&#xA9C0;ꦟ</span></span>
             <span class="g"><span class="hint">ɲ</span><span class="c">&#xA9C0;ꦘ</span></span>
             <span class="g"><span class="hint">g</span><span class="c">&#xA9C0;ꦓ</span></span>
+	</div>
+	<div style="justify-content: space-around;" class="bottomDivider">
+            <span class="g"><span class="hint">s</span><span class="c">&#xA9C0;ꦱ</span></span>
+            <span class="g"><span class="hint">s</span><span class="c">&#xA9C0;ꦯ</span></span>
+            <span class="g"><span class="hint">h</span><span class="c">&#xA9C0;ꦲ</span></span>
 	</div>
 	<div>
             <span class="g"><span class="hint">m</span><span class="c">&#xA9C0;ꦩ</span></span>
             <span class="g"><span class="hint">n</span><span class="c">&#xA9C0;ꦤ</span></span>
             <span class="g"><span class="hint">ɲ</span><span class="c">&#xA9C0;ꦚ</span></span>
             <span class="g"><span class="hint">ŋ</span><span class="c">&#xA9C0;ꦔ</span></span>
-	</div>
-	<div style="justify-content: space-around;">
-            <span class="g"><span class="hint">s</span><span class="c">&#xA9C0;ꦱ</span></span>
-            <span class="g"><span class="hint">s</span><span class="c">&#xA9C0;ꦯ</span></span>
-            <span class="g"><span class="hint">h</span><span class="c">&#xA9C0;ꦲ</span></span>
 	</div>
 
 	<div>
