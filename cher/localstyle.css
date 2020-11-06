@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Noto Sans Cherokee WF';
+    src: local("Noto Sans Cherokee WF"),
+		url('/shared/webfonts/notosanscherokee-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosanscherokee-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+:lang(chr) { font-family: "Noto Sans Cherokee WF", "Plantagenet Cherokee", serif; } 
+
+
+#phonelist { display: none; }
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  "Noto Sans Cherokee WF", "Plantagenet Cherokee",  serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+#alphabet { 
+	display: block; 
+	color: #666;
+    line-height: 1.2;
+	}
+#alphabet td { 
+	padding: 0;
+    width: 2em;
+	}
+#alphabet table { 
+	margin: auto;
+    border-collapse: collapse;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	color:tan
+	}
+.c { 
+	min-width: 1em;
+	text-align: center;
+	}
+    
+#diacritics {
+    text-align: center;
+    }    
+
+
+
+
+.firstcol {
+    font-size: 50%;
+    vertical-align: middle;
+}
+.shifted, .unshifted {
+	display: inline-block;
+	width: 10em;
+	}
+
+#shapelist #uppercase, #shapelist #lowercase { 
+	width: 90%;
+	}
+#shapelist #uppercase, #shapelist #lowercase, #shapelist table, #alphabet table { 
+	text-align: center;
+	margin: auto;
+	}
+
+
+
+
