@@ -184,6 +184,53 @@ function toggleShift (node) {
 	}
 
 
+
+function toggleShift (node) {
+	if (node.classList.contains('shifted')) {
+		lcs = document.querySelectorAll('.lowercase')
+		for (let i=0;i<lcs.length;i++) lcs[i].classList.remove('hidden')
+		ucs = document.querySelectorAll('.uppercase')
+		for (let i=0;i<ucs.length;i++) ucs[i].classList.add('hidden')
+		}
+    else {
+		lcs = document.querySelectorAll('.lowercase')
+		for (let i=0;i<lcs.length;i++) lcs[i].classList.add('hidden')
+		ucs = document.querySelectorAll('.uppercase')
+		for (let i=0;i<ucs.length;i++) ucs[i].classList.remove('hidden')
+		} 
+	}
+
+
+function toggleExtended (node) {
+    var chars = document.querySelectorAll('.x')
+
+	if (node.classList.contains('shifted')) {
+        for (let i=0;i<chars.length;i++) {
+            chars[i].style.display = 'none'
+            }
+		document.getElementById('translitvowels').style.display = 'none'
+		}
+    else {
+        for (let i=0;i<chars.length;i++) {
+            chars[i].style.display = 'inline-block'
+            }
+		document.getElementById('translitvowels').style.display = 'block'
+		} 
+	}
+
+
+function toggleSubjoined (node) {
+	if (node.classList.contains('shifted')) {
+		document.getElementById('consonantGrid').style.display = 'flex'
+		document.getElementById('subjoinedGrid').style.display = 'none'
+		}
+    else {
+		document.getElementById('consonantGrid').style.display = 'none'
+		document.getElementById('subjoinedGrid').style.display = 'flex'
+		} 
+	}
+
+
 /*
 shapes
 

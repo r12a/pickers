@@ -2,8 +2,8 @@ var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Adlam WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
-	factoryDefaults.lineheight = "1.4"; // number representing line height of text area in pixels/100
+	factoryDefaults.rows = "150"; // px height of text area
+	factoryDefaults.lineheight = "1.4"; // line height of text area 
 	factoryDefaults.language = 'fuf' // language to use for examples
 	factoryDefaults.uifont = 'Noto Sans Adlam WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
@@ -31,6 +31,7 @@ var template = {}
 	template.scriptcode = 'Adlm'
 	template.cursive = true
 	template.fontLocale = "adlm"
+	template.hints = true
 
 
 

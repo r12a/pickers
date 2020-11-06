@@ -21,33 +21,23 @@
 
 
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
-
-#formatchars {
-    text-align: center;
-    margin-bottom: .25em;
-    line-height: 1;
-    }
-.spaceline {
-    margin-bottom: .5em;
-	line-height: 1.2;
-    }
-
-
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 50%;
-	color: tan;
+	margin-inline-end: 1px;
+	margin-inline-start: .5em;
+	font-size: 60%;
+	color:tan;
 	}
 .c { 
 	min-width: .75em;
 	text-align: center;
 	}
+span.x { 
+	color:chocolate;
+	}
+#cursive {
+    width: 6em;
+    }
 
 
 /* KEYBOARD */
@@ -194,11 +184,6 @@ span.hint {
     }
 #obsolete {
     text-align: center;
-    }
-#cursive {
-    width: 4em;
-    display: inline-block;
-	color: tan;
     }
 
 #alef {
