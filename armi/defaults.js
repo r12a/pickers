@@ -1,12 +1,12 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Aramaic WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
+	factoryDefaults.size = "26";  // text area font size, number of pixels (just the number)
+	factoryDefaults.rows = "150"; // px height of text area
 	factoryDefaults.lineheight = "1.4"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'arc' // language to use for examples
 	factoryDefaults.uifont = 'Noto Sans Aramaic WF'; // font name  for selection area (a single font, no quotes)
-	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.uisize = "24";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
@@ -29,6 +29,7 @@ var template = {}
 	template.github = 'armi'
 	template.scriptcode = 'Armi'
 	template.fontLocale = "armi"
+	template.hints = true
 
 
 
