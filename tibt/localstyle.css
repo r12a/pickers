@@ -14,18 +14,13 @@
 
 #rarestuff { display:none; }
 
-#alphabet { 
-	display: block; 
-	color: #222;
-	background-color: #eee;
-	}
 
 span.hint { 
-	margin-right: 0px;
-    margin-left: 0px;
-	font-size: 50%;
-	color: tan;
-	}
+  margin-inline-start: .5em;
+  margin-inline-end: 1px;
+  font-size: 60%;
+  color:tan;
+  }
 .c { 
 	min-width: .75em;
 	text-align: center;
@@ -125,7 +120,6 @@ span.x span.c {
 	margin-top: 15px;
 	}
 
-#alphabet { padding-left: 5px; padding-right: 5px; }
 #consonants td { margin: 0; padding: 0; padding-bottom: 3px; }
 #subscripts td { margin: 0; padding: 0;  padding-bottom: 3px;  }
 #subscripts, #consonants { border-collapse:collapse; }
@@ -188,11 +182,6 @@ span.x span.c {
 	cursor: pointer;
 	color: #aaa;
 	}
-/*#extend {
-    text-align: center;
-    font-size: 70%;
-	margin: .5em 0 .5em 0;
-    }*/
 #punctuation, #flatnumbers, #other {
     text-align: center;
     font-size: 80%;
