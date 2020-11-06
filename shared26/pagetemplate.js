@@ -141,6 +141,21 @@ function clearBidiOverride () {
 
 
 
+
+function addTabEtc (location) {
+	node = document.getElementById(location)
+	out = `
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');"><img src="../shared26/images/tab.png" alt="⇥"></span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\\n');"><img src="../shared26/images/return.png" alt="⏎"></span> 
+<span class="touch" title="Delete last character in text area" style="padding: 5px 20px;" onClick="del();">DEL</span> 
+<span class="touch delAll" title="Delete all" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span>
+`
+	node.innerHTML = out
+	}
+
+
+
+
 function setTop (title,sample) {
 var out
 
