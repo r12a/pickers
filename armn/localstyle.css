@@ -11,14 +11,17 @@
 
 
 .g {
-    margin: 0 .5em;
+    /*margin: 0 .5em;*/
 	}
 .c { 
 	min-width: .75em;
 	text-align: center;
 	}
-span.hint {
+span.hint { 
+    margin-inline-start: .5em;
+	margin-inline-end: 2px;
 	font-size: 60%;
+	color:tan;
 	}
     
     
