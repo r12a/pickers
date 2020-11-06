@@ -1,0 +1,378 @@
+<html lang="en-gb"><head>
+<meta charset="UTF-8">
+<title>Help for using the Font preview</title>
+<link rel="stylesheet" href="../../shared/style/docs.css">
+<link rel="stylesheet" href="../shared25/style.css">
+<link rel="stylesheet" href="../localstyle.css">
+<script src="/shared/code/boilerplate.js"></script>
+<script src="/shared/code/toc_2016.js"></script>
+<script src="../../shared25/helptemplate.js"></script>
+</head>
+
+<body class="app notes">
+<header>
+  <div id="header-boilerplate"><div id="site-navigation"> <img id="bp_picture" class="app" alt=" " src="/shared/images/world.gif"></div><div id="boilerplate"><div id="line" class="app">&nbsp;</div></div><div id="topbar"><a href="/index">r12a</a> &gt;&gt; <a href="/applist">apps</a> &gt;&gt; Adlam character app <span class="versionnumber"></span></div><div id="sitelinks" class="noprint"><a href="http://rishida.net/blog/">blog</a>&nbsp; <a href="/doclist">docs</a>&nbsp; <a href="/maplist">maps</a>&nbsp; <a href="/applist">apps</a>&nbsp; <a href="/photos">photos</a>&nbsp;&nbsp;</div></div>
+  <script>document.getElementById('header-boilerplate').innerHTML = bp_appHeader('/shared/images/world.gif','Font preview','');</script> 
+  <style>
+  #suggestions dd { text-align:  start; }
+  </style>
+</header>
+
+
+<h1>Font preview notes/help</h1>
+
+
+<aside class="sidebar">
+<h2 class="notoc flush"><a id="tochead">Contents</a></h2>
+<div id="toc"><!-- placeholder --></div>
+
+<h2 class="notoc"><a id="tochead">Related</a></h2>
+<div class="toc1"><a href="/pickers/">List of character apps</a></div>
+</aside>     
+
+<p id="status">Updated  <!-- #BeginDate format:En2 -->06-Oct-2020<!-- #EndDate --></p>
+
+<p>This page tells you how to add your own fonts to the font preview section of a character app, and provides additional hints.</p>
+<p>The font preview allows you to see what the text looks like with a particular font. Mouse over the font names to apply the new font temporarily to the text in the text area. Click on a font name to switch to that font and store your setting. This is useful for choosing a font for display, or for comparing one font with another.</p>
+<p><strong>Unless the font name points to a webfont, you will need to have the font present on your system to view the glyphs.</strong></p>
+<p>See a video of the font preview in action</p>
+<p><video controls="" aria-label="Embedded video" style="border:0;" width="100%; max-width:720px"><source src="images/help/font-preview.mp4" type="video/mp4"></video></p>
+
+<section id="about">
+<h2 href="#about">Adding your own fonts</h2>
+<p>To add your own fonts, click on <img src="images/fonts.png" alt="Fonts icon" style="vertical-align: bottom">, then click on <samp>Manage fonts</samp>. In the text box that becomes visible, list fonts you want to add to the font selection lists. One font name per line. Then click on <samp>Set</samp>.</p>
+<p> The new fonts will be added to the font pull-down selectors immediately. You'll need to close and reopen the font preview panel to see the newly added fonts there (just click on <img src="images/fonts.png" alt="Fonts icon" style="vertical-align: bottom"> twice).</p>
+
+<p>See a video of how to add fonts to the selection lists.</p>
+<p><video controls="" aria-label="Embedded video" style="border:0;" width="100%; max-width:720px"><source src="images/help/add-font.mp4" type="video/mp4"></video></p>
+<div id="aboutBP"></div>
+</section>
+
+
+
+<section id="basics">
+<h2 href="#basics">Identifying missing characters</h2>
+<p>Because browsers do font substitution for characters that are missing from a font, it isn't always easy to spot those characters.</p>
+<p>If you download the <a href="https://unicode.org/policies/lastresortfont_eula.html">Unicode BMP Fallback SIL</a> and/or the <a href="https://github.com/adobe-fonts/adobe-notdef">Adobe NotDef font</a> and install it, the character app will clearly show these characters. See an example in this screen grab. (The SIL font only works for BMP characters. You'll need both for best coverage of BMP plus Supplementary ranges.)</p>
+<p><img src="images/help/notdef_font.png" alt=" "></p>
+<p>(Ideally, i would include that font as a webfont, but I didn't manage to create one successfully.)</p>
+<p>To find out what characters are missing, simply select them and click on <samp>Show codepoints</samp> to reveal their names.</p>
+</section>
+
+
+
+<section id="top_controls">
+<h2 href="#top_controls">Checking coverage for a specific language</h2>
+<p>You may sometimes want to check whether a font covers the repertoire needed for a given language. Here's how you can do that.</p>
+      <p>Open the <a href="/app-charuse/">Character usage lookup  app</a>, and find the language you are interested in. For example,<a href="/app-charuse/?language=fuf-adlm"> here's the page</a> for the Fulah language using the Adlam script.</p>
+      <p>Between the table rows for <samp>Sources</samp> and <samp>Region</samp>, look for a link <samp>Check for fonts</samp>. If you find that link, then click on it (not all languages have been set up for this yet).</p>
+<p>The link will open a relevant character app, and add the required repertoire for that language to the main text box. It will also automatically open the font preview panel.</p>
+<p>Simply mouse over the font names in the font preview to see which characters are supported and which are not.</p>
+<p>If the app recognises a sequence of characters that has a particular significance in its own right, it will show that sequence (slightly indented) after the initial character.</p>
+</section>
+
+
+
+<section id="suggestions">
+<h2>Suggested additional fonts</h2>
+<p>There are many other fonts out there which are not pointed to by the font preview pane, by default. Here are some suggestions for fonts you may want to add.</p>
+
+<dl>
+<dt>Adlam</dt>
+<dd>Kigelia</dd>
+
+<dt>Arabic, &amp; Arabic block</dt>
+<dd>Amiri<br>
+Amiri Quran<br>
+Aref Ruqaa</dd>
+
+<dt>Armenian</dt>
+<dd>Arian AMU<br>
+Arian AMU Serif<br>
+Arian Grqi</dd>
+
+<dt>Assyrian Neo-Aramaic</dt>
+<dd>EastSyriacAdiabeneRegular<br>
+EastSyriacCtesiphonRegular</dd>
+
+<dt>Balinese</dt>
+<dd>Aksara Bali<br>
+JG Aksara Bali<br>
+Kadiri<br>
+Pustaka Bali<br>
+Ubud<br>
+Vimala</dd>
+
+<dt>Bengali</dt>
+<dd>Lohit Bengali<br>
+SolaimanLipi</dd>
+
+<dt>Buginese</dt>
+<dd>Saweri</dd>
+
+<dt>Cherokee</dt>
+<dd>Aboriginal Sans<br>
+Aboriginal Serif<br>
+CherokeeLSU<br>
+Geneva<br>
+Marin</dd>
+
+<dt>Cyrillic all</dt>
+<dd>Brill</dd>
+
+<dt>Devanagari</dt>
+<dd>Chandas<br>
+Kalimati<br>
+Kanjirowa<br>
+Lohit Devanagari<br>
+Uttara</dd>
+
+<dt>Eastern Canadian Inuktitut</dt>
+<dd>Aboriginal Sans<br>
+Aboriginal Serif<br>
+Pigiarniq<br> 
+Uqammaq
+</dd>
+
+<dt>Ethiopic</dt>
+<dd>Droid Sans Ethiopic</dd>
+
+<dt>Georgian, and Georgian all</dt>
+<dd>BPG 2017 DejaVu Sans<br>
+BPG 2017 DejaVu Serif</dd>
+
+<dt>Greek (modern)</dt>
+<dd>Brill<br> Geneva</dd>
+
+<dt>Gujarati</dt>
+<dd>Aakar<br>
+Lohit Gujarati<br>
+RaghuGujarati<br>
+Rekha</dd>
+
+<dt>Gurmukhi</dt>
+<dd>AnmolUni<br>
+AnmolBani<br>
+Lohit Punjabi<br>
+RaghuPunjabi<br>
+Saab</dd>
+
+<dt>Hausa (ajami)</dt>
+<dd>Amiri</dd>
+
+<dt>Hausa (boko)</dt>
+<dd>Adelle Sans EXT<br>
+Adelle Sans EXT Light<br>
+Brill<br>
+EversonMono<br>
+Symbola</dd>
+
+<dt>Hebrew</dt>
+<dd>SBL Unicode</dd>
+
+<dt>Hindi</dt>
+<dd>Kalimati<br>
+Kanjirowa<br>
+Lohit Devanagari</dd>
+
+<dt>IPA</dt>
+<dd>Brill<br> Symbola</dd>
+
+<dt>Javanese</dt>
+<dd>Nawatura beta<br>
+Tuladha Jejeg<br>
+Yogya<br>
+Yogyakarta</dd>
+
+<dt>Khmer</dt>
+<dd>Battambang<br>
+CDT Khmer<br>
+Khmer Angkulileka<br>
+Khmer Chanta<br>
+Khmer Kampongtrach<br>
+Khmer Kampot<br>
+Khmer Kep<br>
+Khmer Kolab<br>
+Khmer Mondulkiri-s<br>
+Khmer Mool<br>
+Khmer Nettra<br>
+Khmer Old Style<br>
+Khmer OS<br>
+Khmer OS Battambang<br>
+Khmer OS Fasthand<br>
+Khmer OS Freehand<br>
+Khmer OS System<br>
+Khmer Vanara<br>
+PhnomPenh OT</dd>
+
+<dt>Khutsuri</dt>
+<dd>BPG 2017 DejaVu Sans<br>
+BPG 2017 DejaVu Serif</dd>
+
+<dt>Lao</dt>
+<dd>Dhyana<br>
+Lao Muang Don<br>
+Lao Unicode<br>
+Phetsarath<br>
+Saysettha OT<br>
+Souliyo</dd>
+
+<dt>Latin &amp; diacritics</dt>
+<dd>Adelle Sans EXT<br>
+Adelle Sans EXT Light<br>
+Brill<br>
+EversonMono<br>
+Symbola</dd>
+
+<dt>Lisu</dt>
+<dd>Lisu Unicode<br>
+Geneva<br>
+Lisu Tzimu</dd>
+
+<dt>Malayalam</dt>
+<dd>AnjaliOldLipi<br>
+JanaMalayalam<br>
+RaghuMalayalam<br>
+Samyak Malayalam<br>
+ThoolikaUnicode<br>
+ThoolikaTraditionalUnicode</dd>
+
+<dt>Mongolian</dt>
+<dd>FZMWBTOT_Unicode<br>
+Mongolian Art<br>
+Mongolian Title<br>
+Mongolian Script<br>
+Oyun Qagan Tig</dd>
+
+<dt>Neo-tifinagh</dt>
+<dd>Hapax Berbere</dd>
+
+<dt>New Tai Lü</dt>
+<dd>Nokyung</dd>
+
+<dt>Northern Thai</dt>
+<dd>Lanna Alif<br>
+Tai Tham LN</dd>
+
+<dt>Old English</dt>
+<dd>Geneva<br> Junicode</dd>
+
+<dt>Old Norse</dt>
+<dd>Geneva<br> Junicode</dd>
+
+<dt>Osage</dt>
+<dd>Avant<br>
+GadugiBeta2<br>
+Nelagoney<br>
+Pawhuska<br>
+Prue<br>
+Wazhazhe<br>
+Wynona</dd>
+
+<dt>Pan-African latin</dt>
+<dd>Adelle Sans EXT<br>
+Adelle Sans EXT Light<br>
+Brill<br>
+EversonMono<br>
+Symbola</dd>
+
+<dt>Persian</dt>
+<dd>Amiri<br>
+Aref Ruqaa</dd>
+
+<dt>Plains Cree</dt>
+<dd>Aboriginal Sans<br>
+Aboriginal Serif<br>
+OskiWest</dd>
+
+<dt>Runic</dt>
+<dd>Babelstone Runic Beagnoth<br>
+Babelstone Runic Beorhtnoth<br>
+Babelstone Runic Beowulf<br>
+Babelstone Runic Berhtwald<br>
+Babelstone Runic Byrhtferth<br>
+Geneva<br>
+Junicode</dd>
+
+<dt>Sinhala</dt>
+<dd>DinaminaUniWeb<br>
+Malithi Web<br>
+Potha</dd>
+
+<dt>Sundanese</dt>
+<dd>Bandung<br>
+Sundanese Unicode<br>
+Sundanese Unicode 2013</dd>
+
+<dt>Tai Khün</dt>
+<dd>A Tai Tham KH New</dd>
+
+<dt>Tamil</dt>
+<dd>Droid Sans Tamil<br>
+Karla Tamil Inclined<br>
+Karla Tamil Upright<br>
+Lohit Tamil<br>
+Maduram<br>
+Pavanam</dd>
+
+<dt>Thai</dt>
+<dd>Droid Sans Thai<br>
+Droid Serif Thai<br>
+Kanit<br>
+Sriracha</dd>
+
+<dt>Tibetan</dt>
+<dd>Jomolhari<br>
+Tibetan Machine Uni</dd>
+
+<dt>Thaana</dt>
+<dd>A_Ilham<br>
+A_Faseyha<br>
+A_Utheem<br>
+A_Waheed<br>
+Mv Jadheedh</dd>
+
+<dt>Tłı̨chǫ</dt>
+<dd>Aboriginal Sans<br>
+Aboriginal Serif<br>
+Brill<br>
+EversonMono<br>
+Symbola</dd>
+
+<dt>Urdu</dt>
+<dd>Gohar Urdu Unicode<br>
+Nafees Nastaleeq<br>
+Nafees Pakistani Naskh<br>
+Nafees Web Naskh<br>
+Nastaleeq Like<br>
+Urdu Naskh Asiatype<br>
+Urdu Naskh Unicode</dd>
+
+<dt>UCAS all</dt>
+<dd>Aboriginal Sans<br>
+Aboriginal Serif<br>
+Kayases<br>
+OskiDakelh<br>
+OskiEast<br>
+OskiWest<br>
+Pigiarniq<br>
+Rotinonhsonni<br>
+Uqammaq
+</dd>
+
+<dt>Vietnamese</dt>
+<dd>Brill<br>
+EversonMono<br>
+Symbola</dd>
+
+
+</dl>
+</section>
+
+
+<div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
+
+<script>
+createtoc(3);
+</script>
+</body></html>
