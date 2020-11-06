@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>All Arabic character app 25</title>
+<title>All Arabic character app 26</title>
 
 <link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
-<link rel="stylesheet" type="text/css" href="../shared25/style.css" />
+<link rel="stylesheet" type="text/css" href="../shared26/style.css" />
 <link rel="stylesheet" type="text/css" href="localstyle.css" />
 
 <script src="defaults.js">  </script>
@@ -18,11 +18,11 @@
 <script src="../../shared/fontlists/manage.js"></script>
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
-<script src="../shared25/setup.js">  </script>
-<script src="../shared25/code.js">  </script>
-<script src="../shared25/latinregister.js">  </script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared25/pagetemplate.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 <!--script src="localtranscription.js">  </script-->
 
@@ -55,18 +55,6 @@
 <div id="tables" dir="rtl">
 
 
-<div class="spaceline">
-<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
-<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
-<span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');" style="transform: rotateY(180deg);">⇥</span> 
-<span class="touch" title="Tab" dir="auto" onClick="add('\n');" style="transform: rotateY(180deg);">⏎</span> 
-<span class="touch" title="Delete All" dir="auto" onClick="del();">DEL</span> 
-<span class="touch delAll"  dir="auto" onClick="deleteAll();">❌</span>
-</div>
-
-
-
   
     <div id="alphabet" class="default">
       <div id="prompts">
@@ -95,7 +83,22 @@
       <bdi onclick="findShape('','\u0660,\u0661,\u0662,\u0663,\u0664,\u0665,\u0666,\u0667,\u0668,\u0669,•,\u06F0,\u06F1,\u06F2,\u06F3,\u06F4,\u06F5,\u06F6,\u06F7,\u06F8,\u06F9',true)">#</bdi> 
       <bdi onclick="findShape('','\u060D,\u061B,.,\u060C,\u061F,\u066A,\u0609,\u060A,\u0606,\u0607,\u066D,\u066C,\u061E,\u00AB,\u00BB,‹,›,(,),•,\u060F,\u06DD,\u06DE,\u06E9,\u06D4,\u0640,\u0600,\u0601,\u0602,\u060E,\u0603',true)">&hellip;</bdi> 
       </div>
-      
+	  
+	  
+	  
+	  
+<div class="spaceline">
+<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
+</div>
+
+
+
+    
 
 
  <div id="shapelist" style="display:none; text-align:center;">

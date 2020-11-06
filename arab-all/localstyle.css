@@ -39,6 +39,7 @@ span.hint {
 #prompts {
     text-align: center;
     color: orange;
+	background-color: white;
     }
 #prompts span, #prompts img, #prompts bdi {
     cursor: pointer;
