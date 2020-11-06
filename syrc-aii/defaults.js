@@ -1,12 +1,12 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'East Syriac Adiabene WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "56";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
+	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
+	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.2"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'aii' // language to use for examples
 	factoryDefaults.uifont = 'Noto Sans Syriac Eastern WF'; // font name  for selection area (a single font, no quotes)
-	factoryDefaults.uisize = "32";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Syriac Eastern WF", "Noto Sans Syriac Estrangela WF"
 
 
 var template = {}
-	template.title = 'Assyrian Neo-Aramaic character picker'
+	template.title = 'Assyrian Neo-Aramaic'
 	template.sample = "ܐܸܢ ܦܵܝܫܝܼ ܒܘܼܓ̰ܪܹ̈ܐ، ܟܹܐ ܗܵܘܝܼ ܡܲܦܬܘܼܝܹܐ ܘܓܲܪܘܘܼܣܹܐ ܒܣܸܕܪܵܐ ܕܐܵܢ ܠܸܫܵܢܹ̈ܐ ܣܸܦܪ̈ܵܝܹܐ ܘܪܗܸܛܪ̈ܵܝܹܐ ܕܕܘܼܢܝܹܐ."
 	template.sample = "ܟܠܲܝܗܝ ܐ݇ܢܵܫܹ̈ܐ ܦܝܼܫܹܐ ܝܢܵܐ ܒܸܪܝܵܐ ܚܹܐܪܹ̈ܐ ܘܫܵܘܝܸ̈ܐ ܒܐܝܼܩܵܪܵܐ ܘܲܒܙܸܕܩܹ̈ܐ. ܘܦܝܼܫܹܐ ܝܢܵܐ ܝܗܝܼܒܹܐ ܗܵܘܢܵܐ ܘܬܹܐܕܬܵܐ ܘܦܝܼܫܬܵܐ ܝܠܵܗ̇ ܣܒܝܼܪܬܵܐ ܡܸܢܲܝܗܝ ܕܦܵܠܚܝܼ ܚܲܕ ܥܲܡ ܗ̇ܘ ܐ݇ܚܹܪ݇ܢܵܐ ܒܲܚܕܵܐ ܪܘܼܚܵܐ ܕܐܲܚܘܼܬܵܐ."
 	template.blocklocation= '/scripts/syriac/block'  // blocklocation to use for examples
@@ -31,6 +31,7 @@ var template = {}
 	template.scriptcode = 'Syrc'
 	template.cursive = true
 	template.fontLocale = 'syrc'
+	template.hints = true
 
 
 
