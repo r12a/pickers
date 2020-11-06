@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Malayalam character app 26</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared26/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="defaults.js">  </script>
+<script src="/shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/malayalam.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
+<script src="/scripts/linkdata/linkdb.js"></script>
+<script src="localtranscription.js">  </script>
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="chardata"><span id="charname">Type assist (T) is on.</span></div>
+
+
+<div id="sideMenu"></div>
+<script>document.getElementById('sideMenu').innerHTML = setSideMenu()</script>
+
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+<div id="tables" dir="ltr">
+  
+  <div id="alphabet" class="default">
+  
+  
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<img alt=" " src="images/shape1.png" onclick="findShape('D15,D7F,D15D4DD37','ക്ള,ക്ക,ക്ത,ക്ര,ക്ഷ,കു,കൂ,കൃ,ങ്ക',true)" />
+<img alt=" " src="images/shape2.png" onclick="findShape('D32','ല്ര,ല്വ,ല്ല',true)" />
+<img alt=" " src="images/shape3.png" onclick="findShape('D25,D67,D2E','ഥ്ള,മ്മ,മ്ര,മ്ള',true)" />
+<img alt=" " src="images/shape4.png" onclick="findShape('D31,D68,D35,D6E','വ്ര,വ്വ,വ്ള,റ്റ',true)" />
+<img alt=" " src="images/shape5.png" onclick="findShape('D16,D10,D6D,D46,D48,D4A,D4C,D09,D0A','ഖ്വ',true)" />
+<img alt=" " src="images/shape6.png" onclick="findShape('D73,D74,D0C,D75,D1E,D61,D2C,D19,D07,D08','ഞ്ര,ഞ്ഞ,ബ്ബ,ബ്ള,ണ്മ,ങ്ര,ബ്ര,ഞ്ച,ഞ്ഛ',true)" />
+<img alt=" " src="images/shape7.png" onclick="findShape('D07,D08,D1C','ഞ്ജ,ജ്ഞ,ജ്ജ,ജ്ര,ജു,ജൂ,ജൃ',true)" />
+<img alt=" " src="images/shape8.png" onclick="findShape('D23,D7A','ണ്ട,ണ്ഡ,ണ്ഢ,ണു,ണൂ,ണ്ര',true)" />
+<img alt=" " src="images/shape9.png" onclick="findShape('D19,D12,D13,D14,D33,D05,D06','ങ്ങ',true)" />
+<img alt=" " src="images/shape10.png" onclick="findShape('D28,D38,D69,D6F,D79,D72,D7B,D57,D4C,D71,D6C','മ്പ,ന്ത,നൂ,ന്ഥ,ന്മ,ന്ദ,ന്ദ്ര,ന്ധ,ന്ന,നൃ,ന്ര,സ്ര,സ്ഥ,സ്ള,സൃ,സ്റ്റ',true)" />
+<img alt=" " src="images/shape11.png" onclick="findShape('D30,D7C,D6A,D24,D7A,D1D','ര്ര,തൃ,ത്ര,ത്ത,ത്ഥ,ത്മ,ത്ന,ത്സ,ഝൃ,ഝ്ര,രൂ,രു,ത്ഭ,ത്ള,തു,തൂ,രൃ',true)" />
+<img alt=" " src="images/shape12.png" onclick="findShape('D17,D36,D7E','ഗ്ദ,ഗ്ന,ഗ്മ,ഗൃ,ശൃ,ഗ്ര,ശ്ര,ഗ്ള,ശ്ള,ഗു,ഗൂ,ശു,ശൂ,ശ്ച,ശ്ഛ',true)" />
+<img alt=" " src="images/shape14.png" onclick="findShape('D21,D22','ഡ്ര,ഢ്ര',true)" />
+<img alt=" " src="images/shape15.png" onclick="findShape('D27,D70,D2F','ധ്ന,ധൃ',true)" />
+<img alt=" " src="images/shape16.png" onclick="findShape('D2F','യ്യ,യ്ര',true)" />
+<img alt=" " src="images/shape17.png" onclick="findShape('D2A,D1A,D2B,D37,D39,D0E,D0F,D10,D18','ഹ്മ,ഘ്ര,ഘ്ള,പ്ട,പ്പ,പ്വ,പ്ള,ഫ്ത,ഫ്പ,പ്ര,ഫ്ര,ഹ്ര,ഹൃ,ഫ്ള,ഷ്പ,ഷ്ര,ഷ്ള,ഹ്ന,ഹ്ള,ഹു,ഹൂ',true)" />
+<img alt=" " src="images/shape18.png" onclick="findShape('D1A,D2A,D1B','ച്ച,ച്വ,ച്ര,ഛ്ര,ഛു,ഛൂ',true)" />
+<img alt=" " src="images/shape19.png" onclick="findShape('D1F,D2D,D26','ഭ്ര,ട്ട,ട്ര,ടൃ',true)" />
+<img alt=" " src="images/shape20.png" onclick="findShape('D26,D6B,D2D,D33','ദ്ദ,ദ്ധ,ദ്ര,ദൃ,ഭ്ര,ഭു,ഭൂ,ഭൃ,ള്ള,ളാ,ളൃ',true)" />
+<img alt=" " src="images/shape21.png" onclick="findShape('D20,D66,D3E,D41,D02,D42','ഠ്ര',true)" />
+<img alt=" " src="images/shape22.png" onclick="findShape('D0B,D60','',true)" />
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+
+<div class="spaceline">
+<span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
+<span class="touch" title="Zero width non-joiner" style="padding: 5px;" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Virama" style="padding: 5px 20px;" dir="auto" onClick="add('\u0D4D');">chandrakkala</span>
+<span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+
+
+<div id="kbdGrid"> 
+ 
+<div id="ivowelGrid" class="box">
+  <div>
+    <span class="g"><span class="hint">ị</span><span class="c">ഇ</span></span>
+    <span class="g"><span class="hint">ị̄</span><span class="c">ഈ</span></span>
+  </div>
+  <div class="bottomDivider">
+    <span class="g"><span class="hint">ụ</span><span class="c">ഉ</span></span>
+    <span class="g"><span class="hint">ụ̄</span><span class="c">ഊ</span></span>
+  </div>
+  <div>
+    <span class="g"><span class="hint">ẹ</span><span class="c">എ</span></span>
+    <span class="g"><span class="hint">ẹ̄</span><span class="c">ഏ</span></span>
+  </div>
+  <div class="bottomDivider">
+    <span class="g"><span class="hint">ọ</span><span class="c">ഒ</span></span>
+    <span class="g"><span class="hint">ọ̄</span><span class="c">ഓ</span></span>
+  </div>
+  <div class="bottomDivider">
+    <span class="g"><span class="hint">ạ</span><span class="c">അ</span></span>
+    <span class="g"><span class="hint">ạ̄</span><span class="c">ആ</span></span>
+  </div>
+  <div>
+    <span class="g"><span class="hint">ạʲ</span><span class="c">ഐ</span></span>
+    <span class="g"><span class="hint">ạʷ</span><span class="c">ഔ</span></span>
+  </div>
+</div>
+      
+      
+
+
+      
+<div id="consonantGrid" class="box">
+           <div>
+            <span class="g"><span class="hint">p</span><span class="c">&#x0D2A;</span></span>
+            <span class="g"><span class="hint">t</span><span class="c">&#x0D24;</span></span>
+            <span class="g"><span class="hint">c</span><span class="c">&#x0D1A;</span></span>
+            <span class="g"><span class="hint">ṭ</span><span class="c">&#x0D1F;</span></span>
+            <span class="g"><span class="hint">k</span><span class="c">&#x0D15;</span></span>
+          </div>
+          <div>
+            <span class="g"><span class="hint">b</span><span class="c">&#x0D2C;</span></span>
+            <span class="g"><span class="hint">d</span><span class="c">&#x0D26;</span></span>
+            <span class="g"><span class="hint">j</span><span class="c">&#x0D1C;</span></span>
+            <span class="g"><span class="hint">ḍ</span><span class="c">&#x0D21;</span></span>
+            <span class="g"><span class="hint">g</span><span class="c">&#x0D17;</span></span>
+          </div>
+          <div>
+            <span class="g"><span class="hint">ph</span><span class="c">&#x0D2B;</span></span>
+            <span class="g"><span class="hint">th</span><span class="c">&#x0D25;</span></span>
+            <span class="g"><span class="hint">ch</span><span class="c">&#x0D1B;</span></span>
+            <span class="g"><span class="hint">ḍh</span><span class="c">&#x0D22;</span></span>
+            <span class="g"><span class="hint">kh</span><span class="c">&#x0D16;</span></span>		  
+          </div>
+          <div class="bottomDivider">
+            <span class="g"><span class="hint">bh</span><span class="c">&#x0D2D;</span></span>
+            <span class="g"><span class="hint">dh</span><span class="c">&#x0D27;</span></span>
+            <span class="g"><span class="hint">jh</span><span class="c">&#x0D1D;</span></span>
+            <span class="g"><span class="hint">ṭh</span><span class="c">&#x0D20;</span></span>
+            <span class="g"><span class="hint">gh</span><span class="c">&#x0D18;</span></span>
+          </div>
+          <div class="bottomDivider">
+            <span class="g"><span class="hint">v</span><span class="c">&#x0D35;</span></span>
+            <span class="g"><span class="hint">s</span><span class="c">&#x0D38;</span></span>
+            <span class="g"><span class="hint">ṣ</span><span class="c">&#x0D37;</span></span>
+            <span class="g"><span class="hint">ś</span><span class="c">&#x0D36;</span></span>
+            <span class="g"><span class="hint">h</span><span class="c">&#x0D39;</span></span>
+          </div>
+          <div>
+            <span class="g"><span class="hint">m</span><span class="c">&#x0D2E;</span></span>
+            <span class="g"><span class="hint">n</span><span class="c">&#x0D28;</span></span>
+            <span class="g"><span class="hint">ñ</span><span class="c">&#x0D1E;</span></span>
+            <span class="g"><span class="hint">ṇ</span><span class="c">&#x0D23;</span></span>
+            <span class="g"><span class="hint">ṅ</span><span class="c">&#x0D19;</span></span>
+          </div>
+          <div class="bottomDivider">
+            <span class="g"><span class="hint">r</span><span class="c">&#x0D30;</span></span>
+            <span class="g"><span class="hint">ṟ</span><span class="c">&#x0D31;</span></span>
+             <span class="g"><span class="hint">ḻ</span><span class="c">&#x0D34;</span></span>
+           <span class="g"><span class="hint">l</span><span class="c">&#x0D32;</span></span>
+            <span class="g"><span class="hint">ḷ</span><span class="c">&#x0D33;</span></span>
+             <span class="g"><span class="hint">y</span><span class="c">&#x0D2F;</span></span>
+         </div>
+          <div>
+            <span class="g"><span class="hint">k͓ṣ</span><span class="c">ക്ഷ</span></span>
+            <span class="g"><span class="hint">r̥</span><span class="c">ഋ</span></span>
+             <span class="c">&#x0D03;</span>
+          <span class="c">&#x0D02;</span>
+          </div>
+
+
+        </div>
+          
+          
+
+ <!--div id="diacritics">
+          <span class="c">&#x0A81;</span>
+          <span class="c">&#x0A82;</span>
+          <span class="c">&#x0A83;</span>
+        </div-->
+
+
+
+<div id="vowelGrid" class="box">
+          <div>
+            <span class="g"><span class="hint">i</span><span class="c">&#x0D3F;</span></span>
+            <span class="g"><span class="hint">ī</span><span class="c">&#x0D40;</span></span>
+          </div>
+          <div class="bottomDivider">
+            <span class="g"><span class="hint">u</span><span class="c">&#x0D41;</span></span>
+            <span class="g"><span class="hint">ū</span><span class="c">&#x0D42;</span></span>
+          </div>
+          <div>
+            <span class="g"><span class="hint">e</span><span class="c">&#x0D46;</span></span>
+            <span class="g"><span class="hint">ẹ̄</span><span class="c">&#x0D47;</span></span>
+          </div>
+          <div class="bottomDivider">
+            <span class="g"><span class="hint">o</span><span class="c">&#x0D4A;</span></span>
+            <span class="g"><span class="hint">ọ̄</span><span class="c">&#x0D4B;</span></span>
+          </div>
+           <div class="bottomDivider">
+            <span class="g"><span class="hint">ā</span><span class="c">&#x0D3E;</span></span>
+          </div>
+         <div>
+            <span class="g"><span class="hint">aʲ</span><span class="c">&#x0D48;</span></span>
+            <span class="g"><span class="hint">r̥ᵊ</span><span class="c">&#x0D43;</span></span>
+          </div>
+          <div>
+            <span class="g"><span class="hint">aʷ</span><span class="c">&#x0D57;</span> <span class="c">&#x0D4C;</span></span>
+          </div>
+          </div>
+        
+        
+
+ <div id="moreconsonants">
+             <span class="g"><span class="hint">k</span><span class="c">&#x0D7F;</span></span>
+           <span class="g"><span class="hint">ṇ</span><span class="c">&#x0D7A;</span></span>
+            <span class="g"><span class="hint">n</span><span class="c">&#x0D7B;</span></span>
+            <span class="g"><span class="hint">r</span><span class="c">&#x0D7C;</span></span>
+            <span class="g"><span class="hint">l</span><span class="c">&#x0D7D;</span></span>
+            <span class="g"><span class="hint">ḷ</span><span class="c">&#x0D7E;</span></span>
+</div>
+          
+        
+        
+
+
+<div id="numberGrid">
+	<div id="digitKeypad" class="box">
+		<div><span class="g"><span class="hint">1</span><span class="c">൧</span></span><span class="g"><span class="hint">2</span><span class="c">൨</span></span><span class="g"><span class="hint">3</span><span class="c">൩</span></span></div>
+		<div><span class="g"><span class="hint">4</span><span class="c">൪</span></span><span class="g"><span class="hint">5</span><span class="c">൫</span></span><span class="g"><span class="hint">6</span><span class="c">6</span></span></div>
+		<div><span class="g"><span class="hint">7</span><span class="c">൭</span></span><span class="g"><span class="hint">8</span><span class="c">൮</span></span><span class="g"><span class="hint">9</span><span class="c">൯</span></span></div>
+		<div><span class="g"><span class="hint">0</span><span class="c">൦</span></span> <span class="c">,</span> <span class="c">.</span> </div>
+		</div>
+	<div id="symbols">
+		<div style="margin-top: .5em;">
+           <span class="g"><span class="hint">x</span><span class="c"><span class="c">൰</span></span></span>
+           <span class="g"><span class="hint">x</span><span class="c">൱</span></span>
+           <span class="g"><span class="hint">x</span><span class="c">൲</span></span>
+		</div>
+		<div>
+           <span class="g"><span class="hint">x</span><span class="c"><span class="c">൳</span></span></span>
+           <span class="g"><span class="hint">x</span><span class="c">൴</span></span>
+           <span class="g"><span class="hint">x</span><span class="c">൵</span></span>
+		</div>
+		</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<!--span class="c">«</span>
+<span class="c">»</span-->
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+<span class="c">।</span> 
+<span class="c">॥</span>
+</div>
+
+
+<details>
+    <summary>other characters</summary>
+    <table id="rare">
+      <tr>
+        <td><span class="c">&#x0D60;</span> <span class="c">&#x0D0C;</span> <span class="c">&#x0D61;</span> &nbsp;&nbsp; <span class="c">&#x0D44;</span> &nbsp; <span class="c">&#x0D62;</span> &nbsp; <span class="c">&#x0D63;</span> &nbsp; <span class="c">&#x0D3D;</span> &nbsp;&nbsp; <span class="c">&#x0D79;</span></td>
+      </tr>
+    </table>
+    </details>
+  </div>
+
+
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
