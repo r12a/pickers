@@ -1528,7 +1528,7 @@ function initialise() {
 	//	<span id="ipaHintType" onClick="setGridHints('ipa')" title="Show IPA.">P</span>
 	//	<span id="noneHintType" onClick="setGridHints('none')" title="Show no hints.">0</span>
 	//	`
-	if (typeof defaults.hints === 'undefined') defaults.hints = template.hints
+	if (typeof defaults.hints === 'undefined') defaults.hints = factoryDefaults.hints
 	setGridHints(defaults.hints)
 	//else if (! defaults.hints == '') setGridHints('key')
 
