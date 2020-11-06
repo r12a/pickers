@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Doulos SIL WF';
+    src: local("Doulos SIL"),
+		url('/shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+[lang=ru] { font-family: 'Doulos SIL WF', "Times New Roman", serif; }
+
+
+#shapelist {
+	display: block;
+	}
+#shapekeys {
+	display: block; 
+	margin:auto; 
+	max-width:90%; 
+	background-color: inherit; 
+	color: darkorange;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	color:tan
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+
+#kbd { display: table; }
+    
+
+
+
+/* KEYBOARD */
+#keyboard { display: none; }
+
+
+
+
+/* SELECTION AREA */
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
