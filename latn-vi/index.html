@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Vietnamese character app 26</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared26/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="defaults.js">  </script>
+<script src="/shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/latn-vi.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
+<script src="/scripts/linkdata/linkdb.js"></script>
+<script src="localtranscription.js">  </script>
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="chardata"><span id="charname">Type assist (T) is on.</span></div>
+
+
+<div id="sideMenu"></div>
+<script>document.getElementById('sideMenu').innerHTML = setSideMenu()</script>
+
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+
+<div id="alphabet" class="default">
+  
+<div class="spaceline">
+<span class="touch" style="margin: 0; padding: 5px 20px;" dir="auto" onClick="toggleShift(this);if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SHIFT</span>
+<span class="touch" title="Space" style="padding: 5px 100px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+  <div id="grid">
+      <table id="upper" style="display:none;">
+        <tr>
+          <td ><span class="c">&#x0042;</span></td>
+          <td ><span class="c">&#x0043;</span></td>
+          <td ><span class="c">&#x0044;</span></td>
+          <td ><span class="c">&#x0110;</span></td>
+          <td ><span class="c">&#x0047;</span></td>
+          <td ><span class="c">&#x0048;</span></td>
+          <td ><span class="c">&#x004B;</span></td>
+          <td ><span class="c">&#x004C;</span></td>
+          <td ><span class="c">&#x004D;</span></td>
+          <td ><span class="c">&#x004E;</span></td>
+          <td style="width:1.5em"><span class="c">&#x004E;&#x0047;</span></td>
+          <td ><span class="c">&#x0050;</span></td>
+          <td ><span class="c">&#x0051;</span></td>
+          <td ><span class="c">&#x0052;</span></td>
+          <td ><span class="c">&#x0053;</span></td>
+          <td ><span class="c">&#x0054;</span></td>
+          <td ><span class="c">&#x0056;</span></td>
+          <td ><span class="c">&#x0058;</span></td>
+        </tr>
+        <tr>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td ><span class="c">&#x0041;</span></td>
+          <td ><span class="c">&#x0102;</span></td>
+          <td ><span class="c">&#x00C2;</span></td>
+          <td ><span class="c">&#x0045;</span></td>
+          <td ><span class="c">&#x00CA;</span></td>
+          <td ><span class="c">&#x0049;</span></td>
+          <td ><span class="c">&#x004F;</span></td>
+          <td ><span class="c">&#x00D4;</span></td>
+          <td ><span class="c">&#x01A0;</span></td>
+          <td ><span class="c">&#x0055;</span></td>
+          <td ><span class="c">&#x01AF;</span></td>
+          <td ><span class="c">&#x0059;</span></td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+        </tr>
+      </table>
+      <table id="lower">
+        <tr>
+          <td ><span class="c">&#x0062;</span></td>
+          <td ><span class="c">&#x0063;</span></td>
+          <td ><span class="c">&#x0064;</span></td>
+          <td ><span class="c">&#x0111;</span></td>
+          <td ><span class="c">&#x0067;</span></td>
+          <td ><span class="c">&#x0068;</span></td>
+          <td ><span class="c">&#x006B;</span></td>
+          <td ><span class="c">&#x006C;</span></td>
+          <td ><span class="c">&#x006D;</span></td>
+          <td ><span class="c">&#x006E;</span></td>
+          <td style="width:1.5em"><span class="c">&#x006E;&#x0067;</span></td>
+          <td ><span class="c">&#x0070;</span></td>
+          <td ><span class="c">&#x0071;</span></td>
+          <td ><span class="c">&#x0072;</span></td>
+          <td ><span class="c">&#x0073;</span></td>
+          <td ><span class="c">&#x0074;</span></td>
+          <td ><span class="c">&#x0076;</span></td>
+          <td ><span class="c">&#x0078;</span></td>
+        </tr>
+        <tr>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td ><span class="c">&#x0061;</span></td>
+          <td ><span class="c">&#x0103;</span></td>
+          <td ><span class="c">&#x00E2;</span></td>
+          <td ><span class="c">&#x0065;</span></td>
+          <td ><span class="c">&#x00EA;</span></td>
+          <td ><span class="c">&#x0069;</span></td>
+          <td ><span class="c">&#x006F;</span></td>
+          <td ><span class="c">&#x00F4;</span></td>
+          <td ><span class="c">&#x01A1;</span></td>
+          <td ><span class="c">&#x0075;</span></td>
+          <td ><span class="c">&#x01B0;</span></td>
+          <td ><span class="c">&#x0079;</span></td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+        </tr>
+      </table>
+      <table id="tones">
+        <tr>
+          <td>&nbsp;</td>
+          <td><span class="g"><span class="hint">grave</span><span class="c">&#x0300;</span></span></td>
+          <td><span class="g"><span class="hint">acute</span><span class="c">&#x0301;</span></span></td>
+          <td><span class="g"><span class="hint">tilde</span><span class="c">&#x0303;</span></span></td>
+          <td><span class="g"><span class="hint">hook</span><span class="c">&#x0309;</span></span></td>
+          <td><span class="g"><span class="hint">dot</span><span class="c">&#x0323;</span></span></td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+
+<div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+ </div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
