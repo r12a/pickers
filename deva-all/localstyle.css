@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'Noto Serif Devanagari WF';
+    src: url('/shared/webfonts/notoserifdevanagari-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notoserifdevanagari-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+
+
+
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  "Noto Serif Devanagari WF",  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+table {
+	border-spacing: 0;
+	}
+
+#alphabet td span.c { 
+	cursor: pointer; 
+	font-family: "Noto Serif Devanagari", "Devanagari Sangam MN", Raavi, "Nirmala UI", "Arial Unicode MS", sans-serif;
+	font-size: 28px;
+	padding: 1px;
+	}
+
+#alphabet td.hint {  
+	font-size: 14px;
+	color: #ccc;
+	text-align: right;
+	vertical-align: top;
+	}
+	
+#kbd { 	
+	margin: auto; 
+	color: #666;
+	}
+#kbd table {
+	margin:0;
+	}
+	
+#kbd td {  
+	margin: 0; 
+	padding: 0; 
+	padding-bottom: 3px; 
+	text-align: left;
+	cursor:pointer;
+	vertical-align: top; 
+	line-height: 1;
+	}
+	
+	
+	
+#kbd #consonants {
+	margin-left: 0px; 
+	}
+#moreconsonants td , #consonants td {
+	text-align: center; 
+	}
+
+.g { display: inline-block; }
+
+#kbd #vowels {
+	border: 1px dotted #ccc;
+	border-radius: 5px; 
+	padding: 0 4px;
+	}
+#kbd #vowels .hint {
+	}
+#kbd #vowels td {
+	text-align: center; 
+	line-height: 1.3;
+	}
+#kbd #vowels span.c {
+	min-width: .75em;
+	text-align: center;
+	}
+#kbd #vowels span.g {
+	text-align: right;
+	}
+	
+
+#kbd #diacritics {
+	margin-left: 0px; 
+	margin-top: 5px;
+	}
+#kbd #diacritics td {
+	text-align: center; 
+	line-height: 1;
+	}
+#kbd #diacritics span.c {
+	min-width: .8em;
+	text-align: center;
+	}
+
+#kbd #symbols {
+	margin-top: 10px;
+	margin-left: 20px; 
+	}
+
+#kbd #symbols td {
+	text-align: right;
+	}
+
+#kbd #numbers {
+	margin-left: 20px;
+	border: 1px dotted #ccc;
+	border-radius: 5px; 
+	}
+#kbd #numbers img {
+	vertical-align: top;
+	}
+
+#kbd #punctuation {
+	margin-left: 20px;
+	}
+#kbd #punctuation td {
+	min-width: 30px;
+	}
+
+#rare td {
+	line-height: 1;
+	}
+
+
+#toggleRare {
+	font-size: 12px;
+	font-family: 'helvetica neue', roboto, calibri, helvetica, sans-serif;
+	}
+
+
+
+#rare {
+	margin:auto;
+	}
