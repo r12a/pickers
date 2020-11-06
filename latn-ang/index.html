@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Old English character app 26</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared26/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="defaults.js">  </script>
+<script src="/shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/latn-ang.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
+<script src="/scripts/linkdata/linkdb.js"></script>
+<script src="localtranscription.js">  </script>
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
+
+
+<div id="sideMenu"></div>
+<script>document.getElementById('sideMenu').innerHTML = setSideMenu()</script>
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+  <div id="alphabet" class="default">
+
+<div class="spaceline">
+<span class="touch" style="margin: 0; padding: 5px 20px;" dir="auto" onClick="toggleShift(this);if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SHIFT</span>
+<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+<span class="touch" title="Space" style="padding: 5px 50px;" onClick="add(' ');">SPACE</span> 
+<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
+<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
+<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
+<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+</div>
+
+
+
+  <div id="grid">
+        <div class="uppercase hidden">
+          <span class="c">Ċ</span>
+          <span class="c">Ð</span>
+          <span class="c">Ġ</span>
+          <span class="c">Þ</span>
+          <span class="c">Ȳ</span>
+        </div>
+        <div class="uppercase hidden">
+          <span class="c">Ā</span>
+          <span class="c">Æ</span>
+          <span class="c">Ǣ</span>
+          <span class="c">Ē</span>
+          <span class="c">Ī</span>
+          <span class="c">Ō</span>
+          <span class="c">Œ</span>
+          <span class="c">Ū</span>
+        </div>
+        <div class="lowercase">
+          <span class="c">ċ</span>
+          <span class="c">ð</span>
+          <span class="c">ġ</span>
+          <span class="c">þ</span>
+          <span class="c">ȳ</span>
+        </div>
+        <div class="lowercase">
+          <span class="c">ā</span>
+          <span class="c">æ</span>
+          <span class="c">ǣ</span>
+          <span class="c">ē</span>
+          <span class="c">ī</span>
+          <span class="c">ō</span>
+          <span class="c">œ</span>
+          <span class="c">ū</span>
+        </div>
+      <div id="punctuation">
+        <div>
+          <span class="c">‹</span>
+          <span class="c">›</span>
+          <span class="c">«</span>
+          <span class="c">»</span>
+          <span class="c">&#x0361;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
