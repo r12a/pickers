@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Noto Sans Ethiopic WF';
+    src: url('/shared/webfonts/NotoSansEthiopic-Regularwebfont.woff2') format('woff2'),
+         url('/shared/webfonts/NotoSansEthiopic-Regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+[lang=am] { font-family:'Noto Sans Ethiopic WF', serif; }
+
+
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	color:tan;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
+    
+
+
+
+
+/* SELECTION AREA */
+
+#kbdGrid {
+	line-height: 1.2;
+    text-align: center;
+    }
+
+#numbers, #enumbers {
+    font-size: 80%;
+    }
+
+#shapeHints {
+    text-align: center;
+    line-height: 1;
+    margin-top: .25em;
+    }
+
+#cchars {
+    text-align: center;
+    font-size: 90%;
+    }
+
+#consonants{
+    color: orange;
+    text-align: center;
+	font-size: 24px;
+    max-width: 90%;
+	margin: auto;
+    }
+#consonants span {
+    cursor: pointer;
+    }
+#consonants .hint {
+    display: none;
+    }
+#reveal {
+    text-align: center;
+    min-height: 2.5em;
+    }
+#reveal > div { 
+    display: none;
+    line-height: 1.2;
+    }
+#reveal .hint {
+    display: none;
+    }
+#reveal .e {
+    display: none;
+    }
+
+
