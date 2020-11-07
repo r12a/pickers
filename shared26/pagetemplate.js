@@ -260,7 +260,7 @@ out += `<details id="fontManagementDetails" style="display: none;">
 <div id="userFontMgt" class="control" style="width: 50em; height: 6em;padding: .5em; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: start;">
 <span style="padding-right: 1em; flex:4; text-align:start;">List fonts you want to add to the font selection lists. One font name per line.</span>
 <textarea id="fontManagementList" style="flex:6; height: 100%;"></textarea>
-<button style="flex:.5; margin-left:.5em;" onclick="manageUserFonts(document.getElementById('fontManagementList').value)">Set</button>
+<button style="flex:.5; margin-left:.5em;" onclick="manageUserFonts(document.getElementById('fontManagementList').value); document.getElementById('fontPicker').innerHTML = createFontPicker()">Set</button>
 </div>
 
 
