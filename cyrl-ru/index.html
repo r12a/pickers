@@ -64,39 +64,51 @@
 <div id="alphabet" class="default">
 
 <div class="spaceline">
-<span class="touch" dir="auto" onClick="toggleShift(this, 'defaultLC', 'defaultUC');if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SHIFT</span>
+<span class="touch" dir="auto" onClick="toggleShift(this);if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SHIFT</span>
+
 <span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
-   </div>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
+</div>
 
 <div id="kbdGrid">
  
- <div id="consonantGrid" class="box">
-<span class="g"><span class="hint">b</span><span class="c">&#x0431;</span></span>
-<span class="g"><span class="hint">v</span><span class="c">&#x0432;</span></span>
-<span class="g"><span class="hint">g</span><span class="c">&#x0433;</span></span>
-<span class="g"><span class="hint">d</span><span class="c">&#x0434;</span></span>
-<span class="g"><span class="hint">ʐ</span><span class="c">&#x0436;</span></span>
-<span class="g"><span class="hint">z</span><span class="c">&#x0437;</span></span>
-<span class="g"><span class="hint">k</span><span class="c">&#x043A;</span></span>
-<span class="g"><span class="hint">l</span><span class="c">&#x043B;</span></span>
-<span class="g"><span class="hint">m</span><span class="c">&#x043C;</span></span>
-<span class="g"><span class="hint">n</span><span class="c">&#x043D;</span></span>
+ <div id="consonantGrid">
+            <div>
 <span class="g"><span class="hint">p</span><span class="c">&#x043F;</span></span>
-<span class="g"><span class="hint">r</span><span class="c">&#x0440;</span></span>
-<span class="g"><span class="hint">s</span><span class="c">&#x0441;</span></span>
+<span class="g"><span class="hint">b</span><span class="c">&#x0431;</span></span>
 <span class="g"><span class="hint">t</span><span class="c">&#x0442;</span></span>
-<span class="g"><span class="hint">f</span><span class="c">&#x0444;</span></span>
-<span class="g"><span class="hint">x</span><span class="c">&#x0445;</span></span>
+<span class="g"><span class="hint">d</span><span class="c">&#x0434;</span></span>
+<span class="g"><span class="hint">k</span><span class="c">&#x043A;</span></span>
+<span class="g"><span class="hint">g</span><span class="c">&#x0433;</span></span>
+            </div>
+            <div class="bottomDivider" style="justify-content: space-around;">
 <span class="g"><span class="hint">ʦ</span><span class="c">&#x0446;</span></span>
 <span class="g"><span class="hint">ʨ</span><span class="c">&#x0447;</span></span>
+           </div>
+           <div class="bottomDivider">
+<span class="g"><span class="hint">f</span><span class="c">&#x0444;</span></span>
+<span class="g"><span class="hint">v</span><span class="c">&#x0432;</span></span>
+<span class="g"><span class="hint">s</span><span class="c">&#x0441;</span></span>
+<span class="g"><span class="hint">z</span><span class="c">&#x0437;</span></span>
 <span class="g"><span class="hint">ʂ</span><span class="c">&#x0448;</span></span>
+<span class="g"><span class="hint">ʐ</span><span class="c">&#x0436;</span></span>
 <span class="g"><span class="hint">ʂ̂</span><span class="c">&#x0449;</span></span>
+<span class="g"><span class="hint">x</span><span class="c">&#x0445;</span></span>
+           </div>
+            <div style="justify-content: space-around;">
+<span class="g"><span class="hint">m</span><span class="c">&#x043C;</span></span>
+<span class="g"><span class="hint">n</span><span class="c">&#x043D;</span></span>
+            </div>
+            <div style="justify-content: space-around;">
+<span class="g"><span class="hint">l</span><span class="c">&#x043B;</span></span>
+<span class="g"><span class="hint">r</span><span class="c">&#x0440;</span></span>
+            </div>
 </div>
+
+
 
 
 <div id="hardsoftGrid">
@@ -104,38 +116,69 @@
 <span class="c">&#x044A;</span>
         </div>
  
- 
-     <div id="vowelGrid" class="box">
-<span class="g"><span class="hint">a</span><span class="c">&#x0430;</span></span>
-<span class="g"><span class="hint">jᵃ</span><span class="c">&#x044F;</span></span>
-<span class="g"><span class="hint">o</span><span class="c">&#x043E;</span></span>
-<span class="g"><span class="hint">jᵒ</span><span class="c">&#x0451;</span></span>
-<span class="g"><span class="hint">ɛ</span><span class="c">&#x044D;</span></span>
-<span class="g"><span class="hint">e</span><span class="c">&#x0435;</span></span>
+
+
+<div id="vowelGrid">
+<div>
+<span class="g"><span class="hint">i</span><span class="c">&#x0438;</span></span>
+<span class="g"><span class="hint">ɨ</span><span class="c">&#x044B;</span></span>
+<span class="g"><span class="hint">y</span><span class="c">&#x0439;</span></span>
+</div>
+<div class="bottomDivider">
 <span class="g"><span class="hint">u</span><span class="c">&#x0443;</span></span>
 <span class="g"><span class="hint">jᵘ</span><span class="c">&#x044E;</span></span>
-<span class="g"><span class="hint">ɨ</span><span class="c">&#x044B;</span></span>
-<span class="g"><span class="hint">i</span><span class="c">&#x0438;</span></span>
-<span class="g"><span class="hint">y</span><span class="c">&#x0439;</span></span>
-<span class="c">&#x0301;</span>
-        </div>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">e</span><span class="c">&#x0435;</span></span>
+<span class="g"><span class="hint">o</span><span class="c">&#x043E;</span></span>
+<span class="g"><span class="hint">jᵒ</span><span class="c">&#x0451;</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">ɛ</span><span class="c">&#x044D;</span></span>
+<span class="g"><span class="hint">accent</span><span class="c">&#x0301;</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">a</span><span class="c">&#x0430;</span></span>
+<span class="g"><span class="hint">jᵃ</span><span class="c">&#x044F;</span></span>
+</div>
+</div>
+
 
 
 <div id="numberGrid">
-<span class="c">&#x0031;</span>
-<span class="c">&#x0032;</span>
-<span class="c">&#x0033;</span>
-<span class="c">&#x0034;</span>
-<span class="c">&#x0035;</span>
-<span class="c">&#x0036;</span>
-<span class="c">&#x0037;</span>
-<span class="c">&#x0038;</span>
-<span class="c">&#x0039;</span>
-<span class="c">&#x0030;</span>
-<span class="c">,</span>
-<span class="c">.</span>
+	<div id="digitKeypad" class="box">
+		<div>
+		<span class="g"><span class="hint">1</span><span class="c">1</span></span>
+		<span class="g"><span class="hint">2</span><span class="c">2</span></span>
+		<span class="g"><span class="hint">3</span><span class="c">3</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">4</span><span class="c">4</span></span>
+		<span class="g"><span class="hint">5</span><span class="c">5</span></span>
+		<span class="g"><span class="hint">6</span><span class="c">6</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">7</span><span class="c">7</span></span>
+		<span class="g"><span class="hint">8</span><span class="c">8</span></span>
+		<span class="g"><span class="hint">9</span><span class="c">9</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">0</span><span class="c">0</span></span>
+		<span class="c">,</span>
+		<span class="c">.</span>
+		</div>
+		</div>
+	<div id="symbols">
+		<div style="margin-top: .5em;">
+		<span class="g"><span class="hint">0</span><span class="c">№</span></span>
+		<span class="g"><span class="hint">0</span><span class="c">₽</span></span>
+		</div>
+		<!--div>
+		<span class="g"><span class="hint">0</span><span class="c">ฯลฯ</span></span>
+		</div-->
+		</div>
 </div>
-   </div>
+</div>
 
 
 
@@ -158,8 +201,6 @@
 <span class="c">&#x0028;</span>
 <span class="c">&#x0029;</span>
 <span class="c">&#x002D;</span>
-<span class="c">№</span>
-<span class="c">₽</span>
 </div>
 
 
@@ -198,19 +239,8 @@
 
 
 
- <div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
-<img alt=" " src="images/shape1.png" onclick="findShape('2D54,2D59,2D5A,2D55,2D41,2D31,2D40,2D32','',true)" />
-<img alt=" " src="images/shape2.png" onclick="findShape('2D30,2D3B,2D53','',true)" />
-<img alt=" " src="images/shape3.png" onclick="findShape('2D48,2D57,2D42,2D3E,2D46,2D58','',true)" />
-<img alt=" " src="images/shape4.png" onclick="findShape('2D5D,2D45,2D33,2D34,2D35,2D4B','',true)" />
-<img alt=" " src="images/shape5.png" onclick="findShape('2D4F,2D51,2D36,2D4A,2D4D,2D5C,2D64','',true)" />
-<img alt=" " src="images/shape6.png" onclick="findShape('2D37,2D38,2D60','',true)" />
-<img alt=" " src="images/shape7.png" onclick="findShape('2D39,2D4E,2D5F,2D61,2D6F,2D3A','',true)" />
-<img alt=" " src="images/shape8.png" onclick="findShape('2D49,2D62','',true)" />
-<img alt=" " src="images/shape9.png" onclick="findShape('2D3D,2D47,2D3F,2D43','',true)" />
-<img alt=" " src="images/shape10.png" onclick="findShape('2D5B,2D5E','',true)" />
-<img alt=" " src="images/shape11.png" onclick="findShape('2D63,2D65','',true)" />
+<div id="shapelist" style="display:none; text-align:center;">
+<div id="shapekeys">
 </div>
 </div>
 
