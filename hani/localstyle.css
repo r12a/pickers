@@ -3,15 +3,11 @@
 
 
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 50%;
+    margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 60%;
 	color:tan;
 	}
 .c { 
@@ -139,9 +135,6 @@ span.hint {
 	margin-bottom: 1em;
     }
 
-#alphabet summary {
-    font-size: 14px;
-    }
 #obsolete {
     text-align: center;
     font-size: 90%;

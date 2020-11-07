@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Chinese character app 25</title>
+<title>Chinese character app 26</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="../shared26/style.css" />
 <link rel="stylesheet" href="localstyle.css" />
 
 <script src="defaults.js">  </script>
@@ -18,11 +18,11 @@
 <script src="../../shared/fontlists/manage.js"></script>
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
-<script src="../shared25/setup.js">  </script>
-<script src="../shared25/code.js">  </script>
-<script src="../shared25/latinregister.js">  </script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared25/pagetemplate.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 <script src="hanData.js">  </script>
 <script src="localtranscription.js">  </script>
@@ -38,7 +38,13 @@
 
 
 
+<div id="chardata"><span id="charname">See the help file for how to input Han characters.</span></div>
 
+
+
+
+<div id="sideMenu"></div>
+<script>document.getElementById('sideMenu').innerHTML = setSideMenu()</script>
 
 
 
@@ -46,10 +52,6 @@
 <div id="phonemelist" style="position:relative;">
 <div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 </div>
-
-
-
-<div id="chardata"><span id="charname">See the help file for how to input Han characters.</span></div>
 
 
 
@@ -89,10 +91,9 @@
 <div class="spaceline">
 <span class="touch" title="Ideographic space" style="padding: 5px 50px;" dir="auto" onClick="add('\u3000');">IDSP</span>
 <span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
 </div>
 
 <div id="kbdGrid"> 
@@ -425,9 +426,6 @@
 
 
 
-<div id="ktp0Wrapper">
-<div id="hintType">
-</div>
 
 
 <div id="punctuation">
@@ -465,7 +463,6 @@
 	<span class="g"><span class="hint"></span><span class="c">&#x095B;</span></span>
 	</div>
     </details-->        
-</div>
 
 </div>
 

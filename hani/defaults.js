@@ -1,8 +1,8 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'PingFang SC' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
+	factoryDefaults.size = "28";  // text area font size, number of pixels (just the number)
+	factoryDefaults.rows = "150"; // px height of text area
 	factoryDefaults.lineheight = "1.4"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'zh' // language to use for examples
 	factoryDefaults.uifont = 'Hei'; // font name  for selection area (a single font, no quotes)
@@ -29,6 +29,7 @@ var template = {}
 	template.github = 'chinese'
 	template.scriptcode = 'Hani'
 	template.fontLocale = 'hani'
+	template.hints = true
 
 
 
