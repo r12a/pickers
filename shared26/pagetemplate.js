@@ -91,7 +91,7 @@ function createFontPicker () {
 			if (options[o].textContent === defaults.font) out += ' currentFont'
 			out += '"'
 			if (fontInfo[options[o].textContent]) out += ' title="'+fontInfo[options[o].textContent].notes+'"'
-			out += ' onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value);  document.getElementById(\'fontPicker\').innerHTML=\'\';"  data-value="'+options[o].textContent+'">'+options[o].textContent+'</div>\n'
+			out += ' onmouseover="applyFontPreview(this.dataset.value)" onclick="selectFont(this.dataset.value);  document.getElementById(\'fontPicker\').innerHTML=\'\';document.getElementById(\'fontManagementDetails\').style.display=\'none\';"  data-value="'+options[o].textContent+'">'+options[o].textContent+'</div>\n'
 			if (g===webfontGroups.length-1 && o===options.length-1) out += '<div class="fpOption"><a href="../shared26/fontpreview.html" onclick="document.getElementById(\'fontManagementDetails\').open=true; return false;">Add more</a></div>'
 			}
 		out += '</div>'
@@ -640,7 +640,7 @@ out += `<input style="display:none" name="fontSize" value="35" id="fontSize" siz
 </div>
 
 <div class="control" id="uiFontControl">Change selection area font:<br />
-    <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
+<select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
 ` + fontSelection + `</select>
 </div>
 
