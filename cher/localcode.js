@@ -91,45 +91,47 @@ function event_toggleKbdShift () {
 
 
 
-
-
-
-
-
-
 function toggleShift (node) {
-	if (node.className =='unshifted') {
-		document.getElementById('lowercase').style.display = 'none'
-		document.getElementById('uppercase').style.display = 'block'
-		node.className = 'shifted'
-		} 
-	else {
-		document.getElementById('lowercase').style.display = 'block'
-		document.getElementById('uppercase').style.display = 'none'
-		node.className = 'unshifted'
-		}
-	}
+    var chars = document.querySelectorAll('.c')
 
-function toggleShift (node, LC, UC) {
 	if (node.classList.contains('shifted')) {
-		document.getElementById(LC).style.display = 'none'
-		document.getElementById(UC).style.display = 'block'
+        for (let i=0;i<chars.length;i++) {
+            if (chars[i].dataset.uc) chars[i].textContent = chars[i].dataset.uc
+            else chars[i].textContent = chars[i].textContent.toUpperCase()
+            }
 		} 
 	else {
-		document.getElementById(LC).style.display = 'block'
-		document.getElementById(UC).style.display = 'none'
+        for (let i=0;i<chars.length;i++) {
+            if (chars[i].dataset.lc) chars[i].textContent = chars[i].dataset.lc
+            else chars[i].textContent = chars[i].textContent.toLowerCase()
+            }
+		}
+	// reinitialise ids to codepoint values of character sequence (with no leading zeros)
+	node = document.querySelectorAll( '.c' ); 
+	for (var n = 0; n < node.length; n++ ) { 
+		content = node[n].textContent
+		id=''
+		for (i=0;i<content.length;i++) {
+			id += convertChar2CP(content[i])
+			}
+		node[n].id = id
+        node[n].dataset.c = 'c'+id
+        dec = parseInt(id, 16)
+        while (id.length<4) id = '0'+id
+        node[n].title = 'U+'+id+': '+charData[content]
 		}
 	}
 
-function toggleShiftDefault (node) {
-	var cells = document.getElementById('defaultpanel').querySelectorAll('span')
-	if (node.className =='unshifted') {
-		for (var i=0;i<cells.length;i++) cells[i].textContent = cells[i].textContent.toUpperCase()
-		node.className = 'shifted'
+function toggleTables (node) {
+	if (! node.classList.contains('shifted')) {
+		document.getElementById('traditional').style.display = 'block'
+		document.getElementById('phonetic').style.display = 'none'
 		} 
 	else {
-		for (var i=0;i<cells.length;i++) cells[i].textContent = cells[i].textContent.toLowerCase()
-		node.className = 'unshifted'
+		document.getElementById('traditional').style.display = 'none'
+		document.getElementById('phonetic').style.display = 'block'
 		}
 	}
+
+
 
