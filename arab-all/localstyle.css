@@ -29,8 +29,12 @@ span.hint {
 	min-width: .75em;
 	text-align: center;
 	}
-
-
+#words span.c {
+	min-width: 2em;
+	}
+#words {
+	text-align: center;
+	}
 #formatCharacters {
     text-align: center;
     line-height: 1;
@@ -40,12 +44,13 @@ span.hint {
     text-align: center;
     color: orange;
 	background-color: white;
+	font-size: 90%;
     }
 #prompts span, #prompts img, #prompts bdi {
     cursor: pointer;
     }
 #extrashapes {
-    min-height: 3.5em;
+    min-height: 5em;
     }
 
 #punctuation {
