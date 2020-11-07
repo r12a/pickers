@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Scheherazade WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Scheherazade New WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "40";  // text area font size, px (just the number)
 	factoryDefaults.rows = "150"; // px height of text area
 	factoryDefaults.lineheight = "1.8"; // line height of text area
 	factoryDefaults.language = 'ar' // language to use for examples
-	factoryDefaults.uifont = 'Noto Naskh Arabic WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Scheherazade New WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "32";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "\u25CC";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,7 +18,7 @@ var thisPicker = 'arabicblockPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Scheherazade WF", "Noto Naskh Arabic WF" ]
+var webFonts = [ "Scheherazade New WF", "Noto Naskh Arabic WF" ]
 
  
 var template = {}
