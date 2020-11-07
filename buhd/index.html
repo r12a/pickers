@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Buhid character app 25</title>
+<title>Buhid character app 26</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="../shared26/style.css" />
 <link rel="stylesheet" href="localstyle.css" />
 
 <script src="defaults.js">  </script>
@@ -18,11 +18,11 @@
 <script src="../../shared/fontlists/manage.js"></script>
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
-<script src="../shared25/setup.js">  </script>
-<script src="../shared25/code.js">  </script>
-<script src="../shared25/latinregister.js">  </script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared25/pagetemplate.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 <script src="localtranscription.js">  </script>
 
@@ -38,6 +38,13 @@
 
 
 
+<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
+<div id="tables" dir="ltr">
+
+  
+
+<div id="sideMenu"></div>
+<script>document.getElementById('sideMenu').innerHTML = setSideMenu()</script>
 
 
 
@@ -47,11 +54,6 @@
 </div>
 
 
-
-<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
-<div id="tables" dir="ltr">
-
-  
 
 <div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
 
@@ -82,14 +84,14 @@
   
   
   
-  <div class="spaceline">
-    <span class="touch" style="padding: 5px 60px;" onClick="add(' ');">SPACE</span> 
-    <span class="touch" style="padding: 5px 10px;" onClick="add('\u200D');">ZWJ</span> 
-    <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
-    <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-    <span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-    <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
-    <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span>
+<div class="spaceline">
+<span class="touch" style="padding: 5px 10px;" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span>
+
+<span class="touch" style="padding: 5px 60px;" onClick="add(' ');">SPACE</span> 
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
 </div>
 
 <div id="kbdGrid"> 
@@ -172,10 +174,6 @@
 
 
 
-<div id="ktp0Wrapper">
-<div id="hintType">
-</div>
-
 
 <div id="punctuation">
 <span class="c">&#x002C;</span>
@@ -195,7 +193,6 @@
 <span class="c">&#x002D;</span>
 <span class="g"><span class="hint">,</span><span class="c">᜵</span></span>
 <span class="g"><span class="hint">.</span><span class="c">᜶</span></span>
-</div>
 </div>
 
 
