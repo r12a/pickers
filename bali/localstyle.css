@@ -19,11 +19,12 @@
 
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
+    margin-inline-start: .25em;
+	margin-inline-end: 1px;
 	font-size: 60%;
-	color: tan;
+	color:tan;
 	}
+
 .c { 
 	min-width: .75em;
 	text-align: center;
