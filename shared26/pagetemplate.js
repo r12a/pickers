@@ -75,9 +75,9 @@ function createFontPicker () {
 		if (webFonts[f].textContent === defaults.font) out += ' currentFont'	
 		out += '" onmouseover="applyFontPreview(String(this.dataset.value))" onclick="selectFont(this.dataset.value); document.getElementById(\'fontPicker\').innerHTML=\'\';document.getElementById(\'fontManagementDetails\').style.display=\'none\';" data-value="'+webFonts[f].textContent+'">'+webFonts[f].textContent+'</span> &nbsp; \n'
 		}
-	out += '&nbsp; <span style="white-space:nowrap"><span class="fpOptgroup">Generic fallbacks</span>'
-	out += '<span class="fpOption" onmouseover="document.getElementById(\'output\').style.fontFamily = \'sans-serif\'" data-value="sans-serif">sans-serif</span> &nbsp; \n'
-	out += '<span class="fpOption" onmouseover="document.getElementById(\'output\').style.fontFamily = \'serif\'" data-value="serif">serif</span>\n'
+	//out += '&nbsp; <span style="white-space:nowrap"><span class="fpOptgroup">Generic fallbacks</span>'
+	//out += '<span class="fpOption" onmouseover="document.getElementById(\'output\').style.fontFamily = \'sans-serif\'" data-value="sans-serif">sans-serif</span> &nbsp; \n'
+	//out += '<span class="fpOption" onmouseover="document.getElementById(\'output\').style.fontFamily = \'serif\'" data-value="serif">serif</span>\n'
 	out += '</span> &nbsp;  &nbsp;  &nbsp; <a  class="fpOptgroup" href="../shared26/fontpreview.html" target="_blank">Usage tips</a>'
 	out += '</div>'
 
