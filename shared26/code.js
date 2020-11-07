@@ -707,6 +707,9 @@ function changeBoxHeight ( newSize ) {
 	//document.getElementById( 'output' ).style.height = (newSize*100)+'px'
 	document.getElementById( 'output' ).style.height = newSize+'px'
 
+	document.getElementById('rows').textContent=defaults.rows
+	document.getElementById('boxHeightSlider').value=defaults.rows
+
 	defaults.rows = newSize
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
 	}
@@ -739,6 +742,8 @@ function setUIFont (font) {
     document.querySelector('#extrashapes').style.fontFamily = '"'+font+'"'
     document.querySelector('#shapelist').style.fontFamily = '"'+font+'"'
 	document.querySelector('#transcriptionChoice').style.fontFamily = "'Doulos SIL WF', '"+font+"'"
+    
+    document.getElementById('uiFont').value = font
 	
 	defaults.uifont = font
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
@@ -751,7 +756,8 @@ function setUIFontSize (size) {
     document.querySelector('#shapelist').style.fontSize = size+'px';
 	document.querySelector('#extrashapes').style.fontSize = size+'px';
     
-    document.getElementById('uiFontSize').value = size
+    document.getElementById('uiFontSizeValue').textContent = size
+    document.getElementById('uiFontSizeSlider').value = size
 		
 	defaults.uisize = size
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
@@ -1630,11 +1636,11 @@ function setUpValues () {
 		document.getElementById( 'output' ).style.fontSize = defaults.size+'px';
 		}
 	if (defaults.uifont) { 
-		document.getElementById( 'uiFont' ).value = defaults.uifont;  
+		//document.getElementById( 'uiFont' ).value = defaults.uifont;  
 		setUIFont(defaults.uifont);
 		}
 	if (defaults.uisize) { 
-		document.getElementById( 'uiFontSize' ).value = defaults.uisize;  
+		//document.getElementById( 'uiFontSize' ).value = defaults.uisize;  
 		setUIFontSize(defaults.uisize);
 		}
 	if (defaults.lineheight) { 

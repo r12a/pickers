@@ -635,18 +635,17 @@ if (template.direction == 'rtl') {
 out += `<input style="display:none" name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);">
 
   
-<div class="control">Box height: <span id="rows" style="font-size:80%;">`+defaults.rows+`</span>px<br />
-<input id="boxHeightSlider" type="range" min="50" max="500" step="10" value="`+defaults.rows+`" oninput="changeBoxHeight(this.value); document.getElementById('rows').textContent=defaults.rows;console.log(document.getElementById('rows').textContent)"  style="width:10em;">
+<div class="control" id="boxHeightControl">Box height: <span id="rows" style="font-size:80%;">`+defaults.rows+`</span>px<br />
+<input id="boxHeightSlider" type="range" min="50" max="500" step="10" value="`+defaults.rows+`" oninput="changeBoxHeight(this.value)"  style="width:10em;">
 </div>
 
 <div class="control" id="uiFontControl">Change selection area font:<br />
     <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
-` +
-  fontSelection
-  +
- `
-</select>
-<input name="uiFontSize" id="uiFontSize"  type="number" onchange="setUIFontSize(document.getElementById('uiFontSize').value); return false;" value=""  style="width: 30px;" />px</div>
+` + fontSelection + `</select>
+</div>
+
+<div class="control" id="uiFontSizeControl">...&amp; size: <span id="uiFontSizeValue" style="font-size:80%;">`+defaults.uisize+`</span>px<br />
+<input id="uiFontSizeSlider" type="range" min="20" max="40" step="1" value="`+defaults.uisize+`" oninput="setUIFontSize(this.value);"  style="width:6em;"></div>
 
 </details>
 
