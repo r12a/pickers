@@ -8,22 +8,25 @@
 
 
 
-[lang=hi] { font-family: 'Noto Sans Bamum WF', serif; }
+[lang=bax] { font-family: 'Noto Sans Bamum WF', serif; }
 
 
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
-
+/*
 span.hint { 
 	margin-right: 1px;
     margin-left: 2px;
 	font-size: 60%;
 	color:tan;
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	}*/
+span.hint { 
+    margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
 	}
+
 .c { 
 	min-width: .75em;
 	text-align: center;
@@ -114,9 +117,6 @@ span.hint {
 	margin-bottom: 1em;
     }
 
-#alphabet summary {
-    font-size: 14px;
-    }
 #obsolete {
     text-align: center;
     font-size: 90%;

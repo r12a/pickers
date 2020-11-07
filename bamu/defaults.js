@@ -2,7 +2,7 @@ var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Bamum' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "35";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
+	factoryDefaults.rows = "150"; // px height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'bax' // language to use for examples
 	factoryDefaults.uifont = 'Noto Sans Bamum'; // font name  for selection area (a single font, no quotes)
@@ -10,7 +10,7 @@ var factoryDefaults = {}
 	factoryDefaults.ccbase = "\u25CC";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
-	factoryDefaults.hints = "" // type of hint to show alongside characters in the grids
+	factoryDefaults.hints = "none" // type of hint to show alongside characters in the grids
 
 
 var thisPicker = 'bamumPicker'
@@ -29,6 +29,7 @@ var template = {}
 	template.github = 'bamu'
 	template.scriptcode = 'Bamu'
 	template.fontLocale = 'bamu'
+	template.hints = true
 
 
 
