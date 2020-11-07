@@ -5,11 +5,18 @@
     font-weight: normal;
     font-style: normal;
 	}
+@font-face {
+    font-family: 'Noto Serif Bengali WF';
+    src: url('/shared/webfonts/notoserifbengali-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notoserifbengali-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
 
 
 
 
-[lang=bn] { font-family: 'Noto Sans Bengali WF', serif; }
+[lang=bn] { font-family: 'Noto Serif Bengali WF', serif; }
 
 
 
@@ -19,6 +26,12 @@ span.hint {
     margin-left: 2px;
 	font-size: 50%;
 	color: tan;
+	}
+span.hint { 
+    margin-inline-start: .25em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
 	}
 .c { 
 	min-width: .75em;
@@ -112,11 +125,6 @@ span.hint {
     font-size: 80%;
     line-height: 1.7;
     margin-top: .5em;
-    }
-#spaceEtc {
-    text-align: center;
-    vertical-align: middle;
-	margin-bottom: 1em;
     }
 
 #obsolete {

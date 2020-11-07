@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'SolaimanLipi' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Noto Serif Bengali WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // px height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'bn' // language to use for examples
-	factoryDefaults.uifont = 'Noto Sans Bengali'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Noto Serif Bengali WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,11 +18,11 @@ var thisPicker = 'bengaliPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Sans Bengali WF" ]
+var webFonts = [ "Noto Sans Bengali WF", "Noto Serif Bengali WF" ]
 
 
 var template = {}
-	template.title = 'Bengali character app'
+	template.title = 'Bengali'
 	template.sample = "২. প্রত্যেকের‌ই নিজ দেশ সহ যে কোন দেশ পরিত্যাগ এবং স্বদেশে প্রত্যাবর্তনের অধিকার রয়েছে।"
 	template.blocklocation= '/scripts/bengali/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
