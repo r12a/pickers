@@ -41,6 +41,12 @@ table {
 	text-align: right;
 	vertical-align: top;
 	}
+span.hint { 
+    margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
+	}
 	
 #kbd { 	
 	margin: auto; 
