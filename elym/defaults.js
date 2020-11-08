@@ -2,8 +2,8 @@ var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Elymaic WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
-	factoryDefaults.lineheight = "1.4"; // number representing line height of text area in pixels/100
+	factoryDefaults.rows = "150"; // px height of text area
+	factoryDefaults.lineheight = "1.4"; // line height of text area 
 	factoryDefaults.language = 'xly' // language to use for examples
 	factoryDefaults.uifont = 'Noto Sans Elymaic WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
@@ -29,6 +29,7 @@ var template = {}
 	template.github = 'elym'
 	template.scriptcode = 'Elym'
 	template.fontLocale = "elym"
+	template.hints = true
 
 
 
