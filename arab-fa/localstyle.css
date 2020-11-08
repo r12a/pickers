@@ -23,10 +23,10 @@
 	}
 
 span.hint { 
-	margin-right: 0px;
-    margin-left: 0px;
-	font-size: 40%;
-	color: tan;
+    margin-inline-start: .25em;
+	margin-inline-end: 1px;
+	font-size: 50%;
+	color:tan;
 	}
 .c { 
 	min-width: .5em;
