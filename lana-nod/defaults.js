@@ -1,8 +1,8 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Lamphun WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "48";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
+	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
+	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'nod' // language to use for examples
 	factoryDefaults.uifont = 'Lanna Alif WF'; // font name  for selection area (a single font, no quotes)
@@ -29,6 +29,7 @@ var template = {}
 	template.github = 'northernthai'
 	template.scriptcode = 'Lana'
 	template.fontLocale = 'lana-nod'
+	template.hints = true
 
 
 
