@@ -85,19 +85,17 @@ var keyboarddef = [
 function toggleShift (node, LC, UC) {
     var chars = document.querySelectorAll('.c')
 
-    if (node.className =='shifted') {
+	if (! node.classList.contains('shifted')) {
         for (let i=0;i<chars.length;i++) {
             if (chars[i].dataset.lc) chars[i].textContent = chars[i].dataset.lc
             else chars[i].textContent = chars[i].textContent.toLowerCase()
             }
-		node.className = 'unshifted'
 		} 
 	else {
         for (let i=0;i<chars.length;i++) {
             if (chars[i].dataset.uc) chars[i].textContent = chars[i].dataset.uc
             else chars[i].textContent = chars[i].textContent.toUpperCase()
             }
-		node.className = 'shifted'
 		}
 	// reinitialise ids to codepoint values of character sequence (with no leading zeros)
 	node = document.querySelectorAll( '.c' ); 

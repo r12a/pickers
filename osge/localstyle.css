@@ -9,19 +9,15 @@
 [lang=osa] { font-family: 'Noto Sans Osage WF', 'Noto Sans Osage', serif; }
 
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
 
 .g {
     margin: 0 .05em;
 	}
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
+    margin-inline-start: .25em;
+	margin-inline-end: 1px;
 	font-size: 60%;
-	color: burlywood;
+	color:tan;
 	}
 .c { 
 	min-width: .75em;
@@ -101,9 +97,6 @@ span.hint {
 	margin-bottom: 1em;
     }
 
-#alphabet summary {
-    font-size: 50%;
-    }
 #obsolete {
     text-align: center;
     }
