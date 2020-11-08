@@ -160,7 +160,7 @@ function setTop (title,sample) {
 var out
 
 //out = `<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">ðŸŒ“</button>
-out = `<div id="contrastSwitch" style="position:absolute;top:3px;right:3px; line-height:1;"  title="Change the contrast level." onclick="toggleContrast()">Change<br>contrast</div>
+out = `<div id="contrastSwitch" style="position:absolute;top:3px;right:14px; line-height:1;"  title="Change the contrast level." onclick="toggleContrast()">Change<br>contrast</div>
 <a class="interactiveHelpButton" style="float:right; margin-right:.5em;" href="help/#contrast" target="_help" title="Help with contrast."><img alt="help" src="../images/help.png"/></a>
 
 <header>
