@@ -2,214 +2,23 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Makasar character app 25</title>
-
-<link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared25/style.css" />
-<link rel="stylesheet" href="localstyle.css" />
-
-<script src="defaults.js">  </script>
-<script src="/shared/fontdb/db.js"> </script>
-<script src="../../shared/scriptdb/makasar.js">  </script>
-
-<script src="../../shared/code/boilerplate.js"></script>
-<script src="../../shared/code/character_conversion.js"></script>
-<script src="../../shared/code/show_codepoints.js"></script>
-<script src="../../shared/fontlists/manage.js"></script>
-<script src="../../shared/code/scriptGroups.js"></script>
-<script src="../../shared/code/all-names.js"></script>
-<script src="../shared25/setup.js">  </script>
-<script src="../shared25/code.js">  </script>
-<script src="../shared25/latinregister.js">  </script>
-<script src="localcode.js">  </script>
-<script src="../shared25/pagetemplate.js">  </script>
-<script src="/scripts/linkdata/linkdb.js"></script>
-<script src="localtranscription.js">  </script>
-
-<style id="dynamicUIFont"></style>
-<style id="dynamicUIFontSize"></style>
+<title>Character app redirect</title>
+<script>
+newlocation = 'maka'
+</script>
 </head>
 
 <body class="app">
-<div id="topBP"></div>
-<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+<p>This app has been moved to <a id="redirect" href="xxxx">xxxx</a>.</p>
 
-
-
-
-
-
-
-
-
-<div id="phonemelist" style="position:relative;">
-<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
-</div>
-
-
-
-<div id="chardata"><span id="charname">Download the <a href="https://github.com/pandey/graphite-fonts/blob/master/makasar/MakasarGraphite.ttf">MakasarGraphite font</a> (works best in Firefox browser).</span></div>
-
-
-
-<div id="tables" dir="ltr">
-  
-
-<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
-
-
-<div id="alphabet" class="default">
- 
-<div class="spaceline">
-<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
-<span class="touch" title="Space" style="padding: 5px 60px;" dir="auto" onClick="add(' ');">SPACE</span>
-<!--span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
-<span class="touch" title="Zero width non-joiner" style="padding: 5px;" dir="auto" onClick="add('\u200C');">ZWNJ</span-->
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
-</div>
-
-
-<div id="kbdGrid"> 
- 
-
-      
-<div id="consonantGrid" class="box">
-        <div>
-          <span class="g"><span class="hint">p</span><span class="c">&#x11EE3;</span></span>
-          <span class="g"><span class="hint">t</span><span class="c">&#x11EE6;</span></span>
-          <span class="g"><span class="hint">c</span><span class="c">&#x11EE9;</span></span>
-		  <span class="g"><span class="hint">k</span><span class="c">&#x11EE0;</span></span>
-        </div>
-        <div>
-          <span class="g"><span class="hint">b</span><span class="c">&#x11EE4;</span></span>
-          <span class="g"><span class="hint">d</span><span class="c">&#x11EE7;</span></span>
-          <span class="g"><span class="hint">j</span><span class="c">&#x11EEA;</span></span>
-          <span class="g"><span class="hint">g</span><span class="c">&#x11EE1;</span></span>
-        </div>
-        <div>
-         <span class="g"><span class="hint">s</span><span class="c">&#x11EF0;</span></span>
-         <span class="g"><span class="hint">y</span><span class="c">&#x11EF2;</span></span>
-        </div>
-        <div>
-          <span class="g"><span class="hint">m</span><span class="c">&#x11EE5;</span></span>
-          <span class="g"><span class="hint">n</span><span class="c">&#x11EE8;</span></span>
-          <span class="g"><span class="hint">ñ</span><span class="c">&#x11EEB;</span></span>
-          <span class="g"><span class="hint">ṅ</span><span class="c">&#x11EE2;</span></span>
-        </div>
-        <div>
-          <span class="g"><span class="hint">w</span><span class="c">&#x11EEF;</span></span> 
-          <span class="g"><span class="hint">r</span><span class="c">&#x11EED;</span></span>
-          <span class="g"><span class="hint">l</span><span class="c">&#x11EEE;</span></span>
-          <span class="g"><span class="hint">y</span><span class="c">&#x11EEC;</span></span>
-        </div>
-        </div>
-        
-        
-
-<div id="vowelGrid" class="box">
-          <div>
-            <span class="g"><span class="hint">a</span><span class="c">&#x11EF1;</span></span>
-          </div>
-          <div>
-            <span class="g"><span class="hint">i</span><span class="c">&#x11EF3;</span></span>
-          </div>
-          <div>
-            <span class="g"><span class="hint">u</span><span class="c">&#x11EF4;</span></span>
-          </div>
-          <div>
-            <span class="g"><span class="hint">e</span><span class="c">&#x11EF5;</span></span>
-          </div>
-          <div>
-            <span class="g"><span class="hint">o</span><span class="c">&#x11EF6;</span></span>
-          </div>
-          </div>
-          
-
-<div id="numberGrid">
-	<div id="digitKeypad" class="box">
-		<div>
-		<span class="g"><span class="hint">1</span><span class="c">1</span></span>
-		<span class="g"><span class="hint">2</span><span class="c">2</span></span>
-		<span class="g"><span class="hint">3</span><span class="c">3</span></span>
-		</div>
-		<div>
-		<span class="g"><span class="hint">4</span><span class="c">4</span></span>
-		<span class="g"><span class="hint">5</span><span class="c">5</span></span>
-		<span class="g"><span class="hint">6</span><span class="c">6</span></span>
-		</div>
-		<div>
-		<span class="g"><span class="hint">7</span><span class="c">7</span></span>
-		<span class="g"><span class="hint">8</span><span class="c">8</span></span>
-		<span class="g"><span class="hint">9</span><span class="c">9</span></span>
-		</div>
-		<div>
-		<span class="g"><span class="hint">0</span><span class="c">0</span></span>
-		<span class="c">,</span>
-		<span class="c">.</span>
-		</div>
-		</div>
-	<div id="symbols">
-		<div style="margin-top: .5em;">
-		<span class="g"><span class="hint">0</span><span class="c">&#x11EF7;</span></span>
-		<span class="g"><span class="hint">0</span><span class="c">&#x11EF8;</span></span>
-		</div>
-		<!--div>
-		<span class="g"><span class="hint">0</span><span class="c">ฯลฯ</span></span>
-		</div-->
-		</div>
-</div>
-
-</div>
-
-
-
-
-<div id="ktp0Wrapper">
-<div id="hintType">
-</div>
-
-
-<div id="punctuation">
-<span class="c">,</span>
-<span class="c">.</span>
-<span class="c">;</span>
-<span class="c">:</span>
-<span class="c">?</span>
-<span class="c">!</span>
-<span class="c">‘</span>
-<span class="c">’</span>
-<span class="c">“</span>
-<span class="c">”</span>
-<span class="c">(</span>
-<span class="c">)</span>
-<span class="c">-</span>
-</div>
-</div>
-
-
-
-  
-  <div id="shapelist">
-    <div id="shapekeys">
-    </div>
-  <div id="extrashapes"></div>
-</div>
-
-
-
- <div id="temp"></div>
-
-</div>
-<!-- end of tables -->
-
-
-<div id="bottomBP"></div>
 <script>
-document.getElementById('bottomBP').innerHTML = getBottom()
-setUpValues()
+var hash = ''
+if (window.location.hash) hash = window.location.hash
+var parameters = ''
+if (window.location.search) hash = window.location.search
+
+document.getElementById('redirect').textContent = 'https://r12a.github.io/pickers/'+newlocation+'/'
+document.getElementById('redirect').href ='../'+newlocation+'/' + parameters + hash
 </script>
 </body>
 </html>
