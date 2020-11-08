@@ -97,20 +97,20 @@ function event_toggleKbdShift () {
 */
 
 
-function toggleShift (node, LC, UC) {
+function toggleShift (node) {
     var chars = document.querySelectorAll('.c')
 
-    if (node.className =='unshifted') {
+	if (! node.classList.contains('shifted')) {
         for (let i=0;i<chars.length;i++) {
-            chars[i].textContent = chars[i].textContent.toLowerCase()
+            if (chars[i].dataset.uc) chars[i].textContent = chars[i].dataset.uc
+            else chars[i].textContent = chars[i].textContent.toUpperCase()
             }
-		node.className = 'shifted'
 		} 
 	else {
         for (let i=0;i<chars.length;i++) {
-            chars[i].textContent = chars[i].textContent.toUpperCase()
+            if (chars[i].dataset.lc) chars[i].textContent = chars[i].dataset.lc
+            else chars[i].textContent = chars[i].textContent.toLowerCase()
             }
-		node.className = 'unshifted'
 		}
 	// reinitialise ids to codepoint values of character sequence (with no leading zeros)
 	node = document.querySelectorAll( '.c' ); 
@@ -127,4 +127,3 @@ function toggleShift (node, LC, UC) {
         node[n].title = 'U+'+id+': '+charData[content]
 		}
 	}
-

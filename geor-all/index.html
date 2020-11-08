@@ -77,52 +77,50 @@
 <div class="spaceline">
 <span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
 <span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
-<br/>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
 <br>
-<span class="shifted" dir="auto" onclick="
-	if (this.className=='shifted') { 
-		this.className='unshifted'; 
+<span class="touch shifted" dir="auto" onclick="
+	if (this.classList.contains('shifted')) { 
+		this.classList.remove('shifted'); 
 		document.getElementById('mkhedruli').style.display='none'
 		} 
 	else {
-		this.className='shifted'; 
+		this.classList.add('shifted'); 
 		document.getElementById('mkhedruli').style.display='flex'
 		}
 		">Mkhedruli</span>
 &nbsp;
-<span class="unshifted" dir="auto" onclick="
-	if (this.className=='shifted') { 
-		this.className='unshifted'; 
+<span class="touch" dir="auto" onclick="
+	if (this.classList.contains('shifted')) { 
+		this.classList.remove('shifted'); 
 		document.getElementById('mtavruli').style.display='none'
 		} 
 	else {
-		this.className='shifted'; 
+		this.classList.add('shifted'); 
 		document.getElementById('mtavruli').style.display='flex'
 		}
 		">Mtavruli</span>
 &nbsp;
-<span class="unshifted" dir="auto" onclick="
-	if (this.className=='shifted') { 
-		this.className='unshifted'; 
+<span class="touch" dir="auto" onclick="
+	if (this.classList.contains('shifted')) { 
+		this.classList.remove('shifted'); 
 		document.getElementById('asomtavruli').style.display='none'
 		} 
 	else {
-		this.className='shifted'; 
+		this.classList.add('shifted'); 
 		document.getElementById('asomtavruli').style.display='flex'
 		}
 		">Asomtavruli</span>
 &nbsp;
-<span class="unshifted" dir="auto" onclick="
-	if (this.className=='shifted') { 
-		this.className='unshifted'; 
+<span class="touch" dir="auto" onclick="
+	if (this.classList.contains('shifted')) { 
+		this.classList.remove('shifted'); 
 		document.getElementById('nuskhuri').style.display='none'
 		} 
 	else {
-		this.className='shifted'; 
+		this.classList.add('shifted'); 
 		document.getElementById('nuskhuri').style.display='flex'
 		}
 		">Nuskhuri</span>
