@@ -91,6 +91,8 @@ table td { border: 0; }
 	border-radius: 5px;
 	padding: 2px 5px;
 	padding-bottom: 1em;
+width: 98%;
+margin: 0 1%;
 	}
 
 #transcriptionWrapper {
@@ -1094,11 +1096,11 @@ summary:hover {
 	}
 
 #formatchars {
+	display: none;
     text-align: center;
     margin-bottom: .25em;
     line-height: 1;
     }
-
 #seeAlso {
 	margin-inline-start: 20px;
 	}
