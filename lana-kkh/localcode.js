@@ -69,18 +69,17 @@ var keyboarddef = [
 
 
 
+
+
 function toggleSubjoined (node) {
     // displays or hides the subjoined keys
     var sjs = document.querySelectorAll('.sj')
-    console.log(sjs.length)
     if (sjs[0].style.display !== 'inline-block') {
         for (let i=0;i<sjs.length;i++) sjs[i].style.display = 'inline-block'
-        node.classList.toggle('subjoined')
         document.getElementById('consonantGrid').style.width = '16em'
         }
     else {
         for (let i=0;i<sjs.length;i++) sjs[i].style.display = 'none'
-        node.classList.toggle('subjoined')
         document.getElementById('consonantGrid').style.width = '12em'
         }
     }

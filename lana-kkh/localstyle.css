@@ -26,15 +26,12 @@
 
 
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 50%;
+    margin-inline-start: .25em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
 	}
 .c { 
 	min-width: .75em;
@@ -56,12 +53,6 @@ span.sj {
 	margin-left: .25em;
 	text-align: end;
 }
-.subjoined {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #ccc;
-    color: white;
-    }
 
     
     
@@ -209,9 +200,6 @@ span.sj {
 	margin-bottom: 1em;
     }
 
-#alphabet summary {
-    font-size: 14px;
-    }
 #mahaprana, #rare, #otherpunctuation {
     text-align: center;
     font-size: 90%;
