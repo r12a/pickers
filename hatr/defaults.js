@@ -2,7 +2,7 @@ var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Hatran WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
+	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.4"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'mis-Hatr' // language to use for examples
 	factoryDefaults.uifont = 'Noto Sans Hatran WF'; // font name  for selection area (a single font, no quotes)
@@ -28,7 +28,8 @@ var template = {}
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'hatr'
 	template.scriptcode = 'Hatr'
-	template.fontLocale = "hatr"
+	template.fontLocale = "hatr" 
+	template.hints = true
 
 
 
