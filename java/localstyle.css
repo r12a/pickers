@@ -20,15 +20,9 @@
 
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 50%;
-	color: tan;
-	}
-span.hint { 
   margin-inline-start: .5em;
   margin-inline-end: 1px;
-  font-size: 60%;
+  font-size: 70%;
   color:tan;
   }
 .c { 

@@ -1,7 +1,7 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Javanese WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
+	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "2.4"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'jv' // language to use for examples
@@ -23,7 +23,7 @@ var webFonts = [ "Noto Sans Javanese WF", "Tuladha Jejeg WF" ]
  
 var template = {}
 	template.title = 'Javanese character app'
-	template.sample = "ꦧꦧ꧀꧇꧑꧇​꧋ꦱꦧꦼꦤ꧀ꦲꦸꦮꦺꦴꦁꦏꦭꦲꦶꦂꦫꦏꦺꦏꦤ꧀ꦛꦶꦩꦂꦢꦶꦏꦭꦤ꧀ꦢꦂꦧꦺꦩꦂꦠꦧꦠ꧀ꦭꦤ꧀ꦲꦏ꧀ꦲꦏ꧀ꦏꦁꦥꦝ꧉"
+	template.sample = "ꦧꦧ꧀꧇꧑꧇​꧋ꦱ​ꦧꦼ​ꦤ꧀ꦲꦸ​ꦮꦺꦴꦁ​ꦏ​ꦭ​ꦲꦶ​ꦫ​ꦏꦺ​ꦏ​ꦤ꧀ꦛꦶ​ꦩꦂ​ꦢꦶ​ꦏ​ꦭ​ꦤ꧀ꦢꦂ​ꦧꦺ​ꦩꦂ​ꦠ​ꦧ​ꦠ꧀ꦭ​ꦤ꧀ꦲ​ꦏ꧀ꦲ​ꦏ꧀ꦏꦁ​ꦥ​ꦝ꧉​"
 	template.sampleSource = "https://unicode.org/udhr/d/udhr_jav_java.html"
 	template.blocklocation= '/scripts/javanese/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
