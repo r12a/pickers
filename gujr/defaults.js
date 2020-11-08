@@ -1,7 +1,7 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Gujarati WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
+	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // px height of text area
 	factoryDefaults.lineheight = "1.8"; // line height of text area 
 	factoryDefaults.language = 'gu' // language to use for examples
