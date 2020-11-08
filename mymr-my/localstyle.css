@@ -31,10 +31,10 @@
 
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 50%;
-	color:tan
+    margin-inline-start: .25em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
 	}
 .c { 
 	min-width: .75em;
@@ -61,7 +61,7 @@ span.hint {
 #kbdGrid {
  display: flex;
  flex-direction: row;
-	line-height: 1.5;
+	line-height: 2;
     justify-content: center;
     }
 #consonantGrid {
