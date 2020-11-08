@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-gb"><head>
 <meta charset="UTF-8" />
-<title>Inuktitut character app 25</title>
+<title>Inuktitut character app 26</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="../shared26/style.css" />
 <link rel="stylesheet" href="localstyle.css" />
 
 <script src="defaults.js">  </script>
@@ -17,11 +17,11 @@
 <script src="../../shared/fontlists/manage.js"></script>
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
-<script src="../shared25/setup.js">  </script>
-<script src="../shared25/code.js">  </script>
-<script src="../shared25/latinregister.js">  </script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared25/pagetemplate.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 <script src="localtranscription.js">  </script>
 
@@ -41,13 +41,18 @@
 
 
 
-<div id="phonemelist" style="position:relative;">
-<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
-</div>
-
-
-
 <div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
+
+
+
+<div id="sideMenu"></div>
+<script>document.getElementById('sideMenu').innerHTML = setSideMenu()</script>
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;">
+</div> 
+</div>
 
 
 
@@ -89,12 +94,11 @@
 
 <div class="spaceline">
 <!--span class="unshifted" dir="auto" onclick="toggleShift(this, 'kbdGrid', 'twoStep')">TABLE VIEW</span-->
-<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
 </div>
 
 
@@ -172,6 +176,61 @@
 <td><span class="c">ᒡ</span></td>
 </tr>
 <tr>
+<th><span class="hint">q</span></th>
+<td class="last"><span class="c">ᕿ</span></td>
+<td class="last"><span class="c">ᖀ</span></td>
+<td class="last"><span class="c">ᖁ</span></td>
+<td class="last"><span class="c">ᖂ</span></td>
+<td class="last"><span class="c">ᖃ</span></td>
+<td class="last"><span class="c">ᖄ</span></td>
+<td class="last"><span class="c">ᙯ</span></td>
+<td class="last"><span class="c">ᖅ</span></td>
+</tr>
+<tr>
+<th><span class="hint">v</span></th>
+<td><span class="c">ᕕ</span></td>
+<td><span class="c">ᕖ</span></td>
+<td><span class="c">ᕗ</span></td>
+<td><span class="c">ᕘ</span></td>
+<td><span class="c">ᕙ</span></td>
+<td><span class="c">ᕚ</span></td>
+<td><span class="c">ᕓ</span></td>
+<td><span class="c">ᕝ</span></td>
+</tr>
+<tr>
+<th><span class="hint">s</span></th>
+<td><span class="c">ᓯ</span></td>
+<td><span class="c">ᓰ</span></td>
+<td><span class="c">ᓱ</span></td>
+<td><span class="c">ᓲ</span></td>
+<td><span class="c">ᓴ</span></td>
+<td><span class="c">ᓵ</span></td>
+<td><span class="c">ᓭ</span></td>
+<td><span class="c">ᔅ</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<div id="part2">      
+<table>
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th><span class="hint">i</span></th>
+<th><span class="hint">ī</span></th>
+<th><span class="hint">u</span></th>
+<th><span class="hint">ū</span></th>
+<th><span class="hint">a</span></th>
+<th><span class="hint">ā</span></th>
+<th><span class="hint">ai</span></th>
+<th><span class="hint">-</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <th><span class="hint">m</span></th>
 <td><span class="c">ᒥ</span></td>
 <td><span class="c">ᒦ</span></td>
@@ -194,48 +253,26 @@
 <td><span class="c">ᓐ</span></td>
 </tr>
 <tr>
-<th><span class="hint">s</span></th>
-<td><span class="c">ᓯ</span></td>
-<td><span class="c">ᓰ</span></td>
-<td><span class="c">ᓱ</span></td>
-<td><span class="c">ᓲ</span></td>
-<td><span class="c">ᓴ</span></td>
-<td><span class="c">ᓵ</span></td>
-<td><span class="c">ᓭ</span></td>
-<td><span class="c">ᔅ</span></td>
+<th><span class="hint">ŋ</span></th>
+<td><span class="c">ᖏ</span></td>
+<td><span class="c">ᖐ</span></td>
+<td><span class="c">ᖑ</span></td>
+<td><span class="c">ᖒ</span></td>
+<td><span class="c">ᖓ</span></td>
+<td><span class="c">ᖔ</span></td>
+<td><span class="c">ᙰ</span></td>
+<td><span class="c">ᖕ</span></td>
 </tr>
 <tr>
-<th><span class="hint">l</span></th>
-<td><span class="c">ᓕ</span></td>
-<td><span class="c">ᓖ</span></td>
-<td><span class="c">ᓗ</span></td>
-<td><span class="c">ᓘ</span></td>
-<td><span class="c">ᓚ</span></td>
-<td><span class="c">ᓛ</span></td>
-<td><span class="c">ᓓ</span></td>
-<td><span class="c">ᓪ</span></td>
-</tr>
-<tr>
-<th><span class="hint">j</span></th>
-<td><span class="c">ᔨ</span></td>
-<td><span class="c">ᔩ</span></td>
-<td><span class="c">ᔪ</span></td>
-<td><span class="c">ᔫ</span></td>
-<td><span class="c">ᔭ</span></td>
-<td><span class="c">ᔮ</span></td>
-<td><span class="c">ᔦ</span></td>
-<td><span class="c">ᔾ</span></td>
-</tr>
-<tr>
-<th><span class="hint">v</span></th>
-<td><span class="c">ᕕ</span></td>
-<td><span class="c">ᕖ</span></td>
-<td><span class="c">ᕗ</span></td>
-<td><span class="c">ᕘ</span></td>
-<td><span class="c">ᕙ</span></td>
-<td><span class="c">ᕚ</span></td>
-<td><span class="c">ᕓ</span></td>
-<td><span class="c">ᕝ</span></td>
+<th class="last"><span class="hint">ŋŋ</span></th>
+<td class="last"><span class="c">ᙱ</span></td>
+<td class="last"><span class="c">ᙲ</span></td>
+<td class="last"><span class="c">ᙳ</span></td>
+<td class="last"><span class="c">ᙴ</span></td>
+<td class="last"><span class="c">ᙵ</span></td>
+<td class="last"><span class="c">ᙶ</span></td>
+<td class="last"><span class="c">ᕼ</span></td>
+<td class="last"><span class="c">ᖖ</span></td>
 </tr>
 <tr>
 <th><span class="hint">r</span></th>
@@ -249,37 +286,15 @@
 <td><span class="c">ᕐ</span></td>
 </tr>
 <tr>
-<th><span class="hint">q</span></th>
-<td><span class="c">ᕿ</span></td>
-<td><span class="c">ᖀ</span></td>
-<td><span class="c">ᖁ</span></td>
-<td><span class="c">ᖂ</span></td>
-<td><span class="c">ᖃ</span></td>
-<td><span class="c">ᖄ</span></td>
-<td><span class="c">ᙯ</span></td>
-<td><span class="c">ᖅ</span></td>
-</tr>
-<tr>
-<th><span class="hint">ŋ</span></th>
-<td><span class="c">ᖏ</span></td>
-<td><span class="c">ᖐ</span></td>
-<td><span class="c">ᖑ</span></td>
-<td><span class="c">ᖒ</span></td>
-<td><span class="c">ᖓ</span></td>
-<td><span class="c">ᖔ</span></td>
-<td><span class="c">ᙰ</span></td>
-<td><span class="c">ᖕ</span></td>
-</tr>
-<tr>
-<th><span class="hint">ŋŋ</span></th>
-<td><span class="c">ᙱ</span></td>
-<td><span class="c">ᙲ</span></td>
-<td><span class="c">ᙳ</span></td>
-<td><span class="c">ᙴ</span></td>
-<td><span class="c">ᙵ</span></td>
-<td><span class="c">ᙶ</span></td>
-<td><span class="c">ᕼ</span></td>
-<td><span class="c">ᖖ</span></td>
+<th><span class="hint">l</span></th>
+<td><span class="c">ᓕ</span></td>
+<td><span class="c">ᓖ</span></td>
+<td><span class="c">ᓗ</span></td>
+<td><span class="c">ᓘ</span></td>
+<td><span class="c">ᓚ</span></td>
+<td><span class="c">ᓛ</span></td>
+<td><span class="c">ᓓ</span></td>
+<td><span class="c">ᓪ</span></td>
 </tr>
 <tr>
 <th><span class="hint">ɫ</span></th>
@@ -291,6 +306,17 @@
 <td><span class="c">ᖥ</span></td>
 <td><span class="c">ᖯ</span></td>
 <td><span class="c">ᖦ</span></td>
+</tr>
+<tr>
+<th><span class="hint">j</span></th>
+<td><span class="c">ᔨ</span></td>
+<td><span class="c">ᔩ</span></td>
+<td><span class="c">ᔪ</span></td>
+<td><span class="c">ᔫ</span></td>
+<td><span class="c">ᔭ</span></td>
+<td><span class="c">ᔮ</span></td>
+<td><span class="c">ᔦ</span></td>
+<td><span class="c">ᔾ</span></td>
 </tr>
 </tbody>
 </table>
@@ -323,7 +349,7 @@
 
 
 <details>
-<summary>Rare letters</summary>
+<summary>rare letters</summary>
 <table style="margin:auto;">
 <tbody>
 <tr>

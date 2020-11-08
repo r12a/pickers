@@ -9,23 +9,22 @@
 [lang=vai] { font-family: 'Noto Sans Canadian Aboriginal WF', Noto Sans Canadian Aboriginal, serif; }
 
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 50%;
-	color: tan;
+    margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 70%;
+	color:tan;
+	color: darkorange;
 	}
 .c { 
 	min-width: .75em;
 	text-align: center;
 	}
 
-    
+#part1 table td.last, #part2 table td.last {
+    border-bottom: 1px solid orange;
+	}  
     
 /* KEYBOARD */
 .key span { 
@@ -145,15 +144,7 @@ span.hint {
     line-height: 1.7;
     margin-top: .5em;
     }
-#spaceEtc {
-    text-align: center;
-    vertical-align: middle;
-	margin-bottom: 1em;
-    }
 
-#alphabet summary {
-    font-size: 14px;
-    }
 #hidden {
     text-align: center;
     font-size: 90%;
