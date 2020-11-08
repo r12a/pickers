@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>IPA2 character app 25</title>
+<title>IPA2 character app 26</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="../shared26/style.css" />
 <link rel="stylesheet" href="localstyle.css" />
 
 <script src="defaults.js">  </script>
@@ -18,11 +18,11 @@
 <script src="../../shared/fontlists/manage.js"></script>
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
-<script src="../shared25/setup.js">  </script>
-<script src="../shared25/code.js">  </script>
-<script src="../shared25/latinregister.js">  </script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared25/pagetemplate.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 <!--script src="localtranscription.js">  </script-->
 
@@ -39,16 +39,16 @@
 
 
 
+<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
+
+
+
 
 
 
 <div id="phonemelist" style="position:relative;">
 <div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 </div>
-
-
-
-<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
 
 
 
@@ -59,13 +59,22 @@
 
 <div id="alphabet" class="default">
 
+<!--
+<div class="vmtab" title="Select characters from a keyboard layout." data-title="Keyboard" data-var="showKeyboard" data-locn="keyboard" data-shorttitle="K" onmouseover="this.textContent=this.dataset.title+globals[this.dataset.var]" onmouseout="this.textContent=this.dataset.shorttitle" 
+
+onclick="if (globals[this.dataset.var] ==''){}toggleSideBarOption(this, this.dataset.title, this.dataset.var, this.dataset.locn)" style="color: white;">K</div>
+-->
+
 <div class="spaceline">
+<span class="touch" style="margin: 0; padding: 5px 20px;" dir="auto" onClick="setUpTypeAssist(false, typeAssistMap, typeAssistMap);if (this.classList.contains('shifted')) {document.getElementById('keyboard').style.display='none';this.classList.remove('shifted');} else {document.getElementById('keyboard').style.display='block';this.classList.add('shifted');}">KBD</span>
+
+<span class="touch" style="margin: 0; padding: 5px 20px;" dir="auto" onClick="setUpTypeAssist(false, typeAssistMap, typeAssistMap);if (this.classList.contains('shifted')) {document.getElementById('transcriptionPalette').style.display='none';this.classList.remove('shifted');} else {document.getElementById('transcriptionPalette').style.display='block';this.classList.add('shifted');}">PALETTE</span>
+
 <span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
 </div>
 
 
@@ -316,7 +325,6 @@
       <td style="text-align: center;">
 <span class="c" style="padding-left:10px;" title="">&#x002F;</span> 
 <span class="c" title="">&#x005B;</span> <span style="margin-right:20px;" class="c" title="">&#x005D;</span></td>
-      <td style="text-align: center;"><span class="c" style="padding-left:10px;" title="">&#x002F;</span> <span class="c" title="">&#x005B;</span> <span style="margin-right:20px;" class="c" title="">&#x005D;</span></td>
       </tr>
  </table>
   <table id="bottomphones">
@@ -369,7 +377,7 @@
 
 
 <details>
-<summary>Show more tone marks</summary>
+<summary>more tone marks</summary>
 <div id="moreTones">
 <span class="g"><span class="hint">Dotted</span>
 <span class="c">꜈</span>
