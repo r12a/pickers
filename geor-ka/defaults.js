@@ -2,8 +2,8 @@ var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'BPG 2017 DejaVu Serif WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "30";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "2"; // number representing number of times 100px for height of text area
-	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
+	factoryDefaults.rows = "150"; // px height of text area
+	factoryDefaults.lineheight = "1.5"; // line height of text area
 	factoryDefaults.language = 'ka' // language to use for examples
 	factoryDefaults.uifont = 'BPG 2017 DejaVu Sans WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
@@ -30,6 +30,7 @@ var template = {}
 	template.github = 'geor-ka'
 	template.scriptcode = 'Geor'
 	template.fontLocale = 'geor'
+	template.hints = true
 
 
 
