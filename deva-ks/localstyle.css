@@ -12,15 +12,11 @@
 
 
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 50%;
+    margin-inline-start: .25em;
+	margin-inline-end: 1px;
+	font-size: 60%;
 	color:tan;
 	}
 .c { 
@@ -50,12 +46,27 @@ span.hint {
 	line-height: 1.2;
     justify-content: center;
     }
-#consonantGrid div {
-    white-space: normal;
+#ivowelGrid {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+	margin-right: 1em;
+    }
+#ivowelGrid div {
+	display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    line-height: 1.5;
+    }
+#consonantGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+#consonantGrid div {
+    display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
-    max-width: 9em;
     justify-content: space-around;
     line-height: 1.5;
     }
@@ -67,34 +78,24 @@ span.hint {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 1.5em;
     justify-content: center;
     line-height: 1.5;
     align-content: flex-start;
     margin-left: 1em;
     }
-#ivowelGrid {
-    white-space: normal;
-    max-width: 5.46em;
-    max-height: 15em;
-    justify-content: flex-end;
-    line-height: 1.5;
-    text-align: right;
-	margin-right: 1em;
-    }
-#vowelGrid div {
-    justify-content: end;
-    }
 #vowelGrid {
-    white-space: normal;
-    max-width: 9em;
-    max-height: 15em;
-    justify-content: end;
-    line-height: 1.5;
-    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	margin-left: 1em;
     }
+#vowelGrid > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:space-between;
+	}
 #cchars {
-    width: 2em;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -105,12 +106,10 @@ span.hint {
 #numberGrid div {
     white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    max-width: 4em;
-    max-height: 8em;
     justify-content: space-between;
-    margin-left: 1.2em;
+    margin-left: 1em;
     line-height: 1.5;
     font-size: 90%;
     }
@@ -126,9 +125,6 @@ span.hint {
 	margin-bottom: 1em;
     }
 
-#alphabet summary {
-    font-size: 14px;
-    }
 #obsolete {
     text-align: center;
     font-size: 90%;
