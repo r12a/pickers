@@ -26,10 +26,6 @@
 
 
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
 
 span.hint { 
 	margin-right: 1px;
@@ -160,9 +156,6 @@ span.hint {
 	margin-bottom: 1em;
     }
 
-#alphabet summary {
-    font-size: 14px;
-    }
 #mahaprana, #rare, #otherpunctuation {
     text-align: center;
     font-size: 90%;

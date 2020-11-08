@@ -27,19 +27,17 @@ var keyboarddef = [
 
 
 function toggleShift (node) {
-	if (node.className =='unshifted') {
+	if (! node.classList.contains('shifted')) {
 		lcs = document.querySelectorAll('.lowercase')
 		for (let i=0;i<lcs.length;i++) lcs[i].classList.add('hidden')
 		ucs = document.querySelectorAll('.uppercase')
 		for (let i=0;i<ucs.length;i++) ucs[i].classList.remove('hidden')
-		node.className = 'shifted'
 		} 
 	else {
 		lcs = document.querySelectorAll('.lowercase')
 		for (let i=0;i<lcs.length;i++) lcs[i].classList.remove('hidden')
 		ucs = document.querySelectorAll('.uppercase')
 		for (let i=0;i<ucs.length;i++) ucs[i].classList.add('hidden')
-		node.className = 'unshifted'
 		}
 	}
 
