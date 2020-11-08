@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Mende Kikakui character app 25</title>
+<title>Mende Kikakui character app 26</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared25/style.css" />
+<link rel="stylesheet" href="../shared26/style.css" />
 <link rel="stylesheet" href="localstyle.css" />
 
 <style id="dynamicUIFont"></style>
@@ -21,11 +21,11 @@
 <script src="../../shared/fontlists/manage.js"></script>
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
-<script src="../shared25/setup.js">  </script>
-<script src="../shared25/code.js">  </script>
-<script src="../shared25/latinregister.js">  </script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared25/pagetemplate.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
 <script src="/scripts/linkdata/linkdb.js"></script>
 <script src="localtranscription.js">  </script>
 </head>
@@ -42,13 +42,17 @@
 
 
 
+<div id="chardata"><span id="charname">Type assist (T) is on.</span></div>
+
+
+<div id="sideMenu"></div>
+<script>document.getElementById('sideMenu').innerHTML = setSideMenu()</script>
+
+
+
 <div id="phonemelist" style="position:relative;">
 <div id="transcriptionPalette" class="transcript" style="display:none;"></div>
 </div>
-
-
-
-<div id="chardata"><span id="charname">Click S (shape lookup), or on characters below.</span></div>
 
 
 
@@ -92,22 +96,22 @@
 <bdi onclick="findShape('1E808,1E80A,1E80E,1E809,1E812,1E810','𞠈,𞠊,𞠎,𞠉,𞠒,𞠐',true)">𞠈</bdi>
 <bdi onclick="findShape('1E853,1E855,1E854','𞡓,𞡕,𞡔',true)">𞡓</bdi>
 <bdi onclick="findShape('20261E81E,1E847,1E85E,1E8BB,1E835,1E86F,1E870,1E89A,1E819,1E890,1E8B2,1E8B4,1E8AF,1E879,1E881,1E87F,1E8C3,1E8C4,1E8C1,1E813,1E80D,1E839,1E8AD,1E8C9,1E8CB,1E8CC,1E8CD,1E8CE','𞠞,𞡇,𞡞,𞢻,𞠵,𞡯,𞡰,𞢚,𞠙,𞢐,𞢲,𞢴,𞢯,𞡹,𞢁,𞡿,𞣃,𞣄,𞣁,𞠓,𞠍,𞠹,𞢭,𞣉,𞣋,𞣌,𞣍,𞣎',true)">…</bdi>
-
- </div>
 </div>
 
 <div id="extrashapes"></div>
+</div>
+
+
 
 
 
 
 <div class="spaceline">
-<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
+<span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
 </div>
 
 <div id="twoStep" style="display: none;">
