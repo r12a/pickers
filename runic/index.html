@@ -2,106 +2,23 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Runic character app 25</title>
-
-<link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared25/style.css" />
-<link rel="stylesheet" href="localstyle.css" />
-
-<script src="defaults.js">  </script>
-<script src="/shared/fontdb/db.js"> </script>
-<script src="../../shared/scriptdb/runic.js">  </script>
-
-<script src="../../shared/code/boilerplate.js"></script>
-<script src="../../shared/code/character_conversion.js"></script>
-<script src="../../shared/code/show_codepoints.js"></script>
-<script src="../../shared/fontlists/manage.js"></script>
-<script src="../../shared/code/scriptGroups.js"></script>
-<script src="../../shared/code/all-names.js"></script>
-<script src="../shared25/setup.js">  </script>
-<script src="../shared25/code.js">  </script>
-<script src="../shared25/latinregister.js">  </script>
-<script src="localcode.js">  </script>
-<script src="../shared25/pagetemplate.js">  </script>
-<script src="/scripts/linkdata/linkdb.js"></script>
-<script src="localtranscription.js">  </script>
-
-<style id="dynamicUIFont"></style>
-<style id="dynamicUIFontSize"></style>
+<title>Character app redirect</title>
+<script>
+newlocation = 'runr'
+</script>
 </head>
 
 <body class="app">
-<div id="topBP"></div>
-<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+<p>This app has been moved to <a id="redirect" href="xxxx">xxxx</a>.</p>
 
-
-
-
-
-
-
-
-
-<div id="phonemelist" style="position:relative;">
-<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
-</div>
-
-
-
-<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
-
-
-
-<div id="tables" dir="ltr">
-  
-<div class="kbdWrapper"><div dir="ltr" id="keyboard" style="display: block;"></div></div>
-
-<div id="alphabet" class="default">
-
-<div class="spaceline">
-<span class="touch" title="Space" style="padding: 5px 140px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="Zero-width space" style="padding: 5px;" dir="auto" onClick="add('\u200B');">ZWSP</span>
-<span class="touch" title="Right-left override" style="padding: 5px;" dir="auto" onClick="add('\u202E');">RLO</span>
-<span class="touch" title="PDF" style="padding: 5px;" dir="auto" onClick="add('\u202C');">PDF</span>
-<span class="touch" title="Zero-width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
-</div>
-
-
-
-<div id="keyboardSwitch">
-<span id="elder" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard (elderkbd, keyboardLCGuide);  this.className='shifted'; unshiftAll('medieval younger anglosaxon latink')} ">Elder</span> 
-  <span id="younger" class="shifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(keyboarddef, keyboardLCGuide); this.className='shifted'; unshiftAll('medieval elder anglosaxon latink')} ">Younger</span> 
-  <span id="medieval" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(medievalkbd, keyboardLCGuide); this.className='shifted'; unshiftAll('elder younger anglosaxon latink')} ">Medieval</span> 
-  <span id="anglosaxon" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(anglosaxonkbd, keyboardLCGuide); this.className='shifted'; unshiftAll('medieval younger elder latink')} ">Anglo-saxon</span> 
-  <span id="latink" class="unshifted" dir="auto" onClick="if (this.className=='unshifted') {makeKeyboard(latinkbd, keyboardLCGuide); this.className='shifted'; unshiftAll('medieval younger elder anglosaxon')} ">Latin</span> 
-</div>
-</div>
-
-
-
-
- <div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
-</div>
-</div>
-
-<div id="extrashapes"></div>
-
-
-<div id="temp"></div>
-
-
-</div><!-- end of tables -->
-
-  
-
-
-<div id="bottomBP"></div>
 <script>
-document.getElementById('bottomBP').innerHTML = getBottom()
-setUpValues()
+var hash = ''
+if (window.location.hash) hash = window.location.hash
+var parameters = ''
+if (window.location.search) hash = window.location.search
+
+document.getElementById('redirect').textContent = 'https://r12a.github.io/pickers/'+newlocation+'/'
+document.getElementById('redirect').href ='../'+newlocation+'/' + parameters + hash
 </script>
 </body>
 </html>
