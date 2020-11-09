@@ -88,15 +88,22 @@
 
 
 
-        <div class="spaceline">
-        <span class="touch" style="padding: 5px 60px;" onClick="add(' ');">SPACE</span> 
-        <span class="touch" style="padding: 5px 30px;" onClick="add('\u200D');">ZWNJ</span> 
-        <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-        <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
-        <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span>
-        </div>
+<div class="spaceline">
+<span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
+<span class="touch" style="padding: 5px 30px;" onClick="add('\u200D');">ZWNJ</span> 
+<span class="touch" style="padding: 5px 60px;" onClick="add(' ');">SPACE</span> 
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
+</div>
+
+
+
+
+
+
+
+
     <table id="kbd">
       <tr>
         <td id="independentvowels"><table>
@@ -148,7 +155,7 @@
             <td><span class="g"><span class="hint">j</span><span class="c">&#x0DA2;</span></span></td>
 <td><span class="g"><span class="hint">jh</span><span class="c">&#x0DA3;</span></span></td>
             <td><span class="g"><span class="hint">ñ</span><span class="c">&#x0DA4;</span></span></td>
-             <td style="text-align:right"><span class="g"><span class="hint"></span></span></td>
+             <td style="text-align:right"><span class="g"><span class="hint"></span><span class="c"> </span></span></td>
          </tr>
           <tr>
             <td><span class="g"><span class="hint">ṭ</span><span class="c">&#x0DA7;</span></span></td>

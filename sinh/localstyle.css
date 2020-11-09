@@ -6,8 +6,6 @@
     font-style: normal;
 	}
 
-#alphabet { display: block; }
-#phonelist { display: none; }
 
     
     
@@ -32,21 +30,12 @@
 	min-width: 18px;
 	}
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-    margin: 0;
-	font-size: 50%;
-	text-align: right;
-	vertical-align: top;
+	margin-inline-start: .25em;
+	margin-inline-end: 1px;
+	font-size: 65%;
+	color:tan;
 	}
 
-/*#alphabet td.hint {  
-	font-size: 14px;
-	color: #ccc;
-	text-align: right;
-	vertical-align: top;
-	}
-*/	
 #kbd { 	
 	margin: auto; 
 	}
