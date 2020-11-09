@@ -11,15 +11,11 @@
 
 
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
-
 span.hint { 
-	margin-right: 1px;
-    margin-left: 1px;
-	font-size: 40%;
+	margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 50%;
+	color:tan;
 	}
 .c { 
 	min-width: .75em;
@@ -64,14 +60,12 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 5.5em;
     }
 #consonantGrid div {
     white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 8em;
     justify-content: space-between;
     }
 #consonantGrid > span {
@@ -80,11 +74,8 @@ span.hint {
 #vowelGrid {
     display: flex;
     flex-direction: column;
-    height: 5.25em;
     justify-content: space-between;
     margin-left: 1em;
-    border: 1px dotted #ccc;
-    border-radius: .5em;
     padding: 0 .25em;
     margin: 0 .5em;
     }
@@ -92,7 +83,6 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    width: 4em;
     justify-content: center;
     }
 #numberGrid {
@@ -101,9 +91,8 @@ span.hint {
 #numberGrid div {
     white-space: normal;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 2.5em;
     justify-content: space-between;
     line-height: 1.2;
     font-size: 90%;
@@ -120,9 +109,6 @@ span.hint {
 	margin-bottom: 1em;
     }
 
-#alphabet summary {
-    font-size: 14px;
-    }
 #vowelclusters {
     text-align: center;
     line-height: 1.7;
@@ -133,8 +119,6 @@ span.hint {
 
 #cursive {
     width: 4em;
-    display: inline-block;
-    color: tan;
     }
 
 
