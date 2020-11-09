@@ -10,7 +10,8 @@ var factoryDefaults = {}
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
-	factoryDefaults.hints = true // type of hint to show alongside characters in the grids
+	factoryDefaults.hints = 'none' // type of hint to show alongside characters in the grids
+
 
 
 var thisPicker = 'kashmiriaPicker'
@@ -18,7 +19,7 @@ var thisPicker = 'kashmiriaPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Scheherazade WF", "Noto Naskh Arabic WF" ]
+var webFonts = [ "Scheherazade WF", "Noto Nastaliq Urdu WF", "Awami Nastaliq WF" ]
 
 var template = {}
 	template.title = 'Kashmiri (arab) character app'
@@ -29,6 +30,7 @@ var template = {}
 	template.scriptcode = 'Arab'
 	template.cursive = true
 	template.fontLocale = 'arab-ks'
+	template.hints = true
 
 
 
