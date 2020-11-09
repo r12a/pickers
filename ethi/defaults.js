@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Ethiopic WF" ]
 
 
 var template = {}
-	template.title = 'All Ethiopic character picker'
+	template.title = 'All Ethiopic'
 	template.sample = "፪/፡ እያንዳንዱ፡ሰው፡ከማንኛውም፡አገር፡ሆነ፡ከራሱ፡አገር፡ወጥቶ፡እንደገና፡ወደ፡አገሩ፡የመመለስ፡መብት፡አለው።"
 	template.blocklocation= 'ethiopic'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script

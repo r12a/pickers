@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Aramaic WF" ]
 
 
 var template = {}
-	template.title = 'Aramaic character app'
+	template.title = 'Imperial Aramaic'
 	template.sample = "𐡁 𐡛𐡚𐡘 𐡋𐡀𐡐 𐡄𐡅 𐡉𐡅𐡌 𐡛𐡚𐡚𐡚 𐡋𐡐𐡇𐡍𐡎 𐡔𐡍𐡕 𐡜𐡚𐡙 𐡀𐡓𐡕𐡇𐡔𐡎𐡔 𐡌𐡋𐡊𐡀 𐡀𐡌𐡓 𐡐𐡉𐡉𐡏 𐡁𐡓 𐡐𐡇𐡉 𐡀𐡓𐡃𐡉𐡊𐡋 𐡋𐡎𐡅𐡍 𐡁𐡉𐡓𐡕𐡀 𐡋𐡌𐡁𐡈𐡇𐡉𐡄 𐡁𐡓𐡕 𐡌𐡇𐡎𐡉𐡄 𐡓𐡁 𐡉𐡃𐡍𐡉𐡀 𐡀𐡓𐡌𐡉𐡀 𐡆𐡉 𐡎𐡅𐡍 𐡋𐡃𐡂𐡋 𐡅𐡓𐡉𐡆𐡕 𐡏𐡋 𐡃𐡉𐡍𐡀 𐡆𐡉 𐡏𐡁𐡃𐡍 𐡍𐡐𐡃𐡕 𐡀𐡋 𐡊𐡎𐡐"
 	template.blocklocation= 'armi'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script

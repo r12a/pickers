@@ -21,7 +21,7 @@ else  defaults = factoryDefaults
 var webFonts = [ "Scheherazade WF", "Noto Naskh Arabic WF" ]
 
 var template = {}
-	template.title = 'Arabic character app'
+	template.title = 'Modern Standard Arabic'
 	template.sample = "2. يحق لكل فرد أن يغادر أية بلاد بما في ذلك بلده كما يحق له العودة إليه."
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script

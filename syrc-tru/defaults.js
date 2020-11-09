@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Syriac Eastern WF", "Noto Sans Syriac Estrangela WF"
 
 
 var template = {}
-	template.title = 'Turoyo character picker'
+	template.title = 'Turoyo'
 	template.sample = "ܐܘ ܢܳܫܐ ܟܷܬܠܶܗ ܚܰܡܫܐ ܪܷܓ݂ܫܶܐ: ܚܙܳܝܐ ܒܰܥ ܥܰܝܢܶܐ، ܫܡܳܥܐ ܒܰܢ ܐܰܕ݂ܢܶܐ، ܢܩܳܚܐ ܒܘ ܢܚܝܪܐ، ܓܝܳܫܐ ܒܰܢ ܐܝܕ݂ܶܐ ܘܛܥܳܡܐ ܒܘ ܠܝܫܳܢܐ."
 	template.blocklocation= '/scripts/syriac/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
