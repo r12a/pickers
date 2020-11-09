@@ -21,28 +21,14 @@
 
 
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
-
-#formatchars {
-    text-align: center;
-    margin-bottom: .25em;
-    line-height: 1;
-    }
-.spaceline {
-    margin-bottom: 0;
-	line-height: 2;
-    }
 
 
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
+	margin-inline-start: .5em;
+	margin-inline-end: 1px;
 	font-size: 70%;
-	color: tan;
+	color:tan;
 	}
 .c { 
 	min-width: .75em;
@@ -144,9 +130,6 @@ span.hint {
     margin-bottom: 0;
     line-height: .8;
 	}
-.touch {
-    margin: 0;
-    }
 #spaceEtc {
     text-align: center;
     vertical-align: middle;
@@ -165,25 +148,16 @@ span.hint {
 	margin-bottom: .2em;
     }
 
-#alphabet summary {
-    font-size: 14px;
-    }
 #obsolete {
     text-align: center;
-    }
-#cursive {
-    width: 6em;
-    display: inline-block;
-	color: tan;
     }
 
 #alef, #hamza {
     display: flex;
 	flex-direction: column;
     align-self: center;
-    width: 1em;
     justify-content: center;
-    margin: 0 .5em;
+    margin: 0 1em;
 	line-height: 2	;
 	}
 #hamza { margin-right: 0; }
