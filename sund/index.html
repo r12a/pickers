@@ -68,15 +68,14 @@
   
   
   
-  <div class="spaceline">
-    <span class="touch" style="padding: 5px 50px;" onClick="add(' ');">SPACE</span> 
-    <span class="touch" style="padding: 5px 30px;" onClick="add('᮪');">PAMAAEH</span> 
-    <span class="touch" style="padding: 5px 10px;" onClick="add('\u200B');">ZWSP</span> 
-    <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
-    <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-    <span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-    <span class="touch" title="Delete All" style="padding: 5px 20px;" onClick="del();">DEL</span> 
-    <span class="touch delAll" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span>
+<div class="spaceline">
+<span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
+<span class="touch" style="padding: 5px 10px;" onClick="add('\u200B');">ZWSP</span> 
+<span class="touch" style="padding: 5px 50px;" onClick="add(' ');">SPACE</span> 
+<span class="touch" style="padding: 5px 30px;" onClick="add('᮪');">PAMAAEH</span> 
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
 </div>
 
 <div id="kbdGrid"> 
