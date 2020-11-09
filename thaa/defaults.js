@@ -1,7 +1,7 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Thaana WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
+	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'dv' // language to use for examples

@@ -88,10 +88,9 @@
 <span class="touch" style="margin: 0; padding: 5px 20px;" dir="auto" onClick="toggleArabic(this);if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">+ARABIC</span>
 <span class="touch" dir="auto" onClick="ccb=document.getElementById('controlchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">Format</span> 
 <span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');" style="transform: rotateY(180deg);">⇥</span> 
-<span class="touch" title="Tab" dir="auto" onClick="add('\n');" style="transform: rotateY(180deg);">⏎</span> 
-<span class="touch" title="Delete All" dir="auto" onClick="del();">DEL</span> 
-<span class="touch delAll"  dir="auto" onClick="deleteAll();">❌</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
 </div>
 
 <div id="controlchars" style="display: none;">
