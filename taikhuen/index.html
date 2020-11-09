@@ -2,10 +2,23 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>redirect</title>
+<title>Character app redirect</title>
+<script>
+newlocation = 'lana-kkh'
+</script>
 </head>
 
 <body class="app">
-<p>Ths is now available at <a href="../lana-kkh/">https://r12a.github.io/pickers/lana-kkh/</a></p>
+<p>This app has been moved to <a id="redirect" href="xxxx">xxxx</a>.</p>
+
+<script>
+var hash = ''
+if (window.location.hash) hash = window.location.hash
+var parameters = ''
+if (window.location.search) hash = window.location.search
+
+document.getElementById('redirect').textContent = 'https://r12a.github.io/pickers/'+newlocation+'/'
+document.getElementById('redirect').href ='../'+newlocation+'/' + parameters + hash
+</script>
 </body>
 </html>
