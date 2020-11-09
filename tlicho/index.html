@@ -2,148 +2,23 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Tłı̨chǫ (Dogrib) character app 25</title>
-
-<link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared25/style.css" />
-<link rel="stylesheet" href="localstyle.css" />
-
-<script src="defaults.js">  </script>
-<script src="/shared/fontdb/db.js"> </script>
-<script src="../../shared/scriptdb/latn-dgr.js">  </script>
-
-<script src="../../shared/code/boilerplate.js"></script>
-<script src="../../shared/code/character_conversion.js"></script>
-<script src="../../shared/code/show_codepoints.js"></script>
-<script src="../../shared/fontlists/manage.js"></script>
-<script src="../../shared/code/scriptGroups.js"></script>
-<script src="../../shared/code/all-names.js"></script>
-
-<script src="../shared25/setup.js">  </script>
-<script src="../shared25/code.js">  </script>
-<script src="../shared25/latinregister.js">  </script>
-<script src="localcode.js">  </script>
-<script src="../shared25/pagetemplate.js">  </script>
-<script src="/scripts/linkdata/linkdb.js"></script>
-<script src="localtranscription.js">  </script>
-
-<style id="dynamicUIFont"></style>
-<style id="dynamicUIFontSize"></style>
+<title>Character app redirect</title>
+<script>
+newlocation = 'latn-dgr'
+</script>
 </head>
 
 <body class="app">
-<div id="topBP"></div>
-<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+<p>This app has been moved to <a id="redirect" href="xxxx">xxxx</a>.</p>
 
-
-
-
-
-
-
-
-
-<div id="phonemelist" style="position:relative;">
-<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
-</div>
-
-
-
-
-
-<div id="chardata"><span id="charname">Type-assist (T) is on.</span></div>
-
-
-
-<div id="tables" dir="ltr">
-  
-
-<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
-
-
-  <div id="alphabet" class="default">
-
-<div class="spaceline">
-<span class="unshifted" dir="auto" onClick="toggleShift(this)">SHIFT</span>
-<span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
-<span class="touch" title="Space" style="padding: 5px 50px;" onClick="add(' ');">SPACE</span> 
-<span class="touch" title="Tab" dir="auto" onClick="add('\u0009');">⇥</span> 
-<span class="touch" title="Line break" dir="auto" onClick="add('\n');">⏎</span> 
-<span class="touch" title="Delete 1 character at end" style="padding: 5px 20px;" dir="auto" onClick="del();">DEL</span>
-<span class="touch delAll" title="Delete All" style="margin-right: 20px; margin-left:20px;" dir="auto" onClick="deleteAll();">❌</span>
-</div>
-
-
-
- 
-
-
-
- <div id="grid">
-        <div class="uppercase hidden">
-           <span class="g"><span class="hint">I</span><span class="c">I</span></span>
-           <span class="g"><span class="hint">L</span><span class="c">Ł</span></span>
-           <span class="g"><span class="hint">'</span><span class="c">ʼ</span></span>
-        </div>
-        <div class="lowercase">
-           <span class="g"><span class="hint">i</span><span class="c">ı</span></span>
-           <span class="g"><span class="hint">l</span><span class="c">ł</span></span>
-           <span class="g"><span class="hint">'</span><span class="c">ʼ</span></span>
-        </div>
-        <div id="tones">
-          <span class="g"><span class="hint">[</span><span class="c">̀</span></span>
-          <span class="g"><span class="hint">]</span><span class="c">̨</span></span>
-          <span class="g"><span class="hint">{</span><span class="c">̨̀</span></span>
-        </div>
-      <div id="punctuation">
-        <div>
-          <span class="g"><span class="hint">&lt;</span><span class="c">‹</span></span>
-          <span class="g"><span class="hint">&gt;</span><span class="c">›</span></span>
-          <span class="g"><span class="hint">&lt;</span><span class="c">«</span></span>
-          <span class="g"><span class="hint">&gt;</span><span class="c">»</span></span>
-        </div>
-      </div>
-    </div>
-
-
-<div class="ktp0Wrapper" style="position: relative">
-<div id="hintType" style="position:absolute; left: 0;top:0;">
-</div>
-
-
-<div id="punctuation2">
-
-<span class="g"><span class="hint">&lt;</span><span class="c">‘</span></span>
-<span class="g"><span class="hint">&lt;</span><span class="c">’</span></span>
-<span class="g"><span class="hint">&lt;</span><span class="c">“</span></span>
-<span class="g"><span class="hint">&lt;</span><span class="c">”</span></span>
-</div>
-</div>
-
-
-</div>
-
-
- <div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
-</div>
-</div>
-
-<div id="extrashapes"></div>
-
-
-<div id="temp"></div>
-
-
-</div><!-- end of tables -->
-
-  
-
-
-<div id="bottomBP"></div>
 <script>
-document.getElementById('bottomBP').innerHTML = getBottom()
-setUpValues()
+var hash = ''
+if (window.location.hash) hash = window.location.hash
+var parameters = ''
+if (window.location.search) hash = window.location.search
+
+document.getElementById('redirect').textContent = 'https://r12a.github.io/pickers/'+newlocation+'/'
+document.getElementById('redirect').href ='../'+newlocation+'/' + parameters + hash
 </script>
 </body>
 </html>
