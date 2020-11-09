@@ -6,25 +6,17 @@
     font-style: normal;
 	}
 
-#alphabet { display: block; }
-#phonelist { display: none; }
-#fontgrid { display: none; }
-
 
 [lang=tbw] { font-family: 'Noto Sans Tagbanwa WF', serif; }
 
 
 
-#alphabet { 
-	display: block; 
-	color: #666;
-	}
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 50%;
-	color:tan
+	margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
 	}
 .c { 
 	min-width: .75em;
@@ -124,9 +116,6 @@ span.hint {
 	margin-bottom: 1em;
     }
 
-#alphabet summary {
-    font-size: 14px;
-    }
 
 
 
