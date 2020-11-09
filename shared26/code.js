@@ -1524,12 +1524,11 @@ function initialise() {
 	if (! localStorage.pickersStore && document.getElementById('welcome')) document.getElementById('welcome').innerHTML = getWelcome(dir)
 	
 	
-	console.log(defaults)	
 	var lastNode = null
 	
 	// set up the grid hint controls
-	if (template.hints = false & typeof defaults.hints === 'undefined') defaults.hints = factoryDefaults.hints
-	if (template.hints = false & defaults.hints) setGridHints(defaults.hints)
+	if (template.hints === true && typeof defaults.hints === 'undefined') defaults.hints = factoryDefaults.hints
+	if (template.hints === true && defaults.hints) setGridHints(defaults.hints)
 	//else if (! defaults.hints == '') setGridHints('key')
 
 
