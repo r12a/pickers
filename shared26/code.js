@@ -1219,7 +1219,7 @@ function unshiftAll (kbdList) {
 
 
 
-function event_mouseoverChar ()  { console.log('in event')
+function event_mouseoverChar ()  {
 	// display character information
 	var out = '<span id="charname">'+this.title
 	var content = this.textContent.replace(defaults.ccbase,'')
@@ -1397,9 +1397,8 @@ function setGridHintsOLD (type) {
 
 
 
-function setGridHints (type) { console.log(type)
+function setGridHints (type) {
 	// switch the hints alongside characters between key indicators and transliterations
-	
 	document.getElementById('keyHintType').style.color = 'white'
 	document.getElementById('translitHintType').style.color = 'white'
 	document.getElementById('ipaHintType').style.color = 'white'
@@ -1444,6 +1443,7 @@ function setGridHints (type) { console.log(type)
 		globals.keyHints = 'translit'
 		for (let n=0; n<nodes.length; n++ ) { 
 			charNode = nodes[n].querySelector('.c, .v')
+			console.log(charNode.textContent, charNode.parentNode.querySelector('.hint').textContent)
 			hintNode = nodes[n].querySelector('.hint')
 			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'')
 			hintNode.textContent = ''
@@ -1528,14 +1528,8 @@ function initialise() {
 	var lastNode = null
 	
 	// set up the grid hint controls
-	//if (document.getElementById('hintType')) document.getElementById('hintType').innerHTML = `
-	//	<span id="keyHintType" onClick="setGridHints('key')" title="Show keypress.">K</span>
-	//	<span id="translitHintType" onClick="setGridHints('translit')" title="Show transliteration.">T</span>
-	//	<span id="ipaHintType" onClick="setGridHints('ipa')" title="Show IPA.">P</span>
-	//	<span id="noneHintType" onClick="setGridHints('none')" title="Show no hints.">0</span>
-	//	`
-	if (typeof defaults.hints === 'undefined') defaults.hints = factoryDefaults.hints
-	if (defaults.hints) setGridHints(defaults.hints)
+	if (template.hints = false & typeof defaults.hints === 'undefined') defaults.hints = factoryDefaults.hints
+	if (template.hints = false & defaults.hints) setGridHints(defaults.hints)
 	//else if (! defaults.hints == '') setGridHints('key')
 
 
