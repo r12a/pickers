@@ -38,14 +38,17 @@
 
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 50%;
-	color: tan;
+    margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
 	}
 .c { 
 	min-width: .75em;
 	text-align: center;
+	}
+span.x {
+	color: chocolate;
 	}
 
 
@@ -196,7 +199,6 @@ span.hint {
 #cursive {
     width: 4em;
     display: inline-block;
-	color: tan;
     }
 
 #alef {

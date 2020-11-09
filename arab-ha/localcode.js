@@ -71,6 +71,26 @@ function setLocalButtons () {
 	}
 
 
+
+function toggleAlternatives (node) {
+    var chars = document.querySelectorAll('.x')
+
+	if (node.classList.contains('shifted')) {
+        for (let i=0;i<chars.length;i++) {
+            chars[i].style.display = 'none'
+            }
+		}
+    else {
+        for (let i=0;i<chars.length;i++) {
+            chars[i].style.display = 'inline-block'
+            }
+		} 
+	}
+
+
+
+
+
 function event_mouseoverCharX ()  {
 	// overrides the function in shared20/code.js to add shaping forms for all syriac styles
 	
