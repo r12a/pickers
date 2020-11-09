@@ -19,13 +19,16 @@ span.hint {
     margin-left: 2px;
 	font-size: 50%;
 	color: tan;
+	color:brown;
 	}
 .c { 
 	min-width: .75em;
 	text-align: center;
 	}
 
-    
+.last {
+	border-bottom: 1px solid orange;
+	}
     
 /* KEYBOARD */
 .key span { 

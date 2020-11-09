@@ -60,6 +60,20 @@ function toggleShift (node, LC, UC) {
 	}
 
 
+function toggleShift (node, LC, UC) {
+    var chars = document.querySelectorAll('.c')
+
+    if (! node.classList.contains('shifted')) {
+        document.getElementById(LC).style.display = 'none'
+        document.getElementById(UC).style.display = 'flex'
+		} 
+	else {
+        document.getElementById(LC).style.display = 'flex'
+        document.getElementById(UC).style.display = 'none'
+		}
+	}
+
+
 
 var justLatinMap = `
 a ã ạ ạ̃
