@@ -18,9 +18,10 @@
 
 
 span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 50%;
+	margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
 	}
 .c { 
 	width: 1em;
