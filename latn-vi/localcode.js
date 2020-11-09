@@ -41,30 +41,33 @@ function event_toggleKbdShift () {
 
 
 
-function toggleShift (node, LC, UC) {
-	if (node.className =='unshifted') {
-		document.getElementById(LC).style.display = 'none'
-		document.getElementById(UC).style.display = 'table'
-		node.className = 'shifted'
-		} 
-	else {
-		document.getElementById(LC).style.display = 'table'
-		document.getElementById(UC).style.display = 'none'
-		node.className = 'unshifted'
-		}
-	}
-
 function toggleShift (node) {
-	if (! node.classList.contains('shifted')) {
-		lcs = document.querySelectorAll('.lowercase')
-		for (let i=0;i<lcs.length;i++) lcs[i].classList.add('hidden')
-		ucs = document.querySelectorAll('.uppercase')
-		for (let i=0;i<ucs.length;i++) ucs[i].classList.remove('hidden')
+    var chars = document.querySelectorAll('.c')
+
+	if (node.classList.contains('shifted')) {
+        for (let i=0;i<chars.length;i++) {
+            if (chars[i].dataset.lc) chars[i].textContent = chars[i].dataset.lc
+            else chars[i].textContent = chars[i].textContent.toLowerCase()
+            }
 		} 
 	else {
-		lcs = document.querySelectorAll('.lowercase')
-		for (let i=0;i<lcs.length;i++) lcs[i].classList.remove('hidden')
-		ucs = document.querySelectorAll('.uppercase')
-		for (let i=0;i<ucs.length;i++) ucs[i].classList.add('hidden')
+        for (let i=0;i<chars.length;i++) {
+            if (chars[i].dataset.uc) chars[i].textContent = chars[i].dataset.uc
+            else chars[i].textContent = chars[i].textContent.toUpperCase()
+            }
+		}
+	// reinitialise ids to codepoint values of character sequence (with no leading zeros)
+	node = document.querySelectorAll( '.c' ); 
+	for (var n = 0; n < node.length; n++ ) { 
+		content = node[n].textContent
+		id=''
+		for (i=0;i<content.length;i++) {
+			id += convertChar2CP(content[i])
+			}
+		node[n].id = id
+        node[n].dataset.c = 'c'+id
+        dec = parseInt(id, 16)
+        while (id.length<4) id = '0'+id
+        node[n].title = 'U+'+id+': '+charData[content]
 		}
 	}
