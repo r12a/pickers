@@ -180,64 +180,97 @@ out += `</header>
 
 <div id="topControls" style="position:relative;">
 <span id="copydelete">
-  <img title="Copy to clipboard." onclick="copyToClipboard()" src="../shared26/images/copy.png" alt="Copy" style="vertical-align: bottom;">
-  <img title="Select all the text." onclick="selectAll()" src="../shared26/images/select.png" alt="Select" style="vertical-align: bottom;">
-  <img title="Toggle invisible code points." onclick="toggleInvisibles()" src="../shared26/images/toggle.png" alt="Toggle" style="vertical-align: bottom;">
-  <img title="Generate a URL including text." onclick="makeSharingLink()"  src="../shared26/images/share.png" alt="Share">
-  <img title="Add sample text." onclick="add('` + template.sample +`')" src="../shared26/images/sample.png" alt="Sample">`
-  if (typeof fontDB !== 'undefined') out += `<img title="Change the font." onclick="if (document.getElementById('fontPicker').innerHTML=='') { document.getElementById('fontPicker').innerHTML = createFontPicker(); document.getElementById('fontManagementDetails').style.display='block'} else { document.getElementById('fontPicker').innerHTML=''; document.getElementById('fontManagementDetails').style.display='none'}" src="../shared26/images/fonts.png" alt="Fonts">`
-  out += `<img title="Delete all the text." onclick="deleteAll()" src="../shared26/images/clear.png" alt="Clear" style="margin-left: 1em;">
+  <img title="Copy to clipboard." onclick="copyToClipboard()" src="../shared26/images/copy.png" alt="Copy" style="vertical-align: bottom;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
+  <img title="Select all the text." onclick="selectAll()" src="../shared26/images/select.png" alt="Select" style="vertical-align: bottom;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
+  <img title="Toggle invisible code points." onclick="toggleInvisibles()" src="../shared26/images/toggle.png" alt="Toggle" style="vertical-align: bottom;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
+  <img title="Generate a URL including text." onclick="makeSharingLink()"  src="../shared26/images/share.png" alt="Share" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
+  <img title="Add some sample text." onclick="add('` + template.sample +`')" src="../shared26/images/sample.png" alt="Sample" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
+  if (typeof fontDB !== 'undefined') out += `<img title="Open the font preview panel." onclick="if (document.getElementById('fontPicker').innerHTML=='') { document.getElementById('fontPicker').innerHTML = createFontPicker(); document.getElementById('fontManagementDetails').style.display='block'} else { document.getElementById('fontPicker').innerHTML=''; document.getElementById('fontManagementDetails').style.display='none'}" src="../shared26/images/fonts.png" alt="Fonts" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
+  out += `<img title="Delete all the text." onclick="deleteAll()" src="../shared26/images/clear.png" alt="Clear" style="margin-left: 1em;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
 <a class="interactiveHelpButton" href="help/#icons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
   </span>
   
   
 <span id="tools">
 <a class="interactiveHelpButton" style="margin-right:.5em;" href="help/#top_controls" target="_help" title="Help for top level controls."><img alt="help" src="../images/help.png"/></a>
-    <button onclick="showCodepoints()">Show<br/>codepoints</button>
 
-    <button  id="showDB" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false)" 
-    title="Show information in the database for the selection.">Analyse<br/>text</button>
+<button onclick="showCodepoints()" title="Show a list of code points for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show<br/>codepoints</button>
+
+<button  id="showDB" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false)" 
+title="Show information in the database for each character."  onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Analyse<br/>text</button>
     
  ` 
+
+/*
+for (let i=0;i<window.controls.length;i++){
+	out += '<button onclick="'+window.controls[i].code+'" '
+	if (typeof window.controls[i].warning === 'undefined') warningMsg = ''
+    if (window.controls[i].warning) {
+        var warningMsg = window.controls[i].warning+'<br/><small>See help file for more information</small>.'
+        var warningLocn = "document.getElementById(\'warning\')"
+        out += 'onmouseover="'+warningLocn+'.style.display=\'inline-block\'; '+warningLocn+'.innerHTML = \''+warningMsg+'\'"; showMenuText(this.title,\'tan\')" '
+        out += 'onmouseout="'+warningLocn+'.style.display=\'none\'; hideMenuText()" '
+        }
+    out += 'title="'+window.controls[i].alt+'">'+window.controls[i].title+'</button>\n\n'
+	}
+*/
 
 
 for (let i=0;i<window.controls.length;i++){
 	out += '<button onclick="'+window.controls[i].code+'" '
-    if (window.controls[i].warning) {
+	if (typeof window.controls[i].warning === 'undefined') warningMsg = ''
+    else {
         var warningMsg = window.controls[i].warning+'<br/><small>See help file for more information</small>.'
         var warningLocn = "document.getElementById(\'warning\')"
-        out += 'onmouseover="'+warningLocn+'.style.display=\'inline-block\'; '+warningLocn+'.innerHTML = \''+warningMsg+'\'" '
-        out += 'onmouseout="'+warningLocn+'.style.display=\'none\'" '
         }
+    out += 'onmouseover="showMenuText(this.title,\'tan\');'
+    if (warningMsg) out += warningLocn+'.style.display=\'inline-block\'; '+warningLocn+'.innerHTML = \''+warningMsg+'\';'
+    out += '" '
+    out += 'onmouseout="hideMenuText();'
+    if (warningMsg) out += warningLocn+'.style.display=\'none\';'
+    out += '" '
     out += 'title="'+window.controls[i].alt+'">'+window.controls[i].title+'</button>\n\n'
 	}
 
 out += ` 
-    <button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" 
-    title="Create an example.">Make<br>example</button>
+<button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" title="Create source code for an example." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Make<br>example</button>
     
-    <button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" 
-    title="Create an character link.">Character<br/>markup</button>
+<button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character<br/>markup</button>
     
-    <img src="../shared26/images/menu.png" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="console.log(document.getElementById(\'pulldown\').style.display); if (document.getElementById(\'pulldown\').style.display===\'none\'){document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\' }; document.getElementById(\'output\').focus();"/>
-    </span>
+<img src="../shared26/images/menu.png" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="console.log(document.getElementById(\'pulldown\').style.display); if (document.getElementById(\'pulldown\').style.display===\'none\'){document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\' }; document.getElementById(\'output\').focus();"/>
+</span>
     
-    <div id="pulldown" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
-    <button onclick="openEscapeWindow(); return false;">Convert to<br/>escapes</button><br/>
+<div id="pulldown" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
 
-    <button  id="showDBAll" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, true)" 
-    title="Show all information in the database for each character in the selection.">Show all<br/>db entries</button>
+<button onclick="openEscapeWindow(); return false;" title="Convert to escapes (in a separate window)." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Convert to<br/>escapes</button><br/>
+
+<button  id="showDBAll" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, true)" title="Show all information in the database for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show all<br/>db entries</button>
     `
 if (window.pulldown) {
-for (let i=0;i<window.pulldown.length;i++){
+/*for (let i=0;i<window.pulldown.length;i++){
 	out += '<button onclick="'+window.pulldown[i].code+'" '
 	
     if (window.pulldown[i].warning) {
         var warningMsg = window.pulldown[i].warning+'<br/><small>See help file for more information</small>.'
         var warningLocn = "document.getElementById(\'warning\')"
-        out += 'onmouseover="'+warningLocn+'.style.display=\'inline-block\'; '+warningLocn+'.innerHTML = \''+warningMsg+'\'" '
-        out += 'onmouseout="'+warningLocn+'.style.display=\'none\'" '
+        out += 'onmouseover="'+warningLocn+'.style.display=\'inline-block\'; '+warningLocn+'.innerHTML = \''+warningMsg+'\'; showMenuText(this.title,\'tan\')" '
+        out += 'onmouseout="'+warningLocn+'.style.display=\'none\'; hideMenuText()" '
         }
+    out += 'title="'+window.pulldown[i].alt+'">'+window.pulldown[i].title+'</button><br/>\n\n'
+	}*/
+for (let i=0;i<window.pulldown.length;i++){
+	out += '<button onclick="'+window.pulldown[i].code+'" '
+	if (typeof window.pulldown[i].warning === 'undefined') warningMsg = ''
+    else {
+        var warningMsg = window.pulldown[i].warning+'<br/><small>See help file for more information</small>.'
+        var warningLocn = "document.getElementById(\'warning\')"
+        }
+    out += 'onmouseover="showMenuText(this.title,\'tan\');'
+    if (warningMsg) out += warningLocn+'.style.display=\'inline-block\'; '+warningLocn+'.innerHTML = \''+warningMsg+'\';'
+    out += '" '
+    out += 'onmouseout="hideMenuText();'
+    if (warningMsg) out += warningLocn+'.style.display=\'none\';'
+    out += '" '
     out += 'title="'+window.pulldown[i].alt+'">'+window.pulldown[i].title+'</button><br/>\n\n'
 	}
 	}
@@ -304,17 +337,17 @@ out += `<textarea dir="auto" id="output" name="output" placeholder="›" lang="`
 
 if (template.direction == "rtl" || template.direction == "bidi") {
     out += `
-    <img title="Set base direction to LTR." onclick="document.getElementById('output').dir='ltr'; clearBidiOverride()" class="setDir" src="../shared26/images/arrows/ltr.png" alt=">">
-    <img title="Set base direction to Auto." onclick="document.getElementById('output').dir='auto'; clearBidiOverride()" class="setDir" src="../shared26/images/arrows/auto.png" alt="<>">
-    <img title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'; clearBidiOverride()" class="setDir" src="../shared26/images/arrows/rtl.png" alt="<">
-    <img title="Set base direction to LTR override." onclick="document.getElementById('output').dir='ltr'; setBidiOverride('ltr',false)" class="setDir" src="../shared26/images/arrows/lro.png" alt=">>">
-    <img title="Set base direction to RTL override." onclick="document.getElementById('output').dir='rtl'; setBidiOverride('rtl',false)" class="setDir" src="../shared26/images/arrows/rlo.png" alt="<<">
+    <img title="Set base direction to LTR." onclick="document.getElementById('output').dir='ltr'; clearBidiOverride()" class="setDir" src="../shared26/images/arrows/ltr.png" alt=">" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
+    <img title="Set base direction to Auto." onclick="document.getElementById('output').dir='auto'; clearBidiOverride()" class="setDir" src="../shared26/images/arrows/auto.png" alt="<>" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
+    <img title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'; clearBidiOverride()" class="setDir" src="../shared26/images/arrows/rtl.png" alt="<" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
+    <img title="Set base direction to LTR override." onclick="document.getElementById('output').dir='ltr'; setBidiOverride('ltr',false)" class="setDir" src="../shared26/images/arrows/lro.png" alt=">>" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
+    <img title="Set base direction to RTL override." onclick="document.getElementById('output').dir='rtl'; setBidiOverride('rtl',false)" class="setDir" src="../shared26/images/arrows/rlo.png" alt="<<" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
      &bull; 
     `
     }
 if (template.direction == "bidi") {
     out += `
-    <img title="Set base direction to RTL override, and reverse character glyphs." onclick="document.getElementById('output').dir='ltr'; setBidiOverride('rtl',true)" class="setDir" src="../shared26/images/arrows/mirror.png" alt="<<<">
+    <img title="Set base direction to RTL override, and reverse character glyphs." onclick="document.getElementById('output').dir='ltr'; setBidiOverride('rtl',true)" class="setDir" src="../shared26/images/arrows/mirror.png" alt="<<<" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
      &bull; 
     `
     }
@@ -326,7 +359,7 @@ if (template.direction == "bidi") {
 //    <span id="afoff" class="off" 
 //    onclick="switchAutofocus('off')">Off</span>
     
-out += `<span id="autofocus" onclick="toggleAutofocus()">Autofocus <span id="autofocusState">On</span></span>
+out += `<span id="autofocus" onclick="toggleAutofocus()" onmouseover="showMenuText('Stop the virtual keyboard opening every time you select a character (for mobile devices).','tan');" onmouseout="hideMenuText()">Autofocus <span id="autofocusState">On</span></span>
     </div>
 
 	<span id="cursive" dir="rtl"></span>
