@@ -34,21 +34,24 @@ var template = {}
 
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Tibetan text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Tibetan text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
 ]
 
 
 
 
 
+
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Tibetan text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
-{"title":"Trans-<br/>scribe", "alt":"Convert Tibetan text to a Latin transcription.", "code":"doTranscription('transcription')", "warning":"Reduces sanskrit, eg. dh̰ài → dʰī; ␣ → space."},
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
-{"title":"Transcribe<br/>to Wylie", "alt":"Convert Tibetan text to a Latin (Wylie) transcription.", "code":"doTranscription('toWylie')"},
+{"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('transcription')", "warning":"Converts sequences representing foreign sounds to a single symbol, and the tsek to a space. The result should be checked."},
 
-{"title":"Transcribe<br/>from Wylie", "alt":"Convert a Latin (Wylie) transcription to Tibetan text.", "code":"var converter = window.open('http://www.thlib.org/reference/transliteration/wyconverter.php', 'converter') ; converter.focus();"},
+{"title":"Tibetan<br/>to Wylie", "alt":"Convert Tibetan text to a Latin (Wylie) transcription.", "code":"doTranscription('toWylie')"},
+
+{"title":"Wylie to<br/>Tibetan", "alt":"Convert a Latin (Wylie) transcription to Tibetan text.", "code":"var converter = window.open('http://www.thlib.org/reference/transliteration/wyconverter.php', 'converter') ; converter.focus();"},
 ]
 
 
@@ -62,7 +65,17 @@ var inputAids = [
 
 {"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
 
-{"title":"Wylie to Tibetan", "dataVar":"showWylieTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"W", "type":"palette", "initialCode":"setUpTypeAssist(false, wylieCharacterMap, wylieCharacterMap)", "desc":"Produce Tibetan text from a Wylie transcription."},
-
 {"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type Tibetan from the keyboard via reverse transliteration."},
+
+{"title":"Wylie to Tibetan", "dataVar":"showWylieTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"W", "type":"palette", "initialCode":"setUpTypeAssist(false, wylieCharacterMap, wylieCharacterMap)", "desc":"Produce Tibetan text from a Wylie transcription."},
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'
+for (let i=0;i<inputAids.length;i++) {
+	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
+	}

@@ -43,9 +43,11 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Trans-<br/>scribe", "alt":"Convert Makasar text to a Latin transcription.", "code":"doTranscription('toLatin')"},
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Makasar text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Javanese text.", "code":"doTranscription('revTransliterate')"},
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+
+{"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('toLatin')", "warning":"Adds inherent vowels and applies angka, but doesn't provide the unwritten syllable final ng or glottal stop, nor the geminated consonants. The result should be checked."},
 ]
 
 
@@ -63,3 +65,13 @@ var inputAids = [
 
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'
+for (let i=0;i<inputAids.length;i++) {
+	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
+	}

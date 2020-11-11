@@ -40,9 +40,7 @@ var controls = [
 
 
 var pulldown = [
-//{"title":"Devanagari<br/>to ISO", "alt":"Convert devanagari text to a ISO 15919 transcription.", "code":"doTranscription('toISO15919')"},
-
-//{"title":"ISO to<br/>Devanagari", "alt":"Convert an ISO 15919 transcription to devanagari text.", "code":"doTranscription('toDeva')"}
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
@@ -60,4 +58,14 @@ var inputAids = [
 
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'
+for (let i=0;i<inputAids.length;i++) {
+	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
+	}
 

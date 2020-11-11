@@ -34,17 +34,22 @@ var template = {}
 
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Bamum text to a Latin transliteration.", "code":"console.log('calling');doTranscription('transliterate')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Bamum text to a one-to-one Latin transliteration.", 
+"warning":"A transcription is supplied automatically, but needs to be checked.", 
 
-{"title":"Make<br/>vocab", "alt":"Expand text to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
-input=getHighlightedText(_output).split('|'); console.log(input);
+"code":"console.log('calling');doTranscription('transliterate')"},
+
+{"title":"Make<br/>vocab", "alt":"Expand a line to create an entry for a vocab file.", "code":`_output=document.getElementById('output'); 
+input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
 if (! hasHighlight(_output)) _output.value=''; 
 
+term = input[0];
+meaning = input[1];
 ipa = toLatin(input[0]);
-notes = input[2]? input[2] : ''; 
+alt = input[3]? input[3] : '';
+notes = input[4]? input[4] : '';
 
-console.log(input[0], input[1], notes, ipa);
-add(getVocab(input[0], input[1], notes, ipa));
+add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
 ]
@@ -53,9 +58,11 @@ _output.focus();`},
 
 var pulldown = [
 
-{"title":"Bamum<br/>to Latin", "alt":"Convert Bamum text to Latin.", "code":"doTranscription('toLatin')"},
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Bamum text.", "code":"doTranscription('reverse')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
-{"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Bamum.", "code":"doTranscription('reverse')"},
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+
+{"title":"Bamum<br/>to Latin", "alt":"Convert Bamum script text to the Latin orthography.", "code":"doTranscription('toLatin')", "warning":"The result of this conversion needs to be checked for accuracy."},
 ]
 
 
@@ -68,4 +75,14 @@ var inputAids = [
 
 {"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'
+for (let i=0;i<inputAids.length;i++) {
+	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
+	}
 

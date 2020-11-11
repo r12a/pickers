@@ -2,14 +2,15 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Hanifi Rohingya character app 25</title>
+<title>Help for Hanifi Rohingya character app 26</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" />
-<link rel="stylesheet" href="../../shared25/style.css" />
+<link rel="stylesheet" href="../../shared26/style.css" />
 <link rel="stylesheet" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js"></script>
 <script src="/shared/code/toc_2016.js"></script>
-<script src="../../shared25/helptemplate.js"></script>
-<script>var direction = 'ltr'</script>
+<script src="../../shared26/helptemplate.js"></script>
+<script>var direction = 'rtl'</script>
+<script src="../defaults.js"></script>
 </head>
 
 
@@ -37,9 +38,7 @@
 </aside>     
 
 <p id="status">Updated 
-<!-- #BeginDate format:Sw1 -->18 August, 2020<!-- #EndDate -->
-  <span id="versionTop">• recent changes <a target="_blank" href="https://github.com/r12a/pickers/commits/gh-pages" title="Show commits for the whole pickers repository.">pickers</a>/<a target="_blank" href="https://github.com/r12a/pickers/commits/gh-pages/rohg" title="Show commits for pickers/rohg.">rohg</a> • leave a <a target="_blank" href="https://github.com/r12a/pickers/issues/new?title=[rohg]%20%20BRIEF_TITLE_GOES_HERE&amp;body=%5Bsource%5D%20https%3A%2F%2Fr12a.github.io%2Fpickers%2Frohg%0A%0A" title="Leave a comment.">comment</a></span>
-</p>
+<!-- #BeginDate format:Sw1 -->11 November, 2020<!-- #EndDate --></p>
 
 <p>This Unicode character app allows you to produce or analyse runs of  Rohingya text using the Hanifi Rohingya script. Character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[rohg%20app]%20%20ADD%20TITLE%20HERE&amp;body=%5Bsource%5D%20https%3A%2F%2Fr12a.github.io%2Fpickers%2Frohg%0A%0A">raise an issue</a>. For release notes see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/rohg">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
@@ -47,18 +46,22 @@
 
 
 
+
+
+
+
 <section id="about">
 <h2 href="#about">Inputting characters</h2>
-<p>The app includes all characters in the Unicode <a href="/uniview/?block=hanifi_rohingya">Hanifi Rohingya</a> block that are used for writing text in the  Hanifi Rohingya script, and a few additional characters from the Arabic block. </p>
+<p>The app includes characters in the Unicode <a href="/uniview/?block=hanifi_rohingya">Hanifi Rohingya</a> block that are used for writing text in the  Rohingya language. </p>
 
-<p>To analyse text, copy paste it into the large text area and select the desired control.</p>
-<p>To produce Hanifi Rohingya text in the text area, do one of the following:</p>
+<p>To <strong><em>analyse</em> text</strong>, copy &amp; paste it into the large text area and select the desired control(s).</p>
+<p>To <strong><em>produce</em> Hanifi Rohingya text</strong> in the text area, do one of the following:</p>
 <ul>
-<li><strong>Type on the keyboard, using type-assist</strong>. A quick way to input text from ASCII characters on a keyboard, based on a Latin transcription.</li>
+<li><strong>Type on your keyboard, using type-assist</strong>. A quick way to input text from ASCII characters on your keyboard, based on a Latin transcription.</li>
 <li><strong>Open the shape-based input, and click</strong> on similar shapes to highlight characters you may be looking for. Good when you don't know the orthography well.</li>
 <li><strong>Click on the characters in the selection area</strong>. The blocks are arranged to assist with input, and groups of characters are arranged within a block phonetically.</li>
 </ul>
-<p>These are all described in more detail below.</p>
+<p>The above are  described in more detail elsewhere on this page.</p>
 <div id="aboutBP">
 </div>
 <script>document.getElementById('aboutBP').innerHTML = addAboutBP()
@@ -67,112 +70,113 @@
 
 
 
-<section id="basics">
-</section>
-<script>
-var direction = 'rtl'
-document.getElementById('basics').innerHTML = addBasicUse(direction)
-</script>
+
+
+<section id="basics"></section><script>document.getElementById('basics').innerHTML = addBasicUse(direction)</script>
+
+
+
+
+
+
 
 
 
 <section id="top_controls">
-<h2 href="#top_controls">Controls above the text area</h2>
-<div id="controlsAbove1"></div>
-<script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
+<div id="controlsAbove1"></div><script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
-       <p><b class="leadin">Transliterate.</b> Converts the contents of the text area to a Latin transliteration that provides a one-to-one correspondence between  Hanifi Rohingya and Latin symbols.</p>
-<p>The transliteration scheme  was developed for this character app, and, where possible, uses  symbols that represent sounds typically associated with their Hanifi Rohingya equivalents, rather than the sometimes fairly arbitrary selection of diacritics found in other systems. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription,  and it doesn't show inherent vowels, but the process is reversible (unlike most  transcriptions).</p>
+
+
+<!-- TRANSLITERATE AND MAKE VOCAB TEXT -->
+
+<p><b class="leadin">Transliterate.</b> Converts the contents of the text area to a Latin transliteration that provides a one-to-one correspondence between   Rohingya and Latin symbols.</p>
+<p>The transliteration scheme  was developed for this character app, and, where possible, uses  symbols that represent sounds typically associated with their Rohingya equivalents, rather than the sometimes fairly arbitrary selection of diacritics found in other systems. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription,  and it doesn't show  vowels for unvowelled text, but the process is reversible (unlike most  transcriptions).</p>
 <p>Transliterations produced this way are particularly useful for understanding the composition of text in  scripts, where the individual parts are not well separated in the text.</p>
 
 
-<p><b class="leadin">Make vocab.</b> This helps speed up the creation of entries for the <a href="../../../app-vocab/">vocabulary app</a>. You can create a vocab item with up to 3 parts, delimited by |, in the following order: [1] native text, [2] meaning, [3] notes (optional). Much of the time, only the first 2 items are needed.</p>
-<p>The text will be replaced with the following: </p>
-<p><code>native_text|meaning|IPA_transcription[|notes]</code></p>
-<p><em>You may need to minimally tweak the auto-generated text.</em></p>
+
+<!--p><b class="leadin">Make vocab.</b> This helps speed up the creation of entries for the <a href="../../../app-vocab/">vocabulary app</a>. You can create a vocab item with up to 5 parts, delimited by / or |, in the following order: </p>
+<ol>
+<li>native text</li>
+<li>meaning</li>
+<li>transcription (IPA or other, optional)</li>
+<li>alternative transcription (if needed)</li>
+<li>notes (optional)</li>
+</ol>
+<p>Much of the time, only the first 2 items are needed. In this app if an IPA transcription is not supplied it will be added automatically, though it should be checked carefully.</p>
+<p>Here is an example of before and after.</p>
 <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
-<p><code><span lang="ike">ᐅᒥᐊᖅ</span>|boat</code></p>
+<p><code><span lang="km">មេឃ</span>/sky</code></p>
 <p>will produce:</p>
-<p><code><span lang="ike">ᐅᒥᐊᖅ</span>|boat|umiaq</code></p>
+<p><code><span lang="km">មេឃ</span>|sky|meːk</code></p>
 </blockquote>
 <p>The app will automatically generate a Latin transcription in parentheses if the Latin orthography differs from the IPA.</p>
 <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
-<p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat</code></p>
+<p><code><span lang="fuf">𞤼𞤮𞤩𞤮</span>|rain</code></p>
 <p>will produce:</p>
-<p><code><span lang="ike">ᐅᒥᐊᖓ</span>|his boat|umiaŋa (umianga)</code></p></blockquote>
-<p>Here's an example where notes are provided.</p>
-<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
-<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|South Qikiqtaaluk</code></p>
-<p>will produce:</p>
-<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|nakuʁmiːk (nakurmiik)|South Qikiqtaaluk</code></p>
+<p><code><span lang="fuf">𞤼𞤮𞤩𞤮</span>|rain|tɔɓɔ (toɓo)</code></p>
 </blockquote>
 <p>The app will also, simultaneously, produce markup for examples in the secondary text area (see below).</p>
-<p>If you have more than one line of text in the text area, you must highlight the row you want to convert.</p>
+<p>If you have more than one line of text in the text area, you must highlight the line you want to convert. Only convert one line at a time.</p-->
+
+
+<!-- TRANSLITERATE AND MAKE VOCAB TEXT -->
 
 
 
-
-<!--p><b class="leadin">Transcribe.</b> Builds on the transliteration scheme just mentioned by:</p>
-<ul>
-<li> adding symbols for inherent vowels (approximate), </li>
-<li> converting sequences representing foreign sounds to a single symbol, </li>
-</ul>
-<p>This transcription may not be reversible. Nor does it fully describe the phonetics of the text. The aim is to produce a Latin-based version of the original text that is a little more readable than the transliteration.</p-->
-
-<!--p><b class="leadin">Hanifi Rohingya to ISO.</b> Converts the contents of the text area to an ISO 15919 Latin transcription. </p>
-<p>This transcription adds 'a' to indicate possible locations for the inherent vowel, however, this is not entirely predictable in Hanifi Rohingya. No inherent vowel is added at the end of a word. If there should be one there, you need to manually adjust the transcription.</p>
-<p><b class="leadin">ISO to Hanifi Rohingya.</b> This transcribes in the opposite direction to the control just described.</p-->
-
-
-<div id="controlsAbove2"></div>
-<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+<div id="controlsAbove2"></div><script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
 
 
-<!--p><b class="leadin">Transcribe to IPA.</b> Converts Osage text to an IPA transcription. This is only a rough, phonemic transcription, and the result should be checked before use.</p-->
+<!-- OTHER PULLDOWN OPTIONS -->
 
+<p><b class="leadin">Vocab to markup.</b> Converts a vocab entry to markup that can be used for an example. Must be applied to one line at a time.</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="km">មេឃ</span>|sky|meːk</code></p>
+<p>will produce:</p>
+<p><code>&lt;span class=&quot;charExample&quot; translate=&quot;no&quot;&gt;&lt;bdi class=&quot;ex&quot; lang=&quot;km&quot; dir=&quot;ltr&quot;&gt;<span lang="km">មេឃ</span>&lt;/bdi&gt; &lt;bdi class=&quot;trans&quot;&gt;m̱eḵʰ&lt;/bdi&gt; &lt;bdi class=&quot;ipa&quot;&gt;meːk&lt;/bdi&gt; &lt;bdi class=&quot;meaning&quot;&gt;sky&lt;/bdi&gt;&lt;/span&gt;</code></p>
+</blockquote>
 
-
-<!--p><b class="leadin">Transcribe to Latin.</b> Converts Adlam text to the Latin orthography for Pular. This will generally work, but may not capture some edge cases. The result should therefore always be checked.</p-->
-
-
-
-<p><b class="leadin">Vocab to Example.</b> If you have a line of vocab data, like those shown above, this will add example markup around the term.</p>
-
+<!-- OTHER PULLDOWN OPTIONS -->
 </section>
 
-<section id="secondaryText">
-</section>
-<script>document.getElementById('secondaryText').innerHTML = addSecondaryText()</script>
+
+
+
+
+
+
+<section id="fontManagement"></section><script>document.getElementById('fontManagement').innerHTML = addSecondaryText()</script>
+
+
+
+
 
 
 
 <section id="input_aids">
-<h2 href="#input_aids">Input aids</h2>
-
-<div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, shape, hinting, typeAssist, latin, translit')</script>
+<div id="inputAids"></div><script>document.getElementById('inputAids').innerHTML = addInputAids(inputAidsHelp)</script>
 
 
-    <!--p><b class="leadin">ISO to Hanifi Rohingya.</b> Allows you to generate Hanifi Rohingya text from an ISO 15919 transcription.    It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>.</p-->
-    
+<!-- OTHER INPUT AIDS -->
 
-<div id="inputAids2"></div>
-<script>document.getElementById('inputAids2').innerHTML = addInputAids('keyboard, close')</script>
-
+<!--p><b class="leadin">IPA to Hausa (ajami).</b> Allows you to generate  Hausa (ajami) text from characters used for the phonetic transcription of Hausa (ajami).  (This may still need some work.) It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the transcription type-in mode.</p-->
 </section>
 
 
 
-<section id="yellow_controls">
-</section>
-<script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
 
 
 
-<section id="more_controls">
-</section>
-<script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+
+<section id="yellow_controls"></section><script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
+<section id="more_controls"></section><script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+
+
+
+
 
 <div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
 </body>
