@@ -138,6 +138,7 @@ return `
 
 
 function addInputAids (aidsList, notes) {
+if (aidsList.length === 0) return ''
 var out = '<h2 href="#input_aids">Input aids</h2>'
 
 if (aidsList.match('showIntro')) {
