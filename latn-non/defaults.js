@@ -40,6 +40,8 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+
 {"title":"Old Norse<br/>to IPA", "alt":"Convert Old Norse text to a rough IPA transcription.", "code":"doTranscription('toIPA')"},
 
 {"title":"Old Norse<br/>to LB runes", "alt":"Convert Old Norse text to a rough runic long-branch transcription.", "code":"doTranscription('toRunes')"},
@@ -62,3 +64,10 @@ var inputAids = [
 
 {"title":"Show case endings", "dataVar":"showCaseEndings", "dataLocn":"caseEndings", "dataShortTitle":"S", "type":"other", "desc":"Show information about case endings."},
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'

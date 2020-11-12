@@ -40,8 +40,11 @@ var controls = [
 
 
 var pulldown = [
-{"title":"North Việt<br>to IPA", "alt":"Convert North Vietnamese text to an *approximation* of an IPA transcription.", "code":"doTranscription('toIPAN')"},
-{"title":"South Việt<br>to IPA", "alt":"Convert South Vietnamese text to an *approximation* of an IPA transcription.", "code":"doTranscription('toIPAS')"},
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+
+{"title":"North Việt<br>to IPA", "alt":"Convert North Vietnamese text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPAN')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand."},
+
+{"title":"South Việt<br>to IPA", "alt":"Convert South Vietnamese text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPAS')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand."},
 ]
 
 
@@ -53,4 +56,11 @@ var inputAids = [
 
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'
 

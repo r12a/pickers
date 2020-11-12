@@ -41,6 +41,8 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+
 {"title":"Old English<br/>to IPA", "alt":"Convert Old English text to a rough IPA transcription.", "code":"doTranscription('toIPA')"},
 
 {"title":"Old English<br/>to runes", "alt":"Convert Old English text to a rough runic transcription.", "code":"doTranscription('oldEnglishToRune')"},
@@ -56,3 +58,10 @@ var inputAids = [
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
 
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'

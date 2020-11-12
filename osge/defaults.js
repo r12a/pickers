@@ -36,32 +36,36 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Osage text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
-{"title":"Make<br/>vocab", "alt":"Expand text to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
-input=getHighlightedText(_output).split('|'); 
+
+{"title":"Make<br/>vocab", "alt":"Expand a line to create an entry for a vocab file.", 
+
+"code":`_output=document.getElementById('output'); 
+input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
 if (! hasHighlight(_output)) _output.value=''; 
 
-ipa = transcribetoIPA(input[0]);
-notes = input[2]? input[2] : ''; 
+term = input[0];
+meaning = input[1];
+ipa = input[2]? input[2] : transcribetoIPA(input[0]);
+alt = input[3]? input[3] : '';
+notes = input[4]? input[4] : '';
 
-add(getVocab(input[0], input[1], notes, ipa));
+add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
-
-//{"title":"Reverse<br/>translit.", "alt":"Convert Latin transliterated text to Armenian.", "code":"doTranscription('reverse')"},
-//{"title":"XXXXXXXXXX<br/>to XXXXXXXXXX", "alt":"XXXXXXXXXX.", "code":"doTranscription('XXXXXXXXXX')"},
 ]
 
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Osage text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+
 {"title":"Upper-<br>case", "alt":"Convert selection to uppercase.", "code":"add(getHighlightedText(document.getElementById('output')).toUpperCase());document.getElementById('output').focus();"},
+
 {"title":"Lower-<br>case", "alt":"Convert selection to lowercase.", "code":"add(getHighlightedText(document.getElementById('output')).toLowerCase());document.getElementById('output').focus();"},
 
-{"title":"Osage to IPA", "alt":"Convert Osage text to an approximate phonetic transcription.", "code":"doTranscription('toIPA')"},
-
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Osage text.", "code":"doTranscription('revTransliterate')"},
-
-{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
+{"title":"Osage<br/>to IPA", "alt":"Convert Osage text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPA')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
 ]
 
 
@@ -75,9 +79,17 @@ var inputAids = [
 
 {"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
 
-//{"title":"ISO to Armenian", "dataVar":"showISOCharMap", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"setUpTypeAssist(false, isoCharacterMap, isoCharacterMap)", "desc":"Create Armenian text from characters in the ISO 9985 transcription."},
-
 {"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type Armenian from the keyboard via reverse transliteration."},
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'
+for (let i=0;i<inputAids.length;i++) {
+	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
+	}
 
 

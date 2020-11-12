@@ -47,3 +47,10 @@ var inputAids = [
 
 {"title":"More Latin characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"M", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);", "desc":"Show characters needed for IPA or other transcriptions, as well as normal letters."},
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'

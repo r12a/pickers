@@ -2,13 +2,15 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for IPA character app 25</title>
-<link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../../shared25/style.css" />
-<link rel="stylesheet" type="text/css" href="../localstyle.css" />
-<script src="/shared/code/boilerplate.js" type="text/javascript"></script>
-<script type="text/javascript" src="/shared/code/toc_2016.js"></script>
-<script type="text/javascript" src="../../shared25/helptemplate.js"></script>
+<title>Help for IPA character app 26</title>
+<link rel="stylesheet" href="../../../shared/style/docs.css" />
+<link rel="stylesheet" href="../../shared26/style.css" />
+<link rel="stylesheet" href="../localstyle.css" />
+<script src="/shared/code/boilerplate.js"></script>
+<script src="/shared/code/toc_2016.js"></script>
+<script src="../../shared26/helptemplate.js"></script>
+<script>var direction = 'ltr'</script>
+<script src="../defaults.js"></script>
 </head>
 
 <body class="app notes">
@@ -18,7 +20,7 @@
 </header>
 
 
-<h1>IPA character app notes/help</h1>
+<h1>IPA <span style="font-size:60%;">(standard)</span> character app notes/help</h1>
 
 
 <aside class="sidebar">
@@ -32,68 +34,112 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->18-May-2020<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">pickers</a>, <a href="https://r12a.github.io/blog/?tag=ipa" title="Show all blog posts tagged with 'ipa'">ipa</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->12-Nov-2020<!-- #EndDate --></p>
 
-<p>This Unicode character app allows you to produce or analyse runs of IPA text. character apps are especially useful for people who don't know a writing system well, as characters are displayed in ways that aid identification.</p>
+<p>This Unicode character app allows you to produce or analyse runs of IPA text.  </p>
+<p>Many characters are arranged similarly to the standard IPA chart. The trill and tap or flap rows of the standard chart have been merged to save space. The same applies to the approximant and lateral approximant rows. Non-pulmonic symbols were also added to the last two rows of the table for the same reason. For alternative arrangements, see the <a href="../../ipa2/">IPA <span style="font-size:80%">(by place)</span></a> and <a href="../../ipa3/">IPA </a><a href="../../ipa3/"><span style="font-size:80%">(by type)</span></a> character apps.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[ipa%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/ipa">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
 
 
 
-
 <section id="about">
-<h2 href="#about">About the app</h2>
-<p>Includes all the symbols in <a href="https://www.internationalphoneticassociation.org/content/full-ipa-chart">the standard IPA chart.</a> The table draws together characters from several Unicode blocks.  There are also a number of additional diacritics and symbols requested by phoneticians using the chart.</p>
-<p> Many characters are arranged similarly to the standard IPA chart. The trill and tap or flap rows of the standard chart have been merged to save space. The same applies to the approximant and lateral approximant rows. Non-pulmonic symbols were also added to the last two rows of the table for the same reason.</p>
-<div id="aboutBP">
-</div>
-<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
-</script>
-
+<h2 href="#about">Inputting characters</h2>
+<p>The app includes all the symbols in <a href="https://www.internationalphoneticassociation.org/content/full-ipa-chart">the standard IPA chart.</a> The table draws together characters from several Unicode blocks.  There are also a number of additional diacritics and symbols requested by phoneticians using the chart.</p>
+<p>To <strong><em>analyse</em> text</strong>, copy &amp; paste it into the large text area and select the desired control(s).</p>
+<p>To <strong><em>produce</em>  text</strong> in the text area, do one of the following:</p>
+<ul>
+<li><strong>Type on your keyboard, using type-assist</strong>. A quick way to input text from ASCII characters on your keyboard, based on a Latin transcription.</li>
+<li><strong>Click on the characters in the selection area</strong>. The blocks are arranged to assist with input, and groups of characters are arranged within a block phonetically.</li>
+</ul>
+<p>You can also click on <samp>KBD</samp> or <samp>PALETTE</samp> to access alternative ways of inputting characters. All these methods are described in the <a href="#input_aids">Input Aids</a> section below.</p>
 </section>
 
 
 
 
-<section id="basics">
-</section>
-<script>
-var direction = 'ltr'
-document.getElementById('basics').innerHTML = addBasicUse(direction)
-</script>
+
+<section id="basics"></section><script>document.getElementById('basics').innerHTML = addBasicUse(direction)</script>
+
+
+
+
+
+
 
 
 
 <section id="top_controls">
-<h2 href="#top_controls">Controls above the text area</h2>
-<div id="controlsAbove1"></div>
-<script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
+<div id="controlsAbove1"></div><script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
-      <!--p><b class="leadin">Transliterate.</b> <strong></strong>Converts the contents of the text area to a Latin transliteration that provides a single correspondence between each IPA symbol and a Latin symbol. It doesn't lead to a good phonetic transcription, but the process is reversible (unlike most phonetic transcriptions).</p-->
-      
 
-<div id="controlsAbove2"></div>
-<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
+<!-- TRANSLITERATE AND MAKE VOCAB TEXT -->
+
+
+
+
+<!--
+<p><b class="leadin">Make vocab.</b> This helps speed up the creation of entries for the <a href="../../../app-vocab/">vocabulary app</a>. You can create a vocab item with up to 5 parts, delimited by / or |, in the following order: </p>
+<ol>
+<li>native text</li>
+<li>meaning</li>
+<li>transcription (IPA or other, optional)</li>
+<li>alternative transcription (if needed)</li>
+<li>notes (optional)</li>
+</ol>
+<p>Much of the time, only the first 2 items are needed. In this app if an IPA transcription is not supplied it will be added automatically, though it should be checked carefully.</p>
+<p>Here is an example of before and after.</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="km">មេឃ</span>/sky</code></p>
+<p>will produce:</p>
+<p><code><span lang="km">មេឃ</span>|sky|meːk</code></p>
+</blockquote>
+<p>The app will automatically generate a Latin transcription in parentheses if the Latin orthography differs from the IPA.</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="fuf">𞤼𞤮𞤩𞤮</span>|rain</code></p>
+<p>will produce:</p>
+<p><code><span lang="fuf">𞤼𞤮𞤩𞤮</span>|rain|tɔɓɔ (toɓo)</code></p>
+</blockquote>
+<p>The app will also, simultaneously, produce markup for examples in the secondary text area (see below).</p>
+<p>If you have more than one line of text in the text area, you must highlight the line you want to convert. Only convert one line at a time.</p>
+-->
+
+
+<!-- TRANSLITERATE AND MAKE VOCAB TEXT -->
+
+
+
+<div id="controlsAbove2"></div><script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+
+
+
+<!-- OTHER PULLDOWN OPTIONS -->
+<!-- OTHER PULLDOWN OPTIONS -->
 </section>
 
-<section id="secondaryText">
-</section>
-<script>document.getElementById('secondaryText').innerHTML = addSecondaryText()</script>
+
+
+
+
+
+
+<section id="fontManagement"></section><script>document.getElementById('fontManagement').innerHTML = addSecondaryText()</script>
+
+
+
+
 
 
 
 <section id="input_aids">
-<h2 href="#input_aids">Input aids</h2>
-
-<div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro')</script>
-
+<div id="inputAids"></div>
+<h2>Input aids</h2>
 
 <p><b class="leadin">Type-assist.</b> Allows you to generate text  from QWERTY input. This can also be switched on/off by hitting the ` (backquote) key, but it is <strong>on by default</strong> when you open the character app</p>
-    <p>You should find that very little practise is needed to learn to enter  text quickly. This method can be much faster than picking items from the selection area below.</p>
+<p>You should find that very little practise is needed to learn to enter  text quickly. This method can be much faster than picking items from the selection area below.</p>
 <p>When there are alternatives, the app will allow you to select characters from a list. For each alternative you'll see the character to be inserted in red. To its left you'll see the transliteration for that character (in grey, above), and the number key to press (in orange, below) to insert the character into the text box. You can also just tap on the character (often more useful when using hand-held devices). </p>
-    <p style="text-align:center;"><img src="type_characters.png" alt=""></p>
-    <p>This sets up the <strong>Transcription type-in mode</strong>, which means two things:</p>
+<p style="text-align:center;"><img src="../../shared26/images/help/latin_type_assist.png" alt=""></p>
+<p>This sets up the <strong>Transcription type-in mode</strong>, which means two things:</p>
 <ol>
 <li>If a key on the keyboard is only associated with a single  character, that character will be inserted immediately.</li>
 <li>If there are alternatives but you continue typing, the app will replace the character you typed with the character assigned to the number 0.</li>
@@ -102,29 +148,31 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 
 <p><b class="leadin">Palette for type-assist.</b> Presents the character that are accessible from the keyboard with the keys (in orange) used to access them. You can click on these to input them into the text area.</p>
 
-
-<div id="inputAids2"></div>
-<script>document.getElementById('inputAids2').innerHTML = addInputAids('keyboard')</script>
-
-<p>The keyboard contains a subset of the characters in the default view, which are arranged as per the <a href="http://www.phon.ucl.ac.uk/resource/phonetics/">Unicode Phonetic Keyboard (UCL)</a> v1.01 designed by Mark Huckvale.</p>
-
+<p><b class="leadin">Keyboard.</b> The keyboard contains a subset of the characters in the default view, which are arranged as per the <a href="http://www.phon.ucl.ac.uk/resource/phonetics/">Unicode Phonetic Keyboard (UCL)</a> v1.01 designed by Mark Huckvale.</p>
 </section>
 
 
 
-<section id="yellow_controls">
-</section>
-<script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
 
 
 
-<section id="more_controls">
-</section>
-<script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+
+<section id="yellow_controls"></section><script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
+<section id="more_controls"></section><script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+
+
+
+
+
+
+
+
 
 <div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
 </body>
-<script type="text/javascript">
+<script>
 createtoc(3);
 </script>
 </html>

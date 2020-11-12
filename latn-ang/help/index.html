@@ -2,14 +2,15 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Old English character app 25</title>
-<link rel="stylesheet" href="../../../shared/style/docs.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../../shared25/style.css" />
-<link rel="stylesheet" type="text/css" href="../localstyle.css" />
-<script src="/shared/code/boilerplate.js" type="text/javascript"></script>
-<script type="text/javascript" src="/shared/code/toc_2016.js"></script>
-<script type="text/javascript" src="../../shared25/helptemplate.js"></script>
+<title>Help for Old English character app 26</title>
+<link rel="stylesheet" href="../../../shared/style/docs.css" />
+<link rel="stylesheet" href="../../shared26/style.css" />
+<link rel="stylesheet" href="../localstyle.css" />
+<script src="/shared/code/boilerplate.js"></script>
+<script src="/shared/code/toc_2016.js"></script>
+<script src="../../shared26/helptemplate.js"></script>
 <script>var direction = 'ltr'</script>
+<script src="../defaults.js"></script>
 </head>
 
 <body class="app notes">
@@ -33,97 +34,161 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->27-Nov-2019<!-- #EndDate --> • tags <a href="https://r12a.github.io/blog/?tag=apps" title="Show all blog posts tagged with 'apps'">apps</a>, <a href="https://r12a.github.io/blog/?tag=pickers" title="Show all blog posts tagged with 'pickers'">character apps</a>, <a href="https://r12a.github.io/blog/?tag=oldenglish" title="Show all blog posts tagged with 'oldenglish'">oldenglish</a></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->12-Nov-2020<!-- #EndDate --></p>
 
 <p>This Unicode character app allows you to produce or analyse runs of Old English text. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>Note that there is also a <a href="/pickers/runic/" target="_blank">Runic character app</a>, which deals with conventional Latin transliterations, and includes characters from a wider range of fuþarks.&nbsp;</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[oldenglish%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/oldenglish">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
 
 
-<section id="basics">
-</section>
-<script>
-document.getElementById('basics').innerHTML = addBasicUse(direction)
-</script>
-
-
 <section id="about">
-<h2 href="#about">About the selection area</h2>
-      <p>Includes characters  that are used for writing Old English.</p>
-<div id="aboutBP">
-</div>
-<script>document.getElementById('aboutBP').innerHTML = addAboutBP()
-</script>
+<h2 href="#about">Inputting characters</h2>
+<p>The app includes characters  used for writing text in Old English. </p>
 
+<p>To <strong><em>analyse</em> text</strong>, copy &amp; paste it into the large text area and select the desired control(s).</p>
+<p>To <strong><em>produce</em> Old English text</strong> in the text area, do one of the following:</p>
+<ul>
+<li><strong>Type on your keyboard, using type-assist</strong>. A quick way to input text from ASCII characters on your keyboard, based on a Latin transcription.</li>
+<!--<li><strong>Open the shape-based input, and click</strong> on similar shapes to highlight characters you may be looking for. Good when you don't know the orthography well.</li>-->
+<li><strong>Click on the characters in the selection area</strong>. The blocks are arranged to assist with input, and groups of characters are arranged within a block phonetically.</li>
+</ul>
+<p>The above are  described in more detail elsewhere on this page.</p>
+<p>Click on <samp>SHIFT</samp> to toggle between lower- and uppercase in the selection area.</p>
 </section>
+
+
+
+
+
+<section id="basics"></section><script>document.getElementById('basics').innerHTML = addBasicUse(direction)</script>
+
+
+
+
+
+
 
 
 
 <section id="top_controls">
-<h2 href="#top_controls">Controls above the text area</h2>
-<div id="controlsAbove1"></div>
-<script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
+<div id="controlsAbove1"></div><script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
-<div id="controlsAbove2"></div>
-<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+
+
+<!-- TRANSLITERATE AND MAKE VOCAB TEXT -->
+
+
+
+
+<!--
+<p><b class="leadin">Make vocab.</b> This helps speed up the creation of entries for the <a href="../../../app-vocab/">vocabulary app</a>. You can create a vocab item with up to 5 parts, delimited by / or |, in the following order: </p>
+<ol>
+<li>native text</li>
+<li>meaning</li>
+<li>transcription (IPA or other, optional)</li>
+<li>alternative transcription (if needed)</li>
+<li>notes (optional)</li>
+</ol>
+<p>Much of the time, only the first 2 items are needed. In this app if an IPA transcription is not supplied it will be added automatically, though it should be checked carefully.</p>
+<p>Here is an example of before and after.</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="km">មេឃ</span>/sky</code></p>
+<p>will produce:</p>
+<p><code><span lang="km">មេឃ</span>|sky|meːk</code></p>
+</blockquote>
+<p>The app will automatically generate a Latin transcription in parentheses if the Latin orthography differs from the IPA.</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="fuf">𞤼𞤮𞤩𞤮</span>|rain</code></p>
+<p>will produce:</p>
+<p><code><span lang="fuf">𞤼𞤮𞤩𞤮</span>|rain|tɔɓɔ (toɓo)</code></p>
+</blockquote>
+<p>The app will also, simultaneously, produce markup for examples in the secondary text area (see below).</p>
+<p>If you have more than one line of text in the text area, you must highlight the line you want to convert. Only convert one line at a time.</p>
+-->
+
+
+<!-- TRANSLITERATE AND MAKE VOCAB TEXT -->
+
+
+
+<div id="controlsAbove2"></div><script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+
+
+
+<!-- OTHER PULLDOWN OPTIONS -->
+
+<p><b class="leadin">Vocab to markup.</b> Converts a vocab entry to markup that can be used for an example. Must be applied to one line at a time.</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="km">មេឃ</span>|sky|meːk</code></p>
+<p>will produce:</p>
+<p><code>&lt;span class=&quot;charExample&quot; translate=&quot;no&quot;&gt;&lt;bdi class=&quot;ex&quot; lang=&quot;km&quot; dir=&quot;ltr&quot;&gt;<span lang="km">មេឃ</span>&lt;/bdi&gt; &lt;bdi class=&quot;trans&quot;&gt;m̱eḵʰ&lt;/bdi&gt; &lt;bdi class=&quot;ipa&quot;&gt;meːk&lt;/bdi&gt; &lt;bdi class=&quot;meaning&quot;&gt;sky&lt;/bdi&gt;&lt;/span&gt;</code></p>
+</blockquote>
 
 <p><b class="leadin">Old English to IPA.</b> This produces a rough phonetic transcription of the highlighted text in the box. It's useful for generating reminders about how to pronounce the text. The transcription appears just below the input box, where you can copy it, move it into the input box at the caret, or delete it.</p>
+
 <p><b class="leadin">Old English to Runes.</b> This produces a runic transcription from Old English or from the standardised Latin transcription of Anglo-Saxon/Frisian runes. It is a conservative transcription, and doesn't attempt to use the less common runes, such as those that distinguish between g pronounced at the front vs. the back of the mouth.</p>
 
+<!-- OTHER PULLDOWN OPTIONS -->
 </section>
 
-<section id="secondaryText">
-</section>
-<script>document.getElementById('secondaryText').innerHTML = addSecondaryText()</script>
+
+
+
+
+
+
+<section id="fontManagement"></section><script>document.getElementById('fontManagement').innerHTML = addSecondaryText()</script>
+
+
+
+
 
 
 
 <section id="input_aids">
-<h2 href="#input_aids">Input aids</h2>
-
-<div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro')</script>
+<div id="inputAids"></div><script>document.getElementById('inputAids').innerHTML = addInputAids(inputAidsHelp)</script>
 
 
-<p><b class="leadin">Type assist.</b> Allows you to generate text  from QWERTY input. This can also be switched on/off by hitting the ` (backquote) key, but <strong>it is on by default</strong> when you open the character app.</p>
-    <p>You should find that very little practise is needed to learn to enter  text quickly. This method is much faster than picking items from the selection area below.</p>
-    <p>When there are alternatives, the app will allow you to select characters from a list. For each alternative you'll see the character to be inserted in red. To its left you'll see the transliteration for that character (in grey, above), and the number key to press (in orange, below) to insert the character into the text box.  You can also just tap on the character (often more useful when using hand-held devices).
-    </p><p style="text-align:center;"><img src="../../shared25/images/help/type-assist.png" alt=""></p>
-	<p>This sets up the <strong>Transcription type-in mode</strong>, which means two things:</p>
-	<ol>
-    <li>If a key on the keyboard is only associated with a single native character, that character will be inserted immediately.</li>
-	<li>If there are alternatives but you continue typing, the app will replace the character you typed with the character assigned to the number 0.</li>
-	</ol>
+<!-- OTHER INPUT AIDS -->
+<p><b class="leadin">[T] Type assist.</b> Allows you to generate text  from QWERTY input. This can also be switched on/off by hitting the ` (backquote) key, but <strong>it is on by default</strong> when you open the character app.</p>
+<p>You should find that very little practise is needed to learn to enter  text quickly. This method is much faster than picking items from the selection area below.</p>
+<p>When there are alternatives, the app will allow you to select characters from a list. For each alternative you'll see the character to be inserted in red. To its left you'll see pronunciation information for that character (in grey, above), and the number key to press (in orange, below) to insert the character into the text box.  You can also just tap on the character (often more useful when using hand-held devices).</p>
+<p style="text-align:center;"><img src="../../shared26/images/help/latin_type_assist.png" alt=""></p>
+<p>This sets up the <strong>Transcription type-in mode</strong>, which means two things:</p>
+<ol>
+<li>If a key on the keyboard is only associated with a single native character, that character will be inserted immediately.</li>
+<li>If there are alternatives but you continue typing, the app will replace the character you typed with the character assigned to the number 0.</li>
+</ol>
 
+<p><b class="leadin">[M] More Latin characters.</b> Displays a panel of  Latin characters you are likely to need for  typing Old English or for various transcriptions. This can also be switched on/off by hitting the ~ (tilde) key.</p>
+<p style="text-align:center;"><img src="../../shared26/images/help/latin-panel.png" alt=""></p>
+<p>As you type the orange characters, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or tap directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already see the character you want, just continue typing.)</p>
+<p style="text-align:center;"><img src="../../shared26/images/help/character-selector.png" alt=""></p>
+<p>Because this sets up the <strong>Latin type-in mode</strong>, alternative characters are <strong>only</strong> inserted after you press on a number key.</p>
+<p>In general, alternative characters are associated with a key on the keyboard that resembles them when displayed - eg. ɣ will usually be brought up by pressing on the 'y' key (rather than, say 'g').</p>
 
-
-
-<p><b class="leadin">More Latin characters.</b> Displays a panel of  Latin characters you are likely to need for  typing Old English. This can also be switched on/off by hitting the ~ (tilde) key.</p>
-    <p style="text-align:center;"><img src="../../shared25/images/help/latin-panel.png" alt=""></p>
-    <p>As you type the orange characters, suggestions for input will appear at the bottom of the text area. To insert one of those items into the text area at the cursor position, type the appropriate number key, or tap directly on the item you want to insert. The character you typed will be replaced by the item you selected. (If you already see the character you want, just continue typing.)</p>
-    <p style="text-align:center;"><img src="../../shared25/images/help/character-selector.png" alt=""></p>
-    <p>Because this sets up the <strong>Latin type-in mode</strong>, alternative characters are <strong>only</strong> inserted after you click on a number key.</p>
-    <p>In general, alternative characters are associated with a key on the keyboard that resembles them when displayed - eg. ɣ will usually be brought up by clicking on the 'y' key (rather than, say 'g').</p>
-<div id="inputAids2"></div>
-<script>document.getElementById('inputAids2').innerHTML = addInputAids('keyboard,close')</script>
-
+<p><b class="leadin">[K] Keyboard.</b> Allows you to type characters by selecting them from a keyboard layout.</p>
 </section>
 
 
 
-<section id="yellow_controls">
-</section>
-<script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
 
 
 
-<section id="more_controls">
-</section>
-<script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+
+<section id="yellow_controls"></section><script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
+<section id="more_controls"></section><script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+
+
+
+
+
 
 <div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
 </body>
-<script type="text/javascript">
+<script>
 createtoc(3);
 </script>
 </html>
