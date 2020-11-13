@@ -36,6 +36,18 @@ var template = {}
 var inputAids = [
 ]
 
+
+var pulldown = [
+]
+
+
 var controls = [
 ]
 
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = ''

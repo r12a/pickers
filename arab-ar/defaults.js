@@ -36,42 +36,37 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Arabic text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
-//{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":"input=getHighlightedText(document.getElementById('output')).split('|'); if (typeof input[2]==='undefined') notes=input[0]; else notes=input[0]+' '+input[2]; add(getVocab(removeVowels(input[0]), input[1], notes, transcribetoIPA(input[0])));document.getElementById('output').focus();"},
 
+{"title":"Make<br/>vocab", "alt":"Expand a line to create an entry for a vocab file.", 
 
-{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
-input=getHighlightedText(_output).split('|'); 
+"code":`_output=document.getElementById('output'); 
+input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
 if (! hasHighlight(_output)) _output.value=''; 
 
-ipa = transcribetoIPA(input[0]);
-ipa += ' (' + input[0] + ')';
-notes = input[2]? input[2] : ''; 
+term = removeVowels(input[0]);
+meaning = input[1];
+ipa = input[2]? input[2] : transcribetoIPA(input[0]);
+alt = input[3]? input[3] : '(' + input[0] + ')';
+notes = input[4]? input[4] : '';
 
-add(getVocab(removeVowels(input[0]), input[1], notes, ipa));
+add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
-
-//{"title":"⇨", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
-
-//{"title":"⇨", "alt":"Convert a vocab sequence to example markup.", "code":"items=getHighlightedText(document.getElementById('output')).split('|');str=items[0]+'/'+transliterate(items[0])+'/'+items[2]+'/'+items[1];makeExample(defaults.language,template.direction,str)"},
 ]
-//onclick="makeExample(defaults.language,template.direction)" title="Create an example.">Make<br>example</button>
-
-//doTranscription('transliterate')" title="Convert Arabic text to a Latin transliteration.">T
 
 
 var pulldown = [
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Arabic text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+
 {"title":"Remove<br/>vowels", "alt":"Remove harakat, etc. from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 
-{"title":"Transcribe<br/>to IPA", "alt":"Convert Arabic text to a rough IPA transcription.", "warning": "Requires fully vowelled text!<br>Result may need to be tweaked.", "code":"doTranscription('toIPA')"},
+{"title":"Arabic<br/>to IPA", "alt":"Convert Arabic text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPA')", "warning":"Requires fully vowelled text!<br>This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
 
-{"title":"Transcribe<br/>to LOC", "alt":"Convert Arabic text to an Library of Congress Latin transcription.", "warning": "Full transcription requires fully vowelled text!", "code":"doTranscription('toLOC')"},
+{"title":"Arabic<br/>to LOC", "alt":"Convert Arabic text to an Library of Congress Latin transcription.", "code":"doTranscription('toLOC')", "warning": "Full transcription requires fully vowelled text! The results should be checked for accuracy."},
 
-{"title":"Transcribe<br/>to ISO", "alt":"Convert Arabic text to an ISO Latin transcription.", "code":"doTranscription('toISO')"},
-
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Arabic text.", "code":"doTranscription('revTransliterate')"},
-
-{"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
+{"title":"Arabic<br/>to ISO", "alt":"Convert Arabic text to an ISO Latin transcription.", "code":"doTranscription('toISO')", "warning": "Full transcription requires fully vowelled text! The results should be checked for accuracy."},
 ]
 
 
@@ -87,11 +82,11 @@ var inputAids = [
 
 {"title":"Latin type assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions, as well as normal letters."},
 
-{"title":"IPA to Arabic", "dataVar":"showIPATrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"setUpTypeAssist(false, ipaCharacterMap, ipaCharacterMap)", "desc":"Create Arabic text from characters in an IPA transcription."},
-
 {"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type Arabic from the keyboard via reverse transliteration."},
 
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
+{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."},
+
+{"title":"IPA to Arabic", "dataVar":"showIPATrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"setUpTypeAssist(false, ipaCharacterMap, ipaCharacterMap)", "desc":"Create Arabic text from characters in an IPA transcription."},
 ]
 
 

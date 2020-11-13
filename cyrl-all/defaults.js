@@ -47,3 +47,10 @@ var pulldown = [
 
 var inputAids = [
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = ''
