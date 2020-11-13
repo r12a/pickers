@@ -34,13 +34,15 @@ var template = {}
 
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Syriac text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Syriac text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
 ]
 
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Syriac text.", "code":"doTranscription('revTransliterate')"},
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to XXXX text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
@@ -56,11 +58,15 @@ var inputAids = [
 {"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type Syriac from the keyboard via reverse transliteration."},
 
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
-
-
-
-
-//{"title":"Show cursive forms", "dataVar":"showCursive", "dataLocn":"cursive", "dataShortTitle":"S", "type":"hint"},
-
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'
+for (let i=0;i<inputAids.length;i++) {
+	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
+	}
 

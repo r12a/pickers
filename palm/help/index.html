@@ -2,14 +2,15 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Palmyrene character app 25</title>
+<title>Help for Palmyrene character app 26</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" />
-<link rel="stylesheet" href="../../shared25/style.css" />
+<link rel="stylesheet" href="../../shared26/style.css" />
 <link rel="stylesheet" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js"></script>
 <script src="/shared/code/toc_2016.js"></script>
-<script src="../../shared25/helptemplate.js"></script>
-<script>var direction = 'ltr'</script>
+<script src="../../shared26/helptemplate.js"></script>
+<script>var direction = 'rtl'</script>
+<script src="../defaults.js"></script>
 </head>
 
 
@@ -37,7 +38,7 @@
 </aside>     
 
 <p id="status">Updated 
-<!-- #BeginDate format:Sw1 -->27 August, 2020<!-- #EndDate -->
+<!-- #BeginDate format:Sw1 -->13 November, 2020<!-- #EndDate -->
   <span id="versionTop">• recent changes <a target="_blank" href="https://github.com/r12a/pickers/commits/gh-pages" title="Show commits for the whole pickers repository.">pickers</a>/<a target="_blank" href="https://github.com/r12a/pickers/commits/gh-pages/palm" title="Show commits for pickers/palm.">palm</a> • leave a <a target="_blank" href="https://github.com/r12a/pickers/issues/new?title=[palm]%20%20BRIEF_TITLE_GOES_HERE&amp;body=%5Bsource%5D%20https%3A%2F%2Fr12a.github.io%2Fpickers%2Fpalm%0A%0A" title="Leave a comment.">comment</a></span>
 </p>
 
@@ -49,17 +50,17 @@
 
 <section id="about">
 <h2 href="#about">Inputting characters</h2>
-<p>The app includes characters in the Unicode <a href="/uniview/?block=palmyrene">Palmyrene</a> block that are used for writing text in the  Palmyrene script. </p>
+<p>The app includes characters in the Unicode <a href="/uniview/?block=palmyrene">Palmyrene</a> block that are used for writing text in the  Palmyrene language. </p>
 
-<p>To analyse text, copy paste it into the large text area and select the desired control.</p>
-<p>To produce Palmyrene text in the text area, do one of the following:</p>
+<p>To <strong><em>analyse</em> text</strong>, copy &amp; paste it into the large text area and select the desired control(s).</p>
+<p>To <strong><em>produce</em> Palmyrene text</strong> in the text area, do one of the following:</p>
 <ul>
-<li><strong>Type on the keyboard, using type-assist</strong>. A quick way to input text from ASCII characters on a keyboard, based on a Latin transcription.</li>
+<li><strong>Type on your keyboard, using type-assist</strong>. A quick way to input text from ASCII characters on your keyboard, based on a Latin transcription.</li>
 <li><strong>Open the shape-based input, and click</strong> on similar shapes to highlight characters you may be looking for. Good when you don't know the orthography well.</li>
 <li><strong>Click on the characters in the selection area</strong>. The blocks are arranged to assist with input, and groups of characters are arranged within a block phonetically.</li>
 </ul>
-<p>The above are  described in more detail below.</p>
-<p>Click on <samp>FORMAT CHARS</samp> to access and input formatting characters to control direction, etc.</p>
+<p>The above are  described in more detail elsewhere on this page.</p>
+<p>Click on <samp>FORMAT</samp> to access and input invisible formatting characters used to control direction, joining forms, etc.</p>
 <div id="aboutBP">
 </div>
 <script>document.getElementById('aboutBP').innerHTML = addAboutBP()
@@ -68,100 +69,102 @@
 
 
 
-<section id="basics">
-</section>
-<script>
-var direction = 'rtl'
-document.getElementById('basics').innerHTML = addBasicUse(direction)
-</script>
+
+
+<section id="basics"></section><script>document.getElementById('basics').innerHTML = addBasicUse(direction)</script>
+
+
+
+
+
+
 
 
 
 <section id="top_controls">
-<h2 href="#top_controls">Controls above the text area</h2>
-<div id="controlsAbove1"></div>
-<script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
+<div id="controlsAbove1"></div><script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
-       <p><b class="leadin">Transliterate.</b> Converts the contents of the text area to a Latin transliteration that provides a one-to-one correspondence between  Palmyrene and Latin symbols.</p>
-<p>The transliteration scheme  was developed for this character app, and, where possible, uses  symbols that represent sounds typically associated with their Palmyrene equivalents, rather than the sometimes fairly arbitrary selection of diacritics found in other systems. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription,  and it doesn't show inherent vowels, but the process is reversible (unlike most  transcriptions).</p>
+
+
+<!-- TRANSLITERATE AND MAKE VOCAB TEXT -->
+
+<p><b class="leadin">Transliterate.</b> Converts the contents of the text area to a Latin transliteration that provides a one-to-one correspondence between  Palmyrene and Latin symbols.</p>
+<p>The transliteration scheme  was developed for this character app, and, where possible, uses  symbols that represent sounds typically associated with their Palmyrene equivalents, rather than the sometimes fairly arbitrary selection of diacritics found in other systems. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription,  and it doesn't show  vowels for unvowelled text, but the process is reversible (unlike most  transcriptions).</p>
 <p>Transliterations produced this way are particularly useful for understanding the composition of text in  scripts, where the individual parts are not well separated in the text.</p>
 
 
-<p><b class="leadin">Make vocab.</b> If you want to create data for  the <a href="../../../app-vocab/">vocabulary app</a>, you need to make a list of 2-5 items, separated by | in the following order: </p>
-<p>[1] <em>native text</em>, [2] <em>meaning</em>, [3] <em>basic transcription</em> (optional), [4] <em>alternative transcription</em> (optional), [5] <em>notes</em> (optional)</p>
+
+<p><b class="leadin">Make vocab.</b> This helps speed up the creation of entries for the <a href="../../../app-vocab/">vocabulary app</a>. You can create a vocab item with up to 5 parts, delimited by / or |, in the following order: </p>
+<ol>
+<li>native text</li>
+<li>meaning</li>
+<li>transcription (IPA or other, optional)</li>
+<li>alternative transcription (if needed)</li>
+<li>notes (optional)</li>
+</ol>
 <p style="font-style: italic; font-size: 80%;">Hint: For RTL script character apps it often helps to set the direction of the text area to LTR. (To do this, click on the →︎ arrow below the bottom right of the text area.)</p>
-<p>The <em>basic transcription</em> should be in IPA, wherever possible. You can also add different transcription, such as an ISO or LOC transcription, to this field, surrounded with parentheses. This will be styled differently from the IPA.</p>
-<p>You can separate items using  / rather than |. Clicking on <samp>Make vocab</samp> will convert all / characters to |. (It will also produce some markup  in the secondary text area.)</p>
-<p>Here's an Inuktitut example where notes are provided, but there is no alternative transcription.</p>
+<p>The basic transcription should be in IPA, wherever possible. You can also add an alternative transcription, such as an ISO or LOC transcription. This will be styled differently from the IPA.</p>
+<p>The app will also, simultaneously, produce markup for examples in the secondary text area (see below).</p>
+<p>If you have more than one line of text in the text area, you must highlight the line you want to convert. Only convert one line at a time.</p>
+
+
+<!-- TRANSLITERATE AND MAKE VOCAB TEXT -->
+
+
+
+<div id="controlsAbove2"></div><script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+
+
+
+<!-- OTHER PULLDOWN OPTIONS -->
+
+<p><b class="leadin">Vocab to markup.</b> Converts a vocab entry to markup that can be used for an example. Must be applied to one line at a time.</p>
 <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
-<p><code><span lang="ike">ᓇᑯᕐᒦᒃ</span>|thank you|nakuʁmiːk (nakurmiik)||South Qikiqtaaluk</code></p>
-</blockquote>
-<p>If you have more than one line of text in the text area, you must highlight the row you want to convert.</p>
-
-
-
-
-<!--p><b class="leadin">Transcribe.</b> Builds on the transliteration scheme just mentioned by:</p>
-<ul>
-<li> adding symbols for inherent vowels (approximate), </li>
-<li> converting sequences representing foreign sounds to a single symbol, </li>
-</ul>
-<p>This transcription may not be reversible. Nor does it fully describe the phonetics of the text. The aim is to produce a Latin-based version of the original text that is a little more readable than the transliteration.</p-->
-
-<!--p><b class="leadin">Palmyrene to ISO.</b> Converts the contents of the text area to an ISO 15919 Latin transcription. </p>
-<p>This transcription adds 'a' to indicate possible locations for the inherent vowel, however, this is not entirely predictable in Palmyrene. No inherent vowel is added at the end of a word. If there should be one there, you need to manually adjust the transcription.</p>
-<p><b class="leadin">ISO to Palmyrene.</b> This transcribes in the opposite direction to the control just described.</p-->
-
-
-<div id="controlsAbove2"></div>
-<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script><!--p><b class="leadin">Transcribe to Latin.</b> Converts Adlam text to the Latin orthography for Pular. This will generally work, but may not capture some edge cases. The result should therefore always be checked.</p-->
-
-
-
-<p><b class="leadin">Vocab to Markup.</b> If you have a line of vocab data in the text area (see above), this will produce markup that includes all the items on the line except for the notes. That markup can then be dropped into an HTML page.</p>
-<p>For example, this vocab data line:</p>
-<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
-<p><bdi>פּינגּוין</bdi>|penguin|ˈpinɡwin|<bdi>פִּינְגְּוִין</bdi></p>
-</blockquote>
-<p>will produce this markup:</p>
-<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
-<p>&lt;span class=&quot;charExample&quot; translate=&quot;no&quot;&gt;&lt;bdi class=&quot;ex&quot; lang=&quot;he&quot; dir=&quot;rtl&quot;&gt;פּינגּוין&lt;/bdi&gt; &lt;bdi class=&quot;trans&quot;&gt;fˑyngˑv̇yn̽&lt;/bdi&gt; (&lt;bdi lang=&quot;he&quot;&gt;פִּינְגְּוִין&lt;/bdi&gt;) &lt;bdi class=&quot;ipa&quot;&gt;ˈpinɡwin&lt;/bdi&gt; &lt;bdi class=&quot;meaning&quot;&gt;penguin&lt;/bdi&gt;&lt;/span&gt;</p>
+<p><code><span lang="km">មេឃ</span>|sky|meːk</code></p>
+<p>will produce:</p>
+<p><code>&lt;span class=&quot;charExample&quot; translate=&quot;no&quot;&gt;&lt;bdi class=&quot;ex&quot; lang=&quot;km&quot; dir=&quot;ltr&quot;&gt;<span lang="km">មេឃ</span>&lt;/bdi&gt; &lt;bdi class=&quot;trans&quot;&gt;m̱eḵʰ&lt;/bdi&gt; &lt;bdi class=&quot;ipa&quot;&gt;meːk&lt;/bdi&gt; &lt;bdi class=&quot;meaning&quot;&gt;sky&lt;/bdi&gt;&lt;/span&gt;</code></p>
 </blockquote>
 
+<!-- OTHER PULLDOWN OPTIONS -->
 </section>
 
-<section id="secondaryText">
-</section>
-<script>document.getElementById('secondaryText').innerHTML = addSecondaryText()</script>
+
+
+
+
+
+
+<section id="fontManagement"></section><script>document.getElementById('fontManagement').innerHTML = addSecondaryText()</script>
+
+
+
+
 
 
 
 <section id="input_aids">
-<h2 href="#input_aids">Input aids</h2>
-
-<div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, shape, hinting, typeAssist, latin, translit')</script>
+<div id="inputAids"></div><script>document.getElementById('inputAids').innerHTML = addInputAids(inputAidsHelp)</script>
 
 
-    <!--p><b class="leadin">ISO to Palmyrene.</b> Allows you to generate Palmyrene text from an ISO 15919 transcription.    It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>.</p-->
-    
+<!-- OTHER INPUT AIDS -->
 
-<div id="inputAids2"></div>
-<script>document.getElementById('inputAids2').innerHTML = addInputAids('close')</script>
-
+<!--<p><b class="leadin">IPA to Hausa (ajami).</b> Allows you to generate  Hausa (ajami) text from characters used for the phonetic transcription of Hausa (ajami).  (This may still need some work.) It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the transcription type-in mode.</p>-->
 </section>
 
 
 
-<section id="yellow_controls">
-</section>
-<script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
 
 
 
-<section id="more_controls">
-</section>
-<script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+
+<section id="yellow_controls"></section><script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
+<section id="more_controls"></section><script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+
+
+
+
 
 <div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
 </body>

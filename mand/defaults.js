@@ -43,9 +43,11 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Trans-<br/>scribe", "alt":"Convert Mandaic text to a Latin transcription.", "code":"doTranscription('transcription')", "warning":"Builds on transliteration."},
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Mandaic text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
-//{"title":"to<br/>Latin", "alt":"Convert Mandaic text to a Latin transcription.", "code":"doTranscription('toLatinTranslit')"},
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+
+{"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('transcription')", "warning":"Simplifies extended consonants that use the affrication mark, uses the  vocalisation mark for more accurate vowel transcription, doubles transcription text where a gemination marker occurs, etc.  The result should be checked."},
 
 {"title":"Mandaic<br/>to WWS", "alt":"Convert Mandaic text to a Latin transcription.", "code":"doTranscription('toLatin')", "warning":"Explores vowel ambiguities. Transcription base on chapter in the book, The Worlds Writing Systems."},
 ]
@@ -61,10 +63,18 @@ var inputAids = [
 
 {"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
 
-//{"title":"ISO to Hindi", "dataVar":"showISOCharMap", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(isoCharacterMap);makeKbdEventList(isoCharacterMap);", "desc":"Create XXXX text from characters in the XXXX transcription."},
-
 {"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type Mandaic from the keyboard via reverse transliteration."},
 
 {"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'
+for (let i=0;i<inputAids.length;i++) {
+	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
+	}
 
