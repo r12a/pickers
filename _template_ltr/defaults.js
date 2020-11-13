@@ -37,7 +37,7 @@ var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert XXXX text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
 
 
-{"title":"Make<br/>vocab", "alt":"Expand a line to create an entry for a vocab file.", 
+{"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
 
 "code":`_output=document.getElementById('output'); 
 input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
