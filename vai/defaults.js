@@ -35,14 +35,14 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>scribe", "alt":"Convert Vai text to a Latin transcription.", "code":"doTranscription('transliterate')"},
-
-//{"title":"XXXXXXXXXX<br/>to XXXXXXXXXX", "alt":"XXXXXXXXXX.", "code":"doTranscription('XXXXXXXXXX')", "warning":"Still in development. Separate syllables before use."},
 ]
 
 
 
 var pulldown = [
-{"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Vai.", "code":"doTranscription('reverse')"},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Vai text.", "code":"doTranscription('reverse')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 ]
 
 
@@ -53,4 +53,14 @@ var inputAids = [
 
 {"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'
+for (let i=0;i<inputAids.length;i++) {
+	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
+	}
 

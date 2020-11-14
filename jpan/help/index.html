@@ -2,14 +2,15 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Japanese character app 25</title>
+<title>Help for Japanese character app 26</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" />
-<link rel="stylesheet" href="../../shared25/style.css" />
+<link rel="stylesheet" href="../../shared26/style.css" />
 <link rel="stylesheet" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js"></script>
 <script src="/shared/code/toc_2016.js"></script>
-<script src="../../shared25/helptemplate.js"></script>
+<script src="../../shared26/helptemplate.js"></script>
 <script>var direction = 'ltr'</script>
+<script src="../defaults.js"></script>
 </head>
 
 
@@ -38,28 +39,27 @@
 </aside>     
 
 <p id="status">Updated 
-<!-- #BeginDate format:Sw1 -->16 February, 2020<!-- #EndDate -->
-  <span id="versionTop">• recent changes <a target="_blank" href="https://github.com/r12a/pickers/commits/gh-pages" title="Show commits for the whole pickers repository.">pickers</a>/<a target="_blank" href="https://github.com/r12a/pickers/commits/gh-pages/jpan" title="Show commits for pickers/jpan.">jpan</a> • leave a <a target="_blank" href="https://github.com/r12a/pickers/issues/new?title=[jpan]%20%20BRIEF_TITLE_GOES_HERE&amp;body=%5Bsource%5D%20https%3A%2F%2Fr12a.github.io%2Fpickers%2Fjpan%0A%0A" title="Leave a comment.">comment</a></span>
-</p>
+<!-- #BeginDate format:Sw1 -->14 November, 2020<!-- #EndDate --></p>
 
 <p>This Unicode character app allows you to produce or analyse runs of Japanese text using the Simplified and Traditional Japanese orthographies. Character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[jpan%20app]%20%20ADD%20TITLE%20HERE&amp;body=%5Bsource%5D%20https%3A%2F%2Fr12a.github.io%2Fpickers%2Fjpan%0A%0A">raise an issue</a>. For release notes see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/jpan">the Github commit list</a>.</p>
 
 
 <section id="about">
-<h2 href="#about">About the app</h2>
-      <p>There are a number of ways to find characters and add them to the large text box, including the following:</p>
+<h2 href="#about">Inputting characters</h2>
+<p>The app includes support for around  3,000 common kanji characters. These include the jōyō kanji set (as well as the kyūjitai shapes reflecting earlier usage), the jinmeiyō set and its variants, and several additional characters.</p>
+
+<p>To <strong><em>analyse</em> text</strong>, copy &amp; paste it into the large text area and select the desired control(s). The app is particularly useful for analysing text. You can get information about kanji characters using the <samp>Analyse text</samp> feature. Identifying most characters used for everyday Japanese, it produces ON and kun transcriptions and definitions for  common kanji characters.</p>
+<p><img src="analyse.png" alt=""></p>
+<p>To <strong><em>produce</em> Japanese text</strong> in the text area, do one or more of the following:</p>
 <ul>
-<li>switch on <samp>Type-assist</samp> (on by default) and type QWERTY characters on your keyboard. As you type, the app shows alternatives in the native script that can be added to the text area by pressing a number key. The most common choice is usually added automatically, but will be overwritten if you choose a number key.</li>
-<li><samp>Latin type-assist</samp> does the same thing, but provides access to Latin characters used alongside the native text, or characters needed for phonetic or other transcriptions.</li>
-<li>select characters from the area just below the large text box by clicking or tapping on them.</li>
+<li><strong>Type on your keyboard, with help from type-assist</strong>.  This character app doesn't provide an in-built IME, so you will need to use the one provided by your system. However, type-assist does allow easy input of kana, fullwidth alphanumerics, and punctuation, and there are ways to find kanji characters.  For example, typing <samp>k</samp> with type-assist turned on gives access to all the kana syllables beginning with <span class="ipa">k</span>. For the katakana equivalents, type uppercase, ie. <samp>K</samp>.</li>
+<li><strong>Find a kanji character to add to the text</strong> by typing the ON or kun yomi equivalent in Latin characters, then use <samp>Lookup Kanji</samp>. This, along with a shortcut alternative approach, is <a href="#lookups">described in more detail below</a>. You can also look up kanji using keywords in the definition, with the <samp>English to Kanji</samp> feature.</li>
+<li><strong>Click on the punctuation characters in the selection area</strong>.</li>
 </ul>
-<p>The app provides a range of other features that allow you to analyse or manipulate the content of the text box.</p>
-<p>This character app doesn't provide an in-built IME, so you will need to use the one provided by your system. However, it does allow easy input of kana, fullwidth alphanumerics, and punctuation, and there are ways to find kanji characters. The app is particularly useful for analysing text, providing a way to get information about kanji characters.</p>
-<p>To input hiragana, use the <a href="#input_aids">type-assist</a> feature. For example, typing <samp>k</samp> with type-assist turned on gives access to all the kana syllables beginning with <span class="ipa">k</span>. For the katakana equivalents, type uppercase, ie. <samp>K</samp>.</p>
-<p>To find a kanji character, type the ON or kun yomi equivalent in Latin characters, then use <samp>Lookup Kanji</samp>. This, along with a shortcut alternative approach, is <a href="#lookups">described in more detail below</a>. You can also look up kanji using keywords in the definition, with the <samp>English to Kanji</samp> feature.</p>
-<p>To get information about kanji that are in the text area, use the <samp>Analyse text</samp> feature. While identifying most characters used for Japanese, it produces ON and kun transcriptions and definitions for around 3,000 common kanji characters. These include the jōyō kanji set (as well as the kyūjitai shapes reflecting earlier usage), the jinmeiyō set and its variants, and several additional characters.</p>
-<div id="aboutBP"></div>
+<p>More detail is provided further down this page.</p>
+<div id="aboutBP">
+</div>
 <script>document.getElementById('aboutBP').innerHTML = addAboutBP()
 </script>
 </section>
@@ -67,28 +67,35 @@
 
 
 
-<section id="basics">
-</section>
-<script>
-document.getElementById('basics').innerHTML = addBasicUse(direction)
-</script>
+
+
+
+
+
+<section id="basics"></section><script>document.getElementById('basics').innerHTML = addBasicUse(direction)</script>
+
+
+
+
+
 
 
 
 
 <section id="top_controls">
-<h2 href="#top_controls">Controls above the text area</h2>
-<div id="controlsAbove1"></div>
-<script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
+<div id="controlsAbove1"></div><script>document.getElementById('controlsAbove1').innerHTML = addControlsAbove1()</script>
 
-       <p><b class="leadin" id="lookups">Lookup Kanji.</b> Allows you to look up Han characters with a given pronunciation.</p>
-<p>Type the pronunciation in pinyin, using the <samp>Latin type-assist</samp> feature (hit the ~ key for a shortcut). Highlight the pinyin syllable you want to look up (only one syllable at a time), and click on <samp>Lookup Kanji</samp>. Matching kanji characters will appear below the text area.</p>
-<p>A shortcut after you have highlighted the pinyin syllable: hit the § key and the pinyin text will be replaced by the matching hanzi characters, surrounded by slashes (to keep them distinct from any other hanzi on the line).</p>
 
-       <p><b class="leadin">English to Kanji.</b> Allows you to look up kanji characters by typing keywords used in the definitions.</p>
-<p>Type one or more words in English, highlight it, and select <samp>English to Kanji</samp> from the pulldown menu. Matching kanji characters, with their definitions, will be displayed below the text area.</p>
-
-       <p><b class="leadin">Toggle direction.</b> Switches the writing mode of the text area between horizontal and vertical.</p>
+<p><b class="leadin" id="lookups">Lookup Kanji.</b> Allows you to look up kanji characters with a given pronunciation.</p>
+<p><img src="lookup.png" alt=""></p>
+<ol>
+<li>Type the pronunciation in romaji.</li>
+<li>Highlight the  syllable you want to look up (only one syllable at a time), and click on <samp>Lookup Kanji</samp>. Matching kanji characters will appear below the text area. Note that, unlike Chinese, there are usually a large number of results for Japanese.</li>
+<li>
+<p>Copy the desired character in place of the highlighted pinyin text. You can do this by copy-pasting, or by using the ^ control to the right of the alternatives and deleting what you don't need.</p>
+<p>Alternatively, as a keyboard shortcut, you could hit the § key and the pinyin text will be replaced by the matching hanzi characters, surrounded by slashes (to keep them distinct from any other hanzi on the line). You can then remove the text you don't want to keep.</p>
+</li>
+</ol>
 
 <!--p><b class="leadin">Transcribe.</b> Builds on the transliteration scheme just mentioned by:</p>
 <ul>
@@ -102,43 +109,68 @@ document.getElementById('basics').innerHTML = addBasicUse(direction)
 <p><b class="leadin">ISO to Japanese.</b> This transcribes in the opposite direction to the control just described.</p-->
 
 
-<div id="controlsAbove2"></div>
-<script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
+<div id="controlsAbove2"></div><script>document.getElementById('controlsAbove2').innerHTML = addControlsAbove2()</script>
 
+
+
+<!-- OTHER PULLDOWN OPTIONS -->
+
+<p><b class="leadin">Vocab to markup.</b> Converts a vocab entry to markup that can be used for an example. Must be applied to one line at a time.</p>
+<blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+<p><code><span lang="km">មេឃ</span>|sky|meːk</code></p>
+<p>will produce:</p>
+<p><code>&lt;span class=&quot;charExample&quot; translate=&quot;no&quot;&gt;&lt;bdi class=&quot;ex&quot; lang=&quot;km&quot; dir=&quot;ltr&quot;&gt;<span lang="km">មេឃ</span>&lt;/bdi&gt; &lt;bdi class=&quot;trans&quot;&gt;m̱eḵʰ&lt;/bdi&gt; &lt;bdi class=&quot;ipa&quot;&gt;meːk&lt;/bdi&gt; &lt;bdi class=&quot;meaning&quot;&gt;sky&lt;/bdi&gt;&lt;/span&gt;</code></p>
+</blockquote>
+
+<p><b class="leadin">English to Kanji.</b> Allows you to look up kanji characters by typing keywords used in the definitions.</p>
+<p><img src="tokanji.png" alt=""></p>
+<p>Type one or more words in English, highlight it, and select <samp>English to Kanji</samp> from the pulldown menu. Matching kanji characters, with their definitions, will be displayed below the text area.</p>
+
+<p><b class="leadin">Toggle direction.</b> Switches the writing mode of the text area between horizontal and vertical.</p>
+
+<p><b class="leadin">Make ruby.</b> This feature speeds up the creation of HTML markup for ruby. Simply type the base character(s) followed by a slash and the ruby annotation, then select <samp>Make ruby</samp>. The markup will appear below.</p>
+<p><img src="makeruby.png" alt=""></p>
+<p>As shown just above, you can add a sequence of base-annotation pairs, and they will be surrounded by a single &lt;ruby&gt; tag.</p>
+
+<!-- OTHER PULLDOWN OPTIONS -->
 </section>
 
-<section id="secondaryText">
-</section>
-<script>document.getElementById('secondaryText').innerHTML = addSecondaryText()</script>
+
+
+
+
+<section id="fontManagement"></section><script>document.getElementById('fontManagement').innerHTML = addSecondaryText()</script>
+
+
+
+
 
 
 
 <section id="input_aids">
-<h2 href="#input_aids">Input aids</h2>
-
-<div id="inputAids1"></div>
-<script>document.getElementById('inputAids1').innerHTML = addInputAids('intro, typeAssist, latin')</script>
+<div id="inputAids"></div><script>document.getElementById('inputAids').innerHTML = addInputAids(inputAidsHelp)</script>
 
 
-    <!--p><b class="leadin">ISO to Japanese.</b> Allows you to generate Japanese text from an ISO 15919 transcription.    It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>.</p-->
-    
+<!-- OTHER INPUT AIDS -->
 
-<div id="inputAids2"></div>
-<script>document.getElementById('inputAids2').innerHTML = addInputAids('close')</script>
-
+<!--<p><b class="leadin">IPA to Hausa (ajami).</b> Allows you to generate  Hausa (ajami) text from characters used for the phonetic transcription of Hausa (ajami).  (This may still need some work.) It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the transcription type-in mode.</p>-->
 </section>
 
 
 
-<section id="yellow_controls">
-</section>
-<script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
 
 
 
-<section id="more_controls">
-</section>
-<script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+
+<section id="yellow_controls"></section><script>document.getElementById('yellow_controls').innerHTML = addYellowControls()</script>
+<section id="more_controls"></section><script>document.getElementById('more_controls').innerHTML = addMoreControls(direction)</script>
+
+
+
+
+
+
 
 <div class="smallprint">Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</div>
 </body>

@@ -13,6 +13,24 @@ end: {}
 }
 
 
+function toggleExtended (node) {
+    var chars = document.querySelectorAll('#reveal .e')
+
+	if (node.classList.contains('shifted')) {
+        for (let i=0;i<chars.length;i++) {
+            chars[i].style.display = 'none'
+            }
+		globals.showExtended =  false	
+		}
+    else {
+        for (let i=0;i<chars.length;i++) {
+            chars[i].style.display = 'inline-block'
+            }
+		globals.showExtended =  true
+		} 
+	}
+
+
 function reveal (id) {
     // when an orange key is clicked on, this reveals the related characters
     

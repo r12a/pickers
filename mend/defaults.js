@@ -34,17 +34,17 @@ var template = {}
 
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Mende Kikakui text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-
-//{"title":"XXXXXXXXXX<br/>to XXXXXXXXXX", "alt":"XXXXXXXXXX.", "code":"doTranscription('XXXXXXXXXX')", "warning":"Still in development. Separate syllables before use."},
+{"title":"Trans-<br/>literate", "alt":"Convert Mende Kikakui text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
 ]
 
 
 
 var pulldown = [
-{"title":"Mende to Latin", "alt":"Convert Mende Kikakui text to a Latin transcription.", "code":"doTranscription('toLatin')", "warning":"This conversion will likely need tweaking!"},
+//{"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Mende Kikakui.", "code":"doTranscription('reverse')"},
 
-{"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Mende Kikakui.", "code":"doTranscription('reverse')"},
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+
+{"title":"Mende to Latin", "alt":"Convert Mende Kikakui text to a Latin transcription.", "code":"doTranscription('toLatin')", "warning":"This conversion will likely need tweaking!"},
 ]
 
 
@@ -53,8 +53,18 @@ var pulldown = [
 var inputAids = [
 {"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
 
-{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"makePalette(''); window.latinOnly=false;makeKbdEventList(translitCharacterMap);", "desc":"Use ASCII characters to type XXXX from the keyboard."},
+{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"makePalette(''); window.latinOnly=false;makeKbdEventList(translitCharacterMap);", "desc":"Use ASCII characters to type Mende from the keyboard."},
 
 {"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
 ]
+
+
+
+
+// this indicates which items are to be described in the help
+// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
+var inputAidsHelp = 'showIntro,'
+for (let i=0;i<inputAids.length;i++) {
+	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
+	}
 
