@@ -85,7 +85,7 @@ var keyboarddef = [
 function toggleShift (node, LC, UC) {
     var chars = document.querySelectorAll('.c')
 
-	if (! node.classList.contains('shifted')) {
+	if (node.classList.contains('shifted')) {
         for (let i=0;i<chars.length;i++) {
             if (chars[i].dataset.lc) chars[i].textContent = chars[i].dataset.lc
             else chars[i].textContent = chars[i].textContent.toLowerCase()
