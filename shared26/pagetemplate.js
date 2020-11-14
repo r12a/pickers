@@ -458,7 +458,8 @@ if (inputAids.length > 0) {
 for (let i=0;i<inputAids.length;i++) {
 	// finish up the assignments
     if (!inputAids[i].initialCode)  inputAids[i].initialCode = ''
-    if (inputAids[i].type === 'palette' || inputAids[i].type === 'typeAssist') inputAids[i].initialCode = 'closeSidebarPalettes(this);'+inputAids[i].initialCode
+    if (inputAids[i].type === 'palette' || inputAids[i].type === 'typeAssist') inputAids[i].onClickCode = `if (globals[this.dataset.var] != '') closeSidebarPalettes(this); else { closeSidebarPalettes(this);`+inputAids[i].initialCode+ `; toggleSideBarOption(this, this.dataset.title, this.dataset.var, this.dataset.locn)}`
+    else inputAids[i].onClickCode = inputAids[i].initialCode + `; toggleSideBarOption(this, this.dataset.title, this.dataset.var, this.dataset.locn)`
     if (! inputAids[i].desc) inputAids[i].desc = inputAids[i].title
     
     // create basic markup
@@ -471,7 +472,7 @@ for (let i=0;i<inputAids.length;i++) {
     out += ` data-shorttitle="`+inputAids[i].dataShortTitle+`"`
     out += ` onMouseOver="showMenuText(this.dataset.title,'#666')"`
     out += ` onMouseOut="hideMenuText()"`
-    out += ` onclick="` + inputAids[i].initialCode + `; toggleSideBarOption(this, this.dataset.title, this.dataset.var, this.dataset.locn)"`
+    out += ` onclick="` + inputAids[i].onClickCode + `"`
     
     // add ids for specific types
     if (inputAids[i].dataVar==="showLatinTrans") out += ' id="showLatinTransSwitch" '
