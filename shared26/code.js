@@ -351,7 +351,7 @@ function toggleSideBarOption (node, fullTitle, variable, id) {
 		//node.textContent = fullTitle
 		node.style.color='white'
 		if (id != '') document.getElementById(id).style.display = 'none'
-		if (id != '') window.kbdEventList = {}
+		//if (id != '') window.kbdEventList = {}
         document.getElementById('output').focus()
 		} 
 	else {
@@ -364,6 +364,26 @@ function toggleSideBarOption (node, fullTitle, variable, id) {
 	return false
 	}
 
+
+function toggleSideBarOptionFUTURE (node, fullTitle, variable, locn) {
+	if (node.classList.contains('on')) {
+		globals[variable] = ''
+		node.classList.remove('on')
+		node.classList.add('off')
+		if (locn != '') document.getElementById(locn).style.display = 'none'
+		if (locn != '') window.kbdEventList = {}
+        document.getElementById('output').focus()
+		} 
+	else {
+		globals[variable] = ' ✓'
+		node.classList.remove('off')
+		node.classList.add('on')
+		console.log('turning on',locn)
+		if (locn != '' && variable != 'typeAssist') document.getElementById(locn).style.display = 'block'
+        document.getElementById('output').focus()
+		} 
+	return false
+	}
 
 
 
@@ -394,26 +414,6 @@ function toggleSideBarOptionNEWBASE (node, fullTitle, variable, id) {
 		globals[variable] = ' ✓'
 		node.style.color='orange'
 		if (id != '' && variable != 'typeAssist') document.getElementById(id).style.display = 'block'
-        document.getElementById('output').focus()
-		} 
-	return false
-	}
-
-function toggleSideBarOptionFUTURE (node, fullTitle, variable, locn) {
-	if (node.classList.contains('on')) {
-		globals[variable] = ''
-		node.classList.remove('on')
-		node.classList.add('off')
-		if (locn != '') document.getElementById(locn).style.display = 'none'
-		if (locn != '') window.kbdEventList = {}
-        document.getElementById('output').focus()
-		} 
-	else {
-		globals[variable] = ' ✓'
-		node.classList.remove('off')
-		node.classList.add('on')
-		console.log('turning on',locn)
-		if (locn != '' && variable != 'typeAssist') document.getElementById(locn).style.display = 'block'
         document.getElementById('output').focus()
 		} 
 	return false
