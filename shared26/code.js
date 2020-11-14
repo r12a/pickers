@@ -2441,7 +2441,7 @@ function drawCharSelectionPanelSAVED (key) {
 	// omit the first item, since we want that at the end
 	for (let i=0;i<kbdEventList[key].length;i++) {
 		if (i > 9) {
-			out += ' &nbsp; <span style="font-size:80%;">See panel for '+eval(kbdEventList[key].length-10)+' more.</span>'
+			out += ' &nbsp; <span style="font-size:50%;">See panel for '+eval(kbdEventList[key].length-10)+' more.</span>'
 			break
 			}
 		if (! window.latinTypeAssist) out += ' <sup>'+ kbdEventList[key][i][0] +'</sup>'
@@ -2465,7 +2465,7 @@ function drawCharSelectionPanel (key) {
 	// omit the first item, since we want that at the end
 	for (let i=0;i<kbdEventList[key].length;i++) {
 		if (i > 9) {
-			out += ' &nbsp; <span style="font-size:80%;">See panel for '+eval(kbdEventList[key].length-10)+' more.</span>'
+			out += ' &nbsp; <span style="font-size:50%;">See panel for '+eval(kbdEventList[key].length-10)+' more.</span>'
 			break
 			}
 		
