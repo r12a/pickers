@@ -1443,7 +1443,7 @@ function setGridHints (type) {
 		globals.keyHints = 'translit'
 		for (let n=0; n<nodes.length; n++ ) { 
 			charNode = nodes[n].querySelector('.c, .v')
-			console.log(charNode.textContent, charNode.parentNode.querySelector('.hint').textContent)
+			//console.log(charNode.textContent, charNode.parentNode.querySelector('.hint').textContent)
 			hintNode = nodes[n].querySelector('.hint')
 			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'')
 			hintNode.textContent = ''
@@ -1534,6 +1534,7 @@ function initialise() {
 
 	// set ids to codepoint values of character sequence (with no leading zeros)
 	node = document.querySelectorAll( '.c, .v' )
+	var notInSpreadsheet = ''
 	for (var n = 0; n < node.length; n++ ) { 
 		content = node[n].textContent
 		codepoints = [... node[n].textContent]
@@ -1563,10 +1564,11 @@ function initialise() {
 		
 		// set title
 		if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ucsName]) node[n].title = window.spreadsheetRows[content][cols.ucsName]
-		else if (content !== '') { console.log(content)
+		else if (content !== '') {
 			hex = content.codePointAt(0).toString(16).toUpperCase()
 			while (hex.length < 4) hex = '0'+hex
 			node[n].title = 'U+'+hex+': '+charData[content]
+			notInSpreadsheet += content + '  '
 			}
 		
 		// set mouseover/out
@@ -1583,7 +1585,8 @@ function initialise() {
 		
 		// FIX the above - doesn't seem that ucsName contains zws
 		}
-	
+	console.log('Not in spreadsheet: ',notInSpreadsheet)
+
 
 		
 	// set onclicks for transcription characters	
@@ -2793,6 +2796,7 @@ function makeLatinTypeAssistMap () {
 	collector = [...uniqueSet]
 	
 	outObj = {}
+	notInRegister = ''
 	for (let i=0;i<collector.length;i++) {
 		var asciiOnly = true
 		for (let c=0;c<collector[i].length;c++) {
@@ -2805,7 +2809,7 @@ function makeLatinTypeAssistMap () {
 			if (outObj[latinRegister[collector[i][0]]]) outObj[latinRegister[collector[i][0]]] +=  ' '+collector[i]
 			else outObj[latinRegister[collector[i][0]]] = latinRegister[collector[i][0]] + ' ' +collector[i]
 			}
-		else console.log('Register didn\'t have:', collector[i])
+		else notInRegister += collector[i] + '  '
 		}
 	
 	var outArray = Object.values(outObj)
@@ -2815,6 +2819,7 @@ function makeLatinTypeAssistMap () {
 	for (i=0;i<outArray.length;i++) window.latinTypeAssistMap += outArray[i] + '\n'
 	
 	console.log('latinTypeAssistMap done')
+	console.log('Register didn\'t have:', notInRegister)
 	}
 
 
