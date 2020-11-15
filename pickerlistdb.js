@@ -71,7 +71,8 @@ var plist = [
     { tag:'prti', name:'Parthian', url:'prti/' },
     { tag:'phnx', name:'Phoenician', url:'phnx/' },
     { tag:'rohg', name:'Hanifi Rohingya', url:'rohg/' },
-    { tag:'runr', name:'Runic', url:'runr/' },
+    { tag:'runr', name:'All Runic', url:'runr/' },
+    { tag:'runr', name:'Anglo-Saxon Runes', url:'runr-ang/' },
     { tag:'talu', name:'New&nbsp;Tai&nbsp;Lue', url:'talu/' },
     { tag:'sinh', name:'Sinhala', url:'sinh/' },
     { tag:'sund', name:'Sundanese', url:'sund/' },
@@ -216,7 +217,10 @@ var plistByRegion = {
 			],
 	'R':[
 			['Rohingya (Hanifi)', 'rohg/'],
-			['Runic', 'runr/'],
+			['<i>Runic</i>','runr/'],
+				['['],
+				['Anglo-Saxon Runes','runr-ang/'],
+				[']'],
 			['Russian', 'cyrl-ru/'],
 			],
 	'S':[
