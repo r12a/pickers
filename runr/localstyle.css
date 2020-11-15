@@ -28,7 +28,11 @@ span.hint {
 	text-align: center;
 	}
 
-    
+
+#other {
+	text-align: center;
+	font-siz: 80%;
+	}
     
 /* KEYBOARD */
 .key span { 
