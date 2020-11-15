@@ -345,40 +345,17 @@ function toggleAutofocus () {
 
 
 
-function toggleSideBarOption (node, fullTitle, variable, id) {
+function toggleSideBarOption (node, fullTitle, variable, locn) {
 	if (globals[variable]) {
-		globals[variable] = ''
-		//node.textContent = fullTitle
+		globals[variable] = false
 		node.style.color='white'
-		if (id != '') document.getElementById(id).style.display = 'none'
-		//if (id != '') window.kbdEventList = {}
-        document.getElementById('output').focus()
-		} 
-	else {
-		globals[variable] = ' ✓'
-		//node.textContent=fullTitle+globals[variable]
-		node.style.color='orange'
-		if (id != '' && variable != 'typeAssist') document.getElementById(id).style.display = 'block'
-        document.getElementById('output').focus()
-		} 
-	return false
-	}
-
-
-function toggleSideBarOptionFUTURE (node, fullTitle, variable, locn) {
-	if (node.classList.contains('on')) {
-		globals[variable] = ''
-		node.classList.remove('on')
-		node.classList.add('off')
 		if (locn != '') document.getElementById(locn).style.display = 'none'
-		if (locn != '') window.kbdEventList = {}
+		if (node.classList.contains('palette')) window.kbdEventList = {}
         document.getElementById('output').focus()
 		} 
 	else {
-		globals[variable] = ' ✓'
-		node.classList.remove('off')
-		node.classList.add('on')
-		console.log('turning on',locn)
+		globals[variable] = true
+		node.style.color='orange'
 		if (locn != '' && variable != 'typeAssist') document.getElementById(locn).style.display = 'block'
         document.getElementById('output').focus()
 		} 
@@ -386,38 +363,6 @@ function toggleSideBarOptionFUTURE (node, fullTitle, variable, locn) {
 	}
 
 
-
-function toggleSideBarOptionLESSOLD (node, fullTitle, variable, id) {
-	if (node.style.color==='orange') {
-		node.style.color='white'
-		if (id != '') document.getElementById(id).style.display = 'none'
-		if (id != '') window.kbdEventList = {}
-        document.getElementById('output').focus()
-		} 
-	else {
-		node.style.color='orange'
-		if (id != '' && variable != 'typeAssist') document.getElementById(id).style.display = 'block'
-        document.getElementById('output').focus()
-		} 
-	return false
-	}
-
-function toggleSideBarOptionNEWBASE (node, fullTitle, variable, id) {
-	if (globals[variable]) {
-		globals[variable] = ''
-		node.style.color='white'
-		if (id != '') document.getElementById(id).style.display = 'none'
-		if (id != '') window.kbdEventList = {}
-        document.getElementById('output').focus()
-		} 
-	else {
-		globals[variable] = ' ✓'
-		node.style.color='orange'
-		if (id != '' && variable != 'typeAssist') document.getElementById(id).style.display = 'block'
-        document.getElementById('output').focus()
-		} 
-	return false
-	}
 
 
 
