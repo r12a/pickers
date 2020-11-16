@@ -12,6 +12,13 @@
     font-weight: normal;
     font-style: normal;
 	}
+@font-face {
+    font-family: 'Noto Sans Balinese WF';
+    src: url('/shared/webfonts/notosansbalinese-regularwebfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosansbalinese-regularwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
 
 
 [lang=ban] { font-family: 'Aksara Bali WF', 'Noto Serif Balinese WF', serif; }
