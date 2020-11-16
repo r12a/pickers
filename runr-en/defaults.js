@@ -35,7 +35,7 @@ var template = {}
 
 
 var controls = [
-{"title":"Trans-<br>late+", "alt":"Convert to a Latin transliteration but then apply additional orthographic transformations.", "code":"doTranscription('translitPlus')", "warning":"Expands some runes to more than one Latin letter."},
+{"title":"Trans-<br>late", "alt":"Convert to a Latin transliteration but then apply additional orthographic transformations.", "code":"doTranscription('translitPlus')", "warning":"Expands some runes to more than one Latin letter."},
 
 {"title":"Latin to<br/>Runic", "alt":"Convert Latin text to Hobbit runes.", "code":"doTranscription('toRunic')", "warning":"Converts ordinary Latin text to Hobbit runes."},
 ]
