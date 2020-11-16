@@ -344,28 +344,6 @@ function toggleAutofocus () {
 
 
 
-
-function toggleSideBarOption (node, fullTitle, variable, locn) {
-	if (globals[variable]) {
-		globals[variable] = false
-		node.style.color='white'
-		if (locn != '') document.getElementById(locn).style.display = 'none'
-		if (node.classList.contains('palette')) window.kbdEventList = {}
-        document.getElementById('output').focus()
-		} 
-	else {
-		globals[variable] = true
-		node.style.color='orange'
-		if (locn != '' && variable != 'typeAssist') document.getElementById(locn).style.display = 'block'
-        document.getElementById('output').focus()
-		} 
-	return false
-	}
-
-
-
-
-
 function toggleKbdShift (node) {
 	if (node.className =='unshifted') {
 		makeKbdUpperCase()
@@ -392,7 +370,43 @@ function setSidebarDefaults (node) {
 	}
 
 
+
+function toggleSideBarOption (node, fullTitle, variable, locn) {
+	if (debug) console.log(locn,variable,node.className)
+	if (globals[variable]) {
+		globals[variable] = false
+		node.style.color='white'
+		if (locn != '') document.getElementById(locn).style.display = 'none'
+        document.getElementById('output').focus()
+		} 
+	else {
+		globals[variable] = true
+		node.style.color='orange'
+		if (locn != '' && variable != 'typeAssist') document.getElementById(locn).style.display = 'block'
+        document.getElementById('output').focus()
+		} 
+	return false
+	}
+
+
+
+
 function closeSidebarPalettes (node) {
+	menuitems = node.parentNode.querySelectorAll('div'); 
+    for (i=0;i<menuitems.length;i++) {
+        if (menuitems[i].classList.contains('palette')) {
+            menuitems[i].style.color='white'
+            globals[menuitems[i].dataset.var] = false
+			window.kbdEventList = {}
+            if (menuitems[i].dataset.locn != '') document.getElementById(menuitems[i].dataset.locn).style.display = 'none'
+            }
+        }
+	document.getElementById('output').focus()
+	}
+
+
+
+function closeSidebarPalettesOLD (node) {
 	menuitems = node.parentNode.querySelectorAll('div'); 
     for (i=0;i<menuitems.length-1;i++) {
         if (menuitems[i].classList.contains('palette')) {
