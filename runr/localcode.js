@@ -12,6 +12,17 @@ function localInitialise () {
 
 
 
+function hideSelectionPanels () {
+	document.getElementById('elder').style.display = 'none'
+	document.getElementById('elderKey').classList.remove('shifted')
+	document.getElementById('younger').style.display = 'none'
+	document.getElementById('youngerKey').classList.remove('shifted')
+	document.getElementById('medieval').style.display = 'none'
+	document.getElementById('medievalKey').classList.remove('shifted')
+	document.getElementById('saxon').style.display = 'none'
+	document.getElementById('anglosaxonKey').classList.remove('shifted')
+	}
+
 
 var _h = {
 

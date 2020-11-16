@@ -10,7 +10,7 @@
 
 <script src="defaults.js">  </script>
 <script src="/shared/fontdb/db.js"> </script>
-<script src="../../shared/scriptdb/runic.js">  </script>
+<script src="../../shared/scriptdb/runr-all.js">  </script>
 
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -58,7 +58,7 @@
 
 <div id="tables" dir="ltr">
   
-<div class="kbdWrapper"><div dir="ltr" id="keyboard" style="display: block;"></div></div>
+<div class="kbdWrapper"><div dir="ltr" id="keyboard" style="display: none;"></div></div>
 
 <div id="alphabet" class="default">
 
@@ -75,19 +75,340 @@
 </div>
 
 
+<!--div id="keyboardSwitch">
+<span id="elderKey" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('elder').style.display='flex'; makeKeyboard(elderkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('medievalKey youngerKey anglosaxonKey latinKey')} ">Elder</span>
+
+<span id="youngerKey" class="touch shifted" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('younger').style.display='flex';makeKeyboard(keyboarddef, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('medievalKey elderKey anglosaxonKey latinKey')} ">Younger</span>
+
+<span id="medievalKey" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('medieval').style.display='flex';makeKeyboard(medievalkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('youngerKey elderKey anglosaxonKey latinKey')} ">Medieval</span>
+
+<span id="anglosaxonKey" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('saxon').style.display='flex';makeKeyboard(anglosaxonkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('youngerKey elderKey medievalKey latinKey')} ">Anglo-saxon</span>
+
+<span id="latinKey" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {makeKeyboard(latinkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('youngerKey elderKey medievalKey anglosaxonKey')} ">Latin</span>
+</div-->
+
+
+
+
 <div id="keyboardSwitch">
-<span id="elder" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {makeKeyboard(elderkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('medieval younger anglosaxon latink')} ">Elder</span>
+<span id="elderKey" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('elder').style.display='flex'; this.classList.add('shifted');} ">Elder</span>
 
-<span id="younger" class="touch shifted" dir="auto" onClick="if (! this.classList.contains('shifted')) {makeKeyboard(keyboarddef, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('medieval elder anglosaxon latink')} ">Younger</span>
+<span id="youngerKey" class="touch shifted" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('younger').style.display='flex';  this.classList.add('shifted');} ">Younger</span>
 
-<span id="medieval" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {makeKeyboard(medievalkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('younger elder anglosaxon latink')} ">Medieval</span>
+<span id="medievalKey" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('medieval').style.display='flex';  this.classList.add('shifted');} ">Medieval</span>
 
-<span id="anglosaxon" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {makeKeyboard(anglosaxonkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('younger elder medieval latink')} ">Anglo-saxon</span>
-
-<span id="latink" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {makeKeyboard(latinkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('younger elder medieval anglosaxon')} ">Latin</span>
+<span id="anglosaxonKey" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('saxon').style.display='flex';this.classList.add('shifted');} ">Anglo-saxon</span>
 </div>
 
 
+
+
+<div id="kbdGrid"> 
+ 
+
+<div id="elder">
+<div id="elderConsonantGrid">
+<div>
+<span class="g"><span class="hint">p</span><span class="c">ᛈ</span></span>
+<span class="g"><span class="hint">t</span><span class="c">ᛏ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ᚲ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">b</span><span class="c">ᛒ</span></span>
+<span class="g"><span class="hint">ḏ</span><span class="c">ᛞ</span></span>
+<span class="g"><span class="hint">g</span><span class="c">ᚷ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">f</span><span class="c">ᚠ</span></span>
+<span class="g"><span class="hint">þ</span><span class="c">ᚦ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">ᛊ</span></span>
+<span class="g"><span class="hint">z</span><span class="c">ᛉ</span></span>
+<span class="g"><span class="hint">h</span><span class="c">ᚺ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">m</span><span class="c">ᛗ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ᚾ</span></span>
+<span class="g"><span class="hint">ŋ</span><span class="c">ᛜ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">w</span><span class="c">ᚹ</span></span>
+<span class="g"><span class="hint">r</span><span class="c">ᚱ</span></span>
+<span class="g"><span class="hint">ʀ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">l</span><span class="c">ᛚ</span></span>
+<span class="g"><span class="hint">j</span><span class="c">ᛃ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ks</span><span class="c"> </span></span>
+<span class="g"><span class="hint">st</span><span class="c"> </span></span>
+</div>
+</div>
+
+
+
+<div id="elderVowelGrid">
+<div>
+<span class="g"><span class="hint">i</span><span class="c">ᛁ</span></span>
+<span class="g"><span class="hint">y</span><span class="c"> </span></span>
+<span class="g"><span class="hint">u</span><span class="c">ᚢ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">e</span><span class="c">ᛖ</span></span>
+<span class="g"><span class="hint">œ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">o</span><span class="c">ᛟ</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: flex-end;">
+<span class="g"><span class="hint">æ</span><span class="c">ᛇ</span></span>
+<span class="g"><span class="hint">a</span><span class="c">ᚨ</span></span>
+<span class="g"><span class="hint">ą</span><span class="c"> </span></span>
+</div>
+<div>
+<span class="g"><span class="hint">iᵒ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">eᵃ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">ɨ</span><span class="c"> </span></span>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="younger">
+<div id="youngerConsonantGrid">
+<div>
+<span class="g"><span class="hint">p</span><span class="c"> </span></span>
+<span class="g"><span class="hint">t</span><span class="c">ᛏ</span><span class="c">ᛐ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ᚴ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">b</span><span class="c">ᛒ</span><span class="c">ᛓ</span></span>
+<span class="g"><span class="hint">ḏ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">g</span><span class="c"> </span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">f</span><span class="c">ᚠ</span></span>
+<span class="g"><span class="hint">þ</span><span class="c">ᚦ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">ᛋ</span><span class="c">ᛌ</span></span>
+<span class="g"><span class="hint">z</span><span class="c"> </span></span>
+<span class="g"><span class="hint">h</span><span class="c">ᚼ</span><span class="c">ᚽ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">m</span><span class="c">ᛘ</span><span class="c">ᛙ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ᚾ</span><span class="c">ᚿ</span></span>
+<span class="g"><span class="hint">ŋ</span><span class="c"> </span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">w</span><span class="c"> </span></span>
+<span class="g"><span class="hint">r</span><span class="c">ᚱ</span></span>
+<span class="g"><span class="hint">ʀ</span><span class="c">ᛦ</span><span class="c">ᛧ</span></span>
+<span class="g"><span class="hint">l</span><span class="c">ᛚ</span></span>
+<span class="g"><span class="hint">j</span><span class="c"> </span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ks</span><span class="c"> </span></span>
+<span class="g"><span class="hint">st</span><span class="c"> </span></span>
+</div>
+</div>
+
+
+
+<div id="youngerVowelGrid">
+<div>
+<span class="g"><span class="hint">i</span><span class="c">ᛁ</span></span>
+<span class="g"><span class="hint">y</span><span class="c"> </span></span>
+<span class="g"><span class="hint">u</span><span class="c">ᚢ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">e</span><span class="c">ᛧ</span><span class="c">ᛦ</span></span>
+<span class="g"><span class="hint">œ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">o</span><span class="c"> </span></span>
+</div>
+<div class="bottomDivider" style="justify-content: flex-end;">
+<span class="g"><span class="hint">æ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">a</span><span class="c">ᛅ</span><span class="c">ᛆ</span></span>
+<span class="g"><span class="hint">ą</span><span class="c">ᚬ</span><span class="c">ᚭ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">iᵒ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">eᵃ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">ɨ</span><span class="c"> </span></span>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="medieval">
+<div id="medievalConsonantGrid">
+<div>
+<span class="g"><span class="hint">p</span><span class="c">ᛔ</span><span class="c">ᛕ</span></span>
+<span class="g"><span class="hint">t</span><span class="c">ᛐ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ᚴ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">b</span><span class="c">ᛒ</span></span>
+<span class="g"><span class="hint">ḏ</span><span class="c">ᛑ</span></span>
+<span class="g"><span class="hint">g</span><span class="c">ᚵ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">f</span><span class="c">ᚠ</span><span class="c">ᚡ</span></span>
+<span class="g"><span class="hint">þ</span><span class="c">ᚦ</span><span class="c">ᚧ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">ᛌ</span></span>
+<span class="g"><span class="hint">z</span><span class="c"> </span></span>
+<span class="g"><span class="hint">h</span><span class="c">ᚼ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">m</span><span class="c">ᛘ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ᚿ</span></span>
+<span class="g"><span class="hint">ŋ</span><span class="c"> </span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">w</span><span class="c"> </span></span>
+<span class="g"><span class="hint">r</span><span class="c">ᚱ</span></span>
+<span class="g"><span class="hint">ʀ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">l</span><span class="c">ᛚ</span></span>
+<span class="g"><span class="hint">j</span><span class="c"> </span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ks</span><span class="c"> </span></span>
+<span class="g"><span class="hint">st</span><span class="c"> </span></span>
+</div>
+</div>
+
+
+
+<div id="medievalVowelGrid">
+<div>
+<span class="g"><span class="hint">i</span><span class="c">ᛁ</span></span>
+<span class="g"><span class="hint">y</span><span class="c">ᛣ</span></span>
+<span class="g"><span class="hint">u</span><span class="c">ᚢ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">e</span><span class="c">ᛂ</span></span>
+<span class="g"><span class="hint">œ</span><span class="c">ᚤ</span><span class="c">ᚯ</span></span>
+<span class="g"><span class="hint">o</span><span class="c">ᚮ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">æ</span><span class="c">ᛅ</span></span>
+<span class="g"><span class="hint">a</span><span class="c">ᛆ</span></span>
+<span class="g"><span class="hint">ą</span><span class="c">ᚰ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">iᵒ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">eᵃ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">ɨ</span><span class="c"> </span></span>
+</div>
+</div>
+</div>
+
+
+
+
+
+ 
+<div id="saxon">
+<div id="saxonConsonantGrid">
+<div>
+<span class="g"><span class="hint">p</span><span class="c">ᛈ</span></span>
+<span class="g"><span class="hint">t</span><span class="c">ᛏ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ᚳ</span><span class="c">ᛤ</span><span class="c">ᛢ</span><span class="c">ᛣ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">b</span><span class="c">ᛒ</span></span>
+<span class="g"><span class="hint">ḏ</span><span class="c">ᛞ</span></span>
+<span class="g"><span class="hint">g</span><span class="c">ᚷ</span><span class="c">ᚸ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">f</span><span class="c">ᚠ</span></span>
+<span class="g"><span class="hint">þ</span><span class="c">ᚦ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">ᛋ</span></span>
+<span class="g"><span class="hint">h</span><span class="c">ᚻ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">m</span><span class="c">ᛗ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ᚾ</span></span>
+<span class="g"><span class="hint">ŋ</span><span class="c">ᛝ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">w</span><span class="c">ᚹ</span></span>
+<span class="g"><span class="hint">r</span><span class="c">ᚱ</span></span>
+<span class="g"><span class="hint">ʀ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">l</span><span class="c">ᛚ</span></span>
+<span class="g"><span class="hint">j</span><span class="c">ᛄ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ks</span><span class="c">ᛉ</span></span>
+<span class="g"><span class="hint">st</span><span class="c">ᛥ</span></span>
+</div>
+</div>
+
+
+
+<div id="saxonVowelGrid">
+<div>
+<span class="g"><span class="hint">i</span><span class="c">ᛁ</span></span>
+<span class="g"><span class="hint">y</span><span class="c">ᚣ</span></span>
+<span class="g"><span class="hint">u</span><span class="c">ᚢ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">e</span><span class="c">ᛖ</span></span>
+<span class="g"><span class="hint">œ</span><span class="c">ᛟ</span></span>
+<span class="g"><span class="hint">o</span><span class="c">ᚩ</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: flex-end;">
+<span class="g"><span class="hint">æ</span><span class="c">ᚫ</span></span>
+<span class="g"><span class="hint">a</span><span class="c">ᚪ</span></span>
+<span class="g"><span class="hint">ą</span><span class="c"> </span></span>
+</div>
+<div>
+<span class="g"><span class="hint">iᵒ</span><span class="c">ᛡ</span></span>
+<span class="g"><span class="hint">eᵃ</span><span class="c">ᛠ</span></span>
+<span class="g"><span class="hint">ɨ</span><span class="c">ᛇ</span></span>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="numberGrid">
+	<div id="digitKeypad" class="box">
+		<div>
+		<span class="g"><span class="hint"> </span><span class="c">1</span></span>
+		<span class="g"><span class="hint"> </span><span class="c">2</span></span>
+		<span class="g"><span class="hint"> </span><span class="c">3</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint"> </span><span class="c">4</span></span>
+		<span class="g"><span class="hint"> </span><span class="c">5</span></span>
+		<span class="g"><span class="hint"> </span><span class="c">6</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint"> </span><span class="c">7</span></span>
+		<span class="g"><span class="hint"> </span><span class="c">8</span></span>
+		<span class="g"><span class="hint"> </span><span class="c">9</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint"> </span><span class="c">0</span></span>
+		<span class="c">,</span>
+		<span class="c">.</span>
+		</div>
+		</div>
+	<!--div id="symbols">
+		<div style="margin-top: .5em;">
+		<span class="g"><span class="hint">0</span><span class="c">฿</span></span>
+		<span class="g"><span class="hint">0</span><span class="c">๚</span></span>
+		<span class="g"><span class="hint">0</span><span class="c">ๆ</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">0</span><span class="c">ฯลฯ</span></span>
+		</div>
+		</div-->
+</div>
+</div>
 
 
 
@@ -95,15 +416,10 @@
 <summary>other characters</summary>
 <div id="other">
 <span class="c">ᚥ</span>
-<span class="c">ᚨ</span>
-<span class="c">ᚰ</span>
 <span class="c">ᚶ</span>
 <span class="c">ᛀ</span>
-<span class="c">ᛄ</span>
 <span class="c">ᛎ</span>
 <span class="c">ᛛ</span>
-<span class="c">ᛢ</span>
-<span class="c">ᛥ</span>
 <span class="c">ᛨ</span>
 <span class="c">ᛩ</span>
 <span class="c">ᛪ</span>

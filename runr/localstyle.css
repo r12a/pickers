@@ -16,7 +16,7 @@
 [lang=non] { font-family: 'Junicode WF', serif; }
 
 
-
+‍
 
 span.hint { 
 	margin-right: 1px;
@@ -26,6 +26,12 @@ span.hint {
 .c { 
 	min-width: .75em;
 	text-align: center;
+	}
+.g {
+	min-width: 2em;
+	}
+#numberGrid .g {
+	min-width: 1em;
 	}
 
 
@@ -50,5 +56,101 @@ span.hint {
     text-align: center;
     }
 
+
+
+/* SELECTION AREA */
+
+#kbdGrid {
+ 	display: flex;
+ 	flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#elder, #saxon, #medieval {
+	display: none;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	}
+#younger {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	}
+#elderConsonantGrid, #saxonConsonantGrid, #youngerConsonantGrid, #medievalConsonantGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+#elderConsonantGrid div, #saxonConsonantGrid div, #youngerConsonantGrid div, #medievalConsonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    }
+#elderConsonantGrid > span, #saxonConsonantGrid > span, #youngerConsonantGrid > span, #medievalConsonantGrid > span {
+    min-width: 1em;
+    }
+#elderVowelGrid, #saxonVowelGrid, #youngerVowelGrid, #medievalVowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	margin-left: 2em;
+    }
+#elderVowelGrid > div, #saxonVowelGrid > div, #youngerVowelGrid > div, #medievalVowelGrid > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:space-between;
+	}
+#moreconsonants {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:flex-start;
+    text-align: end;
+	margin: 0 .5em;
+    }
+#tones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: .5em;
+    }
+#tones div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 1.5em;
+    justify-content: center;
+    margin-left: 0;
+    }
+#numberGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 90%;
+	margin-left: 2em;
+    }
+#digitKeypad div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+
+#punctuation, #flatnumbers, #other {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
+    }
+
+#obsolete {
+    text-align: center;
+    font-size: 90%;
+    }
 
 
