@@ -27,7 +27,7 @@ var template = {}
     // source: http://www.seasite.niu.edu/tai/TaiDehong/story1/gif&jpg/p3.jpg
 	template.blocklocation= '/scripts/taile/block'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
-	template.github = 'taile'
+	template.github = 'tale'
 	template.scriptcode = 'Tale'
 	template.fontLocale = 'tale'
 	template.hints = true
