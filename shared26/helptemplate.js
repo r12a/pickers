@@ -54,12 +54,11 @@ return `
       <blockquote>
       <img src="../../shared26/images/copy.png" alt="Copy icon"/> copy the text to the clipboard<br/>
       <img src="../../shared26/images/select.png" alt="Select icon"/> select all the text<br/>
-      <img src="../../shared26/images/toggle.png" alt="Invisible character toggle icon"/> show/hide invisible characters<br/>
-      <img src="../../shared26/images/clear.png" alt="Clear icon"/> delete all the text<br/>
       <img src="../../shared26/images/share.png" alt="Share icon"/> generate a URL to share with others that will reproduce for them what you see in the text box<br/>
       <img src="../../shared26/images/sample.png" alt="Sample icon"> add some sample text to the text area<br>
-      <img src="../../shared26/images/fonts.png" alt="Fonts icon"> show the font preview list. Mouse over the font names to change the font used for the text area. (Only works for webfonts or fonts you have on your system.) Click on a font name to change the font and store the setting.</blockquote>
-	  	  
+      <img src="../../shared26/images/toggle.png" alt="Invisible character toggle icon"/> show/hide invisible characters<br/>
+      <img src="../../shared26/images/fonts.png" alt="Fonts icon"> show the font preview list. Mouse over the font names to change the font used for the text area. (Only works for webfonts or fonts you have on your system.) Click on a font name to change the font and store the setting.<br/>
+      <img src="../../shared26/images/clear.png" alt="Clear icon"/> delete all the text</blockquote> 	  
 	  <details>
 	  <summary style="margin-left:7.5%">See a video of the font preview in action</summary>
 	  <p><video controls width="100%; max-width:720px" aria-label="Embedded video" style="border:0;"><source src="../../shared26/images/help/font-preview.mp4" type="video/mp4"></video></p>
