@@ -753,9 +753,9 @@ out += `
 
 <div class="smallprint">
 Updates on <a href="https://twitter.com/r12a" target="_blank">Twitter</a>.
-See <a href="https://github.com/r12a/pickers/tree/gh-pages/`+template.github+`">recent changes</a>.
-Make a <a href="https://github.com/r12a/pickers/issues/new?title=[`+template.github+`%20char%20app]%20%20ADD%20TITLE%20HERE">comment</a>. 
-Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
+See <a target="_blank" href="https://github.com/r12a/pickers/tree/gh-pages/`+template.github+`">recent changes</a>.
+Make a <a target="_blank" href="https://github.com/r12a/pickers/issues/new?title=[`+template.github+`]%20%20ADD%20TITLE%20HERE">comment</a>. 
+Licence <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
 </div>
 `
 return out
