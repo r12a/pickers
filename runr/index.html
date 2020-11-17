@@ -62,30 +62,57 @@
 
 <div id="alphabet" class="default">
 
+
+<div id="shapelist" style="display:none; text-align:center;">
+<div id="shapekeys">
+<span onclick="findShape('16C8,16E2,16C7','ᛈ,ᛢ,ᛇ,',true)">ᛈ</span>
+<span onclick="findShape('16E8,16CF,16CE','ᛨ,ᛏ,ᛎ,',true)">ᛨ</span>
+<span onclick="findShape('16DA,16B3,16BE,16BF,16A8,16AB,16AC,16AD,16C0,16D1,16DB,16EE,16F1,16F7,16D5,16D0','ᛚ,ᚳ,ᚾ,ᚿ,ᚨ,ᚫ,ᚬ,ᚭ,ᛀ,ᛑ,ᛛ,ᛮ,ᛱ,ᛷ,ᛕ,ᛐ,',true)">ᛚ</span>
+<span onclick="findShape('16B4,16A0,16D3,16AF,16AE,16C5,16C6,16B0,16A9,16AA,16B6,16D5,16B2,16B5,16A1','ᚴ,ᚠ,ᛓ,ᚯ,ᚮ,ᛅ,ᛆ,ᚰ,ᚩ,ᚪ,ᚶ,ᛕ,ᚲ,ᚵ,ᚡ,',true)">ᚴ</span>
+<span onclick="findShape('16B7,16B8,16E4','ᚷ,ᚸ,ᛤ,',true)">ᚷ</span>
+<span onclick="findShape('16EF,16E3,16E6,16C9,16D8,16E0','ᛯ,ᛣ,ᛦ,ᛉ,ᛘ,ᛠ,',true)">ᛯ</span>
+<span onclick="findShape('16B9,16A6,16A7,16B1,16D2,16D4,16D7,16E9,16F3','ᚹ,ᚦ,ᚧ,ᚱ,ᛒ,ᛔ,ᛗ,ᛩ,ᛳ,',true)">ᚹ</span>
+<span onclick="findShape('16DE,16E5','ᛞ,ᛥ,',true)">ᛞ</span>
+<span onclick="findShape('16CB,16EA,16F2,16F4','ᛋ,ᛪ,ᛲ,ᛴ,',true)">ᛋ</span>
+<span onclick="findShape('16BB,16BA','ᚻ,ᚺ,',true)">ᚻ</span>
+<span onclick="findShape('16DD,16DF,16DC,16C4,16E1,16F0,16F3,16C2,16D9','ᛝ,ᛟ,ᛜ,ᛄ,ᛡ,ᛰ,ᛳ,ᛂ,ᛙ,',true)">ᛝ</span>
+<span onclick="findShape('16A2,16A3,16A5,16A4','ᚢ,ᚣ,ᚥ,ᚤ,',true)">ᚢ</span>
+<span onclick="findShape('16D6,16D7','ᛖ,ᛗ,',true)">ᛖ</span>
+<span onclick="findShape('16F5,16F6,16F8,16C1,16CC,16B2,16C3','ᛵ,ᛶ,ᛸ,ᛁ,ᛌ,ᚲ,ᛃ',true)">…</span>
+</div>
+<div id="extrashapes"></div>
+</div>
+
+<!--
+ᛈᛢᛇ
+ᛨᛏᛎ
+ᛚᚳᚾᚿᚨᚫᚬᚭᛀᛑᛛᛮᛱᛷᛕᛐ
+ᚴᚠᛓᚯᚮᛅᛆᚰᚩᚪᚶᛕᚲᚵᚡ
+ᚷᚸᛤ
+ᛯᛣᛦᛉᛠᛘ
+ᚹᚦᚧᚱᛒᛔᛗᛩᛳ
+ᛞᛥ
+ᛋᛪᛲᛴ
+ᚻᚺ
+ᛝᛟᛜᛄᛡᛰᛳᛂᛙ
+ᚢᚣᚥᚤ
+ᛖᛗ
+ᛵᛶᛸᛁᛌᚲᛃ
+-->
+
 <div class="spaceline">
 <span class="touch" title="Right-left override" style="padding: 5px;" dir="auto" onClick="add('\u202E');">RLO</span>
 <span class="touch" title="PDF" style="padding: 5px;" dir="auto" onClick="add('\u202C');">PDF</span>
 <span class="touch" title="Zero-width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>
 <span class="touch" title="Zero-width space" style="padding: 5px;" dir="auto" onClick="add('\u200B');">ZWSP</span>
 
-<span class="touch" title="Space" style="padding: 5px 140px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Wordspace" style="padding: 5px 30px;" dir="auto" onClick="add('᛫');">WORDSPACE</span>
+<span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
 
 <span id="tabEtc"></span>
 <script>addTabEtc('tabEtc')</script>
 </div>
 
-
-<!--div id="keyboardSwitch">
-<span id="elderKey" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('elder').style.display='flex'; makeKeyboard(elderkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('medievalKey youngerKey anglosaxonKey latinKey')} ">Elder</span>
-
-<span id="youngerKey" class="touch shifted" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('younger').style.display='flex';makeKeyboard(keyboarddef, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('medievalKey elderKey anglosaxonKey latinKey')} ">Younger</span>
-
-<span id="medievalKey" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('medieval').style.display='flex';makeKeyboard(medievalkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('youngerKey elderKey anglosaxonKey latinKey')} ">Medieval</span>
-
-<span id="anglosaxonKey" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {hideSelectionPanels(); document.getElementById('saxon').style.display='flex';makeKeyboard(anglosaxonkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('youngerKey elderKey medievalKey latinKey')} ">Anglo-saxon</span>
-
-<span id="latinKey" class="touch" dir="auto" onClick="if (! this.classList.contains('shifted')) {makeKeyboard(latinkbd, keyboardLCGuide);  this.classList.add('shifted'); unshiftAll('youngerKey elderKey medievalKey anglosaxonKey')} ">Latin</span>
-</div-->
 
 
 
@@ -412,6 +439,34 @@
 
 
 
+
+
+
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<span class="c">«</span>
+<span class="c">»</span>
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+<span class="c">|</span>
+<span class="c">᛫</span> 
+<span class="c">᛬</span>
+<span class="c">᛭</span>
+</div>
+
+
+
 <details>
 <summary>other characters</summary>
 <div id="other">
@@ -445,13 +500,6 @@
 
 
 
-
- <div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
-</div>
-</div>
-
-<div id="extrashapes"></div>
 
 
 <div id="temp"></div>
