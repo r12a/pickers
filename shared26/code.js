@@ -2145,6 +2145,8 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 			else {
 				for (item in spreadsheetRows) { 
 					var matchStr = item.replace(/-/g,'.')
+					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']') matchStr = 'xx'
+					//console.log('matchstr',matchStr)
 					var  regex = new RegExp(matchStr)
 					itemArray = [... item] // to handle surrogates
 					if (((itemArray.length > 1 && itemArray[0] === char) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(item))) && spreadsheetRows[item][cols.class] !== '-' && originStr.substr(ptr,item.length).match(regex)) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
