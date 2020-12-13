@@ -35,10 +35,23 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Bassah Vah text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
-//{"title":"Transl<br/>++", "alt":"Convert Bassah Vah text to a latin transliteration with vowels and other changes.", "code":"doTranscription('translitPlus')"},
-//{"title":"Trans-<br/>scribe", "alt":"Convert hindi text to a latin transcription.", "code":"doTranscription('transcription')"},
-//{"title":"Hindi<br/>to ISO", "alt":"Convert hindi text to a ISO 15919 transcription.", "code":"doTranscription('toISO15919')"},
-//{"title":"ISO to<br/>Hindi", "alt":"Convert an ISO 15919 transcription to hindi text.", "code":"doTranscription('toDeva')"}
+
+
+{"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
+
+"code":`_output=document.getElementById('output'); 
+input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+term = input[0];
+meaning = input[1];
+ipa = input[2]? input[2] : '';
+alt = input[3]? input[3] : '';
+notes = input[4]? input[4] : '';
+
+add(getVocabWithAlt(term, meaning, ipa, notes, alt));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 ]
 
 
