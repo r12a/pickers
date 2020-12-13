@@ -2759,15 +2759,21 @@ function makeLatinTypeAssistMap () {
 	// get the data
 	var collector = []
 	for (item in spreadsheetRows) {
-		if (spreadsheetRows[item][cols.transLoc]) collector.push(spreadsheetRows[item][cols.transLoc])
-		//if (cols.transcKey && spreadsheetRows[item][cols.transcKey]) collector.push(spreadsheetRows[item][cols.transcKey])
-		if (cols.transcription && spreadsheetRows[item][cols.transcription]) {
-			var items = spreadsheetRows[item][cols.transcription].split(' ')
+		if (spreadsheetRows[item][cols.latin]) {
+			var items = spreadsheetRows[item][cols.latin].split(' ')
 			for (let i=0;i<items.length;i++) collector.push(items[i])
 			}
-		if (cols.ipaLoc && spreadsheetRows[item][cols.ipaLoc]) {
-			items = spreadsheetRows[item][cols.ipaLoc].split(' ')
-			for (let i=0;i<items.length;i++) collector.push(items[i])
+		else if (typeof cols.latin === 'undefined') {
+			if (spreadsheetRows[item][cols.transLoc]) collector.push(spreadsheetRows[item][cols.transLoc])
+			//if (cols.transcKey && spreadsheetRows[item][cols.transcKey]) collector.push(spreadsheetRows[item][cols.transcKey])
+			if (cols.transcription && spreadsheetRows[item][cols.transcription]) {
+				var items = spreadsheetRows[item][cols.transcription].split(' ')
+				for (let i=0;i<items.length;i++) collector.push(items[i])
+				}
+			if (cols.ipaLoc && spreadsheetRows[item][cols.ipaLoc]) {
+				items = spreadsheetRows[item][cols.ipaLoc].split(' ')
+				for (let i=0;i<items.length;i++) collector.push(items[i])
+				}
 			}
 		}
 	
