@@ -6,7 +6,7 @@
 
 <!-- creates a list of transcription entries for a picker from a space-separated list of characters/char sequences -->
 
-<script type="text/javascript">
+<script>
 
 /*
 example input
@@ -18,6 +18,8 @@ example input
 
 function makeList (charlist) {
 
+	var extrasFound = false
+	if (charlist.includes('/')) extrasFound = true
 	var lines = charlist.split('\n')
 	var out = ''
 	for (l=0; l<lines.length; l++) {
@@ -26,21 +28,21 @@ function makeList (charlist) {
 		console.log(parts)
 		var firsthalf = parts[0].trim()
 		var extras = ''
-		if (parts[1]) extras = parts[1]
-		extras = extras.replace(/ /g,',').trim()
+		if (extrasFound) {
+			if (parts[1]) extras = parts[1]
+			else extras = '&nbsp;'
+			extras = extras.replace(/ /g,',').trim()
+			}
 		var targets = firsthalf.split(' ')
-		for (let t=0;t<targets.length;t++) {
+		var key = targets[0]
+		for (let t=1;t<targets.length;t++) {
 			var codepoint = ''
-			//for (let c=0; c<targets[t].length; c++) {
-				sequence = [... targets[t]]
-				for (z=0;z<sequence.length;z++) codepoint += sequence[z].codePointAt(0).toString(16).toUpperCase()
-
-				//codepoint += targets[t].codePointAt(c).toString(16).toUpperCase()
-				//}
+			sequence = [... targets[t]]
+			for (z=0;z<sequence.length;z++) codepoint += sequence[z].codePointAt(0).toString(16).toUpperCase()
 			currentLine += codepoint
 			if (t < targets.length-1) currentLine += ','
 			}
-		out += '<span onclick="findShape(\''+currentLine.replace(/ /g,',') + '\',\''+extras+'\',true)">'+targets[0]+'</span>\n'
+		out += '<span onclick="findShape(\''+currentLine.replace(/ /g,',') + '\',\''+extras+'\',true)">'+key+'</span>\n'
 		}
 	return out
 	}
@@ -58,7 +60,9 @@ p, input, #character, #inputArea  { font-size: 200%; }
 </head>
 
 <body>
-<p>Add a space-separated list of characters here, one line per shape to be matched, with the key first. If extra characters are to appear below, add those after / on the same line.</p>
+<p>Make shape list</p>
+<p style="font-size: 16px">Add a space-separated list of characters, one line per shape to be matched, with the key first (which should be duplicated in the line if it's a valid selection).</p>
+<p style="font-size: 16px">If extra characters are to appear below, add those after / on the same line. (No space around the /.)</p>
 <p>&nbsp;
 <textarea dir=ltr id=inputArea style="width: 90%; height: 200px;"></textarea></p>
 
