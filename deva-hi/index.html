@@ -62,11 +62,56 @@
 
 <div id="shapelist" style="display:none; text-align:center;">
 <div id="shapekeys">
+<span onclick="findShape('921,907,908,921,91D,919,95C,939','झ्र,ड्य,ह्ह,ह्म,ह्य,ह्न,ह्र,ह्व,ह्ल,ङ्र,ड़्र,ङ्ङ,ड़्ड़,ङ्य,ड़्य,s,ड्र,ड्ड,ड्ग,ड्ढ,ड्व,ड्र,द्द,ङ्क,ङ्घ,ङ्ङ,ङ्व,ङ्म,ङ्ख,ङ्ग,ङ्ङ,ङ्ह,',true)">ड</span>
+<span onclick="findShape('909,90A,905,905902,905903,906,913,914,950,969','&nbsp;',true)">उ</span>
+<span onclick="findShape('90F,910','&nbsp;',true)">ए</span>
+<span onclick="findShape('92A,95E,937,92F,92B','प्न,प्र,ष्र,फ्र,प्ग,य्र,य्य,s,प्ल,प्त,फ्ल,ष्ट,ष्ठ',true)">फ्‍</span>
+<span onclick="findShape('924,932','त्त,क्त,ल्र,s,ल्ल',true)">त्‍</span>
+<span onclick="findShape('91C,95B,91E','ज्र,ज्ञ,ञ्र,s,ज्ज,ञ्च,ञ्ज',true)">ज्‍</span>
+<span onclick="findShape('91A','s,च्च,च्र',true)">च्‍</span>
+<span onclick="findShape('92C,915,958,935,920','क्र,ब्र,ठ्य,व्र,व्ठ,व्व,s,क्क,क्ल,ब्ल,ठ्व,ठ्र,ठ्ठ,व्ल',true)">व्‍</span>
+<span onclick="findShape('91F,920,922,95D,939','ट्य,ढ्य,s,ट्ड,ट्ठ,ट्ट,ट्व,ट्र,द्र,द्ग,द्द,द्भ,द्ध,द्घ,द्न,द्व,द्ब,ढ्व,ढ्र,ढ्ढ',true)">ट</span>
+<span onclick="findShape('96B,926','&nbsp;',true)">५</span>
+<span onclick="findShape('917,95A','ग्न,ग्र,s,ग्ल',true)">ग्‍</span>
+<span onclick="findShape('92D,938,92E','म्र,s,म्ल',true)">म्‍</span>
+<span onclick="findShape('930,938,20B9','स्र,स्न',true)">र</span>
+<span onclick="findShape('959,916','ख्र',true)">ख्‍</span>
+<span onclick="findShape('91B,927,918,96C','ध्र,घ्र,द्य,द्द,छ्छ,छ्य,ह्ह,s,छ्व,छ्र,छ्ल',true)">६</span>
+<span onclick="findShape('925,936,967,92D,968','क्ष,थ्न,थ्र,भ्न,भ्र,श्च,श्व,श्र,श्ल,s,भ्ल',true)">थ्‍</span>
+<span onclick="findShape('90B,960','त्र,न्र,न्न',true)">त्र</span>
+<span onclick="findShape('25CC93C,941,942,943,944,93C','&nbsp;',true)">◌़</span>
+<span onclick="findShape('25CC902,947,948,901,902','&nbsp;',true)">◌ं</span>
+<span onclick="findShape('93E,93F,940,94B,94C,93E,903','&nbsp;',true)">&nbsp;ा</span>
+<span onclick="findShape('2026,928,923,93D','द्म,च्च,ण्र',true)">…</span>
 </div>
 </div>
 
 <div id="extrashapes"></div>
 
+<!--
+ड इ ई ड झ ङ ड़/झ्र ड्य ह्ह ह्म ह्य ह्न ह्र ह्व ह्ल ङ्र ड़्र ङ्ङ ड़्ड़ ङ्य ड़्य s ड्र ड्ड ड्ग ड्ढ ड्व ड्र द्द ङ्क ङ्घ ङ्ङ ङ्व ङ्म ङ्ख ङ्ग ङ्ङ ङ्ह 
+उ उ ऊ अ अं अः आ ओ औ ॐ ३
+ए ए ऐ
+फ्‍ प फ़ ष य फ/प्न प्र ष्र फ्र प्ग य्र य्य s प्ल प्त फ्ल ष्ट ष्ठ
+त्‍ त ल/त्त क्त ल्र s ल्ल
+ज्‍ ज ज़ ञ/ज्र ज्ञ ञ्र s ज्ज ञ्च ञ्ज
+च्‍ च/s च्च च्र
+व्‍ ब क क़ व ठ/क्र ब्र ठ्य व्र व्ठ व्व s क्क क्ल ब्ल ठ्व ठ्र ठ्ठ व्ल
+ट ट ठ ढ ढ़ ह/ट्य ढ्य s ट्ड ट्ठ ट्ट ट्व ट्र द्र द्ग द्द द्भ द्ध द्घ द्न द्व द्ब ढ्व ढ्र ढ्ढ
+५ द/ज्ञ
+ग्‍ ग ग़/ग्न ग्र s ग्ल
+म्‍ भ स म/म्र s म्ल
+र र स ₹/स्र स्न
+ख्‍ ख़ ख/ख्र
+६ छ ध घ ६/ध्र घ्र द्य द्द छ्छ छ्य ह्ह s छ्व छ्र छ्ल
+थ्‍ थ श १ भ २/थ्न थ्र भ्न भ्र s भ्ल
+क्ष क्ष/श्च श्व श्र श्ल
+त्र ऋ ॠ/त्र न्र न्न
+◌़ ु ू ृ ॄ ़
+◌ं े ै ँ ं
+ा ि ी ो ौ ा ः
+… न ण ऽ/द्म च्च ण्र
+-->
 
 <div class="spaceline">
 <span class="touch" title="Zero width joiner" style="padding: 5px;" dir="auto" onClick="add('\u200D');">ZWJ</span>

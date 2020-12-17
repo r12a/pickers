@@ -47,13 +47,15 @@ var pulldown = [
 
 {"title":"Hindi<br/>to ISO", "alt":"Convert Hindi text to a ISO 15919 transcription.", "code":"doTranscription('toISO15919')", "warning":"The result should be checked, especially for inherent vowels that are pronounced at the end of a word."},
 
-{"title":"ISO to<br/>Hindi", "alt":"Convert an ISO 15919 transcription to Hindi text.", "code":"doTranscription('toDeva')"}
+{"title":"ISO to<br/>Hindi", "alt":"Convert an ISO 15919 transcription to Hindi text.", "code":"doTranscription('toDeva')"},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/devanagari/hi_vocab')"},
 ]
 
 
 
 var inputAids = [
-//{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
+{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
 
 //{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
