@@ -68,11 +68,46 @@ str = ' '+transliterate(str)+'  '
 // convert translit letters to ipa letters
 // convert these to uppercase first, then lowercase all later, so there's no interference
 // nuktas
-str = str.replace(/ʧˑ/g, "ʦ")
-str = str.replace(/ʧʰˑ/g, "ʦʰ")
+str = str.replace(/ʧˑ/g, "t͡s")
+str = str.replace(/ʧʰˑ/g, "t͡sʰ")
 str = str.replace(/ʤˑ/g, "z")
+str = str.replace(/ʤ/g, "d͡ʒ")
 
-str = str.replace(/yV /g, "ⁱ ")
+str = str.replace(/yV /g, "ʲ ")
+
+// standalone vowels
+str = str.replace(/ə̣ʲ/g, "əĭ")
+str = str.replace(/ə̣ʷ/g, "əŭ")
+str = str.replace(/ɨ̣̄/g, "ɨː")
+str = str.replace(/ị̄/g, "iː")
+str = str.replace(/ɨ̣/g, "ɨ")
+str = str.replace(/ị/g, "i")
+str = str.replace(/ụ̄/g, "uː")
+str = str.replace(/ụ/g, "u")
+str = str.replace(/ə̣̄/g, "əː")
+str = str.replace(/ə̣/g, "ə")
+str = str.replace(/ẹ̄/g, "eː")
+str = str.replace(/ẹ/g, "e")
+str = str.replace(/ọ̄/g, "oː")
+str = str.replace(/ọ/g, "o")
+str = str.replace(/ạ̄/g, "aː")
+str = str.replace(/ạ/g, "a")
+str = str.replace(/ɔ̣/g, "ɔː")
+str = str.replace(/r̥̣/g, "ri")
+
+// long vowels
+str = str.replace(/əʷ/g, "əŭ")
+str = str.replace(/əʲ/g, "əĭ")
+str = str.replace(/ā/g, "aː")
+str = str.replace(/ə̄/g, "əː")
+str = str.replace(/ō/g, "oː")
+str = str.replace(/ī/g, "iː")
+str = str.replace(/ū/g, "uː")
+str = str.replace(/ē/g, "eː")
+str = str.replace(/r̥/g, "ri")
+
+str = str.replace(/m̽/g, "n")
+
 
 
 // remove virama

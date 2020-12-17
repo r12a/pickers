@@ -2,11 +2,11 @@ var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Serif Devanagari WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "150"; // px height of text area
+	factoryDefaults.rows = "200"; // px height of text area
 	factoryDefaults.lineheight = "1.4"; // line height of text area 
 	factoryDefaults.language = 'ks' // language to use for examples
 	factoryDefaults.uifont = 'Noto Serif Devanagari WF'; // font name  for selection area (a single font, no quotes)
-	factoryDefaults.uisize = "32";  // selection area font size, number of pixels (just the number)
+	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "s\u25CC";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
@@ -35,6 +35,23 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Kashmiri text to a latin transliteration.", "code":"doTranscription('transliterate')"},
+
+
+{"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
+
+"code":`_output=document.getElementById('output'); 
+input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+term = input[0];
+meaning = input[1];
+ipa = input[2]? input[2] : translitPlus(input[0]);
+alt = input[3]? input[3] : '';
+notes = input[4]? input[4] : '';
+
+add(getVocabWithAlt(term, meaning, ipa, notes, alt));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 ]
 
 
@@ -43,6 +60,8 @@ var pulldown = [
 {"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Hindi text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('translitPlus')", "warning":"Adds inherent vowels and palatalisation. The result should be checked."},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/devanagari/ks_vocab')"},
 ]
 
 
