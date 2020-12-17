@@ -68,6 +68,8 @@ var pulldown = [
 {"title":"Cree<br/>to IPA", "alt":"Convert Inuktitut text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPA')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
 
 {"title":"Cree<br>to Latin", "alt":"Convert Cree script text to the Latin orthography.", "code":"doTranscription('transcription')", "warning":"The result of this conversion needs to be checked for accuracy."},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/cans/crk_vocab')"},
 ]
 
 

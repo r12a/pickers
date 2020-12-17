@@ -67,6 +67,8 @@ var pulldown = [
 {"title":"Arabic<br/>to LOC", "alt":"Convert Arabic text to an Library of Congress Latin transcription.", "code":"doTranscription('toLOC')", "warning": "Full transcription requires fully vowelled text! The results should be checked for accuracy."},
 
 {"title":"Arabic<br/>to ISO", "alt":"Convert Arabic text to an ISO Latin transcription.", "code":"doTranscription('toISO')", "warning": "Full transcription requires fully vowelled text! The results should be checked for accuracy."},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/arabic/arb_vocab')"},
 ]
 
 
