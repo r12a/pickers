@@ -547,6 +547,18 @@ dt {
     color: orange;
 	background-color: white;
 	}
+#shapekeys span {
+    color: orange;
+	background-color: white;
+	padding: 0 5px;
+	margin-inline-start: -.25em;
+	}
+#shapekeys span:hover {
+    background-color: #f1621f;
+    color: white;
+    border-radius: 5px;
+}
+
 
 #tools {
 	float:right; 
