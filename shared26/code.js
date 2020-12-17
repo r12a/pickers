@@ -179,6 +179,14 @@ function openEscapeWindow () {
 	converter.focus()
 	}
 
+function openVocabWindow (filename) {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var vocab = window.open(filename+'?q='+	encodeURIComponent(chars), 'vocab') 
+	output.focus()
+	vocab.focus()
+	}
+
 function doTranscription (type) {
 	transcribe(getHighlightedText(_output), type)
 	_output.focus()
