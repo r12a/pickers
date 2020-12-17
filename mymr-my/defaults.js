@@ -65,6 +65,8 @@ var pulldown = [
 {"title":"Burmese<br/>to MLC", "alt":"Convert Burmese text to an MLC Latin transcription.", "code":"doTranscription('toMLC')", "warning":"The results should be checked for accuracy."},
 
 {"title":"Burmese<br/>to IPA", "alt":"Convert Burmese text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPA')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand."},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/myanmar/my_vocab')"},
 ]
 
 
