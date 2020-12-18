@@ -46,6 +46,8 @@ var pulldown = [
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Georgian to<br/>National Tr", "alt":"Convert Georgian text to a national Georgian transcription.", "code":"doTranscription('toNational')"},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/georgian/ka_vocab')"},
 ]
 
 
