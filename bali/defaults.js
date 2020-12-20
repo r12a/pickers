@@ -43,6 +43,8 @@ var pulldown = [
 {"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Balinese text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Balinese to LOC", "alt":"Convert Balinese text to a Library of Congress Latin transcription.", "code":"doTranscription('toLatin')"},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/balinese/ban_vocab')"},
 ]
 
 
