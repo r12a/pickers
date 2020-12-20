@@ -55,6 +55,8 @@ var pulldown = [
 
 //{"title":"Radice<br/>to Bengali", "alt":"Convert Radice Latin transcription to Bengali.", "code":"doTranscription('rtoBeng')"},
 // THE FORMER ALL NEED UPDATING
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/bengali/bn_vocab')"},
 ]
 
 
