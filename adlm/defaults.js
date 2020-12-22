@@ -70,6 +70,8 @@ var pulldown = [
 {"title":"Reverse transcription", "alt":"Convert Latin transliterated text to Pular.", "code":"transcribe(getHighlightedText(document.getElementById('output')), 'revTransliterate')"},
 
 {"title":"Vocab to<br>Example", "alt":"Convert a vocab sequence to example markup.", "code":"vocab2Example(getHighlightedText(document.getElementById('output')))"},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/adlam/fuf_vocab')"},
 ]
 
 

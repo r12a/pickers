@@ -66,6 +66,8 @@ var pulldown = [
 {"title":"ISO to<br/>Malayalam", "alt":"Convert ISO latin text to Malayalam transcription.", "warning":"The results should be checked for accuracy.", "code":"doTranscription('toMalayalam')"},
 
 {"title":"Malayalam<br/>to IPA", "alt":"Convert Malayalam text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toISO15919')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/malayalam/ml_vocab')"},
 ]
 
 
