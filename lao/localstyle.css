@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'Noto Serif Lao WF';
+    src: url('/shared/webfonts/notoseriflao-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notoseriflao-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
     font-family: 'Noto Sans Lao WF';
     src: url('/shared/webfonts/NotoSansLao-Regular.woff2') format('woff2'),
          url('/shared/webfonts/NotoSansLao-Regular.woff') format('woff');
@@ -7,7 +14,8 @@
 	}
 
 
-[lang=lo] { font-family: 'Noto Sans Lao WF', serif; }
+
+[lang=lo] { font-family: 'Noto Serif Lao WF', serif; }
 
 
 
@@ -35,7 +43,7 @@ span.hint {
 .key span { 
 	font-size: 1.1em; 
 	font-weight: normal; 
-	font-family:  'Noto Sans Lao WF',  sans-serif;  
+	font-family:  'Noto Serif Lao WF',  sans-serif;  
     line-height: 1;
 	}
 .key {padding: 4px 0 0 0; }

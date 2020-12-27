@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Saysettha OT' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Noto Serif Lao WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'lo' // language to use for examples
-	factoryDefaults.uifont = 'Saysettha OT'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Noto Serif Lao WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "\u00A0";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,7 +18,7 @@ var thisPicker = 'laoPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Sans Lao WF" ]
+var webFonts = [ "Noto Serif Lao WF","Noto Sans Lao WF" ]
 
 
 var template = {}
