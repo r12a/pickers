@@ -45,6 +45,8 @@ var pulldown = [
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Armenian<br>to ISO", "alt":"Convert Armenian text to an ISO 9985 Latin transcription.", "code":"doTranscription('toISO')", "warning":"The results should be checked for accuracy."},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/armenian/hy_vocab')"},
 ]
 
 
