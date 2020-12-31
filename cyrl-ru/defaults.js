@@ -46,6 +46,8 @@ var pulldown = [
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Russian<br/>to ISO", "alt":"Convert Russian text to an ISO 9:1995 Latin transliteration.", "code":"doTranscription('toISO')", "warning":"The results should be checked for accuracy."},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/cyrillic/ru_vocab')"},
 ]
 
 
