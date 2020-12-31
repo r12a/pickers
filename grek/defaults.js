@@ -52,6 +52,8 @@ var pulldown = [
 {"title":"Case-<br>fold", "alt":"Casefold the text (useful for automated matching).", "code":"add(casefold(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 
 //{"title":"Greek<br/>to ISO", "alt":"Convert Greek text to an ISO 9:1995 Latin transliteration.", "code":"doTranscription('toISO')"},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/greek/el_vocab')"},
 ]
 
 
