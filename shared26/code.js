@@ -567,6 +567,8 @@ function add (ch) {
 		while (ch.charAt(0) == defaults.ccbase) {
 			ch = ch.substr(1)
 			}
+		// remove leading zwj (used esp for arabic vowels)
+		ch = ch.replace(/\u200D/g,'').replace(/\u0640/g,'')
 		}
 	if (document.getElementById('output').style.display == 'none') { return; }
 
@@ -1402,7 +1404,7 @@ function setGridHints (type) {
 		for (let n=0; n<nodes.length; n++ ) {
 			charNode = nodes[n].querySelector('.c, .v')
 			hintNode = nodes[n].querySelector('.hint')
-			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'')
+			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.key]) {
 				keyContent = window.spreadsheetRows[content][cols.key] ? window.spreadsheetRows[content][cols.key].replace(/¶/,'\u0331') : ''
@@ -1416,7 +1418,7 @@ function setGridHints (type) {
 		for (let n=0; n<nodes.length; n++ ) {
 			charNode = nodes[n].querySelector('.c, .v')
 			hintNode = nodes[n].querySelector('.hint')
-			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'')
+			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ipaLoc]) {
 				keyContent = window.spreadsheetRows[content][cols.ipaLoc] ? window.spreadsheetRows[content][cols.ipaLoc] : ''
@@ -1431,7 +1433,7 @@ function setGridHints (type) {
 			charNode = nodes[n].querySelector('.c, .v')
 			//console.log(charNode.textContent, charNode.parentNode.querySelector('.hint').textContent)
 			hintNode = nodes[n].querySelector('.hint')
-			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'')
+			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.transLoc]) {
 				keyContent = window.spreadsheetRows[content][cols.transLoc] ? window.spreadsheetRows[content][cols.transLoc] : ''
@@ -1522,7 +1524,8 @@ function initialise() {
 	node = document.querySelectorAll( '.c, .v' )
 	var notInSpreadsheet = ''
 	for (var n = 0; n < node.length; n++ ) { 
-		content = node[n].textContent
+		//content = node[n].textContent.replace(/\u200D/g,'').replace(/\u0640/g,'')
+		content = node[n].textContent.replace(/\u0640/g,'')
 		codepoints = [... node[n].textContent]
 		
 		// set id and dataset.c
