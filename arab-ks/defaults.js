@@ -19,11 +19,11 @@ var thisPicker = 'kashmiriaPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Scheherazade WF", "Noto Nastaliq Urdu WF", "Awami Nastaliq WF" ]
+var webFonts = [  "Noto Nastaliq Urdu WF", "Awami Nastaliq WF", "Scheherazade New WF"]
 
 var template = {}
-	template.title = 'Kashmiri (arab) character app'
-	template.sample = "سٔری لُکھ چھہٕ حقوٗق تِہ عزت لِحاظٕ ہِہی ژامِت."
+	template.title = 'Kashmiri [arab]'
+	template.sample = "سٲری اِنسان چھِ آزاد زامٕتؠ۔ وؠقار تہٕ حۆقوٗق چھِ ہِوی۔ تِمَن چھُ سوچ سَمَج عَطا کَرنہٕ آمُت تہٕ تِمَن پَزِ بٲے بَرادٔری ہٕنٛدِس جَذباتَس تَحَت اکھ أکِس اکار بَکار یُن ۔"
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'arab-ks'
@@ -45,6 +45,8 @@ var pulldown = [
 {"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Kashmiri text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/arabic/ks_vocab')"},
 ]
 
 
