@@ -96,5 +96,8 @@
 
 #keyboard { display: none; }
 
-
+#charts {
+    text-align: center;
+    font-size: 90%;
+}
 
