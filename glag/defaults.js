@@ -23,7 +23,7 @@ var webFonts = [ "Glagolitic WF" ]
 
 var template = {}
 	template.title = 'Glagolitic'
-	template.sample = "कऻशुर छि सऻन्य् माजि ज़्यव। असि पज़ि पनॖन्यन शुर्यन सॗत्य् ॳथ्य् ज़बऻन्य् मंज़ कथ करॖनय्।"
+	template.sample = "ⰵⰲⰰⰳⰵⰾⰻⰵ ⱉⱅⱐ ⰾⱆⰽⰺ: ⱆⰱⱁ· ⰿⱀⱁⰸⰻ ⱀⰰⱍⱔⱎⱔ· ⱍⰻⱀⰻⱅⰻ ⱂⱁⰲⱑⱄⱅⱏ· ⱁ ⰹⰸⰲⱑⱄⱅⱐⱀⱏⱈⱐ ⰲⱐ ⱀⰰⱄⱐ ⰲⰵⱎⱅⰵⱈⱐ· ⱑⰽⱁⰶⰵ ⱂⱃⱑⰴⰰⱎⰵ ⱀⰰⰿⱐ· ⰱⱏⰲⱏⱎⰵⰹ ⰹⱄⰽⱁⱀⰻ ⱄⰰⰿⱁⰲⰻⰴⱏⱌⰻ· ⰺ ⱄⰾⱆⰳⰹ ⱄⰾⱁⰲⰵⱄⰻ."
 	template.blocklocation= 'glag'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'glag'
