@@ -2,14 +2,14 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Rudimentary Lydian character app 26</title>
+<title>Lydian character app 26</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
 <link rel="stylesheet" href="../shared26/style.css" />
 <link rel="stylesheet" href="localstyle.css" />
 
 <script src="defaults.js">  </script>
-<script src="/shared/fontdb/db.js"> </script>
+<script src="../../shared/fontdb/db.js"> </script>
 <script src="../../shared/scriptdb/lydi.js">  </script>
 
 <script src="../../shared/code/boilerplate.js"></script>
@@ -91,12 +91,8 @@
 
 
 <div class="spaceline">
-<span class="touch" dir="auto" onclick="toggleSubjoined(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SUBJ</span>
-<span class="touch" dir="auto" onclick="toggleExtended(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">EXT</span>
 <span class="touch" dir="auto" onClick="ccb=document.getElementById('formatchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">FORMAT</span> 
-<span class="touch" title="Virama" style="padding: 5px 50px;" dir="auto" onClick="add('\u094D');">VIRAMA</span>
 <span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" style="padding: 5px 30px;" onClick="add('\u200B');" title="Zero-width space">ZWSP</span>
 
 <span id="tabEtc"></span>
 <script>addTabEtc('tabEtc')</script>
@@ -182,7 +178,7 @@
 
 
 
-<div id="numberGrid">
+<!--div id="numberGrid">
 	<div id="digitKeypad" class="box">
 		<div>
 		<span class="g"><span class="hint">90</span><span class="c">𐍁</span></span>
@@ -198,11 +194,11 @@
 		<div style="margin-top: .5em;">
 <span class="g"><span class="hint"></span><span class="c">&#x0305;</span></span>
 		</div>
-		<!--div>
+		<div>
 		<span class="g"><span class="hint">0</span><span class="c">ฯลฯ</span></span>
-		</div-->
 		</div>
-</div>
+		</div>
+</div-->
 </div>
 
 
@@ -226,7 +222,6 @@
 
 
 <div id="punctuation">
-<span class="c">·</span>
 <span class="c">,</span>
 <span class="c">.</span>
 <span class="c">;</span>
@@ -242,8 +237,9 @@
 <span class="c">(</span>
 <span class="c">)</span>
 <span class="c">-</span>
-<span class="c">।</span> 
-<span class="c">॥</span>
+<span class="c">·</span>
+<span class="c">&#x2E31;</span> 
+<span class="c">&#x1093F;</span>
 </div>
 </div><!-- end of alphabet -->
 

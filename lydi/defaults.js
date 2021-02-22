@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Noto Sans Lydian' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Noto Sans Lydian WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // px height of text area
 	factoryDefaults.lineheight = "1.4"; // line height of text area
-	factoryDefaults.language = 'cu' // language to use for examples
-	factoryDefaults.uifont = 'Noto Sans Lydian'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.language = 'xld' // language to use for examples
+	factoryDefaults.uifont = 'Noto Sans Lydian WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Lydian WF" ]
 
 
 var template = {}
-	template.title = 'Lydian (rough)'
+	template.title = 'Lydian'
 	template.sample = "𐤠𐤨𐤦𐤯 𐤲𐤤𐤣 𐤱𐤠𐤳𐤱𐤶𐤫𐤰 𐤠𐤨𐤠𐤯 𐤲𐤯 𐤱𐤠𐤨𐤠𐤫𐤯𐤭𐤬𐤥 𐤠𐤣𐤪𐤯𐤦𐤮 𐤲𐤦𐤮 𐤣𐤦𐤯𐤬𐤩𐤩𐤠𐤣 𐤱𐤠𐤨𐤪𐤯𐤦𐤯𐤦𐤫 𐤲𐤯𐤣𐤵𐤫𐤨 𐤠𐤭𐤯𐤦𐤪𐤰𐤨 𐤨𐤠𐤯𐤮𐤠𐤭𐤩𐤬𐤨𐤦𐤣 𐤠𐤨𐤦𐤯 𐤤𐤣𐤨𐤬𐤨 𐤶𐤯𐤲𐤭𐤠𐤯𐤠𐤣 𐤨𐤬𐤯𐤠𐤣 𐤠𐤪𐤰 𐤪𐤦𐤯𐤭𐤦𐤣𐤠𐤮𐤯𐤠𐤳 𐤱𐤶𐤯𐤠𐤪𐤫𐤦𐤣𐤫 𐤠𐤨𐤳 𐤲𐤦𐤮 𐤶𐤪𐤫 𐤰𐤫 𐤡𐤠𐤸𐤣𐤫𐤠𐤳𐤬𐤣 𐤡𐤰𐤨 𐤦𐤫 𐤪𐤶𐤯𐤭𐤦𐤣 𐤡𐤰𐤨 𐤡𐤦𐤣𐤶𐤫 𐤲𐤦𐤨 𐤦𐤫𐤯 𐤠𐤨𐤪𐤯 𐤲𐤤𐤣 𐤶𐤪𐤤𐤣 𐤶𐤯𐤠𐤪𐤳 𐤰𐤫 𐤠𐤣𐤠𐤣 𐤠𐤭𐤯𐤦𐤪𐤰𐤳 𐤡𐤦𐤱𐤤𐤭𐤳𐤯"
 	template.blocklocation= 'lydi'  // blocklocation to use for examples
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
@@ -34,10 +34,10 @@ var template = {}
 
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert XXXX text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Lydian text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
 
 
-{"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
+/*{"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
 
 "code":`_output=document.getElementById('output'); 
 input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
@@ -51,7 +51,7 @@ notes = input[4]? input[4] : '';
 
 add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
-_output.focus();`},
+_output.focus();`},*/
 ]
 
 
@@ -61,7 +61,7 @@ _output.focus();`},
 var pulldown = [
 {"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to XXXX text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+/*{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('translitPlus')", "warning":"Adds inherent vowels and palatalisation. The result should be checked."},
 
@@ -77,16 +77,16 @@ var pulldown = [
 
 {"title":"XXXX<br/>to IPA", "alt":"Convert XXX text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toISO15919')", "warning":"Separate syllables with spaces before use! Full transcription requires fully vowelled text! This only produces an APPROXIMATION to an IPA transcription. Use it as a base and refine it by hand." },
 
-{"title":"ISO to<br/>XXXX", "alt":"Convert an ISO 15919 transcription to XXXX text.", "code":"doTranscription('toDeva')"},
+{"title":"ISO to<br/>XXXX", "alt":"Convert an ISO 15919 transcription to XXXX text.", "code":"doTranscription('toDeva')"},*/
 ]
 
 
 
 
 var inputAids = [
-{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
+//{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
 
-{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
+//{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
 {"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type XXXX from the keyboard."},
 
@@ -95,8 +95,6 @@ var inputAids = [
 //{"title":"ISO to Hindi", "dataVar":"showISOCharMap", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(isoCharacterMap);makeKbdEventList(isoCharacterMap);", "desc":"Create XXXX text from characters in the XXXX transcription."},
 
 {"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type XXXX from the keyboard via reverse transliteration."},
-
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
 ]
 
 
