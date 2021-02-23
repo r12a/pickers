@@ -2,7 +2,7 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Temporary Glagolitic character app 26</title>
+<title>Glagolitic character app 26</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
 <link rel="stylesheet" href="../shared26/style.css" />
@@ -91,12 +91,10 @@
 
 
 <div class="spaceline">
-<span class="touch" dir="auto" onclick="toggleSubjoined(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SUBJ</span>
-<span class="touch" dir="auto" onclick="toggleExtended(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">EXT</span>
-<span class="touch" dir="auto" onClick="ccb=document.getElementById('formatchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">FORMAT</span> 
-<span class="touch" title="Virama" style="padding: 5px 50px;" dir="auto" onClick="add('\u094D');">VIRAMA</span>
+<span class="touch" style="margin: 0; padding: 5px 20px;" dir="auto" onClick="toggleShift(this);if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SHIFT</span>
+<span class="touch" title="Middle dot" style="padding: 5px 10px;" dir="auto" onClick="add('·');">·</span>
 <span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" style="padding: 5px 30px;" onClick="add('\u200B');" title="Zero-width space">ZWSP</span>
+
 
 <span id="tabEtc"></span>
 <script>addTabEtc('tabEtc')</script>
@@ -142,7 +140,7 @@
 <span class="g"><span class="hint">ʧʰ</span><span class="c">ⱍ</span></span>
 <span class="g"><span class="hint">ʈʰ</span><span class="c">ⰼ</span></span>
            </div>
-           <div>
+           <div class="topDivider">
 <span class="g"><span class="hint">b</span><span class="c">ⱇ</span></span>
 <span class="g"><span class="hint">d</span><span class="c">ⰲ</span></span>
 <span class="g"><span class="hint">ʤ</span><span class="c">ⱚ</span></span>
@@ -152,11 +150,11 @@
 <span class="g"><span class="hint">w</span><span class="c">ⰶ</span></span>
 <span class="g"><span class="hint">w</span><span class="c">ⱈ</span></span>
            </div>
-            <div>
+            <div style="justify-content: center" class="topDivider">
 <span class="g"><span class="hint">m</span><span class="c">ⰿ</span></span>
 <span class="g"><span class="hint">n</span><span class="c">ⱀ</span></span>
             </div>
-            <div>
+            <div style="justify-content: center">
 <span class="g"><span class="hint">r</span><span class="c">ⱃ</span></span>
 <span class="g"><span class="hint">l</span><span class="c">ⰾ</span></span>
             </div>
@@ -205,7 +203,7 @@
 </div>
 
 
-<div class="verticalAlign bottomDivider">
+<div>
 <div>
 <span class="g"><span class="hint"></span><span class="c">ⱐ</span></span><br/>
 <span class="g"><span class="hint"></span><span class="c"></span></span>
@@ -227,68 +225,28 @@
 
 
 
-<div id="cchars">
-<div>
-<span class="g"><span class="hint"></span><span class="c">ँ</span></span>
-</div>
-<div>
-<span class="g"><span class="hint"></span><span class="c">ं</span></span>
-</div>
-<div>
-<span class="g"><span class="hint"></span><span class="c">़</span></span>
-</div>
-</div>
 
 
-<div id="numberGrid">
+<!--div id="numberGrid">
 	<div id="digitKeypad" class="box">
 		<div>
-		<span class="g"><span class="hint">1</span><span class="c">๑</span></span>
-		<span class="g"><span class="hint">2</span><span class="c">๒</span></span>
-		<span class="g"><span class="hint">3</span><span class="c">๓</span></span>
+		<span class="g"><span class="hint">90</span><span class="c">𐍁</span></span>
+		<span class="g"><span class="hint">900</span><span class="c">𐍊</span></span>
 		</div>
 		<div>
-		<span class="g"><span class="hint">4</span><span class="c">๔</span></span>
-		<span class="g"><span class="hint">5</span><span class="c">๕</span></span>
-		<span class="g"><span class="hint">6</span><span class="c">๖</span></span>
+		<span class="g"><span class="hint">4</span><span class="c">•</span></span>
+		<span class="g"><span class="hint">5</span><span class="c">&#x0304;&#x0331;</span></span>
 		</div>
-		<div>
-		<span class="g"><span class="hint">7</span><span class="c">๗</span></span>
-		<span class="g"><span class="hint">8</span><span class="c">๘</span></span>
-		<span class="g"><span class="hint">9</span><span class="c">๙</span></span>
-		</div>
-		<div>
-		<span class="g"><span class="hint">0</span><span class="c">๐</span></span>
-		<span class="c">,</span>
-		<span class="c">.</span>
-		</div>
+
 		</div>
 	<div id="symbols">
 		<div style="margin-top: .5em;">
-		<span class="g"><span class="hint">0</span><span class="c">฿</span></span>
-		<span class="g"><span class="hint">0</span><span class="c">๚</span></span>
-		<span class="g"><span class="hint">0</span><span class="c">ๆ</span></span>
-		</div>
-		<div>
-		<span class="g"><span class="hint">0</span><span class="c">ฯลฯ</span></span>
+<span class="g"><span class="hint"></span><span class="c">&#x0305;</span></span>
 		</div>
 		</div>
-</div>
-</div>
-
-
-<!--div id="flatnumbers">
-<span class="g"><span class="hint">0</span><span class="c">०</span></span>
-<span class="g"><span class="hint">1</span><span class="c">१</span></span>
-<span class="g"><span class="hint">2</span><span class="c">२</span></span>
-<span class="g"><span class="hint">3</span><span class="c">३</span></span>
-<span class="g"><span class="hint">4</span><span class="c">४</span></span>
-<span class="g"><span class="hint">5</span><span class="c">५</span></span>
-<span class="g"><span class="hint">6</span><span class="c">६</span></span>
-<span class="g"><span class="hint">7</span><span class="c">७</span></span>
-<span class="g"><span class="hint">8</span><span class="c">८</span></span>
-<span class="g"><span class="hint">9</span><span class="c">९</span></span>
 </div-->
+</div>
+
 
 
 
@@ -300,8 +258,8 @@
 <span class="c">·</span>
 <span class="c">,</span>
 <span class="c">.</span>
-<span class="c">;</span>
 <span class="c">:</span>
+<span class="c">;</span>
 <span class="c">?</span>
 <span class="c">!</span>
 <span class="c">‘</span>
@@ -313,30 +271,10 @@
 <span class="c">(</span>
 <span class="c">)</span>
 <span class="c">-</span>
-<span class="c">।</span> 
-<span class="c">॥</span>
+<span class="c">&#x2056;</span> 
+<span class="c">&#x2058;</span> 
+<span class="c">&#x2059;</span> 
 </div>
-
-
-
-<details>
-  <summary>other characters</summary>
-	<div id="other">
-	<span class="c">ॲ</span>
-	<span class="c">ॅ</span>
-	<span class="c">ऑ</span>
-	<span class="c">ॉ</span>
-	&nbsp;
-	<span class="c">ष</span>
-	<span class="c">क्ष</span>
-	<span class="c">झ</span>
-	<span class="c">ङ</span>
-	<span class="c">ण</span>
-	&nbsp;
-	<span class="g"><span class="hint"></span><span class="c">&#x095B;</span></span>
-	</div>
-    </details>        
-
 </div><!-- end of alphabet -->
 
 

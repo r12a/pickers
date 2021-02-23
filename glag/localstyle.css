@@ -1,14 +1,14 @@
 @font-face {
-    font-family: 'Noto Serif Devanagari WF';
-    src: url('/shared/webfonts/notoserifdevanagari-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notoserifdevanagari-regular-webfont.woff') format('woff');
+    font-family: 'Noto Sans Glagolitic WF';
+    src: url('/shared/webfonts/notosansglagolitic-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosansglagolitic-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
 
 
-[lang=hi] { font-family: 'Noto Serif Devanagari WF', serif; }
+[lang=hi] { font-family: 'Noto Sans Glagolitic WF'; }
 
 
 
@@ -30,7 +30,7 @@ span.hint {
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  'Noto Serif Devanagari WF',  sans-serif;  
+	font-family:  'Noto Sans Glagolitic WF';  
     line-height: 1;
 	}
 
