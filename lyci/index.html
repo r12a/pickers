@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Lycian character app 26</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared26/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="defaults.js">  </script>
+<script src="../../shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/lyci.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
+<script src="/scripts/linkdata/linkdb.js"></script>
+<script src="localtranscription.js">  </script>
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+<div id="chardata"><span id="charname">Type assist (T) is on.</span></div>
+
+
+<div id="sideMenu"></div>
+<script>document.getElementById('sideMenu').innerHTML = setSideMenu()</script>
+
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+
+<div id="alphabet" class="default">
+
+
+<div id="shapelist">
+<div id="shapekeys">
+<span onclick="findShape('921,907,908','',true)">ड</span>
+<img alt=" " src="images/shape1.png" onclick="findShape('A986,A987,A99B','ꦆ,ꦇ,ꦛ',true)" />
+</div>
+<div id="extrashapes"></div>
+</div>
+<!--
+𐡡 𐡱 𐡪 𐡮
+𐡣 𐡪 𐡯 𐡰 𐡽 𐡴
+𐡳 𐡬 𐡶
+𐡦 𐡭 𐡥 𐡫
+𐡢
+𐡲 𐡧
+𐡶
+𐡵
+𐡤
+𐡩
+𐡨
+𐡠
+-->
+
+
+
+
+<div class="spaceline">
+<span class="touch" dir="auto" onClick="ccb=document.getElementById('formatchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">FORMAT</span> 
+<span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
+</div>
+
+<div id="formatchars" style="display: none; text-align: center; line-height: 1; margin-bottom: 1em;">
+<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" dir="auto" onClick="add('\u00A0');">NBSP</span> 
+<span class="touch" dir="auto" onClick="add('\u2067');">RLI</span>
+<span class="touch" dir="auto" onClick="add('\u2066');">LRI</span>
+<span class="touch" dir="auto" onClick="add('\u2068');">FSI</span>
+<span class="touch" dir="auto" onClick="add('\u2069');">PDI</span>
+<span class="touch" dir="auto" onClick="add('\u202B');">RLE</span>
+<span class="touch" dir="auto" onClick="add('\u202A');">LRE</span>
+<span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
+<span class="touch" dir="auto" onClick="add('\u200F');">RLM</span>
+<span class="touch" dir="auto" onClick="add('\u200E');">LRM</span>
+<span class="touch" dir="auto" onClick="add('\u034F');">CGJ</span>
+<span class="touch" dir="auto" onClick="add('\u061C');">ALM</span>
+</div>
+
+
+
+
+
+<div id="kbdGrid"> 
+ 
+
+<div id="consonantGrid">
+            <div>
+<span class="g"><span class="hint">p</span><span class="c">𐊓</span></span>
+<span class="g"><span class="hint">b</span><span class="c">𐊗</span></span>
+<span class="g"><span class="hint">d</span><span class="c">𐊔</span></span>
+<span class="g"><span class="hint">k</span><span class="c">𐊌</span></span>
+<span class="g"><span class="hint">k</span><span class="c">𐊋</span></span>
+<span class="g"><span class="hint">k</span><span class="c">𐊃</span></span>
+<span class="g"><span class="hint">k</span><span class="c">𐊜</span></span>
+           </div>
+             <div>
+<span class="g"><span class="hint">f</span><span class="c">𐊈</span></span>
+<span class="g"><span class="hint">þ</span><span class="c">𐊘</span></span>
+           </div>
+             <div>
+<span class="g"><span class="hint">p</span><span class="c">𐊂</span></span>
+<span class="g"><span class="hint">f</span><span class="c">𐊉</span></span>
+<span class="g"><span class="hint">t</span><span class="c">𐊅</span></span>
+<span class="g"><span class="hint">þ</span><span class="c">𐊖</span></span>
+<span class="g"><span class="hint">k</span><span class="c">𐊄</span></span>
+<span class="g"><span class="hint">s</span><span class="c">𐊛</span></span>
+           </div>
+            <div>
+<span class="g"><span class="hint">m</span><span class="c">𐊎</span></span>
+<span class="g"><span class="hint">n</span><span class="c">𐊏</span></span>
+<span class="g"><span class="hint">n</span><span class="c">𐊐</span></span>
+<span class="g"><span class="hint">n</span><span class="c">𐊑</span></span>
+            </div>
+            <div>
+<span class="g"><span class="hint">w</span><span class="c">𐊇</span></span>
+<span class="g"><span class="hint">r</span><span class="c">𐊕</span></span>
+<span class="g"><span class="hint">l</span><span class="c">𐊍</span></span>
+<span class="g"><span class="hint">j</span><span class="c">𐊊</span></span>
+            </div>
+</div>
+
+
+
+<div id="vowelGrid" class="box">
+<div>
+<span class="g"><span class="hint"></span><span class="c">𐊆</span></span>
+<span class="g"><span class="hint"></span><span class="c">𐊒</span></span><br/>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c">𐊁</span></span><br/>
+<span class="g"><span class="hint"></span><span class="c">𐊚</span></span>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c">𐊀</span></span><br/>
+<span class="g"><span class="hint"></span><span class="c">𐊙</span></span>
+</div>
+</div>
+
+
+
+
+
+<!--div id="numberGrid">
+	<div id="digitKeypad" class="box">
+		<div>
+		<span class="g"><span class="hint">90</span><span class="c">𐍁</span></span>
+		<span class="g"><span class="hint">900</span><span class="c">𐍊</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">4</span><span class="c">•</span></span>
+		<span class="g"><span class="hint">5</span><span class="c">&#x0304;&#x0331;</span></span>
+		</div>
+
+		</div>
+	<div id="symbols">
+		<div style="margin-top: .5em;">
+<span class="g"><span class="hint"></span><span class="c">&#x0305;</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">0</span><span class="c">ฯลฯ</span></span>
+		</div>
+		</div>
+</div-->
+</div>
+
+
+<!--div id="flatnumbers">
+<span class="g"><span class="hint">0</span><span class="c">०</span></span>
+<span class="g"><span class="hint">1</span><span class="c">१</span></span>
+<span class="g"><span class="hint">2</span><span class="c">२</span></span>
+<span class="g"><span class="hint">3</span><span class="c">३</span></span>
+<span class="g"><span class="hint">4</span><span class="c">४</span></span>
+<span class="g"><span class="hint">5</span><span class="c">५</span></span>
+<span class="g"><span class="hint">6</span><span class="c">६</span></span>
+<span class="g"><span class="hint">7</span><span class="c">७</span></span>
+<span class="g"><span class="hint">8</span><span class="c">८</span></span>
+<span class="g"><span class="hint">9</span><span class="c">९</span></span>
+</div-->
+
+
+
+
+
+
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<span class="c">«</span>
+<span class="c">»</span>
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+<span class="c">·</span>
+<span class="c">&#x2E31;</span> 
+<span class="c">&#x205a;</span>
+</div>
+</div><!-- end of alphabet -->
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
