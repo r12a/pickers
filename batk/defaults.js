@@ -107,3 +107,4 @@ for (let i=0;i<inputAids.length;i++) {
 	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
 	}
 
+var moreFonts = ['Pangururan']

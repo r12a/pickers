@@ -16,7 +16,9 @@ function toggleAlternatives (type) {
 		return
 		}
 
-	for (i=0;i<chars.length;i++) chars[i].style.display = 'none'
+	for (i=0;i<chars.length;i++) {
+		if (chars[i].parentNode.id !== 'punctuation') chars[i].style.display = 'none'
+		}
 	
 	for (i=0;i<chars.length;i++) {
 		if (chars[i].classList.contains(type)) chars[i].style.display = 'inline-block'
