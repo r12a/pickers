@@ -97,6 +97,7 @@ var plist = [
     { tag:'tibt', name:'Tibetan', url:'tibt/' },
     { tag:'ugar', name:'Ugaritic', url:'ugar/' },
     { tag:'vaii', name:'Vai', url:'vai/' },
+    { tag:'yezi', name:'Yezidi', url:'yezi' },
 ]
 
 
@@ -279,5 +280,8 @@ var plistByRegion = {
 	'V':[
 			['Vai', 'vai/'],
 			['Vietnamese', 'latn-vi/'],
+			],
+	'Y':[
+			['Yezidi', 'yezi/'],
 			],
 	}
