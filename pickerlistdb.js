@@ -73,6 +73,8 @@ var plist = [
     { tag:'osge', name:'Osage', url:'osge/' },
     { tag:'palm', name:'Palmyrene', url:'palm/' },
     { tag:'phli', name:'Pahlavi', url:'phli/' },
+    { tag:'plrd', name:'All&nbsp;Miao&nbsp;(Pollard)', url:'plrd/' },
+    { tag:'plrd', name:'A-Hmao', url:'plrd-hmd/' },
     { tag:'prti', name:'Parthian', url:'prti/' },
     { tag:'phnx', name:'Phoenician', url:'phnx/' },
     { tag:'rjng', name:'Rejang', url:'rjng/' },
@@ -206,6 +208,10 @@ var plistByRegion = {
 				['Burmese', 'mymr-my/'],
 				['Shan', 'mymr-shn/'],
 				[']'],
+			['<i>Miao</i>','plrd-all/'],
+				['['],
+				['A-Hmao','plrd-hmd/'],
+				[']'],
 			],
 	'N':[
 			['Nabataean', 'nbat/'],
@@ -226,6 +232,7 @@ var plistByRegion = {
 			['Phoenician', 'phnx/'],
 			['Pahlavi', 'phli/'],
 			['Parthian', 'prti/'],
+			['Pollard&nbsp;script', 'plrd-all/'],
 			],
 	'R':[
 			['Rejang', 'rjng/'],
