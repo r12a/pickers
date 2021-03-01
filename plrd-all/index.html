@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>All Miao character app 26</title>
+
+<link rel="stylesheet" type="text/css" href="../../shared/style/docs.css" />
+<link rel="stylesheet" type="text/css" href="../shared26/style.css" />
+<link rel="stylesheet" type="text/css" href="localstyle.css" />
+
+<script src="defaults.js">  </script>
+<script src="/shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/plrd-all.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared26/setup.js">  </script>
+<script src="../shared26/code.js">  </script>
+<script src="../shared26/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared26/pagetemplate.js">  </script>
+<script src="/scripts/linkdata/linkdb.js"></script>
+<!--script src="localtranscription.js">  </script-->
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+<div id="phonemelist" style="position:relative;">
+<div id="transcriptionPalette" class="transcript" style="display:none;"></div>
+</div>
+
+
+
+<div id="chardata"><span id="charname">Click on closest shape in orange characters, then on the list shown.</span></div>
+
+
+
+<div id="tables" dir="rtl">
+
+
+  
+    <div id="alphabet" class="default">
+      <div id="prompts">
+<span onclick="findShape('','𖼀,𖼁,𖼂,𖼃,𖽅,𖼖,𖼗,𖼘,𖼙,𖼇,𖼦,𖼧',true)">𖼀</span>
+<span onclick="findShape('','𖼐,𖼑,𖽐,𖼒,𖼣,𖼤,𖼔,𖼕,𖼄,𖼅,𖼴,𖼆,𖼓,𖼥',true)">𖼐</span>
+<span onclick="findShape('','𖼊,𖼋,𖼌,𖼍,𖼎,𖼰,𖼏,𖼠,𖼡,𖼢,𖽈,𖽊,𖼪,𖼫,𖽇,𖼲',true)">𖼊</span>
+<span onclick="findShape('','𖼞,𖼟,𖼮,𖼯,𖼱,𖼰,𖼲',true)">𖼞</span>
+<span onclick="findShape('','𖼷,𖼸,𖼹,𖽉',true)">𖼷</span>
+<span onclick="findShape('','𖼽,𖼾,𖼈,𖼉,𖼿,𖽀,𖽁,𖼚,𖼛,𖼜,𖼝',true)">𖼽</span>
+<span onclick="findShape('','𖼨,𖼩',true)">𖼨</span>
+<span onclick="findShape('','𖼻,𖼼,𖼬,𖼭',true)">𖼻</span>
+<span onclick="findShape('','𖼳,𖽆,𖼵,𖼶,𖼺,𖽂,𖽃,𖽄',true)">…</span>
+<span onclick="findShape('','&nbsp;',true)"></span>
+<span onclick="findShape('','𖽙,𖽚,𖽛,𖽥,𖽼,𖽰,𖽘,𖽲,𖽾',true)">𖽙</span>
+<span onclick="findShape('','𖽜,𖽠,𖽢,𖽫,𖽳,𖽴,𖽕,𖽗,𖽘',true)">𖽜</span>
+<span onclick="findShape('','𖽝,𖽱,𖽽',true)">𖽝</span>
+<span onclick="findShape('','𖽡,𖽣,𖽤,𖽨,𖽩,𖽪,𖽬,𖽭,𖽖,𖽰',true)">𖽡</span>
+<span onclick="findShape('','𖽞,𖽟',true)">𖽞</span>
+<span onclick="findShape('','𖽦,𖽻,𖽹,𖽺',true)">𖽦</span>
+<span onclick="findShape('','𖽧,𖽮,𖽯',true)">𖽧</span>
+<span onclick="findShape('','𖽵,𖽷',true)">𖽵</span>
+<span onclick="findShape('','𖽶,𖽸,𖽺',true)">𖽶</span>
+      </div>
+	  
+<!--
+𖼀/ 𖼀 𖼁 𖼂 𖼃 𖽅 𖼖 𖼗 𖼘 𖼙 𖼇 𖼦 𖼧 
+𖼐/ 𖼐 𖼑 𖽐 𖼒 𖼣 𖼤 𖼔 𖼕 𖼄 𖼅 𖼴 𖼆 𖼓 𖼥 
+𖼊/ 𖼊 𖼋 𖼌 𖼍 𖼎 𖼰 𖼏 𖼠 𖼡 𖼢 𖽈 𖽊 𖼪 𖼫 𖽇 𖼲
+𖼞/ 𖼞 𖼟 𖼮 𖼯 𖼱 𖼰 𖼲 
+𖼷/ 𖼷 𖼸 𖼹 𖽉
+𖼽/ 𖼽 𖼾 𖼈 𖼉 𖼿 𖽀 𖽁 𖼚 𖼛 𖼜 𖼝 
+𖼨/ 𖼨 𖼩 
+𖼻/ 𖼻 𖼼 𖼬 𖼭
+…/ 𖼳 𖽆 𖼵 𖼶 𖼺 𖽂 𖽃 𖽄 
+
+ 𖽙/ 𖽙 𖽚 𖽛 𖽥 𖽼 𖽰 𖽘 𖽲 𖽾
+ 𖽜/ 𖽜 𖽠 𖽢 𖽫 𖽳 𖽴 𖽕 𖽗 𖽘
+ 𖽝/ 𖽝 𖽱 𖽽
+ 𖽡/ 𖽡 𖽣 𖽤 𖽨 𖽩 𖽪 𖽬 𖽭 𖽖 𖽰
+ 𖽞/ 𖽞 𖽟
+ 𖽦/ 𖽦 𖽻 𖽹 𖽺
+ 𖽧/ 𖽧 𖽮 𖽯
+ 𖽵/ 𖽵 𖽷
+ 𖽶/ 𖽶 𖽸 𖽺
+ -->
+	  
+	  
+<div class="spaceline">
+<span class="touch" style="margin: 0; padding: 5px 10px;" dir="auto" onClick="add('𖾏');">𖾏</span>
+<span class="touch" style="margin: 0; padding: 5px 10px;" dir="auto" onClick="add('𖾐');">𖾐</span>
+<span class="touch" style="margin: 0; padding: 5px 10px;" dir="auto" onClick="add('𖾑');">𖾑</span>
+<span class="touch" style="margin: 0; padding: 5px 10px;" dir="auto" onClick="add('𖾒');">𖾒</span>
+<span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
+</div>
+
+
+
+    
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+<div id="temp"></div>
+
+
+
+ <!--div id="punctuation">  
+         <span class="c">&#x060C;</span>
+         <span class="c">.</span>
+         <span class="c">&#x061B;</span>
+        <span class="c">:</span>
+        <span class="c">&#x061F;</span>
+         <span class="c">&#x060D;</span>
+         <span class="c">&#x066A;</span>
+         <span class="c">&#x0640;</span>
+         
+         <span class="c">&#x00AB;</span>
+         <span class="c">&#x00BB;</span>
+         <span class="c">&#x2039;</span>
+         <span class="c">&#x203A;</span>
+         <span class="c">(</span>
+         <span class="c">)</span>
+         
+         <span class="c">&#x0600;</span>
+         <span class="c">&#x0601;</span>
+         <span class="c">&#x0602;</span>
+         <span class="c">&#x060E;</span>
+         <span class="c">&#x0603;</span>
+         <span class="c">&#x060F;</span>
+         </div-->
+
+
+
+<!--div id="formatCharacters">
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u2067');">RLI</span>
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u2066');">LRI</span>
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u2068');">FSI</span>
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u2069');">PDI</span>
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u202B');">RLE</span>
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u202A');">LRE</span>
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u202C');">PDF</span>
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u202E');">RLO</span>
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u202D');">LRO</span>
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u200F');">RLM</span>
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u200E');">LRM</span>
+<span class="touch" style="padding: 5px 5px;" onClick="add('\u061C');">ALM</span>
+<br>
+<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+</div-->
+
+<details>
+<summary>Baseline tone marks</summary>
+<div id="tones">
+<span class="c">&#x16F93;</span>
+<span class="c">&#x16F94;</span>
+<span class="c">&#x16F95;</span>
+<span class="c">&#x16F96;</span>
+<span class="c">&#x16F97;</span>
+<span class="c">&#x16F98;</span>
+<span class="c">&#x16F99;</span>
+</div>
+</details>
+
+<details>
+<summary>Archaic baseline tone marks</summary>
+<div id="archaic_tones">
+<span class="c">&#x16F9A;</span>
+<span class="c">&#x16F9B;</span>
+<span class="c">&#x16F9C;</span>
+<span class="c">&#x16F9D;</span>
+<span class="c">&#x16F9E;</span>
+<span class="c">&#x16F9F;</span>
+</div>
+</details>
+
+    </div><!-- end of alphabet -->
+
+
+
+
+
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>

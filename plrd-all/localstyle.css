@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Noto Sans Miao WF';
+    src: url('/shared/webfonts/notosansmiao-regular-webfont.woff2') format('woff2'),
+         url('/shared/webfonts/notosansmiao-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+span.hint { 
+	margin-right: 1px;
+    margin-left: 2px;
+	font-size: 50%;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+#tones span.c, , #archaic_tones span.c {
+	min-width: 2em;
+	}
+#tones, #archaic_tones {
+	text-align: center;
+	}
+#formatCharacters {
+    text-align: center;
+    line-height: 1;
+    }
+
+#prompts {
+    text-align: center;
+    color: orange;
+	background-color: white;
+	font-size: 90%;
+    }
+#prompts span, #prompts img, #prompts bdi {
+    cursor: pointer;
+    }
+#extrashapes {
+    min-height: 2em;
+    }
+
+#punctuation {
+    line-height: 1;
+    text-align: center;
+    font-size: 80%;
+    }
+
+#extrashapes {
+    line-height: 1.6;
+    }
