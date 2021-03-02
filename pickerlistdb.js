@@ -71,6 +71,7 @@ var plist = [
     { tag:'newa', name:'Newa', url:'newa/' },
     { tag:'nkoo', name:"N'Ko", url:'nko/' },
     { tag:'olck', name:'Santali', url:'olck/' },
+    { tag:'orya', name:'Odia (Oriya)', url:'orya/' },
     { tag:'osge', name:'Osage', url:'osge/' },
     { tag:'palm', name:'Palmyrene', url:'palm/' },
     { tag:'phli', name:'Pahlavi', url:'phli/' },
@@ -223,6 +224,7 @@ var plistByRegion = {
 			['Northern&nbsp;Thai', 'lana-nod/'],
 			],
 	'O':[
+			['Odia (Oriya)', 'orya/'],
 			['Ol Chiki', 'olck/'],
 			['Old English', 'latn-ang/'],
 			['Old Norse', 'latn-non/'],
