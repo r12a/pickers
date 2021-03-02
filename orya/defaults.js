@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = ' Noto Sans Orya WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = ' Noto Sans Oriya WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // px height of text area
 	factoryDefaults.lineheight = "1.4"; // line height of text area
 	factoryDefaults.language = 'or' // language to use for examples
-	factoryDefaults.uifont = ' Noto Sans Orya WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = ' Noto Sans Oriya WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,7 +18,7 @@ var thisPicker = 'odiaPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ " Noto Sans Orya WF" ]
+var webFonts = [ " Noto Sans Oriya WF" ]
 
 
 var template = {}
@@ -34,7 +34,7 @@ var template = {}
 
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert Orya text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Oriya text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
 
 /*
 {"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
@@ -60,7 +60,7 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Orya text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Oriya text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 /*
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
@@ -91,13 +91,13 @@ var inputAids = [
 
 //{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
-{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type Orya from the keyboard."},
+{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type Oriya from the keyboard."},
 
 {"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
 
 //{"title":"ISO to Hindi", "dataVar":"showISOCharMap", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(isoCharacterMap);makeKbdEventList(isoCharacterMap);", "desc":"Create XXXX text from characters in the XXXX transcription."},
 
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type Orya from the keyboard via reverse transliteration."},
+{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type Oriya from the keyboard via reverse transliteration."},
 
 //{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
 ]
