@@ -29,7 +29,7 @@ function makeList (charlist) {
 		var firsthalf = parts[0].trim()
 		var extras = ''
 		if (extrasFound) {
-			if (parts[1]) extras = parts[1]
+			if (parts[1]) extras = parts[1].trim()
 			else extras = '&nbsp;'
 			extras = extras.replace(/ /g,',').trim()
 			}
