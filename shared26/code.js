@@ -1994,7 +1994,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 		if (! window.location.href.match('r12a.github.io')) {
 			var char = String.fromCodePoint(chars[i])
 			if (spreadsheetRows[char] && spreadsheetRows[char][cols.block]) block = '/scripts/'+spreadsheetRows[char][cols.block]+'/block'
-			console.log(spreadsheetRows)
+			//console.log(spreadsheetRows)
 			out +=  '<a href="'+block+'#char'+hex+'">'
 			}
 		out +=  '<span class="uname">U+'+hex+' '+name+'</span>'
@@ -2686,6 +2686,12 @@ function toggleInvisibles () {
         { cp:"\u2003", abbr:"ᵉᵐˢᵖ"},
         { cp:"\u2009", abbr:"ᵗʰˢᵖ"},
         { cp:"\u2007", abbr:"ᶠˢᵖ"},
+		
+		// miao tones
+        { cp:"\u{16F90}", abbr:"ᵐᵗᵗʳ"},
+        { cp:"\u{16FF8}", abbr:"ᵐᵗʳ"},
+        { cp:"\u{16F91}", abbr:"ᵐᵗᵃ"},
+        { cp:"\u{16F92}", abbr:"ᵐᵗᵇ"},
         ]
     
     // ascertain which way to switch
