@@ -70,6 +70,7 @@ var plist = [
     { tag:'nbat', name:'Nabataean', url:'nbat/' },
     { tag:'newa', name:'Newa', url:'newa/' },
     { tag:'nkoo', name:"N'Ko", url:'nko/' },
+    { tag:'olck', name:'Santali', url:'olck/' },
     { tag:'osge', name:'Osage', url:'osge/' },
     { tag:'palm', name:'Palmyrene', url:'palm/' },
     { tag:'phli', name:'Pahlavi', url:'phli/' },
@@ -222,6 +223,7 @@ var plistByRegion = {
 			['Northern&nbsp;Thai', 'lana-nod/'],
 			],
 	'O':[
+			['Ol Chiki', 'olck/'],
 			['Old English', 'latn-ang/'],
 			['Old Norse', 'latn-non/'],
 			['Osage', 'osge/'],
@@ -244,6 +246,7 @@ var plistByRegion = {
 			['Russian', 'cyrl-ru/'],
 			],
 	'S':[
+			['Santali', 'olck/'],
 			['Shan', 'mymr-shn/'],
 			['Sinhala', 'sinh/'],
 			['Sundanese', 'sund/'],
