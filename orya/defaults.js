@@ -36,7 +36,6 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Oriya text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
 
-/*
 {"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
 
 "code":`_output=document.getElementById('output'); 
@@ -52,7 +51,6 @@ notes = input[4]? input[4] : '';
 add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
-*/
 ]
 
 
@@ -61,9 +59,10 @@ _output.focus();`},
 
 var pulldown = [
 {"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Oriya text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-/*
+
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
+/*
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('translitPlus')", "warning":"Adds inherent vowels and palatalisation. The result should be checked."},
 
 {"title":"XXXX to Latin", "alt":"Convert XXXX text to a Latin transcription.", "code":"doTranscription('transcription')"},

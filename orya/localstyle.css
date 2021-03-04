@@ -98,7 +98,7 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content:space-around;
     text-align: end;
 	margin: 0 .5em;
 
@@ -133,10 +133,10 @@ span.hint {
     justify-content: space-between;
     }
 
-#punctuation, #flatnumbers, #other {
+#punctuation, #flatnumbers, #other, #fractions {
     text-align: center;
     font-size: 80%;
-    line-height: 1.7;
+    line-height: 1;
     margin-top: .5em;
     }
 
