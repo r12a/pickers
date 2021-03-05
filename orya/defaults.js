@@ -79,6 +79,8 @@ var pulldown = [
 
 {"title":"ISO to<br/>XXXX", "alt":"Convert an ISO 15919 transcription to XXXX text.", "code":"doTranscription('toDeva')"},
 */
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/oriya/or_vocab')"},
 ]
 
 
