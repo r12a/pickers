@@ -314,6 +314,13 @@ out += `<textarea dir="auto" id="output" name="output" placeholder="›" lang="`
 + defaults.language +
 `"></textarea>
 </div>
+
+<div id="listOutput">
+<pre id="listOutputHorizontal" contenteditable></pre>
+<pre id="listOutputVertical"></pre>
+<p id="listOutputClose" onclick="document.getElementById('listOutput').style.display='none'">X</p>
+</div>
+
 <div id="charChoice"></div>
  <div id="transcriptionChoice"></div>
 </div>

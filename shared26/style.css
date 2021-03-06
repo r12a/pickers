@@ -1123,4 +1123,42 @@ summary:hover {
 
 
 
-
+#listOutput {
+	display: none;
+	font-family: sans-serif;
+    cursor: pointer;
+    line-height: 1;
+    margin-inline-start: 10px;
+	padding: 1em;
+	padding-block-end: 0;
+	font-size: 18px;
+	border-radius: .5em;
+	background-color: seashell;
+	}
+#listOutputHorizontal {
+    text-align: center;
+	margin: 0;
+	margin-block-end: 1em;
+	font-size: 18px;
+	font-family: sans;
+	}
+#listOutputVertical {
+    text-align: start;
+	font-size: 22px;
+	max-width: 60%;
+	margin: auto;
+	font-family: sans;
+	}
+#listOutput pre {
+	white-space: pre-wrap;
+	}
+#listOutputClose {
+	cursor: pointer;
+	margin: 0;
+	margin-inline-end: 20px;
+	padding-block-end: 10px;
+	text-align: end;
+	color: #ccc;
+	line-height: 1;
+    font-size: 24px;
+}
