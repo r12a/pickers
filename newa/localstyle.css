@@ -23,7 +23,9 @@ span.hint {
 	min-width: .75em;
 	text-align: center;
 	}
-
+span.x {
+    color: chocolate;
+	}
     
     
 /* KEYBOARD */
@@ -82,7 +84,7 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-	margin-left: 1em;
+	margin-inline-start: .5em;
     }
 #vowelGrid > div {
 	display: flex;
@@ -96,6 +98,7 @@ span.hint {
     flex-direction: column;
     justify-content:space-around;
     align-content: space-around;
+	margin-inline-start: .5em;
     }
 #moreconsonants > div {
     display: flex;
