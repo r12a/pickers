@@ -936,11 +936,22 @@ summary:hover {
 	clear: both;
     }
 
-
+/*
 #charChoice {
     position:absolute; 
     bottom:10px; 
     left:15px; 
+    background-color:white; 
+    color: #999;
+    font-family: "doulos sil wf", "doulos sil";
+    font-size: 1.5em;
+	
+	bottom: -50px;
+	left: 10px;
+	height: 50px;
+	z-index: 1000;
+    }*/
+#charChoice {
     background-color:white; 
     color: #999;
     font-family: "doulos sil wf", "doulos sil";
