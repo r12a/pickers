@@ -37,6 +37,23 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Persian text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
+
+
+{"title":"Make<br/>vocab", "alt":"Expand a line to create an entry for a vocab file.", 
+
+"code":`_output=document.getElementById('output'); 
+input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+term = removeVowels(input[0]);
+meaning = input[1];
+ipa = input[2]? input[2] : transcribetoIPA(input[0]);
+alt = input[3]? input[3] : '(' + input[0] + ')';
+notes = input[4]? input[4] : '';
+
+add(getVocabWithAlt(term, meaning, ipa, notes, alt));
+vocab2Example(getHighlightedText(document.getElementById('output')));
+_output.focus();`},
 ]
 
 
@@ -46,7 +63,13 @@ var pulldown = [
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
+{"title":"Remove<br/>vowels", "alt":"Remove harakat, etc. from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
+
+{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+
 {"title":"Persian<br/>to UN", "alt":"Convert Persian text to an UN Latin transcription.", "code":"doTranscription('toUN')"},
+
+{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/arabic/fa_vocab')"},
 ]
 
 
