@@ -25,7 +25,7 @@ function replaceSlash (str, replacement) {
 	return strArray.join('')
 	}
 
-function addReplacement (ch) { 
+function addReplacement (ch, autoInsertedFromPalette='') { 
 	// ch: string, the text to be added
 	if (debug) console.log('addReplacement(',ch,')')
 	
@@ -55,7 +55,8 @@ function addReplacement (ch) {
 		
         // get whatever is highlighted, or if no highlight the previous character
         var consonant
-        if (startPos === endPos) startPos = startPos-1
+        //if (startPos === endPos) startPos = startPos-1
+        if (startPos === endPos) startPos = startPos-autoInsertedFromPalette.length
         consonant = outputNode.value.substring(startPos-1,endPos-1)
 		if (consonant.codePointAt(0) > 0xD800 && consonant.codePointAt(0) < 0xDFFF) startPos--
         if (debug) console.log('Consonant',consonant)
@@ -2679,7 +2680,7 @@ function drawCharSelectionPanel (key) {
 			//if (spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc]) hint = spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc]
 			//else hint = kbdEventList[key][i][0]
 			hint = kbdEventList[key][i][0]
-			out += ' <sup>'+ hint +'</sup>'
+			out += ' <sup>'+ hint.toLowerCase() +'</sup>'
 			}
 		else out += ' <sup></sup>'
 		out += '<sub>'+ ((i+1) % 10)+'</sub> '
@@ -2693,7 +2694,9 @@ function drawCharSelectionPanel (key) {
 
 	
 
-	
+window.autoInsertedFromPalette = ''
+
+
 // decipher key down codes
 function showDown (evt) {
 	evt = (evt) ? evt : ((event) ? event : null)
@@ -2711,7 +2714,9 @@ function showDown (evt) {
             evt.preventDefault()
             }
         else if (evt.key==='~') { // switch to Latin palette
-            var latinSwitch = document.getElementById('showLatinTransSwitch')
+            var clickEvent = new MouseEvent("click", {"view": window,"bubbles": true,"cancelable": false})
+            document.getElementById('togglePalette').dispatchEvent(clickEvent)
+            /*var latinSwitch = document.getElementById('showLatinTransSwitch')
             if (latinSwitch.classList.contains('on')) {
                 closeSidebarPalettes(latinSwitch)
                 window.latinTypeAssist=false
@@ -2725,31 +2730,30 @@ function showDown (evt) {
                 latinSwitch.classList.remove('off')
                 latinSwitch.classList.add('on')
                 }
-            latinSwitch.textContent=latinSwitch.dataset.shorttitle
+            latinSwitch.textContent=latinSwitch.dataset.shorttitle*/
             evt.preventDefault()
-
-/*
-            if (globals[latinSwitch.dataset.var]==''){
-                closeSidebarPalettes(latinSwitch)
-                window.latinTypeAssist=true
-                makePalette(latinTypeAssistMap)
-                makeKbdEventList(latinTypeAssistMap)
-                }
-            toggleSideBarOption(latinSwitch, latinSwitch.title, latinSwitch.dataset.var, latinSwitch.dataset.locn)
-            latinSwitch.textContent=latinSwitch.dataset.shorttitle
-            evt.preventDefault()
-            */
             }
         else if (evt.key==='`') { // switch to Reverse translit palette
-            var revSwitch = document.getElementById('showRevTransSwitch')
-            /*if (globals[revSwitch.dataset.var]==''){
-                closeSidebarPalettes(revSwitch)
-                window.latinTypeAssist=false
-                //makePalette(typeAssistMap)
-                makeKbdEventList(typeAssistMap)
+            // find all the input palettes
+            inputAidsList = document.getElementById('vertical-menu').querySelectorAll('.palette')
+            // find out where we currently are
+            ptr = 0
+            for (i=0;i<inputAidsList.length;i++) {
+                if (inputAidsList[i].classList.contains('on')) {
+                    ptr = i
+                    break
+                    }
                 }
-            toggleSideBarOption(revSwitch, revSwitch.title, revSwitch.dataset.var, revSwitch.dataset.locn)
-            revSwitch.textContent=revSwitch.dataset.shorttitle */
+            closeSidebarPalettes(inputAidsList[ptr])
+            // point to the next item
+            if (ptr === inputAidsList.length-1) ptr = 0 // wrap around
+            else ptr++
+            var clickEvent = new MouseEvent("click", {"view": window,"bubbles": true,"cancelable": false})
+            inputAidsList[ptr].dispatchEvent(clickEvent)
+            
+        
+        /*else if (evt.key==='`') { // switch to Reverse translit palette
+            var revSwitch = document.getElementById('showRevTransSwitch')
             if (revSwitch.classList.contains('on')){
                 closeSidebarPalettes(revSwitch)
                 window.latinTypeAssist=false
@@ -2764,7 +2768,7 @@ function showDown (evt) {
                 revSwitch.classList.remove('off')
                 revSwitch.classList.add('on')
                 }
-            revSwitch.textContent=revSwitch.dataset.shorttitle
+            revSwitch.textContent=revSwitch.dataset.shorttitle*/
             evt.preventDefault()
             }
 			
@@ -2779,7 +2783,7 @@ function showDown (evt) {
 
             // add the chosen character
 			if (num < 0 || num > choices.length-1) console.log('Number ',num+1, 'is out of range.')
-			else addReplacement(choices[num].textContent)
+			else addReplacement(choices[num].textContent, window.autoInsertedFromPalette)
 			
             //if (num < choices.length+1) {
 			//	if (--num === 0) num = 10
@@ -2798,11 +2802,18 @@ function showDown (evt) {
             if (debug) console.log(evt.key,'triggers',kbdEventList[evt.key][0][1])
 			
 			// if this is not Latin type-assist, or a Latin-based picker, display the first item in the keyEventList
+            // window.autoInsertedFromPalette keeps track of automatic insertions when a palette is shown; then if a different 
+            // choice is picked from the palette, the addReplacement function knows how many characters to delete
+            // that is useful when a palette choice inserts a selection that is more than a single character
 			//if (! window.latinTypeAssist  && template.scriptcode !== 'Latn') {
 			if (! window.latinTypeAssist) {
 				add(kbdEventList[evt.key][0][1])
+                window.autoInsertedFromPalette = kbdEventList[evt.key][0][1]
 				}
-			else add(evt.key)
+			else {
+                add(evt.key)
+                window.autoInsertedFromPalette = kbdEventList[evt.key][0][1]
+                }
 			
 			// display the selection list
 			drawCharSelectionPanel(evt.key)
@@ -3088,12 +3099,20 @@ function makeLatinTypeAssistMap () {
 			continue
 			}
 		if (asciiOnly) continue
-		//if (collector[i].length === 1 && collector[i].codePointAt(0) < 127) continue
-		if (latinRegister[collector[i][0]]) { 
+
+
+        lookup = collector[i].normalize('NFD')[0]
+
+        if (latinRegister[lookup]) { 
+			if (outObj[latinRegister[lookup]]) outObj[latinRegister[lookup]] +=  ' '+collector[i]
+			else outObj[latinRegister[lookup]] = latinRegister[lookup] + ' ' +collector[i]
+			}
+		else notInRegister += collector[i] + '  '
+       /* if (latinRegister[collector[i][0]]) { 
 			if (outObj[latinRegister[collector[i][0]]]) outObj[latinRegister[collector[i][0]]] +=  ' '+collector[i]
 			else outObj[latinRegister[collector[i][0]]] = latinRegister[collector[i][0]] + ' ' +collector[i]
 			}
-		else notInRegister += collector[i] + '  '
+		else notInRegister += collector[i] + '  '*/
 		}
 	
 	var outArray = Object.values(outObj)
