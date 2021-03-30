@@ -394,8 +394,9 @@ if (inputAids.length > 0) {
 for (let i=0;i<inputAids.length;i++) {
 	// finish up the assignments
     if (!inputAids[i].initialCode)  inputAids[i].initialCode = ''
-    if (inputAids[i].type === 'palette') inputAids[i].onClickCode = `if (this.classList.contains('on')) closeSidebarPalettes(this); else { closeSidebarPalettes(this);`+inputAids[i].initialCode+ `; this.classList.add('on');this.classList.remove('off');}`
-    
+    if (inputAids[i].id === 'showShapeLookup') inputAids[i].initialCode = `if (this.classList.contains('on')) { document.getElementById('shapelist').style.display = 'none' } else { document.getElementById('shapelist').style.display = 'block' }`
+    if (inputAids[i].id === 'showShapeHints') inputAids[i].initialCode = `if (this.classList.contains('on')) { globals.showShapeHints = false; } else { globals.showShapeHints = true; }`
+    if (inputAids[i].type === 'palette') inputAids[i].onClickCode = `if (this.classList.contains('on')) closeSidebarPalettes(this); else { closeSidebarPalettes(this);`+inputAids[i].initialCode+ `; this.classList.add('on');this.classList.remove('off');}`    
     else inputAids[i].onClickCode = inputAids[i].initialCode + `; if (this.classList.contains('on')) { this.classList.remove('on'); this.classList.add('off'); } else { this.classList.remove('off'); this.classList.add('on') }`
     if (! inputAids[i].desc) inputAids[i].desc = inputAids[i].title
     
