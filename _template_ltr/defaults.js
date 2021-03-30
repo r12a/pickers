@@ -87,19 +87,45 @@ var pulldown = [
 
 
 var inputAids = [
-{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
+{"title":"Shape-based lookup", "id":"showShapeLookup", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
 
-{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
+{"title":"Hint at similar shapes", "id":"showShapeHints", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
-{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type XXXX from the keyboard."},
+{"title":"Type-assist palette toggle", 
+"desc":"Show or hide the palette used for type-assist input.",
+"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
+},
 
-{"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
+{"id":"showRevTransSwitch", 
+"title":"Default type-assist: Maps keyboard mapped to useful characters.", 
+"desc":"Use ASCII characters to type Santali from the keyboard using a customised key mapping.",
+"dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
+},
 
-//{"title":"ISO to Hindi", "dataVar":"showISOCharMap", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(isoCharacterMap);makeKbdEventList(isoCharacterMap);", "desc":"Create XXXX text from characters in the XXXX transcription."},
+{"title":"Type assist: IPA to Santali.", 
+"desc":"Use an IPA keyboard mapping to type Santali from the keyboard.",
+"dataShortTitle":"æ", "type":"palette",
+"initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
+},
 
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type XXXX from the keyboard via reverse transliteration."},
+{"title":"Type assist: ALA LC transcription to Santali.", 
+"desc":"Use a  mapping from ALA LC to type Santali from the keyboard.",
+"dataShortTitle":"a", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
+},
 
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
+{"title":"Type assist: Microsoft keyboard mappings.", 
+"desc":"Use a Microsoft Santali keyboard mapping to type from the keyboard.",
+"dataShortTitle":"k", "type":"palette", 
+"initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
+},
+
+
+{"id":"showLatinTransSwitch", 
+"title":"Latin type-assist", 
+"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
+"dataShortTitle":"L", "type":"palette", 
+"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
+},
 ]
 
 
