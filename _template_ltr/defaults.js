@@ -91,41 +91,41 @@ var inputAids = [
 
 {"title":"Hint at similar shapes", "id":"showShapeHints", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
-{"title":"Type-assist palette toggle", 
-"desc":"Show or hide the palette used for type-assist input.",
-"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
-},
-
 {"id":"showRevTransSwitch", 
-"title":"Default type-assist: Maps keyboard mapped to useful characters.", 
-"desc":"Use ASCII characters to type Santali from the keyboard using a customised key mapping.",
+"title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
+"desc":"Use ASCII characters to type XXXXXX from the keyboard using a customised key mapping.",
 "dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
 },
 
-{"title":"Type assist: IPA to Santali.", 
-"desc":"Use an IPA keyboard mapping to type Santali from the keyboard.",
+{"title":"Type assist: IPA to XXXXXX.", 
+"desc":"Use an IPA keyboard mapping to type XXXXXX from the keyboard.",
 "dataShortTitle":"æ", "type":"palette",
 "initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
-{"title":"Type assist: ALA LC transcription to Santali.", 
-"desc":"Use a  mapping from ALA LC to type Santali from the keyboard.",
-"dataShortTitle":"a", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
+{"title":"Type assist: LOC transcription to XXXXXX.", 
+"desc":"Use a  mapping from LOC to type XXXXXX from the keyboard.",
+"dataShortTitle":"t", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
-{"title":"Type assist: Microsoft keyboard mappings.", 
-"desc":"Use a Microsoft Santali keyboard mapping to type from the keyboard.",
+{"title":"Type assist: Map keys to an XXXXX keyboard.", 
+"desc":"Use a XXXXXX XXXXXX keyboard mapping to type from the keyboard.",
 "dataShortTitle":"k", "type":"palette", 
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },
 
 
-{"id":"showLatinTransSwitch", 
-"title":"Latin type-assist", 
+{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
 "desc":"Show characters needed for IPA or other transcriptions and transliterations.",
 "dataShortTitle":"L", "type":"palette", 
 "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
 },
+
+{"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 
+"desc":"Show or hide the palette used for type-assist input.",
+"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
+},
+
 ]
 
 
