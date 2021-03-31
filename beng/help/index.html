@@ -2,13 +2,13 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Bengali character app 26</title>
+<title>Help for Bengali character app 27</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" />
-<link rel="stylesheet" href="../../shared26/style.css" />
+<link rel="stylesheet" href="../../shared27/style.css" />
 <link rel="stylesheet" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js"></script>
 <script src="/shared/code/toc_2016.js"></script>
-<script src="../../shared26/helptemplate.js"></script>
+<script src="../../shared27/helptemplate.js"></script>
 <script>var direction = 'ltr'</script>
 <script src="../defaults.js"></script>
 </head>
@@ -34,7 +34,7 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->10-Nov-2020<!-- #EndDate --></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->31-Mar-2021<!-- #EndDate --></p>
 
 <p>This Unicode character app allows you to produce or analyse runs of Bengali text. character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[bengali%20picker]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/bengali">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps.</p>
@@ -50,7 +50,7 @@
 <p>The app includes characters in the Unicode <a href="/uniview/?block=bengali" target="_blank">Bengali</a> block that are used for writing text in the  Bangla language. </p>
 
 <p>To <strong><em>analyse</em> text</strong>, copy &amp; paste it into the large text area and select the desired control(s).</p>
-<p>To <strong><em>produce</em> Javanese text</strong> in the text area, do one of the following:</p>
+<p>To <strong><em>produce</em> Bengali text</strong> in the text area, do one of the following:</p>
 <ul>
 <li><strong>Type on your keyboard, using type-assist</strong>. A quick way to input text from ASCII characters on your keyboard, based on a Latin transcription.</li>
 <li><strong>Open the shape-based input, and click</strong> on similar shapes to highlight characters you may be looking for. Good when you don't know the orthography well.</li>
@@ -141,14 +141,19 @@
 
 
 
-<section id="input_aids">
-<div id="inputAids"></div><script>document.getElementById('inputAids').innerHTML = addInputAids(inputAidsHelp)</script>
+<section id="input_aids"> <!-- inputAidsHelp1/2 are defined in the default.js file -->
+<h2 href="#input_aids">Input aids</h2>
+
+<div id="inputAids1"></div><script>document.getElementById('inputAids1').innerHTML = addInputAids(inputAidsHelp1)</script>
 
 
 <!-- OTHER INPUT AIDS -->
 
-<p><b class="leadin">ISO to Bengali.</b> Allows you to generate Bengali text from an ISO 15919 transcription.    It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>.</p>
-<p><b class="leadin">Radice to Bengali.</b> Displays a panel that  allows you to generate Bengali text from a transcription as used by Radice's book <cite>Teach Yourself Bengali</cite>.    It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the <strong>transcription type-in mode</strong>.</p>
+<p>Keys are mapped to characters in the ISO 15919 transcription.</p>
+<p><b class="leadin">[r] Radice to Bengali.</b> Converts from the  transcription  used by William Radice's book <cite>Teach Yourself Bengali</cite> to the target language.</p>
+
+
+<div id="inputAids2"></div><script>document.getElementById('inputAids2').innerHTML = addInputAids(inputAidsHelp2)</script>
 </section>
 
 
