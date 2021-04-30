@@ -180,6 +180,100 @@ function openEscapeWindow () {
 	converter.focus()
 	}
 
+function openUniViewWindow () {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var converter = window.open('/uniview/?charlist='+	encodeURIComponent(chars), 'uniview') 
+	output.focus()
+	uniview.focus()
+	}
+
+function openUniViewUniqueWindow () {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+    // reduce characters to one of each
+    filtered = [...chars]
+    const uniqueSet = new Set(filtered)
+    const backToArray = [...uniqueSet]
+    chars = backToArray.join('')
+	var converter = window.open('/uniview/?charlist='+	encodeURIComponent(chars), 'uniview') 
+	output.focus()
+	uniview.focus()
+	}
+
+function openAnalyseWindow () {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var converter = window.open('/app-analysestring/?chars='+	encodeURIComponent(chars), 'analyse') 
+	output.focus()
+	analyse.focus()
+	}
+
+function openListWindow () {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var converter = window.open('/app-listcharacters/?chars='+	encodeURIComponent(chars), 'listchar') 
+	output.focus()
+	listchar.focus()
+	}
+
+function openUsageWindow () {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+    // reduce characters to one of each
+    filtered = [...chars]
+    const uniqueSet = new Set(filtered)
+    const backToArray = [...uniqueSet]
+    chars = backToArray.join('')
+	var converter = window.open('/app-charuse/?charlist='+	encodeURIComponent(chars), 'usage') 
+	output.focus()
+	usage.focus()
+	}
+
+function openFontlistWindow (scriptName) {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var converter = window.open('/scripts/fontlist/?script='+scriptName+'&text='+	encodeURIComponent(chars), 'fontlist') 
+	output.focus()
+	fontlist.focus()
+	}
+
+function openListbidiWindow (scriptName) {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var converter = window.open('/scripts/apps/listbidi/?chars='+	encodeURIComponent(chars), 'listbidi') 
+	output.focus()
+	listbidi.focus()
+	}
+
+function openListcatsWindow (scriptName) {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var converter = window.open('/scripts/apps/listcategories/?chars='+	encodeURIComponent(chars), 'listcats') 
+	output.focus()
+	listcats.focus()
+	}
+
+function openListlinebreakWindow (scriptName) {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var converter = window.open('/scripts/apps/listlinebreak/?chars='+	encodeURIComponent(chars), 'listlines') 
+	output.focus()
+	listlines.focus()
+	}
+
+function openListindicWindow (scriptName) {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var converter = window.open('/scripts/apps/listindic/?chars='+	encodeURIComponent(chars), 'listindic') 
+	output.focus()
+	listindic.focus()
+	}
+
+
+
+
+
 function openVocabWindow (filename) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)

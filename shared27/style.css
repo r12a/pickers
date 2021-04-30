@@ -573,7 +573,7 @@ dt {
 	padding: 1px;
 	border-radius: 5px;
 	}
-#pulldown button {
+#pulldown button, #shuttle button {
 	cursor:pointer; 
 	display: inline-block; 
 	line-height:1;
@@ -594,6 +594,9 @@ dt {
 #pulldown button:hover {
 	background-color: #eee;
 	}
+#shuttle button {
+    text-align: start;
+    }
 #tools button {
 	cursor:pointer; 
 	display: inline-block; 

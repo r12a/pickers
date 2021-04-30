@@ -194,10 +194,10 @@ out += `</header>
 <span id="tools">
 <a class="interactiveHelpButton" style="margin-right:.5em;" href="help/#top_controls" target="_help" title="Help for top level controls."><img alt="help" src="../images/help.png"/></a>
 
-<button onclick="showCodepoints()" title="Show a list of code points for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show<br/>codepoints</button>
-
 <button  id="showDB" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false)" 
 title="Show information in the database for each character."  onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Analyse<br/>text</button>
+
+<button onclick="showCodepoints()" title="Show a list of code points for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show<br/>codepoints</button>
     
  ` 
 
@@ -237,12 +237,46 @@ out += `
     
 <button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character<br/>markup</button>
     
+<img src="../shared27/images/transfer.png" alt="Shuttle to other apps" style="vertical-align: bottom; cursor:pointer;" onclick="console.log(document.getElementById(\'pulldown\').style.display); if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'output\').focus();"/>
+    
 <img src="../shared27/images/menu.png" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="console.log(document.getElementById(\'pulldown\').style.display); if (document.getElementById(\'pulldown\').style.display===\'none\'){document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\' }; document.getElementById(\'output\').focus();"/>
 </span>
-    
+
+
+<div id="shuttle" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
+
+<button onclick="openEscapeWindow(); return false;" title="Convert to escapes." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Convert to escapes</button><br/>
+
+<button onclick="openUniViewWindow(); return false;" title="Open in UniView." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show in UniView</button><br/>
+
+<button onclick="openUniViewUniqueWindow(); return false;" title="Show each unique character in UniView." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show in UniView (unique)</button><br/>
+
+<button onclick="openAnalyseWindow(); return false;" title="Open in Analyse String app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show in Analyse String</button><br/>
+
+<button onclick="openListWindow(); return false;" title="Open in List Characters app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show in List Characters</button><br/>
+
+<button onclick="openUsageWindow(); return false;" title="Open in Character Usage app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show in Character Usage</button><br/>
+
+<button onclick="openFontlistWindow('`+template.scriptcode.toLowerCase()+`'); return false;" title="Open in Font Lister app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show in Font Lister</button><br/>
+
+<button onclick="openListcatsWindow(); return false;" title="Open in List by category app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage by category</button><br/>
+
+<button onclick="openListbidiWindow(); return false;" title="Open in Triage Bidi app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage by bidi class</button><br/>
+
+<button onclick="openListlinebreakWindow(); return false;" title="Open in Triage for Linebreaking  app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage for line breaking</button><br/>
+
+<button onclick="openListindicWindow(); return false;" title="Open in Triage for Indic_Syllabic_Category app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage by Indic category </button><br/>
+
+
+<div id="closeShuttle" onclick="document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();">X</div>
+</div>
+
+
+
+
 <div id="pulldown" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
 
-<button onclick="openEscapeWindow(); return false;" title="Convert to escapes (in a separate window)." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Convert to<br/>escapes</button><br/>
+<!--button onclick="openEscapeWindow(); return false;" title="Convert to escapes (in a separate window)." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Convert to<br/>escapes</button><br/-->
 
 <button  id="showDBAll" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, true)" title="Show all information in the database for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show all<br/>db entries</button>
     `
