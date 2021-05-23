@@ -2109,10 +2109,14 @@ function displayDBInfo (cp, block, lang, direction, showAll) {
 	//var chars = []
 	//convertStr2DecArray(cp, chars)
 	var chars = [...cp]
-
-	var out = '<span id="textAnalysis" style="display:flex; flex-direction:column;">'
-	//console.log(spreadsheetRows)
+    var out = ''
+    
+    out += '<button onclick="sieveFor(\'analysisIPA\')" style="float:right; width: 10em;">Show IPA</button>'
+    out += '<button onclick="sieveFor(\'analysisTransc\')" style="float:right; width: 15em;">Show Transcription</button>'
 	
+	out += '<span id="textAnalysis" style="display:flex; flex-direction:column;">'
+	//console.log(spreadsheetRows)
+
 	for (let i=0;i<chars.length;i++) {
 		//out += buildDBInfoLine(chars[i], true)
 		out += buildDBInfoLine(chars[i], true, cp, i, showAll)
@@ -2810,21 +2814,6 @@ function showDown (evt) {
         else if (evt.key==='~') { // switch to Latin palette
             var clickEvent = new MouseEvent("click", {"view": window,"bubbles": true,"cancelable": false})
             document.getElementById('togglePalette').dispatchEvent(clickEvent)
-            /*var latinSwitch = document.getElementById('showLatinTransSwitch')
-            if (latinSwitch.classList.contains('on')) {
-                closeSidebarPalettes(latinSwitch)
-                window.latinTypeAssist=false
-                latinSwitch.classList.remove('on')
-                latinSwitch.classList.add('off')
-                }
-            else {
-                closeSidebarPalettes(latinSwitch)
-                window.latinTypeAssist=true
-                setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)
-                latinSwitch.classList.remove('off')
-                latinSwitch.classList.add('on')
-                }
-            latinSwitch.textContent=latinSwitch.dataset.shorttitle*/
             evt.preventDefault()
             }
         else if (evt.key==='`') { // switch to Reverse translit palette
@@ -2845,24 +2834,6 @@ function showDown (evt) {
             var clickEvent = new MouseEvent("click", {"view": window,"bubbles": true,"cancelable": false})
             inputAidsList[ptr].dispatchEvent(clickEvent)
             
-        
-        /*else if (evt.key==='`') { // switch to Reverse translit palette
-            var revSwitch = document.getElementById('showRevTransSwitch')
-            if (revSwitch.classList.contains('on')){
-                closeSidebarPalettes(revSwitch)
-                window.latinTypeAssist=false
-                revSwitch.classList.remove('on')
-                revSwitch.classList.add('off')
-                }
-            else {
-                closeSidebarPalettes(revSwitch)
-                window.latinTypeAssist=true
-                mapstring=makeTypeAssistMap(cols.key)
-                setUpTypeAssist(false, mapstring, mapstring)
-                revSwitch.classList.remove('off')
-                revSwitch.classList.add('on')
-                }
-            revSwitch.textContent=revSwitch.dataset.shorttitle*/
             evt.preventDefault()
             }
 			
@@ -2879,12 +2850,6 @@ function showDown (evt) {
 			if (num < 0 || num > choices.length-1) console.log('Number ',num+1, 'is out of range.')
 			else addReplacement(choices[num].textContent, window.autoInsertedFromPalette)
 			
-            //if (num < choices.length+1) {
-			//	if (--num === 0) num = 10
-			//	addReplacement(choices[num].textContent)
-			//	}
-			//else console.log('Number ',num, 'is out of range.')
-			
             // tidy up
             evt.preventDefault()
             document.getElementById("charChoice").innerHTML = ''
@@ -2899,14 +2864,15 @@ function showDown (evt) {
             // window.autoInsertedFromPalette keeps track of automatic insertions when a palette is shown; then if a different 
             // choice is picked from the palette, the addReplacement function knows how many characters to delete
             // that is useful when a palette choice inserts a selection that is more than a single character
-			//if (! window.latinTypeAssist  && template.scriptcode !== 'Latn') {
 			if (! window.latinTypeAssist) {
+                if (debug) console.log('Not latinTypeAssist. Adding ',kbdEventList[evt.key][0][1],' autoInsertedFromPalette set to.', kbdEventList[evt.key][0][1])
 				add(kbdEventList[evt.key][0][1])
                 window.autoInsertedFromPalette = kbdEventList[evt.key][0][1]
 				}
 			else {
+                if (debug) console.log('LatinTypeAssist. Adding ',evt.key,' autoInsertedFromPalette set to ', evt.key)
                 add(evt.key)
-                window.autoInsertedFromPalette = kbdEventList[evt.key][0][1]
+                window.autoInsertedFromPalette = evt.key
                 }
 			
 			// display the selection list
