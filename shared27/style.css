@@ -1143,7 +1143,7 @@ summary:hover {
     cursor: pointer;
     line-height: 1;
     margin-inline-start: 10px;
-	padding: 1em;
+	padding: .5em;
 	padding-block-end: 0;
 	font-size: 18px;
 	border-radius: .5em;
@@ -1155,6 +1155,7 @@ summary:hover {
 	margin-block-end: 1em;
 	font-size: 18px;
 	font-family: sans;
+    font-size: 120%;
 	}
 #listOutputVertical {
     text-align: start;
@@ -1170,7 +1171,8 @@ summary:hover {
 	cursor: pointer;
 	margin: 0;
 	margin-inline-end: 20px;
-	padding-block-end: 10px;
+    margin-block-start: -1em;
+	padding-block-end: 0px;
 	text-align: end;
 	color: #ccc;
 	line-height: 1;
