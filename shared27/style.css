@@ -1159,7 +1159,7 @@ summary:hover {
 	}
 #listOutputVertical {
     text-align: start;
-	font-size: 22px;
+	font-size: 16px;
 	max-width: 60%;
 	margin: auto;
 	font-family: sans;
@@ -1178,3 +1178,21 @@ summary:hover {
 	line-height: 1;
     font-size: 24px;
 }
+
+
+
+
+
+
+
+#listOutputHorizontal { display: flex; flex-direction: row; }
+.xitem { display: flex; flex-direction: column; flex-wrap: nowrap; margin-inline-end: .5em;  }
+.xitem span { text-align: center; }
+.xitemSrc { height: 2em; display: inline-block; }
+.xitemRes { border: 1px solid chocolate; padding: .25em; border-radius: .25em; }
+.xitemHide { color: #ccc; border: 1px dotted #ccc; }
+
+
+
+
+

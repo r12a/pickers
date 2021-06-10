@@ -2111,8 +2111,8 @@ function displayDBInfo (cp, block, lang, direction, showAll) {
 	var chars = [...cp]
     var out = ''
     
-    out += '<button onclick="sieveFor(\'analysisIPA\')" style="float:right; width: 10em;">Show IPA</button>'
-    out += '<button onclick="sieveFor(\'analysisTransc\')" style="float:right; width: 15em;">Show Transcription</button>'
+    out += '<button onclick="sieveFor(\'analysisIPA\')" style="float:right;">Show IPA</button>'
+    out += '<button onclick="sieveFor(\'analysisTransc\')" style="float:right;">Show Transcription</button>'
 	
 	out += '<span id="textAnalysis" style="display:flex; flex-direction:column;">'
 	//console.log(spreadsheetRows)
@@ -2385,7 +2385,7 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 			else {
 				for (item in spreadsheetRows) { 
 					var matchStr = item.replace(/-/g,'.')
-					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']') matchStr = 'xx'
+					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']' || matchStr == '*') matchStr = 'xx'
 					//console.log('matchstr',matchStr)
 					var  regex = new RegExp(matchStr)
 					itemArray = [... item] // to handle surrogates
@@ -2399,7 +2399,7 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 
 
 
-function sieveFor (type) {
+function sieveForOLDER (type) {
 	// hide the labels
 	var ems = document.getElementById('textAnalysis').querySelectorAll('em')
 	for (var i=0;i<ems.length;i++) ems[i].style.display = 'none'
@@ -2419,7 +2419,7 @@ function sieveFor (type) {
 
 
 
-function sieveFor (type) {
+function sieveForOLD (type) {
 	// hide the labels
 	var hlist = ''
 	var vlist = ''
@@ -2447,6 +2447,63 @@ function sieveFor (type) {
 	document.getElementById('listOutputHorizontal').textContent = hlist
 	document.getElementById('listOutputVertical').textContent = vlist
 	}
+
+
+
+
+function sieveFor (type) {
+	// hide the labels
+	var hlist = ''
+	var vlist = ''
+    var items
+    
+    
+    if (type === 'dbCharName') {
+        var lines = document.getElementById('textAnalysis').querySelectorAll('.dbCharContainer')
+        for (var i=0;i<lines.length;i++) {
+            vlist += lines[i].querySelector('.dbCharItem').textContent
+            valueNode = lines[i].querySelector('.'+type)
+            valueText = ''
+            if (valueNode && valueNode.lastChild.textContent !== '-') {
+                valueText = valueNode.lastChild.textContent
+                vlist += ' '+valueText+'\n'
+                }
+           }
+        }
+    
+    else {
+        // find the character and/or the value we want (type)
+        var lines = document.getElementById('textAnalysis').querySelectorAll('.dbCharContainer')
+        for (var i=0;i<lines.length;i++) {
+            hlist += '<span class="xitem">'
+            hlist += '<span class="xitemSrc">'+lines[i].querySelector('.dbCharItem').textContent+'</span>'
+            hlist += '<span class="xitemResults">'
+            valueNode = lines[i].querySelector('.'+type)
+            if (valueNode === null) items = ' '
+            else items = valueNode.lastChild.textContent.split(' ')
+            for (j=0;j<items.length;j++) hlist += '<span class="xitemRes" onclick="this.classList.toggle(\'xitemHide\')">'+items[j].toLowerCase()+'</span>'
+            hlist += '</span>'
+            hlist += '</span>\n'
+            }
+		}
+	
+	// display the result
+	document.getElementById('listOutput').style.display = 'block'
+	document.getElementById('listOutputHorizontal').innerHTML = hlist
+	document.getElementById('listOutputVertical').textContent = vlist
+	}
+
+
+function addXitems () {
+    // sends the result of sieveFor to the text area
+    items = document.querySelectorAll('.xitemRes')
+    console.log('Items length',items.length)
+    var out = ''
+    for (i=0;i<items.length;i++) {
+        if (! items[i].classList.contains('xitemHide')) out += items[i].textContent.replace(/-/g,'')
+        }
+    add( out )
+    }
 
 
 

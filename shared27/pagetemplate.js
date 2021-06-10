@@ -350,9 +350,11 @@ out += `<textarea dir="auto" id="output" name="output" placeholder="›" lang="`
 </div>
 
 <div id="listOutput">
-<button onclick="document.getElementById('listOutputHorizontal').textContent = document.getElementById('listOutputHorizontal').textContent.replace(/⸱/g,'')" style="float:right">Remove •</button>
-<button onclick="add(document.getElementById('listOutputHorizontal').textContent.replace(/⸱/g,''))" style="float:right">Add ^</button>
-<pre id="listOutputHorizontal" contenteditable></pre>
+<!--button onclick="document.getElementById('listOutputHorizontal').textContent = document.getElementById('listOutputHorizontal').textContent.replace(/⸱/g,'')" style="float:right">Remove •</button-->
+<!--button onclick="add(document.getElementById('listOutputHorizontal').textContent.replace(/⸱/g,''))" style="float:right">Add ^</button-->
+<button onclick="addXitems()" style="float:right">Add ^</button>
+<p id="listOutputHorizontal"></p>
+<!--pre id="listOutputHorizontal" contenteditable></pre-->
 <pre id="listOutputVertical"></pre>
 <p id="listOutputClose" onclick="document.getElementById('listOutput').style.display='none'">X</p>
 </div>

@@ -106,7 +106,7 @@ function makeTypeAssistMap (col) {
 	}
 
 
-function makeComplexTypeAssistMap (col) {
+function makeComplexTypeAssistMapOLD (col) {
 	// create a data object typeassist where the spreadsheet column data has alternatives 
 	// uses latinRegister from shared24/latinregister
 	
@@ -146,6 +146,76 @@ function makeComplexTypeAssistMap (col) {
         if (collector[i].includes('⛭')) {
             // find the appropriate key using the register
             lookup = collector[i].normalize('NFD')[0]
+            if (typeof latinRegister[lookup] === 'undefined') notInRegister += lookup+' '
+            else keypress = latinRegister[lookup]
+            }
+        else keypress = collector[i][0]
+        //console.log('Looking for ',lookup,' found ',keypress)
+        
+        
+		// create entry for the item
+        if (charArray[keypress]) {
+            //if (primary) charArray[keypress] = charArray[keypress].replace(keypress, keypress+' '+spreadsheetRows[line][cols.transLoc]+' '+line)
+            //else 
+            charArray[keypress] += ' '+collector[i].replace(/⛭|⛯/,' ')+' '
+            }
+        else {
+            charArray[keypress] = keypress+' '+collector[i].replace(/⛭|⛯/,' ')+' '
+            }
+        }
+    
+    console.log('charArray',charArray)
+    console.log('notInRegister',notInRegister)
+    
+    var typeAssistMap = ''
+	//sort the results & create the typeAssistMap string
+	for (let i=0;i<window.sortIndex.length;i++) {
+		if (charArray[window.sortIndex[i]]) typeAssistMap += charArray[window.sortIndex[i]]+'\n'
+		}
+
+ 	console.log('typeAssistMap done')
+    //console.log(typeAssistMap)
+    return typeAssistMap
+ 	}
+
+
+
+
+
+function makeComplexTypeAssistMap (col) {
+	// create a data object typeassist where the spreadsheet column data has alternatives 
+	// uses latinRegister from shared24/latinregister
+	
+	// get the data: collector is an array of strings of the form A⛭B, where A is a value in col and B is the code point(s)
+    // splits multiple, space-separated values into separate strings
+	var collector = []
+	for (item in spreadsheetRows) {
+		if (spreadsheetRows[item][col] && spreadsheetRows[item][col] !== '•') {
+			var items = spreadsheetRows[item][col].split(' ')
+			for (let i=0;i<items.length;i++) collector.push(items[i]+'⛭'+item)
+			}
+        // if there's a § in the column, get the key from the key column
+        // use the ⛯ symbol, to prevent this being changed by the register lookup
+		else if (spreadsheetRows[item][col] === '•') {
+			if (spreadsheetRows[item][cols.key]) collector.push(spreadsheetRows[item][cols.key]+'⛯'+item)
+			}
+        // if there's nothing in the column, ignore
+		}
+	
+	// remove duplicates from collector
+	const uniqueSet = new Set(collector)
+	collector = [...uniqueSet]
+    console.log('Collector',collector)
+	
+    
+	var notInRegister = ''
+    var lookup, keypress
+    var charArray = {}
+    
+    for (i=0;i<collector.length;i++) {
+        if (collector[i].includes('⛭')) {
+            // find the appropriate key using the register
+            lookup = collector[i].normalize('NFD').replace(/-/g,'')[0]
             if (typeof latinRegister[lookup] === 'undefined') notInRegister += lookup+' '
             else keypress = latinRegister[lookup]
             }
