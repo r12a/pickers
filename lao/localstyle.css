@@ -90,13 +90,18 @@ span.hint {
     min-width: 1em;
     }
 #finals {
-    white-space: normal;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 1.5em;
-    justify-content:flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:space-around;
     align-content: space-around;
+    }
+#finals div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-content: flex-end;
     }
 #ivowelGrid {
     display: flex;
