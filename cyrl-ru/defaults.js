@@ -25,6 +25,7 @@ var template = {}
 	template.title = 'Russian character app'
 	template.sample = "Все люди рождаются свободными и равными в своем достоинстве и правах. Они наделены разумом и совестью и должны поступать в отношении друг друга в духе братства."
 	template.blocklocation= '/scripts/cyrillic/block'  // blocklocation to use for examples
+	template.noteslocation = 'cyrillic/' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cyrl-ru'
 	template.scriptcode = 'Cyrl'
