@@ -24,7 +24,8 @@ var webFonts = [ " Noto Sans Ol Chiki WF" ]
 var template = {}
 	template.title = 'Santali'
 	template.sample = "ᱱᱤᱭᱟᱹ ᱣᱤᱠᱤᱯᱤᱰᱤᱭᱟ ᱫᱚ ᱥᱟᱱᱛᱟᱲᱤ ᱛᱮ ᱚᱞ ᱟᱠᱟᱱᱟ᱾ ᱚᱨᱦᱚᱸ ᱮᱴᱟᱜ ᱯᱟᱹᱨᱥᱤᱛᱮ ᱦᱚᱸ ᱟᱭᱢᱟ ᱣᱤᱠᱤᱯᱤᱰᱤᱭᱟ ᱢᱮᱱᱟᱜ-ᱟ᱾ ᱱᱚᱸᱰᱮ ᱠᱤᱪᱷᱩ ᱛᱟᱹᱞᱠᱟᱹ ᱮᱢ ᱦᱩᱭᱱᱟ᱾"
-	template.blocklocation= 'olck'  // blocklocation to use for examples
+	template.blocklocation= '../../scripts/santali/block'  // blocklocation to use for examples
+	template.noteslocation = 'santali/' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'olck'
 	template.scriptcode = 'Olck'
@@ -88,17 +89,12 @@ var pulldown = [
 
 
 var inputAids = [
-//{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
+//{"title":"Shape-based lookup", "id":"showShapeLookup", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
 
-//{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
-
-{"title":"Type-assist palette toggle", 
-"desc":"Show or hide the palette used for type-assist input.",
-"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
-},
+//{"title":"Hint at similar shapes", "id":"showShapeHints", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
 {"id":"showRevTransSwitch", 
-"title":"Default type-assist: Maps keyboard mapped to useful characters.", 
+"title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
 "desc":"Use ASCII characters to type Santali from the keyboard using a customised key mapping.",
 "dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
 },
@@ -111,21 +107,25 @@ var inputAids = [
 
 {"title":"Type assist: ALA LC transcription to Santali.", 
 "desc":"Use a  mapping from ALA LC to type Santali from the keyboard.",
-"dataShortTitle":"a", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
+"dataShortTitle":"t", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
-{"title":"Type assist: Microsoft keyboard mappings.", 
+{"title":"Type assist: Map keys to a Microsoft keyboard.", 
 "desc":"Use a Microsoft Santali keyboard mapping to type from the keyboard.",
 "dataShortTitle":"k", "type":"palette", 
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },
 
 
-{"id":"showLatinTransSwitch", 
-"title":"Latin type-assist", 
+{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
 "desc":"Show characters needed for IPA or other transcriptions and transliterations.",
 "dataShortTitle":"L", "type":"palette", 
 "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
+},
+
+{"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 
+"desc":"Show or hide the palette used for type-assist input.",
+"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
 },
 ]
 
@@ -133,9 +133,7 @@ var inputAids = [
 
 
 // this indicates which items are to be described in the help
-// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp = 'showIntro,'
-for (let i=0;i<inputAids.length;i++) {
-	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
-	}
+// options include: intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist – kbdAssist,latinAssist,togglePalette
+var inputAidsHelp1 = 'intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist'
+var inputAidsHelp2 = 'kbdAssist,latinAssist,togglePalette'
 
