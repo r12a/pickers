@@ -25,6 +25,7 @@ var template = {}
 	template.title = 'Modern Greek character app'
 	template.sample = "ΑΡΘΡΟ 1 Όλοι οι άνθρωποι γεννιούνται ελεύθεροι και ίσοι στην αξιοπρέπεια και τα δικαιώματα. Είναι προικισμένοι με λογική και συνείδηση, και οφείλουν να συμπεριφέρονται μεταξύ τους με πνεύμα αδελφοσύνης."
 	template.blocklocation= '/scripts/greek/block'  // blocklocation to use for examples
+	template.noteslocation = 'greek/' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'grek'
 	template.scriptcode = 'Grek'
