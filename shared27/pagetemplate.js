@@ -237,13 +237,13 @@ out += `
     
 <button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character<br/>markup</button>
     
-<img src="../shared27/images/transfer.png" alt="Shuttle to other apps" style="vertical-align: bottom; cursor:pointer;" onclick="console.log(document.getElementById(\'pulldown\').style.display); if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'output\').focus();"/>
-    
 <img src="../shared27/images/menu.png" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="console.log(document.getElementById(\'pulldown\').style.display); if (document.getElementById(\'pulldown\').style.display===\'none\'){document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\' }; document.getElementById(\'output\').focus();"/>
+
+<img src="../shared27/images/transfer.png" alt="Shuttle to other apps" style="vertical-align: bottom; cursor:pointer; margin-inline-end: 1em;" onclick="console.log(document.getElementById(\'pulldown\').style.display); if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'output\').focus();"/>
 </span>
 
 
-<div id="shuttle" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
+<div id="shuttle" style="text-align:right; position:absolute; top:40; right:5px; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
 
 <button onclick="openEscapeWindow(); return false;" title="Convert to escapes." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Convert to escapes</button><br/>
 
@@ -265,8 +265,14 @@ out += `
 
 <button onclick="openListlinebreakWindow(); return false;" title="Open in Triage for Linebreaking  app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage for line breaking</button><br/>
 
-<button onclick="openListindicWindow(); return false;" title="Open in Triage for Indic_Syllabic_Category app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage by Indic category </button><br/>
+<button onclick="openListindicWindow(); return false;" title="Open in Triage for Indic_Syllabic_Category app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage by Indic category </button><br/>`
 
+if (template.noteslocation) out += `
+<button onclick="openScriptPageWindow(); return false;" title="View first character in selection in a page that describes the script." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Script notes</button><br/>
+`
+
+out += `
+<button onclick="openBlockPageWindow(); return false;" title="View notes for first character in selection." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character notes</button><br/>
 
 <div id="closeShuttle" onclick="document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();">X</div>
 </div>

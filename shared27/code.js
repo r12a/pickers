@@ -183,7 +183,7 @@ function openEscapeWindow () {
 function openUniViewWindow () {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var converter = window.open('/uniview/?charlist='+	encodeURIComponent(chars), 'uniview') 
+	var uniview = window.open('/uniview/?charlist='+	encodeURIComponent(chars), 'uniview') 
 	output.focus()
 	uniview.focus()
 	}
@@ -196,7 +196,7 @@ function openUniViewUniqueWindow () {
     const uniqueSet = new Set(filtered)
     const backToArray = [...uniqueSet]
     chars = backToArray.join('')
-	var converter = window.open('/uniview/?charlist='+	encodeURIComponent(chars), 'uniview') 
+	var uniview = window.open('/uniview/?charlist='+	encodeURIComponent(chars), 'uniview') 
 	output.focus()
 	uniview.focus()
 	}
@@ -204,7 +204,7 @@ function openUniViewUniqueWindow () {
 function openAnalyseWindow () {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var converter = window.open('/app-analysestring/?chars='+	encodeURIComponent(chars), 'analyse') 
+	var analyse = window.open('/app-analysestring/?chars='+	encodeURIComponent(chars), 'analyse') 
 	output.focus()
 	analyse.focus()
 	}
@@ -212,7 +212,7 @@ function openAnalyseWindow () {
 function openListWindow () {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var converter = window.open('/app-listcharacters/?chars='+	encodeURIComponent(chars), 'listchar') 
+	var listchar = window.open('/app-listcharacters/?chars='+	encodeURIComponent(chars), 'listchar') 
 	output.focus()
 	listchar.focus()
 	}
@@ -225,7 +225,7 @@ function openUsageWindow () {
     const uniqueSet = new Set(filtered)
     const backToArray = [...uniqueSet]
     chars = backToArray.join('')
-	var converter = window.open('/app-charuse/?charlist='+	encodeURIComponent(chars), 'usage') 
+	var usage = window.open('/app-charuse/?charlist='+	encodeURIComponent(chars), 'usage') 
 	output.focus()
 	usage.focus()
 	}
@@ -233,7 +233,7 @@ function openUsageWindow () {
 function openFontlistWindow (scriptName) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var converter = window.open('/scripts/fontlist/?script='+scriptName+'&text='+	encodeURIComponent(chars), 'fontlist') 
+	var fontlist = window.open('/scripts/fontlist/?script='+scriptName+'&text='+	encodeURIComponent(chars), 'fontlist') 
 	output.focus()
 	fontlist.focus()
 	}
@@ -241,7 +241,7 @@ function openFontlistWindow (scriptName) {
 function openListbidiWindow (scriptName) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var converter = window.open('/scripts/apps/listbidi/?chars='+	encodeURIComponent(chars), 'listbidi') 
+	var listbidi = window.open('/scripts/apps/listbidi/?chars='+	encodeURIComponent(chars), 'listbidi') 
 	output.focus()
 	listbidi.focus()
 	}
@@ -249,7 +249,7 @@ function openListbidiWindow (scriptName) {
 function openListcatsWindow (scriptName) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var converter = window.open('/scripts/apps/listcategories/?chars='+	encodeURIComponent(chars), 'listcats') 
+	var listcats = window.open('/scripts/apps/listcategories/?chars='+	encodeURIComponent(chars), 'listcats') 
 	output.focus()
 	listcats.focus()
 	}
@@ -257,7 +257,7 @@ function openListcatsWindow (scriptName) {
 function openListlinebreakWindow (scriptName) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var converter = window.open('/scripts/apps/listlinebreak/?chars='+	encodeURIComponent(chars), 'listlines') 
+	var listlines = window.open('/scripts/apps/listlinebreak/?chars='+	encodeURIComponent(chars), 'listlines') 
 	output.focus()
 	listlines.focus()
 	}
@@ -265,10 +265,31 @@ function openListlinebreakWindow (scriptName) {
 function openListindicWindow (scriptName) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var converter = window.open('/scripts/apps/listindic/?chars='+	encodeURIComponent(chars), 'listindic') 
+	var listindic = window.open('/scripts/apps/listindic/?chars='+	encodeURIComponent(chars), 'listindic') 
 	output.focus()
 	listindic.focus()
 	}
+
+function openScriptPageWindow () {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var scriptdesc = window.open('/scripts/'+template.noteslocation+'?index='+encodeURIComponent(chars[0]), 'scriptdesc') 
+	output.focus()
+	scriptdesc.focus()
+	}
+
+function openBlockPageWindow () {
+	var output = document.getElementById('output')
+	var char = getHighlightedText(output).codePointAt(0).toString(16).toUpperCase()
+    while (char.length < 4) char = '0'+char
+	var blockdesc = window.open(template.blocklocation+'#char'+char, 'blockdesc') 
+	output.focus()
+	blockdesc.focus()
+	}
+
+
+
+
 
 
 
