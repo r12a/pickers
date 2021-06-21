@@ -25,6 +25,7 @@ var template = {}
 	template.title = 'Lao character app'
 	template.sample = "ຂໍ້ 2. ບຸກຄົນແຕ່ລະຄົນມີສິດທີ່ຈະຈາກປະເທດໃດປະເທດໜື່ງໄປ ນັບທັງປະເທດຂອງຕົນດ້ວຍ ແລະ ກັບຄືນມາໃນປະເທດຂອງຕົນໄດ້."
 	template.blocklocation= '/scripts/lao/block'  // blocklocation to use for examples
+	template.noteslocation = 'lao/' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'lao'
 	template.scriptcode = 'Laoo'
