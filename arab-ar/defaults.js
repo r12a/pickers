@@ -24,6 +24,7 @@ var template = {}
 	template.title = 'Modern Standard Arabic'
 	template.sample = "2. يحق لكل فرد أن يغادر أية بلاد بما في ذلك بلده كما يحق له العودة إليه."
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
+	template.noteslocation = 'arabic/' // location of script notes relevant to this app
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'arab-ar'
 	template.scriptcode = 'Arab'
