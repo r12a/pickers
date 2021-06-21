@@ -25,6 +25,7 @@ var template = {}
 	template.title = 'Armenian character app'
 	template.sample = "2. Ամեն ոք ունի ցանկացած երկրից, այդ թվում իր երկրից հեռանալու և իր երկիր վերադառնալու իրավունք։"
 	template.blocklocation= '/scripts/armenian/block'  // blocklocation to use for examples
+	template.noteslocation = 'armenian/' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'armn'
 	template.scriptcode = 'Armn'
