@@ -67,7 +67,7 @@ return `
 <p>Find <a href="../../shared27/fontpreview" target="_blank">more information</a> about using the font preview panel, including <cite>Adding your own fonts</cite>, <cite>Identifying missing characters</cite>, and <cite>Checking coverage for a specific language</cite>.</p>
 
       <!--p><b class="leadin">Copy, select, delete, etc. (<img src="../../shared27/images/help/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p-->
-      <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
+      
       <p><b class="leadin">Analyze text.</b> This control is particularly useful for understanding the composition of the text. For each character highlighted (or the whole text box if nothing is highlighted) this lists information such as the following:</p>
        <ul>
        <li>transliteration</li>
@@ -78,6 +78,10 @@ return `
        <li>a link to that character's description in the detailed character notes.</li>
        </ul>
       <p>If the app recognises a sequence of characters that has a particular significance in its own right, it will show that sequence (slightly indented) after the initial character.</p>
+      <p>The two controls <samp>Show Transcription</samp> and <samp>Show IPA</samp> produce a list of characters alongside the transcription or IPA information in the database for each.  This is not an actual transcription: the information is provided on a character by character basis.  However, that said, it can often provide a quick way of producing a transcription.  Unwanted alternatives for a given character can be greyed out by clicking on them. The remainder can be transferred to the main text area as a string by clicking on the <samp>Add</samp> button.</p>
+      <p><samp>List Codepoints</samp> produces a list of characters with their Unicode names that you can then copy-paste to a document.</p>
+      
+      <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
 
 `
 }
@@ -85,9 +89,9 @@ return `
 
 function addControlsAbove2 () {
 return `
-        <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] native text, [2] transliteration, [3] IPA transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use nothing between the slashes.</p>
-        <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
-       <p>For example, the following in a Russian character app:</p>
+      <p><b class="leadin">Make example.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order: [1] native text, [2] transliteration, [3] IPA transcription, [4] meaning. You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use nothing between the slashes.</p>
+      <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
+      <p>For example, the following in a Russian character app:</p>
       <p><span lang="ru">ру́сский язы́к</span>/rússkiy yazýk/ˈruskʲɪj jɪˈzɨk/Russian (language)</p>
       <p>will produce:</p>
       <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;charExample&quot; translate=&quot;no&quot;&gt;&lt;span class=&quot;ex&quot; lang=&quot;ru&quot;&gt;ру́сский язы́к&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;rússkiy yazýk&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;ˈruskʲɪj jɪˈzɨk&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Russian (language)&lt;/span&gt;&lt;/span&gt;</code></p>
@@ -102,9 +106,24 @@ return `
       <p>When you add it to your document, it will look like this.</p>
       <p><span class="codepoint" translate="no"><span lang="en">&#x04A7;</span> [<span class="uname">U+04A7 CYRILLIC SMALL LETTER PE WITH MIDDLE HOOK</span>]</span></p>
       </blockquote>
-        <p><b class="leadin">Convert to escapes.</b> Opens a new window for the converter app, which shows various different ways of representing the text in the input box using escapes.</p>
-        <p><b class="leadin">Show all db entries.</b> This is like 'Analyse text', described above, except that it will list all meaningful sequences in the backend database which include each character.</p>
-        <p><b class="leadin">Reverse transliterate.</b> Converts a Latin transliteration in the text area (using the home-grown transliteration scheme described above) to native characters.</p>
+      
+      <p><b class="leadin">Show all db entries.</b> This is like 'Analyse text', described above, except that it will list all meaningful sequences in the backend database which include each character.</p>
+      
+      <p><b class="leadin">Reverse transliterate.</b> Converts a Latin transliteration in the text area (using the home-grown transliteration scheme described above) to native characters.</p>
+      
+      <p><b class="leadin">Find vocab.</b> Appears if the character app is associated with a list of terms. Clicking on this will search for and display any items in the term list that match what is currently highlighted. You can use regular expression syntax in the string you are searching for, eg. <span lang="lo">ເ.າະ</span> will match any consonant plus the vowel-signs for <span class="ipa">ɔ</span>, ie. it will find a term such as <span lang="lo">ເພາະ</span>.</p>
+
+`
+}
+
+
+
+
+function addControlsAbove3 () {
+return `
+
+      <p><b class="leadin"><img src="../../shared27/images/transfer.png" alt="transfer icon"/> pulldown list.</b> This control allows you to send or look up whatever text is currently highlighted in the text area in another app. The app opens in a separate window.</p>
+      <p>The selection <samp>Script notes</samp> looks at the first character only in the highlighted text and opens the script description page at point in the index where that character appears. You can then follow the links to places in the page that describe the use of that character.  The <samp>Character notes</samp> selection also picks the first highlighted character and takes you to the character notes document where that is described.</p>
 
 `
 }
