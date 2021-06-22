@@ -1160,9 +1160,11 @@ summary:hover {
 #listOutputVertical {
     text-align: start;
 	font-size: 16px;
-	max-width: 60%;
+	max-width: 80%;
 	margin: auto;
-	font-family: sans;
+    margin-block-start: -1em;
+    margin-block-end: 1em;
+	font-family: sans-serif;
 	}
 #listOutput pre {
 	white-space: pre-wrap;
