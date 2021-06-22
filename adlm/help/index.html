@@ -2,13 +2,13 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Help for Adlam character app 26</title>
+<title>Help for Adlam character app 27</title>
 <link rel="stylesheet" href="../../../shared/style/docs.css" />
-<link rel="stylesheet" href="../../shared26/style.css" />
+<link rel="stylesheet" href="../../shared27/style.css" />
 <link rel="stylesheet" href="../localstyle.css" />
 <script src="/shared/code/boilerplate.js"></script>
 <script src="/shared/code/toc_2016.js"></script>
-<script src="../../shared26/helptemplate.js"></script>
+<script src="../../shared27/helptemplate.js"></script>
 <script src="../defaults.js"></script>
 <script>var direction = 'rtl'</script>
 </head>
@@ -34,7 +34,7 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->10-Nov-2020<!-- #EndDate --></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->22-Jun-2021<!-- #EndDate --></p>
 
 <p>This Unicode character app allows you to produce, analyse or manipulate runs of Adlam text. Character apps are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 <p>If something is broken or missing <a target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/issues/new?title=[adlam%20character%20app]%20%20ADD%20TITLE%20HERE">raise an issue</a>. For version information see <a  target="_blank" style="font-size:110%;" href="https://github.com/r12a/pickers/commits/gh-pages/adlam">the Github commit list</a>. The pictures of the UI used in this page are taken from a variety of character apps</p>
@@ -124,9 +124,12 @@
 <p><b class="leadin">Transcribe to Latin.</b> Converts Adlam text to the Latin orthography for Pular. This will generally work, but may not capture some edge cases. The result should therefore always be checked.</p>
 
 <p><b class="leadin">Vocab to Example.</b> If you have a line of vocab data, like those shown above, this will convert it to an example.</p>
-</section>
 
 <!-- OTHER PULLDOWN OPTIONS -->
+
+
+<div id="controlsAbove3"></div><script>document.getElementById('controlsAbove3').innerHTML = addControlsAbove3()</script>
+</section>
 
 
 
@@ -141,14 +144,20 @@
 
 
 
+<section id="input_aids"> <!-- inputAidsHelp1/2 are defined in the default.js file -->
+<h2 href="#input_aids">Input aids</h2>
 
-<section id="input_aids">
-<div id="inputAids"></div><script>document.getElementById('inputAids').innerHTML = addInputAids(inputAidsHelp)</script>
+<div id="inputAids1"></div><script>document.getElementById('inputAids1').innerHTML = addInputAids(inputAidsHelp1)</script>
 
 
 <!-- OTHER INPUT AIDS -->
 
-<!--p><b class="leadin">IPA to Hausa (ajami).</b> Allows you to generate  Hausa (ajami) text from characters used for the phonetic transcription of Hausa (ajami).  (This may still need some work.) It works as described in the section just above about <samp>Reverse transliteration</samp>, but uses a different panel to set up the transcription type-in mode.</p-->
+<!--p>Keys are mapped to characters in the ISO 15919 transcription.</p>
+
+<p><b class="leadin">[r] Radice to Bengali.</b> Converts from the  transcription  used by William Radice's book <cite>Teach Yourself Bengali</cite> to the target language.</p-->
+
+
+<div id="inputAids2"></div><script>document.getElementById('inputAids2').innerHTML = addInputAids(inputAidsHelp2)</script>
 </section>
 
 
