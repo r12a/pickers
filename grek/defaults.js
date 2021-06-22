@@ -135,5 +135,5 @@ var inputAids = [
 
 // this indicates which items are to be described in the help
 // options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp1 = 'intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist'
+var inputAidsHelp1 = 'intro,typeAssist,ipaAssist'
 var inputAidsHelp2 = 'kbdAssist,latinAssist,togglePalette'
