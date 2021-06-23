@@ -273,6 +273,7 @@ function openListindicWindow (scriptName) {
 function openScriptPageWindow () {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
+    chars = [...chars]
 	var scriptdesc = window.open('/scripts/'+template.noteslocation+'?index='+encodeURIComponent(chars[0]), 'scriptdesc') 
 	output.focus()
 	scriptdesc.focus()
