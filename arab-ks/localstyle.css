@@ -18,7 +18,9 @@
     font-weight: normal;
     font-style: normal;
 	}
-
+#output {
+    font-language-override: 'URD';
+    }
 
 span.hint { 
 	margin-inline-start: .5em;
@@ -30,7 +32,12 @@ span.hint {
 	min-width: .75em;
 	text-align: center;
 	}
-
+span.x {
+    color: chocolate;
+    }
+.g {
+    text-align: end;
+    }
 #kbdGrid .b { width: 1em; }
 
 #keyboard { display: none; }
@@ -76,7 +83,7 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 0 .5em 0 1.5em;
+    margin: 0 .5em 0 .5em;
     line-height: 2;
     /*border: 1px solid #ccc;
     border-radius: .3em;*/
