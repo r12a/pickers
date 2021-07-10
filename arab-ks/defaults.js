@@ -22,7 +22,7 @@ else  defaults = factoryDefaults
 var webFonts = [  "Noto Nastaliq Urdu WF", "Awami Nastaliq WF", "Scheherazade New WF"]
 
 var template = {}
-	template.title = 'Kashmiri [arab]'
+	template.title = 'Kashmiri [aran]'
 	template.sample = "سٲری اِنسان چھِ آزاد زامٕتؠ۔ وؠقار تہٕ حۆقوٗق چھِ ہِوی۔ تِمَن چھُ سوچ سَمَج عَطا کَرنہٕ آمُت تہٕ تِمَن پَزِ بٲے بَرادٔری ہٕنْدِس جَذباتَس تَحَت اکھ أکِس اکار بَکار یُن ۔"
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
 	template.noteslocation = '../../scripts/arabic/kashmiri' // location of script notes relevant to this app
