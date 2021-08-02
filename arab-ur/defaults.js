@@ -81,7 +81,7 @@ var inputAids = [
 },
 
 {"title":"Type assist: Map keys to an Urdu keyboard.", 
-"desc":"Use an Urdu keyboard mapping to type from the keyboard.",
+"desc":"Use a Windows Urdu keyboard mapping to type from the keyboard.",
 "dataShortTitle":"k", "type":"palette", 
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },
