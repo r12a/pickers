@@ -2154,7 +2154,7 @@ function displayDBInfo (cp, block, lang, direction, showAll) {
 	}
 
 
-function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
+function buildDBInfoLineOLD (char, toplevel, originStr, ptr, showAll) {
 		
 		hex = char.codePointAt(0).toString(16).toUpperCase()
 		while (hex.length < 4) hex = '0'+hex
@@ -2289,7 +2289,7 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 //function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 
 
-function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
+function buildDBInfoLineLESSOLD (char, toplevel, originStr, ptr, showAll) {
 		
 		hex = char.codePointAt(0).toString(16).toUpperCase()
 		while (hex.length < 4) hex = '0'+hex
@@ -2370,6 +2370,152 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 
 			// add unicode name
 			out += '<bdi class="dbCharName" onclick="sieveFor(\'dbCharName\')" onmouseover="showMenuText(\'Make a list of Unicode names.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
+			if (spreadsheetRows[char][cols.ucsName]) out += spreadsheetRows[char][cols.ucsName]
+			else {
+				for (let i=0;i<char.length;i++) {
+					if (i>0) out += ', '
+					out += 'U+'+hex+': '+charData[char[i]]
+					}
+				}
+			out += '</bdi>'	
+			}
+		
+		else {
+			// if class is x, just display ucs name
+			out += '<span class="dbCharInfo">'
+			out += '</span><bdi class="dbCharName">'	
+			
+			// add unicode name
+			var blockfile = getScriptGroup(parseInt(hex,16), true)
+			if (blockfile) {
+				for (let i=0;i<char.length;i++) {
+					if (i>0) out += ', '
+					out += 'U+'+hex+': '+charData[char[i]]
+					}
+				}
+			out += '</bdi>'	
+			}
+
+		out += '</span> '
+		out += '</div> '
+		
+		
+		// find related items
+		if (toplevel) {
+			if (showAll) {
+				for (item in spreadsheetRows) { 
+					if (((item.length > 1 && item.includes(char)) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(char))) && spreadsheetRows[item][cols.class] !== '-') out += buildDBInfoLine(item, false, originStr, ptr, showAll)
+					}
+				}
+			else {
+				for (item in spreadsheetRows) { 
+					var matchStr = item.replace(/-/g,'.')
+					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']' || matchStr == '*') matchStr = 'xx'
+					//console.log('matchstr',matchStr)
+					var  regex = new RegExp(matchStr)
+					itemArray = [... item] // to handle surrogates
+					if (((itemArray.length > 1 && itemArray[0] === char) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(item))) && spreadsheetRows[item][cols.class] !== '-' && originStr.substr(ptr,item.length).match(regex)) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
+					}
+				}
+			}
+		
+		return out
+}
+
+
+
+//function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
+
+
+function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
+		
+		hex = char.codePointAt(0).toString(16).toUpperCase()
+		while (hex.length < 4) hex = '0'+hex
+		
+		out = '<div class="dbCharContainer"'
+		if (!toplevel) out += ' style="margin-left: 3em;"'
+		if (toplevel) out += '><span class="dbCharItem">'+char+'</span> '
+		else if (! showAll) out += '><span class="dbCharItem">'+char+'</span> '
+		else out += '><span class="dbCharItemLevel2">'+char+'</span> '
+		
+		// skip items with an x in the class column unless this is the top level
+		// ie. characters in the text will be reported, but not linked to - options
+		var ignorable = false
+		if (! toplevel && spreadsheetRows[char] && spreadsheetRows[char][cols.class] && spreadsheetRows[char][cols.class].includes('-')) ignorable = true
+		
+		
+		out += '<span class="dbCharSubContainer" style="display:flex;flex-direction:column;">'
+
+		if (spreadsheetRows[char] && ignorable === false) {
+					
+			out += '<span class="dbCharInfo">'
+
+			// get ipa info
+			if (cols.ipaLoc) {
+				//out += '<bdi class="analysisIPA" onclick="sieveFor(\'analysisIPA\')" onmouseover="showMenuText(\'Make a list of IPA values.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer"><em>ipa</em> '
+				//out += '<bdi class="analysisIPA" onclick="sieveFor(\'analysisIPA\')" onmouseover="showMenuText(\'IPA: Click to make a list of values.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
+				out += '<bdi class="analysisIPA" onmouseover="showMenuText(\'Typical phonemic/phonetic value(s).\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
+				if (spreadsheetRows[char][cols.ipaLoc]) out += ' <span class="ipa" style="display:inline-block; min-width:1.5em;">'+spreadsheetRows[char][cols.ipaLoc].toLowerCase()+'</span>'
+				else out += '<span class="ipa" style="display:inline-block; min-width:1.5em;">-</span>'
+				out += '</bdi>'
+				}
+
+			// get type
+			out += '<bdi class="analysisType">'
+			//out += '<em>type</em> '
+			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="ipa" onmouseover="showMenuText(\'Type of character.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
+			else out += '<span class="ipa">-</span>'
+			out += '</bdi>'
+
+			// get status
+			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
+				out += '<bdi class="analysisStatus">'
+				//out += '<em>usage</em> '
+				out += ' <span style="color:black; font-weight: bold;" onmouseover="showMenuText(\'Usage notes.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.statusLoc]+'</span>'
+				out += '</bdi>'
+				}
+
+			// get transcription
+			if (cols.othertranscriptions) {
+				for (let t=0;t<cols.othertranscriptions.length;t++) {
+					//out += '<bdi class="analysisTransc" onclick="sieveFor(\'analysisTransc\')" onmouseover="showMenuText(\''+cols.othertranscriptions[t][1]+' transcription. (Click to extract a list.)\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer"><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
+					out += '<bdi class="analysisTransc" onmouseover="showMenuText(\''+cols.othertranscriptions[t][1]+' transcription.\',\'tan\')" onmouseout="hideMenuText()"><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
+					if (spreadsheetRows[char][cols.othertranscriptions[t][0]]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.othertranscriptions[t][0]]+'</span>'
+					else out += '<span class="ipa">-</span>'
+					out += '</bdi>'
+					}
+				}
+
+
+			// get transliteration
+			if (spreadsheetRows[char][cols.transLoc] && spreadsheetRows[char][cols.transLoc] !== char) {
+				out += '<bdi class="analysisTranslit" onmouseover="showMenuText(\'Transliteration produced by this app.\',\'tan\')" onmouseout="hideMenuText()">'
+				out += '<span><em>translit</em> '
+				if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transLoc]+'</span>'
+				else out += '<span class="ipa">-</span>'
+				out += '</bdi>'
+				}
+
+
+			// get name
+			if (spreadsheetRows[char][cols.nameLoc] && cols.nameLoc > 0) {
+				out += '<bdi class="analysisName" onmouseover="showMenuText(\'Name.\',\'tan\')" onmouseout="hideMenuText()"><em>name</em> '
+				out += ' <span>'+spreadsheetRows[char][cols.nameLoc]
+				if (spreadsheetRows[char][cols.nnameLoc] && cols.nnameLoc > 0) out += ' ('+spreadsheetRows[char][cols.nnameLoc]+')'
+				out += '</span></bdi>'
+				}
+
+			// add link to notes page
+			var blockfile = getScriptGroup(parseInt(hex,16), true)
+			//console.log(blockfile)
+			if (blockfile) {
+				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">details</a></bdi>'
+				}
+			out += '</span>'	
+
+			// add unicode name
+			//out += '<bdi class="dbCharName" onclick="sieveFor(\'dbCharName\')" onmouseover="showMenuText(\'Make a list of Unicode names.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
+			out += '<bdi class="dbCharName" onmouseover="showMenuText(\'Unicode name.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
 			if (spreadsheetRows[char][cols.ucsName]) out += spreadsheetRows[char][cols.ucsName]
 			else {
 				for (let i=0;i<char.length;i++) {
