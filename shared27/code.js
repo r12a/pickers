@@ -271,6 +271,7 @@ function openListindicWindow (scriptName) {
 	}
 
 function openScriptPageWindow () {
+    if (template.noteslocation === '') return
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
     chars = [...chars]
@@ -280,6 +281,7 @@ function openScriptPageWindow () {
 	}
 
 function openBlockPageWindow () {
+    if (template.blocklocation === '') return
 	var output = document.getElementById('output')
 	var char = getHighlightedText(output).codePointAt(0).toString(16).toUpperCase()
     while (char.length < 4) char = '0'+char
@@ -3052,13 +3054,23 @@ function showDown (evt) {
             for (i=0;i<inputAidsList.length;i++) {
                 if (inputAidsList[i].classList.contains('on')) {
                     ptr = i
-                    break
+                    //break
                     }
+                // identify the T and L items
+                if (inputAidsList[i].id === 'showRevTransSwitch') Tptr = i
+                if (inputAidsList[i].id === 'showLatinTransSwitch') Lptr = i
                 }
             closeSidebarPalettes(inputAidsList[ptr])
             // point to the next item
-            if (ptr === inputAidsList.length-1) ptr = 0 // wrap around
-            else ptr++
+            
+            // the following 2 lines just move to the next in the list
+            //if (ptr === inputAidsList.length-1) ptr = 0 // wrap around
+            //else ptr++
+            
+            // this new code only toggles between T and L
+            if (ptr === Lptr) ptr = Tptr
+            else ptr = Lptr
+            
             var clickEvent = new MouseEvent("click", {"view": window,"bubbles": true,"cancelable": false})
             inputAidsList[ptr].dispatchEvent(clickEvent)
             
