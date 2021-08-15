@@ -25,6 +25,7 @@ var template = {}
 	template.title = 'Pan-African Arabic'
 	template.sample = "رَایُوَا بَبَّنْ رَبُو نَا ، غُنْ مَسَاٻِى دُونْ شِدَیْنَا ، تَرْسَشِنْ أَیْكِى نَ ٻَرْنَا ، فَیْ دَ ٻُویٜ سِڟَیْدَ سُنَّا ، شِبِ أَللَّهْ بَادَكَنْغَرَا بَا"
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
+    template.noteslocation = 'arabic/' // location of script notes relevant to this app
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'arab-afr'
 	template.scriptcode = 'Arab'

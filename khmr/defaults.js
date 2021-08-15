@@ -24,6 +24,7 @@ var template = {}
 	template.title = 'Khmer character app'
 	template.sample = "២. មនុស្សគ្រប់រូបមានសិទ្ធិចាកចេញពីប្រទេសណាមួយ រួមទាំងប្រទេសរបស់ខ្លួនផង និងមាន សិទ្ធិវិលត្រឡប់មកប្រទេសរបស់ខ្លួនវិញ។"
 	template.blocklocation= '/scripts/khmer/block'  // blocklocation to use for examples
+	template.noteslocation = 'khmer/' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'khmr'
 	template.scriptcode = 'Khmr'
@@ -78,21 +79,48 @@ var pulldown = [
 
 
 var inputAids = [
-{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
+{"title":"Shape-based lookup", "id":"showShapeLookup", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
 
-{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
+{"title":"Hint at similar shapes", "id":"showShapeHints", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
-{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type Khmer from the keyboard."},
+{"id":"showRevTransSwitch", 
+"title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
+"desc":"Use ASCII characters to type Khmer from the keyboard using a customised key mapping.",
+"dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
+},
 
-{"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
+{"title":"Type assist: IPA to Khmer.", 
+"desc":"Use an IPA keyboard mapping to type Khmer from the keyboard.",
+"dataShortTitle":"æ", "type":"palette",
+"initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
+},
 
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type Khmer from the keyboard via reverse transliteration."},
+{"title":"Type assist: UNGEGN transcription to Khmer.", 
+"desc":"Use a  mapping from UNGEGN to type Khmer from the keyboard.",
+"dataShortTitle":"t", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
+},
 
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."},
+{"title":"Type assist: Map keys to a Khmer keyboard.", 
+"desc":"Use a Khmer keyboard mapping to type from the keyboard.",
+"dataShortTitle":"k", "type":"palette", 
+"initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
+},
 
-{"title":"Huffman to Khmer", "dataVar":"showHuffmanTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"H", "type":"palette", "initialCode":"setUpTypeAssist(false, huffmanCharacterMap, huffmanCharacterMap)"},
+{"title":"Huffman to Khmer", "dataVar":"showHuffmanTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"h", "type":"palette", "initialCode":"setUpTypeAssist(false, huffmanCharacterMap, huffmanCharacterMap)"},
 
-{"title":"Gilbert to Khmer", "dataVar":"showGilbertTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"G", "type":"palette", "initialCode":"setUpTypeAssist(false, gilbertCharacterMap, gilbertCharacterMap)"},
+{"title":"Gilbert to Khmer", "dataVar":"showGilbertTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"g", "type":"palette", "initialCode":"setUpTypeAssist(false, gilbertCharacterMap, gilbertCharacterMap)"},
+
+{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
+"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
+"dataShortTitle":"L", "type":"palette", 
+"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
+},
+
+
+{"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 
+"desc":"Show or hide the palette used for type-assist input.",
+"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
+},
 ]
 
 
@@ -100,11 +128,9 @@ var inputAids = [
 
 
 // this indicates which items are to be described in the help
-// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp = 'showIntro,'
-for (let i=0;i<inputAids.length;i++) {
-	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
-	}
+// options include: intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist – kbdAssist,latinAssist,togglePalette
+var inputAidsHelp1 = 'intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist'
+var inputAidsHelp2 = 'kbdAssist,latinAssist,togglePalette'
 
 
 /*
