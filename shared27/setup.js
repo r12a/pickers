@@ -67,6 +67,7 @@ function makeTypeAssistMap (col) {
     // col: the number of the column in the spreadsheet containing the key to be mapped to
     // note: this replaces makeTranslitCharacterMap which only managed the 'key' column
     var charArray = {}
+    if (typeof col === 'undefined') console.log('ERROR: col undefined in makeTypeAssistMap')
     
     // suck out the relevant data into the chars array
     for (var line in spreadsheetRows) {
@@ -76,6 +77,7 @@ function makeTypeAssistMap (col) {
         var primary = false
 		var keypress = spreadsheetRows[line][col]
         typeAssistMap = ''
+        //console.log(col,keypress)
 		
 		// check for a marker that this pair should come first
 		if (keypress.includes('¶')) {
