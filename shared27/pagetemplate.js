@@ -268,12 +268,13 @@ out += `
 <button onclick="openListindicWindow(); return false;" title="Open in Triage for Indic_Syllabic_Category app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage by Indic category </button><br/>`
 
 if (template.noteslocation) out += `
-<button onclick="openScriptPageWindow(); return false;" title="View first character in selection in a page that describes the script." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Script notes</button><br/>
+<button onclick="openScriptPageWindow(); return false;" title="View first character in selection in a page that describes the script." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Script notes</button><br/>`
+
+if (template.blocklocation) out += `
+<button onclick="openBlockPageWindow(); return false;" title="View notes for first character in selection." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character notes</button><br/>
 `
 
 out += `
-<button onclick="openBlockPageWindow(); return false;" title="View notes for first character in selection." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character notes</button><br/>
-
 <div id="closeShuttle" onclick="document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();">X</div>
 </div>
 
