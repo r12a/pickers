@@ -2997,7 +2997,7 @@ function drawCharSelectionPanel (key) {
 	// omit the first item, since we want that at the end
 	for (let i=0;i<kbdEventList[key].length;i++) {
 		if (i > 9) {
-			out += ' &nbsp; <span style="font-size:50%;">See panel for '+eval(kbdEventList[key].length-10)+' more.</span>'
+			out += '<br><span style="font-size:50%; margin-inline-start:3em;"><a href="#" onclick="palette=document.getElementById(\'transcriptionPalette\'); palette.style.display=\'block\'; toggle=document.getElementById(\'togglePalette\'); if (toggle.classList.contains(\'off\')) {toggle.classList.remove(\'off\'); toggle.classList.add(\'on\');} return false;">Open the panel</a> for '+eval(kbdEventList[key].length-10)+' more.</span>'
 			break
 			}
 		
@@ -3020,7 +3020,8 @@ function drawCharSelectionPanel (key) {
 	document.getElementById("charChoice").innerHTML = out
     }
 
-	
+
+  
 
 window.autoInsertedFromPalette = ''
 
