@@ -84,20 +84,14 @@ var inputAids = [
 "dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
 },
 
-{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
-"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"L", "type":"palette", 
-"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
-},
-
 {"title":"Type assist: IPA to Persian.", 
 "desc":"Use an IPA keyboard mapping to type Persian from the keyboard.",
 "dataShortTitle":"æ", "type":"palette",
 "initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
-{"title":"Type assist: LOC transcription to Persian.", 
-"desc":"Use a  mapping from LOC to type Persian from the keyboard.",
+{"title":"Type assist: UN transcription to Persian.", 
+"desc":"Use a  mapping from the UN transcription to type Persian from the keyboard.",
 "dataShortTitle":"t", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
@@ -107,15 +101,17 @@ var inputAids = [
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },
 
+{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
+"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
+"dataShortTitle":"L", "type":"palette", 
+"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
+},
+
 
 {"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 
 "desc":"Show or hide the palette used for type-assist input.",
 "dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
 },
-
-{"title":"UN to Persian", "dataVar":"showLOCTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"U", "type":"palette", "initialCode":"setUpTypeAssist(false, unCharacterMap, unCharacterMap)", "desc":"Create Persian text from characters in the UNGEN transcription."},
-
-{"title":"IPA to Persian", "dataVar":"showIPATrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"setUpTypeAssist(false, ipaCharacterMap, ipaCharacterMap)", "desc":"Create Persian text from characters in an IPA transcription."},
 ]
 
 
