@@ -28,7 +28,9 @@ span.hint {
 	min-width: .5em;
 	text-align: center;
 	}
-
+span.x {
+    color: chocolate;
+    }
 #kbdGrid .b { width: 1em; }
 
 
