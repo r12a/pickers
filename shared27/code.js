@@ -2490,7 +2490,8 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 
 
 			// get transliteration
-			if (spreadsheetRows[char][cols.transLoc] && spreadsheetRows[char][cols.transLoc] !== char) {
+			//if (spreadsheetRows[char][cols.transLoc] && spreadsheetRows[char][cols.transLoc] !== char) {
+			if (spreadsheetRows[char][cols.transLoc] && cols.transLoc > 0) {
 				out += '<bdi class="analysisTranslit" onmouseover="showMenuText(\'Transliteration produced by this app.\',\'tan\')" onmouseout="hideMenuText()">'
 				out += '<span><em>translit</em> '
 				if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transLoc]+'</span>'
@@ -2507,12 +2508,21 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 				out += '</span></bdi>'
 				}
 
-			// add link to notes page
+			// add link to notes page (using the block column)
+			if (spreadsheetRows[char][cols.block] && cols.block > 0) {
+				//out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+spreadsheetRows[char][cols.block]+'/block#char'+hex+'" target="_blank">details</a></bdi>'
+                var blockloc = template.blocklocation.replace('/scripts/','').replace('/block','') // deal with legacy
+				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+blockloc+'/block#char'+hex+'" target="_blank">details</a></bdi>'
+                console.log('blockloc',blockloc)
+				}
+
+/*			// add link to notes page
 			var blockfile = getScriptGroup(parseInt(hex,16), true)
 			//console.log(blockfile)
 			if (blockfile) {
 				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">details</a></bdi>'
 				}
+*/
 			out += '</span>'	
 
 			// add unicode name
