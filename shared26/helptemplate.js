@@ -67,7 +67,6 @@ return `
 <p>Find <a href="../../shared26/fontpreview" target="_blank">more information</a> about using the font preview panel, including <cite>Adding your own fonts</cite>, <cite>Identifying missing characters</cite>, and <cite>Checking coverage for a specific language</cite>.</p>
 
       <!--p><b class="leadin">Copy, select, delete, etc. (<img src="../../shared26/images/help/copy_etc.png" style="vertical-align:middle;" alt=""/>).</b> The icons on the left above the input box allow you (listing them from left to right) to copy the text to the clipboard, select the text,  delete it, generate a URL to share with others that will reproduce for them what you see in the text box, add some sample text to the text area, and open this help file.</p-->
-      <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
       <p><b class="leadin">Analyze text.</b> This control is particularly useful for understanding the composition of the text. For each character highlighted (or the whole text box if nothing is highlighted) this lists information such as the following:</p>
        <ul>
        <li>transliteration</li>
@@ -78,6 +77,7 @@ return `
        <li>a link to that character's description in the detailed character notes.</li>
        </ul>
       <p>If the app recognises a sequence of characters that has a particular significance in its own right, it will show that sequence (slightly indented) after the initial character.</p>
+      <p><b class="leadin">Show codepoints.</b> Produces a list of the Unicode code points in the input box. You can usually follow a link from a code point item to more detailed information about that character.</p>
 
 `
 }
