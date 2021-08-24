@@ -24,7 +24,8 @@ var webFonts = [ "Noto Sans Lydian WF" ]
 var template = {}
 	template.title = 'Lydian'
 	template.sample = "𐤠𐤨𐤯𐤦𐤫 𐤫𐤵𐤲𐤦𐤳 𐤲𐤤𐤩𐤷𐤨 𐤱𐤶𐤫𐤳𐤷𐤦𐤱𐤦𐤣 𐤱𐤠𐤨𐤪𐤷 𐤠𐤭𐤯𐤦𐤪𐤰𐤮 𐤦𐤡𐤮𐤦𐤪𐤳𐤦𐤳 𐤠𐤭𐤯𐤦𐤪𐤰𐤨 𐤨𐤰𐤩𐤰𐤪𐤳𐤦𐤳 𐤠𐤠𐤭𐤠𐤷 𐤡𐤦𐤭𐤠𐤷𐤨 𐤨𐤷𐤦𐤣𐤠𐤷 𐤨𐤬𐤱𐤰𐤷𐤨 𐤲𐤦𐤭𐤠𐤷 𐤲𐤤𐤩𐤷𐤨 𐤡𐤦𐤩𐤷 𐤥𐤹𐤡𐤠𐤲𐤶𐤫𐤯"
-	template.blocklocation= 'lydi'  // blocklocation to use for examples
+	template.blocklocation= ''  // blocklocation to use for examples
+	template.noteslocation = '' // location of script notes relevant to this app
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'lydi'
 	template.scriptcode = 'lydi'
@@ -84,26 +85,51 @@ var pulldown = [
 
 
 var inputAids = [
-//{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
+//{"title":"Shape-based lookup", "id":"showShapeLookup", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
 
-//{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
+//{"title":"Hint at similar shapes", "id":"showShapeHints", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
-{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type XXXX from the keyboard."},
+{"id":"showRevTransSwitch", 
+"title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
+"desc":"Use ASCII characters to type Lydian from the keyboard using a customised key mapping.",
+"dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
+},
 
-{"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
+{"title":"Type assist: IPA to Lydian.", 
+"desc":"Use an IPA keyboard mapping to type Lydian from the keyboard.",
+"dataShortTitle":"æ", "type":"palette",
+"initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
+},
 
-//{"title":"ISO to Hindi", "dataVar":"showISOCharMap", "dataLocn":"transcriptionPalette", "dataShortTitle":"I", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(isoCharacterMap);makeKbdEventList(isoCharacterMap);", "desc":"Create XXXX text from characters in the XXXX transcription."},
+{"title":"Type assist: Latin transcription to Lydian.", 
+"desc":"Use a  mapping from Latin to type Lydian from the keyboard.",
+"dataShortTitle":"t", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
+},
 
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type XXXX from the keyboard via reverse transliteration."},
+/*{"title":"Type assist: Map keys to a XXXXX keyboard.", 
+"desc":"Use a XXXXXX XXXXXX keyboard mapping to type from the keyboard.",
+"dataShortTitle":"k", "type":"palette", 
+"initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
+},*/
+
+{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
+"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
+"dataShortTitle":"L", "type":"palette", 
+"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
+},
+
+
+{"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 
+"desc":"Show or hide the palette used for type-assist input.",
+"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
+},
 ]
 
 
 
 
 // this indicates which items are to be described in the help
-// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp = 'showIntro,'
-for (let i=0;i<inputAids.length;i++) {
-	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
-	}
+// options include: intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist – kbdAssist,latinAssist,togglePalette
+var inputAidsHelp1 = 'intro,typeAssist,ipaAssist,transAssist'
+var inputAidsHelp2 = 'latinAssist,togglePalette'
 
