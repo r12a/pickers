@@ -24,13 +24,34 @@ var webFonts = [ "Noto Serif Thai WF", "Noto Sans Thai WF" ]
 var template = {}
 	template.title = 'Template'
 	template.sample = "कऻशुर छि सऻन्य् माजि ज़्यव। असि पज़ि पनॖन्यन शुर्यन सॗत्य् ॳथ्य् ज़बऻन्य् मंज़ कथ करॖनय्।"
-	template.blocklocation= '../../scripts/XXXX/block'  // blocklocation to use for examples
+	template.blocklocation= 'XXXX'  // blocklocation to use for examples
 	template.noteslocation = 'XXXXX' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'template'
 	template.scriptcode = 'Tmp'
 	template.fontLocale = "tmp"
 	template.hints = true
+	template.bicameral = true
+
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003'], ['IDSP','\u3000']]
+	template.defaultInvisible = ''
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011'], ['CGJ','\u034F'],  
+	['RLM','\u200F'], ['LRM','\u200E'], ['ALM','\u061C']]
+	template.moreKeys = [['RLI','\u2067'], ['LRI','\u2066'], ['FSI','\u2068'], 
+	['PDI','\u2069'], ['RLO','\u202E'], ['LRO','\u202D'], ['PDF','\u202C'], 
+	['CGJ','\u034F']]
+
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = ''
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011'], ['CGJ','\u034F']]
 
 
 
@@ -104,8 +125,8 @@ var inputAids = [
 "initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
-{"title":"Type assist: LOC transcription to XXXXXX.", 
-"desc":"Use a  mapping from LOC to type XXXXXX from the keyboard.",
+{"title":"Type assist: Latin transcription to XXXXXX.", 
+"desc":"Use a  mapping from Latin to type XXXXXX from the keyboard.",
 "dataShortTitle":"t", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
