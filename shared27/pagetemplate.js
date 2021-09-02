@@ -281,7 +281,7 @@ out += `
 
 
 
-<div id="pulldown" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
+<div id="pulldown" style="text-align:right; position:absolute; top:40; right:0; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none; width: 15em;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
 
 <!--button onclick="openEscapeWindow(); return false;" title="Convert to escapes (in a separate window)." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Convert to<br/>escapes</button><br/-->
 
@@ -291,6 +291,14 @@ out += `
 
 <button  id="sortAllUnique" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=true)" title="Keep one of each character and sort in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Unique sort</button>
     `
+
+if (template.bicameral) out += `
+
+<button  id="makeUpperCase" type="button" onclick="add(getHighlightedText(document.getElementById('output')).toUpperCase());document.getElementById('output').focus();" title="Convert the highlighted text to uppercase." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Uppercase</button>
+
+<button  id="makeLowerCase" type="button" onclick="add(getHighlightedText(document.getElementById('output')).toLowerCase());document.getElementById('output').focus();" title="Convert the highlighted text to lowercase." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Lowercase</button>
+`
+
 if (window.pulldown) {
 /*for (let i=0;i<window.pulldown.length;i++){
 	out += '<button onclick="'+window.pulldown[i].code+'" '
