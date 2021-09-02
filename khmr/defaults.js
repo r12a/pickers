@@ -30,6 +30,13 @@ var template = {}
 	template.scriptcode = 'Khmr'
 	template.fontLocale = 'khmr'
 	template.hints = true
+	
+	template.defaultSpace = '\u200B'
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003'], ['1/6SP','\u2006']]
+	template.defaultInvisible = '\u17D2'
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011']]
 
 
 

@@ -33,6 +33,13 @@ var template = {}
 	template.fontLocale = 'java'
 	template.hints = true
 	
+	template.defaultSpace = '\u200B'
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = '꧀'
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011']]
+	
 	// this indicates which items are to be described in the help
 	// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
 	template.inputaids1 = 'intro,shape,typeAssist,latin,reverse,'
