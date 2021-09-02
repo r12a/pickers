@@ -31,6 +31,13 @@ var template = {}
 	template.scriptcode = 'Ethi'
 	template.fontLocale = 'ethi'
 	template.hints = false
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = '፡'
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011']]
 
 
 
@@ -64,8 +71,8 @@ var inputAids = [
 "dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
 },*/
 
-{"title":"Type assist: IPA to XXXXXX.", 
-"desc":"Use an IPA keyboard mapping to type XXXXXX from the keyboard.",
+{"title":"Type assist: IPA to Amharic.", 
+"desc":"Use an IPA keyboard mapping to type Amharic from the keyboard.",
 "dataShortTitle":"æ", "type":"palette",
 "initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
 },

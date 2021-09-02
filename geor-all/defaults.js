@@ -31,6 +31,15 @@ var template = {}
 	template.scriptcode = 'Geor'
 	template.fontLocale = 'geor'
 	template.hints = false
+	template.bicameral = true
+
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = ''
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011'], ['CGJ','\u034F']]
 
 
 

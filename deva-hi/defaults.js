@@ -31,6 +31,15 @@ var template = {}
 	template.scriptcode = 'Deva'
 	template.fontLocale = 'deva-hi'
 	template.hints = true
+	template.spaces = [['SP', ' '], ['NBSP','\u00A0'], ['NNBSP','\u202F']]
+	template.invisibles = [['HALANT','\u094D'], ['ZWJ','\u200D'], ['ZWNJ','\u200C']]
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003'] ]
+	template.defaultInvisible = '\u094D'
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u200C'], ['NBHY','\u2011']]
 
 
 
