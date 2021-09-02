@@ -31,6 +31,15 @@ var template = {}
 	template.initialInput = 'showTranslit'
 	template.fontLocale = 'latn-ha'
 	template.hints = false
+	template.bicameral = true
+
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = ''
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011'], ['CGJ','\u034F']]
 
 
 
@@ -72,7 +81,7 @@ var inputAids = [
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },*/
 
-{"id":"showLatinTransSwitch", "title":"Type-assist: More characters, needed for transcriptions", 
+{"id":"showLatinTransSwitch", "title":"Type-assist: More characters, needed for transcriptions.", 
 "desc":"Show characters needed for IPA or other transcriptions and transliterations.",
 "dataShortTitle":"M", "type":"palette", 
 "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"

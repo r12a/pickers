@@ -31,6 +31,18 @@ var template = {}
 	template.scriptcode = 'Thaa'
 	template.fontLocale = 'thaa'
 	template.hints = true
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = 'އ'
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u200C'], ['NBHY','\u2011'], 
+	['RLM','\u200F'], ['LRM','\u200E'], ['ALM','\u061C']]
+	template.moreKeys = [['RLI','\u2067'], ['LRI','\u2066'], ['FSI','\u2068'], 
+	['PDI','\u2069'], ['RLO','\u202E'], ['LRO','\u202D'], ['PDF','\u202C'], 
+	['CGJ','\u034F']]
+
 
 
 

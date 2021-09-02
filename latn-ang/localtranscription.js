@@ -17,7 +17,12 @@ function oldEnglishToIPA (str) {
 	str = ' '+str.toLowerCase()+' '
 	str = str.replace(/\n/g,' ¶ ') 
 	
+	str = str.replace(/⁊/g,'ond') 
+	str = str.replace(/ꝥ/g,'ðæt') 
+	
 	str = str.replace(/ ge| ġe/g,' JE') 
+	
+	str = str.replace(/þþ/g,'θθ') 
 	
 	str = str.replace(/cg/g,'ʤ') 
 	str = str.replace(/sc/g,'ʃ') 
@@ -90,6 +95,9 @@ function oldEnglishToIPA (str) {
 	str = str.replace(/ō/g,'oː')  
 	str = str.replace(/ȳ/g,'yː') 
 	str = str.replace(/ǣ/g,'æː')
+	
+	str = str.replace(/ʤ/g,'d͡ʒ')
+	str = str.replace(/ʧ/g,'t͡ʃ')
 	
 	str = str.replace(/-/g,'')
 	

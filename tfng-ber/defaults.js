@@ -31,6 +31,14 @@ var template = {}
 	template.scriptcode = 'Tfng'
 	template.fontLocale = 'tfng-ber'
 	template.hints = true
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = '\u200D'
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011'], ['TFNCJ','\u2D7F']]
+	template.moreKeys = [['RLO','\u202E'], ['LRO','\u202D'], ['PDF','\u202C']]
 
 
 

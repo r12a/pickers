@@ -31,12 +31,26 @@ var template = {}
 	template.scriptcode = 'Latn'
 	template.fontLocale = 'latn'
 	template.hints = false
+	template.bicameral = true
+
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = ''
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011'], ['CGJ','\u034F']]
 
 
 
 var controls = [
 {"title":"Upper-<br>case", "alt":"Convert selection to uppercase.", "code":"add(getHighlightedText(document.getElementById('output')).toUpperCase());document.getElementById('output').focus();"},
 {"title":"Lower-<br>case", "alt":"Convert selection to lowercase.", "code":"add(getHighlightedText(document.getElementById('output')).toLowerCase());document.getElementById('output').focus();"},
+]
+
+
+var pulldown = [
+{"title":"Sort<br/>characters", "alt":"Reorder the characters in ascending order of Unicode code point position.", "code":"sortOutput()"},
 ]
 
 

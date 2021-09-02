@@ -24,7 +24,7 @@ var webFonts = [ "Doulos SIL WF", "Junicode WF" ]
 var template = {}
 	template.title = 'Old English character app'
 	template.sample = "Hwæt! wē Gār-Dena in ġēar-dagum þēod-cyninga þrym gefrūnon, hūðā æþelingas ellen fremedon."
-	template.blocklocation= '/scripts/latin/block'  // blocklocation to use for examples
+	template.blocklocation= 'latin'  // blocklocation to use for examples
 	template.noteslocation = '' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'latn-ang'
@@ -32,6 +32,14 @@ var template = {}
 	template.initialInput = 'showTranslit'
 	template.fontLocale = 'germ'
 	template.hints = false
+	template.bicameral = true
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = ''
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011'], ['CGJ','\u034F']]
 
 
 
@@ -52,12 +60,6 @@ var pulldown = [
 
 
 var inputAids = [
-/*{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type Hausa from the keyboard."},
-
-{"title":"More characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"M", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions, as well as normal letters."},
-*/
-
-
 {"id":"showRevTransSwitch", 
 "title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
 "desc":"Use ASCII characters to type Old English from the keyboard using a customised key mapping.",
@@ -76,9 +78,9 @@ var inputAids = [
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },
 
-{"id":"showLatinTransSwitch", "title":"Type-assist: Characters needed for IPA transcriptions", 
+{"id":"showLatinTransSwitch", "title":"Type-assist: More characters, needed for transcriptions.", 
 "desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"I", "type":"palette", 
+"dataShortTitle":"M", "type":"palette", 
 "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
 },
 

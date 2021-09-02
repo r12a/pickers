@@ -31,7 +31,17 @@ var template = {}
 	template.scriptcode = 'Thai'
 	template.fontLocale = 'thai'
 	template.hints = true
-
+	template.defaultSpace = '\u200B'
+	
+	privilegedKey = ' '  // § key assignment
+	template.defaultSpace = '\u200B'
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003'] ]
+	template.defaultInvisible = ''
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u200C'], ['NBHY','\u2011']]
+	template.defaultCtrlkey = ' ฺ'
+	template.ctrlkeys = [['VIRAMA','\u0E3A']]
 
 
 

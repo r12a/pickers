@@ -24,12 +24,22 @@ var webFonts = [ "Doulos SIL WF" ]
 var template = {}
 	template.title = 'Tłı̨chǫ (Dogrib) character app'
 	template.sample = "Dıı  sah nàé t’à. Dıı deh nı̨ı̨lı̨. Dıı ndè nàgoèhdǫ-le nı̨dè Asıı ts’àgoèt’ǫ hǫı̨lı̨ ha nele."
-	template.blocklocation= '/scripts/latin/block'  // blocklocation to use for examples
+	template.blocklocation= 'latin'  // blocklocation to use for examples
+	template.noteslocation = '' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'latn-dgr'
 	template.scriptcode = 'Latn'
 	template.fontLocale = 'latn'
 	template.hints = false
+	template.bicameral = true
+
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = ''
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011'], ['CGJ','\u034F']]
 
 
 
@@ -46,16 +56,50 @@ var pulldown = [
 
 
 var inputAids = [
-{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type Tłı̨chǫ from the keyboard."},
+//{"title":"Shape-based lookup", "id":"showShapeLookup", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
 
-{"title":"More characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"M", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions, as well as normal letters."},
+//{"title":"Hint at similar shapes", "id":"showShapeHints", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."},
+{"id":"showRevTransSwitch", 
+"title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
+"desc":"Use ASCII characters to type Tłı̨chǫ from the keyboard using a customised key mapping.",
+"dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
+},
+
+{"title":"Type assist: IPA to Tłı̨chǫ.", 
+"desc":"Use an IPA keyboard mapping to type Tłı̨chǫ from the keyboard.",
+"dataShortTitle":"æ", "type":"palette",
+"initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
+},
+
+/*{"title":"Type assist: Latin transcription to XXXXXX.", 
+"desc":"Use a  mapping from Latin to type XXXXXX from the keyboard.",
+"dataShortTitle":"t", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
+},*/
+
+{"title":"Type assist: Map keys to a Tłı̨chǫ keyboard.", 
+"desc":"Use a Tłı̨chǫ keyboard mapping to type from the keyboard.",
+"dataShortTitle":"k", "type":"palette", 
+"initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
+},
+
+{"id":"showLatinTransSwitch", "title":"Type-assist: More characters, needed for transcriptions", 
+"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
+"dataShortTitle":"M", "type":"palette", 
+"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
+},
+
+
+{"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 
+"desc":"Show or hide the palette used for type-assist input.",
+"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
+},
 ]
 
 
 
 
 // this indicates which items are to be described in the help
-// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp = 'showIntro,'
+// options include: intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist – kbdAssist,latinAssist,togglePalette
+var inputAidsHelp1 = 'intro,typeAssist,ipaAssist,transAssist'
+var inputAidsHelp2 = 'kbdAssist,latinAssist,togglePalette'

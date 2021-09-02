@@ -31,6 +31,13 @@ var template = {}
 	template.scriptcode = 'Mymr'
 	template.fontLocale = 'mymr'
 	template.hints = true
+	
+	template.defaultSpace = '\u200B'
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = '\u103A'  // § key assignment
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011'], ['VIRAMA','\u1039']]
 
 
 

@@ -31,6 +31,13 @@ var template = {}
 	template.scriptcode = 'Talu'
 	template.fontLocale = 'talu'
 	template.hints = true
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003'], ['IDSP','\u3000']]
+	template.defaultInvisible = 'ᦰ'
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011']]
 
 
 
