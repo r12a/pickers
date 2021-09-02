@@ -20,12 +20,62 @@ var _output
 function replaceSlash (str, replacement) {
 // does .replace(/\//g,str), since that doesn't seem to work
 	
-	strArray = [...str]
+	var strArray = [...str]
 	for (i=0;i<strArray.length;i++) if (strArray[i]==='/') strArray[i]=replacement
 	return strArray.join('')
 	}
 
-function addReplacement (ch, autoInsertedFromPalette='') { 
+function addReplacement (ch, autoInsertedFromPalette='') {
+    // this version assumes that no selection ranges are involved, because it's only replacing a character 
+    // that has just been typed while the insertion panel opened
+    // autoInsertFromPalette: the character that was automatically inserted by the keypress 
+    // – may be set to '' if nothing was produced by the previous keypress, eg for ALT
+	// ch: string, the text to be added
+	if (debug) console.log('addReplacement(',ch,',',autoInsertedFromPalette,')')
+	
+	if (document.getElementById('output').style.display == 'none') { return; }
+	var outputNode = document.getElementById( 'output' ); // points to the output textarea
+
+	
+	if (outputNode.selectionStart || outputNode.selectionStart == '0') {
+        var firstBit = [...outputNode.value.substring(0,outputNode.selectionStart)]
+        var secondBit = [...outputNode.value.substring(outputNode.selectionStart)]
+        var autoInsertLength = [...autoInsertedFromPalette].length
+                                       if (debug) console.log('firstBit',firstBit)
+                                       if (debug) console.log('secondBit',secondBit)
+                                       if (debug) console.log('autoInsert',autoInsertLength)
+        
+        // remove the previously inserted item
+        for (var i=0;i<autoInsertLength;i++) var garbage = firstBit.pop()
+        if (firstBit.length > 0) var lastCharacter = firstBit.pop()
+        else lastCharacter = ''
+        
+                                       if (debug) console.log('firstBit',firstBit)
+                                       if (debug) console.log('lastCharacter',lastCharacter)
+        
+        // if ch has a hyphen, replace it with the last character
+        if (ch.includes('-')) {
+            ch = ch.replace('-',lastCharacter)
+            lastCharacter = ''
+            }
+        
+        outputNode.value = firstBit.join('')+lastCharacter+ch+secondBit.join('')
+		outputNode.selectionStart = firstBit.join('').length+lastCharacter.length+ch.length
+		outputNode.selectionEnd = firstBit.join('').length+lastCharacter.length+ch.length
+        
+ 		if (globals.refocus) outputNode.focus()
+ 		if (! globals.refocus) outputNode.blur()
+      
+        }
+
+	// normalize
+	if (globals.n11n=='nfc') { outputNode.value = outputNode.value.normalize('NFC') }
+	else if (globals.n11n=='nfd') { outputNode.value = outputNode.value.normalize('NFD') }
+	}
+
+
+
+function addReplacementOLDISH (ch, autoInsertedFromPalette='') { 
 	// ch: string, the text to be added
 	if (debug) console.log('addReplacement(',ch,')')
 	
@@ -33,20 +83,7 @@ function addReplacement (ch, autoInsertedFromPalette='') {
 	var outputNode = document.getElementById( 'output' ); // points to the output textarea
 
 	
-	//IE support
-	if (document.selection) { 
-		outputNode.focus()
-	    range = document.selection.createRange()
-		
-        // merge the base and the vowels
-        ch = ch.replace('-',range.text)
-        
-		range.text = ch; 
-	    range.select(); 
-		if (globals.refocus) outputNode.focus() 
-		}
-	// Mozilla and Safari support
-	else if (outputNode.selectionStart || outputNode.selectionStart == '0') {
+	if (outputNode.selectionStart || outputNode.selectionStart == '0') {
 		var startPos = outputNode.selectionStart
 		var endPos = outputNode.selectionEnd
 		var cursorPos = startPos
@@ -56,6 +93,7 @@ function addReplacement (ch, autoInsertedFromPalette='') {
         // get whatever is highlighted, or if no highlight the previous character
         var consonant
         //if (startPos === endPos) startPos = startPos-1
+        if (debug) console.log('autoInsertedFromPalette length is:', autoInsertedFromPalette.length)
         if (startPos === endPos) startPos = startPos-autoInsertedFromPalette.length
         consonant = outputNode.value.substring(startPos-1,endPos-1)
 		if (consonant.codePointAt(0) > 0xD800 && consonant.codePointAt(0) < 0xDFFF) startPos--
@@ -2106,7 +2144,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 
 		if (! window.location.href.match('r12a.github.io')) {
 			var char = String.fromCodePoint(chars[i])
-			if (spreadsheetRows[char] && spreadsheetRows[char][cols.block]) block = '/scripts/'+spreadsheetRows[char][cols.block]+'/block'
+			//if (spreadsheetRows[char] && spreadsheetRows[char][cols.block]) block = '/scripts/'+spreadsheetRows[char][cols.block]+'/block'
 			//console.log(spreadsheetRows)
 			out +=  '<a href="'+block+'#char'+hex+'">'
 			}
@@ -2664,7 +2702,8 @@ function sieveFor (type) {
             valueNode = lines[i].querySelector('.'+type)
             if (valueNode === null) items = ' '
             else items = valueNode.lastChild.textContent.split(' ')
-            for (j=0;j<items.length;j++) hlist += '<span class="xitemRes" onclick="this.classList.toggle(\'xitemHide\')">'+items[j].toLowerCase()+'</span>'
+            //for (j=0;j<items.length;j++) hlist += '<span class="xitemRes" onclick="this.classList.toggle(\'xitemHide\')">'+items[j].toLowerCase()+'</span>'
+            for (j=0;j<items.length;j++) hlist += '<span class="xitemRes" onclick="toggleXItem(this)">'+items[j].toLowerCase()+'</span>'
             hlist += '</span>'
             hlist += '</span>\n'
             }
@@ -2689,6 +2728,37 @@ function addXitems () {
     }
 
 
+function toggleXItem (node) {
+    // click on an IPA item in the analysis list and its siblings, if any, will be greyed out
+    parentNode = node.parentNode
+    siblings = parentNode.querySelectorAll('span')
+    xitemsRes = parentNode.querySelectorAll('.xitemRes')
+    console.log(siblings.length,'siblings')
+    console.log(xitemsRes.length,'xitemsRes')
+    
+    if (xitemsRes.length === 1 || siblings.length === 1) {
+        if (node.classList.contains('xitemRes')) {
+            node.classList.remove('xitemRes')
+            node.classList.add('xitemHide')
+            }
+        else {
+            node.classList.add('xitemRes')
+            node.classList.remove('xitemHide')
+            }
+        return
+        }
+
+    for (i=0;i<siblings.length;i++) {
+        if (siblings[i] !== node) { console.log('sibling != node', siblings[i].textContent)
+            siblings[i].classList.remove('xitemRes')
+            siblings[i].classList.add('xitemHide')
+            }
+        else { console.log('sibling == node', siblings[i].textContent)
+            siblings[i].classList.add('xitemRes')
+            siblings[i].classList.remove('xitemHide')
+            }
+        }
+    }
 
 
 function getData (script) {
@@ -3030,6 +3100,42 @@ function drawCharSelectionPanel (key) {
 	document.getElementById("charChoice").innerHTML = out
     }
 
+	
+
+	
+// draw a selection panel for a type-assist keypress
+// new version doesn't just put IPA in grey
+function drawCharSelectionPanel (key) {
+	out = ''
+
+	// omit the first item, since we want that at the end
+	for (let i=0;i<kbdEventList[key].length;i++) {
+        out += '\u200B<span>'
+		if (i > 9) {
+			out += '<br><span style="font-size:50%; margin-inline-start:3em;"><a href="#" onclick="palette=document.getElementById(\'transcriptionPalette\'); palette.style.display=\'block\'; toggle=document.getElementById(\'togglePalette\'); if (toggle.classList.contains(\'off\')) {toggle.classList.remove(\'off\'); toggle.classList.add(\'on\');} return false;">Open the panel</a> for '+eval(kbdEventList[key].length-10)+' more.</span>'
+			break
+			}
+		
+		if (! window.latinTypeAssist) {
+			//console.log('ipa',spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc])
+			// if there is an ipa transcription, use that as a superscript hint
+			// otherwise, use the transliteration
+			if (spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc]) hint = spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc]
+			else hint = kbdEventList[key][i][0]
+			//hint = kbdEventList[key][i][0]
+			out += '<sup>'+ hint.toLowerCase() +'</sup>'
+			}
+		else out += ' <sup></sup>'
+		out += '<sub>'+ ((i+1) % 10)+'</sub>'
+		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'Doulos SIL WF\';" onclick="'
+		out += 'addReplacement'
+		out += '(\''+kbdEventList[key][i][1]+'\', window.autoInsertedFromPalette); document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+kbdEventList[key][i][1]+'</bdi>'
+        out += '</span>'
+		}
+
+	document.getElementById("charChoice").innerHTML = out
+    }
+
 
   
 
@@ -3043,15 +3149,9 @@ function showDown (evt) {
         if (debug) console.log(evt.key, evt.code)
 		
 		// skip if this is Cmd+C, Ctrl+C, etc
-        if (evt.metaKey || evt.ctrlKey || evt.altKey) { if (debug) console.log( evt.key,' pressed.')}
+        //if (evt.metaKey || evt.ctrlKey || evt.altKey) { if (debug) console.log( evt.key,' pressed.')}
+        if (evt.metaKey) { if (debug) console.log( evt.key,' pressed.')}
 		
-		// capture special keys
-        else if (evt.key==='§') { // transliterate & move second text area contents to main text area
-			doTranscription('transliterate')
-   			document.getElementById('transcription').textContent = '/'+document.getElementById('transcription').textContent+'/'
-            moveTranscription()
-            evt.preventDefault()
-            }
         else if (evt.key==='~') { // switch to Latin palette
             var clickEvent = new MouseEvent("click", {"view": window,"bubbles": true,"cancelable": false})
             document.getElementById('togglePalette').dispatchEvent(clickEvent)
@@ -3087,11 +3187,65 @@ function showDown (evt) {
             
             evt.preventDefault()
             }
-			
+        else if (evt.key === ' ' && template.spaces && ! window.latinTypeAssist) { // space bar
+            if (debug) {
+                console.log('Entered Spaces')
+                console.log('template.defaultSpace',template.defaultInvisible)
+                }
+            add(template.defaultSpace)
+            window.autoInsertedFromPalette = template.defaultSpace
+            out = ''
+            for (i=0;i<template.spaces.length;i++) {
+                out += '<span>'
+                out += `<sup>`+template.spaces[i][0]+`</sup>` +
+                `<sub>`+eval(i+1)+`</sub> ` +
+                `<bdi class="space" onclick="addReplacement('`+template.spaces[i][1]+`',' ');
+                document.getElementById('charChoice').innerHTML = ''; ">`+template.spaces[i][1]+`</bdi>`
+                out += '</span>'
+                }
+            document.getElementById('charChoice').innerHTML = out
+            evt.preventDefault()
+            }
+        else if (evt.key==='§' && template.invisibles && ! window.latinTypeAssist) { // § key for invisibles, as defined in defaults.js
+            if (debug) {
+                console.log('Entered Invisibles')
+                console.log('template.defaultInvisible',template.defaultInvisible)
+                }
+            if (typeof template.defaultInvisible === 'undefined' || template.defaultInvisible === '' || template.defaultInvisible === ' ') template.defaultInvisible = '§'
+            add(template.defaultInvisible)
+            window.autoInsertedFromPalette = template.defaultInvisible
+            out = ''
+            for (i=0;i<template.invisibles.length;i++) {
+                out += '<span>'
+                out += `<sup>`+template.invisibles[i][0]+`</sup>` +
+                `<sub>`+eval(i+1)+`</sub> ` +
+                `<bdi class="space" onclick="add('`+template.invisibles[i][1]+`');
+                document.getElementById('charChoice').innerHTML = ''; ">`+template.invisibles[i][1]+`</bdi>`
+                out += '</span>&#x200B;'
+                }
+            document.getElementById('charChoice').innerHTML = out
+            evt.preventDefault()
+            }
+         else if (evt.key==='€' && template.moreKeys && ! window.latinTypeAssist) { // € key for directional controls, as defined in defaults.js
+            if (debug) console.log('Entered Eurozone')
+            out = ''
+            for (i=0;i<template.moreKeys.length;i++) {
+                out += '<span>'
+                out += `<sup>`+template.moreKeys[i][0]+`</sup>` +
+                `<sub>`+eval(i+1)+`</sub> ` +
+                `<bdi class="space" onclick="addReplacement('`+template.moreKeys[i][1]+`',' ');
+                document.getElementById('charChoice').innerHTML = ''; ">`+template.moreKeys[i][1]+`</bdi>`
+                out += '</span>&#x200B;'
+                }
+            document.getElementById('charChoice').innerHTML = out
+            window.autoInsertedFromPalette = ''
+            evt.preventDefault()
+            }
 		
 		// Type-assist selector showing, and a number key was hit
 		else if (charChoiceKeys.has(evt.key) && document.getElementById('charChoice').textContent !== '') {
-            if (debug) console.log('Type-assist selector showing, and a number key '+evt.key+' was hit')
+            if (debug) console.log('Type-assist selector showing.')
+            if (debug) console.log('Number key '+evt.key+' was hit')
 
 			num = parseInt(evt.key)-1
 			if (num === -1) num = 9
@@ -3116,12 +3270,14 @@ function showDown (evt) {
             // choice is picked from the palette, the addReplacement function knows how many characters to delete
             // that is useful when a palette choice inserts a selection that is more than a single character
 			if (! window.latinTypeAssist) {
-                if (debug) console.log('Not latinTypeAssist. Adding ',kbdEventList[evt.key][0][1],' autoInsertedFromPalette set to.', kbdEventList[evt.key][0][1])
+                if (debug) console.log('Not latinTypeAssist.')
+                if (debug) console.log('Adding ',kbdEventList[evt.key][0][1])
 				add(kbdEventList[evt.key][0][1])
                 window.autoInsertedFromPalette = kbdEventList[evt.key][0][1]
+                if (debug) console.log('autoInsertedFromPalette is',autoInsertedFromPalette)
 				}
 			else {
-                if (debug) console.log('LatinTypeAssist. Adding ',evt.key,' autoInsertedFromPalette set to ', evt.key)
+                if (debug) console.log('LatinTypeAssist.\nAdding ',evt.key,'\nautoInsertedFromPalette is ', evt.key)
                 add(evt.key)
                 window.autoInsertedFromPalette = evt.key
                 }
@@ -3289,6 +3445,7 @@ function toggleInvisibles () {
         { cp:"\u2003", abbr:"ᵉᵐˢᵖ"},
         { cp:"\u2009", abbr:"ᵗʰˢᵖ"},
         { cp:"\u2007", abbr:"ᶠˢᵖ"},
+        { cp:"\u0020", abbr:"ˢᵖ"},
 		
 		// miao tones
         { cp:"\u{16F90}", abbr:"ᵐᵗᵗʳ"},
@@ -3756,3 +3913,27 @@ for (i=0;i<chars.length;i++) {
 
 return chars.join('')
 }
+
+
+
+
+function sortOutput (text, unique=false) {
+    // sorts all the characters in the output field by Unicode code point order
+    // unique indicates whether or not to reduce to one instance of each character
+    
+    if (unique) {
+        var charSet = new Set([...text])
+        console.log(charSet)
+        charList = [...charSet]
+        }
+    else charList=[...text]
+    console.log(charList)
+    sorted=charList.sort()
+    return sorted.join(' ')
+    }
+
+
+
+
+
+
