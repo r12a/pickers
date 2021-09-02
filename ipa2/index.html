@@ -43,6 +43,8 @@
 
 
 
+<div id="sideMenu"></div>
+<script>document.getElementById('sideMenu').innerHTML = setSideMenu()</script>
 
 
 
@@ -59,17 +61,8 @@
 
 <div id="alphabet" class="default">
 
-<!--
-<div class="vmtab" title="Select characters from a keyboard layout." data-title="Keyboard" data-var="showKeyboard" data-locn="keyboard" data-shorttitle="K" onmouseover="this.textContent=this.dataset.title+globals[this.dataset.var]" onmouseout="this.textContent=this.dataset.shorttitle" 
-
-onclick="if (globals[this.dataset.var] ==''){}toggleSideBarOption(this, this.dataset.title, this.dataset.var, this.dataset.locn)" style="color: white;">K</div>
--->
 
 <div class="spaceline">
-<span class="touch" style="margin: 0; padding: 5px 20px;" dir="auto" onClick="setUpTypeAssist(false, typeAssistMap, typeAssistMap);if (this.classList.contains('shifted')) {document.getElementById('keyboard').style.display='none';this.classList.remove('shifted');} else {document.getElementById('keyboard').style.display='block';this.classList.add('shifted');}">KBD</span>
-
-<span class="touch" style="margin: 0; padding: 5px 20px;" dir="auto" onClick="setUpTypeAssist(false, typeAssistMap, typeAssistMap);if (this.classList.contains('shifted')) {document.getElementById('transcriptionPalette').style.display='none';this.classList.remove('shifted');} else {document.getElementById('transcriptionPalette').style.display='block';this.classList.add('shifted');}">PALETTE</span>
-
 <span class="touch" title="Space" style="padding: 5px 80px;" dir="auto" onClick="add(' ');">SPACE</span>
 <span class="touch" title="No-break space" style="padding: 5px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
 

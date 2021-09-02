@@ -24,7 +24,8 @@ var webFonts = [ "Doulos SIL WF" ]
 var template = {}
 	template.title = 'IPA  <span style="font-size:50%">standard</span>'
 	template.sample = "/ɔːl ˈhɟʉːmən ˈbiːɪŋz ɑː bɔːn friː ænd ˈiːkwəl ɪn ˈdɪɡnɪtɪ ənd raɪts ‖ ðeɪ  ɑːr ɪnˈdæʊd wɪð ˈriːzᵊn ənd ˈkɒnʃəns ænd ʃʊd ækt təˈɰɔːdz wʌn əˈnʌðə ɪn ə ˈspɪrɪt ɒv ˈbrʌðəˌħʊd/"
-	template.blocklocation= '/scripts/latin/block'  // blocklocation to use for examples
+	template.blocklocation= 'latin'  // blocklocation to use for examples
+    template.noteslocation = '' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'ipa'
 	template.scriptcode = 'Latn'
@@ -45,16 +46,35 @@ var pulldown = [
 
 
 var inputAids = [
-{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type IPA from the keyboard."},
+{"id":"showRevTransSwitch", 
+"title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
+"desc":"Use ASCII characters to type Hausa from the keyboard using a customised key mapping.",
+"dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
+},
 
-{"title":"Palette for type-assist", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"P", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Input characters from a palette."},
+{"title":"Type assist: Map keys to an IPA keyboard.", 
+"desc":"Use an IPA keyboard mapping to type from the keyboard.",
+"dataShortTitle":"k", "type":"palette", 
+"initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
+},
 
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
+{"id":"showLatinTransSwitch", "title":"Type-assist: More characters, needed for transcriptions.", 
+"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
+"dataShortTitle":"M", "type":"palette", 
+"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
+},
+
+
+{"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 
+"desc":"Show or hide the palette used for type-assist input.",
+"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
+},
 ]
 
 
 
 
 // this indicates which items are to be described in the help
-// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp = ''
+// options include: intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist – kbdAssist,latinAssist,togglePalette
+var inputAidsHelp1 = 'intro,typeAssist'
+var inputAidsHelp2 = 'kbdAssist,latinAssist,togglePalette'

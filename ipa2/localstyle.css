@@ -38,6 +38,13 @@
 	}
 
 
+#charChoice bdi {
+    min-width: 2em;
+    text-align: center;
+    }
+#charChoice sup {
+    visibility: hidden;
+    }
 
 
 #consonants { padding-bottom: 10px;   padding-top: 8px; border-radius: 8px;  }
