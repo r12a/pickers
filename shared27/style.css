@@ -668,6 +668,7 @@ dt {
 	font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif;
 	color: #C33;
 	text-align: left;
+    color: dimgray;
 	}
 
 #output::selection {
@@ -960,19 +961,36 @@ summary:hover {
     font-family: "doulos sil wf", "doulos sil";
     font-size: 1.5em;
     }
+#charChoice span {
+    white-space: nowrap;
+    }
 #charChoice sub {
     padding-left: .2em;
     font-size: 50%;
     color: coral;
+    color: dimgray;
     }
 #charChoice sup {
     color: #999;
-    font-size: 80%;
+    font-size: 65%;
     padding-left: 1em;
+    color: tan;
     }
 #charChoice bdi {
     color: red;
     cursor: pointer;
+    }
+#charChoice bdi {
+    color: coral;
+    cursor: pointer;
+    /*border: 1px solid #ddd;*/
+    padding: 0 0 0 4px;
+    border-radius: .2em;
+    min-width: 1em;
+    /*min-height: 1em;*/
+    display: inline-block;
+    text-align: left;
+    line-height: 1.4;
     }
 
 .dbCharContainer {
@@ -1009,6 +1027,7 @@ summary:hover {
 	vertical-align:top;
 	font-size: 60%;
 	line-height: 2;
+    color: chocolate;
 	}
 
 .dbCharItem, .dbCharItemLevel2 {
@@ -1197,4 +1216,14 @@ summary:hover {
 
 
 
+#charChoice bdi.space {
+    font-size: 50%;
+    min-width: 1em;
+    display: inline-block;
+    min-height: 1em;
+    border: 1px solid chocolate;
+    }
+#charChoice sup.space {
+    font-size: 50%;
+    }
 
