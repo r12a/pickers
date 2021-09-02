@@ -286,6 +286,10 @@ out += `
 <!--button onclick="openEscapeWindow(); return false;" title="Convert to escapes (in a separate window)." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Convert to<br/>escapes</button><br/-->
 
 <button  id="showDBAll" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, true)" title="Show all information in the database for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show all<br/>db entries</button>
+
+<button  id="sortAll" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=false)" title="Reorder all characters in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Sort characters</button>
+
+<button  id="sortAllUnique" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=true)" title="Keep one of each character and sort in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Unique sort</button>
     `
 if (window.pulldown) {
 /*for (let i=0;i<window.pulldown.length;i++){
