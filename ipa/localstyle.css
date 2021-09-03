@@ -62,14 +62,25 @@
 
 .c { min-width:.6em; text-align: center; }
 
+#nonstandard {
+    text-align: center;
+    font-size: 20px;
+    }
 #moreTones {
     text-align: center;
+    font-size: 20px;
     }
 #charts {
 	text-align: center;
 	font-size: 90%;
+    font-size: 20px;
 	}
-
+table .divider td {
+    border-block-start: 1px solid #ccc;
+    }
+table .bottomDivider td {
+    border-block-end: 1px solid #ccc;
+    }
     
     
 /* KEYBOARD */

@@ -58,9 +58,9 @@ var inputAids = [
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },
 
-{"id":"showLatinTransSwitch", "title":"Type-assist: More characters, needed for transcriptions.", 
-"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"M", "type":"palette", 
+{"id":"showLatinTransSwitch", "title":"No type-assist.", 
+"desc":"Turn off type assist.",
+"dataShortTitle":"N", "type":"palette", 
 "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
 },
 
