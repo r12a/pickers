@@ -33,6 +33,7 @@ var template = {}
 	template.cursive = true
 	template.fontLocale = "adlm"
 	template.hints = true
+	template.bicameral = true
 	
 	template.defaultSpace = ' '
 	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
