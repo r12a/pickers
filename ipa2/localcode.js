@@ -69,7 +69,7 @@ function clearHighlights () {
 
 // overwrite standard function to display phonetic description
 
-function event_mouseoverChar ()  {
+function event_mouseoverCharOLD ()  {
 	// display character information
 	span = document.createElement( 'span' );
 	span.setAttribute( 'id', 'charname' );
@@ -100,6 +100,44 @@ function event_mouseoverChar ()  {
 		ptr = this.id
 		for (i=0;i<_h[ptr].length;i++) {
 			document.getElementById(_h[ptr][i]).style.backgroundColor = '#FFE6B2'
+			}
+		}
+	}
+
+function event_mouseoverChar ()  {
+	// display character information
+	var out = '<span id="charname">'+this.title
+	var content = this.textContent.replace(defaults.ccbase,'')
+	if (window.spreadsheetRows[content]) {
+		if (window.spreadsheetRows[content][cols.transLoc]) out += '<span class="hint">ᵗ</span>' + window.spreadsheetRows[content][cols.transLoc]
+		if (window.spreadsheetRows[content][cols.key]) out += '<span class="hint">ᵏ</span>' + window.spreadsheetRows[content][cols.key]
+		if (window.spreadsheetRows[content][cols.ipaLoc]) out += '<span class="hint">ᵖ</span>' + window.spreadsheetRows[content][cols.ipaLoc]
+		}
+	out += '</span>'
+	document.getElementById('chardata').innerHTML = out
+	
+    document.getElementById('phoneticInfo').textContent = spreadsheetRows[this.textContent][cols.typeLoc]
+
+	// add cursive forms to table
+	if (template.cursive) {
+		document.getElementById('cursive').innerHTML = ''
+		var char = this.textContent
+		if (spreadsheetRows[char] && spreadsheetRows[char][cols.shape]) {
+			document.getElementById('cursive').innerHTML = spreadsheetRows[char][cols.shape].replace(/ /g,'&nbsp;&nbsp;').replace(/ـ/g,'\u200D')
+			}
+		}
+
+	// highlight similar characters
+	if (this.dataset.c) {
+		ptr = this.dataset.c.replace('c','')
+		if (globals.showShapeHints && _h[ptr]) {
+			clearHighlights()
+			for (let i=0;i<_h[ptr].length;i++) { 
+				ids = document.querySelectorAll('[data-c=c'+_h[ptr][i]+']')
+				for (let x=0;x<ids.length;x++) {
+					ids[x].classList.add('highlightedChar')
+					}
+				}
 			}
 		}
 	}
@@ -150,51 +188,4 @@ _ ͡ ͜
 > ˥ ˦ ˧ ˨ ˩ ˩˥ ˥˩ ˦˥ ˩˨ ˧˦˧
 / ↓ ↑ ↗ ↘
 `
-
-/*
-var justLatinMap = `
-a æ ɐ ɑ ɒ
-b ʙ β ɓ
-c ç ƈ ɕ
-d ɖ ð ɗ ʣ ʤ ʥ
-e ə ɛ ɘ ɚ ɜ ɝ ɞ
-f ʄ ɸ
-g ɢ ɠ ʛ
-h ħ ɦ ɥ ʜ ɧ ʰ
-i ɨ ɪ
-j ɟ ʝ ʲ
-k ƙ
-l ɬ ɮ ɭ ʟ ɫ ˡ
-m ɱ
-n ɳ ɲ ŋ ɴ ⁿ
-O θ
-o ø ɵ œ ɔ ɶ φ σ
-p ƥ
-q ʠ
-r ɾ ɽ ʀ ʁ ɹ ɻ ɺ
-s ʃ ʂ
-t ʈ ƭ ʦ ʧ ʨ
-u ʉ ʊ μ
-v ⱱ ʋ ʌ
-w ʍ w ɯ ɰ ʷ
-x χ ɤ
-y ɣ ʎ ʏ ˠ
-z ʒ ʐ ʑ
-? ʔ ʕ ʢ ʡ ˤ
-| ʘ ǀ ǁ ǃ ǂ
-A ̥ ̬ ̤ ̰ ͓ ̼ ̪ ̺ ̻
-B ̹ ̜ ̟ ̠ ̩ ̯ ̮
-C ̙ ̘ ̞ ̝ ̨
-D ̊ ̈ ̽ ˞ ̴ ̃ ͊ ͋ ̚ ᵊ
-E ʼ ˭
-F ͡ ͜
-: ː
-' ˑ
-^ ̆
-[ ˈ ˌ | ‖ . ‿
-G ̋ ́ ̄ ̀ ̏ ̌ ̂ ᷄ ᷅ ᷈
-H ˥ ˦ ˧ ˨ ˩ ˩˥ ˥˩ ˦˥ ˩˨ ˧˦˧
-I ↓ ↑ ↗ ↘
-`
-*/
 

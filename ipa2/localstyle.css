@@ -10,6 +10,9 @@
 [lang=en-fonipa] { font-family: 'Doulos SIL WF', serif; }
 
 
+span.x { color: chocolate; }
+span.s { font-size: 80%; }
+
 #kbd { 	
 	margin: auto; 
 	}
@@ -21,9 +24,9 @@
 	padding: 0; 
 	padding-bottom: 3px; 
 	text-align: left;
-	font-size: 20px;
+	font-size: 22px;
 	cursor:pointer;
-	vertical-align: top; 
+	vertical-align: middle; 
 	line-height: 1.4;
 	}
 #kbd td.hint {  
@@ -48,7 +51,13 @@
 
 
 #consonants { padding-bottom: 10px;   padding-top: 8px; border-radius: 8px;  }
-#consonants td {  padding: 0;  white-space: nowrap; height: 30px; line-height: 1.4;}
+#consonants td {
+    padding: 0;
+    white-space: nowrap;
+    /*height: 30px;*/
+    line-height: 1.2;
+    text-align: center;
+    }
 #consonants span { padding: 0 3px; }
 #kbd #vowels { padding-bottom: 0.3em; }
 #vowels { margin-left: 20px; background: url(vowelgrid.gif) top left no-repeat; white-space: nowrap; border-radius: 8px;  }
