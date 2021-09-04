@@ -162,7 +162,7 @@ var plistByRegion = {
 			['<i>Georgian</i> ['],
 				['Modern', 'geor-ka/'],
 				['Khutsuri', 'geok-ka/'],
-				['All', 'geok-all/'],
+				['All', 'geor-all/'],
 				[']'],
 			['Glagolitic', 'glag/'],
 			['Gothic', 'goth/'],
