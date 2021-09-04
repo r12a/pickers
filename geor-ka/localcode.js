@@ -158,22 +158,14 @@ var keyboarddef = [
 ]
 
 
-/*  FOR KEYBOARDS WITH DIFFERENT CHARS ON SHIFT LEVEL
 var keyboardUC = [
-"§|1|2|3|4|5|6|7|8|9|0|-|=",
-"q|w|e|r|t උ|y|u|i|o|p|[|]",
-"a ඒ ඌ ඖ|s|d ො ඎ ෲ|f|g|h|j|k|l|;|'|\\",
-"`|z|x|c|v|b|n|m|,|.|/"
+"§ „  “|1 !|2 ?|3 №|4 §|5 %|6 :|7 .|8 ;|9 ,|0 /|-|=",
+"Q Ღ|W Ჯ|E Უ|R Კ|T Ე Ჱ|Y Ნ|U Გ|I Შ|O Წ|P Ზ|[ Ხ Ჴ|] Ც",
+"A Ფ Ჶ|S Ძ|D Ვ Ჳ|F Თ|G Ა|H Პ|J Რ|K Ო|L Ლ|; Დ|' Ჟ|\\",
+"`|Z Ჭ|X Ჩ|C Ყ|V Ს|B Მ|N Ი Ჲ|M Ტ|, Ქ|. Ბ|/ Ჰ Ჵ"
 ]
 
 
-function event_toggleKbdShift () {
-    if (this.classList.contains('shiftKeyOn')) {
-        makeKeyboard(keyboarddef, keyboardLCGuide)
-        }
-    else makeKeyboard(keyboardUC, keyboardUCGuide)
-    }
-*/
 
 
 function toggleShift (node, LC, UC) {
