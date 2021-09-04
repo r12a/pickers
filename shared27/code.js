@@ -1189,11 +1189,21 @@ var keyboardUCGuide = [
 
 var keyboardRowOffset = ['0','1.5em','.5em','1.5em']
 
-function event_toggleKbdShift () {
+function event_toggleKbdShiftOLD () {
     if (this.classList.contains('shiftKeyOn')) {
         makeKeyboard(keyboarddef, keyboardLCGuide)
         }
     else makeKeyboard(keyboarddef, keyboardUCGuide)
+    }
+
+function event_toggleKbdShift () {
+    if (this.classList.contains('shiftKeyOn')) {
+        makeKeyboard(keyboarddef, keyboardLCGuide)
+        }
+    else {
+        if (typeof keyboardUC === 'undefined') makeKeyboard(keyboarddef, keyboardUCGuide)
+        else makeKeyboard(keyboardUC, keyboardUCGuide)
+        }
     }
 
 function makeKeyboard (chosenKbd, guideArray) { 
