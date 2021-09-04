@@ -135,30 +135,24 @@ end: {}
 
 
 
+// source: https://en.wikipedia.org/wiki/Georgian_keyboard_layout Standard Keyboard
+
 var keyboarddef = [
 "§ „  “|1 !|2 ?|3 №|4 §|5 %|6 :|7 .|8 ;|9 ,|0 /|-|=",
-"q ღ|w ჯ|e უ|r კ|t ე ჱ|y ნ|u გ|i შ|o წ|p ზ|[ ხ ჴ|] ც",
-"a ფ ჶ|s ძ|d ვ ჳ|f თ|g ა|h პ|j რ|k ო|l ლ|; დ|' ჟ|\\",
-"`|z ჭ|x ჩ|c ყ|v ს|b მ|n ი ჲ|m ტ|, ქ|. ბ|/ ჰ ჵ"
+"q ⴖ|w ⴟ|e ⴓ|r ⴉ|t ⴄ ⴡ|y ⴌ|u ⴂ|i ⴘ|o ⴜ|p ⴆ|[ ⴞ ⴤ|] ⴚ",
+"a ⴔ|s ⴛ|d ⴅ ⴣ|f ⴇ|g ⴀ|h ⴎ|j ⴐ|k ⴍ|l ⴊ|; ⴃ|' ⴏ|\\",
+"`|z ⴝ|x ⴙ|c ⴗ|v ⴑ|b ⴋ|n ⴈ ⴢ|m ⴒ|, ⴕ|. ⴁ|/ ⴠ ⴥ"
 ]
 
 
-/*  FOR KEYBOARDS WITH DIFFERENT CHARS ON SHIFT LEVEL
 var keyboardUC = [
 "§|1|2|3|4|5|6|7|8|9|0|-|=",
-"q|w|e|r|t උ|y|u|i|o|p|[|]",
-"a ඒ ඌ ඖ|s|d ො ඎ ෲ|f|g|h|j|k|l|;|'|\\",
-"`|z|x|c|v|b|n|m|,|.|/"
+"Q Ⴖ|W Ⴟ|E Ⴓ|R Ⴉ|T Ⴄ Ⴡ|Y Ⴌ|U Ⴂ|I Ⴘ|O Ⴜ|P Ⴆ|[ Ⴞ Ⴤ|] Ⴚ",
+"A Ⴔ|S Ⴛ|D Ⴅ Ⴣ|F Ⴇ|G Ⴀ|H Ⴎ|J Ⴐ|K Ⴍ|L Ⴊ|; Ⴃ|' Ⴏ|\\",
+"`|Z Ⴝ|X Ⴙ|C Ⴗ|V Ⴑ|B Ⴋ|N Ⴈ Ⴢ|M Ⴒ|, Ⴕ|. Ⴁ|/ Ⴠ Ⴥ"
 ]
 
 
-function event_toggleKbdShift () {
-    if (this.classList.contains('shiftKeyOn')) {
-        makeKeyboard(keyboarddef, keyboardLCGuide)
-        }
-    else makeKeyboard(keyboardUC, keyboardUCGuide)
-    }
-*/
 
 
 function toggleShift (node, LC, UC) {
