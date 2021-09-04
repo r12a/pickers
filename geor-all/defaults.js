@@ -25,7 +25,8 @@ var template = {}
 	template.title = 'All Georgian character app'
 	template.sample = "მუხლი 1. ყველა ადამიანი იბადება თავისუფალი და თანასწორი თავისი ღირსებითა და უფლებებით. მათ მინიჭებული აქვთ გონება და სინდისი და ერთმანეთის მიმართ უნდა იქცეოდნენ ძმობის სულისკვეთებით."
 	// source: https://unicode.org/udhr/d/udhr_kat.html
-	template.blocklocation= '/scripts/georgian/block'  // blocklocation to use for examples
+	template.blocklocation= 'georgian'  // blocklocation to use for examples
+	template.noteslocation = 'georgian/' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'geor-all'
 	template.scriptcode = 'Geor'
