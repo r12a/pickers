@@ -24,7 +24,8 @@ var webFonts = [ "Noto Serif Devanagari WF" ]
 var template = {}
 	template.title = 'All Devanagari character app'
 	template.sample = "(२) प्रत्येक व्यक्ति को अपने या पराये किसी भी देश को छोड़नो और अपने देश को वापस आनो का अधिकार है ।"
-	template.blocklocation= '/scripts/devanagari/block'  // blocklocation to use for examples
+	template.blocklocation= 'devanagari'  // blocklocation to use for examples
+	template.noteslocation = '' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'deva-all'
 	template.scriptcode = 'Deva'
@@ -56,26 +57,20 @@ var pulldown = [
 
 
 var inputAids = [
-//{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
+{"title":"Hint at similar shapes", "id":"showShapeHints", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
-{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
-
-//{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"makePalette(''); window.latinOnly=false;makeKbdEventList(translitCharacterMap);", "desc":"Use ASCII characters to type XXXX from the keyboard."},
-
-//{"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"window.latinOnly=true;makePalette(justLatinMap);makeKbdEventList(justLatinMap);", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
-
-//{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"window.latinOnly=false;makePalette(translitCharacterMap);makeKbdEventList(translitCharacterMap);", "desc":"Use ASCII characters to type XXXX from the keyboard via reverse transliteration."},
-
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
+{"title":"Type assist: Map keys to a Devanagari keyboard.", 
+"desc":"Use a Devanagari keyboard mapping to type from the keyboard.",
+"dataShortTitle":"K", "type":"palette", 
+"initialCode":"document.getElementById('keyboard').style.display='block';"
+},
 ]
 
 
 
 
 // this indicates which items are to be described in the help
-// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp = 'showIntro,'
-for (let i=0;i<inputAids.length;i++) {
-	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
-	}
+// options include: intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist – kbdAssist,latinAssist,togglePalette
+var inputAidsHelp1 = 'intro,shapeHints'
+var inputAidsHelp2 = 'kbdAssist,togglePalette'
 
