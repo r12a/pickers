@@ -132,22 +132,10 @@ end: {}
 }
 
 
-/*
-
-ბ Ბ გ Გ ზ Ზ
-თ დ ი Დ Თ Ი
-ძ შ მ Ძ Შ Მ
-პ კ ფ ც ვ ჰ Პ Კ Ფ Ც Ვ Ჰ
-ხ ჩ ნ ს Ჩ Ხ Ნ Ს
-ე ქ ჟ უ Ქ Ჟ Უ Ე
-ო ღ რ ლ Ღ Რ Ლ Ო Უ
-ტ წ ჭ ყ ფ ჯ Ტ Წ Ჭ Ყ Ფ Ჯ
-
-*/
 
 
 
-
+// source: https://en.wikipedia.org/wiki/Georgian_keyboard_layout Standard Keyboard
 
 
 var keyboarddef = [
