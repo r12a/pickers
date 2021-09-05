@@ -323,7 +323,9 @@ function openBlockPageWindow () {
 	var output = document.getElementById('output')
 	var char = getHighlightedText(output).codePointAt(0).toString(16).toUpperCase()
     while (char.length < 4) char = '0'+char
-	var blockdesc = window.open(template.blocklocation+'#char'+char, 'blockdesc') 
+    var blockLocation = template.blocklocation.replace(/\/scripts\//,'').replace(/\/block/,'')
+    blockLocation = '/scripts/'+blockLocation+'/block'
+	var blockdesc = window.open(blockLocation+'#char'+char, 'blockdesc') 
 	output.focus()
 	blockdesc.focus()
 	}
