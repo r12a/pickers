@@ -245,6 +245,14 @@ out += `
 
 <div id="shuttle" style="text-align:right; position:absolute; top:40; right:5px; z-index:2; background-color: white; border:1px solid tan; border-radius: 5px; display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
 
+`
+
+if (template.vocablocation) out += `
+<button onclick="openVocabWindow(template.vocablocation); return false;" title="Search for examples containing the highlighted text." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Find examples</button><br/>
+
+`
+
+out += `
 <button onclick="openEscapeWindow(); return false;" title="Convert to escapes." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Convert to escapes</button><br/>
 
 <button onclick="openUniViewWindow(); return false;" title="Open in UniView." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show in UniView</button><br/>
@@ -290,6 +298,8 @@ out += `
 <button  id="sortAll" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=false)" title="Reorder all characters in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Sort characters</button>
 
 <button  id="sortAllUnique" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=true)" title="Keep one of each character and sort in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Unique sort</button>
+
+<!--button  id="collapseSpaces" type="button" onclick="var text = document.getElementById('output').value; document.getElementById('output').value = text.replace(/[ ]+/g,' ')" title="Collapse multiple spaces to a single space." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Collapse spaces</button-->
     `
 
 if (template.bicameral) out += `
@@ -600,7 +610,8 @@ out = `
 
 
 <div class="control" id="ccVariousControls" style="vertical-align: top;">Change text:<br/> <img src="../images/addspace.png" alt="Select" title="Separate the characters in the edit buffer with spaces." onclick="addSpacesToPicker(' ');">
-          <img src="../images/removespace.png" alt="Select" title="Remove all spaces from the text area." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\s/g,'')">
+          <img src="../images/collapsespaces.png" alt="Select" title="Collapse multiple spaces to a single space." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/[ ]+/g,' ')">
+          <img src="../images/removespace.png" alt="Select" title="Remove all white space from the text area." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\s/g,'')">
           <input name="insertMe" id="insertMe"  type="text" style="width: 40px; text-align:right; vertical-align: top; line-height: 1;" value="␣" />
           <img src="../images/addcomma.png" alt="Select" title="Separate the characters in the edit buffer with commas." onclick="addSpacesToPicker(document.getElementById('insertMe').value);">
           <img src="../images/count.png" alt="Count" title="Count the characters in the text area." onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { count=[...document.getElementById('output').value]; alert(count.length); }">
