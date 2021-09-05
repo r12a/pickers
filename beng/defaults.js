@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "২. প্রত্যেকের‌ই নিজ দেশ সহ যে কোন দেশ পরিত্যাগ এবং স্বদেশে প্রত্যাবর্তনের অধিকার রয়েছে।"
 	template.blocklocation= 'bengali'  // blocklocation to use for examples
 	template.noteslocation = 'bengali' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/bengali/bn_vocab' // location of term database (adds link to share menu)
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'beng'
 	template.scriptcode = 'Beng'
@@ -64,7 +65,7 @@ var pulldown = [
 //{"title":"Radice<br/>to Bengali", "alt":"Convert Radice Latin transcription to Bengali.", "code":"doTranscription('rtoBeng')"},
 // THE FORMER ALL NEED UPDATING
 
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/bengali/bn_vocab')"},
+//{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/bengali/bn_vocab')"},
 ]
 
 
