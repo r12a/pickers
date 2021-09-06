@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "2. തന്റെ സ്വന്തം രാജ്യവും മറ്റേതൊരു രാജ്യവും വിടുന്നതിന്നും തന്റെ രാജ്യത്തേയ്ക്കു മടങ്ങിവരുന്നതിനുമുള്ള അധികാരം ഏതൊരാള്‍ക്കുമുള്ളതാണ്‌."
 	template.blocklocation= 'malayalam'  // blocklocation to use for examples
 	template.noteslocation = 'malayalam/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/malayalam/ml_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'mlym'
 	template.scriptcode = 'Mlym'
@@ -74,8 +75,6 @@ var pulldown = [
 {"title":"ISO to<br/>Malayalam", "alt":"Convert ISO latin text to Malayalam transcription.", "warning":"The results should be checked for accuracy.", "code":"doTranscription('toMalayalam')"},
 
 {"title":"Malayalam<br/>to IPA", "alt":"Convert Malayalam text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toISO15919')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/malayalam/ml_vocab')"},
 ]
 
 
@@ -89,12 +88,6 @@ var inputAids = [
 "title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
 "desc":"Use ASCII characters to type Malayalam from the keyboard using a customised key mapping.",
 "dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
-},
-
-{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
-"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"L", "type":"palette", 
-"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
 },
 
 {"title":"Type assist: IPA to Malayalam.", 
@@ -113,6 +106,12 @@ var inputAids = [
 "dataShortTitle":"k", "type":"palette", 
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },*/
+
+{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
+"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
+"dataShortTitle":"L", "type":"palette", 
+"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
+},
 
 
 {"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 

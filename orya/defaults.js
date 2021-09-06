@@ -27,6 +27,7 @@ var template = {}
 	template.blocklocation= 'oriya'  // blocklocation to use for examples
 	template.noteslocation = 'oriya/' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
+	template.vocablocation = '/scripts/oriya/or_vocab' // location of term database, full url
 	template.github = 'orya'
 	template.scriptcode = 'Orya'
 	template.fontLocale = "orya"
@@ -87,8 +88,6 @@ var pulldown = [
 
 {"title":"ISO to<br/>XXXX", "alt":"Convert an ISO 15919 transcription to XXXX text.", "code":"doTranscription('toDeva')"},
 */
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/oriya/or_vocab')"},
 ]
 
 
@@ -104,12 +103,6 @@ var inputAids = [
 "title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
 "desc":"Use ASCII characters to type XXXXXX from the keyboard using a customised key mapping.",
 "dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
-},
-
-{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
-"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"L", "type":"palette", 
-"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
 },
 
 {"title":"Type assist: IPA to Oriya.", 
@@ -128,6 +121,12 @@ var inputAids = [
 "dataShortTitle":"k", "type":"palette", 
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },*/
+
+{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
+"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
+"dataShortTitle":"L", "type":"palette", 
+"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
+},
 
 
 {"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 

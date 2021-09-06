@@ -25,6 +25,7 @@ var template = {}
 	template.sample = "𑐳𑐎𑐮𑐾𑑄 𑐩𑐣𑐹𑐟 𑐳𑑂𑐰𑐟𑐣𑑂𑐟𑑂𑐬 𑐰 𑐖𑑂𑐰𑐮𑐶𑐖𑑂𑐰𑑅 𑐁𑐟𑑂𑐩𑐳𑐩𑑂𑐩𑐵𑐣 𑐰 𑐰𑐵𑑄 𑐡𑐂𑐎𑐠𑑄 𑐧𑐸𑐂 𑑋 𑐂𑐥𑐶𑑄 𑐳𑑂𑐰𑐰𑐶𑐰𑐾𑐎 𑐰 𑐳𑐡𑑂𑐧𑐸𑐡𑑂𑐔𑐶 𑐡𑐫𑐵𑑅 𑐰𑐶𑐰𑐾𑐎𑐱𑐷𑐮 𑐖𑐸𑐂 𑐀𑐮𑐾 𑐠𑐰𑑄𑐠𑐰𑐫𑑂 𑐡𑐵𑐖𑐵𑐎𑐠𑑄 𑐴𑐣𑐵𑐧𑐣𑐵 𑐫𑐵𑐂 𑑋"
 	template.blocklocation= 'newa'  // blocklocation to use for examples
 	template.noteslocation = 'newa/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/newa/new_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'newa'
 	template.scriptcode = 'Newa'
@@ -53,8 +54,6 @@ var pulldown = [
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('transcription')", "warning":"Adds inherent vowels based on a very generalised rule. The result should be checked."},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/newa/new_vocab')"},
 ]
 
 
@@ -68,12 +67,6 @@ var inputAids = [
 "title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
 "desc":"Use ASCII characters to type Newa from the keyboard using a customised key mapping.",
 "dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
-},
-
-{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
-"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"L", "type":"palette", 
-"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
 },
 
 {"title":"Type assist: IPA to Newar.", 
@@ -92,6 +85,12 @@ var inputAids = [
 "dataShortTitle":"k", "type":"palette", 
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },*/
+
+{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
+"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
+"dataShortTitle":"L", "type":"palette", 
+"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
+},
 
 
 {"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 

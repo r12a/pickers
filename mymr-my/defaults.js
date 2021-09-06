@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "(၂) လူတိုင်းတွင် မိမိနေထိုင်ရာ တိုင်းပြည်မှ လည်းကောင်း၊ အခြားတိုင်းပြည်မှလည်းကောင်း ထွက်ခွာ သွားပိုင်ခွင့်ရှိသည့်အပြင်၊ မိမိ၏ တိုင်းပြည်သို့ ပြန်လာ ပိုင်ခွင့်လည်းရှိသည်။"
 	template.blocklocation= '/scripts/myanmar/block'  // blocklocation to use for examples
 	template.noteslocation = 'myanmar/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/myanmar/my_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'mymr-my'
 	template.scriptcode = 'Mymr'
@@ -73,8 +74,6 @@ var pulldown = [
 {"title":"Burmese<br/>to MLC", "alt":"Convert Burmese text to an MLC Latin transcription.", "code":"doTranscription('toMLC')", "warning":"The results should be checked for accuracy."},
 
 {"title":"Burmese<br/>to IPA", "alt":"Convert Burmese text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPA')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand."},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/myanmar/my_vocab')"},
 ]
 
 
