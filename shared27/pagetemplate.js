@@ -611,6 +611,7 @@ out = `
 
 <div class="control" id="ccVariousControls" style="vertical-align: top;">Change text:<br/> <img src="../images/addspace.png" alt="Select" title="Separate the characters in the edit buffer with spaces." onclick="addSpacesToPicker(' ');">
           <img src="../images/collapsespaces.png" alt="Select" title="Collapse multiple spaces to a single space." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/[ ]+/g,' ')">
+          <img src="../images/collapselines.png" alt="Select" title="Collapse line breaks to spaces." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\n/g,' ')">
           <img src="../images/removespace.png" alt="Select" title="Remove all white space from the text area." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\s/g,'')">
           <input name="insertMe" id="insertMe"  type="text" style="width: 40px; text-align:right; vertical-align: top; line-height: 1;" value="␣" />
           <img src="../images/addcomma.png" alt="Select" title="Separate the characters in the edit buffer with commas." onclick="addSpacesToPicker(document.getElementById('insertMe').value);">
