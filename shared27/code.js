@@ -3535,7 +3535,7 @@ function parseSpreadsheet () {
 	
 
 
-function makeLatinTypeAssistMap () {
+function makeLatinTypeAssistMapOLD () {
 	// create a data object for the Latin only palette
 	// uses latinRegister from shared24/latinregister
 	
@@ -3628,6 +3628,89 @@ for (x=0;x<exclusionList.length;x++) {
 	}
 return str.trim()
 }
+
+
+
+
+function makeLatinTypeAssistMap () {
+	// create a data object for the Latin only palette
+	// uses latinRegister from shared24/latinregister
+    // this new version look for latinPanel in the scriptdb file and uses that if available
+	
+	// quit if the spreadsheet hasn't been updated
+	if (typeof cols.class === 'undefined') {
+		console.log("latinTypeAssistMap exists. Quitting.")
+		return
+		}
+	
+	// get the data
+    if (typeof latinPanel === 'undefined') {
+	var collector = []
+        for (item in spreadsheetRows) {
+            if (spreadsheetRows[item][cols.latin]) {
+                var items = spreadsheetRows[item][cols.latin].split(' ')
+                for (let i=0;i<items.length;i++) collector.push(items[i])
+                }
+            else if (typeof cols.latin === 'undefined') {
+                if (spreadsheetRows[item][cols.transLoc]) collector.push(spreadsheetRows[item][cols.transLoc])
+                //if (cols.transcKey && spreadsheetRows[item][cols.transcKey]) collector.push(spreadsheetRows[item][cols.transcKey])
+                if (cols.transcription && spreadsheetRows[item][cols.transcription]) {
+                    var items = spreadsheetRows[item][cols.transcription].split(' ')
+                    for (let i=0;i<items.length;i++) collector.push(items[i])
+                    }
+                if (cols.ipaLoc && spreadsheetRows[item][cols.ipaLoc]) {
+                    items = spreadsheetRows[item][cols.ipaLoc].split(' ')
+                    for (let i=0;i<items.length;i++) collector.push(items[i])
+                    }
+                }
+            }
+
+        // remove duplicates from collector
+        const uniqueSet = new Set(collector)
+        collector = [...uniqueSet]
+        }
+    else {
+        collector = latinPanel.split(' ')
+        }
+	
+	outObj = {}
+	notInRegister = ''
+	for (let i=0;i<collector.length;i++) {
+		var asciiOnly = true
+		for (let c=0;c<collector[i].length;c++) {
+			if (collector[i].codePointAt(c) > 127) asciiOnly = false
+			continue
+			}
+		if (asciiOnly) continue
+
+
+        lookup = collector[i].normalize('NFD')[0]
+
+        if (latinRegister[lookup]) { 
+			if (outObj[latinRegister[lookup]]) outObj[latinRegister[lookup]] +=  ' '+collector[i]
+			else outObj[latinRegister[lookup]] = latinRegister[lookup] + ' ' +collector[i]
+			}
+		else notInRegister += collector[i] + '  '
+       /* if (latinRegister[collector[i][0]]) { 
+			if (outObj[latinRegister[collector[i][0]]]) outObj[latinRegister[collector[i][0]]] +=  ' '+collector[i]
+			else outObj[latinRegister[collector[i][0]]] = latinRegister[collector[i][0]] + ' ' +collector[i]
+			}
+		else notInRegister += collector[i] + '  '*/
+		}
+	
+	var outArray = Object.values(outObj)
+	outArray.sort()
+	
+	window.latinTypeAssistMap = ''
+	for (i=0;i<outArray.length;i++) window.latinTypeAssistMap += outArray[i] + '\n'
+	
+	console.log('latinTypeAssistMap done')
+	console.log('Register didn\'t have:', notInRegister)
+	}
+
+
+
+
 
 
 
