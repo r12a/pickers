@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "कऻशुर छि सऻन्य् माजि ज़्यव। असि पज़ि पनॖन्यन शुर्यन सॗत्य् ॳथ्य् ज़बऻन्य् मंज़ कथ करॖनय्।"
 	template.blocklocation= 'XXXX'  // blocklocation to use for examples
 	template.noteslocation = 'XXXXX' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/XXXX/XX_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'template'
 	template.scriptcode = 'Tmp'
@@ -100,8 +101,6 @@ var pulldown = [
 {"title":"XXXX<br/>to IPA", "alt":"Convert XXX text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toISO15919')", "warning":"Separate syllables with spaces before use! Full transcription requires fully vowelled text! This only produces an APPROXIMATION to an IPA transcription. Use it as a base and refine it by hand." },
 
 {"title":"ISO to<br/>XXXX", "alt":"Convert an ISO 15919 transcription to XXXX text.", "code":"doTranscription('toDeva')"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/XXXX/XX_vocab')"},
 ]
 
 
