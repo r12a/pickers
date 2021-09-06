@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "ᬫᬓᬲᬫᬶᬫᬦᬸᬲᬦᬾᬓᬳᭂᬫ᭄ᬩᬲᬶᬦ᭄ᬫᬳᬃᬤᬶᬓᬮᬦ᭄ᬧᬢᭂᬄᬲᬚ᭄ᬭᭀᬦᬶᬂᬓᬳᬦᬦ᭄ᬮᬦ᭄ᬓ᭄ᬯᬲ᭟"
 	template.blocklocation= 'balinese'  // blocklocation to use for examples
 	template.noteslocation = 'balinese/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/balinese/ban_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'bali'
 	template.scriptcode = 'Bali'
@@ -70,8 +71,6 @@ var pulldown = [
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Balinese to LOC", "alt":"Convert Balinese text to a Library of Congress Latin transcription.", "code":"doTranscription('toLatin')"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/balinese/ban_vocab')"},
 ]
 
 

@@ -27,6 +27,7 @@ var template = {}
 	template.sampleSource = "https://unicode.org/udhr/d/udhr_jav_java.html"
 	template.blocklocation= '/scripts/javanese/block'  // blocklocation to use for examples
 	template.noteslocation = 'javanese/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/javanese/jv_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'java'
 	template.scriptcode = 'Java'
@@ -56,9 +57,7 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to XXXX text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/javanese/jv_vocab')"},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to XXXX text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 ]
 
 

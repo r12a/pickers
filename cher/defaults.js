@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "2. ᏂᎦᏛ ᎠᏂᏴᏫ ᎤᏂᎲ ᎾᏍᎩ ᏚᏳᎪᏛ ᎤᏂᎩᏍᏗ ᏂᎦᎥᏉ ᎠᏰᎵ ᏂᎬᎾᏛᎢ, ᎤᏠᏯᏍᏗ ᎤᏩᏌ ᎤᏤᎵ ᎡᎥᎢ, ᎠᎴ ᎢᎦᎷᎯᏍᏗ ᎤᎾᎢ ᎤᏩᏌ ᎤᏤᎵ ᎠᏰᎵ ᏂᎬᎾᏛᎢ."
 	template.blocklocation= '/scripts/cherokee/block'  // blocklocation to use for examples
 	template.noteslocation = 'cherokee' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/cherokee/chr_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cher'
 	template.scriptcode = 'Cher'
@@ -49,8 +50,6 @@ var controls = [
 
 var pulldown = [
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/cherokee/chr_vocab')"},
 ]
 
 

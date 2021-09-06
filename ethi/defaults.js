@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "፪/፡ እያንዳንዱ፡ሰው፡ከማንኛውም፡አገር፡ሆነ፡ከራሱ፡አገር፡ወጥቶ፡እንደገና፡ወደ፡አገሩ፡የመመለስ፡መብት፡አለው።"
 	template.blocklocation= 'ethiopic'  // blocklocation to use for examples
 	template.noteslocation = 'ethiopic/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/ethiopic/am_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'ethi'
 	template.scriptcode = 'Ethi'
@@ -48,11 +49,9 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Ethiopic text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Ethiopic text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/ethiopic/am_vocab')"},
 ]
 
 

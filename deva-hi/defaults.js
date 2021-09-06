@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "(२) प्रत्येक व्यक्ति को अपने या पराये किसी भी देश को छोड़नो और अपने देश को वापस आनो का अधिकार है ।"
 	template.blocklocation= 'devanagari'  // blocklocation to use for examples
 	template.noteslocation = 'devanagari/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/devanagari/hi_vocab' // location of term database (adds link to share menu), full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'deva-hi'
 	template.scriptcode = 'Deva'
@@ -58,8 +59,6 @@ var pulldown = [
 {"title":"Hindi<br/>to ISO", "alt":"Convert Hindi text to a ISO 15919 transcription.", "code":"doTranscription('toISO15919')", "warning":"The result should be checked, especially for inherent vowels that are pronounced at the end of a word."},
 
 {"title":"ISO to<br/>Hindi", "alt":"Convert an ISO 15919 transcription to Hindi text.", "code":"doTranscription('toDeva')"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/devanagari/hi_vocab')"},
 ]
 
 

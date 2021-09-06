@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "ຂໍ້ 2. ບຸກຄົນແຕ່ລະຄົນມີສິດທີ່ຈະຈາກປະເທດໃດປະເທດໜື່ງໄປ ນັບທັງປະເທດຂອງຕົນດ້ວຍ ແລະ ກັບຄືນມາໃນປະເທດຂອງຕົນໄດ້."
 	template.blocklocation= '/scripts/lao/block'  // blocklocation to use for examples
 	template.noteslocation = 'lao/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/lao/lo_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'lao'
 	template.scriptcode = 'Laoo'
@@ -65,15 +66,13 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Lao text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Lao text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Lao to<br>LOC", "alt":"Convert Lao text to an Library of Congress Latin transcription.", "code":"doTranscription('toLOC')", "warning":"The results should be checked for accuracy."},
 
 {"title":"Split<br/>syllables", "alt":"Break text into syllabic units.", "code":"doTranscription('toSyllables')", "warning":"The results should be checked for accuracy."},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/lao/lo_vocab')"},
 ]
 
 

@@ -25,6 +25,8 @@ var template = {}
 	template.title = 'Kayah Li'
 	template.sample = "ꤙꤤ ꤋꤢꤨ꤭ꤡꤛꤥꤔꤢ ꤡꤛꤣ ꤟꤢꤩꤏꤥ꤬ꤘꤣ꤬ꤑꤢ꤭ ꤕꤢꤩ ꤔꤤꤔꤢ꤬ꤠꤢꤩ꤬ ꤠꤟꤤ꤭ꤢꤨ ꤒꤢ꤬ꤟꤢꤩ꤬ ꤔꤢ ꤡꤢꤪꤗꤢꤚꤛꤢ꤬ ꤢ꤬ꤒꤟꤢꤧ꤬ꤟꤢꤩꤙꤢꤧ꤬ ꤢ꤬ꤋꤢꤧ꤭ ꤔꤌꤣ꤬ ꤢꤧ꤬ꤞꤤ꤭ ꤕꤟꤛꤢꤐꤟꤢꤧꤜꤟꤛꤢ꤬ꤊꤟꤢ꤬ ꤢꤧ꤬ꤞꤤ꤭ꤞꤢꤧ ꤚꤢꤪ ꤢ꤬ ꤔꤟꤤꤘꤢ꤭ ꤜꤟꤢꤪ꤭ꤋꤛꤢꤩ꤭ꤞꤛꤢ ꤡꤢꤪꤗꤢ꤬ꤚꤛꤢ꤬ꤘꤢꤨ꤬ ꤍꤟꤥ꤯"
 	template.blocklocation= 'kali'  // blocklocation to use for examples
+	template.noteslocation = 'kali/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/kali/kyu_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'kali'
 	template.scriptcode = 'Kali'
@@ -66,7 +68,7 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Kayah Li text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Kayah Li text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
@@ -85,8 +87,6 @@ var pulldown = [
 //{"title":"XXXX<br/>to IPA", "alt":"Convert XXX text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toISO15919')", "warning":"Separate syllables with spaces before use! Full transcription requires fully vowelled text! This only produces an APPROXIMATION to an IPA transcription. Use it as a base and refine it by hand." },
 
 //{"title":"ISO to<br/>XXXX", "alt":"Convert an ISO 15919 transcription to XXXX text.", "code":"doTranscription('toDeva')"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/kali/kyu_vocab')"},
 ]
 
 

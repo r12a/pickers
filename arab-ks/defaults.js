@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "سٲری اِنسان چھِ آزاد زامٕتؠ۔ وؠقار تہٕ حۆقوٗق چھِ ہِوی۔ تِمَن چھُ سوچ سَمَج عَطا کَرنہٕ آمُت تہٕ تِمَن پَزِ بٲے بَرادٔری ہٕنْدِس جَذباتَس تَحَت اکھ أکِس اکار بَکار یُن ۔"
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
 	template.noteslocation = '../../scripts/arabic/kashmiri' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/arabic/ks_vocab' // location of term database, full url
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'arab-ks'
 	template.scriptcode = 'Arab'
@@ -71,11 +72,9 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Kashmiri text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Kashmiri text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/arabic/ks_vocab')"},
 ]
 
 

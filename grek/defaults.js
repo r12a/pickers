@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "ΑΡΘΡΟ 1 Όλοι οι άνθρωποι γεννιούνται ελεύθεροι και ίσοι στην αξιοπρέπεια και τα δικαιώματα. Είναι προικισμένοι με λογική και συνείδηση, και οφείλουν να συμπεριφέρονται μεταξύ τους με πνεύμα αδελφοσύνης."
 	template.blocklocation= '/scripts/greek/block'  // blocklocation to use for examples
 	template.noteslocation = 'greek/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/greek/el_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'grek'
 	template.scriptcode = 'Grek'
@@ -68,7 +69,7 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Greek text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Greek text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
@@ -93,8 +94,6 @@ var pulldown = [
 {"title":"Lower-<br>case", "alt":"Convert selection to lowercase.", "code":"add(getHighlightedText(document.getElementById('output')).toLowerCase());document.getElementById('output').focus();"},
 
 {"title":"Case-<br>fold", "alt":"Casefold the text (useful for automated matching).", "code":"add(casefold(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/XXXX/XX_vocab')"},
 ]
 
 

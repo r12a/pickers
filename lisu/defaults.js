@@ -28,6 +28,7 @@ var template = {}
     // sample source: http://www.evertype.com/standards/iso10646/pdf/fraser-sample.pdf
 	template.blocklocation= '/scripts/lisu/block'  // blocklocation to use for examples
 	template.noteslocation = 'lisu/' // location of script notes relevant to this app
+	//template.vocablocation = '/scripts/XXXX/XX_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'lisu'
 	template.scriptcode = 'Lisu'

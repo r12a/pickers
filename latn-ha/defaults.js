@@ -25,6 +25,7 @@ var template = {}
 	template.sample = "Abin nufi ga ilimi shi ne: ya sama wa ɗan‐adam jin daɗin rayuwa da ƙarfafa kiyayewa da hakkokinsa da muhimman abubuwan da ƴancinsa ya ƙunsa."
 	template.blocklocation= '/scripts/latin/block'  // blocklocation to use for examples
 	template.noteslocation = 'latin/hausa' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/latin/ha_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'latn-ha'
 	template.scriptcode = 'Latn'
@@ -50,8 +51,6 @@ var controls = [
 
 var pulldown = [
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/latin/ha_vocab')"},
 ]
 
 

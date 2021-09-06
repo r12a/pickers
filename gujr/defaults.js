@@ -27,6 +27,7 @@ var template = {}
 	template.blocklocation= 'gujarati'  // blocklocation to use for examples
 	template.noteslocation = 'gujarati/' // location of script notes relevant to this app
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
+	template.vocablocation = '/scripts/gujarati/gu_vocab' // location of term database (adds link to share menu), full url
 	template.github = 'gujr'
 	template.scriptcode = 'Gujr'
 	template.fontLocale = 'gujr'
@@ -53,8 +54,6 @@ var pulldown = [
 {"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Gujarati text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/gujarati/gu_vocab')"},
 ]
 
 

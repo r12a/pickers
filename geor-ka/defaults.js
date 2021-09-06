@@ -27,6 +27,7 @@ var template = {}
 	// source: https://unicode.org/udhr/d/udhr_kat.html
 	template.blocklocation= '/scripts/georgian/block'  // blocklocation to use for examples
 	template.noteslocation = 'georgian/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/georgian/ka_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'geor-ka'
 	template.scriptcode = 'Geor'
@@ -51,13 +52,11 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to XXXX text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to XXXX text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Georgian to<br/>National Tr", "alt":"Convert Georgian text to a national Georgian transcription.", "code":"doTranscription('toNational')"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/georgian/ka_vocab')"},
 ]
 
 

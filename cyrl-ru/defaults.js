@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "Все люди рождаются свободными и равными в своем достоинстве и правах. Они наделены разумом и совестью и должны поступать в отношении друг друга в духе братства."
 	template.blocklocation= '/scripts/cyrillic/block'  // blocklocation to use for examples
 	template.noteslocation = 'cyrillic/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/cyrillic/ru_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cyrl-ru'
 	template.scriptcode = 'Cyrl'
@@ -67,13 +68,11 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Russian text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Russian text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Russian<br/>to ISO", "alt":"Convert Russian text to an ISO 9:1995 Latin transliteration.", "code":"doTranscription('toISO')", "warning":"The results should be checked for accuracy."},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/cyrillic/ru_vocab')"},
 ]
 
 

@@ -26,6 +26,7 @@ var template = {}
     template.sample = "כל בני אדם נולדו בני חורין ושווים בערכם ובזכויותיהם. כולם חוננו בתבונה ובמצפון, לפיכך חובה עליהם לנהוג איש ברעהו ברוח של אחוה."
     template.blocklocation= '/scripts/hebrew/block'  // blocklocation to use for examples
     template.noteslocation = 'hebrew/' // location of script notes relevant to this app
+    template.vocablocation = '/scripts/hebrew/he_vocab' // location of term database, full url
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'hebr'
 	template.scriptcode = 'Hebr'
@@ -74,8 +75,6 @@ var pulldown = [
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Remove<br/>vowels", "alt":"Remove points from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/hebrew/he_vocab')"},
 ]
 
 

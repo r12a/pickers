@@ -25,6 +25,7 @@ var template = {}
 	template.sample = "២. មនុស្សគ្រប់រូបមានសិទ្ធិចាកចេញពីប្រទេសណាមួយ រួមទាំងប្រទេសរបស់ខ្លួនផង និងមាន សិទ្ធិវិលត្រឡប់មកប្រទេសរបស់ខ្លួនវិញ។"
 	template.blocklocation= '/scripts/khmer/block'  // blocklocation to use for examples
 	template.noteslocation = 'khmer/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/khmer/km_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'khmr'
 	template.scriptcode = 'Khmr'
@@ -78,8 +79,6 @@ var pulldown = [
 {"title":"Khmer<br/>to IPA", "alt":"Convert Khmer text to a rough IPA transcription.", "code":"doTranscription('toIPA')", "warning":"Still in development. Separate syllables before use."},
 
 {"title":"Remove<br/>space/hyphen", "alt":"Remove spaces and hyphens.", "code":"add(condense(getHighlightedText(_output)));_output.focus();"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/khmer/km_vocab')"},
 ]
 
 
