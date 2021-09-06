@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "ܐܘ ܢܳܫܐ ܟܷܬܠܶܗ ܚܰܡܫܐ ܪܷܓ݂ܫܶܐ: ܚܙܳܝܐ ܒܰܥ ܥܰܝܢܶܐ، ܫܡܳܥܐ ܒܰܢ ܐܰܕ݂ܢܶܐ، ܢܩܳܚܐ ܒܘ ܢܚܝܪܐ، ܓܝܳܫܐ ܒܰܢ ܐܝܕ݂ܶܐ ܘܛܥܳܡܐ ܒܘ ܠܝܫܳܢܐ."
 	template.blocklocation= '/scripts/syriac/block'  // blocklocation to use for examples
 	template.noteslocation = 'syriac/syrc-tru' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/syriac/tru_vocab' // location of term database, full url
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'syrc-tru'
 	template.scriptcode = 'Syrc'
@@ -53,11 +54,9 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Turoyo text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Turoyo text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/syriac/tru_vocab')"},
 ]
 
 

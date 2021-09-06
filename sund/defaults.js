@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "ᮙᮛᮔᮨᮂᮔ ᮓᮤᮘᮨᮛᮨ ᮃᮊᮜ᮪ ᮏᮩᮀ ᮠᮒᮨ ᮔᮥᮛᮔᮤ, ᮎᮙ᮪ᮕᮥᮁ-ᮌᮅᮜ᮪ ᮏᮩᮀ ᮞᮞᮙᮔ ᮃᮚ ᮓᮤᮔ ᮞᮥᮙᮔᮨᮒ᮪ ᮓᮥᮓᮥᮜᮥᮛᮔ᮪."
 	template.blocklocation= 'sundanese'  // blocklocation to use for examples
 	template.noteslocation = 'sundanese/' // location of script notes relevant to this app
+	// template.vocablocation = '/scripts/XXXX/XX_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'sund'
 	template.scriptcode = 'Sund'

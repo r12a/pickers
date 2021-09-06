@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "2. ⴽⵓ ⵢⴰⵏ ⴷⴰⵔⵙ ⵜⴰⴷⵔⴼⵉⵜⵏ ⴰⴷ ⵉⴼⴼⵖ ⵜⴰⵎⵓⵔⵜ, ⵜⵉⵏⵏⵙ ⵏⵖ ⵜⵉⵢⵢⴰⴹ, ⵏⵏⵙ ⵢⵉⵍⵉ ⴷⴰⵔⵙ ⵓⵣⵔⴼ ⴰⴷ ⴷⵉⵙ ⵢⵓⵔⵔⵉ."
 	template.blocklocation= 'tifinagh'  // blocklocation to use for examples
 	template.noteslocation = 'tifinagh' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/tifinagh/zgh_vocab' // location of term database, full url
 	template.direction = "bidi" // indicates whether this is a picker for a RTL script
 	template.github = 'tfng-ber'
 	template.scriptcode = 'Tfng'
@@ -68,13 +69,11 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Tifinagh text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Tifinagh text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 {"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Tiginagh<br/>to IRCAM", "alt":"Convert Neo-Tifinagh text to an IRCAM transcription.", "code":"doTranscription('toIRCAM')","warning":"This still needs a little refinement."},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/tifinagh/zgh_vocab')"},
 ]
 
 

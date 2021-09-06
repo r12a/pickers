@@ -27,6 +27,7 @@ var template = {}
     // source: http://www.seasite.niu.edu/tai/TaiDehong/story1/gif&jpg/p3.jpg
 	template.blocklocation= '/scripts/taile/block'  // blocklocation to use for examples
 	template.noteslocation = 'taile/' // location of script notes relevant to this app
+	// template.vocablocation = '/scripts/XXXX/XX_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'tale'
 	template.scriptcode = 'Tale'

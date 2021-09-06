@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "༢ སྐྱེ་བོ་རེ་རེར་རང་ཡུལ་ཐེ་བས་ཡུལ་ལུང་གང་འདྲ་ཞིག་ནས་ཕྱིར་ཐོན་བྱེད་པའམ། ཡང་ན་རང་ཡུལ་དུ་ཕྱིར་ལོག་བྱེད་པའི་ཐོབ་ཐང་ཡོད༎"
 	template.blocklocation= 'tibetan'  // blocklocation to use for examples
 	template.noteslocation = 'tibetan/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/tibetan/bo_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'tibt'
 	template.scriptcode = 'Tibt'
@@ -60,8 +61,6 @@ var pulldown = [
 {"title":"Tibetan<br/>to Wylie", "alt":"Convert Tibetan text to a Latin (Wylie) transcription.", "code":"doTranscription('toWylie')"},
 
 {"title":"Wylie to<br/>Tibetan", "alt":"Convert a Latin (Wylie) transcription to Tibetan text.", "code":"var converter = window.open('http://www.thlib.org/reference/transliteration/wyconverter.php', 'converter') ; converter.focus();"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/tibetan/bo_vocab')"},
 ]
 
 

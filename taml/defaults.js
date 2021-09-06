@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "2. தனது சொந்த நாடு உட்பட ஏதேனும் நாட்டை விட்டுச் செல்லவும் தத்தமது நாட்டுக்குத் திரும்பவும் ஒவ்வொருவருக்கும் உரிமையுண்டு."
 	template.blocklocation= 'tamil'  // blocklocation to use for examples
 	template.noteslocation = 'tamil/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/tamil/ta_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'taml'
 	template.scriptcode = 'Taml'
@@ -78,8 +79,6 @@ var pulldown = [
 //{"title":"Tamil<br>to IPA", "alt":"Convert Tamil text to an phonetic transcription.", "code":"doTranscription('toIPA')"},
 
 {"title":"ISO to<br/>Tamil", "alt":"Convert ISO latin text to Tamil transcription.", "code":"doTranscription('fromISO')", "warning":"The results should be checked for accuracy."},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/tamil/ta_vocab')"},
 ]
 
 
@@ -93,12 +92,6 @@ var inputAids = [
 "title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
 "desc":"Use ASCII characters to type Tamil from the keyboard using a customised key mapping.",
 "dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
-},
-
-{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
-"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"L", "type":"palette", 
-"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
 },
 
 {"title":"Type assist: IPA to Tamil.", 
@@ -116,6 +109,12 @@ var inputAids = [
 "desc":"Use a Tamil keyboard mapping to type from the keyboard.",
 "dataShortTitle":"k", "type":"palette", 
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
+},
+
+{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
+"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
+"dataShortTitle":"L", "type":"palette", 
+"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
 },
 
 

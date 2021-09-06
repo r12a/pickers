@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "2. ทุกคนมีสิทธิที่จะออกจากประเทศใด ๆ ไป รวมทั้งประเทศของตนเองด้วย และที่จะกลับยังประเทศตน"
 	template.blocklocation= 'thai'  // blocklocation to use for examples
 	template.noteslocation = 'thai' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/thai/th_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'thai'
 	template.scriptcode = 'Thai'
@@ -83,8 +84,6 @@ var pulldown = [
 {"title":"Thai<br>to IPA", "alt":"Convert Thai text to an approximate IPA transcription.", "code":"doTranscription('toIPA')", "warning":"Separate syllables with spaces before use. This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand."},
 
 {"title":"Remove<br>sp/hyph", "alt":"Remove spaces and hyphens.", "code":"add(condense(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/thai/th_vocab')"},
 ]
 
 

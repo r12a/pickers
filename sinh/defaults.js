@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "1 වන වගන්තිය සියලු මනුෂ්‍යයෝ නිදහස්ව උපත ලබා ඇත. ගරුත්වයෙන් හා අයිතිවාසිකම්වලින් සමාන වෙති."
 	template.blocklocation= 'sinhala'  // blocklocation to use for examples
 	template.noteslocation = 'sinhala/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/sinhala/si_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'sinh'
 	template.scriptcode = 'Sinh'
@@ -57,8 +58,6 @@ var pulldown = [
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('transcription')", "warning":"Adds inherent vowels and single symbols for composite vowels, foreign sounds, etc. The result should be checked."},
 
 {"title":"Sinhala<br/>to ISO", "alt":"Convert Sinhalese text to an ISO 15919 Latin transcription.", "code":"doTranscription('toISO15919')", "warning":"The results should be checked for accuracy."},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/sinhala/si_vocab')"},
 ]
 
 
