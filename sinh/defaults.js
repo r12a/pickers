@@ -51,13 +51,9 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Sinhala text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('transcription')", "warning":"Adds inherent vowels and single symbols for composite vowels, foreign sounds, etc. The result should be checked."},
 
-{"title":"Sinhala<br/>to ISO", "alt":"Convert Sinhalese text to an ISO 15919 Latin transcription.", "code":"doTranscription('toISO15919')", "warning":"The results should be checked for accuracy."},
+{"title":"Sinhala to ISO", "alt":"Convert Sinhalese text to an ISO 15919 Latin transcription.", "code":"doTranscription('toISO15919')", "warning":"The results should be checked for accuracy."},
 ]
 
 

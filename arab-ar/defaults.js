@@ -70,19 +70,14 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Arabic text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+{"title":"Remove vowels", "alt":"Remove harakat, etc. from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 
-{"title":"Remove<br/>vowels", "alt":"Remove harakat, etc. from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
+{"title":"Arabic to IPA", "alt":"Convert Arabic text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPA')", "warning":"Requires fully vowelled text!<br>This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
 
-{"title":"Arabic<br/>to IPA", "alt":"Convert Arabic text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPA')", "warning":"Requires fully vowelled text!<br>This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
+{"title":"Arabic to LOC", "alt":"Convert Arabic text to an Library of Congress Latin transcription.", "code":"doTranscription('toLOC')", "warning": "Full transcription requires fully vowelled text! The results should be checked for accuracy."},
 
-{"title":"Arabic<br/>to LOC", "alt":"Convert Arabic text to an Library of Congress Latin transcription.", "code":"doTranscription('toLOC')", "warning": "Full transcription requires fully vowelled text! The results should be checked for accuracy."},
-
-{"title":"Arabic<br/>to ISO", "alt":"Convert Arabic text to an ISO Latin transcription.", "code":"doTranscription('toISO')", "warning": "Full transcription requires fully vowelled text! The results should be checked for accuracy."},
-
-{"title":"Find vocab", "alt":"Search for examples containing the highlighted text", "code":"openVocabWindow('/scripts/arabic/arb_vocab')"},
+{"title":"Arabic to ISO", "alt":"Convert Arabic text to an ISO Latin transcription.", "code":"doTranscription('toISO')", "warning": "Full transcription requires fully vowelled text! The results should be checked for accuracy."},
 ]
 
 

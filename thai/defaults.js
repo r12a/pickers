@@ -71,19 +71,11 @@ _output.focus();`},
 
 
 var pulldown = [
-//{"title":"Trans-<br/>scribe", "alt":"Convert Thai text to a Latin transcription.", "code":"doTranscription('transcription')", "warning":"Converts complex vowels closer to phonetics."},
+{"title":"Thai to ISO 11940", "alt":"Convert Thai text to an ISO 11940-2 Latin transcription.", "code":"doTranscription('toISO2')", "warning":"Separate syllables with spaces before use. The results should be checked for accuracy."},
 
-//{"title":"Trans-<br/>literate", "alt":"Convert Thai text to an ISO 11940-1 Latin transcription.", "code":"doTranscription('toISO1')"},
+{"title":"Thai to IPA", "alt":"Convert Thai text to an approximate IPA transcription.", "code":"doTranscription('toIPA')", "warning":"Separate syllables with spaces before use. This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand."},
 
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Thai text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Thai to<br>ISO 11940", "alt":"Convert Thai text to an ISO 11940-2 Latin transcription.", "code":"doTranscription('toISO2')", "warning":"Separate syllables with spaces before use. The results should be checked for accuracy."},
-
-{"title":"Thai<br>to IPA", "alt":"Convert Thai text to an approximate IPA transcription.", "code":"doTranscription('toIPA')", "warning":"Separate syllables with spaces before use. This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand."},
-
-{"title":"Remove<br>sp/hyph", "alt":"Remove spaces and hyphens.", "code":"add(condense(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
+{"title":"Remove sp/hyph", "alt":"Remove spaces and hyphens.", "code":"add(condense(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 ]
 
 

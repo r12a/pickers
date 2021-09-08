@@ -52,11 +52,7 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Trans-<br/>literate", "alt":"Convert Runic text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
-
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Runic text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+{"title":"Transliterate", "alt":"Convert Runic text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
 
 ]
 

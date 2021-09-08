@@ -49,7 +49,6 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 ]
 
 

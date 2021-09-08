@@ -52,7 +52,6 @@ var controls = [
 var pulldown = [
 //{"title":"Trans-<br/>scribe", "alt":"Convert Buhid text to a Latin transcription.", "code":"doTranscription('toLatin')"},
 
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Buhid text.", "code":"doTranscription('revTransliterate')", "warning":"The selected text area content must follow the transliteration scheme developed for this app."},
 ]
 
 

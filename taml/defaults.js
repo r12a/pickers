@@ -68,17 +68,14 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Tamil text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('translitPlus')", "warning":"Normalises text, adds inherent vowels, and simplifies some sequences. The result should be checked."},
 
-{"title":"Tamil<br>to ISO", "alt":"Convert Tamil text to an ISO Latin transcription.", "code":"doTranscription('toISO')", "warning":"The results should be checked for accuracy."},
+{"title":"Tamil to ISO", "alt":"Convert Tamil text to an ISO Latin transcription.", "code":"doTranscription('toISO')", "warning":"The results should be checked for accuracy."},
 
 //{"title":"Tamil<br>to IPA", "alt":"Convert Tamil text to an phonetic transcription.", "code":"doTranscription('toIPA')"},
 
-{"title":"ISO to<br/>Tamil", "alt":"Convert ISO latin text to Tamil transcription.", "code":"doTranscription('fromISO')", "warning":"The results should be checked for accuracy."},
+{"title":"ISO to Tamil", "alt":"Convert ISO latin text to Tamil transcription.", "code":"doTranscription('fromISO')", "warning":"The results should be checked for accuracy."},
 ]
 
 

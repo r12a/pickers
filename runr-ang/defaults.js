@@ -68,13 +68,9 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Anglo-Saxon text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('translitPlus')", "warning":"Changes eᵃ to e͡a. This function provides only a general indication of the transliterated Runic."},
 
-{"title":"Latin to<br/>Runic", "alt":"Convert latin text to Anglo-Saxon/Frisian runes.", "code":"doTranscription('toASF')", "warning":"Symbols used in the various sources can vary, so the result needs to be checked for appropriateness."},
+{"title":"Latin to Runic", "alt":"Convert latin text to Anglo-Saxon/Frisian runes.", "code":"doTranscription('toASF')", "warning":"Symbols used in the various sources can vary, so the result needs to be checked for appropriateness."},
 ]
 
 

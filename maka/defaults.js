@@ -51,10 +51,6 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Makasar text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('toLatin')", "warning":"Adds inherent vowels and applies angka, but doesn't provide the unwritten syllable final ng or glottal stop, nor the geminated consonants. The result should be checked."},
 ]
 

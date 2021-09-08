@@ -68,11 +68,7 @@ _output.focus();`},
 
 
 var pulldown = [
-//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Russian text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Russian<br/>to ISO", "alt":"Convert Russian text to an ISO 9:1995 Latin transliteration.", "code":"doTranscription('toISO')", "warning":"The results should be checked for accuracy."},
+{"title":"Russian to ISO", "alt":"Convert Russian text to an ISO 9:1995 Latin transliteration.", "code":"doTranscription('toISO')", "warning":"The results should be checked for accuracy."},
 ]
 
 

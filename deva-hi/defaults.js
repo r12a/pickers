@@ -52,13 +52,11 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Hindi text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then make other changes.", "code":"doTranscription('transcription')", "warning":"The result should be checked, especially for inherent vowels that are pronounced at the end of a word."},
 
-{"title":"Hindi<br/>to ISO", "alt":"Convert Hindi text to a ISO 15919 transcription.", "code":"doTranscription('toISO15919')", "warning":"The result should be checked, especially for inherent vowels that are pronounced at the end of a word."},
+{"title":"Hindi to ISO", "alt":"Convert Hindi text to a ISO 15919 transcription.", "code":"doTranscription('toISO15919')", "warning":"The result should be checked, especially for inherent vowels that are pronounced at the end of a word."},
 
-{"title":"ISO to<br/>Hindi", "alt":"Convert an ISO 15919 transcription to Hindi text.", "code":"doTranscription('toDeva')"},
+{"title":"ISO to Hindi", "alt":"Convert an ISO 15919 transcription to Hindi text.", "code":"doTranscription('toDeva')"},
 ]
 
 

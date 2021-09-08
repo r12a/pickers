@@ -50,9 +50,8 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Buginese text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
-{"title":"Buginese<br/>to Latin", "alt":"Convert Buginese text to a Latin transcription.", "code":"doTranscription('toLatin')"},
+{"title":"Buginese to Latin", "alt":"Convert Buginese text to a Latin transcription.", "code":"doTranscription('toLatin')"},
 ]
 
 

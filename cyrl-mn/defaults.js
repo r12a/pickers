@@ -26,13 +26,20 @@ var template = {}
 	template.sample = "Хүн бүр төрж мэндлэхэд эрх чөлөөтэй, адилхан нэр төртэй, ижил эрхтэй байдаг. Оюун ухаан, нандин чанар заяасан хүн гэгч өөр хоорондоо ахан дүүгийн үзэл санаагаар харьцах учиртай."
 	template.blocklocation= 'cyrillic'  // blocklocation to use for examples
 	template.noteslocation = 'cyrillic/mn' // location of script notes relevant to this app
-	template.vocablocation = '/scripts/cyrillic/mn_vocab' // location of term database (adds link to share menu)
+	template.vocablocation = '/scripts/cyrillic/mn_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cyrl-mn'
 	template.scriptcode = 'Cyrl'
 	template.fontLocale = 'cyrl'
 	template.hints = true
 	template.bicameral = true
+	
+	template.defaultSpace = ' '
+	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
+	['NNBSP','\u202F'], ['EMSP','\u2003']]
+	template.defaultInvisible = ''
+	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
+	['SHY','\u00AD'], ['NBHY','\u2011']]
 
 
 
@@ -62,9 +69,7 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Mongolian text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Mongolian text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 
 //{"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('translitPlus')", "warning":"Adds inherent vowels and palatalisation. The result should be checked."},
 

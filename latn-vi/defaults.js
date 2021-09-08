@@ -50,11 +50,9 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+{"title":"North Việt to IPA", "alt":"Convert North Vietnamese text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPAN')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand."},
 
-{"title":"North Việt<br>to IPA", "alt":"Convert North Vietnamese text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPAN')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand."},
-
-{"title":"South Việt<br>to IPA", "alt":"Convert South Vietnamese text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPAS')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand."},
+{"title":"South Việt to IPA", "alt":"Convert South Vietnamese text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPAS')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand."},
 ]
 
 

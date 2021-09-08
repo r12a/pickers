@@ -66,12 +66,7 @@ _output.focus();`},
 
 
 var pulldown = [
-
-//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Bamum text.", "code":"doTranscription('reverse')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Bamum<br/>to Latin", "alt":"Convert Bamum script text to the Latin orthography.", "code":"doTranscription('toLatin')", "warning":"The result of this conversion needs to be checked for accuracy."},
+{"title":"Bamum to Latin", "alt":"Convert Bamum script text to the Latin orthography.", "code":"doTranscription('toLatin')", "warning":"The result of this conversion needs to be checked for accuracy."},
 ]
 
 

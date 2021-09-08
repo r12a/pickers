@@ -55,13 +55,10 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Mandaic text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
 
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('transcription')", "warning":"Simplifies extended consonants that use the affrication mark, uses the  vocalisation mark for more accurate vowel transcription, doubles transcription text where a gemination marker occurs, etc.  The result should be checked."},
 
-{"title":"Mandaic<br/>to WWS", "alt":"Convert Mandaic text to a Latin transcription.", "code":"doTranscription('toLatin')", "warning":"Explores vowel ambiguities. Transcription base on chapter in the book, The Worlds Writing Systems."},
+{"title":"Mandaic to WWS", "alt":"Convert Mandaic text to a Latin transcription.", "code":"doTranscription('toLatin')", "warning":"Explores vowel ambiguities. Transcription base on chapter in the book, The Worlds Writing Systems."},
 ]
 
 

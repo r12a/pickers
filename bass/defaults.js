@@ -65,7 +65,6 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Bassa Vah text.", "code":"doTranscription('revTransliterate')"},
 
 ]
 

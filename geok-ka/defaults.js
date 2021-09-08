@@ -51,11 +51,7 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Khutsuri text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Georgian to<br/>National Tr", "alt":"Convert Khutsuri text to a national Georgian Latin transcription.", "code":"doTranscription('toNational')"},
+{"title":"Georgian to National Tr", "alt":"Convert Khutsuri text to a national Georgian Latin transcription.", "code":"doTranscription('toNational')"},
 ]
 
 

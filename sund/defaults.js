@@ -53,11 +53,7 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Sundanese text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
-
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Sundanese<br/>to Latin", "alt":"Convert Sundanese text to a Latin transcription.", "code":"doTranscription('toLatin')", "warning":"The result of this conversion needs to be checked for accuracy."},
+{"title":"Sundanese to Latin", "alt":"Convert Sundanese text to a Latin transcription.", "code":"doTranscription('toLatin')", "warning":"The result of this conversion needs to be checked for accuracy."},
 ]
 
 

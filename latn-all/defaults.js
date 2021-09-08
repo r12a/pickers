@@ -50,7 +50,6 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Sort<br/>characters", "alt":"Reorder the characters in ascending order of Unicode code point position.", "code":"sortOutput()"},
 ]
 
 

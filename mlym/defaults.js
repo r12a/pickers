@@ -66,15 +66,11 @@ _output.focus();`},
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Malayalam text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+{"title":"Malayalam to ISO", "alt":"Convert Malayalam text to an ISO Latin transcription.", "warning":"The results should be checked for accuracy.", "code":"doTranscription('toISO')"},
 
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
+{"title":"ISO to Malayalam", "alt":"Convert ISO latin text to Malayalam transcription.", "warning":"The results should be checked for accuracy.", "code":"doTranscription('toMalayalam')"},
 
-{"title":"Malayalam<br/>to ISO", "alt":"Convert Malayalam text to an ISO Latin transcription.", "warning":"The results should be checked for accuracy.", "code":"doTranscription('toISO')"},
-
-{"title":"ISO to<br/>Malayalam", "alt":"Convert ISO latin text to Malayalam transcription.", "warning":"The results should be checked for accuracy.", "code":"doTranscription('toMalayalam')"},
-
-{"title":"Malayalam<br/>to IPA", "alt":"Convert Malayalam text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toISO15919')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
+{"title":"Malayalam to IPA", "alt":"Convert Malayalam text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toISO15919')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
 ]
 
 

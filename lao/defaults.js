@@ -66,13 +66,9 @@ _output.focus();`},
 
 
 var pulldown = [
-//{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Lao text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
+{"title":"Lao to LOC", "alt":"Convert Lao text to an Library of Congress Latin transcription.", "code":"doTranscription('toLOC')", "warning":"The results should be checked for accuracy."},
 
-{"title":"Vocab to<br>Markup", "alt":"Convert a vocab entry to example markup.", "code":"vocab2Markup(getHighlightedText(document.getElementById('output')))"},
-
-{"title":"Lao to<br>LOC", "alt":"Convert Lao text to an Library of Congress Latin transcription.", "code":"doTranscription('toLOC')", "warning":"The results should be checked for accuracy."},
-
-{"title":"Split<br/>syllables", "alt":"Break text into syllabic units.", "code":"doTranscription('toSyllables')", "warning":"The results should be checked for accuracy."},
+{"title":"Split syllables", "alt":"Break text into syllabic units.", "code":"doTranscription('toSyllables')", "warning":"The results should be checked for accuracy."},
 ]
 
 

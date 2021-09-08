@@ -49,9 +49,6 @@ var controls = [
 
 
 var pulldown = [
-//{"title":"Trans-<br/>scribe", "alt":"Convert Hanunoo text to a Latin transcription.", "code":"doTranscription('toLatin')"},
-
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Hanunoo text.", "code":"doTranscription('revTransliterate')", "warning":"The Latin text must follow the transliteration scheme developed for this app."},
 ]
 
 

@@ -50,7 +50,6 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Reverse<br/>transliterate", "alt":"Convert a Latin transliteration to Bengali text.", "code":"doTranscription('revTransliterate')", "warning":"The selected text area content must follow the transliteration scheme developed for this app."},
 
 //{"title":"Bengali<br/>to IPA", "alt":"Convert Bengali text to a very approximate IPA transcription.", "code":"doTranscription('toIPA')", "warning":"This only produces an APPROXIMATION to an IPA transcription. Use it as a base and refine it by hand."},
 
