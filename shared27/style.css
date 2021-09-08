@@ -573,12 +573,29 @@ dt {
 	padding: 1px;
 	border-radius: 5px;
 	}
+
+
+#pulldown, #shuttle {
+	position:absolute; 
+	top:40; 
+	right:10px; 
+	z-index:2; 
+	background-color: white; 
+	border:1px solid grey; 
+	border-radius: 5px;
+	box-shadow: 10px 5px 5px #ccc, -2px 0 3px #eee;
+	width: 15em;
+	}
+#pulldown div, #shuttle div {
+	display:flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: start;
+	padding: 1em;
+	line-height:1;
+	}
 #pulldown button, #shuttle button {
 	cursor:pointer; 
-	display: inline-block; 
-	line-height:1;
-	text-align:center;
-	padding: 1px;
 	border-radius: 5px;
 	border: 0;
 	background-color: white;
@@ -586,17 +603,23 @@ dt {
 	font-size: smaller;
 	color: gray;
 	margin: 0;
-	margin-right: .5em;
 	border: 1px solid white; 
 	padding: .5em;
+	align-self: start;
 	width: 100%;
+	text-align: start;
 	}
-#pulldown button:hover {
+#pulldown button:hover, #shuttle button:hover {
 	background-color: #eee;
 	}
-#shuttle button {
-    text-align: start;
-    }
+#closeShuttle, #closePulldown {
+	align-self: end;
+	margin-inline-end: 1em;
+	color: #aaa;
+	}
+
+
+
 #tools button {
 	cursor:pointer; 
 	display: inline-block; 
