@@ -38,7 +38,8 @@ var template = {}
 	['NNBSP','\u202F'], ['EMSP','\u2003'], ['IDSP','\u3000']]
 	template.defaultInvisible = '\u202F'
 	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
-	['SHY','\u00AD'], ['NBHY','\u2011'], ['MVS','\u180E']]
+	['SHY','\u00AD'], ['NBHY','\u2011'], ['MVS','\u180E'], ['FVS1','\u180B'], ['FVS2','\u180C'], ['FVS3','\u180D'], 
+	['FVS4','\u180F']]
 	template.moreKeys = [['FVS1','\u180B'], ['FVS2','\u180C'], ['FVS3','\u180D'], 
 	['FVS4','\u180F']]
 
