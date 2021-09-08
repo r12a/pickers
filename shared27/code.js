@@ -3161,8 +3161,7 @@ function showDown (evt) {
         if (debug) console.log(evt.key, evt.code)
 		
 		// skip if this is Cmd+C, Ctrl+C, etc
-        //if (evt.metaKey || evt.ctrlKey || evt.altKey) { if (debug) console.log( evt.key,' pressed.')}
-        if (evt.metaKey) { if (debug) console.log( evt.key,' pressed.')}
+        if (evt.metaKey || evt.ctrlKey || evt.altKey) { if (debug) console.log( evt.key,' pressed.')}
 		
         else if (evt.key==='~') { // switch to Latin palette
             var clickEvent = new MouseEvent("click", {"view": window,"bubbles": true,"cancelable": false})
