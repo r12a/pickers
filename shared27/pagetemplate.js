@@ -733,12 +733,14 @@ if (template.scriptcode) {
 
     //out += getData(template.scriptcode)
     
+    if (template.noteslocation) out += '<a href="../../scripts/' + template.noteslocation + '" target="_blank">Script notes</a><br/>\n'
+    if (template.blocklocation) out += '<a href="../../scripts/' + template.blocklocation + '/block" target="_blank">Character notes</a><br/>\n'
     out += '<a href="../../scripts/links?iso=' + template.scriptcode + '" target="_blank">Script-related links for '+template.scriptcode+'</a><br/>\n'
     out += '<a href="../../app-charuse?language=' + defaults.language + '" target="_blank">Character usage for '+defaults.language+'</a><br/>\n'
     out += `
     	<a onclick="this.href = '../../uniview/?charlist='+getHighlightedText(_output)" target="_blank" href="#">UniView</a><br/>
-    	<a onclick="this.href = '../../app-listcharacters/?chars='+getHighlightedText(_output)" target="_blank" href="#">List characters</a><br/>
-    	<a onclick="this.href = '../../app-conversion/?q='+getHighlightedText(_output)" target="_blank" href="#">Character converter</a>
+    	<!--a onclick="this.href = '../../app-listcharacters/?chars='+getHighlightedText(_output)" target="_blank" href="#">List characters</a><br/>
+    	<a onclick="this.href = '../../app-conversion/?q='+getHighlightedText(_output)" target="_blank" href="#">Character converter</a-->
     	</div>`
     
     out += '</details>'
