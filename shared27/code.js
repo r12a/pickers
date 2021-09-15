@@ -4029,5 +4029,29 @@ function sortOutput (text, unique=false) {
 
 
 
+function sortOutput (text, unique=false, word=false) {
+    // sorts all the characters in the output field by Unicode code point order
+    // unique indicates whether or not to reduce to one instance of each character
+    // word indicates to segment on spaces, rather than individual characters
+    
+    text = text.replace(/s+/g,' ')
+    
+    if (unique) {
+        var charSet = new Set([...text])
+        console.log(charSet)
+        charList = [...charSet]
+        }
+    else if (word) {
+        charList = text.split(' ')
+        }
+    else charList=[...text]
+    console.log('charList',charList)
+    sorted=charList.sort()
+    return sorted.join(' ')
+    }
+
+
+
+
 
 
