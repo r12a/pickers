@@ -298,9 +298,11 @@ out += `
 
 <button  id="vocab2Markup" type="button" onclick="vocab2Markup(getHighlightedText(document.getElementById('output')))" title="Convert a vocab entry to example markup." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Vocab to markup</button>
 
-<button  id="sortAll" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=false)" title="Reorder all characters in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Sort characters</button>
+<button  id="sortAll" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=false, word=false)" title="Reorder all characters in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Sort characters</button>
 
-<button  id="sortAllUnique" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=true)" title="Keep one of each character and sort in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Unique sort</button>
+<button  id="sortAllUnique" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=true, word=false)" title="Keep one of each character and sort in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Unique sort</button>
+
+<button  id="sortWord" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=false, word=true)" title="Split on white space and sort in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Word sort</button>
     `
 
 if (template.bicameral) out += `
