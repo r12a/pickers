@@ -1250,3 +1250,54 @@ summary:hover {
     font-size: 50%;
     }
 
+
+
+.charChecker td {
+    font-size: .8rem;
+    text-align: start;
+    }
+.charChecker th {
+    font-size: 1rem;
+    text-align: start;
+    }
+.charChecker bdi {
+    font-size: 200%;
+    color: #333;
+    }
+.charChecker td {
+    width: 30%;
+    }
+.charChecker .cCheckCount {
+    font-size: 2rem;
+    width: 10%;
+    text-align: end;
+    padding-inline-end: .5em;
+    }
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
