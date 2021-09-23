@@ -1263,9 +1263,16 @@ summary:hover {
 .charChecker bdi {
     font-size: 200%;
     color: #333;
+    padding-inline-end: .25em;
     }
 .charChecker td {
     width: 30%;
+    }
+.cCheckHighlight {
+    color: red;
+    }
+.cCheckFix {
+    vertical-align: middle;
     }
 .charChecker .cCheckCount {
     font-size: 2rem;

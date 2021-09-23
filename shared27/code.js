@@ -4052,6 +4052,83 @@ function sortOutput (text, unique=false, word=false) {
 
 
 
+function charChecker () {
+	// scan the text in the text area for unexpected characters/sequences and report
+	
+	var text = getHighlightedText(_output)
+
+    var out = '<table class="charChecker"><thead>'
+    out += '<tr><th>&nbsp;</th><th>NOT recommended</th><th>&nbsp;</th><th>Recommended</th></tr>'
+    out += '</thead><tbody>'
+    
+    for (var i=0;i<window.charCheckerList.length;i++) {
+        var wrong = new RegExp(charCheckerList[i].wrong,"g")
+        var matchListWrong = text.match(wrong)
+        if (matchListWrong === null) matchListWrong = []
+        var right = new RegExp(charCheckerList[i].right,"g")
+        var matchListRight = text.match(right)
+        if (matchListRight === null) matchListRight = []
+        //console.log(matchList)
+        //if (matchList && matchList.length > 0) console.log('Found ',charCheckerList[i].wrong,matchList.length,'times.')
+        out += `<tr>`
+        out += `<td class="cCheckCount`
+        if (matchListWrong.length > 0)  out += ` cCheckHighlight`
+        out += `">${ matchListWrong.length }</td>
+        <td class="cCheckWrong">${ makeCharacterLink(charCheckerList[i].wrong,'', 'ks', 'rtl') }</td>
+        <td class="cCheckCount">${ matchListRight.length }</td>
+        <td class="cCheckRight">${ makeCharacterLink(charCheckerList[i].right,'', 'ks', 'rtl') }</td>
+        </tr>`
+        }
+    
+    out += '</tbody></table>'
+    
+    document.getElementById('transcription').innerHTML = out
+	document.getElementById('transcription').contentEditable = true
+	document.getElementById('transcriptionWrapper').style.display = 'block' 
+	}
+
+
+
+
+function charChecker () {
+	// scan the text in the text area for unexpected characters/sequences and report
+	
+	var text = getHighlightedText(_output)
+
+    var out = '<table class="charChecker"><thead>'
+    out += '<tr><th>&nbsp;</th><th>NOT recommended</th><th>&nbsp;</th><th>Recommended</th></tr>'
+    out += '</thead><tbody>'
+    
+    for (var i=0;i<window.charCheckerList.length;i++) {
+        var wrong = new RegExp(charCheckerList[i].wrong,"g")
+        var matchListWrong = text.match(wrong)
+        if (matchListWrong === null) matchListWrong = []
+        var right = new RegExp(charCheckerList[i].right,"g")
+        var matchListRight = text.match(right)
+        if (matchListRight === null) matchListRight = []
+        //console.log(matchList)
+        //if (matchList && matchList.length > 0) console.log('Found ',charCheckerList[i].wrong,matchList.length,'times.')
+        out += `<tr>`
+        out += `<td class="cCheckCount`
+        if (matchListWrong.length > 0)  out += ` cCheckHighlight`
+        out += `">${ matchListWrong.length }</td>
+        <td class="cCheckWrong">${ makeCharacterLink(charCheckerList[i].wrong,'', 'ks', 'rtl') }</td>
+        <td class="cCheckCount">${ matchListRight.length }</td>
+        <td class="cCheckRight">${ makeCharacterLink(charCheckerList[i].right,'', 'ks', 'rtl') }</td>
+        <td class="cCheckFix"><button onclick="_output.value = _output.value.replace(/${ charCheckerList[i].wrong }/g,'${ charCheckerList[i].right }'); charChecker();">Fix</button></td>
+        </tr>`
+        }
+    
+    out += '</tbody></table>'
+    
+    document.getElementById('transcription').innerHTML = out
+	document.getElementById('transcription').contentEditable = true
+	document.getElementById('transcriptionWrapper').style.display = 'block' 
+	}
+
+
+
+
 
 
 
