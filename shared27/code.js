@@ -2086,7 +2086,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 
 function makeCharacterLink (cp, block, lang, direction) { 
 	// returns markup with information about cp
-	// only wraps in a link if not on r12a.github.io
+	// only wraps in a link if not on r12a.github.io or block !== ''
 	// cp: a unicode character, or sequence of unicode characters
 	// block: default directory for scripts block file
 	// lang: the BCP47 language tag for the context
@@ -2105,7 +2105,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 	var out = '<span class="codepoint" translate="no">'
 	var charstr = ''
 	if (shortForm) {
-		out += '<span lang="'+lang+'"'+direction+'>'
+		out += '<bdi lang="'+lang+'"'+direction+'>'
 		for (let i=0;i<chars.length;i++) {
 			charstr = String.fromCodePoint(chars[i])
 			var mark = false
@@ -2119,7 +2119,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 			else return 'Character not found in database.'
 			out += cbase+'&#x'+hex+';'
 			}
-		out += '</span> '
+		out += '</bdi> '
 		}
 	
 	else {
@@ -2139,7 +2139,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 				if (direction === 'rtl') dir = ' dir="rtl"'
 				}
 			else return 'Character not found in database.'
-			out += '<span lang="'+lang+'"'+dir+'>'+cbase+'&#x'+hex+';</span> '
+			out += '<bdi lang="'+lang+'"'+dir+'>'+cbase+'&#x'+hex+';</bdi> '
 			}
 		}
 
@@ -2154,14 +2154,14 @@ function makeCharacterLink (cp, block, lang, direction) {
 		var name = charData[charstr]
 
 
-		if (! window.location.href.match('r12a.github.io')) {
+        if (! window.location.href.match('r12a.github.io') && block !== '') {
 			var char = String.fromCodePoint(chars[i])
 			//if (spreadsheetRows[char] && spreadsheetRows[char][cols.block]) block = '/scripts/'+spreadsheetRows[char][cols.block]+'/block'
 			//console.log(spreadsheetRows)
 			out +=  '<a href="'+block+'#char'+hex+'">'
 			}
 		out +=  '<span class="uname">U+'+hex+' '+name+'</span>'
-		if (! window.location.href.match('r12a.github.io')) out +=  '</a>'
+		if (! window.location.href.match('r12a.github.io') && block !== '') out +=  '</a>'
 		if (i===chars.length-1) out += ']'
 		}
     out += '</span> '
