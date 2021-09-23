@@ -5,6 +5,59 @@ globals.typeAssist = ' ✓'
 globals.showKeysTranslitToggle = false
 
 
+window.charCheckerList = [
+{ wrong:"ٳ", right:"اٟ", freq:0 },
+{ wrong:"ێ", right:"یٚ", freq:0 },
+{ wrong:"ۆ", right:"وٚ", freq:0 },
+{ wrong:"ځ", right:"حٔ", freq:0 },
+{ wrong:"ݬ", right:"رٔ", freq:0 },
+{ wrong:"ࢡ", right:"بٔ", freq:0 },
+{ wrong:"ي", right:"ی", freq:0 },
+{ wrong:"ئ", right:"یٔ", freq:0 },
+{ wrong:"ك", right:"ک", freq:0 },
+{ wrong:"ٛ", right:"ْ", freq:0 },
+{ wrong:"ٮ۪", right:"ؠ", freq:0 },
+{ wrong:"ۅ", right:"ۄ", freq:0 },
+//{ wrong:"", right:"", freq:0 },
+//{ wrong:"", right:"", freq:0 },
+]
+
+function charChecker () {
+	// scan the text in the text area for unexpected characters/sequences and report
+	
+	var text = getHighlightedText(_output)
+
+    var out = '<table class="charChecker"><thead>'
+    out += '<tr><th>&nbsp;</th><th>NOT recommended</th><th>&nbsp;</th><th>Recommended</th></tr>'
+    out += '</thead><tbody>'
+    
+    for (var i=0;i<window.charCheckerList.length;i++) {
+        var wrong = new RegExp(charCheckerList[i].wrong,"g")
+        var matchListWrong = text.match(wrong)
+        if (matchListWrong === null) matchListWrong = []
+        var right = new RegExp(charCheckerList[i].right,"g")
+        var matchListRight = text.match(right)
+        if (matchListRight === null) matchListRight = []
+        //console.log(matchList)
+        //if (matchList && matchList.length > 0) console.log('Found ',charCheckerList[i].wrong,matchList.length,'times.')
+        out += `<tr>
+        <td class="cCheckCount">${ matchListWrong.length }</td>
+        <td class="cCheckWrong">${ makeCharacterLink(charCheckerList[i].wrong,'', 'ks', 'rtl') }</td>
+        <td class="cCheckCount">${ matchListRight.length }</td>
+        <td class="cCheckRight">${ makeCharacterLink(charCheckerList[i].right,'', 'ks', 'rtl') }</td>
+        </tr>`
+        }
+    
+    out += '</tbody></table>'
+    
+    document.getElementById('transcription').innerHTML = out
+	document.getElementById('transcription').contentEditable = true
+	document.getElementById('transcriptionWrapper').style.display = 'block' 
+	}
+
+
+
+
 
 function localInitialise () {
 
