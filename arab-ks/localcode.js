@@ -6,54 +6,22 @@ globals.showKeysTranslitToggle = false
 
 
 window.charCheckerList = [
-{ wrong:"ٳ", right:"اٟ", freq:0 },
-{ wrong:"ێ", right:"یٚ", freq:0 },
-{ wrong:"ۆ", right:"وٚ", freq:0 },
-{ wrong:"ځ", right:"حٔ", freq:0 },
-{ wrong:"ݬ", right:"رٔ", freq:0 },
-{ wrong:"ࢡ", right:"بٔ", freq:0 },
-{ wrong:"ي", right:"ی", freq:0 },
-{ wrong:"ئ", right:"یٔ", freq:0 },
-{ wrong:"ك", right:"ک", freq:0 },
-{ wrong:"ٛ", right:"ْ", freq:0 },
-{ wrong:"ٮ۪", right:"ؠ", freq:0 },
-{ wrong:"ۅ", right:"ۄ", freq:0 },
-//{ wrong:"", right:"", freq:0 },
-//{ wrong:"", right:"", freq:0 },
+{ wrong:"ٳ", right:"اٟ" },
+{ wrong:"ێ", right:"یٚ" },
+{ wrong:"ۆ", right:"وٚ" },
+{ wrong:"ځ", right:"حٔ" },
+{ wrong:"ݬ", right:"رٔ" },
+{ wrong:"ࢡ", right:"بٔ" },
+{ wrong:"ي", right:"ی" },
+{ wrong:"ئ", right:"یٔ" },
+{ wrong:"ك", right:"ک" },
+{ wrong:"ٛ", right:"ْ" },
+{ wrong:"ٮ۪", right:"ؠ" },
+{ wrong:"ۅ", right:"ۄ" },
+//{ wrong:"", right:"" },
+//{ wrong:"", right:"" },
 ]
 
-function charChecker () {
-	// scan the text in the text area for unexpected characters/sequences and report
-	
-	var text = getHighlightedText(_output)
-
-    var out = '<table class="charChecker"><thead>'
-    out += '<tr><th>&nbsp;</th><th>NOT recommended</th><th>&nbsp;</th><th>Recommended</th></tr>'
-    out += '</thead><tbody>'
-    
-    for (var i=0;i<window.charCheckerList.length;i++) {
-        var wrong = new RegExp(charCheckerList[i].wrong,"g")
-        var matchListWrong = text.match(wrong)
-        if (matchListWrong === null) matchListWrong = []
-        var right = new RegExp(charCheckerList[i].right,"g")
-        var matchListRight = text.match(right)
-        if (matchListRight === null) matchListRight = []
-        //console.log(matchList)
-        //if (matchList && matchList.length > 0) console.log('Found ',charCheckerList[i].wrong,matchList.length,'times.')
-        out += `<tr>
-        <td class="cCheckCount">${ matchListWrong.length }</td>
-        <td class="cCheckWrong">${ makeCharacterLink(charCheckerList[i].wrong,'', 'ks', 'rtl') }</td>
-        <td class="cCheckCount">${ matchListRight.length }</td>
-        <td class="cCheckRight">${ makeCharacterLink(charCheckerList[i].right,'', 'ks', 'rtl') }</td>
-        </tr>`
-        }
-    
-    out += '</tbody></table>'
-    
-    document.getElementById('transcription').innerHTML = out
-	document.getElementById('transcription').contentEditable = true
-	document.getElementById('transcriptionWrapper').style.display = 'block' 
-	}
 
 
 
@@ -71,7 +39,6 @@ var _h = {
 '633': ['634'],
 '628': ['62A', '628', '679', '67E', '62B'],
 '62A': ['628', '679', '67E', '62B', '628'],
-'628': ['679', '67E', '62B', '628', '62A'],
 '679': ['67E', '62B', '628', '62A', '628'],
 '67E': ['62B', '628', '62A', '628', '679'],
 '62B': ['628', '62A', '628', '679', '67E'],
@@ -83,7 +50,6 @@ var _h = {
 '648': ['632', '631', '648', '6C6', '6C4', '6C4622', '648657', '62F', '688', '630'],
 '632': ['631', '648', '6C6', '6C4', '6C4622', '648657', '62F', '688', '630', '648'],
 '631': ['648', '6C6', '6C4', '6C4622', '648657', '62F', '688', '630', '648', '632'],
-'648': ['6C6', '6C4', '6C4622', '648657', '62F', '688', '630', '648', '632', '631'],
 '6C6': ['6C4', '6C4622', '648657', '62F', '688', '630', '648', '632', '631', '648'],
 '6C4': ['6C4622', '648657', '62F', '688', '630', '648', '632', '631', '648', '6C6'],
 '6C4622': ['648657', '62F', '688', '630', '648', '632', '631', '648', '6C6', '6C4'],
