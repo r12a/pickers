@@ -2158,7 +2158,9 @@ function makeCharacterLink (cp, block, lang, direction) {
 			var char = String.fromCodePoint(chars[i])
 			//if (spreadsheetRows[char] && spreadsheetRows[char][cols.block]) block = '/scripts/'+spreadsheetRows[char][cols.block]+'/block'
 			//console.log(spreadsheetRows)
-			out +=  '<a href="'+block+'#char'+hex+'">'
+            block = block.replace(/\/scripts\//,'')  // these 2 lines for backward compat
+            block = block.replace(/\/block/,'')
+			out +=  '<a href="/scripts/'+block+'/block#char'+hex+'">'
 			}
 		out +=  '<span class="uname">U+'+hex+' '+name+'</span>'
 		if (! window.location.href.match('r12a.github.io') && block !== '') out +=  '</a>'
