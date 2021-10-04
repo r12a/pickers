@@ -26,6 +26,7 @@ var template = {}
     template.sample = "(۲) هر کس حق دارد هر کشوری و از جمله کشور خود را ترک کند یا به کشور خود باز گردد."
     template.blocklocation= 'arabic'  // blocklocation to use for examples
 	template.noteslocation = 'arabic/arab-fa' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/arabic/pes_vocab' // location of term database, full url
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'arab-fa'
 	template.scriptcode = 'Arab'
