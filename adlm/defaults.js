@@ -27,6 +27,7 @@ var template = {}
 	template.sampleSource = 'UDHR https://unicode.org/udhr/d/udhr_fuf_adlm.html'
     template.blocklocation= '/scripts/adlam/block'  // blocklocation to use for examples
 	template.noteslocation = 'adlam/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/adlam/fuf_vocab' // location of term database, full url
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'adlm'
 	template.scriptcode = 'Adlm'
