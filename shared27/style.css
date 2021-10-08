@@ -426,6 +426,25 @@ span.c {
 	font-size: 200%; 
 	color: #F00;
 	}
+#panelShare { 
+	position: fixed; 
+	bottom: 30px; 
+	right: 30px;
+    right: 28%;
+	width: 8em; 
+	background-color:#faead8; 
+	background-color:white; 
+	border: 1px solid chocolate; 
+	border: 1px solid tan; 
+	box-shadow: 7px 7px 5px #888; 
+	padding: 5px 10px 5px 15px; 
+	border-radius: 5px; 
+	z-index:4000;
+	text-align: start;
+	max-height: 80%;
+	overflow: auto;
+    font-size: 1rem;
+	}
 
 
 .smallprint {
@@ -1282,7 +1301,12 @@ summary:hover {
     }
     
   
-
+rb {
+    color: chocolate;
+    }
+rt {
+    color: gray;
+    }
 
 
 
