@@ -14,6 +14,9 @@ globals.showTranslit =  ''
 globals.showKeyboard = ''
 globals.keyHints = 'key'
 var _output
+var marks = new Set()
+
+
 
 
 
@@ -2190,7 +2193,7 @@ function displayDBInfo (cp, block, lang, direction, showAll) {
     out += '<div style="text-align:center; margin-block-end: .5em;">'
     out += '<button onclick="sieveFor(\'analysisIPA\')">Show IPA</button> '
     out += '<button onclick="sieveFor(\'analysisTransc\')">Show Transcription</button> '
-    out += '<button onclick="sieveFor(\'dbCharName\')">List Codepoints</button>'
+    //out += '<button onclick="sieveFor(\'dbCharName\')">List Codepoints</button>'
     out += '</div>'
 	
 	out += '<span id="textAnalysis" style="display:flex; flex-direction:column;">'
