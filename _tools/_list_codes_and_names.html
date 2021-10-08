@@ -80,23 +80,26 @@ function makeCharsetObject () {
 	
 </script>
 <style>
-p, input, #character, #inputArea  { font-size: 200%; }
+p, input, #character, #inputArea  { font-size: 140%; }
+#inputArea { float: left; margin-inline-end: 2em; width: 10%; height: 850px; }
+#output { float: left; width: 80%; height: 800px; }
 </style>
 </head>
 
 <body>
-<p>Make a list of names to paste to google sheets</p>
-<p>Copy a column of characters here:</p>
-<p><button onClick="document.getElementById('inputArea').value = '';">Clear input</button> &nbsp; 
-<label style="font-size: .5em;"><input type="checkbox" id="ignoreHyphens" checked> Ignore hyphens</label> &nbsp; 
+<p>Make a list of Unicode names to paste to google sheets</p>
+<p><button onClick="document.getElementById('inputArea').value = '';">Clear input</button> &nbsp; &nbsp; <label style="font-size: .5em;"><input type="checkbox" id="ignoreHyphens" checked> Ignore hyphens</label>  &nbsp; 
 <label style="font-size: .5em;">Remove duplication of: <input type="text" id="delete"></label></p>
-<p>&nbsp;
-<textarea dir="ltr" id="inputArea" style="width: 90%; height: 200px;"></textarea></p>
+<p>
+<textarea dir="ltr" id="inputArea" placeholder="Copy a column of characters here."></textarea></p>
 
 <p><button type="submit" onClick="document.getElementById('output').value  = makeCharsetObject(document.getElementById('inputArea').value); document.getElementById('output').select(); return false;">Create lists!</button></p>
 
-<p>&nbsp;
-<textarea id="output" style="width: 90%; height: 600px;"></textarea></p>
+
+<p><textarea id="output"></textarea></p>
+
+<br clear="all">
+
 
 </body>
 </html>
