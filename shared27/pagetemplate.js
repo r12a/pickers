@@ -198,7 +198,7 @@ out += `</header>
 <button  id="showDB" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false)" 
 title="Show information in the database for each character."  onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Analyse<br/>text</button>
 
-<button onclick="showCodepoints()" title="Show a list of code points for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show<br/>codepoints</button>
+<button onclick="showCodepoints()" title="Show a list of code points for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show<br/>components</button>
     
  ` 
 
@@ -234,9 +234,11 @@ for (let i=0;i<window.controls.length;i++){
 	}
 
 out += ` 
-<button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" title="Create source code for an example." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Make<br>example</button>
+<button onclick="openVocabWindow(template.vocablocation); return false;" title="Search for examples containing the highlighted text." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Find<br>examples</button>
+
+<button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" title="Create source code for an example." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Mark up<br>example</button>
     
-<button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character<br/>markup</button>
+<button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Mark up<br/>character</button>
     
 <img src="../shared27/images/menu.png" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="if (document.getElementById(\'pulldown\').style.display===\'none\') {document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\'}; document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();"/>
 
