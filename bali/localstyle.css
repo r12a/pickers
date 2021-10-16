@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'Vimala WF';
+    src: local('Vimala'),
+        url('../../shared/webfonts/Vimala.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
     font-family: 'Aksara Bali WF';
     src: url('/shared/webfonts/AksaraBaliwebfont.woff2') format('woff2'),
          url('/shared/webfonts/AksaraBaliwebfont.woff') format('woff');
@@ -21,7 +28,7 @@
 	}
 
 
-[lang=ban] { font-family: 'Aksara Bali WF', 'Noto Serif Balinese WF', serif; }
+[lang=ban] { font-family: "Vimala", 'Aksara Bali WF', 'Noto Serif Balinese WF', serif; }
 
 
 
@@ -43,10 +50,12 @@ span.hint {
 .x {
 	display: none;
 	}
+.k .c {
+    color: brown;
+    }    
 .x .c {
 	color: chocolate;
 	}
-    
     
 /* KEYBOARD */
 .key span { 
@@ -68,13 +77,14 @@ span.hint {
  	flex-direction: row;
 	line-height: 1.2;
     justify-content: center;
+    align-content: flex-start;
     }
 #ivowelGrid {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 	margin-right: 1em;
-	line-height: 2em;
+	line-height: 1.6;
     }
 #ivowelGrid div {
 	display: flex;
@@ -125,6 +135,7 @@ span.hint {
     flex-direction: column;
     justify-content:flex-start;
     text-align: end;
+    margin-inline-start: 1em;
     }
 #tones {
     display: flex;
