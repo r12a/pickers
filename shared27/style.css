@@ -5,7 +5,7 @@
     font-style: normal;
 	}
 @font-face {
-    font-family: 'Doulos SIL WF';
+    font-family: 'ExtendedLatinWF';
     src: url('/shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2'),
          url('/shared/webfonts/DoulosSIL-R.woff') format('woff');
     font-weight: normal;
@@ -989,7 +989,7 @@ summary:hover {
     left:15px; 
     background-color:white; 
     color: #999;
-    font-family: "doulos sil wf", "doulos sil";
+    font-family: "ExtendedLatinWF", "doulos sil";
     font-size: 1.5em;
 	
 	bottom: -50px;
@@ -1000,7 +1000,7 @@ summary:hover {
 #charChoice {
     background-color:white; 
     color: #999;
-    font-family: "doulos sil wf", "doulos sil";
+    font-family: "ExtendedLatinWF", "doulos sil";
     font-size: 1.5em;
     }
 #charChoice span {
@@ -1248,11 +1248,21 @@ summary:hover {
 
 
 
-#listOutputHorizontal { display: flex; flex-direction: row; }
+#listOutputHorizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    line-height: 2;
+    }
 .xitem { display: flex; flex-direction: column; flex-wrap: nowrap; margin-inline-end: .5em;  }
 .xitem span { text-align: center; }
 .xitemSrc { height: 2em; display: inline-block; }
-.xitemRes { border: 1px solid chocolate; padding: .25em; border-radius: .25em; }
+.xitemRes {
+    border: 1px solid chocolate;
+    padding: .25em;
+    border-radius: .25em; 
+    font-family: 'ExtendedLatinWF';
+    }
 .xitemHide { color: #ccc; border: 1px dotted #ccc; }
 
 
@@ -1333,7 +1343,7 @@ rt {
     }
 .rt {
     line-height: 1;
-    font-family: 'Doulos SIL WF';
+    font-family: 'ExtendedLatinWF';
     font-size: 1.15rem;
     font-style: italic;
     font-weight: 300;
