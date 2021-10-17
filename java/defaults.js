@@ -34,7 +34,7 @@ var template = {}
 	template.fontLocale = 'java'
 	template.hints = true
 	
-	template.defaultSpace = '\u200B'
+	template.defaultSpace = ' '
 	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
 	['NNBSP','\u202F'], ['EMSP','\u2003']]
 	template.defaultInvisible = '꧀'
