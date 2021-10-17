@@ -28,7 +28,20 @@ return str.trim()
 
 
 
+function addInherent (str) {
+    // used by Analyse Text to insert inherent vowels
+    
+    var initials = new Set(['ᬓ', 'ᬔ', 'ᬕ', 'ᬖ', 'ᬗ', 'ᬘ', 'ᬙ', 'ᬚ', 'ᬛ', 'ᬜ', 'ᬝ', 'ᬞ', 'ᬟ', 'ᬠ', 'ᬡ', 'ᬢ', 'ᬣ', 'ᬤ', 'ᬥ', 'ᬦ', 'ᬧ', 'ᬨ', 'ᬩ', 'ᬪ', 'ᬫ', 'ᬬ', 'ᬭ', 'ᬮ', 'ᬯ', 'ᬰ', 'ᬲ', 'ᬱ', 'ᬳ', 'ᬚ᬴', 'ᬧ᬴', 'ᬯ᬴', 'ᬓ᬴', 'ᬳ᬴', 'ᬕ᬴', 'ᬗ᬴'])
 
+    var killers = new Set(['᭄', 'ᬶ', 'ᬷ', 'ᬸ', 'ᬹ', 'ᬾ', 'ᭀ', 'ᭂ', 'ᭃ', 'ᬵ', 'ᬿ', 'ᭁ', 'ᬺ', 'ᬻ', 'ᬼ', 'ᬽ']) // adeg-adeg, vowel-signs
+    
+    var chars = [...str]
+    chars.push(' ')
+    for (var i=0;i<chars.length;i++) {
+        if (initials.has(chars[i]) && ! killers.has(chars[i+1])) chars[i] += '‒'
+        }
+    return chars.join('').trim()
+    }
 
 
 
