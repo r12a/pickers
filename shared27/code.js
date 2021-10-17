@@ -675,6 +675,7 @@ function getExample (str, lang, dir) {
 
 
 
+
 function toggleExtraControls () {
 	var divs = document.getElementById('extracontrols').querySelectorAll('.control')
 	var toggle = document.getElementById('showMoreControls')
@@ -776,9 +777,9 @@ function add (ch) {
 function selectFont ( newFont ) {
 	// sets a font-family for text area, and panel title
 	if (newFont.match('"') || newFont.match(',')) { alert('Use a single font with no quotes.'); return }
-	document.getElementById( 'output' ).style.fontFamily = "'"+newFont+"', 'Doulos SIL WF'"
-	document.querySelector('#panel #title').style.fontFamily ="'"+newFont+"', 'Doulos SIL WF'"
-	document.querySelector('#transcription').style.fontFamily ="'Doulos SIL WF', '"+newFont+"', 'Gentium Plus', 'Charis Sil', Gentium, serif"
+	document.getElementById( 'output' ).style.fontFamily = "'"+newFont+"', 'ExtendedLatinWF'"
+	document.querySelector('#panel #title').style.fontFamily ="'"+newFont+"', 'ExtendedLatinWF'"
+	document.querySelector('#transcription').style.fontFamily ="'ExtendedLatinWF', '"+newFont+"', 'Gentium Plus', 'Charis Sil', Gentium, serif"
 	document.getElementById( 'cursive' ).style.fontFamily = "'"+newFont+"'"
 	//document.getElementById('fontName').value="";
 
@@ -850,7 +851,7 @@ function setUIFont (font) {
 		chars[i].style.fontFamily = '"'+font+'"'
 		}
 	document.querySelector('#extrashapes').style.fontFamily = '"'+font+'"'
-	document.querySelector('#transcriptionChoice').style.fontFamily = "\'Doulos SIL WF\', \''+font+'\'"
+	document.querySelector('#transcriptionChoice').style.fontFamily = "\'ExtendedLatinWF\', \''+font+'\'"
 	
 	defaults.uifont = font
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
@@ -862,7 +863,7 @@ function setUIFont (font) {
 	document.querySelector('#alphabet').style.fontFamily = '"'+font+'"'
     document.querySelector('#extrashapes').style.fontFamily = '"'+font+'"'
     document.querySelector('#shapelist').style.fontFamily = '"'+font+'"'
-	document.querySelector('#transcriptionChoice').style.fontFamily = "'Doulos SIL WF', '"+font+"'"
+	document.querySelector('#transcriptionChoice').style.fontFamily = "'ExtendedLatinWF', '"+font+"'"
     
     document.getElementById('uiFont').value = font
 	
@@ -1583,7 +1584,7 @@ function setGridHints (type) {
 			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ipaLoc]) {
-				keyContent = window.spreadsheetRows[content][cols.ipaLoc] ? window.spreadsheetRows[content][cols.ipaLoc] : ''
+				keyContent = window.spreadsheetRows[content][cols.ipaLoc] ? window.spreadsheetRows[content][cols.ipaLoc].toLowerCase() : ''
 				hintNode.textContent = keyContent
 				}
 			}
@@ -2187,6 +2188,11 @@ function displayDBInfo (cp, block, lang, direction, showAll) {
 
 	//var chars = []
 	//convertStr2DecArray(cp, chars)
+    
+    
+    // add inherent vowels
+    if (typeof addInherent === 'function') cp = addInherent(cp)
+    
 	var chars = [...cp]
     var out = ''
     
@@ -2482,6 +2488,7 @@ function buildDBInfoLineLESSOLD (char, toplevel, originStr, ptr, showAll) {
 
 
 //function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
+
 
 
 function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
@@ -3043,7 +3050,7 @@ function drawCharSelectionPanelSAVED (key) {
 		if (! window.latinTypeAssist) out += ' <sup>'+ kbdEventList[key][i][0] +'</sup>'
 		else out += ' <sup></sup>'
 		out += '<sub>'+ ((i+1) % 10)+'</sub> '
-		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'Doulos SIL WF\';" onclick="'
+		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'ExtendedLatinWF\';" onclick="'
 		out += 'addReplacement'
 		out += '(\''+kbdEventList[key][i][1]+'\'); document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+kbdEventList[key][i][1]+'</bdi>'
 		}
@@ -3075,7 +3082,7 @@ function drawCharSelectionPanel (key) {
 			}
 		else out += ' <sup></sup>'
 		out += '<sub>'+ ((i+1) % 10)+'</sub> '
-		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'Doulos SIL WF\';" onclick="'
+		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'ExtendedLatinWF\';" onclick="'
 		out += 'addReplacement'
 		out += '(\''+kbdEventList[key][i][1]+'\'); document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+kbdEventList[key][i][1]+'</bdi>'
 		}
@@ -3109,7 +3116,7 @@ function drawCharSelectionPanel (key) {
 			}
 		else out += ' <sup></sup>'
 		out += '<sub>'+ ((i+1) % 10)+'</sub> '
-		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'Doulos SIL WF\';" onclick="'
+		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'ExtendedLatinWF\';" onclick="'
 		out += 'addReplacement'
 		out += '(\''+kbdEventList[key][i][1]+'\'); document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+kbdEventList[key][i][1]+'</bdi>'
 		}
@@ -3144,7 +3151,7 @@ function drawCharSelectionPanel (key) {
 			}
 		else out += ' <sup></sup>'
 		out += '<sub>'+ ((i+1) % 10)+'</sub>'
-		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'Doulos SIL WF\';" onclick="'
+		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'ExtendedLatinWF\';" onclick="'
 		out += 'addReplacement'
 		out += '(\''+kbdEventList[key][i][1]+'\', window.autoInsertedFromPalette); document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+kbdEventList[key][i][1]+'</bdi>'
         out += '</span>'
