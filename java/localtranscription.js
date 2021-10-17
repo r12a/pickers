@@ -13,6 +13,30 @@ function localtranscribe (direction, str) {
 
 
 
+
+
+
+function addInherent (str) {
+    // used by Analyse Text to insert inherent vowels
+    
+    var initials = new Set(['ꦥ', 'ꦠ', 'ꦕ', 'ꦛ', 'ꦏ', 'ꦧ', 'ꦢ', 'ꦗ', 'ꦝ', 'ꦒ', 'ꦦ', 'ꦡ', 'ꦖ', 'ꦑ', 'ꦨ', 'ꦟ', 'ꦘ', 'ꦓ', 'ꦱ', 'ꦯ', 'ꦲ', 'ꦩ', 'ꦤ', 'ꦚ', 'ꦔ', 'ꦮ', 'ꦫ', 'ꦉ', 'ꦭ', 'ꦊ', 'ꦪ', 'ꦀ'])
+
+    var killers = new Set(['꧀', 'ꦀ', '◌', 'ꦶ', '◌', 'ꦸ', '◌', 'ꦺ', '◌', 'ꦺ', 'ꦴ', '◌', 'ꦼ', '◌ꦽ', '◌ꦾ', '◌ꦿ']) // adeg-adeg, vowel-signs
+    
+    var chars = [...str]
+    chars.push(' ')
+    for (var i=0;i<chars.length;i++) {
+        if (initials.has(chars[i]) && ! killers.has(chars[i+1])) chars[i] += '‒'
+        }
+    return chars.join('').trim()
+    }
+
+
+
+
+
+
+
 function transliterate (str) {
 
 str = ' '+str
