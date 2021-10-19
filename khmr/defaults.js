@@ -32,7 +32,7 @@ var template = {}
 	template.fontLocale = 'khmr'
 	template.hints = true
 	
-	template.defaultSpace = '\u200B'
+	template.defaultSpace = ' '
 	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
 	['NNBSP','\u202F'], ['EMSP','\u2003'], ['1/6SP','\u2006']]
 	template.defaultInvisible = '\u17D2'
@@ -45,8 +45,12 @@ var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Khmer text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
 
 
+]
 
-{"title":"Make<br/>vocab", "alt":"Expand a line to create an entry for a vocab file.", 
+
+
+var pulldown = [
+{"title":"Make vocab", "alt":"Expand a line to create an entry for a vocab file.", 
 "warning":"Remember to separate the syllables first!<br>IPA is supplied automatically, but needs to be checked.", 
 
 "code":`_output=document.getElementById('output'); 
@@ -63,11 +67,7 @@ add(getVocabWithAlt(condense(term), meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
 
-]
 
-
-
-var pulldown = [
 {"title":"Show syllables", "alt":"Attempt to split the text into syllables.", "code":"add(syllabify(getHighlightedText(_output)));_output.focus();", "warning":"Incomplete! You need to adjust."},
 
 {"title":"Khmer to UNGEGN", "alt":"Convert Khmer text to a rough UNGEGN transcription.", "code":"doTranscription('toUNGEGN')", "warning":"Still in development. Separate syllables before use."},
