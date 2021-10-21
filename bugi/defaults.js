@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "ᨔᨗᨊᨗᨊ ᨑᨘᨄ ᨈᨕᨘ ᨑᨗ ᨍᨍᨗᨕᨂᨗ ᨑᨗᨒᨗᨊᨚᨕᨙ ᨊᨄᨘᨊᨕᨗ ᨆᨊᨙᨂᨗ ᨑᨗᨕᨔᨙᨂᨙ ᨕᨒᨙᨅᨗᨑᨙ᨞"
 	template.blocklocation= 'buginese'  // blocklocation to use for examples
 	template.noteslocation = 'buginese/' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/buginese/bug_vocab' // location of term database (adds link to share menu)
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'bugi'
 	template.scriptcode = 'Bugi'
