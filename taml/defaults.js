@@ -45,8 +45,14 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br>literate", "alt":"Convert Tamil text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')", "warning":"Produce a codepoint-by-codepoint, reversible Latin transliteration."},
+]
 
-{"title":"Make<br/>vocab", "alt":"Expand a line to create an entry for a vocab file.", 
+
+
+
+
+var pulldown = [
+{"title":"Make vocab", "alt":"Expand a line to create an entry for a vocab file.", 
 
 "code":`_output=document.getElementById('output'); 
 input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
@@ -61,13 +67,6 @@ notes = input[4]? input[4] : '';
 add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
-]
-
-
-
-
-
-var pulldown = [
 
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('translitPlus')", "warning":"Normalises text, adds inherent vowels, and simplifies some sequences. The result should be checked."},
 
