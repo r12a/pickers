@@ -50,8 +50,14 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Hebrew text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+]
 
-{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output')
+
+
+var pulldown = [
+{"title":"Remove vowels", "alt":"Remove points from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
+
+{"title":"Make vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output')
 input=replaceSlash(getHighlightedText(_output),'|').split('|')
 if (! hasHighlight(_output)) _output.value=''; 
 
@@ -65,12 +71,6 @@ notes = input[4]? input[4] : '';
 add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
-]
-
-
-
-var pulldown = [
-{"title":"Remove vowels", "alt":"Remove points from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 ]
 
 
