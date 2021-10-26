@@ -236,9 +236,9 @@ for (let i=0;i<window.controls.length;i++){
 out += ` 
 <button onclick="openVocabWindow(template.vocablocation); return false;" title="Search for examples containing the highlighted text." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Find<br>examples</button>
 
-<button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" title="Create source code for an example." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Mark up<br>example</button>
+<button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" title="Create source code for an example." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Example<br>markup</button>
     
-<button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Mark up<br/>character</button>
+<button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character<br/>markup</button>
     
 <img src="../shared27/images/menu.png" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="if (document.getElementById(\'pulldown\').style.display===\'none\') {document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\'}; document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();"/>
 
@@ -340,7 +340,7 @@ for (let i=0;i<window.pulldown.length;i++){
     out += 'onmouseout="hideMenuText();'
     if (warningMsg) out += warningLocn+'.style.display=\'none\';'
     out += '" '
-    out += 'title="'+window.pulldown[i].alt+'">'+window.pulldown[i].title+'</button><br/>\n\n'
+    out += 'title="'+window.pulldown[i].alt+'">'+window.pulldown[i].title+'</button>\n\n'
 	}
 	}
 
