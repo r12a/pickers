@@ -52,7 +52,34 @@ var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Arabic text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
 
-{"title":"Make<br/>vocab", "alt":"Expand a line to create an entry for a vocab file.", 
+]
+
+
+var pulldown = [
+
+
+{"title":"Make termbase entry", "alt":`Create an entry for the termbase. Must start with vowelled-arabic and use | separator. Optional: meaning, ipa, transcription`, 
+
+"code":`
+_output=document.getElementById('output'); 
+_output.value = _output.value.trim()
+input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+term = input[0].trim();
+meaning = input[1]? input[1].trim() : '';
+ipa = input[2]? input[2].trim() : '';
+transc = input[3]? input[3].trim() : '';
+notes = input[4]? input[4].trim() : '';
+
+if (notes === '') notes = removeVowels(input[0]);
+
+add( term.trim()+'|'+meaning.trim()+'|'+ipa.trim()+'|'+transc.trim()+'|'+notes.trim()+'\\n');
+add( notes.trim()+'|'+meaning.trim()+'|'+ipa.trim()+'|'+transc.trim()+'|'+term.trim()+'\\n');
+`
+},
+
+/*{"title":"Make vocab", "alt":"Expand a line to create an entry for a vocab file.", 
 
 "code":`_output=document.getElementById('output'); 
 input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
@@ -67,10 +94,7 @@ notes = input[4]? input[4] : '';
 add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
-]
-
-
-var pulldown = [
+*/
 
 {"title":"Remove vowels", "alt":"Remove harakat, etc. from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 
