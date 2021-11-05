@@ -3468,7 +3468,7 @@ function toggleInvisibles () {
         { cp:"\u2003", abbr:"ᵉᵐˢᵖ"},
         { cp:"\u2009", abbr:"ᵗʰˢᵖ"},
         { cp:"\u2007", abbr:"ᶠˢᵖ"},
-        { cp:"\u0020", abbr:"ˢᵖ"},
+        //{ cp:"\u0020", abbr:"⁺"},
 		
 		// miao tones
         { cp:"\u{16F90}", abbr:"ᵐᵗᵗʳ"},
