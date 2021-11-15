@@ -21,7 +21,7 @@ var webFonts = [ "Noto Sans Light WF" ]
 
 
 var template = {}
-	template.title = 'Bamanankan character app'
+	template.title = 'Bamanan character app'
 	template.sample = "Hadamaden bɛɛ danmakɛɲɛnen bɛ bange, danbe ni josira la. Hakili ni taasi bʼu bɛɛ la, wa u ka kan ka badenɲasira de waleya u ni ɲɔgɔn cɛ."
 	template.blocklocation= 'latin'  // blocklocation to use for examples
 	template.noteslocation = 'latin/bm' // location of script notes relevant to this app
@@ -55,7 +55,7 @@ var pulldown = [
 
 
 var inputAids = [
-/*{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type Bamanankan from the keyboard."},
+/*{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type Bamanan from the keyboard."},
 
 {"title":"More characters", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"M", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions, as well as normal letters."},
 */
@@ -63,12 +63,12 @@ var inputAids = [
 
 {"id":"showRevTransSwitch", 
 "title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
-"desc":"Use ASCII characters to type Bamanankan from the keyboard using a customised key mapping.",
+"desc":"Use ASCII characters to type Bamanan from the keyboard using a customised key mapping.",
 "dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
 },
 
-{"title":"Type assist: IPA to Bamanankan.", 
-"desc":"Use an IPA keyboard mapping to type Bamanankan from the keyboard.",
+{"title":"Type assist: IPA to Bamanan.", 
+"desc":"Use an IPA keyboard mapping to type Bamanan from the keyboard.",
 "dataShortTitle":"æ", "type":"palette",
 "initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
 },
