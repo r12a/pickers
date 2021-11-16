@@ -163,7 +163,7 @@ function setTop (title,sample) {
 var out
 
 //out = `<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">ðŸŒ“</button>
-out = `<div id="contrastSwitch" style="position:absolute;top:3px;right:14px; line-height:1;"  title="Change the contrast level." onclick="toggleContrast()">Change<br>contrast</div>
+out = `<div id="contrastSwitch" style="position:absolute;top:3px;right:14px; line-height:1;"  title="Change the contrast level." onclick="document.getElementById('access').style.display='flex'"><img src="../shared27/images/access.png" alt="Accessibility settings"></div>
 <a class="interactiveHelpButton" style="float:right; margin-right:.5em;" href="help/#contrast" target="_help" title="Help with contrast."><img alt="help" src="../images/help.png"/></a>
 
 <header>
@@ -173,6 +173,27 @@ out = `<div id="contrastSwitch" style="position:absolute;top:3px;right:14px; lin
 out += bp_appHeader('/shared/images/world.gif',template.title.replace(/ Character app/i,''),'v27');
 
 out += `</header>
+
+<!-- ACCESSIBILITY PANEL  -->
+<div id="access" style="display: none;">
+<div id="access_contrast">
+<div id="contrastChoice">
+<button id="contrastLow" class="access_selected" onClick="document.querySelector('body').classList.remove('contrast');
+	defaults.contrast = 'low'; 
+    this.classList.add('access_selected'); 
+    this.nextSibling.classList.remove('access_selected');
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)">Low contrast</button><button id="contrastHigh" onClick="
+    document.querySelector('body').classList.add('contrast');
+	defaults.contrast = 'high';
+    this.classList.add('access_selected'); 
+    this.previousSibling.classList.remove('access_selected');
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)">High contrast</button>
+</div>
+</div>
+<div id="access_fontsize">Set text size: <input type="range" min="17" max="24" step="1" value="17" oninput="document.querySelector('body').style.fontSize = this.value+'px'" style="width:12rem;"></div>
+<div style="color: white;">Font size of the selection panel and text box are set using the controls below.</div>
+<div style="margin-block-start: 1rem; font-size: 1.4rem; color: black; cursor:pointer;" onclick="this.parentNode.style.display='none';">Close X</div>
+</div>
 
 
 <div id="welcome"></div>

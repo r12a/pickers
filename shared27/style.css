@@ -20,7 +20,11 @@
 	color: chocolate;
 	}
 
-/* higher contrast settings */
+
+
+
+
+/* HIGH CONTRAST SETTINGS */
 body.contrast #chardata, 
 body.contrast #autofocusswitch, 
 body.contrast .hint, 
@@ -28,6 +32,55 @@ body.contrast summary,
 body.contrast #phonemelist span {
 	color:rgba(125,58,33,1.00);
 	}
+body.contrast #tools button {
+    color: #222;
+    }
+body.contrast #charname {
+    color: rgba(125,58,33,1.00);
+    font-size: 1.2rem;
+    }
+body.contrast #hintControls {
+    background: rgba(125,58,33,1.00);
+    }
+body.contrast .control {
+    color: rgba(125,58,33,1.00);
+	font-size: .9rem;
+    }
+body.contrast .vmtab {
+    background-color: antiquewhite;
+    color: #222;
+    }
+body.contrast .vmtab.on {
+    font-weight: bold;
+    color: chocolate;
+    font-size: 1.4rem;
+    border: 1px solid chocolate;
+    }
+body.contrast .dbCharInfo em {
+    color: chocolate;
+    }
+body.contrast .dbCharInfo, body.contrast .dbCharName {
+    line-height: 1;
+    font-size: 1.2rem;
+    }
+body.contrast #transcription {
+    color: brown;
+    border-block-end: 1px solid #aaa;
+    padding-block-end: 1rem;
+    }
+body.contrast .dbCharContainer {
+    border-block-start: 1px dotted #999;
+    padding-block-start: .4rem;
+    }
+body.contrast #pulldown button, body.contrast #shuttle button {
+    color: #222;
+    }
+/* ---------------- */
+
+
+
+
+
 
 body.app #sitelinks { 
 	margin-bottom: 2em;
@@ -1353,6 +1406,48 @@ rt {
 
 
 
+
+
+
+/* ACCESSIBLITY PANEL */
+
+#access { 
+    position:absolute; 
+    top: 50px;
+    right: 30px;
+    width: 40%;
+    background-color:#60b0f9;
+    z-index: 1000;
+    text-align: center;
+    padding: 1.4em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-radius: 1rem;
+    }
+#access_contrast, #access_fontsize {
+    padding: 1rem;
+    background: #eee;
+    border-radius: 1rem;
+    border: 1px solid gray;
+    }
+#contrastChoice {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 1rem;
+    justify-content: space-around;
+    }
+#contrastChoice button {
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: 1px solid gray;
+    border-radius: .4rem;
+    }
+.access_selected {
+    color: white;
+    background: #007bf2;
+    }
 
 
 
