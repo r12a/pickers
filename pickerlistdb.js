@@ -50,6 +50,7 @@ var plist = [
     { tag:'lana', name:'Tai&nbsp;Khün', url:'lana-kkh/' },
     { tag:'latn', name:'Latin&nbsp;&amp;&nbsp;diacritics', url:'latn-all/' },
     { tag:'latn', name:'Hausa', url:'latn-ha/' },
+    { tag:'latn', name:'Bamanan', url:'latn-bm/' },
     { tag:'latn', name:'IPA&nbsp;standard&nbsp;chart', url:'ipa/' },
     { tag:'latn', name:'IPA&nbsp;by&nbsp;place', url:'ipa2/' },
     { tag:'latn', name:'IPA&nbsp;by&nbsp;type', url:'ipa3/' },
@@ -122,6 +123,7 @@ var plistByRegion = {
 			],
 	'B':[
 			['Balinese', 'bali/'],
+			['Bamanan', 'latn-bm/'],
 			['Bamum', 'bamu/'],
 			['Bassa Vah', 'bass/'],
 			['Batak', 'batk/'],
