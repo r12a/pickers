@@ -2696,6 +2696,37 @@ function sieveForOLD (type) {
 
 
 
+
+
+
+function displayIPAorTranscriptionData (charStr, type) {
+	// shows a panel with characters alongside their transcription or IPA equivalents in the db
+    // THIS IS NOW REDUNDANT, SINCE WE NOW ANALYSE TEXT AND GENERATE FROM THERE
+	var hlist = ''
+    var items
+    
+    var charArray = [...charStr]
+
+    // find the character and/or the value we want (type)
+    for (var i=0;i<charArray.length;i++) {
+        hlist += '<span class="xitem">'
+        hlist += `<span class="xitemSrc">${ charArray[i] }</span>`
+        hlist += '<span class="xitemResults">'
+        if ( spreadsheetRows[charArray[i]] && spreadsheetRows[charArray[i]][cols[type]] ) items = spreadsheetRows[charArray[i]][cols[type]].split(' ')
+        else items = [' ']
+        for (j=0;j<items.length;j++) hlist += '<span class="xitemRes" onclick="toggleXItem(this)">'+items[j].toLowerCase()+'</span>'
+        hlist += '</span>'
+        hlist += '</span>\n'
+        }
+	
+	// display the result
+	document.getElementById('listOutput').style.display = 'block'
+	document.getElementById('listOutputHorizontal').innerHTML = hlist
+	}
+
+
+
+
 function sieveFor (type) {
 	// hide the labels
 	var hlist = ''

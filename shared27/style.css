@@ -1307,16 +1307,31 @@ summary:hover {
     flex-wrap: wrap;
     line-height: 2;
     }
-.xitem { display: flex; flex-direction: column; flex-wrap: nowrap; margin-inline-end: .5em;  }
-.xitem span { text-align: center; }
-.xitemSrc { height: 2em; display: inline-block; }
+.xitem { 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-inline-end: .5em;
+    }
+.xitem span { 
+    text-align: center;
+    }
+.xitemSrc { 
+    height: 2em;
+    display: inline-block;
+    }
 .xitemRes {
     border: 1px solid chocolate;
     padding: .25em;
     border-radius: .25em; 
     font-family: 'ExtendedLatinWF';
+    background: chocolate;
+    color: white;
     }
-.xitemHide { color: #ccc; border: 1px dotted #ccc; }
+.xitemHide {
+    color: #ccc;
+    border: 1px dotted #ccc;
+    }
 
 
 
