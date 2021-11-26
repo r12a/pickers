@@ -49,6 +49,8 @@ var plist = [
     { tag:'lana', name:'Northern&nbsp;Thai', url:'lana-nod/' },
     { tag:'lana', name:'Tai&nbsp;Khün', url:'lana-kkh/' },
     { tag:'latn', name:'Latin&nbsp;&amp;&nbsp;diacritics', url:'latn-all/' },
+    { tag:'latn', name:'Bamanan', url:'latn-bm/' },
+    { tag:'latn', name:'Fula', url:'latn-ff/' },
     { tag:'latn', name:'Hausa', url:'latn-ha/' },
     { tag:'latn', name:'Bamanan', url:'latn-bm/' },
     { tag:'latn', name:'IPA&nbsp;standard&nbsp;chart', url:'ipa/' },
@@ -160,6 +162,7 @@ var plistByRegion = {
 			  ],
 	'F':[
 			['Fraser script', 'lisu/'],
+			['Fula', 'latn-ff/'],
 			],
 	'G':[
 			['<i>Georgian</i> ['],
