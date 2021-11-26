@@ -2574,7 +2574,8 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 			if (spreadsheetRows[char][cols.block] && cols.block > 0) {
 				//out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+spreadsheetRows[char][cols.block]+'/block#char'+hex+'" target="_blank">details</a></bdi>'
                 var blockloc = template.blocklocation.replace('/scripts/','').replace('/block','') // deal with legacy
-				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+blockloc+'/block#char'+hex+'" target="_blank">details</a></bdi>'
+				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+blockloc+'/block#char'+hex+'" target="details">notes</a></bdi> • '
+				out += '<bdi onmouseover="showMenuText(\'Open a page to show character properties.\',\'tan\')" onmouseout="hideMenuText()"><a href="https://util.unicode.org/UnicodeJsps/character.jsp?a='+hex+'" target="details">properties</a></bdi>'
                 console.log('blockloc',blockloc)
 				}
 
