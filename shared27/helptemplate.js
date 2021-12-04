@@ -95,11 +95,17 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 <section id="topControls">
 <h2 href="#top_controls">Controls above the text area</h2>
 
-      <p><img src="../../shared27/images/help/top_bar.png" alt=""/></p>
-      <p>Controls above the text area (and those pulled down from the icons to the right) allow you to run various operations on the text in the box. <strong><em>Most of them work on what you have selected within the box, or on all the text in the box if nothing is selected</em></strong>.</p>
+<p><img src="../../shared27/images/help/top_bar.png" alt=""/></p>
 
+<p>Controls above the text area (and those pulled down from the icons to the right) allow you to run various operations on the text in the box. <strong><em>Most of them work on what you have selected within the box, or on all the text in the box if nothing is selected</em></strong>.</p>
+
+
+
+
+<section id="topLeftIcons">
 <h3>Icons</h3>
-      <p>The icons on the left above the input box allow you to do the following:</p>
+
+<p>The icons on the left above the input box allow you to do the following:</p>
       <blockquote>
       <img src="../../shared27/images/copy.png" alt="Copy icon"/> copy the text to the clipboard<br/>
       <img src="../../shared27/images/select.png" alt="Select icon"/> select all the text<br/>
@@ -114,8 +120,13 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 	  </details>
 	  
 <p>Find <a href="../../shared27/fontpreview" target="_blank">more information</a> about using the font preview panel, including <cite>Adding your own fonts</cite>, <cite>Identifying missing characters</cite>, and <cite>Checking coverage for a specific language</cite>.</p>
+</section>
 
 
+
+
+
+<section id="topRight">
 <h3>Controls to the right</h3>
       <p><b class="leadin">Analyze text.</b> This control is particularly useful for understanding the composition of the text. For each character highlighted (or the whole text box if nothing is highlighted) this lists information such as the following:</p>
        <ul>
@@ -173,6 +184,7 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
       <p>When you add it to your document, it will look like this.</p>
       <p><span class="codepoint" translate="no"><span lang="en">&#x04A7;</span> [<span class="uname">U+04A7 CYRILLIC SMALL LETTER PE WITH MIDDLE HOOK</span>]</span></p>
       </blockquote>
+</section>
 
 
 

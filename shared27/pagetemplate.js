@@ -164,7 +164,7 @@ var out
 
 //out = `<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">ðŸŒ“</button>
 out = `<div id="contrastSwitch" style="position:absolute;top:3px;right:14px; line-height:1;"  title="Change the contrast level." onclick="document.getElementById('access').style.display='flex'"><img src="../shared27/images/access.png" alt="Accessibility settings"></div>
-<a class="interactiveHelpButton" style="float:right; margin-right:.5em;" href="help/#contrast" target="_help" title="Help with contrast."><img alt="help" src="../images/help.png"/></a>
+
 
 <header>
 <div id="header-boilerplate"></div>
@@ -209,12 +209,12 @@ out += `</header>
   if (typeof window.charCheckerList !== 'undefined') out += `<img title="Check the text for non-recommended characters or sequences." onclick="charChecker();" src="../shared27/images/checker.png" alt="Checker" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">` // charCheckerList is defined in localcode.js
   if (typeof fontDB !== 'undefined') out += `<img title="Open the font preview panel." style="margin-left:.5em;" onclick="if (document.getElementById('fontPicker').innerHTML=='') { document.getElementById('fontPicker').innerHTML = createFontPicker(); document.getElementById('fontManagementDetails').style.display='block'} else { document.getElementById('fontPicker').innerHTML=''; document.getElementById('fontManagementDetails').style.display='none'}" src="../shared27/images/fonts.png" alt="Fonts" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
   out += `<img title="Delete all the text." onclick="deleteAll()" src="../shared27/images/clear.png" alt="Clear" style="margin-left: 1em;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
-<a class="interactiveHelpButton" href="help/#icons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
+<a class="interactiveHelpButton" href="help/#topLeftIcons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
   </span>
   
   
 <span id="tools">
-<a class="interactiveHelpButton" style="margin-right:.5em;" href="help/#top_controls" target="_help" title="Help for top level controls."><img alt="help" src="../images/help.png"/></a>
+<a class="interactiveHelpButton" style="margin-right:.5em;" href="help/#topRight" target="_help" title="Help for top level controls."><img alt="help" src="../images/help.png"/></a>
 
 <button onclick="showCodepoints()" title="Show a list of code points for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">List<br>characters</button>
 
@@ -260,8 +260,12 @@ out += `
 <button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" title="Create source code for an example." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Example<br>markup</button>
     
 <button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character<br/>markup</button>
-    
+
+<a class="interactiveHelpButton" href="help/#functionPulldown" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a>
+
 <img src="../shared27/images/menu.png" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="if (document.getElementById(\'pulldown\').style.display===\'none\') {document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\'}; document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();"/>
+
+<a class="interactiveHelpButton" href="help/#exportPulldown" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a>
 
 <img src="../shared27/images/transfer.png" alt="Export to other apps" style="vertical-align: bottom; cursor:pointer; margin-inline-end: 1em;" onclick="if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'pulldown\').style.display=\'none\'; document.getElementById(\'output\').focus();"/>
 </span>
@@ -489,6 +493,7 @@ if (inputAids.length > 0) {
 	out += `
     <div style="position:relative;">
     <div id="vertical-menu">
+	<div class="vmtab off"><a class="interactiveHelpButton" href="help/#inputAids" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a></div>
     `
 	}
 
@@ -572,8 +577,12 @@ if (template.hints) out += `<div id="hintControls">
 <div id="keyHintType" onClick="if (this.style.color!=='white'){setGridHints('none');} else{setGridHints('key')}" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Show keypress hints.">K</div>
 <div id="translitHintType" onClick="if (this.style.color!=='white'){setGridHints('none');} else{setGridHints('translit')}" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Show transliteration hints.">T</div>
 <div id="ipaHintType" onClick="if (this.style.color!=='white'){setGridHints('none');} else{setGridHints('ipa')}" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Show IPA hints.">P</div>
-</div>`
+`
 
+out += `
+<div><a class="interactiveHelpButton" href="help/#ktpHints" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a></div>
+</div>
+`
 return out
 }
 
@@ -630,7 +639,7 @@ out = `
     onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/>
     </div>
 
-<a class="interactiveHelpButton" href="help/#yellow_controls" target="_help" title="Help with main yellow controls."><img alt="help" src="../images/help.png"/></a>
+<a class="interactiveHelpButton" href="help/#yellowControls" target="_help" title="Help with main yellow controls." style="margin: 1rem;"><img alt="help" src="../images/help.png"/></a>
 
 <div class="control" id="helpcontrol" onclick="showCSHelp();return false;" accesskey="h">Help<br/><img src="../images/help.png" alt=""/></div>
 </div>

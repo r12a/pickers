@@ -935,8 +935,9 @@ summary:hover {
 	cursor: pointer;
 	}
 .interactiveHelpButton {
-    background-color: white;
+    background-color: transparent;
     border-radius: 3px;
+	height: 1rem;
     }
 #helpcontrol a, #helpBanner a {
 	color: white;
