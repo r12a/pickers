@@ -278,10 +278,10 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 <p>Other type-assist methods work in the same way, but the key mappings are different.
 
 
-<p><b class="leadin"><span class="iaShortName">[...]</span> IPA type-assist.</b> Converts IPA to text in the target language.</p>
+<p><b class="leadin"><span class="iaShortName" style="font-size:2rem;">[...]</span> IPA type-assist.</b> Converts IPA to text in the target language.</p>
 
 
-<p><b class="leadin"><span class="iaShortName">&lt;..&gt;</span> Transcription type-assist.</b> Converts a common transcription to text in the target language.</p>
+<p><b class="leadin"><span class="iaShortName" style="font-size:2rem;">&lt;..&gt;</span> Transcription type-assist.</b> Converts a common transcription to text in the target language.</p>
 
 <p><b class="leadin">Other type-assist methods.</b> Some character apps may provide additional converters, such as mappings to the ASCII characters for other transcription forms. They will appear here, and operate in the same way as others we have described. The control is represented by a lowercase letter that has some association with the transcription it handles.</p>
 
