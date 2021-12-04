@@ -573,10 +573,14 @@ for (let i=0;i<inputAids.length;i++) {
 
 */
 
-if (template.hints) out += `<div id="hintControls">
+if (template.hints) out += `<div id="hintControls" onMouseOver="document.getElementById('closeHintType').style.display='block'"  onMouseOut="document.getElementById('closeHintType').style.display='none'">
 <div id="keyHintType" onClick="if (this.style.color!=='white'){setGridHints('none');} else{setGridHints('key')}" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Show keypress hints.">K</div>
+
 <div id="translitHintType" onClick="if (this.style.color!=='white'){setGridHints('none');} else{setGridHints('translit')}" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Show transliteration hints.">T</div>
+
 <div id="ipaHintType" onClick="if (this.style.color!=='white'){setGridHints('none');} else{setGridHints('ipa')}" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Show IPA hints.">P</div>
+
+<div id="closeHintType" style="display:none" onClick="setGridHints('none');" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Remove all IPA hints.">X</div>
 `
 
 out += `
