@@ -1466,8 +1466,17 @@ rt {
 
 
 
-
-
+/* for the help file */
+.iaShortName {
+    font-size: 3em;
+    font-weight: normal;
+    float: left;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    clear: both;
+    width: 1.5em;
+    }
 
 
 
