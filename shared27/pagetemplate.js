@@ -494,6 +494,12 @@ if (inputAids.length > 0) {
 
 
 for (let i=0;i<inputAids.length;i++) {
+
+	// change the short labels, where needed
+    if (inputAids[i].dataShortTitle === 'æ')  inputAids[i].dataShortTitle = '[...]'
+    if (inputAids[i].dataShortTitle === 't')  inputAids[i].dataShortTitle = '<..>'
+    if (inputAids[i].dataShortTitle === 'k')  inputAids[i].dataShortTitle = '⌨'
+	
 	// finish up the assignments
     if (!inputAids[i].initialCode)  inputAids[i].initialCode = ''
     if (inputAids[i].id === 'showShapeLookup') inputAids[i].initialCode = `if (this.classList.contains('on')) { document.getElementById('shapelist').style.display = 'none' } else { document.getElementById('shapelist').style.display = 'block' }`
