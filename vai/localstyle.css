@@ -25,6 +25,9 @@ span.hint {
 	min-width: .75em;
 	text-align: center;
 	}
+span.x { 
+	color: chocolate;
+	}
 
 .last {
 	border-bottom: 1px solid orange;
