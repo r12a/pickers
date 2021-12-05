@@ -81,13 +81,13 @@ var inputAids = [
 
 {"title":"Type assist: IPA to Bengali.", 
 "desc":"Use an IPA keyboard mapping to type Bengali from the keyboard.",
-"dataShortTitle":"æ", "type":"palette",
+"dataShortTitle":"[...]", "type":"palette",
 "initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
 {"title":"Type assist: ISO transcription to Bengali.", 
 "desc":"Use a  mapping from ISO to type Bengali from the keyboard.",
-"dataShortTitle":"t", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
+"dataShortTitle":"<..>", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
 {"title":"Type assist: Radice transcription to Bengali.", 
@@ -97,7 +97,7 @@ var inputAids = [
 
 {"title":"Type assist: Map keys to a Bengali keyboard.", 
 "desc":"Use a Bengali keyboard mapping to type from the keyboard.",
-"dataShortTitle":"k", "type":"palette", 
+"dataShortTitle":"⌨", "type":"palette", 
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },
 
