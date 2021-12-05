@@ -120,7 +120,7 @@ var inputAids = [
 
 {"title":"Type assist: IPA to XXXXXX.", 
 "desc":"Use an IPA keyboard mapping to type XXXXXX from the keyboard.",
-"dataShortTitle":"æ", "type":"palette",
+"dataShortTitle":"[..]", "type":"palette",
 "initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
@@ -131,13 +131,13 @@ var inputAids = [
 
 {"title":"Type assist: Map keys to a XXXXX keyboard.", 
 "desc":"Use a XXXXXX XXXXXX keyboard mapping to type from the keyboard.",
-"dataShortTitle":"k", "type":"palette", 
+"dataShortTitle":"⌨", "type":"palette", 
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
 },
 
 {"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
 "desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"L", "type":"palette", 
+"dataShortTitle":"&lt;&gt;", "type":"palette", 
 "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
 },
 
@@ -149,12 +149,4 @@ var inputAids = [
 
 ]
 
-
-
-
-
-// this indicates which items are to be described in the help
-// options include: intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist – kbdAssist,latinAssist,togglePalette
-var inputAidsHelp1 = 'intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist'
-var inputAidsHelp2 = 'kbdAssist,latinAssist,togglePalette'
 
