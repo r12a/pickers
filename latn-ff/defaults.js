@@ -69,7 +69,7 @@ var inputAids = [
 
 {"title":"Type assist: IPA to Bamanan.", 
 "desc":"Use an IPA keyboard mapping to type Bamanan from the keyboard.",
-"dataShortTitle":"æ", "type":"palette",
+"dataShortTitle":"[...]", "type":"palette",
 "initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
