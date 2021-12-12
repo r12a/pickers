@@ -333,7 +333,7 @@ out += `
 <button  id="sortWord" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=false, word=true)" title="Split on white space and sort in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Word sort</button>
 
 <button  id="showIPA" type="button" 
-onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false); document.getElementById('transcriptionWrapper').style.display='none'; sieveFor('analysisIPA');" 
+onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false); document.getElementById('transcriptionWrapper').style.display='none'; sieveForIPA();" 
 title="For each character, show IPA equivalents from the database." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show IPA data</button>
 
 <button  id="showTranscription" type="button" 

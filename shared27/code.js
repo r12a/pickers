@@ -2197,7 +2197,8 @@ function displayDBInfo (cp, block, lang, direction, showAll) {
     var out = ''
     
     out += '<div style="text-align:center; margin-block-end: .5em;">'
-    out += '<button onclick="sieveFor(\'analysisIPA\')">Show IPA</button> '
+    //out += '<button onclick="sieveFor(\'analysisIPA\')">Show IPA</button> '
+    out += '<button onclick="sieveForIPA()">Show IPA</button> '
     out += '<button onclick="sieveFor(\'analysisTransc\')">Show Transcription</button> '
     //out += '<button onclick="sieveFor(\'dbCharName\')">List Codepoints</button>'
     out += '</div>'
@@ -2524,18 +2525,10 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 				out += '</bdi>'
 				}
 
-			// get type
-			out += '<bdi class="analysisType">'
-			//out += '<em>type</em> '
-			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="ipa" onmouseover="showMenuText(\'Type of character.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
-			else out += '<span class="ipa">-</span>'
-			out += '</bdi>'
-
-			// get status
-			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
-				out += '<bdi class="analysisStatus">'
-				//out += '<em>usage</em> '
-				out += ' <span style="color:black; font-weight: bold;" onmouseover="showMenuText(\'Usage notes.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.statusLoc]+'</span>'
+            // get any ipaPlus info
+			if (cols.ipaPlus && spreadsheetRows[char][cols.ipaPlus]) {
+				out += `<bdi class="analysisIPAplus" onmouseover="showMenuText('Additional sounds that may be associated with this letter.','tan')" onmouseout="hideMenuText()" style="cursor:pointer">`
+				out +=  `<span class="ipa" style="display:inline-block; min-width:1.5em;">${ spreadsheetRows[char][cols.ipaPlus].toLowerCase() }</span>`
 				out += '</bdi>'
 				}
 
@@ -2550,6 +2543,21 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 					}
 				}
 
+
+			// get type
+			out += '<bdi class="analysisType">'
+			//out += '<em>type</em> '
+			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="ipa" onmouseover="showMenuText(\'Type of character.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
+			else out += '<span class="ipa">-</span>'
+			out += '</bdi>'
+
+			// get status
+			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
+				out += '<bdi class="analysisStatus">'
+				//out += '<em>usage</em> '
+				out += ' <span style="color:black; font-weight: bold;" onmouseover="showMenuText(\'Usage notes.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.statusLoc]+'</span>'
+				out += '</bdi>'
+				}
 
 			// get transliteration
 			//if (spreadsheetRows[char][cols.transLoc] && spreadsheetRows[char][cols.transLoc] !== char) {
@@ -2736,6 +2744,7 @@ function sieveFor (type) {
     
     
     if (type === 'dbCharName') {
+    // i think this code is no longer used, since lists of names are created by List Characters, so sieveFor is no longer called using the dbCharName type
         var lines = document.getElementById('textAnalysis').querySelectorAll('.dbCharContainer')
         for (var i=0;i<lines.length;i++) {
             vlist += lines[i].querySelector('.dbCharItem').textContent
@@ -2764,6 +2773,42 @@ function sieveFor (type) {
             hlist += '</span>\n'
             }
 		}
+	
+	// display the result
+	document.getElementById('listOutput').style.display = 'block'
+	document.getElementById('listOutputHorizontal').innerHTML = hlist
+	document.getElementById('listOutputVertical').textContent = vlist
+	}
+
+
+
+
+function sieveForIPA () {
+	// hide the labels
+	var hlist = ''
+	var vlist = ''
+    var ipaItems, ipaPlusItems
+    
+    // find the IPA data
+    var lines = document.getElementById('textAnalysis').querySelectorAll('.dbCharContainer')
+    for (var i=0;i<lines.length;i++) {
+        hlist += '<span class="xitem">'
+        hlist += '<span class="xitemSrc">'+lines[i].querySelector('.dbCharItem').textContent+'</span>'
+        hlist += '<span class="xitemResults">'
+        valueNode = lines[i].querySelector('.analysisIPA')
+        if (valueNode === null) ipaItems = ' '
+        else ipaItems = valueNode.lastChild.textContent.split(' ')
+        console.log('ipa',ipaItems)
+        ipaPlusNode = lines[i].querySelector('.analysisIPAplus')
+        if (ipaPlusNode) ipaPlusItems = ipaPlusNode.lastChild.textContent.split(' ')
+        else ipaPlusItems = ''
+        console.log('ipa+',ipaPlusItems)
+        //for (j=0;j<items.length;j++) hlist += '<span class="xitemRes" onclick="this.classList.toggle(\'xitemHide\')">'+items[j].toLowerCase()+'</span>'
+        for (j=0;j<ipaItems.length;j++) hlist += '<span class="xitemRes" onclick="toggleXItem(this)">'+ipaItems[j].toLowerCase()+'</span>'
+        for (j=0;j<ipaPlusItems.length;j++) hlist += '<span class="xitemHide" onclick="toggleXItem(this)">'+ipaPlusItems[j].toLowerCase()+'</span>'
+        hlist += '</span>'
+        hlist += '</span>\n'
+        }
 	
 	// display the result
 	document.getElementById('listOutput').style.display = 'block'

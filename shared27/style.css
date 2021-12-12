@@ -1485,13 +1485,31 @@ rt {
 
 
 
+.analysisTranslit span span {
+    margin-inline-end: 120px;
+    width: 2em;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    }
+.analysisTranslit em {
+    display: none;
+    }
+
+.dbCharContainer:hover {
+    background: #eee;
+    }
 
 
 
-
-
-
-
+.analysisIPAplus .ipa::before {
+    content: '(';
+    color: #ccc;
+    }
+.analysisIPAplus .ipa::after {
+    content: ')';
+    color: #ccc;
+    }
 
 
     
