@@ -52,7 +52,6 @@ var plist = [
     { tag:'latn', name:'Bamanan', url:'latn-bm/' },
     { tag:'latn', name:'Fula', url:'latn-ff/' },
     { tag:'latn', name:'Hausa', url:'latn-ha/' },
-    { tag:'latn', name:'Bamanan', url:'latn-bm/' },
     { tag:'latn', name:'IPA&nbsp;standard&nbsp;chart', url:'ipa/' },
     { tag:'latn', name:'IPA&nbsp;by&nbsp;place', url:'ipa2/' },
     { tag:'latn', name:'IPA&nbsp;by&nbsp;type', url:'ipa3/' },
