@@ -32,6 +32,7 @@ var template = {}
 	template.scriptcode = 'Cher'
 	template.fontLocale = 'cher'
 	template.hints = false
+	template.bicameral = true
 	
 	template.defaultSpace = ' '
 	template.spaces = [['SP', ' '], ['ZWSP', '\u200B'], ['NBSP','\u00A0'], 
@@ -49,6 +50,7 @@ var controls = [
 
 
 var pulldown = [
+{"title":"Mont-And to IPA", "alt":"Convert a Montgomery-Anderson transcription to an IPA transcription.", "code":"doTranscription('MAtoIPA')"},
 ]
 
 
