@@ -44,8 +44,14 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Oriya text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
+]
 
-{"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
+
+
+
+
+var pulldown = [
+{"title":"Make vocab", "alt":"Create an entry for a vocab file.", 
 
 "code":`_output=document.getElementById('output'); 
 input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
@@ -60,13 +66,7 @@ notes = input[4]? input[4] : '';
 add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
-]
 
-
-
-
-
-var pulldown = [
 /*
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('translitPlus')", "warning":"Adds inherent vowels and palatalisation. The result should be checked."},
 
