@@ -1328,10 +1328,14 @@ summary:hover {
     font-family: 'ExtendedLatinWF';
     background: chocolate;
     color: white;
+    display: inline-block;
+    min-width: .5em;
     }
 .xitemHide {
     color: #ccc;
     border: 1px dotted #ccc;
+    display: inline-block;
+    min-width: .5em;
     }
 
 
