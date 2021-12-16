@@ -45,8 +45,13 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Malayalam text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
+]
 
-{"title":"Make<br/>vocab", "alt":"Expand a line to create an entry for a vocab file.", 
+
+
+var pulldown = [
+
+{"title":"Make vocab", "alt":"Expand a line to create an entry for a vocab file.", 
 
 "code":`_output=document.getElementById('output'); 
 input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
@@ -61,11 +66,7 @@ notes = input[4]? input[4] : '';
 add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
 _output.focus();`},
-]
 
-
-
-var pulldown = [
 {"title":"Malayalam to ISO", "alt":"Convert Malayalam text to an ISO Latin transcription.", "warning":"The results should be checked for accuracy.", "code":"doTranscription('toISO')"},
 
 {"title":"ISO to Malayalam", "alt":"Convert ISO latin text to Malayalam transcription.", "warning":"The results should be checked for accuracy.", "code":"doTranscription('toMalayalam')"},
