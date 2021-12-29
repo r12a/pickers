@@ -26,6 +26,7 @@ var template = {}
 	template.sample = "2. ھەممە ئادەم ھەرقانداق دۆلەتتىن كېتىشكە، جوملىدىن ئۆز دۆلىتىدىن كېتىشكە ھوقۇقلۇق ھەمدە ئۆزىنىڭ دۆلىتىگە قايتىپ كېلىشكە ھوقۇقلۇق."
     template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
     template.noteslocation = 'arabic/uighur' // location of script notes relevant to this app
+	template.vocablocation = '/scripts/arabic/ug_vocab' // location of term database, full url
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'arab-ug'
 	template.scriptcode = 'Arab'
