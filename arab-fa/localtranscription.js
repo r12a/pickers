@@ -31,7 +31,7 @@ return str.trim()
 function removeVowels (str) {
 // removes the harakat etc from the text in the text area
 
-var vowels = ['ِ','ٍ','ُ','ٌ','َ','ً','ْ','ّ']
+var vowels = ['ِ','ٍ','ُ','ٌ','َ','ً','ْ','ّ', 'ٰ']
 
 for (var i=0;i<vowels.length;i++) {
 	re = new RegExp(vowels[i],'g')
