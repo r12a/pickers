@@ -18,10 +18,10 @@
     font-weight: normal;
     font-style: normal;
 	}
-#output {
+/*#output {
     font-language-override: 'URD';
     }
-
+*/
 span.hint { 
 	margin-inline-start: .5em;
 	margin-inline-end: 1px;
