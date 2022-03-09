@@ -4141,7 +4141,7 @@ function sortOutput (text, unique=false, word=false) {
 
 
 
-function charChecker () {
+function charCheckerOLD () {
 	// scan the text in the text area for unexpected characters/sequences and report
 	
 	var text = getHighlightedText(_output)
@@ -4179,7 +4179,7 @@ function charChecker () {
 
 
 
-function charChecker () {
+function charCheckerLESSOLD () {
 	// scan the text in the text area for unexpected characters/sequences and report
 	
 	var text = getHighlightedText(_output)
@@ -4211,6 +4211,100 @@ function charChecker () {
     out += '</tbody></table>'
     
     document.getElementById('transcription').innerHTML = out
+	document.getElementById('transcription').contentEditable = true
+	document.getElementById('transcriptionWrapper').style.display = 'block' 
+	}
+
+
+
+
+function charCheckerEVENLESSOLD () {
+	// scan the text in the text area for unexpected characters/sequences and report
+	
+	var text = getHighlightedText(_output)
+
+    var out = '<table class="charChecker"><thead>'
+    out += '<tr><th>&nbsp;</th><th>NOT recommended</th><th>&nbsp;</th><th>Recommended</th></tr>'
+    out += '</thead><tbody>'
+    
+    for (var i=0;i<window.charCheckerList.length;i++) {
+        var wrong = new RegExp(charCheckerList[i].wrong,"g")
+        var matchListWrong = text.match(wrong)
+        if (matchListWrong === null) matchListWrong = []
+        var right = new RegExp(charCheckerList[i].right,"g")
+        var matchListRight = text.match(right)
+        if (matchListRight === null) matchListRight = []
+        //console.log(matchList)
+        //if (matchList && matchList.length > 0) console.log('Found ',charCheckerList[i].wrong,matchList.length,'times.')
+        out += `<tr>`
+        out += `<td class="cCheckCount`
+        if (matchListWrong.length > 0)  out += ` cCheckHighlight`
+        out += `">${ matchListWrong.length }</td>
+        <td class="cCheckWrong">${ makeCharacterLink(charCheckerList[i].wrong,'', 'ks', 'rtl') }</td>
+        <td class="cCheckCount">${ matchListRight.length }</td>
+        <td class="cCheckRight">${ makeCharacterLink(charCheckerList[i].right,'', 'ks', 'rtl') }</td>
+        `
+        
+        console.log('matchListWrong.length', matchListWrong.length)
+        if (matchListWrong.length === 0)  out += `<td class="cCheckFix" style="color:lightgreen; font-size: 1.5rem; font-weight: bold; font-style: italic; padding-inline: 1rem;">OK</td>`
+        else out += `<td class="cCheckFix" style="padding-inline: 1rem;"><button onclick="_output.value = _output.value.replace(/${ charCheckerList[i].wrong }/g,'${ charCheckerList[i].right }'); charChecker();">Fix</button></td>
+        </tr>`
+        }
+    
+    out += '</tbody></table>'
+    
+    document.getElementById('transcription').innerHTML = out
+	document.getElementById('transcription').contentEditable = true
+	document.getElementById('transcriptionWrapper').style.display = 'block' 
+	}
+
+
+
+
+function charChecker () {
+	// scan the text in the text area for unexpected characters/sequences and report
+	
+	var text = getHighlightedText(_output)
+    var out = ''
+    var counter = 0
+    for (var i=0;i<window.charCheckerList.length;i++) {
+        var wrong = new RegExp(charCheckerList[i].wrong,"g")
+        var matchListWrong = text.match(wrong)
+        if (matchListWrong === null) matchListWrong = []
+        var right = new RegExp(charCheckerList[i].right,"g")
+        var matchListRight = text.match(right)
+        if (matchListRight === null) matchListRight = []
+        //console.log(matchList)
+        //if (matchList && matchList.length > 0) console.log('Found ',charCheckerList[i].wrong,matchList.length,'times.')
+        
+        if (matchListWrong.length > 0) {
+            counter++
+            out += `<tr>`
+            out += `<td class="cCheckCount`
+            if (matchListWrong.length > 0)  out += ` cCheckHighlight`
+            out += `">${ matchListWrong.length }</td>
+            <td class="cCheckWrong">${ makeCharacterLink(charCheckerList[i].wrong,'', 'ks', 'rtl') }</td>
+            <td class="cCheckCount">${ matchListRight.length }</td>
+            <td class="cCheckRight">${ makeCharacterLink(charCheckerList[i].right,'', 'ks', 'rtl') }</td>
+            `
+
+            console.log('matchListWrong.length', matchListWrong.length)
+            if (matchListWrong.length === 0)  out += `<td class="cCheckFix" style="color:lightgreen; font-size: 1.5rem; font-weight: bold; font-style: italic; padding-inline: 1rem;">OK</td>`
+            else out += `<td class="cCheckFix" style="padding-inline: 1rem;"><button onclick="_output.value = _output.value.replace(/${ charCheckerList[i].wrong }/g,'${ charCheckerList[i].right }'); charChecker();">Fix</button></td>
+            </tr>`
+            }
+        }
+
+    if (out !== '') {
+        var table = '<table class="charChecker"><thead>'
+        table += '<tr><th>&nbsp;</th><th>NOT recommended</th><th>&nbsp;</th><th>Recommended</th></tr>'
+        table += '</thead><tbody>'
+        table += out
+        out += '</tbody></table>'
+        }
+    else table = `<p>No issues found.</p>`
+    
+    document.getElementById('transcription').innerHTML = table
 	document.getElementById('transcription').contentEditable = true
 	document.getElementById('transcriptionWrapper').style.display = 'block' 
 	}
