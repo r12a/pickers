@@ -633,13 +633,13 @@ out = `
   </div>
   
 <div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
-<img src="/pickers//images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+<img src="../images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
     onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFC');
     document.getElementById('n11nform').innerHTML = 'NFC';"/> 
-<img src="/pickers//images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+<img src="../images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
     onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFD');
     document.getElementById('n11nform').innerHTML = 'NFD';"/> 
-<img src="/pickers//images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+<img src="../images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
     onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/>
     </div>
 
@@ -697,7 +697,7 @@ out = `
 <div class="control">Search for:
     <form action="none" onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
       <input name="search" id="search"  type="text" style="width: 7em;"/>
-      <img src="/pickers/images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+      <img src="../images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
     </form>
   </div>
   
