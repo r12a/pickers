@@ -58,6 +58,27 @@ var bothJoin = new Set(['ل', 'ك', 'ع', 'غ', 'ح', 'خ', 'ج', 'ف', 'ق', '�
 
 
 
+function convertFromNFKC (str) {
+    // replaces Arabic Presentation form code points with standard code points
+    
+    changed = []
+    var chars = [...str]
+    for (var i=0;i<chars.length;i++) {
+        if (chars[i] !== chars[i].normalize('NFKC')) changed.push(chars[i])
+        }
+    if (changed.length > 0) {
+        const uniqueSet = new Set(changed)
+        var uniqueArray = [...uniqueSet]
+        alert(changed.length+' characters were converted.\nHere is a list of unique codepoints changed: '+uniqueArray.join(' '))
+        }
+    return str.normalize('NFKC')
+    }
+
+
+
+
+
+
 
 
 var ipaCharacterMap = `

@@ -98,6 +98,8 @@ _output.focus();`},
 
 {"title":"Remove vowels", "alt":"Remove harakat, etc. from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 
+{"title":"Replace presentation forms", "alt":"Replaces all compatibility code points with regular code points. Particularly useful for detecting and removing Arabic presentation forms.", "code":"add(convertFromNFKC(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
+
 {"title":"Arabic to IPA", "alt":"Convert Arabic text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPA')", "warning":"Requires fully vowelled text!<br>This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
 
 {"title":"Arabic to LOC", "alt":"Convert Arabic text to an Library of Congress Latin transcription.", "code":"doTranscription('toLOC')", "warning": "Full transcription requires fully vowelled text! The results should be checked for accuracy."},
