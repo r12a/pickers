@@ -82,9 +82,9 @@ var pulldown = [
 
 //{"title":"XXXX to Radice", "alt":"Convert XXXX text to the Latin transcription used by Radice.", "code":"doTranscription('transcription')"},
 
-{"title":"Ukrainian<br/>to UNT", "alt":"Convert Ukrainian text to an Ukrainian National Transliteration Latin transcription.", "code":"doTranscription('toISO15919')"},
+//{"title":"Ukrainian<br/>to UNT", "alt":"Convert Ukrainian text to an Ukrainian National Transliteration Latin transcription.", "code":"doTranscription('toISO15919')"},
 
-{"title":"Ukrainian<br/>to IPA", "alt":"Convert Ukrainian text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPA')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
+//{"title":"Ukrainian<br/>to IPA", "alt":"Convert Ukrainian text to an <em>approximate</em> IPA transcription.", "code":"doTranscription('toIPA')", "warning":"This only produces an <em>approximation</em> to an IPA transcription. Use it as a base and refine it by hand." },
 
 //{"title":"ISO to<br/>XXXX", "alt":"Convert an ISO 15919 transcription to XXXX text.", "code":"doTranscription('toDeva')"},
 ]
@@ -105,7 +105,7 @@ var inputAids = [
 
 {"title":"Type assist: IPA to Ukrainian.", 
 "desc":"Use an IPA keyboard mapping to type Ukrainian from the keyboard.",
-"dataShortTitle":"[..]", "type":"palette",
+"dataShortTitle":"[...]", "type":"palette",
 "initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
@@ -122,7 +122,7 @@ var inputAids = [
 
 {"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
 "desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"&lt;&gt;", "type":"palette", 
+"dataShortTitle":"L", "type":"palette", 
 "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
 },
 
