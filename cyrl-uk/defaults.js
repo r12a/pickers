@@ -114,11 +114,11 @@ var inputAids = [
 "dataShortTitle":"t", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
-{"title":"Type assist: Map keys to a Ukrainian keyboard.", 
-"desc":"Use a Ukrainian keyboard mapping to type from the keyboard.",
-"dataShortTitle":"⌨", "type":"palette", 
-"initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
-},
+//{"title":"Type assist: Map keys to a Ukrainian keyboard.", 
+//"desc":"Use a Ukrainian keyboard mapping to type from the keyboard.",
+//"dataShortTitle":"⌨", "type":"palette", 
+//"initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
+//},
 
 {"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
 "desc":"Show characters needed for IPA or other transcriptions and transliterations.",
