@@ -2995,7 +2995,7 @@ function removeCharacterOLD (char) {
     }
 
 
-function removeCharacter (char,replacement) {
+function removeCharacterLESSOLD (char,replacement) {
     var problemChars = new Set (['.','*','[',']','(',')','?','^'])
     if (char === '') return
     if (char.length === 1) {
@@ -3016,6 +3016,15 @@ function removeCharacter (char,replacement) {
         }
     console.log(ch)
     var re = new RegExp(ch, "g"); 
+    document.getElementById('output').value = document.getElementById('output').value.replace(re,replacement)
+    }
+
+
+function removeCharacter (char,replacement) {
+    // makes the replace control work
+    if (trace) console.log('removeCharacter(',char,',',replacement,')')
+    var re = new RegExp(char, "g")
+    console.log(re)
     document.getElementById('output').value = document.getElementById('output').value.replace(re,replacement)
     }
 
