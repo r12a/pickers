@@ -15,6 +15,7 @@ var factoryDefaults = {}
 
 var thisPicker = 'ukrainianPicker'
 
+
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
@@ -26,7 +27,7 @@ var template = {}
 	template.sample = "Всі люди народжуються вільними і рівними у своїй гідності та правах. Вони наділені розумом і совістю і повинні діяти у відношенні один до одного в дусі братерства."
 	template.blocklocation= 'cyrillic'  // blocklocation to use for examples
 	template.noteslocation = 'cyrillic' // location of script notes relevant to this app
-	template.vocablocation = '/scripts/cyrillic/uk_vocab' // location of term database, full url
+	template.vocablocation = '../../scripts/cyrillic/uk_vocab' // location of term database, full url
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cyrl-uk'
 	template.scriptcode = 'Cyrl'
