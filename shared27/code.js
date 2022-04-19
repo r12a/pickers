@@ -19,7 +19,6 @@ var marks = new Set()
 
 
 
-
 function replaceSlash (str, replacement) {
 // does .replace(/\//g,str), since that doesn't seem to work
 	
@@ -721,7 +720,8 @@ function add (ch) {
 			ch = ch.substr(1)
 			}
 		// remove leading zwj (used esp for arabic vowels)
-		ch = ch.replace(/\u200D/g,'').replace(/\u0640/g,'')
+		//ch = ch.replace(/\u200D/g,'').replace(/\u0640/g,'')
+        // removed above because it affects other scripts like Sundanese
 		}
 	if (document.getElementById('output').style.display == 'none') { return; }
 
@@ -1371,16 +1371,27 @@ function unshiftAll (kbdList) {
 
 
 function event_mouseoverChar ()  {
+    var parameter
 	// display character information
 	var out = '<span id="charname">'+this.title
-	var content = this.textContent.replace(defaults.ccbase,'')
+	/*var content = this.textContent.replace(defaults.ccbase,'')
 	if (window.spreadsheetRows[content]) {
 		if (window.spreadsheetRows[content][cols.transLoc]) out += '<span class="hint">ᵗ</span>' + window.spreadsheetRows[content][cols.transLoc]
 		if (window.spreadsheetRows[content][cols.key]) out += '<span class="hint">ᵏ</span>' + window.spreadsheetRows[content][cols.key]
 		if (window.spreadsheetRows[content][cols.ipaLoc]) out += '<span class="hint">ᵖ</span>' + window.spreadsheetRows[content][cols.ipaLoc]
+		}*/
+	var out = '<span id="charname">'
+	var content = this.textContent.replace(defaults.ccbase,'')
+    out += '<span class="ssheetDetails">'
+	if (window.spreadsheetRows[content]) {
+		if (window.spreadsheetRows[content][cols.ipaLoc]) out += '<bdi class="ipa">' + window.spreadsheetRows[content][cols.ipaLoc].toLowerCase() + '</bdi>'
+		if (window.spreadsheetRows[content][cols.transcription]) out += '<bdi class="transc">' + window.spreadsheetRows[content][cols.transcription].toLowerCase() + '</bdi>'
+		if (window.spreadsheetRows[content][cols.key]) out += '<bdi>⌨ ' + window.spreadsheetRows[content][cols.key] + '</bdi>'
 		}
-	out += '</span>'
+    out += '</span>'
+	out += this.title + '</span>'
 	document.getElementById('chardata').innerHTML = out
+    
 	
 	
 	// add cursive forms to table
@@ -1853,6 +1864,8 @@ function setUpValues () {
 		makeKbdEventList(typeAssistMap)
 		}
 
+    // make a set of combining marks for use in the panel
+    setMarks()
 
     document.getElementById('output').focus()
 	}
@@ -4320,6 +4333,14 @@ function charChecker () {
 
 
 
+function setMarks () {
+    // sets the global variable marks as a set containing all combining marks in the spreadsheet
+    for (var char in spreadsheetRows) {
+        //console.log(char,spreadsheetRows[char][cols['class']])
+        if (spreadsheetRows[char][cols['class']].startsWith('M')) window.marks.add(char)
+        }
+    return
+    }
 
 
 
