@@ -90,7 +90,8 @@
 
 <div class="spaceline">
 <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
-<span class="touch" style="padding: 5px 30px;" onClick="add('\u200D');">ZWNJ</span> 
+<span class="touch" style="padding: 5px 30px;" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" style="padding: 5px 30px;" onClick="add('\u200C');">ZWNJ</span> 
 <span class="touch" style="padding: 5px 60px;" onClick="add(' ');">SPACE</span> 
 
 <span id="tabEtc"></span>
@@ -100,202 +101,192 @@
 
 
 
-
-
-
-
-    <table id="kbd">
-      <tr>
-        <td id="independentvowels"><table>
-          <tr>
-            <td><span class="g"><span class="hint">a</span><span class="c">&#x0D85;</span></span></td>
-<td><span class="g"><span class="hint">ā</span><span class="c">&#x0D86;</span></span></td>
-</tr>
-          <tr>
-            <td><span class="g"><span class="hint">æ</span><span class="c">&#x0D87;</span></span></td>
-<td><span class="g"><span class="hint">ǣ</span><span class="c">&#x0D88;</span></span></td>
-</tr>
-          <tr>
-            <td><span class="g"><span class="hint">i</span><span class="c">&#x0D89;</span></span></td>
-<td><span class="g"><span class="hint">ī</span><span class="c">&#x0D8A;</span></span></td>
-</tr>
-          <tr>
-            <td><span class="g"><span class="hint">u</span><span class="c">&#x0D8B;</span></span></td>
-<td><span class="g"><span class="hint">ū</span><span class="c">&#x0D8C;</span></span></td>
-</tr>
-          <tr>
-            <td><span class="g"><span class="hint">e</span><span class="c">&#x0D91;</span></span></td>
-<td><span class="g"><span class="hint">ē</span><span class="c">&#x0D92;</span></span></td>
-</tr>
-          <tr>
-            <td><span class="g"><span class="hint">ai</span><span class="c">&#x0D93;</span></span></td>
-<td><span class="g"><span class="hint">au</span><span class="c">&#x0D96;</span></span></td>
-</tr>
-          <tr>
-            <td><span class="g"><span class="hint">o</span><span class="c">&#x0D94;</span></span></td>
-<td><span class="g"><span class="hint">ō</span><span class="c">&#x0D95;</span></span></td>
-</tr>
-        </table></td>
-        <!--td id="adegadeg" style="text-align: center;"><span class="c" style="padding: 1em .25em">&#x0DCA;</span><br/>
-        <span class="touch" style="margin: 0;" onClick="add('\u0DCA\u200D');"><img src="images/hk_zwj.png" alt="HKZWJ"/></span><br/><span class="g" style="display:inline-block; margin-top: 0.3em"><span class="c">&#x0DCA;&#x200D;&#x0DBB;</span><span class="hint">-r</span></span>
-        <br/><span class="g" style="display:inline-block; margin-top: 0.3em"><span class="c">&#x0DCA;&#x200D;&#x0DBA;</span><span class="hint">-y</span></span>
-</td-->
-        <td style="padding-right: 1em;"><table id="consonants">
-          <tr>
-            <td><span class="g"><span class="hint">k</span><span class="c">&#x0D9A;</span></span></td>
-<td><span class="g"><span class="hint">kh</span><span class="c">&#x0D9B;</span></span></td>
-            <td><span class="g"><span class="hint">g</span><span class="c">&#x0D9C;</span></span></td>
-<td><span class="g"><span class="hint">gh</span><span class="c">&#x0D9D;</span></span></td>
-            <td><span class="g"><span class="hint">ṅ</span><span class="c">&#x0D9E;</span></span></td>
-            <td style="text-align:right"><span class="g"><span class="hint">ňg</span><span class="c">&#x0D9F;</span></span></td>
-          </tr>
-          <tr>
-            <td><span class="g"><span class="hint">c</span><span class="c">&#x0DA0;</span></span></td>
-<td><span class="g"><span class="hint">ch</span><span class="c">&#x0DA1;</span></span></td>
-            <td><span class="g"><span class="hint">j</span><span class="c">&#x0DA2;</span></span></td>
-<td><span class="g"><span class="hint">jh</span><span class="c">&#x0DA3;</span></span></td>
-            <td><span class="g"><span class="hint">ñ</span><span class="c">&#x0DA4;</span></span></td>
-             <td style="text-align:right"><span class="g"><span class="hint"></span><span class="c"> </span></span></td>
-         </tr>
-          <tr>
-            <td><span class="g"><span class="hint">ṭ</span><span class="c">&#x0DA7;</span></span></td>
-<td><span class="g"><span class="hint">ṭh</span><span class="c">&#x0DA8;</span></span></td>
-            <td><span class="g"><span class="hint">ḍ</span><span class="c">&#x0DA9;</span></span></td>
-<td><span class="g"><span class="hint">ḍh</span><span class="c">&#x0DAA;</span></span></td>
-            <td><span class="g"><span class="hint">ṇ</span><span class="c">&#x0DAB;</span></span></td>
-             <td style="text-align:right"><span class="g"><span class="hint">ňḍ</span><span class="c">&#x0DAC;</span></span></td>
-         </tr>
-          <tr>
-            <td><span class="g"><span class="hint">t</span><span class="c">&#x0DAD;</span></span></td>
-<td><span class="g"><span class="hint">th</span><span class="c">&#x0DAE;</span></span></td>
-            <td><span class="g"><span class="hint">d</span><span class="c">&#x0DAF;</span></span></td>
-<td><span class="g"><span class="hint">dh</span><span class="c">&#x0DB0;</span></span></td>
-            <td><span class="g"><span class="hint">n</span><span class="c">&#x0DB1;</span></span></td>
-             <td style="text-align:right"><span class="g"><span class="hint">ňd</span><span class="c">&#x0DB3;</span></span></td>
-         </tr>
-          <tr>
-            <td><span class="g"><span class="hint">p</span><span class="c">&#x0DB4;</span></span></td>
-<td><span class="g"><span class="hint">ph</span><span class="c">&#x0DB5;</span></span></td>
-            <td><span class="g"><span class="hint">b</span><span class="c">&#x0DB6;</span></span></td>
-<td><span class="g"><span class="hint">bh</span><span class="c">&#x0DB7;</span></span></td>
-            <td><span class="g"><span class="hint">m</span><span class="c">&#x0DB8;</span></span></td>
-             <td style="text-align:right"><span class="g"><span class="hint">m̌b</span><span class="c">&#x0DB9;</span></span></td>
-        </tr>
-          <tr>
-            <td><span class="g"><span class="hint">y</span><span class="c">&#x0DBA;</span></span></td>
-<td><span class="g"><span class="hint">r</span><span class="c">&#x0DBB;</span></span></td>
-            <td><span class="g"><span class="hint">l</span><span class="c">&#x0DBD;</span></span></td>
-<td><span class="g"><span class="hint">ḷ</span><span class="c">&#x0DC5;</span></span></td>
-<td><span class="g"><span class="hint">v</span><span class="c">&#x0DC0;</span></span></td>
-            <td style="text-align:right"><span class="g"><span class="hint">f</span><span class="c">&#x0DC6;</span></span></td>
-         </tr>
-          <tr>
-             <td><span class="g"><span class="hint">ś</span><span class="c">&#x0DC1;</span></span></td>
-           <td><span class="g"><span class="hint">ṣ</span><span class="c">&#x0DC2;</span></span></td>
-<td><span class="g"><span class="hint">s</span><span class="c">&#x0DC3;</span></span></td>
-            <td><span class="g"><span class="hint">h</span><span class="c">&#x0DC4;</span></span></td>
-          <td style="text-align:right"><span class="g"><span class="hint">ḥ</span><span class="c">&#x0D83;</span></span></td>
-          <td style="text-align:right"><span class="g"><span class="hint">ṃ</span><span class="c">&#x0D82;</span></span></td>
-          </tr>
-          </table>
-        </td>
-        
-        
-          <td id="adegadeg" style="text-align: center; padding-right: 10px;"><span class="c" style="padding: 1em .25em">&#x0DCA;</span><br/>
-        <span class="touch" style="margin: 0;" onClick="add('\u0DCA\u200D');"><img src="images/hk_zwj.png" alt="HKZWJ"/></span><br/><span class="g" style="display:inline-block; margin-top: 0.3em"><span class="hint">-r</span><span class="c">&#x0DCA;&#x200D;&#x0DBB;</span></span>
-        <br/><span class="g" style="display:inline-block; margin-top: 0.3em"><span class="hint">-y</span><span class="c">&#x0DCA;&#x200D;&#x0DBA;</span></span>
-</td>
-      
-        
-        
-                <td id="vowels" style="padding: 0 .25em;"><table>
-<tr>
-<td>&nbsp;</td>
-<td><span class="g"><span class="hint">ā</span><span class="c">&#x0DCF;</span></span></td>
-</tr>
-<tr>
-<td><span class="g"><span class="hint">æ</span><span class="c">&#x0DD0;</span></span></td>
-<td><span class="g"><span class="hint">ǣ</span><span class="c">&#x0DD1;</span></span></td>
-</tr>
-<tr>
-<td><span class="g"><span class="hint">i</span><span class="c">&#x0DD2;</span></span></td>
-<td><span class="g"><span class="hint">ī</span><span class="c">&#x0DD3;</span></span></td>
-</tr>
-<tr>
-<td><span class="g"><span class="hint">u</span><span class="c">&#x0DD4;</span></span></td>
-<td><span class="g"><span class="hint">ū</span><span class="c">&#x0DD6;</span></span></td>
-</tr>
-<tr>
-<td><span class="g"><span class="hint">e</span><span class="c">&#x0DD9;</span></span></td>
-<td><span class="g"><span class="hint">ē</span><span class="c">&#x0DDA;</span></span></td>
-</tr>
-<tr>
-<td><span class="g"><span class="hint">ai</span><span class="c">&#x0DDB;</span></span></td>
-<td><span class="g"><span class="hint">au</span><span class="c">&#x0DDE;</span></span></td>
-</tr>
-<tr>
-<td><span class="g"><span class="hint">o</span><span class="c">&#x0DDC;</span></span></td>
-<td><span class="g"><span class="hint">ō</span><span class="c">&#x0DDD;</span></span></td>
-</tr>
-        </table></td>
-
-        
-
-
-
-      <td id="numbers" style="padding-left: 1em;">
-       <table>
-            <tr>
-<td><span class="c">1</span></td>
-            <td><span class="c">2</span></td>
-            <td><span class="c">3</span></td>
-</tr>
-          <tr>
-            <td><span class="c">4</span></td>
-            <td><span class="c">5</span></td>
-            <td><span class="c">6</span></td>
-</tr>
-          <tr>
-            <td><span class="c">7</span></td>
-            <td><span class="c">8</span></td>
-            <td><span class="c">9</span></td>
-</tr>
-         <tr>
-			   <td>&nbsp;</td>
-            <td><span class="c">0</span></td>
-            <td>&nbsp;</td>
-</tr>
-       </table>
-       <table>
-<tr>
-<td><span class="c">,</span></td>
-<td><span class="c">.</span></td>
-<td><span class="c">!</span></td>
-<td><span class="c">?</span></td>
-</tr>
-<tr>
-<td><span class="c">;</span></td>
-<td><span class="c">:</span></td>
-<td><span class="c">(</span></td>
-<td><span class="c">)</span></td>
-</tr>
-<tr>
-<td><span class="c">‘</span></td>
-<td><span class="c">’</span></td>
-<td><span class="c">“</span></td>
-<td><span class="c">”</span></td>
-</tr>
-</table>
-      </td>
-        
-      </tr>
-  </table>      
+<div id="kbdGrid"> 
  
- 
- 
- 
- 
- 
+<div id="ivowelGrid">
+<div>
+<span class="g"><span class="hint">ị</span><span class="c">ඉ</span></span>
+<span class="g"><span class="hint">ɨ̣</span><span class="c">ඊ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ị̄</span><span class="c">උ</span></span>
+<span class="g"><span class="hint">ɨ̣</span><span class="c">ඌ</span></span>
+</div>
+<div style="border-top: 1px dotted gray">
+<span class="g"><span class="hint">ẹ</span><span class="c">එ</span></span>
+<span class="g"><span class="hint">ə̣</span><span class="c">ඒ</span></span>
+</div>
+<div style="border-bottom: 1px dotted gray">
+<span class="g"><span class="hint">ẹ̄</span><span class="c">ඔ</span></span>
+<span class="g"><span class="hint">ə̣̄</span><span class="c">ඕ</span></span>
+</div>
+<div style="border-bottom: 1px dotted gray">
+<span class="g"><span class="hint">ạ</span><span class="c">ඇ</span></span>
+<span class="g"><span class="hint">ạ̄</span><span class="c">ඈ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ə̣ʲ</span><span class="c">අ</span></span>
+<span class="g"><span class="hint">ə̣ʷ</span><span class="c">ආ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ə̣ʲ</span><span class="c">ඓ</span></span>
+<span class="g"><span class="hint">ə̣ʷ</span><span class="c">ඖ</span></span>
+</div>
+</div>
+
+<!--div id="pulli"><span class="c" style="line-height: 2; padding: 2em 5px; border: 1px dotted #999;">&#x094D;</span> &nbsp;
+<span class="c">&#x093C;</span></div-->
+
+
+<div id="consonantGrid">
+            <div>
+<span class="g"><span class="hint">p</span><span class="c">ප</span></span>
+<span class="g"><span class="hint">b</span><span class="c">බ</span></span>
+<span class="g"><span class="hint">t</span><span class="c">ත</span></span>
+<span class="g"><span class="hint">d</span><span class="c">ද</span></span>
+<span class="g"><span class="hint">ʈ</span><span class="c">ට</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ඩ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ක</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ග</span></span>
+           </div>
+             <div>
+<span class="g"><span class="hint">pʰ</span><span class="c">ඵ</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">භ</span></span>
+<span class="g"><span class="hint">ch</span><span class="c">ථ</span></span>
+<span class="g"><span class="hint">ʧʰ</span><span class="c">ධ</span></span>
+<span class="g"><span class="hint">ʈʰ</span><span class="c">ඨ</span></span>
+<span class="g"><span class="hint">kʰ</span><span class="c">ඪ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ඛ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ඝ</span></span>
+           </div>
+             <div class="bottomDivider">
+<span class="g"><span class="hint">nb</span><span class="c"> </span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">ඹ</span></span>
+<span class="g"><span class="hint">ch</span><span class="c"> </span></span>
+<span class="g"><span class="hint">ʧʰ</span><span class="c">ඳ</span></span>
+<span class="g"><span class="hint">ʈʰ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">kʰ</span><span class="c">ඬ</span></span>
+<span class="g"><span class="hint">k</span><span class="c"> </span></span>
+<span class="g"><span class="hint">k</span><span class="c">ඟ</span></span>
+           </div>
+           <div style="justify-content: space-around" class="bottomDivider">
+<span class="g"><span class="hint">b</span><span class="c">ච</span></span>
+<span class="g"><span class="hint">d</span><span class="c">ජ</span></span>
+<span class="g"><span class="hint">ʤ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">ɖ</span><span class="c">ඡ</span></span>
+<span class="g"><span class="hint">g</span><span class="c">ඣ</span></span>
+           </div>
+            <div class="bottomDivider">
+<span class="g"><span class="hint">w</span><span class="c">ෆ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">ව</span></span>
+<span class="g"><span class="hint">z</span><span class="c">ස</span></span>
+<span class="g"><span class="hint">ʃ</span><span class="c">ශ</span></span>
+<span class="g"><span class="hint">h</span><span class="c">ෂ</span></span>
+<span class="g"><span class="hint">h</span><span class="c">හ</span></span>
+            </div>
+            <div class="bottomDivider">
+<span class="g"><span class="hint">m</span><span class="c">ම</span></span>
+<span class="g"><span class="hint">n</span><span class="c">න</span></span>
+<span class="g"><span class="hint">m</span><span class="c">ණ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ඤ</span></span>
+<span class="g"><span class="hint">m</span><span class="c">ඞ</span></span>
+            </div>
+            <div style="justify-content: space-around">
+<span class="g"><span class="hint">r</span><span class="c">ර</span></span>
+<span class="g"><span class="hint">l</span><span class="c">ල</span></span>
+<span class="g"><span class="hint">y</span><span class="c">ළ</span></span>
+<span class="g"><span class="hint">w</span><span class="c">ය</span></span>
+            </div>
+</div>
+
+
+
+<div id="viramas" class="box">
+<!--span class="touch" style="margin: 0;" onClick="add('\u0DCA\u200D');"><img src="images/hk_zwj.png" alt="HKZWJ"></span-->
+<span class="g"><span class="hint"></span><span class="c">&#x0DCA;&#x200D;</span>+</span>
+<span class="g"><span class="hint"></span><span class="c" style="padding-block: 2rem; padding-inline: 0.5rem;">්</span></span>
+<span class="g"><span class="hint"></span><span class="c">්‍ර</span></span>
+<span class="g"><span class="hint"></span><span class="c">්‍ය</span></span>
+</div>
+
+
+
+
+
+
+<div id="vowelGrid">
+<div>
+<span class="g"><span class="hint">i</span><span class="c">ි</span></span>
+<span class="g"><span class="hint">u</span><span class="c">ු</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ī</span><span class="c">ී</span></span>
+<span class="g"><span class="hint">ū</span><span class="c">ූ</span></span>
+</div>
+<div class="topDivider">
+<span class="g"><span class="hint">e</span><span class="c">ෙ</span></span>
+<span class="g"><span class="hint">o</span><span class="c">ො</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">ē</span><span class="c">ේ</span></span>
+<span class="g"><span class="hint">ō</span><span class="c">ෝ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ā</span><span class="c">ැ</span></span>
+<span class="g"><span class="hint">ɔ</span><span class="c">ॏ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">əʲ</span><span class="c"> </span></span>
+<span class="g"><span class="hint">əʷ</span><span class="c">ා</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">əʲ</span><span class="c">ෛ</span></span>
+<span class="g"><span class="hint">əʷ</span><span class="c">ෞ</span></span>
+</div>
+</div>
+
+
+<div id="cchars">
+<span class="g"><span class="hint"></span><span class="c">ඃ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ං</span></span>
+</div>
+
+
+<div id="numberGrid">
+	<div id="digitKeypad" class="box">
+		<div>
+		<span class="g"><span class="hint">1</span><span class="c">1</span></span>
+		<span class="g"><span class="hint">2</span><span class="c">2</span></span>
+		<span class="g"><span class="hint">3</span><span class="c">3</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">4</span><span class="c">4</span></span>
+		<span class="g"><span class="hint">5</span><span class="c">5</span></span>
+		<span class="g"><span class="hint">6</span><span class="c">6</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">7</span><span class="c">7</span></span>
+		<span class="g"><span class="hint">8</span><span class="c">8</span></span>
+		<span class="g"><span class="hint">9</span><span class="c">9</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">0</span><span class="c">0</span></span>
+		<span class="c">,</span>
+		<span class="c">.</span>
+		</div>
+</div>
+	<div id="symbols">
+		<!--div style="margin-top: .5em;">
+		<span class="g"><span class="hint">0</span><span class="c">฿</span></span>
+		<span class="g"><span class="hint">0</span><span class="c">๚</span></span>
+		<span class="g"><span class="hint">0</span><span class="c">ๆ</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">0</span><span class="c">ฯลฯ</span></span>
+		</div-->
+</div>
+</div>
+</div>
 
 
 
