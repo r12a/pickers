@@ -2273,7 +2273,7 @@ function buildDBInfoLineOLD (char, toplevel, originStr, ptr, showAll) {
 
 			// get type
 			out += '<span><em>type</em> '
-			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
+			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="type">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
 			else out += '-'
 			out += '</span>'
 
@@ -2560,7 +2560,7 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 			// get type
 			out += '<bdi class="analysisType">'
 			//out += '<em>type</em> '
-			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="ipa" onmouseover="showMenuText(\'Type of character.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
+			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="" onmouseover="showMenuText(\'Type of character.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
 			else out += '<span class="ipa">-</span>'
 			out += '</bdi>'
 
@@ -2569,6 +2569,13 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 				out += '<bdi class="analysisStatus">'
 				//out += '<em>usage</em> '
 				out += ' <span style="color:black; font-weight: bold;" onmouseover="showMenuText(\'Usage notes.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.statusLoc]+'</span>'
+				out += '</bdi>'
+				}
+
+			// get class (ie. general category)
+			if (spreadsheetRows[char][cols.class] && cols.class > 0) {
+				out += '<bdi class="">'
+				out += ' <span style="font-size: 80%; font-style:italic;" onmouseover="showMenuText(\'General category.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.class]+'</span>'
 				out += '</bdi>'
 				}
 
