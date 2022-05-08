@@ -12,16 +12,16 @@ function toggleAlternatives (type) {
     var chars = document.querySelectorAll('.c')
 	
 	if (type === 'all') {
-		for (i=0;i<chars.length;i++) chars[i].style.display = 'inline-block'
+		for (i=0;i<chars.length;i++) chars[i].parentNode.style.display = 'inline-block'
 		return
 		}
 
 	for (i=0;i<chars.length;i++) {
-		if (chars[i].parentNode.id !== 'punctuation') chars[i].style.display = 'none'
+		if (chars[i].parentNode.id !== 'punctuation') chars[i].parentNode.style.display = 'none'
 		}
 	
 	for (i=0;i<chars.length;i++) {
-		if (chars[i].classList.contains(type)) chars[i].style.display = 'inline-block'
+		if (chars[i].classList.contains(type)) chars[i].parentNode.style.display = 'inline-block'
 		}
 	}
 
