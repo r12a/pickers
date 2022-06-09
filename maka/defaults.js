@@ -1,6 +1,6 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'MakasarGraphite' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Makasar WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
@@ -18,7 +18,7 @@ var thisPicker = 'makasarPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "MakasarGraphite WF" ]
+var webFonts = [ "Makasar WF" ]
 
 
 var template = {}
