@@ -215,7 +215,7 @@ function showCodepoints () {
 function openEscapeWindow () {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var converter = window.open('/app-conversion/?q='+	encodeURIComponent(chars), 'converter') 
+	var converter = window.open('../../app-conversion/index.html?q='+	encodeURIComponent(chars), 'converter') 
 	output.focus()
 	converter.focus()
 	}
@@ -223,7 +223,7 @@ function openEscapeWindow () {
 function openUniViewWindow () {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var uniview = window.open('/uniview/?charlist='+	encodeURIComponent(chars), 'uniview') 
+	var uniview = window.open('../../uniview/index.html?charlist='+	encodeURIComponent(chars), 'uniview') 
 	output.focus()
 	uniview.focus()
 	}
@@ -236,7 +236,7 @@ function openUniViewUniqueWindow () {
     const uniqueSet = new Set(filtered)
     const backToArray = [...uniqueSet]
     chars = backToArray.join('')
-	var uniview = window.open('/uniview/?charlist='+	encodeURIComponent(chars), 'uniview') 
+	var uniview = window.open('../../uniview/index.html?charlist='+	encodeURIComponent(chars), 'uniview') 
 	output.focus()
 	uniview.focus()
 	}
@@ -244,7 +244,7 @@ function openUniViewUniqueWindow () {
 function openAnalyseWindow () {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var analyse = window.open('/app-analysestring/?chars='+	encodeURIComponent(chars), 'analyse') 
+	var analyse = window.open('../../app-analysestring/index.html?chars='+	encodeURIComponent(chars), 'analyse') 
 	output.focus()
 	analyse.focus()
 	}
@@ -252,7 +252,7 @@ function openAnalyseWindow () {
 function openListWindow () {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var listchar = window.open('/app-listcharacters/?chars='+	encodeURIComponent(chars), 'listchar') 
+	var listchar = window.open('../../app-listcharacters/index.html?chars='+	encodeURIComponent(chars), 'listchar') 
 	output.focus()
 	listchar.focus()
 	}
@@ -265,7 +265,7 @@ function openUsageWindow () {
     const uniqueSet = new Set(filtered)
     const backToArray = [...uniqueSet]
     chars = backToArray.join('')
-	var usage = window.open('/app-charuse/?charlist='+	encodeURIComponent(chars), 'usage') 
+	var usage = window.open('../../app-charuse/index.html?charlist='+	encodeURIComponent(chars), 'usage') 
 	output.focus()
 	usage.focus()
 	}
@@ -273,7 +273,7 @@ function openUsageWindow () {
 function openFontlistWindow (scriptName) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var fontlist = window.open('/scripts/fontlist/?script='+scriptName+'&text='+	encodeURIComponent(chars), 'fontlist') 
+	var fontlist = window.open('../../scripts/fontlist/index.html?script='+scriptName+'&text='+	encodeURIComponent(chars), 'fontlist') 
 	output.focus()
 	fontlist.focus()
 	}
@@ -281,7 +281,7 @@ function openFontlistWindow (scriptName) {
 function openListbidiWindow (scriptName) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var listbidi = window.open('/scripts/apps/listbidi/?chars='+	encodeURIComponent(chars), 'listbidi') 
+	var listbidi = window.open('../../scripts/apps/listbidi/index.html?chars='+	encodeURIComponent(chars), 'listbidi') 
 	output.focus()
 	listbidi.focus()
 	}
@@ -289,7 +289,7 @@ function openListbidiWindow (scriptName) {
 function openListcatsWindow (scriptName) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var listcats = window.open('/scripts/apps/listcategories/?chars='+	encodeURIComponent(chars), 'listcats') 
+	var listcats = window.open('../../scripts/apps/listcategories/index.html?chars='+	encodeURIComponent(chars), 'listcats') 
 	output.focus()
 	listcats.focus()
 	}
@@ -297,7 +297,7 @@ function openListcatsWindow (scriptName) {
 function openListlinebreakWindow (scriptName) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var listlines = window.open('/scripts/apps/listlinebreak/?chars='+	encodeURIComponent(chars), 'listlines') 
+	var listlines = window.open('../../scripts/apps/listlinebreak/index.html?chars='+	encodeURIComponent(chars), 'listlines') 
 	output.focus()
 	listlines.focus()
 	}
@@ -305,7 +305,7 @@ function openListlinebreakWindow (scriptName) {
 function openListindicWindow (scriptName) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var listindic = window.open('/scripts/apps/listindic/?chars='+	encodeURIComponent(chars), 'listindic') 
+	var listindic = window.open('../../scripts/apps/listindic/index.html?chars='+	encodeURIComponent(chars), 'listindic') 
 	output.focus()
 	listindic.focus()
 	}
@@ -315,7 +315,7 @@ function openScriptPageWindow () {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
     chars = [...chars]
-	var scriptdesc = window.open('/scripts/'+template.noteslocation+'?index='+encodeURIComponent(chars[0]), 'scriptdesc') 
+	var scriptdesc = window.open('../../scripts/'+template.noteslocation+'.html?showIndex#index'+encodeURIComponent(chars[0]), 'scriptdesc') 
 	output.focus()
 	scriptdesc.focus()
 	}
@@ -325,8 +325,8 @@ function openBlockPageWindow () {
 	var output = document.getElementById('output')
 	var char = getHighlightedText(output).codePointAt(0).toString(16).toUpperCase()
     while (char.length < 4) char = '0'+char
-    var blockLocation = template.blocklocation.replace(/\/scripts\//,'').replace(/\/block/,'')
-    blockLocation = '/scripts/'+blockLocation+'/block'
+    //var blockLocation = template.blocklocation.replace(/\/scripts\//,'').replace(/\/block/,'')
+    var blockLocation = '../../scripts/'+template.blocklocation+'/block.html'
 	var blockdesc = window.open(blockLocation+'#char'+char, 'blockdesc') 
 	output.focus()
 	blockdesc.focus()
@@ -343,7 +343,7 @@ function openBlockPageWindow () {
 function openVocabWindow (filename) {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)
-	var vocab = window.open(filename+'?q='+	encodeURIComponent(chars), 'vocab') 
+	var vocab = window.open('../../scripts/'+filename+'.html?q='+	encodeURIComponent(chars), 'vocab') 
 	output.focus()
 	vocab.focus()
 	}
@@ -1459,7 +1459,7 @@ function titleSort (a, b) {
 function getWelcome (dir) {
 	// creates the welcome message for new users
 	// rtl indicates whether or not to include UI direction msg
-	var out = "<p>You can change the contrast for this app by clicking on the <span style='color:brown;'>Change contrast</span> text in the top right corner of the page.<br/>"
+	var out = "<p>You can change the contrast and font size for this app by clicking on <img src='../shared27/images/access.png' alt='Accessibility Settings' style='vertical-align:bottom; height:26px;'> in the top right corner of the page.<br/>"
 	if (dir === 'rtl') out += "The selection area for this picker is ordered RTL by default, but can be set to LTR at <samp>more controls/table direction</samp>.<br/>"
 	out += "Find characters by shape, transliteration, or by selecting from the panel. Explore and transform text using the controls above the large box. Use the controls at the bottom of the page to change other settings, and <samp>more controls/reset</samp> to return to the default setup. Familiarise yourself with <a href='help/'>the help page</a> before use.<br/>Click one of the following buttons to remove this message. Click <samp>Ok to store</samp> if you want this and other pickers to remember your settings between sessions. Settings are stored locally on the computer/device you are using.<br/><button onClick='savePreferences(this)'>Ok to store</button> <button onClick='dontStore(this)'>Don't store</button></p>"
 	return out
@@ -2306,7 +2306,7 @@ function buildDBInfoLineOLD (char, toplevel, originStr, ptr, showAll) {
 			var blockfile = getScriptGroup(parseInt(hex,16), true)
 			//console.log(blockfile)
 			if (blockfile) {
-				out += '<a title="Right-click to open notes file." href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">details</a>'
+				out += '<a title="Right-click to open notes file." href="../../scripts/'+blockfile+'/block.html#char'+hex+'" target="_blank">details</a>'
 				}
 			out += '</span><span class="dbCharName">'	
 
@@ -2441,7 +2441,7 @@ function buildDBInfoLineLESSOLD (char, toplevel, originStr, ptr, showAll) {
 			var blockfile = getScriptGroup(parseInt(hex,16), true)
 			//console.log(blockfile)
 			if (blockfile) {
-				out += '<bdi><a title="Right-click to open notes file." href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">details</a></bdi>'
+				out += '<bdi><a title="Right-click to open notes file." href="../../scripts/'+blockfile+'/block.html#char'+hex+'" target="_blank">details</a></bdi>'
 				}
 			out += '</span>'	
 
@@ -2550,8 +2550,8 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 				for (let t=0;t<cols.othertranscriptions.length;t++) {
 					//out += '<bdi class="analysisTransc" onclick="sieveFor(\'analysisTransc\')" onmouseover="showMenuText(\''+cols.othertranscriptions[t][1]+' transcription. (Click to extract a list.)\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer"><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
 					out += '<bdi class="analysisTransc" onmouseover="showMenuText(\''+cols.othertranscriptions[t][1]+' transcription.\',\'tan\')" onmouseout="hideMenuText()"><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
-					if (spreadsheetRows[char][cols.othertranscriptions[t][0]]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.othertranscriptions[t][0]]+'</span>'
-					else out += '<span class="ipa">-</span>'
+					if (spreadsheetRows[char][cols.othertranscriptions[t][0]]) out += ' <span class="transc">'+spreadsheetRows[char][cols.othertranscriptions[t][0]]+'</span>'
+					else out += '<span>-</span>'
 					out += '</bdi>'
 					}
 				}
@@ -2584,8 +2584,8 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 			if (spreadsheetRows[char][cols.transLoc] && cols.transLoc > 0) {
 				out += '<bdi class="analysisTranslit" onmouseover="showMenuText(\'Transliteration produced by this app.\',\'tan\')" onmouseout="hideMenuText()">'
 				out += '<span><em>translit</em> '
-				if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transLoc]+'</span>'
-				else out += '<span class="ipa">-</span>'
+				if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="">'+spreadsheetRows[char][cols.transLoc]+'</span>'
+				else out += '<span>–</span>'
 				out += '</bdi>'
 				}
 
@@ -2601,10 +2601,10 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 			// add link to notes page (using the block column)
 			if (spreadsheetRows[char][cols.block] && cols.block > 0) {
 				//out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+spreadsheetRows[char][cols.block]+'/block#char'+hex+'" target="_blank">details</a></bdi>'
-                var blockloc = template.blocklocation.replace('/scripts/','').replace('/block','') // deal with legacy
-				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+blockloc+'/block#char'+hex+'" target="details">notes</a></bdi> • '
+                //var blockloc = template.blocklocation.replace('/scripts/','').replace('/block','') // deal with legacy
+				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="../../scripts/'+template.blocklocation+'/block.html#char'+hex+'" target="details">notes</a></bdi> • '
 				out += '<bdi onmouseover="showMenuText(\'Open a page to show character properties.\',\'tan\')" onmouseout="hideMenuText()"><a href="https://util.unicode.org/UnicodeJsps/character.jsp?a='+hex+'" target="details">properties</a></bdi>'
-                console.log('blockloc',blockloc)
+                console.log('template.blocklocation',template.blocklocation)
 				}
 
 /*			// add link to notes page
