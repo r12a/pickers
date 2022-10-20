@@ -786,14 +786,14 @@ if (template.scriptcode) {
 
     //out += getData(template.scriptcode)
     
-    if (template.noteslocation) out += '<a href="../../scripts/' + template.noteslocation + '" target="_blank">Script notes</a><br/>\n'
-    if (template.blocklocation) out += '<a href="../../scripts/' + template.blocklocation + '/block" target="_blank">Character notes</a><br/>\n'
-    out += '<a href="../../scripts/links?iso=' + template.scriptcode + '" target="_blank">Script-related links for '+template.scriptcode+'</a><br/>\n'
-    out += '<a href="../../app-charuse?language=' + defaults.language + '" target="_blank">Character usage for '+defaults.language+'</a><br/>\n'
+    if (template.noteslocation) out += '<a href="../../scripts/' + template.noteslocation + '.html" target="_blank">Script notes</a><br/>\n'
+    if (template.blocklocation) out += '<a href="../../scripts/' + template.blocklocation + '/block.html" target="_blank">Character notes</a><br/>\n'
+    out += '<a href="../../scripts/links.html?iso=' + template.scriptcode + '" target="_blank">Script-related links for '+template.scriptcode+'</a><br/>\n'
+    out += '<a href="../../app-charuse/index.html?language=' + defaults.language + '" target="_blank">Character usage for '+defaults.language+'</a><br/>\n'
     out += `
-    	<a onclick="this.href = '../../uniview/?charlist='+getHighlightedText(_output)" target="_blank" href="#">UniView</a><br/>
-    	<!--a onclick="this.href = '../../app-listcharacters/?chars='+getHighlightedText(_output)" target="_blank" href="#">List characters</a><br/>
-    	<a onclick="this.href = '../../app-conversion/?q='+getHighlightedText(_output)" target="_blank" href="#">Character converter</a-->
+    	<a onclick="this.href = '../../uniview/index.html?charlist='+getHighlightedText(_output)" target="_blank" href="#">UniView</a><br/>
+    	<!--a onclick="this.href = '../../app-listcharacters/index.html?chars='+getHighlightedText(_output)" target="_blank" href="#">List characters</a><br/>
+    	<a onclick="this.href = '../../app-conversion/index.html?q='+getHighlightedText(_output)" target="_blank" href="#">Character converter</a-->
     	</div>`
     
     out += '</details>'
@@ -801,7 +801,7 @@ if (template.scriptcode) {
     
 out += `<details>
 <summary>more character apps</summary>
-<iframe id="pickerlist" src="../pickerlist"></iframe>
+<iframe id="pickerlist" src="../pickerlist.html"></iframe>
 </details>
 `
 if ((typeof(footnotes) !== 'undefined')) {
