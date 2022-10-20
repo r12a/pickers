@@ -25,10 +25,10 @@ var template = {}
 	template.title = 'Lisu character app'
 	//template.sample = "ꓠꓬꓲꓻꓠꓬꓲ ꓣꓳꓽꓡꓲꓢꓴ ꓫꓵꓽꓐꓴ ꓒꓵꓽꓒꓽ ꓐꓴꓣꓱꓽˍꓔꓬˍꓟ ꓢꓽꓚꓻ ꓛꓲꓻꓐꓶꓻꓔꓯꓸꓣꓱꓽꓐˍꓡˍꓠꓼꓟ꓾ ꓞꓳꓻꓡꓯꓸ ꓐꓴˍꓶꓻꓙꓳˍꓡꓳ꓿ꓟꓬꓽꓠꓬꓲ ꓕꓲꓽꓐꓱꓻꓟˍꓠꓬ꓾"
 	template.sample = "ꓞꓳ ꓘꓹ ꓠꓯꓹꓼ ꓢꓲ ꓫꓬ ꓟ ꓙ ꓖꓴ ꓗꓪ ꓟꓬꓱꓽ ꓧꓳꓽ ꓢꓴ ꓠꓬ꓾ ꓞꓳ ꓘꓹ ꓗꓪ ꓟ ꓞꓳ ꓟ ꓐꓴ ꓔꓯ ꓮ ꓡꓲ ꓬꓰ ꓠꓯꓹ ꓟ꓾ ꓟꓬꓱꓽ ꓔꓯ ꓧꓳꓽ ꓪꓴꓸ ꓟꓴ ꓢꓴ ꓬꓲ ꓜꓴꓻ ꓤ (Committee) ꓕꓲ ꓜꓴꓻ ꓢꓲꓺ ꓖꓶ ꓠꓯꓹ ꓡꓳ꓿"
-    // sample source: http://www.evertype.com/standards/iso10646/pdf/fraser-sample.pdf
-	template.blocklocation= '/scripts/lisu/block'  // blocklocation to use for examples
-	template.noteslocation = 'lisu/' // location of script notes relevant to this app
-	//template.vocablocation = '/scripts/XXXX/XX_vocab' // location of term database, full url
+	template.sampleSource = 'http://www.evertype.com/standards/iso10646/pdf/fraser-sample.pdf'
+	template.blocklocation= 'lisu'  // block directory
+	template.noteslocation = '' // location of script notes
+	template.vocablocation = '' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'lisu'
 	template.scriptcode = 'Lisu'

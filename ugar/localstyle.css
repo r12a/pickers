@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Noto Sans Ugaritic WF';
-    src: url('/shared/webfonts/notosansugaritic-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notosansugaritic-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosansugaritic-regular-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/notosansugaritic-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}

@@ -24,13 +24,14 @@ var webFonts = [ "Noto Sans Batak WF" ]
 var template = {}
 	template.title = 'Batak'
 	template.sample = "ᯤᯉᯪᯞᯂ᯲ᯖᯮᯞᯪᯘᯉ᯲ᯂᯪᯖ ᯑᯪᯅᯩᯉ᯲ᯖᯮᯂ᯲ᯀᯬᯞᯩᯂ᯲ᯖᯝᯉ᯲ᯖᯝᯉ᯲ᯂᯪᯖ. ᯀᯞᯖ᯲ᯀᯞᯖ᯲ᯂᯪᯖ,ᯘᯩᯐᯒᯄ᯲ᯂᯪᯖ."
-	template.blocklocation= 'batk'  // blocklocation to use for examples
-	template.noteslocation = 'batk' // location of script notes relevant to this app
+	template.sampleSource = ''
+	template.blocklocation= 'batk'  // block directory
+	template.noteslocation = 'batk/btk' // location of script notes
+	template.vocablocation = 'batk/btk_vocab' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'batk'
 	template.scriptcode = 'batk'
 	template.fontLocale = "batk"
-	template.vocablocation = '../../scripts/batk/btk_vocab' // location of term database, full url
 	template.hints = true
 	
 	template.defaultSpace = ' '

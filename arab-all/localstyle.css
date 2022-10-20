@@ -1,15 +1,15 @@
 @font-face {
     font-family: 'Scheherazade New WF';
-    src: url('/shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/scheherazadenew-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/scheherazadenew-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Naskh Arabic WF';
     src: 	local('Noto Naskh Arabic'),
-			url('/shared/webfonts/NotoNaskhArabic-Regular.woff2') format('woff2'),
-         	url('/shared/webfonts/NotoNaskhArabic-Regular.woff') format('woff');
+			url('../../shared/webfonts/NotoNaskhArabic-Regular.woff2') format('woff2'),
+         	url('../../shared/webfonts/NotoNaskhArabic-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}

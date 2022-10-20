@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'Noto Sans Ol Chiki WF';
-    src: url('/shared/webfonts/notosansolchiki-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notosansolchiki-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosansolchiki-regular-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/notosansolchiki-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
 
 
-[lang=hi] { font-family: 'Noto Sans Ol Chiki WF', serif; }
+[lang=sat] { font-family: 'Noto Sans Ol Chiki WF', serif; }
 
 
 

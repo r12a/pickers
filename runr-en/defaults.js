@@ -24,8 +24,10 @@ var webFonts = [ "BabelStone Moon Runes WF", "BabelStone Runic Berhtwald WF" ]
 var template = {}
 	template.title = 'Tolkien Runes'
 	template.sample = "ᚹᚣᚱᛗᛋᛏᚫᚾᛞ᛫ᛒᚣ᛫ᚦᛖ᛫ᚷᚱᛖᚣ᛫ᛋᛏᚩᚾᛖ᛫ᚹᚻᛁᛚᛖ᛫ᚦᛖ᛫ᚦᚱᚢᛋᚻ᛫ᛱᚾᚩᚳᛱᛋ᛫ᚫᚾᛞ᛫ᚦᛖ᛫ᛋᛖᛏᛏᛁᚾᚷ᛫ᛋᚢᚾ᛫ᚹᛁᚦ᛫ᚦᛖ᛫ᛚᚫᛋᛏ᛫ᛚᛁᚷᚻᛏ᛫ᚩᚠ᛫ᛞᚢᚱᛁᚾᛋ᛫ᛞᚫᚣ᛫ᚹᛁᛚᛚ᛫ᛋᚻᛁᚾᛖ᛫ᚢᛈᚩᚾ᛫ᚦᛖ᛫ᛱᛖᚣᚻᚩᛚᛖ  ᚦ⃞     ᛋᛗᚪᚢᚷ"
-	// sample source: https://www.babelstone.co.uk/Fonts/MoonRunes.html
-	template.blocklocation= '/scripts/runr/block'  // blocklocation to use for examples
+	template.sampleSource = 'https://www.babelstone.co.uk/Fonts/MoonRunes.html'
+	template.blocklocation= 'runic'  // block directory
+	template.noteslocation = '' // location of script notes
+	template.vocablocation = '' // location of term database
 	template.direction = "bidi" // indicates whether this is a picker for a RTL script
 	template.github = 'runr-en'
 	template.scriptcode = 'Runr'

@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'Noto Sans Oriya WF';
-    src: url('/shared/webfonts/notosansoriya-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notosansoriya-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosansoriya-regular-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/notosansoriya-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
 
 
-[lang=hi] { font-family: 'Noto Sans Oriya WF', serif; }
+[lang=or] { font-family: 'Noto Sans Oriya WF', serif; }
 
 
 

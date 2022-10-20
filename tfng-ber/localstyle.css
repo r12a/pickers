@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Noto Sans Tifinagh WF';
-    src: url('/shared/webfonts/notoseriftifinagh-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notoseriftifinagh-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notoseriftifinagh-regular-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/notoseriftifinagh-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}

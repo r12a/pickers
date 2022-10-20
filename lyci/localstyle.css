@@ -1,14 +1,13 @@
 @font-face {
-    font-family: 'Noto Sans Lydian WF';
-    src: url('/shared/webfonts/notosanslydian-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notosanslydian-regular-webfont.woff') format('woff');
+    font-family: 'Noto Sans Lycian WF';
+    src: url('../../shared/webfonts/notosanslycian-regular-webfont.woff2') format('woff2') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 
 
 
-[lang=hi] { font-family: 'Noto Sans Lydian WF'; }
+[lang=xlc] { font-family: 'Noto Sans Lycian WF'; }
 
 
 

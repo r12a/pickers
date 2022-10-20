@@ -24,9 +24,10 @@ var webFonts = [ "Noto Sans Georgian WF", "Noto Serif Georgian WF", "BGP 2017 De
 var template = {}
 	template.title = 'Khutsuri character app'
 	template.sample = "Ⴋⴓⴞⴊⴈ 1. Ⴗⴅⴄⴊⴀ ⴀⴃⴀⴋⴈⴀⴌⴈ ⴈⴁⴀⴃⴄⴁⴀ ⴇⴀⴅⴈⴑⴓⴔⴀⴊⴈ ⴃⴀ ⴇⴀⴌⴀⴑⴜⴍⴐⴈ ⴖⴈⴐⴑⴄⴁⴈⴇⴀ ⴃⴀ ⴓⴔⴊⴄⴁⴈⴇ. Ⴋⴀⴇ ⴋⴈⴌⴈⴝⴄⴁⴓⴊⴈ ⴀⴕⴅⴇ ⴂⴍⴌⴄⴁⴀ ⴃⴀ ⴑⴈⴌⴃⴈⴑⴈ ⴃⴀ ⴄⴐⴇⴋⴀⴌⴄⴇⴈⴑ ⴋⴈⴋⴀⴐⴇ ⴓⴌⴃⴀ ⴈⴕⴚⴄⴍⴃⴌⴄⴌ ⴛⴋⴍⴁⴈⴑ ⴑⴓⴊⴈⴑⴉⴅⴄⴇⴄⴁⴈⴇ."
-	// source: https://unicode.org/udhr/d/udhr_kat.html
-	template.blocklocation= 'georgian'  // blocklocation to use for examples
-	template.noteslocation = 'georgian/' // location of script notes relevant to this app
+	template.sampleSource = 'https://unicode.org/udhr/d/udhr_kat.html'
+	template.blocklocation= 'georgian'  // block directory
+	template.noteslocation = 'georgian/ka' // location of script notes
+	template.vocablocation = 'georgian/ka_vocab' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'geok-ka'
 	template.scriptcode = 'Geok'

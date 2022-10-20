@@ -25,8 +25,10 @@ var template = {}
 	template.title = 'Anglo-Saxon Runes'
 	template.sample = "ᚫᛣᚱᛁᛋᛏ ᚹᚫᛋ ᚩᚾ ᚱᚩᛞᛁ ᚻᚹᛖᚦᚱᚫ   ᚦᛖᚱ ᚠᚢᛋᚫ ᚠᛠᚱᚱᚪᚾ ᛣᚹᚩᛗᚢ   ᚫᚦᚦᛁᛚᚫ ᛏᛁᛚ ᚪᚾᚢᛗ   ᛁᚳ ᚦᚫᛏ ᚪᛚ ᛒᛁᚻ"
 	// sample source: Ruthwell Cross, in https://en.wikipedia.org/wiki/Ruthwell_Cross
-	template.blocklocation= 'runr'  // blocklocation to use for examples
-	template.noteslocation = '' // location of script notes relevant to this app
+	template.sampleSource = ''
+	template.blocklocation= 'runic'  // block directory
+	template.noteslocation = '' // location of script notes
+	template.vocablocation = '' // location of term database
 	template.direction = "bidi" // indicates whether this is a picker for a RTL script
 	template.github = 'runr-ang'
 	template.scriptcode = 'Runr'

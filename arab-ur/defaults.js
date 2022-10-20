@@ -24,10 +24,11 @@ var webFonts = [ "Noto Nastaliq Urdu WF", "Scheherazade WF", "Awami Nastaliq WF"
 var template = {}
 	template.title = 'Urdu character app'
 	template.sample = "(۲) ہر شخص کو اس بات کا حق ہے کہ وہ ملک سے چلا جائے چاہے یہ ملک اس کا اپنا ہو۔ اور اسی طرح اسے ملک میں واپس آ جانے کا بھی حق ہے۔"
-    template.blocklocation= '/scripts/arabic/block'  // blocklocation to use for examples
+	template.sampleSource = ''
+	template.blocklocation= 'arabic'  // block directory
+	template.noteslocation = 'arabic/ur' // location of script notes
+	template.vocablocation = 'arabic/ur_vocab' // location of term database
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
-	template.vocablocation = '/scripts/arabic/ur_vocab' // location of term database, full url
-	template.noteslocation = 'arabic/' // location of script notes relevant to this app
 	template.github = 'arab-ur'
 	template.scriptcode = 'Arab'
 	template.cursive = true
@@ -50,11 +51,55 @@ var template = {}
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Urdu text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
+
+{"title":"Make termbase<br>entry", "alt":`Create an entry for the termbase. Must start with vowelled-arabic and use | separator. Optional: meaning, ipa, transcription`, 
+
+"code":`
+_output=document.getElementById('output'); 
+_output.value = _output.value.trim()
+input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+term = input[0].trim();
+meaning = input[1]? input[1].trim() : '';
+ipa = input[2]? input[2].trim() : '';
+transc = input[3]? input[3].trim() : '';
+notes = input[4]? input[4].trim() : '';
+
+if (notes === '') notes = removeVowels(input[0]);
+
+add( term.trim()+'|'+meaning.trim()+'|'+ipa.trim()+'|'+transc.trim()+'|'+notes.trim()+'\\n');
+add( notes.trim()+'|'+meaning.trim()+'|'+ipa.trim()+'|'+transc.trim()+'|'+term.trim()+'\\n');
+`
+},
 ]
 
 
 
 var pulldown = [
+{"title":"Make termbase entry", "alt":`Create an entry for the termbase. Must start with vowelled-arabic and use | separator. Optional: meaning, ipa, transcription`, 
+
+"code":`
+_output=document.getElementById('output'); 
+_output.value = _output.value.trim()
+input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
+if (! hasHighlight(_output)) _output.value=''; 
+
+term = input[0].trim();
+meaning = input[1]? input[1].trim() : '';
+ipa = input[2]? input[2].trim() : '';
+transc = input[3]? input[3].trim() : '';
+notes = input[4]? input[4].trim() : '';
+
+if (notes === '') notes = removeVowels(input[0]);
+
+add( term.trim()+'|'+meaning.trim()+'|'+ipa.trim()+'|'+transc.trim()+'|'+notes.trim()+'\\n');
+add( notes.trim()+'|'+meaning.trim()+'|'+ipa.trim()+'|'+transc.trim()+'|'+term.trim()+'\\n');
+`
+},
+
+
+{"title":"Remove vowels", "alt":"Remove harakat, etc. from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 ]
 
 

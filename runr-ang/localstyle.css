@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Junicode WF';
-    src: url('/shared/webfonts/Junicode.woff') format('woff');
+    src: url('../../shared/webfonts/Junicode.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}

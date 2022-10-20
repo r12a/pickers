@@ -24,10 +24,10 @@ var webFonts = [ "Noto Sans Tai Le WF" ]
 var template = {}
 	template.title = 'Tai Le character app'
 	template.sample = "ᥘᥬ̈ᥔᥩᥛ̇ᥝᥢ̈ᥘᥭ̇，ᥐᥩᥙᥘᥭ̀ᥑᥨᥛ̌ᥑᥦᥢ́ᥖᥫᥒ̈ᥐᥣ，ᥝᥣᥐᥖᥣᥙ̌ᥐᥨᥢ̈ᥑᥥᥢ́ᥛᥣ̈ᥔᥥ́，ᥛᥣᥢ̀ᥘᥣ̈ᥟᥢᥐᥬ̀ᥓᥛᥑᥩᥙ̌ᥞᥤᥛ̈ᥙᥥ̀ᥢᥣᥢ̇ᥘᥢ̇，ᥛᥤ̈ᥐᥣᥭ̈ᥚᥣᥒ̇ᥓᥤᥢᥚᥧᥒ́ᥘᥫᥒᥑᥝ̀ᥛᥣᥢ̇ᥛᥣ̈，ᥟᥣᥛᥥᥝ̈ᥖᥭ̈ᥖᥒ̈ᥘᥣᥭ́ᥟᥩᥢᥐᥢᥐᥣ̌ᥓᥩᥭᥗᥦᥛ́．"
-    // source: http://www.seasite.niu.edu/tai/TaiDehong/story1/gif&jpg/p3.jpg
-	template.blocklocation= '/scripts/taile/block'  // blocklocation to use for examples
-	template.noteslocation = 'taile/' // location of script notes relevant to this app
-	// template.vocablocation = '/scripts/XXXX/XX_vocab' // location of term database, full url
+	template.sampleSource = 'http://www.seasite.niu.edu/tai/TaiDehong/story1/gif&jpg/p3.jpg'
+	template.blocklocation= 'taile'  // block directory
+	template.noteslocation = 'taile/tdd' // location of script notes
+	template.vocablocation = 'taile/tdd_vocab' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'tale'
 	template.scriptcode = 'Tale'

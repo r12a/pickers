@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Doulos SIL WF';
-    src: url('/shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2'),
-         url('/shared/webfonts/DoulosSIL-R.woff') format('woff');
+    src: url('../../shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2'),
+         url('../../shared/webfonts/DoulosSIL-R.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Junicode WF';
-    src: url('/shared/webfonts/Junicode.woff') format('woff');
+    src: url('../../shared/webfonts/Junicode.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}

@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'Scheherazade New WF';
-    src: url('/shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/scheherazadenew-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/scheherazadenew-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Arabic Sans Light WF';
-    src: 	url('/shared/webfonts/notosansarabic-light-webfont.woff2') format('woff2'),
-         	url('/shared/webfonts/notosansarabic-light-webfont.woff') format('woff');
+    src: 	url('../../shared/webfonts/notosansarabic-light-webfont.woff2') format('woff2'),
+         	url('../../shared/webfonts/notosansarabic-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}

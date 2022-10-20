@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Noto Sans Telugu WF';
-    src: url('/shared/webfonts/notosanstelugu-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notosanstelugu-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosanstelugu-regular-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/notosanstelugu-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}

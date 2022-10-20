@@ -2,13 +2,13 @@
 	font-family: 'Tibetan Machine Uni WF'; 
 	font-style: normal; 
 	font-weight: normal; 
-	src: url(/shared/webfonts/TibMachUni-1.901.woff); 
+	src: url(../../shared/webfonts/TibMachUni-1.901.woff); 
 	} 
 @font-face { 
 	font-family: 'Noto Serif Tibetan WF'; 
 	font-style: normal; 
 	font-weight: normal; 
-	src: url(/shared/webfonts/notoseriftibetan-regular-webfont.woff2); 
+	src: url(../../shared/webfonts/notoseriftibetan-regular-webfont.woff2); 
 	} 
 
 

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Noto Sans Elymaic WF';
-    src: url('/shared/webfonts/notosanselymaic-regular-webfont.woff2') format('woff2'),
+    src: url('../../shared/webfonts/notosanselymaic-regular-webfont.woff2') format('woff2'),
          url('/shared/webfonts/notosanselymaic-regular-webfont.woff2') format('woff');
     font-weight: normal;
     font-style: normal;

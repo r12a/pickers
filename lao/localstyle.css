@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'Noto Serif Lao WF';
-    src: url('/shared/webfonts/notoseriflao-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notoseriflao-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notoseriflao-regular-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/notoseriflao-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Sans Lao WF';
-    src: url('/shared/webfonts/NotoSansLao-Regular.woff2') format('woff2'),
-         url('/shared/webfonts/NotoSansLao-Regular.woff') format('woff');
+    src: url('../../shared/webfonts/NotoSansLao-Regular.woff2') format('woff2'),
+         url('../../shared/webfonts/NotoSansLao-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
