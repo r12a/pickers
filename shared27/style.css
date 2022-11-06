@@ -1220,7 +1220,8 @@ summary:hover {
 
 
 
-#fontPicker { font-size: 80%; margin: 0; width: 100%; text-align: left;  }
+#fontPicker, #otPicker { font-size: 80%; margin: 0; width: 100%; text-align: left;  }
+#otPicker label { white-space: nowrap; }
 #fontPickerWebfonts { margin-top: 1.5em; }
 #fontPickerCols { display: flex; justify-content: space-between; }
 .fpOptgroup { font-weight: bold; margin: 1em; }

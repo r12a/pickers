@@ -4318,3 +4318,248 @@ function setMarks () {
 
 
 
+function addVariantLigatures ( type ) {
+    // add font variants to the output
+    // type is the value to add or remove
+    
+    var values = _output.style.fontVariantLigatures
+    
+    if (values.includes(type)) values = values.replace(type, '')
+    else values += ' '+type
+    
+    _output.style.fontVariantLigatures = values
+    }
+
+
+
+function applyFontPosition (setting) {
+    // sets the value of font-variant-position
+    
+    _output.style.fontVariantPosition = setting
+    }
+
+
+
+function applyFontKerning (setting) {
+    // sets the value of font-kerning
+    
+    _output.style.fontKerning = setting
+    }
+
+
+function applyFontVariantCaps (setting) {
+    // sets the value of font-variant-caps
+    
+    _output.style.fontVariantCaps = setting
+    }
+
+
+
+function applyVariantNumericOLD ( type ) {
+    // add font variants to the output
+    // type is the value to add or remove
+    console.log('Change to', type)
+    var values = _output.style.fontVariantNumeric
+    
+    if (type === 'normal') {
+        _output.style.fontVariantNumeric = 'normal'
+        document.getElementById('liningNums').checked = true
+        document.getElementById('proportionalNums').checked = true
+        document.getElementById('diagonalFractions').checked = true
+        document.getElementById('ordinalVariant').checked = false
+        document.getElementById('slashedZeroVariant').checked = false
+        return
+        }
+    else values = values.replace(/normal/,'')
+    
+    if (type === 'lining-nums' && values.includes('oldstyle-nums')) {
+        values = values.replace(/oldstyle-nums/, 'lining-nums')
+        document.getElementById('variantNumericNormal').checked = false
+        }
+    
+    else if (type === 'oldstyle-nums' && values.includes('lining-nums')) {
+        values = values.replace(/lining-nums/, 'oldstyle-nums')
+         document.getElementById('variantNumericNormal').checked = false
+        }
+   
+    else if (type === 'proportional-nums' && values.includes('tabular-nums')) {
+        values = values.replace(/tabular-nums/, 'proportional-nums')
+        document.getElementById('variantNumericNormal').checked = false
+        }
+    
+    else if (type === 'tabular-nums' && values.includes('proportional-nums')) {
+        values = values.replace(/proportional-nums/, 'tabular-nums')
+         document.getElementById('variantNumericNormal').checked = false
+        }
+   
+    else if (type === 'diagonal-fractions' && values.includes('stacked-fractions')) {
+        values = values.replace(/stacked-fractions/, 'diagonal-fractions')
+        document.getElementById('variantNumericNormal').checked = false
+        }
+    
+    else if (type === 'stacked-fractions' && values.includes('diagonal-fractions')) {
+        values = values.replace(/diagonal-fractions/, 'stacked-fractions')
+         document.getElementById('variantNumericNormal').checked = false
+        }
+   
+    else { console.log('in final else')
+        if (values.includes(type)) values = values.replace(type, '')
+        else values += ' '+type
+        document.getElementById('variantNumericNormal').checked = false
+        }
+    
+    _output.style.fontVariantNumeric = values
+    console.log('Result', _output.style.fontVariantNumeric)
+    }
+
+
+
+
+function applyVariantNumericLESS ( type ) {
+    // add font variants to the output
+    // type is the value to add or remove
+    console.log('Change to', type)
+    var values = _output.style.fontVariantNumeric
+    
+    if (type === 'normal') {
+        _output.style.fontVariantNumeric = 'normal'
+        document.getElementById('liningNums').checked = false
+        document.getElementById('oldstyleNums').checked = false
+        document.getElementById('proportionalNums').checked = false
+        document.getElementById('tabularNums').checked = false
+        document.getElementById('diagonalFractions').checked = false
+        document.getElementById('ordinalVariant').checked = false
+        document.getElementById('slashedZeroVariant').checked = false
+        return
+        }
+    else values = values.replace(/normal/,'')
+    
+    if (type === 'lining-nums') {
+        if (values.includes('oldstyle-nums')) values = values.replace(/oldstyle-nums/, 'lining-nums')
+        else values += ' '+type
+        document.getElementById('oldstyleNums').checked = false
+        document.getElementById('variantNumericNormal').checked = false
+        }
+    
+    if (type === 'oldstyle-nums') {
+        if (values.includes('lining-nums')) values = values.replace(/lining-nums/, 'oldstyle-nums')
+        else values += ' '+type
+        document.getElementById('liningNums').checked = false
+        document.getElementById('variantNumericNormal').checked = false
+        }
+   
+    if (type === 'proportional-nums') {
+        if (values.includes('tabular-nums')) values = values.replace(/tabular-nums/, 'proportional-nums')
+        else values += ' '+type
+        document.getElementById('tabular-nums').checked = false
+        document.getElementById('variantNumericNormal').checked = false
+        }
+       
+    if (type === 'tabular-nums') {
+        if (values.includes('proportional-nums')) values = values.replace(/proportional-nums/, 'tabular-nums')
+        else values += ' '+type
+        document.getElementById('proportional-nums').checked = false
+        document.getElementById('variantNumericNormal').checked = false
+        }
+       
+    
+    _output.style.fontVariantNumeric = values
+    console.log('Result', _output.style.fontVariantNumeric)
+    }
+
+
+
+
+
+function applyVariantNumeric ( type ) {
+    // add font variants to the output
+    // type is the value to add or remove
+    console.log('Change', type)
+    var values = ''
+    
+    if (document.getElementById('variantNumericNormal').checked) {
+        _output.style.fontVariantNumeric = 'normal'
+        return
+        }
+    
+    if (document.getElementById('liningNums').checked) values += ' lining-nums'
+    if (document.getElementById('oldstyleNums').checked) values += ' oldstyle-nums'
+   
+    if (document.getElementById('proportionalNums').checked) values += ' proportional-nums'  
+    if (document.getElementById('tabularNums').checked) values += ' tabular-nums'  
+       
+    if (document.getElementById('diagonalFractions').checked) values += ' diagonal-fractions'  
+    if (document.getElementById('stackedFractions').checked) values += ' stacked-fractions'  
+       
+    if (document.getElementById('ordinalVariant').checked) values += ' ordinal'  
+       
+    if (document.getElementById('slashedZeroVariant').checked) values += ' slashed-zero'  
+       
+    
+    _output.style.fontVariantNumeric = values.trim()
+    console.log('Result', _output.style.fontVariantNumeric)
+    }
+
+
+
+
+function applyVariantEastAsian () {
+    // add font variants to the output
+    var values = ''
+    
+    if (document.getElementById('variantEastAsianNormal').checked) {
+        _output.style.fontVariantEastAsian = 'normal'
+        console.log('Result', _output.style.fontVariantEastAsian)
+        return
+        }
+    
+    if (document.getElementById('fullwidthVariant').checked) values += ' full-width'
+    if (document.getElementById('proportionalwidthVariant').checked) values += ' proportional-width'
+   
+    if (document.getElementById('jis78Variant').checked) values += ' jis78'  
+    if (document.getElementById('jis83Variant').checked) values += ' jis83'
+    if (document.getElementById('jis90Variant').checked) values += ' jis90'  
+
+    if (document.getElementById('simplifiedVariant').checked) values += ' simplified'   
+    if (document.getElementById('traditionalVariant').checked) values += ' traditional'  
+       
+    
+    _output.style.fontVariantEastAsian = values.trim()
+    console.log('Result', _output.style.fontVariantEastAsian)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

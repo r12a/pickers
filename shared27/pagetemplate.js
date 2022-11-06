@@ -208,6 +208,9 @@ out += `</header>
   <img title="Toggle invisible code points." onclick="toggleInvisibles()" src="../shared27/images/toggle.png" alt="Toggle" style="vertical-align: bottom;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
   if (typeof window.charCheckerList !== 'undefined') out += `<img title="Check the text for non-recommended characters or sequences." onclick="charChecker();" src="../shared27/images/checker.png" alt="Checker" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">` // charCheckerList is defined in localcode.js
   if (typeof fontDB !== 'undefined') out += `<img title="Open the font preview panel." style="margin-left:.5em;" onclick="if (document.getElementById('fontPicker').innerHTML=='') { document.getElementById('fontPicker').innerHTML = createFontPicker(); document.getElementById('fontManagementDetails').style.display='block'} else { document.getElementById('fontPicker').innerHTML=''; document.getElementById('fontManagementDetails').style.display='none'}" src="../shared27/images/fonts.png" alt="Fonts" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
+
+  out += `<img title="Set OpenType typographic features." style="margin-left:.5em;" onclick="if (document.getElementById('otPicker').style.display == 'none') { document.getElementById('otPicker').style.display = 'block'} else { document.getElementById('otPicker').style.display='none';}" src="../shared27/images/typography.png" alt="Typography" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
+
   out += `<img title="Delete all the text." onclick="deleteAll()" src="../shared27/images/clear.png" alt="Clear" style="margin-left: 1em;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
 <a class="interactiveHelpButton" href="help/#topLeftIcons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
   </span>
@@ -392,7 +395,10 @@ out += '<div id="fontPicker">'
 out += `</div>`
 
 
-out += `<details id="fontManagementDetails" style="display: none;">
+
+
+
+out += `<details id="fontManagementDetails" style="display: none; padding:1rem;">
 <summary>manage fonts</summary>
 
 <div style="display:flex; flex-wrap: nowrap; flex-direction:row;">
@@ -410,6 +416,215 @@ out += `<details id="fontManagementDetails" style="display: none;">
 </div>
 </details>
 `
+
+
+
+
+
+
+out += '<div id="otPicker" style="display:none;">'
+out += `<div onclick="document.getElementById('otPicker').style.display='none';" 
+			style="cursor:pointer; font-size: 200%; float:right; color:#ccc;">X</div>
+			
+<div id="typographyPicker" style="padding:1rem;">`
+
+// font variant ligatures
+out += `<div><span style="font-weight:bold;">Font variant ligatures:</span>
+<label"><input type="checkbox" onClick="addVariantLigatures('discretionary-ligatures')">discretionary</label>
+
+<label><input type="checkbox" onClick="addVariantLigatures('historical-ligatures')">historical</label>
+
+<label><input type="checkbox" onClick="addVariantLigatures('common-ligatures')">common</label>
+
+<label><input type="checkbox" onClick="addVariantLigatures('contextual')">contextual alt</label>
+</div>`
+
+// font variant position
+out += `<div><span style="font-weight:bold;">Font variant position:</span>
+<label><input type="radio" name="variantPosition" onClick="applyFontPosition('normal')" checked>normal</label>
+
+<label><input type="radio" name="variantPosition" onClick="applyFontPosition('sub')">sub</label>
+
+<label><input type="radio" name="variantPosition" onClick="applyFontPosition('super')">super</label>
+</div>`
+
+// font kerning
+out += `<div><span style="font-weight:bold;">Font kerning:</span>
+<label><input type="radio" name="variantKerning" onClick="applyFontKerning('auto')" checked>auto</label>
+
+<label><input type="radio" name="variantKerning" onClick="applyFontKerning('normal')">normal</label>
+
+<label><input type="radio" name="variantKerning" onClick="applyFontKerning('none')">none</label>
+</div>`
+
+// font variant caps
+out += `<div><span style="font-weight:bold;">Font variant caps:</span>
+<label><input type="radio" name="variantCaps" onClick="applyFontVariantCaps('normal')" checked>auto</label>
+
+<label><input type="radio" name="variantCaps" onClick="applyFontVariantCaps('small-caps')">small-caps</label>
+
+<label><input type="radio" name="variantCaps" onClick="applyFontVariantCaps('all-small-caps')">all-small-caps</label>
+
+<label><input type="radio" name="variantCaps" onClick="applyFontVariantCaps('petite-caps')">petite-caps</label>
+
+<label><input type="radio" name="variantCaps" onClick="applyFontVariantCaps('all-petite-caps')">all-petite-caps</label>
+
+<label><input type="radio" name="variantCaps" onClick="applyFontVariantCaps('unicase')">unicase</label>
+
+<label><input type="radio" name="variantCaps" onClick="applyFontVariantCaps('titling-caps')">titling-caps</label>
+</div>`
+
+// font variant numeric
+out += `<div><span style="font-weight:bold;">Font variant numeric:</span>
+<label><input type="checkbox" id="variantNumericNormal"
+	onClick="document.getElementById('liningNums').checked = false
+        document.getElementById('oldstyleNums').checked = false
+        document.getElementById('proportionalNums').checked = false
+        document.getElementById('tabularNums').checked = false
+        document.getElementById('diagonalFractions').checked = false
+        document.getElementById('stackedFractions').checked = false
+        document.getElementById('ordinalVariant').checked = false
+        document.getElementById('slashedZeroVariant').checked = false
+        applyVariantNumeric('normal')" checked>normal</label>
+
+<label><input type="checkbox" id="liningNums"
+	onClick="document.getElementById('oldstyleNums').checked = false
+		document.getElementById('variantNumericNormal').checked = false
+		applyVariantNumeric('lining-nums')">lining-nums</label>
+<label><input type="checkbox" id="oldstyleNums"
+	onClick="document.getElementById('liningNums').checked = false
+		document.getElementById('variantNumericNormal').checked = false
+		applyVariantNumeric('oldstyle-nums')">oldstyle-nums</label>
+
+<label><input type="checkbox" id="proportionalNums"
+	onClick="document.getElementById('tabularNums').checked = false
+		document.getElementById('variantNumericNormal').checked = false
+		applyVariantNumeric('proportional-nums')">proportional-nums</label>
+<label><input type="checkbox" id="tabularNums"
+	onClick="document.getElementById('proportionalNums').checked = false
+		document.getElementById('variantNumericNormal').checked = false
+		applyVariantNumeric('tabular-nums')">tabular-nums</label>
+
+<label><input type="checkbox" id="diagonalFractions"
+	onClick="document.getElementById('stackedFractions').checked = false
+		document.getElementById('variantNumericNormal').checked = false
+		applyVariantNumeric('diagonal-fractions')">diagonal-fractions</label>
+<label><input type="checkbox" id="stackedFractions"
+	onClick="document.getElementById('diagonalFractions').checked = false
+		document.getElementById('variantNumericNormal').checked = false
+		applyVariantNumeric('stacked-fractions')">stacked-fractions</label>
+
+<label><input type="checkbox" id="ordinalVariant"
+	onClick="document.getElementById('variantNumericNormal').checked = false
+		applyVariantNumeric('ordinal')">ordinal</label>
+
+<label><input type="checkbox" id="slashedZeroVariant"
+	onClick="document.getElementById('variantNumericNormal').checked = false
+		applyVariantNumeric('slashed-zero')">slashed-zero</label>
+</div>`
+
+
+
+// font variant east asian
+out += `<div><span style="font-weight:bold;">Font variant east asian:</span>
+<label><input type="checkbox" id="variantEastAsianNormal"
+	onClick="document.getElementById('jis78Variant').checked = false
+        document.getElementById('jis83Variant').checked = false
+        document.getElementById('jis90Variant').checked = false
+        document.getElementById('simplifiedVariant').checked = false
+        document.getElementById('traditionalVariant').checked = false
+        document.getElementById('fullwidthVariant').checked = false
+        document.getElementById('proportionalwidthVariant').checked = false
+        applyVariantEastAsian('normal')" checked>normal</label>
+
+<label><input type="checkbox" id="fullwidthVariant"
+	onClick="document.getElementById('proportionalwidthVariant').checked = false
+		document.getElementById('variantEastAsianNormal').checked = false
+		applyVariantEastAsian()">full-width</label>
+<label><input type="checkbox" id="proportionalwidthVariant"
+	onClick="document.getElementById('fullwidthVariant').checked = false
+		document.getElementById('variantEastAsianNormal').checked = false
+		applyVariantEastAsian()">proportional-width</label>
+
+<label><input type="checkbox" id="simplifiedVariant"
+	onClick="document.getElementById('jis78Variant').checked = false
+		document.getElementById('jis83Variant').checked = false
+		document.getElementById('jis90Variant').checked = false
+		document.getElementById('traditionalVariant').checked = false
+		document.getElementById('variantEastAsianNormal').checked = false
+		applyVariantEastAsian()">simplified</label>
+<label><input type="checkbox" id="traditionalVariant"
+	onClick="document.getElementById('jis78Variant').checked = false
+		document.getElementById('jis83Variant').checked = false
+		document.getElementById('jis90Variant').checked = false
+		document.getElementById('simplifiedVariant').checked = false
+		document.getElementById('variantEastAsianNormal').checked = false
+		applyVariantEastAsian()">traditional</label>
+<label><input type="checkbox" id="jis78Variant"
+	onClick="document.getElementById('jis83Variant').checked = false
+		document.getElementById('jis90Variant').checked = false
+		document.getElementById('simplifiedVariant').checked = false
+		document.getElementById('traditionalVariant').checked = false
+		document.getElementById('variantEastAsianNormal').checked = false
+		applyVariantEastAsian()">jis78</label>
+<label><input type="checkbox" id="jis83Variant"
+	onClick="document.getElementById('jis78Variant').checked = false
+		document.getElementById('jis90Variant').checked = false
+		document.getElementById('simplifiedVariant').checked = false
+		document.getElementById('traditionalVariant').checked = false
+		document.getElementById('variantEastAsianNormal').checked = false
+		applyVariantEastAsian()">jis83</label>
+<label><input type="checkbox" id="jis90Variant"
+	onClick="document.getElementById('jis78Variant').checked = false
+		document.getElementById('jis83Variant').checked = false
+		document.getElementById('simplifiedVariant').checked = false
+		document.getElementById('traditionalVariant').checked = false
+		document.getElementById('variantEastAsianNormal').checked = false
+		applyVariantEastAsian()">jis90</label>
+</div>`
+
+
+// font feature settings
+out += `<div><span style="font-weight:bold;">Font feature settings:</span>
+
+<a href="https://learn.microsoft.com/en-gb/typography/opentype/spec/featurelist" target="_blank" 
+		style="display:inline-block; text-align:center; border:1px solid #ccc; border-radius:.5rem; width:1rem; height: 1rem; vertical-align:middle; line-height:1.2; margin-inline-end:.5rem;">?</a>
+
+<input type="text" id="featureSettings"
+	onInput="_output.style.fontFeatureSettings = this.value.trim()"
+		placeholder='eg. "swsh", "cv12", "ss02", "cv78" 2, "smpl"'
+		style="width:20rem;">
+
+<span style="color:#ccc; margin-inline-start:.5rem; cursor: pointer; margin-inline-end:1rem;"
+	onClick="document.getElementById('featureSettings').value = ''
+        _output.style.fontFeatureSettings =''">X</span>
+		`
+
+
+// font language override
+out += ` <span style="white-space:nowrap"><span style="font-weight:bold">Font language override:</span> 
+
+<a href="https://learn.microsoft.com/en-gb/typography/opentype/spec/languagetags" target="_blank" 
+		style="display:inline-block; text-align:center; border:1px solid #ccc; border-radius:.5rem; width:1rem; height: 1rem; vertical-align:middle; line-height:1.2; margin-inline-end:.5rem;">?</a>
+	
+<input type="text" id="langOverrideSettings"
+	onInput="document.getElementById('languageOverrideNormal').checked = false
+		_output.style.fontLanguageOverride = this.value.trim()"
+		placeholder='eg. SRB'
+		style="width:5rem;">
+		</span>
+
+<span style="color:#ccc; margin-inline-start:.5rem; cursor: pointer;"
+	onClick="document.getElementById('langOverrideSettings').value = ''
+        _output.style.fontLanguageOverride =''">X</span>
+</div>`
+
+
+
+out += `</div>`
+out += `</div>`
+
+
 
 
 
