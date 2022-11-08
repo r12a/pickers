@@ -104,7 +104,7 @@ function createFontPicker () {
 
 
 function applyFontPreview (font) {
-	document.getElementById('output').style.fontFamily = "\'"+font+"\', 'Unicode BMP Fallback SIL', 'Adobe NotDef'"
+	document.getElementById('output').style.fontFamily = "\'"+font+"\', 'Unicode BMP Fallback SIL', 'Adobe NotDef', NotDef_WF"
 	}
 
 
@@ -170,7 +170,7 @@ out = `<div id="contrastSwitch" style="position:absolute;top:3px;right:14px; lin
 <div id="header-boilerplate"></div>
 `
 
-out += bp_appHeader('/shared/images/world.gif',template.title.replace(/ Character app/i,''),'v27');
+out += bp_appHeader('../../shared/images/world.gif',template.title.replace(/ Character app/i,''),'v27');
 
 out += `</header>
 
