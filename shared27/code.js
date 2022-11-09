@@ -770,7 +770,15 @@ function add (ch) {
 	else if (globals.n11n=='nfd') { outputNode.value = outputNode.value.normalize('NFD') }
 	}
 
+
+
+
+function setFallback (first, second) {
+	// set the temporary fallback font
+	// first is the main font set, second is the fallback
 	
+	document.getElementById( 'output' ).style.fontFamily = '"'+first+'", "'+second+'"'
+	}
 
 	
 	
@@ -788,7 +796,9 @@ function selectFont ( newFont ) {
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
     document.getElementById('fontList').value = defaults.font
 	}
+
 	
+
 function customFont ( newFont ) { 
 	if (newFont.match('"') || newFont.match(',')) { alert('Use a single font with no quotes.'); return }
 	addFontToLists(newFont, 'fontList,uiFont')
