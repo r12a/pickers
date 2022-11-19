@@ -46,6 +46,11 @@ return createContent()
 function createContent (direction) {
 
 var out = `
+
+<style>
+img.big { margin-block-start: 0; max-width: 100%; transform: scale(.8); }
+</style>
+
 <section id="input">
 <h2 href="#about">Inputting characters</h2>
 
@@ -318,32 +323,55 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 <section id="yellowControls">
 <h2 href="#yellowControls">Controls below the selection panel</h2>
 
-<p><img src="../../shared27/images/help/yellow_controls.png" alt=""/></p>
+<div><img src="../../shared27/images/help/yellow_controls.png" alt="" class="big"></div>
 
-    <p><b class="leadin" id="currentFont">Current font.</b> This control allows you to change the font used in the text area. If you want to use a font that is not in the predefined list, add the font using the <samp>manage fonts</samp> control (see above).</p>
+<p><b class="leadin" id="currentFont">Current font.</b> This control allows you to change the font used in the text area. If you want to use a font that is not in the predefined list, add the font using the <samp>manage fonts</samp> control (see above).</p>
     
-    <p><b class="leadin" id="fontSize">Font size.</b> Allows you to adjust the size of the font for the text area.</p>
+<p><b class="leadin" id="fontSize">Font size.</b> Allows you to adjust the size of the font for the text area.</p>
     
-    <p><b class="leadin" id="addCodepoints">Add codepoint(s).</b> You can add characters to the text area by typing codepoints and escapes in the <samp translate="no">Add codepoint</samp> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal.</p>
+<p><b class="leadin" id="addCodepoints">Add codepoint(s).</b> You can add characters to the text area by typing codepoints and escapes in the <samp translate="no">Add codepoint</samp> field and hitting return. This will accept HTML numeric character references, javascript and other programming escapes, U+ Unicode notation, or just simple codepoint numbers separated by spaces. All codepoint numbers (including those in escapes) must be hexadecimal. You can enter multiple code point values or escapes at the same time.</p>
 
-  <p><b class="leadin" id="normalise">Normalise.</b> All text is added to the main text area in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on the buttons in the yellow area. Note that normalization only takes place when you click on a character – text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. </p>
 
-    <p><img src="../../shared27/images/help/yellow_controls2.png" alt=""/></p>
 
-    <p><b class="leadin" id="lineHeight">Line height.</b> Adjust the line height for the text area.</p>
 
-<p><b class="leadin" id="changeText">Change text.</b> Tools for manipulating the content in the text area.</p>
-<p><img alt="Add space:" src="../../images/addspace.png"/> &nbsp; Adds a space between every character in the text area.</p>
-<p><img alt="Collapse space:" src="../../images/collapsespaces.png"/> &nbsp; Converts multiple spaces to a single space.</p>
-<p><img alt="Collapse lines:" src="../../images/collapselines.png"/> &nbsp; Convert all line breaks to spaces.</p>
-<p><img alt="Remove space:" src="../../images/removespace.png"/> &nbsp; Removes all spaces from the text area.</p>
-<p><img alt="Add comma:" src="../../images/addcomma.png"/> &nbsp; By default, adds ␣ between every character in the text area. Put a different character or sequence of characters in the box just to the left in order to add something else between each character.</p>
-<p><img alt="Count:" src="../../images/count.png"/> &nbsp; Counts the number of characters in the text area.</p>
-<p><b class="leadin">Replace.</b> Allows you to remove a character from the text area, or replace it with something else. Type in the left-hand box a single character or the hex code point value for the character you want to delete/replace. If replacing, type the replacement text in the right-hand box.</p>
+<div><img src="../../shared27/images/help/yellow_controls2.png" alt="" class="big"></div>
+
+<p><b class="leadin" id="lineHeight">Line height.</b> Adjust the line height for the text area.</p>
+
+<p><b class="leadin" id="replace">Replace.</b> This allows you to replace the items in the text area.  What you enter in the left-hand box will be replaced by what you enter in the right-hand box. You can enter multiple characters at a time, as characters.</p>
 
 <p><b class="leadin" id="searchFor">Search for. </b>If you are searching for a particular character and know (at least part of) the name or the codepoint, type that in the search box and hit return. All characters with matching text in the name or codepoint number will be highlighted. The highlighting is only removed when you click on the <samp translate="no">X</samp> next to the search input field. You can also use regular expression syntax to improve your search results. For example, to find the letter 'ha', but not 'gha' etc, you can use <kbd  translate="no">\\bha\\b</kbd> (or the shortcut, <kbd  translate="no">:ha:</kbd>).</p>
 
+<p><b class="leadin" id="setLanguage">Set language.</b> Add a BCP47 language tag here (ie. what you would use as the value of a <code class="kw" translate="no">lang</code> attribute in HTML). It is used in code generated by <samp>Make example</samp> and <samp>Character markup</samp> controls to indicate the language of the text.</p>
+
 <p><b class="leadin" id="reset">Reset. </b>Returns all settings you have changed (such as font size, text area size, language, etc.) to the original, default state.</p>
+</section>
+
+
+
+
+
+
+<section id="sideIcons">
+<h2 id="side_icons" href="#side_icons">Icons alongside the text area</h2>
+
+<p>The icons to the right side of the text area allow you to easily do various particularly useful manipulations on the text.</p>
+
+<p>Information about the currently set language and normalisation form appear just above the icons.</p>
+
+<p><img alt="Add space:" src="../../images/addspace.png"/> &nbsp; Adds a space between every character in the text area.</p>
+
+<p><img alt="Remove space:" src="../../images/removespace.png"/> &nbsp; Removes all spaces from the text area.</p>
+
+<p><img alt="Collapse space:" src="../../images/collapsespaces.png"/> &nbsp; Converts multiple spaces to a single space.</p>
+
+<p><img alt="Collapse lines:" src="../../images/collapselines.png"/> &nbsp; Convert all line breaks to spaces.</p>
+
+<p><img alt="Add comma:" src="../../images/addcomma.png"/> &nbsp; By default, adds ␣ between every character in the text area. Put a different character or sequence of characters in the box just below in order to add something else between each character.</p>
+
+<p><img alt="Count:" src="../../images/count.png"/> &nbsp; Counts the number of characters in the text area.</p>
+ 
+<p><b class="leadin" id="normalise">Normalisation icons.</b> All text is added to the main text area in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on these buttons. Note that normalization only takes place when you click on a character – text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. </p>
 </section>
 
 
@@ -354,11 +382,10 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 <section id="moreControls">
 <h2 id="more_controls" href="#more_controls">More controls</h2>
   `
-  if (direction === 'rtl') out += '<p><img src="../../shared27/images/help/more_controls_rtl.png" alt=""/></p>'
-  else out += '<p><img src="../../shared27/images/help/more_controls.png" alt=""/></p>'
+  if (direction === 'rtl') out += '<div><img src="../../shared27/images/help/more_controls_rtl.png" alt="" class="big"></div>'
+  else out += '<div><img src="../../shared27/images/help/more_controls.png" alt="" class="big"></div>'
   
   out += `
-<p><b class="leadin" id="setLanguage">Set language.</b> Add a BCP47 language tag here (ie. what you would use as the value of a <code class="kw" translate="no">lang</code> attribute in HTML). It is used in code generated by <samp>Make example</samp> and <samp>Character markup</samp> controls to indicate the language of the text.</p>
 
 <p><b class="leadin" id="ccBase">CC base.</b> You would normally expect combining characters, such as accents and vowel signs, when displayed alone to be associated with a dotted circle, however these font glyphs are <a href="http://r12a.github.io/blog/?p=1433">handled inconsistently</a> from one browser/font to the next. The app is set up for a given web font initially, but if you change the table font you may need to do something to ensure that combining characters display in a way that helps you click on them. </p>
     <p>The <samp class="kw" translate="no">CC base</samp> control allows you to specify a base character that will be used before each combining character (or no base character). This should hopefully help for most font and browser combinations.</p>

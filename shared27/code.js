@@ -1166,6 +1166,7 @@ function setLanguage (value) {
 	defaults.language = value
 	document.getElementById('output').lang = value
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+    document.getElementById('clang').textContent = value
 	}
 
 	
@@ -1833,6 +1834,7 @@ function setUpValues () {
 		}
 	if (defaults.language) { 
 		document.getElementById('langtag').value = defaults.language
+		document.getElementById('clang').textContent = defaults.language
 		}
 	if (defaults.contrast) { 
 		if (defaults.contrast === 'high') document.querySelector('body').classList.add('contrast')

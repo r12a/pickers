@@ -4,7 +4,7 @@ function addBasicUse (direction) {
 var out
 out = `<section id="basics">
   <h2 href="#basics">Basic use</h2>
-<p>The controls just above the text area allow you to interact with or analyse the text in various ways. <strong>They nearly all work on any highlighted text within the text area, or if there is no highlight, on all the text.</strong> Controls near the bottom of the app allow you to change font, font size, line-height, text direction, etc.</p>
+<p>The controls just above the text area allow you to interact with or analyse the text in various ways. <strong>They nearly all work on any highlighted text within the text area, or if there is no highlight, on all the text.</strong> Controls near the bottom of the app allow you to change font, font size, line-height, text direction, etc. Icons to the side of the text area allow you to make various handy changes to the text.</p>
 <p><b class="leadin" id="contrast">Contrast.</b> Some of the text on the UI has a lighter coloured text, so as to not swamp the key information. However, if you find it difficult to read the light-coloured text, click on <samp>Change contrast</samp> at the top right of the page to toggle between lighter and darker text. If you chose to save your settings between sessions, this will also be remembered.</p>
 <p><b class="leadin">Sample text.</b> If you want to add some sample text to the text area, click on the <img src="../../shared26/images/sample.png" alt="Sample"/> icon.</p>
 <p><b class="leadin">Fonts.</b>

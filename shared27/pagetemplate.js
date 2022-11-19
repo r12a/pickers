@@ -162,9 +162,48 @@ out += `></span>
 function setTop (title,sample) {
 var out
 
-//out = `<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">ðŸŒ“</button>
-out = `<div id="contrastSwitch" style="position:absolute;top:3px;right:14px; line-height:1;"  title="Change the contrast level." onclick="document.getElementById('access').style.display='flex'"><img src="../shared27/images/access.png" alt="Accessibility settings"></div>
 
+//out = `<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">ðŸŒ“</button>
+out = `
+
+<div id="slideout">
+
+<span id="clang">bn</span>
+<span id="n11nform">NFC</span>
+
+<img src="../images/addspace_large.png" alt="Select" title="Separate the characters in the text area with spaces." onclick="addSpacesToPicker(' ');" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+
+<img src="../images/removespace_large.png" alt="Select" title="Remove all white space from the text area."  onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\s/g,'')" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+
+<img src="../images/collapsespaces_large.png" alt="Select" title="Collapse multiple spaces in the text area to a single space." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/[ ]+/g,' ')" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+
+<img src="../images/collapselines_large.png" alt="Select" title="Collapse line breaks in the text area to spaces." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\n/g,' ')" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+
+<img src="../images/addcomma_large.png" alt="Select" title="Separate the characters in the text area with the text in the box below." onclick="addSpacesToPicker(document.getElementById('insertMe').value);" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+
+<input name="insertMe" id="insertMe"  type="text" value="␣">
+
+<img src="../images/count_large.png" alt="Count" title="Count the characters in the text area." onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { count=[...document.getElementById('output').value]; alert(count.length); }" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+
+<img src="../images/nfc_large.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+    onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFC');
+    document.getElementById('n11nform').innerHTML = 'NFC';" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+     
+<img src="../images/nfd_large.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+    onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFD');
+    document.getElementById('n11nform').innerHTML = 'NFD';" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+     
+<img src="../images/nfx_large.png" alt="Don't normalise output."  title="Don't normalise output."  
+    onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'N—';" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+
+</div>
+
+
+<div id="contrastSwitch"  title="Change the contrast level." onclick="document.getElementById('access').style.display='flex'">
+<div><img src="../shared27/images/access.png" alt="Accessibility settings"></div>
+<!--span id="clang">bn</span>
+<span id="n11nform">NFC</span-->
+</div>
 
 <header>
 <div id="header-boilerplate"></div>
@@ -197,6 +236,9 @@ out += `</header>
 
 
 <div id="welcome"></div>
+
+
+<div id="main">
 
 
 <div id="topControls" style="position:relative;">
@@ -809,6 +851,8 @@ return out
 function getBottom () {
 var out
 out = `
+</div> <!-- end of the body segment -->
+
   <div id="helpBanner" style="text-align: center;color: white;background-color: #60ADFB;">
   <div style="float:right; margin:1em;" onclick="hideCSHelp()">X</div>
   <div><a href="help/index.html" target="_help">Get basic information</a> about how to use this app.</div>
@@ -843,11 +887,11 @@ out = `
   
   <div class="control">Add codepoint(s):
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
-      <input name="addcode" id="addcode"  type="text" style="width: 10em; text-align:right;" />
+      <input name="addcode" id="addcode"  type="text" style="width: 14em; text-align:right;" placeholder="Code point(s) or escape(s)">
     </form>
   </div>
   
-<div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
+<!--div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
 <img src="../images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
     onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFC');
     document.getElementById('n11nform').innerHTML = 'NFC';"/> 
@@ -856,7 +900,7 @@ out = `
     document.getElementById('n11nform').innerHTML = 'NFD';"/> 
 <img src="../images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
     onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/>
-    </div>
+    </div-->
 
 <a class="interactiveHelpButton" href="help/index.html#yellowControls" target="_help" title="Help with main yellow controls." style="margin: 1rem;"><img alt="help" src="../images/help.png"/></a>
 
@@ -879,14 +923,14 @@ out = `
 </div>
 
 
-<div class="control" id="ccVariousControls" style="vertical-align: top;">Change text:<br/> <img src="../images/addspace.png" alt="Select" title="Separate the characters in the edit buffer with spaces." onclick="addSpacesToPicker(' ');">
-          <img src="../images/collapsespaces.png" alt="Select" title="Collapse multiple spaces to a single space." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/[ ]+/g,' ')">
-          <img src="../images/collapselines.png" alt="Select" title="Collapse line breaks to spaces." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\n/g,' ')">
-          <img src="../images/removespace.png" alt="Select" title="Remove all white space from the text area." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\s/g,'')">
+<!--div class="control" id="ccVariousControls" style="vertical-align: top;">Change text:<br/> <img src="../images/addspace_large.png" alt="Select" title="Separate the characters in the text area with spaces." onclick="addSpacesToPicker(' ');" style="height:20px;">
+          <img src="../images/collapsespaces_large.png" alt="Select" title="Collapse multiple spaces to a single space." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/[ ]+/g,' ')" style="height:20px;">
+          <img src="../images/collapselines_large.png" alt="Select" title="Collapse line breaks to spaces." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\n/g,' ')" style="height:20px;">
+          <img src="../images/removespace_large.png" alt="Select" title="Remove all white space from the text area." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\s/g,'')" style="height:20px;">
           <input name="insertMe" id="insertMe"  type="text" style="width: 40px; text-align:right; vertical-align: top; line-height: 1;" value="␣" />
-          <img src="../images/addcomma.png" alt="Select" title="Separate the characters in the edit buffer with commas." onclick="addSpacesToPicker(document.getElementById('insertMe').value);">
-          <img src="../images/count.png" alt="Count" title="Count the characters in the text area." onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { count=[...document.getElementById('output').value]; alert(count.length); }">
-</div>
+          <img src="../images/addcomma_large.png" alt="Select" title="Separate the characters in the text area with the text in the box." onclick="addSpacesToPicker(document.getElementById('insertMe').value);" style="height:20px;">
+          <img src="../images/count_large.png" alt="Count" title="Count the characters in the text area." onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { count=[...document.getElementById('output').value]; alert(count.length); }" style="height:20px;">
+</div-->
 
 
 
@@ -911,11 +955,20 @@ out = `
 
 <div class="control">Search for:
     <form action="none" onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
-      <input name="search" id="search"  type="text" style="width: 7em;"/>
+      <input name="search" id="search"  type="text" style="width: 7em;" placeholder="Regex ok">
       <img src="../images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
     </form>
   </div>
   
+
+
+
+<div class="control">Set language:
+<form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
+  <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:start;" />
+  <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
+</form>
+</div>
 
 
 
@@ -930,26 +983,7 @@ out += `
   
 
 <div id="moreControls">
-
-<div class="control">Set language:
-<form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
-  <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:start;" />
-  <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
-</form>
-</div>
-
-
-
-<div class="control" id="ccBaseControl">CC base:<br />
-    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
-		<option value="0">Select...</option>
-        <option value="">none</option>
-        <option value="&#x00A0;">NBSP</option>
-        <option value=" ">SP</option>
-        <option value="◌">◌</option>
-        <option value="-">-</option>
-		</select>
-</div>`
+`
 
 
 if (template.direction == 'rtl') {
@@ -980,7 +1014,19 @@ out += `<input style="display:none" name="fontSize" value="35" id="fontSize" siz
 <div class="control" id="uiFontSizeControl">...&amp; size: <span id="uiFontSizeValue" style="font-size:80%;">`+defaults.uisize+`</span>px<br />
 <input id="uiFontSizeSlider" type="range" min="20" max="40" step="1" value="`+defaults.uisize+`" oninput="setUIFontSize(this.value);"  style="width:6em;"></div>
 
-<br>
+
+<div class="control" id="ccBaseControl">CC base:<br />
+    <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
+		<option value="0">Select...</option>
+        <option value="">none</option>
+        <option value="&#x00A0;">NBSP</option>
+        <option value=" ">SP</option>
+        <option value="◌">◌</option>
+        <option value="-">-</option>
+		</select>
+</div>
+
+
 <div class="control">Set temporary fallback font:
 <form action="none" onsubmit="setFallback(document.getElementById('fontList').value, document.getElementById('fallback').value); return false;">
   <input id="fallback" type="text" style="width: 10rem;">
@@ -1065,6 +1111,7 @@ See <a target="_blank" href="https://github.com/r12a/pickers/tree/gh-pages/`+tem
 Make a <a target="_blank" href="https://github.com/r12a/pickers/issues/new?title=[`+template.github+`]%20%20ADD%20TITLE%20HERE">comment</a>. 
 Licence <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
 </div>
+
 `
 return out
 }

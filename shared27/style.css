@@ -21,7 +21,9 @@
 	}
 
 
-
+#main {
+	margin-inline-end: 36px;
+	}
 
 
 /* HIGH CONTRAST SETTINGS */
@@ -827,6 +829,7 @@ dt {
 .spaceline {
     margin-bottom: .25em;
     /*margin-top: .25em;*/
+    margin-inline-end: 50px;
     line-height: 1;
     text-align: center;
 	background-color: #ddd;
@@ -974,6 +977,12 @@ summary:hover {
 	font-size: 70%;
 	color: brown;
 	cursor: pointer;
+	position:absolute;
+	top:3px;
+	right:0px;
+	width: 44px;
+	line-height:1;
+	text-align: center;
 	}
 #rare {
 	margin: auto;
@@ -1584,4 +1593,48 @@ rt {
     margin-inline-end: 1em;
     float: right;
     }
-    
+
+
+
+
+
+
+#slideout {
+    position:absolute;
+    top: 6.5rem;
+    right: 0;
+    width: 44px;
+    background-color: transparent;
+    height: 400px;
+    z-index: 1000;
+    text-align: center;
+    }
+/*#slideout:hover {
+    width: 70px;
+    z-index: 1000;
+    }*/
+#slideout img {
+    width: 36px;
+    text-align: end;
+    /*margin-inline-start: 1rem;*/
+    }
+#n11nform, #clang {
+	display: block;
+	vertical-align: middle;
+	color: chocolate;
+	font-size: 16px;
+	line-break: anywhere;
+	line-height: 1;
+	width: 36px;
+	font-weight: bold;
+	text-align: end;
+	}
+#n11nform {
+	margin-block-end: .3rem;
+	}
+#insertMe {
+	width: 24px;
+	text-align: right;
+	vertical-align: top;
+	line-height: 1;
+	}
