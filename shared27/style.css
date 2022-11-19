@@ -26,6 +26,22 @@
 	}
 
 
+
+
+
+
+/* DARK SETTINGS */
+body.dark { 
+	background-color: #000;
+    filter: invert(100%);
+	}
+/* ---------------- */
+
+
+
+
+
+
 /* HIGH CONTRAST SETTINGS */
 body.contrast #chardata, 
 body.contrast #autofocusswitch, 

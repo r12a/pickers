@@ -217,18 +217,31 @@ out += `</header>
 <div id="access" style="display: none;">
 <div id="access_contrast">
 <div id="contrastChoice">
-<button id="contrastLow" class="access_selected" onClick="document.querySelector('body').classList.remove('contrast');
+<button id="contrastLow" class="access_selected" onClick="document.querySelector('.access_selected').classList.remove('access_selected');
+	document.querySelector('body').classList.remove('contrast');
+	document.querySelector('body').classList.remove('dark');
 	defaults.contrast = 'low'; 
     this.classList.add('access_selected'); 
-    this.nextSibling.classList.remove('access_selected');
-	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)">Low contrast</button><button id="contrastHigh" onClick="
-    document.querySelector('body').classList.add('contrast');
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)">Low contrast</button>
+
+<button id="contrastDark" 
+	onClick="document.querySelector('.access_selected').classList.remove('access_selected');
+    document.querySelector('body').classList.add('dark');
+	document.querySelector('body').classList.remove('contrast');
+	defaults.contrast = 'dark';
+    this.classList.add('access_selected'); 
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)">Dark mode</button>
+
+<button id="contrastHigh" 
+onClick="document.querySelector('.access_selected').classList.remove('access_selected');    document.querySelector('body').classList.add('contrast');
+	document.querySelector('body').classList.remove('dark');
 	defaults.contrast = 'high';
     this.classList.add('access_selected'); 
-    this.previousSibling.classList.remove('access_selected');
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)">High contrast</button>
 </div>
 </div>
+
+
 <div id="access_fontsize">Set text size: <input type="range" min="17" max="24" step="1" value="17" oninput="document.querySelector('body').style.fontSize = this.value+'px'" style="width:12rem;"></div>
 <div style="color: white;">Font size of the selection panel and text box are set using the controls below.</div>
 <div style="margin-block-start: 1rem; font-size: 1.4rem; color: black; cursor:pointer;" onclick="this.parentNode.style.display='none';">Close X</div>

@@ -1838,6 +1838,7 @@ function setUpValues () {
 		}
 	if (defaults.contrast) { 
 		if (defaults.contrast === 'high') document.querySelector('body').classList.add('contrast')
+		else if (defaults.contrast === 'dark') document.querySelector('body').classList.add('dark')
 		}
 	if (defaults.uidir && document.getElementById('tables')) { 
 		if (defaults.uidir === 'rtl') document.getElementById('tables').dir = 'rtl'
