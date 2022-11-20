@@ -168,8 +168,8 @@ out = `
 
 <div id="slideout">
 
-<span id="clang">bn</span>
-<span id="n11nform">NFC</span>
+<span id="clang" onmouseover="showMenuText('The current BCP47 language tag for text in the text area.','tan');" onmouseout="hideMenuText()">bn</span>
+<span id="n11nform" onmouseover="showMenuText('What type of normalisation is being applied to the text area.','tan');" onmouseout="hideMenuText()">NFC</span>
 
 <img src="../images/addspace_large.png" alt="Select" title="Separate the characters in the text area with spaces." onclick="addSpacesToPicker(' ');" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
 
@@ -200,9 +200,7 @@ out = `
 
 
 <div id="contrastSwitch"  title="Change the contrast level." onclick="document.getElementById('access').style.display='flex'">
-<div><img src="../shared27/images/access.png" alt="Accessibility settings"></div>
-<!--span id="clang">bn</span>
-<span id="n11nform">NFC</span-->
+<div><img src="../shared27/images/access.png" alt="Accessibility settings" onmouseover="showMenuText('Change the font size and the colours of the UI.','tan');" onmouseout="hideMenuText()"></div>
 </div>
 
 <header>
@@ -321,11 +319,11 @@ out += `
 
 <a class="interactiveHelpButton" href="help/index.html#functionPulldown" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a>
 
-<img src="../shared27/images/menu.png" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="if (document.getElementById(\'pulldown\').style.display===\'none\') {document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\'}; document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();"/>
+<img src="../shared27/images/menu.png" alt="More controls" style="vertical-align: bottom; cursor:pointer;" onclick="if (document.getElementById(\'pulldown\').style.display===\'none\') {document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\'}; document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();"  onmouseover="showMenuText('Show more options to apply to the text area.','tan');" onmouseout="hideMenuText()">
 
 <a class="interactiveHelpButton" href="help/index.html#exportPulldown" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a>
 
-<img src="../shared27/images/transfer.png" alt="Export to other apps" style="vertical-align: bottom; cursor:pointer; margin-inline-end: 1em;" onclick="if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'pulldown\').style.display=\'none\'; document.getElementById(\'output\').focus();"/>
+<img src="../shared27/images/transfer.png" alt="Export to other apps" style="vertical-align: bottom; cursor:pointer; margin-inline-end: 1em;" onclick="if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'pulldown\').style.display=\'none\'; document.getElementById(\'output\').focus();" onmouseover="showMenuText('Export the text in the text area to another app. Many options work on highlighted ranges.','tan');" onmouseout="hideMenuText()">
 </span>
 
 
@@ -850,7 +848,7 @@ if (template.hints) out += `<div id="hintControls" onMouseOver="document.getElem
 
 <div id="ipaHintType" onClick="if (this.style.color!=='white'){setGridHints('none');} else{setGridHints('ipa')}" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Show IPA hints.">P</div>
 
-<div id="closeHintType" style="display:none" onClick="setGridHints('none');" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Remove all IPA hints.">X</div>
+<div id="closeHintType" style="display:none" onClick="setGridHints('none');" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Remove all hints.">X</div>
 `
 
 out += `
@@ -876,7 +874,7 @@ out = `
 <div id="controlBox">
 
 <div id="controls">
-  <div class="control">Current font:<br />
+  <div class="control" onmouseover="showMenuText('Change the font of the text area. (See also the F icon above the text area.)','tan');" onmouseout="hideMenuText()">Current font:<br />
     <select id="fontList" name="fontList" onchange="selectFont(this.value); return false;">
 ` +
   fontSelection
@@ -892,13 +890,13 @@ out = `
   
   
   
-  <div class="control">Font size: <span id="sizeIndicator" style="font-size:80%;">`+defaults.size+`</span>px<br />
+  <div class="control" onmouseover="showMenuText('Change the size of the font of the text area.','tan');" onmouseout="hideMenuText()">Font size: <span id="sizeIndicator" style="font-size:80%;">`+defaults.size+`</span>px<br />
     <input id="fontSizeSlider" type="range" min="10" max="200" step="1" value="`+defaults.size+`" oninput="changeFontSize(this.value)" style="width:12em;">
   </div>
   
   
   
-  <div class="control">Add codepoint(s):
+  <div class="control" onmouseover="showMenuText('Use code point values or escapes to add characters to the text area.','tan');" onmouseout="hideMenuText()">Add codepoint(s):
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
       <input name="addcode" id="addcode"  type="text" style="width: 14em; text-align:right;" placeholder="Code point(s) or escape(s)">
     </form>
@@ -931,7 +929,7 @@ out = `
 <div id="extracontrols">
 
 
-<div class="control">Line height: <span id="lineHeight" style="font-size:80%;">`+defaults.lineheight+`</span><br />
+<div class="control" onmouseover="showMenuText('Change the line height for the text in the text area.','tan');" onmouseout="hideMenuText()">Line height: <span id="lineHeight" style="font-size:80%;">`+defaults.lineheight+`</span><br />
 <input id="lineHeightSlider" type="range" min=".5" max="5" step=".1" value="`+defaults.lineheight+`" oninput="changeLineHeight(this.value); document.getElementById('lineHeight').textContent=this.value;" style="width:10em;">
 </div>
 
@@ -955,7 +953,7 @@ out = `
 </div-->
 
 
-<div class="control">Replace:
+<div class="control" onmouseover="showMenuText('Replace one character (left) with another (right) in the text area.','tan');" onmouseout="hideMenuText()">Replace:
 <form action="none" onsubmit="removeCharacter(document.getElementById('charRemoval').value, document.getElementById('charReplacement').value); return false;">
   <input name="charRemoval" id="charRemoval"  type="text" style="width: 40px; text-align:right; line-height: 1;" />
   <input name="charReplacement" id="charReplacement"  type="text" style="width: 40px; text-align:right; line-height: 1;" />
@@ -966,7 +964,7 @@ out = `
 
 
 
-<div class="control">Search for:
+<div class="control" onmouseover="showMenuText('Highlight items in the selection area that have the text specified. Regular expressions work.','tan');" onmouseout="hideMenuText()">Search for:
     <form action="none" onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
       <input name="search" id="search"  type="text" style="width: 7em;" placeholder="Regex ok">
       <img src="../images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
@@ -976,7 +974,7 @@ out = `
 
 
 
-<div class="control">Set language:
+<div class="control" onmouseover="showMenuText('Set the BCP47 language for the text area. Affects code output and sometimes rendering.','tan');" onmouseout="hideMenuText()">Set language:
 <form action="none" onsubmit="setLanguage(document.getElementById('langtag').value); return false;">
   <input name="langtag" id="langtag"  type="text" style="width: 40px; text-align:start;" />
   <button onClick="setLanguage(document.getElementById('langtag').value)">Set</button>
@@ -985,7 +983,7 @@ out = `
 
 
 
-<div class="control" id="ccFactoryReset">Reset<br/><button onClick="resetDefaults()">Go</button>
+<div class="control" id="ccFactoryReset" onmouseover="showMenuText('Reset all fonts, sizes, etc to the factory settings.','tan');" onmouseout="hideMenuText()">Reset<br/><button onClick="resetDefaults()">Go</button>
 </div>
 </div>
 `
@@ -1002,7 +1000,7 @@ out += `
 if (template.direction == 'rtl') {
     out += `
     
-     <div class="control" id="uiTableDirection" style="text-align:right;">Table direction:<br />
+     <div class="control" id="uiTableDirection" style="text-align:right;" onmouseover="showMenuText('Flip the direction of the items in the selection panel.','tan');" onmouseout="hideMenuText()">Table direction:<br />
     <select onChange="changeSelectionDirection(this.value); return false;">
     <option value="rtl">RTL</option>
     <option value="ltr">LTR</option>
@@ -1015,20 +1013,20 @@ if (template.direction == 'rtl') {
 out += `<input style="display:none" name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);">
 
   
-<div class="control" id="boxHeightControl">Box height: <span id="rows" style="font-size:80%;">`+defaults.rows+`</span>px<br />
+<div class="control" id="boxHeightControl" onmouseover="showMenuText('Change the height of box that is the text area.','tan');" onmouseout="hideMenuText()">Box height: <span id="rows" style="font-size:80%;">`+defaults.rows+`</span>px<br />
 <input id="boxHeightSlider" type="range" min="50" max="500" step="10" value="`+defaults.rows+`" oninput="changeBoxHeight(this.value)"  style="width:10em;">
 </div>
 
-<div class="control" id="uiFontControl">Change selection area font:<br />
+<div class="control" id="uiFontControl" onmouseover="showMenuText('Change the font for the items in the selection area.','tan');" onmouseout="hideMenuText()">Change selection area font:<br />
 <select id="uiFont" name="uiFont" onchange="setUIFont(this.value); return false;">
 ` + fontSelection + `</select>
 </div>
 
-<div class="control" id="uiFontSizeControl">...&amp; size: <span id="uiFontSizeValue" style="font-size:80%;">`+defaults.uisize+`</span>px<br />
+<div class="control" id="uiFontSizeControl" onmouseover="showMenuText('Change the font size for the items in the selection area.','tan');" onmouseout="hideMenuText()">...&amp; size: <span id="uiFontSizeValue" style="font-size:80%;">`+defaults.uisize+`</span>px<br />
 <input id="uiFontSizeSlider" type="range" min="20" max="40" step="1" value="`+defaults.uisize+`" oninput="setUIFontSize(this.value);"  style="width:6em;"></div>
 
 
-<div class="control" id="ccBaseControl">CC base:<br />
+<div class="control" id="ccBaseControl" onmouseover="showMenuText('Change the base character used for combining characters in the selection area.','tan');" onmouseout="hideMenuText()">CC base:<br />
     <select id="ccBase" name="ccBase" onchange="selectCCBase(this.value); return false;">
 		<option value="0">Select...</option>
         <option value="">none</option>
@@ -1040,7 +1038,7 @@ out += `<input style="display:none" name="fontSize" value="35" id="fontSize" siz
 </div>
 
 
-<div class="control">Set temporary fallback font:
+<div class="control" onmouseover="showMenuText('Applies to the text area. Especially useful if the main font has no support Latin characters.','tan');" onmouseout="hideMenuText()">Set temporary fallback font:
 <form action="none" onsubmit="setFallback(document.getElementById('fontList').value, document.getElementById('fallback').value); return false;">
   <input id="fallback" type="text" style="width: 10rem;">
 
@@ -1138,7 +1136,8 @@ function showMenuText (msg, colour) {
 	window.msgStore = node.innerHTML
 	node.textContent=msg
 	node.style.backgroundColor=colour
-	node.style.color='white'
+	if (defaults.contrast === 'dark') node.style.color='#333'
+	else node.style.color='white'
 	node.style.paddingInlineStart = "1em"
 	}
 

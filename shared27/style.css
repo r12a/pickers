@@ -35,6 +35,9 @@ body.dark {
 	background-color: #000;
     filter: invert(100%);
 	}
+body.dark #output {
+    background: rgb(217,214,217);
+    }
 /* ---------------- */
 
 
@@ -261,6 +264,7 @@ margin: 0 1%;
 	display: inline-block;
 	text-align: center;
 	padding: 1px;
+    color: #666;
 	}
 #phonemelist span:hover {
 	background-color: rgb(192,255,131);
@@ -374,6 +378,7 @@ margin: 0 1%;
 	cursor:pointer;
 	min-width: 2em;
 	text-align: center;
+    font-weight: bold;
 	}
 .vmtab {
 	background-color:#666; 
