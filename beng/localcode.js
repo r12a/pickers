@@ -5,8 +5,14 @@ globals.showKeysTranslitToggle = false
 
 
 window.charCheckerList = [
-//{ wrong:"သြော်", right:"ဪ" },
-//{ wrong:"သြ", right:"ဩ" },
+{ wrong:"ব়", right:"র" },
+{ wrong:"অা", right:"আ" },
+{ wrong:"াে", right:"ো" },
+{ wrong:"াৈ", right:"ৈা" },
+{ wrong:"\u09DC", right:"ড়" },
+{ wrong:"\u09DD", right:"ঢ়" },
+{ wrong:"\u09DF", right:"য়" },
+//{ wrong:"", right:"" },
 ]
 
 
