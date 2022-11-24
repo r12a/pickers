@@ -2290,10 +2290,17 @@ function buildDBInfoLineOLD (char, toplevel, originStr, ptr, showAll) {
 			else out += '-'
 			out += '</span>'
 
-			// get status
+			// get usage
 			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
 				out += '<span><em>usage</em> '
-				out += ' <span style="color:black; font-weight: bold;">'+spreadsheetRows[char][cols.statusLoc]+'</span>'
+				out += ' <span class="type">('+spreadsheetRows[char][cols.statusLoc]+')</span>'
+				out += '</span>'
+				}
+
+			// get status
+			if (spreadsheetRows[char][cols.status] && cols.status > 0) {
+				out += '<span><em>usage</em> '
+				out += ' <span style="color:black; font-weight: bold;">'+spreadsheetRows[char][cols.status]+'</span>'
 				out += '</span>'
 				}
 
@@ -2514,6 +2521,25 @@ function buildDBInfoLineLESSOLD (char, toplevel, originStr, ptr, showAll) {
 
 
 
+
+
+function statusExpander (status) {
+    // takes a single letter status value and expands to a word for display
+    
+    out = ''
+    switch (status) {
+        case 'i': out += 'infrequent '; break
+        case 'r': out += 'rare '; break
+        case 'a': out += 'archaic '; break
+        case 'd': out += 'deprecated '; break
+        case 'u': out += 'unused '; break
+        case 'o': out += 'obsolete '; break
+        case 'l': out += 'loan words or foreign sounds '; break
+        }
+    return out
+    }
+
+
 //function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 
 
@@ -2577,11 +2603,21 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 			else out += '<span class="ipa">-</span>'
 			out += '</bdi>'
 
-			// get status
+
+
+			// get usage
 			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
 				out += '<bdi class="analysisStatus">'
 				//out += '<em>usage</em> '
-				out += ' <span style="color:black; font-weight: bold;" onmouseover="showMenuText(\'Usage notes.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.statusLoc]+'</span>'
+				out += '<span onmouseover="showMenuText(\'Usage notes.\',\'tan\')" onmouseout="hideMenuText()">('+spreadsheetRows[char][cols.statusLoc]+')</span>'
+				out += '</bdi>'
+				}
+
+			// get status
+			if (spreadsheetRows[char][cols.status] && cols.status > 0) {
+				out += '<bdi class="analysisStatus">'
+				//out += '<em>usage</em> '
+				out += ' <span style="color:black; font-weight: bold;" onmouseover="showMenuText(\'Status notes.\',\'tan\')" onmouseout="hideMenuText()">'+statusExpander(spreadsheetRows[char][cols.status])+'</span>'
 				out += '</bdi>'
 				}
 
