@@ -4,8 +4,22 @@ globals.showKeysTranslitToggle = false
 
 
 window.charCheckerList = [
-//{ wrong:"သြော်", right:"ဪ" },
-//{ wrong:"သြ", right:"ဩ" },
+// vowel signs
+{ wrong:"ाे", right:"ो" },
+{ wrong:"ाै", right:"ौ" },
+
+// independent vowels
+{ wrong:"अा", right:"आ" },
+{ wrong:"अो", right:"ओ" },
+{ wrong:"अौ", right:"औ" },
+{ wrong:"एे", right:"ऐ" },
+
+// nukta
+{ wrong:"\u0928\u093C", right:"ऩ" },
+{ wrong:"\u0930\u093C", right:"ऱ" },
+{ wrong:"\u0933\u093C", right:"ऴ" },
+
+//{ wrong:"", right:"" },
 ]
 
 

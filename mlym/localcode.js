@@ -4,8 +4,23 @@ globals.showKeysTranslitToggle = false
 
 
 window.charCheckerList = [
-//{ wrong:"သြော်", right:"ဪ" },
-//{ wrong:"သြ", right:"ဩ" },
+// frankensteins
+{ wrong:"െെ", right:"ൈ" },
+{ wrong:"ഇൗ", right:"ഈ" },
+{ wrong:"ഉൗ", right:"ഊ" },
+{ wrong:"ഒാ", right:"ഓ" },
+{ wrong:"എെ", right:"ഐ" },
+{ wrong:"ഒൗ", right:"ഔ" },
+
+// chillus
+{ wrong:"ക്‍", right:"ൿ" },
+{ wrong:"ണ്‍", right:"ൺ" },
+{ wrong:"ന്‍", right:"ൻ" },
+{ wrong:"ര്‍", right:"ർ" },
+{ wrong:"ല്‍", right:"ൽ" },
+{ wrong:"ള്‍", right:"ൾ" },
+
+//{ wrong:"", right:"" },
 ]
 
 
