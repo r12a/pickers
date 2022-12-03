@@ -57,13 +57,13 @@ function makeCharsetObject () {
 				console.log('upointer',uPointer)
 				udata = U[uPointer].split(';')
 				if (name != '') { name += ', ' }
-				name += udata[2]
+				name += udata[1]
 				}
 			out += name
 
 			uPointer = seq[0].codePointAt(0)
 			udata = U[uPointer].split(';')
-			if (udata[2].substr(0,1) == 'M') { 
+			if (udata[1].substr(0,1) == 'M') { 
 				out += '\u200B'
 				}
 			}
