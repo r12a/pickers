@@ -3,8 +3,19 @@ globals.showKeysTranslitToggle = false
 
 
 window.charCheckerList = [
-//{ wrong:"သြော်", right:"ဪ" },
-//{ wrong:"သြ", right:"ဩ" },
+{ wrong:"ﬓ", right:"մն" },
+{ wrong:"ﬔ", right:"մե" },
+{ wrong:"ﬕ", right:"մի" },
+{ wrong:"ﬖ", right:"վն" },
+{ wrong:"ﬗ", right:"մխ" },
+{ wrong:"՚", right:"’" },
+{ wrong:"ՙ", right:"ʻ" },
+/*
+{ wrong:"", right:"" },
+{ wrong:"", right:"" },
+{ wrong:"", right:"" },
+{ wrong:"", right:"" },
+*/
 ]
 
 
