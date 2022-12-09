@@ -3,6 +3,7 @@ function localtranscribe (direction, str) {
 	if (direction == 'transliterate') { return romajiToHan(str) }
 	if (direction == 'romajiToHan') { return romajiToHan(str) }
 	if (direction == 'englishToHan') { return englishToHan(str) }
+	if (direction == 'lookupHan') { return lookupHan(str) }
 	}
 		
 
@@ -24,8 +25,6 @@ for (i=0;i<strArray.length;i++) {
 
 return str.trim()
 }
-
-
 
 
 
@@ -72,3 +71,72 @@ function englishToHan (str) {
 	
 	return out.trim()
 	}
+
+
+
+
+
+
+
+function lookupHanX (str) {
+	// search the han list for a character and provide the information available
+	
+	out = ''
+
+    if (str.length > 1) {
+        alert('Look up one character at a time.')
+        return
+        }
+
+    if (han[str]) {
+        out += str+' '
+        if (han[str].def) out += ' '+han[str].def
+        if (han[str].jo) out += ' — '+han[str].jo
+        if (han[str].jk) out += ' — <i>'+han[str].jk+'</i>'
+        }
+    
+    else out += 'Character not found.'
+
+	
+	return out.trim()
+	}
+
+
+
+
+
+
+
+function lookupHan (str) {
+	// search the han list for a character and provide the information available
+	
+	out = ''
+    chars = [...str]
+
+    for (i=0;i<chars.length;i++) {
+        if (han[chars[i]]) {
+            out += chars[i]+' '
+            if (han[chars[i]].def) out += ' '+han[chars[i]].def
+            if (han[chars[i]].jo) out += ' — '+han[chars[i]].jo
+            if (han[chars[i]].jk) out += ' — <i>'+han[chars[i]].jk+'</i>'
+            }
+
+        else if (spreadsheetRows[chars[i]]) {
+            out += chars[i]
+            if (spreadsheetRows[chars[i]][cols.ipaLoc]) out += ' ['+spreadsheetRows[chars[i]][cols.ipaLoc]+']'
+            if (spreadsheetRows[chars[i]][cols.typeLoc]) out += ', '+spreadsheetRows[chars[i]][cols.typeLoc]
+            out += ', '+spreadsheetRows[chars[i]][cols.ucsName]
+            }
+        
+        else out += chars[i]+' Character not found.'
+        
+        if (i<chars.length) out += '<br>'
+        }
+
+	
+	return out.trim()
+	}
+
+
+
+

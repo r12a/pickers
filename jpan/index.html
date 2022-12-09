@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Japanese character app 26</title>
+<title>Japanese character app 27</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared26/style.css" />
+<link rel="stylesheet" href="../shared27/style.css" />
 <link rel="stylesheet" href="localstyle.css" />
 
 <script src="defaults.js">  </script>
@@ -18,11 +18,11 @@
 <script src="../../shared/fontlists/manage.js"></script>
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
-<script src="../shared26/setup.js">  </script>
-<script src="../shared26/code.js">  </script>
-<script src="../shared26/latinregister.js">  </script>
+<script src="../shared27/setup.js">  </script>
+<script src="../shared27/code.js">  </script>
+<script src="../shared27/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared26/pagetemplate.js">  </script>
+<script src="../shared27/pagetemplate.js">  </script>
 <script src="../../scripts/linkdata/linkdb.js"></script>
 <script src="hanData.js">  </script>
 <script src="localtranscription.js">  </script>
@@ -41,13 +41,12 @@
 
 
 
-
-<div id="chardata"><span id="charname">See help file to input kanji and kana.</span></div>
-
+<div id="chardata"><span id="charname">Type assist (T) is on. See help file to input kanji and kana.</span></div>
 
 
 <div id="sideMenu"></div>
 <script>document.getElementById('sideMenu').innerHTML = setSideMenu()</script>
+
 
 
 <div id="phonemelist" style="position:relative;">
@@ -56,35 +55,38 @@
 
 
 
+
 <div id="tables" dir="ltr">
   
 
 <div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+
 <div id="alphabet" class="default">
 
 
-<div id="shapelist" style="display:none; text-align:center;">
+<div id="shapelist">
 <div id="shapekeys">
 <span onclick="findShape('921,907,908','',true)">ड</span>
-<span onclick="findShape('90F,910,90E','',true)">ए</span>
-<span onclick="findShape('905,976,976,973,974,906,909,90A,912,913,975,914,969,96C','',true)">अ</span>
-<span onclick="findShape('92F,92A,925','',true)">य</span>
-<span onclick="findShape('928,924,932','',true)">न</span>
-<span onclick="findShape('91A,91A93C,91C,91C93C','',true)">च</span>
-<span onclick="findShape('966,96A,91F,920,92C,935','',true)">०</span>
-<span onclick="findShape('92B,915','',true)">फ</span>
-<span onclick="findShape('967,968,96F,91B93C,91B,916,936','',true)">१</span>
-<span onclick="findShape('96B,926,939','',true)">५</span>
-<span onclick="findShape('96D,96E','',true)">७</span>
-<span onclick="findShape('92E,938,917,930','',true)">म</span>
-<span onclick="findShape('93F','',true)">ि</span>
-<span onclick="findShape('25CC353,956,957,941,942,93C','',true)">◌͓</span>
-<span onclick="findShape('93E,940,94A,93B,94B,94F,94C','',true)">ा</span>
-<span onclick="findShape('25CC33D,93A,946,947,948,901,902','',true)">◌̽</span>
+<img alt=" " src="images/shape1.png" onclick="findShape('A986,A987,A99B','ꦆ,ꦇ,ꦛ',true)" />
 </div>
-</div>
-
 <div id="extrashapes"></div>
+</div>
+<!--
+𐡡 𐡱 𐡪 𐡮
+𐡣 𐡪 𐡯 𐡰 𐡽 𐡴
+𐡳 𐡬 𐡶
+𐡦 𐡭 𐡥 𐡫
+𐡢
+𐡲 𐡧
+𐡶
+𐡵
+𐡤
+𐡩
+𐡨
+𐡠
+-->
 
 
 
@@ -97,44 +99,10 @@
 <script>addTabEtc('tabEtc')</script>
 </div>
 
+
+
 <div id="kbdGrid"> 
  
-<!--div id="ivowelGrid">
-<div>
-<span class="g"><span class="hint">ị</span><span class="c">इ</span></span>
-<span class="g"><span class="hint">ɨ̣</span><span class="c">ॶ</span></span>
-<span class="g"><span class="hint">ụ</span><span class="c">उ</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">ị̄</span><span class="c">ई</span></span>
-<span class="g"><span class="hint">ɨ̣</span><span class="c">ॷ</span></span>
-<span class="g"><span class="hint">ụ̄</span><span class="c">ऊ</span></span>
-</div>
-<div style="border-top: 1px dotted gray">
-<span class="g"><span class="hint">ẹ</span><span class="c">ऎ</span></span>
-<span class="g"><span class="hint">ə̣</span><span class="c">ॳ</span></span>
-<span class="g"><span class="hint">ọ</span><span class="c">ऒ</span></span>
-</div>
-<div style="border-bottom: 1px dotted gray">
-<span class="g"><span class="hint">ẹ̄</span><span class="c">ए</span></span>
-<span class="g"><span class="hint">ə̣̄</span><span class="c">ॴ</span></span>
-<span class="g"><span class="hint">ọ̄</span><span class="c">ओ</span></span>
-</div>
-<div style="border-bottom: 1px dotted gray">
-<span class="g"><span class="hint">ạ</span><span class="c">अ</span></span>
-<span class="g"><span class="hint">ạ̄</span><span class="c">आ</span></span>
-<span class="g"><span class="hint">ɔ̣</span><span class="c">ॵ</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">ə̣ʲ</span><span class="c">ऐ</span></span>
-<span class="g"><span class="hint">ə̣ʷ</span><span class="c">औ</span></span>
-</div>
-</div-->
-
-<!--div id="pulli"><span class="c" style="line-height: 2; padding: 2em 5px; border: 1px dotted #999;">&#x094D;</span> &nbsp;
-<span class="c">&#x093C;</span></div-->
-
-
 <div id="consonantGrid">
             <div>
 <span class="g"><span class="hint"></span><span class="c">「</span></span>
@@ -202,165 +170,11 @@
 
 
 
-<!--div id="vowelGrid" class="box">
-<div class="verticalAlign bottomDivider">
-<div>
-<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
-<span class="g"><span class="hint"></span><span class="c"></span></span>
-</div>
-<div>
-<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
-<span class="g"><span class="hint">ɯ̄</span><span class="c"></span></span>
-</div>
-<div>
-<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
-<span class="g"><span class="hint"></span><span class="c"></span></span>
-</div>
-</div>
-
-
-<div class="verticalAlign bottomDivider">
-<div>
-<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
-<span class="g"><span class="hint"></span><span class="c"></span></span>
-</div>
-<div>
-<span class="g"><span class="hint"></span><span class="c">เ-อะ</span></span><br/>
-<span class="g"><span class="hint"></span><span class="c"></span></span>
-</div>
-<div>
-<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
-<span class="g"><span class="hint"></span><span class="c"></span></span>
-</div>
-</div>
-
-
-<div class="verticalAlign bottomDivider">
-<div>
-<span class="g"><span class="hint"></span><span class="c"></span></span><br/>
-<span class="g"><span class="hint"></span><span class="c"></span></span>
-</div>
-<div>
-<span class="g"><span class="hint"></span><span class="c">เ-าะ</span></span><br/>
-<span class="g"><span class="hint"></span><span class="c"></span></span>
-</div>
-</div>
-
-
-<div class="verticalAlign bottomDivider">
-<div>
-<span class="g"><span class="hint"></span><span class="c"></span></span>
-<span class="g"><span class="hint"></span><span class="c"></span></span>
-<span class="g"><span class="hint">aᵐ</span><span class="c"></span></span>
-</div>
-</div>
-
-
-<div>
-<span class="g"><span class="hint">aj</span><span class="c"></span></span><br/>
-<span class="g"><span class="hint">aj</span><span class="c"></span></span><br/>
-<span class="g"><span class="hint">r̥</span><span class="c"></span></span>
-</div>
-</div-->
 
 
 
 
 
-<!--div id="vowelGrid" class="box">
-<div class="verticalAlign bottomDivider">
-<div>
-<span class="g"><span class="hint">i</span><span class="c">ิ</span></span><br/>
-<span class="g"><span class="hint">ī</span><span class="c">ี</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">ɯ</span><span class="c">ึ</span></span><br/>
-<span class="g"><span class="hint">ɯ̄</span><span class="c">ื</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">u</span><span class="c">ุ</span></span><br/>
-<span class="g"><span class="hint">ū</span><span class="c">ู</span></span>
-</div>
-</div>
-
-
-<div class="verticalAlign bottomDivider">
-<div>
-<span class="g"><span class="hint">E</span><span class="v" onClick="addVowel(this.textContent)">เ-ะ</span></span><br/>
-<span class="g"><span class="hint">E</span><span class="v" onClick="addVowel(this.textContent)">เ-</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">V</span><span class="v" onClick="addVowel(this.textContent)">เ-อะ</span></span><br/>
-<span class="g"><span class="hint">V</span><span class="v" onClick="addVowel(this.textContent)">เ-อ</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">O</span><span class="v" onClick="addVowel(this.textContent)">โ-ะ</span></span><br/>
-<span class="g"><span class="hint">o</span><span class="v" onClick="addVowel(this.textContent)">โ-</span></span>
-</div>
-</div>
-
-
-<div class="verticalAlign bottomDivider">
-<div>
-<span class="g"><span class="hint">E</span><span class="v" onClick="addVowel(this.textContent)">แ-ะ</span></span><br/>
-<span class="g"><span class="hint">E</span><span class="v" onClick="addVowel(this.textContent)">แ-</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">O</span><span class="v" onClick="addVowel(this.textContent)">เ-าะ</span></span><br/>
-<span class="g"><span class="hint">O</span><span class="v" onClick="addVowel(this.textContent)">-อ</span></span>
-</div>
-</div>
-
-
-<div class="verticalAlign bottomDivider">
-<div>
-<span class="g"><span class="hint">ä</span><span class="c">ั</span></span>
-<span class="g"><span class="hint">ā</span><span class="c">า</span></span>
-<span class="g"><span class="hint">aᵐ</span><span class="c">ำ</span></span>
-</div>
-</div>
-
-
-<div>
-<span class="g"><span class="hint">aj</span><span class="v" onClick="addVowel(this.textContent)">ไ-</span></span><br/>
-<span class="g"><span class="hint">aj</span><span class="v" onClick="addVowel(this.textContent)">ใ-</span></span><br/>
-<span class="g"><span class="hint">r̥</span><span class="c">ฤ</span></span>
-</div>
-</div-->
-
-
-
-
-<!--div id="vowelGrid">
-<div>
-<span class="g"><span class="hint">i</span><span class="c">ि</span></span>
-<span class="g"><span class="hint">ɨ</span><span class="c">ॖ</span></span>
-<span class="g"><span class="hint">u</span><span class="c">ु</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">ī</span><span class="c">ी</span></span>
-<span class="g"><span class="hint">ɨ̣</span><span class="c">ॗ</span></span>
-<span class="g"><span class="hint">ū</span><span class="c">ू</span></span>
-</div>
-<div style="border-top: 1px dotted gray">
-<span class="g"><span class="hint">e</span><span class="c">ॆ</span></span>
-<span class="g"><span class="hint">ə</span><span class="c">ऺ</span></span>
-<span class="g"><span class="hint">o</span><span class="c">ॊ</span></span>
-</div>
-<div style="border-bottom: 1px dotted gray">
-<span class="g"><span class="hint">ē</span><span class="c">े</span></span>
-<span class="g"><span class="hint">ə̄</span><span class="c">ऻ</span></span>
-<span class="g"><span class="hint">ō</span><span class="c">ो</span></span>
-</div>
-<div style="border-bottom: 1px dotted gray">
-<span class="g"><span class="hint">ā</span><span class="c">ा</span></span>
-<span class="g"><span class="hint">ɔ</span><span class="c">ॏ</span></span>
-</div>
-<div>
-<span class="g"><span class="hint">əʲ</span><span class="c">ै</span></span>
-<span class="g"><span class="hint">əʷ</span><span class="c">ौ</span></span>
-</div>
-</div-->
 
 
 <div id="cchars">
@@ -385,8 +199,10 @@
 </div>
 
 
+
+
 <div id="numberGrid">
-	<div id="digitKeypad" class="box">
+<div id="digitKeypad" class="box">
 		<div>
 		<span class="g"><span class="hint">1</span><span class="c">一</span></span>
 		<span class="g"><span class="hint">2</span><span class="c">二</span></span>
@@ -418,8 +234,8 @@
 		<span class="g"><span class="hint">0</span><span class="c">万</span></span>
 		</div>
 		</div>
-</div>
-</div>
+</div><!-- end of numberGrid -->
+</div><!-- end of kbdGrid -->
 
 
 <div id="flatnumbers">
@@ -459,25 +275,8 @@
 
 
 
-<!--details>
-  <summary>other characters</summary>
-	<div id="other">
-	<span class="c">ॲ</span>
-	<span class="c">ॅ</span>
-	<span class="c">ऑ</span>
-	<span class="c">ॉ</span>
-	&nbsp;
-	<span class="c">ष</span>
-	<span class="c">क्ष</span>
-	<span class="c">झ</span>
-	<span class="c">ङ</span>
-	<span class="c">ण</span>
-	&nbsp;
-	<span class="g"><span class="hint"></span><span class="c">&#x095B;</span></span>
-	</div>
-    </details-->        
+</div><!-- end of alphabet -->
 
-</div>
 
 
 <div id="temp"></div>

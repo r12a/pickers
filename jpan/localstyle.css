@@ -1,13 +1,22 @@
+/*@font-face {
+    font-family: 'Noto Serif Devanagari WF';
+    src: url('../../shared/webfonts/notoserifdevanagari-regular-webfont.woff2') format('woff2'),
+         url('../../shared/webfonts/notoserifdevanagari-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+*/
 
-[lang=zh] { font-family: 'Hei', serif; }
+
+[lang=ja] { font-family: 'Hiragino Mincho Pro', serif; }
 
 
 
 
 span.hint { 
-    margin-inline-start: .5em;
+	margin-inline-start: .5em;
 	margin-inline-end: 1px;
-	font-size: 70%;
+	font-size: 60%;
 	color:tan;
 	}
 .c { 
@@ -21,7 +30,7 @@ span.hint {
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  'Hei',  sans-serif;  
+	font-family:  'Hiragino Kaku Gothic Pro',  sans-serif;  
     line-height: 1;
 	}
 
@@ -128,11 +137,6 @@ span.hint {
     font-size: 80%;
     line-height: 1.7;
     margin-top: .5em;
-    }
-#spaceEtc {
-    text-align: center;
-    vertical-align: middle;
-	margin-bottom: 1em;
     }
 
 #obsolete {

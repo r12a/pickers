@@ -8,7 +8,9 @@ window.charCheckerList = [
 { wrong:"ாே", right:"ோ" },
 { wrong:"ௗெ", right:"ௌ" },
 { wrong:"ௗஒ", right:"ஔ" },
-//{ wrong:"သြ", right:"ဩ" },
+{ wrong:"ஂ", right:" " },
+//{ wrong:"", right:"" },
+//{ wrong:"", right:"" },
 ]
 
 
