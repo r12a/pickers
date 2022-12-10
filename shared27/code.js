@@ -2708,7 +2708,7 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 			else {
 				for (item in spreadsheetRows) { 
 					var matchStr = item.replace(/-/g,'.')
-					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']' || matchStr == '*') matchStr = 'xx'
+					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']' || matchStr == '*' || matchStr == '\\') matchStr = 'xx'
 					//console.log('matchstr',matchStr)
 					var  regex = new RegExp(matchStr)
 					itemArray = [... item] // to handle surrogates
