@@ -9,6 +9,12 @@ window.charCheckerList = [
 ]
 
 
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`BPG 2017 DejaVu Sans
+BPG 2017 DejaVu Serif`
+
+
 function localInitialise () {
 	}
 

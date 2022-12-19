@@ -11,6 +11,14 @@ window.charCheckerList = [
 ]
 
 
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`GreatHorKham Yangon
+Padauk
+Padauk Book
+`
+
+
 function localInitialise () {
 	}
 	

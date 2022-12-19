@@ -10,6 +10,17 @@ window.charCheckerList = [
 ]
 
 
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`Classical Mongolian Dashtseden
+FZMWBTOT_Unicode
+Mongolian Art
+Mongolian Title
+Mongolian White
+MongolianScript
+Oyun Qagan Tig`
+
+
 function localInitialise () {
 	}
 

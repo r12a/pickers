@@ -16,6 +16,13 @@ window.charCheckerList = [
 ]
 
 
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`Lohit Bangla
+SolaimonLipi
+`
+
+
 function localInitialise () {
 	}
 	

@@ -9,6 +9,15 @@ window.charCheckerList = [
 ]
 
 
+
+
+
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`BabelStone Moon Runes
+BabelStone Runic Berhtwald`
+
+
 function localInitialise () {}
 
 

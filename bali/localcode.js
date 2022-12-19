@@ -10,6 +10,17 @@ window.charCheckerList = [
 ]
 
 
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`Aksara Bali Galang
+JG Aksara Bali
+Kadiri
+Pustaka Bali
+Ubud
+Vimala
+`
+
+
 function localInitialise () {
 	}
 	

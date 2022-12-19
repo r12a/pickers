@@ -8,9 +8,14 @@ window.charCheckerList = [
 //{ wrong:"သြ", right:"ဩ" },
 ]
 
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`Tuladha Jejeg
+Yogyakarta
+`
+
 
 function localInitialise () {
-
 	}
 
 

@@ -8,6 +8,14 @@ window.charCheckerList = [
 ]
 
 
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`Tibetan Machine Uni
+Uchen_05
+BabelStone Tibetan Slim
+`
+
+
 function localInitialise () {
 	}
 

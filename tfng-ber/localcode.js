@@ -10,7 +10,22 @@ window.charCheckerList = [
 ]
 
 
+
+
+
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+``
+
+
 function localInitialise () {
+
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`Akatab
+Hapax Berbere
+Tagmukay`
+
 	}
 	
 

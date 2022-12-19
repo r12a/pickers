@@ -10,6 +10,11 @@ window.charCheckerList = [
 
 
 function localInitialise () {
+
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+``
+
 	}
 
 

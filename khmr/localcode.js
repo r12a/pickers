@@ -11,8 +11,17 @@ window.charCheckerList = [
 ]
 
 
-function localInitialise () {
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`Khmer OS Battambang
+Khmer Mool
+Khmer OS Muol
+Khmer Ratanakiri
+Moul
+Metal`
 
+
+function localInitialise () {
 	}
 
 

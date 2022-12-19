@@ -19,7 +19,15 @@ window.charCheckerList = [
 ]
 
 
-function localInitialise () {}
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`Arian AMU
+Arian AMU Serif
+Arian Grqi`
+
+
+function localInitialise () {
+}
 
 
 
