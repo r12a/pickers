@@ -1963,7 +1963,7 @@ function selectCCBase (base) {
 
 
 
-function makeCharacterLink (cp, block, lang, direction) { 
+function makeCharacterLinkX (cp, block, lang, direction) { 
 	// returns markup with information about cp
 	// only wraps in a link if not on r12a.github.io
 	// cp: a unicode character, or sequence of unicode characters
@@ -2025,7 +2025,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 
 
 
-function makeCharacterLink (cp, block, lang, direction) { 
+function makeCharacterLinkXX (cp, block, lang, direction) { 
 	// returns markup with information about cp
 	// only wraps in a link if not on r12a.github.io
 	// cp: a unicode character, or sequence of unicode characters
@@ -2190,7 +2190,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 			//console.log(spreadsheetRows)
             block = block.replace(/\/scripts\//,'')  // these 2 lines for backward compat
             block = block.replace(/\/block/,'')
-			out +=  '<a href="/scripts/'+block+'/block#char'+hex+'">'
+			out +=  '<a href="../../scripts/'+block+'/block.html#char'+hex+'">'
 			}
 		out +=  '<span class="uname">U+'+hex+' '+name+'</span>'
 		if (! window.location.href.match('r12a.github.io') && block !== '') out +=  '</a>'
