@@ -1,4 +1,10 @@
 @font-face {
+    font-family: 'Payap Lanna WF';
+    src: url('../../shared/webfonts/payaplanna-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
     font-family: 'Lamphun WF';
     src: url('../../shared/webfonts/lamphun-webfont.woff2') format('woff2'),
          url('../../shared/webfonts/lamphun-webfont.woff') format('woff');
@@ -21,7 +27,7 @@
 	}
 
 
-[lang=nod] { font-family: 'Lamphun WF', 'Noto Serif Tai Tham WF', serif; }
+[lang=nod] { font-family: 'Payap Lanna WF', 'Lamphun WF', 'Noto Serif Tai Tham WF', serif; }
 
 
 

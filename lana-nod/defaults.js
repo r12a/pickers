@@ -1,6 +1,6 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Lamphun WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Payap Lanna WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
@@ -18,12 +18,12 @@ var thisPicker = 'northernthaiPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Lamphun WF", "Noto Serif Tai Tham WF", "Lanna Alif WF" ]
+var webFonts = [ 'Payap Lanna WF', "Lamphun WF", "Lamphun WF", "Noto Serif Tai Tham WF", "Lanna Alif WF" ]
 
 
 var template = {}
 	template.title = 'Northern Thai character app'
-	template.sample = "ᨣᩢ᩠ᨶᩉᩮᩖᩨᨠᩥ᩠ᨶ ᨣᩢᩐᩢᩣᨡᩣ᩠ᨿᨸᩮ᩠ᨶᨦᩫ᩠ᨶ ᨠᩮ᩠ᨷᩉᩬᨾᩋᩬᨾᩅᩱᩢᨯ᩠᩶ᨦᨶᩦ᩶ ᨴᩩᨠᪧᨸᩦᨾᩣᨷᩢᨡᩣ᩠ᨯ ᨧᩥ᩠᩵ᨦᨠ᩠ᨴᩣᩴᩉᩨ᩶ᨡᩮᩢᩣᨻᩳ᩵ᨾᩯ᩵ᩃᩪᨠ ᨷᩢᨯᩱ᩶ᨠᩢ᩠᩶ᨶᩈᩢ᩠ᨦᩈᩢ᩠ᨠᨩᩮᩬᩨ"
+	template.sample = "ᨣᩢ᩠ᨶᩉᩖᩮᩨᨠᩥ᩠ᨶ ᨣᩢᩐᩢᩣᨡᩣ᩠ᨿᨸᩮ᩠ᨶᨦᩫ᩠ᨶ ᨠᩮ᩠ᨷᩉᩬᨾᩋᩬᨾᩅᩱᩢᨯ᩠᩶ᨦᨶᩦ᩶ ᨴᩩᨠᪧᨸᩦᨾᩣᨷᩢᨡᩣ᩠ᨯ ᨧᩥ᩠᩵ᨦᨠ᩠ᨴᩣᩴᩉᩨ᩶ᨡᩮᩢᩣᨻᩳ᩵ᨾᩯ᩵ᩃᩪᨠ ᨷᩢᨯᩱ᩶ᨠᩢ᩠᩶ᨶᩈᩢ᩠ᨦᩈᩢ᩠ᨠᨩᩮᩨᩬ"
 	template.sampleSource = ''
 	template.blocklocation= 'taitham'  // block directory
 	template.noteslocation = 'taitham/nod' // location of script notes
