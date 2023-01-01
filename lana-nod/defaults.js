@@ -1,6 +1,6 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Payap Lanna WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Hariphunchai WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
@@ -18,7 +18,7 @@ var thisPicker = 'northernthaiPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ 'Payap Lanna WF', "Lamphun WF", "Lamphun WF", "Noto Serif Tai Tham WF", "Lanna Alif WF" ]
+var webFonts = [ 'Hariphunchai WF', 'Payap Lanna WF', "Lamphun WF", "Noto Serif Tai Tham WF", "Lanna Alif WF" ]
 
 
 var template = {}

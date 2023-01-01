@@ -13,21 +13,19 @@
 	}
 @font-face {
     font-family: 'Noto Serif Tai Tham WF';
-    src: url('../../shared/webfonts/notosanstaitham-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notosanstaitham-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosanstaitham-regular-webfont.woff2') format('woff2')) format('woff');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
-    font-family: 'Lanna Alif WF';
-    src: url('../../shared/webfonts/lannaalif-v1-03-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/lannaalif-v1-03-webfont.woff') format('woff');
+    font-family: 'Hariphunchai WF';
+    src: url('../../shared/webfonts/hariphunchai4-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 
 
-[lang=nod] { font-family: 'Payap Lanna WF', 'Lamphun WF', 'Noto Serif Tai Tham WF', serif; }
+[lang=nod] { font-family: 'Hariphunchai WF', 'Payap Lanna WF', 'Lamphun WF', 'Noto Serif Tai Tham WF', serif; }
 
 
 
