@@ -48,7 +48,7 @@ var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Inuktitut text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
 
 
-{"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
+/*{"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
 
 "code":`_output=document.getElementById('output'); 
 input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
@@ -64,7 +64,7 @@ notes = input[4]? input[4] : '';
 
 add(getVocabWithAlt(term, meaning, ipa, notes, alt));
 vocab2Example(getHighlightedText(document.getElementById('output')));
-_output.focus();`},
+_output.focus();`},*/
 
 ]
 

@@ -55,7 +55,7 @@ var controls = [
 //{"title":"Transl<br/>++", "alt":"Convert ajami text to a latin transliteration with vowels and other changes.", "code":"doTranscription('translitPlus')"},
 
 
-{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
+/*{"title":"Make<br/>vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output'); 
 input=getHighlightedText(_output).split('|'); 
 if (! hasHighlight(_output)) _output.value=''; 
 
@@ -67,7 +67,7 @@ notes = input[2]? input[2] : '';
 
 add(getVocab(input[0], input[1], notes, ipa));
 vocab2Example(getHighlightedText(document.getElementById('output')));
-_output.focus();`},
+_output.focus();`},*/
 ]
 
 //if (ipa !== latin) notes += '|' + latin;

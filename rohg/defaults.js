@@ -52,23 +52,6 @@ var template = {}
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Rohingya text to a latin transliteration.", "code":"doTranscription('transliterate')"},
 //{"title":"Transl<br/>++", "alt":"Convert Kashmiri text to a latin transliteration with vowels and other changes.", "code":"doTranscription('translitPlus')"},
-
-
-{"title":"Make<br/>vocab", "alt":"Expand a line to create an entry for a vocab file.", 
-
-"code":`_output=document.getElementById('output'); 
-input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
-if (! hasHighlight(_output)) _output.value=''; 
-
-term = input[0];
-meaning = input[1];
-ipa = input[2]? input[2] : '';
-alt = input[3]? input[3] : '';
-notes = input[4]? input[4] : '';
-
-add(getVocabWithAlt(term, meaning, ipa, notes, alt));
-vocab2Example(getHighlightedText(document.getElementById('output')));
-_output.focus();`},
 ]
 
 

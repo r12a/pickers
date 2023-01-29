@@ -48,20 +48,6 @@ var controls = [
 "warning":"A transcription is supplied automatically, but needs to be checked.", 
 
 "code":"console.log('calling');doTranscription('transliterate')"},
-
-{"title":"Make<br/>vocab", "alt":"Expand a line to create an entry for a vocab file.", "code":`_output=document.getElementById('output'); 
-input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
-if (! hasHighlight(_output)) _output.value=''; 
-
-term = input[0];
-meaning = input[1];
-ipa = toLatin(input[0]);
-alt = input[3]? input[3] : '';
-notes = input[4]? input[4] : '';
-
-add(getVocabWithAlt(term, meaning, ipa, notes, alt));
-vocab2Example(getHighlightedText(document.getElementById('output')));
-_output.focus();`},
 ]
 
 
