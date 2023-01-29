@@ -176,7 +176,7 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
       <li>native text</li>
       <li>meaning</li>
       <li>IPA transcription</li>
-      <li>transliteration</li>
+      <li>transcription</li>
       </ol>
       <p>You don't need to add all four elements, but if you want to skip one in the middle of the sequence, keep the vertical lines.</p>
       <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
@@ -195,6 +195,8 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
       <p>When you add it to your document, it will look like this.</p>
       <p><span class="codepoint" translate="no"><span lang="en">ҧ</span> [<span class="uname">U+04A7 CYRILLIC SMALL LETTER PE WITH MIDDLE HOOK</span>]</span></p>
       </blockquote>
+      
+      <p>If you are dealing with more than one character, they will be displayed by default as normal.  If you wish to separate each character with a + sign, prefix the text to be converted with a colon.</p>
 </section>
 
 
@@ -213,9 +215,9 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 <p>will produce:</p>
 <p><code>&lt;span class="charExample" translate="no"&gt;&lt;bdi class="ex" lang="km" dir="ltr"&gt;<span lang="km">មេឃ</span>&lt;/bdi&gt; &lt;bdi class="trans"&gt;m̱eḵʰ&lt;/bdi&gt; &lt;bdi class="ipa"&gt;meːk&lt;/bdi&gt; &lt;bdi class="meaning"&gt;sky&lt;/bdi&gt;&lt;/span&gt;</code></p></blockquote><p></p>
       
-      <p><b class="leadin" id="sortCharacters">Sort characters.</b> Produces a space-separated list of characters in the selected text, in Unicode code point order. Characters that appear multiple times are all displayed together.  If you want to remove the spaces, click on <img src="images/removespace.png" style="vertical-align:middle;" alt="Remove space"> below the selection area.</p>
+      <p><b class="leadin" id="sortCharacters">Sort characters.</b> Produces a space-separated list of characters in the selected text, in Unicode code point order. Characters that appear multiple times are all displayed together.  If you want to remove the spaces, click on <img src="../images/removespace.png" style="vertical-align:middle;" alt="Remove space"> to the right of the text area.</p>
       
-      <p><b class="leadin" id="uniqueSort">Unique sort.</b> Produces a space-separated list of characters in the selected text, in Unicode code point order, but characters that appear multiple times are reduced to a single item.  If you want to remove the spaces, click on <img src="../../images/help/removespace.png" style="vertical-align:middle;" alt="Remove space"> below the selection area.</p>
+      <p><b class="leadin" id="uniqueSort">Unique sort.</b> Produces a space-separated list of characters in the selected text, in Unicode code point order, but characters that appear multiple times are reduced to a single item.  If you want to remove the spaces, click on <img src="../images/removespace.png" style="vertical-align:middle;" alt="Remove space"> to the right of the text area.</p>
       
       <p><b class="leadin" id="wordSort">Word sort.</b> Produces a space-separated list of the words in the selected text, where a 'word' is defined as a string of characters separated by spaces.  This is particularly useful for sorting digraphs and such with ordinary characters.</p>
       
