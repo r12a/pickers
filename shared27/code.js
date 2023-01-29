@@ -434,6 +434,18 @@ function vocab2Markup (input) {
 
 
 
+function makeExampleX (lang, dir, str) {
+	// str is populated when we're generating from a vocab string
+	var output = document.getElementById('output')
+	if (str) chars = str
+	else var chars = getHighlightedText(output)
+	document.getElementById('transcriptionWrapper').style.display='block'
+	document.getElementById('transcription').style.display = 'block'
+	document.getElementById('transcription').contentEditable = true
+	document.getElementById('transcription').textContent = getExample(chars, lang, dir)
+	output.focus()
+	}
+
 function makeExample (lang, dir, str) {
 	// str is populated when we're generating from a vocab string
 	var output = document.getElementById('output')
@@ -445,6 +457,9 @@ function makeExample (lang, dir, str) {
 	document.getElementById('transcription').textContent = getExample(chars, lang, dir)
 	output.focus()
 	}
+
+
+
 
 function makeRuby (lang, dir) {
 	var output = document.getElementById('output')
@@ -625,7 +640,7 @@ function paste () {
 	}
 
 
-function getExample (str, lang, dir) {
+function getExampleX (str, lang, dir) {
 	parts = str.split('/')
 	var out = '<span class="charExample" translate="no">'
 	out += '<span class="ex" lang="'+lang+'"'
@@ -647,7 +662,7 @@ function getExample (str, lang, dir) {
 
 
 
-function getExample (str, lang, dir) {
+function getExampleXX (str, lang, dir) {
 	parts = str.split('/')
 	var out = '<span class="charExample" translate="no">'
 	out += '<span class="ex" lang="'+lang+'"'
@@ -668,6 +683,62 @@ function getExample (str, lang, dir) {
 	if (parts[3]) {
 		out += '<span class="meaning">'+parts[3]+'</span> '
 		}
+	return out.trim()+'</span>'
+	}
+
+
+
+
+
+function getExample (str, lang, dir) {
+    // the new approach uses | as a delimiter, and orders per the termbase
+    // native|meaning|IPA¹|transcription|notes|wiktionary²
+    if (str.includes('|')) {
+        parts = str.split('|')
+        var out = '<span class="charExample" translate="no">'
+        out += '<span class="ex" lang="'+lang+'"'
+        if (dir==='rtl') { out += ' dir="rtl"' }
+        out += '>'+parts[0]+'</span> '
+        if (parts[2]) {
+            if (parts[2].startsWith(':')) out += '(<span class="trans">'+parts[2].substr(1)+'</span>) '
+            else if (parts[2].includes('(')) {
+                ipaSplit = parts[2].split('(')
+                out += ' (<span class="trans">'+ipaSplit[1].replace(')','').trim()+'</span>) '
+                out += '<span class="ipa">'+ipaSplit[0].trim()+'</span> '
+                }
+            else out += '<span class="ipa">'+parts[2]+'</span> '
+            }
+        if (parts[3]) {
+            out += '<span class="transc">'+parts[3]+'</span> '
+            }
+        if (parts[1]) {
+            out += '<span class="meaning">'+parts[1]+'</span> '
+            }
+        }
+
+
+    else { // this is the old way of doing it
+        parts = str.split('/')
+        var out = '<span class="charExample" translate="no">'
+        out += '<span class="ex" lang="'+lang+'"'
+        if (dir==='rtl') { out += ' dir="rtl"' }
+        out += '>'+parts[0]+'</span> '
+        if (parts[1]) {
+            out += '<span class="trans">'+parts[1]+'</span> '
+            }
+        if (parts[2]) {
+            if (parts[2].startsWith(':')) out += '(<span class="trans">'+parts[2].substr(1)+'</span>) '
+            else if (parts[2].includes('(')) {
+                ipaSplit = parts[2].split('(')
+                out += ' (<span class="trans">'+ipaSplit[1].replace(')','').trim()+'</span>) '
+                out += '<span class="ipa">'+ipaSplit[0].trim()+'</span> '
+                }
+            else out += '<span class="ipa">'+parts[2]+'</span> '
+            }
+        if (parts[3]) {
+            out += '<span class="meaning">'+parts[3]+'</span> '
+            }
+        }
 	return out.trim()+'</span>'
 	}
 
