@@ -47,21 +47,21 @@ var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Bassah Vah text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
 
 
-{"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
+//{"title":"Make<br/>vocab", "alt":"Create an entry for a vocab file.", 
 
-"code":`_output=document.getElementById('output'); 
-input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
-if (! hasHighlight(_output)) _output.value=''; 
+//"code":`_output=document.getElementById('output'); 
+//input=replaceSlash(getHighlightedText(_output),'|').split('|'); 
+//if (! hasHighlight(_output)) _output.value=''; 
 
-term = input[0];
-meaning = input[1];
-ipa = input[2]? input[2] : '';
-alt = input[3]? input[3] : '';
-notes = input[4]? input[4] : '';
+//term = input[0];
+//meaning = input[1];
+//ipa = input[2]? input[2] : '';
+//alt = input[3]? input[3] : '';
+//notes = input[4]? input[4] : '';
 
-add(getVocabWithAlt(term, meaning, ipa, notes, alt));
-vocab2Example(getHighlightedText(document.getElementById('output')));
-_output.focus();`},
+//add(getVocabWithAlt(term, meaning, ipa, notes, alt));
+//vocab2Example(getHighlightedText(document.getElementById('output')));
+//_output.focus();`},
 ]
 
 
