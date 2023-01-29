@@ -63,7 +63,7 @@ img.big { margin-block-start: 0; max-width: 100%; transform: scale(.8); }
 </li>
 </ul>
 <img src="../../shared27/images/help/hints.png" alt="NOT FOUND" style="float:left; margin-inline-end:1em;">
-<p id="ktpHints"><b class="leadin">Hints.</b> The <samp>K T P</samp> selectors to the left of the window allow you to show hints for characters in the selection area. <samp>K</samp> shows the keypress that will produce that character in type-assist mode. <samp>T</samp> shows the transliteration for that character. <samp>P</samp> shows likely IPA pronunciation(s) for the character.  These hints are off by default. To turn them off again after using them, click on the currently highlighted option.</p>
+<p id="ktpHints"><b class="leadin">Hints.</b> The <samp>K T P</samp> selectors to the left of the window allow you to show hints for characters in the selection area. <samp>K</samp> shows the keypress that will produce that character in type-assist mode. <samp>T</samp> shows the transliteration for that character. <samp>P</samp> shows likely IPA pronunciation(s) for the character.  These hints are off by default. To turn them off again after using them, click on the currently highlighted option, or on the <samp>X</samp> option (which appears as you mouse over the menu).</p>
 </section>
 
 
@@ -73,7 +73,8 @@ img.big { margin-block-start: 0; max-width: 100%; transform: scale(.8); }
 
 <p>The controls just above the text area allow you to interact with or analyse the text in various ways. <strong>They nearly all work on any highlighted text within the text area, or if there is no highlight, on all the text.</strong> Controls near the bottom of the app allow you to change font, font size, line-height, text direction, etc.</p>
 <p><b class="leadin" id="contrast">Contrast.</b> Some of the text on the UI has a lighter coloured text, so as to not swamp the key information. However, if you find it difficult to read the light-coloured text, click on <img src="../../shared27/images/access.png" alt="Sample" style="height:1.4em; vertical-align:middle;"/> at the top right of the page to toggle between lighter and darker text. If you chose to save your settings between sessions, this will also be remembered.</p>
-<p><b class="leadin">Sample text.</b> If you want to add some sample text to the text area, click on the &nbsp; <img src="../../shared27/images/sample.png" alt="Sample" style="height:1.4em; vertical-align:middle;"> &nbsp; icon.</p>
+
+<p><b class="leadin">Sample text.</b> To add some sample text to the text area, click on the &nbsp; <img src="../../shared27/images/sample.png" alt="Sample" style="height:1.4em; vertical-align:middle;"> &nbsp; icon.</p>
 
 <p><b class="leadin" id="fonts">Fonts.</b>
 To properly display the text you will need to use a font that is loaded on your system or device, or use the web font(s) downloaded with the page (names end in 'WF'). Font selectors in the app indicate which fonts are standard for Mac and Windows operating systems, and fonts that are freely available from Google and SIL. See more information about <a href="../../../scripts/fontlist/" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
@@ -85,7 +86,7 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 
 <p><b class="leadin" id="translit">Transliteration vs transcription.</b> Character apps distinguish between transliteration and transcription. In <strong>transliteration</strong> each native character has an equivalent Latin character associated with it. The transliteration may not accurately represent pronunciation, but does allow straightforward and reversible conversion between the two scripts. The transliteration schemes used here are specially created for materials on this site, and the app has controls to convert to and from that transliteration. A <strong>transcription</strong>, on the other hand, is more likely to be phonetically accurate (though may still reflect only an approximation), and is likely not to allow reversible conversions.</p>
 
-<p><b class="leadin" id="normalisation">Normalisation.</b> All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation using the controls below the selection area. Note that normalization only takes place when you click on a character – text <em>pasted</em> into the box won't be normalised until you add another character from the UI, or set the normalisation explicitly.</p>
+<p><b class="leadin" id="normalisation">Normalisation.</b> All text is output in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation using the controls below the selection area. Note that normalization only takes place when you click on a character in the selection palette – text <em>pasted</em> into the box won't be normalised until you add another character from the UI, or set the normalisation explicitly.</p>
 
 <p><b class="leadin" id="secondaryTextArea">Secondary text area.</b> An area that opens up automatically just below the text area receives the output of various tools. Note that the text is editable.</p>
 <p><img src="../../shared27/images/help/secondary_text.png" alt=""/></p>
@@ -117,7 +118,8 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
       <img src="../../shared27/images/select.png" alt="Select icon"/> select all the text<br/>
       <img src="../../shared27/images/share.png" alt="Share icon"/> generate a URL to share with others that will reproduce for them what you see in the text box<br/>
       <img src="../../shared27/images/sample.png" alt="Sample icon"> add some sample text to the text area<br>
-      <img src="../../shared27/images/toggle.png" alt="Invisible character toggle icon"/> show/hide invisible characters<br/>
+      <img src="../../shared27/images/toggle.png" alt="Invisible character toggle icon"/> show/hide invisible characters.<br/>
+      <img src="../../shared27/images/checker.png" alt="Checker icon">Check the text for non-recommended characters or sequences.<br/>
       <img src="../../shared27/images/fonts.png" alt="Fonts icon"> show the font preview list. Mouse over the font names to change the font used for the text area. (Only works for webfonts or fonts you have on your system.) Click on a font name to change the font and store the setting.<br/>
       <img src="../../shared27/images/typography.png" alt="Fonts icon"> set OpenType typographic features. Reveals controls that allow you to turn on and off the font features of the font used for text in the output area. (Of course, the font needs to support the relevant features.)<br/>
       <img src="../../shared27/images/clear.png" alt="Clear icon"/> delete all the text</blockquote> 	  
@@ -136,14 +138,16 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 <section id="topRight">
 <h3>Controls to the right</h3>
 
-      <p><b class="leadin" id="listCharacters">List characters.</b> Produces a list of the Unicode code points in the text area, and displays it in the bottom right corner of the window. At the top of the panel, Latin transliterations are shown alongside each character, to help you identify the components of the string. At the bottom of the panel are a number of icons that let you copy:</p>
-      <ol>
-      <li>a list of all code points with their Unicode names and code point values (very useful for copy/pasting lists to email, issue threads, or other places)</li>
-      <li>the characters you are analysing</li>
-      <li>the transliteration of the characters you are analysing</li>
-      </ol>
-      <p>By clicking on the <img src="../../shared27/images/help/share_transp.png" style="vertical-align:middle;" alt=""/> icon, you can export the characters to other apps.</p>
-      <p>When detailed information is available for a given character, you can follow the link on the character name to see it.</p>
+      <p><b class="leadin" id="listCharacters">List characters.</b> Produces lists of the Unicode code points in the text area, and displays them in the bottom right corner of the window.</p>
+      <p><img src="../../shared27/images/help/list_characters.png" style="height:400px"></p>
+  
+        <p>At the top of the panel the selected text is shown, segmented into units corresponding to one base character plus any following combining mark(s). Latin <em>transliterations</em> are shown above each character, to help you identify the components of the string. (Remember that this is not a transcription.)</p>
+  
+        <p>To copy either line to the clipboard, click on the icon that precedes it.</p>
+    
+      <p>There follows a list of each character found, with its Unicode code point and name. When detailed information is available for a given character, you can follow the link on the character name to see it.</p>
+      
+      <p>At the bottom of the panel, the <samp>Export</samp> button allows you to open the text in a number of other apps.  The <samp>Copy list</samp> button copies to the clipboard the list of code points with codepoints and names (very useful for copy/pasting lists to email, issue threads, or other places)</li>
       
       <p><b class="leadin" id="analyzeText">Analyze text.</b> This control is particularly useful for understanding the composition of the text. For each character highlighted (or the whole text box if nothing is highlighted) this lists information such as the following:</p>
        <ul>
@@ -159,36 +163,35 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
       <p>If the app recognises a <em>sequence</em> of characters that has a particular significance in its own right, it will show that sequence (slightly indented) after the initial character.</p>
       <p>The two controls <samp>Show IPA</samp> and  <samp>Show Transcription</samp> reproduce the list of characters with the transcription or IPA information alongside each.  This is not an actual transcription: the information is provided on a character by character basis.  However, that said, it can often provide a quick way of producing a transcription.  You can select or grey out the transcription items by clicking on them. The remainder can be transferred to the main text area as a string by clicking on the <samp>Add</samp> button.</p>
       
-      <p><b class="leadin" id="transliterate">Transliterate.</b> Converts the contents of the text area to a Latin transliteration that provides a one-to-one correspondence between the selected text and Latin symbols.</p>
+      <p><b class="leadin" id="transliterate">Transliterate.</b> Converts the contents of the text area to a Latin <em>transliteration</em> that provides a one-to-one correspondence between the selected text and Latin symbols. Transliterations produced this way are particularly useful for getting a quick idea of the composition of text in scripts, especially where the individual parts are not well separated in the orthography. (It is not a transcription.)</p>
       <p>The transliteration scheme was developed for this character app, and, where possible, uses symbols that represent sounds typically associated with the main phonological equivalents, rather than the sometimes fairly arbitrary selection of diacritics found in other systems. Of course, the complexities of mapping graphemes to sounds means that this is far from a real phonetic transcription, and it doesn't show vowels or other things that are not shown in the original text, but the process is reversible (unlike most transcriptions).</p>
-      <p>Transliterations produced this way are particularly useful for quickly getting an idea of the composition of text in scripts, especially where the individual parts are not well separated in the orthography.</p>
       
       <p><b class="leadin" id="findExamples">Find examples.</b> Opens a new window and searches for the highlighted text in the database of terms. The highlighted text can be a single character, or any sequence of characters. If it's a single character, the database will be searched for all terms containing that character. If it's a sequence of characters, the database will be searched for entries containing that sequence.</p>
       <p>The database search works with regular expressions, so for example you could write something like <samp>x..?y</samp> to search for any sequences that begin with an 'x', then have one or two other characters, then end with a 'y'. This supports the regular expression syntax that your browser uses for JavaScript matching. If you want to search for a literal character that is used in regex syntax, such as a period, you'll need to escape it (eg. <samp>\\.</samp>).</p>
       <p>By default, the search attempts to match the language terms and their transcriptions, but you can reduce the scope of the search on the term base page.</p>
       <p>From the term database page you can look up matches in the Wiktionary lemma list by clicking on entries with links.</p>
 
-      <p><b class="leadin">Example markup.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by /, in the following order:</p>
+      <p><b class="leadin">Example markup.</b> This may be useful to speed up the creation of examples. You can create an example with four parts, delimited by |, in the following order:</p>
       <ol>
       <li>native text</li>
-      <li>transliteration</li>
-      <li>IPA transcription</li>
       <li>meaning</li>
+      <li>IPA transcription</li>
+      <li>transliteration</li>
       </ol>
-      <p>You don't need to add all four elements, but if you want to skip one in the middle of the sequence, use nothing between the slashes.</p>
+      <p>You don't need to add all four elements, but if you want to skip one in the middle of the sequence, keep the vertical lines.</p>
       <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
-      <p>For example, the following in a Russian character app:</p>
-      <p><span lang="ru">ру́сский язы́к</span>/rússkiy yazýk/ˈruskʲɪj jɪˈzɨk/Russian (language)</p>
+      <p>For example, the following in a Ukrainian character app:</p>
+      <p><span lang="uk">український</span>|Ukrainian|ʊkrɐˈjinʲsʲkei̯|ukrajínsʹkyj</p>
       <p>will produce:</p>
-      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;charExample&quot; translate=&quot;no&quot;&gt;&lt;span class=&quot;ex&quot; lang=&quot;ru&quot;&gt;ру́сский язы́к&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;rússkiy yazýk&lt;/span&gt; &lt;span class=&quot;ipa&quot;&gt;ˈruskʲɪj jɪˈzɨk&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Russian (language)&lt;/span&gt;&lt;/span&gt;</code></p>
-      <p>To get just the Cyrillic and the meaning you would use:</p>
-       <p><span lang="ru">ру́сский язы́к///Russian (language)</span></p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;charExample&quot; translate=&quot;no&quot;&gt;&lt;bdi class=&quot;ex&quot; lang=&quot;uk&quot;&gt;український&lt;/bdi&gt; &lt;span class=&quot;ipa&quot;&gt;ʊkrɐˈjinʲsʲkei̯&lt;/span&gt; &lt;span class=&quot;transc&quot;&gt;ukrajínsʹkyj&lt;/span&gt; &lt;span class=&quot;meaning&quot;&gt;Ukrainian&lt;/span&gt;&lt;/span&gt;</code></p>
+      <p>To get just the Cyrillic and the IPA you would use:</p>
+       <p><span lang="uk"><code><span lang="uk">український</span>||ʊkrɐˈjinʲsʲkei̯</code></p>
        </blockquote>
       
       <p><b class="leadin" id="characterMarkup">Character markup.</b> This may be useful to speed up the creation of markup for a specific character or set of characters. Select one or more characters in the text area, then click this button.</p>
       <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
       <p>It will return something like the following for each of the characters:</p>
-      <p style="text-align:left; text-justify:auto;"><code>&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;span lang=&quot;en&quot;&gt;&amp;#x04A7;&lt;/span&gt; [&lt;span class=&quot;uname&quot;&gt;U+04A7 CYRILLIC SMALL LETTER PE WITH MIDDLE HOOK&lt;/span&gt;]&lt;/span&gt;</code></p>
+      <p style="text-align:left; text-justify:auto;"><code>&lt;bdi class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;span lang=&quot;en&quot;&gt;&amp;#x04A7;&lt;/bdi&gt; [&lt;span class=&quot;uname&quot;&gt;U+04A7 CYRILLIC SMALL LETTER PE WITH MIDDLE HOOK&lt;/span&gt;]&lt;/span&gt;</code></p>
       <p>When you add it to your document, it will look like this.</p>
       <p><span class="codepoint" translate="no"><span lang="en">&#x04A7;</span> [<span class="uname">U+04A7 CYRILLIC SMALL LETTER PE WITH MIDDLE HOOK</span>]</span></p>
       </blockquote>
@@ -204,7 +207,7 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 	
       <p><b class="leadin" id="showAllDBEntries">Show all db entries.</b> This is like 'Analyse text', described above, except that it will list all the meaningful sequences contained in the backend database for each character looked up, whether or not those sequences are contained in the string that is being tested.</p>
       
-      <p><b class="leadin" id="vocabToMarkup">Vocab to markup.</b> Converts a vocab entry to markup that can be used for an example. Must be applied to one line at a time.</p>
+      <p><b class="leadin" id="vocabToMarkup">Term to markup.</b> Converts a term entry to markup that can be used for an example. Must be applied to one line at a time.</p>
 <blockquote style="background-color: cornsilk; padding: 0.1em 1em; border-radius: .5em; font-size: 90%;">
 <p><code><span lang="km">មេឃ</span>|sky|meːk</code></p>
 <p>will produce:</p>
@@ -234,6 +237,34 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
       <p>This control allows you to send or look up whatever text is currently highlighted in the text area in another app. That app opens in a separate window.</p>
       <p>The selection <samp>Script notes</samp> looks at the first character only in the highlighted text and opens the script description page at point in the index where that character appears. You can then follow the links to places in the page that describe the use of that character.  The <samp>Character notes</samp> selection also picks the first highlighted character and takes you to the character notes document where that is described.</p>
 </section>
+</section>
+
+
+
+
+
+<section id="sideIcons">
+<h2 id="side_icons" href="#side_icons">Icons alongside the text area</h2>
+
+<img src="../../shared27/images/help/right_side.png" alt="" style="float:right; margin-inline-end: 10%;">
+
+<p>The icons to the right side of the text area allow you to easily do various particularly useful manipulations on the text.  Atop the column is information about the currently set normalisation form and language.</p>
+
+<p>Information about the currently set language and normalisation form appear just above the icons.</p>
+
+<p><img alt="Add space:" src="../../images/addspace_large.png"/> &nbsp; Adds a space between every character in the text area.</p>
+
+<p><img alt="Remove space:" src="../../images/removespace_large.png"/> &nbsp; Removes all spaces from the text area.</p>
+
+<p><img alt="Collapse space:" src="../../images/collapsespaces_large.png"/> &nbsp; Converts multiple spaces to a single space.</p>
+
+<p><img alt="Collapse lines:" src="../../images/collapselines_large.png"/> &nbsp; Convert all line breaks to spaces.</p>
+
+<p><img alt="Add comma:" src="../../images/addcomma_large.png"/> &nbsp; By default, adds ␣ between every character in the text area. Put a different character or sequence of characters in the box just below in order to add something else between each character.</p>
+
+<p><img alt="Count:" src="../../images/count_large.png"/> &nbsp; Counts the number of characters in the text area.</p>
+ 
+<p><b class="leadin" id="normalise">Normalisation icons.</b> All text is added to the main text area in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on these buttons. Note that normalization only takes place when you click on a character – text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. </p>
 </section>
 
 
@@ -352,27 +383,6 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 
 
 
-<section id="sideIcons">
-<h2 id="side_icons" href="#side_icons">Icons alongside the text area</h2>
-
-<p>The icons to the right side of the text area allow you to easily do various particularly useful manipulations on the text.</p>
-
-<p>Information about the currently set language and normalisation form appear just above the icons.</p>
-
-<p><img alt="Add space:" src="../../images/addspace.png"/> &nbsp; Adds a space between every character in the text area.</p>
-
-<p><img alt="Remove space:" src="../../images/removespace.png"/> &nbsp; Removes all spaces from the text area.</p>
-
-<p><img alt="Collapse space:" src="../../images/collapsespaces.png"/> &nbsp; Converts multiple spaces to a single space.</p>
-
-<p><img alt="Collapse lines:" src="../../images/collapselines.png"/> &nbsp; Convert all line breaks to spaces.</p>
-
-<p><img alt="Add comma:" src="../../images/addcomma.png"/> &nbsp; By default, adds ␣ between every character in the text area. Put a different character or sequence of characters in the box just below in order to add something else between each character.</p>
-
-<p><img alt="Count:" src="../../images/count.png"/> &nbsp; Counts the number of characters in the text area.</p>
- 
-<p><b class="leadin" id="normalise">Normalisation icons.</b> All text is added to the main text area in Unicode normalisation form NFC by default.  You can change to NFD or no normalisation by clicking on these buttons. Note that normalization only takes place when you click on a character – text pasted into the box won't be normalised until you click on another character above, or click on a button in the yellow area. </p>
-</section>
 
 
 
