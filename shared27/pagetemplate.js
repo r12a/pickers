@@ -265,12 +265,12 @@ onClick="document.querySelector('.access_selected').classList.remove('access_sel
   out += `<img title="Set OpenType typographic features." style="margin-left:.5em;" onclick="if (document.getElementById('otPicker').style.display == 'none') { document.getElementById('otPicker').style.display = 'block'} else { document.getElementById('otPicker').style.display='none';}" src="../shared27/images/typography.png" alt="Typography" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
 
   out += `<img title="Delete all the text." onclick="deleteAll()" src="../shared27/images/clear.png" alt="Clear" style="margin-left: 1em;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
-<a class="interactiveHelpButton" href="help/index.html#topLeftIcons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
+<a class="interactiveHelpButton" href="../shared27/help.html#topLeftIcons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
   </span>
   
   
 <span id="tools">
-<a class="interactiveHelpButton" style="margin-right:.5em;" href="help/index.html#topRight" target="_help" title="Help for top level controls."><img alt="help" src="../images/help.png"/></a>
+<a class="interactiveHelpButton" style="margin-right:.5em;" href="../shared27/help.html#topRight" target="_help" title="Help for top level controls."><img alt="help" src="../images/help.png"/></a>
     
 <button onclick="showCodepoints()" title="Show a list of code points for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">List<br>characters</button>
 
@@ -320,7 +320,7 @@ out += `
 
 <img src="../shared27/images/menu.png" alt="More controls" style="vertical-align: bottom; cursor:pointer; height:2rem;" onclick="if (document.getElementById(\'pulldown\').style.display===\'none\') {document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\'}; document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();"  onmouseover="showMenuText('Show more options to apply to the text area.','tan');" onmouseout="hideMenuText()">
 
-<a class="interactiveHelpButton" href="help/index.html#exportPulldown" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a>
+<a class="interactiveHelpButton" href="../shared27/help.html#exportPulldown" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a>
 
 <img src="../shared27/images/transfer.png" alt="Export to other apps" style="vertical-align: bottom; cursor:pointer; margin-inline-end: 1em; height:2rem;" onclick="if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'pulldown\').style.display=\'none\'; document.getElementById(\'output\').focus();" onmouseover="showMenuText('Export the text in the text area to another app. Many options work on highlighted ranges.','tan');" onmouseout="hideMenuText()">
 </span>
@@ -468,7 +468,7 @@ out += `<details id="fontManagementDetails" style="display: none; padding:1rem;"
 <div class="control" style="width: 10px;" onclick="document.getElementById('fontManagementList').value = escapeNonASCII(JSON.stringify(autoTranslitArray));document.getElementById('fontManagementList').select();"
 </div>
 
-<a class="interactiveHelpButton" href="help/index.html#manage_fonts" target="_help" title="Help with font management controls."><img alt="help" src="../images/help.png"/></a>
+<a class="interactiveHelpButton" href="../shared27/help.html#manage_fonts" target="_help" title="Help with font management controls."><img alt="help" src="../images/help.png"/></a>
 </div>
 </details>
 `
@@ -707,7 +707,7 @@ out += `<textarea dir="auto" id="output" name="output" placeholder="›" lang="`
 
 
 <div id="transcriptionWrapper">
-<a class="interactiveHelpButton" href="help/index.html#secondary_output" target="_help" style= "float: left; margin: 1em 1em 0 1em;" title="Help with the secondary text area."><img alt="help" src="../images/help.png"/></a>
+<a class="interactiveHelpButton" href="../shared27/help.html#secondary_output" target="_help" style= "float: left; margin: 1em 1em 0 1em;" title="Help with the secondary text area."><img alt="help" src="../images/help.png"/></a>
 <div id="copyTranscription" onclick="copyTranscription()"><img src="../shared27/images/copy.png" alt="Copy"></div>
 <div id="moveTranscription" onclick="moveTranscription()"><img src="../shared27/images/move.png" alt="Move"></div>
 <div id="closeTranscription" onclick="closeTranscription()">X</div>
@@ -717,7 +717,7 @@ out += `<textarea dir="auto" id="output" name="output" placeholder="›" lang="`
 
 
 <div id="autofocusswitch">
-<a class="interactiveHelpButton" style="margin-right:.5em;" href="help/index.html#autofocus" target="_help" title="Help with autofocus and direction."><img alt="help" src="../images/help.png"/></a>
+<a class="interactiveHelpButton" style="margin-right:.5em;" href="../shared27/help.html#autofocus" target="_help" title="Help with autofocus and direction."><img alt="help" src="../images/help.png"/></a>
 `
 
 if (template.direction == "rtl" || template.direction == "bidi") {
@@ -764,7 +764,7 @@ if (inputAids.length > 0) {
 	out += `
     <div style="position:relative;">
     <div id="vertical-menu">
-	<div class="vmtab off"><a class="interactiveHelpButton" href="help/index.html#inputAids" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a></div>
+	<div class="vmtab off"><a class="interactiveHelpButton" href="../shared27/help.html#inputAids" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a></div>
     `
 	}
 
@@ -855,7 +855,7 @@ if (template.hints) out += `<div id="hintControls" onMouseOver="document.getElem
 `
 
 out += `
-<div><a class="interactiveHelpButton" href="help/index.html#ktpHints" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a></div>
+<div><a class="interactiveHelpButton" href="../shared27/help.html#ktpHints" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a></div>
 </div>
 `
 return out
@@ -869,7 +869,7 @@ out = `
 
   <div id="helpBanner" style="text-align: center;color: white;background-color: #60ADFB;">
   <div style="float:right; margin:1em;" onclick="hideCSHelp()">X</div>
-  <div><a href="help/index.html" target="_help">Get basic information</a> about how to use this app.</div>
+  <div><a href="../shared27/help.html" target="_help">Get basic information</a> about how to use this app.</div>
   <div style="font-size:80%">For context-sensitive help, click on one of these icons: <img src="../images/help.png" alt=""/></div>
   </div>
   
@@ -916,7 +916,7 @@ out = `
     onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/>
     </div-->
 
-<a class="interactiveHelpButton" href="help/index.html#yellowControls" target="_help" title="Help with main yellow controls." style="margin: 1rem;"><img alt="help" src="../images/help.png"/></a>
+<a class="interactiveHelpButton" href="../shared27/help.html#yellowControls" target="_help" title="Help with main yellow controls." style="margin: 1rem;"><img alt="help" src="../images/help.png"/></a>
 
 <div class="control" id="helpcontrol" onclick="showCSHelp();return false;" accesskey="h">Help<br/><img src="../images/help.png" alt=""/></div>
 </div>
