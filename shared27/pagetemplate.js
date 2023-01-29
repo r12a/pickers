@@ -313,7 +313,7 @@ for (let i=0;i<window.controls.length;i++){
 out += ` 
 <button onclick="openVocabWindow(template.vocablocation); return false;" title="Search for examples containing the highlighted text." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Find<br>examples</button>
 
-<button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" title="Create source code for an example." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Example<br>markup</button>
+<button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" title="Create source code for an example. native|meaning|IPA|transcription" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Example<br>markup</button>
     
 <button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character<br/>markup</button>
 
