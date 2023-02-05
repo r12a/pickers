@@ -4,9 +4,92 @@ globals.typeAssist = ' ✓'
 globals.showKeysTranslitToggle = false
 
 
+
+function checkOrder (chars) {
+// check that combining marks are in the right order
+	// chars is the content of the text area
+	var msg = ''
+	var messages = []
+    var graphemes = []
+    var ptr = -1
+    var characterList, cchars
+	var virama, nukta, vowel, bindu, gemination, final
+	
+
+	// parse the text area into graphemes
+    characterList = [...chars]
+    for (var c=0;c<characterList.length;c++) {
+        if (window.marks && window.marks.has(characterList[c]) && c !== 0) graphemes[ptr] += characterList[c]
+        else {
+            ptr++
+            graphemes[ptr] = characterList[c]
+            }
+        }
+
+console.log('Graphemes:',graphemes)
+
+	// make sets for the expected character types
+	var viramas = new Set(['\u1B44'])
+	var nuktas = new Set(['᬴'])
+	var vowels = new Set(['ᬾ', 'ᬿ', 'ᭀ', 'ᭃ', 'ᭁ', 'ᬶ', 'ᬷ', 'ᬸ', 'ᬹ', 'ᬺ', 'ᬻ', 'ᬼ', 'ᬽ', 'ᭂ','᭞', 'ᬵ'])
+	var finals = new Set(['ᬃ', 'ᬀ', 'ᬁ', 'ᬂ', 'ᬄ'])
+
+
+
+	// assign position values to types of mark
+	for (i=0;i<graphemes.length;i++) {
+		cchars = [... graphemes[i]]
+		console.log('cchars',cchars)
+		ccstr = ''
+		for (c=0;c<cchars.length;c++) {
+			if (viramas.has(cchars[c])) ccstr += 'v'
+			if (nuktas.has(cchars[c])) ccstr += 'n'
+			if (vowels.has(cchars[c])) ccstr += 'V'
+			if (finals.has(cchars[c])) ccstr += 'F'
+			}
+
+		console.log(graphemes[i], ccstr)
+
+
+		// APPLY RULES TO FIND PROBLEMS
+		if (ccstr.startsWith('v') && ccstr.length > 1) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="ban">${ graphemes[i] }</bdi></a> no combining marks should follow the adeg-adeg.`)
+								
+		if (ccstr.includes('n') && ! ccstr.startsWith('n')) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="ban">${ graphemes[i] }</bdi></a> the rerekan should come immediately after the base.`)
+
+
+							
+		// go through each mark, checking whether something follows that shouldn't
+		for (p=0;p<ccstr.length;p++) {
+			slice = ccstr.slice(p+1)
+			console.log('SLICE', slice)
+			
+			// bindi and gemination and finals must come after vowels
+			if (ccstr[p] === 'F' && slice.includes('V')) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="ban">${ graphemes[i] }</bdi></a> the vowel sign should precede the syllable-final consonant diacritic.`)
+			}
+		}
+
+
+	// remove duplicate messages
+    const uniqueSet = new Set(messages)
+    messages = [...uniqueSet]
+
+	//concatenate all the messages
+	for (i=0;i<messages.length;i++) msg += `\n<tr><td>${ messages[i] }</td></tr>`
+	console.log(msg)
+	
+	return msg
+	}
+
+
+
+
 window.charCheckerList = [
-//{ wrong:"သြော်", right:"ဪ" },
-//{ wrong:"သြ", right:"ဩ" },
+//{ wrong:"xxx", right:"xxx" },
+{ wrong:"ᬵᬿ", right:"ᭁ" },
+{ wrong:"ᬵᬾ", right:"ᭀ" },
+{ wrong:"ᬵᭂ", right:"ᭃ" },
+{ wrong:"ᬵᬺ", right:"ᬻ" },
+{ wrong:"ᬵᬼ", right:"ᬽ" },
 ]
 
 
