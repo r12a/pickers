@@ -5,6 +5,131 @@ globals.typeAssist = ' ✓'
 globals.showKeysTranslitToggle = false
 
 
+
+function checkOrder (chars) {
+// check that combining marks are in the right order
+	// chars is the content of the text area
+	var msg = ''
+	var messages = []
+    var graphemes = []
+    var ptr = -1
+    var characterList, cchars
+	var virama, nukta, vowel, bindu, gemination, final
+	var ccstr = ''
+	
+
+	// parse the text area into graphemes
+    characterList = [...chars]
+    for (var c=0;c<characterList.length;c++) {
+        if (window.marks && window.marks.has(characterList[c]) && c !== 0) graphemes[ptr] += characterList[c]
+        else {
+            ptr++
+            graphemes[ptr] = characterList[c]
+            }
+        }
+
+console.log('Graphemes:',graphemes)
+
+	// make sets for the expected character types
+	var viramas = new Set(['\u1039'])
+	var asats = new Set(['\u103A'])
+	var medials = new Set(['ျ', 'ြ', 'ွ', 'ှ'])
+	var vowels = new Set(['ေ', 'ိ', 'ီ', 'ု', 'ူ', 'ဲ', 'ာ', 'ါ'])
+	var bindi = new Set(['ံ'])
+	var tones = new Set(['့', 'း'])
+	
+	const LEFTVOWEL = 'l'
+	const TOPVOWEL = 't'
+	const BOTTOMVOWEL = 'b'
+	const RIGHTVOWEL = 'r'
+	
+	const DTONE = 'd'
+	const VTONE = 'x'
+
+	var leftvowels = new Set(['ေ'])
+	var highvowels = new Set(['ိ', 'ီ', 'ဲ'])
+	var lowvowels = new Set(['ု', 'ူ'])
+	var rightvowels = new Set(['ာ', 'ါ'])
+
+	var yamedials = new Set(['ျ'])
+	var ramedials = new Set(['ြ'])
+	var wamedials = new Set(['ွ'])
+	var hamedials = new Set(['ှ'])
+
+
+	// assign position values to types of mark
+	for (i=0;i<graphemes.length;i++) {
+		virama = asat = medial = vowel = bindu = tone = 0
+		cchars = [... graphemes[i]]
+		console.log('cchars',cchars)
+		ccstr = ''
+		for (c=0;c<cchars.length;c++) {
+			if (viramas.has(cchars[c])) ccstr += 'v'
+			if (asats.has(cchars[c])) ccstr += 'a'
+			if (medials.has(cchars[c])) ccstr += 'M'
+			if (vowels.has(cchars[c])) ccstr += 'V'
+			if (bindi.has(cchars[c])) ccstr += 'B'
+			if (tones.has(cchars[c])) ccstr += 'T'
+			
+			if (leftvowels.has(cchars[c])) ccstr += 'l'
+			if (highvowels.has(cchars[c])) ccstr += 't'
+			if (lowvowels.has(cchars[c])) ccstr += 'b'
+			if (rightvowels.has(cchars[c])) ccstr += 'r'
+			
+			if (yamedials.has(cchars[c])) ccstr += 'y'
+			if (ramedials.has(cchars[c])) ccstr += 'x'
+			if (wamedials.has(cchars[c])) ccstr += 'w'
+			if (hamedials.has(cchars[c])) ccstr += 'h'
+			}
+
+		console.log(graphemes[i], ccstr)
+
+
+		// APPLY RULES TO FIND PROBLEMS
+		if (ccstr.startsWith('v') && ccstr.length > 1) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="my">${ graphemes[i] }</bdi></a> no combining marks should follow the virama.`)
+			
+		if (ccstr.startsWith('a') && ccstr.length > 1  && ccstr[1] !== 'T') messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="my">${ graphemes[i] }</bdi></a> only tone marks should follow the asat.`)
+			
+		if (ccstr.startsWith(DTONE) && ccstr.length > 1  && ccstr[1] === 'T') messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="my">${ graphemes[i] }</bdi></a> only tone marks should follow the asat.`)
+		
+		// go through each mark, checking whether something follows that shouldn't
+		for (p=0;p<ccstr.length;p++) {
+			slice = ccstr.slice(p+1)
+			console.log('SLICE', slice)
+			
+			if (ccstr[p] === 'V' && slice.includes('M')) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="my">${ graphemes[i] }</bdi></a> the medial consonant should precede the vowel.`)
+		
+			// vowel order
+			if (ccstr[p] === 'b' && (slice.includes('t') || slice.includes('l'))) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="my">${ graphemes[i] }</bdi></a> the order of vowel sign marks should be left, above, below, right.`)
+			if (ccstr[p] === 't' && (slice.includes('l'))) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="my">${ graphemes[i] }</bdi></a> the order of vowel sign marks should be left, above, below, right.`)
+			if (ccstr[p] === 'r' && (slice.includes('l') || slice.includes('t') || slice.includes('b'))) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="my">${ graphemes[i] }</bdi></a> the order of vowel sign marks should be left, above, below, right.`)
+
+			
+			// medial order
+			if (ccstr[p] === 'h' && (slice.includes('y') || slice.includes('x') || slice.includes('w'))) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="my">${ graphemes[i] }</bdi></a> the order of medial characters should be YA, RA, WA, HA.`)
+			if (ccstr[p] === 'w' && (slice.includes('y') || slice.includes('x'))) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="my">${ graphemes[i] }</bdi></a> the order of medial characters should be YA, RA, WA, HA.`)
+			if (ccstr[p] === 'x' && (slice.includes('y'))) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="my">${ graphemes[i] }</bdi></a> the order of medial characters should be YA, RA, WA, HA.`)
+			}
+			
+			if (ccstr[p] === 'B' && (slice.includes('V') || slice.includes('M'))) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="my">${ graphemes[i] }</bdi></a> the bindu should come after the other combining marks.`)
+
+		}
+
+
+
+	// remove duplicate messages
+    const uniqueSet = new Set(messages)
+    messages = [...uniqueSet]
+
+	//concatenate all the messages
+	for (i=0;i<messages.length;i++) msg += `\n<tr><td>${ messages[i] }</td></tr>`
+	console.log(msg)
+	
+	return msg
+	}
+
+
+
 window.charCheckerList = [
 { wrong:"သြော်", right:"ဪ" },
 { wrong:"သြ", right:"ဩ" },
