@@ -3,6 +3,115 @@ globals.typeAssist = ' ✓'
 globals.showKeysTranslitToggle = false
 
 
+
+
+
+function checkOrder (chars) {
+// check that combining marks are in the right order
+	// chars is the content of the text area
+	var msg = ''
+	var messages = []
+    var graphemes = []
+    var ptr = -1
+    var characterList, cchars
+	var virama, nukta, vowel, bindu, gemination, final
+	
+
+	// parse the text area into graphemes
+    characterList = [...chars]
+    for (var c=0;c<characterList.length;c++) {
+        if (window.marks && window.marks.has(characterList[c]) && c !== 0) graphemes[ptr] += characterList[c]
+        else {
+            ptr++
+            graphemes[ptr] = characterList[c]
+            }
+        }
+
+	console.log('Graphemes:',graphemes)
+
+
+
+	// CREATE SETS & REPLACE CHARACTERS WITH SET NAMES
+
+	// make sets for the expected character types
+	var viramas = new Set(['\u0A4D'])
+	var nuktas = new Set(['\u0A3C'])
+	var yakash = new Set(['ੵ'])
+	var vowels = new Set(['ਿ', 'ੀ', 'ੂ', 'ੁ', 'ੇ', 'ੋ', 'ੈ', 'ੌ', 'ਾ'])
+	var bindi = new Set(['ੰ', 'ਂ'])
+	var geminators = new Set(['ੱ'])
+	var finals = new Set(['ਃ', 'ੑ'])
+
+	const VIRAMA = 'v'
+	const NUKTA = 'n'
+	const YAKASH = 'y'
+	const VOWELS = 'V'
+	const BINDI = 'B'
+	const GEMINATION = 'g'
+	const FINALS = 'F'
+
+	// assign position values to types of mark
+	for (i=0;i<graphemes.length;i++) {
+		cchars = [... graphemes[i]]
+		console.log('cchars',cchars)
+		ccstr = ''
+		for (c=0;c<cchars.length;c++) {
+			if (viramas.has(cchars[c])) ccstr += VIRAMA
+			if (nuktas.has(cchars[c])) ccstr += NUKTA
+			if (yakash.has(cchars[c])) ccstr += YAKASH
+			if (vowels.has(cchars[c])) ccstr += VOWELS
+			if (bindi.has(cchars[c])) ccstr += BINDI
+			if (geminators.has(cchars[c])) ccstr += GEMINATION
+			if (finals.has(cchars[c])) ccstr += FINALS
+			}
+
+		console.log(graphemes[i], ccstr)
+
+
+
+		// APPLY RULES TO FIND PROBLEMS
+		
+		if (ccstr.includes(VIRAMA) && !(ccstr.startsWith(NUKTA+VIRAMA) || ccstr.startsWith(VIRAMA))) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="pa">${ graphemes[i] }</bdi></a> the virama should immediately follow the consonant (with optional nukta).`)
+		
+		if (ccstr.startsWith(VIRAMA) && ccstr.length > 1) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="pa">${ graphemes[i] }</bdi></a> no combining marks should follow the virama.`)
+		
+		if (ccstr.startsWith(NUKTA+VIRAMA) && ccstr.length > 2) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="pa">${ graphemes[i] }</bdi></a> no combining marks should follow the virama.`)
+								
+		if (ccstr.includes(NUKTA) && ! ccstr.startsWith(NUKTA)) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="pa">${ graphemes[i] }</bdi></a> the nukta should come immediately after the base.`)
+
+
+							
+		// go through each mark, checking whether something follows that shouldn't
+		for (p=0;p<ccstr.length;p++) {
+			slice = ccstr.slice(p+1)
+			console.log('SLICE', slice)
+			
+			// bindi and gemination and finals must come after vowels
+			if (ccstr[p] === BINDI && (slice.includes(VOWELS) || slice.includes(YAKASH))) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="pa">${ graphemes[i] }</bdi></a> the nasalisation marker (bindu) should follow yakash and vowel signs.`)
+
+			if (ccstr[p] === GEMINATION && (slice.includes(VOWELS) || slice.includes(YAKASH) || slice.includes(BINDI))) messages.push(`In <a contenteditable="false" target="_blank" href="../../app-analysestring/index.html?chars=${ graphemes[i] }"><bdi lang="pa">${ graphemes[i] }</bdi></a> the addak (gemination mark) should follow yakash, vowel signs, and nasalisation markers.`)
+			}
+		}
+
+
+
+	// PRODUCE OUTPUT
+
+	// remove duplicate messages
+    const uniqueSet = new Set(messages)
+    messages = [...uniqueSet]
+
+	//concatenate all the messages
+	for (i=0;i<messages.length;i++) msg += `\n<tr><td>${ messages[i] }</td></tr>`
+	console.log(msg)
+	
+	return msg
+	}
+
+
+
+
+
 window.charCheckerList = [
 //{ wrong:"xxx", right:"xxx" },
 { wrong:"ੲੀ", right:"ਈ" },
