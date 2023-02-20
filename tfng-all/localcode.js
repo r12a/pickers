@@ -10,7 +10,11 @@ globals.showKeysTranslitToggle = false
 
 // list of fonts to add to the standard selection
 window.fontsuggestions =  
-``
+`Hapax Berbere
+Hapax Berbère
+Tifinaghe-Ircam Unicode
+Akatab
+Tagmukay`
 
 
 function localInitialise () {
