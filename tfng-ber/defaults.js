@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Hapax Berbère' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Noto Sans Tifinagh SIL' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.5"; // number representing line height of text area in pixels/100
-	factoryDefaults.language = 'ber' // language to use for examples
-	factoryDefaults.uifont = 'Hapax Berbère'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.language = 'zgh' // language to use for examples
+	factoryDefaults.uifont = 'Noto Sans Tifinagh'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "\u25CC";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,20 +18,20 @@ var thisPicker = 'neotifinaghPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Sans Tifinagh WF" ]
+var webFonts = [ "Noto Sans Tifinagh WF", "Noto Sans Tifinagh SIL WF" ]
 
 
 var template = {}
-	template.title = 'Neo-tifinagh character app'
+	template.title = 'Neo-tifinagh'
 	template.sample = "2. ⴽⵓ ⵢⴰⵏ ⴷⴰⵔⵙ ⵜⴰⴷⵔⴼⵉⵜⵏ ⴰⴷ ⵉⴼⴼⵖ ⵜⴰⵎⵓⵔⵜ, ⵜⵉⵏⵏⵙ ⵏⵖ ⵜⵉⵢⵢⴰⴹ, ⵏⵏⵙ ⵢⵉⵍⵉ ⴷⴰⵔⵙ ⵓⵣⵔⴼ ⴰⴷ ⴷⵉⵙ ⵢⵓⵔⵔⵉ."
 	template.sampleSource = ''
-	template.blocklocation= 'tifinagh'  // block directory
-	template.noteslocation = 'tifinagh/zgh' // location of script notes
-	template.vocablocation = 'tifinagh/zgh_vocab' // location of term database
+	template.blocklocation= 'tfng'  // block directory
+	template.noteslocation = 'tfng/zgh' // location of script notes
+	template.vocablocation = 'tfng/zgh_vocab' // location of term database
 	template.direction = "bidi" // indicates whether this is a picker for a RTL script
-	template.github = 'tfng-ber'
+	template.github = 'tfng-zgh'
 	template.scriptcode = 'Tfng'
-	template.fontLocale = 'tfng-ber'
+	template.fontLocale = 'tfng-zgh'
 	template.hints = true
 	
 	template.defaultSpace = ' '
