@@ -790,6 +790,7 @@ function add (ch) {
 		while (ch.charAt(0) == defaults.ccbase) {
 			ch = ch.substr(1)
 			}
+		ch = ch.replace(/\u25CC/g,'')
 		// remove leading zwj (used esp for arabic vowels)
 		//ch = ch.replace(/\u200D/g,'').replace(/\u0640/g,'')
         // removed above because it affects other scripts like Sundanese
