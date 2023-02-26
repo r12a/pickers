@@ -499,7 +499,7 @@ span.c {
 	}
 #panel img {
     vertical-align: middle;
-    height: 1rem;
+    height: 1.25rem;
     cursor: pointer;
     }
 #panel p { margin: 0; margin-top: 3px; }
@@ -526,6 +526,20 @@ span.c {
 	overflow: auto;
     font-size: 1rem;
 	}
+
+#panel #advice, #dialogBox advice {
+	text-align: right;
+	font-style: italic;
+	font-size: 80%;
+	margin-right: 2em;
+	}
+
+#panel .panelCharacter img {
+    height: 2.5rem;
+    }
+
+
+
 
 
 .smallprint {
@@ -1264,7 +1278,7 @@ summary:hover {
 .fpOption:hover, .currentFont { background-color: antiquewhite; border-radius: .5em; }
 
 
-#character_panel_close_button {
+#panel img#character_panel_close_button {
 	position: fixed;
 	padding: 0;
 	border: 1px solid tan;
@@ -1272,7 +1286,8 @@ summary:hover {
 	right: 5px;
     bottom: 5px;
 	border-radius: 5px;
-	width: 2em;
+	width: 2rem;
+    height: 2.5rem
 	}
 
 #controlBox {
@@ -1670,10 +1685,21 @@ rt {
 
 
 
-#panel #advice, #dialogBox advice {
-	text-align: right;
-	font-style: italic;
-	font-size: 80%;
-	margin-right: 2em;
-	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
