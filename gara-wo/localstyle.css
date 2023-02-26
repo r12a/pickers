@@ -45,7 +45,7 @@ span.x {
 #kbdGrid {
  	display: flex;
  	flex-direction: row;
-	line-height: 1.2;
+	/*line-height: 1.2;*/
     justify-content: center;
     }
 #kbdGrid .hidden {
@@ -74,9 +74,8 @@ span.x {
     }
 #toneGrid div {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    width: 1.5em;
     justify-content: center;
     margin-left: 0;
     }
