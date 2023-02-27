@@ -22,7 +22,7 @@ var webFonts = [ "Wolof Garay WF" ]
 
 var template = {}
 	template.title = 'Wolof Garay character app'
-	template.sample = "𐵚𐵌𐵎𐵲𐵋 𐵰𐵊𐵎𐵺𐵊𐵲𐵊 𐵼𐵍𐵍𐶂𐵪 𐵺𐵊𐶁𐵍𐵌𐵼 𐵵𐵍𐵌𐵺𐵪𐵍𐵌، 𐵼𐵊𐵲 𐵱𐵋 𐵽𐵊𐵷𐶀𐵍𐵎𐵻 𐵱𐵋 𐵶𐵊𐵹 𐵊𐵳 𐵶𐵊𐵿𐵯."
+	template.sample = "𐵚𐵌𐵎𐵲𐵋 𐵰𐵊𐵎𐵺𐵊𐵲𐵊 𐵼𐵩𐵍𐶂𐵪 𐵺𐵊𐶁𐵍𐵌𐵼 𐵵𐵍𐵌𐵺𐵪𐵍𐵌، 𐵼𐵊𐵲 𐵱𐵋 𐵽𐵊𐵷𐶀𐵩𐵎𐵻 𐵱𐵋 𐵶𐵊𐵹 𐵰𐵊𐵳 𐵶𐵊𐵿𐵯. 𐵡𐵩𐵳𐵪 𐶁𐵊 𐵰𐵋𐵽 𐵳𐵍𐵌 𐵻𐵊𐵲 𐵺𐵍𐵊𐵹𐵪 𐵽𐵩 𐵰𐵊𐵎𐶁𐵺 𐶁𐵊 𐵰𐵊𐵳 𐵻𐵩𐵸𐵊𐵲، 𐵽𐵩 𐵷𐵊𐵾 𐶁𐵊𐵎 𐵵𐵍𐵊𐶀𐵸𐵊𐶁𐵽𐵩 𐵊𐵳 𐶁𐵊𐵷𐵸𐵩𐵎𐶁، 𐵽𐵩 𐵽𐵩𐵹 𐵳𐵌 𐵱𐵋 𐵷𐵊𐵎𐵸𐵪𐵍𐵌 𐵴𐵩𐵌𐵳𐵪."
 	template.sampleSource = ''
 	template.blocklocation= 'latn'  // block directory
 	template.noteslocation = 'latn/wo' // location of script notes
