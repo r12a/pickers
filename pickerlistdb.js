@@ -341,7 +341,10 @@ var plistByRegion = {
 			['Vietnamese', 'latn-vi/index.html'],
 			],
 	'W':[
-			['Wolof', 'latn-wo/index.html'],
+			['<i>Wolof</i> ['],
+				['Latin', 'latn-wo/index.html'],
+				['Garay', 'gara-wo/index.html'],
+				[']'],
 			],
 	'Y':[
 			['Yezidi', 'yezi/index.html'],
