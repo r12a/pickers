@@ -7,9 +7,10 @@ var factoryDefaults = {}
 	factoryDefaults.language = 'suz' // language to use for examples
 	factoryDefaults.uifont = 'Sunuwar WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
-	factoryDefaults.ccbase = "-";  // default base for combining characters
+	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
+	factoryDefaults.hints = "none" // type of hint to show alongside characters in the grids
 
 
 var thisPicker = 'sunuPicker'
@@ -23,14 +24,13 @@ var webFonts = [ "Sunuwar WF" ]
 var template = {}
 	template.title = 'Sunuwar'
 	template.sample = "𑯃:𑯄𑯃 𑯊𑯂𑯁𑯘𑯃, 𑯆𑯑̍𑯃̃𑯌𑯖 𑯎𑯖𑯍𑯖𑯎𑯑𑯒𑯃 𑯘𑯖𑯐𑯑 𑯀𑯂̃:𑯜𑯑 𑯅𑯁𑯘𑯃 𑯒𑯖𑯄𑯊𑯃 𑯘𑯖𑯐𑯑 𑯇𑯂. 𑯇𑯂 𑯇𑯑𑯀𑯂 𑯆𑯑̍𑯃̃𑯌𑯇𑯃 𑯎𑯂𑯠𑯜𑯑𑯍𑯑𑯐𑯂 𑯔𑯖𑯎𑯐𑯂𑯆𑯖𑯐𑯃 𑯒𑯖𑯄𑯊𑯃𑯘𑯖𑯐𑯑 𑯒𑯑𑯃𑯍𑯃𑯇𑯃."
-	template.sampleSource = ''
+	template.sampleSource = 'https://www.devkumarsunuwar.com.np/iwsadmin/imagine-filemanager/uploads/media/Hamso_Katik%202078%20(Final).pdf'
 	template.blocklocation= 'sunu'  // block directory
 	template.noteslocation = 'sunu/suz' // location of script notes
 	template.vocablocation = 'sunu/suz_vocab' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'sunu-suz'
 	template.scriptcode = 'Sunu'
-	template.initialInput = 'showTranslit'
 	template.fontLocale = 'sunu-suz'
 	template.hints = true
 	template.bicameral = false

@@ -44,7 +44,7 @@ span.x {
 #kbdGrid {
  	display: flex;
  	flex-direction: row;
-	/*line-height: 1.2;*/
+	line-height: 1.2;
     justify-content: center;
     }
 #kbdGrid .hidden {

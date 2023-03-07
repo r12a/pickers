@@ -10,6 +10,7 @@ var factoryDefaults = {}
 	factoryDefaults.ccbase = "-";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
+	factoryDefaults.hints = "none" // type of hint to show alongside characters in the grids
 
 
 var thisPicker = 'garayPicker'
@@ -30,8 +31,6 @@ var template = {}
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'gara-wo'
 	template.scriptcode = 'Latn'
-	template.fontLocale = 'deva-hi'
-	template.initialInput = 'showTranslit'
 	template.fontLocale = 'gara-wo'
 	template.hints = true
 	template.bicameral = true
