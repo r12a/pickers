@@ -80,11 +80,11 @@ var inputAids = [
 "dataShortTitle":"t", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
-/*{"title":"Type assist: Map keys to a XXXXX keyboard.", 
-"desc":"Use a XXXXXX XXXXXX keyboard mapping to type from the keyboard.",
+{"title":"Type assist: Map keys to a Sunuwar keyboard.", 
+"desc":"Use a Mukdum font keyboard mapping to type from the keyboard.",
 "dataShortTitle":"k", "type":"palette", 
 "initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
-},*/
+},
 
 {"id":"showLatinTransSwitch", "title":"Type-assist: More characters, needed for transcriptions.", 
 "desc":"Show characters needed for IPA or other transcriptions and transliterations.",
