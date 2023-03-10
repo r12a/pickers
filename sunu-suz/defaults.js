@@ -69,13 +69,13 @@ var inputAids = [
 "dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
 },
 
-{"title":"Type assist: IPA to Wolof.", 
+{"title":"Type assist: IPA to Sunuwar.", 
 "desc":"Use an IPA keyboard mapping to type Sunuwar from the keyboard.",
 "dataShortTitle":"[...]", "type":"palette",
 "initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
-{"title":"Type assist: Latin transcription to Garay.", 
+{"title":"Type assist: Latin transcription to Sunuwar.", 
 "desc":"Use a  mapping from Sunuwar in Latin text to type Sunuwar from the keyboard.",
 "dataShortTitle":"t", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
 },
