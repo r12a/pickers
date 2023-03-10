@@ -899,9 +899,9 @@ out = `
   
   
   
-  <div class="control" onmouseover="showMenuText('Use code point values or escapes to add characters to the text area.','tan');" onmouseout="hideMenuText()">Add codepoint(s):
+  <div class="control" onmouseover="showMenuText('Use code point values or escapes to add characters to the text area.','tan');" onmouseout="hideMenuText()">Add code point(s) or escape(s):
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
-      <input name="addcode" id="addcode"  type="text" style="width: 14em; text-align:right;" placeholder="Code point(s) or escape(s)">
+      <input name="addcode" id="addcode"  type="text" style="width: 14em; text-align:start;" placeholder=">">
     </form>
   </div>
   
