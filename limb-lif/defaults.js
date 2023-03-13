@@ -23,7 +23,7 @@ var webFonts = [ "Namdhinggo SIL WF" ]
 
 var template = {}
 	template.title = 'Limbu'
-	template.sample = "ᤁᤧᤖᤧᤰ ᤕᤠᤵᤔᤡᤜᤠ, ᤀᤡᤱᤎᤠᤱ ᤏᤢ ᤕᤢᤰᤖᤧ ᤏᤠ᤺ᤶᤓᤣᤀᤥ ᤛᤠᤘᤠ᤺ᤴᤏᤥᤏᤢᤀᤣ ᤈᤥ᤺ᤰᤕᤢᤶᤓᤥᤒᤠ ᤏᤢ ᤐᤧᤶᤒᤧᤶᤒᤠ ᤔᤧᤘᤠ᤹ ॥"
+	template.sample = "ᤁᤧᤖᤧᤰ ᤕᤠᤵᤔᤡᤜᤠ᤹ ᤀᤡᤱᤎᤠᤱ ᤏᤢ ᤕᤢᤰᤖᤧ ᤏᤠ᤺ᤶᤓᤣᤀᤥ ᤛᤠᤘᤠ᤺ᤴᤏᤥᤏᤢᤀᤣ ᤆᤥ᤺ᤰᤕᤢᤶᤓᤥᤒᤠ ᤏᤢ ᤐᤧᤶᤒᤧᤶᤒᤠ ᤔᤧᤘᤠ᤹ ॥"
 	template.sampleSource = ''
 	template.blocklocation= 'limb'  // block directory
 	template.noteslocation = 'limb/lif' // location of script notes
@@ -43,7 +43,7 @@ var template = {}
 	template.invisibles = [['ZWJ','\u200D'], ['ZWNJ','\u200C'], ['WJ','\u2060'], 
 	['SHY','\u00AD'], ['NBHY','\u2011'], ['CGJ','\u034F']]
 
-// ᤁᤧᤖᤧᤰ ᤕᤠᤵᤔᤡᤜᤠ, ᤀᤡᤱᤎᤠᤱ ᤏᤢ ᤕᤢᤰᤖᤧ ᤏᤠ᤺ᤶᤓᤣᤀᤥ ᤛᤠᤘᤠ᤺ᤴᤏᤥᤏᤢᤀᤣ ᤈᤥ᤺ᤰᤕᤢᤶᤓᤥᤒᤠ ᤏᤢ ᤐᤧᤶᤒᤧᤶᤒᤠ ᤔᤧᤘᤠ᤹ ॥ ᤂᤢᤏᤡ, ᤏᤡᤛᤡ᤺ᤰᤐᤠ ᤏᤢ ᤂᤧᤛᤡᤱ ᤔᤧᤍᤠᤖᤢᤀᤠᤱ ᤔᤧᤍᤩᤧᤀᤠᤱ ᤔᤧᤘᤠ, ᤜᤧᤰᤁᤩᤠᤱ ᤌᤡᤰᤘᤣ᤹ᤀᤥ ᤑᤢ᤹ᤏᤢᤛᤠ, ᤀᤡᤛᤡᤰ ᤀᤥᤃᤠᤶ ᤈᤥ᤺ᤰᤔᤠᤛᤡ ᤐᤥ᤺ᤱ ॥
+// ᤁᤧᤖᤧᤰ ᤕᤠᤵᤔᤡᤜᤠ᤹ ᤀᤡᤱᤎᤠᤱ ᤏᤢ ᤕᤢᤰᤖᤧ ᤏᤠ᤺ᤶᤓᤣᤀᤥ ᤛᤠᤘᤠ᤺ᤴᤏᤥᤏᤢᤀᤣ ᤆᤥ᤺ᤰᤕᤢᤶᤓᤥᤒᤠ ᤏᤢ ᤐᤧᤶᤒᤧᤶᤒᤠ ᤔᤧᤘᤠ᤹ ॥ ᤂᤢᤏᤡ᤹ ᤏᤡᤛᤡ᤺ᤰᤐᤠ ᤏᤢ ᤂᤧᤛᤡᤱ ᤔᤧᤍᤠᤖᤢᤀᤠᤱ ᤔᤧᤍᤩᤧᤀᤠᤱ ᤔᤧᤘᤠ᤹ ᤜᤧᤰᤁᤩᤠᤱ  ᤌᤡᤰᤘᤣ᤹ᤀᤥ ᤑᤢ᤹ᤏᤢᤛᤠ᤹ ᤀᤡᤛᤡᤰ ᤀᤥᤃᤠᤵ ᤆᤥ᤺ᤰᤔᤠᤛᤡ ᤐᤥ᤺ᤱ ॥
 
 var controls = [
 {"title":"Trans-<br/>literate", "alt":"Convert Limbu text to a Latin transliteration.", "code":"doTranscription('transliterate')"},
