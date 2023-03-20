@@ -57,6 +57,23 @@ var pulldown = [
 
 
 
+
+
+var show = {}  // indicates which inputAids to use
+    show.shape = false
+    show.hints = true
+    show.default = false
+    show.latin = false
+    show.ipa = false
+    show.transc = ''
+    show.kbd = "Devanagari"
+    show.language = "Devanagari"
+
+
+var inputAids = []
+
+
+
 var inputAids = [
 {"title":"Hint at similar shapes", "id":"showShapeHints", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
 
@@ -66,12 +83,3 @@ var inputAids = [
 "initialCode":"document.getElementById('keyboard').style.display='block';"
 },
 ]
-
-
-
-
-// this indicates which items are to be described in the help
-// options include: intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist – kbdAssist,latinAssist,togglePalette
-var inputAidsHelp1 = 'intro,shapeHints'
-var inputAidsHelp2 = 'kbdAssist,togglePalette'
-

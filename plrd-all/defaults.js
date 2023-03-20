@@ -42,11 +42,6 @@ var template = {}
 	['SHY','\u00AD'], ['NBHY','\u2011'], ['CGJ','\u034F'], ['RIGHT','\u16F8F'], ['TOP RIGHT','\u16F90'], ['ABOVE','\u16F91'], ['BELOW','\u16F92']]
 
 
-
-var inputAids = [
-]
-
-
 var pulldown = [
 ]
 
@@ -58,6 +53,18 @@ var controls = [
 
 
 
-// this indicates which items are to be described in the help
-// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp = ''
+
+
+var show = {}  // indicates which inputAids to use
+    show.shape = false
+    show.hints = false
+    show.default = false
+    show.latin = false
+    show.ipa = false
+    show.transc = ''
+    show.kbd = ""
+    show.language = ""
+
+
+var inputAids = []
+

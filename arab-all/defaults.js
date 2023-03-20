@@ -45,8 +45,20 @@ var template = {}
 
 
 
-var inputAids = [
-]
+
+
+var show = {}  // indicates which inputAids to use
+    show.shape = false
+    show.hints = false
+    show.default = false
+    show.latin = false
+    show.ipa = false
+    show.transc = ''
+    show.kbd = ""
+    show.language = ""
+
+
+var inputAids = []
 
 
 var pulldown = [

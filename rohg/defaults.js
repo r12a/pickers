@@ -61,54 +61,16 @@ var pulldown = [
 
 
 
-var inputAids = [
-{"title":"Shape-based lookup", "desc":"Click on a panel of shapes to find similar characters.", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "initialCode":"shapelist=document.getElementById('shapelist'); if (shapelist.style.display==='none') {shapelist.style.display='block';} else {shapelist.style.display='none';}"},
 
-//{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
-
-{"id":"showRevTransSwitch", 
-"title":"Default type-assist: Maps keyboard mapped to useful characters.", 
-"desc":"Use ASCII characters to type Hanifi Rohingya from the keyboard using a customised key mapping.",
-"dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
-},
-
-{"title":"Type assist: IPA to Hanifi Rohingya.", 
-"desc":"Use an IPA keyboard mapping to type Hanifi Rohingya from the keyboard.",
-"dataShortTitle":"æ", "type":"palette",
-"initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
-},
-
-{"title":"Type assist: Latin transcription to Hanifi Rohingya.", 
-"desc":"Use a  mapping from Latin to type Hanifi Rohingya from the keyboard.",
-"dataShortTitle":"l", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
-},
-
-{"title":"Type assist: Google keyboard mappings.", 
-"desc":"Use a Google Hanifi Rohingya keyboard mapping to type from the keyboard.",
-"dataShortTitle":"k", "type":"palette", 
-"initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
-},
+var show = {}  // indicates which inputAids to use
+    show.shape = true
+    show.hints = false
+    show.default = true
+    show.latin = true
+    show.ipa = true
+    show.transc = 'Latin'
+    show.kbd = "Google Hanifi Rohingya"
+    show.language = "Hanifi Rohingya"
 
 
-{"id":"showLatinTransSwitch", 
-"title":"Latin type-assist", 
-"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"L", "type":"palette", 
-"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
-},
-
-{"title":"Type-assist palette toggle", 
-"desc":"Show or hide the palette used for type-assist input.",
-"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
-},
-]
-
-
-
-
-// this indicates which items are to be described in the help
-// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp = 'showIntro,'
-for (let i=0;i<inputAids.length;i++) {
-	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
-	}
+var inputAids = []

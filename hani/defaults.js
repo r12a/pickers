@@ -56,18 +56,20 @@ var pulldown = [
 
 
 
-var inputAids = [
-{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type Chinese punctuation, etc. from the keyboard."},
-
-{"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
-]
 
 
+var show = {}  // indicates which inputAids to use
+    show.shape = false
+    show.hints = false
+    show.default = true
+    show.latin = true
+    show.ipa = false
+    show.transc = ''
+    show.kbd = ""
+    show.language = "Chinese"
 
 
-// this indicates which items are to be described in the help
-// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp = 'showIntro,'
-for (let i=0;i<inputAids.length;i++) {
-	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
-	}
+var inputAids = []
+
+
+

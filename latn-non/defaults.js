@@ -66,44 +66,23 @@ var pulldown = [
 
 
 
+
+
+
+
+
+var show = {}  // indicates which inputAids to use
+    show.shape = false
+    show.hints = false
+    show.default = true
+    show.latin = 'Latin'
+    show.ipa = true
+    show.transc = ''
+    show.kbd = "Old Norse"
+    show.language = "Old Norse"
+
+
+// show case endings doesn't currently work
 var inputAids = [
-{"id":"showRevTransSwitch", 
-"title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
-"desc":"Use ASCII characters to type Old Norse from the keyboard using a customised key mapping.",
-"dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
-},
-
-{"title":"Type assist: IPA to Old Norse.", 
-"desc":"Use an IPA keyboard mapping to type Old Norse from the keyboard.",
-"dataShortTitle":"æ", "type":"palette",
-"initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
-},
-
-{"title":"Type assist: Map keys to an Old Norse keyboard.", 
-"desc":"Use an Old Norse keyboard mapping to type from the keyboard.",
-"dataShortTitle":"k", "type":"palette", 
-"initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
-},
-
-{"id":"showLatinTransSwitch", "title":"Type-assist: More characters, needed for transcriptions.", 
-"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"M", "type":"palette", 
-"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
-},
-
-
-{"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 
-"desc":"Show or hide the palette used for type-assist input.",
-"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
-},
-
-{"title":"Show case endings", "dataVar":"showCaseEndings", "dataLocn":"caseEndings", "dataShortTitle":"S", "type":"other", "desc":"Show information about case endings."},
+//{"title":"Show case endings", "dataVar":"showCaseEndings", "dataLocn":"caseEndings", "dataShortTitle":"S", "type":"other", "desc":"Show information about case endings."},
 ]
-
-
-
-
-// this indicates which items are to be described in the help
-// options include: intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist – kbdAssist,latinAssist,togglePalette
-var inputAidsHelp1 = 'intro,typeAssist,ipaAssist'
-var inputAidsHelp2 = 'kbdAssist,latinAssist,togglePalette'

@@ -50,26 +50,17 @@ var pulldown = [
 
 
 
-var inputAids = [
-{"title":"Shape-based lookup", "dataVar":"showShapeLookup", "dataLocn":"shapelist", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
 
-{"title":"Hint at similar shapes", "dataVar":"showShapeHints", "dataLocn":"", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
-
-{"title":"Type assist", "dataVar":"typeAssist", "dataLocn":"transcriptionPalette", "dataShortTitle":"T", "type":"palette", "initialCode":"setUpTypeAssist(false, '', typeAssistMap)", "desc":"Use ASCII characters to type Tifinagh from the keyboard."},
-
-{"title":"Latin type-assist", "dataVar":"showLatinTrans", "dataLocn":"transcriptionPalette", "dataShortTitle":"L", "type":"palette", "initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)", "desc":"Show characters needed for IPA or other transcriptions and transliterations."},
-
-{"title":"Reverse transliteration", "dataVar":"showTranslit", "dataLocn":"transcriptionPalette", "dataShortTitle":"R", "type":"palette", "initialCode":"setUpTypeAssist(false, typeAssistMap, typeAssistMap)", "desc":"Use ASCII characters to type Tifinagh from the keyboard via reverse transliteration."},
-
-{"title":"Keyboard", "dataVar":"showKeyboard", "dataLocn":"keyboard", "dataShortTitle":"K", "type":"keyboard", "desc":"Select characters from a keyboard layout."}
-]
+var show = {}  // indicates which inputAids to use
+    show.shape = true
+    show.hints = true
+    show.default = true
+    show.latin = true
+    show.ipa = true
+    show.transc = 'Latin'
+    show.kbd = ""
+    show.language = "Tifinagh"
 
 
+var inputAids = []
 
-
-// this indicates which items are to be described in the help
-// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp = 'showIntro,'
-for (let i=0;i<inputAids.length;i++) {
-	if (inputAids[i].dataVar) inputAidsHelp += ','+inputAids[i].dataVar
-	}

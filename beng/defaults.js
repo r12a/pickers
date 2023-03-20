@@ -69,56 +69,29 @@ var pulldown = [
 ]
 
 
+
+
+
+var show = {}  // indicates which inputAids to use
+    show.shape = true
+    show.hints = false
+    show.default = true
+    show.latin = true
+    show.ipa = true
+    show.transc = 'ISO'
+    show.kbd = "Bengali"
+    show.language = "Bengali"
+
+
+
 var inputAids = [
-{"title":"Shape-based lookup", "id":"showShapeLookup", "dataShortTitle":"S", "type":"shape", "desc":"Click on a panel of shapes to find similar characters."},
-
-//{"title":"Hint at similar shapes", "id":"showShapeHints", "dataShortTitle":"H", "type":"hint", "desc":"Show similar shapes as you mouse over a character."},
-
-{"id":"showRevTransSwitch", 
-"title":"Default type-assist: Map keyboard to characters for easy input. Press ` to switch.", 
-"desc":"Use ASCII characters to type Bengali from the keyboard using a customised key mapping.",
-"dataShortTitle":"T", "type":"palette", "initialCode":"mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring)", 
-},
-
-{"title":"Type assist: IPA to Bengali.", 
-"desc":"Use an IPA keyboard mapping to type Bengali from the keyboard.",
-"dataShortTitle":"[...]", "type":"palette",
-"initialCode":"mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring)"
-},
-
-{"title":"Type assist: ISO transcription to Bengali.", 
-"desc":"Use a  mapping from ISO to type Bengali from the keyboard.",
-"dataShortTitle":"<..>", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring)"
-},
 
 {"title":"Type assist: Radice transcription to Bengali.", 
 "desc":"Use a  mapping from the transcription used by Radice to type Bengali from the keyboard.",
-"dataShortTitle":"r", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.radice);setUpTypeAssist(false, mapstring, mapstring)"
-},
-
-{"title":"Type assist: Map keys to a Bengali keyboard.", 
-"desc":"Use a Bengali keyboard mapping to type from the keyboard.",
-"dataShortTitle":"⌨", "type":"palette", 
-"initialCode":"setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';"
-},
-
-
-{"id":"showLatinTransSwitch", "title":"Type-assist: Latin characters needed for transcriptions", 
-"desc":"Show characters needed for IPA or other transcriptions and transliterations.",
-"dataShortTitle":"L", "type":"palette", 
-"initialCode":"setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap)"
-},
-
-{"id":"togglePalette", "title":"Show/hide the type-assist palette. ~ also works.", 
-"desc":"Show or hide the palette used for type-assist input.",
-"dataShortTitle":"P", "type":"toggle", "initialCode":"palette=document.getElementById('transcriptionPalette'); if (palette.style.display==='none') {palette.style.display='block';} else {palette.style.display='none';}"
+"dataShortTitle":"Radice", "type":"palette", "initialCode":"mapstring=makeComplexTypeAssistMap(cols.radice);setUpTypeAssist(false, mapstring, mapstring)"
 },
 
 ]
 
 
 
-// this indicates which items are to be described in the help
-// options include: intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist – kbdAssist,latinAssist,togglePalette
-var inputAidsHelp1 = 'intro,shapeLookup,shapeHints,typeAssist,ipaAssist,transAssist'
-var inputAidsHelp2 = 'kbdAssist,latinAssist,togglePalette'

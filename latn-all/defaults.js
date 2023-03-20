@@ -55,13 +55,19 @@ var pulldown = [
 ]
 
 
-var inputAids = [
-]
 
 
 
+var show = {}  // indicates which inputAids to use
+    show.shape = false
+    show.hints = false
+    show.default = false
+    show.latin = false
+    show.ipa = false
+    show.transc = ''
+    show.kbd = ""
+    show.language = ""
 
-// this indicates which items are to be described in the help
-// options include: intro,shape,hinting,typeAssist,latin,reverse & keyboard
-var inputAidsHelp = ''
+
+var inputAids = []
 
