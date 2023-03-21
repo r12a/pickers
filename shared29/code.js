@@ -1264,7 +1264,17 @@ function setLanguage (value) {
 
 // INITIALISATION
 
-function getTitle (textcontent) { //console.log(textcontent)
+function getTitle (textcontent) {
+		if (charData[textcontent]) { 
+            var cp = textcontent.codePointAt(0).toString(16).toUpperCase()
+            while (cp.length < 4) cp = '0'+cp
+			return 'U+'+cp+': '+charData[textcontent]
+			}
+        else return ''
+	}
+	
+
+function getTitleX (textcontent) { //console.log(textcontent)
 		if (charData[textcontent]) { 
 			var codepoint = ''
 			for (c=0; c<textcontent.length; c++) { 
