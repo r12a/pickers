@@ -76,6 +76,7 @@ var plist = [
     { tag:'mong', name:'Mongolian', url:'mong-mn/index.html' },
     { tag:'mymr', name:'Burmese', url:'mymr-my/index.html' },
     { tag:'mymr', name:'Shan', url:'mymr-shn/index.html' },
+    { tag:'nagm', name:'Nag Mundari', url:'nagm-unr/index.html' },
     { tag:'nbat', name:'Nabataean', url:'nbat/index.html' },
     { tag:'newa', name:'Newa', url:'newa/index.html' },
     { tag:'nkoo', name:"N'Ko", url:'nko/index.html' },
@@ -264,6 +265,7 @@ var plistByRegion = {
 			],
 	'N':[
 			['Nabataean', 'nbat/index.html'],
+			['Nag Mundari', 'nagm-unr/index.html'],
 			['N’Ko', 'nko/index.html'],
 			['Neo-tifinagh', 'tfng-ber/index.html'],
 			['New&nbsp;Tai&nbsp;Lü', 'talu/index.html'],
