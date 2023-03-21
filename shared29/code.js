@@ -1367,7 +1367,7 @@ function makeKeyboard (chosenKbd, guideArray) {
              else {
                 normalkey = document.createElement('span')
                 normalkey.className = 'nkey blank'
-                normalkey.style.cursor = 'auto'
+                normalkey.style.cursor = 'pointer'
                 normalkey.appendChild(document.createTextNode('\u00A0'))
                 }
 
@@ -1383,7 +1383,7 @@ function makeKeyboard (chosenKbd, guideArray) {
              else {
                 shiftkey = document.createElement('span')
                 shiftkey.className = 'skey blank'
-                normalkey.style.cursor = 'auto'
+                normalkey.style.cursor = 'pointer'
                 shiftkey.appendChild(document.createTextNode('\u00A0'))
                 }
            
@@ -1399,7 +1399,7 @@ function makeKeyboard (chosenKbd, guideArray) {
             else {
                 thirdkey = document.createElement('span')
                 thirdkey.className = 'okey blank'
-                normalkey.style.cursor = 'auto'
+                normalkey.style.cursor = 'pointer'
                 thirdkey.appendChild(document.createTextNode('\u00A0'))
                 }
 
