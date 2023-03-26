@@ -126,6 +126,7 @@ var plistByRegion = {
 				['All', 'arab-all/index.html'],
 				['Modern Standard', 'arab-ar/index.html'],
 				['Pan-African', 'arab-afr/index.html'],
+				['Fulfulde', 'arab-ff/index.html'],
 				['Hausa', 'arab-ha/index.html'],
 				['Kashmiri', 'arab-ks/index.html'],
 				['Persian', 'arab-fa/index.html'],
@@ -177,7 +178,8 @@ var plistByRegion = {
 			  ],
 	'F':[
 			['Fraser script', 'lisu/index.html'],
-			['Fula', 'latn-ff/index.html'],
+			['Fula (latn)', 'latn-ff/index.html'],
+			['Fulfulde (arab)', 'arab-ff/index.html'],
 			],
 	'G':[
 			['<i>Georgian</i> ['],
