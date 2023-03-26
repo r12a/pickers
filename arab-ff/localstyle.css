@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'Scheherazade WF';
+    src: url('../../shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+
+#alphabet { 
+	display: block; 
+	color: #666;
+	}
+
+#formatchars {
+    text-align: center;
+    margin-bottom: .25em;
+    line-height: 1;
+    }
+.spaceline {
+    margin-bottom: 0;
+	line-height: 1.2;
+    }
+
+
+
+span.hint { 
+    margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+span.x {
+	color: chocolate;
+	}
+
+
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Scheherazade WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+.block {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	margin-left: .25em;
+	text-align: end;
+}
+
+
+
+/* SELECTION AREA */
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#ivowelGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-inline-start: 1rem;
+    margin-inline-end: .25rem;
+    }
+#ivowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-height: 15em;
+    justify-content: space-between;
+	line-height: 1.5;
+    }
+#consonantGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+	line-height: 1.6;
+    }
+#consonantGrid > span {
+    min-width: 1em;
+    }
+#consonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: baseline;
+    }
+#vowelGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+    }
+#vowelGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-height: 15em;
+    justify-content: space-between;
+	line-height: 1.5;
+    }
+#numberGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 15em;
+    justify-content: flex-start;
+    margin-inline-start: 1.5rem;
+    line-height: 1.4;
+    /*border: 1px solid #ccc;
+    border-radius: .3em;*/
+    padding: .2em .4em;
+    }
+#numberGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    max-height: 15em;
+    justify-content: space-between;
+    }
+#alphabet #controlchars {
+	display: flex;
+    width: 2em;
+    flex-wrap: wrap;
+    align-items: stretch;
+    text-align: center;
+    align-content: space-between;
+    justify-content: center;
+	}
+#alphabet #controlchars p {
+	margin: .1em 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: .8;
+	}
+#otherCharacters { text-align: center; }
+.touch {
+    margin: 0;
+    }
+#spaceEtc {
+    text-align: center;
+    vertical-align: middle;
+	margin-bottom: 1em;
+    }
+#initials {
+    text-align: center;
+    font-size: 100%;
+    line-height: 1;
+    }
+
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.4;
+	margin-bottom: .2em;
+	margin-top: .5em;
+    }
+
+#alphabet summary {
+    font-size: 14px;
+    }
+#obsolete {
+    text-align: center;
+    }
+#cursive {
+    width: 4em;
+    display: inline-block;
+    }
+
+#alef {
+    display: flex;
+    align-self: center;
+    width: 1em;
+    justify-content: center;
+    margin-left: 1em;
+}
+#alef > span {
+	padding: 4em 0;
+	width: 1em;
+}
+
+span.x, span.h { display: none; }
+.h { color:#B5F6A4; color:#00B0F0; }
+.x { color:#EFBBF6; color:#9BBB59; }
+
+
+
