@@ -688,7 +688,7 @@ out += `</div>`
 
 
 
-out += `<textarea dir="auto" id="output" name="output" placeholder="›" lang="${ defaults.language }" class="typeAssistDefault"></textarea>
+out += `<textarea dir="auto" id="output" name="output" placeholder="›" spellcheck="false" lang="${ defaults.language }" class="typeAssistDefault"></textarea>
 </div>`
 
 
