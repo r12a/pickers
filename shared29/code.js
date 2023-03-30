@@ -2208,7 +2208,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 
 
 	for (let i=0;i<chars.length;i++) {
-        if (i===0) out += '['
+        if (i===0) out += ''
         if (i>0 && i<chars.length) out += ' + '
         
 		charstr = String.fromCodePoint(chars[i])
@@ -2227,7 +2227,7 @@ function makeCharacterLink (cp, block, lang, direction) {
 			}
 		out +=  '<span class="uname">U+'+hex+' '+name+'</span>'
 		if (! window.location.href.match('r12a.github.io') && block !== '') out +=  '</a>'
-		if (i===chars.length-1) out += ']'
+		if (i===chars.length-1) out += ''
 		}
     out += '</span> '
 	
