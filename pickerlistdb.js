@@ -62,7 +62,6 @@ var plist = [
     { tag:'latn', name:'Old&nbsp;Norse', url:'latn-non/index.html' },
     { tag:'latn', name:'Tłı̨chǫ&nbsp;(Dogrib)', url:'latn-dgr/index.html' },
     { tag:'latn', name:'Vietnamese', url:'latn-vi/index.html' },
-    { tag:'latn', name:'Vietnamese', url:'latn-vi/index.html' },
     { tag:'latn', name:'Wolof', url:'latn-wo/index.html' },
     { tag:'lepc', name:'Lepcha', url:'lepc-lep/index.html' },
     { tag:'limb', name:'Limbu', url:'limb-lif/index.html' },
