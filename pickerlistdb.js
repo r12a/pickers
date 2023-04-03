@@ -73,6 +73,7 @@ var plist = [
     { tag:'mand', name:'Mandaic', url:'mand/index.html' },
     { tag:'mend', name:'Mende Kikakui', url:'mend/index.html' },
     { tag:'mong', name:'Mongolian', url:'mong-mn/index.html' },
+    { tag:'mroo', name:'Mro', url:'mroo-mro/index.html' },
     { tag:'mymr', name:'Burmese', url:'mymr-my/index.html' },
     { tag:'mymr', name:'Shan', url:'mymr-shn/index.html' },
     { tag:'nagm', name:'Nag Mundari', url:'nagm-unr/index.html' },
@@ -263,6 +264,7 @@ var plistByRegion = {
 				['All','plrd-all/index.html'],
 				['A-Hmao','plrd-hmd/index.html'],
 				[']'],
+			['Mro', 'mroo-mro/index.html'],
 			],
 	'N':[
 			['Nabataean', 'nbat/index.html'],
