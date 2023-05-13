@@ -23,7 +23,7 @@ var webFonts = [ "CPAGenizah WF" ]
 
 var template = {}
 	template.title = 'Christian Palestinian Aramaic'
-	template.sample = "ܘܗܘܐ [ܣ]ܒܝܪ / ܖܚܬܪ [ܝܬ]ܗ̇ / ܘܫܪܝ ܩܨܝܚ / ܒܩܠܐ ܪܒܐ / ܘܐܒܪ ܟܖܢ ܃܁ / ܐܫܬܒܫܘ / ܖ̈ܚܡܝــــــ / ܐܫܬܒܫܘ / ܥܘ̈ܠܘ ܒܟܝܪ / ܐܡܪ ܖܝ / ܛܘܒܢܐ ܠܘܬܗ ܃ / ܟܘܠ ܡܝܢ̈ܝܐ / ܚܓ̈ܠܘ ܝܬܝ / ܘܒܫܝܡܗ ܖܡܪܐ / ܪܖܦܬ ܝܬܗܘܢ ܃܁"
+	template.sample = "ܘܗܘܐ [ܣـ]ܒܝܪ / ܖܚܬܪ [ܝܬ]ܗ̇ / ܘܫܪܝ ܩܨܝܚ / ܒܩܠܐ ܪܒܐ / ܘܐܒܪ ܟܖܢ ܃܁ / ܐܫܬܒܫܘ / ܖ̈ܚܡܝــــــ / ܐܫܬܒܫܘ / ܥܘ̈ܠܘ ܒܟܝܪ / ܘܚܢܘܩ̈ܘ ܝܬܗ ܃܁ / ܐܡܪ ܖܝ / ܛܘܒܢܐ ܠܘܬܗ ܃ / ܟܘܠ ܡܝܢ̈ܝܐ / ܚܓ̈ܠܘ ܝܬܝ / ܘܒܫܝܡܗ ܖܡܪܐ / ܪܖܦܬ ܝܬܗܘܢ ܃܁"
 	template.sampleSource = ''
 	template.blocklocation= 'syrc'  // block directory
 	template.noteslocation = 'syrc/axp' // location of script notes
