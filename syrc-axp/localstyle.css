@@ -4,6 +4,9 @@
     font-weight: normal;
     font-style: normal;
 	}
+/*
+The copyright (in OFL license is): Designers : Alain Desreumaux et Alain Hurtig, greetings to George Kiraz, Paul Nelson and Michael Langlois for additional code and design. Credits : Alain Desreumaux and Alain Hurtig for the Syriac letters, George Kiraz and Paul Nelson for the Arabic Numbers. Some symbols, including numerical symbols, are based on the monospaced Courier type design.
+*/
 @font-face {
     font-family: 'Noto Sans Syriac Estrangela WF';
     src: url('../../shared/webfonts/notosanssyriacestrangela-regular-webfont.woff2') format('woff2'),
