@@ -31,7 +31,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'limb-lif'
 	template.scriptcode = 'Limb'
-	template.fontLocale = 'limb-lif'
+	template.fontLocale = 'limb'
 	template.hints = true
 	template.bicameral = false
 
