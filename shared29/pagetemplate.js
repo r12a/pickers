@@ -145,6 +145,8 @@ function clearBidiOverride () {
 function addTabEtc (location) {
 	node = document.getElementById(location)
 	out = `
+<span class="touch" title="Add dotted circle" style="padding: 5px 10px;" onClick="add('◌');">◌</span> 
+<span class="touch" title="Add ␣" style="padding: 5px 10px;" onClick="add('␣');">␣</span> 
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');"><img src="../shared29/images/tab.png" alt="⇥"`
 if (template.direction === 'rtl')  out += ` style="transform: rotateY(180deg);"`
 out += `></span> 
@@ -165,6 +167,7 @@ var out
 
 //out = `<button id="contrastSwitch" title="Change the contrast level." onclick="toggleContrast()">ðŸŒ“</button>
 out = `
+<dialog id="copyNotice">Copied !</dialog>
 
 <div id="slideout">
 
@@ -386,6 +389,16 @@ out += `
 <button  id="sortAllUnique" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=true, word=false)" title="Keep one of each character and sort in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Unique sort</button>
 
 <button  id="sortWord" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=false, word=true)" title="Split on white space and sort in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Word sort</button>
+
+<button  id="showDB" type="button" onclick="
+	out=''; console.log(spreadsheetRows.length)
+	exclusions=new Set(['o','d','u','?','a']); 
+	for (ch in spreadsheetRows) {
+		if (! exclusions.has(spreadsheetRows[ch][cols['status']]) && ! ch.includes('var')) out+=ch;
+		} 
+	document.getElementById('output').value = sortOutput(out, unique=true, word=true).replace(/ /g,'')
+	"
+	title="Show all characters in the database currently used in this orthography." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">List db characters</button>
 
 <button  id="showIPA" type="button" 
 onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false); document.getElementById('transcriptionWrapper').style.display='none'; sieveForIPA();" 
