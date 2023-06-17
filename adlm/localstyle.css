@@ -74,8 +74,8 @@ span.x {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: space-around;
-    margin: 0 1em 0 0;
-    padding: .2em .5em .2em 0;
+    margin-inline: .75em;
+    padding-block: .4em;
     }
 #ivowelGrid div {
     display: flex;
@@ -101,7 +101,7 @@ span.x {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     vertical-align: baseline;
     }
 #vowelGrid, #UCvowelGrid {
@@ -110,7 +110,6 @@ span.x {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 0 0 0 1em;
     padding: .2em .5em .2em 0;
     }
 #vowelGrid div, #UCvowelGrid div {
@@ -140,6 +139,7 @@ span.x {
     flex-direction: row;
     max-height: 15em;
     justify-content: space-between;
+    padding-block: .2em;
     }
 #alphabet #controlchars {
 	display: flex;
