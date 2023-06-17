@@ -428,6 +428,13 @@ span.c {
 #extracontrols details, #moreControls details {
 	clear: both;
 	}
+#panel button, .control button {
+    height: 1.4rem;
+    border: 1px solid gray;
+    background-color: #eee;
+    border-radius: 2px;
+    color: #666;
+    }
 .control { 
 	/*float:left; */
 	padding: 2px 4px; 
@@ -482,7 +489,7 @@ span.c {
 	text-align: start;
 	}
 
-#panel { 
+/*#panel { 
 	position: fixed; 
 	bottom: 20px; 
 	right: 10px; 
@@ -497,6 +504,22 @@ span.c {
 	width: 28%;
 	font-size: 80%;
 	text-align: left;
+	text-align: start;
+	max-height: 80%;
+	overflow: auto;
+	}*/
+#panel { 
+	position: fixed; 
+	bottom: 0px; 
+	right: 0px; 
+	width: 40%; 
+	background-color:seashell; 
+	border: 1px solid #CCC; 
+	box-shadow: 7px 7px 5px #888; 
+	padding: 5px 10px 5px 15px; 
+	border-radius: 10px; 
+	z-index:2000;
+	font-size: 80%;
 	text-align: start;
 	max-height: 80%;
 	overflow: auto;
@@ -1282,7 +1305,7 @@ summary:hover {
 .fpOption:hover, .currentFont { background-color: antiquewhite; border-radius: .5em; }
 
 
-#panel img#character_panel_close_button {
+/*#panel img#character_panel_close_button {
 	position: fixed;
 	padding: 0;
 	border: 1px solid tan;
@@ -1292,6 +1315,20 @@ summary:hover {
 	border-radius: 5px;
 	width: 2rem;
     height: 2.5rem
+	}*/
+#panel #character_panel_close_button {
+	position: fixed;
+	padding: 0;
+	background-color: white;
+	right: 44%;
+    bottom: 1rem;
+	border-radius: 5px;
+	width: 2rem;
+    height: 2.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #aaa;
+    text-align: center;
 	}
 
 #controlBox {
