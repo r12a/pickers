@@ -74,12 +74,13 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     }
 #translitGrid {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-inline-start: .5em;
     }
 #translitGrid div {
     display: flex;
@@ -123,6 +124,7 @@ span.hint {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-inline-start: .5em;
     }
 #numberGrid {
     display: flex;
