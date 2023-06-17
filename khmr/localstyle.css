@@ -75,7 +75,7 @@ span.x {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     }
 #translitGrid {
     display: flex;
@@ -112,13 +112,12 @@ span.x {
     flex-direction: column;
     height: 12.5em;
     justify-content: space-around;
-    margin-right: 1em;
     padding: 0 .25em;
     }
 #ivowelGrid div {
-	justify-content: center;
+	justify-content: flex-end;
 	flex-wrap: nowrap;
-	text-align: center; 
+	text-align: end; 
     }
 #vowelGrid {
     display: flex;
@@ -131,7 +130,7 @@ span.x {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     }
 #moreconsonants {
     white-space: normal;
@@ -144,14 +143,10 @@ span.x {
     align-content: space-around;
     }
 #virama {
-    width: 2em;
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin: 0 .5em 0 .75em;
     justify-content: center;
-    align-items: center;
-    height: 10em;
     }
 #numberGrid div {
     white-space: normal;
