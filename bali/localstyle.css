@@ -82,14 +82,14 @@ span.hint {
 #ivowelGrid {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
 	margin-right: 1em;
 	line-height: 1.6;
     }
 #ivowelGrid div {
 	display: flex;
     flex-wrap: nowrap;
-	justify-content: space-around;
+	justify-content: flex-end;
     }
 #ivowelGrid .verticalAlign {
 	justify-content: flex-end;
@@ -104,7 +104,7 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     }
 #consonantGrid > span {
     min-width: 1em;
@@ -120,28 +120,34 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-	margin-left: 1em;
+	margin-inline-start: .5em;
 	padding: .5em .25em;
     }
 #vowelGrid > div {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content:space-between;
+	justify-content:flex-start;
 	}
 #moreconsonants {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content:center;
     text-align: end;
     margin-inline-start: 1em;
+    }
+#virama {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-inline-start: 0;
     }
 #tones {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-left: .5em;
+    margin-inline-start: .5em;
     }
 #tones div {
     display: flex;
@@ -149,7 +155,7 @@ span.hint {
     flex-direction: row;
     width: 1.5em;
     justify-content: center;
-    margin-left: 0;
+    margin-inline-start: 0;
     }
 #numberGrid {
     display: flex;
@@ -157,7 +163,7 @@ span.hint {
     flex-direction: column;
     justify-content: space-between;
     font-size: 90%;
-	margin-left: 1em;
+	margin-inline-start: 1em;
     }
 #digitKeypad div {
     white-space: normal;
@@ -172,12 +178,12 @@ span.hint {
     text-align: center;
     font-size: 80%;
     line-height: 1.7;
-    margin-top: .5em;
+    margin-block-start: .5em;
     }
 #spaceEtc {
     text-align: center;
     vertical-align: middle;
-	margin-bottom: 1em;
+	margin-block-end: 1em;
     }
 
 #rare {
