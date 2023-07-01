@@ -6,8 +6,8 @@ globals.showKeysTranslitToggle = false
 
 
 window.charCheckerList = [
-//{ wrong:"သြော်", right:"ဪ" },
-//{ wrong:"သြ", right:"ဩ" },
+{ wrong:"ເເ", right:"ແ" },
+{ wrong:"ໍາ", right:"ຳ" },
 ]
 
 
@@ -175,6 +175,65 @@ function sendVowelRight (str) {
 
 
 function addVowel (ch) {
+	// ch: string, the text to be added
+	
+	if (document.getElementById('output').style.display == 'none') { return; }
+	var outputNode = document.getElementById( 'output' ); // points to the output textarea
+
+	
+	//IE support
+	if (document.selection) { 
+		outputNode.focus()
+	    range = document.selection.createRange()
+		
+        // merge the base and the vowels
+        ch = ch.replace('-',range.text)
+        
+		range.text = ch; 
+	    range.select(); 
+		if (globals.refocus) outputNode.focus() 
+		}
+	// Mozilla and Safari support
+	else if (outputNode.selectionStart || outputNode.selectionStart == '0') {
+		var startPos = outputNode.selectionStart
+		var endPos = outputNode.selectionEnd
+		var cursorPos = startPos
+		var scrollTop = outputNode.scrollTop
+		var baselength = 0
+		
+        // get whatever is highlighted, or if no highlight the previous character
+        var consonant
+        if (startPos === endPos) startPos = startPos-1
+        consonant = outputNode.value.substring(startPos,endPos)
+        console.log(consonant)
+        
+        // merge the base and the vowels
+        ch = ch.replace('◌',consonant)
+        
+		outputNode.value = outputNode.value.substring(0, startPos)
+              + ch
+              + outputNode.value.substring(endPos, outputNode.value.length)
+		cursorPos += ch.length
+
+		if (globals.refocus) outputNode.focus()
+		outputNode.selectionStart = cursorPos
+		outputNode.selectionEnd = cursorPos
+		if (! globals.refocus) outputNode.blur()
+		}
+	else {
+		outputNode.value += ch
+		if (globals.refocus) outputNode.focus()
+		}
+		
+	// normalize
+	if (globals.n11n=='nfc') { outputNode.value = outputNode.value.normalize('NFC') }
+	else if (globals.n11n=='nfd') { outputNode.value = outputNode.value.normalize('NFD') }
+	}
+
+
+
+
+function addVowelX (ch) {
 	// ch: string, the text to be added
 	
 	if (document.getElementById('output').style.display == 'none') { return; }
