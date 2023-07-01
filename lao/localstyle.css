@@ -71,12 +71,13 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
+    justify-content: start;
     }
 #toneGrid {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-left: .25em;
+    margin-inline: .25em;
     }
 #toneGrid div {
     display: flex;
@@ -95,6 +96,7 @@ span.hint {
     flex-direction: column;
     justify-content:space-around;
     align-content: space-around;
+    margin-inline-end: .25em;
     }
 #finals div {
     display: flex;
@@ -117,12 +119,14 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-inline-start: 1em;
     }
 #vowelGrid > div {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
+    justify-content: flex-end;
     }
 #vowelbase {
     text-align: center;
