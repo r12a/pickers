@@ -7,7 +7,7 @@ globals.showKeysTranslitToggle = false
 
 window.charCheckerList = [
 //{ wrong:"သြော်", right:"ဪ" },
-//{ wrong:"သြ", right:"ဩ" },
+{ wrong:"เเ", right:"แ" },
 ]
 
 
@@ -23,6 +23,11 @@ Thonburi`
 
 function localInitialise () {
 	}
+
+
+
+
+
 
 
 
@@ -172,7 +177,12 @@ function sendVowelLeft (str) {
 	return lv+str.substr(0,lv.index)+str.substr(lv.index+1)
 	}
 
-function addVowel (ch) { 
+
+
+
+
+
+function addVowel (ch) {
 	// ch: string, the text to be added
 	
 	if (document.getElementById('output').style.display == 'none') { return; }
@@ -206,7 +216,7 @@ function addVowel (ch) {
         console.log(consonant)
         
         // merge the base and the vowels
-        ch = ch.replace('-',consonant)
+        ch = ch.replace('◌',consonant)
         
 		outputNode.value = outputNode.value.substring(0, startPos)
               + ch
@@ -227,6 +237,7 @@ function addVowel (ch) {
 	if (globals.n11n=='nfc') { outputNode.value = outputNode.value.normalize('NFC') }
 	else if (globals.n11n=='nfd') { outputNode.value = outputNode.value.normalize('NFD') }
 	}
+
 
 
 
