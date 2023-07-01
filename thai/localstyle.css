@@ -59,8 +59,10 @@ span.hint {
 	margin-right: 1em;
     }
 #ivowelGrid div {
+    display: flex;
     text-align: right;
     flex-wrap: nowrap;
+    justify-content: flex-end;
     }
 #consonantGrid {
     display: flex;
@@ -72,7 +74,7 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     }
 #consonantGrid > span {
     min-width: 1em;
@@ -88,27 +90,35 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-inline-start: 1em;
     }
 #vowelGrid > div {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content:space-between;
+	justify-content:flex-end;
 	}
 #finals {
     white-space: normal;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 1.5em;
-    justify-content:flex-start;
-    align-content: space-around;
+    flex-direction: column;
+    justify-content:space-around;
+    align-content: flex-end;
+    margin-inline-start:.25em;
+    margin-inline-end:.25em;
     }
+#finals > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:flex-end;
+	}
 #tones {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-left: .5em;
+    margin-inline: .25em;
     }
 #tones div {
     display: flex;
