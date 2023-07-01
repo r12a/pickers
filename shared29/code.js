@@ -60,6 +60,11 @@ function addReplacement (ch, autoInsertedFromPalette='') {
             ch = ch.replace('-',lastCharacter)
             lastCharacter = ''
             }
+        // if ch has a dotted circle, replace it with the last character
+        if (ch.includes('◌')) {
+            ch = ch.replace('◌',lastCharacter)
+            lastCharacter = ''
+            }
         
         outputNode.value = firstBit.join('')+lastCharacter+ch+secondBit.join('')
 		outputNode.selectionStart = firstBit.join('').length+lastCharacter.length+ch.length
@@ -1584,7 +1589,7 @@ function resetDefaults () {
 	
 	setUIFont(factoryDefaults.uifont)
 	setUIFontSize(factoryDefaults.uisize)
-	//selectCCBase(factoryDefaults.ccbase)
+	selectCCBase(factoryDefaults.ccbase)
 	selectFont(factoryDefaults.font)
 	changeFontSize(factoryDefaults.size)
 	changeBoxHeight(factoryDefaults.rows)
@@ -1604,6 +1609,88 @@ function resetDefaults () {
 
 
 function setGridHints (type) {
+	// switch the hints alongside characters between key indicators, transliterations & IPA
+	document.getElementById('keyHintType').style.color = 'white'
+	document.getElementById('translitHintType').style.color = 'white'
+	document.getElementById('ipaHintType').style.color = 'white'
+	if (type !== 'none') document.getElementById(type+'HintType').style.color = 'brown'
+
+	defaults.hints = type
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+
+	var lastNode = null
+	var nodes = document.querySelectorAll( '.g' )
+	var charNode, hintNode, strToLookUp, keyContent
+
+	if (type === 'key') {
+		globals.keyHints = 'key'
+		for (let n=0; n<nodes.length; n++ ) {
+			charNode = nodes[n].querySelector('.c, .v')
+			hintNode = nodes[n].querySelector('.hint')
+            strToLookUp = charNode.textContent
+            if (strToLookUp.startsWith(defaults.ccbase)) strToLookUp = strToLookUp.substr(1)
+			strToLookUp = strToLookUp.replace(/\u200D/g,'').replace(/\u0640/g,'')
+			hintNode.textContent = ''
+			if (window.spreadsheetRows[strToLookUp] && window.spreadsheetRows[strToLookUp][cols.key]) {
+				keyContent = window.spreadsheetRows[strToLookUp][cols.key] ? window.spreadsheetRows[strToLookUp][cols.key].replace(/¶/,'\u0331') : ''
+				hintNode.textContent = keyContent
+				}
+			}
+		}
+
+	else if (type === 'ipa') {
+		globals.keyHints = 'ipa'
+		for (let n=0; n<nodes.length; n++ ) {
+			charNode = nodes[n].querySelector('.c, .v')
+			hintNode = nodes[n].querySelector('.hint')
+            strToLookUp = charNode.textContent
+            if (strToLookUp.startsWith(defaults.ccbase)) strToLookUp = strToLookUp.substr(1)
+			strToLookUp = strToLookUp.replace(/\u200D/g,'').replace(/\u0640/g,'')
+			hintNode.textContent = ''
+			if (window.spreadsheetRows[strToLookUp] && window.spreadsheetRows[strToLookUp][cols.ipaLoc]) {
+				keyContent = window.spreadsheetRows[strToLookUp][cols.ipaLoc] ? window.spreadsheetRows[strToLookUp][cols.ipaLoc].toLowerCase() : ''
+				hintNode.textContent = keyContent
+				}
+			}
+		}
+
+    else if (type === 'translit') {
+		globals.keyHints = 'translit'
+		for (let n=0; n<nodes.length; n++ ) { 
+			charNode = nodes[n].querySelector('.c, .v')
+			hintNode = nodes[n].querySelector('.hint')
+            strToLookUp = charNode.textContent
+            if (strToLookUp.startsWith(defaults.ccbase)) strToLookUp = strToLookUp.substr(1)
+			strToLookUp = strToLookUp.replace(/\u200D/g,'').replace(/\u0640/g,'')
+			hintNode.textContent = ''
+			if (window.spreadsheetRows[strToLookUp] && window.spreadsheetRows[strToLookUp][cols.transLoc]) {
+				keyContent = window.spreadsheetRows[strToLookUp][cols.transLoc] ? window.spreadsheetRows[strToLookUp][cols.transLoc] : ''
+				hintNode.textContent = keyContent
+				}
+			}
+		}
+
+	else {
+		for (let n = 0; n < nodes.length; n++ ) { 
+			hintNode = nodes[n].querySelector('.hint')
+			if (hintNode) hintNode.textContent = ''
+			}
+		globals.keyHints = 'none'
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+function setGridHintsX (type) {
 	// switch the hints alongside characters between key indicators and transliterations
 	document.getElementById('keyHintType').style.color = 'white'
 	document.getElementById('translitHintType').style.color = 'white'
@@ -1622,7 +1709,8 @@ function setGridHints (type) {
 		for (let n=0; n<nodes.length; n++ ) {
 			charNode = nodes[n].querySelector('.c, .v')
 			hintNode = nodes[n].querySelector('.hint')
-			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
+			content = //charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
+			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.key]) {
 				keyContent = window.spreadsheetRows[content][cols.key] ? window.spreadsheetRows[content][cols.key].replace(/¶/,'\u0331') : ''
@@ -1636,7 +1724,8 @@ function setGridHints (type) {
 		for (let n=0; n<nodes.length; n++ ) {
 			charNode = nodes[n].querySelector('.c, .v')
 			hintNode = nodes[n].querySelector('.hint')
-			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
+            if (charNode.textContent.startsWith(factoryDefaults.ccbase)) charNode.textContent = charNode.textContent.substr(1)
+			content = charNode.textContent.replace(/\u200D/g,'').replace(/\u0640/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ipaLoc]) {
 				keyContent = window.spreadsheetRows[content][cols.ipaLoc] ? window.spreadsheetRows[content][cols.ipaLoc].toLowerCase() : ''
@@ -1644,14 +1733,30 @@ function setGridHints (type) {
 				}
 			}
 		}
-
+/*
+	else if (type === 'ipa') {
+		globals.keyHints = 'ipa'
+		for (let n=0; n<nodes.length; n++ ) {
+			charNode = nodes[n].querySelector('.c, .v')
+			hintNode = nodes[n].querySelector('.hint')
+			//content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
+			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
+			hintNode.textContent = ''
+			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ipaLoc]) {
+				keyContent = window.spreadsheetRows[content][cols.ipaLoc] ? window.spreadsheetRows[content][cols.ipaLoc].toLowerCase() : ''
+				hintNode.textContent = keyContent
+				}
+			}
+		}
+*/
 	else if (type === 'translit') {
 		globals.keyHints = 'translit'
 		for (let n=0; n<nodes.length; n++ ) { 
 			charNode = nodes[n].querySelector('.c, .v')
 			//console.log(charNode.textContent, charNode.parentNode.querySelector('.hint').textContent)
 			hintNode = nodes[n].querySelector('.hint')
-			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
+			content = //charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
+			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.transLoc]) {
 				keyContent = window.spreadsheetRows[content][cols.transLoc] ? window.spreadsheetRows[content][cols.transLoc] : ''
@@ -1676,7 +1781,6 @@ function toggleGridHints () {
 	
 	var lastNode = null
 	var nodes = document.querySelectorAll( '.c, .v' )
-	//console.log(nodes)
 	
 	if (globals.keyHints === 'key') {
 		for (let n = 0; n < nodes.length; n++ ) { 
@@ -1713,6 +1817,9 @@ function toggleGridHints () {
 		globals.keyHints = 'key'
 		}
 	}
+
+
+
 
 
 
@@ -1791,9 +1898,13 @@ function initialise() {
 			}
 
 		// add defaults.ccbase to combining characters
-		if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ucsName] && window.spreadsheetRows[content][cols.ucsName].includes('\u200B')) node[n].textContent = defaults.ccbase+node[n].textContent
-		
+		//if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ucsName] && window.spreadsheetRows[content][cols.ucsName].includes('\u200B')) node[n].textContent = defaults.ccbase+node[n].textContent
 		// FIX the above - doesn't seem that ucsName contains zws
+
+		if (window.spreadsheetRows[content[0]] && window.spreadsheetRows[content[0]][cols.class] && window.spreadsheetRows[content[0]][cols.class].startsWith('M')) {
+            node[n].textContent = defaults.ccbase+node[n].textContent
+            document.getElementById('ccBase').value = defaults.ccbase
+            }
 		}
 	console.log('Not in spreadsheet: ',notInSpreadsheet)
 
@@ -1970,7 +2081,34 @@ function hidetrans () {
     document.getElementById('transcriptionChoice').style.display = 'none'
     }
 
+
+
 function selectCCBase (base) {
+	if (base === '0') return
+	//console.log(base)
+	
+	// add defaults.ccbase to combining characters
+	nodes = document.querySelectorAll( '.c' )
+	for (var n = 0; n < nodes.length; n++ ) { 
+		// remove leading base characters if this is a combining character
+		if (nodes[n].textContent.length > 1 && defaults.ccbase != '') {
+			while (nodes[n].textContent.charAt(0) === defaults.ccbase) {
+				nodes[n].textContent = nodes[n].textContent.substr(1)
+				}
+			}
+		// look for M... in spreadsheet class (which indicates cchar)
+		// if found, add base before other content
+        if (spreadsheetRows[nodes[n].textContent] && spreadsheetRows[nodes[n].textContent][cols.class].startsWith('M')) nodes[n].textContent = base + nodes[n].textContent
+		}
+	defaults.ccbase = base
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+	}
+
+
+
+
+
+function selectCCBaseX (base) {
 	if (base === '0') return
 	//console.log(base)
 	
@@ -2740,7 +2878,7 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 				}
 			else {
 				for (item in spreadsheetRows) { 
-					var matchStr = item.replace(/-/g,'.')
+					var matchStr = item.replace(/-/g,'.').replace(/◌/g,'.')
 					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']' || matchStr == '*' || matchStr == '\\') matchStr = 'xx'
 					//console.log('matchstr',matchStr)
 					var  regex = new RegExp(matchStr)
