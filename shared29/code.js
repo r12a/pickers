@@ -1628,7 +1628,7 @@ function setGridHints (type) {
 			charNode = nodes[n].querySelector('.c, .v')
 			hintNode = nodes[n].querySelector('.hint')
             strToLookUp = charNode.textContent
-            if (strToLookUp.startsWith(defaults.ccbase)) strToLookUp = strToLookUp.substr(1)
+            if (defaults.ccbase && strToLookUp.startsWith(defaults.ccbase)) strToLookUp = strToLookUp.substr(1)
 			strToLookUp = strToLookUp.replace(/\u200D/g,'').replace(/\u0640/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[strToLookUp] && window.spreadsheetRows[strToLookUp][cols.key]) {
@@ -1644,7 +1644,7 @@ function setGridHints (type) {
 			charNode = nodes[n].querySelector('.c, .v')
 			hintNode = nodes[n].querySelector('.hint')
             strToLookUp = charNode.textContent
-            if (strToLookUp.startsWith(defaults.ccbase)) strToLookUp = strToLookUp.substr(1)
+            if (defaults.ccbase && strToLookUp.startsWith(defaults.ccbase)) strToLookUp = strToLookUp.substr(1)
 			strToLookUp = strToLookUp.replace(/\u200D/g,'').replace(/\u0640/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[strToLookUp] && window.spreadsheetRows[strToLookUp][cols.ipaLoc]) {
@@ -1660,7 +1660,7 @@ function setGridHints (type) {
 			charNode = nodes[n].querySelector('.c, .v')
 			hintNode = nodes[n].querySelector('.hint')
             strToLookUp = charNode.textContent
-            if (strToLookUp.startsWith(defaults.ccbase)) strToLookUp = strToLookUp.substr(1)
+            if (defaults.ccbase && strToLookUp.startsWith(defaults.ccbase)) strToLookUp = strToLookUp.substr(1)
 			strToLookUp = strToLookUp.replace(/\u200D/g,'').replace(/\u0640/g,'')
 			hintNode.textContent = ''
 			if (window.spreadsheetRows[strToLookUp] && window.spreadsheetRows[strToLookUp][cols.transLoc]) {
