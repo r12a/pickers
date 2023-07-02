@@ -60,7 +60,7 @@ span.hint {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-	margin-right: 1em;
+	margin-right: .5em;
     }
 #ivowelGrid div {
 	display: flex;
@@ -70,6 +70,12 @@ span.hint {
 #ivowelGrid .verticalAlign {
 	justify-content: flex-end;
 	}
+#virama {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	margin-right: .25em;
+    }
 #consonantGrid, #subConsonantGrid {
     display: flex;
     flex-direction: column;
@@ -80,7 +86,7 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     }
 #consonantGrid > span {
     min-width: 1em;
@@ -92,25 +98,37 @@ span.hint {
     justify-content: center;
     align-items: center;
     }
-#vowelGrid {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-	margin-left: 1em;
-    }
-#vowelGrid > div {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content:space-between;
-	}
 #moreconsonants {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content:flex-start;
     text-align: end;
-	margin-left: .75em;
+	margin-left: 0em;
+    }
+#moreconsonants .g {
+    margin-block-end: 1rem;
+    }
+#vowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	margin-left: .5em;
+    border: 1px dotted tan;
+    }
+#vowelGrid > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:flex-end;
+	}
+#finals {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:flex-end;
+    text-align: end;
+	margin-left: .25em;
     }
 #tones {
     display: flex;
@@ -132,7 +150,10 @@ span.hint {
     flex-direction: column;
     justify-content: space-between;
     font-size: 90%;
-	margin-left: 1em;
+	margin-inline-start: 1.5em;
+    }
+#digitKeypad {
+    border: 1px dotted tan;
     }
 #digitKeypad div {
     white-space: normal;
@@ -141,12 +162,21 @@ span.hint {
     flex-direction: row;
     justify-content: space-between;
     }
+#digitKeypad .g {
+    margin-block-end: 1rem;
+    }
 
 #punctuation, #flatnumbers, #other {
     text-align: center;
     font-size: 80%;
     line-height: 1.7;
     margin-top: .5em;
+    }
+#punctuation {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: 1em;
     }
 
 #mahaprana, #rare, #otherpunctuation {
