@@ -16,8 +16,10 @@ window.charCheckerList = [
 { wrong:"ئ", right:"یٔ" },
 { wrong:"ك", right:"ک" },
 { wrong:"ٛ", right:"ْ" },
+{ wrong:"ی࣑", right:"ؠ" },
 { wrong:"ٮ۪", right:"ؠ" },
 { wrong:"ۅ", right:"ۄ" },
+{ wrong:"ۍ", right:"ؠ" },
 //{ wrong:"", right:"" },
 //{ wrong:"", right:"" },
 ]
