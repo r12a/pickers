@@ -18,7 +18,7 @@ var thisPicker = 'lepcPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Mingzat WF" ]
+var webFonts = [ "Mingzat WF", "Noto Sans Lepcha WF" ]
 
 
 var template = {}
