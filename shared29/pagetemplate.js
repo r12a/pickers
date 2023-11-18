@@ -198,6 +198,9 @@ out = `
      
 <img src="../images/nfx_large.png" alt="Don't normalise output."  title="Don't normalise output."  
     onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'N—';" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+     
+<img src="../images/add_term_large.png" alt="Add template for term creation."  title="Add template for term creation."  
+    onclick="document.getElementById('output').value += 'native|meaning|IPA|transc|otherTransc|notes|x|rawIPA\\n';document.getElementById('output').focus();" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
 
 </div>
 
