@@ -6,10 +6,17 @@ globals.showKeysTranslitToggle = false
 
 
 window.charCheckerList = [
-//{ wrong:"သြော်", right:"ဪ" },
-//{ wrong:"သြ", right:"ဩ" },
+//{ wrong:"xxx", right:"xxx" },
+{ wrong:"ځ", right:"حٔ" },
+{ wrong:"ݬ", right:"رٔ" },
+{ wrong:"ࢡ", right:"بٔ" },
+{ wrong:"ي", right:"ی" },
+{ wrong:"ه", right:"ہ" },
+{ wrong:"ۀ", right:"ۂ" },
+{ wrong:"ة", right:"ۃ" },
+{ wrong:"ك", right:"ک" },
+{ wrong:"\u0652", right:"\u065B" },
 ]
-
 
 // list of fonts to add to the standard selection
 window.fontsuggestions =  
