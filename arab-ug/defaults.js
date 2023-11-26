@@ -18,7 +18,7 @@ var thisPicker = 'uighurPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Scheherazade WF" ]
+var webFonts = [ "Scheherazade WF", "Noto Nastaliq Urdu WF" ]
 
 
 var template = {}

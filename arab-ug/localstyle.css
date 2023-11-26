@@ -5,6 +5,12 @@
     font-weight: normal;
     font-style: normal;
 	}
+@font-face {
+    font-family: 'Noto Nastaliq Urdu WF';
+    src: url('../../shared/webfonts/notonastaliqurdu-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
 
 
 [lang=ug] { font-family: 'Scheherazade WF', serif; }
