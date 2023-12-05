@@ -7,13 +7,11 @@ globals.showKeysTranslitToggle = false
 
 window.charCheckerList = [
 { wrong:"ۀ", right:"هٔ" },
-{ wrong:"ۀ", right:"هٔ" },
 { wrong:"ۂ", right:"هٔ" },
-{ wrong:"ۂ", right:"هٔ" },
-{ wrong:"ئ", right:"یٔ" },
 { wrong:"ئ", right:"یٔ" },
 { wrong:"ࢨ", right:"یٔ" },
 { wrong:"ي", right:"ی" },
+{ wrong:"ى", right:"ی" },
 { wrong:"ہ", right:"ه" },
 { wrong:"ە", right:"ه" },
 { wrong:"ۃ", right:"ة" },
