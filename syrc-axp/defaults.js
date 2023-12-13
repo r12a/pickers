@@ -1,13 +1,13 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'CPAGenizah WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'CPADM WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "200"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.2"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'axp' // language to use for examples
-	factoryDefaults.uifont = 'CPAGenizah WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'CPADM WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
-	factoryDefaults.ccbase = "";  // default base for combining characters
+	factoryDefaults.ccbase = "◌";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
 	factoryDefaults.hints = "none" // type of hint to show alongside characters in the grids
@@ -18,12 +18,12 @@ var thisPicker = 'cpaPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "CPAGenizah WF" ]
+var webFonts = [ "CPADM WF", "CPAGenizah WF" ]
 
 
 var template = {}
 	template.title = 'Christian Palestinian Aramaic'
-	template.sample = "ܘܗܘܐ [ܣـ]ܒܝܪ / ܖܚܬܪ [ܝܬ]ܗ̇ / ܘܫܪܝ ܩܨܝܚ / ܒܩܠܐ ܪܒܐ / ܘܐܒܪ ܟܖܢ ܃܁ / ܐܫܬܒܫܘ / ܖ̈ܚܡܝــــــ / ܐܫܬܒܫܘ / ܥܘ̈ܠܘ ܒܟܝܪ / ܘܚܢܘܩ̈ܘ ܝܬܗ ܃܁ / ܐܡܪ ܖܝ / ܛܘܒܢܐ ܠܘܬܗ ܃ / ܟܘܠ ܡܝܢ̈ܝܐ / ܚܓ̈ܠܘ ܝܬܝ / ܘܒܫܝܡܗ ܖܡܪܐ / ܪܖܦܬ ܝܬܗܘܢ ܃܁"
+	template.sample = "ܘܗܘܐ [ܣـ]ܒܝܪ / ܖܚܬܪ [ܝܬ]ܗ̇ / ܘܫܪܝ ܩܨܝܚ / ܒܩܠܐ ܪܒܐ / ܘܐܒܪ ܟܖܢ ⁖ / ܐܫܬܒܫܘ / ܖ̈ܚܡܝــــــ / ܐܫܬܒܫܘ / ܥܘ̈ܠܘ ܒܟܝܪ / ܘܚܢܘܩ̈ܘ ܝܬܗ ⁖ / ܐܡܪ ܖܝ / ܛܘܒܢܐ ܠܘܬܗ ܃ / ܟܘܠ ܡܝܢ̈ܝܐ / ܚܓ̈ܠܘ ܝܬܝ / ܘܒܫܝܡܗ ܖܡܪܐ / ܪܖܦܬ ܝܬܗܘܢ ⁖"
 	template.sampleSource = ''
 	template.blocklocation= 'syrc'  // block directory
 	template.noteslocation = 'syrc/axp' // location of script notes

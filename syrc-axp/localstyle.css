@@ -8,6 +8,12 @@
 The copyright (in OFL license is): Designers : Alain Desreumaux et Alain Hurtig, greetings to George Kiraz, Paul Nelson and Michael Langlois for additional code and design. Credits : Alain Desreumaux and Alain Hurtig for the Syriac letters, George Kiraz and Paul Nelson for the Arabic Numbers. Some symbols, including numerical symbols, are based on the monospaced Courier type design.
 */
 @font-face {
+    font-family: 'CPADM WF';
+    src: url('../../shared/webfonts/cpa-dmscriptfont-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
     font-family: 'Noto Sans Syriac Estrangela WF';
     src: url('../../shared/webfonts/notosanssyriacestrangela-regular-webfont.woff2') format('woff2'),
          url('../../shared/webfonts/notosanssyriacestrangela-regular-webfont.woff') format('woff');
@@ -17,7 +23,7 @@ The copyright (in OFL license is): Designers : Alain Desreumaux et Alain Hurtig,
 	}
 
 
-[lang=axp] { font-family: "CPAGenizah WF", serif; font-size: 180%; }
+[lang=axp] { font-family: "CPADM WF", serif; font-size: 180%; }
 
 
 
@@ -38,14 +44,16 @@ span.hint {
 	text-align: center;
     cursor: pointer;
 	}
-
+span.x {
+    color: chocolate;
+    }
     
     
 /* KEYBOARD */
 .key span { 
 	font-size: 1.4em; 
 	font-weight: normal; 
-	font-family:  'CPAGenizah WF',  sans-serif;  
+	font-family:  'CPADM WF',  sans-serif;  
     line-height: 1;
 	}
 .key {padding: 4px 0 0 0; }
@@ -69,6 +77,9 @@ span.hint {
  flex-direction: row;
 	line-height: 1.4;
     justify-content: center;
+    }
+#alaph {
+    margin-inline-end: 1em;
     }
 #consonantGrid {
     display: flex;
@@ -98,11 +109,25 @@ span.hint {
     flex-direction: row;
     justify-content: center;
     }
+#annotations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-inline-start: 1em;
+    }
+#annotations div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    }
 #diacriticGrid {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: nowrap;
+    margin-inline-start: 1em;
     }
 #diacriticGrid div {
     display: flex;
@@ -132,7 +157,7 @@ span.hint {
     }
 #punctuation {
     text-align: center;
-    font-size: 70%;
+    font-size: 90%;
     line-height: 1;
 	margin: .5em 0 .5em 0;
     }
