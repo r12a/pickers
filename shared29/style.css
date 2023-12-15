@@ -1143,6 +1143,7 @@ summary:hover {
     color: #999;
     font-family: "ExtendedLatinWF", "doulos sil";
     font-size: 1.5em;
+    height: 3rem;
     }
 #charChoice span {
     white-space: nowrap;
