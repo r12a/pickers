@@ -6,6 +6,7 @@ var plist = [
     { tag:'arab', name:'Persian', url:'arab-fa/index.html' },
     { tag:'arab', name:'Uighur', url:'arab-ug/index.html' },
     { tag:'arab', name:'Urdu', url:'arab-ur/index.html' },
+    { tag:'arab', name:'Wolof', url:'arab-wo/index.html' },
     { tag:'arab', name:'Pan-African&nbsp;Arabic', url:'arab-afr/index.html' },
     { tag:'arab', name:'All&nbsp;Arabic', url:'arab-all/index.html' },
     { tag:'armi', name:'Aramaic', url:'armi/index.html' },
@@ -133,6 +134,7 @@ var plistByRegion = {
 				['Persian', 'arab-fa/index.html'],
 				['Uighur', 'arab-ug/index.html'],
 				['Urdu', 'arab-ur/index.html'],
+				['Wolof', 'arab-wo/index.html'],
 				[']'],
 			['• <i>Aramaic</i> ['],
 				['Aramaic (Imperial)','armi/index.html'],
@@ -360,6 +362,7 @@ var plistByRegion = {
 			['<i>Wolof</i> ['],
 				['Latin', 'latn-wo/index.html'],
 				['Garay', 'gara-wo/index.html'],
+				['Wolofal', 'arab-wo/index.html'],
 				[']'],
 			],
 	'Y':[
