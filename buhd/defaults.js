@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Buhid WF" ]
 
 
 var template = {}
-	template.title = 'Buhid character app'
-	template.sample = "ᝃᝑᝓᝃᝑᝓ ᝃᝓ ᝋᝎᝄᝓ ᜵ ᝃᝊᝓᝌᝓᝊᝓᝌᝓ ᝐᝒ ᝇᝄᝓ ᜵ ᝇᝎᝒᝃ ᝐ ᝉᝍᝓᝋᝒᝌᝓ ᜵ ᝐᝒᝑᝋᝓ ᝃ ᝐ ᝊᝎ ᝊᝃᝓ ᜵ ᝀᝈ ᝂᝋᝊᝓ ᝃ ᝈᝒᝋᝓ ᜶"
-	template.sampleSource = ''
-	template.blocklocation= ''  // block directory
-	template.noteslocation = '' // location of script notes
-	template.vocablocation = '' // location of term database
+	template.title = 'Buhid'
+	template.sample = "ᝃᝑᝓ ᝃᝑᝓ ᝃᝓ ᝋᝎᝄᝓ ᝃᝊᝓᝌᝓ ᝊᝓᝌᝓ ᝐᝒ ᝂᝎᝓ ᝃᝇᝓᝌ ᝇᝓᝌ ᝐᝒ ᝇᝄᝓ᜵ ᝇᝎᝃ ᝐ ᝉᝍᝓᝋᝒᝌᝓ ᝐᝒᝑᝋᝓ ᝃ ᝐ ᝊᝎ ᝊᝃᝓ ᝀᝈ ᝂᝋᝊᝓᝓ ᝃ ᝈᝒᝋᝓ᜶"
+	template.sampleSource = 'https://commons.wikimedia.org/wiki/File:Buhid_urukay.jpg'
+	template.blocklocation= 'buhd'  // block directory
+	template.noteslocation = 'buhd/bku' // location of script notes
+	template.vocablocation = 'buhd/arb_vocab' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'buhd'
 	template.scriptcode = 'Buhd'
