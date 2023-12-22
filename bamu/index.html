@@ -47,44 +47,65 @@
 <div id="alphabet" class="default">
 
 
+
+<style>#shapekeys img { height: 2rem; }</style>
+
+
 <div id="shapelist" style="display:none; text-align:center;">
 <div id="shapekeys">
-<span onclick="findShape('A6C0,A6DD,A6A3,A6DC,A6C1,A6BF','ꛀ,ꛝ,ꚣ,ꛜ,ꛁ,ꚿ',true)">ꛀ</span>
-<span onclick="findShape('A6E4,A6B0,A6E0,A6AC,A6AA,A6D3,A6AE','ꛤ,ꚰ,ꛠ,ꚬ,ꚪ,ꛓ,ꚮ',true)">ꛤ</span>
-<span onclick="findShape('A6D7,A6D4,A6CF','ꛗ,ꛔ,ꛏ',true)">ꛗ</span>
-<span onclick="findShape('A6AB,A6CB,A6D9','ꚫ,ꛋ,ꛙ',true)">ꚫ</span>
-<span onclick="findShape('A6EA,A6E7,A6E6,A6E9','ꛪ,ꛧ,ꛦ,ꛩ',true)">ꛪ</span>
-<span onclick="findShape('A6B1,A6E8,A6EC,A6E3,A6B9,A6D5','ꚱ,ꛨ,ꛬ,ꛣ,ꚹ,ꛕ',true)">ꚱ</span>
-<span onclick="findShape('A6E5,A6C4,A6C2','ꛥ,ꛄ,ꛂ',true)">ꛥ</span>
-<span onclick="findShape('A6BB,A6B7,A6AF','ꚻ,ꚷ,ꚯ',true)">ꚻ</span>
-<span onclick="findShape('A6DF,A6B4,A6CE,A6C7','ꛟ,ꚴ,ꛎ,ꛇ',true)">ꛟ</span>
-<span onclick="findShape('A6A1,A6D8','ꚡ,ꛘ',true)">ꚡ</span>
-<span onclick="findShape('A6EB,A6ED,A6CD','ꛫ,ꛭ,ꛍ',true)">ꛫ</span>
-<span onclick="findShape('A6DB,A6EE,A6B3,A6B6,A6BE','ꛛ,ꛮ,ꚳ,ꚶ,ꚾ',true)">ꛛ</span>
-<span onclick="findShape('A6A5,A6DA','ꚥ,ꛚ',true)">ꚥ</span>
-<span onclick="findShape('A6B8,A6B5,A6E2,A6D6,A6BD,A6C6,A6C3,A6AD,A6D0,A6CC,A6D1,A6E1,A6AE,A6DE,A6C9,A6C8,A6C5,A6CA,A6A6,A6BA,A6D2,A6EF','ꚸ,ꚵ,ꛢ,ꛖ,ꚽ,ꛆ,ꛃ,ꚭ,ꛐ,ꛌ,ꛑ,ꛡ,ꚮ,ꛞ,ꛉ,ꛈ,ꛅ,ꛊ,ꚦ,ꚺ,ꛒ,ꛯ',true)">ꚸ</span>
+<img title="Has a dot above." alt="Dot above" src="shapes/dot_above.png" onclick="findShape('A6A6,A6BB,A6AF,A6BC,A6D4,A6B2,A6CC,A6A5,A6D1,A6DA,A6A4,A6F2,A6BA,','',true)">
+
+<img title="Has a dot below." alt="Dot below" src="shapes/dot_below.png" onclick="findShape('A6A6,A6BC,A6CC,A6A5,A6A9,A6CF,','',true)">
+
+<img title="Has a dot to the right." alt="Dot right" src="shapes/dot_right.png" onclick="findShape('A6DD,A6C5,A6AB,A6A3,A6BA,A6B6,A6C7,A6B4,','',true)">
+
+<img title="Shape to left of vertical." alt="Shape left" src="shapes/shape_left.png" onclick="findShape('A6DD,A6A3,A6C0,A6C6,A6DC,A6C1,A6BF,','',true)">
+
+<img title="Shape to right of vertical." alt="Shape right" src="shapes/shape_right.png" onclick="findShape('A6E4,A6B0,A6E5,A6C4,A6E0,A6AC,A6AE,A6DE,A6AA,A6D3,A6C2,','',true)">
+
+<img title="Has a top right-hand corner." alt="Corner right" src="shapes/corner_right.png" onclick="findShape('A6EA,A6E8,A6CB,A6D9,A6AB,A6E7,A6E6,A6E3,A6A8,A6A7,','',true)">
+
+<img title="Has a top left-hand corner." alt="Corner left" src="shapes/corner_left.png" onclick="findShape('A6B9,A6EC,A6AF,A6B1,A6D5,','',true)">
+
+<img title="Strong vertical lines." alt="Vertical lines"  src="shapes/verticals.png" onclick="findShape('A6EE,A6DB,A6B3,A6C2,A6BE,A6D5,A6AD,A6D6,A6B6','',true)">
+
+<img title="Shaped like M." alt="Like M" src="shapes/like_M.png" onclick="findShape('A6D7,A6D4,A6CF,','',true)">
+
+<img title="Shaped like V" alt="Like V" src="shapes/like_V.png" onclick="findShape('A6DF,A6B4,A6CE,A6C7,','',true)">
+
+<img title="Shaped like reversed N." alt="Like N" src="shapes/like_N.png" onclick="findShape('A6A1,A6D8,','',true)">
+
+<img title="Shaped like a question mark." alt="Like ?" src="shapes/like_question.png" onclick="findShape('A6ED,A6EB,A6CD,','',true)">
+
+<img title="A vertical line above a curve." alt="Vertical curve" src="shapes/vertical_curve.png" onclick="findShape('A6EA,A6E7,A6E6,A6E9,A6BD','',true)">
+
+<img title="Looks like an ASCII letter." alt="Like ASCII" src="shapes/like_ascii.png" onclick="findShape('A6C9,A6D6,A6EF,A6C5,A6C3,A6A5,A6DA,A6A1,A6DF,A6CF','',true)">
+
+<img title="Other shapes." alt="Other" src="shapes/other.png" onclick="findShape('A6D2,A6C8,A6CA,A6B8,A6EF,A6B5,A6E2,A6C3,A6AD,A6D0,A6CC,A6E1,A6A2,A6A0,A6F2,','',true)" />
 </div>
 </div>
 
 <div id="extrashapes"></div>
 
-
 <!--
-ꛀ ꛝ ꚣ ꛜ ꛁ ꚿ/ꛀ ꛝ ꚣ ꛜ ꛁ ꚿ
-ꛤ ꚰ ꛠ ꚬ ꚪ ꛓ ꚮ/ꛤ ꚰ ꛠ ꚬ ꚪ ꛓ ꚮ
-ꛗ ꛔ ꛏ/ꛗ ꛔ ꛏ
-ꚫ ꛋ ꛙ/ꚫ ꛋ ꛙ
-ꛪ ꛧ ꛦ ꛩ/ꛪ ꛧ ꛦ ꛩ
-ꚱ ꛨ ꛬ ꛣ ꚹ ꛕ/ꚱ ꛨ ꛬ ꛣ ꚹ ꛕ
-ꛥ ꛄ ꛂ/ꛥ ꛄ ꛂ
-ꚻ ꚷ ꚯ/ꚻ ꚷ ꚯ
-ꛟ ꚴ ꛎ ꛇ/ꛟ ꚴ ꛎ ꛇ
-ꚡ ꛘ/ꚡ ꛘ
-ꛫ ꛭ ꛍ/ꛫ ꛭ ꛍ
-ꛛ ꛮ ꚳ ꚶ ꚾ/ꛛ ꛮ ꚳ ꚶ ꚾ
-ꚥ ꛚ/ꚥ ꛚ
-ꚸ ꚵ ꛢ ꛖ ꚽ ꛆ ꛃ ꚭ ꛐ ꛌ ꛑ ꛡ ꚮ ꛞ ꛉ ꛈ ꛅ ꛊ ꚦ ꚺ ꛒ/ꚸ ꚵ ꛢ ꛖ ꚽ ꛆ ꛃ ꚭ ꛐ ꛌ ꛑ ꛡ ꚮ ꛞ ꛉ ꛈ ꛅ ꛊ ꚦ ꚺ ꛒ
+ꚦ ꚻ ꚯ ꚼ ꛔ ꚲ ꛌ ꚥ ꛑ ꛚ ꚤ ꛲ ꚺ 
+ꚦ ꚼ ꛌ ꚥ ꚩ ꛏ 
+ꛝ ꛅ ꚫ ꚣ ꚺ ꚶ ꛇ ꚴ 
+ꛝ ꚣ ꛀ ꛆ ꛜ ꛁ ꚿ 
+ꛤ ꚰ ꛥ ꛄ ꛠ ꚬ ꚮ ꛞ ꚪ ꛓ ꛂ 
+ꛪ ꛨ ꛋ ꛙ ꚫ ꛧ ꛦ ꛣ ꚨ ꚧ 
+ꚹ ꛬ ꚯ ꚱ ꛕ 
+ꛮ ꛛ ꚳ ꛂ ꚾ ꛕ ꚭ ꛖ 
+ꛗ ꛔ ꛏ 
+ꛟ ꚴ ꛎ ꛇ 
+ꚡ ꛘ 
+ꛭ ꛫ ꛍ 
+ꛪ ꛧ ꛦ ꛩ
+ꛉ ꛖ ꛯ ꛅ ꛃ ꚥ ꛚ ꚡ ꛟ ꛏ
+ꛒ ꛩ ꛈ ꛊ ꚸ ꛯ ꚵ ꛢ ꚽ ꛃ ꚭ ꛐ ꛌ ꛡ ꚢ ꚠ ꛲ 
 -->
+
+
 
 
 <div class="spaceline">
