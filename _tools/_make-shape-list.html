@@ -42,7 +42,7 @@ function makeList (charlist) {
 			currentLine += codepoint
 			if (t < targets.length-1) currentLine += ','
 			}
-		out += '<span onclick="findShape(\''+currentLine.replace(/ /g,',') + '\',\''+extras+'\',true)">'+key+'</span>\n'
+		out += '<span title="" onclick="findShape(\''+currentLine.replace(/ /g,',') + '\',\''+extras+'\',true)">'+key+'</span>\n'
 		}
 	return out
 	}
