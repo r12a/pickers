@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8">
+<title>Kurmanji Hawar character app 29</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css">
+<link rel="stylesheet" href="../shared29/style.css">
+<link rel="stylesheet" href="localstyle.css">
+
+<script src="defaults.js">  </script>
+<script src="../../shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/latn-kmr.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared29/setup.js">  </script>
+<script src="../shared29/code.js">  </script>
+<script src="../shared29/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared29/pagetemplate.js">  </script>
+<script src="../../scripts/linkdata/linkdb.js"></script>
+<script src="localtranscription.js">  </script>
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+
+
+
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+<div id="alphabet" class="default">
+
+
+<div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+
+<div class="spaceline">
+<span class="touch" style="margin: 0; padding: 5px 20px;" dir="auto" onClick="toggleShift(this);if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SHIFT</span>
+<span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
+</div>
+
+
+
+<div id="kbdGrid">
+
+<div id="consonantGrid"  class="lowercase">
+<div class="bottomDivider">
+<span class="g"><span class="hint"></span><span class="c">p</span></span>
+<span class="g"><span class="hint"></span><span class="c">t</span></span>
+<span class="g"><span class="hint"></span><span class="c">ç</span></span>
+<span class="g"><span class="hint"></span><span class="c">k</span></span>
+<span class="g"><span class="hint"></span><span class="c">q</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: space-around;">
+<span class="g"><span class="hint"></span><span class="c">b</span></span>
+<span class="g"><span class="hint"></span><span class="c">d</span></span>
+<span class="g"><span class="hint"></span><span class="c">c</span></span>
+<span class="g"><span class="hint"></span><span class="c">g</span></span>
+<span class="g"><span class="hint"></span><span class="c"> </span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint"></span><span class="c">f</span></span>
+<span class="g"><span class="hint"></span><span class="c">v</span></span>
+<span class="g"><span class="hint"></span><span class="c">s</span></span>
+<span class="g"><span class="hint"></span><span class="c">z</span></span>
+<span class="g"><span class="hint"></span><span class="c">ş</span></span>
+<span class="g"><span class="hint"></span><span class="c">j</span></span>
+<span class="g"><span class="hint"></span><span class="c">x</span></span>
+<span class="g"><span class="hint"></span><span class="c">h</span></span>
+</div>
+<div style="justify-content: space-around;">
+<span class="g"><span class="hint"></span><span class="c">m</span></span>
+<span class="g"><span class="hint"></span><span class="c">n</span></span>
+</div>
+<div style="justify-content: space-around;">
+<span class="g"><span class="hint"></span><span class="c">w</span></span>
+<span class="g"><span class="hint"></span><span class="c">r</span></span>
+<span class="g"><span class="hint"></span><span class="c">l</span></span>
+<span class="g"><span class="hint"></span><span class="c">y</span></span>
+</div>
+</div>
+ 
+  
+<div id="UCconsonantGrid"  class="uppercase hidden">
+<div class="bottomDivider">
+<span class="g"><span class="hint"></span><span class="c">P</span></span>
+<span class="g"><span class="hint"></span><span class="c">T</span></span>
+<span class="g"><span class="hint"></span><span class="c">Ç</span></span>
+<span class="g"><span class="hint"></span><span class="c">K</span></span>
+<span class="g"><span class="hint"></span><span class="c">Q</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: space-around;">
+<span class="g"><span class="hint"></span><span class="c">B</span></span>
+<span class="g"><span class="hint"></span><span class="c">D</span></span>
+<span class="g"><span class="hint"></span><span class="c">C</span></span>
+<span class="g"><span class="hint"></span><span class="c">G</span></span>
+<span class="g"><span class="hint"></span><span class="c"> </span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint"></span><span class="c">F</span></span>
+<span class="g"><span class="hint"></span><span class="c">V</span></span>
+<span class="g"><span class="hint"></span><span class="c">S</span></span>
+<span class="g"><span class="hint"></span><span class="c">Z</span></span>
+<span class="g"><span class="hint"></span><span class="c">Ş</span></span>
+<span class="g"><span class="hint"></span><span class="c">J</span></span>
+<span class="g"><span class="hint"></span><span class="c">X</span></span>
+<span class="g"><span class="hint"></span><span class="c">H</span></span>
+</div>
+<div style="justify-content: space-around;">
+<span class="g"><span class="hint"></span><span class="c">M</span></span>
+<span class="g"><span class="hint"></span><span class="c">N</span></span>
+<span class="g"><span class="hint"></span><span class="c">Ň</span></span>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c">W</span></span>
+<span class="g"><span class="hint"></span><span class="c">R</span></span>
+<span class="g"><span class="hint"></span><span class="c">L</span></span>
+<span class="g"><span class="hint"></span><span class="c">Y</span></span>
+</div>
+</div>
+   
+
+
+
+
+
+  
+  
+<div id="vowelGrid"  class="lowercase" style="justify-content: space-around;">
+<div  style="justify-content: space-between">
+<span class="g"><span class="hint"></span><span class="c">î</span></span>
+<span class="g"><span class="hint"></span><span class="c">û</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: space-between">
+<span class="g"><span class="hint"></span><span class="c">i</span></span>
+<span class="g"><span class="hint"></span><span class="c">u</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: space-between">
+<span class="g"><span class="hint"></span><span class="c">ê</span></span>
+<span class="g"><span class="hint"></span><span class="c">o</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: space-between">
+<span class="g"><span class="hint"></span><span class="c">e</span></span>
+<span class="g"><span class="hint"></span><span class="c">a</span></span>
+</div>
+</div>
+
+<div id="UCvowelGrid"  class="uppercase hidden">
+<div  style="justify-content: space-between">
+<span class="g"><span class="hint"></span><span class="c">Î</span></span>
+<span class="g"><span class="hint"></span><span class="c">Û</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: space-between">
+<span class="g"><span class="hint"></span><span class="c">I</span></span>
+<span class="g"><span class="hint"></span><span class="c">U</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: space-between">
+<span class="g"><span class="hint"></span><span class="c">Ê</span></span>
+<span class="g"><span class="hint"></span><span class="c">O</span></span>
+</div>
+<div class="bottomDivider" style="justify-content: space-between">
+<span class="g"><span class="hint"></span><span class="c">E</span></span>
+<span class="g"><span class="hint"></span><span class="c">A</span></span>
+</div>
+
+</div>
+
+
+
+
+<div id="numberGrid">
+<div><span class="c">7</span><span class="c">8</span><span class="c">9</span></div>
+<div><span class="c">4</span><span class="c">5</span><span class="c">6</span></div>
+<div><span class="c">1</span><span class="c">2</span><span class="c">3</span></div>
+<div><span class="c">0</span> <span class="c">,</span> <span class="c">.</span> </div>
+<!--div style="margin-top: .5em;"><span class="c">₭</span> <span class="c">ຯ</span> <span class="c">ໆ</span></div>
+<div><span class="c">ໆລໆ</span></div-->
+</div>
+</div>
+
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">&#x2010;</span>
+</div>
+
+
+
+
+<details>
+<summary style="text-align: center;">infrequent characters</summary>
+<table id="rare"><tbody>
+<tr>
+<td>
+<span class="g"><span class="hint">r</span><span class="c">ḧ</span></span>
+<span class="g"><span class="hint">r</span><span class="c">ẍ</span></span>
+<span class="g"><span class="hint">ng</span><span class="c">ň</span></span>
+</td>
+</tr>
+</tbody></table> 
+</details>
+
+</div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>

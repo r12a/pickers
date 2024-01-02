@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Sorani character app 29</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared29/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="defaults.js">  </script>
+<script src="../../shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/arab-ckb.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared29/setup.js">  </script>
+<script src="../shared29/code.js">  </script>
+<script src="../shared29/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared29/pagetemplate.js">  </script>
+<script src="../../scripts/linkdata/linkdb.js"></script>
+<script src="localtranscription.js">  </script>
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+<div id="tables" dir="rtl">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+<div id="alphabet" class="default">
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+<span onclick="findShape('627,622,623,625,671,661','',true)">ا</span>
+<span onclick="findShape('644627,644622,644623,644625','',true)">لا</span>
+<span onclick="findShape('644,643','',true)">ل</span>
+<span onclick="findShape('639,63A','',true)">ع</span>
+<span onclick="findShape('62D,62E,62C','',true)">ح</span>
+<span onclick="findShape('641,642','',true)">ف</span>
+<span onclick="findShape('637,638','',true)">ط</span>
+<span onclick="findShape('647,629,621,645','',true)">ه</span>
+<span onclick="findShape('631,632,648,624','',true)">ر</span>
+<span onclick="findShape('62F,630','',true)">د</span>
+<span onclick="findShape('649,626,64A','',true)">ى</span>
+<span onclick="findShape('628,62A,62B,646','',true)">ٮ</span>
+<span onclick="findShape('635,636,633,634','',true)">ص</span>
+/
+<span onclick="findShape('62F,637,43,633,635,62D,639,645,648,644,631','',true)"><img src="images/dot_none.png" alt=" "></span>
+<span onclick="findShape('628,62C','',true)"><img src="images/dot_below_1.png" alt="﮳"></span>
+<span onclick="findShape('646,636,641,62E,630,632,638,63A','',true)"><img src="images/dot_above_1.png" alt="﮲"></span>
+<span onclick="findShape('62A,629,642','',true)"><img src="images/dot_above_2.png" alt="﮴"></span>
+<span onclick="findShape('64A','',true)"><img src="images/dot_below_2.png" alt="﮵"></span>
+<span onclick="findShape('62B,634','',true)"><img src="images/dot_above_3.png" alt="﮶"></span>
+</div>
+</div>
+<!--
+ا ا آ أ إ ٱ ١
+لا لا لآ لأ لإ
+ل ل ك
+ع ع غ
+ح ح خ ج
+ف ف ق
+ط ط ظ
+ه ه ة ء م
+ر ر ز و ؤ
+د د ذ
+ى ى ئ ي
+ٮ ب ت ث ن
+ص ص ض س ش
+-->
+
+
+<div id="extrashapes"></div>
+
+
+<div class="spaceline">
+<span class="touch" dir="auto" onClick="ccb=document.getElementById('formatchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">Format</span>
+
+<span class="touch" style="margin: 0; padding: 5px 70px;" dir="auto" onClick="add(' ');">SPACE</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
+</div>
+
+
+<div id="formatchars" style="display: none;">
+<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" dir="auto" onClick="add('\u00A0');">NBSP</span> 
+<span class="touch" dir="auto" onClick="add('\u2067');">RLI</span>
+<span class="touch" dir="auto" onClick="add('\u2066');">LRI</span>
+<span class="touch" dir="auto" onClick="add('\u2068');">FSI</span>
+<span class="touch" dir="auto" onClick="add('\u2069');">PDI</span>
+<span class="touch" dir="auto" onClick="add('\u202B');">RLE</span>
+<span class="touch" dir="auto" onClick="add('\u202A');">LRE</span>
+<span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
+<span class="touch" dir="auto" onClick="add('\u200F');">RLM</span>
+<span class="touch" dir="auto" onClick="add('\u200E');">LRM</span>
+<span class="touch" dir="auto" onClick="add('\u034F');">CGJ</span>
+<span class="touch" dir="auto" onClick="add('\u061C');">ALM</span>
+<span class="touch" dir="auto" onClick="add('\u0640');">ـــ</span>
+</div>
+
+
+
+
+
+<div id="kbdGrid">
+
+	<div id="consonantGrid" class="box">    
+		
+		<div>
+		<span class="g"><span class="hint">p</span><span class="c">پ</span></span>
+		<span class="g"><span class="hint">t</span><span class="c">ت</span></span>
+		<span class="g"><span class="hint">c</span><span class="c">چ</span></span>
+		<span class="g"><span class="hint">k</span><span class="c">ک</span></span>
+		<span class="g"><span class="hint">q</span><span class="c">ق</span></span>
+		</div>
+
+		<div class="bottomDivider">
+		<span class="g"><span class="hint">b</span><span class="c">ب</span></span>
+		<span class="g"><span class="hint">d</span><span class="c">د</span></span>
+		<span class="g"><span class="hint">j</span><span class="c">ج</span></span>
+		<span class="g"><span class="hint">g</span><span class="c">گ</span></span>
+		<span class="g"><span class="hint"></span><span class="c"> </span></span>
+		</div>
+
+		<div >
+		<span class="g"><span class="hint">f</span><span class="c">ف</span></span>
+		<span class="g"><span class="hint">s</span><span class="c">س</span></span>
+		<span class="g"><span class="hint">ʃ</span><span class="c">ش</span></span>
+		<span class="g"><span class="hint">x</span><span class="c">خ</span></span>
+		<span class="g"><span class="hint">ħ</span><span class="c">ح</span></span>
+		<span class="g"><span class="hint">h</span><span class="c">ه</span></span>
+		<span class="g"><span class="hint">h</span><span class="c">ھ</span></span>
+		</div>
+
+		<div class="bottomDivider">
+		<span class="g"><span class="hint">v</span><span class="c">ڤ</span></span>
+		<span class="g"><span class="hint">z</span><span class="c">ز</span></span>
+		<span class="g"><span class="hint">ʒ</span><span class="c">ژ</span></span>
+		<span class="g"><span class="hint">ɣ</span><span class="c">غ</span></span>
+		<span class="g"><span class="hint">ʕ</span><span class="c">ع</span></span>
+		<span class="g"><span class="hint"></span><span class="c"> </span></span>
+		</div>
+
+
+        <div style="justify-content: space-around;">
+		<span class="g"><span class="hint">m</span><span class="c">م</span></span>
+		<span class="g"><span class="hint">n</span><span class="c">ن</span></span>
+		<span class="g"><span class="hint">ng</span><span class="c">نٚ</span></span>
+        </div>
+
+        <div style="justify-content: space-around;">
+		<span class="g"><span class="hint">w</span><span class="c">و</span></span>
+		<span class="g"><span class="hint">ɾ</span><span class="c">ر</span></span>
+		<span class="g"><span class="hint">r</span><span class="c">ڕ</span></span>
+		<span class="g"><span class="hint">l</span><span class="c">ل</span></span>
+		<span class="g"><span class="hint">ɫ</span><span class="c">ڵ</span></span>
+		<span class="g"><span class="hint">y</span><span class="c">ی</span></span>
+        </div>
+        </div>
+  
+  
+  
+  
+  
+    
+   
+   
+     <div id="carriers" class="box">   
+	 	<div>
+		<span class="g"><span class="hint">vcarrier</span><span class="c">ئ</span></span>
+		</div>
+        </div>
+
+
+
+   
+   
+     <div id="vowelGrid" class="box">   
+	 	<div>
+		<span class="g"><span class="hint">iː</span><span class="c">ی</span></span>
+		<span class="g"><span class="hint">u</span><span class="c">وو</span></span>
+		</div>
+	 	<div class="bottomDivider">
+		<span class="g"><span class="hint">yː</span><span class="c">ۊ</span></span>
+		<span class="g"><span class="hint">ʊ</span><span class="c">و</span></span>
+		</div>
+		<div class="bottomDivider">
+		<span class="g"><span class="hint">eː</span><span class="c">ێ</span></span>
+		<span class="g"><span class="hint">oː</span><span class="c">ۆ</span></span>
+		</div>
+		
+		<div class="bottomDivider">
+		<span class="g"><span class="hint">ɛ</span><span class="c">ە</span></span>
+		<span class="g"><span class="hint">ɑː</span><span class="c">ا</span></span>
+		</div>
+		
+        </div>
+  
+   
+   
+     <div id="tones" class="box">   
+	 	<div>
+		<span class="g"><span class="hint">sukun</span><span class="c">&#x0652;</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">e</span><span class="c">&#x0651;</span></span>
+		</div>
+        </div>
+
+
+
+<div id="numberGrid" dir="ltr">
+	<div id="digitKeypad" class="box">
+		<div>
+        <span class="g"><span class="hint">1</span><span class="c">۱</span></span>
+        <span class="g"><span class="hint">2</span><span class="c">۲</span></span>
+        <span class="g"><span class="hint">3</span><span class="c">۳</span></span>
+		</div>
+		<div>
+        <span class="g"><span class="hint">4</span><span class="c">۴</span></span>
+        <span class="g"><span class="hint">5</span><span class="c">۵</span></span>
+        <span class="g"><span class="hint">6</span><span class="c">۶</span></span>
+		</div>
+      <div>
+        <span class="g"><span class="hint">7</span><span class="c">۷</span></span>
+        <span class="g"><span class="hint">8</span><span class="c">۸</span></span>
+        <span class="g"><span class="hint">9</span><span class="c">۹</span></span>
+        </div>
+		<div>
+        <span class="g"><span class="hint">0</span><span class="c">۰</span></span>
+		<span class="c">,</span> <span class="c">.</span> 
+		</div>
+		</div>
+	<!--div id="symbols">
+		<div style="margin-top: .5em; font-size: 80%;">
+         <span class="c">&#x0600;</span>
+         <span class="c">&#x0601;</span>
+         <span class="c">&#x0602;</span><br>
+         <span class="c">&#x060E;</span>
+         <span class="c">&#x0603;</span>
+         <span class="c">&#x060F;</span>
+		</div>
+	<div><span class="c">ໆລໆ</span></div>
+	</div-->
+</div>
+	
+</div>
+
+
+
+<div id="punctuation">  
+         <span class="c">&#x060C;</span>
+         <span class="c">.</span>
+         <span class="c">&#x061B;</span>
+        <span class="c">:</span>
+        <span class="c">&#x061F;</span>
+         <span class="c">&#x060D;</span>
+         <span class="c">&#x066A;</span>
+         <span class="c">&#x0640;</span>
+         
+         <span class="c">&#x00AB;</span>
+         <span class="c">&#x00BB;</span>
+         <span class="c">&#x2039;</span>
+         <span class="c">&#x203A;</span>
+         <span class="c">(</span>
+         <span class="c">)</span>
+         <span class="c">ˈ</span>
+         </div>
+
+
+<details>
+<summary style="text-align: center;">infrequent characters</summary>
+<table id="rare"><tbody>
+<tr>
+<td>
+<span class="g"><span class="hint">r</span><span class="c">ڒ</span></span>
+<span class="g"><span class="hint">r</span><span class="c">ڔ</span></span>
+<span class="g"><span class="hint">ɫ</span><span class="c">ڶ</span></span>
+<span class="g"><span class="hint">ɫ</span><span class="c">ڷ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ك</span></span>
+<!--span class="g"><span class="hint">Allāh</span><span class="c">اللّٰه</span></span--></td>
+</tr>
+</tbody></table> 
+</details>
+
+
+</div><!-- end of alphabet -->
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
