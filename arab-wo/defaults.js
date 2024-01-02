@@ -33,7 +33,7 @@ var template = {}
 	template.scriptcode = 'Arab'
 	template.fontLocale = "arab"
 	template.hints = true
-	template.bicameral = true
+	template.bicameral = false
 
 	
 	template.defaultSpace = ' '
