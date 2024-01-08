@@ -1,13 +1,12 @@
 @font-face {
     font-family: 'Scheherazade WF';
-    src: url('../../shared/webfonts/scheherazaderegotwebfont.woff2') format('woff2'),
-         url('../../shared/webfonts/scheherazaderegotwebfont.woff') format('woff');
+    src: url('../../shared/webfonts/scheherazaderegotwebfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Alkalami WF';
-    src: url('../../shared/webfonts/Alkalami-Regular.woff') format('woff');
+    src: url('../../shared/webfonts/alkalami-regular-webfont.woff2') format('woff');
     font-weight: normal;
     font-style: normal;
 	}
