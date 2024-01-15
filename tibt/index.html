@@ -11,6 +11,7 @@
 <script src="defaults.js">  </script>
 <script src="../../shared/fontdb/db.js"> </script>
 <script src="../../shared/scriptdb/tibt.js">  </script>
+<script src="../../scripts/tibt/bo-sets.js">  </script>
 
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -55,7 +56,7 @@
 <div id="alphabet" class="default">
 
 <div class="spaceline">
-<span class="touch" dir="auto" onclick="toggleSubjoined(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SUBJ</span>
+<!--span class="touch" dir="auto" onclick="toggleSubjoined(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SUBJ</span-->
 <span class="touch" dir="auto" onclick="console.log(this.classList); toggleExtended(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">EXT</span>
 
 <span class="touch" title="Space" style="padding: 5px 60px;" dir="auto" onClick="add(' ');">SPACE</span>
@@ -67,76 +68,99 @@
 
 
 <div id="kbdGrid">
+<div id="prefixes">
+	<span class="b"><span class="hint"></span><span class="c">ག</span></span>
+	<span class="b"><span class="hint"></span><span class="c">ད</span></span>
+	<span class="b"><span class="hint"></span><span class="c">བ</span></span>
+	<span class="b"><span class="hint"></span><span class="c">མ</span></span>
+	<span class="b"><span class="hint"></span><span class="c">འ</span></span>
+</div>
+
+
+
 <div id="consonantGrid">
+<div id="superscripts" style="justify-content: center;">
+	<span class="b"><span class="hint"></span><span class="c">ར</span></span>
+	<span class="b"><span class="hint"></span><span class="c">ལ</span></span>
+	<span class="b"><span class="hint"></span><span class="c">ས</span></span>
+</div>
+
+
+
+<div class="boxed" style="display: flex;flex-direction: column;">
 <div>
-	<span class="g"><span class="hint">p</span><span class="c">པ</span></span>
-	<span class="g"><span class="hint">b</span><span class="c">བ</span></span>
-	<span class="g"><span class="hint">pʰ</span><span class="c">ཕ</span></span>
-	<span class="g x"><span class="hint">bʰ</span><span class="c">བྷ</span></span>
-	<span class="g"><span class="hint">t</span><span class="c">ཏ</span></span>
-	<span class="g"><span class="hint">d</span><span class="c">ད</span></span>
-	<span class="g"><span class="hint">tʰ</span><span class="c">ཐ</span></span>
-	<span class="g x"><span class="hint">dh̽</span><span class="c">དྷ</span></span>
-	<span class="g"><span class="hint">k</span><span class="c">ཀ</span></span>
-	<span class="g"><span class="hint">g</span><span class="c">ག</span></span>
-	<span class="g"><span class="hint">kʰ</span><span class="c">ཁ</span></span>
+	<span class="g"><span class="hint">k</span><span class="c">ཀ</span><span class="c">&#x0F90;</span></span>
+	<span class="g"><span class="hint">kʰ</span><span class="c">ཁ</span><span class="c x">&#x0F91;</span></span>
+	<span class="g"><span class="hint">g</span><span class="c">ག</span><span class="c">&#x0F92;</span></span>
+	<span class="g x"><span class="hint">gh̽</span><span class="c">གྷ</span><span class="c">&#x0F92;&#x0FB7;</span></span>
 	<span class="g x"><span class="hint">q</span><span class="c">ཫ</span></span>
-	<span class="g x"><span class="hint">gh̽</span><span class="c">གྷ</span></span>
+
+	<span class="g"><span class="hint">ʧ</span><span class="c">&#x0F45;</span><span class="c">&#x0F95;</span></span>
+	<span class="g"><span class="hint">ʧʰ</span><span class="c">&#x0F46;</span><span class="c x">&#x0F96;</span></span>
+	<span class="g"><span class="hint">ʤ</span><span class="c">&#x0F47;</span><span class="c">&#x0F97;</span></span>
+
+	<span class="g"><span class="hint">t</span><span class="c">ཏ</span><span class="c">&#x0F9F;</span></span>
+	<span class="g"><span class="hint">tʰ</span><span class="c">ཐ</span><span class="c x">&#x0FA0;</span></span>
+	<span class="g"><span class="hint">d</span><span class="c">ད</span><span class="c">&#x0FA1;</span></span>
+	<span class="g x"><span class="hint">dh̽</span><span class="c">དྷ</span><span class="c">&#x0FA1;&#x0FB7;</span></span>
 </div>
-<div style="justify-content: space-around;">
-	<span class="g x"><span class="hint">ʈ</span><span class="c">ཊ</span></span>
-	<span class="g x"><span class="hint">ʈʰ</span><span class="c">ཋ</span></span>
-	<span class="g x"><span class="hint">ɖ</span><span class="c">ཌ</span></span>
-	<span class="g x"><span class="hint">ɖʰ</span><span class="c">ཌྷ</span></span>
+<div class="bottomDivider">
+    <span class="g"><span class="hint">p</span><span class="c">པ</span><span class="c">&#x0FA4;</span></span>
+	<span class="g"><span class="hint">pʰ</span><span class="c">ཕ</span><span class="c x">&#x0FA5;</span></span>
+	<span class="g"><span class="hint">b</span><span class="c">བ</span><span class="c">&#x0FA6;</span></span>
+	<span class="g x"><span class="hint">bʰ</span><span class="c">བྷ</span><span class="c">&#x0FA6;&#x0FB7;</span></span>
+
+	<span class="g"><span class="hint">ʦ</span><span class="c">&#x0F59;</span><span class="c">&#x0FA9;</span></span>
+	<span class="g"><span class="hint">ʦʰ</span><span class="c">&#x0F5A;</span><span class="c x">&#x0FAA;</span></span>
+	<span class="g"><span class="hint">ʣ</span><span class="c">&#x0F5B;</span><span class="c">&#x0FAB;</span></span>
+	<span class="g x"><span class="hint">ʣʰ</span><span class="c">&#x0F5B;&#x0FB7;</span><span class="c">&#x0FAB;&#x0FB7;</span></span>
+	<span class="g x"><span class="hint">kˢ</span><span class="c">&#x0F40;&#x0FB5;</span><span class="c">&#x0F90;&#x0FB5;</span></span>
 </div>
-<div class="bottomDivider" style="justify-content: space-around;">
-	<span class="g"><span class="hint">ʦ</span><span class="c">&#x0F59;</span></span>
-	<span class="g"><span class="hint">ʣ</span><span class="c">&#x0F5B;</span></span>
-	<span class="g"><span class="hint">ʦʰ</span><span class="c">&#x0F5A;</span></span>
-	<span class="g x"><span class="hint">ʣʰ</span><span class="c">&#x0F5B;&#x0FB7;</span></span>
-	<span class="g"><span class="hint">ʧ</span><span class="c">&#x0F45;</span></span>
-	<span class="g"><span class="hint">ʤ</span><span class="c">&#x0F47;</span></span>
-	<span class="g"><span class="hint">ʧʰ</span><span class="c">&#x0F46;</span></span>
-	<span class="g x"><span class="hint">kˢ</span><span class="c">&#x0F40;&#x0FB5;</span></span>
+<div class="">
+	<span class="g x"><span class="hint">ʈ</span><span class="c">ཊ</span><span class="c">&#x0F9A;</span></span>
+	<span class="g x"><span class="hint">ʈʰ</span><span class="c">ཋ</span><span class="c">&#x0F9B;</span></span>
+	<span class="g x"><span class="hint">ɖ</span><span class="c">ཌ</span><span class="c">&#x0F9C;</span></span>
+	<span class="g x"><span class="hint">ɖʰ</span><span class="c">ཌྷ</span><span class="c">&#x0F9C;&#x0FB7;</span></span>
 </div>
-<div class="bottomDivider" style="justify-content: space-around;">
-	<span class="g x"><span class="hint">f</span><span class="c">&#x0F55;&#x0F39;</span></span>
-	<span class="g x"><span class="hint">v</span><span class="c">&#x0F56;&#x0F39;</span></span>
-	<span class="g"><span class="hint">s</span><span class="c">&#x0F66;</span></span>
-	<span class="g"><span class="hint">z</span><span class="c">&#x0F5F;</span></span>
-	<span class="g"><span class="hint">ʃ</span><span class="c">&#x0F64;</span></span>
-	<span class="g"><span class="hint">ʒ</span><span class="c">&#x0F5E;</span></span>
-	<span class="g x"><span class="hint">ʂ</span><span class="c">&#x0F65;</span></span>
-	<span class="g"><span class="hint">h</span><span class="c">&#x0F67;</span></span>
+<div class="bottomDivider">
+	<span class="g x"><span class="hint">f</span><span class="c">&#x0F55;&#x0F39;</span><span class="c">&#x0F55;&#x0F39;</span></span>
+	<span class="g x"><span class="hint">v</span><span class="c">&#x0F56;&#x0F39;</span><span class="c">&#x0F56;&#x0F39;</span></span>
+	<span class="g"><span class="hint">s</span><span class="c">&#x0F66;</span><span class="c x">&#x0FB6;</span></span>
+	<span class="g"><span class="hint">z</span><span class="c">&#x0F5F;</span><span class="c x">&#x0FAF;</span></span>
+	<span class="g"><span class="hint">ʃ</span><span class="c">&#x0F64;</span><span class="c x">&#x0FB4;</span></span>
+	<span class="g"><span class="hint">ʒ</span><span class="c">&#x0F5E;</span><span class="c x">&#x0FAE;</span></span>
+	<span class="g x"><span class="hint">ʂ</span><span class="c">&#x0F65;</span><span class="c">&#x0FB5;</span></span>
+	<span class="g"><span class="hint">h</span><span class="c">&#x0F67;</span><span class="c x">&#x0FB7;</span></span>
 </div>
-<div style="justify-content: space-around;">
-	<span class="g"><span class="hint">m</span><span class="c">&#x0F58;</span></span>
-	<span class="g"><span class="hint">n</span><span class="c">&#x0F53;</span></span>
-	<span class="x">&nbsp;&nbsp;&nbsp;</span>
-	<span class="g"><span class="hint">ɲ</span><span class="c">&#x0F49;</span></span>
-	<span class="g x"><span class="hint">ɳ</span><span class="c">&#x0F4E;</span></span>
-	<span class="g"><span class="hint">ŋ</span><span class="c">&#x0F44;</span></span>
+<div class="">
+	<span class="g"><span class="hint">m</span><span class="c">&#x0F58;</span><span class="c">&#x0FA8;</span></span>
+	<span class="g"><span class="hint">n</span><span class="c">&#x0F53;</span><span class="c">&#x0FA3;</span></span>
+	<span class="g"><span class="hint">ɲ</span><span class="c">&#x0F49;</span><span class="c">&#x0F99;</span></span>
+	<span class="g x"><span class="hint">ɳ</span><span class="c">&#x0F4E;</span><span class="c">&#x0F9E;</span></span>
+	<span class="g"><span class="hint">ŋ</span><span class="c">&#x0F44;</span><span class="c">&#x0F94;</span></span>
 </div>
-<div style="justify-content: space-around;">
+<div class="">
 	<span class="g"><span class="hint">w</span><span class="c">&#x0F5D;</span></span>
 	<span class="g"><span class="hint">r</span><span class="c">&#x0F62;</span></span>
-	<span class="g x"><span class="hint">r̄</span><span class="c">&#x0F6A;</span></span>
+	<span class="g x"><span class="hint">r̄</span><span class="c">&#x0F6A;</span><span class="c">&#x0FBC;</span></span>
 	<span class="g x"><span class="hint">ɽ</span><span class="c">&#x0F6C;</span></span>
 	<span class="g"><span class="hint">l</span><span class="c">&#x0F63;</span></span>
 	<span class="g"><span class="hint">y</span><span class="c">&#x0F61;</span></span>
 </div>
-<div style="justify-content: space-around;">
-	<span class="g"><span class="hint">à</span><span class="c">&#x0F60;</span></span>
-	<span class="g"><span class="hint">ạ</span><span class="c">&#x0F68;</span></span>
-</div>
 </div>
 
 
 
 
+<div style="justify-content: center;"><!-- subscripts -->
+	<span class="g"><span class="hint">w</span><span class="c">ྭ</span></span>
+	<span class="g"><span class="hint">r</span><span class="c">ྲ</span></span>
+	<span class="g"><span class="hint">l</span><span class="c">ླ</span></span>
+	<span class="g"><span class="hint">j</span><span class="c">ྱ</span></span>
+</div>
+</div>
 
-
-<div id="subjoinedGrid" style="display: none">
+<!--div id="subjoinedGrid" style="display: none">
 <div>
 	<span class="g"><span class="hint">p</span><span class="c">&#x0FA4;</span></span>
 	<span class="g"><span class="hint">b</span><span class="c">&#x0FA6;</span></span>
@@ -152,7 +176,7 @@
 	<span class="g"><span class="hint">q</span><span class="c x"> </span></span>
 	<span class="g x"><span class="hint">gh&#x033D;</span><span class="c">&#x0F92;&#x0FB7;</span></span>
 </div>
-<div style="justify-content: space-around;">
+<div>
 	<span class="g x"><span class="hint">ʈ</span><span class="c">&#x0F9A;</span></span>
 	<span class="g x"><span class="hint">ʈʰ</span><span class="c">&#x0F9B;</span></span>
 	<span class="g x"><span class="hint">ɖ</span><span class="c">&#x0F9C;</span></span>
@@ -178,7 +202,7 @@
 	<span class="g x"><span class="hint">ʂ</span><span class="c">&#x0FB5;</span></span>
 	<span class="g"><span class="hint">h</span><span class="c">&#x0FB7;</span></span>
 </div>
- <div style="justify-content: space-around;">
+ <div>
 	<span class="g"><span class="hint">m</span><span class="c">&#x0FA8;</span></span>
 	<span class="g"><span class="hint">n</span><span class="c">&#x0FA3;</span></span>
 	<span class="g"><span class="hint">ɲ</span><span class="c">&#x0F99;</span></span>
@@ -193,20 +217,55 @@
 	<span class="g"><span class="hint">l</span><span class="c">&#x0FB3;</span></span>
 	<span class="g"><span class="hint">y</span><span class="c">&#x0FB1;</span><span class="c">&#x0FBB;</span></span>
 </div>
-<div style="justify-content: space-around;">
+<div>
 	<span class="g"><span class="hint">à</span><span class="c">&#x0FB0;</span></span>
 	<span class="g"><span class="hint">ạ</span><span class="c">&#x0FB8;</span></span>
 </div>
-</div>
-         
+</div-->
+
+
+
           
 <div id="commonvowels">
+	<span class="g"><span class="hint">à</span><span class="c">&#x0F60;</span></span>
+	<span class="g" style="margin-block-end:1rem;"><span class="hint">ạ</span><span class="c">&#x0F68;</span></span>
 	<span class="g"><span class="hint">i</span><span class="c">&#x0F72;</span></span>
 	<span class="g"><span class="hint">u</span><span class="c">&#x0F74;</span></span>
 	<span class="g"><span class="hint">e</span><span class="c">&#x0F7A;</span></span>
 	<span class="g"><span class="hint">o</span><span class="c">&#x0F7C;</span></span>
 	<span class="g"><span class="hint">à</span><span class="c">&#x0F71;</span></span>
 </div>
+
+
+
+
+
+
+
+<div id="suffixes">
+<div>
+	<span class="g"><span class="hint">p</span><span class="c">བ</span></span>
+	<span class="b"><span class="hint">-</span><span class="c">ད</span></span>
+	<span class="b"><span class="hint">g</span><span class="c">ག</span></span>
+</div>
+<div>
+	<span class="g"><span class="hint">m</span><span class="c">མ</span></span>
+	<span class="g"><span class="hint">n</span><span class="c">ན</span></span>
+	<span class="g"><span class="hint">ng</span><span class="c">ང</span></span>
+</div>
+<div>
+	<span class="b"><span class="hint">-</span><span class="c">ས</span></span>
+</div>
+<div>
+	<span class="g"><span class="hint">r</span><span class="c">ར</span></span>
+	<span class="g"><span class="hint">l</span><span class="c">ལ</span></span>
+	<span class="g"><span class="hint">a</span><span class="c">འ</span></span>
+</div>
+</div>
+
+
+
+
 
 <div id="tsek">
 <span class="c" style="padding: 0 6px;">&#x0F0C;</span>
@@ -218,26 +277,26 @@
     
 
           <table id="numbers" style="margin: 0 10px 10px 0;"><tbody>
-          <tr>
-          <td><span class="g"><span class="hint">1</span><span class="c">&#x0F21;</span></span></td>
-          <td><span class="g"><span class="hint">2</span><span class="c">&#x0F22;</span></span></td>
-          <td><span class="g"><span class="hint">3</span><span class="c">&#x0F23;</span></span></td>
-          </tr>
-          <tr>
-          <td><span class="g"><span class="hint">4</span><span class="c">&#x0F24;</span></span></td>
-          <td><span class="g"><span class="hint">5</span><span class="c">&#x0F25;</span></span></td>
-          <td><span class="g"><span class="hint">6</span><span class="c">&#x0F26;</span></span></td>
-          </tr>
-          <tr>
+        <tr>
           <td><span class="g"><span class="hint">7</span><span class="c">&#x0F27;</span></span></td>
           <td><span class="g"><span class="hint">8</span><span class="c">&#x0F28;</span></span></td>
           <td><span class="g"><span class="hint">9</span><span class="c">&#x0F29;</span></span></td>
           </tr>
-          <tr>
-          <td></td>
+        <tr>
+          <td><span class="g"><span class="hint">4</span><span class="c">&#x0F24;</span></span></td>
+          <td><span class="g"><span class="hint">5</span><span class="c">&#x0F25;</span></span></td>
+          <td><span class="g"><span class="hint">6</span><span class="c">&#x0F26;</span></span></td>
+          </tr>
+        <tr>
+          <td><span class="g"><span class="hint">1</span><span class="c">&#x0F21;</span></span></td>
+          <td><span class="g"><span class="hint">2</span><span class="c">&#x0F22;</span></span></td>
+          <td><span class="g"><span class="hint">3</span><span class="c">&#x0F23;</span></span></td>
+          </tr>
+         <tr>
           <td><span class="g"><span class="hint">0</span><span class="c">&#x0F20;</span></span></td>
           <td></td>
-          </tr>
+           <td></td>
+         </tr>
           </tbody></table>
           
         <div id="morepunctuation">

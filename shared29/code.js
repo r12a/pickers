@@ -4879,6 +4879,40 @@ function applyVariantEastAsian () {
 
 
 
+function showLocationInText (needle) {
+    // indicate location of a regular expression value in the text area
+
+    var out = ''
+    
+    // clear any existing indicators
+    _output.value = _output.value.replace(/✅/g,'')
+    var haystack = _output.value
+    
+    // bail if no new search specified
+    if (needle === '') return
+    
+    // otherwise search for the regex
+    
+    
+    // fold in the sets
+    if (typeof collections !== 'undefined') {
+        for (var set=0;set<collections.length;set++) {
+            findme = new RegExp(collections[set].symbol, 'g')
+            needle = needle.replace(findme, collections[set].chars)
+            }
+        }
+    
+    let re = new RegExp(needle, 'g')
+    out = haystack.replace(re, '$&' + '✅')
+    _output.value = out
+
+    var listOfMatches = out.match(re)
+    if (listOfMatches) count = listOfMatches.length
+    else count = 0
+    document.getElementById('find_report').textContent = 'Found: '+count
+	}
+
+
 
 
 

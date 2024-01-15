@@ -1122,12 +1122,40 @@ out = `
 
 
 
-<div class="control" onmouseover="showMenuText('Highlight items in the selection area that have the text specified. Regular expressions work.','tan');" onmouseout="hideMenuText()">Search for:
-    <form action="none" onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
-      <input name="search" id="search"  type="text" style="width: 7em;" placeholder="Regex ok">
-      <img src="../images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
-    </form>
-  </div>
+<div class="control" onmouseover="showMenuText('Find things in the text area. Regular expressions work.','tan');" onmouseout="hideMenuText()"><span style="float:right;" id="find_report"></span>Search text: `
+
+if (typeof collections !== 'undefined' && collections.length > 0) out += `<span title="Show a list of character sets that can be included in regular expressions." style="cursor:pointer;" onclick="document.getElementById('searchSets').style.display='block'">▼</span>`
+
+out += `
+<div>
+<input id="searchText"  type="text" style="width: 7em;" placeholder="Regex ok">
+<button onclick="showLocationInText(getElementById('searchText').value)">Go</button>
+<button onclick="showLocationInText(''); document.getElementById('searchSets').style.display='none'" alt="Clear search results." title="Clear search results.">X</button>
+</div>
+</div>
+
+
+
+
+<!--div class="control" onmouseover="showMenuText('Find things in the text area. Regular expressions work.','tan');" onmouseout="hideMenuText()">Search text for:
+<form action="none" onsubmit="showLocationInText(getElementById('searchText').value); return false;">
+<input id="searchText"  type="text" style="width: 7em;" placeholder="Regex ok">
+<button>Go</button>
+<button onclick="getElementById('searchText').value=''" alt="Clear search results." title="Clear search results.">X</button>
+</form>
+</div-->
+
+
+
+
+<!--div class="control" onmouseover="showMenuText('Find things in the text area. Regular expressions work.','tan');" onmouseout="hideMenuText()">Search text for:
+<form action="none" onsubmit="showLocationInText(getElementById('searchText').value); return false;">
+<input id="searchText"  type="text" style="width: 7em;" placeholder="Regex ok">
+<button onclick="showLocationInText(getElementById('searchText').value)">Go</button>
+<img src="../images/clearsearch.png" onclick="showLocationInText('');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results.">
+<button onclick="showLocationInText('');" alt="Clear search results." title="Clear search results.">X</button>
+</form>
+</div-->
   
 
 
@@ -1145,6 +1173,26 @@ out = `
 </div>
 </div>
 `
+
+
+
+
+var setMarkup = ''
+if (typeof collections !== 'undefined' && collections.length > 0) {
+    for (set=0;set<collections.length; set++) {
+        setMarkup += `<div class="set"><span class="symbol" onclick="navigator.clipboard.writeText(this.textContent)" style="cursor:copy;">${ collections[set].symbol }</span> <span class="desc">${ collections[set].desc }</span> <span class="sets">${ collections[set].chars }</span></div>`
+        }
+    }
+
+
+out += `
+<div id="searchSets" style="display:none;">
+<p class="set">Use the following circled characters to represent sets in the search regular expression.</p>
+${ setMarkup }
+</div>
+`
+
+
 
 out += `
 <details>
@@ -1203,6 +1251,16 @@ out += `<input style="display:none" name="fontSize" value="35" id="fontSize" siz
   <button onClick="setFallback(document.getElementById('fontList').value, document.getElementById('fallback').value)">Set</button>
 </form>
 </div>
+
+
+
+
+<div class="control" onmouseover="showMenuText('Highlight items in the selection area that have the text specified. Regular expressions work.','tan');" onmouseout="hideMenuText()">Search panel for:
+    <form action="none" onsubmit="searchFor(getElementById('search').value, 'myanmar'); return false;">
+      <input name="search" id="search"  type="text" style="width: 7em;" placeholder="Regex ok">
+      <img src="../images/clearsearch.png" onclick="searchFor('xxxxxx', 'myanmar');" style="cursor: pointer; vertical-align:top; margin:0 0px 0 0; border:0; padding:0; height: 15px;" alt="Clear search results." title="Clear search results." />
+    </form>
+  </div>
 
 </details>
 

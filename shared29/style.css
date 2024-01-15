@@ -1787,7 +1787,21 @@ rt {
 
 
 
-
+/* styles for character sets in search */
+#searchSets {
+    text-align: start;
+    }
+#searchSets .set {
+    font-size: 85%;
+    margin-inline: 7rem;
+    line-height: 1.4;
+	}
+#searchSets .sets {
+	letter-spacing: .3em;
+	}
+#searchSets .symbol {
+    cursor: copy;
+    }
 
 
 
