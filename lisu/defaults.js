@@ -27,8 +27,8 @@ var template = {}
 	template.sample = "ꓞꓳ ꓘꓹ ꓠꓯꓹꓼ ꓢꓲ ꓫꓬ ꓟ ꓙ ꓖꓴ ꓗꓪ ꓟꓬꓱꓽ ꓧꓳꓽ ꓢꓴ ꓠꓬ꓾ ꓞꓳ ꓘꓹ ꓗꓪ ꓟ ꓞꓳ ꓟ ꓐꓴ ꓔꓯ ꓮ ꓡꓲ ꓬꓰ ꓠꓯꓹ ꓟ꓾ ꓟꓬꓱꓽ ꓔꓯ ꓧꓳꓽ ꓪꓴꓸ ꓟꓴ ꓢꓴ ꓬꓲ ꓜꓴꓻ ꓤ (Committee) ꓕꓲ ꓜꓴꓻ ꓢꓲꓺ ꓖꓶ ꓠꓯꓹ ꓡꓳ꓿"
 	template.sampleSource = 'http://www.evertype.com/standards/iso10646/pdf/fraser-sample.pdf'
 	template.blocklocation= 'lisu'  // block directory
-	template.noteslocation = '' // location of script notes
-	template.vocablocation = '' // location of term database
+	template.noteslocation = 'lisu/lis' // location of script notes
+	template.vocablocation = 'lisu/lis_vocab' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'lisu'
 	template.scriptcode = 'Lisu'
@@ -53,6 +53,7 @@ var controls = [
 
 var pulldown = [
 {"title":"Translit+", "alt":"Convert to a Latin transliteration but then apply additional phonetic transformations.", "code":"doTranscription('translitplus')", "warning":"Adds IPA tone markers. No inherent vowel added."},
+{"title":"Fraser to Lisu", "alt":"Convert Fraser's Latin transcription to Lisu characters.", "code":"doTranscription('transcToLisu')", "warning":"Use full sized numbers for tones!"},
 ]
 
 
