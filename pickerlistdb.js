@@ -113,6 +113,7 @@ var plist = [
     { tag:'thai', name:'Thai', url:'thai/index.html' },
     { tag:'tibt', name:'Tibetan', url:'tibt/index.html' },
     { tag:'ugar', name:'Ugaritic', url:'ugar/index.html' },
+    { tag:'wcho', name:'Wancho', url:'wcho-nnp/index.html' },
     { tag:'vaii', name:'Vai', url:'vai/index.html' },
     { tag:'yezi', name:'Yezidi', url:'yezi' },
 ]
@@ -459,6 +460,11 @@ var plistByRegion = {
 				[']'],
 			['• <b>Ugaritic</b> ['],
 				['Ugaritic','ugar/index.html'],
+				[']'],
+			],
+	'W':[
+			['<b>Wancho</b> ['],
+				['Wancho', 'wcho-nnp/index.html'],
 				[']'],
 			],
 	'V':[
