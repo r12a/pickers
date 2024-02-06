@@ -19,8 +19,11 @@ span.hint {
 	color:tan;
 	}
 .c { 
-	min-width: .75em;
+	min-width: .5em;
 	text-align: center;
+	}
+span.x {
+	color: chocolate;
 	}
 
     
@@ -48,7 +51,7 @@ span.hint {
 #ivowelGrid {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 	margin-right: 1em;
     }
 #consonantGrid {
@@ -95,7 +98,7 @@ span.hint {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content:center;
     text-align: end;
 	margin: 0 .5em;
     }
@@ -109,7 +112,6 @@ span.hint {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 1.5em;
     justify-content: center;
     margin-left: 0;
     }
