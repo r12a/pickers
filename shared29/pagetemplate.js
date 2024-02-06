@@ -393,8 +393,10 @@ out += `
 
 <button  id="sortWord" type="button" onclick="document.getElementById('output').value = sortOutput(document.getElementById('output').value, unique=false, word=true)" title="Split on white space and sort in ascending order of Unicode code position." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Word sort</button>
 
+<button  id="sortAllIPA" type="button" onclick="document.getElementById('output').value = sortByIPA(document.getElementById('output').value)" title="Sort space-separated items to reflect articulatory order in IPA." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">IPA sort</button>
+
 <button  id="showDB" type="button" onclick="
-	out=''; console.log(spreadsheetRows.length)
+	out='';
 	exclusions=new Set(['o','d','u','?','a']); 
 	for (ch in spreadsheetRows) {
 		if (! exclusions.has(spreadsheetRows[ch][cols['status']]) && ! ch.includes('var')) out+=ch;
@@ -402,6 +404,17 @@ out += `
 	document.getElementById('output').value = sortOutput(out, unique=true, word=true).replace(/ /g,'')
 	"
 	title="Show all characters in the database currently used in this orthography." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">List db characters</button>
+
+<button  id="showPC" type="button" onclick="
+	out=''; 
+	chs=document.querySelectorAll('.c,.v'); 
+	for (i=0;i<chs.length;i++) {
+		out += chs[i].textContent;
+		} 
+	document.getElementById('output').value = sortOutput(out, unique=true, word=true).replace(/ /g,'')
+	"
+	title="Show all characters in this picker's selection table." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">List picker characters</button>
+
 
 <button  id="showIPA" type="button" 
 onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false); document.getElementById('transcriptionWrapper').style.display='none'; sieveForIPA();" 

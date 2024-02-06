@@ -4922,6 +4922,71 @@ function showLocationInText (needle) {
 
 
 
+function sortByIPA (str) {
+    // take a list of space-separated items from the text area and reorder them by IPA articulatory position
+    
+    var ipaOrder = {
+    "p":{}, "b":{}, "t":{}, "d":{}, "ʈ":{}, "ɖ":{}, "c":{}, "ɟ":{}, "k":{}, "ɡ":{}, "q":{}, "ɢ":{}, "ʡ":{}, "ʔ":{}, "ɓ":{}, "ɗ":{}, "ʄ":{}, "ɠ":{}, "ʛ":{}, "t͡s":{}, "d͡z":{}, "t͡ʃ":{}, "d͡ʒ":{}, "ʈ͡ʂ":{}, "ɖ͡ʐ":{}, "t͡ɕ":{}, "d͡ʑ":{}, "ɸ":{}, "β":{}, "f":{}, "v":{}, "θ":{}, "ð":{}, "s":{}, "z":{}, "ʃ":{}, "ʒ":{}, "ʂ":{}, "ʐ":{}, "ɕ":{}, "ʑ":{}, "ç":{}, "ʝ":{}, "x":{}, "ɣ":{}, "χ":{}, "ʁ":{}, "ħ":{}, "ʕ":{}, "h":{}, "ɦ":{}, "m":{}, "ɱ":{}, "n":{}, "ɳ":{}, "ɲ":{}, "ŋ":{}, "ɴ":{}, "ʍ":{}, "w":{}, "ʋ":{}, "ɹ":{}, "l":{}, "ɫ":{}, "ɻ":{}, "j":{}, "ɰ":{}, "ʙ":{}, "ⱱ":{}, "r":{}, "ɾ":{}, "ɽ":{}, "ʀ":{}, "ʜ":{}, "ʢ":{}, "ɬ":{}, "ɮ":{}, "ɺ":{}, "ɭ":{}, "ʎ":{}, "ʟ":{}, "ʘ":{}, "ǀ":{}, "ǃ":{}, "ǁ":{}, "ǂ":{}, "ɥ":{}, "t͡p":{}, "d͡b":{}, "k͡p":{}, "ɡ͡b":{}, "ɧ":{},
+
+    "i":{}, "y":{}, "ɨ":{}, "ʉ":{}, "ɯ":{}, "u":{}, "ɪ":{}, "ʏ":{}, "ʊ":{}, "e":{}, "ø":{}, "ɘ":{}, "ɵ":{}, "ɤ":{}, "o":{}, "ə":{}, "ɛ":{}, "œ":{}, "ɜ":{}, "ɞ":{}, "ʌ":{}, "ɔ":{}, "æ":{}, "ɐ":{}, "a":{}, "ɶ":{}, "ɑ":{}, "ɒ":{}
+    }
+
+    // make sure all items are separated by a single space
+    str = str.replace(/\s+/g,' ')
+    
+    var items = str.split(' ')
+    var unidentified = ''
+    
+    for (i=0;i<items.length;i++) {
+        // get the ipa value of items.i from the spreadsheet, if there is one
+        // only take the initial phone if there are more than one
+        if (spreadsheetRows[items[i]] && spreadsheetRows[items[i]][cols.ipaLoc]) 
+        var ipa = spreadsheetRows[items[i]][cols.ipaLoc].split(' ')[0]
+        
+        if (ipaOrder[ipa]) {
+            if (ipaOrder[ipa].found) ipaOrder[ipa].found += items[i]+' '
+            else ipaOrder[ipa].found = items[i]+' '
+            }
+        else unidentified += items[i]+' '
+        }
+    
+    // try to put unidentified items in likely position, based on first character
+    var undefArray = unidentified.split(' ')
+    unidentified = ''
+    console.log(undefArray)
+    for (j=0;j<undefArray.length;j++) {
+        if (spreadsheetRows[undefArray[j]] && spreadsheetRows[undefArray[j]][cols.ipaLoc]) 
+        ipa = spreadsheetRows[undefArray[j]][cols.ipaLoc].split(' ')[0]
+        var first = ipa[0]
+        
+        if (ipaOrder[first]) {
+            if (ipaOrder[first].found) ipaOrder[first].found += undefArray[j]+' '
+            else ipaOrder[first].found = undefArray[j]+' '
+            }
+        else unidentified += undefArray[j]+' '
+        }
+    
+    out = ''
+    for (x in ipaOrder) {
+        if (ipaOrder[x].found) out += ipaOrder[x].found+' '
+        }
+    if (unidentified) out += ' + '+unidentified
+
+    out = out.replace(/\s+/g,' ').trim()
+
+    return out
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
