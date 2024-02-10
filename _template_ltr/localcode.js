@@ -3,9 +3,49 @@ globals.typeAssist = ''
 globals.showKeysTranslitToggle = false
 
 
-function localInitialise () {
 
+
+
+window.charCheckerList = [
+//{ wrong:"", right:"" },
+]
+
+
+
+
+
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`Namdhinggo SIL`
+
+
+function localInitialise () {
 	}
+	
+
+
+
+
+var _h = {
+end: {}
+}
+
+
+
+
+
+var keyboarddef = [
+"§|1 ꤁ !|2 ꤂ ꤮|3 ꤃ #|4 ꤄ :|5 ꤅ %|6 ꤆ “|7 ꤇ ”|8 ꤈ *|9 ꤉ (|0 ꤀ )|- - _|== +",
+"q ꤠ|w ꤎ|e ꤙ|r ꤚ|t ꤣ|y ꤤ|u ꤥ|i ꤞ|o ꤓ|p ꤑ|[ ꤘ|]",
+"a ꤊ|s ꤔ|d ꤛ|f ꤢ ꤢꤦ|g ꤩ ꤢꤧ|h ꤪ ꤢꤨ|j ꤒ ꤢꤩ|k ꤟ ꤢꤪ|l ꤕ|; ꤜ|' ꤍ|\\ \\",
+"`|z ꤡ|x ꤌ|c ꤏ|v ꤋ|b ꤗ|n ꤖ|m ꤝ|, ꤐ|. ,|/ ꤯"
+]
+// source: 
+
+
+
+
+
 
 function toggleExtended (node) {
     var chars = document.querySelectorAll('.x')
@@ -68,101 +108,6 @@ function toggleShift (node) {
 		}
 	}
 
-
-var _h = {
-'974': ['973', '93B', '93A', '93E', '93B'],
-'973': ['93B', '93A', '93E', '93B', '974'],
-'93B': ['93A', '93E', '93B', '974', '973'],
-'93A': ['93E', '93B', '974', '973', '93B'],
-'93E': ['93B', '974', '973', '93B', '93A'],
-'93B': ['974', '973', '93B', '93A', '93E'],
-'908': ['919', '939', '907'],
-'919': ['939', '907', '908'],
-'939': ['907', '908', '919'],
-'907': ['908', '919', '939'],
-'946': ['947', '94A', '94B', '90E'],
-'947': ['94A', '94B', '90E', '946'],
-'94A': ['94B', '90E', '946', '947'],
-'94B': ['90E', '946', '947', '94A'],
-'90E': ['946', '947', '94A', '94B'],
-'92B': ['915'],
-'915': ['92B'],
-'92A': ['925', '92F'],
-'925': ['92F', '92A'],
-'92F': ['92A', '925'],
-'938': ['92E'],
-'92E': ['938'],
-'92C': ['937', '935'],
-'937': ['935', '92C'],
-'935': ['92C', '937'],
-
-end: {}
-}
-
-
-var keyboarddef = [
-"§|1 ꤁ !|2 ꤂ ꤮|3 ꤃ #|4 ꤄ :|5 ꤅ %|6 ꤆ “|7 ꤇ ”|8 ꤈ *|9 ꤉ (|0 ꤀ )|- - _|== +",
-"q ꤠ|w ꤎ|e ꤙ|r ꤚ|t ꤣ|y ꤤ|u ꤥ|i ꤞ|o ꤓ|p ꤑ|[ ꤘ|]",
-"a ꤊ|s ꤔ|d ꤛ|f ꤢ ꤢꤦ|g ꤩ ꤢꤧ|h ꤪ ꤢꤨ|j ꤒ ꤢꤩ|k ꤟ ꤢꤪ|l ꤕ|; ꤜ|' ꤍ|\\ \\",
-"`|z ꤡ|x ꤌ|c ꤏ|v ꤋ|b ꤗ|n ꤖ|m ꤝ|, ꤐ|. ,|/ ꤯"
-]
-
-
-
-globals.showISOCharMap = ''
-
-var isoCharacterMap = `
-a ā ा ai ै au ौ
-A a अ ā आ ai ऐ au औ
-b b ब
-B bh भ
-c c च
-C ch छ
-d d द ḍ ड
-D dh ध ḍh ढ
-e ē े
-E ē ए
-f f \u095E
-g g ग ġ \u095A
-G gh घ
-h h ह ḥ ः
-i i ि ī ी
-I i इ ī ई
-j j ज
-J jh झ
-k k क
-K kh ख k͟h \u0959
-l l ल ḷ ळ
-m m म ṁ ं
-n n न ñ ञ ṇ ण
-N ṅ ङ ̃ ँ
-o ō ो
-O ō ओ
-p p प
-P ph फ
-q q \u0958
-r r र ṛ \u095C ṛh \u095D
-R r̥ ृ r̥̄ ॄ r̥ ऋ r̥̄ ॠ
-s s स ś श ṣ ष
-t t त ṭ ट
-T th थ ṭh ठ
-u u ु ū ू
-U u उ ū ऊ
-v v व
-y y य
-z z \u095B
-0 0 ०
-1 1 १
-2 2 २
-3 3 ३
-4 4 ४
-5 5 ५
-6 6 ६
-7 7 ७
-8 8 ८
-9 9 ९
-\\ ' ऽ
-`
 
 
 
