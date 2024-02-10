@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Cham character app 29</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared29/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="defaults.js">  </script>
+<script src="../../shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/cham-cjm.js">  </script>
+<script src="../../scripts/sund/cjm-sets.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared29/setup.js">  </script>
+<script src="../shared29/code.js">  </script>
+<script src="../shared29/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared29/pagetemplate.js">  </script>
+<script src="../../scripts/linkdata/linkdb.js"></script>
+<script src="localtranscription.js">  </script>
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+
+<div id="alphabet" class="default">
+
+
+<div id="shapelist">
+<div id="shapekeys">
+<span onclick="findShape('921,907,908','',true)">ड</span>
+<img alt=" " src="images/shape1.png" onclick="findShape('A986,A987,A99B','ꦆ,ꦇ,ꦛ',true)" />
+</div>
+<div id="extrashapes"></div>
+</div>
+<!--
+𐡡 𐡱 𐡪 𐡮
+𐡣 𐡪 𐡯 𐡰 𐡽 𐡴
+𐡳 𐡬 𐡶
+𐡦 𐡭 𐡥 𐡫
+𐡢
+𐡲 𐡧
+𐡶
+𐡵
+𐡤
+𐡩
+𐡨
+𐡠
+-->
+
+
+
+
+<div class="spaceline">
+<span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" style="padding: 5px 30px;" onClick="add('\u200B');" title="Zero-width space">ZWSP</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
+</div>
+
+<div id="formatchars" style="display: none; text-align: center; line-height: 1; margin-bottom: 1em;">
+<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
+<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
+<span class="touch" dir="auto" onClick="add('\u00A0');">NBSP</span> 
+<span class="touch" dir="auto" onClick="add('\u2067');">RLI</span>
+<span class="touch" dir="auto" onClick="add('\u2066');">LRI</span>
+<span class="touch" dir="auto" onClick="add('\u2068');">FSI</span>
+<span class="touch" dir="auto" onClick="add('\u2069');">PDI</span>
+<span class="touch" dir="auto" onClick="add('\u202B');">RLE</span>
+<span class="touch" dir="auto" onClick="add('\u202A');">LRE</span>
+<span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
+<span class="touch" dir="auto" onClick="add('\u200F');">RLM</span>
+<span class="touch" dir="auto" onClick="add('\u200E');">LRM</span>
+<span class="touch" dir="auto" onClick="add('\u034F');">CGJ</span>
+<span class="touch" dir="auto" onClick="add('\u061C');">ALM</span>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="kbdGrid"> 
+ 
+<div id="ivowelGrid">
+<div>
+<span class="g"><span class="hint">ị</span><span class="c">ꨁ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">ụ</span><span class="c">ꨂ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ẹ</span><span class="c">ꨃ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">ọ</span><span class="c">ꨅ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">ạ</span><span class="c">ꨀ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">ə̣ʲ</span><span class="c">ꨄ</span></span>
+</div>
+</div>
+
+<!--div id="pulli"><span class="c" style="line-height: 2; padding: 2em 5px; border: 1px dotted #999;">&#x094D;</span> &nbsp;
+<span class="c">&#x093C;</span></div-->
+
+
+<div id="consonantGrid">
+            <!--div>
+<span class="g"><span class="hint">p</span><span class="c">ꨚ</span></span>
+<span class="g"><span class="hint">p</span><span class="c">ꨛ</span></span>
+<span class="g"><span class="hint">b</span><span class="c">ꨝ</span></span>
+<span class="g"><span class="hint">ɓ</span><span class="c">ꨡ</span></span>
+<span class="g"><span class="hint">t</span><span class="c">ꨓ</span></span>
+<span class="g"><span class="hint">d</span><span class="c">ꨕ</span></span>
+<span class="g"><span class="hint">ɗ</span><span class="c">ꨙ</span></span>
+<span class="g"><span class="hint">c</span><span class="c">ꨌ</span></span>
+<span class="g"><span class="hint">dz</span><span class="c">ꨎ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ꨆ</span></span>
+<span class="g"><span class="hint">g</span><span class="c">ꨈ</span></span>
+           </div-->
+            <div>
+<span class="g"><span class="hint">p</span><span class="c">ꨚ</span></span>
+<span class="g"><span class="hint">p</span><span class="c">ꨛ</span></span>
+<span class="g"><span class="hint">t</span><span class="c">ꨓ</span></span>
+<span class="g"><span class="hint">c</span><span class="c">ꨌ</span></span>
+<span class="g"><span class="hint">k</span><span class="c">ꨆ</span></span>
+           </div>
+            <div>
+<span class="g"><span class="hint">b</span><span class="c">ꨝ</span></span>
+<span class="g"><span class="hint">ɓ</span><span class="c">ꨡ</span></span>
+<span class="g"><span class="hint">d</span><span class="c">ꨕ</span></span>
+<span class="g"><span class="hint">ɗ</span><span class="c">ꨙ</span></span>
+<span class="g"><span class="hint">dz</span><span class="c">ꨎ</span></span>
+<span class="g"><span class="hint">g</span><span class="c">ꨈ</span></span>
+           </div>
+             <!--div>
+<span class="g"><span class="hint">pʰ</span><span class="c">ꨜ</span></span>
+<span class="g"><span class="hint">bʰ</span><span class="c">ꨞ</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">ꨔ</span></span>
+<span class="g"><span class="hint">dʰ</span><span class="c">ꨖ</span></span>
+<span class="g"><span class="hint">cʰ</span><span class="c">ꨍ</span></span>
+<span class="g"><span class="hint">jʰ</span><span class="c">ꨏ</span></span>
+<span class="g"><span class="hint">kʰ</span><span class="c">ꨇ</span></span>
+<span class="g"><span class="hint">gʰ</span><span class="c">ꨉ</span></span>
+           </div-->
+             <div>
+<span class="g"><span class="hint">pʰ</span><span class="c">ꨜ</span></span>
+<span class="g"><span class="hint">tʰ</span><span class="c">ꨔ</span></span>
+<span class="g"><span class="hint">cʰ</span><span class="c">ꨍ</span></span>
+<span class="g"><span class="hint">kʰ</span><span class="c">ꨇ</span></span>
+           </div>
+             <div>
+<span class="g"><span class="hint">bʰ</span><span class="c">ꨞ</span></span>
+<span class="g"><span class="hint">dʰ</span><span class="c">ꨖ</span></span>
+<span class="g"><span class="hint">jʰ</span><span class="c">ꨏ</span></span>
+<span class="g"><span class="hint">gʰ</span><span class="c">ꨉ</span></span>
+           </div>
+            <div class="topDivider" style="justify-content: space-around">
+<span class="g"><span class="hint">s</span><span class="c">ꨦ</span></span>
+<span class="g"><span class="hint">s</span><span class="c">ꨧ</span></span>
+<span class="g"><span class="hint">h</span><span class="c">ꨨ</span></span>
+            </div>
+            <div class="topDivider">
+<span class="g"><span class="hint">m</span><span class="c">ꨟ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ꨗ</span></span>
+<span class="g"><span class="hint">ɲ</span><span class="c">ꨐ</span></span>
+<span class="g"><span class="hint">ŋ</span><span class="c">ꨑ</span></span>
+<span class="g"><span class="hint">ŋʰ</span><span class="c">ꨋ</span></span>
+            </div>
+            <div>
+<span class="g"><span class="hint">m</span><span class="c">ꨠ</span></span>
+<span class="g"><span class="hint">n</span><span class="c">ꨘ</span></span>
+<span class="g"><span class="hint">ɲ</span><span class="c">ꨑ</span></span>
+<span class="g"><span class="hint">ŋ</span><span class="c">ꨊ</span></span>
+<span class="g"><span class="hint"></span><span class="c"> </span></span>
+            </div>
+            <div class="topDivider" style="justify-content: space-around">
+<span class="g"><span class="hint">w</span><span class="c">ꨥ</span></span>
+<span class="g"><span class="hint">r</span><span class="c">ꨣ</span></span>
+<span class="g"><span class="hint">l</span><span class="c">ꨤ</span></span>
+<span class="g"><span class="hint">y</span><span class="c">ꨢ</span></span>
+<span class="g"><span class="hint">y</span><span class="c">ꨒ</span></span>
+            </div>
+</div>
+
+
+
+
+
+
+<div id="medials">
+<span class="g"><span class="hint">w</span><span class="c">ꨶ</span></span>
+<span class="g"><span class="hint">r</span><span class="c">ꨴ</span></span>
+<span class="g"><span class="hint">l</span><span class="c">ꨵ</span></span>
+<span class="g"><span class="hint">j</span><span class="c">ꨳ</span></span>
+</div>
+
+
+
+
+
+
+<div id="vowelGrid">
+<div>
+<span class="g"><span class="hint">i</span><span class="c">ꨪ</span></span>
+<span class="g"><span class="hint">ɨ</span><span class="c">ꨲ</span></span>
+<span class="g"><span class="hint">u</span><span class="c">ꨭ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">ī</span><span class="c">ꨫ</span></span>
+<span class="g"><span class="hint">ɨ̣</span><span class="c">ꨲꨩ</span></span>
+<span class="g"><span class="hint">ū</span><span class="c">ꨭꨩ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">e</span><span class="c">ꨬ</span></span>
+<span class="g"><span class="hint">ə</span><span class="c">ꨯ</span></span>
+<span class="g"><span class="hint">o</span><span class="c">ꨯꨩ</span></span>
+</div>
+<div class="bottomDivider">
+<span class="g"><span class="hint">ə</span><span class="c">ꨮ</span></span>
+<span class="g"><span class="hint">ə</span><span class="c">ꨱ</span></span>
+</div>
+<div  class="bottomDivider">
+<span class="g"><span class="hint">ɛ</span><span class="c">ꨯꨮ</span></span>
+<span class="g"><span class="hint">ɛ</span><span class="c">ꨯꨮꨩ</span></span>
+<span class="g"><span class="hint">ɔ</span><span class="c">ꨯꨱ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint">a</span><span class="c">ꨩ</span></span>
+<span class="g"><span class="hint">aʲ</span><span class="c">ꨰ</span></span>
+<span class="g"><span class="hint">aʷ</span><span class="c">ꨮꨭ</span></span>
+</div>
+</div>
+
+
+
+
+<div id="finals" class="">
+<div>
+<span class="g"><span class="hint"></span><span class="c">ꩇ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ꩅ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ꩄ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ꩀ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ꩁ</span></span>
+</div>
+<div style="justify-content: space-around;">
+<span class="g"><span class="hint"></span><span class="c">ꩌ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ꩆ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ꩂ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ꩃ</span></span>
+</div>
+<div>
+<span class="g"><span class="hint"></span><span class="c">ꩋ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ꩍ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ꩉ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ꩊ</span></span>
+<span class="g"><span class="hint"></span><span class="c">ꩈ</span></span>
+</div>
+</div>
+
+
+
+
+<div id="numberGrid">
+	<div id="digitKeypad" class="box">
+		<div>
+		<span class="g"><span class="hint">1</span><span class="c">꩑</span></span>
+		<span class="g"><span class="hint">2</span><span class="c">꩒</span></span>
+		<span class="g"><span class="hint">3</span><span class="c">꩓</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">4</span><span class="c">꩔</span></span>
+		<span class="g"><span class="hint">5</span><span class="c">꩕</span></span>
+		<span class="g"><span class="hint">6</span><span class="c">꩖</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">7</span><span class="c">꩗</span></span>
+		<span class="g"><span class="hint">8</span><span class="c">꩘</span></span>
+		<span class="g"><span class="hint">9</span><span class="c">꩙</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">0</span><span class="c">꩐</span></span>
+		<span class="c">,</span>
+		<span class="c">.</span>
+		</div>
+		</div>
+	<!--div id="symbols">
+		<div style="margin-top: .5em;">
+		<span class="g"><span class="hint">0</span><span class="c">฿</span></span>
+		<span class="g"><span class="hint">0</span><span class="c">๚</span></span>
+		<span class="g"><span class="hint">0</span><span class="c">ๆ</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="hint">0</span><span class="c">ฯลฯ</span></span>
+		</div>
+		</div-->
+</div>
+</div>
+
+
+<!--div id="flatnumbers">
+<span class="g"><span class="hint">0</span><span class="c">꩐</span></span>
+<span class="g"><span class="hint">1</span><span class="c">꩑</span></span>
+<span class="g"><span class="hint">2</span><span class="c">꩒</span></span>
+<span class="g"><span class="hint">3</span><span class="c">꩓</span></span>
+<span class="g"><span class="hint">4</span><span class="c">꩔</span></span>
+<span class="g"><span class="hint">5</span><span class="c">꩕</span></span>
+<span class="g"><span class="hint">6</span><span class="c">꩖</span></span>
+<span class="g"><span class="hint">7</span><span class="c">꩗</span></span>
+<span class="g"><span class="hint">8</span><span class="c">꩘</span></span>
+<span class="g"><span class="hint">9</span><span class="c">꩙</span></span>
+</div-->
+
+
+
+
+
+
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<!--span class="c">«</span>
+<span class="c">»</span-->
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">-</span>
+<span class="c">꩜</span> 
+<span class="c">꩝</span>
+<span class="c">꩞</span>
+<span class="c">꩟</span>
+</div>
+
+
+
+
+
+<!--details>
+  <summary>other characters</summary>
+	<div id="other">
+	<span class="c">ॲ</span>
+	<span class="c">ॅ</span>
+	<span class="c">ऑ</span>
+	<span class="c">ॉ</span>
+	&nbsp;
+	<span class="c">ष</span>
+	<span class="c">क्ष</span>
+	<span class="c">झ</span>
+	<span class="c">ङ</span>
+	<span class="c">ण</span>
+	&nbsp;
+	<span class="g"><span class="hint"></span><span class="c">&#x095B;</span></span>
+	</div>
+    </details-->        
+
+</div><!-- end of alphabet -->
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>
