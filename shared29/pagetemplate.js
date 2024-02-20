@@ -147,6 +147,7 @@ function addTabEtc (location) {
 	out = `
 <span class="touch" title="Add dotted circle" style="padding: 5px 10px;" onClick="add('◌');">◌</span> 
 <span class="touch" title="Add ␣" style="padding: 5px 10px;" onClick="add('␣');">␣</span> 
+<span class="touch" title="Add † to indicate guessed spelling." style="padding: 5px 10px;" onClick="add('†');">†</span> 
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');"><img src="../shared29/images/tab.png" alt="⇥"`
 if (template.direction === 'rtl')  out += ` style="transform: rotateY(180deg);"`
 out += `></span> 
