@@ -2415,149 +2415,34 @@ function displayDBInfo (cp, block, lang, direction, showAll) {
 	}
 
 
-function buildDBInfoLineOLD (char, toplevel, originStr, ptr, showAll) {
-		
-		hex = char.codePointAt(0).toString(16).toUpperCase()
-		while (hex.length < 4) hex = '0'+hex
-		
-		out = '<span class="dbCharContainer"'
-		if (!toplevel) out += ' style="margin-left: 3em;"'
-		if (toplevel) out += '><span class="dbCharItem">'+char+'</span> '
-		else if (! showAll) out += '><span class="dbCharItem">'+char+'</span> '
-		else out += '><span class="dbCharItemLevel2">'+char+'</span> '
-		
-		// skip items with an x in the class column unless this is the top level
-		// ie. characters in the text will be reported, but not linked to - options
-		var ignorable = false
-		if (! toplevel && spreadsheetRows[char] && spreadsheetRows[char][cols.class] && spreadsheetRows[char][cols.class].includes('-')) ignorable = true
-		
-		
-		out += '<span class="dbCharSubContainer" style="display:flex;flex-direction:column;">'
-
-		if (spreadsheetRows[char] && ignorable === false) {
-					
-			out += '<span class="dbCharInfo">'
-
-			// get transliteration
-			if (spreadsheetRows[char][cols.transLoc] && spreadsheetRows[char][cols.transLoc] !== char) {
-				out += '<span>'
-				//out += '<span><em>tl</em> '
-				if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transLoc]+'</span>'
-				else out += '-'
-				out += '</span>'
-				}
-
-			// get ipa info
-			if (cols.ipaLoc) {
-				out += '<span><em>ipa</em> '
-				if (spreadsheetRows[char][cols.ipaLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.ipaLoc]+'</span>'
-				else out += '-'
-				out += '</span>'
-				}
-
-			// get type
-			out += '<span><em>type</em> '
-			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="type">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
-			else out += '-'
-			out += '</span>'
-
-			// get usage
-			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
-				out += '<span><em>usage</em> '
-				out += ' <span class="type">('+spreadsheetRows[char][cols.statusLoc]+')</span>'
-				out += '</span>'
-				}
-
-			// get status
-			if (spreadsheetRows[char][cols.status] && cols.status > 0) {
-				out += '<span><em>usage</em> '
-				out += ' <span style="color:black; font-weight: bold;">'+spreadsheetRows[char][cols.status]+'</span>'
-				out += '</span>'
-				}
-
-			// get transcription
-			if (cols.othertranscriptions) {
-				for (let t=0;t<cols.othertranscriptions.length;t++) {
-					out += '<span><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
-					if (spreadsheetRows[char][cols.othertranscriptions[t][0]]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.othertranscriptions[t][0]]+'</span>'
-					else out += ' -'
-					out += '</span>'
-					}
-				}
-
-			// get name
-			if (spreadsheetRows[char][cols.nameLoc] && cols.nameLoc > 0) {
-				out += '<span><em>name</em> '
-				out += ' <span>'+spreadsheetRows[char][cols.nameLoc]
-				if (spreadsheetRows[char][cols.nnameLoc] && cols.nnameLoc > 0) out += ' ('+spreadsheetRows[char][cols.nnameLoc]+')'
-				out += '</span></span>'
-				}
-
-			// add link to notes page
-			var blockfile = getScriptGroup(parseInt(hex,16), true)
-			//console.log(blockfile)
-			if (blockfile) {
-				out += '<a title="Right-click to open notes file." href="../../scripts/'+blockfile+'/block.html#char'+hex+'" target="_blank">details</a>'
-				}
-			out += '</span><span class="dbCharName">'	
-
-			// add unicode name
-			if (spreadsheetRows[char][cols.ucsName]) out += spreadsheetRows[char][cols.ucsName]
-			else {
-				for (let i=0;i<char.length;i++) {
-					if (i>0) out += ', '
-					out += 'U+'+hex+': '+charData[char[i]]
-					}
-				}
-			out += '</span>'	
-			}
-		
-		else {
-			// if class is x, just display ucs name
-			out += '<span class="dbCharInfo">'
-			out += '</span><span class="dbCharName">'	
-			
-			// add unicode name
-			var blockfile = getScriptGroup(parseInt(hex,16), true)
-			if (blockfile) {
-				for (let i=0;i<char.length;i++) {
-					if (i>0) out += ', '
-					out += 'U+'+hex+': '+charData[char[i]]
-					}
-				}
-			out += '</span>'	
-			}
-
-		out += '</span> '
-		out += '</span> '
-		
-		
-		// find related items
-		if (toplevel) {
-			if (showAll) {
-				for (item in spreadsheetRows) { 
-					if (((item.length > 1 && item.includes(char)) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(char))) && spreadsheetRows[item][cols.class] !== '-') out += buildDBInfoLine(item, false, originStr, ptr, showAll)
-					}
-				}
-			else {
-				for (item in spreadsheetRows) { 
-					var matchStr = item.replace(/-/g,'.')
-					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']') matchStr = 'xx'
-					//console.log('matchstr',matchStr)
-					var  regex = new RegExp(matchStr)
-					itemArray = [... item] // to handle surrogates
-					if (((itemArray.length > 1 && itemArray[0] === char) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(item))) && spreadsheetRows[item][cols.class] !== '-' && originStr.substr(ptr,item.length).match(regex)) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
-					}
-				}
-			}
-		
-		return out
-}
-
-//function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 
 
-function buildDBInfoLineLESSOLD (char, toplevel, originStr, ptr, showAll) {
+
+
+
+
+
+function statusExpander (status) {
+    // takes a single letter status value and expands to a word for display
+    
+    out = ''
+    switch (status) {
+        case 'i': out += 'infrequent '; break
+        case 'r': out += 'rare '; break
+        case 'a': out += 'archaic '; break
+        case 'd': out += 'deprecated '; break
+        case 'u': out += 'unused '; break
+        case 'o': out += 'obsolete '; break
+        case 'l': out += 'loan words or foreign sounds '; break
+        }
+    return out
+    }
+
+
+
+
+
+function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 		
 		hex = char.codePointAt(0).toString(16).toUpperCase()
 		while (hex.length < 4) hex = '0'+hex
@@ -2580,64 +2465,114 @@ function buildDBInfoLineLESSOLD (char, toplevel, originStr, ptr, showAll) {
 					
 			out += '<span class="dbCharInfo">'
 
-			// get transliteration
-			if (spreadsheetRows[char][cols.transLoc] && spreadsheetRows[char][cols.transLoc] !== char) {
-				out += '<bdi class="analysisTranslit">'
-				//out += '<span><em>tl</em> '
-				if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.transLoc]+'</span>'
-				else out += '<span class="ipa">-</span>'
-				out += '</bdi>'
-				}
-
 			// get ipa info
 			if (cols.ipaLoc) {
-				out += '<bdi class="analysisIPA" onclick="sieveFor(\'analysisIPA\')" onmouseover="showMenuText(\'Make a list of IPA values.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer"><em>ipa</em> '
-				if (spreadsheetRows[char][cols.ipaLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.ipaLoc]+'</span>'
-				else out += '<span class="ipa">-</span>'
+				//out += '<bdi class="analysisIPA" onclick="sieveFor(\'analysisIPA\')" onmouseover="showMenuText(\'Make a list of IPA values.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer"><em>ipa</em> '
+				//out += '<bdi class="analysisIPA" onclick="sieveFor(\'analysisIPA\')" onmouseover="showMenuText(\'IPA: Click to make a list of values.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
+				out += '<bdi class="analysisIPA" onmouseover="showMenuText(\'Typical phonemic/phonetic value(s).\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
+				if (spreadsheetRows[char][cols.ipaLoc]) out += ' <span class="ipa" style="display:inline-block; min-width:1.5em;">'+spreadsheetRows[char][cols.ipaLoc].toLowerCase()+'</span>'
+				else out += '<span class="ipa" style="display:inline-block; min-width:1.5em;">-</span>'
 				out += '</bdi>'
 				}
 
-			// get type
-			out += '<bdi class="analysisType"><em>type</em> '
-			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
-			else out += '<span class="ipa">-</span>'
-			out += '</bdi>'
+            // get any ipaPlus info
+			if (cols.ipaPlus && spreadsheetRows[char][cols.ipaPlus]) {
+				out += `<bdi class="analysisIPAplus" onmouseover="showMenuText('Inherent vowels associated with this letter.','tan')" onmouseout="hideMenuText()" style="cursor:pointer">`
+				out +=  `<span class="ipa" style="display:inline-block; min-width:1.5em;">${ spreadsheetRows[char][cols.ipaPlus].toLowerCase() }</span>`
+				out += '</bdi>'
+				}
 
-			// get status
-			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
-				out += '<bdi class="analysisStatus"><em>usage</em> '
-				out += ' <span style="color:black; font-weight: bold;">'+spreadsheetRows[char][cols.statusLoc]+'</span>'
+            // get any ipaOther info
+			if (cols.ipaOther && spreadsheetRows[char][cols.ipaOther]) {
+				out += `<bdi class="analysisIPAother" onmouseover="showMenuText('Additional sounds that may be associated with this letter.','tan')" onmouseout="hideMenuText()" style="cursor:pointer">`
+				out +=  `<span class="ipa" style="display:inline-block; min-width:1.5em;">${ spreadsheetRows[char][cols.ipaOther].toLowerCase() }</span>`
 				out += '</bdi>'
 				}
 
 			// get transcription
 			if (cols.othertranscriptions) {
 				for (let t=0;t<cols.othertranscriptions.length;t++) {
-					out += '<bdi class="analysisTransc" onclick="sieveFor(\'analysisTransc\')" onmouseover="showMenuText(\'Make a list of '+cols.othertranscriptions[t][1]+' transcription values.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer"><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
-					if (spreadsheetRows[char][cols.othertranscriptions[t][0]]) out += ' <span class="ipa">'+spreadsheetRows[char][cols.othertranscriptions[t][0]]+'</span>'
-					else out += '<span class="ipa">-</span>'
+					//out += '<bdi class="analysisTransc" onclick="sieveFor(\'analysisTransc\')" onmouseover="showMenuText(\''+cols.othertranscriptions[t][1]+' transcription. (Click to extract a list.)\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer"><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
+					out += '<bdi class="analysisTransc" onmouseover="showMenuText(\''+cols.othertranscriptions[t][1]+' transcription.\',\'tan\')" onmouseout="hideMenuText()"><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
+					if (spreadsheetRows[char][cols.othertranscriptions[t][0]]) out += ' <span class="transc">'+spreadsheetRows[char][cols.othertranscriptions[t][0]]+'</span>'
+					else out += '<span>-</span>'
 					out += '</bdi>'
 					}
 				}
 
+
+			// get type
+			out += '<bdi class="analysisType">'
+			//out += '<em>type</em> '
+			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="" onmouseover="showMenuText(\'Type of character.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
+			else out += '<span class="ipa">-</span>'
+			out += '</bdi>'
+
+
+
+			// get usage
+			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
+				out += '<bdi class="analysisStatus">'
+				//out += '<em>usage</em> '
+				out += '<span onmouseover="showMenuText(\'Usage notes.\',\'tan\')" onmouseout="hideMenuText()">('+spreadsheetRows[char][cols.statusLoc]+')</span>'
+				out += '</bdi>'
+				}
+
+			// get status
+			if (spreadsheetRows[char][cols.status] && cols.status > 0) {
+				out += '<bdi class="analysisStatus">'
+				//out += '<em>usage</em> '
+				out += ' <span style="color:black; font-weight: bold;" onmouseover="showMenuText(\'Status notes.\',\'tan\')" onmouseout="hideMenuText()">'+statusExpander(spreadsheetRows[char][cols.status])+'</span>'
+				out += '</bdi>'
+				}
+
+			// get class (ie. general category)
+			if (spreadsheetRows[char][cols.class] && cols.class > 0) {
+				out += '<bdi class="">'
+				out += ' <span style="font-size: 80%; font-style:italic;" onmouseover="showMenuText(\'General category.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.class]+'</span>'
+				out += '</bdi>'
+				}
+
+			// get transliteration
+			//if (spreadsheetRows[char][cols.transLoc] && spreadsheetRows[char][cols.transLoc] !== char) {
+			if (spreadsheetRows[char][cols.transLoc] && cols.transLoc > 0) {
+				out += '<bdi class="analysisTranslit" onmouseover="showMenuText(\'Transliteration produced by this app.\',\'tan\')" onmouseout="hideMenuText()">'
+				out += '<span><em>translit</em> '
+				if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="">'+spreadsheetRows[char][cols.transLoc]+'</span>'
+				else out += '<span>–</span>'
+				out += '</bdi>'
+				}
+
+
 			// get name
 			if (spreadsheetRows[char][cols.nameLoc] && cols.nameLoc > 0) {
-				out += '<bdi class="analysisName"><em>name</em> '
+				out += '<bdi class="analysisName" onmouseover="showMenuText(\'Name.\',\'tan\')" onmouseout="hideMenuText()"><em>name</em> '
 				out += ' <span>'+spreadsheetRows[char][cols.nameLoc]
 				if (spreadsheetRows[char][cols.nnameLoc] && cols.nnameLoc > 0) out += ' ('+spreadsheetRows[char][cols.nnameLoc]+')'
 				out += '</span></bdi>'
 				}
 
-			// add link to notes page
+			// add link to notes page (using the block column)
+			if (spreadsheetRows[char][cols.block] && cols.block > 0) {
+				//out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+spreadsheetRows[char][cols.block]+'/block#char'+hex+'" target="_blank">details</a></bdi>'
+                //var blockloc = template.blocklocation.replace('/scripts/','').replace('/block','') // deal with legacy
+				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="../../scripts/'+template.blocklocation+'/block.html#char'+hex+'" target="details">notes</a></bdi> • '
+				out += '<bdi onmouseover="showMenuText(\'Open a page to show character properties.\',\'tan\')" onmouseout="hideMenuText()"><a href="https://util.unicode.org/UnicodeJsps/character.jsp?a='+hex+'" target="details">properties</a></bdi>'
+                console.log('template.blocklocation',template.blocklocation)
+				}
+
+/*			// add link to notes page
 			var blockfile = getScriptGroup(parseInt(hex,16), true)
 			//console.log(blockfile)
 			if (blockfile) {
-				out += '<bdi><a title="Right-click to open notes file." href="../../scripts/'+blockfile+'/block.html#char'+hex+'" target="_blank">details</a></bdi>'
+				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">details</a></bdi>'
 				}
+*/
 			out += '</span>'	
 
 			// add unicode name
-			out += '<bdi class="dbCharName" onclick="sieveFor(\'dbCharName\')" onmouseover="showMenuText(\'Make a list of Unicode names.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
+			//out += '<bdi class="dbCharName" onclick="sieveFor(\'dbCharName\')" onmouseover="showMenuText(\'Make a list of Unicode names.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
+			out += '<bdi class="dbCharName" onmouseover="showMenuText(\'Unicode name.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
 			if (spreadsheetRows[char][cols.ucsName]) out += spreadsheetRows[char][cols.ucsName]
 			else {
 				for (let i=0;i<char.length;i++) {
@@ -2677,8 +2612,8 @@ function buildDBInfoLineLESSOLD (char, toplevel, originStr, ptr, showAll) {
 				}
 			else {
 				for (item in spreadsheetRows) { 
-					var matchStr = item.replace(/-/g,'.')
-					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']' || matchStr == '*') matchStr = 'xx'
+					var matchStr = item.replace(/-/g,'.').replace(/◌/g,'.')
+					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']' || matchStr == '*' || matchStr == '\\') matchStr = 'xx'
 					//console.log('matchstr',matchStr)
 					var  regex = new RegExp(matchStr)
 					itemArray = [... item] // to handle surrogates
@@ -2694,28 +2629,7 @@ function buildDBInfoLineLESSOLD (char, toplevel, originStr, ptr, showAll) {
 
 
 
-function statusExpander (status) {
-    // takes a single letter status value and expands to a word for display
-    
-    out = ''
-    switch (status) {
-        case 'i': out += 'infrequent '; break
-        case 'r': out += 'rare '; break
-        case 'a': out += 'archaic '; break
-        case 'd': out += 'deprecated '; break
-        case 'u': out += 'unused '; break
-        case 'o': out += 'obsolete '; break
-        case 'l': out += 'loan words or foreign sounds '; break
-        }
-    return out
-    }
-
-
-//function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
-
-
-
-function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
+function buildDBInfoLineX (char, toplevel, originStr, ptr, showAll) {
 		
 		hex = char.codePointAt(0).toString(16).toUpperCase()
 		while (hex.length < 4) hex = '0'+hex
@@ -3023,6 +2937,12 @@ function sieveFor (type) {
 
 
 
+
+
+
+
+
+
 function sieveForIPA () {
 	// hide the labels
 	var hlist = ''
@@ -3038,11 +2958,49 @@ function sieveForIPA () {
         valueNode = lines[i].querySelector('.analysisIPA')
         if (valueNode === null) ipaItems = ' '
         else ipaItems = valueNode.lastChild.textContent.split(' ')
-        console.log('ipa',ipaItems)
+        //console.log('ipa',ipaItems)
         ipaPlusNode = lines[i].querySelector('.analysisIPAplus')
         if (ipaPlusNode) ipaPlusItems = ipaPlusNode.lastChild.textContent.split(' ')
         else ipaPlusItems = ''
-        console.log('ipa+',ipaPlusItems)
+        ipaOtherNode = lines[i].querySelector('.analysisIPAother')
+        if (ipaOtherNode) ipaOtherItems = ipaOtherNode.lastChild.textContent.split(' ')
+        else ipaOtherItems = ''
+        //console.log('ipa+',ipaPlusItems)
+        //for (j=0;j<items.length;j++) hlist += '<span class="xitemRes" onclick="this.classList.toggle(\'xitemHide\')">'+items[j].toLowerCase()+'</span>'
+        for (j=0;j<ipaItems.length;j++) hlist += '<span class="xitemRes" onclick="toggleXItem(this)">'+ipaItems[j].toLowerCase()+'</span>'
+        for (j=0;j<ipaPlusItems.length;j++) hlist += '<span class="xitemHide" onclick="toggleXItem(this)">'+ipaPlusItems[j].toLowerCase()+'</span>'
+        for (j=0;j<ipaOtherItems.length;j++) hlist += '<span class="xitemHide" onclick="toggleXItem(this)">'+ipaOtherItems[j].toLowerCase()+'</span>'
+        hlist += '</span>'
+        hlist += '</span>\n'
+        }
+	
+	// display the result
+	document.getElementById('listOutput').style.display = 'block'
+	document.getElementById('listOutputHorizontal').innerHTML = hlist
+	document.getElementById('listOutputVertical').textContent = vlist
+	}
+
+
+function sieveForIPAX () {
+	// hide the labels
+	var hlist = ''
+	var vlist = ''
+    var ipaItems, ipaPlusItems
+    
+    // find the IPA data
+    var lines = document.getElementById('textAnalysis').querySelectorAll('.dbCharContainer')
+    for (var i=0;i<lines.length;i++) {
+        hlist += '<span class="xitem">'
+        hlist += '<span class="xitemSrc">'+lines[i].querySelector('.dbCharItem').textContent+'</span>'
+        hlist += '<span class="xitemResults">'
+        valueNode = lines[i].querySelector('.analysisIPA')
+        if (valueNode === null) ipaItems = ' '
+        else ipaItems = valueNode.lastChild.textContent.split(' ')
+        //console.log('ipa',ipaItems)
+        ipaPlusNode = lines[i].querySelector('.analysisIPAplus')
+        if (ipaPlusNode) ipaPlusItems = ipaPlusNode.lastChild.textContent.split(' ')
+        else ipaPlusItems = ''
+        //console.log('ipa+',ipaPlusItems)
         //for (j=0;j<items.length;j++) hlist += '<span class="xitemRes" onclick="this.classList.toggle(\'xitemHide\')">'+items[j].toLowerCase()+'</span>'
         for (j=0;j<ipaItems.length;j++) hlist += '<span class="xitemRes" onclick="toggleXItem(this)">'+ipaItems[j].toLowerCase()+'</span>'
         for (j=0;j<ipaPlusItems.length;j++) hlist += '<span class="xitemHide" onclick="toggleXItem(this)">'+ipaPlusItems[j].toLowerCase()+'</span>'
