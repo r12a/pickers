@@ -68,6 +68,22 @@ span.x span.c {
 	color: #666;
 	}
 
+#prefixes, #suffixes { 
+	text-align: center; 
+	border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .25em;
+    margin-inline: .5rem;
+    line-height: 1.4;
+	}
+#suffixes div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
 #consonantGrid, #subjoinedGrid {
     display: flex;
     flex-wrap: nowrap;
@@ -79,7 +95,7 @@ span.x span.c {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     }
 #commonvowels { 
 	text-align: center; 
@@ -88,9 +104,8 @@ span.x span.c {
     flex-direction: column;
     justify-content: center;
     padding: .25em;
-    margin-left: 1em;
-    margin-right: 1em;
-    line-height: 2;
+    margin-inline-start: .5rem;
+    line-height: 1.4;
 	}
 #tsek { 
     display: flex;
@@ -190,5 +205,10 @@ span.x span.c {
     }
 
 
-
+.boxed {
+    background-color:seashell;
+    border-radius:.5rem;
+    border:1px solid tan;
+    margin-block-end:.2rem;
+    }
 
