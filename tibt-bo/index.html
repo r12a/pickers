@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8" />
+<title>Lhasa Tibetan character app 29</title>
+
+<link rel="stylesheet" href="../../shared/style/docs.css" />
+<link rel="stylesheet" href="../shared29/style.css" />
+<link rel="stylesheet" href="localstyle.css" />
+
+<script src="defaults.js">  </script>
+<script src="../../shared/fontdb/db.js"> </script>
+<script src="../../shared/scriptdb/tibt-bo.js">  </script>
+<script src="../../scripts/tibt/bo-sets.js">  </script>
+
+<script src="../../shared/code/boilerplate.js"></script>
+<script src="../../shared/code/character_conversion.js"></script>
+<script src="../../shared/code/show_codepoints.js"></script>
+<script src="../../shared/fontlists/manage.js"></script>
+<script src="../../shared/code/scriptGroups.js"></script>
+<script src="../../shared/code/all-names.js"></script>
+<script src="../shared29/setup.js">  </script>
+<script src="../shared29/code.js">  </script>
+<script src="../shared29/latinregister.js">  </script>
+<script src="localcode.js">  </script>
+<script src="../shared29/pagetemplate.js">  </script>
+<script src="../../scripts/linkdata/linkdb.js"></script>
+<script src="localtranscription.js">  </script>
+
+<style id="dynamicUIFont"></style>
+<style id="dynamicUIFontSize"></style>
+</head>
+
+<body class="app">
+<div id="topBP"></div>
+<script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
+
+
+<div id="alphabet" class="default">
+
+<div class="spaceline">
+<!--span class="touch" dir="auto" onclick="toggleSubjoined(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SUBJ</span-->
+<span class="touch" dir="auto" onclick="console.log(this.classList); toggleExtended(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">EXT</span>
+
+<span class="touch" title="Space" style="padding: 5px 60px;" dir="auto" onClick="add(' ');">SPACE</span>
+<span class="touch" title="Space" style="padding: 5px 60px;" dir="auto" onClick="add('\u00A0');">NBSP</span>
+
+<span id="tabEtc"></span>
+<script>addTabEtc('tabEtc')</script>
+</div>
+
+
+<div id="kbdGrid">
+<div id="prefixes">
+	<span class="b"><span class="hint"></span><span class="c">ག</span></span>
+	<span class="b"><span class="hint"></span><span class="c">ད</span></span>
+	<span class="b"><span class="hint"></span><span class="c">བ</span></span>
+	<span class="b"><span class="hint"></span><span class="c">མ</span></span>
+	<span class="b"><span class="hint"></span><span class="c">འ</span></span>
+</div>
+
+
+
+
+
+<div id="consonantGrid">
+
+<div>
+    <span class="g"><span class="hint">p</span><span class="c">པ</span></span>
+	<span class="g"><span class="hint">t</span><span class="c">ཏ</span></span>
+    <span class="g"><span class="hint">k</span><span class="c">ཀ</span></span>
+	<span class="g"><span class="hint">ʧ</span><span class="c">&#x0F45;</span></span>
+    <span class="g"><span class="hint">ʦ</span><span class="c">&#x0F59;</span></span>
+</div>
+<div class="">
+	<span class="g"><span class="hint">pʰ</span><span class="c">ཕ</span></span>
+	<span class="g"><span class="hint">tʰ</span><span class="c">ཐ</span></span>
+	<span class="g"><span class="hint">kʰ</span><span class="c">ཁ</span></span>
+	<span class="g"><span class="hint">ʧʰ</span><span class="c">&#x0F46;</span></span>
+	<span class="g"><span class="hint">ʦʰ</span><span class="c">&#x0F5A;</span></span>
+</div>
+<div class="bottomDivider">
+	<span class="g"><span class="hint">b</span><span class="c">བ</span></span>
+	<span class="g"><span class="hint">d</span><span class="c">ད</span></span>
+	<span class="g"><span class="hint">g</span><span class="c">ག</span></span>
+	<span class="g"><span class="hint">ʤ</span><span class="c">&#x0F47;</span></span>
+	<span class="g"><span class="hint">ʣ</span><span class="c">&#x0F5B;</span></span>
+</div>
+<div class="bottomDivider">
+	<span class="g"><span class="hint">s</span><span class="c">&#x0F66;</span></span>
+	<span class="g"><span class="hint">z</span><span class="c">&#x0F5F;</span></span>
+	<span class="g"><span class="hint">ʃ</span><span class="c">&#x0F64;</span></span>
+	<span class="g"><span class="hint">ʒ</span><span class="c">&#x0F5E;</span></span>
+	<span class="g x"><span class="hint">ʂ</span><span class="c">&#x0F65;</span></span>
+	<span class="g"><span class="hint">h</span><span class="c">&#x0F67;</span></span>
+</div>
+<div class="">
+	<span class="g"><span class="hint">m</span><span class="c">&#x0F58;</span></span>
+	<span class="g"><span class="hint">n</span><span class="c">&#x0F53;</span></span>
+	<span class="g"><span class="hint">ɲ</span><span class="c">&#x0F49;</span></span>
+	<span class="g x"><span class="hint">ɳ</span><span class="c">&#x0F4E;</span></span>
+	<span class="g"><span class="hint">ŋ</span><span class="c">&#x0F44;</span></span>
+</div>
+<div class="">
+	<span class="g"><span class="hint">w</span><span class="c">&#x0F5D;</span></span>
+	<span class="g"><span class="hint">r</span><span class="c">&#x0F62;</span></span>
+	<span class="g"><span class="hint">l</span><span class="c">&#x0F63;</span></span>
+	<span class="g"><span class="hint">y</span><span class="c">&#x0F61;</span></span>
+</div>
+</div>
+
+
+
+
+<div id="subjoinedGrid">
+<div>
+    <span class="g"><span class="hint">p</span><span class="c">ྤ</span></span>
+	<span class="g"><span class="hint">t</span><span class="c">ྟ</span></span>
+    <span class="g"><span class="hint">k</span><span class="c">ྐ</span></span>
+	<span class="g"><span class="hint">ʧ</span><span class="c">ྕ</span></span>
+    <span class="g"><span class="hint">ʦ</span><span class="c">ྩ</span></span>
+</div>
+<div class="">
+	<span class="g"><span class="hint">pʰ</span><span class="c">ྥ</span></span>
+	<span class="g"><span class="hint">tʰ</span><span class="c x">ྠ</span></span>
+	<span class="g"><span class="hint">kʰ</span><span class="c">ྒ</span></span>
+	<span class="g"><span class="hint">ʧʰ</span><span class="c x">ྖ</span></span>
+	<span class="g"><span class="hint">ʦʰ</span><span class="c x">ྪ</span></span>
+</div>
+<div class="bottomDivider">
+	<span class="g"><span class="hint">b</span><span class="c">ྦ</span></span>
+	<span class="g"><span class="hint">d</span><span class="c x">ྡ</span></span>
+	<span class="g"><span class="hint">g</span><span class="c">ྒ</span></span>
+	<span class="g"><span class="hint">ʤ</span><span class="c">ྗ</span></span>
+	<span class="g"><span class="hint">ʣ</span><span class="c">ྫ</span></span>
+</div>
+<div class="bottomDivider">
+	<span class="g"><span class="hint">s</span><span class="c x">ྶ</span></span>
+	<span class="g"><span class="hint">ʃ</span><span class="c x">ྯ</span></span>
+	<span class="g"><span class="hint">ʒ</span><span class="c x">ྴ</span></span>
+	<span class="g"><span class="hint">ʂ</span><span class="c x">ྮ</span></span>
+	<span class="g"><span class="hint">h</span><span class="c">ྷ</span></span>
+</div>
+<div class="bottomDivider">
+	<span class="g"><span class="hint">m</span><span class="c">&#x0FA8;</span></span>
+	<span class="g"><span class="hint">n</span><span class="c">&#x0FA3;</span></span>
+	<span class="g"><span class="hint">ɲ</span><span class="c">&#x0F99;</span></span>
+	<span class="g"><span class="hint">ɳ</span><span class="c x">&#x0F9E;</span></span>
+	<span class="g"><span class="hint">ŋ</span><span class="c">&#x0F94;</span></span>
+</div>
+<div style="justify-content: center;"><!-- subscripts -->
+	<span class="g"><span class="hint">w</span><span class="c">ྭ</span></span>
+	<span class="g"><span class="hint">r</span><span class="c">ྲ</span></span>
+	<span class="g"><span class="hint">l</span><span class="c">ླ</span></span>
+	<span class="g"><span class="hint">j</span><span class="c">ྱ</span></span>
+</div>
+</div>
+
+
+
+          
+<div id="commonvowels">
+	<span class="g"><span class="hint">i</span><span class="c">&#x0F72;</span></span>
+	<span class="g"><span class="hint">u</span><span class="c">&#x0F74;</span></span>
+	<span class="g"><span class="hint">e</span><span class="c">&#x0F7A;</span></span>
+	<span class="g"><span class="hint">o</span><span class="c">&#x0F7C;</span></span>
+	<span class="g"><span class="hint">à</span><span class="c">&#x0F71;</span></span>
+</div>
+
+
+
+
+
+
+
+<div id="suffixes">
+<div>
+	<span class="g"><span class="hint">à</span><span class="c">&#x0F60;</span></span>
+	<span class="g" style="margin-block-end:1rem;"><span class="hint">ạ</span><span class="c">&#x0F68;</span></span>
+</div>
+<div>
+	<span class="g"><span class="hint">p</span><span class="c">བ</span></span>
+	<span class="b"><span class="hint">-</span><span class="c">ད</span></span>
+	<span class="b"><span class="hint">g</span><span class="c">ག</span></span>
+</div>
+<div>
+	<span class="g"><span class="hint">m</span><span class="c">མ</span></span>
+	<span class="g"><span class="hint">n</span><span class="c">ན</span></span>
+	<span class="g"><span class="hint">ng</span><span class="c">ང</span></span>
+</div>
+<div>
+	<span class="b"><span class="hint">s</span><span class="c">ས</span></span>
+	<span class="g"><span class="hint">r</span><span class="c">ར</span></span>
+	<span class="g"><span class="hint">l</span><span class="c">ལ</span></span>
+</div>
+</div>
+
+
+
+
+
+<div id="tsek">
+<span class="c" style="padding: 0 6px;">&#x0F0C;</span>
+<span style="padding:80px 8px; border: 1px dotted #999;" class="c">&#x0F0B;</span>
+</div>
+
+    <div id="numpunc">
+    
+
+          <table id="numbers" style="margin: 0 10px 10px 0;"><tbody>
+        <tr>
+          <td><span class="g"><span class="hint">7</span><span class="c">&#x0F27;</span></span></td>
+          <td><span class="g"><span class="hint">8</span><span class="c">&#x0F28;</span></span></td>
+          <td><span class="g"><span class="hint">9</span><span class="c">&#x0F29;</span></span></td>
+          </tr>
+        <tr>
+          <td><span class="g"><span class="hint">4</span><span class="c">&#x0F24;</span></span></td>
+          <td><span class="g"><span class="hint">5</span><span class="c">&#x0F25;</span></span></td>
+          <td><span class="g"><span class="hint">6</span><span class="c">&#x0F26;</span></span></td>
+          </tr>
+        <tr>
+          <td><span class="g"><span class="hint">1</span><span class="c">&#x0F21;</span></span></td>
+          <td><span class="g"><span class="hint">2</span><span class="c">&#x0F22;</span></span></td>
+          <td><span class="g"><span class="hint">3</span><span class="c">&#x0F23;</span></span></td>
+          </tr>
+         <tr>
+          <td><span class="g"><span class="hint">0</span><span class="c">&#x0F20;</span></span></td>
+          <td></td>
+           <td></td>
+         </tr>
+          </tbody></table>
+          
+        <div id="morepunctuation">
+            <span class="c">&#x0F00;</span>
+            <span class="c">&#x0F34;</span><br/>
+            <span class="c">&#x0F04;</span> 
+            <span class="c">&#x0F05;</span><br>
+            <span class="c">&#x0F3C;</span> 
+            <span class="c">&#x0F3D;</span><br/>
+            <span class="c">&#x0F35;</span> 
+            <span class="c">&#x0F37;</span><br/>
+        </div>
+        </div>
+
+
+</div>
+<div id="translitvowels">
+	<span class="g x"><span class="hint">TTA</span><span class="c">ཊ</span></span>
+	<span class="g x"><span class="hint">TTHA</span><span class="c">ཋ</span></span>
+	<span class="g x"><span class="hint">DDA</span><span class="c">ཌ</span></span>
+	<span class="g x"><span class="hint">RO</span><span class="c">ཾ</span></span>
+	<span class="g x"><span class="hint">-A</span><span class="c">ྰ</span></span>
+<br>
+    <span class="g x"><span class="hint">bʰ</span><span class="c">བྷ</span></span>
+	<span class="g x"><span class="hint">bʰ</span><span class="c">&#x0FA6;&#x0FB7;</span></span>
+
+	<span class="g"><span class="hint">ʈ</span><span class="c">&#x0F9A;</span></span>
+	<span class="g"><span class="hint">ʈʰ</span><span class="c">&#x0F9B;</span></span>
+	<span class="g"><span class="hint">ɖ</span><span class="c">&#x0F9C;</span></span>
+	<span class="g"><span class="hint">ɖʰ</span><span class="c">&#x0F9C;&#x0FB7;</span></span>
+
+	<span class="g x"><span class="hint">kˢ</span><span class="c">&#x0F40;&#x0FB5;</span><span class="c">&#x0F90;&#x0FB5;</span></span>
+	<span class="g x"><span class="hint">ʣʰ</span><span class="c">&#x0F5B;&#x0FB7;</span></span>
+
+    <span class="g"><span class="hint">ʧ</span><span class="c">&#x0F95;</span></span>
+	<span class="g"><span class="hint">ʧʰ</span><span class="c x">&#x0F96;</span></span>
+	<span class="g"><span class="hint">ʤ</span><span class="c">&#x0F97;</span></span>
+
+    <span class="g"><span class="hint">ʦ</span><span class="c">&#x0FA9;</span></span>
+	<span class="g"><span class="hint">ʦʰ</span><span class="c x">&#x0FAA;</span></span>
+	<span class="g"><span class="hint">ʣ</span><span class="c">&#x0FAB;</span></span>
+	<span class="g x"><span class="hint">ʣʰ</span><span class="c">&#x0FAB;&#x0FB7;</span></span>
+
+    <span class="g"><span class="hint">dh̽</span><span class="c">དྷ</span></span>
+	<span class="g"><span class="hint">gh̽</span><span class="c">གྷ</span></span>
+	<span class="g"><span class="hint">q</span><span class="c">ཫ</span></span>
+	<span class="g x"><span class="hint">ʣʰ</span><span class="c">&#x0F5B;&#x0FB7;</span></span>
+	<span class="g x"><span class="hint">bʰ</span><span class="c">བྷ</span></span>
+	<span class="g"><span class="hint">dh̽</span><span class="c">དྷ</span></span>
+	<span class="g"><span class="hint">gh̽</span><span class="c">གྷ</span></span>
+	<span class="g"><span class="hint">q</span><span class="c">ཫ</span></span>
+
+<span class="g x"><span class="hint">r̄</span><span class="c">&#x0F6A;</span><span class="c">&#x0FBC;</span></span>
+<span class="g x"><span class="hint">ɽ</span><span class="c">&#x0F6C;</span></span>
+
+<span class="g x"><span class="hint">f</span><span class="c">ཕ༹</span></span>
+<span class="g x"><span class="hint">v</span><span class="c">བ༹</span></span>
+
+<span class="g x"><span class="hint">ū</span><span class="c">&#x0F71;&#x0F74;</span></span>
+<span class="g x"><span class="hint">ē </span><span class="c">&#x0F7B;</span></span>
+<span class="g x"><span class="hint">ō </span><span class="c">&#x0F7D;</span></span>
+<span class="g x"><span class="hint">-ï </span><span class="c">&#x0F80;</span></span>
+<span class="g x"><span class="hint">r̥</span><span class="c">&#x0FB2;&#x0F80;</span></span>
+<span class="g x"><span class="hint">l̥</span><span class="c">&#x0FB3;&#x0F80;</span></span>
+<span class="g x"><span class="hint">ï̄</span><span class="c">&#x0F71;&#x0F80;</span></span>
+
+<span class="g x"><span class="hint">m̽</span><span class="c">&#x0F7E;</span></span>
+<span class="g x"><span class="hint">h̽</span><span class="c">&#x0F7F;</span></span>
+<span class="g x"><span class="hint">cb</span><span class="c">&#x0F83;</span></span>
+<span class="g x"><span class="hint">tp</span><span class="c">&#x0F39;</span></span>
+<span class="g x"><span class="hint">ː</span><span class="c">&#x0F85;</span></span>
+
+<span class="g x"><span class="hint">virama</span><span style="padding: 0 6px;" class="c">&#x0F84;</span></span>
+</div>
+
+
+
+
+
+<div id="ktp0Wrapper">
+<div id="hintType">
+</div>
+
+<div id="punctuation">
+<span class="c">,</span>
+<span class="c">.</span>
+<span class="c">;</span>
+<span class="c">:</span>
+<span class="c">?</span>
+<span class="c">!</span>
+<span class="c">‘</span>
+<span class="c">’</span>
+<span class="c">“</span>
+<span class="c">”</span>
+<span class="c">(</span>
+<span class="c">)</span>
+<span class="c">&#x2010;</span>
+	<span style="padding: 0 6px;" class="c">&#x0F0D;</span>
+	<span style="padding: 0 6px;" class="c">&#x0F0E;</span>
+	<span style="padding: 0 6px;" class="c">&#x0F11;</span>
+	<span style="padding: 0 6px;" class="c">&#x0F08;</span>
+</div>
+</div>
+
+
+<details>
+<summary>additional symbols</summary>
+<div id="extras">
+          <span class="c">&#x0F10;</span>
+          <span class="c">&#x0F11;</span>
+          <span class="c">&#x0F0F;</span>
+          
+          <span class="c">&#x0F88;</span>
+          <span class="c">&#x0F89;</span>
+          <span class="c">&#x0F8A;</span>
+          <span class="c">&#x0F8B;</span>
+          <span class="c">&#x0F82;</span>
+          <span class="c">&#x0F14;</span>
+          <span class="c">&#x0F12;</span>
+          <span class="c">&#x0FBE;</span>
+          <span class="c">&#x0FBF;</span>
+          <span class="c">&#x0F13;</span>
+          <span class="c">&#x0F36;</span>
+            </div>
+</details>
+
+<details>
+<summary>head marks</summary>
+          <div id="headmarks">
+            <span class="c">&#x0F01;</span> 
+            <span class="c">&#x0F02;</span> 
+            <span class="c">&#x0F03;</span> 
+            <span class="c">&#x0F04;</span> 
+            <span class="c">&#x0F05;</span> 
+            <span class="c">&#x0F06;</span> 
+            <span class="c">&#x0F07;</span> 
+            <span class="c">&#x0FD3;</span> 
+            <span class="c">&#x0FD4;</span>
+            <span class="c">&#x0F3A;</span> 
+            <span class="c">&#x0F3B;</span> 
+            <span class="c">&#x0F3C;</span> 
+            <span class="c">&#x0F3D;</span> 
+            <!--span class="c">&#x2638;</span--> 
+          </div>
+          </details>
+
+ <details>
+ <summary>more symbols</summary>
+ <table id="extraSymbols"><tbody>
+        <tr><td>
+          <div><span class="c">&#x0F1A;</span> <span class="c">&#x0F1B;</span> <span class="c">&#x0F1C;</span> <span class="c">&#x0F1D;</span> <span class="c">&#x0F1E;</span> <span class="c">&#x0FCF;</span> <span class="c">&#x0F1F;</span> <span class="c">&#x0FCE;</span></div>
+              <div>
+                <span class="c">&#x0F3F;</span>
+                <span class="c">&#x0F3E;</span> 
+                <span class="c">&#x0F17;</span> 
+                <span class="c">&#x0F18;</span> 
+                <span class="c">&#x0F19;</span> 
+                <span class="c">&#x0F15;</span> 
+                <span class="c">&#x0F16;</span>
+                </div>
+          <div><span class="c">&#x0F09;</span> <span class="c">&#x0F0A;</span>   
+             <span class="c">&#x0F38;</span> <span class="c">&#x0FD0;</span> <span class="c">&#x0FD1;</span></div>
+            
+              </td>
+              <td>
+          <div><span class="c">&#x0FD5;</span> <span class="c">&#x0FD6;</span> <span class="c">&#x0FD7;</span> <span class="c">&#x0FD8;</span> <span class="c">&#x0FCC;</span> <span class="c">&#x0FCB;</span> <span class="c">&#x0FCA;</span> <span class="c">&#x0FC9;</span></div>
+          <div><span class="c">&#x0FC0;</span> <span class="c">&#x0FC1;</span> <span class="c">&#x0FC2;</span> <span class="c">&#x0FC3;</span> <span class="c">&#x0FC4;</span> <span class="c">&#x0FC5;</span> <span class="c">&#x0FC6;</span> <span class="c">&#x0FC7;</span> <span class="c">&#x0FC8;</span></div>
+            </td>
+              <td>
+              <div>
+          	<span class="c">&#x0FD2;</span>
+            <span class="c">&#x0F39;</span> 
+            <span class="c">&#x0F86;</span> 
+            <span class="c">&#x0F87;</span> 
+      		</div>
+            <div>
+             <span class="c">&#x0FD9;</span> <span class="c">&#x0FDA;</span>
+             </div>
+</td>
+          </tr>
+</tbody></table> 
+</details>
+
+ <details>
+ <summary>rare/deprecated characters</summary>
+ <table id="rare"><tbody>
+        <tr><td><span class="hint">Unnormalized:</span>
+                <span class="c">&#x0F75;</span> <span class="c">&#x0F78;</span> <span class="c">&#x0F73;</span> <span class="c">&#x0F81;</span> <span class="c">&#x0F76;</span> <span class="c">&#x0F77;</span> <span class="c">&#x0F79;</span>
+                
+                <span style="margin-left: 1em" class="c">&#x0F43;</span><span class="c">&#x0F93;</span> 
+                <span class="c">&#x0F4D;</span><span class="c">&#x0F9D;</span>
+                <span class="c">&#x0F52;</span><span class="c">&#x0FA2;</span>
+                <span class="c">&#x0F57;</span><span class="c">&#x0FA7;</span> 
+                <span class="c">&#x0F5C;</span><span class="c">&#x0FAC;</span> 
+                <span class="c">&#x0F69;</span><span class="c">&#x0FB9;</span> 
+              </td>
+              </tr>
+              <tr>
+              <td><span class="hint">Half numbers:</span>
+            	<span class="c">&#x0F2A;</span> <span class="c">&#x0F2B;</span> <span class="c">&#x0F2C;</span> <span class="c">&#x0F2D;</span> <span class="c">&#x0F2E;</span> 
+            	<span style="margin-left: 1em" class="c">&#x0F2F;</span> <span class="c">&#x0F30;</span> <span class="c">&#x0F31;</span> <span class="c">&#x0F32;</span> <span class="c">&#x0F33;</span>
+</td>
+          </tr>
+</tbody></table> 
+</details>
+  </div>
+
+
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
+<div id="temp"></div>
+
+
+</div><!-- end of tables -->
+
+  
+
+
+<div id="bottomBP"></div>
+<script>
+document.getElementById('bottomBP').innerHTML = getBottom()
+setUpValues()
+</script>
+</body>
+</html>

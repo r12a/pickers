@@ -1,0 +1,217 @@
+@font-face { 
+	font-family: 'Tibetan Machine Uni WF'; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: url(../../shared/webfonts/TibMachUni-1.901.woff); 
+	} 
+@font-face { 
+	font-family: 'Noto Serif Tibetan WF'; 
+	font-style: normal; 
+	font-weight: normal; 
+	src: url(../../shared/webfonts/notoseriftibetan-regular-webfont.woff2); 
+	} 
+
+
+#rarestuff { display:none; }
+
+
+span.hint { 
+  margin-inline-start: .5em;
+  margin-inline-end: 1px;
+  font-size: 60%;
+  color:tan;
+  }
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+/*span.x {
+    display: none;
+    }
+span.x span.c {
+    color: chocolate;
+    }*/
+.c.x {
+    color: chocolate;
+    }
+
+
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  "Arian Amu WF", "Noto serif Armenian",  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+
+#kbdGrid {
+    display: flex;
+    flex-direction: row;
+    line-height: 1.2;
+    justify-content: center;
+    }
+
+#morepunctuation {
+    width: 5em;
+    line-height: 1.5;
+    font-size: 80%;
+    text-align: center;
+}
+
+#kbd {
+	margin: auto;
+	line-height: 1.4;
+	color: #666;
+	}
+
+#prefixes, #suffixes { 
+	text-align: center; 
+	border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .25em;
+    margin-inline: .5rem;
+    line-height: 1.4;
+	}
+#suffixes div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+#consonantGrid, #subjoinedGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1.5;
+    }
+#consonantGrid div, #subjoinedGrid div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    }
+#commonvowels { 
+	text-align: center; 
+	border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .25em;
+    margin-inline-start: .5rem;
+    line-height: 1.4;
+	}
+#tsek { 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+	width: 40px;
+	}
+#numpunc {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-left: 1em;
+    justify-content: space-around;
+    align-items: center;
+	line-height: 1;
+	}
+#translitvowels {
+    text-align: center;
+    margin-top: 1em;
+	display: none;
+    }
+
+
+#marks {
+	margin: auto;
+	margin-top: 15px;
+	}
+
+#consonants td { margin: 0; padding: 0; padding-bottom: 3px; }
+#subscripts td { margin: 0; padding: 0;  padding-bottom: 3px;  }
+#subscripts, #consonants { border-collapse:collapse; }
+
+#alpharare { width: 100px;}
+#deprecated { border: 2px solid #DDDDDD;  }
+#deprecated div { background-color:#DDDDDD;  }
+#alphaobsolete { border: 2px solid #DDDDDD;  }
+#alphaobsolete div { background-color:#DDDDDD;  }
+
+
+
+#tconsonants {
+	padding-right: 20px;
+	}
+
+#extras, #headmarks { 
+	text-align: center; 
+	}
+
+
+
+#shad { 
+	width: 30px; 
+	vertical-align: middle; 
+	text-align:center; 
+	line-height: 1.7;
+	}
+#symbols {
+	padding-left: 15px;
+	text-align: left;
+	}
+#headmarks span {
+	margin-left: 5px;
+	}
+#numbers {
+	border-radius: 5px; 
+	}
+#undernumbers {
+	margin-top: 30px;
+	}
+    
+    
+#extraSymbols {
+	margin: auto;
+	}
+#extraSymbols td {
+	text-align: center;
+	}
+#extraSymbols span {
+	min-width: 10px;
+	}
+#extraSymbols td {
+	padding-left: 10px;
+	padding-right: 10px;
+	}
+
+#toggleSymbols {
+	font-size: 80%;
+	cursor: pointer;
+	color: #aaa;
+	}
+#punctuation, #flatnumbers, #other {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
+    }
+
+
+.boxed {
+    background-color:seashell;
+    border-radius:.5rem;
+    border:1px solid tan;
+    margin-block-end:.2rem;
+    }
+
