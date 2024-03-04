@@ -1119,7 +1119,7 @@ out = `
 
 <!--div class="control">Remove:
 <form action="none" onsubmit="removeCharacter(document.getElementById('charRemoval').value); return false;">
-  <input name="charRemoval" id="charRemoval"  type="text" style="width: 40px; text-align:right;" />
+  <input name="charRemoval" id="charRemoval"  type="text" style="width: 40px; text-align:right;">
   <button>Go</button>
 </form>
 </div-->
@@ -1127,8 +1127,8 @@ out = `
 
 <div class="control" onmouseover="showMenuText('Replace one character (left) with another (right) in the text area.','tan');" onmouseout="hideMenuText()">Replace:
 <form action="none" onsubmit="removeCharacter(document.getElementById('charRemoval').value, document.getElementById('charReplacement').value); return false;">
-  <input name="charRemoval" id="charRemoval"  type="text" style="width: 40px; text-align:right; line-height: 1;" />
-  <input name="charReplacement" id="charReplacement"  type="text" style="width: 40px; text-align:right; line-height: 1;" />
+  <input name="charRemoval" id="charRemoval"  type="text" style="width: 40px; text-align:center; line-height: 1;" />
+  <input name="charReplacement" id="charReplacement"  type="text" style="width: 40px; text-align:center; line-height: 1;" />
   <button>Go</button>
 </form>
 </div>
