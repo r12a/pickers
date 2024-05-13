@@ -202,6 +202,9 @@ out = `
      
 <img src="../images/add_term_large.png" alt="Add template for term creation."  title="Add template for term creation."  
     onclick="document.getElementById('output').value += 'native|meaning|IPA|transc|otherTransc|notes|wAlt\\n';document.getElementById('output').focus();" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+     
+<img src="../images/centre.png" alt="Centre the content of the output area."  title="Centre the content of the output area."  
+    onclick="document.getElementById('output').style.textAlign = 'center'">
 
 </div>
 
