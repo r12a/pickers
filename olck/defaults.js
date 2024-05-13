@@ -5,7 +5,7 @@ var factoryDefaults = {}
 	factoryDefaults.rows = "150"; // px height of text area
 	factoryDefaults.lineheight = "1.4"; // line height of text area
 	factoryDefaults.language = 'sat' // language to use for examples
-	factoryDefaults.uifont = ' Noto Sans Ol Chiki WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Noto Sans Ol Chiki WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "24";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,7 +18,7 @@ var thisPicker = 'santaliPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ " Noto Sans Ol Chiki WF" ]
+var webFonts = [ "Noto Sans Ol Chiki WF" ]
 
 
 var template = {}
