@@ -869,6 +869,55 @@ function add (ch) {
 
 
 
+
+
+
+function addAround (ch1, ch2) {
+    // Adds a pair of characters around a selection.  Particularly useful for things like RLI...PDF insertion, or parentheses.
+	// ch1, ch2: string, the text to be added
+	// _cluster: boolean, global variable, set if this is a consonant cluster (used for vowels that surround base)
+	// globals.view: string, indicates which view is showing - this is important, since non-intelligent ordering is needed in the default view
+
+	if (document.getElementById('output').style.display == 'none') return
+
+    document.getElementById("charChoice").innerHTML = '' // clear any left over selection panel
+	
+	var outputNode = document.getElementById( 'output' ) // points to the output textarea
+
+	
+	if (outputNode.selectionStart || outputNode.selectionStart == '0') {
+		var startPos = outputNode.selectionStart
+		var endPos = outputNode.selectionEnd
+		var cursorPos = startPos
+		var scrollTop = outputNode.scrollTop
+		var baselength = 0
+		
+		outputNode.value = 
+                outputNode.value.substring(0, startPos)
+              + ch1
+              + outputNode.value.substring(startPos, endPos)
+              + ch2
+              + outputNode.value.substring(endPos, outputNode.value.length)
+		cursorPos += ch1.length+ch2.length+outputNode.value.substring(startPos, endPos).length
+
+		if (globals.refocus) outputNode.focus()
+		outputNode.selectionStart = cursorPos
+		outputNode.selectionEnd = cursorPos
+		if (! globals.refocus) outputNode.blur()
+		}
+	else {
+		outputNode.value += ch1
+		if (globals.refocus) outputNode.focus()
+		}
+		
+	// normalize
+	if (globals.n11n=='nfc') outputNode.value = outputNode.value.normalize('NFC')
+	else if (globals.n11n=='nfd') outputNode.value = outputNode.value.normalize('NFD')
+	}
+
+
+
+
 function setFallback (first, second) {
 	// set the temporary fallback font
 	// first is the main font set, second is the fallback
