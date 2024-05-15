@@ -83,32 +83,17 @@
 
 
 <div class="spaceline">
-<span class="touch" dir="auto" onclick="toggleSubjoined(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SUBJ</span>
-<span class="touch" dir="auto" onclick="toggleExtended(this); if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">EXT</span>
 <span class="touch" dir="auto" onClick="ccb=document.getElementById('formatchars'); if (ccb.style.display=='none'){ ccb.style.display = 'block'} else {ccb.style.display='none'}">FORMAT</span> 
-<span class="touch" title="Virama" style="padding: 5px 50px;" dir="auto" onClick="add('\u094D');">VIRAMA</span>
 <span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" style="padding: 5px 30px;" onClick="add('\u200B');" title="Zero-width space">ZWSP</span>
 
 <span id="tabEtc"></span>
 <script>addTabEtc('tabEtc')</script>
 </div>
 
 <div id="formatchars" style="display: none; text-align: center; line-height: 1; margin-bottom: 1em;">
-<span class="touch" dir="auto" onClick="add('\u200D');">ZWJ</span> 
-<span class="touch" dir="auto" onClick="add('\u200C');">ZWNJ</span>
-<span class="touch" dir="auto" onClick="add('\u00A0');">NBSP</span> 
-<span class="touch" dir="auto" onClick="add('\u2067');">RLI</span>
-<span class="touch" dir="auto" onClick="add('\u2066');">LRI</span>
-<span class="touch" dir="auto" onClick="add('\u2068');">FSI</span>
-<span class="touch" dir="auto" onClick="add('\u2069');">PDI</span>
-<span class="touch" dir="auto" onClick="add('\u202B');">RLE</span>
-<span class="touch" dir="auto" onClick="add('\u202A');">LRE</span>
-<span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
-<span class="touch" dir="auto" onClick="add('\u200F');">RLM</span>
-<span class="touch" dir="auto" onClick="add('\u200E');">LRM</span>
-<span class="touch" dir="auto" onClick="add('\u034F');">CGJ</span>
-<span class="touch" dir="auto" onClick="add('\u061C');">ALM</span>
+<span class="touch" dir="auto" onClick="addAround('(',')');">(..)</span> 
+<span class="touch" dir="auto" onClick="addAround('“','”');">“..”</span> 
+<span class="touch" dir="auto" onClick="addAround('‘','›');">‘..’</span> 
 </div>
 
 
@@ -148,6 +133,7 @@
             <div>
 <span class="g"><span class="hint">w</span><span class="c">𑃚</span></span>
 <span class="g"><span class="hint">r</span><span class="c">𑃝</span></span>
+<span class="g"><span class="hint">ɽ</span><span class="c">𑃝𑃔</span></span>
 <span class="g"><span class="hint">l</span><span class="c">𑃘</span></span>
 <span class="g"><span class="hint">j</span><span class="c">𑃜</span></span>
             </div>
@@ -172,8 +158,8 @@
 <span class="g"><span class="hint">o</span><span class="c">𑃦</span></span>
 </div>
 <div class="bottomDivider">
-<span class="g"><span class="hint">ā</span><span class="c">𑃢</span></span>
-<span class="g"><span class="hint">ɔ</span><span class="c">𑃧</span></span>
+<span class="g"><span class="hint">ɛ</span><span class="c">𑃧</span></span>
+<span class="g"><span class="hint">a</span><span class="c">𑃢</span></span>
 </div>
 <div>
 <span class="g"><span class="hint">əʲ</span><span class="c">𑃨</span></span>
@@ -261,8 +247,6 @@
 <span class="c">’</span>
 <span class="c">“</span>
 <span class="c">”</span>
-<span class="c">«</span>
-<span class="c">»</span>
 <span class="c">(</span>
 <span class="c">)</span>
 <span class="c">-</span>
