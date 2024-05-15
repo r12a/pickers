@@ -97,6 +97,7 @@ var plist = [
     { tag:'runr', name:'Anglo-Saxon Runes', url:'runr-ang/index.html' },
     { tag:'talu', name:'New&nbsp;Tai&nbsp;Lue', url:'talu/index.html' },
     { tag:'sinh', name:'Sinhala', url:'sinh/index.html' },
+    { tag:'sora', name:'Sora Sompeng', url:'sora-srb/index.html' },
     { tag:'sund', name:'Sundanese', url:'sund/index.html' },
     { tag:'sunu', name:'Sunuwar', url:'sunu-suz/index.html' },
     { tag:'syrc', name:'Assyrian&nbsp;Neo-Aramaic', url:'syrc-aii/index.html' },
@@ -409,6 +410,9 @@ var plistByRegion = {
 	'S':[
 			['<b>Sinhala</b> ['],
 				['Sinhala', 'sinh/index.html'],
+				[']'],
+			['• <b>Sora Sompeng</b> ['],
+				['Sora','sora-srb/index.html'],
 				[']'],
 			['• <b>Sundanese</b> ['],
 				['Sundanese','sund/index.html'],
