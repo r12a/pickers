@@ -1,3 +1,4 @@
+/* 
 var plist = [
     { tag:'adlm', name:'Adlam', url:'adlm/index.html' },
     { tag:'arab', name:'Arabic', url:'arab-ar/index.html' },
@@ -33,6 +34,7 @@ var plist = [
     { tag:'elym', name:'Elymaic', url:'elym/index.html' },
     { tag:'ethi', name:'All Ethiopic', url:'ethi/index.html' },
     { tag:'ethi', name:'Amharic', url:'ethi-am/index.html' },
+    { tag:'gara', name:'Wolof Garay', url:'gara-wo/index.html' },
     { tag:'geor', name:'Modern Georgian', url:'geor-ka/index.html' },
     { tag:'geor', name:'Khutsuri', url:'geok-ka/index.html' },
     { tag:'geor', name:'All Georgian', url:'geor-all/index.html' },
@@ -120,7 +122,7 @@ var plist = [
     { tag:'vaii', name:'Vai', url:'vai/index.html' },
     { tag:'yezi', name:'Yezidi', url:'yezi' },
 ]
-
+*/
 
 
 var plistByRegion = {
@@ -174,7 +176,10 @@ var plistByRegion = {
 				[']'],
 			],
 	'C':[
-			['<b>Cherokee</b> ['],
+			['<b>Cham</b> ['],
+				['Cham','cham/index.html'],
+				[']'],
+			['• <b>Cherokee</b> ['],
 				['Cherokee','cher/index.html'],
 				[']'],
 			['• <b>Chinese</b> ['],
