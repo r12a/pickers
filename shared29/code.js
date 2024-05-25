@@ -82,58 +82,6 @@ function addReplacement (ch, autoInsertedFromPalette='') {
 
 
 
-function addReplacementOLDISH (ch, autoInsertedFromPalette='') { 
-	// ch: string, the text to be added
-	if (debug) console.log('addReplacement(',ch,')')
-	
-	if (document.getElementById('output').style.display == 'none') { return; }
-	var outputNode = document.getElementById( 'output' ); // points to the output textarea
-
-	
-	if (outputNode.selectionStart || outputNode.selectionStart == '0') {
-		var startPos = outputNode.selectionStart
-		var endPos = outputNode.selectionEnd
-		var cursorPos = startPos
-		var scrollTop = outputNode.scrollTop
-        var substitutionMade = false
-		
-        // get whatever is highlighted, or if no highlight the previous character
-        var consonant
-        //if (startPos === endPos) startPos = startPos-1
-        if (debug) console.log('autoInsertedFromPalette length is:', autoInsertedFromPalette.length)
-        if (startPos === endPos) startPos = startPos-autoInsertedFromPalette.length
-        consonant = outputNode.value.substring(startPos-1,endPos-1)
-		if (consonant.codePointAt(0) > 0xD800 && consonant.codePointAt(0) < 0xDFFF) startPos--
-        if (debug) console.log('Consonant',consonant)
-        
-        // merge the base and the vowels
-        if (ch.includes('-')) {
-            ch = ch.replace('-',consonant)
-            startPos--
-            substitutionMade = true
-            }
-        
-		outputNode.value = outputNode.value.substring(0, startPos)
-              + ch
-              + outputNode.value.substring(endPos, outputNode.value.length)
-		if (substitutionMade) cursorPos += ch.length-2
-        else cursorPos += ch.length-1
-
-		if (globals.refocus) outputNode.focus()
-		outputNode.selectionStart = cursorPos
-		outputNode.selectionEnd = cursorPos
-		if (! globals.refocus) outputNode.blur()
-		}
-	else {
-		outputNode.value += ch
-		if (globals.refocus) outputNode.focus()
-		}
-		
-	// normalize
-	if (globals.n11n=='nfc') { outputNode.value = outputNode.value.normalize('NFC') }
-	else if (globals.n11n=='nfd') { outputNode.value = outputNode.value.normalize('NFD') }
-	}
-
 
 
 // LOCALSTORAGE ROUTINES
@@ -368,15 +316,6 @@ function makeSharingLink () {
 	output.focus()
 	}
 
-function vocab2ExampleOLD (input) {
-	// converts a sequence of vocab data, ie. str|ipa|meaning|... to example code
-	items=input.split('|')
-	console.log(items)
-	str=items[0]+'/'+transliterate(items[0])+'/'+items[2]+'/'+items[1]
-	console.log(str)
-	makeExample(defaults.language,template.direction,str)
-	}
-
 
 function vocab2Example (input) {
 	// converts a sequence of vocab data, ie. str|ipa|meaning|... to example code that can be automatically expanded
@@ -393,24 +332,6 @@ function vocab2Example (input) {
 	}
 
 
-function vocab2ExampleXX (input) {
-	// converts a sequence of vocab data, ie. str|ipa|latin|meaning|notes to example code
-	items=input.split('|')
-	console.log(items)
-	var native, meaning, ipa, latin, notes
-	native = items[0]
-	meaning = items[1]
-	ipa = items[2]
-	if (ipa.includes('(')) {
-		ipaSplit = ipa.split('(')
-		ipa = ipaSplit[0].trim()
-		latin = ipaSplit[1].replace(')','').trim()
-		}
-	else latin = ''
-	str=items[0]+'/'+transliterate(items[0])+'/'+items[2]+'/'+items[1]
-	console.log(str)
-	makeExample(defaults.language,template.direction,str)
-	}
 
 function vocab2Markup (input) {
 	// converts a sequence of vocab data, ie. str|ipa|meaning|... to example code that can be inserted directly (normally called from pull down menu)
@@ -438,18 +359,6 @@ function vocab2Markup (input) {
 	}
 
 
-
-function makeExampleX (lang, dir, str) {
-	// str is populated when we're generating from a vocab string
-	var output = document.getElementById('output')
-	if (str) chars = str
-	else var chars = getHighlightedText(output)
-	document.getElementById('transcriptionWrapper').style.display='block'
-	document.getElementById('transcription').style.display = 'block'
-	document.getElementById('transcription').contentEditable = true
-	document.getElementById('transcription').textContent = getExample(chars, lang, dir)
-	output.focus()
-	}
 
 function makeExample (lang, dir, str) {
 	// str is populated when we're generating from a vocab string
@@ -601,24 +510,6 @@ function closeSidebarPalettes (node) {
 
 
 
-function closeSidebarPalettesX (node) {
-	menuitems = node.parentNode.querySelectorAll('div'); 
-    for (i=0;i<menuitems.length;i++) {
-        if (menuitems[i].classList.contains('palette')) {
-            //menuitems[i].style.color='white'
-            //globals[menuitems[i].dataset.var] = false
-            menuitems[i].classList.remove('on')
-            menuitems[i].classList.add('off')
-			window.kbdEventList = {}
-            //if (menuitems[i].dataset.locn != '') document.getElementById(menuitems[i].dataset.locn).style.display = 'none'
-            }
-        }
-    document.getElementById('keyboard').style.display='none';
-	document.getElementById('output').focus()
-	}
-
-
-
 
 
 
@@ -661,53 +552,6 @@ function hasHighlight (node) {
 
 function paste () {
 	document.execCommand('paste')
-	}
-
-
-function getExampleX (str, lang, dir) {
-	parts = str.split('/')
-	var out = '<span class="charExample" translate="no">'
-	out += '<span class="ex" lang="'+lang+'"'
-	if (dir==='rtl') { out += ' dir="rtl"' }
-	out += '>'+parts[0]+'</span> '
-	if (parts[1]) {
-		out += '<span class="trans">'+parts[1]+'</span> '
-		}
-	if (parts[2]) {
-		if (parts[2].startsWith(':')) out += '(<span class="trans">'+parts[2].substr(1)+'</span>) '
-		else out += '<span class="ipa">'+parts[2]+'</span> '
-		}
-	if (parts[3]) {
-		out += '<span class="meaning">'+parts[3]+'</span> '
-		}
-	return out.trim()+'</span>'
-	}
-
-
-
-
-function getExampleXX (str, lang, dir) {
-	parts = str.split('/')
-	var out = '<span class="charExample" translate="no">'
-	out += '<span class="ex" lang="'+lang+'"'
-	if (dir==='rtl') { out += ' dir="rtl"' }
-	out += '>'+parts[0]+'</span> '
-	if (parts[1]) {
-		out += '<span class="trans">'+parts[1]+'</span> '
-		}
-	if (parts[2]) {
-		if (parts[2].startsWith(':')) out += '(<span class="trans">'+parts[2].substr(1)+'</span>) '
-		else if (parts[2].includes('(')) {
-			ipaSplit = parts[2].split('(')
-			out += ' (<span class="trans">'+ipaSplit[1].replace(')','').trim()+'</span>) '
-			out += '<span class="ipa">'+ipaSplit[0].trim()+'</span> '
-			}
-		else out += '<span class="ipa">'+parts[2]+'</span> '
-		}
-	if (parts[3]) {
-		out += '<span class="meaning">'+parts[3]+'</span> '
-		}
-	return out.trim()+'</span>'
 	}
 
 
@@ -1000,19 +844,6 @@ function changeLineHeight ( newSize ) {
 	}
 
 
-function setUIFont (font) {
-	chars = document.querySelectorAll('.c,.k1,.k2,.k3,.shapeSelect,#shapelist,#cursive')
-	for (i=0;i<chars.length;i++) {
-		chars[i].style.fontFamily = '"'+font+'"'
-		}
-	document.querySelector('#extrashapes').style.fontFamily = '"'+font+'"'
-	document.querySelector('#transcriptionChoice').style.fontFamily = "\'ExtendedLatinWF\', \''+font+'\'"
-	
-	defaults.uifont = font
-	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
-	}
-	
-		
 
 function setUIFont (font) {
 	document.querySelector('#alphabet').style.fontFamily = '"'+font+'"'
@@ -1327,21 +1158,6 @@ function getTitle (textcontent) {
         else return ''
 	}
 	
-
-function getTitleX (textcontent) { //console.log(textcontent)
-		if (charData[textcontent]) { 
-			var codepoint = ''
-			for (c=0; c<textcontent.length; c++) { 
-				cp = parseInt(textcontent.charCodeAt(c),10)
-				cp = cp.toString(16).toUpperCase()
-				while (cp.length < 4) cp = '0'+cp
-				cp = 'U+'+cp
-				if (c < textcontent.length-1) cp += ' '
-				codepoint += cp
-				}
-			return codepoint+': '+charData[textcontent]
-			}
-	}
 	
 
 
@@ -1360,13 +1176,6 @@ var keyboardUCGuide = [
 ]
 
 var keyboardRowOffset = ['0','1.5em','.5em','1.5em']
-
-function event_toggleKbdShiftOLD () {
-    if (this.classList.contains('shiftKeyOn')) {
-        makeKeyboard(keyboarddef, keyboardLCGuide)
-        }
-    else makeKeyboard(keyboarddef, keyboardUCGuide)
-    }
 
 function event_toggleKbdShift () {
     if (this.classList.contains('shiftKeyOn')) {
@@ -1739,92 +1548,6 @@ function setGridHints (type) {
 
 
 
-function setGridHintsX (type) {
-	// switch the hints alongside characters between key indicators and transliterations
-	document.getElementById('keyHintType').style.color = 'white'
-	document.getElementById('translitHintType').style.color = 'white'
-	document.getElementById('ipaHintType').style.color = 'white'
-	if (type !== 'none') document.getElementById(type+'HintType').style.color = 'brown'
-
-	defaults.hints = type
-	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
-
-	var lastNode = null
-	var nodes = document.querySelectorAll( '.g' )
-	var charNode, hintNode, content, keyContent
-
-	if (type === 'key') {
-		globals.keyHints = 'key'
-		for (let n=0; n<nodes.length; n++ ) {
-			charNode = nodes[n].querySelector('.c, .v')
-			hintNode = nodes[n].querySelector('.hint')
-			content = //charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
-			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
-			hintNode.textContent = ''
-			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.key]) {
-				keyContent = window.spreadsheetRows[content][cols.key] ? window.spreadsheetRows[content][cols.key].replace(/¶/,'\u0331') : ''
-				hintNode.textContent = keyContent
-				}
-			}
-		}
-
-	else if (type === 'ipa') {
-		globals.keyHints = 'ipa'
-		for (let n=0; n<nodes.length; n++ ) {
-			charNode = nodes[n].querySelector('.c, .v')
-			hintNode = nodes[n].querySelector('.hint')
-            if (charNode.textContent.startsWith(factoryDefaults.ccbase)) charNode.textContent = charNode.textContent.substr(1)
-			content = charNode.textContent.replace(/\u200D/g,'').replace(/\u0640/g,'')
-			hintNode.textContent = ''
-			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ipaLoc]) {
-				keyContent = window.spreadsheetRows[content][cols.ipaLoc] ? window.spreadsheetRows[content][cols.ipaLoc].toLowerCase() : ''
-				hintNode.textContent = keyContent
-				}
-			}
-		}
-/*
-	else if (type === 'ipa') {
-		globals.keyHints = 'ipa'
-		for (let n=0; n<nodes.length; n++ ) {
-			charNode = nodes[n].querySelector('.c, .v')
-			hintNode = nodes[n].querySelector('.hint')
-			//content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
-			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
-			hintNode.textContent = ''
-			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ipaLoc]) {
-				keyContent = window.spreadsheetRows[content][cols.ipaLoc] ? window.spreadsheetRows[content][cols.ipaLoc].toLowerCase() : ''
-				hintNode.textContent = keyContent
-				}
-			}
-		}
-*/
-	else if (type === 'translit') {
-		globals.keyHints = 'translit'
-		for (let n=0; n<nodes.length; n++ ) { 
-			charNode = nodes[n].querySelector('.c, .v')
-			//console.log(charNode.textContent, charNode.parentNode.querySelector('.hint').textContent)
-			hintNode = nodes[n].querySelector('.hint')
-			content = //charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/-/g,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
-			content = charNode.textContent.replace(factoryDefaults.ccbase,'').replace(/\u200D/g,'').replace(/\u0640/g,'')
-			hintNode.textContent = ''
-			if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.transLoc]) {
-				keyContent = window.spreadsheetRows[content][cols.transLoc] ? window.spreadsheetRows[content][cols.transLoc] : ''
-				hintNode.textContent = keyContent
-				}
-			}
-		}
-
-	else {
-		for (let n = 0; n < nodes.length; n++ ) { 
-			hintNode = nodes[n].querySelector('.hint')
-			if (hintNode) hintNode.textContent = ''
-			}
-		globals.keyHints = 'none'
-		}
-	}
-
-
-
 function toggleGridHints () {
 	// switch the hints alongside characters between key indicators and transliterations
 	
@@ -2157,178 +1880,9 @@ function selectCCBase (base) {
 
 
 
-function selectCCBaseX (base) {
-	if (base === '0') return
-	//console.log(base)
-	
-	// add defaults.ccbase to combining characters
-	nodes = document.querySelectorAll( '.c' ); 
-	for (var n = 0; n < nodes.length; n++ ) { 
-		// remove leading base characters if this is a combining character
-		if (nodes[n].textContent.length > 1 && defaults.ccbase != '') {
-			while (nodes[n].textContent.charAt(0) === defaults.ccbase) {
-				nodes[n].textContent = nodes[n].textContent.substr(1)
-				}
-			}
-		// look for ZWSP in charData name (which indicates cchar)
-		// if found, add base before other content
-		//console.log(n,nodes[n].textContent,charData[nodes[n].textContent])
-		if (charData[nodes[n].textContent].match('\u200B') && base != '') nodes[n].textContent = base + nodes[n].textContent
-		}
-	defaults.ccbase = base
-	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
-	}
 
 
 
-
-
-function makeCharacterLinkX (cp, block, lang, direction) { 
-	// returns markup with information about cp
-	// only wraps in a link if not on r12a.github.io
-	// cp: a unicode character, or sequence of unicode characters
-	// block: default directory for scripts block file
-	// lang: the BCP47 language tag for the context
-	// direction: either rtl or ltr or ''
-	//var chars = cp.split('')
-	var chars = []
-	convertStr2DecArray(cp, chars)
-	
-
-	var out = '<span class="codepoint" translate="no">'
-	var charstr = ''
-	for (let i=0;i<chars.length;i++) {
-        if (i>0) out += ' + '
-		charstr = String.fromCodePoint(chars[i])
-		var mark = false
-		var cbase = ''
-		var dir = ''
-		
-		if (charData[charstr]) {
-			var hex = chars[i].toString(16).toUpperCase()
-			while (hex.length < 4) hex = '0'+hex 
-			
-			if (charData[charstr].match('\u200B')) mark = true
-			if (mark && defaults.ccbase != '') cbase = '&#x'+convertChar2CP(defaults.ccbase)+';'
-			if (direction === 'rtl') dir = ' dir="rtl"'
-			}
-		else return 'Character not found in database.'
-		out += '<span lang="'+lang+'"'+dir+'>'+cbase+'&#x'+hex+';</span> '
-        }
-	
-	for (let i=0;i<chars.length;i++) {
-        if (i===0) out += '['
-        if (i>0 && i<chars.length) out += ' + '
-        
-		charstr = String.fromCodePoint(chars[i])
-        var hex = chars[i].toString(16).toUpperCase()
-		while (hex.length < 4) hex = '0'+hex 
-		var name = charData[charstr]
-
-
-		if (! window.location.href.match('r12a.github.io')) {
-			var char = String.fromCodePoint(chars[i])
-			if (spreadsheetRows[char] && spreadsheetRows[char][cols.block]) block = '/scripts/'+spreadsheetRows[char][cols.block]+'/block'
-			console.log(spreadsheetRows)
-			out +=  '<a href="'+block+'#char'+hex+'">'
-			}
-		out +=  '<span class="uname">U+'+hex+' '+name+'</span>'
-		if (! window.location.href.match('r12a.github.io')) out +=  '</a>'
-		if (i===chars.length-1) out += ']'
-		}
-    out += '</span> '
-	
-	return out.trim()
-	}
-
-
-
-
-
-function makeCharacterLinkXX (cp, block, lang, direction) { 
-	// returns markup with information about cp
-	// only wraps in a link if not on r12a.github.io
-	// cp: a unicode character, or sequence of unicode characters
-	// block: default directory for scripts block file
-	// lang: the BCP47 language tag for the context
-	// direction: either rtl or ltr or ''
-	//var chars = cp.split('')
-	var chars = []
-	convertStr2DecArray(cp, chars)
-	if (direction==='rtl') direction = ' dir="rtl"'
-	else direction = ''
-	var shortForm = false
-	if (cp.startsWith(':')) {
-		shortForm = true
-		var colon = chars.shift()
-		}
-	
-	var out = '<span class="codepoint" translate="no">'
-	var charstr = ''
-	if (shortForm) {
-		out += '<span lang="'+lang+'"'+direction+'>'
-		for (let i=0;i<chars.length;i++) {
-			charstr = String.fromCodePoint(chars[i])
-			var mark = false
-			var cbase = ''
-			var dir = ''
-
-			if (charData[charstr]) {
-				var hex = chars[i].toString(16).toUpperCase()
-				while (hex.length < 4) hex = '0'+hex 
-				}
-			else return 'Character not found in database.'
-			out += cbase+'&#x'+hex+';'
-			}
-		out += '</span> '
-		}
-	
-	else {
-		for (let i=0;i<chars.length;i++) {
-			if (i>0) out += ' + '
-			charstr = String.fromCodePoint(chars[i])
-			var mark = false
-			var cbase = ''
-			var dir = ''
-
-			if (charData[charstr]) {
-				var hex = chars[i].toString(16).toUpperCase()
-				while (hex.length < 4) hex = '0'+hex 
-
-				if (charData[charstr].match('\u200B')) mark = true
-				if (mark && defaults.ccbase != '') cbase = '&#x'+convertChar2CP(defaults.ccbase)+';'
-				if (direction === 'rtl') dir = ' dir="rtl"'
-				}
-			else return 'Character not found in database.'
-			out += '<span lang="'+lang+'"'+dir+'>'+cbase+'&#x'+hex+';</span> '
-			}
-		}
-
-
-	for (let i=0;i<chars.length;i++) {
-        if (i===0) out += '['
-        if (i>0 && i<chars.length) out += ' + '
-        
-		charstr = String.fromCodePoint(chars[i])
-        var hex = chars[i].toString(16).toUpperCase()
-		while (hex.length < 4) hex = '0'+hex 
-		var name = charData[charstr]
-
-
-		if (! window.location.href.match('r12a.github.io')) {
-			var char = String.fromCodePoint(chars[i])
-			if (spreadsheetRows[char] && spreadsheetRows[char][cols.block]) block = '/scripts/'+spreadsheetRows[char][cols.block]+'/block'
-			console.log(spreadsheetRows)
-			out +=  '<a href="'+block+'#char'+hex+'">'
-			}
-		out +=  '<span class="uname">U+'+hex+' '+name+'</span>'
-		if (! window.location.href.match('r12a.github.io')) out +=  '</a>'
-		if (i===chars.length-1) out += ']'
-		}
-    out += '</span> '
-	
-	return out.trim()
-	}
 
 
 
@@ -2672,238 +2226,11 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 			}
 		
 		return out
-}
+    }
 
 
 
 
-
-function buildDBInfoLineX (char, toplevel, originStr, ptr, showAll) {
-		
-		hex = char.codePointAt(0).toString(16).toUpperCase()
-		while (hex.length < 4) hex = '0'+hex
-		
-		out = '<div class="dbCharContainer"'
-		if (!toplevel) out += ' style="margin-left: 3em;"'
-		if (toplevel) out += '><span class="dbCharItem">'+char+'</span> '
-		else if (! showAll) out += '><span class="dbCharItem">'+char+'</span> '
-		else out += '><span class="dbCharItemLevel2">'+char+'</span> '
-		
-		// skip items with an x in the class column unless this is the top level
-		// ie. characters in the text will be reported, but not linked to - options
-		var ignorable = false
-		if (! toplevel && spreadsheetRows[char] && spreadsheetRows[char][cols.class] && spreadsheetRows[char][cols.class].includes('-')) ignorable = true
-		
-		
-		out += '<span class="dbCharSubContainer" style="display:flex;flex-direction:column;">'
-
-		if (spreadsheetRows[char] && ignorable === false) {
-					
-			out += '<span class="dbCharInfo">'
-
-			// get ipa info
-			if (cols.ipaLoc) {
-				//out += '<bdi class="analysisIPA" onclick="sieveFor(\'analysisIPA\')" onmouseover="showMenuText(\'Make a list of IPA values.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer"><em>ipa</em> '
-				//out += '<bdi class="analysisIPA" onclick="sieveFor(\'analysisIPA\')" onmouseover="showMenuText(\'IPA: Click to make a list of values.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
-				out += '<bdi class="analysisIPA" onmouseover="showMenuText(\'Typical phonemic/phonetic value(s).\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
-				if (spreadsheetRows[char][cols.ipaLoc]) out += ' <span class="ipa" style="display:inline-block; min-width:1.5em;">'+spreadsheetRows[char][cols.ipaLoc].toLowerCase()+'</span>'
-				else out += '<span class="ipa" style="display:inline-block; min-width:1.5em;">-</span>'
-				out += '</bdi>'
-				}
-
-            // get any ipaPlus info
-			if (cols.ipaPlus && spreadsheetRows[char][cols.ipaPlus]) {
-				out += `<bdi class="analysisIPAplus" onmouseover="showMenuText('Additional sounds that may be associated with this letter.','tan')" onmouseout="hideMenuText()" style="cursor:pointer">`
-				out +=  `<span class="ipa" style="display:inline-block; min-width:1.5em;">${ spreadsheetRows[char][cols.ipaPlus].toLowerCase() }</span>`
-				out += '</bdi>'
-				}
-
-			// get transcription
-			if (cols.othertranscriptions) {
-				for (let t=0;t<cols.othertranscriptions.length;t++) {
-					//out += '<bdi class="analysisTransc" onclick="sieveFor(\'analysisTransc\')" onmouseover="showMenuText(\''+cols.othertranscriptions[t][1]+' transcription. (Click to extract a list.)\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer"><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
-					out += '<bdi class="analysisTransc" onmouseover="showMenuText(\''+cols.othertranscriptions[t][1]+' transcription.\',\'tan\')" onmouseout="hideMenuText()"><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
-					if (spreadsheetRows[char][cols.othertranscriptions[t][0]]) out += ' <span class="transc">'+spreadsheetRows[char][cols.othertranscriptions[t][0]]+'</span>'
-					else out += '<span>-</span>'
-					out += '</bdi>'
-					}
-				}
-
-
-			// get type
-			out += '<bdi class="analysisType">'
-			//out += '<em>type</em> '
-			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="" onmouseover="showMenuText(\'Type of character.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
-			else out += '<span class="ipa">-</span>'
-			out += '</bdi>'
-
-
-
-			// get usage
-			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
-				out += '<bdi class="analysisStatus">'
-				//out += '<em>usage</em> '
-				out += '<span onmouseover="showMenuText(\'Usage notes.\',\'tan\')" onmouseout="hideMenuText()">('+spreadsheetRows[char][cols.statusLoc]+')</span>'
-				out += '</bdi>'
-				}
-
-			// get status
-			if (spreadsheetRows[char][cols.status] && cols.status > 0) {
-				out += '<bdi class="analysisStatus">'
-				//out += '<em>usage</em> '
-				out += ' <span style="color:black; font-weight: bold;" onmouseover="showMenuText(\'Status notes.\',\'tan\')" onmouseout="hideMenuText()">'+statusExpander(spreadsheetRows[char][cols.status])+'</span>'
-				out += '</bdi>'
-				}
-
-			// get class (ie. general category)
-			if (spreadsheetRows[char][cols.class] && cols.class > 0) {
-				out += '<bdi class="">'
-				out += ' <span style="font-size: 80%; font-style:italic;" onmouseover="showMenuText(\'General category.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.class]+'</span>'
-				out += '</bdi>'
-				}
-
-			// get transliteration
-			//if (spreadsheetRows[char][cols.transLoc] && spreadsheetRows[char][cols.transLoc] !== char) {
-			if (spreadsheetRows[char][cols.transLoc] && cols.transLoc > 0) {
-				out += '<bdi class="analysisTranslit" onmouseover="showMenuText(\'Transliteration produced by this app.\',\'tan\')" onmouseout="hideMenuText()">'
-				out += '<span><em>translit</em> '
-				if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="">'+spreadsheetRows[char][cols.transLoc]+'</span>'
-				else out += '<span>–</span>'
-				out += '</bdi>'
-				}
-
-
-			// get name
-			if (spreadsheetRows[char][cols.nameLoc] && cols.nameLoc > 0) {
-				out += '<bdi class="analysisName" onmouseover="showMenuText(\'Name.\',\'tan\')" onmouseout="hideMenuText()"><em>name</em> '
-				out += ' <span>'+spreadsheetRows[char][cols.nameLoc]
-				if (spreadsheetRows[char][cols.nnameLoc] && cols.nnameLoc > 0) out += ' ('+spreadsheetRows[char][cols.nnameLoc]+')'
-				out += '</span></bdi>'
-				}
-
-			// add link to notes page (using the block column)
-			if (spreadsheetRows[char][cols.block] && cols.block > 0) {
-				//out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+spreadsheetRows[char][cols.block]+'/block#char'+hex+'" target="_blank">details</a></bdi>'
-                //var blockloc = template.blocklocation.replace('/scripts/','').replace('/block','') // deal with legacy
-				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="../../scripts/'+template.blocklocation+'/block.html#char'+hex+'" target="details">notes</a></bdi> • '
-				out += '<bdi onmouseover="showMenuText(\'Open a page to show character properties.\',\'tan\')" onmouseout="hideMenuText()"><a href="https://util.unicode.org/UnicodeJsps/character.jsp?a='+hex+'" target="details">properties</a></bdi>'
-                console.log('template.blocklocation',template.blocklocation)
-				}
-
-/*			// add link to notes page
-			var blockfile = getScriptGroup(parseInt(hex,16), true)
-			//console.log(blockfile)
-			if (blockfile) {
-				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">details</a></bdi>'
-				}
-*/
-			out += '</span>'	
-
-			// add unicode name
-			//out += '<bdi class="dbCharName" onclick="sieveFor(\'dbCharName\')" onmouseover="showMenuText(\'Make a list of Unicode names.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
-			out += '<bdi class="dbCharName" onmouseover="showMenuText(\'Unicode name.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
-			if (spreadsheetRows[char][cols.ucsName]) out += spreadsheetRows[char][cols.ucsName]
-			else {
-				for (let i=0;i<char.length;i++) {
-					if (i>0) out += ', '
-					out += 'U+'+hex+': '+charData[char[i]]
-					}
-				}
-			out += '</bdi>'	
-			}
-		
-		else {
-			// if class is x, just display ucs name
-			out += '<span class="dbCharInfo">'
-			out += '</span><bdi class="dbCharName">'	
-			
-			// add unicode name
-			var blockfile = getScriptGroup(parseInt(hex,16), true)
-			if (blockfile) {
-				for (let i=0;i<char.length;i++) {
-					if (i>0) out += ', '
-					out += 'U+'+hex+': '+charData[char[i]]
-					}
-				}
-			out += '</bdi>'	
-			}
-
-		out += '</span> '
-		out += '</div> '
-		
-		
-		// find related items
-		if (toplevel) {
-			if (showAll) {
-				for (item in spreadsheetRows) { 
-					if (((item.length > 1 && item.includes(char)) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(char))) && spreadsheetRows[item][cols.class] !== '-') out += buildDBInfoLine(item, false, originStr, ptr, showAll)
-					}
-				}
-			else {
-				for (item in spreadsheetRows) { 
-					var matchStr = item.replace(/-/g,'.').replace(/◌/g,'.')
-					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']' || matchStr == '*' || matchStr == '\\') matchStr = 'xx'
-					//console.log('matchstr',matchStr)
-					var  regex = new RegExp(matchStr)
-					itemArray = [... item] // to handle surrogates
-					if (((itemArray.length > 1 && itemArray[0] === char) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(item))) && spreadsheetRows[item][cols.class] !== '-' && originStr.substr(ptr,item.length).match(regex)) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
-					}
-				}
-			}
-		
-		return out
-}
-
-
-
-function sieveForOLDER (type) {
-	// hide the labels
-	var ems = document.getElementById('textAnalysis').querySelectorAll('em')
-	for (var i=0;i<ems.length;i++) ems[i].style.display = 'none'
-	var hlist = ''
-	
-	// hide all bdi elements except the one we want (type)
-	var bdis = document.getElementById('textAnalysis').querySelectorAll('bdi')
-	for (var i=0;i<bdis.length;i++) {
-		if (bdis[i].className !== type) bdis[i].style.display = 'none'
-		else if (bdis[i].querySelector('span')) { hlist += bdis[i].querySelector('span').textContent + '⸱'}
-		// stop the name being on a separate line
-		if (type === 'dbCharName') bdis[i].parentNode.style.display = 'block'
-		}
-	console.log(hlist)
-	}
-
-
-
-
-function sieveForOLD (type) {
-	// hide the labels
-	var hlist = ''
-	var vlist = ''
-	
-	// find the character and/or the value we want (type)
-	var lines = document.getElementById('textAnalysis').querySelectorAll('.dbCharContainer')
-	for (var i=0;i<lines.length;i++) {
-		vlist += lines[i].querySelector('.dbCharItem').textContent
-		valueNode = lines[i].querySelector('.'+type)
-		valueText = ''
-		if (valueNode && valueNode.lastChild.textContent !== '-') {
-			valueText = valueNode.lastChild.textContent
-			vlist += ' '+valueText+'\n'
-			hlist += valueText
-			if (i<lines.length-1) hlist += '⸱'
-			}
-		else {
-			vlist += '\n'
-			hlist += lines[i].querySelector('.dbCharItem').textContent+'⸱'
-			}
-		}
-	
-	// display the result
-	document.getElementById('listOutput').style.display = 'block'
-	document.getElementById('listOutputHorizontal').textContent = hlist
-	document.getElementById('listOutputVertical').textContent = vlist
-	}
 
 
 
@@ -3030,38 +2357,6 @@ function sieveForIPA () {
 	}
 
 
-function sieveForIPAX () {
-	// hide the labels
-	var hlist = ''
-	var vlist = ''
-    var ipaItems, ipaPlusItems
-    
-    // find the IPA data
-    var lines = document.getElementById('textAnalysis').querySelectorAll('.dbCharContainer')
-    for (var i=0;i<lines.length;i++) {
-        hlist += '<span class="xitem">'
-        hlist += '<span class="xitemSrc">'+lines[i].querySelector('.dbCharItem').textContent+'</span>'
-        hlist += '<span class="xitemResults">'
-        valueNode = lines[i].querySelector('.analysisIPA')
-        if (valueNode === null) ipaItems = ' '
-        else ipaItems = valueNode.lastChild.textContent.split(' ')
-        //console.log('ipa',ipaItems)
-        ipaPlusNode = lines[i].querySelector('.analysisIPAplus')
-        if (ipaPlusNode) ipaPlusItems = ipaPlusNode.lastChild.textContent.split(' ')
-        else ipaPlusItems = ''
-        //console.log('ipa+',ipaPlusItems)
-        //for (j=0;j<items.length;j++) hlist += '<span class="xitemRes" onclick="this.classList.toggle(\'xitemHide\')">'+items[j].toLowerCase()+'</span>'
-        for (j=0;j<ipaItems.length;j++) hlist += '<span class="xitemRes" onclick="toggleXItem(this)">'+ipaItems[j].toLowerCase()+'</span>'
-        for (j=0;j<ipaPlusItems.length;j++) hlist += '<span class="xitemHide" onclick="toggleXItem(this)">'+ipaPlusItems[j].toLowerCase()+'</span>'
-        hlist += '</span>'
-        hlist += '</span>\n'
-        }
-	
-	// display the result
-	document.getElementById('listOutput').style.display = 'block'
-	document.getElementById('listOutputHorizontal').innerHTML = hlist
-	document.getElementById('listOutputVertical').textContent = vlist
-	}
 
 
 function addXitems () {
@@ -3217,54 +2512,7 @@ function addSpacesToPicker (type) {
     document.getElementById('output').value = out
     }
 
-function removeCharacterOLD (char) {
-    var problemChars = new Set (['.','*','[',']','(',')','?','^'])
-    if (char === '') return
-    if (char.length === 1) {
-        if (problemChars.has(char)) ch = '\\'+char
-        else ch = char
-        }
-    else {
-        var hex = new Set(['1','2','3','4','5','6','7','8','9','0','A','B','C','D','E','F','a','b','c','d','e','f'])
-        error = false
-        if (char.length > 6) error = true
-        for (let i=0;i<char.length;i++) if (! hex.has(char[i])) error = true
-        if (error) {
-            alert('Input either a single character or hex code point value.')
-            return
-            }
-        var dec = parseInt(char, 16)
-        var ch = String.fromCodePoint(dec)
-        }
-    console.log(ch)
-    var re = new RegExp(ch, "g"); 
-    document.getElementById('output').value = document.getElementById('output').value.replace(re,'')
-    }
 
-
-function removeCharacterLESSOLD (char,replacement) {
-    var problemChars = new Set (['.','*','[',']','(',')','?','^'])
-    if (char === '') return
-    if (char.length === 1) {
-        if (problemChars.has(char)) ch = '\\'+char
-        else ch = char
-        }
-    else {
-        var hex = new Set(['1','2','3','4','5','6','7','8','9','0','A','B','C','D','E','F','a','b','c','d','e','f'])
-        error = false
-        if (char.length > 6) error = true
-        for (let i=0;i<char.length;i++) if (! hex.has(char[i])) error = true
-        if (error) {
-            alert('Input either a single character or hex code point value.')
-            return
-            }
-        var dec = parseInt(char, 16)
-        var ch = String.fromCodePoint(dec)
-        }
-    console.log(ch)
-    var re = new RegExp(ch, "g"); 
-    document.getElementById('output').value = document.getElementById('output').value.replace(re,replacement)
-    }
 
 
 function removeCharacter (char,replacement) {
@@ -3359,22 +2607,6 @@ var charChoiceKeys = new Set(['0','1','2','3','4','5','6','7','8','9'])
 
 
 
-function setUpTypeAssistx (latin, palette, map) {
-	// called from defaults.js, sets up type-in modes with any panels required
-	
-	window.latinTypeAssist=latin
-	makePalette(palette)
-	makeKbdEventList(map)
-    
-    // set the border colour for the top of the textarea
-    var selection = document.getElementById('vertical-menu').querySelector('.on')
-    if (selection.id === 'textAssistDefault') window.output.style.borderTop = '4px solid orange'
-    else if (selection.id === 'textAssistLatin') window.output.style.borderTop = '4px solid tan'
-    else window.output.style.borderTop = '4px solid gray'
-	}
-
-
-
 
 
 function setUpTypeAssist (latin, palette, map) {
@@ -3386,96 +2618,6 @@ function setUpTypeAssist (latin, palette, map) {
 	}
 
 
-
-
-// draw a selection panel for a type-assist keypress
-function drawCharSelectionPanelSAVED (key) {
-	out = ''
-
-	// omit the first item, since we want that at the end
-	for (let i=0;i<kbdEventList[key].length;i++) {
-		if (i > 9) {
-			out += ' &nbsp; <span style="font-size:50%;">See panel for '+eval(kbdEventList[key].length-10)+' more.</span>'
-			break
-			}
-		if (! window.latinTypeAssist) out += ' <sup>'+ kbdEventList[key][i][0] +'</sup>'
-		else out += ' <sup></sup>'
-		out += '<sub>'+ ((i+1) % 10)+'</sub> '
-		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'ExtendedLatinWF\';" onclick="'
-		out += 'addReplacement'
-		out += '(\''+kbdEventList[key][i][1]+'\'); document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+kbdEventList[key][i][1]+'</bdi>'
-		}
-
-	document.getElementById("charChoice").innerHTML = out
-    }
-
-	
-
-	
-// draw a selection panel for a type-assist keypress
-function drawCharSelectionPanel (key) {
-	out = ''
-
-	// omit the first item, since we want that at the end
-	for (let i=0;i<kbdEventList[key].length;i++) {
-		if (i > 9) {
-			out += ' &nbsp; <span style="font-size:50%;">See panel for '+eval(kbdEventList[key].length-10)+' more.</span>'
-			break
-			}
-		
-		if (! window.latinTypeAssist) {
-			//console.log('ipa',spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc])
-			// if there is an ipa transcription, use that as a superscript hint
-			// otherwise, use the transliteration
-			if (spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc]) hint = spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc]
-			else hint = kbdEventList[key][i][0]
-			out += ' <sup>'+ hint +'</sup>'
-			}
-		else out += ' <sup></sup>'
-		out += '<sub>'+ ((i+1) % 10)+'</sub> '
-		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'ExtendedLatinWF\';" onclick="'
-		out += 'addReplacement'
-		out += '(\''+kbdEventList[key][i][1]+'\'); document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+kbdEventList[key][i][1]+'</bdi>'
-		}
-
-	document.getElementById("charChoice").innerHTML = out
-    }
-
-	
-
-	
-// draw a selection panel for a type-assist keypress
-// new version doesn't just put IPA in grey
-function drawCharSelectionPanel (key) {
-	out = ''
-
-	// omit the first item, since we want that at the end
-	for (let i=0;i<kbdEventList[key].length;i++) {
-		if (i > 9) {
-			out += '<br><span style="font-size:50%; margin-inline-start:3em;"><a href="#" onclick="palette=document.getElementById(\'transcriptionPalette\'); palette.style.display=\'block\'; toggle=document.getElementById(\'togglePalette\'); if (toggle.classList.contains(\'off\')) {toggle.classList.remove(\'off\'); toggle.classList.add(\'on\');} return false;">Open the panel</a> for '+eval(kbdEventList[key].length-10)+' more.</span>'
-			break
-			}
-		
-		if (! window.latinTypeAssist) {
-			//console.log('ipa',spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc])
-			// if there is an ipa transcription, use that as a superscript hint
-			// otherwise, use the transliteration
-			//if (spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc]) hint = spreadsheetRows[kbdEventList[key][i][1]][cols.ipaLoc]
-			//else hint = kbdEventList[key][i][0]
-			hint = kbdEventList[key][i][0]
-			out += ' <sup>'+ hint.toLowerCase() +'</sup>'
-			}
-		else out += ' <sup></sup>'
-		out += '<sub>'+ ((i+1) % 10)+'</sub> '
-		out += '<bdi style="font-family:\''+defaults.uifont+'\', \'ExtendedLatinWF\';" onclick="'
-		out += 'addReplacement'
-		out += '(\''+kbdEventList[key][i][1]+'\'); document.getElementById(\'charChoice\').innerHTML = \'\'; ">'+kbdEventList[key][i][1]+'</bdi>'
-		}
-
-	document.getElementById("charChoice").innerHTML = out
-    }
-
-	
 
 	
 // draw a selection panel for a type-assist keypress
@@ -3682,40 +2824,11 @@ function addVowel (ch) {
     }
 
 
-function makePaletteX (mappingTable) {
-    var output = ''
-	var fulllist = mappingTable.split('\n')
-	for (let i=0;i<fulllist.length;i++) {
-        list = fulllist[i]
-        //list = list.trim('') // can't be used because it removes NNBSP
-        list = list.replace(/^[ \t\uFEFF]+|[\ \t\uFEFF]+$/g, '')
-        list = list.replace(/ +/g,' ')
-        list = list.replace(/\u0008/g,'')
-        if (list==='') continue
-		
-        out = ''
-        var charArray = list.split('\u0020')
-        var theKey = charArray.shift()
-        out = '<b>'+theKey+'</b>\n'
-        for (let j=0;j<charArray.length;j++) {
-            if (window.latinTypeAssist) {
-                out += '<span class="t" onclick="add(\''+charArray[j]+'\')">'+charArray[j]+'</span>\n'
-                }
-            else {
-                out += '<span class="t" onmouseover="showtrans(\''+charArray[j+1]+'\')" onmouseout="hidetrans()" onclick="add'
-                if (charArray[j+1] && charArray[j+1].includes('-')) out += 'Vowel'
-                out += '(\''+charArray[j+1]+'\')">'+charArray[j]+'</span>\n'
-                j++
-                }
-            }
-        output += out
-        }
-	document.getElementById('transcriptionPalette').innerHTML = output
-	}
 
 
 // new version to remove the mouseover and replace the transliteration with the character itself
 function makePalette (mappingTable) {
+    console.log('mappingTable',mappingTable)
     var output = ''
 	var fulllist = mappingTable.split('\n')
 	for (let i=0;i<fulllist.length;i++) {
@@ -3899,99 +3012,7 @@ function parseSpreadsheet () {
 	
 
 
-function makeLatinTypeAssistMapOLD () {
-	// create a data object for the Latin only palette
-	// uses latinRegister from shared24/latinregister
-	
-	// quit if the spreadsheet hasn't been updated
-	if (typeof cols.class === 'undefined') {
-		console.log("latinTypeAssistMap exists. Quitting.")
-		return
-		}
-	
-	// get the data
-	var collector = []
-	for (item in spreadsheetRows) {
-		if (spreadsheetRows[item][cols.latin]) {
-			var items = spreadsheetRows[item][cols.latin].split(' ')
-			for (let i=0;i<items.length;i++) collector.push(items[i])
-			}
-		else if (typeof cols.latin === 'undefined') {
-			if (spreadsheetRows[item][cols.transLoc]) collector.push(spreadsheetRows[item][cols.transLoc])
-			//if (cols.transcKey && spreadsheetRows[item][cols.transcKey]) collector.push(spreadsheetRows[item][cols.transcKey])
-			if (cols.transcription && spreadsheetRows[item][cols.transcription]) {
-				var items = spreadsheetRows[item][cols.transcription].split(' ')
-				for (let i=0;i<items.length;i++) collector.push(items[i])
-				}
-			if (cols.ipaLoc && spreadsheetRows[item][cols.ipaLoc]) {
-				items = spreadsheetRows[item][cols.ipaLoc].split(' ')
-				for (let i=0;i<items.length;i++) collector.push(items[i])
-				}
-			}
-		}
-	
-	// remove duplicates from collector
-	const uniqueSet = new Set(collector)
-	collector = [...uniqueSet]
-	
-	outObj = {}
-	notInRegister = ''
-	for (let i=0;i<collector.length;i++) {
-		var asciiOnly = true
-		for (let c=0;c<collector[i].length;c++) {
-			if (collector[i].codePointAt(c) > 127) asciiOnly = false
-			continue
-			}
-		if (asciiOnly) continue
 
-
-        lookup = collector[i].normalize('NFD')[0]
-
-        if (latinRegister[lookup]) { 
-			if (outObj[latinRegister[lookup]]) outObj[latinRegister[lookup]] +=  ' '+collector[i]
-			else outObj[latinRegister[lookup]] = latinRegister[lookup] + ' ' +collector[i]
-			}
-		else notInRegister += collector[i] + '  '
-       /* if (latinRegister[collector[i][0]]) { 
-			if (outObj[latinRegister[collector[i][0]]]) outObj[latinRegister[collector[i][0]]] +=  ' '+collector[i]
-			else outObj[latinRegister[collector[i][0]]] = latinRegister[collector[i][0]] + ' ' +collector[i]
-			}
-		else notInRegister += collector[i] + '  '*/
-		}
-	
-	var outArray = Object.values(outObj)
-	outArray.sort()
-	
-	window.latinTypeAssistMap = ''
-	for (i=0;i<outArray.length;i++) window.latinTypeAssistMap += outArray[i] + '\n'
-	
-	console.log('latinTypeAssistMap done')
-	console.log('Register didn\'t have:', notInRegister)
-	}
-
-
-function reverseTransliterate (str) {
-// uses array created in setup.js to convert Latin back to native
-
-str = ' '+str
-// exclusions list deals with characters problematic for regex
-var exclusions = new Set(['(',')','[',']','.',' ','|','+','*','?'])
-var exclusionList = []
-
-for (i=0;i<revTranslitArray.length;i++) {
-	if (exclusions.has(revTranslitArray[i][0])) { exclusionList.push(i); continue }
-	re = new RegExp(revTranslitArray[i][0],'g')
-	//console.log(re)
-	str = str.replace(re, revTranslitArray[i][1])
-	}
-
-// replace any exclusions
-for (x=0;x<exclusionList.length;x++) {
-	xre = new RegExp('\\'+revTranslitArray[exclusionList[x]][0],'g')
-	str = str.replace(xre, revTranslitArray[exclusionList[x]][1])
-	}
-return str.trim()
-}
 
 
 
@@ -4077,23 +3098,6 @@ function makeLatinTypeAssistMap () {
 
 
 
-
-function getVocabOLD (str) {
-// converts a string of native text to native_text||ipa_transcription
-	var parts = str.split('|')
-	if (parts.length===1) parts[1] = ''
-	var ipa=toLatin(parts[0])
-	ipa = ipa.replace(/altfirst|altlast|alts|alt|syllable/g,'')
-	ipa = ipa.replace(/"/g,'')
-	ipa = ipa.replace(/span|class/g,'')
-	ipa = ipa.replace(/=|<|>/g,'')
-	ipa = ipa.replace(/\//g,'')
-	ipa = ipa.replace(/\s+/g,' ').trim()
-	//ipa = ipa.replace(/\<span class=syllable\>/g,'').replace(/<span class=alt>/,'').replace(/span\>/g,'').replace(regex,'')
-	out = condense(parts[0])+'|'+parts[1]+'|'+ipa
-	
-	return out
-	}
 
 
 
@@ -4376,22 +3380,6 @@ return chars.join('')
 
 
 
-function sortOutput (text, unique=false) {
-    // sorts all the characters in the output field by Unicode code point order
-    // unique indicates whether or not to reduce to one instance of each character
-    
-    if (unique) {
-        var charSet = new Set([...text])
-        console.log(charSet)
-        charList = [...charSet]
-        }
-    else charList=[...text]
-    console.log(charList)
-    sorted=charList.sort()
-    return sorted.join(' ')
-    }
-
-
 
 
 function sortOutput (text, unique=false, word=false) {
@@ -4421,134 +3409,6 @@ function sortOutput (text, unique=false, word=false) {
 
 
 
-
-function charCheckerOLD () {
-	// scan the text in the text area for unexpected characters/sequences and report
-    // window.charCheckerList is set in localcode.js
-	
-	var text = getHighlightedText(_output)
-    var out = ''
-    var counter = 0
-    
-    // check whether any of the items in charCheckerList appear
-    for (var i=0;i<window.charCheckerList.length;i++) {
-        var wrong = new RegExp(charCheckerList[i].wrong,"g")
-        var matchListWrong = text.match(wrong)
-        if (matchListWrong === null) matchListWrong = []
-        var right = new RegExp(charCheckerList[i].right,"g")
-        var matchListRight = text.match(right)
-        if (matchListRight === null) matchListRight = []
-        //console.log(matchList)
-        //if (matchList && matchList.length > 0) console.log('Found ',charCheckerList[i].wrong,matchList.length,'times.')
-        
-        if (matchListWrong.length > 0) {
-            counter++
-            out += `<tr>`
-            out += `<td class="cCheckCount`
-            if (matchListWrong.length > 0)  out += ` cCheckHighlight`
-            out += `">${ matchListWrong.length }</td>
-            <td class="cCheckWrong">${ makeCharacterLink(charCheckerList[i].wrong,'', 'ks', 'rtl') }</td>
-            <td class="cCheckCount">${ matchListRight.length }</td>
-            <td class="cCheckRight">${ makeCharacterLink(charCheckerList[i].right,'', 'ks', 'rtl') }</td>
-            `
-
-            console.log('matchListWrong.length', matchListWrong.length)
-            if (matchListWrong.length === 0)  out += `<td class="cCheckFix" style="color:lightgreen; font-size: 1.5rem; font-weight: bold; font-style: italic; padding-inline: 1rem;">OK</td>`
-            else out += `<td class="cCheckFix" style="padding-inline: 1rem;"><button onclick="_output.value = _output.value.replace(/${ charCheckerList[i].wrong }/g,'${ charCheckerList[i].right }'); charChecker();">Fix</button></td>
-            </tr>`
-            }
-        }
-
-    if (out !== '') {
-        var table = '<table class="charChecker"><thead>'
-        table += '<tr><th>&nbsp;</th><th>NOT recommended</th><th>&nbsp;</th><th>Recommended</th></tr>'
-        table += '</thead><tbody>'
-        table += out
-        out += '</tbody></table>'
-        }
-    else table = `<p>No issues found.</p>`
-    
-    document.getElementById('transcription').innerHTML = table
-	document.getElementById('transcription').contentEditable = true
-	document.getElementById('transcriptionWrapper').style.display = 'block' 
-	}
-
-
-function charCheckerX () {
-	// scan the text in the text area for unexpected characters/sequences and report
-    // window.charCheckerList is set in localcode.js
-	
-	var text = getHighlightedText(_output)
-    var out = ''
-    var counter = 0
-    
-    // check whether any of the items in charCheckerList appear
-    for (var i=0;i<window.charCheckerList.length;i++) {
-        var wrong = new RegExp(charCheckerList[i].wrong,"g")
-        var matchListWrong = text.match(wrong)
-        if (matchListWrong === null) matchListWrong = []
-        var right = new RegExp(charCheckerList[i].right,"g")
-        var matchListRight = text.match(right)
-        if (matchListRight === null) matchListRight = []
-        
-        if (matchListWrong.length > 0) {
-            counter++
-            out += `<tr>`
-            out += `<td class="cCheckCount`
-            if (matchListWrong.length > 0)  out += ` cCheckHighlight`
-            out += `">${ matchListWrong.length }</td>
-            <td class="cCheckWrong">${ makeCharacterLink(charCheckerList[i].wrong,'', 'ks', 'rtl') }</td>
-            <td class="cCheckCount">${ matchListRight.length }</td>
-            <td class="cCheckRight">${ makeCharacterLink(charCheckerList[i].right,'', 'ks', 'rtl') }</td>
-            `
-
-            if (matchListWrong.length === 0)  out += `<td class="cCheckFix" style="color:lightgreen; font-size: 1.5rem; font-weight: bold; font-style: italic; padding-inline: 1rem;">OK</td>`
-            else out += `<td class="cCheckFix" style="padding-inline: 1rem;"><button onclick="_output.value = _output.value.replace(/${ charCheckerList[i].wrong }/g,'${ charCheckerList[i].right }'); charChecker();">Fix</button></td>
-            </tr>`
-            }
-        }
-    
-    // check for unrecognised characters
-    var chars = [...text]
-    unrecognised = []
-    for (i=0;i<chars.length;i++) {
-        //if (typeof spreadsheetRows[chars[i]] === 'undefined' && chars[i] !== ' ' && chars[i] !== '\u000A') {
-        if (typeof spreadsheetRows[chars[i]] === 'undefined' && chars[i].codePointAt(0) > 128) {
-            unrecognised.push(chars[i])
-            }
-        }
-    const uniqueSet = new Set(unrecognised)
-    unrecognised = [...uniqueSet]
-    unknown = ''
-    if (unrecognised.length > 0) {
-        for (i=0;i<unrecognised.length;i++) {
-             unknown += `<tr><td class="cCheckWrong">${ makeCharacterLink(unrecognised[i],'', 'ks', 'ltr') }</td></tr>`
-            }
-        }
-
-    var table = ''
-    if (out !== '') {
-        table += '<table class="charChecker"><thead>'
-        table += '<tr><th>&nbsp;</th><th>NOT recommended</th><th>&nbsp;</th><th>Recommended</th></tr>'
-        table += '</thead><tbody>'
-        table += out
-        out += '</tbody></table>'
-        }
-    
-    if (unknown !== '') {
-        table += '<table class="charChecker" style="margin-block-start:2rem; width: 30%; margin: auto;"><thead>'
-        table += '<tr><th>NOT recognised</th></tr>'
-        table += '</thead><tbody>'
-        table += unknown
-        out += '</tbody></table>'
-        }
-    
-    if (out === '' && unknown === '') table = `<p>No issues found.</p>`
-    
-    document.getElementById('transcription').innerHTML = table
-	document.getElementById('transcription').contentEditable = true
-	document.getElementById('transcriptionWrapper').style.display = 'block' 
-	}
 
 
 
@@ -4709,117 +3569,6 @@ function applyFontVariantCaps (setting) {
 
 
 
-function applyVariantNumericOLD ( type ) {
-    // add font variants to the output
-    // type is the value to add or remove
-    console.log('Change to', type)
-    var values = _output.style.fontVariantNumeric
-    
-    if (type === 'normal') {
-        _output.style.fontVariantNumeric = 'normal'
-        document.getElementById('liningNums').checked = true
-        document.getElementById('proportionalNums').checked = true
-        document.getElementById('diagonalFractions').checked = true
-        document.getElementById('ordinalVariant').checked = false
-        document.getElementById('slashedZeroVariant').checked = false
-        return
-        }
-    else values = values.replace(/normal/,'')
-    
-    if (type === 'lining-nums' && values.includes('oldstyle-nums')) {
-        values = values.replace(/oldstyle-nums/, 'lining-nums')
-        document.getElementById('variantNumericNormal').checked = false
-        }
-    
-    else if (type === 'oldstyle-nums' && values.includes('lining-nums')) {
-        values = values.replace(/lining-nums/, 'oldstyle-nums')
-         document.getElementById('variantNumericNormal').checked = false
-        }
-   
-    else if (type === 'proportional-nums' && values.includes('tabular-nums')) {
-        values = values.replace(/tabular-nums/, 'proportional-nums')
-        document.getElementById('variantNumericNormal').checked = false
-        }
-    
-    else if (type === 'tabular-nums' && values.includes('proportional-nums')) {
-        values = values.replace(/proportional-nums/, 'tabular-nums')
-         document.getElementById('variantNumericNormal').checked = false
-        }
-   
-    else if (type === 'diagonal-fractions' && values.includes('stacked-fractions')) {
-        values = values.replace(/stacked-fractions/, 'diagonal-fractions')
-        document.getElementById('variantNumericNormal').checked = false
-        }
-    
-    else if (type === 'stacked-fractions' && values.includes('diagonal-fractions')) {
-        values = values.replace(/diagonal-fractions/, 'stacked-fractions')
-         document.getElementById('variantNumericNormal').checked = false
-        }
-   
-    else { console.log('in final else')
-        if (values.includes(type)) values = values.replace(type, '')
-        else values += ' '+type
-        document.getElementById('variantNumericNormal').checked = false
-        }
-    
-    _output.style.fontVariantNumeric = values
-    console.log('Result', _output.style.fontVariantNumeric)
-    }
-
-
-
-
-function applyVariantNumericLESS ( type ) {
-    // add font variants to the output
-    // type is the value to add or remove
-    console.log('Change to', type)
-    var values = _output.style.fontVariantNumeric
-    
-    if (type === 'normal') {
-        _output.style.fontVariantNumeric = 'normal'
-        document.getElementById('liningNums').checked = false
-        document.getElementById('oldstyleNums').checked = false
-        document.getElementById('proportionalNums').checked = false
-        document.getElementById('tabularNums').checked = false
-        document.getElementById('diagonalFractions').checked = false
-        document.getElementById('ordinalVariant').checked = false
-        document.getElementById('slashedZeroVariant').checked = false
-        return
-        }
-    else values = values.replace(/normal/,'')
-    
-    if (type === 'lining-nums') {
-        if (values.includes('oldstyle-nums')) values = values.replace(/oldstyle-nums/, 'lining-nums')
-        else values += ' '+type
-        document.getElementById('oldstyleNums').checked = false
-        document.getElementById('variantNumericNormal').checked = false
-        }
-    
-    if (type === 'oldstyle-nums') {
-        if (values.includes('lining-nums')) values = values.replace(/lining-nums/, 'oldstyle-nums')
-        else values += ' '+type
-        document.getElementById('liningNums').checked = false
-        document.getElementById('variantNumericNormal').checked = false
-        }
-   
-    if (type === 'proportional-nums') {
-        if (values.includes('tabular-nums')) values = values.replace(/tabular-nums/, 'proportional-nums')
-        else values += ' '+type
-        document.getElementById('tabular-nums').checked = false
-        document.getElementById('variantNumericNormal').checked = false
-        }
-       
-    if (type === 'tabular-nums') {
-        if (values.includes('proportional-nums')) values = values.replace(/proportional-nums/, 'tabular-nums')
-        else values += ' '+type
-        document.getElementById('proportional-nums').checked = false
-        document.getElementById('variantNumericNormal').checked = false
-        }
-       
-    
-    _output.style.fontVariantNumeric = values
-    console.log('Result', _output.style.fontVariantNumeric)
-    }
 
 
 
