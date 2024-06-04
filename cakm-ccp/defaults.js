@@ -20,6 +20,10 @@ else  defaults = factoryDefaults
  
 var webFonts = [ "Noto Sans Chakma WF" ]
 
+// list of fonts to add to the standard selection
+window.fontsuggestions =  
+`RibengUni`
+
 
 var template = {}
 	template.title = 'Chakma'
