@@ -1325,11 +1325,12 @@ summary:hover {
     bottom: 1rem;
 	border-radius: 5px;
 	width: 2rem;
-    height: 2.5rem;
+    height: 3.5rem;
     font-size: 2rem;
     cursor: pointer;
     color: #aaa;
     text-align: center;
+    border: 1px solid #ccc;
 	}
 
 #controlBox {
