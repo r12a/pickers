@@ -6,8 +6,19 @@
 <meta name="description" content="Pickers allow you to quickly create phrases in a script by clicking on Unicode characters arranged in a way that aids their identification. The phrase appears at the bottom of the screen and you can easily cut and paste the result into your own document. They're written in XHTML with a small amount of JavaScript.">
 <link rel="stylesheet" href="../shared/style/docs.css">
 <script src="../shared/code/boilerplate.js"></script>
+<script src="../scripts/linkdata/linkdb.js"></script>
 <style>
 iframe { border: 0; width: 60%; height: 38em; margin: 1em 32% 1em 7.5%; }
+</style>
+<style>
+#pickerSummaries { margin-inline-start: 7.5%; margin-inline-end: 32%; }
+.scriptname { font-weight: bold; }
+.summaries { font-size: 80%;text-align:start; }
+.letter::before { content: attr(title); font-size: 100%; color:brown;font-weight:bold; margin-inline-end: .5rem; }
+.constituents { /*font-style: italic;*/ font-size: 95%; }
+.constituents::before { content: '{'; font-style: normal; color: #ccc; }
+.constituents::after { content: '} '; font-style: normal; color: #ccc; }
+.plus::before { content: ' • '}
 </style>
 </head>
 
@@ -43,19 +54,99 @@ iframe { border: 0; width: 60%; height: 38em; margin: 1em 32% 1em 7.5%; }
 
 <section id="howto">
 <h2><a href="#howto">Available apps</a></h2>
-  <iframe id="pickerlist" src="pickerlist.html"></iframe>
-  <p>Each app has its own help file, which explains how to use the app and what features are available. Features vary, but can include automatic transcription to and from the text, shape-based hints and selection methods, keyboards, codepoint listing, creating examples in markup, control over the font used, etc.</p>
+
+<script>
+scriptList = { a:[], b:[], c:[], d:[], e:[], f:[], g:[], h:[], i:[], j:[], k:[], l:[], m:[], n:[], o:[], p:[], q:[], r:[], s:[], t:[], u:[], v:[], w:[], x:[], y:[], z:[] }
+
+function listScripts () {
+    // create an alphabetically grouped list of scripts
+    // global scriptList
+    var i, counter=0, firstLetter, script
+    
+         
+    function compareByScriptName(a,b) { // comparison function
+      if (linkDB[a].script < linkDB[b].script)         // compare by script name
+        return -1;
+      if (linkDB[a].script > linkDB[b].script)
+        return 1;
+      return 0;
+    }
+
+
+    // get a list of scripts in indexLetters
+    for (script in linkDB) {
+        firstLetter = linkDB[script].script[0].toLowerCase()
+        //console.log(firstLetter, linkDB[script].script)
+        counter++
+        scriptList[firstLetter].push(script)
+        }
+    // sort the lists
+    for (script in scriptList) {
+        scriptList[script] = scriptList[script].sort(compareByScriptName)
+        }
+    //console.log(counter,'scripts',scriptList)
+    }
+
+function getPickers () {
+    // make a list of links to pickers
+    // global scriptList, linkDB (linkdb.js)
+    var i, s, p, scripts, out='', ptrs=[], found, temp, index, counter=0
+    
+    // get a list of scripts in indexLetters
+    for (index in scriptList) {
+        if (scriptList[index].length>0) { // there are scripts associated with an initial letter
+            temp = '' // screen out index letters with scripts but no pickers
+            temp += `<div class="letter" title="${ index.toUpperCase() }">\n`
+            found = false
+            
+            for (s=0;s<scriptList[index].length;s++) { // for each script associated with a given letter
+                if (linkDB[scriptList[index][s]].pickers) {
+                    if (found) temp += ` • `
+                    //temp += `<a href="${ scriptList[index][s] }/index.html" class="scriptname">${ linkDB[scriptList[index][s]].script }</a>\n`
+                    temp += `<span class="scriptname">${ linkDB[scriptList[index][s]].script }</span>\n`
+                    temp += `<span class="constituents">\n`
+                    ptrs = linkDB[scriptList[index][s]].pickers // eg. [["Hindi", "deva/hi.html"], ["Kashmiri", "deva/ks.html"]]
+                    for (p=0;p<ptrs.length;p++) {
+                        if (p>0) temp += ` • `
+                        temp += `<a href="../pickers/${ ptrs[p][1] }/index.html" class="orthlink">${ ptrs[p][0] }</a>\n`
+                        counter++
+                        }
+                    temp += `</span>\n`
+                    found = true
+                    }
+                }
+            temp += `</div>\n`
+            if (temp !== `<div class="letter" title="${ index.toUpperCase() }">\n</div>\n`) out += temp // screen out index letters with scripts but no pickers
+            }
+        }
+    console.log(counter,' pickers.')
+    document.getElementById('count').textContent = counter
+    return out
+    }
+
+listScripts()
+
+</script>
+
+
+
+<div class="summaries" id="pickerSummaries"></div>
+<p style="font-size:70%">Total character apps: <span id="count"></span></p>
+<script>document.getElementById('pickerSummaries').innerHTML = getPickers()</script>
+
+
+<p>The <a href="shared29/help.html" style="font-size:140%" target="_blank">help file</a> explains how to use the app and what features are available. Features vary, but can include automatic transcription to and from the text, shape-based hints and selection methods, keyboards, codepoint listing, creating examples in markup, control over the font used, etc.</p>
 </section>
 
 
 <section id="bugs">
 <h2><a href="#bugs">Bugs and requests</a></h2>
-  <p>Please <a target="_blank" href="https://github.com/r12a/pickers/issues/new?title=ADD%20DESCRIPTIVE%20TITLE%20HERE">raise an issue</a> if you'd like to see other characters, fonts or apps. If you want a new app, you'll have to provide (a) a list of all characters to be supported, and (b) mappings to phonemes in a language.  Note that if you want to find characters and there's no character app, you may be able to use the picker-like features of <a href="/uniview/index.html" target="_blank">Uniview</a>. Just select a block, click on the big up-arrow below the text box (top right), then click on characters.</p>
+  <p>Please <a target="_blank" href="https://github.com/r12a/pickers/issues/new?title=ADD%20DESCRIPTIVE%20TITLE%20HERE">raise an issue</a> if you'd like to see other characters, fonts or apps. If you want a new app, you'll have to provide (a) a list of all characters to be supported, and (b) mappings to phonemes in a language, and (c) a Unicode font.  Note that if you want to find characters and there's no character app, you may be able to use the picker-like features of <a href="/uniview/index.html" target="_blank">Uniview</a>. Just select a block, click on the big up-arrow below the text box (top right), then click on characters.</p>
 </section>
 
 
 <div class="smallprint"> <span id="version">First published  2004.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2023-02-20  13:50<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2024-06-21  15:52<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span> </div>
 </body>
 </html>
