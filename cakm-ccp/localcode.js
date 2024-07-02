@@ -1,6 +1,6 @@
 globals.showTranslit =  ''
 globals.typeAssist = ''
-globals.showKeysTranslitToggle = false
+globals.showKeysTranslitToggle = true
 
 
 
@@ -29,12 +29,11 @@ end: {}
 
 
 var keyboarddef = [
-"§|1 ꤁ !|2 ꤂ ꤮|3 ꤃ #|4 ꤄ :|5 ꤅ %|6 ꤆ “|7 ꤇ ”|8 ꤈ *|9 ꤉ (|0 ꤀ )|- - _|== +",
-"q ꤠ|w ꤎ|e ꤙ|r ꤚ|t ꤣ|y ꤤ|u ꤥ|i ꤞ|o ꤓ|p ꤑ|[ ꤘ|]",
-"a ꤊ|s ꤔ|d ꤛ|f ꤢ ꤢꤦ|g ꤩ ꤢꤧ|h ꤪ ꤢꤨ|j ꤒ ꤢꤩ|k ꤟ ꤢꤪ|l ꤕ|; ꤜ|' ꤍ|\\ \\",
-"`|z ꤡ|x ꤌ|c ꤏ|v ꤋ|b ꤗ|n ꤖ|m ꤝ|, ꤐ|. ,|/ ꤯"
-]
-// source: 
+"§|1 𑄷 !|2 𑄸 @|3 𑄹 #|4 𑄺 𑅇|5 𑄻 %|6 𑄼 𑅀|7 𑄽 𑄀|8 𑄾 *|9 𑄿 (|0 𑄶 )|- - _|== ;",
+"q 𑄋 𑄁|w 𑄡 𑄠|e 𑄓 𑄔|r 𑄛 𑄜|t 𑄑 𑄒|y 𑄌 𑄍|u 𑄎 𑄏|i 𑄦 𑄐|o 𑄉 𑄊|p 𑄤 𑄅|[ {|] }|` 𑅂 𑄂",
+"a 𑄭 𑄱|s 𑄪 𑄫|d 𑄨 𑄩|f 𑄧 𑄃|g 𑄳 𑅁|h 𑄝 𑄞|j 𑄇 𑄈|k 𑄖 𑄗|l 𑄘 𑄙|; 𑄴 𑅅|' ' \"|\\ \\",
+"`|z 𑄄 𑅆|x 𑄮 𑄯|c 𑄬 𑄰|v 𑄢 𑄣|b 𑄚 𑄕|n 𑄥 𑄲|m 𑄟 𑄆|, , <|. . >|/ 𑅄 𑅃"]
+// source: https://keymanweb.com/#ccp-cakm-bd,Keyboard_easy_chakma
 
 
 

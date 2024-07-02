@@ -75,7 +75,7 @@ var show = {}  // indicates which inputAids to use
     show.latin = true
     show.ipa = true
     show.transc = 'Latin'
-    show.kbd = ""
+    show.kbd = "Chakma"
     show.language = "Chakma"
 
 
