@@ -564,9 +564,9 @@ function getExample (str, lang, dir) {
     if (str.includes('|')) {
         parts = str.split('|')
         var out = '<span class="charExample" translate="no">'
-        out += '<span class="ex" lang="'+lang+'"'
+        out += '<bdi class="ex" lang="'+lang+'"'
         if (dir==='rtl') { out += ' dir="rtl"' }
-        out += '>'+parts[0]+'</span> '
+        out += '>'+parts[0]+'</bdi> '
         if (parts[2]) {
             if (parts[2].startsWith(':')) out += '(<span class="trans">'+parts[2].substr(1)+'</span>) '
             else if (parts[2].includes('(')) {
@@ -588,9 +588,9 @@ function getExample (str, lang, dir) {
     else { // this is the old way of doing it
         parts = str.split('/')
         var out = '<span class="charExample" translate="no">'
-        out += '<span class="ex" lang="'+lang+'"'
+        out += '<bdi class="ex" lang="'+lang+'"'
         if (dir==='rtl') { out += ' dir="rtl"' }
-        out += '>'+parts[0]+'</span> '
+        out += '>'+parts[0]+'</bdi> '
         if (parts[1]) {
             out += '<span class="trans">'+parts[1]+'</span> '
             }
@@ -2975,6 +2975,32 @@ function toggleInvisibles () {
 
 function parseSpreadsheet () {
     // create an object called spreadsheetRows from the Google spreadsheet data
+    // global, spreadsheet
+    var temp
+
+    if (typeof window.spreadsheet == 'undefined') {
+		alert("Spreadsheet not loaded !")
+		return
+		}
+    
+    // make an object from the spreadsheet
+    var temp = window.spreadsheet.split('\n')
+    window.spreadsheetRows = {}
+    for (var x=1; x<temp.length; x++) { // starts at 1 to avoid first line
+        if (temp[x].trim() == '') continue
+        if (temp[x].startsWith('/')) continue // skip comments
+        var items = temp[x].split('\t')
+        if (items[0] === '') continue
+
+        window.spreadsheetRows[items[0]] = [0]
+        for (let i=1;i<items.length;i++) window.spreadsheetRows[items[0]].push(items[i])
+        }
+	}
+
+
+
+function parseSpreadsheetX () {
+    // create an object called spreadsheetRows from the Google spreadsheet data
 	// newStyleSpreadsheet is defined in the db.js file - if set, the character column is one higher
 	// it should eventually become the only pattern
 
@@ -3388,7 +3414,7 @@ function sortOutput (text, unique=false, word=false) {
     // unique indicates whether or not to reduce to one instance of each character
     // word indicates to segment on spaces, rather than individual characters
     
-    text = text.replace(/s+/g,' ')
+    text = text.replace(/\s+/g,' ')
     
     if (unique) {
         var charSet = new Set([...text])
