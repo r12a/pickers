@@ -101,9 +101,10 @@ span.hint {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 1.5em;
+    max-width: 2em;
     justify-content:flex-start;
     align-content: space-around;
+    margin-inline-start: 1.5rem;
     }
 #tones {
     display: flex;
