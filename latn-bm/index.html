@@ -65,7 +65,10 @@
 
 <div class="spaceline">
 <span class="touch" style="margin: 0; padding: 5px 20px;" dir="auto" onClick="toggleShift(this);if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SHIFT</span>
-<span class="touch" title="Space" style="padding: 5px 50px;" dir="auto" onClick="add(' ');">SPACE</span>
+
+
+<span class="touch" style="margin: 0; padding: 5px 20px;" dir="auto" onClick="add('\u202F');">NNBSP</span>
+<span class="touch" title="Space" style="padding: 5px 20px;" dir="auto" onClick="add(' ');">SPACE</span>
 
 <span id="tabEtc"></span>
 <script>addTabEtc('tabEtc')</script>
@@ -188,6 +191,8 @@
 <div id="toneGrid">
 <div><span class="g"><span class="hint"></span><span class="c">́</span></span></div>
 <div><span class="g"><span class="hint"></span><span class="c">̀</span></span></div>
+<div><span class="g"><span class="hint"></span><span class="c">̂</span></span></div>
+<div><span class="g"><span class="hint"></span><span class="c">̌</span></span></div>
 <div><span class="g"><span class="hint"></span><span class="c">ʼ</span></span></div>
 </div>
 
@@ -198,9 +203,8 @@
 <div><span class="c">7</span><span class="c">8</span><span class="c">9</span></div>
 <div><span class="c">4</span><span class="c">5</span><span class="c">6</span></div>
 <div><span class="c">1</span><span class="c">2</span><span class="c">3</span></div>
-<div><span class="c">0</span> <span class="c">,</span> <span class="c">.</span> </div>
-<!--div style="margin-top: .5em;"><span class="c">₭</span> <span class="c">ຯ</span> <span class="c">ໆ</span></div>
-<div><span class="c">ໆລໆ</span></div-->
+<div><span class="c">0</span> <span class="c">,</span> <span class="c">.</span> <span class="c">%</span></div>
+<!--<div style="margin-top: .5em;"><span class="c">%</span></div>-->
 </div>
 </div>
 
@@ -221,6 +225,7 @@
 <span class="c">(</span>
 <span class="c">)</span>
 <span class="c">&#x2010;</span>
+<span class="c">…</span>
 </div>
 
 

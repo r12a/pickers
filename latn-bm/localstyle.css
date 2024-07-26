@@ -68,6 +68,7 @@ span.hint {
     flex-direction: column;
     justify-content: space-around;
     margin-left: .5em;
+    align-items: center;
     }
 #toneGrid div {
     display: flex;
