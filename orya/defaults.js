@@ -18,7 +18,7 @@ var thisPicker = 'odiaPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ " Noto Sans Oriya WF" ]
+var webFonts = [ "Noto Sans Oriya WF", "Noto Serif Oriya WF" ]
 
 
 var template = {}
