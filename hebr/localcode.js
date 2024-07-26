@@ -16,7 +16,38 @@ window.fontsuggestions =
 
 function localInitialise () {
 	}
-	
+
+
+
+function removeVowels (str) {
+// removes the vowel nikkud from the text in the text area
+
+var vowels =  ['ִ','ֻ','ְ','ֱ','ֵ','ֶ','ֳ','ֹ','ֺ','ֲ','ַ','ָ', 'ּ']
+
+for (var i=0;i<vowels.length;i++) {
+	var re = new RegExp(vowels[i],'g')
+	str = str.replace(re,'')
+	}
+
+return str
+}
+
+
+
+function removePoints (str) {
+// removes the all points from the text in the text area
+
+var vowels =  ['ִ','ֻ','ְ','ֱ','ֵ','ֶ','ֳ','ֹ','ֺ','ֲ','ַ','ָ','ּ','ׁ','ׂ']
+
+for (var i=0;i<vowels.length;i++) {
+	var re = new RegExp(vowels[i],'g')
+	str = str.replace(re,'')
+	}
+
+return str
+}
+
+
 
 var keyboarddef = [
 "§|1|2|3|4|5|6|7 ₪|8|9 )|0 (|-|=",

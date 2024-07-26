@@ -56,7 +56,9 @@ var controls = [
 
 
 var pulldown = [
-{"title":"Remove vowels", "alt":"Remove points from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
+{"title":"Remove vowels", "alt":"Remove vowel points from the text.", "code":"add(removeVowels(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
+
+{"title":"Remove points", "alt":"Remove all points from the text.", "code":"add(removePoints(getHighlightedText(document.getElementById('output'))));document.getElementById('output').focus();"},
 
 {"title":"Make vocab", "alt":"Expand to create a line for a vocab file.", "code":`_output=document.getElementById('output')
 input=replaceSlash(getHighlightedText(_output),'|').split('|')
