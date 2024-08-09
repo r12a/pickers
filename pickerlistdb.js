@@ -137,6 +137,7 @@ var plistByRegion = {
 				['Kashmiri', 'arab-ks/index.html'],
 				['Pashto', 'arab-ps/index.html'],
 				['Persian', 'arab-fa/index.html'],
+				['Saraiki', 'arab-skr/index.html'],
 				['Sindhi', 'arab-sd/index.html'],
 				['Sorani', 'arab-ckb/index.html'],
 				['Uighur', 'arab-ug/index.html'],
