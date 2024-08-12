@@ -74,7 +74,7 @@ function makeTypeAssistMap (col) {
     // suck out the relevant data into the chars array
     for (var line in spreadsheetRows) {
         // continue if there is no key mentioned in the column
-		if (spreadsheetRows[line][col] === '' || line.startsWith('/')) continue
+		if (spreadsheetRows[line][col] === '' || line.startsWith('/') || cols.key == '0') continue
 		if (notUsed.has(spreadsheetRows[line][cols.status])) continue
        
         var primary = false
