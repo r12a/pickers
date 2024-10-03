@@ -13,12 +13,36 @@ window.charCheckerList = [
 
 // list of fonts to add to the standard selection
 window.fontsuggestions =  
-`Khmer OS Battambang
+`Angkor
+Battambang
+Bayon
+Bokor
+Chenla
+Content
+Dangrek
+Fasthand
+Freehand
+Hanuman
+Kdam Thmor Pro
+Kantumruy Pro
+Khmer
+Khmer Koulen
+Khmer OS Battambang
 Khmer Mool
 Khmer OS Muol
 Khmer Ratanakiri
+Konkhmer Sleokchher
+Koh Santepheap
 Moul
-Metal`
+Moulpali
+Metal
+Nokora
+Odor Mean Chey
+Preahvihear
+Siemreap
+Suwannaphum
+Taprom
+`
 
 
 function localInitialise () {
