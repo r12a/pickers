@@ -1301,8 +1301,24 @@ summary:hover {
 #otPicker label { white-space: nowrap; }
 #fontPickerWebfonts { margin-top: 1.5em; }
 #fontPickerCols { display: flex; justify-content: space-between; }
-.fpOptgroup { font-weight: bold; margin: 1em; }
-.fpOption { cursor: pointer; font-weight: normal; }
+#fontPickerCols .fpOptgroup {
+    max-height: 40vh;
+    }
+#fontPickerWebfonts .fpOptgroup {
+    display: inline;
+    }
+.fpOptgroup {
+    font-weight: bold;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    }
+.fpOption {
+    cursor: pointer;
+    font-weight: normal;
+    margin-inline-end: 1em;
+    }
 .fpOption:hover, .currentFont { background-color: antiquewhite; border-radius: .5em; }
 
 
