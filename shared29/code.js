@@ -825,6 +825,18 @@ function changeFontSize ( newSize ) {
 	}
 
 function changeBoxHeight ( newSize ) {
+	if (newSize > 100) newSize = 30
+	document.getElementById( 'output' ).style.height = newSize+'vh'
+
+	document.getElementById('rows').textContent=defaults.rows
+	document.getElementById('boxHeightSlider').value=defaults.rows
+
+	defaults.rows = newSize
+	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)
+	}
+
+
+function changeBoxHeightX ( newSize ) {
 	//document.getElementById( 'output' ).style.height = (newSize*100)+'px'
 	document.getElementById( 'output' ).style.height = newSize+'px'
 
@@ -1742,12 +1754,19 @@ function setUpValues () {
 		document.getElementById( 'output' ).style.lineHeight = defaults.lineHeight;
 		}
 	if (defaults.rows) {
+		// add a check for previous px settings
+        defaults.rows = factoryDefaults.rows
+		if (defaults.rows > 30) defaults.rows = 30
+		document.getElementById( 'rows' ).value = defaults.rows
+		document.getElementById( 'output' ).style.height = defaults.rows+'vh';
+		}
+	/*if (defaults.rows) {
 		// add a check for pre v26 settings
 		if (defaults.rows < 10) defaults.rows = factoryDefaults.rows
 		document.getElementById( 'rows' ).value = defaults.rows; 
 		//document.getElementById( 'output' ).style.height = (defaults.rows*100)+'px';
 		document.getElementById( 'output' ).style.height = defaults.rows+'px';
-		}
+		}*/
 	if (defaults.language) { 
 		document.getElementById('langtag').value = defaults.language
 		document.getElementById('clang').textContent = defaults.language

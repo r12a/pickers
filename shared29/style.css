@@ -147,7 +147,7 @@ table td { border: 0; }
 	}
 #warning {
     position: absolute;
-    top: 4em;
+    top: 30vh;
     left: 50%;
 	margin-left: -25%;
     z-index: 100;
@@ -787,7 +787,8 @@ dt {
 	/*margin-right: .5em;*/
 	border: 1px solid white; 
 	padding: .5em;
-	/*border: 1px solid tan;*/
+	/*border: 1px solid tan;
+    color: brown;*/
 	}
 #tools button:hover {
 	/*color: #c33;*/
@@ -1790,6 +1791,7 @@ rt {
     color: #fff;
     text-align: center;
     border-radius: 1rem;
+    z-index: 1000;
     }
 #panel img.copyIcon {
     cursor: copy;
