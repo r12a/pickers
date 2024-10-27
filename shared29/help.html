@@ -29,7 +29,7 @@
   </div>
 </aside>     
 
-<p id="status">Updated  <!-- #BeginDate format:En2 -->15-Jan-2024<!-- #EndDate --></p>
+<p id="status">Updated  <!-- #BeginDate format:En2 -->27-Oct-2024<!-- #EndDate --></p>
 
 <p>Character apps allow you to produce or analyse runs of text in a particular language and script. They are especially useful for people who don't know a script well, as characters are displayed in ways that aid identification.</p>
 
@@ -74,7 +74,7 @@ img.big { margin-block-start: 0; max-width: 100%; transform: scale(.8); }
 <p>The controls just above the text area allow you to interact with or analyse the text in various ways. <strong>They nearly all work on any highlighted text within the text area, or if there is no highlight, on all the text.</strong> Controls near the bottom of the app allow you to change font, font size, line-height, text direction, etc.</p>
 <p><b class="leadin" id="contrast">Contrast.</b> Some of the text on the UI has a lighter coloured text, so as to not swamp the key information. However, if you find it difficult to read the light-coloured text, click on <img src="images/access.png" alt="Sample" style="height:1.4em; vertical-align:middle;"> at the top right of the page to toggle between lighter and darker text. If you chose to save your settings between sessions, this will also be remembered.</p>
 
-<p><b class="leadin">Sample text.</b> To add some sample text to the text area, click on the &nbsp; <img src="images/sample.png" alt="Sample" style="height:1.4em; vertical-align:middle;"> &nbsp; icon.</p>
+<p><b class="leadin">Sample text.</b> To add some sample text to the text area, click on the &nbsp; <img src="../shared29/images/toprow/sample.svg" alt="Sample" style="height:1.4em; vertical-align:top;"> &nbsp; icon.</p>
 
 <p><b class="leadin" id="fonts">Fonts.</b>
 To properly display the text you will need to use a font that is loaded on your system or device, or use the web font(s) downloaded with the page (names end in 'WF'). Font selectors in the app indicate which fonts are standard for Mac and Windows operating systems, and fonts that are freely available from Google and SIL. See more information about <a href="../../scripts/fontlist/index.html" target="_blank">standard OS fonts in Mac and Windows</a>.</p>
@@ -102,7 +102,7 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 <section id="topControls">
 <h2 href="#top_controls">Controls above the text area</h2>
 
-<p><img src="images/help/top_bar.png" alt=""></p>
+<p><img src="images/help/top_bar.png" style="width:100%;" alt=""></p>
 
 <p>Controls above the text area (and those pulled down from the icons to the right) allow you to run various operations on the text in the box. <strong><em>Most of them work on what you have selected within the box, or on all the text in the box if nothing is selected</em></strong>.</p>
 
@@ -114,15 +114,17 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 
 <p>The icons on the left above the input box allow you to do the following:</p>
       <blockquote>
-      <img src="images/copy.png" alt="Copy icon"> copy the text to the clipboard<br>
-      <img src="images/select.png" alt="Select icon"> select all the text<br>
-      <img src="images/share.png" alt="Share icon"> generate a URL to share with others that will reproduce for them what you see in the text box<br>
-      <img src="images/sample.png" alt="Sample icon"> add some sample text to the text area<br>
-      <img src="images/toggle.png" alt="Invisible character toggle icon"> show/hide invisible characters.<br>
-      <img src="images/checker.png" alt="Checker icon">Check the text for non-recommended characters or sequences.<br>
-      <img src="images/fonts.png" alt="Fonts icon"> show the font preview list. Mouse over the font names to change the font used for the text area. (Only works for webfonts or fonts you have on your system.) Click on a font name to change the font and store the setting.<br>
-      <img src="images/typography.png" alt="Fonts icon"> set OpenType typographic features. Reveals controls that allow you to turn on and off the font features of the font used for text in the output area. (Of course, the font needs to support the relevant features.)<br>
-      <img src="images/clear.png" alt="Clear icon"> delete all the text</blockquote> 	  
+      <p><img src="images/toprow/copytiny.svg" style="height:2rem; vertical-align: middle;" alt="Copy icon"> Copy the text to the clipboard</p>
+      <!--<img src="images/select.png" alt="Select icon"> select all the text<br>-->
+      <p><img src="images/toprow/fonts.svg"  style="height:2rem; vertical-align: middle;"  alt="Fonts icon"> Show the font preview list. Mouse over the font names to change the font used for the text area. (Only works for webfonts or fonts you have on your system.) Click on a font name to change the font and store the setting.</p>
+      <p><img src="images/toprow/typography.svg" style="height:2rem; vertical-align: middle;"  alt="Fonts icon"> set OpenType typographic features. Reveals controls that allow you to turn on and off the font features of the font used for text in the output area. (Of course, the font needs to support the relevant features.)</p>
+      <p><img src="images/toprow/sample.svg" style="height:2rem; vertical-align: middle;" alt="Sample icon"> Add some sample text to the text area</p>
+      <p><img src="images/toprow/checker.svg" style="height:2rem; vertical-align: middle;" alt="Checker icon">Check the text for non-recommended characters or sequences.</p>
+      <p><img src="images/toprow/move.svg" style="height:2rem; vertical-align: middle;" alt="Move to top icon">Move this line to the top of the window.</p>
+      <p><img src="images/toprow/toggle.svg" style="height:2rem; vertical-align: middle;" alt="Invisible character toggle icon"> Show/hide invisible formatting characters.</p>
+      <p><img src="images/toprow/clear.png" alt="Clear icon"> delete all the text</p>
+      </blockquote> 	
+    
 	  <details>
 	  <summary style="margin-left:7.5%">See a video of the font preview in action</summary>
 	  <p><video controls="" aria-label="Embedded video" style="border:0;" width="100%; max-width:720px"><source src="images/help/font-preview.mp4" type="video/mp4"></video></p>
@@ -136,7 +138,7 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 
 
 <section id="topRight">
-<h3>Controls to the right</h3>
+<h3>Controls on the centre-right</h3>
 
       <p><b class="leadin" id="listCharacters">List characters.</b> Produces lists of the Unicode code points in the text area, and displays them in the bottom right corner of the window.</p>
       <p><img src="images/help/list_characters.png" style="height:400px"></p>
@@ -202,8 +204,18 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 
 
 
+<section id="exportPulldown">
+<h3>The <img src="images/toprow/export.svg" style="height: 1.4em; vertical-align: middle;" alt="Left-hand"> pulldown list</h3>
+
+      <p>This control allows you to send or look up whatever text is currently highlighted in the text area in another app. That app opens in a separate window.</p>
+      <p>The selection <samp>Script notes</samp> looks at the first character only in the highlighted text and opens the script description page at point in the index where that character appears. You can then follow the links to places in the page that describe the use of that character.  The <samp>Character notes</samp> selection also picks the first highlighted character and takes you to the character notes document where that is described.</p>
+</section>
+
+
+
+
 <section id="functionPulldown">
-<h3>The <img src="images/menu.png" style="height: 1.4em; vertical-align: middle;" alt="Left-hand"> pulldown list</h3>
+<h3>The <img src="../images/more.svg" style="height: 1.4em; vertical-align: middle;" alt="Left-hand"> pulldown list</h3>
 
 	<p>The list that is accessed via this icon contains additional controls.  The exact controls available for a given app will vary, depending on the type of orthography and whether or not additional features have been added to the app. The list below describes the more common controls, but doesn't describe additional features.</p>
 	
@@ -233,11 +245,10 @@ When working on an iPad or similar device, you should turn off <code class="kw" 
 
 
 
-<section id="exportPulldown">
-<h3>The <img src="images/transfer.png" style="height: 1.4em; vertical-align: middle;" alt="Left-hand"> pulldown list</h3>
+<section id="getURL">
+<h3>The <img src="images/toprow/share.svg" style="height: 1.4em; vertical-align: middle;" alt="Share"> icon</h3>
 
-      <p>This control allows you to send or look up whatever text is currently highlighted in the text area in another app. That app opens in a separate window.</p>
-      <p>The selection <samp>Script notes</samp> looks at the first character only in the highlighted text and opens the script description page at point in the index where that character appears. You can then follow the links to places in the page that describe the use of that character.  The <samp>Character notes</samp> selection also picks the first highlighted character and takes you to the character notes document where that is described.</p>
+      <p>This icon generates a URL to share with others that will reproduce for them what you see in the text box.</p>
 </section>
 </section>
 
