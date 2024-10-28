@@ -127,6 +127,21 @@ function selectAll () {
 
 
 function copyToClipboard () {
+	// copy the highlighted content of the text area to the clipboard, or whole text if no highlights
+    var output, textToCopy, wholeText
+    wholeText = false
+	output = document.getElementById('output')
+    textToCopy = getHighlightedText(output)
+    if (textToCopy == output.value) wholeText = true
+    navigator.clipboard.writeText(textToCopy)
+    document.getElementById('copyNotice').style.display = 'block'
+    setTimeout(() => { document.getElementById('copyNotice').style.display = 'none' }, '500')
+    if (wholeText) output.select()
+	output.focus()
+	}
+
+
+function copyToClipboardX () {
 	// this doesn't work on older versions of Safari because S didn't support execCommand('copy')
 	var output = document.getElementById('output')
 	var copybuffer = document.getElementById('copybuffer')
