@@ -1819,6 +1819,9 @@ function setUpValues () {
 		if (pairs[0] === 'showFonts') { 
 			document.getElementById('fontPicker').innerHTML = createFontPicker()
 			}
+		if (pairs[0] === 'showSample') { 
+			add(template.sample)
+			}
 		}
 		
 	// activate type assist/ime input
