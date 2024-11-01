@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Meroitic WF" ]
 
 // list of fonts to add to the standard selection
 window.fontsuggestions =  
-`Noto Sans Meroitic`
+`Aegyptus`
 
 
 var template = {}
@@ -32,7 +32,7 @@ var template = {}
 	template.blocklocation= 'mero'  // block directory
 	template.noteslocation = 'mero/xmr' // location of script notes
 	template.vocablocation = 'mero/xmr_vocab' // location of term database
-	template.direction = "ltr" // indicates whether this is a picker for a RTL script
+	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'template'
 	template.scriptcode = 'Mero'
 	template.fontLocale = "mero"
