@@ -1,7 +1,7 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Tai Le WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
+	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'tdd' // language to use for examples
@@ -24,6 +24,7 @@ var webFonts = [ "Noto Sans Tai Le WF" ]
 var template = {}
 	template.title = 'Tai Le character app'
 	template.sample = "ᥘᥬ̈ᥔᥩᥛ̇ᥝᥢ̈ᥘᥭ̇，ᥐᥩᥙᥘᥭ̀ᥑᥨᥛ̌ᥑᥦᥢ́ᥖᥫᥒ̈ᥐᥣ，ᥝᥣᥐᥖᥣᥙ̌ᥐᥨᥢ̈ᥑᥥᥢ́ᥛᥣ̈ᥔᥥ́，ᥛᥣᥢ̀ᥘᥣ̈ᥟᥢᥐᥬ̀ᥓᥛᥑᥩᥙ̌ᥞᥤᥛ̈ᥙᥥ̀ᥢᥣᥢ̇ᥘᥢ̇，ᥛᥤ̈ᥐᥣᥭ̈ᥚᥣᥒ̇ᥓᥤᥢᥚᥧᥒ́ᥘᥫᥒᥑᥝ̀ᥛᥣᥢ̇ᥛᥣ̈，ᥟᥣᥛᥥᥝ̈ᥖᥭ̈ᥖᥒ̈ᥘᥣᥭ́ᥟᥩᥢᥐᥢᥐᥣ̌ᥓᥩᥭᥗᥦᥛ́．"
+	// additional ᥘᥣᥟ̈ᥛᥬ̌  ᥘᥣᥟ̈ᥐᥝ̌ᥛᥤ̈ᥡᥥ̈ᥘᥬ ᥕᥒᥛᥥᥢ́ᥐᥢ：ᥖᥣᥝᥟᥣᥢᥐᥨᥛ̀ ᥔᥣᥢ̈ᥖᥥᥛ̀。 ᥕᥤᥢ̇ᥘᥣᥢ̇ᥛᥤᥢ̇ᥔᥧ̀ᥔᥧ̀ᥙᥣᥢ̈ᥔᥥ̈。
 	template.sampleSource = 'http://www.seasite.niu.edu/tai/TaiDehong/story1/gif&jpg/p3.jpg'
 	template.blocklocation= 'tale'  // block directory
 	template.noteslocation = 'tale/tdd' // location of script notes

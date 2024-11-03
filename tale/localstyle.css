@@ -29,6 +29,9 @@ span.hint {
     cursor: pointer;
 	}
 
+#output {
+	line-break: anywhere;
+	}
     
     
 /* KEYBOARD */
