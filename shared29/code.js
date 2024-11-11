@@ -1697,10 +1697,7 @@ function initialise() {
 			}
 
 		// add defaults.ccbase to combining characters
-		//if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.ucsName] && window.spreadsheetRows[content][cols.ucsName].includes('\u200B')) node[n].textContent = defaults.ccbase+node[n].textContent
-		// FIX the above - doesn't seem that ucsName contains zws
-
-		if (window.spreadsheetRows[content[0]] && window.spreadsheetRows[content[0]][cols.class] && window.spreadsheetRows[content[0]][cols.class].startsWith('M')) {
+		if (window.spreadsheetRows[content] && window.spreadsheetRows[content][cols.class] && window.spreadsheetRows[content][cols.class].startsWith('M')) {
             node[n].textContent = defaults.ccbase+node[n].textContent
             document.getElementById('ccBase').value = defaults.ccbase
             }
