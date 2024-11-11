@@ -71,7 +71,7 @@ var pulldown = [
 
 
 var show = {}  // indicates which inputAids to use
-    show.shape = true
+    show.shape = false
     show.hints = false
     show.default = true
     show.latin = true

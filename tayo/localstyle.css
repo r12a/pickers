@@ -88,7 +88,7 @@ span.hint {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content:space-between;
+	justify-content:space-around;
 	}
 #moreconsonants {
     display: flex;
@@ -140,6 +140,7 @@ span.hint {
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
+    display: none;
     }
 
 #punctuation, #flatnumbers, #other {
