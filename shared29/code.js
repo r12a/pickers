@@ -188,6 +188,17 @@ function openEscapeWindow () {
 	converter.focus()
 	}
 
+function openCharNoteWindow () {
+	var output, chars, char
+    output = document.getElementById('output')
+	chars = getHighlightedText(output)
+    suppchars = [... chars].join('')
+    
+	var notes = window.open(`../../scripts/${ template.noteslocation }-characters.html?q=${ suppchars }`, 'notes') 
+	output.focus()
+	notes.focus()
+	}
+
 function openUniViewWindow () {
 	var output = document.getElementById('output')
 	var chars = getHighlightedText(output)

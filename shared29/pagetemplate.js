@@ -329,11 +329,11 @@ for (let i=0;i<window.controls.length;i++){
 	}
 
 out += ` 
+<button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" title="Create source code for an example. native|meaning|IPA|transcription" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Example<br>markup</button>
+
 <button onclick="openVocabWindow(template.vocablocation); return false;" title="Search for examples containing the highlighted text." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Find<br>examples</button>
 
-<button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" title="Create source code for an example. native|meaning|IPA|transcription" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Example<br>markup</button>
-    
-<button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character<br/>markup</button>
+<button  id="showNotesLink" type="button" onclick="openCharNoteWindow()" title="Show detailed notes for the first character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show DB<br/>details</button>
 
 
 <img src="../shared29/images/toprow/export.svg" alt="Export to other apps" style="vertical-align: middle; margin-block-end:.2rem; margin-inline-start:1rem; margin-inline-end:.3rem; cursor:pointer; height:1.7rem;" onclick="if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'pulldown\').style.display=\'none\'; document.getElementById(\'output\').focus();" onmouseover="showMenuText('Export the text in the text area to another app. Many options work on highlighted ranges.','tan');" onmouseout="hideMenuText()">
@@ -350,11 +350,12 @@ out += `
 <div id="shuttle" style="display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
 <div>
 `
-
+/*
 if (template.vocablocation) out += `
 <button onclick="openVocabWindow(template.vocablocation); return false;" title="Search for examples containing the highlighted text." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Find examples</button>
 
 `
+*/
 
 out += `
 <button onclick="openEscapeWindow(); return false;" title="Convert to escapes." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Convert to escapes</button>
@@ -397,6 +398,8 @@ out += `
 <div>
 
 <!--button onclick="openEscapeWindow(); return false;" title="Convert to escapes (in a separate window)." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Convert to<br/>escapes</button><br/-->
+
+<button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Create character markup</button>
 
 <button  id="showDBAll" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, true)" title="Show all information in the database for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show all db entries</button>
 
