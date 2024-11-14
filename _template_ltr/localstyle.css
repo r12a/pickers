@@ -14,17 +14,24 @@
 
 
 span.hint { 
-	margin-inline-start: .5em;
-	margin-inline-end: 1px;
+	margin-inline-end: .5em;
+	margin-inline-start: 1px;
 	font-size: 60%;
 	color:tan;
 	}
 .c { 
 	min-width: .75em;
 	text-align: center;
+    writing-mode: vertical-rl;
 	}
+#consonantGrid .g, #consonantGrid .g {
+    margin-inline-end: 1rem;
+    }
+#consonantGrid table .g, #consonantGrid table .g {
+    margin-inline-end: 0;
+    }
 
-    
+
     
 /* KEYBOARD */
 .key span { 
