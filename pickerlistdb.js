@@ -475,6 +475,9 @@ var plistByRegion = {
 				['Neo-tifinagh', 'tfng-zgh/index.html'],
 				['All', 'tfng-all/index.html'],
 				[']'],
+			['• <b>Tolong Siki</b> ['],
+				['Kurukh', 'tols/index.html'],
+				[']'],
 			],
 	'U':[
 			['<b>UCAS</b> ['],
