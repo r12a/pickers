@@ -28,7 +28,16 @@ span.hint {
 #consonantGrid table .g, #consonantGrid table .g {
     margin-inline-end: 0;
     }
-
+span.x span {
+    color: #a52a2a;
+    color: chocolate;
+    }
+span.q span {
+    color: tan;
+    }
+span.x {
+    display: none;
+    }
 
     
 /* KEYBOARD */
@@ -51,20 +60,6 @@ span.hint {
 	line-height: 1.2;
     justify-content: center;
     }
-#ivowelGrid {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-	margin-right: 1em;
-    }
-#ivowelGrid div {
-	display: flex;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    }
-#ivowelGrid .verticalAlign {
-	justify-content: flex-end;
-	}
 #consonantGrid {
     display: flex;
     flex-direction: column;
@@ -97,7 +92,7 @@ span.hint {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content:space-between;
+	justify-content:space-around;
 	}
 #moreconsonants {
     display: flex;

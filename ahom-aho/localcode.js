@@ -8,6 +8,8 @@ globals.showKeysTranslitToggle = false
 
 window.charCheckerList = [
 //{ wrong:"", right:"" },
+{ wrong:"𑜪𑜢", right:"𑜢𑜪" },
+{ wrong:"𑜪𑜧", right:"𑜧𑜪" },
 ]
 
 
@@ -42,66 +44,6 @@ var keyboarddef = [
 
 
 
-function toggleExtended (node) {
-    var chars = document.querySelectorAll('.x')
-
-	if (node.classList.contains('shifted')) {
-        for (let i=0;i<chars.length;i++) {
-            chars[i].style.display = 'none'
-            }
-		document.getElementById('translitvowels').style.display = 'none'
-		}
-    else {
-        for (let i=0;i<chars.length;i++) {
-            chars[i].style.display = 'inline-block'
-            }
-		document.getElementById('translitvowels').style.display = 'block'
-		} 
-	}
-
-
-function toggleSubjoined (node) {
-	if (node.classList.contains('shifted')) {
-		document.getElementById('consonantGrid').style.display = 'flex'
-		document.getElementById('subjoinedGrid').style.display = 'none'
-		}
-    else {
-		document.getElementById('consonantGrid').style.display = 'none'
-		document.getElementById('subjoinedGrid').style.display = 'flex'
-		} 
-	}
-
-
-function toggleShift (node) {
-    var chars = document.querySelectorAll('.c')
-
-	if (node.classList.contains('shifted')) {
-        for (let i=0;i<chars.length;i++) {
-            if (chars[i].dataset.lc) chars[i].textContent = chars[i].dataset.lc
-            else chars[i].textContent = chars[i].textContent.toLowerCase()
-            }
-		} 
-	else {
-        for (let i=0;i<chars.length;i++) {
-            if (chars[i].dataset.uc) chars[i].textContent = chars[i].dataset.uc
-            else chars[i].textContent = chars[i].textContent.toUpperCase()
-            }
-		}
-	// reinitialise ids to codepoint values of character sequence (with no leading zeros)
-	node = document.querySelectorAll( '.c' ); 
-	for (var n = 0; n < node.length; n++ ) { 
-		content = node[n].textContent
-		id=''
-		for (i=0;i<content.length;i++) {
-			id += convertChar2CP(content[i])
-			}
-		node[n].id = id
-        node[n].dataset.c = 'c'+id
-        dec = parseInt(id, 16)
-        while (id.length<4) id = '0'+id
-        node[n].title = 'U+'+id+': '+charData[content]
-		}
-	}
 
 
 
