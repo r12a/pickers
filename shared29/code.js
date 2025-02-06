@@ -1830,6 +1830,10 @@ function setUpValues () {
 		if (pairs[0] === 'showSample') { 
 			add(template.sample)
 			}
+		if (pairs[0] === 'font') {
+			pairs[1] = pairs[1].replace(/_/g,' ')
+			selectFont(pairs[1])
+			}
 		}
 		
 	// activate type assist/ime input
