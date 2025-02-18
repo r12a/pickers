@@ -175,7 +175,7 @@ var plistByRegion = {
 				['Bangla','beng/index.html'],
 				[']'],
 			['<b>Beria Erfe</b> ['],
-				['Zaghawa','beri-zag/index.html'],
+				['Zaghawa','berf-zag/index.html'],
 				[']'],
 			['<b>Buginese</b> ['],
 				['Buginese','bugi/index.html'],
