@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'Kedebideri WF';
+    src: url('../../shared/webfonts/kedebideri-regular-webfont.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+
+[lang=zag] { font-family: 'Kedebideri WF', serif; }
+
+
+#consonantGridUC { display: none; }
+#vowelGridUC { display: none; }
+
+
+
+span.hint { 
+	margin-inline-end: .5em;
+	margin-inline-start: 1px;
+	font-size: 60%;
+	color:tan;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+#consonantGrid .g, #consonantGrid .g {
+    margin-inline-end: 1rem;
+    }
+#consonantGrid table .g, #consonantGrid table .g {
+    margin-inline-end: 0;
+    }
+
+
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Kedebideri WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/* SELECTION AREA */
+
+#kbdGrid {
+ 	display: flex;
+ 	flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+#consonantGrid, #consonantGridUC {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+#consonantGrid div, #consonantGridUC div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+#consonantGrid > span, #consonantGridUC span {
+    min-width: 1em;
+    }
+#vowelbase {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+#vowelGrid, #vowelGridUC {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	margin-left: 1em;
+    }
+#vowelGrid > div, #vowelGrid > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:space-between;
+	}
+#moreconsonants {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:flex-start;
+    text-align: end;
+	margin: 0 .5em;
+    }
+#tones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: .5em;
+    }
+#tones div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 1.5em;
+    justify-content: center;
+    margin-left: 0;
+    }
+#numberGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 90%;
+	margin-left: 1em;
+    }
+#digitKeypad div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+
+#punctuation, #flatnumbers, #other {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
+    }
+
+#obsolete {
+    text-align: center;
+    font-size: 90%;
+    }
+
+#consonantGridUC { display: none; }
+#vowelGridUC { display: none; }
