@@ -289,6 +289,14 @@ function openListindicWindow (scriptName) {
 	listindic.focus()
 	}
 
+function openGraphemeWindow (scriptName) {
+	var output = document.getElementById('output')
+	var chars = getHighlightedText(output)
+	var listindic = window.open('../../scripts/apps/graphemes/index.html?q='+	encodeURIComponent(chars), 'listgraphemes') 
+	output.focus()
+	listindic.focus()
+	}
+
 function openScriptPageWindow () {
     if (template.noteslocation === '') return
 	var output = document.getElementById('output')

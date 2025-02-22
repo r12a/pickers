@@ -372,13 +372,15 @@ out += `
 
 <button onclick="openFontlistWindow('`+template.scriptcode.toLowerCase()+`'); return false;" title="Open in Font Lister app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show in Font Lister</button>
 
-<button onclick="openListcatsWindow(); return false;" title="Open in List by category app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage by category</button>
+<button onclick="openListcatsWindow(); return false;" title="Open in List by category app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Sort by General Category</button>
 
-<button onclick="openListbidiWindow(); return false;" title="Open in Triage Bidi app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage by bidi class</button>
+<button onclick="openListbidiWindow(); return false;" title="Open in Triage Bidi app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Sort by Bidi Class</button>
 
-<button onclick="openListlinebreakWindow(); return false;" title="Open in Triage for Linebreaking  app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage for line breaking</button>
+<button onclick="openListlinebreakWindow(); return false;" title="Open in Triage for Linebreaking  app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Sort by Line Break</button>
 
-<button onclick="openListindicWindow(); return false;" title="Open in Triage for Indic_Syllabic_Category app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Triage by Indic category </button>`
+<button onclick="openListindicWindow(); return false;" title="Open in Triage for Indic_Syllabic_Category app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Sort by Indic Category</button>
+
+<button onclick="openGraphemeWindow(); return false;" title="Send to Grapheme Segmenter app." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show grapheme clusters</button>`
 
 if (template.noteslocation) out += `
 <button onclick="openScriptPageWindow(); return false;" title="View first character in selection in a page that describes the script." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Script notes</button>`
