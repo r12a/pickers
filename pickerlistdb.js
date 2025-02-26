@@ -431,6 +431,9 @@ var plistByRegion = {
 				[']'],
 			],
 	'S':[
+			['<b>Sharadd</b> ['],
+				['Sanskrit/Kashmiri', 'shrd-ks/index.html'],
+				[']'],
 			['<b>Sinhala</b> ['],
 				['Sinhala', 'sinh/index.html'],
 				[']'],
