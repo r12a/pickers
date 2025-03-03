@@ -973,6 +973,10 @@ out += ` onclick="if (this.classList.contains('on')) { document.getElementById('
 out += `>▼</span>`
 
 
+out += `<form action="none" style="display:inline;" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
+<input name="addcode" id="addcode" type="text" style="width: 16em; text-align:start; border: 1px solid #ccc;" placeholder="> hex/escape" onmouseover="showMenuText('Use hex code point values or escapes to add characters to the text area. Hit return to transfer.','tan');" onmouseout="hideMenuText()">
+</form>`
+
     out += `</div>`
    
     return out
@@ -1101,11 +1105,16 @@ out = `
   
   
   
-  <div class="control" onmouseover="showMenuText('Use code point values or escapes to add characters to the text area.','tan');" onmouseout="hideMenuText()">Add code point(s) or escape(s):
+<div class="control" onmouseover="showMenuText('Change the line height for the text in the text area.','tan');" onmouseout="hideMenuText()">Line height: <span id="lineHeight" style="font-size:80%;">`+defaults.lineheight+`</span><br />
+<input id="lineHeightSlider" type="range" min=".5" max="5" step=".1" value="`+defaults.lineheight+`" oninput="changeLineHeight(this.value); document.getElementById('lineHeight').textContent=this.value;" style="width:10em;">
+</div>
+
+
+  <!--div class="control" onmouseover="showMenuText('Use code point values or escapes to add characters to the text area.','tan');" onmouseout="hideMenuText()">Add code point(s) or escape(s):
     <form action="none" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
       <input name="addcode" id="addcode"  type="text" style="width: 14em; text-align:start;" placeholder="…">
     </form>
-  </div>
+  </div-->
   
 <!--div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
 <img src="../images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
@@ -1134,9 +1143,9 @@ out = `
 <div id="extracontrols">
 
 
-<div class="control" onmouseover="showMenuText('Change the line height for the text in the text area.','tan');" onmouseout="hideMenuText()">Line height: <span id="lineHeight" style="font-size:80%;">`+defaults.lineheight+`</span><br />
+<!--div class="control" onmouseover="showMenuText('Change the line height for the text in the text area.','tan');" onmouseout="hideMenuText()">Line height: <span id="lineHeight" style="font-size:80%;">`+defaults.lineheight+`</span><br />
 <input id="lineHeightSlider" type="range" min=".5" max="5" step=".1" value="`+defaults.lineheight+`" oninput="changeLineHeight(this.value); document.getElementById('lineHeight').textContent=this.value;" style="width:10em;">
-</div>
+</div-->
 
 
 <!--div class="control" id="ccVariousControls" style="vertical-align: top;">Change text:<br/> <img src="../images/addspace_large.png" alt="Select" title="Separate the characters in the text area with spaces." onclick="addSpacesToPicker(' ');" style="height:20px;">
