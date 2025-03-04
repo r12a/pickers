@@ -17,7 +17,8 @@ window.fontsuggestions =
 `Hapax Berbere
 Tifinaghe-Ircam Unicode
 Akatab
-Tagmukay`
+Tagmukay
+Kigelia`
 
 
 function localInitialise () {

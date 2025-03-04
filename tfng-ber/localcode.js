@@ -24,7 +24,8 @@ function localInitialise () {
 window.fontsuggestions =  
 `Akatab
 Hapax Berbere
-Tagmukay`
+Tagmukay
+Kigelia`
 
 	}
 	
