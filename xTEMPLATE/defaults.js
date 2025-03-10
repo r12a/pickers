@@ -1,8 +1,8 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Serif Devanagari WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
-	factoryDefaults.rows = "150"; // px height of text area
+	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
+	factoryDefaults.rows = "30"; // vh height of text area
 	factoryDefaults.lineheight = "1.4"; // line height of text area
 	factoryDefaults.language = 'ks' // language to use for examples
 	factoryDefaults.uifont = 'Noto Serif Devanagari WF'; // font name  for selection area (a single font, no quotes)
