@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Noto Sans Sharada WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Satisar Sharada WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "200"; // px height of text area
-	factoryDefaults.lineheight = "1.4"; // line height of text area 
+	factoryDefaults.lineheight = "1.6"; // line height of text area 
 	factoryDefaults.language = 'ks' // language to use for examples
-	factoryDefaults.uifont = 'Noto Sans Sharada WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Satisar Sharada WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,7 +18,7 @@ var thisPicker = 'sharadaPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Sans Sharada WF" ]
+var webFonts = [ "Satisar Sharada WF", "Noto Sans Sharada WF" ]
 
 
 var template = {}
@@ -31,7 +31,7 @@ var template = {}
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'shrd-ks'
 	template.scriptcode = 'Shrd'
-	template.fontLocale = 'shrd-ks'
+	template.fontLocale = 'shrd'
 	template.hints = true
 	
 	template.defaultSpace = ' '
