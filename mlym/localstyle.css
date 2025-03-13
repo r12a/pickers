@@ -1,13 +1,26 @@
 @font-face {
     font-family: 'Noto Sans Malayalam WF';
-    src: url('../../shared/webfonts/NotoSansMalayalamUI-Regularwebfont.woff2') format('woff2'),
-         url('../../shared/webfonts/NotoSansMalayalamUI-Regularwebfont.woff') format('woff');
+    src: url('../../shared/webfonts/NotoSansMalayalamUI-Regularwebfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Noto Serif Malayalam WF';
+    src: url('../../shared/webfonts/notoserifmalayalam-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Manjari WF';
+    src: url('../../shared/webfonts/Manjari-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 
 
-[lang=ml] { font-family: 'Noto Sans Malayalam WF', serif; }
+
+
+[lang=ml] { font-family: 'Noto Serif Malayalam WF', serif; }
 
 
 
@@ -30,7 +43,7 @@ span.hint {
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  'Noto Sans Gujarati WF',  sans-serif;  
+	font-family:  'Noto Sans Malayalam WF',  sans-serif;  
     line-height: 1;
 	}
 

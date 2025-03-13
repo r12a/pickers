@@ -27,6 +27,7 @@ window.charCheckerList = [
 // list of fonts to add to the standard selection
 window.fontsuggestions =  
 `ThoolikaTraditionalUnicode
+Manjari
 `
 
 
