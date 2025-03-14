@@ -434,6 +434,14 @@ function makeCharLink (script, lang, dir) {
 	document.getElementById('transcription').textContent = makeCharacterLink(getHighlightedText(output), script, lang, dir)
 	}
 
+function htmlRender (script, lang, dir) {
+	var output = document.getElementById('output')
+	document.getElementById('transcriptionWrapper').style.display='block'
+	document.getElementById('transcription').style.display = 'block'
+	document.getElementById('transcription').contentEditable = true
+	document.getElementById('transcription').innerHTML = output.value
+	}
+
 
 function getDBInfo (script, lang, dir, showAll) {
 	var output = document.getElementById('output')

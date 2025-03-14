@@ -403,6 +403,8 @@ out += `
 
 <button  id="makeCharLink" type="button" onclick="makeCharLink(template.blocklocation,defaults.language,template.direction)" title="Create source code for a character link." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Create character markup</button>
 
+<button  id="htmlRender" type="button" onclick="htmlRender(template.blocklocation,defaults.language,template.direction)" title="Render the text in the text area as HTML." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Render HTML</button>
+
 <button  id="showDBAll" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, true)" title="Show all information in the database for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show all db entries</button>
 
 <button  id="vocab2Markup" type="button" onclick="vocab2Markup(getHighlightedText(document.getElementById('output')))" title="Convert a vocab entry to example markup." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Vocab to markup</button>
