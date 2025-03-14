@@ -199,14 +199,6 @@ table td { border: 0; }
 	cursor:pointer;
 	color: #ccc;
 	}
-#transcription {
-	margin: 5px 25px 10px;
-	font-size: 28px;
-	font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif;
-	/* border-bottom: 1px solid #ccc; */
-	color: #C33;
-	text-align: left;
-	}
 .altfirst {
 	border: 1px solid #ccc;
 	border-top-left-radius: 5px;
@@ -838,13 +830,20 @@ dt {
 	color: #ccc;
 	}
 #transcription {
+	margin: 5px 25px 10px;
+	font-size: 28px;
+	font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif;
+	/* border-bottom: 1px solid #ccc; */
+	color: #C33;
+	}
+#transcription {
 	margin: 5px 140px 0px 25px;
 	font-size: 22px;
 	line-height: 1.4;
 	font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif;
 	color: #C33;
-	text-align: left;
     color: dimgray;
+    text-justify: none;
 	}
 
 #output::selection {
