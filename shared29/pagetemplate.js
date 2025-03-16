@@ -2,7 +2,7 @@ if (typeof fontDB === 'undefined') {
 	fontSelection = ''
 	webFonts = ''
 	}
-else {  
+else {
 	// create a subset of the fontDB
 	localeList = []
 	for (rec in fontDB) { //console.log(fontDB[rec].name)
@@ -34,20 +34,20 @@ else {
 
 function createFontPulldowns () {
 	// create the select list markup for the font pulldowns (used if fontDB available)
-	
+
 	if (typeof webFonts === 'undefined') alert('The webFonts array is not defined.')
-	
+
 	out = '<optgroup label="Webfonts">\n'
 	for (var w=0;w<webFonts.length;w++) {
 		out += '<option value="'+webFonts[w]+'">'+webFonts[w]+'</option>\n'
 		}
 	out += '</optgroup>\n'
-	
+
 	out += '<optgroup label="System defaults">\n'
 	out += '<option value="serif">serif</option>\n'
 	out += '<option value="sans-serif">sans-serif</option>\n'
 	out += '</optgroup>\n'
-	
+
 	for (r=0; r<fontDB.length;r++) {
 		if (fontDB[r].length > 1) {
 			out += '<optgroup label="'+fontDB[r][0]+'">\n'
@@ -72,7 +72,7 @@ function createFontPicker () {
 	out = '<div id="fontPickerWebfonts"><span class="fpOptgroup">Webfonts</span>'
 	for (let f=0;f<webFonts.length;f++) {
 		out += '<span class="fpOption'
-		if (webFonts[f].textContent === defaults.font) out += ' currentFont'	
+		if (webFonts[f].textContent === defaults.font) out += ' currentFont'
 		out += '" onmouseover="applyFontPreview(String(this.dataset.value))" onclick="selectFont(this.dataset.value); document.getElementById(\'fontPicker\').innerHTML=\'\';document.getElementById(\'fontManagementDetails\').style.display=\'none\';" data-value="'+webFonts[f].textContent+'">'+webFonts[f].textContent+'</span> &nbsp; \n'
 		}
 	//out += '&nbsp; <span style="white-space:nowrap"><span class="fpOptgroup">Generic fallbacks</span>'
@@ -98,7 +98,7 @@ function createFontPicker () {
 		}
 	out += '<div onclick="document.getElementById(\'fontPicker\').innerHTML=\'\'; document.getElementById(\'fontManagementDetails\').style.display=\'none\';" style="cursor:pointer; font-size: 200%;">X</div>'
 	out += '</div>'
-	
+
 	return out
 	}
 
@@ -112,7 +112,7 @@ function setBidiOverride (dir, mirror) {
     // used by the small arrows below the input area when character app base direction is bidi
     // sets the direction to rlo with optional mirroring
     // mirror: boolean, sets the mirroring if true
-    
+
     if (mirror) {
         document.getElementById('output').classList.add('mirrorRTL')
         document.getElementById('output').classList.add('bdoLTR')
@@ -133,7 +133,7 @@ function setBidiOverride (dir, mirror) {
 function clearBidiOverride () {
     // used by the small arrows below the input area when character app base direction is bidi
     // clears the rlo and any mirroring
-    
+
     document.getElementById('output').classList.remove('bdoRTL')
     document.getElementById('output').classList.remove('mirrorRTL')
     document.getElementById('output').classList.remove('bdoLTR')
@@ -145,22 +145,30 @@ function clearBidiOverride () {
 function addTabEtc (location) {
 	node = document.getElementById(location)
 	out = `
-<span class="touch" title="Add dotted circle" style="padding: 5px 10px;" onClick="add('◌');">◌</span> 
-<span class="touch" title="Add ␣" style="padding: 5px 10px;" onClick="add('␣');">␣</span> 
-<span class="touch" title="Add † to indicate guessed spelling." style="padding: 5px 10px;" onClick="add('†');">†</span> 
+<span class="touch" title="Add dotted circle" style="padding: 5px 10px;" onClick="add('◌');">◌</span>
+<span class="touch" title="Add ␣" style="padding: 5px 10px;" onClick="add('␣');">␣</span>
+<span class="touch" title="Add † to indicate guessed spelling." style="padding: 5px 10px;" onClick="add('†');">†</span>
 <span class="touch" title="Tab" dir="auto" onClick="add('\u0009');"><img src="../shared29/images/tab.png" alt="⇥"`
 if (template.direction === 'rtl')  out += ` style="transform: rotateY(180deg);"`
-out += `></span> 
+out += `></span>
 <span class="touch" title="Line break" dir="auto" onClick="add('\\n');"><img src="../shared29/images/return.png" alt="⏎"`
 if (template.direction === 'rtl')  out += ` style="transform: rotateY(180deg);"`
-out += `></span> 
-<span class="touch" title="Delete last character in text area" style="padding: 5px 20px;" onClick="del();">DEL</span> 
+out += `></span>
+<span class="touch" title="Delete last character in text area" style="padding: 5px 20px;" onClick="del();">DEL</span>
 <span class="touch delAll" title="Delete all" style="margin-right: 20px; margin-left:20px;" onClick="deleteAll();">❌</span>
 `
 	node.innerHTML = out
 	}
 
 
+
+function removeWSByLine () {
+    const regex = /[^\S\r\n]/g
+    var lines = document.getElementById('output').value.split('\n')
+    out = ''
+    for (var i=0;i<lines.length;i++) out += lines[i].replace(regex,'') + '\n'
+    document.getElementById('output').value = out
+    }
 
 function setTop (title,sample) {
 var out
@@ -179,6 +187,8 @@ out = `
 
 <img src="../images/removespace_large.png" alt="Select" title="Remove all white space from the text area."  onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\s/g,'')" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
 
+<img src="../images/removespace_exlines.png" alt="Select" title="Remove all white space from the text area BUT keep lines intact."  onclick="removeWSByLine()" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+
 <img src="../images/collapsespaces_large.png" alt="Select" title="Collapse multiple spaces in the text area to a single space." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/[ ]+/g,' ')" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
 
 <img src="../images/collapselines_large.png" alt="Select" title="Collapse line breaks in the text area to spaces." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/\\n/g,' ')" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
@@ -189,21 +199,21 @@ out = `
 
 <img src="../images/count_large.png" alt="Count" title="Count the characters in the text area." onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { count=[...document.getElementById('output').value]; alert(count.length); }" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
 
-<img src="../images/nfc_large.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+<img src="../images/nfc_large.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C."
     onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFC');
     document.getElementById('n11nform').innerHTML = 'NFC';" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
-     
-<img src="../images/nfd_large.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+
+<img src="../images/nfd_large.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."
     onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFD');
     document.getElementById('n11nform').innerHTML = 'NFD';" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
-     
-<img src="../images/nfx_large.png" alt="Don't normalise output."  title="Don't normalise output."  
+
+<img src="../images/nfx_large.png" alt="Don't normalise output."  title="Don't normalise output."
     onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'N—';" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
-     
-<img src="../images/add_term_large.png" alt="Add template for term creation."  title="Add template for term creation."  
+
+<img src="../images/add_term_large.png" alt="Add template for term creation."  title="Add template for term creation."
     onclick="document.getElementById('output').value += 'native|meaning|IPA|transc|otherTransc|notes|wAlt\\n';document.getElementById('output').focus();" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
-     
-<img src="../images/centre.png" alt="Centre the content of the output area."  title="Centre the content of the output area."  
+
+<img src="../images/centre.png" alt="Centre the content of the output area."  title="Centre the content of the output area."
     onclick="document.getElementById('output').style.textAlign = 'center'">
 
 </div>
@@ -228,23 +238,23 @@ out += `</header>
 <button id="contrastLow" class="access_selected" onClick="document.querySelector('.access_selected').classList.remove('access_selected');
 	document.querySelector('body').classList.remove('contrast');
 	document.querySelector('body').classList.remove('dark');
-	defaults.contrast = 'low'; 
-    this.classList.add('access_selected'); 
+	defaults.contrast = 'low';
+    this.classList.add('access_selected');
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)">Low contrast</button>
 
-<button id="contrastDark" 
+<button id="contrastDark"
 	onClick="document.querySelector('.access_selected').classList.remove('access_selected');
     document.querySelector('body').classList.add('dark');
 	document.querySelector('body').classList.remove('contrast');
 	defaults.contrast = 'dark';
-    this.classList.add('access_selected'); 
+    this.classList.add('access_selected');
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)">Dark mode</button>
 
-<button id="contrastHigh" 
+<button id="contrastHigh"
 onClick="document.querySelector('.access_selected').classList.remove('access_selected');    document.querySelector('body').classList.add('contrast');
 	document.querySelector('body').classList.remove('dark');
 	defaults.contrast = 'high';
-    this.classList.add('access_selected'); 
+    this.classList.add('access_selected');
 	if (localStorage.pickersStore) localStorage[thisPicker] = JSON.stringify(defaults)">High contrast</button>
 </div>
 </div>
@@ -285,17 +295,17 @@ if (typeof window.charCheckerList !== 'undefined') out += `<img title="Check the
 
 <a class="interactiveHelpButton" href="../shared29/help.html#topLeftIcons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
   </span>
-  
-  
+
+
 <span id="tools">
 <a class="interactiveHelpButton" style="margin-right:.5em;" href="../shared29/help.html#topRight" target="_help" title="Help for top level controls."><img alt="help" src="../images/help.png"/></a>
-    
+
 <button onclick="showCodepoints()" title="Show a list of code points for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">List<br>characters</button>
 
-<button  id="showDB" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false)" 
+<button  id="showDB" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false)"
 title="Show information in the database for each character."  onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Analyse<br>text</button>
 
- ` 
+ `
 
 /*
 for (let i=0;i<window.controls.length;i++){
@@ -328,7 +338,7 @@ for (let i=0;i<window.controls.length;i++){
     out += 'title="'+window.controls[i].alt+'">'+window.controls[i].title+'</button>\n\n'
 	}
 
-out += ` 
+out += `
 <button  id="makeExample" onclick="makeExample(defaults.language,template.direction)" title="Create source code for an example. native|meaning|IPA|transcription" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Example<br>markup</button>
 
 <button onclick="openVocabWindow(template.vocablocation); return false;" title="Search for examples containing the highlighted text." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Find<br>examples</button>
@@ -419,7 +429,7 @@ out += `
 
 <button  id="showDB" type="button" onclick="
 	out='';
-	exclusions=new Set(['o','d','u','?','a']); 
+	exclusions=new Set(['o','d','u','?','a']);
 	for (ch in spreadsheetRows) {
 		if (! exclusions.has(spreadsheetRows[ch][cols['status']]) && ! ch.includes('var')) out+=ch;
 		}
@@ -435,11 +445,11 @@ out += `
 	title="Show all characters in the database currently used in this orthography." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">List db characters</button>
 
 <button  id="showPC" type="button" onclick="
-	out=''; 
-	chs=document.querySelectorAll('.c,.v'); 
+	out='';
+	chs=document.querySelectorAll('.c,.v');
 	for (i=0;i<chs.length;i++) {
 		out += chs[i].textContent;
-		} 
+		}
 	initialList = [... sortOutput(out, unique=true, word=true).replace(/ /g,'')]
 	out = ''
 	for (ch=0; ch<initialList.length;ch++) {
@@ -452,12 +462,12 @@ out += `
 	title="Show all characters in this picker's selection table." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">List picker characters</button>
 
 
-<button  id="showIPA" type="button" 
-onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false); document.getElementById('transcriptionWrapper').style.display='none'; sieveForIPA();" 
+<button  id="showIPA" type="button"
+onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false); document.getElementById('transcriptionWrapper').style.display='none'; sieveForIPA();"
 title="For each character, show IPA equivalents from the database." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show IPA data</button>
 
-<button  id="showTranscription" type="button" 
-onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false); document.getElementById('transcriptionWrapper').style.display='none'; sieveFor('analysisTransc');" 
+<button  id="showTranscription" type="button"
+onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false); document.getElementById('transcriptionWrapper').style.display='none'; sieveFor('analysisTransc');"
 title="For each character, show transcription equivalents from the database." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show transcription data</button>
     `
 
@@ -471,7 +481,7 @@ if (template.bicameral) out += `
 if (window.pulldown) {
 /*for (let i=0;i<window.pulldown.length;i++){
 	out += '<button onclick="'+window.pulldown[i].code+'" '
-	
+
     if (window.pulldown[i].warning) {
         var warningMsg = window.pulldown[i].warning+'<br/><small>See help file for more information</small>.'
         var warningLocn = "document.getElementById(\'warning\')"
@@ -545,9 +555,9 @@ out += `<details id="fontManagementDetails" style="display: none; padding:1rem;"
 
 
 out += '<div id="otPicker" style="display:none;">'
-out += `<div onclick="document.getElementById('otPicker').style.display='none';" 
+out += `<div onclick="document.getElementById('otPicker').style.display='none';"
 			style="cursor:pointer; font-size: 200%; float:right; color:#ccc;">X</div>
-			
+
 <div id="typographyPicker" style="padding:1rem;">`
 
 // font variant ligatures
@@ -709,7 +719,7 @@ out += `<div><span style="font-weight:bold;">Font variant east asian:</span>
 // font feature settings
 out += `<div><span style="font-weight:bold;">Font feature settings:</span>
 
-<a href="https://learn.microsoft.com/en-gb/typography/opentype/spec/featurelist" target="_blank" 
+<a href="https://learn.microsoft.com/en-gb/typography/opentype/spec/featurelist" target="_blank"
 		style="display:inline-block; text-align:center; border:1px solid #ccc; border-radius:.5rem; width:1rem; height: 1rem; vertical-align:middle; line-height:1.2; margin-inline-end:.5rem;">?</a>
 
 <input type="text" id="featureSettings"
@@ -724,11 +734,11 @@ out += `<div><span style="font-weight:bold;">Font feature settings:</span>
 
 
 // font language override
-out += ` <span style="white-space:nowrap"><span style="font-weight:bold">Font language override:</span> 
+out += ` <span style="white-space:nowrap"><span style="font-weight:bold">Font language override:</span>
 
-<a href="https://learn.microsoft.com/en-gb/typography/opentype/spec/languagetags" target="_blank" 
+<a href="https://learn.microsoft.com/en-gb/typography/opentype/spec/languagetags" target="_blank"
 		style="display:inline-block; text-align:center; border:1px solid #ccc; border-radius:.5rem; width:1rem; height: 1rem; vertical-align:middle; line-height:1.2; margin-inline-end:.5rem;">?</a>
-	
+
 <input type="text" id="langOverrideSettings"
 	onInput="document.getElementById('languageOverrideNormal').checked = false
 		_output.style.fontLanguageOverride = this.value.trim()"
@@ -784,17 +794,17 @@ if (template.direction == "rtl" || template.direction == "bidi") {
     <img title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'; clearBidiOverride()" class="setDir" src="../shared29/images/arrows/rtl.png" alt="<" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
     <img title="Set base direction to LTR override." onclick="document.getElementById('output').dir='ltr'; setBidiOverride('ltr',false)" class="setDir" src="../shared29/images/arrows/lro.png" alt=">>" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
     <img title="Set base direction to RTL override." onclick="document.getElementById('output').dir='rtl'; setBidiOverride('rtl',false)" class="setDir" src="../shared29/images/arrows/rlo.png" alt="<<" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
-     &bull; 
+     &bull;
     `
     }
 if (template.direction == "bidi") {
     out += `
     <img title="Set base direction to RTL override, and reverse character glyphs." onclick="document.getElementById('output').dir='ltr'; setBidiOverride('rtl',true)" class="setDir" src="../shared29/images/arrows/mirror.png" alt="<<<" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
-     &bull; 
+     &bull;
     `
     }
 
-    
+
 out += `<span id="autofocus" onclick="toggleAutofocus()" onmouseover="showMenuText('Stop the virtual keyboard opening every time you select a character (for mobile devices).','tan');" onmouseout="hideMenuText()">Autofocus <span id="autofocusState">On</span></span>
     </div>
 
@@ -881,41 +891,41 @@ function setInputAidMenu () {
 if (show.default) {
     out += `
     <span class="vmtab palette on" id="showRevTransSwitch"
-    data-title="Customised mapping of Latin keys to ${ show.language } characters for easy input. Press \` to switch." 
-    data-shorttitle="Default" 
-    onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()" 
+    data-title="Customised mapping of Latin keys to ${ show.language } characters for easy input. Press \` to switch."
+    data-shorttitle="Default"
+    onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()"
     onclick="if (this.classList.contains('on')) closeSidebarPalettes(this); else { closeSidebarPalettes(this); mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring); this.classList.add('on');this.classList.remove('off');} output.className = 'typeAssistDefault'">Default</span>`
     }
 if (show.latin) {
     if (show.latin === 'Latin') var shorttitle = "More"
-    else shorttitle="Latin" 
+    else shorttitle="Latin"
     out += `
     <span class="vmtab palette off" id="showLatinTransSwitch"
     data-title="Type Latin characters needed for transcriptions. Press \` to switch."
     data-shorttitle = "${shorttitle}"
-    onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()" 
+    onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()"
     onclick="if (this.classList.contains('on')) closeSidebarPalettes(this); else { closeSidebarPalettes(this); setUpTypeAssist(true, latinTypeAssistMap, latinTypeAssistMap); this.classList.add('on'); this.classList.remove('off');}output.className = 'typeAssistLatin'">${shorttitle}</span>`
     }
 if (show.ipa) {
     out += `
-    <span class="vmtab off palette" 
-    data-title="Type ${ show.language } from keys mapped to IPA characters." 
-    data-shorttitle="[...]" 
-    onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()" 
+    <span class="vmtab off palette"
+    data-title="Type ${ show.language } from keys mapped to IPA characters."
+    data-shorttitle="[...]"
+    onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()"
     onclick="if (this.classList.contains('on')) closeSidebarPalettes(this); else { closeSidebarPalettes(this);mapstring=makeComplexTypeAssistMap(cols.ipaLoc);setUpTypeAssist(false, mapstring, mapstring); this.classList.add('on');this.classList.remove('off');} output.className = 'typeAssistOther'">[...]</span>`
     }
 if (show.transc) {
     out += `
-    <span class="vmtab off palette" 
+    <span class="vmtab off palette"
     data-title="Type ${ show.language } from keys mapped to the ${ show.transc } transcription."
-    data-shorttitle="<..>" 
-    onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()" 
+    data-shorttitle="<..>"
+    onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()"
     onclick="if (this.classList.contains('on')) closeSidebarPalettes(this); else { closeSidebarPalettes(this);mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring); this.classList.add('on');this.classList.remove('off');}output.className = 'typeAssistOther'">&lt;..&gt;</span>`
     }
 if (show.kbd) {
     out += `
-    <span class="vmtab off palette" 
-    data-title="Map keys to the ${ show.kbd } keyboard." data-shorttitle="⌨" onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()" 
+    <span class="vmtab off palette"
+    data-title="Map keys to the ${ show.kbd } keyboard." data-shorttitle="⌨" onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()"
     onclick="if (this.classList.contains('on')) closeSidebarPalettes(this); else { closeSidebarPalettes(this);setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';; this.classList.add('on');this.classList.remove('off');}output.className = 'typeAssistOther'">⌨</span>`
     }
 
@@ -926,22 +936,22 @@ for (let i=0;i<inputAids.length;i++) {
 
 	// finish up the assignments
     if (!inputAids[i].initialCode)  inputAids[i].initialCode = ''
-    
-    
-    if (inputAids[i].type === 'palette') inputAids[i].onClickCode = `if (this.classList.contains('on')) closeSidebarPalettes(this); else { closeSidebarPalettes(this);`+inputAids[i].initialCode+ `; this.classList.add('on');this.classList.remove('off');}`    
-    
-    
+
+
+    if (inputAids[i].type === 'palette') inputAids[i].onClickCode = `if (this.classList.contains('on')) closeSidebarPalettes(this); else { closeSidebarPalettes(this);`+inputAids[i].initialCode+ `; this.classList.add('on');this.classList.remove('off');}`
+
+
     if (! inputAids[i].desc) inputAids[i].desc = inputAids[i].title
-    
-    
+
+
     // set colour of top border of text area
     if (inputAids[i].id === 'showRevTransSwitch') inputAids[i].onClickCode += `output.className = 'typeAssistDefault'`
-    
+
     else if (inputAids[i].id === 'showLatinTransSwitch') inputAids[i].onClickCode += `output.className = 'typeAssistLatin'`
-    
+
     else if (inputAids[i].type === 'palette') inputAids[i].onClickCode += `output.className = 'typeAssistOther'`
-   
-    
+
+
     // create basic markup
 	out += `<span class="vmtab off`
     if (inputAids[i].type === 'palette') out += ' palette'
@@ -952,13 +962,13 @@ for (let i=0;i<inputAids.length;i++) {
     out += ` onMouseOver="showMenuText(this.dataset.title,'#666')"`
     out += ` onMouseOut="hideMenuText()"`
     out += ` onclick="` + inputAids[i].onClickCode + `"`
-    
+
     // add ids for specific types
     if (inputAids[i].id) out += ' id="'+inputAids[i].id+'"'
     out += '>'
-    
+
     out += inputAids[i].dataShortTitle
-    
+
     out += `</span>
     `
 	}
@@ -980,7 +990,7 @@ out += `<form action="none" style="display:inline;" onsubmit="add(convertCP2Char
 </form>`
 
     out += `</div>`
-   
+
     return out
 }
 
@@ -1014,7 +1024,7 @@ out = ''
             document.getElementById('shapelist').style.display = 'none';
             this.classList.add('off');
             this.classList.remove('on');
-            } 
+            }
             else {
             document.getElementById('shapelist').style.display = 'block';
             this.classList.add('on');
@@ -1031,12 +1041,12 @@ out = ''
         out += ` onMouseOver="showMenuText(this.dataset.title,'#666')"`
         out += ` onMouseOut="hideMenuText()"`
         out += ` onclick="if (this.classList.contains('on')) {
-            globals.showShapeHints = false; 
+            globals.showShapeHints = false;
             this.classList.add('off');
             this.classList.remove('on');
-            } 
+            }
             else {
-            globals.showShapeHints = true; 
+            globals.showShapeHints = true;
             this.classList.add('on');
             this.classList.remove('off');
             }"`
@@ -1080,7 +1090,7 @@ out = `
   <div><a href="../shared29/help.html" target="_help">Get basic information</a> about how to use this app.</div>
   <div style="font-size:80%">For context-sensitive help, click on one of these icons: <img src="../images/help.png" alt=""/></div>
   </div>
-  
+
 
 <div id="controlBox">
 
@@ -1098,15 +1108,15 @@ out = `
       <input name="fontName" id="fontName" value="`+defaults.font+`" onclick="this.select();" />
     </form>
   </div-->
-  
-  
-  
+
+
+
   <div class="control" onmouseover="showMenuText('Change the size of the font of the text area.','tan');" onmouseout="hideMenuText()">Font size: <span id="sizeIndicator" style="font-size:80%;">`+defaults.size+`</span>px<br />
     <input id="fontSizeSlider" type="range" min="10" max="200" step="1" value="`+defaults.size+`" oninput="changeFontSize(this.value)" style="width:12em;">
   </div>
-  
-  
-  
+
+
+
 <div class="control" onmouseover="showMenuText('Change the line height for the text in the text area.','tan');" onmouseout="hideMenuText()">Line height: <span id="lineHeight" style="font-size:80%;">`+defaults.lineheight+`</span><br />
 <input id="lineHeightSlider" type="range" min=".5" max="5" step=".1" value="`+defaults.lineheight+`" oninput="changeLineHeight(this.value); document.getElementById('lineHeight').textContent=this.value;" style="width:10em;">
 </div>
@@ -1117,15 +1127,15 @@ out = `
       <input name="addcode" id="addcode"  type="text" style="width: 14em; text-align:start;" placeholder="…">
     </form>
   </div-->
-  
+
 <!--div id="normaliseControl" class="control" title="Change the normalization of the output.">Normalise: <span id="n11nform">NFC</span><br />
-<img src="../images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C." 
+<img src="../images/nfc.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C."
     onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFC');
-    document.getElementById('n11nform').innerHTML = 'NFC';"/> 
-<img src="../images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."  
+    document.getElementById('n11nform').innerHTML = 'NFC';"/>
+<img src="../images/nfd.png" alt="Convert output to Normalization Form D."  title="Convert output to Normalization Form D."
     onclick="globals.n11n='nfd'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFD');
-    document.getElementById('n11nform').innerHTML = 'NFD';"/> 
-<img src="../images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."  
+    document.getElementById('n11nform').innerHTML = 'NFD';"/>
+<img src="../images/nfx.png" alt="Don't normalise output."  title="Don't normalise output."
     onclick="globals.n11n='none'; document.getElementById('n11nform').innerHTML = 'None';"/>
     </div-->
 
@@ -1214,7 +1224,7 @@ out += `
 <button onclick="showLocationInText('');" alt="Clear search results." title="Clear search results.">X</button>
 </form>
 </div-->
-  
+
 
 
 
@@ -1255,7 +1265,7 @@ ${ setMarkup }
 out += `
 <details>
     <summary style="margin-left:20px">more..</summary>
-  
+
 
 <div id="moreControls">
 `
@@ -1263,20 +1273,20 @@ out += `
 
 if (template.direction == 'rtl') {
     out += `
-    
+
      <div class="control" id="uiTableDirection" style="text-align:right;" onmouseover="showMenuText('Flip the direction of the items in the selection panel.','tan');" onmouseout="hideMenuText()">Table direction:<br />
     <select onChange="changeSelectionDirection(this.value); return false;">
     <option value="rtl">RTL</option>
     <option value="ltr">LTR</option>
     </select>
     </div>
-   
+
     `
     }
 
 out += `<input style="display:none" name="fontSize" value="35" id="fontSize" size="3" onchange="changeFontSize(this.value);">
 
-  
+
 <div class="control" id="boxHeightControl" onmouseover="showMenuText('Change the height of box that is the text area.','tan');" onmouseout="hideMenuText()">Box height: <span id="rows" style="font-size:80%;">`+defaults.rows+`</span>vh<br />
 <input id="boxHeightSlider" type="range" min="0" max="100" step="5" value="`+defaults.rows+`" oninput="changeBoxHeight(this.value)"  style="width:10em;">
 </div>
@@ -1341,7 +1351,7 @@ if (template.scriptcode) {
     <div id="linklist">`
 
     //out += getData(template.scriptcode)
-    
+
     if (template.noteslocation) out += '<a href="../../scripts/' + template.noteslocation + '.html" target="_blank">Script notes</a><br/>\n'
     if (template.blocklocation) out += '<a href="../../scripts/' + template.blocklocation + '/block.html" target="_blank">Character notes</a><br/>\n'
     out += '<a href="../../scripts/links.html?iso=' + template.scriptcode + '" target="_blank">Script-related links for '+template.scriptcode+'</a><br/>\n'
@@ -1351,10 +1361,10 @@ if (template.scriptcode) {
     	<!--a onclick="this.href = '../../app-listcharacters/index.html?chars='+getHighlightedText(_output)" target="_blank" href="#">List characters</a><br/>
     	<a onclick="this.href = '../../app-conversion/index.html?q='+getHighlightedText(_output)" target="_blank" href="#">Character converter</a-->
     	</div>`
-    
+
     out += '</details>'
     }
-    
+
 out += `<details>
 <summary>more character apps</summary>
 <iframe id="pickerlist" src="../pickerlist.html"></iframe>
@@ -1393,8 +1403,8 @@ out += `
 <div class="smallprint">
 Updates on <a href="https://typo.social/@ri" target="_blank">Mastodon</a>.
 See <a target="_blank" href="https://github.com/r12a/pickers/tree/gh-pages/`+template.github+`">recent changes</a>.
-Make a <a target="_blank" href="https://github.com/r12a/pickers/issues/new?title=[`+template.github+`]%20%20ADD%20TITLE%20HERE">comment</a>. 
-Licence <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a> 
+Make a <a target="_blank" href="https://github.com/r12a/pickers/issues/new?title=[`+template.github+`]%20%20ADD%20TITLE%20HERE">comment</a>.
+Licence <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a> © <a href="mailto:r12a@w3.org">r12a</a>
 </div>
 
 `
