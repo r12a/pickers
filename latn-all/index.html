@@ -2,7 +2,7 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Latin &amp; diacritic character app 29</title>
+<title>Latin &amp; diacritic picker 29</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
 <link rel="stylesheet" href="../shared29/style.css" />
@@ -11,6 +11,7 @@
 <script src="defaults.js">  </script>
 <script src="../../shared/fontdb/db.js"> </script>
 <script src="../../shared/scriptdb/latn.js">  </script>
+<script src="../../scripts/latn/latn-sets.js">  </script>
 
 <script src="../../shared/code/boilerplate.js"></script>
 <script src="../../shared/code/character_conversion.js"></script>
@@ -24,13 +25,16 @@
 <script src="localcode.js">  </script>
 <script src="../shared29/pagetemplate.js">  </script>
 <script src="../../scripts/linkdata/linkdb.js"></script>
-<!--script src="localtranscription.js">  </script-->
+<script src="localtranscription.js">  </script>
 
 <style id="dynamicUIFont"></style>
 <style id="dynamicUIFontSize"></style>
 </head>
 
 <body class="app">
+
+
+
 <div id="topBP"></div>
 <script>document.getElementById('topBP').innerHTML = setTop(defaults.title, defaults.sample)</script>
 
@@ -42,6 +46,9 @@
 
 
 <div id="tables" dir="ltr">
+  
+
+<div class="kbdWrapper"><div dir="ltr" id="keyboard"></div></div>
 
 
 
@@ -84,15 +91,27 @@
 
 
 
-
 <div id="alphabet" class="default">
+
+
+<div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys">
+</div>
+</div>
+
+<div id="extrashapes"></div>
+
+
 
 <div class="spaceline">
 <span class="touch" id="shiftToggle" style="padding: 5px 40px;" dir="auto" onClick="toggleShift(this, 'upper', 'lower');if (this.classList.contains('shifted')) {this.classList.remove('shifted');} else {this.classList.add('shifted');}">SHIFT</span>
+<span class="touch" title="Non-breaking hyphen" dir="auto" onClick="add('\u2011');">SHY</span>
 <span class="touch" title="Narrow no-break space" dir="auto" onClick="add('\u202F');">NNBSP</span>
 <span class="touch" title="No-break space" dir="auto" onClick="add('\u00A0');">NBSP</span> 
 <span class="touch" style="margin: 0; padding: 5px 90px;" dir="auto" onClick="add(' ');">SPACE</span>
-<span class="touch" dir="auto" onClick="addAround('“','”');">“..”</span> 
+
+<span class="touch" title="Punctuation apostrophe" dir="auto" onClick="add('’');">’</span> 
+<span class="touch" title="Letter apostrophe" dir="auto" onClick="add('ʼ');">ʼ</span> 
 
 <span id="tabEtc"></span>
 <script>addTabEtc('tabEtc')</script>
@@ -100,24 +119,24 @@
 
 
 
+<div id="kbdGrid">
+
 <div id="punctuation"> 
 <span class="touch" title="Word joiner" dir="auto" onClick="add('\u2060');">WJ</span>
 <span class="touch" title="Combining grapheme joiner" dir="auto" onClick="add('\u034F');">CGJ</span>
 
 <span class="touch" dir="auto" onClick="addAround('(',')');">(..)</span> 
+<span class="touch" dir="auto" onClick="addAround('[',']');">[..]</span> 
 <span class="touch" dir="auto" onClick="addAround('«','»');">«..»</span> 
 <span class="touch" dir="auto" onClick="addAround('‹','›');">‹..›</span> 
 <span class="touch" dir="auto" onClick="addAround('“','”');">“..”</span> 
 <span class="touch" dir="auto" onClick="addAround('‘','’');">‘..’</span> 
 
 <span class="c">…</span>
-<span class="c">¶</span>
 <span class="c">¿</span>
 <span class="c">¡</span>
-<span class="c">‚</span>
 <span class="c">‘</span>
 <span class="c">’</span>
-<span class="c">„</span>
 <span class="c">“</span>
 <span class="c">”</span>
 <!--<span class="c">«</span>
@@ -130,33 +149,34 @@
 <span class="c">‧</span>
 <span class="c">✓</span>
 <span class="c">→</span>
-<!--<span class="c">🗸</span>
-<span class="c">🗴</span>
-<span class="c">🗶</span>-->
+<span class="c">•</span>
+<span class="c">‣</span>
 </div>
 
 
-  
-<div id="extrashapes"></div>
-  
+<details>
+<summary>more punctuation</summary>
+ <div id="other" style="text-align: center; font-size:80%;">
 
-
-
-    </div>
-
-
-
-
- <div id="shapelist" style="display:none; text-align:center;">
- <div id="shapekeys">
+<span class="c">‚</span>
+<span class="c">„</span>
+<span class="c">‥</span>
+<span class="c">․</span>
+<span class="c">¶</span>
+<span class="c">⁋</span>
+<span class="c">©</span>
+<span class="c">¼</span>
+<span class="c">½</span>
+<span class="c">¾</span>
 </div>
-</div>
+</details>
 
+</div>
 
 
 <div id="temp"></div>
 
-
+</div>
 </div><!-- end of tables -->
 
   
