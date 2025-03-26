@@ -197,7 +197,9 @@ out = `
 
 <input name="insertMe" id="insertMe"  type="text" value="␣">
 
-<img src="../images/count_large.png" alt="Count" title="Count the characters in the text area." onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { count=[...document.getElementById('output').value]; alert(count.length); }" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+<img src="../images/space_to_space.png" alt="Replace" title="Replace spaces with ␣" onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/ /g,'␣');" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+
+<!--img src="../images/count_large.png" alt="Count" title="Count the characters in the text area." onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { count=[...document.getElementById('output').value]; alert(count.length); }" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()"-->
 
 <img src="../images/nfc_large.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C."
     onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFC');
@@ -415,6 +417,8 @@ out += `
 
 <button  id="htmlRender" type="button" onclick="htmlRender(template.blocklocation,defaults.language,template.direction)" title="Render the text in the text area as HTML." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Render HTML</button>
 
+<button  id="countAll" type="button" onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { count=[...document.getElementById('output').value]; alert(count.length+' characters.'); }" title="Count the characters in the text area." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Character count</button>
+
 <button  id="showDBAll" type="button" onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, true)" title="Show all information in the database for each character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show all db entries</button>
 
 <button  id="vocab2Markup" type="button" onclick="vocab2Markup(getHighlightedText(document.getElementById('output')))" title="Convert a vocab entry to example markup." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Vocab to markup</button>
@@ -469,6 +473,10 @@ title="For each character, show IPA equivalents from the database." onMouseOver=
 <button  id="showTranscription" type="button"
 onclick="getDBInfo(template.blocklocation,defaults.language,template.direction, false); document.getElementById('transcriptionWrapper').style.display='none'; sieveFor('analysisTransc');"
 title="For each character, show transcription equivalents from the database." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show transcription data</button>
+
+<button  id="showUnTranslit" type="button"
+onclick="untransliterate(getHighlightedText(_output))"
+title="Convert a transliteration to a sequence of native characters." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Transliteration &gt; characters</button>
     `
 
 if (template.bicameral) out += `

@@ -1135,6 +1135,7 @@ function transcribe (chstring, direction) {
 	var transcription
 
 	if (direction === 'revTransliterate') transcription =  reverseTransliterate(chstring)
+    else if (direction === 'untransliterate') transcription = untransliterate(chstring)
 
 	else {
 		// for security, remove angle brackets
@@ -3840,6 +3841,111 @@ function sortByIPA (str) {
 
 
 
+
+
+
+
+
+
+
+function untransliterate (str) {
+// convert a transliteration into native characters
+
+    var t, s, re
+    var exclusions = new Set(['(',')','[',']','.',' ','?','*','|'])
+
+    //str = getHighlightedText(_output)
+	if (str==='') return
+
+    str = str.replace(/␣/g,' ')
+    //console.log('STRING',str)
+
+
+    // create arrays of differing lengths of transcriptions->char pairs
+    // this will enable us to do non-overlapping replace operations later
+    trans5 = {}
+    trans4 = {}
+    trans3 = {}
+    trans2 = {}
+    trans1 = {}
+    for (t in spreadsheetRows) {
+        if (spreadsheetRows[t][cols.transLoc].length === 5) trans5[spreadsheetRows[t][cols.transLoc]] = t
+        if (spreadsheetRows[t][cols.transLoc].length === 4) trans4[spreadsheetRows[t][cols.transLoc]] = t
+        if (spreadsheetRows[t][cols.transLoc].length === 3) trans3[spreadsheetRows[t][cols.transLoc]] = t
+        if (spreadsheetRows[t][cols.transLoc].length === 2) trans2[spreadsheetRows[t][cols.transLoc]] = t    
+        if (spreadsheetRows[t][cols.transLoc].length === 1) trans1[spreadsheetRows[t][cols.transLoc]] = t
+        }
+    //console.log(trans5)
+    //console.log(trans4)
+    //console.log(trans3)
+    //console.log(trans2)
+    //console.log(trans1)
+
+
+    // replace transliterations with characters, going from longest to shortest to avoid ambiguity
+    for (s in trans5) {
+        re = new RegExp(makeRegex(s),'g')
+        //console.log('RE is', re)
+        str = str.replace(re, trans5[s])
+        }
+    for (s in trans4) {
+        re = new RegExp(makeRegex(s),'g')
+        //console.log('RE is', re)
+        str = str.replace(re, trans4[s])
+        //console.log(str)
+        }
+    for (s in trans3) {
+        re = new RegExp(makeRegex(s),'g')
+        //console.log('RE is', re)
+        str = str.replace(re, trans3[s])
+        //console.log(str)
+        }
+    for (s in trans2) {
+        re = new RegExp(makeRegex(s),'g')
+        //console.log('RE is', re)
+        str = str.replace(re, trans2[s])
+        //console.log(str)
+        }
+    for (s in trans1) {
+        re = new RegExp(makeRegex(s),'g')
+        //console.log('RE is', re)
+        str = str.replace(re, trans1[s])
+        //console.log(str)
+        }
+
+
+	document.getElementById('transcription').innerHTML = str.trim()
+	document.getElementById('transcription').contentEditable = true
+	document.getElementById('transcriptionWrapper').style.display = 'block' 
+	return transcription
+
+    }
+
+
+
+function makeRegex (s) {
+//  called by untransliterate() to create a regex that ignores syntax characters
+    
+    str = [...s]
+    out = ''
+    for (i=0;i<str.length;i++) {
+        switch (str[i]) {
+            case '(': out += '\\('; break
+            case ')': out += '\\)'; break
+            case '{': out += '\\{'; break
+            case '}': out += '\\}'; break
+            case '[': out += '\\['; break
+            case ']': out += '\\]'; break
+            case '.': out += '\\.'; break
+            case '?': out += '\\?'; break
+            case '*': out += '\\*'; break
+            case '|': out += '\\|'; break
+            case '&': out += '\\&'; break
+            default:  out += str[i]
+            }
+        }
+    return out
+    }
 
 
 

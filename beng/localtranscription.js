@@ -7,6 +7,7 @@
 	if (direction == 'toBeng') { return isoToBengali(str) }
 	if (direction == 'toISO') { return bengaliToISO(str) }
 	if (direction == 'toRadice') { return bengaliToRadice(str) }
+	if (direction == 'untransliterate') { return untransliterate(str) }
 	}
 
 
@@ -28,6 +29,7 @@ for (i=0;i<strArray.length;i++) {
 
 return str.trim()
 }
+
 
 
 
