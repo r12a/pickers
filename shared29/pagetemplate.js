@@ -216,7 +216,7 @@ out = `
     onclick="document.getElementById('output').value += 'native|meaning|IPA|transc|otherTransc|notes|wAlt\\n';document.getElementById('output').focus();" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
 
 <img src="../images/centre.png" alt="Centre the content of the output area."  title="Centre the content of the output area."
-    onclick="document.getElementById('output').style.textAlign = 'center'">
+    onclick="document.getElementById('output').style.textAlign = 'center'" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
 
 </div>
 
