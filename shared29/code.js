@@ -1446,7 +1446,11 @@ function event_mouseoverChar ()  {
 		document.getElementById('cursive').innerHTML = ''
 		var char = this.textContent
 		if (spreadsheetRows[char] && spreadsheetRows[char][cols.shape]) {
-			document.getElementById('cursive').innerHTML = spreadsheetRows[char][cols.shape].replace(/ /g,'&nbsp;&nbsp;').replace(/ـ/g,'\u200D')
+			// check for numbers rather than strings
+			if (spreadsheetRows[char][cols.shape] == '4') document.getElementById('cursive').innerHTML = `${ this.textContent } &nbsp; ${ this.textContent }${ this.textContent }${ this.textContent }`
+			else if (spreadsheetRows[char][cols.shape] == '2') document.getElementById('cursive').innerHTML = `${ this.textContent } &nbsp; \u200D${ this.textContent }`
+			
+			else document.getElementById('cursive').innerHTML = spreadsheetRows[char][cols.shape].replace(/ /g,'&nbsp;&nbsp;').replace(/ـ/g,'\u200D')
 			}
 		}
 
