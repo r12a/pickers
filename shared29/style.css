@@ -636,7 +636,7 @@ span.c {
 #autofocusswitch {
 	float: right; 
 	font-size: 80%; 
-	margin-right: 20px;
+	/* margin-right: 20px; */
 	color: #aaa;
 	margin-left: 20px;
 	}
@@ -1007,6 +1007,7 @@ summary:hover {
 .setDir {
 	cursor: pointer;
 	opacity: 50%;
+	vertical-align: top;
 	}
 
 #helpcontrol, #helpBanner {
@@ -1765,6 +1766,7 @@ rt {
     font-size: 80%;
     padding: 0;
     line-height: 1;
+    text-align: start;
     }
 
 .vmtab {

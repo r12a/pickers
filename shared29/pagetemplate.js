@@ -806,18 +806,22 @@ if (template.direction == "rtl" || template.direction == "bidi") {
     <img title="Set base direction to RTL." onclick="document.getElementById('output').dir='rtl'; clearBidiOverride()" class="setDir" src="../shared29/images/arrows/rtl.png" alt="<" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
     <img title="Set base direction to LTR override." onclick="document.getElementById('output').dir='ltr'; setBidiOverride('ltr',false)" class="setDir" src="../shared29/images/arrows/lro.png" alt=">>" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
     <img title="Set base direction to RTL override." onclick="document.getElementById('output').dir='rtl'; setBidiOverride('rtl',false)" class="setDir" src="../shared29/images/arrows/rlo.png" alt="<<" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
-     &bull;
     `
     }
 if (template.direction == "bidi") {
     out += `
     <img title="Set base direction to RTL override, and reverse character glyphs." onclick="document.getElementById('output').dir='ltr'; setBidiOverride('rtl',true)" class="setDir" src="../shared29/images/arrows/mirror.png" alt="<<<" onmouseover="showMenuText(this.title,'tan');" onmouseout="hideMenuText()">
-     &bull;
     `
     }
 
 
-out += `<span id="autofocus" onclick="toggleAutofocus()" onmouseover="showMenuText('Stop the virtual keyboard opening every time you select a character (for mobile devices).','tan');" onmouseout="hideMenuText()">Autofocus <span id="autofocusState">On</span></span>
+out += `
+    <input id="fontSizeSlider2" type="range" min="10" max="200" step="1" value="`+defaults.size+`" 
+    oninput="changeFontSize(this.value)" style="width:8rem; height:1rem;"
+    onmouseover="showMenuText('Change the size of the font of the text area.','tan');" 
+    onmouseout="hideMenuText()">
+
+	<!--<span id="autofocus" onclick="toggleAutofocus()" onmouseover="showMenuText('Stop the virtual keyboard opening every time you select a character (for mobile devices).','tan');" onmouseout="hideMenuText()">Autofocus <span id="autofocusState">On</span></span>-->
     </div>
 
 	<span id="cursive" dir="rtl"></span>
@@ -998,7 +1002,7 @@ out += `>▼</span>`
 
 
 out += `<form action="none" style="display:inline;" onsubmit="add(convertCP2Char(getElementById('addcode').value)); return false;">
-<input name="addcode" id="addcode" type="text" style="width: 16em; text-align:start; border: 1px solid #ccc;" placeholder="> hex/escape" onmouseover="showMenuText('Use hex code point values or escapes to add characters to the text area. Hit return to transfer.','tan');" onmouseout="hideMenuText()">
+<input name="addcode" id="addcode" type="text" style="width: 20%; text-align:start; border: 1px solid #ccc;" placeholder="> hex/escape" onmouseover="showMenuText('Use hex code point values or escapes to add characters to the text area. Hit return to transfer.','tan');" onmouseout="hideMenuText()">
 </form>`
 
     out += `</div>`
