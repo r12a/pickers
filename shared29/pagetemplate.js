@@ -218,6 +218,10 @@ out = `
 <img src="../images/centre.png" alt="Centre the content of the output area."  title="Centre the content of the output area."
     onclick="document.getElementById('output').style.textAlign = 'center'" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
 
+<img id="autofocusToggleIcon" src="../images/af_on.png" alt="Autofocus"  title="Stop the virtual keyboard opening every time you select a character (for mobile devices)."
+    onclick="toggleAutofocus()" 		
+    onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+
 </div>
 
 

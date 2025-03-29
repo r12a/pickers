@@ -469,6 +469,22 @@ function switchAutofocus (desiredState) {
 
 
 function toggleAutofocus () {
+	var widget = document.getElementById('autofocusToggleIcon')
+	if (widget.src.match('af_off')) {
+		widget.src = widget.src.replace(/af_off/,'af_on') 
+		globals.refocus=true
+		}
+	else {
+		widget.src = widget.src.replace(/af_on/,'af_off') 
+		globals.refocus=false;
+		}
+	document.getElementById( 'output' ).focus()
+	}
+
+
+
+
+function toggleAutofocusX () {
 	var widget = document.getElementById('autofocusState')
 	if (widget.textContent === 'Off') {
 		widget.textContent = 'On' 
