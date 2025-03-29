@@ -1769,7 +1769,7 @@ rt {
 
 .vmtab {
     background-color: white;
-    padding-inline-end: 2rem;
+    padding-inline-end: 1rem;
     cursor: pointer;
     }
 .vmtab.off {
