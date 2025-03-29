@@ -526,6 +526,7 @@ for (let i=0;i<window.pulldown.length;i++){
 </div>
 
 <div id="outputDiv" style="position: relative;">
+<span id="cursive" dir="rtl" style="position: absolute; bottom: 1rem; right: 5%; font-size: 3rem; font-family: &quot;Noto Sans Adlam&quot;; width: unset;"></span>
 <div id="warning"></div>
 <div>
 
@@ -820,11 +821,7 @@ out += `
     oninput="changeFontSize(this.value)" style="width:8rem; height:1rem;"
     onmouseover="showMenuText('Change the size of the font of the text area.','tan');" 
     onmouseout="hideMenuText()">
-
-	<!--<span id="autofocus" onclick="toggleAutofocus()" onmouseover="showMenuText('Stop the virtual keyboard opening every time you select a character (for mobile devices).','tan');" onmouseout="hideMenuText()">Autofocus <span id="autofocusState">On</span></span>-->
     </div>
-
-	<span id="cursive" dir="rtl"></span>
     </div>
    `
 
@@ -898,6 +895,7 @@ function setInputAidMenu () {
 
     // otherwise
     var out = '<div id="inputAidMenu">Type-assist: '
+
 
 	out += `
 	<span class="vmtab off"><a class="interactiveHelpButton" href="../shared29/help.html#inputAids" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a></span>

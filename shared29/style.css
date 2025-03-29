@@ -473,9 +473,11 @@ span.c {
 	color: chocolate;
     display: inline-block;
 	
-	float: right;
-	/*background-color: antiquewhite;*/
-	width: 5em;
+	/*float: right;*/
+	background-color: seashell;
+	padding: .5rem;
+	border-radius: .5rem;
+	/*width: 5em;*/
 	font-size: 24px;
 	line-height: 1;
 	text-align: start;
@@ -1008,6 +1010,7 @@ summary:hover {
 	cursor: pointer;
 	opacity: 50%;
 	vertical-align: top;
+	margin-block-start: .3rem;
 	}
 
 #helpcontrol, #helpBanner {
