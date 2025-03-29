@@ -778,7 +778,7 @@ out += `<textarea dir="auto" id="output" name="output" placeholder="›" spellch
 
 
 
-
+/*
 out += `
 
 
@@ -787,7 +787,7 @@ out += `
 <a class="interactiveHelpButton" style="float:right; margin-right:.5em;" href="../shared29/help.html#autofocus" target="_help" title="Help with autofocus and direction."><img alt="help" src="../images/help.png"/></a>
 </div>
 `
-
+*/
 
 
 out += `
