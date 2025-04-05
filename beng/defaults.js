@@ -18,7 +18,7 @@ var thisPicker = 'bengaliPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Sans Bengali WF", "Noto Serif Bengali WF" ]
+var webFonts = [ "Noto Sans Bengali WF", "Noto Serif Bengali WF", "Tiro Bangla WF" ]
 
 
 var template = {}

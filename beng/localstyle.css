@@ -1,14 +1,18 @@
 @font-face {
     font-family: 'Noto Sans Bengali WF';
-    src: url('../../shared/webfonts/NotoSansBengali-Regularwebfont.woff2') format('woff2'),
-         url('../../shared/webfonts/NotoSansBengali-Regularwebfont.woff') format('woff');
+    src: url('../../shared/webfonts/NotoSansBengali-Regularwebfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Serif Bengali WF';
-    src: url('../../shared/webfonts/notoserifbengali-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notoserifbengali-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notoserifbengali-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Tiro Bangla WF';
+    src: url('../../shared/webfonts/TiroBangla-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
