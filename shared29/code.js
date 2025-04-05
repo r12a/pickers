@@ -972,7 +972,8 @@ function searchFor ( str, scriptname ) {
 
 function convertCP2Char ( textString ) { 
   var outputString = '';
-  textString = textString.replace(/[^a-fA-F0-9]/g, ' ');
+  textString = textString.replace(/and/g, ' ');
+  textString = textString.replace(/[^a-fA-F0-9]/g, ' ')
   textString = textString.replace(/^\s+/, '');
   textString = textString.replace(/\s+$/, '');
   if (textString.length == 0) { return ""; }
