@@ -178,6 +178,8 @@ var out
 out = `
 <dialog id="copyNotice">Copied !</dialog>
 
+<iframe id="notesDisplayIframe"></iframe>
+
 <div id="slideout">
 
 <span id="clang" onmouseover="showMenuText('The current BCP47 language tag for text in the text area.','tan');" onmouseout="hideMenuText()">bn</span>
@@ -1254,6 +1256,7 @@ out += `
 <div class="control" id="ccFactoryReset" onmouseover="showMenuText('Reset all fonts, sizes, etc to the factory settings.','tan');" onmouseout="hideMenuText()">Reset<br/><button onClick="resetDefaults()">Go</button>
 </div>
 </div>
+
 `
 
 
@@ -1424,6 +1427,7 @@ Licence <a target="_blank" rel="license" href="http://creativecommons.org/licens
 `
 return out
 }
+
 
 
 window.msgStore = ''

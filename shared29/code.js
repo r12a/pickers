@@ -18,7 +18,6 @@ var marks = new Set()
 
 
 
-
 function replaceSlash (str, replacement) {
 // does .replace(/\//g,str), since that doesn't seem to work
 	
@@ -138,6 +137,13 @@ function copyToClipboard () {
     setTimeout(() => { document.getElementById('copyNotice').style.display = 'none' }, '500')
     if (wholeText) output.select()
 	output.focus()
+	}
+
+function copyCharToClipboard (textToCopy) {
+	// copy an item in List Characters to the clipboard
+    navigator.clipboard.writeText(textToCopy)
+    document.getElementById('copyNotice').style.display = 'block'
+    setTimeout(() => { document.getElementById('copyNotice').style.display = 'none' }, '500')
 	}
 
 
@@ -1883,6 +1889,18 @@ function setUpValues () {
 
     // make a set of combining marks for use in the panel
     setMarks()
+    
+    
+    // close subwindows with ESC
+    document.querySelector("body").addEventListener('keydown', closeDialogEsc)
+    function closeDialogEsc (e) {
+        // closes the dialog box and panel when escape is pressed
+        if (e.code === 'Escape') {
+            document.getElementById('panel').style.display = 'none'
+            document.getElementById('notesDisplayIframe').style.display = 'none'
+            }
+        }
+
 
     document.getElementById('output').focus()
 	}
@@ -2130,25 +2148,39 @@ function statusExpander (status) {
     }
 
 
-
+window.addEventListener("message", function(event) {
+    if (event.data === "closeIframe") {
+        document.getElementById("notesDisplayIframe").style.display = "none"; // Hide iframe
+        }
+    });
 
 
 function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 		
 		hex = char.codePointAt(0).toString(16).toUpperCase()
 		while (hex.length < 4) hex = '0'+hex
-		
+/*
+				out += '<bdi><a href="../../scripts/'+template.blocklocation+'/block.html#char'+hex+'" target="details">notes</a></bdi> • '
+				out += '<bdi><a href="https://util.unicode.org/UnicodeJsps/character.jsp?a='+hex+'" target="details">properties</a></bdi>'
+                console.log('template.blocklocation',template.blocklocation)
+*/
 		out = '<div class="dbCharContainer"'
 		if (!toplevel) out += ' style="margin-left: 3em;"'
-		if (toplevel) out += '><span class="dbCharItem">'+char+'</span> '
-		else if (! showAll) out += '><span class="dbCharItem">'+char+'</span> '
-		else out += '><span class="dbCharItemLevel2">'+char+'</span> '
+		if (toplevel) out += `>
+            <button onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"
+            onclick="document.getElementById('notesDisplayIframe').style.display = 'block'; document.getElementById('notesDisplayIframe').src = '../../scripts/${ template.blocklocation }/character.html?q=${ char }&showX';
+            close = document.createElement('div')
+            close.textContent = 'X'
+            document.getElementById('notesDisplayIframe').body.appendChild(close);
+            ">Notes</button>&nbsp;
+            <span class="dbCharItem">${ char }</span> `
+		else if (! showAll) out += `><span class="dbCharItem">${ char }</span> `
+		else out += `><span class="dbCharItemLevel2">${ char }</span> `
 		
 		// skip items with an x in the class column unless this is the top level
 		// ie. characters in the text will be reported, but not linked to - options
 		var ignorable = false
 		if (! toplevel && spreadsheetRows[char] && spreadsheetRows[char][cols.class] && spreadsheetRows[char][cols.class].includes('-')) ignorable = true
-		
 		
 		out += '<span class="dbCharSubContainer" style="display:flex;flex-direction:column;">'
 
@@ -2247,8 +2279,10 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 			if (spreadsheetRows[char][cols.block] && cols.block > 0) {
 				//out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+spreadsheetRows[char][cols.block]+'/block#char'+hex+'" target="_blank">details</a></bdi>'
                 //var blockloc = template.blocklocation.replace('/scripts/','').replace('/block','') // deal with legacy
-				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="../../scripts/'+template.blocklocation+'/block.html#char'+hex+'" target="details">notes</a></bdi> • '
-				out += '<bdi onmouseover="showMenuText(\'Open a page to show character properties.\',\'tan\')" onmouseout="hideMenuText()"><a href="https://util.unicode.org/UnicodeJsps/character.jsp?a='+hex+'" target="details">properties</a></bdi>'
+				//out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="../../scripts/'+template.blocklocation+'/block.html#char'+hex+'" target="details">notes</a></bdi> • '
+                out += `<button onmouseover="showMenuText(\'Open a page to show character properties.\',\'tan\')" onmouseout="hideMenuText()"
+                    onclick="details = window.open('https://util.unicode.org/UnicodeJsps/character.jsp?a='+hex, 'details'); details.focus()"
+                    >Properties…</button>&nbsp;`
                 console.log('template.blocklocation',template.blocklocation)
 				}
 
@@ -2753,9 +2787,21 @@ function showDown (evt) {
 	if (evt) {
         if (debug) console.log(evt.key, evt.code)
 		
+		// list characters if this is Cmd+L
+        if (evt.ctrlKey && evt.key === 'l') {
+            showCodepoints()
+            evt.preventDefault()
+            }
+		
 		// skip if this is Cmd+C, Ctrl+C, etc
         if (evt.metaKey || evt.ctrlKey || evt.altKey) { if (debug) console.log( evt.key,' pressed.')}
 		
+        else if (evt.key==='Escape') { // close subwindows
+            document.getElementById('notesDisplayIframe').style.display = 'none'
+            document.getElementById('panel').style.display = 'none'
+            evt.preventDefault()
+            }
+        
         else if (evt.key==='~') { // switch to Latin palette
             var clickEvent = new MouseEvent("click", {"view": window,"bubbles": true,"cancelable": false})
             document.getElementById('togglePalette').dispatchEvent(clickEvent)
@@ -3968,6 +4014,8 @@ function makeRegex (s) {
         }
     return out
     }
+
+
 
 
 

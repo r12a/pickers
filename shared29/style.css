@@ -1828,5 +1828,17 @@ rt {
 
 
 
-
+#notesDisplayIframe {
+    position: absolute;
+    top: 10%;
+    right: 0px;
+    height: 70%;
+    width: 60%;
+    z-index: 2000;
+    display: none;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-block: 2px solid chocolate;
+    border-inline-start: 2px solid chocolate;
+    }
 
