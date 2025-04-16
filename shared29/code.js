@@ -2176,7 +2176,7 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
             <span class="dbCharItem">${ char }</span> `*/
 		if (toplevel) out += `>
             <button onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"
-            onclick="document.getElementById('notesDisplayIframe').style.display = 'block'; document.getElementById('notesDisplayIframe').src = '../../scripts/${ template.blocklocation }/character.html?q=${ char }&showX';
+            onclick="document.getElementById('notesDisplayIframe').style.display = 'block'; document.getElementById('notesDisplayIframe').src = '../../scripts/${ template.blocklocation }/character.html?q=${ char }&showX#${ factoryDefaults.language }'; console.log('Going to:','../../scripts/${ template.blocklocation }/character.html?q=${ char }&showX#${ factoryDefaults.language }');
             ">Notes</button>&nbsp;
             <span class="dbCharItem">${ char }</span> `
 		else if (! showAll) out += `><span class="dbCharItem">${ char }</span> `
