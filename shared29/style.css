@@ -1340,11 +1340,11 @@ summary:hover {
 #panel #character_panel_close_button {
 	position: fixed;
 	padding: 0;
-	background-color: white;
+	background-color: seashell;
 	right: 44%;
     bottom: 1rem;
 	border-radius: 5px;
-	width: 2rem;
+	width: 3rem;
     height: 3.5rem;
     font-size: 2rem;
     cursor: pointer;
