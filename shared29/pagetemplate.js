@@ -351,7 +351,7 @@ out += `
 
 <button onclick="openVocabWindow(template.vocablocation); return false;" title="Search for examples containing the highlighted text." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Find<br>examples</button>
 
-<button  id="showNotesLink" type="button" onclick="openCharNoteWindow()" title="Show detailed notes for the first character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show DB<br/>details</button>
+<!--<button  id="showNotesLink" type="button" onclick="openCharNoteWindow()" title="Show detailed notes for the first character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show DB<br/>details</button>-->
 
 
 <img src="../images/more.svg" alt="More controls" style="margin-inline-start:1rem; vertical-align: middle; cursor:pointer; height:2rem;" onclick="if (document.getElementById(\'pulldown\').style.display===\'none\') {document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\'}; document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();"  onmouseover="showMenuText('Show more options to apply to the text area.','tan');" onmouseout="hideMenuText()">
