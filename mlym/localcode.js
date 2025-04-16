@@ -19,6 +19,7 @@ window.charCheckerList = [
 { wrong:"ര്‍", right:"ർ" },
 { wrong:"ല്‍", right:"ൽ" },
 { wrong:"ള്‍", right:"ൾ" },
+{ wrong:"ന്റ", right:"ൻ്റ" },
 
 //{ wrong:"", right:"" },
 ]
