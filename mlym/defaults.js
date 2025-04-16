@@ -23,7 +23,7 @@ var webFonts = [ "Noto Serif Malayalam WF", "Noto Sans Malayalam WF", "Manjari W
 
 var template = {}
 	template.title = 'Malayalam character app'
-	template.sample = "2. തന്റെ സ്വന്തം രാജ്യവും മറ്റേതൊരു രാജ്യവും വിടുന്നതിന്നും തന്റെ രാജ്യത്തേയ്ക്കു മടങ്ങിവരുന്നതിനുമുള്ള അധികാരം ഏതൊരാള്‍ക്കുമുള്ളതാണ്‌."
+	template.sample = "2. തൻ്റെ സ്വന്തം രാജ്യവും മറ്റേതൊരു രാജ്യവും വിടുന്നതിന്നും തൻ്റെ രാജ്യത്തേയ്ക്കു മടങ്ങിവരുന്നതിനുമുള്ള അധികാരം ഏതൊരാൾക്കുമുള്ളതാണ്‌."
 	template.sampleSource = ''
 	template.blocklocation= 'mlym'  // block directory
 	template.noteslocation = 'mlym/ml' // location of script notes
