@@ -2166,12 +2166,17 @@ function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
 */
 		out = '<div class="dbCharContainer"'
 		if (!toplevel) out += ' style="margin-left: 3em;"'
-		if (toplevel) out += `>
+		/*if (toplevel) out += `>
             <button onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"
             onclick="document.getElementById('notesDisplayIframe').style.display = 'block'; document.getElementById('notesDisplayIframe').src = '../../scripts/${ template.blocklocation }/character.html?q=${ char }&showX';
             close = document.createElement('div')
             close.textContent = 'X'
             document.getElementById('notesDisplayIframe').body.appendChild(close);
+            ">Notes</button>&nbsp;
+            <span class="dbCharItem">${ char }</span> `*/
+		if (toplevel) out += `>
+            <button onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"
+            onclick="document.getElementById('notesDisplayIframe').style.display = 'block'; document.getElementById('notesDisplayIframe').src = '../../scripts/${ template.blocklocation }/character.html?q=${ char }&showX';
             ">Notes</button>&nbsp;
             <span class="dbCharItem">${ char }</span> `
 		else if (! showAll) out += `><span class="dbCharItem">${ char }</span> `
@@ -2963,7 +2968,7 @@ function addVowel (ch) {
 // new version to remove the mouseover and replace the transliteration with the character itself
 function makePalette (mappingTable) {
     console.log('mappingTable',mappingTable)
-    var output = ''
+    var output = `<span style="float:right; margin-inline-end: -3rem; color: #ccc; font-family: sans-serif; cursor: pointer; line-height: 1; font-size:2rem;" onclick="document.getElementById('transcriptionPalette').style.display = 'none'; document.getElementById('togglePalette').classList.add('off'); document.getElementById('togglePalette').classList.remove('on');">X</span>`
 	var fulllist = mappingTable.split('\n')
 	for (let i=0;i<fulllist.length;i++) {
         list = fulllist[i]
