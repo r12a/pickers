@@ -1,7 +1,12 @@
 @font-face {
     font-family: 'Noto Sans Gurmukhi WF';
-    src: url('../../shared/webfonts/NotoSansGurmukhi-Regularwebfont.woff2') format('woff2'),
-         url('../../shared/webfonts/NotoSansGurmukhi-Regularwebfont.woff') format('woff');
+    src: url('../../shared/webfonts/NotoSansGurmukhi-Regularwebfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Noto Serif Gurmukhi WF';
+    src: url('../../shared/webfonts/notoserifgurmukhi-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -11,7 +16,7 @@
 #fontgrid { display: none; }
 
 
-[lang=pa] { font-family: 'Noto Sans Gurmukhi WF', serif; }
+[lang=pa] { font-family: 'Noto Serif Gurmukhi WF', serif; }
 
 
 
@@ -33,7 +38,7 @@ span.hint {
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  'Noto Sans Gurmukhi WF',  sans-serif;  
+	font-family:  'Noto Serif Gurmukhi WF',  sans-serif;  
     line-height: 1;
 	}
 
