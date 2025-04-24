@@ -1,14 +1,19 @@
 @font-face {
     font-family: 'Noto Sans Telugu WF';
-    src: url('../../shared/webfonts/notosanstelugu-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notosanstelugu-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosanstelugu-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Noto Serif Telugu WF';
+    src: url('../../shared/webfonts/notoseriftelugu-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 
 
 
-[lang=hi] { font-family: 'Noto Sans Telugu WF', serif; }
+[lang=hi] { font-family: 'Noto Serif Telugu WF', serif; }
 
 
 
@@ -30,7 +35,7 @@ span.hint {
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  'Noto Sans Telugu WF',  sans-serif;  
+	font-family:  'Noto Serif Telugu WF',  sans-serif;  
     line-height: 1;
 	}
 

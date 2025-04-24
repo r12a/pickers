@@ -1,6 +1,6 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Noto Sans Telugu WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Noto Serif Telugu WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.4"; // number representing line height of text area in pixels/100
@@ -18,7 +18,7 @@ var thisPicker = 'teluguPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Sans Telugu WF" ]
+var webFonts = [ "Noto Sans Telugu WF", "Noto Serif Telugu WF" ]
 
 
 var template = {}
