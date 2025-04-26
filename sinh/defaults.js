@@ -18,7 +18,7 @@ var thisPicker = 'sinhalapicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Serif Sinhala WF" ]
+var webFonts = [ "Noto Serif Sinhala WF", 'Noto Sans Sinhala WF' ]
 
 
 var template = {}
