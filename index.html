@@ -12,13 +12,40 @@ iframe { border: 0; width: 60%; height: 38em; margin: 1em 32% 1em 7.5%; }
 </style>
 <style>
 #pickerSummaries { margin-inline-start: 7.5%; margin-inline-end: 32%; }
-.scriptname { font-weight: bold; }
-.summaries { font-size: 80%;text-align:start; }
 .letter::before { content: attr(title); font-size: 100%; color:brown;font-weight:bold; margin-inline-end: .5rem; }
 .constituents { /*font-style: italic;*/ font-size: 95%; }
 .constituents::before { content: '{'; font-style: normal; color: #ccc; }
 .constituents::after { content: '} '; font-style: normal; color: #ccc; }
 .plus::before { content: ' • '}
+
+.summaries {
+    font-size: 100%;
+    text-align: start;
+    opacity: 80%;
+    line-height: 1.6;
+    background: #f9f9fb;
+    padding: 1rem;
+    }
+.letter {
+    margin-block-end: .8rem;
+    position: relative;
+    padding-inline-start: 3rem;
+    }
+.letter::before {
+    content: attr(title);
+    font-size: 120%;
+    color: brown;
+    font-weight: bold;
+    margin-inline-end: .5rem;
+    position: absolute;
+    left: 0;
+    }
+.scriptname {
+    font-weight: bold;
+    }
+
+
+
 </style>
 </head>
 
@@ -87,6 +114,7 @@ function listScripts () {
     //console.log(counter,'scripts',scriptList)
     }
 
+
 function getPickers () {
     // make a list of links to pickers
     // global scriptList, linkDB (linkdb.js)
@@ -101,7 +129,7 @@ function getPickers () {
             
             for (s=0;s<scriptList[index].length;s++) { // for each script associated with a given letter
                 if (linkDB[scriptList[index][s]].pickers) {
-                    if (found) temp += ` • `
+                    if (found) temp += `<br>`
                     //temp += `<a href="${ scriptList[index][s] }/index.html" class="scriptname">${ linkDB[scriptList[index][s]].script }</a>\n`
                     temp += `<span class="scriptname">${ linkDB[scriptList[index][s]].script }</span>\n`
                     temp += `<span class="constituents">\n`
@@ -146,7 +174,7 @@ listScripts()
 
 
 <div class="smallprint"> <span id="version">First published  2004.  This version <span id="version-info"> 
-  <!-- #BeginDate format:IS1m -->2024-06-21  15:52<!-- #EndDate --> 
+  <!-- #BeginDate format:IS1m -->2025-05-03  6:36<!-- #EndDate --> 
   </span> GMT. &nbsp;&bull;&nbsp; Copyright <a href="mailto:r12a@w3.org">r12a@w3.org</a>. Licence <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-By</a>.</span> </div>
 </body>
 </html>
