@@ -128,7 +128,7 @@ var plist = [
 var plistByRegion = {
 	'A':[
 			['<b>Adlam</b> ['],
-				['Adlam/Pular','adlm/index.html'],
+				['Fula','adlm/index.html'],
 				[']'],
 			['• <b>Ahom</b> ['],
 				['Tai Ahom','ahom-aho/index.html'],
@@ -150,13 +150,11 @@ var plistByRegion = {
 				['All', 'arab-all/index.html'],
 				[']'],
 			['• <b>Aramaic</b> ['],
-				['Christian Palestinian', 'syrc-axp/index.html'],
 				['Imperial','armi/index.html'],
 				[']'],
 			['• <b>Armenian</b> ['],
 				['Armenian','armn/index.html'],
 				[']'],
-			['Assyrian&nbsp;Neo-Aramaic', 'syrc-aii/index.html'],
 			],
 	'B':[
 			['<b>Balinese</b> ['],
@@ -252,7 +250,7 @@ var plistByRegion = {
 				['Gujarati', 'gujr/index.html'],
 				[']'],
 			['• <b>Gurmukhi</b> ['],
-				['Gurmukhi/Punjabi', 'guru/index.html'],
+				['Punjabi', 'guru/index.html'],
 				[']'],
 			],
 	'H':[
@@ -275,9 +273,9 @@ var plistByRegion = {
 			],
 	'I':[
 			['<b>IPA</b> ['],
-				['Traditional chart', 'ipa/index.html'],
 				['By position', 'ipa2/index.html'],
 				['By type', 'ipa3/index.html'],
+				['Traditional chart', 'ipa/index.html'],
 				[']'],
 			],
 	'J':[
@@ -315,8 +313,7 @@ var plistByRegion = {
 				['Lao', 'lao/index.html'],
 				[']'],
 			['• <b>Latin</b> ['],
-				['All Latin & diacritics','latn-all/index.html'],
-				['Pan-African','latn-afr/index.html'],
+				['<span style="color:chocolate">All Latin & diacritics</span>','latn-all/index.html'],
 				['Bamanan','latn-bm/index.html'],
 				['Fula','latn-ff/index.html'],
 				['Hausa Boko','latn-ha/index.html'],
@@ -326,6 +323,7 @@ var plistByRegion = {
 				['Tłı̨chǫ (Dogrib)','latn-dgr/index.html'],
 				['Vietnamese','latn-vi/index.html'],
 				['Wolof','latn-wo/index.html'],
+				['Pan-African','latn-afr/index.html'],
 				[']'],
 			['• <b>Lepcha</b> ['],
 				['Lepcha', 'lepc-lep/index.html'],
