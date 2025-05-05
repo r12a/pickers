@@ -528,7 +528,7 @@ for (let i=0;i<window.pulldown.length;i++){
 </div>
 
 <div id="outputDiv" style="position: relative;">
-<span id="cursive" dir="rtl" style="position: absolute; bottom: 1rem; right: 5%; font-size: 3rem; font-family: &quot;Noto Sans Adlam&quot;; width: unset;"></span>
+<span id="cursive"  style="position: absolute; text-align:end; bottom: 1rem; right: 0; font-size: 1rem; font-family: &quot;Noto Sans Adlam&quot;; width: unset;"></span>
 <div id="warning"></div>
 <div>
 
@@ -1039,6 +1039,7 @@ out = ''
         out += ` onMouseOut="hideMenuText()"`
         out += ` onclick="if (this.classList.contains('on')) {
             closeSidebarPalettes(this);
+            mapstring=makeTypeAssistMap(cols.key); setUpTypeAssist(false, mapstring, mapstring);
             this.classList.add('off');
             this.classList.remove('on');
             document.getElementById('kbdGrid').style.display = 'flex'
@@ -1098,7 +1099,7 @@ out = ''
 
 
 if (template.hints) out += `<div id="hintControls" onMouseOver="document.getElementById('closeHintType').style.display='block'"  onMouseOut="document.getElementById('closeHintType').style.display='none'">
-<div id="keyHintType" onClick="if (this.style.color!=='white'){setGridHints('none');} else{setGridHints('key')}" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Show keypress hints.">K</div>
+<div id="keyHintType" onClick="if (this.style.color!=='white'){setGridHints('none');} else{setGridHints('key');}" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Show keypress hints.">K</div>
 
 <div id="translitHintType" onClick="if (this.style.color!=='white'){setGridHints('none');} else{setGridHints('translit')}" onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()" title="Show transliteration hints.">T</div>
 
