@@ -938,13 +938,14 @@ if (show.transc) {
     onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()"
     onclick="if (this.classList.contains('on')) closeSidebarPalettes(this); else { closeSidebarPalettes(this);mapstring=makeComplexTypeAssistMap(cols.transcription);setUpTypeAssist(false, mapstring, mapstring); this.classList.add('on');this.classList.remove('off');}output.className = 'typeAssistOther'">&lt;..&gt;</span>`
     }
+/*
 if (show.kbd) {
     out += `
     <span class="vmtab off palette"
     data-title="Map keys to the ${ show.kbd } keyboard." data-shorttitle="⌨" onmouseover="showMenuText(this.dataset.title,'#666')" onmouseout="hideMenuText()"
     onclick="if (this.classList.contains('on')) closeSidebarPalettes(this); else { closeSidebarPalettes(this);setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd)); document.getElementById('keyboard').style.display='block';; this.classList.add('on');this.classList.remove('off');}output.className = 'typeAssistOther'">⌨</span>`
     }
-
+*/
 
 
 
@@ -1027,7 +1028,32 @@ out = ''
     `
 
 
-    // Add the S and H controls
+    // Add the K, S and H controls
+    if (show.kbd) {
+        out += `<div class="vmtabSide off"`
+        out += ` id="showKeyboard"`
+        out += ` title="Show keyboard."`
+        out += ` data-title="Map keys to the physical keyboard."`
+        out += ` data-shorttitle="K"`
+        out += ` onMouseOver="showMenuText(this.dataset.title,'#666')"`
+        out += ` onMouseOut="hideMenuText()"`
+        out += ` onclick="if (this.classList.contains('on')) {
+            closeSidebarPalettes(this);
+            this.classList.add('off');
+            this.classList.remove('on');
+            document.getElementById('kbdGrid').style.display = 'flex'
+            }
+            else {
+            closeSidebarPalettes(this);
+            setUpTypeAssist(false, makeTypeAssistMap(cols.kbd), makeTypeAssistMap(cols.kbd));
+            document.getElementById('keyboard').style.display='block';
+            this.classList.add('on');
+            this.classList.remove('off');
+            document.getElementById('kbdGrid').style.display = 'none'
+            }
+            output.className = 'typeAssistOther';"`
+        out += `>K</div>`
+        }
     if (show.shape) {
         out += `<div class="vmtabSide off"`
         out += ` id="showShapeLookup"`
