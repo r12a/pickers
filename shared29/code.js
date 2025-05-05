@@ -1476,6 +1476,8 @@ function event_mouseoverChar ()  {
 		}
 	}
 
+
+
 function event_mouseoutChar ()  {
 	// unhighlight this character
 	//this.style.backgroundColor = 'transparent'
@@ -1618,6 +1620,8 @@ function setGridHints (type) {
 			}
 		globals.keyHints = 'none'
 		}
+
+    setHintOnclicks()
 	}
 
 
@@ -4021,6 +4025,15 @@ function makeRegex (s) {
     }
 
 
+
+
+function setHintOnclicks () {
+    // sets up an onclick on hints to add character to text area
+    // needs to be called after switching the left hand hint controls
+    
+    nodes = document.querySelectorAll( '.hint' )
+    for (n=0;n<nodes.length;n++) nodes[n].onclick = event_clickOnChar
+    }
 
 
 
