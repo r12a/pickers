@@ -6,8 +6,7 @@
 	}
 @font-face {
     font-family: 'ExtendedLatinWF';
-    src: url('../../shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2'),
-         url('../../shared/webfonts/DoulosSIL-R.woff') format('woff');
+    src: url('../../shared/webfonts/DoulosSIL-Rwebfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -388,17 +387,6 @@ table td { border: 0; }
 	margin-left: 0;
 	}
 
-span.c {
-	border-radius: 3px;
-	cursor: pointer;
-	display: inline-block;
-	/*color: #a52a2a;*/
-	color: #333;
-	}
-/*span.c:hover {
-	background-color: #CF9;
-	border-radius: 3px;
-	}*/
 
 #toggleRare {
 	font-size: 80%;
@@ -587,6 +575,7 @@ span.c {
 	/*margin-bottom: 50px;*/
     font-size: 1em;
     margin-top: .25em;
+    margin-block-end: 1rem;
 	}
  .keyboardrow {
 	 white-space: nowrap;
@@ -1841,4 +1830,178 @@ rt {
     border-block: 2px solid chocolate;
     border-inline-start: 2px solid chocolate;
     }
+
+
+
+/*  defaults for sections in kbdgrid  */
+/*  assumes that hints are on the right */
+
+table { margin: 0; }
+
+span.c {
+	min-width: .75em;
+	text-align: center;
+	opacity: 75%;
+	border-radius: 3px;
+	cursor: pointer;
+	display: inline-block;
+	color: #333;
+	}
+/*span.c:hover {
+	background-color: #CF9;
+	border-radius: 3px;
+	}*/
+span.x { 
+	color:chocolate;
+	}
+span.x .c { 
+	color:chocolate;
+	}
+span.hint { 
+	margin-inline-start: 1px;
+    margin-inline-end: .5em;
+	font-size: .8rem;
+	color:tan;
+	text-transform: lowercase;
+	cursor: pointer;
+	}
+
+#kbdGrid {
+    display: flex;
+    flex-direction: row;
+    line-height: 1.2;
+    justify-content: center;
+ 	margin-block: .5rem;
+    }
+#kbdGrid td {
+	text-align: start;
+    }
+#ivowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	margin-inline: .5rem;
+    border: 1px dotted tan;
+    border-radius: .5rem;
+    padding-inline: .5rem;
+    }
+#ivowelGrid div {
+	display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    }
+#ivowelGrid .verticalAlign {
+	justify-content: flex-end;
+	}
+#consonantGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px dotted tan;
+    border-radius: .5rem;
+    padding-inline: .5rem;
+    margin-inline: .5rem;
+    }
+#consonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    }
+#consonantGrid > span {
+    min-width: 1em;
+    }
+#vowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	margin-inline: .5rem;
+    border: 1px dotted tan;
+    border-radius: .5rem;
+    padding-inline: .5rem;
+    }
+#vowelGrid > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:flex-end;
+	}
+.block {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	}
+#extras {  /* for aleph, aspiration, & other frequent support characters */
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:center;
+    }
+#extras div {
+    text-align:end;
+    }
+#extras .g {
+    margin-inline-end: 0;
+    }
+#moreconsonants {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:flex-start;
+    text-align: end;
+	margin: 0 .5em;
+    border: 1px dotted tan;
+    border-radius: .5rem;
+    padding-inline: .5rem;
+    }
+#tones, #toneGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-inline: .5rem;
+    border: 1px dotted tan;
+    border-radius: .5rem;
+    padding-inline: .5rem;
+    }
+#tones div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 0;
+    }
+#numberGrid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 90%;
+	margin-inline: .5rem;
+    }
+#digitKeypad {
+    border: 1px dotted tan;
+    border-radius: .5rem;
+    padding: .4rem;
+    }
+#digitKeypad div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+
+#punctuation, #flatnumbers, #other {
+    text-align: center;
+    font-size: 80%;
+    line-height: 1.7;
+    margin-top: .5em;
+    }
+
+#obsolete, .other {
+    text-align: center;
+    font-size: 90%;
+    }
+
 
