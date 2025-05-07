@@ -1,48 +1,24 @@
-@font-face { 
-	font-family: 'Noto Serif Khmer WF'; 
-	font-style: normal; 
-	font-weight: normal; 
-	src: url('../../shared/webfonts/notoserifkhmer-regular-webfont.woff2'); 
-	} 
-@font-face { 
-	font-family: 'Noto Sans Khmer WF'; 
-	font-style: normal; 
-	font-weight: normal; 
-	src: url('../../shared/webfonts/notosanskhmer-regularwebfont.woff2'); 
-	} 
-@font-face { 
-	font-family: 'Khmer OS Battambang WF'; 
-	font-style: normal; 
-	font-weight: normal; 
-	src: url('../../shared/webfonts/khmerosbbangw.woff'); 
-	} 
+@font-face {
+    font-family: 'Kanchenjunga WF';
+    src: url('../../shared/webfonts/kanchenjunga-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
 
-[lang=km] { font-family: 'Khmer OS Battambang WF', 'Noto Sans Khmer WF', serif; }
+
+[lang=bap] { font-family: 'Kanchenjunga WF', serif; }
+
 .ipa { font-family: 'Doulos Sil', 'Gentium Plus', 'Charis Sil', Gentium, serif; }
 
 
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.2;
+    }
 
-span.hint { 
-    margin-inline-start: .25em;
-	margin-inline-end: 1px;
-	font-size: 70%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-
-.v { 
-	min-width: .75em;
-	text-align: center;
-    cursor: pointer;
-	}
-.g { margin: 0 .1em; }
 span.x {
-	color: chocolate;
-	display: none;
-	}
+    display: none;
+    }
 
     
 /* KEYBOARD */
@@ -59,16 +35,7 @@ span.x {
 
 
 
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
+/*
 #consonantGrid {
     display: flex;
     flex-direction: column;
@@ -197,7 +164,6 @@ span.x {
     }
 
 
-/* SELECTION AREA */
 
 #kbd { margin: auto; }
 #kbd td.fullchar { text-align: right; }
@@ -210,17 +176,14 @@ span.x {
 #shape li, #shape span, #shape img { border: 0; }
 #shape ul { margin:0; padding:0; }
 #shape span, #shape img { cursor:pointer; }
-/*#shape img.noOnclick { position: relative; z-index: 500; }*/
 .hidden { display:none; }
 #shapelist { text-align: center; display: none; }
 .shapelist { margin-bottom: 10px; }
 .shapelist li { 
 	position:relative;
-	/*border-bottom: 1px solid white;*/
 	list-style-type: none;
 	display: inline; 
 	line-height: 36px;
-	/*border: 1px solid #ccc;*/
 	}
 .shapelist .hidden { 
 	position: absolute;
@@ -280,7 +243,7 @@ span.x {
     margin: 0 20%;
     }
 
-
+*/
 
 
 

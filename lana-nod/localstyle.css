@@ -6,14 +6,13 @@
 	}
 @font-face {
     font-family: 'Lamphun WF';
-    src: url('../../shared/webfonts/lamphun-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/lamphun-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/lamphun-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Serif Tai Tham WF';
-    src: url('../../shared/webfonts/notosanstaitham-regular-webfont.woff2') format('woff2')) format('woff');
+    src: url('../../shared/webfonts/notosanstaitham-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -28,35 +27,30 @@
 [lang=nod] { font-family: 'Hariphunchai WF', 'Payap Lanna WF', 'Lamphun WF', 'Noto Serif Tai Tham WF', serif; }
 
 
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.4;
+    }
 
 
-span.hint { 
-    margin-inline-start: .25em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: 1em;
-	text-align: center;
-	}
 span.sj {
     display: none;
     color: chocolate;
     }
-.v { 
-	min-width: .75em;
-	text-align: center;
+
+#numberGrid .naitam {
+    display: none;
+    }
+span.numberSwitch {
+    margin-inline-start: 1px;
+    margin-inline-end: .5em;
+    font-size: .8rem;
+    color: tan;
+    text-transform: lowercase;
     cursor: pointer;
-	}
-#vowelGrid .block {
-	display: inline-block;
-	white-space: nowrap;
-	margin-left: .25em;
-	text-align: end;
 }
 
-    
+
     
 /* KEYBOARD */
 .key span { 
@@ -69,22 +63,13 @@ span.sj {
 #keyboard { display: none; }
 
 
-.subjoined {
+/*.subjoined {
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #ccc;
     color: white;
     }
 
-/* SELECTION AREA */
-
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
 #consonantGrid {
     display: flex;
     flex-direction: column;
@@ -223,8 +208,6 @@ span.sj {
     margin: auto;
     }
 
-#numberGrid .naitam {
-    display: none;
-    }
 
 
+*/

@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Noto Sans Light WF';
-    src: url('../../shared/webfonts/notosans-light-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notosans-light-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosans-light-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -10,17 +9,15 @@
 [lang=bm] { font-family: 'Noto Sans Light WF', serif; }
 
 
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.4;
+    }
 
-span.hint { 
-	margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
+#kbdGrid .hidden {
+	display: none;
 	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
+
 
     
     
@@ -36,19 +33,7 @@ span.hint {
 
 
 
-
-/* SELECTION AREA */
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
-#kbdGrid .hidden {
-	display: none;
-	}
-
+/*
 #consonantGrid, #UC#consonantGrid {
     display: flex;
     flex-direction: column;
@@ -114,3 +99,4 @@ span.hint {
     text-align: center;
     font-size: 90%;
     }
+*/

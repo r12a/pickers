@@ -68,11 +68,11 @@ end: {}
 function toggleSubjoined (node) {
 	if (node.classList.contains('shifted')) {
 		document.getElementById('consonantGrid').style.display = 'flex'
-		document.getElementById('subConsonantGrid').style.display = 'none'
+		document.getElementById('consonantGridUC').style.display = 'none'
 		}
     else {
 		document.getElementById('consonantGrid').style.display = 'none'
-		document.getElementById('subConsonantGrid').style.display = 'flex'
+		document.getElementById('consonantGridUC').style.display = 'flex'
 		} 
 	}
 

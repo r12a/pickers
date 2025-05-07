@@ -9,15 +9,6 @@
 
 
 
-span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 50%;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
 
     
     
@@ -36,7 +27,7 @@ span.hint {
 /* SELECTION AREA */
 
 
-#upper, #lower, #tones 	{ margin: auto; }
+#upper, #lower, #tone 	{ margin: auto; }
 
 #kbd { 	
 	margin-left: 0; 

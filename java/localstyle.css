@@ -1,14 +1,12 @@
 @font-face {
     font-family: 'Tuladha Jejeg WF';
-    src: url('../../shared/webfonts/tuladhajejeg_gr-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/tuladhajejeg_gr-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/tuladhajejeg_gr-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Sans Javanese WF';
-    src: url('../../shared/webfonts/notosansjavanese-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notosansjavanese-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosansjavanese-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -19,17 +17,12 @@
 
 
 
-span.hint { 
-  margin-inline-start: .5em;
-  margin-inline-end: 1px;
-  font-size: 70%;
-  color:tan;
-  }
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-#subConsonantGrid .c { 
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.5;
+    }
+
+#consonantGridUC .c { 
 	min-width: 1.25em;
 	text-align: center;
 	}
@@ -47,15 +40,7 @@ span.hint {
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.5;
-    justify-content: center;
-    }
+/*
 #ivowelGrid {
     display: flex;
     flex-direction: column;
@@ -178,7 +163,7 @@ span.hint {
     line-height: 1.7;
     margin-top: 1em;
     }
-
+*/
 #mahaprana, #rare, #otherpunctuation {
     text-align: center;
     font-size: 90%;

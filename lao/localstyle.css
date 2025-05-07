@@ -1,14 +1,12 @@
 @font-face {
     font-family: 'Noto Serif Lao WF';
-    src: url('../../shared/webfonts/notoseriflao-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notoseriflao-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notoseriflao-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Sans Lao WF';
-    src: url('../../shared/webfonts/NotoSansLao-Regular.woff2') format('woff2'),
-         url('../../shared/webfonts/NotoSansLao-Regular.woff') format('woff');
+    src: url('../../shared/webfonts/NotoSansLao-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -19,24 +17,12 @@
 
 
 
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.2;
+    }
 
 
-span.hint { 
-    margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 65%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-
-.v { 
-	min-width: .75em;
-	text-align: center;
-    cursor: pointer;
-	}
     
     
 /* KEYBOARD */
@@ -50,16 +36,7 @@ span.hint {
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
+/*
 #consonantGrid {
     display: flex;
     flex-direction: column;
@@ -180,3 +157,4 @@ span.hint {
     margin-right: .5em;
 	width: 2em;
 }
+*/
