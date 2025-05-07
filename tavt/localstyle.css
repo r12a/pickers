@@ -1,15 +1,13 @@
 @font-face {
     font-family: 'Noto Sans Tai Viet WF';
-    src: url('../../shared/webfonts/notosanstaiviet-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notosanstaiviet-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosanstaiviet-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 
 @font-face {
     font-family: 'Tai Heritage Pro WF';
-    src: url('../../shared/webfonts/taiheritagepro-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/taiheritagepro-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/taiheritagepro-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -20,22 +18,13 @@
 
 
 
-span.hint { 
-	margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: 1em;
-	text-align: center;
-	}
-
-.v { 
-	min-width: .75em;
-	text-align: center;
-    cursor: pointer;
-	}
+/* SELECTION AREA */
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
 
     
     
@@ -50,17 +39,8 @@ span.hint {
 #keyboard { display: none; }
 
 
+/*
 
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
 #ivowelGrid {
     display: flex;
     flex-direction: column;
@@ -196,4 +176,4 @@ span.hint {
     display: none;
     }
 
-
+*/

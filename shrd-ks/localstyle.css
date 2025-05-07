@@ -16,21 +16,10 @@
 [lang=ks] { font-family: 'Satisar Sharada WF', serif; }
 
 
-
-
-span.hint { 
-	margin-inline-end: .5em;
-	margin-inline-start: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-span.x { 
-	color: tan;
-	}
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.2;
+    }
 
     
     
@@ -45,15 +34,7 @@ span.x {
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
+/*
 #ivowelGrid {
     display: flex;
     flex-direction: column;
@@ -138,3 +119,4 @@ span.x {
     font-size: 90%;
     }
 
+*/

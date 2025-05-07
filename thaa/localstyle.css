@@ -11,29 +11,12 @@
 
 
 
-#kbd { margin:auto; }
-#kbd table {
-	margin:0;
-	}
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.2;
+    }
 
-span.hint { 
-	margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-.x {
-	display: none;
-	}
-.x .c {
-	color: chocolate;
-	}
-
-
+span.x { display: none; }
 
 /* KEYBOARD */
 .key { 
@@ -48,16 +31,7 @@ span.hint {
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
+/*
 #consonantGrid {
     white-space: normal;
     display: flex;
@@ -140,3 +114,4 @@ span.hint {
 
 
 
+*/

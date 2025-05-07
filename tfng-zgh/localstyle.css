@@ -17,19 +17,10 @@
 
 
 
-span.hint { 
-    margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: 1em;
-	text-align: center;
-	}
-span.x { 
-	color: chocolate;
-	}
+/* SELECTION AREA  */
+#kbdGrid {
+	line-height: 1.2;
+    }
 
     
     
@@ -50,17 +41,7 @@ span.x {
 
 
 
-/* SELECTION AREA  */
-
-
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.1;
-    justify-content: center;
-    }
-#consonantGrid {
+/*#consonantGrid {
     white-space: normal;
     display: flex;
     flex-wrap: nowrap;
@@ -110,4 +91,4 @@ span.x {
 
 #obsolete {
     text-align: center;
-    }
+    }*/

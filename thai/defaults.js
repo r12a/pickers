@@ -1,7 +1,7 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Serif Thai WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "32";  // text area font size, number of pixels (just the number)
+	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "30"; // number representing % of height of window
 	factoryDefaults.lineheight = "1.8"; // number representing line height of text area in pixels/100
 	factoryDefaults.language = 'th' // language to use for examples

@@ -15,8 +15,7 @@ The copyright (in OFL license is): Designers : Alain Desreumaux et Alain Hurtig,
 	}
 @font-face {
     font-family: 'Noto Sans Syriac Estrangela WF';
-    src: url('../../shared/webfonts/notosanssyriacestrangela-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notosanssyriacestrangela-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosanssyriacestrangela-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -28,24 +27,9 @@ The copyright (in OFL license is): Designers : Alain Desreumaux et Alain Hurtig,
 
 
 
-span.hint { 
-    margin-inline-start: .5em;
-	margin-inline-end: 2px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-
-.v { 
-	min-width: .75em;
-	text-align: center;
-    cursor: pointer;
-	}
-span.x {
-    color: chocolate;
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.4;
     }
     
     
@@ -61,8 +45,7 @@ span.x {
 
 
 
-/* SELECTION AREA */
-
+/*
 #controlchars {
     text-align: center;
     margin-bottom: .25em;
@@ -72,12 +55,6 @@ span.x {
     margin-bottom: 0;
     }
 
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.4;
-    justify-content: center;
-    }
 #alaph {
     margin-inline-end: 1em;
     }
@@ -184,3 +161,4 @@ span.x {
     margin: auto;
     
 }
+*/

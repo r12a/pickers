@@ -9,26 +9,19 @@
 
 [lang=tyj] { font-family: 'Noto Serif Tai Yo WF', serif; }
 
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.2;
+    }
 
 
 
 span.hint { 
-	margin-inline-end: .5em;
-	margin-inline-start: 1px;
-	font-size: 60%;
-	color:tan;
+	margin-inline-start: -3px;
 	}
 .c { 
-	min-width: .75em;
-	text-align: center;
     writing-mode: vertical-rl;
 	}
-#consonantGrid .g, #consonantGrid .g {
-    margin-inline-end: 1rem;
-    }
-#consonantGrid table .g, #consonantGrid table .g {
-    margin-inline-end: 0;
-    }
 
 
 #output {
@@ -47,15 +40,7 @@ span.hint {
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
+/*
 #consonantGrid {
     display: flex;
     flex-direction: column;
@@ -116,24 +101,6 @@ span.hint {
 	flex-wrap: nowrap;
 	justify-content:space-between;
 	}
-/*
-#cchars div {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 1.5em;
-    justify-content: center;
-    margin-left: 0;
-    }
-#numberGrid {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 90%;
-	margin-left: 1em;
-    }
-*/
 #digitKeypad div {
     white-space: normal;
     display: flex;
@@ -155,3 +122,4 @@ span.hint {
     font-size: 90%;
     }
 
+*/

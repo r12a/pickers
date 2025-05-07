@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Noto Sans Tai Le WF';
-    src: url('../../shared/webfonts/notosanstaile-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notosanstaile-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosanstaile-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -12,27 +11,18 @@
 
 
 
-span.hint { 
-	margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: 1em;
-	text-align: center;
-	}
-
-.v { 
-	min-width: .75em;
-	text-align: center;
-    cursor: pointer;
-	}
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.4;
+    }
 
 #output {
 	line-break: anywhere;
 	}
-    
+
+.myanmar {
+    display: none;
+    }
     
 /* KEYBOARD */
 .key span { 
@@ -46,16 +36,7 @@ span.hint {
 
 
 
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
+/*
 #consonantGrid {
     display: flex;
     flex-direction: column;
@@ -182,3 +163,4 @@ span.hint {
     }
 
 
+*/

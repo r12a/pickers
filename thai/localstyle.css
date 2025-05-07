@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Noto Serif Thai WF';
-    src: url('../../shared/webfonts/NotoSerifThai-Regularwebfont.woff2') format('woff2'),
-         url('../../shared/webfonts/NotoSerifThai-Regularwebfont.woff') format('woff');
+    src: url('../../shared/webfonts/NotoSerifThai-Regularwebfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -12,22 +11,10 @@
 
 
 
-span.hint { 
-	margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-
-.v { 
-	min-width: .75em;
-	text-align: center;
-    cursor: pointer;
-	}
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.2;
+    }
 
     
     
@@ -42,16 +29,7 @@ span.hint {
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
+/*
 #ivowelGrid {
     display: flex;
     flex-direction: column;
@@ -167,3 +145,4 @@ span.hint {
     margin-top: .5em;
     margin: auto;
     }
+*/

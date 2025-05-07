@@ -12,21 +12,9 @@
 
 
 
-span.hint { 
-	margin-inline-end: .5em;
-	margin-inline-start: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-#consonantGrid .g {
-    margin-inline-end: 1rem;
-    }
-#consonantGrid table .g {
-    margin-inline-end: 0;
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.2;
     }
     
     
@@ -41,15 +29,7 @@ span.hint {
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
+/*
 #ivowelGrid {
     display: flex;
     flex-direction: column;
@@ -163,3 +143,4 @@ span.hint {
     font-size: 90%;
     }
 
+*/

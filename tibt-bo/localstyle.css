@@ -15,25 +15,36 @@
 #rarestuff { display:none; }
 
 
-span.hint { 
-  margin-inline-start: .5em;
-  margin-inline-end: 1px;
-  font-size: 60%;
-  color:tan;
-  }
-.c { 
-	min-width: .75em;
-	text-align: center;
+/* SELECTION AREA */
+#kbdGrid {
+    display: flex;
+    flex-direction: row;
+    line-height: 1.2;
+    justify-content: center;
+    }
+
+#suffixes { 
+	text-align: center; 
+	border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .25em;
+    margin-inline: .5rem;
+    line-height: 1.4;
 	}
-/*span.x {
-    display: none;
+#suffixes div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
     }
-span.x span.c {
-    color: chocolate;
-    }*/
-.c.x {
-    color: chocolate;
+#translitvowels {
+    text-align: center;
+    margin-top: 1em;
+	display: none;
     }
+
 
 
 /* KEYBOARD */
@@ -47,16 +58,7 @@ span.x span.c {
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
-    display: flex;
-    flex-direction: row;
-    line-height: 1.2;
-    justify-content: center;
-    }
+/*
 
 #morepunctuation {
     width: 5em;
@@ -215,3 +217,4 @@ span.x span.c {
     margin-block-end:.2rem;
     }
 
+*/
