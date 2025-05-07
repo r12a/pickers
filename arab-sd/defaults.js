@@ -1,13 +1,13 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Scheherazade WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Scheherazade New WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "180"; // px height of text area
 	factoryDefaults.lineheight = "1.4"; // line height of text area
 	factoryDefaults.language = 'sd' // language to use for examples
-	factoryDefaults.uifont = 'Scheherazade New'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Scheherazade New WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
-	factoryDefaults.ccbase = "";  // default base for combining characters
+	factoryDefaults.ccbase = "◌";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
 	factoryDefaults.contrast = "low" // contrast for UI text colours
 	factoryDefaults.hints = "none" // type of hint to show alongside characters in the grids
@@ -18,7 +18,7 @@ var thisPicker = 'sdPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Scheherazade WF", "Noto Naskh Arabic WF" ]
+var webFonts = [ "Scheherazade New WF", "Noto Naskh Arabic WF" ]
 
 // list of fonts to add to the standard selection
 window.fontsuggestions =  

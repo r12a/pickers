@@ -7,22 +7,19 @@
 	}
 @font-face {
     font-family: 'Aksara Bali WF';
-    src: url('../../shared/webfonts/AksaraBaliwebfont.woff2') format('woff2'),
-         url('../../shared/webfonts/AksaraBaliwebfont.woff') format('woff');
+    src: url('../../shared/webfonts/AksaraBaliwebfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Serif Balinese WF';
-    src: url('../../shared/webfonts/notoserifbalinese-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notoserifbalinese-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notoserifbalinese-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Sans Balinese WF';
-    src: url('../../shared/webfonts/notosansbalinese-regularwebfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notosansbalinese-regularwebfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosansbalinese-regularwebfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -32,6 +29,39 @@
 
 
 
+/* SELECTION AREA */
+
+
+#kbdGrid {
+	line-height: 1.2;
+    }
+
+.k .c {
+    color: brown;
+    }    
+.x {
+	display: none;
+	}
+
+#moreconsonants {
+    justify-content: space-around;
+    }
+#vowelGrid {
+    justify-content: space-around;
+    }
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.1em; 
+	font-weight: normal; 
+	font-family:  'Noto Serif Balinese WF',  sans-serif;  
+    line-height: 1.2;
+	}
+
+#keyboard { display: none; }
+
+
+/*
 span.hint { 
     margin-inline-start: .25em;
 	margin-inline-end: 1px;
@@ -56,29 +86,7 @@ span.hint {
 .x .c {
 	color: chocolate;
 	}
-    
-/* KEYBOARD */
-.key span { 
-	font-size: 1.1em; 
-	font-weight: normal; 
-	font-family:  'Noto Serif Balinese WF',  sans-serif;  
-    line-height: 1.2;
-	}
 
-#keyboard { display: none; }
-
-
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    align-content: flex-start;
-    }
 #ivowelGrid {
     display: flex;
     flex-direction: column;
@@ -199,5 +207,5 @@ span.hint {
 .aspiratedplosives { white-space: nowrap; }
 .vowels{ padding: 5px; margin-bottom: 5px; width: 750px; border: 1px dotted teal; }
 
-
+*/
 

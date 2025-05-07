@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Noto Sans Buginese WF';
-    src: url('../../shared/webfonts/notosansbuginese-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notosansbuginese-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosansbuginese-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -15,6 +14,30 @@
 
 
 
+/* SELECTION AREA */
+
+
+#kbdGrid {
+	line-height: 1.2;
+    }
+
+
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Buginese WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/*
 span.hint { 
     margin-inline-start: .5em;
 	margin-inline-end: 1px;
@@ -26,29 +49,6 @@ span.hint {
 	text-align: center;
 	}
 
-    
-    
-/* KEYBOARD */
-.key span { 
-	font-size: 1.2em; 
-	font-weight: normal; 
-	font-family:  'Noto Sans Javanese WF',  sans-serif;  
-    line-height: 1;
-	}
-
-#keyboard { display: none; }
-
-
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
 #consonantGrid {
     display: flex;
     flex-direction: column;
@@ -119,7 +119,7 @@ span.hint {
 	margin-bottom: 1em;
     }
 
-
+*/
 
 
 

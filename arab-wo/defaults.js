@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'ScheherazadeWF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'Scheherazade New WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "200"; // px height of text area
 	factoryDefaults.lineheight = "2"; // line height of text area
 	factoryDefaults.language = 'wo' // language to use for examples
-	factoryDefaults.uifont = 'ScheherazadeWF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Scheherazade New WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "◌";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,7 +18,7 @@ var thisPicker = 'arabwoPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "ScheherazadeWF" ]
+var webFonts = [ "Scheherazade New WF" ]
 
 
 var template = {}

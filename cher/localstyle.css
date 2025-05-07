@@ -13,6 +13,34 @@
 
 #phonelist { display: none; }
 
+
+
+/* SELECTION AREA */
+
+
+#shapelist #uppercase, #shapelist #lowercase { 
+	width: 90%;
+	}
+#shapelist #uppercase, #shapelist #lowercase, #shapelist table, #alphabet table { 
+	text-align: center;
+	margin: auto;
+	}
+#tables td.firstcol {
+    font-size: 80%;
+    vertical-align: middle;
+	color: darkorange;
+    font-family: ExtendedLatinWF;
+    padding-inline: .4rem;
+	}
+span.hint { 
+    margin-inline-end: .5em;
+	margin-inline-start: 1px;
+	font-size: 80%;
+	color:darkorange;
+    font-family: ExtendedLatinWF;
+	}
+
+
     
     
 /* KEYBOARD */
@@ -26,8 +54,7 @@
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
+/*
 #alphabet { 
 	display: block; 
 	color: #666;
@@ -97,16 +124,7 @@ span.hint {
     margin-top: .5em;
     }
 
-
-
-#shapelist #uppercase, #shapelist #lowercase { 
-	width: 90%;
-	}
-#shapelist #uppercase, #shapelist #lowercase, #shapelist table, #alphabet table { 
-	text-align: center;
-	margin: auto;
-	}
-
+*/
 
 
 

@@ -11,20 +11,14 @@
 
 
 
+/* SELECTION AREA */
 
-span.hint { 
-	margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-span.x {
-    color: chocolate;
+#kbdGrid {
+	line-height: 1.2;
     }
+
+
+
     
     
 /* KEYBOARD */
@@ -39,13 +33,19 @@ span.x {
 
 
 
-/* SELECTION AREA */
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
+/*
+span.hint { 
+	margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+span.x {
+    color: chocolate;
     }
 #ivowelGrid {
     display: flex;
@@ -152,7 +152,6 @@ span.x {
     }
 
 
-/* STYLES FOR HINT ON RIGHT */
 span.hint {
     margin-inline-start: .2em;
     font-size: 60%;
@@ -162,7 +161,7 @@ span.hint {
     margin-inline-end: .25em;
 }
 
-
+*/
 
 
 

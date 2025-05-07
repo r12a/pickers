@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Noto Sans Bamum WF';
-    src: url('../../shared/webfonts/notosansbamum-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notosansbamum-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosansbamum-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -12,25 +11,12 @@
 
 
 
-/*
-span.hint { 
-	margin-right: 1px;
-    margin-left: 2px;
-	font-size: 60%;
-	color:tan;
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-	}*/
-span.hint { 
-    margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
 
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
+/* SELECTION AREA */
+
+#kbdGrid {
+	line-height: 1.2;
+    }
 
     
     
@@ -44,9 +30,20 @@ span.hint {
 
 #keyboard { display: none; }
 
+/*
 
+span.hint { 
+    margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
+	}
 
-/* SELECTION AREA */
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+
 
 #cchars {
  	display: flex;
@@ -121,4 +118,4 @@ span.hint {
     text-align: center;
     font-size: 90%;
     }
-
+*/

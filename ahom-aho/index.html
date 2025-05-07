@@ -149,20 +149,13 @@ function togglePali (state) {
 <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
 </div>-->
 
-<style>
+<!--<style>
 #consonantGrid div table {
     margin-inline: 0;
     }
 #consonantGrid div td {
     text-align: start;
     }
-/*
-.g {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-}
-*/
 span.hint {
   /*margin-inline-start: .5em;
   margin-inline-end: 1px;*/
@@ -173,7 +166,7 @@ span.hint {
 .g {
   margin-inline-end: .25em;
 }
-</style>
+</style>-->
 
 
 <div id="kbdGrid">
@@ -228,7 +221,7 @@ span.hint {
         </table>
         </div>
 
-        <div class="bottomDivider">
+        <div>
 <span class="g"><span class="c">𑜉</span><span class="hint">m</span></span>
 <span class="g"><span class="c">𑜃</span><span class="hint">n</span></span>
 <span class="g x"><span class="c">𑝅</span><span class="hint">ɳ</span></span>
@@ -248,18 +241,18 @@ span.hint {
 </div>
   
 
-<div id="other" style="justify-content: center;">
-<div><span class="g"><span class="c" style="padding-block:1rem; padding-inline:1rem;">𑜫</span><span class="hint"></span></span></div>
+<div id="moreconsonants" style="justify-content: space-around;">
+<div><span class="g"><span class="c">𑜫</span><span class="hint"></span></span></div>
 <div><span class="g"><span class="c">𑜞</span><span class="hint">r</span></span></div>
 <div><span class="g"><span class="c">𑜟</span><span class="hint">l</span></span></div>
 <div><span class="g"><span class="c">𑜝</span><span class="hint">l</span></span></div>
-<div><span class="g"><span class="c" style="padding-block:1rem; padding-inline:1rem;">𑜒</span><span class="hint"></span></span></div>
+<div><span class="g"><span class="c">𑜒</span><span class="hint"></span></span></div>
 </div>
    
   
   
 <div id="vowelGrid" class="box">   
-	 	<div class="bottomDivider">
+	 	<div>
 <span class="g"><span class="c">𑜢</span><span class="hint">i</span></span>
 <span class="g"><span class="c">𑜤</span><span class="hint">u</span></span>
 		</div>
@@ -279,12 +272,12 @@ span.hint {
 <span class="g"><span class="c">𑜡</span><span class="hint">a</span></span>
 		</div>
 		
-		<div class="bottomDivider">
+		<div>
 <span class="g"><span class="c">𑜩</span><span class="hint">ai</span></span>
 <span class="g"><span class="c">𑜪</span><span class="hint">am</span></span>
 		</div>
 		
-		<div class="bottomDivider">
+		<div>
 <span class="g"><span class="c">𑜧</span><span class="hint">aw</span></span>
 <span class="g"><span class="c">𑜚𑜫</span><span class="hint">w</span></span>
 		</div>
@@ -293,8 +286,46 @@ span.hint {
 
 
 
+<div id="numberGrid">
+	<div id="digitKeypad">
+		<div>
+		<span class="g"><span class="c">𑜱</span><span class="hint">1</span></span>
+		<span class="g"><span class="c">𑜲</span><span class="hint">2</span></span>
+		<span class="g"><span class="c">𑜳</span><span class="hint">3</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="c">𑜴</span><span class="hint">4</span></span>
+		<span class="g"><span class="c">𑜵</span><span class="hint">5</span></span>
+		<span class="g"><span class="c">𑜶</span><span class="hint">6</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="c">𑜷</span><span class="hint">7</span></span>
+		<span class="g"><span class="c">𑜸</span><span class="hint">8</span></span>
+		<span class="g"><span class="c">𑜹</span><span class="hint">9</span></span>
+		</div>
+		<!--<div>
+		<span class="g"><span class="c">0</span><span class="hint">0</span></span>
+		<span class="c">,</span>
+		<span class="c">.</span>
+		</div>-->
+<span class="g"><span class="c">𑜰</span><span class="hint">0</span></span>
+<span class="g"><span class="c">𑜺</span><span class="hint">10</span></span>
+<span class="g"><span class="c">𑜻</span><span class="hint">20</span></span>
+		</div>
+	<!--<div id="symbols">
+		<div style="margin-top: .5em;">
+		<span class="g"><span class="c"></span><span class="hint">0</span></span>
+		<span class="g"><span class="c"></span><span class="hint">0</span></span>
+		<span class="g"><span class="c"></span><span class="hint">0</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="c"></span><span class="hint">0</span></span>
+		</div>
+		</div>-->
+</div>
 
-<div id="numberGrid" dir="ltr">
+
+<!--<div id="numberGrid" dir="ltr">
       <div>
 <span class="g"><span class="c">𑜱</span><span class="hint">1</span></span>
 <span class="g"><span class="c">𑜲</span><span class="hint">2</span></span>
@@ -321,13 +352,13 @@ span.hint {
 <div id="symbols">
     <div style="margin-top: 2em;">
     &nbsp;<!--<span class="g"><span class="c">&#x060D;</span><span class="hint">0</span></span>
-    <span class="g"><span class="c">&#x066A;</span><span class="hint">0</span></span>-->
+    <span class="g"><span class="c">&#x066A;</span><span class="hint">0</span></span>
     </div>
-    <!--<div>
+    <div>
     <span class="g"><span class="hint">0</span><span class="c"></span></span>
-    </div>-->
     </div>
-</div>
+    </div>
+</div>-->
 	
 
 </div> <!-- end of kbd-->

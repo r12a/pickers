@@ -15,6 +15,32 @@
 
 
 
+/* SELECTION AREA */
+
+#kbdGrid {
+	line-height: 1.2;
+    }
+
+
+#vowelGrid, #vowelGridUC, #tones {
+    justify-content: space-around;
+    }
+
+
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Kedebideri WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+/*
+    
+
 span.hint { 
 	margin-inline-end: .5em;
 	margin-inline-start: 1px;
@@ -32,28 +58,6 @@ span.hint {
     margin-inline-end: 0;
     }
 
-
-    
-/* KEYBOARD */
-.key span { 
-	font-size: 1.2em; 
-	font-weight: normal; 
-	font-family:  'Kedebideri WF',  sans-serif;  
-    line-height: 1;
-	}
-
-#keyboard { display: none; }
-
-
-
-/* SELECTION AREA */
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
 #consonantGrid, #consonantGridUC {
     display: flex;
     flex-direction: column;
@@ -140,3 +144,4 @@ span.hint {
 
 #consonantGridUC { display: none; }
 #vowelGridUC { display: none; }
+*/

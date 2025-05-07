@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Noto Sans Buhid WF';
-    src: url('../../shared/webfonts/notosansbuhid-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notosansbuhid-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notosansbuhid-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -15,6 +14,31 @@
 
 
 
+/* SELECTION AREA */
+
+
+#kbdGrid {
+ display: flex;
+ flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Buhid WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+/*
 span.hint { 
 	margin-right: 1px;
     margin-left: 2px;
@@ -32,29 +56,6 @@ span.hint {
 	text-align: center;
 	}
 
-    
-    
-/* KEYBOARD */
-.key span { 
-	font-size: 1.2em; 
-	font-weight: normal; 
-	font-family:  'Noto Sans Buhid WF',  sans-serif;  
-    line-height: 1;
-	}
-
-#keyboard { display: none; }
-
-
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
 #consonantGrid {
     display: flex;
     flex-direction: column;
@@ -125,6 +126,6 @@ span.hint {
 	margin-bottom: 1em;
     }
 
-
+*/
 
 
