@@ -6,22 +6,43 @@
 	}
 @font-face {
     font-family: 'Scheherazade New WF';
-    src: url('../../shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/scheherazadenew-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Awami Nastaliq WF';
-    src: url('../../shared/webfonts/AwamiNastaliq-Regular.woff') format('woff');
+    src: url('../../shared/webfonts/AwamiNastaliq-Regular.woff') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
+
+
+#keyboard { display: none; }
+
+#kbdGrid { line-height: 1.8; }
+#kbdGrid .b { width: 1em; }
+
+#alef {
+    display: flex;
+    align-self: center;
+    width: 1em;
+    justify-content: center;
+    margin-inline: .25rem;
+}
+#alef > span {
+	padding: 4em 0;
+	width: 1em;
+}
+#vowelGrid > div {
+    justify-content: space-between;
+    }
+
 /*#output {
     font-language-override: 'URD';
     }
 */
-span.hint { 
+/*span.hint { 
 	margin-inline-start: .5em;
 	margin-inline-end: 1px;
 	font-size: 70%;
@@ -36,21 +57,17 @@ span.x {
     }
 .g {
     text-align: end;
-    }
-#kbdGrid .b { width: 1em; }
-
-#keyboard { display: none; }
-
-.block {
+    }*/
+/*.block {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	}
-
+*/
 
 
 /* SELECTION AREA */
-
+/*
 #kbdGrid {
  display: flex;
  flex-direction: row;
@@ -84,8 +101,6 @@ span.x {
     justify-content: flex-start;
     margin: 0 .5em 0 .5em;
     line-height: 2;
-    /*border: 1px solid #ccc;
-    border-radius: .3em;*/
     padding: .2em .5em .2em 0;
     }
 #vowelGrid div {
@@ -104,8 +119,6 @@ span.x {
     justify-content: flex-start;
     margin: 0 .2em;
     line-height: 1;
-    /*border: 1px solid #ccc;
-    border-radius: .3em;*/
     padding: .2em .4em;
     }
 #numberGrid div {
@@ -158,15 +171,9 @@ span.x {
 #cursive {
     width: 6em;
     }
+*/
 
-#alef {
-    display: flex;
-    align-self: center;
-    width: 1em;
-    justify-content: center;
-    margin-left: 1em;
-}
-#alef > span {
-	padding: 4em 0;
-	width: 1em;
-}
+
+
+
+

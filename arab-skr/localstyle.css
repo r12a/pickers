@@ -18,6 +18,26 @@
 
 
 
+/* SELECTION AREA */
+
+#kbdGrid {
+	line-height: 1.6;
+    }
+
+
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Nastaliq Urdu WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+/*
 span.hint { 
 	margin-inline-start: .5em;
 	margin-inline-end: 1px;
@@ -31,29 +51,6 @@ span.x {
 	min-width: .75em;
 	text-align: center;
 	}
-
-    
-    
-/* KEYBOARD */
-.key span { 
-	font-size: 1.2em; 
-	font-weight: normal; 
-	font-family:  'Noto Nastaliq Urdu WF',  sans-serif;  
-    line-height: 1;
-	}
-
-#keyboard { display: none; }
-
-
-
-/* SELECTION AREA */
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.6;
-    justify-content: center;
-    }
 #ivowelGrid {
     display: flex;
     flex-direction: column;
@@ -151,3 +148,4 @@ span.x {
     font-size: 90%;
     }
 
+*/

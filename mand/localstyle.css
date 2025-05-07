@@ -9,7 +9,7 @@
 #alphabet { display: block; }
 #phonelist { display: none; }
 #fontgrid { display: none; }
-
+table { margin-inline-start: 0; }
 
 [lang=mid] { font-family: 'Noto Sans Mandaic WF', serif; }
 
@@ -20,12 +20,13 @@
 span.hint { 
     margin-inline-end: .5em;
 	margin-inline-start: 1px;
-	font-size: 60%;
+	font-size: 50%;
 	color:tan;
 	}
 .c { 
 	min-width: .75em;
 	text-align: center;
+    opacity: 75%;
 	}
 span.x { 
 	color: chocolate;
@@ -57,16 +58,19 @@ span.x {
     }
 
 #kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.4;
+    display: flex;
+    flex-direction: row;
+    line-height: 1.4;
     justify-content: center;
+    margin-block: .5rem;
     }
 #consonantGrid {
     display: flex;
     flex-direction: column;
 	flex-wrap: nowrap;
     justify-content: space-between;
+    border: 1px dotted tan;
+    border-radius: .5rem;
     }
 #consonantGrid div {
     display: flex;
@@ -83,6 +87,8 @@ span.x {
     justify-content: space-around;
     margin: 0 .5em;
     flex-wrap: nowrap;
+    border: 1px dotted tan;
+    border-radius: .5rem;
     }
 #vowelGrid div {
     display: flex;
@@ -95,17 +101,18 @@ span.x {
     flex-direction: column;
     justify-content: space-between;
     flex-wrap: nowrap;
+    border: 1px dotted tan;
+    border-radius: .5rem;
     }
 #diacriticGrid div {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: nowrap;
     }
 #numberGrid {
     height: 4em;
     margin: 0 .5em;
-	padding-bottom: 1em;
     }
 #numberGrid div {
     white-space: normal;

@@ -193,36 +193,12 @@
 <span class="touch" dir="auto" onClick="add('\u202C');">PDF</span>
 </div>
 
-<style>
-#consonantGrid div table {
-    margin-inline: 0;
-    }
-#consonantGrid div td {
-    text-align: start;
-    }
-/*
-.g {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-}
-*/
-span.hint {
-  /*margin-inline-start: .5em;
-  margin-inline-end: 1px;*/
-  margin-inline-start: .2em;
-  font-size: 60%;
-  color: tan;
-}
-.g {
-  margin-inline-end: .25em;
-}
-</style>
+
 
 
 <div id="kbdGrid">
 
- <div id="consonantGrid" class="box">    
+ <div id="consonantGrid">    
 		<div>
         <table class="bottomDivider">
         <tr>
@@ -286,7 +262,7 @@ span.hint {
 <span class="g"><span class="c x">ژ</span><span class="hint">ʃ</span></span>
 		</div>
 
-        <div class="bottomDivider">
+        <div>
 <span class="g"><span class="c">م</span><span class="hint">m</span></span>
 <span class="g"><span class="c">ن</span><span class="hint">n</span></span>
 <span class="g"><span class="c">ݨ</span><span class="hint">ɳ</span></span>
@@ -308,8 +284,8 @@ span.hint {
 </div>
   
 
-<div id="other" style="justify-content: center;">
-<div><span class="g"><span class="c" style="padding-block:2rem; padding-inline:1rem;">ھ</span><span class="hint">hdo</span></span></div>
+<div id="extras" style="justify-content: center;">
+<div><span class="g"><span class="c" style="padding-block:2rem;padding-inline:.25rem;">ھ</span><span class="hint">h</span></span></div>
 <div><span class="g"><span class="c">ئ</span><span class="hint">ʔ</span></span></div>
 <div><span class="g"><span class="c">ؤ</span><span class="hint">ʔ</span></span></div>
 <div><span class="g"><span class="c">ۓ</span><span class="hint">ʔ</span></span></div>
@@ -318,8 +294,8 @@ span.hint {
    
   
   
-<div id="vowelGrid" class="box">   
-	 	<div class="bottomDivider">
+<div id="vowelGrid" style="justify-content: space-around; margin-inline-start: 0;">   
+	 	<div>
 <span class="g"><span class="c">ِ</span><span class="hint">i</span></span>
 <span class="g"><span class="c">ُ</span><span class="hint">u</span></span>
 <span class="g"><span class="c">ٗ</span><span class="hint">u</span></span>
@@ -335,7 +311,7 @@ span.hint {
 <span class="g"><span class="c">َ</span><span class="hint">a</span></span>
 		</div>
 		
-		<div class="bottomDivider">
+		<div>
 <span class="g"><span class="c">ا</span><span class="hint">a</span></span>
 <span class="g"><span class="c">آ</span><span class="hint">hmz</span></span>
 		</div>
@@ -345,40 +321,42 @@ span.hint {
 
 
 
-<div id="numberGrid" dir="ltr">
-      <div>
-<span class="g"><span class="c">۱</span><span class="hint">1</span></span>
-<span class="g"><span class="c">۲</span><span class="hint">2</span></span>
-<span class="g"><span class="c">۳</span><span class="hint">3</span></span>
-        </div>
-      <div>
-<span class="g"><span class="c">۴</span><span class="hint">4</span></span>
-<span class="g"><span class="c">۵</span><span class="hint">5</span></span>
-<span class="g"><span class="c">۶</span><span class="hint">6</span></span>
-        </div>
-      <div>
-<span class="g"><span class="c">۷</span><span class="hint">7</span></span>
-<span class="g"><span class="c">۸</span><span class="hint">8</span></span>
-<span class="g"><span class="c">۹</span><span class="hint">9</span></span>
-        </div>
-      <div>
-<span class="g"><span class="c">۰</span><span class="hint">0</span></span>
-<span class="c">٫</span>
-<span class="c">٬</span>
-	</div>
-
-
-
-<div id="symbols">
-    <div style="margin-top: 2em;">
-    <span class="g"><span class="c">&#x060D;</span><span class="hint">0</span></span>
-    <span class="g"><span class="c">&#x066A;</span><span class="hint">0</span></span>
-    </div>
-    <!--<div>
-    <span class="g"><span class="hint">0</span><span class="c"></span></span>
-    </div>-->
-    </div>
+<div id="numberGrid">
+	<div id="digitKeypad">
+		<div>
+		<span class="g"><span class="c">۱</span><span class="hint">1</span></span>
+		<span class="g"><span class="c">۲</span><span class="hint">2</span></span>
+		<span class="g"><span class="c">۳</span><span class="hint">3</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="c">۴</span><span class="hint">4</span></span>
+		<span class="g"><span class="c">۵</span><span class="hint">5</span></span>
+		<span class="g"><span class="c">۶</span><span class="hint">6</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="c">۷</span><span class="hint">7</span></span>
+		<span class="g"><span class="c">۸</span><span class="hint">8</span></span>
+		<span class="g"><span class="c">۹</span><span class="hint">9</span></span>
+		</div>
+		<div>
+		<span class="g"><span class="c">۰</span><span class="hint">0</span></span>
+        <span class="c">٫</span>
+        <span class="c">٬</span>
+		</div>
+		</div>
+	<div id="symbols">
+		<div>
+        <span class="g"><span class="c">&#x060D;</span><span class="hint">ts</span></span>
+        <span class="g"><span class="c">٪</span><span class="hint">٪</span></span>
+		</div>
+		<!--<div>
+		<span class="g"><span class="c"></span><span class="hint">0</span></span>
+		</div>-->
+		</div>
 </div>
+
+
+
 	
 
 </div> <!-- end of kbd-->

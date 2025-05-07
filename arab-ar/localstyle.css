@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Scheherazade WF';
-    src: url('../../shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/scheherazadenew-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -24,24 +23,22 @@
 	margin:0;
 	}
 
-span.hint { 
-	margin-inline-end: 1px;
-	/*margin-inline-start: .5em;*/
-	font-size: 50%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-span.x {
-	color: chocolate;
-	}
 
 #cursive {
 	font-size: 32px;
 	width: 4em;
 	}
+
+
+#initials {
+    text-align: center;
+    font-size: 100%;
+    line-height: 1.4;
+    }
+
+#kbdGrid {
+	line-height: 1.4;
+    }
 
 
 /* KEYBOARD */
@@ -60,7 +57,7 @@ span.x {
 
 /* SELECTION AREA */
 
-
+/*
 #kbdGrid {
  	display: flex;
  	flex-direction: row;
@@ -137,11 +134,6 @@ span.x {
 
 
 
-#initials {
-    text-align: center;
-    font-size: 100%;
-    line-height: 1;
-    }
 #punctuation {
     text-align: center;
     font-size: 80%;
@@ -152,3 +144,4 @@ span.x {
 #obsolete {
     text-align: center;
     }
+*/

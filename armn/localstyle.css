@@ -1,29 +1,19 @@
 @font-face {
     font-family: 'Arian AMU WF';
-    src: url('../../shared/webfonts/arnamu-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/arnamu-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/arnamu-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 
-[lang=ber] { font-family: 'Noto Sans Tifinagh WF', Tagmukay, serif; }
+[lang=hy] { font-family: 'Arian AMU WF'; }
 
 
-
-.g {
-    /*margin: 0 .5em;*/
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
+/*
 span.hint { 
     margin-inline-start: .5em;
 	margin-inline-end: 2px;
-	font-size: 60%;
-	color:tan;
 	}
-    
+    */
     
 /* KEYBOARD */
 .key span { 
@@ -38,11 +28,11 @@ span.hint {
 
 
 /* SELECTION AREA */
-
+/*
 #kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.2;
+    display: flex;
+    flex-direction: row;
+    line-height: 1.2;
     justify-content: center;
     }
 #consonantGrid div {
@@ -94,8 +84,19 @@ span.hint {
     }
 
 
+#numberGrid {
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 2.42em;
+    max-height: 15em;
+    justify-content: center;
+    margin-left: 1.2em;
+    line-height: 1.3;
+    }
 
-
+*/
 
 
 

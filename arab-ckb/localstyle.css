@@ -1,7 +1,6 @@
 @font-face {
-    font-family: 'ScheherazadeWF';
-    src: url('../../shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/scheherazadenew-regular-webfont.woff') format('woff');
+    font-family: 'Scheherazade New WF';
+    src: url('../../shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -9,21 +8,20 @@
 
 
 
-[lang=wo] { font-family: 'ScheherazadeWF', serif; }
+[lang=ckb] { font-family: 'Scheherazade New WF'; }
 
 
 
+/* SELECTION AREA */
 
-span.hint { 
-	margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
+#kbdGrid {
+	line-height: 1.6;
+    }
+
+#vowelGrid {
+    justify-content: space-around;
+    }
+
 
     
     
@@ -31,7 +29,7 @@ span.hint {
 .key span { 
 	font-size: 1.2em; 
 	font-weight: normal; 
-	font-family:  'ScheherazadeWF',  sans-serif;  
+	font-family:  'Scheherazade New WF',  sans-serif;  
     line-height: 1;
 	}
 
@@ -39,14 +37,7 @@ span.hint {
 
 
 
-/* SELECTION AREA */
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
+/*
 #ivowelGrid {
     display: flex;
     flex-direction: column;
@@ -158,4 +149,4 @@ span.hint {
     text-align: center;
     font-size: 90%;
     }
-
+*/

@@ -1,38 +1,26 @@
 @font-face {
     font-family: 'Scheherazade WF';
-    src: url('../../shared/webfonts/scheherazaderegotwebfont.woff2') format('woff2'),
-         url('../../shared/webfonts/scheherazaderegotwebfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-	}
-@font-face {
-    font-family: 'Noto Nastaliq Urdu WF';
-    src: url('../../shared/webfonts/notonastaliqurdu-regular-webfont.woff2') format('woff2');
+    src: url('../../shared/webfonts/scheherazadenew-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 
 
-[lang=ug] { font-family: 'Scheherazade WF', serif; }
+[lang=ug] { font-family: 'Scheherazade WF'; }
 
 
 
-span.hint { 
-	margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 50%;
-	color:tan;
+/* SELECTION AREA */
+
+#kbdGrid {
+	line-height: 1.2;
+    }
+
+#vowelGrid {
+	justify-content: space-around;
 	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
 
-.v { 
-	min-width: .75em;
-	text-align: center;
-    cursor: pointer;
-	}
+
 
     
     
@@ -48,7 +36,7 @@ span.hint {
 
 
 
-/* SELECTION AREA */
+/* 
 
 #controlchars {
     text-align: center;
@@ -126,5 +114,5 @@ span.hint {
 #cursive {
     width: 4em;
     }
-
+*/
 

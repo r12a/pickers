@@ -1,20 +1,19 @@
 @font-face {
     font-family: 'Noto Sans Adlam New WF';
     src:	local('Noto Sans Adlam New'),
-			url('../../shared/webfonts/notosansadlamnew-regular-webfont.woff2') format('woff2'),
-         	url('../../shared/webfonts/notosansadlamnew-regular-webfont.woff') format('woff');
+			url('../../shared/webfonts/notosansadlamnew-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Sans Adlam WF';
-    src: url('../../shared/webfonts/notosansadlam-regular-webfont.woff2') format('woff');
+    src: url('../../shared/webfonts/notosansadlam-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Sans Adlam Unjoined WF';
-    src: url('../../shared/webfonts/notosansadlamunjoined-regular-webfont.woff2') format('woff');
+    src: url('../../shared/webfonts/notosansadlamunjoined-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -22,19 +21,6 @@
 
 
 
-span.hint { 
-	margin-inline-end: 1px;
-	margin-inline-start: .5em;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-span.x { 
-	color:chocolate;
-	}
 #cursive {
     width: 6em;
     }
@@ -61,7 +47,7 @@ span.x {
 
 
 /* SELECTION AREA */
-
+/*
 #kbdGrid {
  display: flex;
  flex-direction: row;
@@ -129,8 +115,6 @@ span.x {
     justify-content: flex-start;
     margin: 0 .2em;
     line-height: 1;
-    /*border: 1px solid #ccc;
-    border-radius: .3em;*/
     padding: .2em .4em;
     }
 #numberGrid div {
@@ -200,10 +184,43 @@ span.x {
 
 .h { color:#B5F6A4; color:#00B0F0; }
 .x { color:#EFBBF6; color:#9BBB59; }
-
+*/
 
 #kbdGrid .hidden {
 	display: none;
 	}
 
+#UConsonantGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px dotted tan;
+    border-radius: .5rem;
+    padding-inline: .5rem;
+    }
+#UConsonantGrid div {
+    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    }
+#UConsonantGrid > span {
+    min-width: 1em;
+    }
+#UCvowelGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	margin-inline: .5rem;
+    border: 1px dotted tan;
+    border-radius: .5rem;
+    padding-inline: .5rem;
+    }
+#UCvowelGrid > div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content:space-between;
+	}
 

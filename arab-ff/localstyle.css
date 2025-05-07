@@ -22,8 +22,12 @@
 	line-height: 1.2;
     }
 
+#kbdGrid {
+	line-height: 1.6;
+    }
 
 
+/*
 span.hint { 
     margin-inline-start: .5em;
 	margin-inline-end: 1px;
@@ -37,7 +41,7 @@ span.hint {
 span.x {
 	color: chocolate;
 	}
-
+*/
 
 /* KEYBOARD */
 .key span { 
@@ -60,7 +64,7 @@ span.x {
 
 
 /* SELECTION AREA */
-
+/*
 #kbdGrid {
  display: flex;
  flex-direction: row;
@@ -128,8 +132,6 @@ span.x {
     justify-content: flex-start;
     margin-inline-start: 1.5rem;
     line-height: 1.4;
-    /*border: 1px solid #ccc;
-    border-radius: .3em;*/
     padding: .2em .4em;
     }
 #numberGrid div {
@@ -187,7 +189,7 @@ span.x {
     width: 4em;
     display: inline-block;
     }
-
+*/
 #alef {
     display: flex;
     align-self: center;
