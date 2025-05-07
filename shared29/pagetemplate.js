@@ -281,28 +281,6 @@ onClick="document.querySelector('.access_selected').classList.remove('access_sel
 
 
 <div id="topControls" style="position:relative;">
-<span id="copydelete">
-
-<img title="Copy to clipboard." onclick="copyToClipboard(); document.getElementById('copyNotice').style.display = 'block'; setTimeout(() => { document.getElementById('copyNotice').style.display = 'none' }, '500')" src="../shared29/images/toprow/copytiny.svg" style="height:2rem" alt="Copy" style="vertical-align: bottom;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
-
-<!--img title="Select all the text." onclick="selectAll()" src="../shared29/images/toprow/select.png" alt="Select" style="vertical-align: bottom;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()"-->
-
-if (typeof fontDB !== 'undefined') out += `<img title="Open the font preview panel." style="margin-inline-start:1rem; height:1.8rem;" onclick="if (document.getElementById('fontPicker').innerHTML=='') { document.getElementById('fontPicker').innerHTML = createFontPicker(); document.getElementById('fontManagementDetails').style.display='block'} else { document.getElementById('fontPicker').innerHTML=''; document.getElementById('fontManagementDetails').style.display='none'}" src="../shared29/images/toprow/fonts.svg" alt="Fonts" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
-
-  out += `<img title="Set OpenType typographic features." style="margin-inline-end:.5em; height:1.5rem;" onclick="if (document.getElementById('otPicker').style.display == 'none') { document.getElementById('otPicker').style.display = 'block'} else { document.getElementById('otPicker').style.display='none';}" src="../shared29/images/toprow/typography.svg" alt="Typography" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
-
-out += `<img title="Add some sample text." onclick="add('` + template.sample +`')" src="../shared29/images/toprow/sample.svg" alt="Sample" onmouseover="showMenuText(this.title,\'tan\');" style="height:1.8rem;" onmouseout="hideMenuText()">`
-
-if (typeof window.charCheckerList !== 'undefined') out += `<img title="Check the text for non-recommended characters or sequences." onclick="charChecker();" src="../shared29/images/toprow/checker.svg" style="cursor:pointer; height: 2rem; margin-inline-start:.5rem;" alt="Checker" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">` // charCheckerList is defined in localcode.js
-
-  out += `<img title="Move this line to the top of the screen." onclick="document.location='#main'" src="../shared29/images/toprow/move.svg" alt="Close to top" style="vertical-align: bottom; height: 1.8rem" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
-
-<img title="Toggle invisible code points." onclick="toggleInvisibles()" src="../shared29/images/toprow/toggle.svg" style="height:1.6rem; margin-block-end:.2rem;" alt="Toggle" style="vertical-align: bottom;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
-
-  out += `<img title="Delete all the text." onclick="deleteAll()" src="../shared29/images/toprow/clear.png" alt="Clear" style="margin-left: 1em;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
-
-<a class="interactiveHelpButton" href="../shared29/help.html#topLeftIcons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
-  </span>
 
 
 <span id="tools">
@@ -354,15 +332,43 @@ out += `
 <!--<button  id="showNotesLink" type="button" onclick="openCharNoteWindow()" title="Show detailed notes for the first character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show DB<br/>details</button>-->
 
 
-<img src="../images/more.svg" alt="More controls" style="margin-inline-start:1rem; vertical-align: middle; cursor:pointer; height:2rem;" onclick="if (document.getElementById(\'pulldown\').style.display===\'none\') {document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\'}; document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();"  onmouseover="showMenuText('Show more options to apply to the text area.','tan');" onmouseout="hideMenuText()">
+<img src="../images/more.svg" alt="More controls" style="margin-inline-start:1rem; vertical-align: text-bottom; cursor:pointer; height:2rem;" onclick="if (document.getElementById(\'pulldown\').style.display===\'none\') {document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\'}; document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();"  onmouseover="showMenuText('Show more options to apply to the text area.','tan');" onmouseout="hideMenuText()">
 
-<img src="../shared29/images/toprow/export.svg" alt="Export to other apps" style="margin-inline-start:.3rem; margin-inline-end:.3rem; vertical-align: middle; margin-block-end:.2rem; cursor:pointer; height:1.7rem;" onclick="if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'pulldown\').style.display=\'none\'; document.getElementById(\'output\').focus();" onmouseover="showMenuText('Export the text in the text area to another app. Many options work on highlighted ranges.','tan');" onmouseout="hideMenuText()">
+<img src="../shared29/images/toprow/export.svg" alt="Export to other apps" style="margin-inline-start:.3rem; margin-inline-end:.3rem; vertical-align: text-bottom; margin-block-end:.2rem; cursor:pointer; height:1.7rem;" onclick="if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'pulldown\').style.display=\'none\'; document.getElementById(\'output\').focus();" onmouseover="showMenuText('Export the text in the text area to another app. Many options work on highlighted ranges.','tan');" onmouseout="hideMenuText()">
 
 <a class="interactiveHelpButton" href="../shared29/help.html#exportPulldown" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a>
 
-<img title="Generate a URL including text." onclick="makeSharingLink()"  src="../shared29/images/toprow/share.svg" style="height:1.4rem; vertical-align:middle; margin-inline-end:2em;" alt="Share" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
+<img title="Generate a URL including text." onclick="makeSharingLink()"  src="../shared29/images/toprow/share.svg" style="height:1.4rem; vertical-align:text-bottom; margin-inline-end:2em;" alt="Share" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
 
 </span>
+
+
+
+<span id="copydelete">
+
+<img title="Copy to clipboard." onclick="copyToClipboard(); document.getElementById('copyNotice').style.display = 'block'; setTimeout(() => { document.getElementById('copyNotice').style.display = 'none' }, '500')" src="../shared29/images/toprow/copytiny.svg" style="height:2rem" alt="Copy" style="vertical-align: bottom;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
+
+<!--img title="Select all the text." onclick="selectAll()" src="../shared29/images/toprow/select.png" alt="Select" style="vertical-align: bottom;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()"-->
+
+if (typeof fontDB !== 'undefined') out += `<img title="Open the font preview panel." style="margin-inline-start:1rem; height:1.8rem;" onclick="if (document.getElementById('fontPicker').innerHTML=='') { document.getElementById('fontPicker').innerHTML = createFontPicker(); document.getElementById('fontManagementDetails').style.display='block'} else { document.getElementById('fontPicker').innerHTML=''; document.getElementById('fontManagementDetails').style.display='none'}" src="../shared29/images/toprow/fonts.svg" alt="Fonts" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
+
+  out += `<img title="Set OpenType typographic features." style="margin-inline-end:.5em; height:1.5rem;" onclick="if (document.getElementById('otPicker').style.display == 'none') { document.getElementById('otPicker').style.display = 'block'} else { document.getElementById('otPicker').style.display='none';}" src="../shared29/images/toprow/typography.svg" alt="Typography" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
+
+out += `<img title="Add some sample text." onclick="add('` + template.sample +`')" src="../shared29/images/toprow/sample.svg" alt="Sample" onmouseover="showMenuText(this.title,\'tan\');" style="height:1.8rem;" onmouseout="hideMenuText()">`
+
+if (typeof window.charCheckerList !== 'undefined') out += `<img title="Check the text for non-recommended characters or sequences." onclick="charChecker();" src="../shared29/images/toprow/checker.svg" style="cursor:pointer; height: 2rem; margin-inline-start:.5rem;" alt="Checker" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">` // charCheckerList is defined in localcode.js
+
+  out += `<img title="Move this line to the top of the screen." onclick="document.location='#main'" src="../shared29/images/toprow/move.svg" alt="Close to top" style="vertical-align: bottom; height: 1.8rem" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
+
+<img title="Toggle invisible code points." onclick="toggleInvisibles()" src="../shared29/images/toprow/toggle.svg" style="height:1.6rem; margin-block-end:.2rem;" alt="Toggle" style="vertical-align: bottom;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
+
+  out += `<img title="Delete all the text." onclick="deleteAll()" src="../shared29/images/toprow/clear.png" alt="Clear" style="margin-left: 1em;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
+
+<a class="interactiveHelpButton" href="../shared29/help.html#topLeftIcons" target="_help"><button title="Help with the icons."><img alt="help" src="../images/help.png"/></button></a>
+  </span>
+
+
+
 
 
 <div id="shuttle" style="display:none;" onMouseUp="this.style.display=\'none\'; document.getElementById(\'output\').focus();">
@@ -1111,6 +1117,8 @@ if (template.hints) out += `<div id="hintControls" onMouseOver="document.getElem
 out += `
 <div><a class="interactiveHelpButton" href="../shared29/help.html#ktpHints" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a></div>
 </div>
+
+<div style="position:relative"><div id="vtranscriptions"></div></div>
 `
 return out
 }
