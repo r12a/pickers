@@ -1,7 +1,7 @@
 var defaults = {}
 var factoryDefaults = {}
 	factoryDefaults.font = 'Noto Sans Ol Chiki WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "28";  // text area font size, number of pixels (just the number)
+	factoryDefaults.size = "40";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // px height of text area
 	factoryDefaults.lineheight = "1.4"; // line height of text area
 	factoryDefaults.language = 'sat' // language to use for examples

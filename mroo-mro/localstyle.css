@@ -6,25 +6,17 @@
 	}
 
 
-[lang=suz] { font-family: 'Noto Sans Mro WF'; }
+[lang=mro] { font-family: 'Noto Sans Mro WF'; }
 
 #phonemelist span { font-family: 'Noto Sans Mro WF', ExtendedLatinWF; }
 
-span.hint { 
-	margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-span.x { 
-	color: chocolate;
-	}
 
-    
+/* SELECTION AREA */
+
+#kbdGrid {
+	line-height: 1.75;
+    }
+  
     
 /* KEYBOARD */
 .key span { 
@@ -38,15 +30,7 @@ span.x {
 
 
 
-
-/* SELECTION AREA */
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.75;
-    justify-content: center;
-    }
+/*
 #kbdGrid .hidden {
 	display: none;
 	}
@@ -118,3 +102,4 @@ span.x {
     text-align: center;
     font-size: 90%;
     }
+*/

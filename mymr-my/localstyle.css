@@ -1,45 +1,35 @@
 @font-face {
     font-family: 'Noto Serif Myanmar WF';
-    src: url('../../shared/webfonts/notoserifmyanmar-regular-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/notoserifmyanmar-regular-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/notoserifmyanmar-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Sans Myanmar WF';
-    src: url('../../shared/webfonts/notosansmyanmar-regularwf.woff2') format('woff2'),
-         url('../../shared/webfonts/notosansmyanmar-regularwf.woff') format('woff');
+    src: url('../../shared/webfonts/notosansmyanmar-regularwf.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Myanmar3 WF';
-    src: url('../../shared/webfonts/mm3-multiwf.woff2') format('woff2'),
-         url('../../shared/webfonts/mm3-multiwf.woff') format('woff');
+    src: url('../../shared/webfonts/mm3-multiwf.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Tharlon WF';
-    src: url('../../shared/webfonts/tharlon-regularwf.woff2') format('woff2'),
-         url('../../shared/webfonts/tharlon-regularwf.woff') format('woff');
+    src: url('../../shared/webfonts/tharlon-regularwf.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 
 
 
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 2;
+    }
 
-span.hint { 
-    margin-inline-start: .25em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
 
     
     
@@ -54,16 +44,7 @@ span.hint {
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 2;
-    justify-content: center;
-    }
+/*
 #consonantGrid {
     display: flex;
     flex-direction: column;
@@ -166,6 +147,6 @@ span.hint {
     font-size: 80%;
     }
 
-
+*/
 
 

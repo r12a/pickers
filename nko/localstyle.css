@@ -1,8 +1,7 @@
 @font-face {
     font-family: 'Noto Sans NKo WF';
     src: local('Noto Sans NKo'),
-        url('../../shared/webfonts/notosansnko-regular-webfont.woff2') format('woff2'),
-        url('../../shared/webfonts/notosansnko-regular-webfont.woff') format('woff');
+        url('../../shared/webfonts/notosansnko-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -10,17 +9,11 @@
 [lang=nqo] { font-family: 'Noto Sans NKo WF', serif; }
 
 
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.2;
+    }
 
-span.hint { 
-    margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
 
     
     
@@ -35,16 +28,7 @@ span.hint {
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
-
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
+/*
 #ivowelGrid {
     display: flex;
     flex-direction: column;
@@ -169,5 +153,5 @@ span.hint {
     font-size: 12px;
     }
 
-
+*/
 

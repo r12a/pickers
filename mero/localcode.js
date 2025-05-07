@@ -64,16 +64,16 @@ function toggleShift (node) {
     var chars = document.querySelectorAll('.c')
 
 	if (node.classList.contains('shifted')) {
-        document.getElementById('consonantGrid2').style.display = 'none'
-        document.getElementById('consonantGrid').style.display = 'block'
-        document.getElementById('vowelGrid2').style.display = 'none'
-        document.getElementById('vowelGrid').style.display = 'block'
+        document.getElementById('consonantGridUC').style.display = 'none'
+        document.getElementById('consonantGrid').style.display = 'flex'
+        document.getElementById('vowelGridUC').style.display = 'none'
+        document.getElementById('vowelGrid').style.display = 'flex'
 		} 
 	else {
         document.getElementById('consonantGrid').style.display = 'none'
-        document.getElementById('consonantGrid2').style.display = 'block'
+        document.getElementById('consonantGridUC').style.display = 'flex'
         document.getElementById('vowelGrid').style.display = 'none'
-        document.getElementById('vowelGrid2').style.display = 'block'
+        document.getElementById('vowelGridUC').style.display = 'flex'
 		}
 	}
 
