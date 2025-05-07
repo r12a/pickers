@@ -1434,6 +1434,62 @@ function event_mouseoverChar ()  {
 	// display character information
 	var out = '<span id="charname">'
 	var content = this.textContent.replace(defaults.ccbase,'')
+	out += this.title + '</span>'
+	document.getElementById('chardata').innerHTML = out
+
+
+    // show KTP information, on left
+    out = ''
+        if (window.spreadsheetRows[content][cols.key]) out += '<bdi class="kbdt">' + window.spreadsheetRows[content][cols.key].replace(/¶/,'') + '</bdi><br>'
+        
+		if (window.spreadsheetRows[content][cols.transcription]) out += '<bdi class="transc">' + window.spreadsheetRows[content][cols.transcription].toLowerCase() + '</bdi><br>'
+        
+    	if (window.spreadsheetRows[content]) {
+		if (window.spreadsheetRows[content][cols.ipaLoc]) out += '<bdi class="ipa">' + window.spreadsheetRows[content][cols.ipaLoc].toLowerCase() + '</bdi><br>'
+		}
+	document.getElementById('vtranscriptions').innerHTML = out
+
+	
+	
+	// add cursive forms to table
+	if (template.cursive) {
+		document.getElementById('cursive').innerHTML = ''
+		var char = this.textContent
+		if (spreadsheetRows[char] && spreadsheetRows[char][cols.shape]) {
+			// check for numbers rather than strings
+			if (spreadsheetRows[char][cols.shape] == '4') document.getElementById('cursive').innerHTML = `${ this.textContent } &nbsp; ${ this.textContent }${ this.textContent }${ this.textContent }`
+			else if (spreadsheetRows[char][cols.shape] == '2') document.getElementById('cursive').innerHTML = `${ this.textContent } &nbsp; \u200D${ this.textContent }`
+			
+			else document.getElementById('cursive').innerHTML = spreadsheetRows[char][cols.shape].replace(/ /g,'&nbsp;&nbsp;').replace(/ـ/g,'\u200D')
+			}
+		}
+
+	// highlight similar characters
+	if (this.dataset.c) {
+		ptr = this.dataset.c.replace('c','')
+		if (globals.showShapeHints && _h[ptr]) {
+			clearHighlights()
+			for (let i=0;i<_h[ptr].length;i++) { 
+				ids = document.querySelectorAll('[data-c=c'+_h[ptr][i]+']')
+				for (let x=0;x<ids.length;x++) {
+					ids[x].classList.add('highlightedChar')
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+
+
+
+function event_mouseoverCharX ()  {
+    var parameter
+	// display character information
+	var out = '<span id="charname">'
+	var content = this.textContent.replace(defaults.ccbase,'')
     out += '<span class="ssheetDetails">'
 	if (window.spreadsheetRows[content]) {
 		if (window.spreadsheetRows[content][cols.ipaLoc]) out += '<bdi class="ipa">' + window.spreadsheetRows[content][cols.ipaLoc].toLowerCase() + '</bdi>'
