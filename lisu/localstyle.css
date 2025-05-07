@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Noto Sans Lisu WF';
-    src: url('../../shared/webfonts/NotoSansLisu-Regularwebfont.woff2') format('woff2'),
-         url('../../shared/webfonts/NotoSansLisu-Regularwebfont.woff') format('woff');
+    src: url('../../shared/webfonts/NotoSansLisu-Regularwebfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -9,19 +8,15 @@
 [lang=lis] { font-family: 'Noto Sans Lisu WF', serif; }
 
 
-span.hint { 
-    margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
-.ipa { 
-    font-family: "Doulos SIL", "Doulos SIL WF", serif
+
+/* SELECTION AREA */
+
+#kbdGrid {
+    line-height: 1.2;
     }
+
+
+
 
 
     
@@ -37,14 +32,22 @@ span.hint {
 #keyboard { display: none; }
 
 
-
-/* SELECTION AREA */
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-    justify-content: center;
+/*
+span.hint { 
+    margin-inline-start: .5em;
+	margin-inline-end: 1px;
+	font-size: 60%;
+	color:tan;
+	}
+.c { 
+	min-width: .75em;
+	text-align: center;
+	}
+.ipa { 
+    font-family: "Doulos SIL", "Doulos SIL WF", serif
     }
+
+
 #consonantGrid {
     display: flex;
     flex-wrap: nowrap;
@@ -73,15 +76,6 @@ span.hint {
     flex-direction: row;
     justify-content: space-around;
     }
-/* #toneGrid {
-    width: 2.5em;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    height: 8em;
-    justify-content: center;
-    align-items: center;
-    }*/
 #toneGrid {
     display: flex;
     flex-direction: column;
@@ -123,3 +117,4 @@ span.hint {
 #obsolete {
     text-align: center;
     }
+*/

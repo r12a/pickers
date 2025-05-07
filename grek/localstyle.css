@@ -1,26 +1,20 @@
 @font-face {
     font-family: 'Gentium Plus WF';
-    src: local("Gentium Plus"),
-		url('../../shared/webfonts/gentiumplus-r-webfont.woff2') format('woff2');
+    src: url('../../shared/webfonts/gentiumplus-r-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 
 
-[lang=ru] { font-family: 'Gentium Plus WF', "Times New Roman", serif; }
+[lang=el] { font-family: 'Gentium Plus WF', "Times New Roman", serif; }
+
+/* SELECTION AREA */
+
+#kbdGrid {
+	line-height: 1.2;
+    }
 
 
-
-span.hint { 
-    margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
 
 
 #kbd { display: table; }
@@ -41,16 +35,7 @@ span.hint {
 #keyboard { display: none; }
 
 
-
-
-/* SELECTION AREA */
-
-#kbdGrid {
- display: flex;
- flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
+/*
 #consonantGrid, #consonantGridAlpha {
     display: flex;
     flex-wrap: nowrap;
@@ -118,4 +103,4 @@ span.hint {
 
 #obsolete {
     text-align: center;
-    }
+    }*/

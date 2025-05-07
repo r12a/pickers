@@ -1,31 +1,24 @@
 @font-face {
     font-family: 'Noto Sans Georgian WF';
-    src: url('../../shared/webfonts/NotoSansGeorgian-regular.woff2') format('woff2'),
-         url('../../shared/webfonts/NotoSansGeorgian-regular.woff') format('woff');
+    src: url('../../shared/webfonts/NotoSansGeorgian-regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
 	font-family: 'Noto Serif Georgian WF';
-	src: 	local('Noto Serif Georgian'),
-			url('../../shared/webfonts/notoserifgeorgian-regular-webfont.woff2') format('woff2'),  
-			url('../../shared/webfonts/notoserifgeorgian-regular-webfont.woff') format('woff');
+	src: url('../../shared/webfonts/notoserifgeorgian-regular-webfont.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 	}
 @font-face {
     font-family: 'BGP 2017 DejaVu Serif WF';
-    src: local('BGP 2017 DejaVu Serif'),
-		 url('../../shared/webfonts/bpg_2017_dejavuserif-webfont.woff2') format('woff2'),
-         url('../../shared/webfonts/bpg_2017_dejavuserif-webfont.woff') format('woff');
+    src: url('../../shared/webfonts/bpg_2017_dejavuserif-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
 	font-family: 'BGP 2017 DejaVu Sans WF';
-	src: 	local('BGP 2017 DejaVu Sans'),
-			url('../../shared/webfonts/bpg_2017_dejavusans-webfont.woff2') format('woff2'),  
-			url('../../shared/webfonts/bpg_2017_dejavusans-webfont.woff') format('woff');
+	src: url('../../shared/webfonts/bpg_2017_dejavusans-webfont.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 	}
@@ -34,16 +27,18 @@
 
 
 
-span.hint { 
-    margin-inline-start: .5em;
-	margin-inline-end: 1px;
-	font-size: 60%;
-	color:tan;
+
+/* SELECTION AREA */
+
+#kbdGrid {
+	line-height: 1.4;
+    }
+
+
+#consonantGridUC, #vowelGridUC {
+    display: none;
 	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-	}
+
 
     
     
@@ -57,16 +52,7 @@ span.hint {
 
 #keyboard { display: none; }
 
-
-
-/* SELECTION AREA */
-
-#kbdGrid {
-    display: flex;
-    flex-direction: row;
-	line-height: 1.4;
-    justify-content: center;
-    }
+/*
 #mkhedruli, #mtavruli, #asomtavruli, #nuskhuri {
     display: flex;
     flex-direction: row;
@@ -141,7 +127,4 @@ span.hint {
 #obsolete {
     text-align: center;
     }
-
-#mtavruli, #mkhedruli, #nuskhuri {
-    display: none;
-	}
+*/

@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Noto Sans Elymaic WF';
-    src: url('../../shared/webfonts/notosanselymaic-regular-webfont.woff2') format('woff2'),
-         url('/shared/webfonts/notosanselymaic-regular-webfont.woff2') format('woff');
+    src: url('../../shared/webfonts/notosanselymaic-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
@@ -12,6 +11,32 @@
 
 
 
+/* SELECTION AREA */
+
+#kbdGrid {
+ 	display: flex;
+ 	flex-direction: row;
+	line-height: 1.2;
+    justify-content: center;
+    }
+
+
+
+    
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Elymaic WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+/*
 #alphabet { 
 	display: block; 
 	color: #666;
@@ -34,28 +59,7 @@ span.hint {
 	text-align: center;
 	}
 
-    
-    
-/* KEYBOARD */
-.key span { 
-	font-size: 1.2em; 
-	font-weight: normal; 
-	font-family:  'Noto Sans Elymaic WF',  sans-serif;  
-    line-height: 1;
-	}
 
-#keyboard { display: none; }
-
-
-
-/* SELECTION AREA */
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
 #ivowelGrid {
     display: flex;
     flex-direction: column;
@@ -167,3 +171,4 @@ span.hint {
 	flex-direction: column;
 	flex-wrap: nowrap;
 	}
+*/
