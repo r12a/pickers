@@ -183,11 +183,11 @@ var plistByRegion = {
 				[']'],
 			],
 	'C':[
-			['<b>Cham</b> ['],
-				['Cham','cham/index.html'],
-				[']'],
-			['• <b>Chakma</b> ['],
+			['<b>Chakma</b> ['],
 				['Chakma','cakm-ccp/index.html'],
+				[']'],
+			['• <b>Cham</b> ['],
+				['Cham','cham-cjm/index.html'],
 				[']'],
 			['• <b>Cherokee</b> ['],
 				['Cherokee','cher/index.html'],
@@ -212,8 +212,6 @@ var plistByRegion = {
 	'E':[
 			['<b>Egyptian</b> ['],
 				['Hieroglyphs', 'egyptian/index.html'],
-				['Kashmiri', 'deva-ks/index.html'],
-				['All', 'deva-all/index.html'],
 				[']'],
 			['• <b>Elymaic</b> ['],
 				['Elymaic', 'elym/index.html'],
@@ -338,7 +336,7 @@ var plistByRegion = {
 				['Lycian', 'lyci/index.html'],
 				[']'],
 			['• <b>Lydian</b> ['],
-				['Lisu', 'lydi/index.html'],
+				['Lydian', 'lydi/index.html'],
 				[']'],
 			],
 	'M':[
@@ -429,7 +427,7 @@ var plistByRegion = {
 				[']'],
 			],
 	'S':[
-			['<b>Sharadd</b> ['],
+			['<b>Sharada</b> ['],
 				['Sanskrit/Kashmiri', 'shrd-ks/index.html'],
 				[']'],
 			['<b>Sinhala</b> ['],
