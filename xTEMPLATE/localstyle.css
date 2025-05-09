@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Noto Serif Devanagari WF';
+    font-family: 'NotoSerifDevanagari WF';
     src: url('../../shared/webfonts/notoserifdevanagari-regular-webfont.woff2') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -7,27 +7,14 @@
 
 
 
-[lang=hi] { font-family: 'Noto Serif Devanagari WF', serif; }
+[lang=hi] { font-family: 'NotoSerifDevanagari WF', serif; }
 
 
 
 
-span.hint { 
-	margin-inline-end: .5em;
-	margin-inline-start: 1px;
-	font-size: .8rem;
-	color:tan;
-	}
-.c { 
-	min-width: .75em;
-	text-align: center;
-    writing-mode: vertical-rl;
-	}
-#consonantGrid .g, #consonantGrid .g {
-    margin-inline-end: 1rem;
-    }
-#consonantGrid table .g, #consonantGrid table .g {
-    margin-inline-end: 0;
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.2;
     }
 
 
@@ -42,111 +29,4 @@ span.hint {
 
 #keyboard { display: none; }
 
-
-
-/* SELECTION AREA */
-
-#kbdGrid {
- 	display: flex;
- 	flex-direction: row;
-	line-height: 1.2;
-    justify-content: center;
-    }
-#ivowelGrid {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-	margin-right: 1em;
-    }
-#ivowelGrid div {
-	display: flex;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    }
-#ivowelGrid .verticalAlign {
-	justify-content: flex-end;
-	}
-#consonantGrid {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    }
-#consonantGrid div {
-    white-space: normal;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    }
-#consonantGrid > span {
-    min-width: 1em;
-    }
-#vowelbase {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }
-#vowelGrid {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-	margin-left: 1em;
-    }
-#vowelGrid > div {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content:space-between;
-	}
-#moreconsonants {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content:flex-start;
-    text-align: end;
-	margin: 0 .5em;
-    }
-#tones {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-left: .5em;
-    }
-#tones div {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 1.5em;
-    justify-content: center;
-    margin-left: 0;
-    }
-#numberGrid {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 90%;
-	margin-left: 1em;
-    }
-#digitKeypad div {
-    white-space: normal;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    }
-
-#punctuation, #flatnumbers, #other {
-    text-align: center;
-    font-size: 80%;
-    line-height: 1.7;
-    margin-top: .5em;
-    }
-
-#obsolete {
-    text-align: center;
-    font-size: 90%;
-    }
 
