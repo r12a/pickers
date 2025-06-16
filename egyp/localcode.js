@@ -23,6 +23,26 @@ function event_mouseoverChar ()  {
 	if (charDB[this.textContent] && charDB[this.textContent].s) {
 		charname += ' ( '+charDB[this.textContent].s+' )'
 		}
+    charname += ` <span style="font-size:smaller;margin-inline:2rem;">MdC:${ spreadsheetRows[this.textContent][cols.transLoc] }</span>`
+    
+	out += charname + '</span>'
+	document.getElementById('chardata').innerHTML = out
+	
+	// highlight this character
+	this.style.backgroundColor = '#CF9'
+	this.style.backgroundColor = '#fc6'
+	}
+
+
+
+function event_mouseoverCharXX ()  {
+	// display character information ADAPTED to retrieve description
+
+    var out = '<span id="charname">'
+	var charname = this.title
+	if (charDB[this.textContent] && charDB[this.textContent].s) {
+		charname += ' ( '+charDB[this.textContent].s+' )'
+		}
     
 	out += charname + '</span>'
 	document.getElementById('chardata').innerHTML = out
