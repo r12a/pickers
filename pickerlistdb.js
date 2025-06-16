@@ -211,7 +211,7 @@ var plistByRegion = {
 			],
 	'E':[
 			['<b>Egyptian</b> ['],
-				['Hieroglyphs', 'egyptian/index.html'],
+				['Hieroglyphs', 'egyp/index.html'],
 				[']'],
 			['• <b>Elymaic</b> ['],
 				['Elymaic', 'elym/index.html'],
