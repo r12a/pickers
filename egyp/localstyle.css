@@ -299,3 +299,11 @@ span.hint {
 
 
 
+#punctuation {
+    text-align: center;
+    }
+#punctuation .touch {
+    font-size: 1.2rem;
+    }
+
+
