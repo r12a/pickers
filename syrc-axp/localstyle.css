@@ -1,4 +1,10 @@
 @font-face {
+    font-family: 'EvangelionCPA WF';
+    src: url('../../shared/webfonts/EvangelionCPA-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
     font-family: 'CPAGenizah WF';
     src: url('../../shared/webfonts/cpagenizah-webfont.woff2') format('woff2');
     font-weight: normal;
@@ -22,7 +28,7 @@ The copyright (in OFL license is): Designers : Alain Desreumaux et Alain Hurtig,
 	}
 
 
-[lang=axp] { font-family: "CPADM WF", serif; font-size: 180%; }
+[lang=axp] { font-family: "EvangelionCPA WF", serif; font-size: 180%; }
 
 
 

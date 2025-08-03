@@ -1,6 +1,6 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'CPADM WF' // text area font name (a single font, no quotes)
+	factoryDefaults.font = 'EvangelionCPA WF' // text area font name (a single font, no quotes)
 	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "200"; // number representing number of times 100px for height of text area
 	factoryDefaults.lineheight = "1.2"; // number representing line height of text area in pixels/100
@@ -18,7 +18,7 @@ var thisPicker = 'cpaPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "CPADM WF", "CPAGenizah WF" ]
+var webFonts = [ "EvangelionCPA WF", "CPADM WF", "CPAGenizah WF" ]
 
 
 var template = {}
