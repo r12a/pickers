@@ -1,11 +1,11 @@
 var defaults = {}
 var factoryDefaults = {}
-	factoryDefaults.font = 'Noto Sans Chakma WF' // text area font name (a single font, no quotes)
-	factoryDefaults.size = "36";  // text area font size, number of pixels (just the number)
+	factoryDefaults.font = 'Chakma Unicode WF' // text area font name (a single font, no quotes)
+	factoryDefaults.size = "34";  // text area font size, number of pixels (just the number)
 	factoryDefaults.rows = "150"; // px height of text area
-	factoryDefaults.lineheight = "1.4"; // line height of text area
+	factoryDefaults.lineheight = "1.6"; // line height of text area
 	factoryDefaults.language = 'ccp' // language to use for examples
-	factoryDefaults.uifont = 'Noto Sans Chakma WF'; // font name  for selection area (a single font, no quotes)
+	factoryDefaults.uifont = 'Chakma Unicode WF'; // font name  for selection area (a single font, no quotes)
 	factoryDefaults.uisize = "28";  // selection area font size, number of pixels (just the number)
 	factoryDefaults.ccbase = "";  // default base for combining characters
 	factoryDefaults.uidir = "ltr" // indicates the base direction for the selection area
@@ -18,7 +18,7 @@ var thisPicker = 'ccpPicker'
 if (localStorage.pickersStore && localStorage[thisPicker]) defaults = JSON.parse(localStorage[thisPicker]) 
 else  defaults = factoryDefaults
  
-var webFonts = [ "Noto Sans Chakma WF" ]
+var webFonts = [ "Chakma Unicode WF", "Noto Sans Chakma WF" ]
 
 // list of fonts to add to the standard selection
 window.fontsuggestions =  
