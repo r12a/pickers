@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Noto Sans Syloti Nagri WF';
+    src: url('../../shared/webfonts/notoserifdevanagari-regular-webfont.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+
+[lang=hi] { font-family: 'Noto Sans Syloti Nagri WF', serif; }
+
+
+
+
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.2;
+    }
+
+
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Syloti Nagri WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+
+
+#ivowelGrid {
+    justify-content: space-around;
+    }
