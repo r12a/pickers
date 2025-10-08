@@ -920,7 +920,8 @@ dt {
 	margin: 0;
 	}
 .touch:hover, .shifted {
-	background-color: #ccc;
+    background-color: chocolate;
+    color: white;
 	}
 .delAll { /* special border for delete all touch */
 	border: 1px solid #eee; 
