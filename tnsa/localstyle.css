@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Noto Sans Tangsa WF';
+    src: url('../../shared/webfonts/NotoSansTangsa-Regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+
+[lang=hi] { font-family: 'Noto Sans Tangsa WF', serif; }
+
+
+
+
+/* SELECTION AREA */
+#kbdGrid {
+	line-height: 1.2;
+    }
+
+
+    
+/* KEYBOARD */
+.key span { 
+	font-size: 1.2em; 
+	font-weight: normal; 
+	font-family:  'Noto Sans Tangsa WF',  sans-serif;  
+    line-height: 1;
+	}
+
+#keyboard { display: none; }
+
+
+#consonantGrid div, #consonantGridUC div {
+    justify-content: start;
+}
+
