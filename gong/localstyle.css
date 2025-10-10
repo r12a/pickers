@@ -4,6 +4,12 @@
     font-weight: normal;
     font-style: normal;
 	}
+@font-face {
+    font-family: 'Narnoor WF';
+    src: url('../../shared/webfonts/Narnoor-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
 
 
 

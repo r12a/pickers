@@ -27,8 +27,8 @@ window.fontsuggestions =
 
 var template = {}
 	template.title = 'Gunjala Gondi'
-	template.sample = "𑵮𑵺𑶋 𑵭𑶌𑶉 𑶅𑶊𑵵𑶐 𑶅𑶋𑶉𑵺 𑵽𑶊𑵭 𑵺𑵶𑶍𑶂 𑵮𑶍𑶂𑶋𑵬𑵺 𑵮𑶎𑵳𑶋𑵳𑶐 𑵮𑶊𑵮𑵺𑵶 𑵳𑶐𑵸 𑵡𑶀𑶋 𑵱𑶐𑵳𑶋𑵸𑶊𑶈𑵺𑶐 𑶉𑶊𑶐𑶂𑶋𑵳𑵬𑶊𑶐 𑵬𑶐𑵭 𑵮𑶊𑶐 𑵸𑵺 𑵰𑶎𑶈 𑵱𑶊𑵵𑶋 𑶇𑶊𑶈𑶐 𑶉𑶊𑵬 𑶉𑶌𑵺𑶐𑵱𑶐 𑵮𑶍𑶈𑵰𑶊𑶐𑶂𑶋 𑵮𑵳𑵳𑶐 𑶀𑵱𑶍𑶉𑵺 𑵶𑶊𑵽𑶊𑶐 𑵰𑶊𑶐𑶉 𑶇𑶋𑵱𑶐𑶅𑶈𑶊𑶐𑵺𑵶 𑵱𑶂𑶋𑵳 𑵱𑶊𑵱𑵺 𑵰𑶋𑵬𑶂"
-	template.sampleSource = 'https://software.sil.org/downloads/r/narnoor/Narnoor-Font-Sample.pdf'
+	template.sample = "𑵺𑶊 𑵳𑶓𑶂𑶗𑵸𑵵 𑵭𑶊𑵳𑶄 𑵠𑵭 𑵶𑶓𑶉𑶗𑵽𑶋𑵺 𑵰𑶈𑶍𑶄𑶗𑵰 𑵠𑵺𑶋 𑵠𑵭𑶐𑵺𑵵 𑵮𑶇𑶗𑵱𑶐 𑵰𑶊𑵬𑶗𑵰. 𑵶𑶋𑵬𑵺𑶗𑵳𑶍𑵺 𑶉𑶍𑵽𑶋 𑵱𑶋𑵬𑶗𑵭𑵱 𑵰𑶕𑵸𑶗𑵱𑶋𑵳𑶐, 𑵠𑵸 𑵺𑶌𑵱𑶍𑵺 𑵱𑶊𑵮𑶊𑶂𑶕𑵳. 𑵳𑶊𑵺 𑶅𑶐𑶈𑶗𑵰𑵳𑶐 𑶉𑶎𑶂𑶗𑵱𑶋𑵳𑶐 𑵠𑵸 𑵺𑶌𑵱𑶍𑵺 𑵮𑵻𑶋 𑵱𑶌𑶕𑵳. 𑶉𑵰𑶗𑵸𑶋𑵺𑵵 𑵰𑶍𑵱𑶐 𑵭𑶊𑵵𑶐 𑵶𑶋𑵬𑵺𑶐 𑵡𑶕𑵸𑶍."
+	template.sampleSource = 'https://fonts.google.com/noto/specimen/Noto+Sans+Gunjala+Gondi'
 	template.blocklocation= 'gong'  // block directory
 	template.noteslocation = 'gong/wsg' // location of script notes
 	template.vocablocation = 'gong/wsg_vocab' // location of term database
