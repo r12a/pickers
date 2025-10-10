@@ -50,7 +50,7 @@ var template = {}
 
 
 var controls = [
-{"title":"Trans-<br/>literate", "alt":"Convert XXXX text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
+{"title":"Trans-<br/>literate", "alt":"Convert Tangsa text to a one-to-one Latin transliteration.", "code":"doTranscription('transliterate')"},
 ]
 
 
@@ -72,13 +72,13 @@ var pulldown = [
 
 var show = {}  // indicates which inputAids to use
     show.shape = true
-    show.hints = false
+    show.hints = true
     show.default = true
     show.latin = true
     show.ipa = true
     show.transc = 'Latin'
     show.kbd = ""
-    show.language = "Inuktitut"
+    show.language = "Tangsa"
 
 
 var inputAids = []
