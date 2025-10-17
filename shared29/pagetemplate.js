@@ -197,9 +197,9 @@ out = `
 
 <img src="../images/addcomma_large.png" alt="Select" title="Separate the characters in the text area with the text in the box below." onclick="addSpacesToPicker(document.getElementById('insertMe').value);" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
 
-<input name="insertMe" id="insertMe"  type="text" value="␣">
+<input name="insertMe" id="insertMe"  type="text" value="," style="font-size:1rem; height:1rem; text-align:center;">
 
-<img src="../images/space_to_space.png" alt="Replace" title="Replace spaces with ␣" onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/ /g,'␣');" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+<img src="../images/space_to_space.png" alt="Replace" title="Replace spaces with ␣" onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/ /g,',');" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
 
 <!--img src="../images/count_large.png" alt="Count" title="Count the characters in the text area." onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { count=[...document.getElementById('output').value]; alert(count.length); }" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()"-->
 
