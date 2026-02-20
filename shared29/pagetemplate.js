@@ -203,6 +203,9 @@ out = `
 
 <!--img src="../images/count_large.png" alt="Count" title="Count the characters in the text area." onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { count=[...document.getElementById('output').value]; alert(count.length); }" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()"-->
 
+<img src="../images/css.png" alt="Open a panel to apply CSS styling."  title="Open a panel to apply CSS styling."
+    onclick="node = document.getElementById('css'); node.style.display === 'none' ? node.style.display = 'block' : node.style.display = 'none'" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+
 <img src="../images/nfc_large.png" alt="Convert output to Normalization Form C."  title="Convert output to Normalization Form C."
     onclick="globals.n11n='nfc'; document.getElementById( 'output' ).value=document.getElementById( 'output' ).value.normalize('NFC');
     document.getElementById('n11nform').innerHTML = 'NFC';" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
@@ -531,6 +534,20 @@ for (let i=0;i<window.pulldown.length;i++){
 	<span id="closePulldown" onclick="document.getElementById(\'pulldown\').style.display=\'none\'; document.getElementById(\'output\').focus();">X</span>
     </div>
 </div>
+</div>
+
+<div id="css" style="height:10rem; display:none; background: antiquewhite;">
+<p style="float:inline-end; margin-inline-end:4rem;">
+	<img src="../shared29/images/toprow/sample.svg"
+		style="height:2rem; vertical-align:middle; cursor:pointer;"
+	onclick="applyInlineCSS(document.getElementById('cssToAdd').textContent)">
+	<span onclick="document.getElementById('css').style.display = 'none'"
+		style="font-size:1.6rem; color:gray; margin-inline:2rem; cursor:pointer;"
+		>X</span>
+	</p>
+<p style="font-weight:bold; font-size:80%">Add this inline CSS:</p>
+<p id="cssToAdd" contenteditable style="font-family:monospace; background-color: seashell;"
+	oninput="applyInlineCSS(document.getElementById('cssToAdd').textContent)"></p>
 </div>
 
 <div id="outputDiv" style="position: relative;">
@@ -1243,11 +1260,13 @@ out = `
 
 <div class="control" onmouseover="showMenuText('Find things in the text area. Regular expressions work.','tan');" onmouseout="hideMenuText()"><span style="float:right;" id="find_report"></span>Search text: `
 
-if (typeof collections !== 'undefined' && collections.length > 0) out += `<span title="Show a list of character sets that can be included in regular expressions." style="cursor:pointer;" onclick="document.getElementById('searchSets').style.display='block'">▼</span>`
-
 out += `
 <div>
-<input id="searchText"  type="text" style="width: 7em;" placeholder="Regex ok">
+<input id="searchText"  type="text" style="width: 7em;" placeholder="Regex ok">`
+
+if (typeof collections !== 'undefined' && collections.length > 0) out += `<button title="Show a list of character sets that can be included in regular expressions." style="cursor:pointer;" onclick="document.getElementById('searchSets').style.display='block'">Ⓒ</button>`
+
+out += `
 <button onclick="showLocationInText(getElementById('searchText').value)">Go</button>
 <button onclick="showLocationInText(''); document.getElementById('searchSets').style.display='none'" alt="Clear search results." title="Clear search results.">X</button>
 </div>
@@ -1297,17 +1316,25 @@ out += `
 
 
 
-var setMarkup = ''
+/*var setMarkup = ''
 if (typeof collections !== 'undefined' && collections.length > 0) {
     for (set=0;set<collections.length; set++) {
         setMarkup += `<div class="set"><span class="symbol" onclick="navigator.clipboard.writeText(this.textContent)" style="cursor:copy;">${ collections[set].symbol }</span> <span class="desc">${ collections[set].desc }</span> <span class="sets">${ collections[set].chars }</span></div>`
+        }
+    }*/
+
+
+var setMarkup = ''
+if (typeof collections !== 'undefined' && collections.length > 0) {
+    for (set=0;set<collections.length; set++) {
+        setMarkup += `<div class="set"><span class="symbol" onclick="document.getElementById('searchText').value += this.textContent; navigator.clipboard.writeText(this.textContent)" style="cursor:copy;">${ collections[set].symbol }</span> <span class="desc">${ collections[set].desc }</span> <span class="sets">${ collections[set].chars }</span></div>`
         }
     }
 
 
 out += `
 <div id="searchSets" style="display:none;">
-<p class="set">Use the following circled characters to represent sets in the search regular expression.</p>
+<p class="set"><button style="float:inline-end; margin-inline: 2rem;" onclick="document.getElementById('searchSets').style.display='none'">Close</button>Click on the following characters to represent sets in a search regular expression. Circled characters can be used in the 'Search text' field, and to create queries in the text area for 'Find examples'.</p>
 ${ setMarkup }
 </div>
 `

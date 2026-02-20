@@ -1952,6 +1952,12 @@ function setUpValues () {
 			pairs[1] = pairs[1].replace(/_/g,' ')
 			selectFont(pairs[1])
 			}
+		if (pairs[0] === 'css') {
+			pairs[1] = pairs[1].replace(/_/g,' ')
+			applyInlineCSS(decodeURIComponent(pairs[1]))
+			document.getElementById('cssToAdd').textContent = decodeURIComponent(pairs[1])
+			document.getElementById('css').style.display = 'block'
+			}
 		}
 		
 	// activate type assist/ime input
@@ -1979,6 +1985,20 @@ function setUpValues () {
 	}
 
 
+function applyInlineCSS(cssString) {
+  if (!_output) return
+
+  cssString
+    .split(";")
+    .map(rule => rule.trim())
+    .filter(rule => rule.length > 0)
+    .forEach(rule => {
+      const [property, value] = rule.split(":").map(part => part.trim())
+      if (property && value) {
+        _output.style.setProperty(property, value)
+      }
+    })
+	}
 
 function closeTranscriptionChoice () {
 	document.getElementById('transcriptionChoice').style.display = 'none'
