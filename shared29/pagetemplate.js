@@ -546,7 +546,7 @@ for (let i=0;i<window.pulldown.length;i++){
 		>X</span>
 	</p>
 <p style="font-weight:bold; font-size:80%">Add this inline CSS:</p>
-<p id="cssToAdd" contenteditable style="font-family:monospace; background-color: seashell;"
+<p id="cssToAdd" contenteditable style="font-family:monospace; background-color: seashell; text-align:start;"
 	oninput="applyInlineCSS(document.getElementById('cssToAdd').textContent)"></p>
 </div>
 
