@@ -96,7 +96,7 @@ function createFontPicker () {
 			}
 		out += '</div>'
 		}
-	out += '<div onclick="document.getElementById(\'fontPicker\').innerHTML=\'\'; document.getElementById(\'fontManagementDetails\').style.display=\'none\';" style="cursor:pointer; font-size: 200%;">X</div>'
+	out += '<div onclick="document.getElementById(\'fontPicker\').innerHTML=\'\'; document.getElementById(\'fontManagementDetails\').style.display=\'none\';"><img src="../images/close.png" alt="Close" title="Close" style="height:2rem; vertical-align:middle; cursor:pointer; margin-inline:4rem;"></div>'
 	out += '</div>'
 
 	return out
@@ -199,7 +199,7 @@ out = `
 
 <input name="insertMe" id="insertMe"  type="text" value="," style="font-size:1rem; height:1rem; text-align:center;">
 
-<img src="../images/space_to_space.png" alt="Replace" title="Replace spaces with ␣" onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/ /g,',');" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
+<img src="../images/space_to_space.png" alt="Replace" title="Replace spaces with the text in the box above." onclick="document.getElementById('output').value = document.getElementById('output').value.replace(/ /g,',');" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()">
 
 <!--img src="../images/count_large.png" alt="Count" title="Count the characters in the text area." onclick="if (document.getElementById('output').value== '') { alert('None.'); } else { count=[...document.getElementById('output').value]; alert(count.length); }" onmouseover="showMenuText(this.title,'tan')" onmouseout="hideMenuText()"-->
 
@@ -335,13 +335,13 @@ out += `
 <!--<button  id="showNotesLink" type="button" onclick="openCharNoteWindow()" title="Show detailed notes for the first character." onMouseOver="showMenuText(this.title,'tan')" onMouseOut="hideMenuText()">Show DB<br/>details</button>-->
 
 
-<img src="../images/more.svg" alt="More controls" style="margin-inline-start:1rem; vertical-align: text-bottom; cursor:pointer; height:2rem;" onclick="if (document.getElementById(\'pulldown\').style.display===\'none\') {document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\'}; document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();"  onmouseover="showMenuText('Show more options to apply to the text area.','tan');" onmouseout="hideMenuText()">
+<img src="../images/more.png" alt="More controls" style="margin-inline-start:1rem; vertical-align: text-bottom; cursor:pointer; height:1.8rem;" onclick="if (document.getElementById(\'pulldown\').style.display===\'none\') {document.getElementById(\'pulldown\').style.display=\'block\'} else { document.getElementById(\'pulldown\').style.display=\'none\'}; document.getElementById(\'shuttle\').style.display=\'none\'; document.getElementById(\'output\').focus();"  onmouseover="showMenuText('Show more options to apply to the text area.','tan');" onmouseout="hideMenuText()">
 
-<img src="../shared29/images/toprow/export.svg" alt="Export to other apps" style="margin-inline-start:.3rem; margin-inline-end:.3rem; vertical-align: text-bottom; margin-block-end:.2rem; cursor:pointer; height:1.7rem;" onclick="if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'pulldown\').style.display=\'none\'; document.getElementById(\'output\').focus();" onmouseover="showMenuText('Export the text in the text area to another app. Many options work on highlighted ranges.','tan');" onmouseout="hideMenuText()">
+<img src="../images/export.png" alt="Export to other apps" style="margin-inline:.3rem; vertical-align: text-bottom; cursor:pointer; height:1.8rem;" onclick="if (document.getElementById(\'shuttle\').style.display===\'none\'){document.getElementById(\'shuttle\').style.display=\'block\'} else { document.getElementById(\'shuttle\').style.display=\'none\' }; document.getElementById(\'pulldown\').style.display=\'none\'; document.getElementById(\'output\').focus();" onmouseover="showMenuText('Export the text in the text area to another app. Many options work on highlighted ranges.','tan');" onmouseout="hideMenuText()">
 
 <a class="interactiveHelpButton" href="../shared29/help.html#exportPulldown" target="_help" title="Help with type-assist and other input aids."><img alt="help" src="../images/help.png"/></a>
 
-<img title="Generate a URL including text." onclick="makeSharingLink()"  src="../shared29/images/toprow/share.svg" style="height:1.4rem; vertical-align:text-bottom; margin-inline-end:2em;" alt="Share" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
+<img title="Generate a URL including text." onclick="makeSharingLink()"  src="../images/share.png" style="height:1.8rem; vertical-align:text-bottom; margin-inline-end:2em;" alt="Share" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
 
 </span>
 
@@ -355,15 +355,15 @@ out += `
 
 if (typeof fontDB !== 'undefined') out += `<img title="Open the font preview panel." style="margin-inline-start:1rem; height:1.8rem;" onclick="if (document.getElementById('fontPicker').innerHTML=='') { document.getElementById('fontPicker').innerHTML = createFontPicker(); document.getElementById('fontManagementDetails').style.display='block'} else { document.getElementById('fontPicker').innerHTML=''; document.getElementById('fontManagementDetails').style.display='none'}" src="../shared29/images/toprow/fonts.svg" alt="Fonts" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
 
-  out += `<img title="Set OpenType typographic features." style="margin-inline-end:.5em; height:1.5rem;" onclick="if (document.getElementById('otPicker').style.display == 'none') { document.getElementById('otPicker').style.display = 'block'} else { document.getElementById('otPicker').style.display='none';}" src="../shared29/images/toprow/typography.svg" alt="Typography" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
+  out += `<img title="Set OpenType typographic features." style="margin-inline-end:.5em; height:1.8rem;" onclick="if (document.getElementById('otPicker').style.display == 'none') { document.getElementById('otPicker').style.display = 'block'} else { document.getElementById('otPicker').style.display='none';}" src="../images/typography.png" alt="Typography" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
 
-out += `<img title="Add some sample text." onclick="add('` + template.sample +`')" src="../shared29/images/toprow/sample.svg" alt="Sample" onmouseover="showMenuText(this.title,\'tan\');" style="height:1.8rem;" onmouseout="hideMenuText()">`
+out += `<img title="Add some sample text." onclick="add('` + template.sample +`')" src="../images/sample.png" alt="Sample" onmouseover="showMenuText(this.title,\'tan\');" style="height:1.8rem;" onmouseout="hideMenuText()">`
 
-if (typeof window.charCheckerList !== 'undefined') out += `<img title="Check the text for non-recommended characters or sequences." onclick="charChecker();" src="../shared29/images/toprow/checker.svg" style="cursor:pointer; height: 2rem; margin-inline-start:.5rem;" alt="Checker" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">` // charCheckerList is defined in localcode.js
+if (typeof window.charCheckerList !== 'undefined') out += `<img title="Check the text for non-recommended characters or sequences." onclick="charChecker();" src="../images/checker.png" style="cursor:pointer; height: 1.8rem; margin-inline-start:.5rem;" alt="Checker" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">` // charCheckerList is defined in localcode.js
 
-  out += `<img title="Move this line to the top of the screen." onclick="document.location='#main'" src="../shared29/images/toprow/move.svg" alt="Close to top" style="vertical-align: bottom; height: 1.8rem" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
+  out += `<img title="Move this line to the top of the screen." onclick="document.location='#main'" src="../images/move.png" alt="Close to top" style="vertical-align: bottom; height: 1.8rem" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
 
-<img title="Toggle invisible code points." onclick="toggleInvisibles()" src="../shared29/images/toprow/toggle.svg" style="height:1.6rem; margin-block-end:.2rem;" alt="Toggle" style="vertical-align: bottom;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
+<img title="Toggle invisible code points." onclick="toggleInvisibles()" src="../images/toggle.png" style="height:1.8rem;vertical-align: bottom;" alt="Toggle" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">`
 
   out += `<img title="Delete all the text." onclick="deleteAll()" src="../shared29/images/toprow/clear.png" alt="Clear" style="margin-left: 1em;" onmouseover="showMenuText(this.title,\'tan\');" onmouseout="hideMenuText()">
 
@@ -538,12 +538,14 @@ for (let i=0;i<window.pulldown.length;i++){
 
 <div id="css" style="height:10rem; display:none; background: antiquewhite;">
 <p style="float:inline-end; margin-inline-end:4rem;">
-	<img src="../shared29/images/toprow/sample.svg"
+	<img src="../images/apply.png"
 		style="height:2rem; vertical-align:middle; cursor:pointer;"
-	onclick="applyInlineCSS(document.getElementById('cssToAdd').textContent)">
-	<span onclick="document.getElementById('css').style.display = 'none'"
-		style="font-size:1.6rem; color:gray; margin-inline:2rem; cursor:pointer;"
-		>X</span>
+		onclick="applyInlineCSS(document.getElementById('cssToAdd').textContent)"
+		alt="Apply the styling." title="Apply the styling.">
+	<img src="../images/close.png"
+		style="height:2rem; vertical-align:middle; cursor:pointer;"
+		onclick="document.getElementById('css').style.display = 'none'"
+		alt="Close this panel." title="Close this panel.">
 	</p>
 <p style="font-weight:bold; font-size:80%">Add this inline CSS:</p>
 <p id="cssToAdd" contenteditable style="font-family:monospace; background-color: seashell; text-align:start;"
@@ -593,8 +595,9 @@ out += `<details id="fontManagementDetails" style="display: none; padding:1rem;"
 
 
 out += '<div id="otPicker" style="display:none;">'
-out += `<div onclick="document.getElementById('otPicker').style.display='none';"
-			style="cursor:pointer; font-size: 200%; float:right; color:#ccc;">X</div>
+out += `<img src="../images/close.png" alt="Close" title="Close"
+			onclick="document.getElementById('otPicker').style.display='none';"
+			style="cursor:pointer; height:2rem; margin-inline:4rem; margin-block:2rem; float:right;">
 
 <div id="typographyPicker" style="padding:1rem;">`
 
@@ -887,9 +890,21 @@ out += `
 
 <div id="transcriptionWrapper">
 <a class="interactiveHelpButton" href="../shared29/help.html#secondary_output" target="_help" style= "float: left; margin: 1em 1em 0 1em;" title="Help with the secondary text area."><img alt="help" src="../images/help.png"/></a>
-<div id="copyTranscription" onclick="copyTranscription()"><img src="../shared29/images/copy.png" alt="Copy"></div>
-<div id="moveTranscription" onclick="moveTranscription()"><img src="../shared29/images/move.png" alt="Move"></div>
-<div id="closeTranscription" onclick="closeTranscription()">X</div>
+
+<div id="transcriptionWrapperButtons" style="float:inline-end; margin-inline:4rem;">
+<img src="../images/copy.png" alt="Copy" 
+	onclick="copyTranscription()"style="font-size:28px; height:2rem;">
+
+<img src="../images/move.png" alt="Move" style="height:2rem;"
+	 onclick="moveTranscription()">
+
+<img src="../images/close.png" alt="close" style="height:2rem;"
+	 onclick="closeTranscription()">
+</div>
+
+<!--div id="copyTranscription" onclick="copyTranscription()"><img src="../images/copy.png" alt="Copy" style="font-size:28px; height:2rem;"></div>
+<div id="moveTranscription" onclick="moveTranscription()"><img src="../images/move.png" alt="Move" style="height:2rem;"></div>
+<div id="closeTranscription" onclick="closeTranscription()"><img src="../images/close.png" alt="close" style="height:2rem;"></div-->
 <div id="transcription" contenteditable="true"></div>
 </div>
 `

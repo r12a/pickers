@@ -3061,7 +3061,8 @@ function addVowel (ch) {
 // new version to remove the mouseover and replace the transliteration with the character itself
 function makePalette (mappingTable) {
     console.log('mappingTable',mappingTable)
-    var output = `<span style="float:right; margin-inline-end: -3rem; color: #ccc; font-family: sans-serif; cursor: pointer; line-height: 1; font-size:2rem;" onclick="document.getElementById('transcriptionPalette').style.display = 'none'; document.getElementById('togglePalette').classList.add('off'); document.getElementById('togglePalette').classList.remove('on');">X</span>`
+    //var output = `<span style="float:right; margin-inline-end: -3rem; color: #ccc; font-family: sans-serif; cursor: pointer; line-height: 1; font-size:2rem;" onclick="document.getElementById('transcriptionPalette').style.display = 'none'; document.getElementById('togglePalette').classList.add('off'); document.getElementById('togglePalette').classList.remove('on');">X</span>`
+    var output = `<img src="../images/close.png" alt="Close" title="Close palette" style="float:right; margin-inline-end: -2.5rem; cursor: pointer; height:2rem;" onclick="document.getElementById('transcriptionPalette').style.display = 'none'; document.getElementById('togglePalette').classList.add('off'); document.getElementById('togglePalette').classList.remove('on');">`
 	var fulllist = mappingTable.split('\n')
 	for (let i=0;i<fulllist.length;i++) {
         list = fulllist[i]
