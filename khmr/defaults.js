@@ -21,12 +21,12 @@ else  defaults = factoryDefaults
 var webFonts = [ "Khmer OS Battambang WF", "Noto Serif Khmer WF", "Noto Sans Khmer WF" ]
 
 var template = {}
-	template.title = 'Khmer character app'
+	template.title = 'Khmer'
 	template.sample = "២. មនុស្សគ្រប់រូបមានសិទ្ធិចាកចេញពីប្រទេសណាមួយ រួមទាំងប្រទេសរបស់ខ្លួនផង និងមាន សិទ្ធិវិលត្រឡប់មកប្រទេសរបស់ខ្លួនវិញ។"
 	template.sampleSource = ''
 	template.blocklocation= 'khmr'  // block directory
 	template.noteslocation = 'khmr/km' // location of script notes
-	template.vocablocation = 'khmr/km_vocab' // location of term database
+	template.vocablocation = 'khmr/km_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'khmr'
 	template.scriptcode = 'Khmr'

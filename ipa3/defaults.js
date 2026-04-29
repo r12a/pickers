@@ -21,7 +21,7 @@ var webFonts = [ "Doulos SIL WF" ]
 
 
 var template = {}
-	template.title = 'IPA  <span style="font-size:50%">by type</span>'
+	template.title = '<span style="font-size:50%">by type</span>  IPA'
 	template.sample = "/ɔːl ˈhɟʉːmən ˈbiːɪŋz ɑː bɔːn friː ænd ˈiːkwəl ɪn ˈdɪɡnɪtɪ ənd raɪts ‖ ðeɪ  ɑːr ɪnˈdæʊd wɪð ˈriːzᵊn ənd ˈkɒnʃəns ænd ʃʊd ækt təˈɰɔːdz wʌn əˈnʌðə ɪn ə ˈspɪrɪt ɒv ˈbrʌðəˌħʊd/"
 	template.blocklocation= 'latn'  // blocklocation to use for examples
     template.noteslocation = '' // location of script notes relevant to this app
