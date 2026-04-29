@@ -22,12 +22,12 @@ var webFonts = [ "BPG 2017 DejaVu Serif WF", "BPG 2017 DejaVu Sans WF", "Noto Sa
 
 
 var template = {}
-	template.title = 'Georgian character app'
+	template.title = 'Georgian'
 	template.sample = "მუხლი 1. ყველა ადამიანი იბადება თავისუფალი და თანასწორი თავისი ღირსებითა და უფლებებით. მათ მინიჭებული აქვთ გონება და სინდისი და ერთმანეთის მიმართ უნდა იქცეოდნენ ძმობის სულისკვეთებით."
 	template.sampleSource = 'https://unicode.org/udhr/d/udhr_kat.html'
 	template.blocklocation= 'geor'  // block directory
 	template.noteslocation = 'geor/ka' // location of script notes
-	template.vocablocation = 'geor/ka_vocab' // location of term database
+	template.vocablocation = 'geor/ka_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'geor-ka'
 	template.scriptcode = 'Geor'

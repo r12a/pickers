@@ -22,12 +22,12 @@ var webFonts = [ "Noto Serif Gurmukhi WF", "Noto Sans Gurmukhi WF" ]
 
 
 var template = {}
-	template.title = 'Gurmukhi character app'
+	template.title = 'Gurmukhi'
 	template.sample = "2. ਹਰੇਕ ਵਿਅਕਤੀ ਨੂੰ ਕਿਸੇ ਵੀ ਦੇਸ਼ ਨੂੰ ਛਡ ਕੇ ਜਾਣ ਦਾ ਹੱਕ ਹਾਸਲ ਹੈ ਅਤੇ ਇਸ ਵਿਚ ਉਸ ਦਾ ਆਪਣਾ ਮੁਲਕ ਵੀ ਸ਼ਾਮਲ ਹੈ ਅਤੇ ਉਸ ਨੂੰ ਆਪਣੇ ਮੁਲਕ ਪਰਤਣ ਦਾ ਹੱਕ ਵੀ ਹਾਸਲ ਹੈ ।"
 	template.sampleSource = ''
 	template.blocklocation= 'guru'  // block directory
 	template.noteslocation = 'guru/pa' // location of script notes
-	template.vocablocation = 'guru/pa_vocab' // location of term database
+	template.vocablocation = 'guru/pa_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'guru'
 	template.scriptcode = 'Guru'

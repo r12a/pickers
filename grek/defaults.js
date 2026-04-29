@@ -22,12 +22,12 @@ var webFonts = [ "Gentium Plus WF" ]
 
 
 var template = {}
-	template.title = 'Modern Greek character app'
+	template.title = 'Modern Greek'
 	template.sample = "ΑΡΘΡΟ 1 Όλοι οι άνθρωποι γεννιούνται ελεύθεροι και ίσοι στην αξιοπρέπεια και τα δικαιώματα. Είναι προικισμένοι με λογική και συνείδηση, και οφείλουν να συμπεριφέρονται μεταξύ τους με πνεύμα αδελφοσύνης."
 	template.sampleSource = ''
 	template.blocklocation= 'grek'  // block directory
 	template.noteslocation = 'grek/el' // location of script notes
-	template.vocablocation = 'grek/el_vocab' // location of term database
+	template.vocablocation = 'grek/el_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'grek'
 	template.scriptcode = 'Grek'

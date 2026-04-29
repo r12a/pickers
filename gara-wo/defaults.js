@@ -22,12 +22,12 @@ var webFonts = [ "Wolof Garay WF" ]
 
 
 var template = {}
-	template.title = 'Wolof Garay character app'
+	template.title = 'Wolof Garay'
 	template.sample = "𐵚𐵌𐵎𐵲𐵋 𐵰𐵊𐵎𐵺𐵊𐵲𐵊 𐵼𐵩𐵍𐶂𐵪 𐵺𐵊𐶁𐵍𐵌𐵼 𐵵𐵍𐵌𐵺𐵪𐵍𐵌، 𐵼𐵊𐵲 𐵱𐵋 𐵽𐵊𐵷𐶀𐵩𐵎𐵻 𐵱𐵋 𐵶𐵊𐵹 𐵰𐵊𐵳 𐵶𐵊𐵿𐵯. 𐵡𐵩𐵳𐵪 𐶁𐵊 𐵰𐵋𐵽 𐵳𐵍𐵌 𐵻𐵊𐵲 𐵺𐵍𐵊𐵹𐵪 𐵽𐵩 𐵰𐵊𐵎𐶁𐵺 𐶁𐵊 𐵰𐵊𐵳 𐵻𐵩𐵸𐵊𐵲، 𐵽𐵩 𐵷𐵊𐵾 𐶁𐵊𐵎 𐵵𐵍𐵊𐶀𐵸𐵊𐶁𐵽𐵩 𐵊𐵳 𐶁𐵊𐵷𐵸𐵩𐵎𐶁، 𐵽𐵩 𐵽𐵩𐵹 𐵳𐵌 𐵱𐵋 𐵷𐵊𐵎𐵸𐵪𐵍𐵌 𐵴𐵩𐵌𐵳𐵪."
 	template.sampleSource = ''
 	template.blocklocation= 'gara'  // block directory
 	template.noteslocation = 'gara/wo' // location of script notes
-	template.vocablocation = 'gara/wo_vocab' // location of term database
+	template.vocablocation = 'gara/wo_terms' // location of term database
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'gara-wo'
 	template.scriptcode = 'Gara'

@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Georgian WF", "Noto Serif Georgian WF", "BGP 2017 De
 
 
 var template = {}
-	template.title = 'Khutsuri character app'
+	template.title = 'Khutsuri'
 	template.sample = "Ⴋⴓⴞⴊⴈ 1. Ⴗⴅⴄⴊⴀ ⴀⴃⴀⴋⴈⴀⴌⴈ ⴈⴁⴀⴃⴄⴁⴀ ⴇⴀⴅⴈⴑⴓⴔⴀⴊⴈ ⴃⴀ ⴇⴀⴌⴀⴑⴜⴍⴐⴈ ⴖⴈⴐⴑⴄⴁⴈⴇⴀ ⴃⴀ ⴓⴔⴊⴄⴁⴈⴇ. Ⴋⴀⴇ ⴋⴈⴌⴈⴝⴄⴁⴓⴊⴈ ⴀⴕⴅⴇ ⴂⴍⴌⴄⴁⴀ ⴃⴀ ⴑⴈⴌⴃⴈⴑⴈ ⴃⴀ ⴄⴐⴇⴋⴀⴌⴄⴇⴈⴑ ⴋⴈⴋⴀⴐⴇ ⴓⴌⴃⴀ ⴈⴕⴚⴄⴍⴃⴌⴄⴌ ⴛⴋⴍⴁⴈⴑ ⴑⴓⴊⴈⴑⴉⴅⴄⴇⴄⴁⴈⴇ."
 	template.sampleSource = 'https://unicode.org/udhr/d/udhr_kat.html'
 	template.blocklocation= 'geor'  // block directory
 	template.noteslocation = 'geor/ka' // location of script notes
-	template.vocablocation = 'geor/ka_vocab' // location of term database
+	template.vocablocation = 'geor/ka_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'geok-ka'
 	template.scriptcode = 'Geok'

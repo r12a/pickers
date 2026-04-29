@@ -22,12 +22,12 @@ var webFonts = [ "Noto Serif Hebrew WF" ]
 
 
 var template = {}
-	template.title = 'Hebrew character app'
+	template.title = 'Hebrew'
     template.sample = "כל בני אדם נולדו בני חורין ושווים בערכם ובזכויותיהם. כולם חוננו בתבונה ובמצפון, לפיכך חובה עליהם לנהוג איש ברעהו ברוח של אחוה."
 	template.sampleSource = ''
 	template.blocklocation= 'hebr'  // block directory
 	template.noteslocation = 'hebr/he' // location of script notes
-	template.vocablocation = 'hebr/he_vocab' // location of term database
+	template.vocablocation = 'hebr/he_terms' // location of term database
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'hebr'
 	template.scriptcode = 'Hebr'

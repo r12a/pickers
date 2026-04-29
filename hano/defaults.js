@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Hanunoo WF" ]
 
 
 var template = {}
-	template.title = 'Hanunoo character app'
+	template.title = 'Hanunó’o'
 	template.sample = "ᜣᜥ᜴ ᜫᜨᜳᜣ᜴ ᜰᜲ ᜪᜲᜮᜯᜨ᜴ ᜵ ᜨᜤ᜴ᜰᜲᜮᜳᜥ᜴ ᜰ ᜩᜰᜳᜠᜰᜨ᜴ ᜵ ᜫᜤ᜴ᜧᜮᜨ᜴ᜥᜲᜨ᜴ ᜬᜲ ᜢᜮᜨ᜴ ᜶"
 	template.sampleSource = ''
 	template.blocklocation= 'hano'  // block directory
 	template.noteslocation = 'hano/hnn' // location of script notes
-	template.vocablocation = 'hano/hnn_vocab' // location of term database
+	template.vocablocation = 'hano/hnn_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'hano'
 	template.scriptcode = 'Hano'

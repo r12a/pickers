@@ -22,7 +22,7 @@ var webFonts = [ "" ]
 
 
 var template = {}
-	template.title = 'Chinese character app'
+	template.title = 'Chinese'
 	template.sample = "第一条　人人生而自由，在尊严和权利上一律平等。他们赋有理性和良心，并应以兄弟关系的精神相对待。"
 	template.blocklocation= 'hani'  // blocklocation to use for examples
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
