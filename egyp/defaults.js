@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Egyptian Hieroglyphs WF" ]
 
  
 var template = {}
-	template.title = 'Egyptian hieroglyphs'
+	template.title = 'Egyptian hieroglyph'
 	template.sample = "<-i-mn:n-R4:t*p->\\n𓍹𓇋𓏠𓐰𓈖𓊵𓐰𓏏𓐱𓊪𓍺"
 	template.sampleSource = ''
     template.blocklocation= 'egyp'  // block file directory
 	template.noteslocation = 'egyp/egy' // location of script notes
-	template.vocablocation = 'egyp/egy_vocab' // location of term database
+	template.vocablocation = 'egyp/egy_terms' // location of term database
 	template.direction = "bidi" // indicates whether this is a picker for a RTL script
 	template.github = 'egyp'
 	template.scriptcode = 'Egyp'

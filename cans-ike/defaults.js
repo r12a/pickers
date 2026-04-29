@@ -23,12 +23,12 @@ var webFonts = [ "Noto Sans Canadian Aboriginal WF" ]
 
 
 var template = {}
-	template.title = 'Eastern Canadian Inuktitut character app'
+	template.title = 'Eastern Canadian Inuktitut'
 	template.sample = "ᐃᓚᖓ 1. ᐃᓅᔪᓕᒫᑦ ᐊᓂᖅᑎᕆᔪᓕᒫᑦ ᐃᓅᓚᐅᕐᒪᑕ ᐃᓱᒪᕐᓱᕐᖢᑎᒃ ᐊᒻᒪᓗ ᐊᔾᔨᐅᖃᑎᒌᒃᖢᑎᒃ ᓂᕐᓱᐊᖑᓂᒃᑯᑦ ᐊᒻᒪᓗ ᐱᔪᓐᓇᐃᑎᑎᒍᑦ. ᐃᓱᖃᖅᑐᖁᑎᖃᕐᑎᑕᐅᕙᓕᕐᐳᑦ ᐱᔾᔪᑎᖃᕐᓂᒃᑯᑦ ᖃᑕᙳᑎᒌᑦᑎᐊᕆᐊᖃᕐᓂᒃᑯᓪᓗ."
 	template.sampleSource = ''
 	template.blocklocation= 'cans'  // block directory
 	template.noteslocation = 'cans/ike' // location of script notes
-	template.vocablocation = 'cans/ike_vocab' // location of term database
+	template.vocablocation = 'cans/ike_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cans-ike'
 	template.scriptcode = 'Cans'

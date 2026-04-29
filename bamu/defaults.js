@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Bamum WF" ]
 
 
 var template = {}
-	template.title = 'Bamum character app'
+	template.title = 'Bamum'
 	template.sample = "ꛦ-ꚳꛊꚤ ꚳꚣꚧ꛱ꛦꚧ꛱ ꚳ꛰ꚴꚢ ꛲ꛗ   ꛧ-ꚳꛊꚤ ꛄꚧ꛱ ꚳ꛰ꛤ꛰ ꚩꚤ ꛲ꛗ   ꛨ-ꛅꚧ꛱ ꛣꚠ ꚳꛊꚤꚳ ꛎꛦ ꛛꚧ꛱ ꛲ꛗ   ꛩ-꛲ꚣꛤ ꛅꚧ꛱ ꛇꛛꚧ꛱ ꛤ꛰ ꛨ ꚣꛤ ꛛꚧ꛱ ꛦ꛰ꚳ꛰   ꛪ-ꛕꚠꛤ ꛅꚧ ꛈ ꛅꚧ꛱ ꛖ ꚳ꛰ꛤ꛰ ꛲ꚱꛅ꛱"
 	template.sampleSource = ''
 	template.blocklocation= 'bamu'  // block directory
 	template.noteslocation = 'bamu/bax' // location of script notes
-	template.vocablocation = '' // location of term database
+	template.vocablocation = 'bamu/bax_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'bamu'
 	template.scriptcode = 'Bamu'

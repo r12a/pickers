@@ -22,12 +22,12 @@ var webFonts = [ "Vimala WF", "Aksara Bali WF", "Noto Serif Balinese WF", "Noto 
 
 
 var template = {}
-	template.title = 'Balinese character app'
+	template.title = 'Balinese'
 	template.sample = "ᬫᬓᬲᬫᬶᬫᬦᬸᬲᬦᬾᬓᬳᭂᬫ᭄ᬩᬲᬶᬦ᭄ᬫᬳᬃᬤᬶᬓᬮᬦ᭄ᬧᬢᭂᬄᬲᬚ᭄ᬭᭀᬦᬶᬂᬓᬳᬦᬦ᭄ᬮᬦ᭄ᬓ᭄ᬯᬲ᭟"
 	template.sampleSource = ''
 	template.blocklocation= 'bali'  // block directory
 	template.noteslocation = 'bali/ban' // location of script notes
-	template.vocablocation = 'bali/ban_vocab' // location of term database
+	template.vocablocation = 'bali/ban_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'bali'
 	template.scriptcode = 'Bali'

@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Buginese WF" ]
 
 
 var template = {}
-	template.title = 'Buginese character app'
+	template.title = 'Buginese'
 	template.sample = "ᨔᨗᨊᨗᨊ ᨑᨘᨄ ᨈᨕᨘ ᨑᨗ ᨍᨍᨗᨕᨂᨗ ᨑᨗᨒᨗᨊᨚᨕᨙ ᨊᨄᨘᨊᨕᨗ ᨆᨊᨙᨂᨗ ᨑᨗᨕᨔᨙᨂᨙ ᨕᨒᨙᨅᨗᨑᨙ᨞"
 	template.sampleSource = ''
 	template.blocklocation= 'bugi'  // block directory
 	template.noteslocation = 'bugi/bug' // location of script notes
-	template.vocablocation = 'bugi/bug_vocab' // location of term database
+	template.vocablocation = 'bugi/bug_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'bugi'
 	template.scriptcode = 'Bugi'

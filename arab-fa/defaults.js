@@ -22,11 +22,11 @@ var webFonts = [ "Scheherazade WF", "Noto Naskh Arabic WF" ]
 
 
 var template = {}
-	template.title = 'Persian character app'
+	template.title = 'Persian'
     template.sample = "(۲) هر کس حق دارد هر کشوری و از جمله کشور خود را ترک کند یا به کشور خود باز گردد."
 	template.blocklocation= 'arab'  // block directory
 	template.noteslocation = 'arab/pes' // location of script notes
-	template.vocablocation = 'arab/pes_vocab' // location of term database
+	template.vocablocation = 'arab/pes_terms' // location of term database
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'arab-fa'
 	template.scriptcode = 'Arab'

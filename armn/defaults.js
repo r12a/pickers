@@ -22,12 +22,12 @@ var webFonts = [ "Arian AMU WF" ]
 
 
 var template = {}
-	template.title = 'Armenian character app'
+	template.title = 'Armenian'
 	template.sample = "2. Ամեն ոք ունի ցանկացած երկրից, այդ թվում իր երկրից հեռանալու և իր երկիր վերադառնալու իրավունք։"
 	template.sampleSource = ''
 	template.blocklocation= 'armn'  // block directory
 	template.noteslocation = 'armn/hy' // location of script notes
-	template.vocablocation = 'armn/hy_vocab' // location of term database
+	template.vocablocation = 'armn/hy_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'armn'
 	template.scriptcode = 'Armn'

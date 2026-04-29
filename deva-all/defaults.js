@@ -22,12 +22,12 @@ var webFonts = [ "Noto Serif Devanagari WF" ]
 
 
 var template = {}
-	template.title = 'All Devanagari character app'
+	template.title = 'All Devanagari'
 	template.sample = "(२) प्रत्येक व्यक्ति को अपने या पराये किसी भी देश को छोड़नो और अपने देश को वापस आनो का अधिकार है ।"
 	template.sampleSource = ''
 	template.blocklocation= 'deva'  // block directory
 	template.noteslocation = 'deva/hi' // location of script notes
-	template.vocablocation = '' // location of term database
+	template.vocablocation = 'deva/hi_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'deva-all'
 	template.scriptcode = 'Deva'

@@ -23,12 +23,12 @@ var webFonts = [ "Doulos SIL WF" ]
 
 
 var template = {}
-	template.title = 'Ukrainian character app'
+	template.title = 'Ukrainian'
 	template.sample = "Всі люди народжуються вільними і рівними у своїй гідності та правах. Вони наділені розумом і совістю і повинні діяти у відношенні один до одного в дусі братерства."
 	template.sampleSource = ''
 	template.blocklocation= 'cyrl'  // block directory
 	template.noteslocation = 'cyrl/uk' // location of script notes
-	template.vocablocation = 'cyrl/uk_vocab' // location of term database
+	template.vocablocation = 'cyrl/uk_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'cyrl-uk'
 	template.scriptcode = 'Cyrl'

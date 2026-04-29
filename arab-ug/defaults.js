@@ -22,12 +22,12 @@ var webFonts = [ "Scheherazade WF" ]
 
 
 var template = {}
-	template.title = 'Uighur character app'
+	template.title = 'Uighur'
 	template.sample = "2. ھەممە ئادەم ھەرقانداق دۆلەتتىن كېتىشكە، جوملىدىن ئۆز دۆلىتىدىن كېتىشكە ھوقۇقلۇق ھەمدە ئۆزىنىڭ دۆلىتىگە قايتىپ كېلىشكە ھوقۇقلۇق."
 	template.sampleSource = ''
 	template.blocklocation= 'arab'  // block directory
 	template.noteslocation = 'arab/ug' // location of script notes
-	template.vocablocation = 'arab/ug_vocab' // location of term database
+	template.vocablocation = 'arab/ug_terms' // location of term database
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'arab-ug'
 	template.scriptcode = 'Arab'

@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Bassah Vah WF" ]
 
  
 var template = {}
-	template.title = 'Bassa Vah character app'
+	template.title = 'Bassa Vah'
 	template.sample = "𖫞𖫫𖫰 𖫐𖫭𖫱𖫐-𖫗𖫭𖫰𖫞𖫭𖫰 𖫑𖫫𖫱 𖫔𖫬𖫱𖫞𖫬𖫱𖫭𖫱𖫐-𖫕𖫭𖫰  𖫔𖫪𖫰𖫐𖫬𖫲𖫐, 𖫞𖫫𖫰𖫬𖫱 𖫕𖫨𖫲𖫐𖫪𖫳𖫐-𖫕𖫪𖫱 𖫒𖫫𖫰𖫭𖫰𖫐 𖫛𖫩𖫰𖫞𖫩𖫰𖫬𖫲 𖫔𖫬𖫰𖫭𖫱𖫐-𖫛𖫨𖫲𖫐𖫵"
 	template.sampleSource = ''
 	template.blocklocation= 'bass'  // block directory
 	template.noteslocation = 'bass/bsq' // location of script notes
-	template.vocablocation = 'bass/bsq_vocab' // location of term database
+	template.vocablocation = 'bass/bsq_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'bass'
 	template.scriptcode = 'Bass'
