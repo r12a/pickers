@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Elymaic WF" ]
 
 
 var template = {}
-	template.title = 'Elymaic character app'
+	template.title = 'Elymaic'
 	template.sample = "𐿱𐿫𐿬𐿠 𐿦𐿭𐿤 𐿶 𐿥𐿳𐿥𐿣 𐿭𐿠 𐿮𐿩𐿡 𐿪𐿥𐿳𐿮𐿩𐿠 𐿡𐿳 𐿡𐿫𐿣𐿥𐿴𐿠 𐿶 𐿳𐿡𐿠𐿭𐿩 𐿥𐿠𐿮𐿩𐿳𐿩𐿠 𐿥𐿠𐿵𐿩𐿨𐿪𐿠 𐿶 𐿡𐿵𐿳𐿯𐿠𐿡𐿳 𐿡𐿠𐿮𐿩 𐿭𐿠𐿮𐿩𐿡 𐿪𐿥𐿳𐿮𐿠"
 	template.sampleSource = ''
 	template.blocklocation= ''  // block directory
