@@ -22,7 +22,7 @@ var webFonts = [ "Doulos SIL WF" ]
 
 
 var template = {}
-	template.title = 'Tłı̨chǫ (Dogrib) character app'
+	template.title = 'Tłı̨chǫ (Dogrib)'
 	template.sample = "Dıı  sah nàé t’à. Dıı deh nı̨ı̨lı̨. Dıı ndè nàgoèhdǫ-le nı̨dè Asıı ts’àgoèt’ǫ hǫı̨lı̨ ha nele."
 	template.sampleSource = ''
 	template.blocklocation= 'latn'  // block directory

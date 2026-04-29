@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Nabataean WF" ]
 
 
 var template = {}
-	template.title = 'Nabataean character app'
+	template.title = 'Nabataean'
 	template.sample = "𐢅𐢕𐢆 𐢚𐢂𐢛𐢀 𐢅𐢍 𐢗𐢃𐢅 𐢏𐢇𐢑𐢔 𐢁𐢖𐢍𐢀 𐢃𐢛 𐢈𐢁𐢑𐢔 𐢑𐢕𐢘𐢝𐢆 𐢈𐢍𐢑𐢅𐢆 𐢈𐢁𐢊𐢛𐢆 𐢁𐢝𐢅𐢚 𐢗𐢅 𐢗𐢑𐢒 𐢈𐢁𐢍𐢞𐢌 𐢚𐢃𐢛𐢀 𐢅𐢕𐢆 𐢊𐢛𐢒 𐢏𐢊𐢑𐢍𐢚𐢞 𐢊𐢛𐢓𐢀 𐢅𐢌 𐢓𐢊𐢛𐢒 𐢑𐢅𐢈𐢝𐢛𐢀 𐢃𐢕𐢃𐢋𐢈 𐢈𐢝𐢑𐢓𐢈"
 	template.sampleSource = ''
 	template.blocklocation= ''  // block directory

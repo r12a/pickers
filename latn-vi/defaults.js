@@ -22,7 +22,7 @@ var webFonts = [ "Doulos SIL WF" ]
 
 
 var template = {}
-	template.title = 'Vietnamese character app'
+	template.title = 'Vietnamese'
 	template.sample = "2. Mọi người đều có quyền rời khỏi bất cứ nước nào, kể cả nước mình, cũng như có quyền trở về nước mình."
 	template.sampleSource = ''
 	template.blocklocation= 'latn'  // block directory

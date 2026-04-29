@@ -21,12 +21,12 @@ var webFonts = [ "Noto Sans Light WF" ]
 
 
 var template = {}
-	template.title = 'Hausa (boko) character app'
+	template.title = 'Hausa (boko)'
 	template.sample = "Abin nufi ga ilimi shi ne: ya sama wa ɗan‐adam jin daɗin rayuwa da ƙarfafa kiyayewa da hakkokinsa da muhimman abubuwan da ƴancinsa ya ƙunsa."
 	template.sampleSource = ''
 	template.blocklocation= 'latn'  // block directory
 	template.noteslocation = 'latn/ha' // location of script notes
-	template.vocablocation = 'latn/ha_vocab' // location of term database
+	template.vocablocation = 'latn/ha_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'latn-ha'
 	template.scriptcode = 'Latn'

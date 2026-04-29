@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Parthian WF" ]
 
 
 var template = {}
-	template.title = 'Parthian character app'
+	template.title = 'Parthian'
 	template.sample = "𐭅𐭕𐭀𐭅𐭍𐭉𐭆𐭍𐭄𐭋𐭉 𐭒𐭉𐭃𐭉𐭆𐭍 𐭀𐭋𐭇𐭀 𐭔𐭇𐭉𐭐𐭅𐭇𐭓 𐭌𐭋𐭓𐭉𐭍𐭌𐭋𐭀 𐭀𐭓𐭉𐭀𐭍𐭅 𐭀𐭍𐭀𐭓𐭉𐭀𐭍𐭌𐭍𐭅𐭔𐭉𐭇𐭓 𐭌𐭍 𐭉𐭀𐭆𐭕𐭍𐭏𐭓𐭉 𐭌𐭉𐭃𐭉𐭆𐭍𐭀𐭋𐭇𐭀 𐭀𐭓𐭕𐭇𐭔𐭕𐭂 𐭌𐭋𐭓𐭉𐭍𐭌𐭋𐭓𐭀"
 	template.sampleSource = ''
 	template.blocklocation= ''  // block directory

@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Pahlavi WF" ]
 
 
 var template = {}
-	template.title = 'Inscriptional Pahlavi character app'
+	template.title = 'Inscriptional Pahlavi'
 	template.sample = "𐭲𐭢𐭫𐭠𐭧𐭩 𐭦𐭭𐭤 𐭫𐭩 𐭬𐭦𐭣𐭩𐭮𐭭 𐭡𐭢𐭩 𐭱𐭧𐭯𐭥𐭧𐭥𐭩 𐭬𐭫𐭪𐭠𐭭 𐭬𐭫𐭪𐭠 𐭠𐭩𐭥𐭠𐭭 𐭥𐭠𐭭𐭩𐭥𐭠𐭭 𐭬𐭭𐭥 𐭰𐭲𐭥𐭩 𐭬𐭭 𐭩𐭦𐭲𐭠𐭭 𐭡𐭥𐭤 𐭬𐭦𐭣𐭩𐭮𐭭 𐭡𐭢𐭩 𐭠𐭥𐭲𐭠𐭭 𐭭𐭯𐭩 𐭡𐭢𐭩 𐭯𐭠𐭯𐭪𐭩 𐭬𐭫𐭪𐭠 𐭠𐭩𐭥𐭠𐭭"
 	template.sampleSource = ''
 	template.blocklocation= ''  // block directory

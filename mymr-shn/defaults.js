@@ -22,12 +22,12 @@ var webFonts = [ "Noto Serif Myanmar WF", "Noto Sans Myanmar WF", "Tharlon WF" ]
 
 
 var template = {}
-	template.title = 'Shan character app'
+	template.title = 'Shan'
 	template.sample = "တွၼ်ႈ 1 ၵူၼ်းၵူႊၵေႃႉၼႆႉ ပဵၼ်ဢၼ်ၵိူတ်ႇမႃးလူၺ်ႈၵုင်ႇမုၼ်ဢၼ်လွတ်ႈလႅဝ်းၽဵင်ႇပဵင်းၵၼ် လႄႈ သုၼ်ႇလႆႈဢၼ် လွတ်ႈလႅဝ်းၽဵင်ႇ ပဵင်းၵၼ်။"
 	template.sampleSource = ''
 	template.blocklocation= 'mymr'  // block directory
 	template.noteslocation = 'mymr/shn' // location of script notes
-	template.vocablocation = 'mymr/shn_vocab' // location of term database
+	template.vocablocation = 'mymr/shn_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'mymr-shn'
 	template.scriptcode = 'Mymr'

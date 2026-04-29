@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Palmyrene WF" ]
 
 
 var template = {}
-	template.title = 'Palmyrene character app'
+	template.title = 'Palmyrene'
 	template.sample = "𐡲𐡫𐡬 𐡩𐡥𐡫𐡩𐡯 𐡠𐡥𐡴𐡫𐡩𐡯 𐡦𐡡𐡣𐡫𐡠 𐡡𐡴 𐡬𐡫𐡪𐡥 𐡡𐡴 𐡬𐡫𐡪𐡥 𐡮𐡵𐡥𐡬 𐡣𐡩 𐡤𐡥𐡠 𐡠𐡯𐡨𐡴𐡨𐡢 𐡫𐡳𐡫𐡮𐡩𐡠 𐡡𐡬𐡩𐡶𐡥𐡩𐡶𐡠 𐡣𐡩 𐡠𐡫𐡤𐡠 𐡠𐡫𐡪𐡯𐡮𐡣𐡴𐡥𐡯 𐡳𐡯𐡴"
 	template.sampleSource = ''
 	template.blocklocation= ''  // block directory

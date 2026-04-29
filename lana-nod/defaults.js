@@ -22,12 +22,12 @@ var webFonts = [ 'Hariphunchai WF', 'Payap Lanna WF', "Lamphun WF", "Noto Serif 
 
 
 var template = {}
-	template.title = 'Northern Thai character app'
+	template.title = 'Northern Thai'
 	template.sample = "ᨣᩢ᩠ᨶᩉᩖᩮᩨᨠᩥ᩠ᨶ ᨣᩢᩐᩢᩣᨡᩣ᩠ᨿᨸᩮ᩠ᨶᨦᩫ᩠ᨶ ᨠᩮ᩠ᨷᩉᩬᨾᩋᩬᨾᩅᩱᩢᨯ᩠᩶ᨦᨶᩦ᩶ ᨴᩩᨠᪧᨸᩦᨾᩣᨷᩢᨡᩣ᩠ᨯ ᨧᩥ᩠᩵ᨦᨠ᩠ᨴᩣᩴᩉᩨ᩶ᨡᩮᩢᩣᨻᩳ᩵ᨾᩯ᩵ᩃᩪᨠ ᨷᩢᨯᩱ᩶ᨠᩢ᩠᩶ᨶᩈᩢ᩠ᨦᩈᩢ᩠ᨠᨩᩮᩨᩬ"
 	template.sampleSource = ''
 	template.blocklocation= 'lana'  // block directory
 	template.noteslocation = 'lana/nod' // location of script notes
-	template.vocablocation = 'lana/nod_vocab' // location of term database
+	template.vocablocation = 'lana/nod_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'lana-nod'
 	template.scriptcode = 'Lana'

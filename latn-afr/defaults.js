@@ -22,7 +22,7 @@ var webFonts = [ "Gentium Plus WF", "Adelle Sans EXT Light WF", "Noto Sans Light
 
 
 var template = {}
-	template.title = 'Pan-African Latin character app'
+	template.title = 'Pan-African Latin'
 	template.sample = "Bánlʊrʊ́ʊ ɩrʊ́ báa weení na kezéńbíídi gɛ bɩka bɛdɛ́ɛ ɖɔɔzɩ́tɩ na yíkowá kɛgɛ́ɛ ɖéyí-ɖéyí gɛ. Bɔwɛná laakárɩ na ɩrʊ́tɩ bɩka bɩɩbɔ́ɔ́zɩ bɔcɔɔná ɖamá koobíre cɔwʊrɛ." // from https://unicode.org/udhr/d/udhr_kdh.html
 	template.sampleSource = ''
 	template.blocklocation= 'latn'  // block directory

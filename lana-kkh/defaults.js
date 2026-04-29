@@ -22,12 +22,12 @@ var webFonts = [ "Noto Serif Tai Tham WF", "Lanna Alif WF", "A Tai Tham KH New W
 
 
 var template = {}
-	template.title = 'Tai Khün character app'
+	template.title = 'Tai Khün'
 	template.sample = "ᨡᩳ᩶ 1 ᨾᨶᩩᩔ᩼ᨴ᩠ᨦᩢᩉᩖᩣ᩠ᨿᨠᩮ᩠ᨯᩨᨾᩣᨾᩦᨻ᩠ᨦᩈᩁᩓᩢᨹ᩠ᨿ᩵ᨦᨻ᩠ᨿᨦᨠ᩠ᨶᩢ ᨶᩱᨠᩥᨲ᩠ᨲᩥᩈ᩠ᨠᩢ ᩓᩢᩈᩥᨴ᩠ᨵᩥ ᨲ᩵ᩣ᩠ᨦᨣᩳ᩶ᨣᩢᨾᩦᨾᨶᩮᩣᨵᨾ᩠ᨾ᩼ᩓᩢ ᨣ᩠ᩅᩁᨷᨭᩥᨷ᩠ᨲᩢᨲᩳ᩵ᨠ᩠ᨶᩢᨯᩢ᩠ᩅ᩠ᨿᨣ᩠ᩅᩣ᩠ᨾᨹ᩠ᨿ᩵ᨦᨻ᩠ᨿᨦᨠ᩠ᨶᩢ"
 	template.sampleSource = ''
 	template.blocklocation= 'lana'  // block directory
 	template.noteslocation = 'lana/kkh' // location of script notes
-	template.vocablocation = 'lana/kkh_vocab' // location of term database
+	template.vocablocation = 'lana/kkh_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'lana-kkh'
 	template.scriptcode = 'Lana'

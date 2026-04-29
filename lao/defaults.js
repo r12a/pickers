@@ -22,12 +22,12 @@ var webFonts = [ "Noto Serif Lao WF","Noto Sans Lao WF" ]
 
 
 var template = {}
-	template.title = 'Lao character app'
+	template.title = 'Lao'
 	template.sample = "ຂໍ້ 2. ບຸກຄົນແຕ່ລະຄົນມີສິດທີ່ຈະຈາກປະເທດໃດປະເທດໜື່ງໄປ ນັບທັງປະເທດຂອງຕົນດ້ວຍ ແລະ ກັບຄືນມາໃນປະເທດຂອງຕົນໄດ້."
 	template.sampleSource = ''
 	template.blocklocation= 'laoo'  // block directory
 	template.noteslocation = 'laoo/lo' // location of script notes
-	template.vocablocation = 'laoo/lo_vocab' // location of term database
+	template.vocablocation = 'laoo/lo_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'lao'
 	template.scriptcode = 'Laoo'

@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans NKo WF" ]
 
 
 var template = {}
-	template.title = 'N\'Ko character app'
+	template.title = 'N\'Ko'
     template.sample = " ߡߊ߲߬ߘߋ߲߬ ߛߊ߲ߘߊ ߘߏ߫ ߟߋ߬ ߞߊ߲߫ ߞߏ߫: ߌ ߓߊ߯ ߌ ߢߊ ߟߐ߬ ߕߋ߬ߟߋ ߘߐ߫ ߞߵߌ ߕߊ߯ ߦߙߐ ߡߊߝߟߍ߫߸ ߛߎ߫ ߕߍ߫ ߞߏ߬ ߌ ߡߊ߬. ߒ߬ߓߊ߬ ߊ߲ ߧߋ߫ ߒ߬ ߠߞߊߟߌߦߊ߫ ߛߊ߫ ߒ߬ ߘߌ߫ ߞߍ߫ ߒ߬ ߘߎߢߊߘߐߕߍ߯ ߢߐ߲߮ ߠߎ߬ ߘߐ߫ ߞߊ߬ ߞߍ߫ ߞߎߟߎ߲߫ ߞߋߟߋ߲߫ ߞߣߐ߫ ߏ߬ ߘߐ߫."
 	template.sampleSource = ''
 	template.blocklocation= 'nkoo'  // block directory
 	template.noteslocation = 'nkoo/nqo' // location of script notes
-	template.vocablocation = 'nkoo/nqo_vocab' // location of term database
+	template.vocablocation = 'nkoo/nqo_terms' // location of term database
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'nko'
 	template.scriptcode = 'Nkoo'

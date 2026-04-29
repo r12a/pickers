@@ -22,7 +22,7 @@ var webFonts = [ "Doulos SIL WF", "Junicode WF" ]
 
 
 var template = {}
-	template.title = 'Old Norse character app'
+	template.title = 'Old Norse'
 	template.sample = "Ok sem leið at jólum, gørðusk menn þar ókátir. Bǫðvarr spurði Hǫtt hverju þat sætti; hann sagði honum at dýr eitt hafi komit þar tvá vetr í samt, mikit ok ógurligt."
 	template.sampleSource = ''
 	template.blocklocation= 'latn'  // block directory

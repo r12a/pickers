@@ -21,12 +21,12 @@ var webFonts = [ "Noto Sans Light WF" ]
 
 
 var template = {}
-	template.title = 'Bamanan character app'
+	template.title = 'Bamanan'
 	template.sample = "Hadamaden bɛɛ danmakɛɲɛnen bɛ bange, danbe ni josira la. Hakili ni taasi bʼu bɛɛ la, wa u ka kan ka badenɲasira de waleya u ni ɲɔgɔn cɛ."
 	template.sampleSource = ''
 	template.blocklocation= 'latn'  // block directory
 	template.noteslocation = 'latn/bm' // location of script notes
-	template.vocablocation = 'latn/bm_vocab' // location of term database
+	template.vocablocation = 'latn/bm_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'latn-bm'
 	template.scriptcode = 'Latn'

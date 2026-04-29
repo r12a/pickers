@@ -22,12 +22,12 @@ var webFonts = [ "Makasar WF" ]
 
 
 var template = {}
-	template.title = 'Makasar character app'
+	template.title = 'Makasar'
 	template.sample = "𑻯𑻱𑻦𑻴𑻷𑻪𑻦𑻵𑻠𑻱𑻳𑻷𑻨𑻳𑻣𑻶𑻦𑻵𑻭𑻪𑻳𑻷𑻱𑻨𑻨𑻸29𑻣𑻭𑻠𑻭𑻷𑻪𑻠𑻭𑻴𑻯𑻣𑻴𑻮𑻶𑻨𑻷𑻱𑻰𑻮𑻣𑻷𑻨𑻤𑻠𑻭𑻳𑻠𑻭𑻱𑻵𑻢𑻷  𑻨𑻴𑻲𑻮𑻶𑻱𑻳𑻠𑻯𑻴𑻢𑻰𑻵𑻷  𑻪𑻶𑻣𑻮𑻶𑻶𑻭𑻶𑻷"
 	template.sampleSource = ''
 	template.blocklocation= 'maka'  // block directory
-	template.noteslocation = 'maka' // location of script notes
-	template.vocablocation = 'maka/mak_vocab' // location of term database
+	template.noteslocation = 'maka/mak' // location of script notes
+	template.vocablocation = 'maka/mak_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'maka'
 	template.scriptcode = 'Maka'

@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Mandaic WF" ]
 
 
 var template = {}
-	template.title = 'Mandaic character app'
+	template.title = 'Mandaic'
 	template.sample = "ࡊࡋ ࡁࡓ ࡀࡍࡀࡔࡀ ࡌࡉࡕࡋࡉࡓ ࡔࡀࡅࡉࡀ ࡁࡏࡒࡀࡓࡀ ࡅࡀࡂࡓࡉࡀ࡞"
 	template.sampleSource = ''
 	template.blocklocation= 'mand'  // block directory
 	template.noteslocation = 'mand/mid' // location of script notes
-	template.vocablocation = 'mand/mid_vocab' // location of term database
+	template.vocablocation = 'mand/mid_terms' // location of term database
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'mand'
 	template.scriptcode = 'Mand'

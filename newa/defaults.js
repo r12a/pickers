@@ -21,12 +21,12 @@ else  defaults = factoryDefaults
 var webFonts = [ "Noto Sans Newa WF" ]
 
 var template = {}
-	template.title = 'Newa character app'
+	template.title = 'Newa'
 	template.sample = "𑐳𑐎𑐮𑐾𑑄 𑐩𑐣𑐹𑐟 𑐳𑑂𑐰𑐟𑐣𑑂𑐟𑑂𑐬 𑐰 𑐖𑑂𑐰𑐮𑐶𑐖𑑂𑐰𑑅 𑐁𑐟𑑂𑐩𑐳𑐩𑑂𑐩𑐵𑐣 𑐰 𑐰𑐵𑑄 𑐡𑐂𑐎𑐠𑑄 𑐧𑐸𑐂 𑑋 𑐂𑐥𑐶𑑄 𑐳𑑂𑐰𑐰𑐶𑐰𑐾𑐎 𑐰 𑐳𑐡𑑂𑐧𑐸𑐡𑑂𑐔𑐶 𑐡𑐫𑐵𑑅 𑐰𑐶𑐰𑐾𑐎𑐱𑐷𑐮 𑐖𑐸𑐂 𑐀𑐮𑐾 𑐠𑐰𑑄𑐠𑐰𑐫𑑂 𑐡𑐵𑐖𑐵𑐎𑐠𑑄 𑐴𑐣𑐵𑐧𑐣𑐵 𑐫𑐵𑐂 𑑋"
 	template.sampleSource = ''
 	template.blocklocation= 'newa'  // block directory
 	template.noteslocation = 'newa/new' // location of script notes
-	template.vocablocation = 'newa/new_vocab' // location of term database
+	template.vocablocation = 'newa/new_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'newa'
 	template.scriptcode = 'Newa'
