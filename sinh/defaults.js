@@ -22,12 +22,12 @@ var webFonts = [ "Noto Serif Sinhala WF", 'Noto Sans Sinhala WF' ]
 
 
 var template = {}
-	template.title = 'Sinhala character app'
+	template.title = 'Sinhala'
 	template.sample = "1 වන වගන්තිය සියලු මනුෂ්‍යයෝ නිදහස්ව උපත ලබා ඇත. ගරුත්වයෙන් හා අයිතිවාසිකම්වලින් සමාන වෙති."
 	template.sampleSource = ''
 	template.blocklocation= 'sinh'  // block directory
 	template.noteslocation = 'sinh/si' // location of script notes
-	template.vocablocation = 'sinh/si_vocab' // location of term database
+	template.vocablocation = 'sinh/si_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'sinh'
 	template.scriptcode = 'Sinh'

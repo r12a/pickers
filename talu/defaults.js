@@ -22,12 +22,12 @@ var webFonts = [ "Nokyung WF" ]
 
 
 var template = {}
-	template.title = 'New Tai Lü character app'
+	template.title = 'New Tai Lü'
 	template.sample = "ᦝᧂᦑᦸᦰᦵᦑᦲᧈᦓᦲᦰᦗᦻᦗᦲᧈᦈᧅᦶᦐᦏᦲᧈᦏᦾᧉᦟᧁᧈᦺᦞᧉᦺᦃ ᦂᦱᧇᦵᦂᧂᦆᧄᦂᦸᧃᧈᦵᦓᦲ，ᦅᧄᦙᦲᦺᦞᧉᦈᧅᦺᦃᦉᦱᧃᦍᦸᦍᦹᧃᧈ"
 	template.sampleSource = ''
 	template.blocklocation= 'talu'  // block directory
 	template.noteslocation = 'talu/khb' // location of script notes
-	template.vocablocation = 'talu/khb_vocab' // location of term database
+	template.vocablocation = 'talu/khb_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'talu'
 	template.scriptcode = 'Talu'

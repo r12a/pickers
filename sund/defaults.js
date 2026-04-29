@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Sundanese WF", "Sundanese Unicode 2013 WF" ]
 
 
 var template = {}
-	template.title = 'Sundanese character app'
+	template.title = 'Sundanese'
 	template.sample = "ᮙᮛᮔᮨᮂᮔ ᮓᮤᮘᮨᮛᮨ ᮃᮊᮜ᮪ ᮏᮩᮀ ᮠᮒᮨ ᮔᮥᮛᮔᮤ, ᮎᮙ᮪ᮕᮥᮁ-ᮌᮅᮜ᮪ ᮏᮩᮀ ᮞᮞᮙᮔ ᮃᮚ ᮓᮤᮔ ᮞᮥᮙᮔᮨᮒ᮪ ᮓᮥᮓᮥᮜᮥᮛᮔ᮪."
 	template.sampleSource = ''
 	template.blocklocation= 'sund'  // block directory
 	template.noteslocation = 'sund/su' // location of script notes
-	template.vocablocation = 'sund/su_vocab' // location of term database
+	template.vocablocation = 'sund/su_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'sund'
 	template.scriptcode = 'Sund'
@@ -62,7 +62,7 @@ var pulldown = [
 
 
 var show = {}  // indicates which inputAids to use
-    show.shape = false
+    show.shape = true
     show.hints = true
     show.default = true
     show.latin = true

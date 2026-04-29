@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Syriac Eastern WF", "Noto Sans Syriac Estrangela WF"
 
 
 var template = {}
-	template.title = 'Syriac character app'
+	template.title = 'Classical Syriac'
     template.sample = "ܘܐ̄ܢܵܫ̈ܝܼܢ ܐܵܡܪܝܼܢ ܕܲܐܟܙܢܵܐ ܩܲܕ݂ܡܵܝܲܬ݂ ܪܟ݂ܲܒ݂ ܐܵܬ݂ܘ̈ܵܬ݂ܲܐ ܥܸܒ݂ܪ̈ܵܝܵܬ݂ܲܐ ܘܲܒ݂ܗܹܝܢ ܣܡ ܢܡܘܣܐ ܆ ܗܟܢܐ ܘܫܝܠܡܘܢ ܪܟܒ ܐܬܘ̈ܬܐ ܕܣܦܪ̈ܐ ܐܚܪ̈ܢܐ ܘܝܗ̣ܒ ܠܥܡ̈ܡܐ ܕܐܬܝܩܪ ܡܢܗܘܢ ܂"
 	template.sampleSource = ''
 	template.blocklocation= 'syrc'  // block directory
 	template.noteslocation = 'syrc/syr' // location of script notes
-	template.vocablocation = 'syrc/syr_vocab' // location of term database
+	template.vocablocation = 'syrc/syr_terms' // location of term database
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'syrc'
 	template.scriptcode = 'Syrc'

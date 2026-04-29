@@ -22,12 +22,12 @@ var webFonts = [ "Tai Heritage Pro WF", "Noto Sans Tai Viet WF" ]
 
 
 var template = {}
-	template.title = 'Tai Viet character app'
+	template.title = 'Tai Viet'
 	template.sample = "ꪹꪕꪸꪉ ꪀꪱ ꪋꪴ ꫛ ꪎꪲꪉ ꪮꪮꪀ ꪣꪱ ꪻꪠ ꪁꪷ ꪻꪬ ꪼꪒ ꪕꪳ ꪕꪱꪉ ꪀꪾꪚ ꪹꪋꪷꪉ ꪝꪸꪉ ꪕꪮꪥ ꪩꪾ ꫛ ꪶꪔꪙ ꪠꪴ - ꪋꪴ ꪬꪺ ꫛ ꪻꪠ ꪁꪷ ꪻꪬ ꪣꪲ ꪁꪫꪸꪙ ꪎꪱꪉ ꪶꪎꪣ ꪩꪺꪉ ꪹꪥꪸꪒ ꫛ ꪀꪾꪚ ꪹꪥꪸꪒ ꪻꪊ ꪚꪴꪙ ꪀꪾꪚ ꪼꪒ ꪹꪚꪷꪉ ꪒꪲ ꪀꪾꪚ ꪫꪸꪀ ꪭꪰꪀ ꪵꪝꪉ ꪹꪏꪉ ꪹꪭꪙ ꪒꪸꪫ."
 	template.sampleSource = ''
 	template.blocklocation= 'tavt'  // block directory
 	template.noteslocation = 'tavt/blt' // location of script notes
-	template.vocablocation = 'tavt/blt_vocab' // location of term database
+	template.vocablocation = 'tavt/blt_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'tavt'
 	template.scriptcode = 'Tavt'

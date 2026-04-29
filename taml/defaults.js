@@ -22,12 +22,12 @@ var webFonts = [ "Noto Serif Tamil WF", "Noto Sans Tamil WF" ]
 
 
 var template = {}
-	template.title = 'Tamil character app'
+	template.title = 'Tamil'
 	template.sample = "2. தனது சொந்த நாடு உட்பட ஏதேனும் நாட்டை விட்டுச் செல்லவும் தத்தமது நாட்டுக்குத் திரும்பவும் ஒவ்வொருவருக்கும் உரிமையுண்டு."
 	template.sampleSource = ''
 	template.blocklocation= 'taml'  // block directory
 	template.noteslocation = 'taml/ta' // location of script notes
-	template.vocablocation = 'taml/ta_vocab' // location of term database
+	template.vocablocation = 'taml/ta_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'taml'
 	template.scriptcode = 'Taml'

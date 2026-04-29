@@ -2,10 +2,10 @@
 <html lang="en-gb">
 <head>
 <meta charset="UTF-8" />
-<title>Sundanese character app 29</title>
+<title>Sundanese workbench</title>
 
 <link rel="stylesheet" href="../../shared/style/docs.css" />
-<link rel="stylesheet" href="../shared29/style.css" />
+<link rel="stylesheet" href="../shared32/style.css" />
 <link rel="stylesheet" href="localstyle.css" />
 
 <script src="defaults.js">  </script>
@@ -19,11 +19,11 @@
 <script src="../../shared/fontlists/manage.js"></script>
 <script src="../../shared/code/scriptGroups.js"></script>
 <script src="../../shared/code/all-names.js"></script>
-<script src="../shared29/setup.js">  </script>
-<script src="../shared29/code.js">  </script>
-<script src="../shared29/latinregister.js">  </script>
+<script src="../shared32/setup.js">  </script>
+<script src="../shared32/code.js">  </script>
+<script src="../shared32/latinregister.js">  </script>
 <script src="localcode.js">  </script>
-<script src="../shared29/pagetemplate.js">  </script>
+<script src="../shared32/pagetemplate.js">  </script>
 <script src="../../scripts/linkdata/linkdb.js"></script>
 <script src="localtranscription.js">  </script>
 
@@ -55,8 +55,44 @@
 
 
 <div id="alphabet" class="default">
-  
-  
+
+
+
+
+ <div id="shapelist" style="display:none; text-align:center;">
+ <div id="shapekeys"><bdo dir="ltr">
+<span title="" onclick="findShape('1B94,1B85,1BB3,1BB9,1B8C,1BB2,1B87,1B90,1B8D,1B9A','',true)">ᮔ</span>
+<span title="" onclick="findShape('1B84,1B93,1B8F,1BB9,1BB6,1B9D','',true)">ᮄ</span>
+<span title="" onclick="findShape('1B83,1B89,1B86','',true)">ᮃ</span>
+<span title="" onclick="findShape('1B97,1B95,1B96,1B8E,1BB5,1BB8','',true)">ᮗ</span>
+<span title="" onclick="findShape('1B8A,1B9E,1B9F,1BB4,1B9B','',true)">ᮊ</span>
+<span title="" onclick="findShape('1B98,1B91','',true)">ᮘ</span>
+<span title="" onclick="findShape('1B9C,1BB7','',true)">ᮜ</span>
+<span title="" onclick="findShape('1B9F,1BAF','',true)">ᮟ</span>
+</bdo>
+</div>
+</div>
+<!--
+ᮔ ᮔ ᮅ ᮳ ᮹ ᮌ ᮲ ᮇ ᮐ ᮍ ᮚ
+ᮄ ᮄ ᮓ ᮏ ᮹ ᮶ ᮝ
+ᮃ ᮃ ᮉ ᮆ
+ᮗ ᮗ ᮕ ᮖ ᮎ ᮵ ᮸
+ᮊ ᮊ ᮞ ᮟ ᮴ ᮛ
+ᮘ ᮘ ᮑ
+ᮜ ᮜ ᮷
+ᮟ ᮟ ᮯ
+-->
+
+<!--<button id="openPopup">Show Symbols</button>
+
+<div id="popupOverlay">
+  <div id="popupContent">
+    <ul id="popupList"></ul>
+    <button id="closePopup">X</button>
+  </div>
+</div>
+-->
+
   
 <div class="spaceline">
 <span class="touch" style="padding: 5px;" onClick="add('\u00A0');">NBSP</span> 
