@@ -22,12 +22,12 @@ var webFonts = [ "Noto Serif Thai WF", "Noto Sans Thai WF" ]
 
 
 var template = {}
-	template.title = 'Thai character app'
+	template.title = 'Thai'
 	template.sample = "2. ทุกคนมีสิทธิที่จะออกจากประเทศใด ๆ ไป รวมทั้งประเทศของตนเองด้วย และที่จะกลับยังประเทศตน"
 	template.sampleSource = ''
 	template.blocklocation= 'thai'  // block directory
 	template.noteslocation = 'thai/th' // location of script notes
-	template.vocablocation = 'thai/th_vocab' // location of term database
+	template.vocablocation = 'thai/th_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'thai'
 	template.scriptcode = 'Thai'

@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Ugaritic WF" ]
 
 
 var template = {}
-	template.title = 'Ugaritic character app'
+	template.title = 'Ugaritic'
 	template.sample = "𐎍𐎟𐎎𐎍𐎋𐎟𐎜𐎂𐎗𐎚 𐎀𐎈𐎊𐎟𐎗𐎂𐎎 𐎚𐎈𐎎𐎟𐎎𐎍𐎋𐎟𐎕𐎗𐎟𐎀𐎈𐎋 𐎊𐎌𐎍𐎎𐎟 𐎍𐎋𐎟𐎛𐎍𐎎 𐎚𐎙𐎗𐎋𐎟𐎚𐎌𐎍𐎎𐎋 𐎅𐎐𐎐𐎊𐎟𐎎𐎐 𐎌𐎍𐎎𐎟𐎉𐎎𐎐𐎊 𐎎𐎋𐎟𐎎𐎐𐎎𐎟𐎌𐎍𐎎 𐎗𐎂𐎎𐎟𐎉𐎉𐎁"
 	template.sampleSource = ''
 	template.blocklocation= ''  // block directory

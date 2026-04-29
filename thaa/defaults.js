@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Thaana WF" ]
 
 
 var template = {}
-	template.title = 'Thaana character app'
+	template.title = 'Thaana'
     template.sample = "2. ހަމަކޮންމެ މީހަކަށްމެ، އޭނާގެ އަމިއްލަ ޤައުމު ނުވަތަ އެހެން ޤައުމެއް ދޫކޮށް ދިއުމުގެ ޙައްޤާއި، އޭނާގެ އަމިއްލަ ޤައުމަށް އެނބުރި އައުމުގެ ޙައްޤު ލިބިގެންވެއެވެ."
 	template.sampleSource = ''
 	template.blocklocation= 'thaa'  // block directory
 	template.noteslocation = 'thaa/dv' // location of script notes
-	template.vocablocation = 'thaa/dv_vocab' // location of term database
+	template.vocablocation = 'thaa/dv_terms' // location of term database
 	template.direction = "rtl" // indicates whether this is a picker for a RTL script
 	template.github = 'thaa'
 	template.scriptcode = 'Thaa'

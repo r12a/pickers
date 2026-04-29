@@ -22,7 +22,7 @@ var webFonts = [ "Tibetan Machine Uni WF", "Noto Serif Tibetan WF" ]
 
 
 var template = {}
-	template.title = 'Tibetan character app'
+	template.title = 'All Tibetan'
 	template.sample = "༢ སྐྱེ་བོ་རེ་རེར་རང་ཡུལ་ཐེ་བས་ཡུལ་ལུང་གང་འདྲ་ཞིག་ནས་ཕྱིར་ཐོན་བྱེད་པའམ། ཡང་ན་རང་ཡུལ་དུ་ཕྱིར་ལོག་བྱེད་པའི་ཐོབ་ཐང་ཡོད༎"
 	template.sampleSource = ''
 	template.blocklocation= 'tibt'  // block directory

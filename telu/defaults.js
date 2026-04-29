@@ -22,12 +22,12 @@ var webFonts = [ "Noto Sans Telugu WF", "Noto Serif Telugu WF" ]
 
 
 var template = {}
-	template.title = 'Telugu character app'
+	template.title = 'Telugu'
 	template.sample = "ప్రతిపత్తిస్వత్వముల విషయమున మానవులెల్లరును జన్మతః స్వతంత్రులును సమానులును నగుదురు."
 	template.sampleSource = ''
 	template.blocklocation= 'telu'  // block directory
 	template.noteslocation = 'telu/te' // location of script notes
-	template.vocablocation = 'telu/te_vocab' // location of term database
+	template.vocablocation = 'telu/te_terms' // location of term database
 	template.direction = "ltr" // indicates whether this is a picker for a RTL script
 	template.github = 'telu'
 	template.scriptcode = 'Telu'

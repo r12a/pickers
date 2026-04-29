@@ -22,7 +22,7 @@ var webFonts = [ "Noto Sans Tifinagh WF" ]
 
 
 var template = {}
-	template.title = 'All Tifinagh character app'
+	template.title = 'All Tifinagh'
 	template.sample = "2. ⴽⵓ ⵢⴰⵏ ⴷⴰⵔⵙ ⵜⴰⴷⵔⴼⵉⵜⵏ ⴰⴷ ⵉⴼⴼⵖ ⵜⴰⵎⵓⵔⵜ, ⵜⵉⵏⵏⵙ ⵏⵖ ⵜⵉⵢⵢⴰⴹ, ⵏⵏⵙ ⵢⵉⵍⵉ ⴷⴰⵔⵙ ⵓⵣⵔⴼ ⴰⴷ ⴷⵉⵙ ⵢⵓⵔⵔⵉ."
 	template.sampleSource = ''
 	template.blocklocation= 'tfng'  // block directory
