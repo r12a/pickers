@@ -1464,9 +1464,9 @@ if (template.scriptcode) {
 if (template.scriptcode) {
     out += `<div id="bottomLineLinks">`
     if (template.noteslocation) out += '<a href="../../scripts/' + template.noteslocation + '.html" target="_blank">Orthography</a>\n'
-    if (template.noteslocation) out += `<a href="../../scripts/${ template.noteslocation }-characters.html" target="_blank">Notes</a>`
+    if (template.noteslocation) out += `<a href="../../scripts/${ template.noteslocation }-characters.html" target="_blank">Characters</a>`
     if (template.vocablocation) out += '<a href="../../scripts/' + template.vocablocation + '.html" target="_blank">Terms</a>\n'
-    out += '<a href="../../app-charuse/index.html?language=' + defaults.language + '" target="_blank">Characters</a>\n'
+    out += '<a href="../../app-charuse/index.html?language=' + defaults.language + '" target="_blank">Usage</a>\n'
     out += `<a href="../../scripts/links.html?iso=${ template.scriptcode }" target="_blank">Links</a>`
     //out += `<a onclick="this.href = '../../uniview/index.html?charlist='+getHighlightedText(_output)" target="_blank" href="#">UniView</a>'
     out += `</div>`
