@@ -2187,6 +2187,10 @@ function makeCharacterLink (cp, block, lang, direction) {
 
 
 
+
+
+
+
 function displayDBInfo (cp, block, lang, direction, showAll) { 
 	// displays information about cp from db
 	// cp: a unicode character, or sequence of unicode characters
@@ -2195,38 +2199,358 @@ function displayDBInfo (cp, block, lang, direction, showAll) {
 	// direction: either rtl or ltr or ''
 	// showAll: boolean, if true shows all db entries for every character; otherwise, shows only entries that start with the character
 
-	//var chars = []
-	//convertStr2DecArray(cp, chars)
-    
     
     // add inherent vowels
     if (typeof addInherent === 'function') cp = addInherent(cp)
     
 	var chars = [...cp]
     var out = ''
-    
+
+
+    dataArray = []
+	for (let i=0;i<chars.length;i++) {
+		//dataArray.push(buildDBInfoLineObject(chars[i], true, cp, i, showAll))
+        dataArray.push(
+            buildDBInfoLineObject(chars[i], {
+                includeAll: true,
+                fullString: cp,
+                index: i,
+                showAll: showAll
+                })
+            )
+
+		}
+    //console.log('## dataArray',dataArray)
+
     out += '<div style="text-align:center; margin-block-end: .5em;">'
-    //out += '<button onclick="sieveFor(\'analysisIPA\')">Show IPA</button> '
     out += '<button onclick="sieveForIPA()">Show IPA</button> '
     out += '<button onclick="sieveFor(\'analysisTransc\')">Show Transcription</button> '
-    //out += '<button onclick="sieveFor(\'dbCharName\')">List Codepoints</button>'
     out += '</div>'
-	
-	out += '<span id="textAnalysis" style="display:flex; flex-direction:column;">'
-	//console.log(spreadsheetRows)
-
-	for (let i=0;i<chars.length;i++) {
-		//out += buildDBInfoLine(chars[i], true)
-		out += buildDBInfoLine(chars[i], true, cp, i, showAll)
-		}
-	
-	out += '</span>'
-
+    
+    
+    
+    out += renderDBInfoTable(dataArray)
 
 	return out.trim()
 	}
 
 
+
+
+
+function buildDBInfoLineObject(char, { includeAll, fullString, index, showAll }) {
+
+    const hex = char.codePointAt(0).toString(16).toUpperCase().padStart(4, '0')
+
+    const obj = {
+        char,
+        hex,
+        toplevel: includeAll,
+        originStr: fullString,
+        ptr: index,
+        showAll,
+        ignorable: false,
+        fields: {},
+        relatedItems: []
+        }
+
+    // Determine ignorable
+    if (!includeAll &&
+        spreadsheetRows[char] &&
+        spreadsheetRows[char][cols.class] &&
+        spreadsheetRows[char][cols.class].includes('-')) {
+        obj.ignorable = true
+        }
+
+    // If no spreadsheet row or ignorable, return minimal object
+    if (!spreadsheetRows[char] || obj.ignorable) {
+        obj.fields.unicodeName = getUnicodeNameFallback(char, hex)
+        return obj
+        }
+
+    const row = spreadsheetRows[char]
+
+    // IPA fields
+    obj.fields.ipa = row[cols.ipaLoc] || null
+    obj.fields.ipaPlus = cols.ipaPlus ? row[cols.ipaPlus] || null : null
+    obj.fields.ipaOther = cols.ipaOther ? row[cols.ipaOther] || null : null
+
+    // Transcriptions
+    obj.fields.transcriptions = []
+    if (cols.othertranscriptions) {
+        for (const [colIndex, label] of cols.othertranscriptions) {
+            obj.fields.transcriptions.push({
+                label,
+                value: row[colIndex] || null
+            })
+        }
+    }
+
+    // Type
+    obj.fields.type = row[cols.typeLoc] || null
+
+    // Usage
+    obj.fields.usage = cols.statusLoc > 0 ? row[cols.statusLoc] || null : null
+
+    // Status
+    obj.fields.status = cols.status > 0 ? statusExpander(row[cols.status]) || null : null
+
+    // Class
+    obj.fields.class = cols.class > 0 ? row[cols.class] || null : null
+
+    // Transliteration
+    obj.fields.transliteration = cols.transLoc > 0 ? row[cols.transLoc] || null : null
+
+    // Name + native name
+    if (cols.nameLoc > 0) {
+        obj.fields.name = row[cols.nameLoc] || null
+        obj.fields.nativeName = cols.nnameLoc > 0 ? row[cols.nnameLoc] || null : null
+        }
+
+    // Unicode name
+    obj.fields.unicodeName = row[cols.ucsName] || getUnicodeNameFallback(char, hex)
+
+    // Block link availability
+    obj.fields.blockLinkAvailable = cols.block > 0 && row[cols.block]
+
+    // Related items
+    //console.log(`##includeAll ${includeAll}`)
+    if (includeAll) {
+        obj.relatedItems = findRelatedItems(char, fullString, index, showAll)
+        }
+
+    return obj
+    }
+
+
+
+function getUnicodeNameFallback(char, hex) {
+    let names = []
+    for (let i = 0; i < char.length; i++) {
+        names.push(`U+${hex}: ${charData[char[i]]}`)
+    }
+    return names.join(', ')
+}
+
+
+function findRelatedItems(char, originStr, ptr, showAll) {
+    //console.log(`>>> findRelatedItems(char=${char} originStr=${originStr} ptr=${ptr} showall=${showAll})`)
+    const results = []
+
+    for (const item in spreadsheetRows) {
+
+        if (spreadsheetRows[item][cols.class] === '-') continue
+
+        const itemArray = [...item]
+
+        if (showAll) {
+            const containsChar =
+                (item.length > 1 && item.includes(char)) ||
+                (cols.equiv && spreadsheetRows[item][cols.equiv].includes(char))
+
+            if (containsChar) {
+                results.push({ item })
+                }
+            } 
+        else {
+            let matchStr = item.replace(/[-◌]/g, '.')
+            if (/^[\?\(\)\[\]\*\\]$/.test(matchStr)) matchStr = 'xx'
+
+            const regex = new RegExp(matchStr)
+
+            const startsWithChar =
+                (itemArray.length > 1 && itemArray[0] === char) ||
+                (cols.equiv && spreadsheetRows[item][cols.equiv].includes(item))
+
+            if (startsWithChar && originStr.substr(ptr, item.length).match(regex)) {
+                results.push({ item })
+                }
+            }
+        }
+    //console.log('<<< findRelatedItems', results)
+    return results
+    }
+
+
+
+function renderDBInfoTable(dataArray) {
+
+    // Determine whether the inh column is needed
+    const hasInhColumn = dataArray.some(item => item.fields.ipaPlus)
+
+    let html = `
+        <table class="analysisTable">
+            <thead>
+                <tr>
+                    <th>character</th>
+                    <th>IPA</th>
+                    ${ hasInhColumn ? '<th>inherent vowel</th>' : '' }
+                    <th>transcription</th>
+                    <th>transliteration</th>
+                    <th style="vertical-align: top;">type</th>
+                    <th style="vertical-align: top;">name</th>
+                    <th>gc</th>
+                    <th>properties</th>
+                    <th>notes</th>
+                </tr>
+            </thead>
+            <tbody>
+        `
+    let value = ''
+    for (const row of dataArray) {
+        html += `
+            <tr>
+                <td class="char" rowspan="2">${ row.char }</td>
+                `
+
+                // IPA
+                value = row.fields.ipa === null ? '–' : row.fields.ipa
+                if (value !== '–') value = '<span class="ipa">'+value+'</span>' || '–'
+                value = value.toLowerCase()
+                html += `<td>${ value }</td>
+                `
+
+                // inherent vowel
+                html += `${ hasInhColumn ? `<td class="inh">${ row.fields.ipaPlus || '' }</td>` : '' }
+                `
+
+                // transcriptions
+                //console.log('##',row, row.fields.transcriptions?.[0]?.value)
+                
+                let raw = row.fields.transcriptions?.[0]?.value
+                if (raw === null || raw === undefined || raw === 'null' || raw === 'NULL') raw = ''
+
+                value = raw === '' ? '–' : raw
+                if (value !== '–') value = `<span class="transc">${ value }</span>`
+
+                html += `<td>${ value || '' }</td>
+                `
+
+                // transliteration
+                html += `<td>${ row.fields.transliteration || '' }</td>
+                `
+
+                // type
+                html += `
+                <td class="analysisTableType">${ row.fields.type || '' }</td>
+                `
+
+                // name
+                let name = ''
+                if (row.fields.name) name += row.fields.name
+                if (row.fields.nativeName) name += ` (${ row.fields.nativeName })`
+                html += `
+                <td class="analysisTableType">${ name || '' }</td>
+                `
+
+                // gc
+                html += `<td class="analysisTableStatus">${ row.fields.class || '' }</td>
+                `
+
+                // Properties link
+                html += `
+                <td>
+                    <img src="../images/export.png" style="height:1.2em; cursor:pointer;" onclick="
+                        const details = window.open(
+                            'https://util.unicode.org/UnicodeJsps/character.jsp?a=${ row.hex }',
+                            'details'
+                            );
+                        details.focus();"
+                        >
+                    </td>
+                    `
+
+                // Notes link
+                html += `
+                <td>
+                    <img src="../images/export.png" style="height:1.2em; cursor:pointer;" onclick="
+                        const iframe = document.getElementById('notesDisplayIframe');
+                        iframe.style.display = 'block';
+            	        iframe.src = '../../scripts/${ template.blocklocation }/character.html?q=${ row.char }&showX#${ factoryDefaults.language }';
+                        iframe.onload = () => {
+                            const doc = iframe.contentDocument;
+                            const style = doc.createElement('style');
+                            style.textContent = 'body, div.character { background-color: seashell !important; };' 
+                            doc.head.appendChild(style);
+                            };
+                        ">
+                    </td>
+                    `
+
+                // Usage
+                html += `<td class="analysisTableUsage"><b>${ row.fields.status || '' }</b> ${ row.fields.usage || '' }</td>
+            </tr>
+
+            <tr>
+            <td class="analysisTableUName" colspan="7">${ row.fields.unicodeName || '' }</td>
+            </tr>
+            `
+        
+        // Related items
+        if (row.relatedItems && row.relatedItems.length > 0) {
+            for (const rel of row.relatedItems) {
+
+                const relFields = getRelatedItemFields(rel.item)
+
+                html += `
+                    <tr class="relatedRow">
+                        <td class="char relatedItems" rowspan="2">${ rel.item }</td>
+
+                        <td>${ relFields ? '<span class="ipa">'+relFields.ipa+'</span>' : '' }</td>
+
+                        ${ hasInhColumn ? '<td></td>' : '' }
+
+                        <td>${ relFields ? '<span class="transc">'+relFields.transcription+'</span>' : '' }</td>
+
+                        <td></td> <!-- transliteration not shown for related items -->
+
+                        <td class="analysisTableType">${ relFields ? relFields.type : '' }</td>
+
+                        <td></td> <!-- name not shown for related items -->
+
+                        <td></td> <!-- gc not shown for related items -->
+
+                        <td></td> <!-- properties column left blank -->
+
+                        <td class="analysisTableType">${ relFields ? `<b>${ relFields.status }</b> ${ relFields.usage }` : '' }</td>
+                    </tr>
+
+                <tr>
+                <td class="analysisTableUName" colspan="7" style="color:tan;">${ relFields.unicodeName || '' }</td>
+                </tr>
+                `
+                }
+            }
+        }
+
+    html += `
+            </tbody>
+        </table>
+    `
+
+    return html.trim()
+    }
+
+
+
+
+
+function getRelatedItemFields(item) {
+    const row = spreadsheetRows[item]
+    if (!row) return null
+    //console.log(`ROW ${row}`)
+
+    return {
+        ipa: row[cols.ipaLoc] || '',
+        transcription: cols.othertranscriptions?.[0]
+            ? row[cols.othertranscriptions[0][0]] || ''
+            : '',
+        type: row[cols.typeLoc] || '',
+        status: cols.status > 0 ? statusExpander(row[cols.status]) || '' : '',
+        usage: cols.statusLoc > 0 ? row[cols.statusLoc] || '' : '',
+        unicodeName: row[cols.ucsName] || ''
+        }
+    }
 
 
 
@@ -2258,217 +2582,6 @@ window.addEventListener("message", function(event) {
     });
 
 
-function buildDBInfoLine (char, toplevel, originStr, ptr, showAll) {
-		
-		hex = char.codePointAt(0).toString(16).toUpperCase()
-		while (hex.length < 4) hex = '0'+hex
-/*
-				out += '<bdi><a href="../../scripts/'+template.blocklocation+'/block.html#char'+hex+'" target="details">notes</a></bdi> • '
-				out += '<bdi><a href="https://util.unicode.org/UnicodeJsps/character.jsp?a='+hex+'" target="details">properties</a></bdi>'
-                console.log('template.blocklocation',template.blocklocation)
-*/
-		out = '<div class="dbCharContainer"'
-		if (!toplevel) out += ' style="margin-left: 3em;"'
-		/*if (toplevel) out += `>
-            <button onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"
-            onclick="document.getElementById('notesDisplayIframe').style.display = 'block'; document.getElementById('notesDisplayIframe').src = '../../scripts/${ template.blocklocation }/character.html?q=${ char }&showX';
-            close = document.createElement('div')
-            close.textContent = 'X'
-            document.getElementById('notesDisplayIframe').body.appendChild(close);
-            ">Notes</button>&nbsp;
-            <span class="dbCharItem">${ char }</span> `*/
-		if (toplevel) out += `>
-            <button onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"
-            onclick="
-            	const iframe = document.getElementById('notesDisplayIframe');
-            	iframe.onload = () => {
-    				const doc = iframe.contentDocument;
-    				const style = doc.createElement('style');
-    				style.textContent = 'body, div.character { background-color: seashell !important; };' 
-					doc.head.appendChild(style);
-					};
-
-            	iframe.style.display = 'block';
-            	iframe.src = '../../scripts/${ template.blocklocation }/character.html?q=${ char }&showX#${ factoryDefaults.language }';
-            	console.log('Going to:','../../scripts/${ template.blocklocation }/character.html?q=${ char }&showX#${ factoryDefaults.language }');
-            	
-            ">Notes</button>&nbsp;
-            <span class="dbCharItem">${ char }</span> `
-		else if (! showAll) out += `><span class="dbCharItem">${ char }</span> `
-		else out += `><span class="dbCharItemLevel2">${ char }</span> `
-		
-		// skip items with an x in the class column unless this is the top level
-		// ie. characters in the text will be reported, but not linked to - options
-		var ignorable = false
-		if (! toplevel && spreadsheetRows[char] && spreadsheetRows[char][cols.class] && spreadsheetRows[char][cols.class].includes('-')) ignorable = true
-		
-		out += '<span class="dbCharSubContainer" style="display:flex;flex-direction:column;">'
-
-		if (spreadsheetRows[char] && ignorable === false) {
-					
-			out += '<span class="dbCharInfo">'
-
-			// get ipa info
-			if (cols.ipaLoc) {
-				//out += '<bdi class="analysisIPA" onclick="sieveFor(\'analysisIPA\')" onmouseover="showMenuText(\'Make a list of IPA values.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer"><em>ipa</em> '
-				//out += '<bdi class="analysisIPA" onclick="sieveFor(\'analysisIPA\')" onmouseover="showMenuText(\'IPA: Click to make a list of values.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
-				out += '<bdi class="analysisIPA" onmouseover="showMenuText(\'Typical phonemic/phonetic value(s).\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
-				if (spreadsheetRows[char][cols.ipaLoc]) out += ' <span class="ipa" style="display:inline-block; min-width:1.5em;">'+spreadsheetRows[char][cols.ipaLoc].toLowerCase()+'</span>'
-				else out += '<span class="ipa" style="display:inline-block; min-width:1.5em;">-</span>'
-				out += '</bdi>'
-				}
-
-            // get any ipaPlus info
-			if (cols.ipaPlus && spreadsheetRows[char][cols.ipaPlus]) {
-				out += `<bdi class="analysisIPAplus" onmouseover="showMenuText('Inherent vowels associated with this letter.','tan')" onmouseout="hideMenuText()" style="cursor:pointer">`
-				out +=  `<span class="ipa" style="display:inline-block; min-width:1.5em;">${ spreadsheetRows[char][cols.ipaPlus].toLowerCase() }</span>`
-				out += '</bdi>'
-				}
-
-            // get any ipaOther info
-			if (cols.ipaOther && spreadsheetRows[char][cols.ipaOther]) {
-				out += `<bdi class="analysisIPAother" onmouseover="showMenuText('Additional sounds that may be associated with this letter.','tan')" onmouseout="hideMenuText()" style="cursor:pointer">`
-				out +=  `<span class="ipa" style="display:inline-block; min-width:1.5em;">${ spreadsheetRows[char][cols.ipaOther].toLowerCase() }</span>`
-				out += '</bdi>'
-				}
-
-			// get transcription
-			if (cols.othertranscriptions) {
-				for (let t=0;t<cols.othertranscriptions.length;t++) {
-					//out += '<bdi class="analysisTransc" onclick="sieveFor(\'analysisTransc\')" onmouseover="showMenuText(\''+cols.othertranscriptions[t][1]+' transcription. (Click to extract a list.)\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer"><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
-					out += '<bdi class="analysisTransc" onmouseover="showMenuText(\''+cols.othertranscriptions[t][1]+' transcription.\',\'tan\')" onmouseout="hideMenuText()"><em style="font-size: 80%;">'+cols.othertranscriptions[t][1]+'</em> '
-					if (spreadsheetRows[char][cols.othertranscriptions[t][0]]) out += ' <span class="transc">'+spreadsheetRows[char][cols.othertranscriptions[t][0]]+'</span>'
-					else out += '<span>-</span>'
-					out += '</bdi>'
-					}
-				}
-
-
-			// get type
-			out += '<bdi class="analysisType">'
-			//out += '<em>type</em> '
-			if (spreadsheetRows[char][cols.typeLoc]) out += ' <span class="" onmouseover="showMenuText(\'Type of character.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.typeLoc]+'</span>'
-			else out += '<span class="ipa">-</span>'
-			out += '</bdi>'
-
-
-
-			// get usage
-			if (spreadsheetRows[char][cols.statusLoc] && cols.statusLoc > 0) {
-				out += '<bdi class="analysisStatus">'
-				//out += '<em>usage</em> '
-				out += '<span onmouseover="showMenuText(\'Usage notes.\',\'tan\')" onmouseout="hideMenuText()">('+spreadsheetRows[char][cols.statusLoc]+')</span>'
-				out += '</bdi>'
-				}
-
-			// get status
-			if (spreadsheetRows[char][cols.status] && cols.status > 0) {
-				out += '<bdi class="analysisStatus">'
-				//out += '<em>usage</em> '
-				out += ' <span style="color:black; font-weight: bold;" onmouseover="showMenuText(\'Status notes.\',\'tan\')" onmouseout="hideMenuText()">'+statusExpander(spreadsheetRows[char][cols.status])+'</span>'
-				out += '</bdi>'
-				}
-
-			// get class (ie. general category)
-			if (spreadsheetRows[char][cols.class] && cols.class > 0) {
-				out += '<bdi class="">'
-				out += ' <span style="font-size: 80%; font-style:italic;" onmouseover="showMenuText(\'General category.\',\'tan\')" onmouseout="hideMenuText()">'+spreadsheetRows[char][cols.class]+'</span>'
-				out += '</bdi>'
-				}
-
-			// get transliteration
-			//if (spreadsheetRows[char][cols.transLoc] && spreadsheetRows[char][cols.transLoc] !== char) {
-			if (spreadsheetRows[char][cols.transLoc] && cols.transLoc > 0) {
-				out += '<bdi class="analysisTranslit" onmouseover="showMenuText(\'Transliteration produced by this app.\',\'tan\')" onmouseout="hideMenuText()">'
-				out += '<span><em>translit</em> '
-				if (spreadsheetRows[char][cols.transLoc]) out += ' <span class="">'+spreadsheetRows[char][cols.transLoc]+'</span>'
-				else out += '<span>–</span>'
-				out += '</bdi>'
-				}
-
-
-			// get name
-			if (spreadsheetRows[char][cols.nameLoc] && cols.nameLoc > 0) {
-				out += '<bdi class="analysisName" onmouseover="showMenuText(\'Name.\',\'tan\')" onmouseout="hideMenuText()"><em>name</em> '
-				out += ' <span>'+spreadsheetRows[char][cols.nameLoc]
-				if (spreadsheetRows[char][cols.nnameLoc] && cols.nnameLoc > 0) out += ' ('+spreadsheetRows[char][cols.nnameLoc]+')'
-				out += '</span></bdi>'
-				}
-
-			// add link to notes page (using the block column)
-			if (spreadsheetRows[char][cols.block] && cols.block > 0) {
-				//out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+spreadsheetRows[char][cols.block]+'/block#char'+hex+'" target="_blank">details</a></bdi>'
-                //var blockloc = template.blocklocation.replace('/scripts/','').replace('/block','') // deal with legacy
-				//out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="../../scripts/'+template.blocklocation+'/block.html#char'+hex+'" target="details">notes</a></bdi> • '
-                out += `<button onmouseover="showMenuText(\'Open a page to show character properties.\',\'tan\')" onmouseout="hideMenuText()"
-                    onclick="details = window.open('https://util.unicode.org/UnicodeJsps/character.jsp?a='+hex, 'details'); details.focus()"
-                    >Properties…</button>&nbsp;`
-                console.log('template.blocklocation',template.blocklocation)
-				}
-
-/*			// add link to notes page
-			var blockfile = getScriptGroup(parseInt(hex,16), true)
-			//console.log(blockfile)
-			if (blockfile) {
-				out += '<bdi onmouseover="showMenuText(\'Show details in character notes page.\',\'tan\')" onmouseout="hideMenuText()"><a href="/scripts/'+blockfile+'/block#char'+hex+'" target="_blank">details</a></bdi>'
-				}
-*/
-			out += '</span>'	
-
-			// add unicode name
-			//out += '<bdi class="dbCharName" onclick="sieveFor(\'dbCharName\')" onmouseover="showMenuText(\'Make a list of Unicode names.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
-			out += '<bdi class="dbCharName" onmouseover="showMenuText(\'Unicode name.\',\'tan\')" onmouseout="hideMenuText()" style="cursor:pointer">'
-			if (spreadsheetRows[char][cols.ucsName]) out += spreadsheetRows[char][cols.ucsName]
-			else {
-				for (let i=0;i<char.length;i++) {
-					if (i>0) out += ', '
-					out += 'U+'+hex+': '+charData[char[i]]
-					}
-				}
-			out += '</bdi>'	
-			}
-		
-		else {
-			// if class is x, just display ucs name
-			out += '<span class="dbCharInfo">'
-			out += '</span><bdi class="dbCharName">'	
-			
-			// add unicode name
-			var blockfile = getScriptGroup(parseInt(hex,16), true)
-			if (blockfile) {
-				for (let i=0;i<char.length;i++) {
-					if (i>0) out += ', '
-					out += 'U+'+hex+': '+charData[char[i]]
-					}
-				}
-			out += '</bdi>'	
-			}
-
-		out += '</span> '
-		out += '</div> '
-		
-		
-		// find related items
-		if (toplevel) {
-			if (showAll) {
-				for (item in spreadsheetRows) { 
-					if (((item.length > 1 && item.includes(char)) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(char))) && spreadsheetRows[item][cols.class] !== '-') out += buildDBInfoLine(item, false, originStr, ptr, showAll)
-					}
-				}
-			else {
-				for (item in spreadsheetRows) { 
-					var matchStr = item.replace(/-/g,'.').replace(/◌/g,'.')
-					if (matchStr == '?' || matchStr == '(' || matchStr == ')' || matchStr == '[' || matchStr == ']' || matchStr == '*' || matchStr == '\\') matchStr = 'xx'
-					//console.log('matchstr',matchStr)
-					var  regex = new RegExp(matchStr)
-					itemArray = [... item] // to handle surrogates
-					if (((itemArray.length > 1 && itemArray[0] === char) || (cols.equiv && spreadsheetRows[item][cols.equiv].includes(item))) && spreadsheetRows[item][cols.class] !== '-' && originStr.substr(ptr,item.length).match(regex)) out += buildDBInfoLine(item, false, originStr, ptr, showAll)
-					}
-				}
-			}
-		
-		return out
-    }
 
 
 
