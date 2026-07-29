@@ -2621,7 +2621,7 @@ function displayIPAorTranscriptionData (charStr, type) {
 
 
 
-function sieveFor (type) {
+function sieveForX (type) { // analysisTransc
 	// hide the labels
 	var hlist = ''
 	var vlist = ''
@@ -2668,6 +2668,45 @@ function sieveFor (type) {
 
 
 
+function sieveFor (type) { // analysisTransc
+
+    if (type === 'analysisTransc') type = 'transc'
+	// hide the labels
+	var hlist = ''
+	var vlist = ''
+    var items
+    
+    
+    // find the character and/or the value we want (type)
+    const lines = document.getElementById('transcription').querySelectorAll('tbody tr')
+    for (let i=0;i<lines.length;i++) {
+        if (lines[i].querySelector('.transc') === null) continue
+
+        hlist += `<span class="xitem">`
+        hlist += `<span class="xitemSrc">${ lines[i].querySelector('.char').textContent }</span>`
+        hlist += `<span class="xitemResults">`
+
+        valueNode = lines[i].querySelector('.'+type)
+        if (valueNode === null) items = ' '
+        else items = valueNode.lastChild.textContent.split(' ')
+
+
+        for (j=0;j<items.length;j++) hlist += '<span class="xitemRes" onclick="toggleXItem(this)">'+items[j].toLowerCase()+'</span>'
+        hlist += '</span>'
+        hlist += '</span>\n'
+        }
+	
+    hlist += `<p style="margin-inline:0; font-size:.8rem; max-width:10rem; line-height:1.2;">To remove a redundant transcription, click on it.</p>`
+
+	// display the result
+	document.getElementById('listOutput').style.display = 'block'
+	document.getElementById('listOutputHorizontal').innerHTML = hlist
+	document.getElementById('listOutputVertical').textContent = vlist
+	}
+
+
+
+
 
 
 
@@ -2675,6 +2714,166 @@ function sieveFor (type) {
 
 
 function sieveForIPA () {
+	// hide the labels
+	var hlist = ''
+    var ipaItems = [], ipaPlusItems = []
+    
+    // find the IPA data
+    const lines = document.getElementById('transcription').querySelectorAll('tbody tr')
+    for (line of lines) console.log('LINE',line.querySelector('.char'))
+    for (let i=0;i<lines.length;i++) {
+        const characterNode = lines[i].querySelector('.char')
+        if (characterNode === null) continue
+        if (characterNode.textContent === "‒" || characterNode.textContent === "") continue
+        
+        hlist += `<span class="xitem">`
+        hlist += `<span class="xitemSrc">${ lines[i].querySelector('.char').textContent }</span>`
+        hlist += `<span class="xitemResults">`
+        
+        let ipaNode = lines[i].querySelector('.ipa')
+        if (ipaNode === null || ipaNode.textContent === '–' || ipaNode.textContent === 'undefined') ipaItems = []
+        else if (ipaNode.textContent === 'undefined') ipaItems = [lines[i].querySelector('.char').textContent]
+        else ipaItems = ipaNode.lastChild.textContent.split(' ')
+        
+        inherentNode = lines[i].querySelector('.inh')
+        if (inherentNode && inherentNode.textContent !== '–' && inherentNode.textContent !== '') inherentItems = inherentNode.textContent.split(' ')
+        else inherentItems = []
+        
+        ipaOtherNode = lines[i].querySelector('.analysisIPAother')
+        if (ipaOtherNode) ipaOtherItems = ipaOtherNode.lastChild.textContent.split(' ')
+        else ipaOtherItems = ''
+
+        for (item of ipaItems) {
+            if (ipaItems === []) hlist += `<span class="xitemHide" onclick="toggleXItem(this)">${ item.toLowerCase() }</span>`
+            else hlist += `<span class="xitemRes" onclick="toggleXItem(this)">${ item.toLowerCase() }</span>`
+            }
+
+        for (inhItem of inherentItems) {
+            if (inherentItems !== []) hlist += `<span class="xitemHide" onclick="toggleXItem(this)">${ inhItem.toLowerCase() }</span>`
+            }  
+
+        //for (j=0;j<ipaItems.length;j++) hlist += '<span class="xitemRes" onclick="toggleXItem(this)">'+ipaItems[j].toLowerCase()+'</span>'
+        //for (j=0;j<inherentItems.length;j++) hlist += '<span class="xitemHide" onclick="toggleXItem(this)">'+inherentItems[j].toLowerCase()+'</span>'
+        for (j=0;j<ipaOtherItems.length;j++) hlist += '<span class="xitemHide" onclick="toggleXItem(this)">'+ipaOtherItems[j].toLowerCase()+'</span>'
+        
+        hlist += '</span>'
+        hlist += '</span>\n'
+        }
+    //hlist += `<span style="margin-inline:0; font-size:.8rem; max-width:10rem; line-height:1.2;">To remove a redundant IPA transcription, click on it.</span>`
+    hlist += `<span style="margin-inline:0; margin-block:1rem; font-size:.8rem; max-width:10rem; line-height:1.2;">Click on the transcriptions to hide or show them. Then click on [Add] to copy to the text area.</span>`
+	
+	// display the result
+	document.getElementById('listOutput').style.display = 'block'
+	document.getElementById('listOutputHorizontal').innerHTML = hlist
+	}
+
+
+
+
+function sieveForIPAXXX () {
+	// hide the labels
+	var hlist = ''
+    var ipaItems, ipaPlusItems
+    
+    // find the IPA data
+    const lines = document.getElementById('transcription').querySelectorAll('tbody tr')
+    for (line of lines) console.log('LINE',line.querySelector('.char'))
+    for (let i=0;i<lines.length;i++) {
+        if (lines[i].querySelector('.char') === null) continue
+        
+        hlist += `<span class="xitem">`
+        hlist += `<span class="xitemSrc">${ lines[i].querySelector('.char').textContent }</span>`
+        hlist += `<span class="xitemResults">`
+        
+        let pronunciations = []
+        let valueNode = lines[i].querySelector('.ipa')
+        if (valueNode === null || valueNode.textContent === '–' || valueNode.textContent === 'undefined') ipaItems = ' '
+        else if (valueNode.textContent === 'undefined') ipaItems = lines[i].querySelector('.char').textContent
+        else ipaItems = valueNode.lastChild.textContent.split(' ')
+        
+        //ipaPlusNode = lines[i].querySelector('.analysisIPAplus')
+        //if (ipaPlusNode) ipaPlusItems = ipaPlusNode.lastChild.textContent.split(' ')
+        //else ipaPlusItems = ''
+        ipaPlusNode = lines[i].querySelector('.inh')
+        //console.log('>>>'+ipaPlusNode.textContent.split(' ')+'<')
+        if (ipaPlusNode) ipaPlusItems = ipaPlusNode.textContent.split(' ')
+        else ipaPlusItems = ''
+        
+        ipaOtherNode = lines[i].querySelector('.analysisIPAother')
+        if (ipaOtherNode) ipaOtherItems = ipaOtherNode.lastChild.textContent.split(' ')
+        else ipaOtherItems = ''
+
+        for (j=0;j<ipaItems.length;j++) hlist += '<span class="xitemRes" onclick="toggleXItem(this)">'+ipaItems[j].toLowerCase()+'</span>'
+        for (j=0;j<ipaPlusItems.length;j++) hlist += '<span class="xitemHide" onclick="toggleXItem(this)">'+ipaPlusItems[j].toLowerCase()+'</span>'
+        for (j=0;j<ipaOtherItems.length;j++) hlist += '<span class="xitemHide" onclick="toggleXItem(this)">'+ipaOtherItems[j].toLowerCase()+'</span>'
+        
+        hlist += '</span>'
+        hlist += '</span>\n'
+        }
+    //hlist += `<span style="margin-inline:0; font-size:.8rem; max-width:10rem; line-height:1.2;">To remove a redundant IPA transcription, click on it.</span>`
+    hlist += `<span style="margin-inline:0; margin-block:1rem; font-size:.8rem; max-width:10rem; line-height:1.2;">Click on the IPA transcriptions to hide or show them. Then click on [Add] to copy to the text area.</span>`
+	
+	// display the result
+	document.getElementById('listOutput').style.display = 'block'
+	document.getElementById('listOutputHorizontal').innerHTML = hlist
+	}
+
+
+
+
+function sieveForIPAXX () {
+	// hide the labels
+	var hlist = ''
+    var ipaItems, ipaPlusItems
+    
+    // find the IPA data
+    const lines = document.getElementById('transcription').querySelectorAll('tbody tr')
+    for (line of lines) console.log('LINE',line.querySelector('.char'))
+    for (let i=0;i<lines.length;i++) {
+        if (lines[i].querySelector('.char') === null) continue
+        
+        hlist += `<span class="xitem">`
+        hlist += `<span class="xitemSrc">${ lines[i].querySelector('.char').textContent }</span>`
+        hlist += `<span class="xitemResults">`
+        
+        valueNode = lines[i].querySelector('.ipa')
+        if (valueNode === null || valueNode === '–') ipaItems = ' '
+        else ipaItems = valueNode.lastChild.textContent.split(' ')
+        
+        //ipaPlusNode = lines[i].querySelector('.analysisIPAplus')
+        //if (ipaPlusNode) ipaPlusItems = ipaPlusNode.lastChild.textContent.split(' ')
+        //else ipaPlusItems = ''
+        ipaPlusNode = lines[i].querySelector('.inh')
+        if (ipaPlusNode) ipaPlusItems = ipaPlusNode.textContent.split(' ')
+        else ipaPlusItems = ''
+        
+        ipaOtherNode = lines[i].querySelector('.analysisIPAother')
+        if (ipaOtherNode) ipaOtherItems = ipaOtherNode.lastChild.textContent.split(' ')
+        else ipaOtherItems = ''
+
+        for (j=0;j<ipaItems.length;j++) hlist += '<span class="xitemRes" onclick="toggleXItem(this)">'+ipaItems[j].toLowerCase()+'</span>'
+        for (j=0;j<ipaPlusItems.length;j++) hlist += '<span class="xitemHide" onclick="toggleXItem(this)">'+ipaPlusItems[j].toLowerCase()+'</span>'
+        for (j=0;j<ipaOtherItems.length;j++) hlist += '<span class="xitemHide" onclick="toggleXItem(this)">'+ipaOtherItems[j].toLowerCase()+'</span>'
+        
+        hlist += '</span>'
+        hlist += '</span>\n'
+        }
+    //hlist += `<span style="margin-inline:0; font-size:.8rem; max-width:10rem; line-height:1.2;">To remove a redundant IPA transcription, click on it.</span>`
+    hlist += `<span style="margin-inline:0; margin-block:1rem; font-size:.8rem; max-width:10rem; line-height:1.2;">Click on the IPA transcriptions to hide or show them. Then click on [Add] to copy to the text area.</span>`
+	
+	// display the result
+	document.getElementById('listOutput').style.display = 'block'
+	document.getElementById('listOutputHorizontal').innerHTML = hlist
+	}
+
+
+
+
+
+
+
+
+function sieveForIPAX () {
 	// hide the labels
 	var hlist = ''
 	var vlist = ''
