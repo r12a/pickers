@@ -1958,6 +1958,10 @@ function setUpValues () {
 			document.getElementById('cssToAdd').textContent = decodeURIComponent(pairs[1])
 			document.getElementById('css').style.display = 'block'
 			}
+		if (location.search.includes('listcharacters')) showCodepoints()	
+		if (location.search.includes('analysetext')) getDBInfo(template.blocklocation, defaults.language, template.direction, false)
+		if (location.search.includes('transliterate')) doTranscription('transliterate')	
+
         // the following sets up term entry (ltr, latin selected)
 		if (pairs[0] === 'term') {
 			document.getElementById('output').dir='ltr'
